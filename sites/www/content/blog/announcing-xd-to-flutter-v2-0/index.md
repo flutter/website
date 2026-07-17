@@ -69,7 +69,7 @@ Flutter 2 also introduces sound null safety — a language feature that helps de
 
 <DashImage figure src="images/14Gdqc7x5Vk85t47tQIocmw.webp" alt="“Export Null Safe Code” setting and output" caption="“Export Null Safe Code” setting and output" />
 
-### Sounds great! How do I get started?
+## Sounds great! How do I get started?
 
 Whether you’re using it to copy the code for a tricky gradient, or to export fully responsive, parameterized, interactive widgets, it’s simple to join the thousands of creative professionals that are already using the XD to Flutter plugin.
 

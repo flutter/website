@@ -312,7 +312,7 @@ Here’s an example of how these pieces interact:
 
 1. `RouterDelegate.build()` returns a new `Navigator`, whose pages now reflect the change to the app state (for example, the `selectedBookId`).
 
-## Navigator 2.0 exercise
+### Navigator 2.0 exercise
 
 This section leads you through an exercise using the Navigator 2.0 API. We’ll end up with an app that can stay in sync with the URL bar, and handle back button presses from the app and the browser, as shown in the following GIF:
 
@@ -362,7 +362,7 @@ class _BooksAppState extends State<BooksApp> {
 }
 ```
 
-## Pages
+### Pages
 
 The Navigator has a new `pages` argument in its constructor. If the list of `Page` objects changes, `Navigator` updates the stack of routes to match. To see how this works, we’ll build an app that displays a list of books.
 
@@ -651,13 +651,13 @@ class BookDetailsScreen extends StatelessWidget {
 
 As it stands, this app only enables us to define the stack of pages in a declarative way. We aren’t able to handle the platform’s back button, and the browser’s URL doesn’t change as we navigate.
 
-## Router
+### Router
 
 So far, the app can show different pages, but it can’t handle routes from the underlying platform, for example if the user updates the URL in the browser.
 
 This section shows how to implement the `RouteInformationParser`, `RouterDelegate`, and update the app state. Once set up, the app stays in sync with the browser’s URL.
 
-### Data types
+#### Data types
 
 The `RouteInformationParser` parses the route information into a user-defined data type, so we’ll define that first:
 
@@ -684,7 +684,7 @@ class BookRoutePath {
 
 In this app, all of the routes in the app can be represented using a single class. Instead, you might choose to use different classes that implement a superclass, or manage the route information in another way.
 
-### RouterDelegate
+#### RouterDelegate
 
 Next, add a class that extends `RouterDelegate`:
 
@@ -818,7 +818,7 @@ Future<void> setNewRoutePath(BookRoutePath path) async {
 }
 ```
 
-### RouteInformationParser
+#### RouteInformationParser
 
 The `RouteInformationParser` provides a hook to parse incoming routes (`RouteInformation`) and convert it into a user defined type (`BookRoutePath`). Use the `Uri` class to take care of the parsing:
 
@@ -1137,7 +1137,7 @@ class UnknownScreen extends StatelessWidget {
 
 Running this sample in Chrome now shows the routes as they are being navigated, and navigates to the correct page when the URL is manually edited.
 
-### TransitionDelegate
+#### TransitionDelegate
 
 You can provide a custom implementation of `TransitionDelegate` that customizes how routes appear on (or are removed from) the screen when the list of pages changes. If you need to customize this, read on, but if you are happy with the default behavior you can skip this section.
 
@@ -1210,7 +1210,7 @@ This class only affects the *declarative* API, which is why the **back** button 
 
 [Here’s the full sample(Gist)](https://gist.github.com/5ce79aee5b5f83cfababa97c9cf0a204).
 
-### Nested routers
+#### Nested routers
 
 This larger demo shows how to add a `Router` within another `Router`. Many apps require routes for the destinations in a `BottomAppBar`, and routes for a stack of views above it, which [requires two Navigators](https://medium.com/flutter/getting-to-the-bottom-of-navigation-in-flutter-b3e440b9386). To do this, the app uses an application state object to store app-specific navigation state (the selected menu index and the selected `Book` object). This example also shows how to configure which `Router` handles the back button.
 

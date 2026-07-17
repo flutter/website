@@ -21,7 +21,7 @@ Antigravity brings the best of Google into one place, using a tight feedback loo
 
 The result of our agentic adventure is DashLander — a moonlander-style game set on procedurally generated asteroids. Here is the story of how we built it.
 
-### Why Flutter in the AI era?
+## Why Flutter in the AI era?
 
 A lot of people might be thinking: *If agents can write native code, why not just have them write Android, iOS, and web apps entirely separately?*
 
@@ -31,13 +31,13 @@ Having a single source of truth is just as important for AI as it is for humans.
 
 And, while agentic development has dramatically reduced the cost of producing new software, it’s still far from being free. With agentic development, time is money both figuratively *and* literally, as more time spent querying equals more tokens; which equals more AI spend. With Flutter, agents fresh off a successful coding task don’t have to start over to support another platform, **saving you money**.
 
-### Failing fast to build better
+## Failing fast to build better
 
 We knew we wanted to build a game where you pilot a moonlander, complete with dynamic elements, custom shaders, and particle effects. (We didn’t have the heart to put Dash herself into the cold vacuum of space so, instead, you’re piloting a ship.) Integrating these concepts was, of course, vastly accelerated by using AI, but that doesn’t preclude slowing down and thoughtfully writing high quality code later on. If anything, a fast exploratory phase with AI helps you reach that stage more quickly, as many of your failed experiments can come and go within the life cycle of a few prompts rather than taking hours or days of programming just to learn whether or not a specific idea is actually much fun. And if there’s one thing in this life that doesn’t matter, it’s the code quality of an experimental feature that never sees the light of day.
 
 Crucially, we also knew what we *weren’t* building: a high-performance, real-time multiplayer game. Real-time multiplayer features introduce latency constraints and exponentially scale infrastructure complexity. Instead, we realized we could deliver 90% of that engaging competitive experience by replaying the ghosts of past high scores in a Challenge Mode. This allows us to rely on static storage and simple backends and to cleverly reuse perfectly written “AI opponent logic” for free, just by replaying what the best users have already done. And that’s the best code of all: the code you neither write nor maintain.
 
-### Generating a universe of assets
+## Generating a universe of assets
 
 To make an asteroid lander fun, we needed great assets, and we leaned heavily on the agentic ecosystem to get them:
 
@@ -47,7 +47,7 @@ To make an asteroid lander fun, we needed great assets, and we leaned heavily on
 
 * **Physics:** Because this game takes place in a vacuum, we wanted accurate Reaction Control Systems (RCS). We unleashed Gemini Deep Research to find the exact zero-atmosphere physics formulas we needed, which it compiled into a Google Doc. Then we included that research in our context and Gemini translated the equations directly into Dart. Are they *actually* the right physics equations? Hilariously, we don’t know, because we’re not physicists! But the controls certainly *feel* correct when you’re playing the game.
 
-### Iterating on the prototype
+## Iterating on the prototype
 
 We started our build inside AI Studio’s sandbox to generate rapid, throwaway code before committing to an architecture. These rich prototypes can act as context compression for the model later, locking in micro-decisions early. Some of our prototypes had more fun gameplay, some looked significantly more appealing, and others captured our zero-G physics most cleanly. For our final game, we merged the best ideas from each prototype.
 
@@ -61,7 +61,7 @@ I also had to face a harsh reality: I am not great at trigonometry, and *boy* is
 
 <YoutubeEmbed id="cVcM8jZ_Ioo" title="Dashlander debug mode" fullwidth="true"/>
 
-### The tricky business of time travel
+## The tricky business of time travel
 
 When we added Challenge Mode, Antigravity did a brilliant job wiring up the data models and connecting them to Cloud Firestore. But during testing, I noticed a sneaky bug. I would race against the ghost of a previous high score and, visually, everything looked great as the ghost ship drifted along nicely. But as the replay went on, it turned out that the ghost ship was imperceptibly desyncing from its past self. At the end of the run, despite the original player having landed perfectly, the ghost ship would sometimes violently crash into the asteroid.
 
@@ -69,7 +69,7 @@ To solve this, I had to make like it was 2023 and turn on my own brain. *Scary*,
 
 I realized that the core problem was a fundamental aspect of modern computer architecture. You see, on a modern, multi-process CPU, you can tell a program to run a piece of code at an exact millisecond in the future, but the CPU can never guarantee perfect accuracy due to the nature of process scheduling. And, unfortunately for me, a single millisecond delay in activating a thruster during a replay fundamentally alters a ship’s simulated flight path. I realized that, instead of just logging thruster timestamps, I had to store a complete representation of the lander’s physical state at the exact moment of each thruster event to correct inaccuracies during a replay. Gemini then integrated the logic to continuously compare the replay’s live simulation against these physical checkpoints, auto-correcting any micro-drifts. The result was a flawless, crash-free replay.
 
-### From game to launch
+## From game to launch
 
 You’ve probably felt the pressure to wear more hats in your day job, regardless of the size of your team. For example, maybe you’re great at writing games but don’t want to market them. Or, you’re a rockstar UX engineer but prefer not to handle graphic design. The good news is, you don’t have to do everything alone.
 
@@ -79,7 +79,7 @@ Finally, we used the Antigravity CLI to build our Flutter web app, copy the buil
 
 While DashLander is currently web-first to easily validate mechanics, because it’s built with Flutter, we are always just one command away from deploying to iOS, Android, macOS, Windows, Linux, or even the infotainment panel in a Toyota RAV4. As of this writing, the game is currently available at [dashlander.com](https://dashlander.com); though if you find this article far enough into the future that that link has gone dry, you’re welcome to download the [code straight from GitHub](https://github.com/craiglabenz/dashlander).
 
-### Realizing YOUR vision
+## Realizing YOUR vision
 
 To get started building your dream app or game, head to [antigravity.google](https://antigravity.google) for Google’s Agent Manager and IDE; and to [flutter.dev](https://flutter.dev) to get started with the Flutter SDK.
 

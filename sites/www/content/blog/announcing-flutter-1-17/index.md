@@ -30,7 +30,7 @@ For memory usage, this release brings [a 70% memory reduction](https://github.co
 
 However the broadest performance improvement is the support for Metal in iOS.
 
-## Metal support improves performance by 50% on iOS
+### Metal support improves performance by 50% on iOS
 
 Apple’s support for Metal on iOS provides nearly direct access to the underlying GPU and is Apple’s recommended graphics API. On the iOS devices that fully support Metal, Flutter now uses it by default, making your Flutter apps run faster most of the time, increasing [rendering speeds by about 50% on average](https://github.com/flutter/flutter/issues/53768) (depending on your workload).
 

@@ -46,7 +46,7 @@ We continue to evolve the Dart language — here’s a visualization of all the 
 
 <DashImage figure src="images/0XtA6olQqCpKPyrdO.webp" alt="Dart language evolution" caption="Dart language evolution" />
 
-## Null-aware elements
+### Null-aware elements
 
 Today [in Dart 3.8](https://medium.com/dartlang/announcing-dart-3-8-724eaaec9f47), we’re adding **null-aware elements**, which allows you to include an element in a collection *only* if its runtime value is non-null. You can use this feature to rewrite code like this:
 
@@ -70,7 +70,7 @@ var listWithNullAwareElements = [
 ];
 ```
 
-## Dot shorthands
+### Dot shorthands
 
 We also shared the news that we’re working on a new language feature called [**dot shorthands**](https://github.com/dart-lang/language/issues/357) — projected to release later this year — for addressing duplication in Flutter code with a new shorter syntax for selecting a member on a type that is known based on the context:
 

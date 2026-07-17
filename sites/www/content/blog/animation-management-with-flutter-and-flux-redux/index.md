@@ -104,7 +104,7 @@ One possible approach tracks the intermediate position of each tile as part of t
 
 Another approach, and the one I prefer in this case, places this animation (as well as all “cosmetic” animations) in the presentation layer. This simplifies the state graph and our business logic.
 
-## “Cosmetic” and “real” transition states
+### “Cosmetic” and “real” transition states
 
 We make a distinction between 2 kinds of transition states:
 
@@ -122,11 +122,11 @@ A few more notes about cosmetic transitions:
 
 * Their purpose is to create a more delightful UX, so we prefer to keep them out of the business logic layer.
 
-## “Fire-and-forget” animations
+### “Fire-and-forget” animations
 
 In order to run an animation, its state (progress) must be tracked somewhere. We often use fire-and-forget abstractions with animations, basically delegating the animation state management to other code. A downside of “fire-and-forget” is that we limit the visibility and control that we have over the animation progress (and thus limit the flexibility of what can be done while the animation is running). The upside is that it keeps the calling code simpler (no need to manage the animation state), and delegating animation state management makes it possible for frameworks to optimize performance. For example, on Android some fire-and-forget animations are executed on the RenderThread.
 
-## Figuring out whether/which transition to show
+### Figuring out whether/which transition to show
 
 Our example keeps the animation logic in the UI layer, which rebuilds the widget tree in response to state updates.
 
@@ -157,7 +157,7 @@ To deal with this ambiguity, we provide more information with our store updates:
 
 * With the assumption that we are starting from a non transitioning state; see more on this below.
 
-## Transition conflicts
+### Transition conflicts
 
 One thing we need to take into account is that the user might trigger events while an animation is in progress. For example, while the tiles are sliding to the right, the user might swipe up, interrupting the first animation.
 
@@ -165,7 +165,7 @@ Transition conflicts are a common cause of application bugs. Sometimes, animatio
 
 Sometimes these bugs are not easy to fix and developers resort to a quick-and-dirty solution, such as “disable button A while the animation is running”, which can introduce more subtle bugs. One example of such a bug that was made public is the [iPhone’s calculator “1+2+3” bug](https://qz.com/1114019/if-you-type-123-into-your-apple-iphones-calculator-on-ios-11-you-probably-wont-get-6-aapl/). (Have you ever dealt with an animation conflict bug that you can publicly share? I’d love to hear about it in the comments section!)
 
-## Dealing with transition conflicts
+#### Dealing with transition conflicts
 
 The animations in the 2048 game are “cosmetic” transitions — they are short, and shouldn’t delay the user from performing the next action. Also, the business logic layer does not know about these transitions. At any given point, the UI can trigger an action (moveLeft/moveRight/…) and the store publishes a new state to the UI.
 
@@ -191,7 +191,7 @@ Note that our UI code is performing minimal and simple state management — it j
 
 * Not exactly “fire-and-forget”, as we need to provide a way to terminate the animation.
 
-## A more graceful animation conflict resolution
+#### A more graceful animation conflict resolution
 
 For components where the jump cut effect isn’t sufficient, you can manage more of the animation state in the UI layer, and provide custom handling for transition conflicts. This approach doesn’t help with custom animation conflict resolution, but neither does it make it harder. The upside of this approach is that you use custom handling where you want it, and other conflicts default to the jump cut effect.
 

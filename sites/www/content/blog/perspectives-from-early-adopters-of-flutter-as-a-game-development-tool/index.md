@@ -173,7 +173,7 @@ To set up those new game developers for success, it’s crucial that we position
 
 With that, we’d like to make a few recommendations directed not only to the Flutter team at Google, but also to package authors, tool builders, and content creators from Flutter’s community at large.
 
-## Market positioning
+### Market positioning
 
 The research results suggest three dimensions we need to consider when we position Flutter in the market of game development tools:
 

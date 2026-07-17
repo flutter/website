@@ -10,7 +10,7 @@ category: announcement
 layout: blog
 ---
 
-### *Updated Firebase plugins for higher quality and a new site with Flutter-specific docs, snippets, and videos*
+## *Updated Firebase plugins for higher quality and a new site with Flutter-specific docs, snippets, and videos*
 
 Flutter is more than just an engine, a set of widgets, and some tools; it also includes a large ecosystem of packages to add functionality to your apps beyond what comes out of the box. Some of the most popular packages are the set that supports Firebase (aka FlutterFire). As part of our continued focus on quality for all aspects of Flutter, [we recently announced](https://medium.com/flutter/flutter-package-ecosystem-update-d50645f2d7bc) that Invertase, a consulting firm with deep expertise in Dart, Flutter, and Firebase, would be taking over the bulk of the development and maintenance of the FlutterFire plugins. In just the short amount of time since that announcement, they’ve made a tremendous amount of progress, including a new set of Core, Authentication, and Firestore plugins that provide new functionality and align the APIs more closely with other Firebase SDKs. In addition, they’ve created a whole site of Flutter-specific documentation for each of the Firebase plugins that includes installation instructions and code snippets for common scenarios, as well as a migration guide to help you move your code to this new version. And finally, in addition to all of that great work, this release represents 300+ issues resolved and 80+ pull requests merged.
 

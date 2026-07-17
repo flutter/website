@@ -27,11 +27,11 @@ We’re excited to announce that you can now hot reload on the web! Web support 
 
 If you discover any issues, file a bug using Dart’s [Web Hot Reload issue template](https://github.com/dart-lang/sdk/issues/new?template=6_web_hot_reload.yml). You can find a list of known issues on the [Web Hot Reload Known Issues](https://github.com/orgs/dart-lang/projects/107/views/1) GitHub project.
 
-### Now the fun part: how to use the feature
+#### Now the fun part: how to use the feature
 
 We’ve added a simple command line flag `--web-experimental-hot-reload` that you can pass to Flutter anywhere you invoke `flutter run`.
 
-### Running from VS Code
+##### Running from VS Code
 
 If you use debug configurations in VS Code, you can add this extra configuration to your [launch.json file](https://code.visualstudio.com/docs/editor/debugging-configuration):
 
@@ -54,7 +54,7 @@ If you use debug configurations in VS Code, you can add this extra configuration
 
 For best results, we recommend enabling the “[Dart: Flutter Hot Reload On Save](https://code.visualstudio.com/docs/editor/settings)” setting in VS Code. A hot reload can also be triggered with the ⚡icon in the Run/Debug panel. Hot restarts can still be triggered by using the ⟳ button.
 
-### Running from the command line
+##### Running from the command line
 
 If you use “flutter run” on the command line, you can now run hot reload on the web with the following:
 
@@ -64,7 +64,7 @@ flutter run -d chrome --web-experimental-hot-reload
 
 When hot reload is enabled, you can reload your application by pressing “r” in the running terminal, or “R” to hot restart.
 
-### Reloading in DartPad
+##### Reloading in DartPad
 
 Hot reload is also now available on [DartPad](https://dartpad.dev/) with a new **Reload** button. The feature is only available if Flutter is detected in the running application. You can try it using a [sample app](https://dartpad.dev/?sample=counter&channel=main) provided by DartPad.
 

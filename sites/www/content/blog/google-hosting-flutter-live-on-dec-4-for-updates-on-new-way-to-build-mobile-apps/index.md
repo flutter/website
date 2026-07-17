@@ -10,7 +10,7 @@ category: event
 layout: blog
 ---
 
-### Tl;dr: [Flutter Live](https://developers.google.com/events/flutter-live/), a celebration of Google’s new mobile app SDK, is happening on December 4th. [Sign up here](https://docs.google.com/forms/d/e/1FAIpQLSc95VLm0odas0ieZ7-6K-5B95piV-SfgVvVxVwV39tZl_iSHw/viewform) for our global livestream and watch it at [g.co/FlutterLive](https://g.co/FlutterLive).
+**Tl;dr:** [Flutter Live](https://developers.google.com/events/flutter-live/), a celebration of Google’s new mobile app SDK, is happening on December 4th. [Sign up here](https://docs.google.com/forms/d/e/1FAIpQLSc95VLm0odas0ieZ7-6K-5B95piV-SfgVvVxVwV39tZl_iSHw/viewform) for our global livestream and watch it at [g.co/FlutterLive](https://g.co/FlutterLive).
 
 ## What to expect at Flutter Live
 

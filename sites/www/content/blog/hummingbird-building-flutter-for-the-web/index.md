@@ -56,7 +56,7 @@ Now that we know we want to implement the entire dart:ui API we need to pick a s
 
 The widget building mechanism does not depend on the environment the app is running in. The process simply instantiates in-memory objects, tracks their state, and when the state changes computes the minimal updates necessary for the lower levels of the system, layout and painting. Porting this part to the Web was straight-forward. After the Dart team implemented super-mixin support in dart2js, the compiler compiled all of the widgets and the widget framework to JavaScript with almost no issues.
 
-## Layout
+### Layout
 
 The layout system is a little trickier. The biggest challenge was text layout. Everything else — Center, Row, Column, Stack, Scrollable, Padding, Wrap, and so on — is laid out by the framework and therefore compiles to the Web with no modifications.
 
@@ -70,7 +70,7 @@ You can find more details in Flutter’s [Paragraph documentation](https://docs.
 
 To measure these properties we first put a paragraph in an HTML DOM element, then we read the dimensions of the element. This causes the browser to lay it out. For example, to get the element’s width and height we call [offsetWidth](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetWidth) and its sibling, [offsetHeight](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight). To measure the baseline we place the paragraph in an element configured to lay itself out using flex row. Next to the paragraph we place another element called “probe”. Because the probe is aligned with the text’s baseline calling [getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect) on it gives us the baseline. We use similar tricks to measure minimum and maximum intrinsic widths.
 
-## Painting
+### Painting
 
 Last but not least, we need to paint the widgets. This area has seen the most churn during our exploration, and it still is one of the most active areas of research for us. By the end of the frame all our widgets need to be turned into pixels on the screen. In the browser, this means they have to be boiled down to some combination of HTML/CSS, Canvas, SVG, and WebGL.
 
@@ -84,7 +84,7 @@ We are currently simultaneously exploring two approaches:
 
 * CSS Paint API
 
-### HTML+CSS+Canvas
+#### HTML+CSS+Canvas
 
 With this approach we categorize pictures produced by the framework into those expressible using HTML+CSS, and those expressible using Canvas 2D. We then output HTML DOM that combines HTML, CSS, and 2D canvases.
 
@@ -108,7 +108,7 @@ Structurally they are very similar. The biggest difference is that on the Web we
 
 HTML+CSS+Canvas works in all modern browsers. However, we are already looking into the future:
 
-### CSS Paint API
+#### CSS Paint API
 
 [CSS Paint](https://developers.google.com/web/updates/2018/01/paintapi) is a new Web API and part of a bigger effort, [Houdini](https://developers.google.com/web/updates/2016/05/houdini). Houdini is a collaboration between many browser vendors to expose certain parts of the CSS engine to developers. In particular, the CSS Paint API allows developers paint custom graphics into HTML elements when those elements request painting. For example, you may assign the painting of an element’s `background` to a custom CSS painter. It is very similar to canvas but with the following important differences:
 

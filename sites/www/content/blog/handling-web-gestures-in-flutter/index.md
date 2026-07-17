@@ -31,7 +31,7 @@ The Focusable Action Detector widget allows you to handles several web-specific 
 See the `FocusableActionDetector` in action in the [DartPad #1](https://dartpad.dev/d16345202d0e26d40fe14904657dc24a) example.
 > **Note**: This article uses two DartPad examples, though there are multiple links to each. [DartPad #1](https://dartpad.dev/d16345202d0e26d40fe14904657dc24a) shows the `FocusableActionDetector` sample, and [DartPad #2](https://dartpad.dev/5544c57e20454fe212e3ec5cf10b1f0a) demonstrates hover and focus support for `FocusableActionDetector`.
 
-## Keyboard input
+### Keyboard input
 
 Flutter lets you define custom actions to handle keyboard input. Let’s say you want to have a hidden menu or your application has to handle a lot of custom keyboard input. This is easy to achieve with the `FocusableActionDetector` widget.
 
@@ -132,7 +132,7 @@ void _actionHandler(_ShowSecretMessageIntent intent) {
 }
 ```
 
-## Focus input
+### Focus input
 
 The `FocusableActionDetector` widget lets you perform action calls any time the specified widget is in focus.
 
@@ -153,7 +153,7 @@ The [DartPad #2](https://dartpad.dev/5544c57e20454fe212e3ec5cf10b1f0a) example s
 
 Focus is an advanced topic. Learn more about focus by reading the API docs for the [`Focus`](https://api.flutter.dev/flutter/widgets/Focus-class.html) class
 
-## Hover input
+### Hover input
 
 The `FocusableActionDetector` widget lets you handle hover input. That way, anytime a cursor hovers over a certain widget, custom actions can happen. Similar to the `onShowFocusHighlight` property, the `onShowHoverHighlight` property lets you create custom actions anytime the mouse cursor hovers over a certain widget.
 
@@ -163,7 +163,7 @@ In the [DartPad #2](https://dartpad.dev/5544c57e20454fe212e3ec5cf10b1f0a) exampl
 
 This means you can have different custom actions anytime the widget is in focus or a mouse cursor hovers over that widget. You can tell this if you hover and focus over on the same widget. That widget is applying two shades at the same time to that widget. For more information, see the API docs for the [`FocusableActionDetector`](https://api.flutter.dev/flutter/widgets/FocusableActionDetector-class.html) class.
 
-## Custom mouse cursors
+### Custom mouse cursors
 
 The `FocusableActionDetector` widget lets you implement custom mouse cursors. For example, if you want your users to know that a widget is draggable, changing the mouse cursor is a good indicator that you can do this. The `FocusableActionDetector` widget has a `mouseCursor` parameter.
 

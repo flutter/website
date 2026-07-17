@@ -23,9 +23,9 @@ Keep reading to learn about all the new additions and improvements the Flutter c
 
 We’ve made several improvements to Impeller — our new graphics renderer — and added new Engine APIs for foldable devices.
 
-## Impeller
+### Impeller
 
-### iOS performance improvements
+#### iOS performance improvements
 
 Thanks to the high-quality feedback from Flutter users, in this release we have continued to improve the performance of Impeller on iOS. As a result of many different optimizations, the Impeller renderer on iOS now not only has lower latency (by completely eliminating shader compilation jank), but on some benchmarks also have higher average throughput. In particular, on our flutter/gallery transitions performance benchmark, average frame rasterization time is now around half of what it was with Skia.
 
@@ -47,11 +47,11 @@ This progress was thanks to these and other optimizations, including:
 
 * More eager culling of out-of-bounds draw operations ([flutter/engine#41606](https://github.com/flutter/engine/pull/41606))
 
-### Fidelity improvements
+#### Fidelity improvements
 
 In 3.10 we announced that wide gamut colors were available under a flag when using Impeller. After hearing and addressing feedback from users, wide gamut colors are now the default on iOS when using Impeller.
 
-### Progress update on Impeller on Android
+#### Progress update on Impeller on Android
 
 We continue to make progress on the Vulkan backend for Impeller, however it hasn’t yet reached the level of quality where an official preview period would be useful. We want to ensure that our users’ first experience with Impeller on Android is high quality and we are not quite there yet. We hope to enter a preview period for Impeller on Android in a stable release later this year. Even though Impeller on Android isn’t quite ready for preview yet, the OpenGL and Vulkan backends have benefited from many of the backend agnostic optimizations that we’ve made to Impeller’s HAL during the past year. In particular, average frame rasterization times for Android have also improved significantly on the flutter/gallery transitions performance benchmark. Further improvements are in progress so that the preview on Android can be high quality.
 
@@ -61,7 +61,7 @@ Once again, our progress was greatly accelerated by contributions from the commu
 
 Please continue to follow along with our progress on Impeller using the Impeller [project dashboard](https://github.com/orgs/flutter/projects/21) on GitHub. We greatly appreciate all the feedback and encourage users to continue filing fidelity and performance issues in the [issue tracker](https://github.com/flutter/flutter/issues).
 
-### Impeller (and Wonderous) on macOS
+#### Impeller (and Wonderous) on macOS
 
 In our last stable release, we announced that Impeller, a rewrite of our rendering engine, would be turned on by default for iOS. Since then, we’ve heard great feedback from customers. Now, we’re excited to announce that Impeller for macOS is available in preview. You can test Impeller and enable it in your app by following the guidance on the [Impeller page](https://docs.flutter.dev/perf/impeller#availability).
 
@@ -71,19 +71,19 @@ Looking to try Impeller on macOS? [Install Wonderous from the Mac App Store](htt
 
 <DashImage figure src="images/0mr1oUAyNBl6RWCOD.webp" />
 
-## New engine API
+### New engine API
 
-### Improved foldable support
+#### Improved foldable support
 
 In order to better support foldable devices, we have added a new API to retrieve various properties of a display. The new getter [FlutterView.display](https://master-api.flutter.dev/flutter/dart-ui/FlutterView/display.html) returns a [Display](https://master-api.flutter.dev/flutter/dart-ui/Display-class.html) object. The Display object reports the physical size, the device pixel ratio, and the refresh rate of the display. Check out [setPreferredOrientations](https://master-api.flutter.dev/flutter/services/SystemChrome/setPreferredOrientations.html) for an example that uses the new API.
 
 ## Framework
 
-## Material
+### Material
 
 We’ve made a number of improvements to the Material Framework to 1) offer more platform adaptability, 2) allow for more customization, and 3) add new capabilities.
 
-### Character recognition in TextField
+#### Character recognition in TextField
 
 When using TextField on iOS, users will automatically see an option to use the device camera to recognize characters and insert them into the field.
 
@@ -91,7 +91,7 @@ When using TextField on iOS, users will automatically see an option to use the d
 
 This feature would not be possible without the contributions of community members [luckysmg](https://github.com/luckysmg) (Author) and [tgucio](https://github.com/tgucio) (reviewer). This feature was a 1000 line and 70 commit effort that bridged the [engine](https://github.com/flutter/engine/pull/34751) and [framework](https://github.com/flutter/flutter/pull/96637)! Thank you!
 
-### Platform adaptive dialog
+#### Platform adaptive dialog
 
 An adaptive constructor has been added to the AlertDialog, along with the adaptive function showAdaptiveDialog, to display either a Material or Cupertino dialog depending on the current platform.
 
@@ -103,19 +103,19 @@ And Material [AlertDialog](https://api.flutter.dev/flutter/material/AlertDialog-
 
 <DashImage figure src="images/0mXhB49hbDgipj12y.webp" />
 
-### CupertinoDatePicker with month and year
+#### CupertinoDatePicker with month and year
 
 Adds a monthYear mode to the CupertinoDatePicker.
 
 <DashImage figure src="images/0hduILuHCxPFxzZwT.webp" />
 
-### Cupertino (iOS-style) check styled radio
+#### Cupertino (iOS-style) check styled radio
 
 The useCheckmarkStyle property has been added to CupertinoRadio. This also allows the Radio.adaptive and RadioListTile.adaptive widgets to control whether they use the checkmark style on iOS.
 
 <DashImage figure src="images/0cmIR1i5jjDqtSf7e.webp" />
 
-### More customization options for Material widgets
+#### More customization options for Material widgets
 
 There have been several improvements that make it easier to customize the design of the Material widgets:
 
@@ -143,37 +143,37 @@ There have been several improvements that make it easier to customize the design
 
 <DashImage figure src="images/0ALRxynRXg1MkS-nB.webp" />
 
-### MaterialState color for chips
+#### MaterialState color for chips
 
 [This](https://github.com/flutter/flutter/pull/128584) makes it possible to customize the color of the chips in all of the different states.
 
 <DashImage figure src="images/0EzVRz68A8GCFiuJN.webp" />
 
-### Elevated Chips
+#### Elevated Chips
 
 FilterChip.elevated,ChoiceChip.elevated,and ActionChip.elevated variants have been added in accordance with the [Material 3 specs.](https://m3.material.io/components/chips/overview)
 
 <DashImage figure src="images/0VxRhItQg2lCdN5ka.webp" />
 
-### onSubmitted to SearchBar
+#### onSubmitted to SearchBar
 
 Allows for a different action to be initiated when a user finishes the text entry and presses the Done button on the keyboard.
 
-### BaseTapAndDragGestureRecognizer
+#### BaseTapAndDragGestureRecognizer
 
 A base class has been added for a family of classes, which includes support for tap + pan (TapAndPanGestureRecognizer), and tap + horizontal drag (TapAndHorizontalDragGestureRecognizer). These classes have already been used to implement native text field gestures. However, they’re also great for other use cases — for example, scaling a widget using a double tap + vertical drag gesture.
 
-## App Lifecycle Changes
+### App Lifecycle Changes
 
-### AppLifeCycleListener
+#### AppLifeCycleListener
 
 AppLifecycleListener class was [added](https://github.com/flutter/flutter/pull/123274) for listening to changes in the application lifecycle, and responding to requests to exit the application.
 
 <DashImage figure src="images/0bN0QtrIRWGDMC9LJ.webp" />
 
-## Scrolling
+### Scrolling
 
-### TwoDimensional scrolling foundation
+#### TwoDimensional scrolling foundation
 
 This release of Flutter also contains the foundation for building widgets that scroll in two dimensions, which means a bunch of new classes to build with, including:
 
@@ -191,7 +191,7 @@ We conducted a user study in order to develop this foundation for developers to 
 
 The Flutter team is already at work building two dimensional scrolling widgets on top of this framework, coming soon in the two_dimensional_scrollables package.
 
-### New slivers
+#### New slivers
 
 Flutter 3.13 brings with it a new set of slivers for composing unique scrolling effects.
 
@@ -205,9 +205,9 @@ See all of these new slivers in action in [this DartPad](https://dartpad.dev/?id
 
 <DashImage figure src="images/0OY76w1Hu7LqTODA9.webp" />
 
-## Accessibility
+### Accessibility
 
-### Accessibility updates
+#### Accessibility updates
 
 * The onOffSwitchLabels accessibility property was added for CupertinoSwitch to display I/O labels
 
@@ -219,27 +219,27 @@ See all of these new slivers in action in [this DartPad](https://dartpad.dev/?id
 
 ## Platforms
 
-## Android
+### Android
 
-### New support targets
+#### New support targets
 
 With this release, Flutter now supports targeting [Android 14/ API 34](https://developer.android.com/about/versions/14). While we are still working on a few new features in Android 14 (i.e. predictive back navigation), we have thoroughly tested this release against the new Android SDK and prioritize fixing any related issues you may find.
 
-## iOS
+### iOS
 
-### Reduced rotation distortion on iOS
+#### Reduced rotation distortion on iOS
 
 When an iOS screen rotates, Flutter apps would previously experience some distortion that looked different from native iOS applications. We’ve made some modifications to reduce the [distortion](https://github.com/flutter/flutter/issues/16322):
 
 <DashImage figure src="images/0veAtL_lhOkJ7kU7b.webp" />
 
-### Renaming Runner
+#### Renaming Runner
 
 When a Flutter iOS app is created, a *Runner* Xcode project and Xcode workspace are created in the `/ios` folder. Now, you can rename the workspace or project so that you don’t end up with a list of *Runners*.
 
 <DashImage figure src="images/0HuzkGU7owliBNi5N.webp" />
 
-### Preparing for iOS 17 and Xcode 15
+#### Preparing for iOS 17 and Xcode 15
 
 With the impending release of iOS 17 and Xcode 15, users who desire to develop using this toolchain will need to be on Flutter 3.13. In addition, when downloading Xcode 15, make sure you also download the iOS 17 simulator.
 
@@ -257,9 +257,9 @@ We are actively working on more updates, so please stay tuned! If you are alread
 
 ## Tooling
 
-## DevTools
+### DevTools
 
-### New DevTools features
+#### New DevTools features
 
 We’ve made improvements to the performance and usability of DevTools that include:
 
@@ -279,15 +279,15 @@ To learn more, check out the release notes for [DevTools 2.25.0](https://docs.fl
 
 ## Breaking changes and deprecations
 
-## Breaking changes
+### Breaking changes
 
-### Material 3 by default in the next release
+#### Material 3 by default in the next release
 
 We’re excited to announce that in the **next** Flutter stable release we plan to change the ThemeData useMaterial3 default from false to true. In other words, applications will get the Material 3 colors, text styles, and other visuals, by default.
 
 The [Material 3 demo](https://flutter.github.io/samples/web/material_3_demo/#/) should be helpful for previewing the differences between M2 and M3.
 
-### Android supported platforms
+#### Android supported platforms
 
 Flutter no longer supports the Android Jelly Bean API levels (16, 17, and 18). The good news is that most apps should be [migrated to this new minSdkVersion by default](https://github.com/flutter/flutter/pull/129729).
 
@@ -295,7 +295,7 @@ However, if you were not migrated automatically, it could be because you made ch
 
 Flutter plugins won’t be migrated by default, so plugin authors should update the `minSdkVersion` in the top level `build.gradle` file found at `<YOUR PLUGIN>/android/build.gradle`.
 
-### List of changes and migration guides
+#### List of changes and migration guides
 
 Breaking changes in this release include deprecated APIs that expired after the release of v3.10. To see all affected APIs, along with additional context and migration guidance, see [the deprecation guide for this release](https://docs.flutter.dev/release/breaking-changes/3-10-deprecations). Many of these are supported by [Flutter Fix](https://docs.flutter.dev/development/tools/flutter-fix), including quick fixes in the IDE, and bulk apply with the dart fix command.
 
@@ -303,9 +303,9 @@ As always, many thanks to the community for [contributing tests](https://github.
 
 ## Contributions
 
-## Flutter repository priorities and triage
+### Flutter repository priorities and triage
 
-### Triage updates
+#### Triage updates
 
 Over the past few months we have adopted a new set of definitions for our priorities (P0-P3). This brings us more in line with the definitions used by most other open source projects, and simplifies the decisions we have to make regarding how important bugs are — rather than 7 categories, we now only have 4. Hopefully this will also help us communicate more effectively with those of you who file bugs and then wonder [when things will be fixed](https://github.com/flutter/flutter/wiki/Issue-hygiene#when-will-my-bug-be-fixed)!
 

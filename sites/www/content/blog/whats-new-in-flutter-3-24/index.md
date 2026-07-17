@@ -141,7 +141,7 @@ For a deeper dive into Flutter GPU and to see how you can leverage it in your pr
 
 ## Web
 
-## Multi-view embedding
+### Multi-view embedding
 
 Flutter web applications can now leverage multi-view embedding, allowing developers to render content into multiple HTML elements simultaneously. This feature, known as “embedded mode” or “multi-view,” offers flexibility for integrating Flutter views into existing web applications.
 
@@ -155,7 +155,7 @@ For a deeper dive into implementing multi-view embedding in your Flutter web app
 
 ## Monetization
 
-## Video ad monetization support
+### Video ad monetization support
 
 We have launched a new [Interactive Media Ads (IMA) plugin](https://pub.dev/packages/interactive_media_ads) to support instream video ad monetization on Flutter mobile apps. The new IMA plugin provides new ad monetization opportunities for Flutter apps on top of the existing [Google Mobile Ads (GMA) plugin](https://pub.dev/packages/google_mobile_ads) which primarily supports display ad formats.
 
@@ -175,7 +175,7 @@ Resources: [Plugin guide](https://pub.dev/packages/interactive_media_ads), [Samp
 
 ## iOS
 
-## Swift Package Manager initial support
+### Swift Package Manager initial support
 
 Today, Flutter uses CocoaPods to manage native iOS or macOS dependencies.
 
@@ -190,7 +190,7 @@ If you have feedback on Flutter’s support for Swift Package Manager, please [f
 
 ## Ecosystem
 
-## Shared Preferences plugin updates
+### Shared Preferences plugin updates
 
 We’ve added two new APIs to the [shared_preferences](https://pub.dev/packages/shared_preferences) plugin, SharedPreferencesAsync and SharedPreferencesWithCache. The most significant change is that the Android implementation uses Preferences DataStore instead of Shared Preferences.
 
@@ -200,7 +200,7 @@ SharedPreferencesWithCache is built on top of SharedPreferencesAsync and allows 
 
 These new APIs are intended to replace the current SharedPreferences API in the future. However, this is one of the most used plugins in the ecosystem, and we know it will take time for the ecosystem to switch to the new APIs.
 
-## Flutter and Dart Package Ecosystem Summit Europe 2024
+### Flutter and Dart Package Ecosystem Summit Europe 2024
 
 <DashImage figure src="images/0fWo9ieYzQcJjwQBi.webp" />
 

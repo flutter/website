@@ -15,7 +15,7 @@ Our vision for Flutter is to provide a blank canvas for you to design and paint 
 
 <DashImage figure src="images/1Tb-JXZnxo2pu232C4c2KqQ.webp" alt="Screenshots from the Wonderous App" caption="Screenshots from the Wonderous App" />
 
-### When developing Wonderous, we had a few goals in mind:
+## When developing Wonderous, we had a few goals in mind:
 
 1. **Create an interesting and useful app.** Wonderous isn’t just a demonstration, it’s a fully functional app that allows users to navigate the intersection of history, art, and culture by exploring the Wonders of the World. At a time when travel is difficult for many, Wonderous leverages stunning illustrations and amplified animations to bring the wonder of these sites to life directly on your device.
 

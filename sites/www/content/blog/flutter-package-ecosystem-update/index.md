@@ -10,7 +10,7 @@ category: announcement
 layout: blog
 ---
 
-### New Flutter Favorites, Apple Sign In, and bringing prerelease Flutter plugins into production
+## New Flutter Favorites, Apple Sign In, and bringing prerelease Flutter plugins into production
 
 The Flutter team at Google has exactly one job: to unblock developers building beautiful, native applications across multiple platforms. When Flutter was new, the team accomplished that goal by focusing on a few initial customers. This resulted in the production of a portable rendering engine for text and graphics. Next up was to expand its reach, which the team accomplished by appealing to developers with a fast workflow combining the power of the Dart platform, Flutter APIs designed for ease-of-use, and native compilation across Android and iOS. As the customer base grew, so did their needs, motivating the team to leverage Dart’s pub.dev to provide a Flutter package manager and discovery mechanism that connected package authors with app developers.
 

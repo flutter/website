@@ -10,7 +10,7 @@ category: event
 layout: blog
 ---
 
-### 24 hours of supported codelabs with video streams from the Flutter team
+## 24 hours of supported codelabs with video streams from the Flutter team
 
 As a team, we’re used to plenty of travel, hanging out at various events and user groups, and connecting with folks in person; we miss our time with the Flutter community! So, while we’re not able to get together face-to-face, we’re going to do the next best thing: bring the gathering to you with a dedicated day of Flutter.
 

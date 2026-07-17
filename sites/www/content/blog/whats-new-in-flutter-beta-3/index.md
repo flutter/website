@@ -16,7 +16,7 @@ As mentioned when we shipped [our first beta at Mobile World Congress](https://m
 
 Our work in this release has focused on three primary areas: fundamentals, ecosystem and tooling.
 
-### Fundamentals
+## Fundamentals
 
 Let’s start with the fundamentals, where we’ve improved the built-in UI widgets, completed the remaining feature work for Dart 2, and introduced a new embedding API.
 
@@ -94,7 +94,7 @@ In other areas, we’ve made improvements to the accessibility support for apps 
 
 We’ve also [rewritten the Flutter engine’s threading model](https://github.com/flutter/engine/pull/4932) to make it possible to host multiple FlutterViews within a single application. This is part of our larger focus on making it easier to add Flutter to your existing app — work that continues [in progress](https://github.com/flutter/flutter/issues/14821).
 
-### Ecosystem
+## Ecosystem
 
 We launched an initial suite of Firebase plugins at Google I/O last year. Several of those plugins are reaching their 1.0 milestone this week: [Realtime Database](https://pub.dartlang.org/packages/firebase_database), [Firebase Analytics](https://pub.dartlang.org/packages/firebase_analytics), [Firebase Messaging](https://pub.dartlang.org/packages/firebase_messaging), and [Firebase Core](https://pub.dartlang.org/packages/firebase_core). In addition, we have added new, fully-featured plugins for [Remote Config](https://pub.dartlang.org/packages/firebase_remote_config), [Cloud Firestore](https://pub.dartlang.org/packages/cloud_firestore), and [Performance Monitoring](https://pub.dartlang.org/packages/firebase_performance). For an overview of our Firebase support, please see the [FlutterFire page](https://github.com/flutter/plugins/blob/master/FlutterFire.md).
 
@@ -102,7 +102,7 @@ Our support for ads powered by [AdMob by Google](https://www.google.com/admob/) 
 
 There are many other packages that have recently been made available for Flutter, some [contributed by the Flutter team](https://pub.dartlang.org/packages?q=email%3Aflutter-dev%40googlegroups.com) directly, others by community members. As mentioned in our I/O announcement post, Flutter is a first-class toolkit for [Material](https://material.io/components), which means the Material and Flutter teams have partnered to deliver even more support for Material Design.
 
-### Tooling
+## Tooling
 
 We continue to release regular updates to the **Flutter plugin for Android Studio and IntelliJ** to improve the development experience. In particular, we’ve [redesigned the UI Inspector](https://groups.google.com/forum/#!topic/flutter-dev/N6nOno1m3Mk) with a new “Just My Widgets” feature that filters out auto-generated widgets. You can also run your Flutter app in profile mode, which adds frames-per-second and memory usage displays.
 
@@ -112,7 +112,7 @@ Other notable features in this release for both Android Studio and Visual Studio
 
 <DashImage figure src="images/0Sdp8z8g2G2spsW3j.webp" />
 
-### Connecting with us
+## Connecting with us
 
 There are a few ways to get in touch with us and find out what’s going on with Flutter.
 

@@ -36,11 +36,11 @@ Flutter 3.22 introduces significant updates to Impeller, the rendering engine th
 
 ### Impeller
 
-### Vulkan backend feature complete on Android
+#### Vulkan backend feature complete on Android
 
 In this release, Impeller’s Vulkan backend for Android is feature complete. In particular, in the past few months, the team has been hard at work completing the implementation of [fast advanced blends](https://github.com/flutter/engine/pull/50154), support for custom fragment shaders with the [FragmentProgram API](https://github.com/flutter/engine/pull/49543), [PlatformView](https://github.com/flutter/engine/pull/50730) support (though it requires a [small API migration](https://docs.flutter.dev/release/breaking-changes/android-surface-plugins)), and fully implementing [all blur styles](https://github.com/flutter/flutter/issues/134178).
 
-### Android preview
+#### Android preview
 
 In the 3.19 stable release, after releasing improvements in Impeller’s OpenGL backend, we invited users to try out Impeller on Android devices both with and without Vulkan support. Over the past few months, after evaluating the performance of the OpenGL backend and estimating the remaining work on the Vulkan backend, we have decided to focus our efforts on making the Vulkan backend production ready first.
 
@@ -48,7 +48,7 @@ Impeller solves the issue of shader compilation jank. Additionally, in our bench
 
 As the Impeller preview on Android continues through the 3.22 stable cycle, we request that Flutter developers upgrade to the latest stable version, and file issues about any shortcomings noticed when [Impeller is enabled](https://docs.flutter.dev/perf/impeller#android). Feedback at this stage is invaluable to ensuring that Impeller is successful on Android and that we will be able to confidently make it the default renderer in a release later this year. The Android hardware ecosystem is very diverse. For that reason, the most helpful feedback about Impeller should include detailed information about the specific device and Android version where issues occurred.
 
-### Blur performance improvements
+#### Blur performance improvements
 
 Blur has been [reimplemented](https://github.com/flutter/engine/pull/47576) in Impeller for both iOS and Android. In particular, the new approach, which is similar to Skia’s, reduces the CPU and GPU time of blurs by nearly half in [benchmarks](https://flutter-flutter-perf.skia.org/e/?begin=1699468487&end=1710262311&keys=X01fc3d52ebd6fbf38afef91d82ab8d2b&requestType=0&selected=commit%3D38815%26name%3D%252Carch%253Dintel%252Cbranch%253Dmaster%252Cconfig%253Ddefault%252Cdevice_type%253DiPhone_11%252Cdevice_version%253Dnone%252Chost_type%253Dmac%252Csub_result%253Daverage_frame_rasterizer_time_millis%252Ctest%253Dbackdrop_filter_perf_ios__timeline_summary%252C&xbaroffset=38815).
 
@@ -56,7 +56,7 @@ The chart below shows worst-case, 99%-ile, 90%-ile, and average frame rasterizat
 
 <DashImage figure src="images/0mtFyiLoIUSqk_zRB.webp" alt="99%-ile, 90%-ile and average frame rasterization times and GPU frame times in ms on an iPhone 11 device in a pathological benchmark intended to highlight blur performance" caption="99%-ile, 90%-ile and average frame rasterization times and GPU frame times in ms on an iPhone 11 device in a pathological benchmark intended to highlight blur performance" />
 
-### Stencil-then-Cover
+#### Stencil-then-Cover
 
 Impeller on both iOS and Android has [moved to a new rendering strategy](https://github.com/flutter/engine/pull/51219) based on the Stencil-then-Cover approach described in the chapter “Drawing Filled, Concave Polygons Using the Stencil Buffer” in the [OpenGL Redbook](http://www.opengl-redbook.com/). Team members discussed more on this technique as it applies to Flutter in GitHub issue [#123671](https://github.com/flutter/flutter/issues/123671).
 
@@ -66,7 +66,7 @@ This approach solves the issue where the raster thread was spending too much tim
 
 While pleased with these improvements, there is still more work to do. Among other opportunities, we are aware that polyline generation remains prominent in CPU profiles, and we intend to investigate shifting this work to the GPU, as well.
 
-### New API
+#### New API
 
 While still experimental, flutter test now accepts the `--enable-impeller` flag, which exercises Impeller using the Vulkan backend.
 

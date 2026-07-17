@@ -13,10 +13,11 @@ layout: blog
 Just over six years ago, we unveiled Flutter 1.0. Today, at [**`#FlutterInProduction`**](https://flutter.dev/events/flutter-in-production), we’re celebrating how far we’ve come — from the immense support we’ve received from **thousands of contributors in the community**, to the **widespread adoption** of Flutter as a production-grade app framework for building multi-platform app experiences.
 
 If you haven’t experienced Flutter yet, we invite you to try it! As we shared today, you’d be joining a big group: Flutter has **over 1 million monthly active developers across the globe**, and **powers nearly 30% of all new iOS apps**. More than 90 thousand developers actively participate in Flutter Meetups across more than sixty countries. And if you want input on designing or building a new successful Flutter app, we have a large and growing list of [Flutter Consultants](https://flutter.dev/consultants) ready to help you.
+
 > “Apptopia tracks millions of apps in the Apple AppStore and Google Play Store, and analyzes and detects which developer SDKs were used to create the apps. Flutter is one of the most popular SDKs we track: In the Apple AppStore it has grown steadily in usage from around 10% of all tracked free apps in 2021 to nearly 30% of all tracked free apps in 2024!”
 > — [Apptopia Inc.](https://apptopia.com/)
 
-### A decade of innovation to reach the production era
+## A decade of innovation to reach the production era
 
 It’s been an incredible journey, starting in 2014 (in what we now call our experimental era) as a Google experiment codenamed “Sky.”
 
@@ -32,7 +33,7 @@ We’re now in the “production era,” and we’re celebrating that with **`#F
 
 <YoutubeEmbed id="AEXIrThTgb0" title="" fullwidth="true"/>
 
-### Building in partnership with the community
+## Building in partnership with the community
 
 None of this would be possible without our amazing community of over 1,400 contributors, more than 10,000 package publishers authoring over 50,000 packages, and passionate Flutter content creators and enthusiasts.
 

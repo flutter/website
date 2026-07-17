@@ -78,7 +78,7 @@ We strongly recommend migrating code in order, with the leaves of the dependency
 
 Why is the order important? Although you can make some progress migrating code before your dependencies migrate, you risk having to do a second migration pass if your dependencies change their APIs during their migration. If a few of your dependencies aren’t null safe, consider reaching out to the package publishers using the contact details listed for each package on pub.dev.
 
-### Verifying that dependencies are ready
+#### Verifying that dependencies are ready
 
 To verify whether your app or package is ready to begin migration, you can use `dart pub outdated` in null-safety mode. The example below shows that this app is ready to migrate if it upgrades its dependencies to the prerelease versions of `path`, `process`, and `pedantic` as listed in the **Resolvable** column.
 

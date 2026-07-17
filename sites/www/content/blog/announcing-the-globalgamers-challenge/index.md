@@ -34,7 +34,7 @@ We’re confident that games can encourage players to take small, real life, act
 
 ## Why join the Global Gamers Challenge?
 
-## Defend the planet
+### Defend the planet
 
 This contest was inspired by the [Playing for the Planet Alliance](https://www.playing4theplanet.org/), a United Nations-facilitated alliance of 50 game studios and companies, [including Google](https://blog.google/around-the-globe/google-europe/sustainable-gaming-with-the-playing-for-the-planet-alliance/), with a mission to reduce the industry’s environmental impact and **leverage the power of gaming to bring awareness to and coordinate action for important environmental issues like climate change, biodiversity loss, and pollution**.
 
@@ -42,21 +42,21 @@ Games produced by members of the Playing for the Planet Alliance have a combined
 
 We’ve partnered with the Playing for the Planet Alliance to source [best practices for environmental games](https://igda-website.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/06100719/EnvironmentalGameDesignPlaybook_Alpha_Release_Adj.pdf) and added them to the resources kit provided as part of this challenge. This is your chance to build something that helps protect our planet!
 
-## Learn something new
+### Learn something new
 
 Whether you’re a Flutter developer who’s new to games, a game developer who is new to Flutter, or someone new to both game development and Flutter, you’re bound to learn a few tricks while creating a positive impact on the world.
 
 ## Details
 
-## Timeline
+### Timeline
 
 All projects must be submitted by March 5, 2024, 2:59pm PT (GMT -8). A Top 20 will be announced in late March 2024, and final winners will be announced in May 2024.
 
-## Submission guidelines
+### Submission guidelines
 
 Registration and entry submission instructions can be found at [DevPost](https://globalgamers.devpost.com/).
 
-## Awards
+### Awards
 
 Winners will be judged based on criteria like:
 
@@ -74,7 +74,7 @@ We won’t just award great coding ability, though. We also have prizes for grea
 
 We’ve compiled a bunch of [resources](https://flutter.dev/global-gamers/#resources) to help you build a game, including a [guide](https://flutter.dev/global-gamers/#guide) to navigating this challenge, kind of like a game map. It shows you the resources you need, helps you become a Global Citizen through a new [learning journey](https://glblctzn.co/hQ5oyPFbcGb) in the Global Citizen application, and contains instructions on how to register and submit your game.
 
-## Teams
+### Teams
 
 We recommend completing this challenge as part of a team. When you [register for the challenge](https://globalgamers.devpost.com/) on Devpost, you’ll be able to share your skillset, your team status, and your ideas.
 

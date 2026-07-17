@@ -18,7 +18,7 @@ And with each release, we’ve said the same thing — that we’re just getting
 
 This release includes a visual refresh to support iOS 13 that includes completed implementation of Dark Mode, new Cupertino widgets, several UX tweaks, and a greatly enhanced Add-to-App experience.
 
-## iOS 13 dark mode completed
+### iOS 13 dark mode completed
 
 More big news in Flutter 1.12 is the completion of our work to support the iOS 13 look and feel. This includes complete dark mode support in the Cupertino widgets.
 
@@ -32,7 +32,7 @@ Also, in our continuing goal for pixel-perfection for iOS 13, we’ve added two 
 
 And finally, in our quest to make a Flutter app feel as well as look native on iOS 13, we’ve [improved scrollbar fidelity](https://github.com/flutter/flutter/pull/41799), [provided for adaptive CupertinoAlertDialog padding](https://github.com/flutter/flutter/pull/42967), and [allowed for min/max date constraints on the CupertinoDatePicker](https://github.com/flutter/flutter/pull/44149).
 
-## Add-to-App updated
+### Add-to-App updated
 
 Another improvement in our mobile support is an update to Add-to-App, which is the ability to integrate Flutter into an existing Android or iOS app. Here, we’ve been working on simplifying the integration flow to make adding a Flutter library to your app a better experience, including the addition of a new Flutter Module wizard in Android Studio.
 
@@ -58,7 +58,7 @@ Of course, everything we do in Flutter is based on Dart, so if you haven’t alr
 
 At the same time that Flutter is getting new features in the stable channel, it’s also getting new features beyond what you can do in stable, specifically a beta release of web support and an alpha release of macOS support.
 
-## Web support available in beta
+### Web support available in beta
 
 The Flutter 1.12 master, dev and beta channels all provide improved support for web.
 
@@ -68,7 +68,7 @@ One happy customer of Flutter on the web is [Rivet](https://rivet.area120.com/li
 
 You can learn more about what other customers are doing with Flutter’s web support as well as the rest of the details in the [Flutter web blog post](https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0).
 
-## macOS moving to alpha
+### macOS moving to alpha
 
 macOS desktop support isn’t far behind, moving from tech preview to alpha, available now in both master and dev channels (in Flutter SDK 1.13).
 
@@ -180,7 +180,7 @@ In addition to all of the work on Flutter and its associated tooling, the Flutte
 
 We’re so lucky to have such a great set of developers in the Flutter community. You make us all proud to be on the Flutter team!
 
-## Flutter Favorite packages
+### Flutter Favorite packages
 
 When we released Flutter 1.0 in December, 2018, there were about 1000 packages on pub.dev that supported Flutter and we thought that was a huge number. As of this writing, that number has increased by more than 6x. With that many options, it’s sometimes hard to know which packages to choose. The overall score on pub.dev helps as well as the new [Verified Publishers](https://medium.com/dartlang/verified-publishers-98f05466558a) feature. Now, pub.dev is getting [a rating system](https://dart.dev/blog/announcing-dart-2-7-a-safer-more-expressive-dart#liking-packages-on-pub-dev), which should help even more.
 
@@ -192,7 +192,7 @@ A Flutter Favorite package (or plugin) is one that we think that you should cons
 
 For details, see [the Flutter Favorite page on flutter.dev](https://flutter.dev/docs/development/packages-and-plugins/favorites). You can also see [the complete list of Flutter Favorite packages on pub.dev](https://pub.dev/flutter/favorites). The bottom line is that if you’re an app developer and you see that logo, you should have confidence in that package. If you’re a package author and you’ve been awarded the Flutter Favorite logo, thank you for your contribution to the Flutter ecosystem.
 
-## Community tools
+### Community tools
 
 And speaking of contributions to be proud of, the Flutter community at large has been building a number of excellent tools as well; here’s just a selection.
 
@@ -202,7 +202,7 @@ And speaking of contributions to be proud of, the Flutter community at large has
 
 <DashImage figure src="images/1vJh-yghl3kJJdW0ZakbSzg.webp" alt="[Panache](https://rxlabz.github.io/panache/#/)" caption="[Panache](https://rxlabz.github.io/panache/#/)" />
 
-## Featured tooling partner: Nevercode
+### Featured tooling partner: Nevercode
 
 In addition to a great set of community tools, the Flutter ecosystem has a great set of tooling partners as well. One notable partner has always been Nevercode, who have a whole new set of features in their latest release, including [a Visual Studio Code plugin called Remote Mac](https://marketplace.visualstudio.com/items?itemName=codemagic.remote-mac).
 

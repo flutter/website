@@ -59,7 +59,7 @@ A few of the highlights:
 
 * **What you’ll learn:** Not a lot, but this less-than-two-minute video is fun and introduces the four episode series.
 
-## Full-stack dev series #1 — Flutter + A2UI = GenUI
+### Full-stack dev series #1 — Flutter + A2UI = GenUI
 
 <YoutubeEmbed id="tXeyaV1gVJk" title="Flutter + A2UI = GenUI" fullwidth="true"/>
 
@@ -67,7 +67,7 @@ A few of the highlights:
 
 * **Why it matters:** Not only can GenUI turn a slow, text-based experience into a delightful one, but it opens up new user experience patterns in which static designs and route hierarchies become flexible, on-demand UI tailored to individual users and their goals.
 
-## Full-stack dev series #2 — Full-stack Dart
+### Full-stack dev series #2 — Full-stack Dart
 
 <YoutubeEmbed id="VXFDkg96f4I" title="How to unify your app's tech stack with Full-stack Dart and Firebase Functions" fullwidth="true"/>
 
@@ -75,7 +75,7 @@ A few of the highlights:
 
 * **Why it matters:** This approach improves development velocity and reduces costs by allowing teams to share logic, tooling, and expertise across the entire application stack.
 
-## Full-stack dev series #3 — Introducing Genkit Dart
+### Full-stack dev series #3 — Introducing Genkit Dart
 
 <YoutubeEmbed id="QO30-W3b_vw" title="Introducing Genkit Dart" fullwidth="true"/>
 
@@ -83,7 +83,7 @@ A few of the highlights:
 
 * **Why it matters:** Genkit bridges the gap between prototyping and shipping reliable AI applications. It simplifies building AI into existing code by providing a unified SDK across multiple languages and models, alongside robust debugging and monitoring tools. Genkit works as a backend, but also in your Flutter app!
 
-## Full-stack dev series #4 — Everything you don’t know about building great native apps with Flutter
+### Full-stack dev series #4 — Everything you don’t know about building great native apps with Flutter
 
 <YoutubeEmbed id="2z7U6GU7QwQ" title="Everything you don't know about building great native apps with Flutter" fullwidth="true"/>
 

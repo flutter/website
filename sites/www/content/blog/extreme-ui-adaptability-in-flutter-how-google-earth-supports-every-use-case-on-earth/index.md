@@ -51,13 +51,13 @@ The Google Earth team walked a long road of experimentation, user research, and 
 
 1. How would the Google Earth team cleanly implement this logic?
 
-## Determining an initial UI strategy
+### Determining an initial UI strategy
 
 One of the Earth team’s early assumptions was that “there is no difference between a Chromebook with a touchscreen and a tablet with a connected Bluetooth keyboard”, and that their UI should not distinguish between the two. Although this idea stood to initial reason, it did not survive testing; and over time the Earth team increasingly realized the gaps in this approach. A user launching the app with a high-resolution tablet in landscape mode could find themselves within a desktop UI range of pixel resolution (following older, responsive UI rules). If that same user then rotated their tablet into portrait mode and in doing so shifted into a pixel resolution range assigned to tablets, Google Earth would be faced with a hard choice. The dynamic option would be to dramatically restructure everything by shifting from the desktop UI to the mobile UI; whereas the static option would be to do nothing except squish and compress the desktop UI until it fit in within its new constraints. Neither of these options were satisfying, and it all meant that there *was* a difference between a Chromebook with a touchscreen and a tablet with a keyboard.
 
 In the end, the Earth team settled on a simple rule: serve the mobile experience to smartphones and tablets, and the desktop experience to desktops. If this seems anti-climactic, well, it sort of is; but only because it punts some of the juicy parts to the next question — *When should the UI’s initial strategy **change?***
 
-## Updating the UI strategy within a user session
+### Updating the UI strategy within a user session
 
 The Earth team’s first strategy for UI changes was little more than established responsive UI rules: show your mobile UI on any resolutions below a minimum threshold, your tablet UI (if you have one) the next few hundred possible widths, and lastly, your desktop UI on anything else. And, critically, when a UI crosses one of those thresholds for any reason, you re-render the app accordingly. Of course, this ruleset’s awkwardness launched Google Earth onto its odyssey of extreme adaptability; so it should be no surprise that the team abandoned this approach.
 
@@ -65,7 +65,7 @@ A second possibility came from Stadia, a fellow Google team with a successful Fl
 
 In the end, the Google Earth team settled on a second very simple rule: remain consistent within a session and never leave the initial UI flavor without the user’s explicit permission. As explored earlier, Google Earth would show its mobile-first UI on smartphones and tablets and its desktop-first UI on desktops; and it would never outsmart itself and change that unless the user requested a change in the settings panel.
 
-## Mixed-UI states
+### Mixed-UI states
 
 UI consistency within sessions served Google Earth well, but it is not the whole story. UI affordances in desktop experiences like cursor hover effects lack any equivalent on mobile and must be reimagined. A user treating their touchscreen laptop like a tablet could be blocked entirely by an app’s failure to replace critical hover effects with alternatives suitable for mobile. This realization suggested a two-tier problem and solution. Google Earth’s UI would not only need to smoothly switch back and forth between its mobile and desktop experiences when a user requested, but individual controls would need to have both a touch-friendly form *and* a mouse-friendly form, regardless of the overarching strategy.
 
@@ -75,7 +75,7 @@ Finally, Google Earth knew what they were building. All of their research and it
 
 1. How to build individual controls to support atypical peripherals
 
-## Managing multiple UIs
+### Managing multiple UIs
 
 At its simplest, building any Flutter app to seamlessly switch between two different experiences is as simple as putting the following line somewhere in a widget’s build method:
 
@@ -127,7 +127,7 @@ class _AdaptableTextInputState extends State<AdaptableTextInput> {
 }
 ```
 
-## Navigation
+### Navigation
 
 Navigation stacks and the app’s Back button also require special attention. Continuing with the above example of a desktop UI that shows multiple panels at once, now imagine a complementary mobile UI that presents those panels in a stack-like UI with forward and backward navigation. The implications of allowing desktops to use the mobile UI, and phones to use the desktop UI, was one of the big adaptability ideas Google Earth wanted to pursue.
 
@@ -181,7 +181,7 @@ final mobileRouter = GoRouter(
 
 Highly adaptive UIs like Google Earth’s require an implementation that treats all possible scenarios as always in play, even though only one given UI is ever being rendered. This means that the app must always be able to *completely* reconstruct its state from resources you completely control — whether that is because you have GlobalKeys to retain State objects holding important information, or because you’ve stored all relevant details in your state management classes.
 
-## Adapting to user inputs
+### Adapting to user inputs
 
 All of this left only one more tricky adaptability problem: ensuring controls across their UI were amenable to the user’s last-used peripherals and not just the reigning UI strategy. After all, if a tablet user started clicking a Bluetooth mouse; Google Earth wasn’t going to wholesale switch to their desktop UI, but they *did* want to slightly tweak elements to leverage a keyboard and mouse’s strengths.
 

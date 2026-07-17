@@ -131,15 +131,15 @@ Skia support has been removed from the iOS backend and the `FLTEnableImpeller` o
 
 This release contains a number of new features that take advantage of the Impeller backend.
 
-### Backdrop filter optimizations
+#### Backdrop filter optimizations
 
 Applications that display multiple backdrop filters can now use the new widget `BackdropGroup` and a new `BackdropFilter.grouped` constructor. These can improve performance of multiple blurs above and beyond what was possible on the Skia backend. For an example, visit the [basic.dart](https://github.com/flutter/flutter/blob/flutter-3.29-candidate.0/packages/flutter/lib/src/widgets/basic.dart#L502) source code.
 
-### ImageFilter.shader
+#### ImageFilter.shader
 
 A new `ImageFilter` constructor allows applying a custom shader to any child widgets. This provides similar functionality to the `AnimatedSampler` widget from `package:flutter_shaders`, except that it also works with backdrop filters. For an example, visit the [painting.dart](https://github.com/flutter/flutter/blob/flutter-3.29-candidate.0/engine/src/flutter/lib/ui/painting.dart#L4239) source code.
 
-### Dart threading changes on Android/iOS
+#### Dart threading changes on Android/iOS
 
 Previously, Flutter executed Dart code on a different thread (UI thread) than the platform’s main thread. This allowed higher theoretical throughput if both platform and UI threads were occupied, but came at the cost of making most platform interop require serialized and asynchronous message passing. This architecture also had knock-on effects on text input, accessibility, plugins, and so on.
 

@@ -22,23 +22,23 @@ I interviewed 20 people, 14 streamers and 6 viewers, who regularly participated 
 
 The people I interviewed used different kinds of programming languages including JavaScript (8), Python (4), C# (3), Dart (2), Rust (2), and C (1). Out of the 20 interviewees, 14 were professional developers who were paid to develop software, 4 were students, and 2 were hobbyist programmers. Out of the 14 streamers, 7 of them primarily streamed about themselves working through programming tasks that are related to open source projects.
 
-## 9 tips for live streaming session a coding session
+## 9 tips for live streaming a coding session
 
 I learned many best practices to follow, and pitfalls to avoid from speaking with experienced streamers and viewers in the developer community. I’d like to share 9 tips with you, broken up into three sections: before the livestream, during the livestream, and after the livestream.
 
-## *Before Stream*
+### *Before Stream*
 
-### 1. Find a topic of interest to your community
+#### 1. Find a topic of interest to your community
 
 Some streamers chose stream topics based on the interests of their communities. This includes discussion in Discord or Slack channels, comments from their previous videos, or poll results from prior streams. Depending on your comfort level, you can proactively ask people for their topics of interest and invite them to watch your stream.
 
-### 2. Make multiple announcements the week before
+#### 2. Make multiple announcements the week before
 
 Most streamers keep a regular streaming time (for example, Sunday 10 a.m. — 12 p.m. EST), which is recommended if you want your viewers to make your session every week. However, if you don’t have a regular streaming time, or you want to change the time you stream this week, make sure you remind your viewers multiple times (for example, at 5 days, 2 days, and the day before you go live) when your streaming session is happening.
 
 <DashImage figure src="images/0WBnCrRnxqRMnFYdf.webp" />
 
-### 3. Protect your privacy
+#### 3. Protect your privacy
 
 All streamers have concerns regarding their privacy. This could include mistakenly sharing your personal information, or your organization’s business information. Here is a list of practices that experienced streamers follow to protect their privacy:
 
@@ -54,7 +54,7 @@ All streamers have concerns regarding their privacy. This could include mistaken
 
 * Don’t face your camera to anything that is publicly recognizable (such as buildings with a unique shape)
 
-### 4. Create a FAQ and resources list
+#### 4. Create a FAQ and resources list
 
 Some viewers will join in the middle of your stream, and they might be confused about what you’re working on. Instead of getting distracted answering questions, prepare a list of questions you anticipate the audience might ask. For example:
 
@@ -70,23 +70,23 @@ Some viewers will join in the middle of your stream, and they might be confused 
 
 *A: IntelliJ.*
 
-### 5. Have a high level plan
+#### 5. Have a high level plan
 
 Although the prep work for live streaming is much less than for recording a video, you may still want to have a high level plan. This could include writing down the steps of what you want to accomplish, which can help you stay focused.
 
 <DashImage figure src="images/0r3sTKix-QiZV6vrB.webp" alt="(credit: [https://unsplash.com/photos/RLw-UC03Gwc](https://unsplash.com/photos/RLw-UC03Gwc))" caption="(credit: [https://unsplash.com/photos/RLw-UC03Gwc](https://unsplash.com/photos/RLw-UC03Gwc))" />
 
-### 6. No need to complete the work before hand
+#### 6. No need to complete the work before hand
 > *“It’s not really about me trying to solve a problem. It’s just me trying to learn more or see someone else coding.” — A viewer*
 
 Several viewers reported that when deciding to watch live streams they do not have specific problems to solve or concrete learning objectives. This means that you don’t have to work everything out beforehand. Viewers like to see what kinds of issues you will run into and how you address them. For example, here is what one viewer said in our study:
 > *“I like to see how the person thinks and makes mistakes, and a lot of people edit it too harshly. And then it ends up being this one fluid front-to-back program with no mistakes. They are not researching anything or looking anything up, and that’s not realistic to me. So I think it’s a bit more entertaining, and a bit easier to sit through a lot of the live stream videos or even their arcade videos when they leave in the mistakes.” — A viewer*
 
-## *During Stream*
+### *During Stream*
 
 Great! You’ve done all your preparation, and now you’re on-air! Viewers watch live streams because they want to understand the streamer’s thinking process, debugging approach, and why they choose one strategy versus another. That brings us to the next tip:
 
-### 7. Keep your viewers engaged
+#### 7. Keep your viewers engaged
 
 There are two techniques to get your viewers engaged.
 
@@ -100,15 +100,15 @@ The second way is to ask viewers to provide input. For example, having a short Q
 
 <DashImage figure src="images/01Qz7x7ZMo0Ar75hc.webp" alt="(credit: [https://unsplash.com/photos/YLUvemTiRtk](https://unsplash.com/photos/YLUvemTiRtk))" caption="(credit: [https://unsplash.com/photos/YLUvemTiRtk](https://unsplash.com/photos/YLUvemTiRtk))" />
 
-### 8. Chat moderation
+#### 8. Chat moderation
 
 Once your audience grows large, ask some trustworthy viewers to help you moderate the chat so that you can focus on coding. To grow a healthy community, make sure you address issues such as harassment, spam, and trolling as soon as you see them.
 
-## *After stream*
+### *After stream*
 
 Congratulations! You’ve had a successful live streaming session. Now you can upload your video to YouTube to share it with a broader audience. That brings us to the last tip:
 
-### 9. Create a timetable if you have time
+#### 9. Create a timetable if you have time
 
 Because a live stream recording is often long, viewers appreciate a Timestamp table to jump from topic to topic. The Flutter Boring Show provides a good example of such a table.
 

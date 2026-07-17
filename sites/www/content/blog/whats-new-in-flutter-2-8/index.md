@@ -1,8 +1,8 @@
 ---
 title: "What’s New in Flutter 2.8"
 description: >-
-  Performance improvements, new Firebase features, desktop status, tooling
-  updates and more!
+  Performance improvements, new Firebase features, desktop status,
+  tooling updates, and more!
 publishDate: 2021-12-09
 author: csells
 image: images/00frogkEKgpNOgCVF.webp
@@ -18,7 +18,7 @@ All of this collective work produced significant performance improvements in bot
 
 As always, job #1 with Flutter is quality. We spend much of our time ensuring that Flutter runs as smoothly and as robustly as it can across the range of supported devices.
 
-## Startup
+### Startup
 
 This release includes improvements to application startup latency. Testing these improvements against Google Pay, a large, popular app with more than 1 million lines of code to ensure that these changes result in perceivable impact in the real-world. All together these improvements have resulted in reduction in startup latency for Google Pay of 50% when running on a low-end Android device, and a 10% improvement on high-end devices.
 
@@ -28,11 +28,11 @@ Due to an [abundance of caution](https://github.com/flutter/engine/pull/29145#pu
 
 Previously, setting up the default font manager introduced an artificial delay when setting up the first Dart isolate. [Delaying the default font manager setup](https://github.com/flutter/engine/pull/29291) to run concurrently with Dart `Isolate` setup both improved startup latency, and made the effects of the above optimizations much more visible, as this was the primary bottleneck.
 
-## Memory
+### Memory
 
 Flutter developers targeting memory constrained devices [were having problems](https://github.com/flutter/flutter/issues/91382) taking performance traces due to Flutter eagerly loading the Dart VM’s “service isolate”, whose AOT code was bundled with the app such that Flutter was reading both into memory simultaneously. For Android in the 2.8 release, the Dart VM’s service isolate [was split into its own bundle](https://github.com/flutter/engine/pull/29245) that can be loaded separately, which results in a memory savings of up to 40 MB until the service isolate is needed. The memory footprint has been further reduced by up to 10% by the [Dart VM informing the OS](https://github.com/flutter/flutter/issues/92120) that the pages in memory used by the AOT program are backed by a file that likely won’t need to be read again. Therefore, the pages that had been holding a copy of the file-backed data can then be reclaimed and put to other uses.
 
-## Profiling
+### Profiling
 
 Sometimes developers want to view performance trace data from Flutter alongside Android native tracing events. Furthermore, they’d often like to see trace events even in release mode builds to get a better understanding of performance issues in their deployed applications. To that end, [the 2.8 stable release](https://github.com/flutter/engine/pull/28903) now sends tracing events to the Android systrace recorder if it is enabled at application startup, and these events are sent even when the Flutter application is built in release mode.
 
@@ -40,7 +40,7 @@ Sometimes developers want to view performance trace data from Flutter alongside 
 
 Additionally, to help create animations with less jank, some of you wanted [more information](https://github.com/flutter/flutter/issues/92286) in performance traces about the behavior of the raster cache, which allows Flutter to blit expensive, reused pictures instead of re-drawing them on each frame. [New flow events](https://github.com/flutter/flutter/issues/92286) in performance traces now allow you to track the lifetimes of raster cached pictures.
 
-## Flutter DevTools
+### Flutter DevTools
 
 For debugging performance issues, this release of DevTools adds a [new “Enhance Tracing” feature](https://github.com/flutter/devtools/pull/3451) to help you diagnose UI jank stemming from expensive build, layout, and paint operations.
 
@@ -54,7 +54,7 @@ In addition, this release of DevTools adds new [support for profiling the perfor
 
 <DashImage figure src="images/0xpb0al6JT1AdKUjO.webp" />
 
-## Web platform views
+### Web platform views
 
 Android and iOS aren’t the only platforms getting performance improvements. This release also improves the performance of platform views for Flutter web. If you’re unfamiliar with platform views, they’re the way that Flutter allows you to host native UI components from the underlying platform in your app. Flutter web implements this with the [`HtmlElementView`](https://api.flutter.dev/flutter/widgets/HtmlElementView-class.html) widget, which allows you to host HTML elements inside your Flutter web app. If you’re using the web versions of the google_maps_flutter plugin or the video_player plugin, or you’re following the Flutter team’s advice about how to optimize the [display images on the web](https://docs.flutter.dev/development/platform-integration/web-images#use-img-in-a-platform-view), then you’re using platform views.
 
@@ -64,7 +64,7 @@ In previous versions of Flutter, embedding a platform view immediately created a
 
 Flutter isn’t just the framework, the engine, and the tools — there are more than 20,000 Flutter-compatible packages and plugins on pub.dev with more added every day. A significant amount of what Flutter developers interact with day-to-day is part of the larger ecosystem, so let’s take a look at what’s been going on in the Flutter ecosystem since the previous release.
 
-## GA of Flutter Ads
+### GA of Flutter Ads
 
 First and foremost is the [release of the Google Mobile SDK for Flutter into general availability](https://medium.com/flutter/announcing-general-availability-for-the-google-mobile-ads-sdk-for-flutter-574e51ea6783) in November.
 
@@ -72,7 +72,7 @@ First and foremost is the [release of the Google Mobile SDK for Flutter into gen
 
 This release supports 5 ad formats, integrates both AdMob and Ad Manager support and includes a beta of a new mediation feature to help you optimize ad performance. For more information about integrating Google Ads into your Flutter app as well as other monetization options, [check out the new monetization page on flutter.dev](https://flutter.dev/monetization).
 
-## WebView 3.0
+### WebView 3.0
 
 Another new release that comes with Flutter this time around is the 3.0 release of [the webview_flutter plugin](https://pub.dev/packages/webview_flutter). We’ve bumped the version number because of the number of new features but also because of a potentially breaking change in the way web views work on Android. In previous versions of `webview_flutter`, the hybrid composition mode has been available but not the default. Hybrid composition fixes a number of issues that the previous default virtual displays mode has. Based on user feedback and issue tracking, we think it’s time for hybrid composition to become the default. In addition, `webview_flutter` also adds a number of highly requested features:
 
@@ -134,7 +134,7 @@ dependencies:
 
 If you have feedback on webview_flutter v3.0, either on the web or off, please [log them on the Flutter repo as a webview issue](https://github.com/flutter/flutter/issues). Also, if you haven’t used webview before or you’d like a refresher, check out [the new webview codelab](https://codelabs.developers.google.com/codelabs/flutter-webview), which takes you step-by-step through the process of hosting web content in your Flutter app.
 
-## Flutter Favorites
+### Flutter Favorites
 
 The [Flutter Ecosystem Committee](https://docs.flutter.dev/development/packages-and-plugins/favorites#flutter-ecosystem--committee) has met again to designate the following as Flutter Favorite packages:
 
@@ -152,7 +152,7 @@ The [Flutter Ecosystem Committee](https://docs.flutter.dev/development/packages-
 
 Congratulations to those package authors and thank you for supporting the Flutter community with your hard work. If you’re interested in nominating your favorite Flutter package for a Flutter Favorite award, follow the guidelines and instructions on [the Flutter Favorite program page](https://docs.flutter.dev/development/packages-and-plugins/favorites).
 
-## Platform-specific Packages
+### Platform-specific Packages
 
 If you are a package author, one decision you must make is which platforms you’re going to support. If you’re building a plugin with platform-specific native code, you can do that [using the `pluginClass` property in your project’s `pubspec.yaml`](https://docs.flutter.dev/development/packages-and-plugins/developing-packages#plugin-platforms), which indicates the native class that’s providing the functionality:
 
@@ -180,7 +180,7 @@ flutter:
 
 This setting in place, you have designates your package as only supporting certain platforms even if you don’t have any native code. You also must provide the Dart plugin class; learn more in [the Dart-only platform implementations docs on flutter.dev](https://docs.flutter.dev/development/packages-and-plugins/developing-packages#dart-only-platform-implementations).
 
-## Firebase
+### Firebase
 
 Another big part of the Flutter ecosystem is FlutterFire, which is used by two-thirds of Flutter apps. This release adds a set of new features that make it easier to build applications using Flutter and Firebase:
 
@@ -192,7 +192,7 @@ Another big part of the Flutter ecosystem is FlutterFire, which is used by two-t
 
 * New Firestore Object/Document Mapping for Flutter, available in Alpha
 
-## Production Quality
+#### Production Quality
 
 [The FlutterFire plugins](https://firebase.flutter.dev) have (almost) all moved from beta to stable quality.
 
@@ -200,7 +200,7 @@ Another big part of the Flutter ecosystem is FlutterFire, which is used by two-t
 
 Plugins moving to stable for Android, iOS, and web include [Analytics](https://firebase.flutter.dev/docs/analytics/overview), [Dynamic Links](https://firebase.flutter.dev/docs/dynamic-links/overview), [In-App Messaging](https://firebase.flutter.dev/docs/in-app-messaging/overview/), [Performance Monitoring](https://firebase.flutter.dev/docs/performance/overview), [Realtime Database](https://firebase.flutter.dev/docs/database/overview), [Remote Config](https://firebase.flutter.dev/docs/remote-config/overview) and, the new kid on the block, [Installations](https://firebase.flutter.dev/docs/installations/overview). The App Check plugin and macOS platform support are still in beta because of the phase of the Firebase libraries themselves, which are also in beta. If you’ve worried about whether to choose Realtime Database, Analytics, or Remote Config because the FlutterFire libraries weren’t ready for prime-time, worry no more. These are now fully supported plugins ready for production use.
 
-## Dart-only Firebase Initialization
+#### Dart-only Firebase Initialization
 
 As packages have moved to production quality, we’ve added the ability to [initialize Firebase on any supported platform from Dart](https://github.com/FirebaseExtended/flutterfire/pull/6549):
 
@@ -237,7 +237,7 @@ To gather the data for each platform’s initialization option data structure, c
 
 This tool digs into the data in your platform-specific sub-folders to find the unique bundle ID and then uses that to look up the Firebase-project specific details for your matching platform-specific apps, even creating a new Firebase project and/or new platform-specific apps if there aren’t any. What this means for you is no more downloading and adding a `json` file to your Android project, downloading and adding a `plist` file to your iOS and macOS projects, or [pasting code into your web project’s index.html](https://github.com/FirebaseExtended/flutterfire/pull/7359) — no matter which supported Firebase platform you’re targeting, this single snippet of Dart code initializes Firebase for your app. Note that this may not be the only initialization you have to do to get your FlutterFire app working; for example, you might want to integrate the creation of your Crashlytics symbols into your [Android build](https://firebase.google.com/docs/crashlytics/get-started?platform=android#add-plugin) or your [iOS build](https://firebase.google.com/docs/crashlytics/get-started?platform=ios#set-up-dsym-uploading), but it should get it up and running in minutes with any new Firebase project.
 
-## Use Firebase with DartPad
+#### Use Firebase with DartPad
 
 With this Dart-only initialization of FlutterFire, you can now use Firebase from within DartPad.
 
@@ -251,7 +251,7 @@ The other thing that FlutterFire support in DartPad enables is the ability to us
 
 In this example, you’re seeing the docs for Cloud Firestore with the code for the [example application](https://github.com/FirebaseExtended/flutterfire/tree/master/packages/cloud_firestore/cloud_firestore/example) that you can run and edit directly in your browser without having to install a thing, create a test project, or even copy/paste the code. It’s all right there for your immediate use.
 
-## Firebase UI
+#### Firebase UI
 
 When integrating Firebase into an app, most apps have some kind of authentication flow. This includes allowing users to log in with email and password, or with a social auth provider like the one that Google provides. Firebase Authentication also allows for creating new accounts on the fly, validating email addresses, resetting passwords, and might even involve 2-step verification with SMS, logging in with a phone number, or even merging multiple user accounts into a single account. Firebase Authentication supports all of this functionality, but as a Flutter developer, you’re responsible for implementing the UI for all of it. Until today.
 
@@ -415,7 +415,7 @@ Which works like this:
 
 For details about authentication, list views, and data tables, [check out the `flutterfire_ui` docs](https://firebase.flutter.dev/docs/ui/overview/). As this is a preview release, additional features are planned. If you have a question or a feature request, please [head over to the repo on GitHub to log issues or ask questions in the discussion section](https://github.com/FirebaseExtended/flutterfire/discussions/6978).
 
-## Firestore Object/Document Mapping
+#### Firestore Object/Document Mapping
 
 And last but not least, one new feature to the integration between Firebase and Flutter that you should be aware of: the alpha release of [the Firestore Object/Document Mapper](https://firebase.flutter.dev/docs/firestore-odm/overview/). The Firestore ODM is aimed at helping Flutter developers be more productive by simplifying use of Firestore through familiar type-safe, structured objects and methods. Using code generation, the Firestore ODM improves the syntax for interacting with documents and collections by allowing you to model your data in a type-safe way:
 

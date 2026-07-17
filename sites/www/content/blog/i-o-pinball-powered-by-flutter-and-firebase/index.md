@@ -19,7 +19,7 @@ The Flutter framework is a great choice for building games driven by user intera
 
 <DashImage figure src="images/1Qyyvx52AjpBRuI8MeZ7cAg.webp" />
 
-## Game loop
+### Game loop
 
 In conventional apps, screens are usually visually static until there is an event or interaction from the user. With games, the inverse is true — the UI is rendered continuously and the state of the game constantly changes. Flame provides a game widget, which internally manages the game loop so that the UI is constantly rendering in a performant way. The `Game` class contains the implementation of the game components and logic, which is passed to the `GameWidget` in the widget tree. In I/O Pinball, the game loop reacts to the position and state of the ball on the playfield and applies the necessary effects if the ball collides with an object or falls out of play.
 
@@ -35,7 +35,7 @@ void update(double dt) {
 }
 ```
 
-## Rendering a 3D space with 2D components
+### Rendering a 3D space with 2D components
 
 One of the challenges of building I/O Pinball was figuring out how to create a 3D effect using only 2D elements. Components are ordered to determine how they render on the screen. For example, as the ball is launched up the ramp, the ball’s order increases, so that it appears to be on top of the ramp.
 
@@ -69,7 +69,7 @@ final ballSprite = parent.descendants().whereType<SpriteComponent>();
 }
 ```
 
-## Physics with Forge 2D
+### Physics with Forge 2D
 
 I/O Pinball heavily relies upon the [`forge2d`](https://pub.dev/packages/forge2d) package maintained by the Flame team. This package ports the open source [Box2D physics engine](https://box2d.org/) into Dart so that it can be easily integrated with Flutter. We used `forge2d` to power the physics of the game, for example collision detection between objects (`Fixtures`) on the playfield.
 
@@ -90,7 +90,7 @@ Body createBody() {
 }
 ```
 
-## Sprite sheet animations
+### Sprite sheet animations
 
 There are a few elements on the pinball playfield, such as Android, Dash, Sparky, and Chrome Dino, which are animated. For these, we used sprite sheets, which are included in the Flame engine with the `SpriteAnimationComponent`. For each element, we had a file with the image in various orientations, the number of frames in the file, and the time between frames. Using this data, the `SpriteAnimationComponent` in Flame compiles all of the images together on a loop so that the element appears animated.
 
@@ -122,7 +122,7 @@ animation = SpriteAnimation.fromFrameData(
 
 ## A closer look at the I/O Pinball Codebase
 
-## Leaderboard with live results from Firebase
+### Leaderboard with live results from Firebase
 
 The I/O Pinball leaderboard displays the top scores of players around the world in real time. Users can also share their scores to Twitter and Facebook. We use Firebase [Cloud Firestore](https://firebase.google.com/docs/firestore) to track the top ten scores and fetch them to display on the leaderboard. When a new score is written to the leaderboard, a [Cloud Function](https://firebase.google.com/docs/functions) resorts the scores in descending order and removes any scores not currently in the top ten.
 
@@ -147,13 +147,13 @@ Future<List<LeaderboardEntryData>> fetchTop10Leaderboard() async {
 }
 ```
 
-## Building for the web
+### Building for the web
 
 It can be easier to build a responsive game compared to a conventional app. The pinball playfield simply needs to scale to the size of the device. For I/O Pinball, we zoom based on the size of your device on a fixed ratio. This ensures that the coordinate system is always the same, no matter the display size, which is important to ensure that components appear and interact consistently across devices.
 
 I/O Pinball also adapts to a mobile or desktop browser. On a mobile browser, users can tap the launch button to begin play, as well as tap the left and right sides of the screen to control the corresponding flippers. On a desktop browser, users can use the keyboard to launch the ball and control the flippers.
 
-## Codebase architecture
+### Codebase architecture
 
 The pinball codebase follows a layered architecture, with each feature in its own folder. The game logic is also separated from the visual components in this project. This ensures that we could easily update visual elements independently of the game logic and vice versa.
 
@@ -216,7 +216,7 @@ class BumperNoiseBehavior extends ContactBehavior {
 
 The codebase also contains comprehensive unit, widget, and golden tests. At times, testing the game posed a few challenges due to the fact that single components could have multiple responsibilities, which made them hard to test in isolation. As a result, we ended up defining patterns to better isolate and test components. We also incorporated improvements into the [`flame_test`](https://pub.dev/packages/flame_test) package.
 
-## Component sandbox
+### Component sandbox
 
 This project relies heavily on Flame components to bring the pinball experience to life. The codebase comes with a component sandbox, which is similar to a [UI component gallery](https://gallery.flutter.dev/#/). This is a helpful tool when developing games because it allows you to develop the game components in isolation and ensure that they look and behave as expected before integrating them into the game.
 

@@ -15,13 +15,13 @@ Google’s Flutter team has partnered closely with the [Google News Initiative (
 
 Three months ago, we announced the Toolkit in an early access period and received an overwhelming number of applications from organizations across the world, so we’re excited to announce the first version of the Flutter News Toolkit is now generally available!
 
-### Why did we build the Flutter News Toolkit?
+## Why did we build the Flutter News Toolkit?
 
 Nowadays, most people turn to smartphones for news. In addition to mobile websites, mobile apps can be a great way for news publishers to engage with existing readers, reach new audiences, and create new revenue streams. But it takes time and effort to design, implement and deploy mobile apps.
 
 For news publishers who have limited financial and human resources, building apps from scratch is a major undertaking. Here at Google, we want to help developers be successful and productive, so we’re investing in a toolkit that offers all the common functionalities news publishers need, so they can focus on differentiating their brand and content without writing boilerplate code.
 
-### What features are included in the Flutter News Toolkit?
+## What features are included in the Flutter News Toolkit?
 
 We collaborated with industry experts and news publishers globally to identify essential features and user workflows for a news application template. With these pre-built, out-of-the-box features, news publishers only need to connect their data source and customize the UI to reflect their brand.
 
@@ -43,7 +43,7 @@ You can use these pre-integrated features out-of-the-box, or easily modify and s
 
 <DashImage figure src="images/1HOaHUtxwx2S4urCrztI88g.webp" alt="*Sample features provided in the Flutter News Toolkit*" caption="*Sample features provided in the Flutter News Toolkit*" />
 
-### Early adopters
+## Early adopters
 
 The Flutter News Toolkit has already begun helping news publishers across the globe accelerate mobile strategy and achieve business goals. For example,
 
@@ -59,7 +59,7 @@ Let’s hear from some of them in their own words.
 
 <YoutubeEmbed id="YnJwjZ3jCTc" title="FOO041 v8" fullwidth="true"/>
 
-### Get Started
+## Get Started
 
 If you have been waiting to get access to the Flutter News Toolkit, the wait is over! You can now directly access the [code hosted on Github](https://github.com/flutter/news_toolkit).
 

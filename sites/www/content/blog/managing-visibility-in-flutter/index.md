@@ -17,19 +17,19 @@ I thought I’d write a quick snippet / tutorial on how you can easily write a g
 
 For most use cases there are going to be four specific visibility states:
 
-### Visible
+## Visible
 
 This is self explanatory.
 
-### Invisible
+## Invisible
 
 Rendered in place. Is not visible and is not interactive. You will probably use this state in conjunction with another constrained widget (e.g: Container) because Invisible widgets will still occupy space on the screen even though they’re not interactive and not visible. For example, you may have a Container with a background that has an Image that is invisible until it loads. You don’t want the UI jumping around in this case.
 
-### Offscreen
+## Offscreen
 
 Rendered off screen. Is not visible and is not interactive. It will still incur a cost but it is generally OK because it is useful for doing widget size calculations where you don’t need to show the widget all of the time. For example, if you need to calculate the size of a widget for the end state of an animation where the widget is only visible right at the end.
 
-### Gone
+## Gone
 
 Your widget is not rendered at all. Ideally the widget is never included in the widget tree. It should incur a zero or close to zero cost.
 

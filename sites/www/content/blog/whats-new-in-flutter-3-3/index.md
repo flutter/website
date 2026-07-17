@@ -67,21 +67,21 @@ Thanks to the amazing contributions of community member [fbcouch](https://github
 
 To improve support for rich text editing, this release introduces the ability to receive granular text updates from the platform’s `TextInputPlugin`. Previously, the `TextInputClient` only delivered the new editing state with no delta between the old and new, `TextEditingDeltas` and the `DeltaTextInputClient` fill this information gap. Having access to these deltas allows you to build an input field with styled ranges that expand and contract as you type. To learn more, check out the [Rich Text Editor demo](https://flutter.github.io/samples/rich_text_editor.html).
 
-## Material Design 3
+### Material Design 3
 
 The Flutter team continues to migrate more Material Design 3 components to Flutter. This release includes updates to [`IconButton`](https://api.flutter.dev/flutter/material/IconButton-class.html), [`Chips`](https://api.flutter.dev/flutter/material/Chip-class.html), and large and medium variants for [`AppBar`](https://api.flutter.dev/flutter/material/AppBar-class.html).
 
 To monitor the progress on the Material Design 3 migration, check out [Bring Material 3 to Flutter](https://github.com/flutter/flutter/issues/91605) on GitHub.
 
-### IconButton
+#### IconButton
 
 <DashImage figure src="images/0AxLlKvPfaiODtzch.webp" />
 
-### Chip
+#### Chip
 
 <DashImage figure src="images/05fCsX84PRpjMtzx5.webp" />
 
-### Medium and large AppBar
+#### Medium and large AppBar
 
 <DashImage figure src="images/0jVFZWFsCOuzeqzTb.webp" />
 

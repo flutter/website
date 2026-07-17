@@ -10,7 +10,7 @@ category: release
 layout: blog
 ---
 
-### Supporting iOS 14 and Android 11, new i18n and l10n support, Google Maps and WebView plugins ready for production, a new App Size tool and much more!
+## Supporting iOS 14 and Android 11, new i18n and l10n support, Google Maps and WebView plugins ready for production, a new App Size tool and much more!
 
 We’re delighted to introduce our latest release of Flutter, with extensive support for iOS 14 and Android 11. Flutter 1.22 builds on the foundation set by previous releases by enabling developers to build fast, beautiful user experiences for multiple platforms from a single codebase. Our quarterly stable releases package the latest features, performance improvements, and bug fixes, and are suitable for broad production use.
 

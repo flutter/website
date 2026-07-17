@@ -39,7 +39,7 @@ And third, [**plugins**](https://flutter.io/developing-packages/) make it possib
 
 This article is an in-depth introduction to platform channels. Starting from Flutter’s messaging foundations, I’ll introduce the message/method/event channel concepts, and discuss some API design considerations. There’ll be no API listings, but short code samples for copy-paste reuse instead. A brief list of usage guidelines is provided, based on my experience contributing to the [flutter/plugins](https://github.com/flutter/plugins) GitHub repository as a member of the Flutter team. The article concludes with a list of additional resources, including links to the DartDoc/JavaDoc/ObjcDoc reference APIs.
 
-### Table of contents
+## Table of contents
 
 [**Platform channels API**](https://medium.com/p/ce7f540a104e#99ef)
 [Foundations: asynchronous, binary messaging](https://medium.com/p/ce7f540a104e#67d0)

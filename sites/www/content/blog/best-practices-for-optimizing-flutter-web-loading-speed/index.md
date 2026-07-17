@@ -124,7 +124,7 @@ While Flutter’s Wasm build option isn’t fully stable yet, adopting modern JS
 
 [Preloading assets](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload) like images, fonts, and JavaScript files can significantly improve webpage loading speed. By preloading within the HTML `<head>` tag or using HTTP response headers, you instruct the browser to download these resources before they’re needed for rendering. This eliminates delays and ensures a smoother user experience. To preload assets, add the `<link>` tag in the `<head>` section and set the `rel` attribute to `preload`. Only preload assets that are used immediately, optimally in the first screen of your app, otherwise browsers will consider the preloading as a waste of bandwidth.
 
-### HTML &lt;head&gt; tag
+#### HTML &lt;head&gt; tag
 
 ```xml
 <head>
@@ -137,7 +137,7 @@ While Flutter’s Wasm build option isn’t fully stable yet, adopting modern JS
 </body>
 ```
 
-### HTTP response headers for Firebase hosting
+#### HTTP response headers for Firebase hosting
 
 The following code block is a `firebase.json` example with a key/value combo demonstrating how to add HTTP headers for asset preloading.
 

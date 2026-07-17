@@ -78,7 +78,7 @@ Dart null safety support is based on the following three core design principles:
 
 Let’s review these design principles in more detail.
 
-## 1. Non-nullable by default
+### 1. Non-nullable by default
 
 The core syntax is simple enough. Here are some non-nullable variables, declared in different ways. Remember, non-nullable is the default, so these declarations look like they do today, but their meaning changes.
 
@@ -91,7 +91,7 @@ String m = '';
 
 Dart will make sure that you never assign null to any of the above variables. If you try to do `widget = null` a thousand lines later, you’ll get a static analysis error and red squiggly lines, and your program will refuse to compile.
 
-### Nullable variables
+#### Nullable variables
 
 If you want your variable to be nullable, you can use `?`, like this:
 
@@ -117,7 +117,7 @@ static List<double?>? getTemperatures() {
 
 But, once again, the dream is that you’ll rarely have to use `?`. The majority of your types will be non-nullable.
 
-### Being productive with null safety
+#### Being productive with null safety
 
 Null safety isn’t just about safety. We also want you to be productive when using the feature, which means that the feature must be easy to use. For example, look at this code, which uses `if` to check for a null value:
 
@@ -141,7 +141,9 @@ Here’s another example, which shows a case where Dart can be sure that a varia
 ```dart
 class StatusLine extends StatelessWidget {
   final Status status;
+
   StatusLine({this.status: Status.failed});
+
   @override
   Widget build(BuildContext context) {
     // This local variable is non-nullable, but not initialized.
@@ -157,11 +159,12 @@ class StatusLine extends StatelessWidget {
     // nullable Strings -- without getting an error.
     return Text(statusText);
   }
+}
 ```
 
 If you remove any of the assignments above (for example, by deleting the line `statusText = 'Update failed';`), Dart cannot guarantee that `statusText` will be non-null: you’ll get a static error and your code won’t compile. You can [give this a try in DartPad](https://nullsafety.dartpad.dev/ecc0f87fa5af5cc7ff30d8bd3e3b12e2).
 
-## 2. Incrementally adoptable
+### 2. Incrementally adoptable
 
 Because null safety is such a fundamental change to our typing system, it would be extremely disruptive if we insisted on forced adoption. We want to let you decide when the time is right, so null safety is an opt-in feature: you’ll be able to use the latest Dart and Flutter releases without being forced to enable null safety before you’re ready to do so. You can even depend on packages that have already enabled null safety from an app or package that hasn’t yet.
 
@@ -173,7 +176,7 @@ When your dependencies are ready, you can use our migration tool. The tool works
 
 <DashImage figure src="images/0vRDfouqMsEojq6t9.webp" alt="The migration tool helps you interactively migrate your code to null safety." caption="The migration tool helps you interactively migrate your code to null safety." />
 
-## 3. Fully sound
+### 3. Fully sound
 
 Once you’ve fully migrated, Dart’s null safety is **sound**. This means that Dart is 100% sure that in the above examples, the return variables, lists, and elements cannot be null. When Dart analyzes your code and determines that a variable is non-nullable, that variable is **always** non-nullable: if you inspect your running code in the debugger, you’ll see that non-nullability is retained at runtime. By contrast, some other implementations are unsound, and in many cases still need to perform runtime null checks. Dart shares ***sound* null safety** with Swift, but not very many other programming languages.
 

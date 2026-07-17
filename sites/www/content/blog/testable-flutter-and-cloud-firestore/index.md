@@ -464,7 +464,7 @@ $ flutter pub get
 
 > Note: If you have not yet created your database: visit the Firebase console for your project, click on the **Cloud Firestore** tab, and click the **Create Database** button.
 
-## Waiting on Firebase
+### Waiting on Firebase
 
 The first step to successfully use Cloud Firestore is to initialize Firebase and, most critically, *not attempting to use any Firebase resources until this task is successful*. Luckily, you can contain that logic with one `StatefulWidget` instead of sprinkling that task all over your code.
 
@@ -543,7 +543,7 @@ class MyApp extends StatelessWidget {
 Now, the app is able to wait for Firebase’s initialization, but can skip this process during tests by simply not using `FirebaseWaiter`.
 > Note: The above changes may cause Flutter to complain about missing Firebase plugins. If it does, completely kill your app and start debugging again, which allows Flutter to install all platform-specific dependencies.
 
-## Getting data from Cloud Firestore
+### Getting data from Cloud Firestore
 
 First, import Cloud Firestore by adding the following line to the top of `counter_manager.dart`:
 
@@ -645,7 +645,7 @@ class DependenciesProvider extends StatelessWidget {
 }
 ```
 
-## Diagnosing the bug
+### Diagnosing the bug
 
 If you run this code as is, you’ll *almost* see the desired behavior. Everything seems correct, except the screen is always rendered one click behind reality. What is happening?
 
@@ -667,7 +667,7 @@ It’s almost as if the `manager` object needs to be able to tell the widgets wh
 Enter: [ChangeNotifier](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple#changenotifier)
 > Note: If you got stuck during this section, compare your changes with [this commit](https://github.com/craiglabenz/flutter-firestore-counter/commit/3bf17b9bfac6c907b8650e1c668fa19b1160a51d) in the public repo. These changes include Xcode and build.gradle changes resulting from adding Firebase, but you can likely focus on changes to the Dart files.
 
-## Using `ChangeNotifier` to re-render the widget tree
+### Using `ChangeNotifier` to re-render the widget tree
 
 `ChangeNotifier` is a class that does exactly what its name suggests: it notifies widgets when changes occur that require a re-render.
 
@@ -775,7 +775,7 @@ At this point, you should be able to hot restart your app and see everything wor
 
 Note: If you got stuck during this section, compare your changes against [this commit](https://github.com/craiglabenz/flutter-firestore-counter/commit/dfb584f62d094d8fdb6067ea11ff3551b9186aed) of the public repo.
 
-## Fixing the tests
+### Fixing the tests
 
 While the last round of changes successfully implemented the desired functionality, unfortunately, they also broke the tests. Next, you’ll apply a few more tweaks to get everything working again, and you’ll be done.
 

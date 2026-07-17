@@ -41,11 +41,11 @@ Why this matters for developers:
 
 Another goal for the Wonderous app is to serve as a source for creating learning materials and documentation. In this section, we share the details where Wonderous didn’t address large-screen requirements. These issues might be common problems Flutter developers encounter so we share how we fixed them.
 
-## App continuity & configuration changes
+### App continuity & configuration changes
 
 **Requirement:** Apps should change orientation and retain or restore state as the device rotates, changes window size or folds and unfolds.
 
-### Problem: Folding/Unfolding causes state-loss
+#### Problem: Folding/Unfolding causes state-loss
 
 When Wonderous was folded and unfolded, the app experienced state-loss and would always go back to the initial screen. This issue took a long time for us to figure out. We first assumed this was default behavior in Flutter with folding/unfolding a device, but couldn’t reproduce it with a Flutter counter app. We then realized it might be a plugin that was causing state loss, specifically the [flutter_inappwebview](https://pub.dev/packages/flutter_inappwebview) plugin.
 
@@ -53,7 +53,7 @@ When Wonderous was folded and unfolded, the app experienced state-loss and would
 
 **Learning:** Your app should not lose state when the device is folded/unfolded, Flutter should maintain state by default. If your app is losing state, verify that the plugins you use support large screen devices. A native extension could cause state-loss when the device changes position.
 
-### Problem: Maintaining scroll position state
+#### Problem: Maintaining scroll position state
 
 We thought we might need a lot of boilerplate code to ensure that a list maintained its scroll position when the screen size changed. We first used the key:PageStorageKey API and it fixed most of our list views. The “learnings” section below describes the situation where you need to go further.
 
@@ -63,11 +63,11 @@ We thought we might need a lot of boilerplate code to ensure that a list maintai
 
 **Learning:** While key: PageStorageKey offers an elegant way to maintain scroll position with a list, it doesn’t work if your List changes layout from vertical to horizontal. The previous GIF shows what happened with some of the Wonderous pages. In this case, you might have to [do a bit of math and change the scroll position on screen rotation](https://github.com/gskinnerTeam/flutter-wonderous-app/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39).
 
-## Multi-window & split screen
+### Multi-window & split screen
 
 **Requirement:** App has full functionality running in multi-window mode. The app updates its UI, continuing to play media, for example, when the app doesn’t have top focus.
 
-### Problem: Letterboxing due to split screen view
+#### Problem: Letterboxing due to split screen view
 
 With the advent of [“screen splitting”](https://developer.android.com/guide/topics/large-screens/multi-window-support), the user can, with some orientations and aspect ratios, put the app into less than two inches of vertical space. When the screen was split to ⅓ of the display area, the Wonderous app was [letterboxed](https://developer.android.com/guide/topics/large-screens/large-screen-compatibility-mode#letterboxing) or positioned in the center of the display area with a solid color background filling the unused area (shown below).
 
@@ -79,11 +79,11 @@ This happened because we chose to disable landscape on smaller screens by using 
 
 **Learning:** When disabling landscape on smaller devices (using SystemChrome.setPreferredOrientations()), use the Display API to determine the device size rather than MediaQuery.
 
-## Keyboard, mouse and trackpad input
+### Keyboard, mouse and trackpad input
 
 **Requirement:** Apps should support basic mice or trackpads, and keyboard shortcuts. Main user flows should support keyboard navigation to ensure accessibility.
 
-### Problem: Focus states
+#### Problem: Focus states
 
 Flutter’s Material buttons handle basic focus states by default. In the case of Wonderous, we changed the default styling of the Material buttons to set the overlayColor to transparent. This ended up breaking the focus state of the buttons. With large screen devices that have keyboards and trackpads, your app must handle navigation and provide accessible solutions for those peripheral devices.
 
@@ -91,7 +91,7 @@ Flutter’s Material buttons handle basic focus states by default. In the case o
 
 **Learning:** Make sure to implement a focus state for any custom buttons or gesture detectors in your app. If you change the default Material button styles, make sure you are testing for keyboard focus states, and implementing your own if needed.
 
-### Problem: Mouse scroll slow
+#### Problem: Mouse scroll slow
 
 The mouse scroll wheel didn’t work well on some devices throughout the app. A user had to move the scroll wheel a lot for the screen to respond . This was a known [issue](https://github.com/flutter/flutter/issues/82973), thanks to our community. We noticed that it was more pronounced on tablets and foldables.
 
@@ -101,11 +101,11 @@ The mouse scroll wheel didn’t work well on some devices throughout the app. A 
 
 **Learning:** Sometimes the issue is not unique to your app and needs to be fixed by the Flutter team :)
 
-## App UX layout
+### App UX layout
 
 **Requirement:** Apps should provide adaptive layouts and responsive visual elements that change for available screen space or device orientation.
 
-### Problem: Navigation rail
+#### Problem: Navigation rail
 
 In the first iteration of Wonderous, we disabled the rotation of the app on small form factors since the app lacked proper landscape support on smaller screens. As mentioned earlier, we fixed the app to be able to support landscape mode for smaller screens during split-screen mode on large screen devices. While this approach fixed the letterboxing issue, it became more obvious that the app’s navigation lacked the proper ergonomics for larger screens.
 
@@ -119,9 +119,9 @@ This required the app to layout the navigation close to the edges of the screen 
 
 <DashImage figure src="images/1T0mBXs1X6YdvCQmQlP5ryg.webp" alt="After using Material’s Navigation rail" caption="After using Material’s Navigation rail" />
 
-## Other things to consider
+### Other things to consider
 
-### Problem: Camera preview and media projection
+#### Problem: Camera preview and media projection
 
 [To achieve Android’s Tier 3](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality#T3-7) status, your app needs to support camera preview and media projection in different orientations, screen sizes, and in multi-window mode. Since Wonderous doesn’t have a camera feature, this requirement didn’t apply.
 
@@ -133,7 +133,7 @@ dependencies:
   camera_android_camerax: ^0.5.0
 ```
 
-### Not just for Android
+#### Not just for Android
 
 While these fixes and learnings are presented for Android’s large screen devices, some might apply to other platforms. They can make your app run and feel better on iPads, desktop browsers, and desktop devices. The same learnings apply: leveraging the PageStorageKey API, using adaptive widgets and layouts, or ensuring the plugins you use work well with large form factors.
 

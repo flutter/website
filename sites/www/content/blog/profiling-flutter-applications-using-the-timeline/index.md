@@ -105,7 +105,7 @@ To collect traces, you need to open the Dart Observatory for your Flutter applic
 
 <DashImage figure src="images/1wA1fIv94nkn0LnY5OJ3IXg.webp" alt="Observatory from the IDE" caption="Observatory from the IDE" />
 
-## Navigate to the Timeline in the Observatory
+### Navigate to the Timeline in the Observatory
 
 Either click on the timeline link on the main observatory page or navigate to the timeline directly by opening **http://127.0.0.1:61102/#/timeline** (replace the # with the actual port number).
 
@@ -117,7 +117,7 @@ You will now see an empty timeline. Trace are assigned categories, and, by defau
 
 <DashImage figure src="images/1TlX5df1vv352ypRRfveEAA.webp" alt="An Empty Timeline" caption="An Empty Timeline" />
 
-## Collecting a Trace
+### Collecting a Trace
 
 Enable tracing on all trace categories by clicking on ***All*** then click the ***clear*** button to start tracing on the device. Notice that the “Recorded Streams” are all enabled. The timeline is still empty but the device has started gathering traces. Make sure to interact with the application in a way that adds traces to the Timeline. Usually, rendering a few frames works.
 
@@ -135,7 +135,7 @@ Navigating the trace using the mouse depends on what navigation mode is selected
 
 It is also a good idea to press ***?*** on your keyboard. This brings up a help dialog of supported shortcuts.
 
-## Saving & Sharing Traces
+### Saving & Sharing Traces
 
 Clicking the ***save*** button makes the browser download a JSON file containing the trace. You can share that trace in bug reports or email. To view a shared trace, navigate to ***about://tracing*** in Chrome and load the previously saved trace file.
 

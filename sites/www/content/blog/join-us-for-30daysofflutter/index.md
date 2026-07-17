@@ -17,13 +17,13 @@ Happy New Year folks. It’s the perfect time of year to learn something new! Do
 
 Flutter is Google’s open source UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. It’s one of the fastest growing, most in-demand cross platform frameworks to learn and is used by freelance developers and large organizations around the world. Flutter uses the Dart language, so it will feel natural to many of you familiar with object-oriented languages.
 
-### Jump in, the water’s fine!
+## Jump in, the water’s fine!
 
 Along with the curated content, we will also have four live AskMeAnything sessions (#AMAs), where you can meet members of Google’s Flutter team and community. You can also join us on the [FlutterDev Discord channel](https://discord.com/invite/N7Yshp4), where you can meet the other members of the community, ask and answer questions, and maybe make some new Flutter friends too!
 
 Does this sound exciting? Visit the [**30 Days of Flutter website**](https://goo.gle/30daysofflutter) to get more information and to register to join. Last date to register is 31st January 2021, 11:30pm PST.
 
-### #30DaysOfFlutter Schedule
+## #30DaysOfFlutter Schedule
 
 Your learning journey with Flutter for the month will look like this::
 

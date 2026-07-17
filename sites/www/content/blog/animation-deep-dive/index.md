@@ -18,7 +18,7 @@ In the other episodes of the series, my colleagues talk about all the practical 
 
 Let’s start with something simple and lighthearted:
 
-### What *is* motion, really?
+## What *is* motion, really?
 
 You see, motion is an illusion. Look at this:
 
@@ -28,7 +28,7 @@ It’s a lie. What you’re actually seeing are many still images shown in quick
 
 So, if motion is a lie, what are all these `AnimationFoo` and `FooTransition` widgets really doing? Surely, because the frames need to be constructed up to 120 times per second, the UI cannot be *rebuilt* every time.
 
-### Or, can it?
+## Or, can it?
 
 In fact, animations in Flutter are just a way to rebuild parts of your widget tree on every frame. There is no special case. Flutter is fast enough to do that.
 

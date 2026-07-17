@@ -393,7 +393,7 @@ As with the Flutter GPU API itself, Flutter Scene is currently in an early previ
 
 Next, make an app with Flutter Scene!
 
-## Set up a Flutter Scene project
+### Set up a Flutter Scene project
 
 Since it's strongly recommended to use Flutter Scene against the [main channel](https://docs.flutter.dev/release/upgrade#other-channels), start off by switching to it.
 
@@ -427,7 +427,7 @@ flutter pub add flutter_scene vector_math
 
 Next, import a 3D model!
 
-## Import a 3D model
+### Import a 3D model
 
 First, you need a 3D model to render. For this guide, you’ll use a common [glTF](https://en.wikipedia.org/wiki/GlTF) sample asset: [DamagedHelmet.glb](https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/DamagedHelmet). Here's what it looks like.
 
@@ -497,7 +497,7 @@ flutter:
 
 In the future, the native assets feature will allow build hooks to append data assets to the bundle. Once this happens, it will no longer be necessary to add an asset import rule alongside the build hook.
 
-## Rendering a 3D scene
+### Rendering a 3D scene
 
 Now for the app's code.
 

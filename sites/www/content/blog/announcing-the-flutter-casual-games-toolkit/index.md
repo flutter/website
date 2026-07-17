@@ -31,11 +31,11 @@ The [Flutter Casual Games Toolkit](https://flutter.dev/games) offers a specializ
 
 <DashImage figure src="images/0NwJbJ1BD7MvehPAA.webp" alt="Tic-Tac-Toe game running on a mobile device" caption="Tic-Tac-Toe game running on a mobile device" />
 
-### Video Tutorial
+## Video Tutorial
 
 To get started, check out the [video tutorial](https://youtu.be/zGgeBNiRy-8) on how to use the game template. It gives you a step-by-step guide on building a [Tic-Tac-Toe game](https://github.com/filiph/tictactoe) (also available for download from the [iOS](https://apps.apple.com/us/app/tic-tac-toe-puzzle-game/id1611729977)/[Android](https://play.google.com/store/apps/details?id=dev.flutter.tictactoe) stores). To see all the nitty-gritty details that Filip experienced as he developed the game, check out his [raw dev log](https://docs.google.com/document/d/e/2PACX-1vRM-pZYVNOcJhCh5-ZHt8jGwWpNvx4KtpJZECHmaUPn9PIOgdTThK5OBRblCM6PQC4skqDRdW0lJnyM/pub).
 
-### Pre-integrated services
+## Pre-integrated services
 
 In addition to the common UI and functional elements you might need for a game, you get pre-integrated modules and sample code for critical services required for game development. For example, the game template integrates the Apple Game Center and Google Play Games Services so you can easily display features like leaderboards and achievements.
 
@@ -43,15 +43,15 @@ If you plan to monetize your game, the template uses the [Google Mobile Ads SDK]
 
 Lastly, the game template includes [Firebase Crashlytics](https://pub.dev/packages/firebase_crashlytics), so you can gain more insights into any crashes or errors that might occur in your game. All the source code for the game template can be found in this [Flutter samples repository](https://github.com/flutter/samples/tree/master/game_template#readme) on GitHub.
 
-### Flutter Game Discord Channel
+## Flutter Game Discord Channel
 
 One of the strengths of Flutter is its helpful and welcoming community. To chat with other Flutter game developers, ask questions, and share best practices, consider joining the [dedicated game channel](https://discord.gg/WY5NwwjBQz) on r/FlutterDev’s Discord server! Big thanks to Flutter community member @Miyoyo for helping create this community space to support Flutter game developers! (By the way, if you are already a member of the r/FlutterDev community, here is a [direct link](https://discord.com/channels/420324994703163402/964110538986651658).)
 
-### Google Ads and Cloud Credits
+## Google Ads and Cloud Credits
 
 If your game needs Cloud or Firebase services, or you want to promote your game to more users with Ads, you can get up to $900 in credits offered by the [Google Ads](https://ads.google.com/intl/en_us/home/flutter/#!/) and [Cloud](https://cloud.google.com/free?utm_source=flutter&utm_medium=display&utm_campaign=FY22-Q2-flutter-games_get-started&utm_content=-&utm_term=-) teams (terms and limits apply)!
 
-### Start with mobile, but go beyond
+## Start with mobile, but go beyond
 
 We’ve learned from past research that the majority of Flutter games today are casual mobile games, so we prioritized mobile scenarios when designing the Flutter Casual Games Toolkit.
 
@@ -65,7 +65,7 @@ Meanwhile, we recently added support for the community-driven game engine Flame 
 
 Game development is a new but exciting scenario for Flutter! Going forward, we hope to add more codelabs and other resources to help you develop your games. This is our first attempt at making it easier for you, and we are fully aware that there may be many areas for improvement. We’ve recently started collaborating with community member [@wolfenrain](https://github.com/wolfenrain) to triage game-related issues. Please file an issue (or vote on an existing issue) on GitHub if you need product features that you hope the Flutter SDK can better support.
 
-### flutter.dev/games
+## flutter.dev/games
 
 Please check out the dedicated [game development](https://flutter.dev/games) page, where you can learn more about the above-mentioned resources, and also find links to [documentation](https://docs.flutter.dev/resources/games-toolkit), and references to libraries, packages, and tools recommended by game development experts in the Flutter community.
 

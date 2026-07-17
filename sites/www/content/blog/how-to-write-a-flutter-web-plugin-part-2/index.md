@@ -23,7 +23,7 @@ In this article you will learn a different way to add web support for a Flutter 
 
 Before we walk through how to actually implement a plugin, it’s worth discussing how we structure multi-platform plugins on the Flutter team. We intend for the plugins owned by the Flutter team to be models showing best practices for implementing Flutter plugins. The main difference between the old way of writing Flutter plugins and the new way is that *platform-specific implementations are in different packages*. We call a plugin implemented in this way a *federated plugin*.
 
-## Advantages
+### Advantages
 
 Why split the various implementations across multiple packages rather than combining them all into a single package? There are a few reasons why this is better for the long-term maintainability and growth of a plugin:
 
@@ -35,11 +35,11 @@ Why split the various implementations across multiple packages rather than combi
 
 Restructuring your plugin as a federated plugin allows anyone to implement support for new platforms without requiring you to do it yourself. For example, if Flutter supports Nintendo Switch in the future, then a Switch expert can add support for your plugin without you needing to learn all the new APIs. You can even vet the new Switch plugin, and if it meets your standards, you can make it an “endorsed implementation”, meaning that users of your plugin won’t even have to specifically depend on it in order to use it!
 
-## Platform Interfaces
+### Platform Interfaces
 
 How can we implement web support for a plugin without using a `MethodChannel`? By creating an abstraction that describes exactly what the plugin package (such as `package:url_launcher`) requires from its platform-specific implementations (such as `package:url_launcher_web`). This approach abstracts *how* the plugin package communicates with the platform implementation and replaces it with a description of *what* behavior and data the plugin package requires from the platform. In the context of Flutter plugins, we call this abstraction a *platform interface*.
 
-## Example: `url_launcher` Platform Interface Sketch
+#### Example: `url_launcher` Platform Interface Sketch
 
 To give a concrete example of a platform interface, let’s look at a platform interface that could be defined for `package:url_launcher`. Our first web implementation of `url_launcher` set up a `MethodChannel` that listened for calls to the `launch` method, which took a `url` parameter. So, in order for a platform-specific backend to work with `package:url_launcher`, it needs to implement a method with the signature `Future<bool> launch(String url)`. A reasonable platform interface for `package:url_launcher` would look like this:
 
@@ -62,11 +62,11 @@ In the [`flutter/plugins`](https://github.com/flutter/plugins) GitHub repository
 
 Let’s work through an example of how this would be done for a real plugin.
 
-## Example: Migrating package:url_launcher
+### Example: Migrating package:url_launcher
 
 <DashImage figure src="images/1jLlh4b9zQ3u0aUA-hHAgKg.webp" />
 
-## Step 1: Creating the platform interface package
+#### Step 1: Creating the platform interface package
 
 In the first step, we’ll create the platform interface package and rearrange the existing code to use our federated plugin directory layout. For the purposes of this example, we are assuming that the plugin is in a repo that is laid out like the [`flutter/plugins`](https://github.com/flutter/plugins) GitHub repo (in other words, the plugin lives in a directory like `packages/url_launcher`). Specifically, we are assuming a layout that looks like this:
 
@@ -87,7 +87,7 @@ In the first step, we’ll create the platform interface package and rearrange t
 
 The gist of this refactoring is that we are creating a directory that holds not only the plugin package, but also the platform interface package and the web package. We want to move `packages/url_launcher` to `packages/url_launcher/url_launcher` and create another package `packages/url_launcher/url_launcher_platform_interface` (and eventually create another package `packages/url_launcher/url_launcher_web`).
 
-## Move `url_launcher` to its own subdirectory
+##### Move `url_launcher` to its own subdirectory
 
 Assuming you’re in the `packages/` directory, you can move the `url_launcher` plugin to a federated subdirectory by running the following:
 
@@ -98,7 +98,7 @@ $ git mv url_launcher_tmp url_launcher/url_launcher
 $ git commit -m "Move url_launcher to url_launcher/url_launcher"
 ```
 
-## Create the url_launcher_platform_interface package
+##### Create the url_launcher_platform_interface package
 
 Move to the `packages/url_launcher` directory we created in the last step. Then create the platform interface package by running:
 
@@ -167,7 +167,7 @@ Notice also the `instance` getter and setter in the platform interface. New plat
 
 The last thing to note is that all of the methods in the platform interface should have a default implementation that just throws an `UnimplementedError`. Since every implementation of `UrlLauncherPlatform` must use `extends`, then if a new method is added to the interface, it won’t be a breaking change that causes apps to break. If an implementation used `implements`, it would be a breaking change because that implementation would no longer implement every method in the interface.
 
-### Creating `method_channel_url_launcher.dart`
+###### Creating `method_channel_url_launcher.dart`
 
 We set the default `UrlLauncherPlatform` to `MethodChannelUrlLauncher` in the last step. Now we need to write `MethodChannelUrlLauncher`. Edit `lib/method_channel_url_launcher.dart` and paste in the following:
 
@@ -196,15 +196,15 @@ class MethodChannelUrlLauncher extends UrlLauncherPlatform {
 
 If you followed [Part 1](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) of this guide, you will recognize the code to invoke the method on the `MethodChannel` above. In the next step, when we refactor `package:url_launcher` to use `package:url_launcher_platform_interface`, since the default platform interface uses `MethodChannel` to dispatch the calls, all currently existing platforms for `package:url_launcher` should continue to work.
 
-### Finishing package:url_launcher_platform_interface
+###### Finishing package:url_launcher_platform_interface
 
 With this code written, we are done with `package:url_launcher_platform_interface`. All that’s left is to commit the new code, submit it to version control (e.g. land a PR on GitHub), and upload the new package to pub.dev. You must submit this package to pub.dev before moving on to the next step because we will be refactoring `package:url_launcher` to have a dependency on this new package.
 
-## Step 2: Refactoring package:url_launcher to use the platform interface
+#### Step 2: Refactoring package:url_launcher to use the platform interface
 
 Now that our platform interface package from Step 1 has been published to pub.dev, let’s use it in `package:url_launcher`.
 
-## Updating dependencies
+##### Updating dependencies
 
 In the `pubspec.yaml` for `package:url_launcher`, add a dependency on `url_launcher_platform_interface` as shown below:
 
@@ -219,7 +219,7 @@ dependencies:
   # …
 ```
 
-## Refactoring all usages of MethodChannel
+##### Refactoring all usages of MethodChannel
 
 If you recall from [Part 1](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) of this guide, our (simplified) `package:url_launcher` contained the following `launch()` method:
 
@@ -254,7 +254,7 @@ As we covered in the previous section, since the default `UrlLauncherPlatform` u
 
 Make sure to add an entry to the `CHANGELOG.md` saying that you are migrating `package:url_launcher` to use the platform interface. With this small refactoring done, you can commit your changes, upload `package:url_launcher` to pub.dev, and we can move on to writing the implementation of `package:url_launcher` for the web platform.
 
-## Step 3: Implementing package:url_launcher_web using the platform interface
+#### Step 3: Implementing package:url_launcher_web using the platform interface
 
 In [Part 1](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) of this guide, we created a `package:url_launcher_web` that uses `MethodChannel` for communication with the plugin. Let’s refactor this plugin to use the platform interface instead.
 
@@ -292,11 +292,11 @@ We touched on the advantages of using a platform interface above, but here we ca
 
 The example above is very simple; the platform interface has only one method. In this section we’ll cover some general principles to keep in mind when creating a platform interface package for a plugin. If you keep these principles in mind, creating a platform interface package for a plugin is straightforward in almost all cases.
 
-## Make a 1:1 mapping with MethodChannel calls
+### Make a 1:1 mapping with MethodChannel calls
 
 In the ideal case, you can design a platform interface for a plugin by finding everywhere the plugin calls the `MethodChannel` and making a method in the platform interface corresponding to each call. That’s what we did in the `package:url_launcher` example above. This makes it very simple to implement the default platform interface implementation backed by a `MethodChannel` since each method in the platform interface corresponds exactly to a `MethodChannel` call. This also makes it trivial to refactor the plugin package to use the platform interface: simply replace each `MethodChannel` call with the corresponding call on the platform interface.
 
-## Keep the platform interface package minimal
+### Keep the platform interface package minimal
 
 Avoid bringing abstractions from the plugin package into the platform interface package. This allows the plugin package to be more flexible.
 
@@ -327,7 +327,7 @@ class Launcher {
 
 Now we won’t be able to refactor `package:url_launcher` to a different API without also refactoring `package:url_launcher_platform_interface`. If `package:url_launcher_platform_interface` followed the advice above and just had a method for each `MethodChannel` call, then the fake API for `package:url_launcher` above and the actual API will both be simple to implement via the platform implementation.
 
-## Enforce that implementers use extends
+### Enforce that implementers use extends
 
 We’ve mentioned it a few times already in this article, but it is a very important point that bears repeating. Make sure you use `package:plugin_platform_interface` to enforce that implementers of your platform interface use `extends` rather than `implements`. Read more about implementing [federated plugins](https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#heading=h.xabf9lffxrkb) for background information on why `implements` is a bad idea for platform interfaces.
 

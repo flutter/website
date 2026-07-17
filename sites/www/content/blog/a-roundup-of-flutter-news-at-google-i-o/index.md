@@ -14,11 +14,11 @@ We shipped an almost overwhelming amount of news about Flutter at [I/O ’19](ht
 
 <DashImage figure src="images/13XedGb879lTK2vbCP0uscA.webp" alt="Flutter for Web technical preview, announced by Adam Seligman during the developer keynote at Google I/O ‘19" caption="Flutter for Web technical preview, announced by Adam Seligman during the developer keynote at Google I/O ‘19" />
 
-### TL;DR
+## TL;DR
 
 Flutter expands from mobile devices to support the web and desktop: same codebase, same focus on fast, beautiful experiences with high productivity.
 
-### News and announcements
+## News and announcements
 
 * Flutter [now supports the web](https://flutter.dev/web). Open source, [repo on GitHub](https://github.com/flutter/flutter_web).
 
@@ -38,7 +38,7 @@ Flutter expands from mobile devices to support the web and desktop: same codebas
 
 * International [community-organized Flutter hackathon](https://flutterhackathon.com) on June 1st.
 
-### Articles from the Flutter and Dart teams
+## Articles from the Flutter and Dart teams
 
 * [Flutter: a portable UI framework for mobile, web, embedded, and desktop](https://developers.googleblog.com/2019/05/Flutter-io19.html)
 
@@ -52,7 +52,7 @@ Flutter expands from mobile devices to support the web and desktop: same codebas
 
 * [Performance testing of Flutter apps](https://medium.com/flutter-io/performance-testing-of-flutter-apps-df7669bb7df7)
 
-### Articles from partner teams
+## Articles from partner teams
 
 * [Flutter is all the things](https://medium.com/flutter-nyc/flutter-is-all-the-things-805caf2793f3) (Very Good Ventures)
 
@@ -60,7 +60,7 @@ Flutter expands from mobile devices to support the web and desktop: same codebas
 
 * [Flutter Developer Quest game at I/O ’19](https://medium.com/2dimensions/flutter-developer-quest-game-at-google-i-o-2019-53971a56a524) (2Dimensions)
 
-### Flutter and Dart keynote and session recordings
+## Flutter and Dart keynote and session recordings
 
 * [Keynote: announcing the technical preview of Flutter for web](https://twitter.com/googledevs/status/1126222981452247040)
 
@@ -74,7 +74,7 @@ Flutter expands from mobile devices to support the web and desktop: same codebas
 
 * [Pragmatic state management with Flutter](https://www.youtube.com/watch?v=d_m5csmrf7I)
 
-### Demos and Codelabs
+## Demos and Codelabs
 
 * [New York Times KENKEN game, built with Flutter for web](https://www.nytimes.com/games/prototype/kenken)
 
@@ -86,7 +86,7 @@ Flutter expands from mobile devices to support the web and desktop: same codebas
 
 <DashImage figure src="images/1iFS8mhfeoLHEBSfh0p7CTw.webp" alt="The New York Times KENKEN game, shown running on Chrome, macOS, mobile Safari, iPhone and Android." caption="The New York Times KENKEN game, shown running on Chrome, macOS, mobile Safari, iPhone and Android." />
 
-### Press highlights
+## Press highlights
 
 * “Flutter has grown by leaps and bounds to quickly become arguably the best framework for multi-platform coding across iOS and Android. […] It has frankly been a bit shocking how positive the response to Flutter has been.” ([XDA Developers](https://www.xda-developers.com/flutter-1-5-support-web-embedded-desktop/))
 

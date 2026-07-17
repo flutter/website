@@ -28,31 +28,31 @@ We hope you had fun using [Flutter](https://flutter.dev), and participating in t
 
 ## The winners are… 🥁🥁🥁
 
-## Grand Prize Winner: Compass by Zebiao Hu
+### Grand Prize Winner: Compass by Zebiao Hu
 
 <DashImage figure src="images/09r31IUKmyYJdBwX0.webp" />
 
 [This app](https://github.com/zesage/flutter_compass) is a polished, custom-designed fully functioning compass. Once you scroll up, it displays a globe that users can rotate and get real-time weather data wherever the red dot is placed.
 
-## Visual Beauty Winner: Relax by Erin Morrissey
+### Visual Beauty Winner: Relax by Erin Morrissey
 
 <DashImage figure src="images/0PfWbKHdiDVCfn3b-.webp" />
 
 [Relax](https://github.com/erinmorrissey/relax) is a beautiful audio meditation app that displays imagery of rain, forest, sunset, and ocean with corresponding sounds.
 
-## Code Quality Winner: Pocket Piano by Rody Davis
+### Code Quality Winner: Pocket Piano by Rody Davis
 
 <DashImage figure src="images/0bsrTVoVwYi38mp0m.webp" />
 
 A piano built for both iOS and Android. You can change the octave (by sliding to the left or right), and key width, toggle labels on the keys, and play any note (or notes) by tapping. The piano also fully supports semantics for screen reader users. [Check out their tutorial](https://rodydavisjr.com/2019/03/12/making-a-piano/) to build the app yourself.
 
-## Overall Execution Winner: TimeFlow by Fabian Stein
+### Overall Execution Winner: TimeFlow by Fabian Stein
 
 <DashImage figure src="images/0lMe2G_2Al68HniQ6.gif" />
 
 [TimeFlow](https://github.com/Fabian-Stein/timeflow) is a timer that displays a sphere that shatters into pieces and slowly reassembles in one, two, or three minutes, as selected (reassembly not shown in the video). This gentle approach to a timer addresses the complaint that numeric timers can stress the meditator.
 
-## Novelty of Idea Winner: Flutter Events by Noel Jacob
+### Novelty of Idea Winner: Flutter Events by Noel Jacob
 
 <DashImage figure src="images/0peT4RsFqjTeCAeBn.webp" />
 

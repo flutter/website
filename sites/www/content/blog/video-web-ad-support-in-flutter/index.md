@@ -14,7 +14,7 @@ _Authored by Zoey Fan, Harold Benson, and Alak Jhunjhunwala_
 
 Monetizing your Flutter app just got easier and more rewarding. Today, we are thrilled to announce a new suite of tools and feature updates that provide developers with a range of options to monetize your apps and grow your business.
 
-### Video ads now available for Flutter developers
+## Video ads now available for Flutter developers
 
 <DashImage figure src="images/0xsAbaMexfbR30wgK.webp" alt="An animated gif showing a sample video ads" caption="An animated gif showing a sample video ads" />
 
@@ -35,7 +35,7 @@ We’d like to announce the launch of the [Interactive Media Ads (IMA) plugin fo
 **Get started today!**
 Are you ready to supercharge your Flutter app with video ads? Head over to [pub.dev/packages/interactive_media_ads](https://pub.dev/packages/interactive_media_ads) to explore the IMA plugin and access detailed documentation. You’ll find everything you need to get started, including code samples and step-by-step guides. We’re excited to see how you use the IMA plugin to monetize your Flutter video content and create even more engaging app experiences!
 
-### Beta: Monetize your Flutter web games with AdSense ads
+## Beta: Monetize your Flutter web games with AdSense ads
 
 <DashImage figure src="images/0wz_WITqUIrY1dR7w.webp" alt="An animated gif showing a sample AdSense Ads in a game" caption="An animated gif showing a sample AdSense Ads in a game" />
 
@@ -53,7 +53,7 @@ This program is a major step towards a complete ad monetization solution for Flu
 
 If you are a Flutter web **game** developer, and interested in participating, please fill out the [H5 AdSense application form](https://adsense.google.com/start/h5-beta/?src=flutter). Once you are approved into the beta program, use [pub.dev/packages/google_adsense](https://pub.dev/packages/google_adsense) to get started!
 
-### Higher conversion and better user experience with Deep Linking
+## Higher conversion and better user experience with Deep Linking
 
 Adding ads is one of the ways to become a successful business. Sometimes your business requires selling goods and services in your app. You have probably already spent an enormous amount of time and resources in creating SMS/email marketing and Ads campaigns, and hoping these campaigns will drive effective conversion. But what if you could take your campaigns to the next level by directing customers from a marketing campaign straight to your app and the specific item they’re interested in?
 

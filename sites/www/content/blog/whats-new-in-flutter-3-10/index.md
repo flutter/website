@@ -24,25 +24,25 @@ To opt in to the M3 version of the Material library, set `useMaterial3 : true` i
 
 To preview these changes, check out the [demo app](https://flutter.github.io/samples/material_3.html). The demo lets you toggle `useMaterial3` on and off.
 
-### ColorScheme.fromImageProvider()
+#### ColorScheme.fromImageProvider()
 
 All M3 components configure the default colors of the theme’s `ColorScheme`. The default color scheme uses shades of purple. You can create a custom color scheme either from a single “seed” color or from an image. Try both variations with the demo. Color schemes generated should look good and be accessible.
 
 <DashImage figure src="images/1CPv57Dp1cYXPz-YtZ2jMcA.webp" />
 
-### NavigationBar
+#### NavigationBar
 
 This provides an M3 version of `BottomNavigationBar` widget. While [M3](https://m3.material.io/components/navigation-bar/overview) uses different colors, highlighting, and elevation, it works as it did before. To override the default appearance of the `NavigationBars` widget, use the `NavigationBarTheme` widget. Though you don’t need to migrate existing apps to this component, you should use it for new apps.
 
 <DashImage figure src="images/1sApyn1E7o2DqWJx4fG6T8w.webp" />
 
-### NavigationDrawer
+#### NavigationDrawer
 
 This provides an [M3](https://m3.material.io/components/navigation-drawer/overview) destination selection widget based on the Drawer widget. `NavigationDrawer` shows a single-selection list of `NavigationDestinations` widgets. You can include other widgets in this list as well. The `NavigationDrawer` can scroll when needed. To override the default appearance of the `NavigationDrawers` widget, use the `NavigationDrawerTheme` widget.
 
 <DashImage figure src="images/1tSZSZ2DVOT3CzX2OjxTg2Q.webp" />
 
-### SearchBar and SearchAnchor
+#### SearchBar and SearchAnchor
 
 These components provide predictive text for search queries. When the user enters a search query, the app computes a list of matching responses in a “search view”. The user either selects one or adjusts the query. To override the [M3](https://m3.material.io/components/search/overview) design of these components, use the `SearchBarTheme` and `SearchAnchorTheme` widgets.
 
@@ -50,45 +50,45 @@ These components provide predictive text for search queries. When the user enter
 
 <DashImage figure src="images/167iesripk2_62VSr5US-Iw.webp" />
 
-### Secondary Tab Bar
+#### Secondary Tab Bar
 
 M3 allows you to create a second tier of tabbed content. To distinguish this second `TabBar`, use [`TabBar.secondary`](https://m3.material.io/components/tabs/overview#34192702-8a18-4da7-b2cf-d1579632cb96).
 
 <DashImage figure src="images/1Fzkz6aIl-ZIry-vGojaM9w.webp" />
 
-### DatePicker updated for [M3](https://m3.material.io/components/date-pickers/overview)
+#### DatePicker updated for [M3](https://m3.material.io/components/date-pickers/overview)
 
 The M3 `DatePicker` updates the colors, layout, and shape for both the calendar and textfield versions of the widget. This doesn’t change the API, but adds a new `DatePickerTheme`.
 
 <DashImage figure src="images/16cpF7kqYEBCHqv-YswfLhg.gif" />
 
-### TimePicker updated for [M3](https://m3.material.io/components/time-pickers/overview)
+#### TimePicker updated for [M3](https://m3.material.io/components/time-pickers/overview)
 
 The M3 `TimePicker`, like the `DatePicker`, updates the colors, layout, and shapes for both the regular and compact versions of the widget.
 
 <DashImage figure src="images/1jYLsooI9kMMCqibaOgwwFA.gif" />
 
-### BottomSheet updated for [M3](https://m3.material.io/components/bottom-sheets/overview)
+#### BottomSheet updated for [M3](https://m3.material.io/components/bottom-sheets/overview)
 
 Beyond M3 color and shape updates, the bottom sheet now adds an optional drag handle that’s included when you set `showDragHandle` to `true`.
 
 <DashImage figure src="images/1x52LrlHvIpARkrF1RevMeA.webp" />
 
-### ListTile updated for [M3](https://m3.material.io/components/lists/overview)
+#### ListTile updated for [M3](https://m3.material.io/components/lists/overview)
 
 The M3 `ListTile` updates positioning and spacing of this widget. This includes content padding, leading and trailing widget alignment, minimum leading width, and vertical spacing. The API remains unchanged.
 
 <DashImage figure src="images/154RCRghfN9g3tTXzl0U9ew.gif" />
 
-### Drawer updated for M3
+#### Drawer updated for M3
 
 The M3 `Drawer` updates the colors and elevation while making some small layout changes.
 
-## TextField Updates
+### TextField Updates
 
 M3 updates all `TextField` widgets to support native gestures. Double clicking or triple clicking with a mouse work the same as double tapping or triple tapping on a touch device. By default, the `TextField` and `CupertinoTextField` widgets use these features.
 
-### `TextField` double click/tap gestures
+#### `TextField` double click/tap gestures
 
 * **Double click + drag:** Extends the selection in word blocks.
 
@@ -96,9 +96,9 @@ M3 updates all `TextField` widgets to support native gestures. Double clicking o
 
 <DashImage figure src="images/1QFzoK7Gj3Q6uFopP7dOJhw.gif" />
 
-### `TextField` triple click/tap gestures
+#### `TextField` triple click/tap gestures
 
-### Triple click
+##### Triple click
 
 * Selects a paragraph block at the clicked position when inside of a multi-line `TextField` (Android/Fuchsia/iOS/macOS/Windows).
 
@@ -106,13 +106,13 @@ M3 updates all `TextField` widgets to support native gestures. Double clicking o
 
 * Selects all text in a single-line `TextField`.
 
-### Triple tap
+##### Triple tap
 
 * Selects a paragraph block at the clicked position when inside of a multi-line `TextField`.
 
 * Selects all text in a single-line `TextField`.
 
-### Triple click + drag
+##### Triple click + drag
 
 * Extends the selection in paragraph blocks (Android/Fuchsia/iOS/macOS/Windows).
 
@@ -174,11 +174,11 @@ Progress continues on a Vulkan backend for Impeller. Impeller on Android remains
 
 To follow along with our progress, check out [our GitHub project board](https://github.com/orgs/flutter/projects/21).
 
-## Performance
+### Performance
 
 This release covers more performance improvements and fixes aside from Impeller.
 
-### Eliminating Jank
+#### Eliminating Jank
 
 We want to thank open-source contributor [luckysmg](https://github.com/luckysmg). They discovered they could slash the time to get the next drawable layer from the Metal driver. To get that bonus, you need to set the `FlutterViews` background color to a non-nil value. This change eliminates low frame rates on recent iOS 120Hz displays. In some cases, it *triples* the frame rate. This helped us close over half a dozen GitHub issues. This change held such significance that we backported a hotfix into the 3.7 release.
 
@@ -188,27 +188,27 @@ In the 3.7 stable release, we shifted loading of local images from the platform 
 
 We continue to build optimizations on top of Flutter’s new internal DisplayList structure. In this release, we added an [R-Tree based culling](https://github.com/flutter/engine/pull/38429) mechanism. This mechanism removes the processing of drawing operations much earlier in our renderer. This optimization accelerates, [for example](https://github.com/flutter/flutter/issues/92366), a custom painter whose output fails offscreen. Our [microbenchmarks](https://flutter-engine-perf.skia.org/e/?begin=1671661938&end=1671754421&keys=X789f7ff76f30f8ccc672464f335fe09b&num_commits=50&request_type=1&xbaroffset=31974) showed a decreased DisplayList processing time of up to 50%. Apps with clipped custom paints could see differing improvements. The degree of improvement depends on the complexity and number of hidden draw operations.
 
-### Reducing iOS startup latency
+#### Reducing iOS startup latency
 
 An [inefficient strategy](https://github.com/flutter/flutter/issues/37826) for identifier lookups in app bundles increased app startup latency. This startup latency grows in proportion to the app’s size. In this release, [we fixed the bundle identifier lookup](https://github.com/flutter/engine/pull/39975). This reduced startup latency by 100ms or about 30–50% in a large production application.
 
-### Reducing Size
+#### Reducing Size
 
 Flutter uses `SkParagraph` as the default library for text shaping, layout, and rendering. We included a flag to fall back on the legacy `libtxt` and `minikin` libraries. As we have full confidence in `SkParagraph`, [we removed](https://github.com/flutter/engine/pull/39499) `libtxt` and `minikin` and their flag in this release. This reduces Flutter’s compressed size by 30KB.
 
-### Stability
+#### Stability
 
 In the 3.0 release, we enabled an Android feature late in our rendering pipeline. This Android feature used advanced GPU driver features. These driver features repaint less of the screen when only one “dirty” region changes. We added this to earlier optimizations to our graphics pipeline with similar effects. Though our benchmarks results encouraged us, two issues surfaced. First, the most improved benchmark might not represent practical use cases. Second, the set of devices and Android versions that supported this GPU driver feature proved [hard to find](https://github.com/flutter/engine/pull/37493). Given the limited advances and support, we [disabled](https://github.com/flutter/engine/pull/40898) the partial repaint feature on Android.
 
 The feature remains enabled on iOS when using the Skia backend. We expect to [enable it with Impeller](https://github.com/flutter/flutter/issues/124526) in a future release.
 
-## API Improvements
+### API Improvements
 
-### APNG Decoder
+#### APNG Decoder
 
 Flutter 3.10 addresses one of our most [promoted issues](https://github.com/flutter/flutter/issues/37247). It [adds the ability](https://github.com/flutter/engine/pull/31098) to decode `APNG` images. You can load `APNG` images with Flutter’s existing image loading APIs.
 
-### Image loading API improvements
+#### Image loading API improvements
 
 Flutter’s esteemed Director of Engineering [tvolkert](https://github.com/tvolkert) has landed improvements to `dart:ui`’s image loading APIs. We have added a [new method](https://master-api.flutter.dev/flutter/dart-ui/instantiateImageCodecWithSize.html) `instantiateImageCodecWithSize`. This supports the [use case](https://github.com/flutter/flutter/issues/118543) of loading an image that meets these three conditions:
 
@@ -222,29 +222,29 @@ An example would be when an app tries to display one image from a pool of possib
 
 ## Mobile
 
-## iOS
+### iOS
 
-### Wireless debugging
+#### Wireless debugging
 
 You can now run and hot reload your Flutter iOS apps without a cable! After a successful wireless pairing of your iOS device in Xcode, you can deploy your app to that device using flutter run. If you encounter issues, verify the network icon appears next to your device under **Window &gt; Devices** and **Simulators &gt; Devices**. To learn more, check out our [documentation](https://docs.flutter.dev/get-started/install/macos#ios-setup).
 
-### Wide gamut image support
+#### Wide gamut image support
 
 Flutter apps on iOS can now support accurate rendering for wide gamut images. To use wide gamut support, the app must use Impeller and add the [`FLTEnableWideGamut`](https://github.com/flutter/flutter/blob/a463bb82c413af319c8b715deedd7f2c345becd6/dev/integration_tests/wide_gamut_test/ios/Runner/Info.plist#L52) flag in the `Info.plist` file.
 
-### Spellcheck support
+#### Spellcheck support
 
 The `SpellCheckConfiguration()` widget now defaults to supporting [Apple’s spell check service](https://developer.apple.com/documentation/uikit/uitextchecker) on iOS. To use this widget, set it using the `spellCheckConfiguration` parameter in `CupertinoTextField`.
 
 <DashImage figure src="images/14ibBYWIZH1FhDIpaw0BDFg.webp" />
 
-### Adaptive checkbox and radio
+#### Adaptive checkbox and radio
 
 This release adds the `CupertinoCheckBox` and `CupertinoRadio` widgets to the `Cupertino` library. They create checkbox and radio button components that match Apple’s styling.
 
 The Material checkbox and radio widgets added the `.adaptive` constructors. On iOS and macOS, these constructors use the corresponding Cupertino widgets. On other platforms, they use Material widgets.
 
-### Refining Cupertino animations, transitions and colors
+#### Refining Cupertino animations, transitions and colors
 
 Flutter 3.10 improved some animations, transitions, and colors to match SwiftUI. These improvements include:
 
@@ -256,11 +256,11 @@ Flutter 3.10 improved some animations, transitions, and colors to match SwiftUI.
 
 <DashImage figure src="images/180sFA4-LrCTojCDvUJ9j2w.webp" />
 
-### PlatformView performance
+#### PlatformView performance
 
 When `PlatformViews` appear on screen, Flutter [throttles the refresh rate](https://github.com/flutter/engine/pull/39172) on iOS to reduce jank. App users will notice this when the app displays animated or scrollable `PlatformViews`.
 
-### macOS and iOS can use shared code in plugins
+#### macOS and iOS can use shared code in plugins
 
 Flutter now supports the [`sharedDarwinSource`](https://docs.flutter.dev/development/packages-and-plugins/developing-packages#shared-ios-and-macos-implementations) key in the `pubspec.yaml` file for plugins. This key indicates that Flutter should share iOS and macOS code.
 
@@ -275,19 +275,19 @@ macos:
   sharedDarwinSource: true
 ```
 
-### New resources for app extensions
+#### New resources for app extensions
 
 We added [documentation](https://docs.flutter.dev/development/platform-integration/ios/app-extensions) for Flutter developers to use iOS app extensions. These extensions include live activities, home screen widgets, and share extensions.
 
 To simplify creating home screen widgets and sharing data, we added new methods to the [`path_provider`](https://github.com/flutter/packages/pull/3450) and `homescreen_widget` plugins.
 
-### New resources for cross-platform design
+#### New resources for cross-platform design
 
 The documentation now includes cross platform design considerations for specific [UI components](https://docs.flutter.dev/resources/platform-adaptations#ui-components). To learn more about each of these UI components, check out the [discussions in the Flutter UX GitHub repository](https://github.com/flutter/uxr/discussions). We appreciate any input or feedback!
 
-## Android
+### Android
 
-### Android CameraX support
+#### Android CameraX support
 
 [Camera X](https://developer.android.com/training/camerax), a Jetpack library, simplifies adding rich camera functionality to your Android app. This functionality applies across a wide selection of Android Camera hardware. With this release, we add preliminary support for CameraX to the Flutter Camera plugin. This support covers the following use cases:
 

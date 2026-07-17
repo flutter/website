@@ -176,7 +176,7 @@ We’ve worked hard to smooth out the rough edges in core interaction models thr
 
 * We fixed an issue with pinned headers in `NestedScrollView` and `SliverMainAxisGroup`, ensuring headers correctly overlap subsequent slivers.
 
-## Accessibility
+### Accessibility
 
 Helping you build accessible experiences that reach users on any screen is at the heart of our mission. In this update, we’ve added the following:
 
@@ -186,7 +186,7 @@ Helping you build accessible experiences that reach users on any screen is at th
 
 * We’ve introduced new matchers like `isSemantics` and `accessibilityAnnouncement` in flutter_test to make validating accessibility easier.
 
-## Material and animation
+### Material and animation
 
 We have introduced new primitives and properties to expand control over animations and layout. Thanks to the work of community member [Bernardo Ferrari (bernaferrari@)](https://github.com/bernaferrari), `RepeatingAnimationBuilder` introduces a declarative way to create continuous animations like a loading indicator, a pulsing button, or a shimmering placeholder effect.
 

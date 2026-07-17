@@ -38,37 +38,37 @@ So, to summarize:
 
 What to do? Here are some options:
 
-### Do nothing
+## Do nothing
 
 Errors in samples get caught by the community sooner or later, but by the time you get to know about them, they will have done damage. This does not only lead to frustration of the people who find the breakage, but it will most likely be widely reported sooner or later, leading to damaged reputation of your project.
 
 You will be shocked (*shocked!*) to learn that this is *by far* the most widely used option for sample repos.
 
-### Test manually
+## Test manually
 
 Some poor soul is tasked to manually check the 100 samples every time there’s a new version of the underlying technology.
 
 Many teams do this, and you can probably imagine how that goes, or at least how that keeps the pressure on having significantly *less* than 100 samples.
 
-### Perform static analysis in Continuous Integration (CI)
+## Perform static analysis in Continuous Integration (CI)
 
 For strongly typed languages, this is already way better than the previous option. But static analysis doesn’t catch all breakages. An app with no static errors can still fail to build, or crash at runtime.
 
 <DashImage figure src="images/1bRHZis_QLJmRF-ieQUVlCg.jpeg" />
 
-### Full unit testing in CI
+## Full unit testing in CI
 
 Unit testing is indispensable, but not a good tool for this particular job. Most code samples have trivial logic (e.g. “this function always returns 42”) — not really worth testing. Also, few technologies change in a way that breaks your individual *unit* tests — so it’s not really what you want to test. You want to test that the sample app, when put together, works.
 
 But of course, if you can spare the resources to unit test everything, awesome.
 
-### Full functional / integration testing in CI
+## Full functional / integration testing in CI
 
 This is the best option *if* you have the time and resources. Which—let’s face it—you don’t. Not for 100 different sample repos.
 
 If you can manage, then this is obviously fantastic. You verify that the app not only statically checks and compiles, but also that it runs in a real-world-ish environment. (While we’re in the mode of dreaming: let’s test the sample apps under all supported operating systems and both on real devices and in emulators.)
 
-### Put samples directly in the tech’s repository
+## Put samples directly in the tech’s repository
 
 When you have your samples developed (and tested) in the same repo as the technology they’re “sampling” (like Flutter does with the [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)), there is no chance they’ll go out of date. When the underlying technology changes in a way that breaks the sample, the build goes red and the development team is highly motivated to get the example code fixed.
 

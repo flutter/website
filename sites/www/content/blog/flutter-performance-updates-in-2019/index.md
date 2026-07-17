@@ -143,7 +143,7 @@ contributors: [cskau-g](https://github.com/cskau-g), [mkustermann](https://githu
 
 * [Adds non-eager async stack frame collector](https://dart-review.googlesource.com/c/sdk/+/122644)
 
-## Other improvements
+### Other improvements
 
 **Fixed a memory leak when using `PlatformView` on iOS**
 
@@ -151,7 +151,7 @@ contributors: [cskau-g](https://github.com/cskau-g), [mkustermann](https://githu
 
 * [Memory leak when using `PlatformView` [IOS]](https://github.com/flutter/flutter/issues/24714)
 
-## Fixed a memory leak when animation is playing on iOS
+#### Fixed a memory leak when animation is playing on iOS
 
 * [Gerrit 260538: Don’t allocate invalidation messages for generators that make uncacheable textures](https://skia-review.googlesource.com/c/skia/+/260538)
 

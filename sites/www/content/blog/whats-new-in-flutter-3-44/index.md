@@ -121,7 +121,7 @@ void main() async {
 
 **Learn more**: [Genkit Dart: Build full-stack AI apps with Dart and Flutter](https://dart.dev/blog/announcing-genkit-dart-build-full-stack-ai-apps-with-dart-and-flutter)
 
-### Gemma 3n Impact Challenge
+#### Gemma 3n Impact Challenge
 
 We’re incredibly proud to see Flutter developers pushing the boundaries of what’s possible with AI. A huge congratulations to Tommaso Giovannini, creator of Gemma Vision, and Guido Marangoni, creator of Vite Vere, for their first and second place wins in the [Gemma 3n Impact Challenge](https://www.kaggle.com/competitions/google-gemma-3n-hackathon) last year. Both chose Flutter to build life-changing tools:
 
@@ -133,7 +133,7 @@ We’re incredibly proud to see Flutter developers pushing the boundaries of wha
 
 **Learn more**: [Gemma 3n Impact Challenge winners](https://www.kaggle.com/competitions/google-gemma-3n-hackathon/hackathon-winners)
 
-### Gemma 4
+#### Gemma 4
 
 Gemma 4 recently launched, it’s a lightweight, on-device model purpose-built for advanced reasoning and agentic workflows, cost, on-device data constraints, or network constraints. Its multimodal capabilities are fantastic, and I’ve been especially impressed by its ability to do multi-step planning and chaining tool calls.
 
@@ -141,7 +141,7 @@ Historically, managing these on-device models across diverse hardware was comple
 
 **Learn more**: [Gemma 4](https://deepmind.google/models/gemma/gemma-4/)
 
-### LiteRT-LM for Flutter
+#### LiteRT-LM for Flutter
 
 <DashImage figure src="images/1HeoTr2vo8Ua7b2kL-Qn1-Q.webp" />
 
@@ -153,7 +153,7 @@ LiteRT-LM is Google’s production-ready, high-performance, open-source inferenc
 
 **Learn more**: [`flutter_gemma`](https://pub.dev/packages/flutter_gemma) package and [LiteRT-LM](https://ai.google.dev/edge/litert-lm/overview).
 
-### Flutter + A2UI = GenUI
+#### Flutter + A2UI = GenUI
 
 When it comes to AI-driven user experiences, we can all agree that we’re exhausted by walls of markdown — or worse, plaintext.
 

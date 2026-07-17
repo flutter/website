@@ -44,13 +44,13 @@ Note: This article refers to two different types of overlays:
 
 * Flutter’s `Overlay` class is used to ‘float’ widgets over all the other widgets shown on the following screen.
 
-## New default value indicator shape
+### New default value indicator shape
 
 The biggest visual difference between the old slider and the new slider widgets is the default value indicators: [`RectangularSliderValueIndicatorShape`](https://master-api.flutter.dev/flutter/material/RectangularSliderValueIndicatorShape-class.html) for `Slider` and [`RectangularRangeSliderValueIndicatorShape`](https://master-api.flutter.dev/flutter/material/RectangularRangeSliderValueIndicatorShape-class.html) for `RangeSlider`. The indicators reflect the latest design changes from Material. The old indicator shape was an upside-down pear, and the new shape is more rectangular and looks like a speech bubble. The value indicator was updated for both `Slider` and `RangeSlider`.
 
 <DashImage figure src="images/0i3IWhVNFBB5OJEze.webp" />
 
-## Value indicator paints on the overlay
+### Value indicator paints on the overlay
 
 The updated value indicator is now painted on the overlay. This means that the indicator is no longer restricted to the scope of the slider’s `MediaQuery` and can be displayed over other widgets. This is expected because the indicator is only activated when dealing with the gesture detector, which means that it’s only shown when the user interacts with the slider. By integrating the [`Overlay`](https://api.flutter.dev/flutter/widgets/Overlay-class.html) with the [`CompositedTransformTarget`](https://api.flutter.dev/flutter/widgets/CompositedTransformTarget-class.html), [`CompositedTransformFollower`](https://api.flutter.dev/flutter/widgets/CompositedTransformFollower-class.html), and [`Layerlink`](https://api.flutter.dev/flutter/rendering/LayerLink-class.html) widgets, the value indicator can display over other widgets. To learn more about this mechanism, see [How to float an overlay widget over a (possibly transformed) UI widget](https://medium.com/flutter/how-to-float-an-overlay-widget-over-a-possibly-transformed-ui-widget-1d15ca7667b6).
 
@@ -130,7 +130,7 @@ double getHorizontalShift({
 
 Note: This example was made with the `textScaleFactor` set to 4 for better demonstration.
 
-## Activated value indicator takes precedence
+### Activated value indicator takes precedence
 
 The `RangeSlider` value indicator was also updated so that the currently active indicator takes precedence over the resting indicator. This means that if the indicators overlap, then the active indicator ‘floats’ over the other one.
 
@@ -138,7 +138,7 @@ The `RangeSlider` value indicator was also updated so that the currently active 
 
 Note: This example was made with the `textScaleFactor` set to 4 for better demonstration.
 
-## Old value indicator updated
+### Old value indicator updated
 
 We kept the `PaddleValueIndicator` widget, and updated it to have better scalability and accessibility. The `PaddleValueIndicator` widget is also printed on the `Overlay` like the `RectangularSliderValueIndicatorShape`. In the following example, you can see that both `Slider` and `RangeSlider` are using the old value indicator.
 
@@ -148,7 +148,7 @@ If you want to continue using the old value indicator, then just wrap your `Slid
 
 <DashImage figure src="images/0LNKN4lwqpBxQZ60A.webp" />
 
-## The active track is bigger than the inactive track
+### The active track is bigger than the inactive track
 
 The other component shapes in `Slider` were also updated. The track shape was changed so that the active part of the track is bigger than the inactive part of the track. This means that if your application uses a left-to-right language, then the left part of the track is bigger than the right. If your application uses a right-to-left language, then the right part of the track is bigger than the left. For `RangeSlider`, the active track is the portion of the track between the two thumbs.
 
@@ -156,13 +156,13 @@ The other component shapes in `Slider` were also updated. The track shape was ch
 
 <DashImage figure src="images/0qIoICKw6wo7NcwOW.webp" />
 
-## Tick mark component
+### Tick mark component
 
 The tick mark size and positioning changed. The tick marks are now part of the track component instead of extending the end of the track. There is also padding on the tick mark, so it appears within the track component. The size of the tick mark now has a radius of 1.
 
 <DashImage figure src="images/0PLNNQjK0_zOXok1A.webp" />
 
-## Thumb component has a shadow
+### Thumb component has a shadow
 
 When the thumb slider component is activated, there is now a `Shadow` that appears on the `Overlay`.
 

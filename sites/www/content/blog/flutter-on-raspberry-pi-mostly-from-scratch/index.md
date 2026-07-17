@@ -28,7 +28,7 @@ So, to port Flutter to the Raspberry Pi, you will need the following items:
 
 * A snapshot of the Flutter Dart application. You’ll be using the Flutter engine with a JIT mode VM.
 
-### Constraints
+## Constraints
 
 To demonstrate all the steps necessary in porting Flutter to a new platform, some constraints were placed on the porting process:
 

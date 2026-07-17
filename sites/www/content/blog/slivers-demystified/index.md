@@ -43,7 +43,7 @@ You might want this additional control in scrolling behavior if you:
 
 All of these sliver components go inside a [CustomScrollView](https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html). The rest is up to you for how to combine your list of slivers to make your custom scrollable area. You can reinvent a ListView by putting a SliverList inside a CustomScrollView and set nothing else.
 
-## SliverList
+### SliverList
 
 SliverList takes a delegate parameter which provides the items in the list as they scroll into view. You can specify the actual list of children with a SliverChildListDelegate Or build them lazily with a SliverChildBuilderDelegate.
 
@@ -77,7 +77,7 @@ SliverList(
 );
 ```
 
-## SliverGrid
+### SliverGrid
 
 SliverGrids *also* can specify children with a delegate, or an explicit list, just like SliverList. But there’s some additional formatting for the *cross*-axis dimension on a grid. There are three ways to specify how you want your grid layout:
 
@@ -106,7 +106,7 @@ SliverGrid(
 
 <DashImage figure src="images/1WM9-Gu6XUz4CYCS2hXfqSA.webp" alt="Visual result of SliverGrid.count and SliverGrid.extent, respectively, from the above code snippets." caption="Visual result of SliverGrid.count and SliverGrid.extent, respectively, from the above code snippets." />
 
-## SliverAppBar
+### SliverAppBar
 
 Okay, okay, enough exposition. Here’s what I know you all have been waiting for. How do I make those gorgeous expanding and contracting app-bars? The secret is to set both the flexibleSpace parameter and the expandedHeight parameter. You can set both for a different height and appearance for your app bar when it is expanded to its full size vs the “compressed” version.
 
@@ -116,29 +116,29 @@ Here’s the code for the above example:
 
 ```dart
 CustomScrollView(
-    slivers: <Widget>[
-      SliverAppBar(
-        title: Text('SliverAppBar'),
-        backgroundColor: Colors.green,
-        expandedHeight: 200.0,
-        flexibleSpace: FlexibleSpaceBar(
-          background: Image.asset('assets/forest.jpg', fit: BoxFit.cover),
-        ),
+  slivers: <Widget>[
+    SliverAppBar(
+      title: Text('SliverAppBar'),
+      backgroundColor: Colors.green,
+      expandedHeight: 200.0,
+      flexibleSpace: FlexibleSpaceBar(
+        background: Image.asset('assets/forest.jpg', fit: BoxFit.cover),
       ),
-      SliverFixedExtentList(
-        itemExtent: 150.0,
-        delegate: SliverChildListDelegate(
-          [
-            Container(color: Colors.red),
-            Container(color: Colors.purple),
-            Container(color: Colors.green),
-            Container(color: Colors.orange),
-            Container(color: Colors.yellow),
-            Container(color: Colors.pink),
-          ],
-        ),
+    ),
+    SliverFixedExtentList(
+      itemExtent: 150.0,
+      delegate: SliverChildListDelegate(
+        [
+          Container(color: Colors.red),
+          Container(color: Colors.purple),
+          Container(color: Colors.green),
+          Container(color: Colors.orange),
+          Container(color: Colors.yellow),
+          Container(color: Colors.pink),
+        ],
       ),
-    ],
+    ),
+  ],
 );
 ```
 
@@ -150,7 +150,7 @@ If you add both the snap parameter with the floating parameter, you can make the
 
 <DashImage figure src="images/1vkO1sczH3DPBGPlr3epW_Q.gif" />
 
-## Putting it all together: a collapsible scrolling list with SliverPersistentHeader
+### Putting it all together: a collapsible scrolling list with SliverPersistentHeader
 
 I tried to imagine the most unusual scrolling behavior I could think of that still might be useful. I came up with this scrolling collapsible list:
 

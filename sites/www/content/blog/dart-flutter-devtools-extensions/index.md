@@ -62,9 +62,9 @@ What you will need:
 * A [Pub](https://pub.dev/) package (existing or new) to add a DevTools extension to.
 > To use the latest [devtools_extensions](https://pub.dev/packages/devtools_extensions) and [devtools_app_shared](https://pub.dev/packages/devtools_app_shared) packages, it is acceptable to develop your extension from the Flutter master or beta channel.
 
-## Step 1: Set up your package hierarchy
+### Step 1: Set up your package hierarchy
 
-### Standalone extensions
+#### Standalone extensions
 
 For a standalone extension (an extension that is not being shipped as part of an existing pub package), it is acceptable to include your extension source code in the same package that the extension is shipped with. This will simplify development, and since users of your package will add a dependency on your package as a `dev_dependency`, the size of your package will not affect the user's app size. Your package structure will look like this:
 
@@ -88,7 +88,7 @@ flutter create --template app --platforms web my_new_tool
 
 Now, use the `my_new_tool` package to configure your extension in the next step.
 
-### Companion extensions
+#### Companion extensions
 
 For a companion extension (an extension that is shipped as part of an existing pub package), we recommend that you place your extension source code outside of your pub package. This will help keep your package size as small as possible, since you will want to avoid inflating the size of user apps that depend on your package. Here is the recommended package structure:
 
@@ -105,7 +105,7 @@ foo/  # formerly the repository root of your pub package
       lib/  # source code for your extension Flutter web app
 ```
 
-## Step 2: Configure your extension
+### Step 2: Configure your extension
 
 In the Dart package that will provide the DevTools extension to users, add a top-level `extension` directory:
 
@@ -157,7 +157,7 @@ For the most up-to-date documentation on the `config.yaml` spec, see [extension_
 
 Now it is time to build your extension.
 
-## Step 3: Build your extension
+### Step 3: Build your extension
 
 1. Create the Flutter web app.
 
@@ -213,11 +213,11 @@ The `DevToolsExtension` widget automatically performs all extension initializati
 
 * `dtdManager`: a manager for interacting with the Dart Tooling Daemon, if present.
 
-## Step 4: Debug your extension
+### Step 4: Debug your extension
 
 When developing and maintaining your DevTools extension, you’ll want to run, debug, and test your extension Flutter web app. You have a couple of different options for this, outlined below.
 
-### Option A: Use the Simulated DevTools Environment (recommended for development)
+#### Option A: Use the Simulated DevTools Environment (recommended for development)
 
 For debugging purposes, you will likely want to use the “simulated DevTools environment”. This is a simulated environment that allows you to build your extension without having to develop it as an embedded iFrame in DevTools. Running your extension this way will wrap your extension with an environment that simulates the DevTools-to-DevTools extension connection. It also gives you access to hot restart and a faster development cycle.
 
@@ -258,7 +258,7 @@ or launch your app from the command line with the added flag:
 flutter run -d chrome - dart-define=use_simulated_environment=true
 ```
 
-### Option B: Use a real DevTools environment
+#### Option B: Use a real DevTools environment
 
 Once you develop your extension to a point where you are ready to test your changes in a real DevTools environment, you need to perform a series of setup steps:
 
@@ -304,7 +304,7 @@ dart run devtools_extensions validate --package=path/to/your_pub_package
 
 <DashImage figure src="images/1DSi_p-2FO60qo5JUKXk-3Q.webp" alt="DevTools Extensions menu" caption="DevTools Extensions menu" />
 
-## Step 5: Publish your package with a DevTools extension
+### Step 5: Publish your package with a DevTools extension
 
 In order for a package to provide a DevTools extension to its users, it must be published with the expected content in the `your_pub_package/extension/devtools/` directory (see the setup instructions above).
 

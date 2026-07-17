@@ -214,7 +214,7 @@ environment:
 
 Note that requiring a Flutter SDK greater than 1.10.0 is required when using the new schema as this is the first version where the Flutter tool supported this schema.
 
-## Migrating an existing plugin to use the new schema
+### Migrating an existing plugin to use the new schema
 
 This section uses the battery plugin as an example and walks through the migration of a sample plugin from the previous schema to the new one.
 
@@ -267,7 +267,7 @@ environment:
 
 Note that since the plugin supports Android and iOS these are the only keys under the flutter.plugin.platforms. The value of `flutter.plugin.androidPackage` field in the old schema becomes the value of `flutter.plugin.platforms.android.package`. The new schema has no equivalent for the `iosPrefix` field, as the `pluginClass` for iOS has a dedicated key we can use the prefix in the `flutter.plugin.platforms.ios.pluginClass` field which is set to `FLTSamplePlugin`.
 
-## Plugins that were previously using the iosPrefix field
+#### Plugins that were previously using the iosPrefix field
 
 The previous schema implied an inconsistency between the iOS plugin’s main interface name and its file name, e.g. for this sample plugin as defined with the previous schema, there would be a `SamplePlugin.h` file that declares an `FLTSamplePlugin` interface. This kind of inconsistency is no longer supported, which means the `SamplePlugin.h` file must be renamed to `FLTSamplePlugin.h` when upgrading to the new schema. Plugins that did not use the `iosPrefix` key don’t require renaming any files.
 
@@ -299,7 +299,7 @@ The figure above shows the dependency graph between the app, the app-facing pack
 
 How does the *platform interface* glue together the app-facing package and the correct platform package? In the past, there were no “platform packages”, only a subfolder for the Android code and another subfolder for the iOS code. The app-facing package communicated to the platform code via a `MethodChannel`. You can think of the `MethodChannel` as the de-facto “platform interface” because the app-facing package calls into the `MethodChannel`, and the corresponding platform code must be listening on a `MethodChannel` for the correct methods with the correct arguments. There is no way to statically confirm that the Android code or iOS code is listening for the correct `MethodChannel` calls.
 
-## Old way of launching a URL
+### Old way of launching a URL
 
 ```dart
 Future<void> launch(String url) {
@@ -334,7 +334,7 @@ abstract class UrlLauncherPlatform {
 
 Now, instead of calling on the `MethodChannel`, the app-facing package would call into the platform interface.
 
-## New way of launching a URL
+### New way of launching a URL
 
 ```dart
 Future<void> launch(String url) {
@@ -370,7 +370,7 @@ As you write new cross-platform plugins or add platforms to existing ones, you c
 
 A well-tested plugin typically includes several styles of test spread across multiple packages. It’s possible to slow yourself down writing tests that are flaky or unlikely to never fail, so focus on the test writing that gives you confidence that the key use cases are still functional.
 
-## AutomatedWidgetsFlutterBinding tests
+### AutomatedWidgetsFlutterBinding tests
 
 Tests that use `AutomatedWidgetsFlutterBinding` run on the development machine, rather than a device or browser. Because of this, they run faster and some functionality needs to be provided by mocks.
 

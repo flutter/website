@@ -10,7 +10,7 @@ category: release
 layout: blog
 ---
 
-### Flutter 3.3, a beautiful new app, work on improving performance, and a note of farewell
+## Flutter 3.3, a beautiful new app, work on improving performance, and a note of farewell
 
 Greetings from the beautiful Norwegian capital of Oslo, where members of the Flutter community are gathering for the [Flutter Vikings conference](https://fluttervikings.com/). Flutter Vikings is a two day community-driven developer event with three tracks of content from experts who have traveled from across the world. Over five thousand developers have registered so far, and while the in-person event is sold out, you can [watch all the sessions online for free](https://www.youtube.com/playlist?list=PL4dBIh1xps-EWXK28Qn9kiLK9-eXyqKLX).
 

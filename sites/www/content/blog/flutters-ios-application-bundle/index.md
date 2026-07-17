@@ -65,7 +65,7 @@ When you install the SDK, Flutter tools are cached on your machine. You can see 
 
 The following sections describe some of the files unique to Flutter’s iOS app bundles.
 
-## Flutter Engine framework bundle
+### Flutter Engine framework bundle
 
 The `Flutter.framework` directory, packaged as an [iOS framework bundle](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183i), includes:
 
@@ -75,13 +75,13 @@ The `Flutter.framework` directory, packaged as an [iOS framework bundle](https:/
 
 The buildbots generate the Flutter engine framework bundle, and the Flutter tools download and cache it on your machine.
 
-## AOT framework bundle
+### AOT framework bundle
 
 The `App.framework` bundle contains an AOT snapshot of all the Dart application code written by the user, as well as the Dart code for the Flutter framework and plugins, in `armv7s` and `aarch64` formats.
 
 During a release build, the compiler performs tree-shaking on the Dart code, so only the code that is actually used ends up in the bundle. The `gen_snapshot` tool cached on your machine generates the artifacts necessary to create the `App.framework` bundle.
 
-### AOT Snapshot
+#### AOT Snapshot
 
 The AOT snapshot library contains the ahead-of-time code compiled from Dart to machine native bits.
 

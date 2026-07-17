@@ -129,7 +129,7 @@ Soon after the 3.13 release, the [two_dimensional_scrollables](https://pub.dev/p
 
 ### Impeller
 
-### Android
+#### Android
 
 In this release, we are pleased to share that Impeller on Android is ready for preview feedback on the stable channel. Since early this year, the team has been hard at work on a Vulkan backend for Impeller, and this preview includes gathering feedback about Impeller’s characteristics on Vulkan-capable devices.
 
@@ -159,7 +159,7 @@ We are generally happy with our progress on Impeller’s fidelity and performanc
 
 Further, Impeller’s Vulkan backend enables additional debugging capabilities in “debug” builds beyond what is used with Skia, and these capabilities have additional runtime overhead. Therefore it’s important that feedback about Impeller’s performance is from a profile or release build, and should include timelines from DevTools and a comparison with the Skia backend on the same device. Finally, as always, we are very grateful for feedback that includes a small reproducible test case that demonstrates the issue.
 
-### Impeller performance, fidelity, and stability
+#### Impeller performance, fidelity, and stability
 
 In addition to the focus on the Vulkan backend, since the beginning of the year, the team has also made a number of improvements to text performance in Impeller that benefit both Android and iOS. In particular, we have made improvements to the management of Impeller’s glyph atlas and the way that text workloads are divided across the Engine’s UI and raster threads. As a result, users will notice less jank in text heavy workloads.
 
@@ -175,11 +175,11 @@ To support better performance on mobile devices with heterogeneous multiprocessi
 
 ### API and fidelity improvements
 
-### Impeller performance overlay
+#### Impeller performance overlay
 
 In previous releases, Flutter’s [performance overlay](https://docs.flutter.dev/perf/ui-performance#the-performance-overlay) feature wasn’t displayed with Impeller. This release fixes that issue. The performance overlay [now displays correctly](https://github.com/flutter/engine/pull/45259) with Impeller enabled.
 
-### Dithering is now displayed correctly
+#### Dithering is now displayed correctly
 
 In this release, the `Paint.enableDithering` property is set to true, and is deprecated as per [Flutter’s deprecation policy](https://docs.flutter.dev/release/compatibility-policy#deprecation-policy). Dithering is now enabled by default (developer-configurable dithering is no longer supported), and you will no longer see banding issues. For the full explanation of this change and the migration guide, see [the breaking change page](https://docs.flutter.dev/release/breaking-changes/paint-enableDithering) on docs.flutter.dev.
 

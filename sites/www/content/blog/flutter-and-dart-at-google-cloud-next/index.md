@@ -36,7 +36,7 @@ Very Good Ventures (VGV) showed how to create an AI-powered game with Gemini and
 **How to use Dart Frog and Google Cloud to share code**
 VGV showed how to get up and running quickly with [code sharing between your frontend and backend](https://dartfrog.vgv.dev/), bringing up a full-stack project and getting it running on both device and in Cloud Run in a matter of minutes.
 
-### In case you missed it
+## In case you missed it
 
 Check out these announcements from Cloud Next that we think have the potential to help Flutter and Dart developers more easily build AI features in your apps.
 
@@ -46,7 +46,7 @@ Check out these announcements from Cloud Next that we think have the potential t
 **Vertex Gemini Dart SDK private preview**
 The Vertex Gemini SDKs are a set of client SDKs for Firebase that support Dart, Kotlin, Swift, and JavaScript. They are meant to accelerate development with easy access to Vertex AI services. Flutter and Dart developers can request access to the private preview on this [Google form](https://docs.google.com/forms/d/e/1FAIpQLScIuowa37cp-yCCLOy9QAFYLVzBPXiU5x-mgENvVmn9OYLtYw/viewform).
 
-### Show us what you’re building
+## Show us what you’re building
 
 The future is bright for developers who want to build high quality cross-platform experiences powered by Google Cloud, and we want to see what you’re building. If you use Flutter with Firebase or any Google Cloud products or services, give us a shout on [Twitter](https://twitter.com/FlutterDev) and [LinkedIn](https://www.linkedin.com/showcase/flutterdevofficial/)!
 

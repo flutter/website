@@ -42,7 +42,7 @@ This happens especially when scrolling through the home page of the app. You sho
 
 Let’s look at what the Raster thread is doing.
 
-## Aside: UI thread versus Raster thread
+### Aside: UI thread versus Raster thread
 
 Actually, let’s first clarify what the Raster thread does.
 
