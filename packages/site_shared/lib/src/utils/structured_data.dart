@@ -51,7 +51,7 @@ Map<String, Object?> buildPageStructuredData({
           'description': normalizedDescription,
         'inLanguage': 'en',
         if (dateModified != null)
-          'dateModified': dateModified.toIso8601String(),
+          'dateModified': dateModified.toUtc().toIso8601String(),
         'isPartOf': {'@id': siteId},
         if (validBreadcrumbs != null) 'breadcrumb': {'@id': breadcrumbId},
       },
