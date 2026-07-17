@@ -1,0 +1,142 @@
+@use '../core/breakpoints';
+
+.tabs {
+  --text-width: 394px;
+  --anim-offset: 200px;
+
+  @keyframes slideup {
+    0%   { opacity: 0; }
+    100% { opacity: 1; top: 0px }
+  }
+
+  .tabs-header,
+  .tabs-footer {
+    margin-bottom: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    min-width: 100%;
+    flex-direction: column;
+
+    h2 {
+      font-size: 32px;
+      font-weight: var(--font-weight-normal);
+      max-width: 800px;
+      margin-bottom: 45px;
+    }
+  }
+
+  .tabs-footer {
+    margin-top: 40px;
+  }
+
+  .tabs-menu {
+    ul {
+      display: inline-block;
+      background-color: var(--grey-1);
+      overflow: hidden;
+      border-radius: var(--ui-border-radius);
+      text-wrap: nowrap;
+
+      li {
+        max-width: calc(100% / 3);
+        border: none;
+
+        &:hover {
+          background-color: var(--grey-3);
+          color: var(--grey-6);
+        }
+
+        &.active {
+          background-color: var(--blue-6);
+          color: white;
+        }
+      }
+    }
+
+    @include breakpoints.screen(lg) {
+      ul li {
+        max-width: 165px;
+      }
+    }
+  }
+
+  .tab-content {
+    display: none;
+    grid-template-columns: 1fr;
+    top: var(--anim-offset);
+    opacity: 0;
+    position: relative;
+
+    &.no-spy {
+      top: 0;
+    }
+
+    &.active {
+      display: grid;
+      animation-duration: 600ms;
+      animation-delay: 0ms;
+      animation-name: slideup;
+      animation-iteration-count: 1;
+      animation-timing-function: var(--ui-anim-func);
+      animation-fill-mode: forwards;
+    }
+
+    .media {      
+      img, video {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+
+    .text {
+      padding: var(--gutter-sm);
+
+      h3 {
+        font-size: var(--font-size-heading-2);
+        margin-bottom: var(--gutter-sm);
+        color: black;
+      }
+
+      p {
+        font-size: var(--font-size-heading-4);
+        margin-bottom: var(--spacer);
+      }
+    }
+  }
+
+  .extra-content {
+    display: none;
+    opacity: 0;
+
+    &.active {
+      display: block;
+      animation-duration: 600ms;
+      animation-delay: 0ms;
+      animation-name: slideup;
+      animation-iteration-count: 1;
+      animation-timing-function: var(--ui-anim-func);
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @include breakpoints.screen(lg) {
+    .tabs-menu {
+      ul li {
+        width: 165px;
+      }
+    }
+
+    .tab-content {
+      grid-template-columns: 1fr var(--text-width);
+      align-items: center;
+
+      .media {
+        img, video {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

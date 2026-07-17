@@ -56,5 +56,4 @@ class _ContactGroupsView extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion contact_groups_view

@@ -11,7 +11,7 @@ showBreadcrumbs: false
 Build in-app revenue with Google Play and App Store
 support for Flutter
 
-The the following resources can help get you started:
+The following resources can help get you started:
 
 * [Add in-app purchases to your Flutter app][] (codelab)
 

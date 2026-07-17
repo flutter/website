@@ -162,5 +162,4 @@ class ImageSection extends StatelessWidget {
     // #enddocregion image-asset
   }
 }
-
 // #enddocregion image-section

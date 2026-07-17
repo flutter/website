@@ -1,0 +1,201 @@
+@use '../core/breakpoints';
+
+body.monetization {
+
+  section.hero {
+    background-image: linear-gradient(35deg, #F3FCFF 10%, #93FAEE 80%);
+  }
+
+  #resources {
+    background-image: linear-gradient(145deg, #0654B2 20%, #28F5DE 80%);
+  }
+
+  #resources-1 {
+    background-image: linear-gradient(145deg, #0654B2 20%, #28F5DE 80%);
+  }
+
+  #resources-2 {
+    background-image: linear-gradient(145deg, #0654B2 30%, #A57DF7 90%);
+  }
+
+  #tabs {
+    padding-top: var(--spacer);
+    padding-bottom: var(--spacer);
+
+    .tabs {
+      .tabs-title {
+        font-weight: var(--font-weight-normal);
+        text-align: left;
+        font-size: 24px;
+        line-height: 32px;
+        margin: 48px 0;
+
+        @include breakpoints.screen(lg) {
+          padding: 0 84px;
+          font-size: 28px;
+          text-align: center;
+        }
+      }
+
+      .tabs-header {
+        display: block;
+
+        @include breakpoints.screen(lg) {
+          display: flex;
+        }
+
+        .tabs-menu {
+          @include breakpoints.screen(lg) {
+            width: unset !important;
+          }
+
+          display: block;
+          padding: 0;
+
+          .tabs-wrapper {
+            background-color: var(--grey-1);
+            overflow: scroll;
+            display: block;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            border-radius: 0;
+
+            @include breakpoints.screen(lg) {
+              display: inline-block;
+              overflow: hidden;
+              border-radius: 24px;
+            }
+
+            li {
+              @include breakpoints.screen(lg) {
+                padding: 0 24px !important;
+              }
+
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.25);
+              }
+
+              min-width: 140px;
+              font-size: 14px;
+              max-width: unset;
+              text-wrap: nowrap;
+              padding: 0 16px;
+            }
+
+            li.active {
+              @include breakpoints.screen(lg) {
+                border: none;
+                border-radius: var(--ui-border-radius) !important;
+              }
+
+              background-color: var(--blue-6);
+              color: #ffffff;
+            }
+          }
+
+          .tabs-wrapper::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+
+      .tabs-content {
+        .tab-content {
+          flex-direction: column;
+
+          @include breakpoints.screen(lg) {
+            flex-direction: row;
+          }
+
+          &.active {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+
+            @include breakpoints.screen(lg) {
+              gap: 139px;
+            }
+          }
+
+          .a-wrapper {
+            display: flex;
+            justify-content: center;
+
+            @include breakpoints.screen(lg) {
+              justify-content: left;
+            }
+          }
+
+          .btn {
+            height: 44px;
+          }
+
+          .text {
+            max-width: 500px;
+            padding: 0;
+
+            .title {
+              font-size: 24px;
+              line-height: 36px;
+              font-weight: var(--font-weight-bold);
+              margin-bottom: 24px;
+
+              @include breakpoints.screen(lg) {
+                font-size: 28px;
+                line-height: 38px;
+              }
+            }
+
+            .quiet {
+              color: #ffffff;
+            }
+
+            .white-btn {
+              border: 1px solid white;
+              color: #ffffff;
+            }
+          }
+
+          img {
+            /* height: 288px; */
+            max-width: 500px;
+
+            @include breakpoints.screen(lg) {
+              float: right;
+              /* height: 546px; */
+            }
+          }
+        }
+      }
+
+      .first-tab {
+        color: var(--green-3);
+      }
+
+      .second-tab {
+        color: var(--violet-4);
+      }
+
+      .third-tab {
+        color: var(--coral);
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      @include breakpoints.screen(lg) {
+        li {
+          height: 48px;
+          font-size: 20px;
+          max-width: 330px;
+          width: max-content;
+        }
+      }
+
+      li.active {
+        background-color: var(--blue-5);
+      }
+    }
+  }
+}

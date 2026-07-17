@@ -55,6 +55,13 @@ Future<int> _refreshExcerpts({
   bool dryRun = false,
   bool failOnUpdate = false,
 }) async {
+  if (!site.supportsCodeExcerpts) {
+    stderr.writeln(
+      'Error: The ${site.name} site does not support code excerpts.',
+    );
+    return 1;
+  }
+
   final updater = Updater(
     baseSourcePath: path.join(repositoryRoot, 'examples'),
     defaultPlasterContent: '···',
@@ -63,12 +70,14 @@ Future<int> _refreshExcerpts({
       // Workaround for https://github.com/dart-lang/dart_style/issues/1644
       // to remove extra new lines after block close.
       SimpleReplaceTransform(RegExp(r'[\r\n]+$'), ''),
+      // Compress extra empty lines, working around formatting oddities.
+      SimpleReplaceTransform(RegExp(r'\n{3,}'), '\n\n'),
     ],
   );
 
   print('Running the code excerpt updater...');
   final updateResult = await updater.update(
-    path.join(repositoryRoot, site.directory, 'src', 'content'),
+    path.join(repositoryRoot, site.contentDirectory),
     makeUpdates: !dryRun,
   );
 

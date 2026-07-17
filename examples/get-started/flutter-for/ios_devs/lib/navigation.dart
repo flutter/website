@@ -96,5 +96,4 @@ class DetailsPage extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion details-page

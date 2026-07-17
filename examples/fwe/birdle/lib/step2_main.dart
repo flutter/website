@@ -65,8 +65,8 @@ class Tile extends StatelessWidget {
     // #enddocregion Tile-Container
   }
 }
-
 // #enddocregion Tile
+
 void docRegionTileUsage() {
   // #docregion TileUsage
   // main.dart line ~16

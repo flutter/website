@@ -86,6 +86,5 @@ class SetupFlowState extends State<SetupFlow> {
       title: const Text('Bulb Setup'),
     );
   }
-
   // #enddocregion PromptUser
 }

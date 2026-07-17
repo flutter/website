@@ -6,8 +6,7 @@ import '../../../utils/command.dart';
 import '../../../utils/result.dart';
 
 class TodoListViewModel extends ChangeNotifier {
-  TodoListViewModel({required TodoRepository todoRepository})
-    : _todoRepository = todoRepository {
+  TodoListViewModel({required this._todoRepository}) {
     load = Command0<void>(_load)..execute();
     add = Command1<void, String>(_add);
     delete = Command1<void, int>(_delete);
@@ -83,6 +82,5 @@ class TodoListViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-
   // #enddocregion Delete
 }

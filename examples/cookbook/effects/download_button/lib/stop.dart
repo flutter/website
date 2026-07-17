@@ -158,6 +158,5 @@ class DownloadButton extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion StopIcon
 }

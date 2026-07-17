@@ -35,6 +35,5 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     return TextField(focusNode: myFocusNode);
   }
-
   // #enddocregion Build
 }

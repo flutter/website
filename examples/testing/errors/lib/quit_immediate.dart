@@ -1,6 +1,6 @@
 // ignore_for_file: directives_ordering
 
-import './my_app.dart';
+import 'my_app.dart';
 
 // #docregion on-error-main
 import 'dart:io';

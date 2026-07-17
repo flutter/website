@@ -585,7 +585,7 @@ Let us know if there are issues preventing you from using the new inspector by [
 
 By default, DevTools limits the widgets displayed in the widget tree to those created
 in the project's root directory. To see all widgets, including those created outside
-of a the project's root directory, toggle on [Show implementation widgets][]
+of a project's root directory, toggle on [Show implementation widgets][]
 
 In order to include other widgets in the default widget tree, a parent directory of theirs must
 be added to the Package Directories.

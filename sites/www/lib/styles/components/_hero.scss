@@ -1,0 +1,97 @@
+@use '../core/breakpoints';
+
+body.interior {
+  section.hero {
+    padding: var(--gutter-md) 0;
+    overflow: hidden;
+    background-color: transparent;
+
+    .container {
+      text-align: center;
+    }
+
+    --img-width: 600px;
+
+    .mantle {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gutter-md);
+      align-items: center;
+
+      &.full {
+        grid-template-columns: 1fr !important;
+
+        .text {
+          width: 100%;
+          text-align: center !important;
+
+          h1 {
+            max-width: 100%;
+            margin: 0 auto;
+          }
+        }
+      }
+      
+      .text {
+        text-align: center;
+        order: 2;
+
+        h1 {
+          max-width: 485px;
+          margin: 0 auto;
+          line-height: 1; /* tighter */
+          font-size: var(--font-size-heading-1);
+        }
+
+        h2 {
+          font-size: var(--font-size-heading-3);
+          margin-top: var(--spacer-md);
+          max-width: auto;
+        }
+      }
+
+      .media {
+        order: 1;
+
+        img {
+          width: 100%;
+          max-width: var(--img-width);
+          margin: 0 auto;
+        }
+      }
+    }
+
+    h2 {
+      font-size: var(--font-size-heading-2);
+      font-weight: var(--font-weight-normal);
+      max-width: 925px;
+      margin: var(--gutter-lg) auto var(--spacer);
+    }
+
+    @include breakpoints.screen(lg) {
+      .mantle {
+        grid-template-columns: 1fr minmax(0, var(--img-width));
+        gap: var(--gutter-md);
+  
+        .text {
+          text-align: left;
+          order: 1; 
+          padding-left: var(--gutter);
+  
+          h1 {
+            margin: 0;
+            font-size: 70px;
+          }
+        }
+  
+        .media { 
+          order: 2; 
+
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@use '../core/breakpoints';
+
+#notification {
+  &.module {
+    padding-bottom: 0;
+  }
+
+  .notification {
+    .notification-message {
+      font-family: var(--font-ui);
+      font-size: var(--font-size-heading-4);
+      background-color: var(--blue-6);
+      border-radius: 6px;
+      padding: var(--gutter-sm);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 50px;
+        margin-right: var(--gutter-sm);
+      }
+
+      a {
+        color: white;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      i svg {
+        font-size: 0.7em;
+      }
+    }
+
+    .notification-nav {
+      padding-left: 2rem;
+
+      /* Only one for this launch */
+      display: none;
+
+      span {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: var(--spacer-sm);
+
+        a {
+          background-color: white;
+          border-radius: 100%;
+          display: block;
+          height: 100%;
+          width: 100%;
+          border: 3px solid #dadcdf;
+          transition: border-color 200ms ease;
+        }
+
+        &.active,
+        &:hover {
+          a {
+            border: 3px solid var(--green-1);
+          }
+        }
+      }
+    }
+
+    @include breakpoints.screen(lg) {
+      padding: var(--gutter-sm) 32px;
+
+      img {
+        width: 60px;
+      }
+    }
+  }
+}

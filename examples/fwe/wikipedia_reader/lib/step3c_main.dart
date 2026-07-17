@@ -31,5 +31,4 @@ class ArticleViewModel extends ChangeNotifier {
     notifyListeners();
   }
 }
-
 // #enddocregion ArticleViewModel

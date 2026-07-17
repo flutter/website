@@ -1,6 +1,7 @@
 // #docregion import
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 // #enddocregion import
 
 class VirtualDisplayWidget extends StatelessWidget {
@@ -21,6 +22,5 @@ class VirtualDisplayWidget extends StatelessWidget {
       creationParamsCodec: const StandardMessageCodec(),
     );
   }
-
   // #enddocregion virtual-display
 }

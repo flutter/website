@@ -37,5 +37,4 @@ class MainAppViewModel extends ChangeNotifier {
     super.dispose();
   }
 }
-
 // #enddocregion MainAppViewModel

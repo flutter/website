@@ -1,0 +1,228 @@
+@use '../core/breakpoints';
+
+body.buildWithAI {
+  section.hero {
+    background-image: linear-gradient(35deg, #dcf5ff 10%, #f3fcff 60%);
+  }
+
+  #notification.module {
+    padding-bottom: 0 !important;
+    padding-top: var(--gutter);
+  }
+
+  .tabs {
+    .tab-content {
+      @include breakpoints.screen(lg) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .media {
+      @include breakpoints.screen(lg) {
+        max-width: 330px !important;
+
+        margin: 0 5rem 0 auto;
+      }
+    }
+
+    .tabs-menu {
+      max-width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+
+      ul > li {
+        max-width: unset !important;
+        width: auto !important;
+      }
+    }
+  }
+
+  #tabs {
+    padding-bottom: 2rem !important;
+
+    .tabs-header {
+      margin-bottom: 0;
+    }
+
+    .tabs-menu {
+      ul {
+        background-color: transparent !important;
+        display: flex !important;
+        gap: 1rem;
+        
+        li {
+          background-color: var(--grey-1);
+          border-radius: var(--ui-border-radius);
+          
+          &.active {
+            background-color: var(--blue-6);
+          }
+        }
+      }
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: var(--font-weight-normal);
+      max-width: 800px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .alternating-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      &.reversed {
+        flex-direction: row-reverse;
+      }
+      
+      .media {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+        
+        img.genkit-logo {
+          max-width: 220px !important;
+          border-radius: 50%;
+          transform: translate(-50px, -10px);
+        }
+      }
+      
+      .text {
+        flex: 1;
+        padding: 6rem;
+        
+        h3 {
+          font-size: var(--font-size-heading-2);
+          margin-bottom: var(--gutter-sm);
+          color: black;
+        }
+        
+        p {
+          font-size: var(--font-size-heading-4);
+          margin-bottom: var(--spacer);
+        }
+      }
+      
+      @media (max-width: 1023px) {
+        flex-direction: column !important;
+        text-align: center;
+        
+        &.reversed {
+          flex-direction: column !important;
+        }
+        
+        .text {
+          padding: 1rem 0;
+        }
+        
+        .media {
+          margin-bottom: 2rem;
+          
+          img.genkit-logo {
+            max-width: 200px !important;
+          }
+        }
+      }
+    }
+  }
+
+  #feature-columns {
+    padding-top: 0;
+
+    .feature-column-container {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        margin-top: auto;
+      }
+    }
+  }
+
+  #feature-grid {
+    background: linear-gradient(
+      124.64deg,
+      var(--blue-5) 0%,
+      var(--violet-4) 100%
+    );
+  }
+
+  #find-inspiration-carousel {
+    padding: 56px 0;
+    background-color: transparent;
+
+    hgroup {
+      padding-left: 0 !important;
+    }
+
+    @include breakpoints.screen(lg) {
+      padding: var(--gutter-md) 0;
+    }
+
+    .carousel {
+      .carousel-slider {
+        padding: 20px 0 50px;
+
+        .story-item {
+          min-width: 222px;
+          max-width: 222px;
+
+          &:first-child {
+            margin-left: var(--gutter);
+
+            @include breakpoints.screen(xl) {
+              margin-left: var(--gutter-auto);
+            }
+          }
+
+          img {
+            min-width: 222px;
+            max-width: 222px;
+          }
+
+          .text {
+            padding-right: 0;
+
+            h3 {
+              font-size: 24px;
+            }
+          }
+
+          .learn-more-button {
+            display: none;
+          }
+
+          a {
+            cursor: pointer;
+
+            &:hover {
+              color: var(--blue-6);
+            }
+          }
+        }
+      }
+
+      .carousel-progress {
+        .carousel-completed {
+          height: 4px;
+          border-radius: 4px;
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+}

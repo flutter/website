@@ -1,8 +1,8 @@
 ---
 title: Deprecate `TextInputConnection.setStyle`
 description: >-
-  The `TextInputConnection.setStyle` method has been deprecated in favor
-  of the `TextInputConnection.updateStyle` method.
+  The `TextInputConnection.setStyle` method has been deprecated
+  in favor of the `TextInputConnection.updateStyle` method.
 ---
 
 {% render "docs/breaking-changes.md" %}
@@ -15,19 +15,21 @@ description: >-
 
 ## Context
 
-The previous `setStyle` method did not support `letterSpacing`, `wordSpacing`,
+The previous `setStyle` method didn't support `letterSpacing`, `wordSpacing`,
 or `lineHeight`. This caused visual misalignment of the selection highlight
 and IME caret when these properties were used.
 
-The replacement `updateStyle` method (via `TextInputStyle`) supports these
-properties, ensuring the system input is synchronized with the rendered text.
+The replacement `updateStyle` method uses
+`TextInputStyle` to support these properties,
+ensuring the system input is synchronized with the rendered text.
 
 ## Migration guide
 
-Authors of custom text input clients should replace calls to
-`TextInputConnection.setStyle` with `TextInputConnection.updateStyle`.
+If you author a custom text input client,
+replace calls to `TextInputConnection.setStyle`
+with `TextInputConnection.updateStyle`.
 
-### Code before migration:
+### Code before migration
 
 ```dart
 connection.setStyle(
@@ -39,7 +41,7 @@ connection.setStyle(
 );
 ```
 
-### Code after migration:
+### Code after migration
 
 ```dart
 connection.updateStyle(
@@ -58,18 +60,18 @@ connection.updateStyle(
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: Not yet
+Landed in version: 3.43.0-0.1.pre<br>
+In stable release: 3.44
 
 ## References
 
 Relevant PR:
 
-* [PR 180436][]
+* [Fix IME and selection by syncing more text styles][pr-180436]
 
 Relevant issues:
 
-* [Issue 161592][]
+* [Incorrect position of Japanese predictive conversion popup in TextFormField using maxLines on the Web][issue-161592]
 
-[PR 180436]: {{site.repo.flutter}}/pull/180436
-[Issue 161592]: {{site.repo.flutter}}/issues/161592
+[pr-180436]: {{site.repo.flutter}}/pull/180436
+[issue-161592]: {{site.repo.flutter}}/issues/161592

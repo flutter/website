@@ -470,6 +470,8 @@
   children:
     - title: Use packages & plugins
       permalink: /packages-and-plugins/using-packages
+    - title: Package dependency management
+      permalink: /packages-and-plugins/dependency-management
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
     - title: Swift Package Manager
@@ -620,6 +622,13 @@
           permalink: /add-to-app/ios/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/ios/add-flutter-screen
+    - title: Add to an macOS app
+      permalink: /add-to-app/macos
+      children:
+        - title: Set up macOS project
+          permalink: /add-to-app/macos/project-setup
+        - title: Add a single Flutter screen
+          permalink: /add-to-app/macos/add-flutter-screen
     - title: Add to a web app
       permalink: /platform-integration/web/embedding-flutter-web
     - title: Debug embedded Flutter module
@@ -641,8 +650,6 @@
       permalink: /tools/android-studio
     - title: Visual Studio Code
       permalink: /tools/vs-code
-    - title: Antigravity
-      permalink: /tools/antigravity
     - title: DevTools
       permalink: /tools/devtools
       children:

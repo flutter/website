@@ -124,7 +124,7 @@ class GamePage extends StatelessWidget {
 }
 ```
 
-Then update your `MainPage` widget to create and
+Then update your `MainApp` widget to create and
 display a `GamePage` widget instead of "Hello World!".
 
 <?code-excerpt "fwe/birdle/lib/step3_main.dart (MainApp)"?>
@@ -253,8 +253,10 @@ Now, it looks more like the following (abridged) figure:
 :::note Challenge
 
 Add a `Tile` to each row for each letter allowed in the guess.
-The `guess` variable in the loop is a [record][] with the type
+Each element in `guess` is a [record][] with the type
 `({String char, HitType type})`.
+
+Use a nested loop to iterate over the letters in each guess.
 
 **Solution:**
 

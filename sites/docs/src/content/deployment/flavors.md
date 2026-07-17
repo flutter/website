@@ -280,7 +280,7 @@ names for two product flavors called `staging` and
 
     * To see more information for `Flavors p...` or
       `Flavors s...`, long-press the icon for one of them
-      and and select `App info`.
+      and select `App info`.
 
 [Launch a flavor]: #launching-your-app-flavors
 
@@ -386,10 +386,9 @@ configure for a specific Android product flavor, see
 Android's [Configure build variants][].
 
 While it is possible to set `abiFilters` in product flavors, it is not
-recommended. Instead, favor `abiFilters` in build types. When setting
-`abiFilters` in product flavors, one must use the
-`-Pdisable-abi-filtering` flag when running `flutter build` or
-`flutter run`.
+recommended. Prefer configuring `abiFilters` in `defaultConfig` when possible.
+When setting `abiFilters` in product flavors, pass
+`-Pdisable-abi-filtering=true` when running `flutter build` or `flutter run`.
 
 [Configure build variants]: https://developer.android.com/build/build-variants
 

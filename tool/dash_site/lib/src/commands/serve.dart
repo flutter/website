@@ -26,9 +26,14 @@ final class ServeSiteCommand extends Command<int> {
 
   @override
   Future<int> run() async {
-    final release = argResults!.flag('release');
+    if (installJasprCliIfNecessary() case final jasprInstallResult
+        when jasprInstallResult != 0) {
+      return jasprInstallResult;
+    }
 
-    installJasprCliIfNecessary();
+    final release = argResults!.flag('release');
+    final selectedSite = this.selectedSite;
+    final jasprPorts = selectedSite.jasprPorts;
 
     final process = await Process.start(
       Platform.resolvedExecutable,
@@ -38,6 +43,9 @@ final class ServeSiteCommand extends Command<int> {
         'run',
         'jaspr_cli:jaspr',
         'serve',
+        '--port=${jasprPorts.serve}',
+        '--web-port=${jasprPorts.webDev}',
+        '--proxy-port=${jasprPorts.proxy}',
         // Use build_web_compiler options specified in build.yaml instead of
         // those specified by jaspr_cli.
         '--no-managed-build-options',

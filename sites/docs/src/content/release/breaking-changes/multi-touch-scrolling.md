@@ -11,7 +11,7 @@ description: >
 
 `ScrollBehavior`s now allow or disallow scrolling speeds to be affected by the
 number of pointers on the screen. `ScrollBehavior.multitouchDragStrategy`, by
-default, prevents multiple pointers interacting wih the scrollable at the same
+default, prevents multiple pointers interacting with the scrollable at the same
 time from affecting the speed of scrolling.
 
 ## Context
