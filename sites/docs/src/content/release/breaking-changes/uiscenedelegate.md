@@ -895,8 +895,8 @@ migrate it to UIKit's scene-based lifecycle as follows:
     `application:didFinishLaunchingWithOptions:` during the
     `scene:willConnectToSession:options:` callback.
 
- 1. Migrate other deprecated APIs to support
-    multiple scenes in the future.
+ 1. Migrate other deprecated APIs to properly
+    access the `viewController`, `screen`, or `window`.
 
     | Deprecated API                     | UIScene replacement           |
     |:-----------------------------------|:------------------------------|
