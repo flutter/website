@@ -1196,3 +1196,18 @@
     - "Small-to-medium Business"
     - "Enterprise"
   options_GCP_partner: false
+  - title: "Yudiz Solutions Ltd"
+  summary: "Yudiz Solutions is a technology services company with 16+ years of experience, specializing in mobile app development with strong expertise in Flutter and cross-platform solutions."
+  card: "images/third_party/partners/Yudiz_logo.png"
+  external_url: "https://www.yudiz.com/mobile-app-development/"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
