@@ -1,6 +1,8 @@
 ---
 title: "Updates on Flutter and Firebase"
-description: "Updated Firebase plugins for higher quality and a new site with Flutter-specific docs, snippets and videos"
+description: >-
+  Updated Firebase plugins for higher quality and a new site with
+  Flutter-specific docs, snippets and videos
 publishDate: 2020-08-19
 author: csells
 image: images/0v4wFYjvXB2iCem55.webp

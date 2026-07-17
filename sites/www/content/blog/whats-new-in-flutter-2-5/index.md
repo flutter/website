@@ -1,6 +1,8 @@
 ---
 title: "What’s new in Flutter 2.5"
-description: "Performance improvements, DevTools updates, new Material You support, a new app template, and more!"
+description: >-
+  Performance improvements, DevTools updates, new Material You support, a new
+  app template, and more!
 publishDate: 2021-09-08
 author: csells
 image: images/0esYsdKzKL64130ln.webp

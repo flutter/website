@@ -1,6 +1,8 @@
 ---
 title: "Flutter: Don’t Fear the Garbage Collector"
-description: "Flutter uses Dart as a development language and as a runtime. Dart’s runtime is ever-present, both in debug and release modes, but there…"
+description: >-
+  Flutter uses Dart as a development language and as a runtime. Dart’s runtime
+  is ever-present, both in debug and release modes, but there…
 publishDate: 2019-01-04
 author: mjohnsullivan
 image: images/1oVVba1QhXL1hUBKE9sfenw.webp

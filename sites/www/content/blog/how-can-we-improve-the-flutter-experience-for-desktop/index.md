@@ -1,6 +1,8 @@
 ---
 title: "How can we improve the Flutter experience for desktop?"
-description: "Insights and priorities based on 2022 Flutter desktop user research by Mindy Hoover and Chris Bracken"
+description: >-
+  Insights and priorities based on 2022 Flutter desktop user research by Mindy
+  Hoover and Chris Bracken
 publishDate: 2022-12-12
 author: melyndahoover
 image: images/1VbmSF-liAOyeParju2Y4kw.webp

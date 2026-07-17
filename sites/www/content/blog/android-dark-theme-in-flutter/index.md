@@ -1,6 +1,8 @@
 ---
 title: "Android Dark Theme in Flutter"
-description: "A week ago at Google I/O 2019, the Android team announced support in Android Q for Dark Theme, a system-wide dark UI mode that is toggled…"
+description: >-
+  A week ago at Google I/O 2019, the Android team announced
+  support in Android Q for Dark Theme
 publishDate: 2019-05-15
 author: matthew-carroll
 image: images/1wogDV86zrS8BNYI-8Th-TA.jpeg

@@ -1,6 +1,7 @@
 ---
 title: "What’s new in Flutter 3.41"
-description: "Empowering the community"
+description: >-
+  Empowering the community
 publishDate: 2026-02-11
 author: itsjustkevin
 image: images/1jmKuW7ItWRJAHNABfTEhHA.gif

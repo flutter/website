@@ -1,6 +1,7 @@
 ---
 title: "Dart & Flutter DevTools Extensions"
-description: "A guide for building custom tooling in Dart & Flutter DevTools"
+description: >-
+  A guide for building custom tooling in Dart & Flutter DevTools
 publishDate: 2023-11-15
 author: kenzieschmoll
 image: images/1JsdgKjxlVmm5EAFfXvQ2yA.webp

@@ -1,6 +1,8 @@
 ---
 title: "Unleash new AI capabilities for Flutter in Firebase Studio"
-description: "Flutter development just got a lot smarter in Firebase Studio! At I/O Connect India, we unveiled new AI-powered features designed to give…"
+description: >-
+  Flutter development just got a lot smarter in Firebase Studio! At I/O Connect
+  India, we unveiled new AI-powered features designed to give…
 publishDate: 2025-07-23
 author: antfitch
 image: images/1lPy6kRkj2N5ybEhHIKjbVw.webp

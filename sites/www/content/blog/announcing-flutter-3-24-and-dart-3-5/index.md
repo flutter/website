@@ -1,6 +1,7 @@
 ---
 title: "Announcing Flutter 3.24 and Dart 3.5"
-description: "An early look at Flutter GPU, web enhancements, and more!"
+description: >-
+  An early look at Flutter GPU, web enhancements, and more!
 publishDate: 2024-08-06
 author: mit-mit
 image: images/1jzRGig761LnPlvokq2FaVA.gif

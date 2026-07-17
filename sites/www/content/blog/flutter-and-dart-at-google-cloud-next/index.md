@@ -1,6 +1,8 @@
 ---
 title: "Flutter and Dart at Google Cloud Next"
-description: "In case you missed it, the Flutter team attended Google Cloud Next for the first time this past week, a testament to Flutter’s growing…"
+description: >-
+  In case you missed it, the Flutter team attended Google Cloud Next for the
+  first time this past week, a testament to Flutter’s growing…
 publishDate: 2024-04-16
 author: kkboateng
 image: images/0mlHluTwnXfWI-Yzy.webp

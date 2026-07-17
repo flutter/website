@@ -1,6 +1,7 @@
 ---
 title: "Announcing Flutter 2.8"
-description: "A new release of Flutter: and a look back on a year of growth"
+description: >-
+  A new release of Flutter: and a look back on a year of growth
 publishDate: 2021-12-08
 author: timsneath
 image: images/0_hVZ_qoWPxzQK3ws.webp

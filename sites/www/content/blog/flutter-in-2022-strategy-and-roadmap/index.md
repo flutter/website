@@ -1,6 +1,7 @@
 ---
 title: "Flutter in 2022: strategy and roadmap"
-description: "Areas of focus for Flutter as we build growth and momentum"
+description: >-
+  Areas of focus for Flutter as we build growth and momentum
 publishDate: 2022-02-09
 author: timsneath
 image: images/1_CcfyhAWUIV8pWwuvdoSPA.webp

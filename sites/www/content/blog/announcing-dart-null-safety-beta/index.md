@@ -1,6 +1,7 @@
 ---
 title: "Announcing Dart null safety beta"
-description: "Beginning the journey to migrate packages to a sound, safer state"
+description: >-
+  Beginning the journey to migrate packages to a sound, safer state
 publishDate: 2020-11-19
 author: mit-mit
 image: images/1kr-aQjGvnhY0JDCx1CGzRg.webp

@@ -1,6 +1,7 @@
 ---
 title: "What’s new in Flutter 3.24"
-description: "Unleashing Flutter GPU, Multi-View Embedding, and More"
+description: >-
+  Unleashing Flutter GPU, Multi-View Embedding, and More
 publishDate: 2024-08-06
 author: itsjustkevin
 image: images/0bdcb6KGonosfPZ6m.webp

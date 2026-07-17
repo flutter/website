@@ -1,6 +1,7 @@
 ---
 title: "Introducing the Flutter Consulting Directory"
-description: "Where organizations can find consultants to help build their next application"
+description: >-
+  Where organizations can find consultants to help build their next application
 publishDate: 2023-09-13
 author: leighajarett
 image: images/1m5eYW0Qgmdse1bpkqbsPLQ.webp

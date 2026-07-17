@@ -1,6 +1,7 @@
 ---
 title: "GSoC ’21: Creating a desktop sample for Flutter"
-description: "by Abdullah Deshmukh"
+description: >-
+  by Abdullah Deshmukh
 publishDate: 2021-08-22
 author: abd99
 image: images/1aRiqWvnUYD-cSbGhxTnUsw.jpeg

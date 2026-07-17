@@ -1,6 +1,7 @@
 ---
 title: "Announcing Flutter 1.12: What a year!"
-description: "Posted by Chris Sells, Product Manager, Flutter developer experience"
+description: >-
+  Posted by Chris Sells, Product Manager, Flutter developer experience
 publishDate: 2019-12-11
 author: csells
 image: images/1sW6TueDcNzw806cjigLJaA.webp

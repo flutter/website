@@ -1,6 +1,8 @@
 ---
 title: "Landing Flutter 3.22 and Dart 3.4 at Google I/O 2024"
-description: "Major milestones for Flutter web apps, graphics performance upgrades, productivity experiments, and more"
+description: >-
+  Major milestones for Flutter web apps, graphics performance upgrades,
+  productivity experiments, and more
 publishDate: 2024-05-14
 author: mit-mit
 image: images/1Mq-Uj8c8l7rrpPxYQ6Gemw.gif

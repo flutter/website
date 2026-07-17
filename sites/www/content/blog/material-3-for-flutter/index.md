@@ -1,6 +1,8 @@
 ---
 title: "Material 3 for Flutter"
-description: "Sherlock Holmes and Dr Watson; peanut butter and jam; Flutter and Material! These matches are made in heaven!"
+description: >-
+  Sherlock Holmes and Dr Watson; peanut butter and jam; Flutter and Material!
+  These matches are made in heaven!
 publishDate: 2023-01-18
 author: esouthren
 image: images/0RuCmIqSnK0G0kHmy.webp

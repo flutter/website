@@ -1,6 +1,8 @@
 ---
 title: "When should I useAnimatedBuilder or AnimatedWidget?"
-description: "We know you have many choices when you fly, I mean animate, in Flutter, so thank you for choosing AnimatedBuilder and AnimatedWidget. Wait…"
+description: >-
+  We know you have many choices when you fly, I mean animate, in Flutter, so
+  thank you for choosing AnimatedBuilder and AnimatedWidget. Wait…
 publishDate: 2020-01-19
 author: efortuna
 image: images/1BdRzZMnfFtwe0Wn1dxWp4g.gif

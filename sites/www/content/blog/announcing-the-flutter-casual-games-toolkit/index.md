@@ -1,6 +1,7 @@
 ---
 title: "Announcing the Flutter Casual Games Toolkit"
-description: "A starter kit of resources to help you get from concept to launch"
+description: >-
+  A starter kit of resources to help you get from concept to launch
 publishDate: 2022-05-12
 author: zoeyfan
 image: images/1rIXhQTkBae35i5YkSN8soQ.webp

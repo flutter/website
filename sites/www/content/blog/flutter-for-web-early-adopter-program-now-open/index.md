@@ -1,6 +1,7 @@
 ---
 title: "Flutter for web early adopter program now open"
-description: "Ready for active development of production-quality web apps"
+description: >-
+  Ready for active development of production-quality web apps
 publishDate: 2019-07-25
 author: kevmoo
 image: images/1HcggEjhP_Li6Tt7KIzB10g.webp

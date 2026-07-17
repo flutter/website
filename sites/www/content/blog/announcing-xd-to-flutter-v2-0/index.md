@@ -1,6 +1,7 @@
 ---
 title: "Announcing XD to Flutter v2.0!"
-description: "Giving designers a fast path to production Flutter code"
+description: >-
+  Giving designers a fast path to production Flutter code
 publishDate: 2021-04-29
 author: gskinner
 image: images/1OoVDCYfw18QB91Fpe5jDAg.webp

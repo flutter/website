@@ -1,6 +1,8 @@
 ---
 title: "Supporting six platforms with two keyboards"
-description: "Developing Flutter applications for Android, iOS, the web, Windows, macOS, and Linux without losing your sanity"
+description: >-
+  Developing Flutter applications for Android, iOS, the web, Windows, macOS, and
+  Linux without losing your sanity
 publishDate: 2022-12-06
 author: domesticmouse
 image: images/1RQs5hWCyE30nkyfsVqDb0A.jpeg

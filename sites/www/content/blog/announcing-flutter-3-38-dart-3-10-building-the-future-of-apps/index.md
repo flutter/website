@@ -1,6 +1,9 @@
 ---
 title: "Announcing Flutter 3.38 & Dart 3.10: Building the future of apps"
-description: "Hi, Flutter community! My name is Emma Twersky, and I am unbelievably excited to be your new lead for Flutter and Dart DevRel. I’m not just…"
+description: >-
+  Hi, Flutter community!
+  My name is Emma Twersky, and I am unbelievably excited to be
+  your new lead for Flutter and Dart DevRel.
 publishDate: 2025-11-12
 author: twerske
 image: images/1DwdxTpj5OEQzUzyj4lq6_A.gif

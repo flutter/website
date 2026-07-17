@@ -1,6 +1,8 @@
 ---
 title: "Directional animations with built-in explicit animations"
-description: "Hi! In our previous episodes, we learned how to do some awesome animations using Flutter’s implicit animations. AnimatedFoo and…"
+description: >-
+  Hi! In our previous episodes, we learned how to do some awesome animations
+  using Flutter’s implicit animations. AnimatedFoo and…
 publishDate: 2020-01-10
 author: fitzface
 image: images/01xmX3Sfp_rLOAwwl.webp

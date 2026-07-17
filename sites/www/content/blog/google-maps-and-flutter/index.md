@@ -1,6 +1,8 @@
 ---
 title: "Google Maps and Flutter"
-description: "This article will show you step-by-step how to add a Google Map widget to your Flutter application."
+description: >-
+  This article will show you step-by-step how to add a Google Map widget to your
+  Flutter application.
 publishDate: 2018-12-14
 author: kenzieschmoll
 image: images/14dSyF9z9lAYvHVxFPS_oiw.webp

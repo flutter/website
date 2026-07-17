@@ -1,6 +1,8 @@
 ---
 title: "Flutter’s multiplatform value for agentic development"
-description: "The fundamental value of multiplatform development with Flutter lies in building apps that support multiple platforms with just a single…"
+description: >-
+  The fundamental value of multiplatform development with Flutter lies in
+  building apps that support multiple platforms with just a single…
 publishDate: 2026-05-18
 author: mit-mit
 image: images/1aotSzcGPZg3gYqhwDy4LWQ.webp

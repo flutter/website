@@ -1,6 +1,10 @@
 ---
 title: "Announcing our new Dart and Flutter Getting Started experience"
-description: "When I joined the Dash DevRel team, my manager gave me an onboarding doc which started like this: “Your new job in one sentence: Improve…"
+description: >-
+  When I joined the Dash DevRel team,
+  my manager gave me an onboarding doc which started like this:
+  "Your new job in one sentence:
+  Improve the lives of Dart and Flutter developers."
 publishDate: 2026-02-03
 author: ericwindmill
 image: images/1rHBScksI6g6at1HsqSuPhA.webp

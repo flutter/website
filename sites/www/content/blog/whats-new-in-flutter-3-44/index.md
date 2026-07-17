@@ -1,6 +1,7 @@
 ---
 title: "What’s new in Flutter 3.44"
-description: "Empowering developers at Google I/O 2026"
+description: >-
+  Empowering developers at Google I/O 2026
 publishDate: 2026-05-20
 author: khanhnwin
 image: images/1vZ-dmpSHSo3nF0ChZDb02A.gif

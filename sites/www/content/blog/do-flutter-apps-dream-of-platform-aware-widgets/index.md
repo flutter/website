@@ -1,6 +1,7 @@
 ---
 title: "Do Flutter apps dream of platform aware widgets?"
-description: "Agnostic layout with platform specific widgets"
+description: >-
+  Agnostic layout with platform specific widgets
 publishDate: 2018-03-01
 author: swavkulinski
 image: images/1xgjvZHIs2PUHXRrn8COFRw.webp

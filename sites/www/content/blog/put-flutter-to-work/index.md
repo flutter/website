@@ -1,6 +1,8 @@
 ---
 title: "Put Flutter to Work"
-description: "Connect a Flutter feature to a native app and get up and running in just a few lines of code"
+description: >-
+  Connect a Flutter feature to a native app and get up and running in just a few
+  lines of code
 publishDate: 2022-05-26
 author: verygoodopensource
 image: images/17pcNynupdvylRqlRdi6rPQ.webp

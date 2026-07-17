@@ -1,6 +1,8 @@
 ---
 title: "Custom Implicit Animations in Flutter…with TweenAnimationBuilder"
-description: "To make animations in Flutter, there are many different options available. How do you choose the right animation widget? This article…"
+description: >-
+  To make animations in Flutter, there are many different options available. How
+  do you choose the right animation widget? This article…
 publishDate: 2019-12-15
 author: efortuna
 image: images/1ZiMTAgg11y3BHH24bTt6Mg.gif

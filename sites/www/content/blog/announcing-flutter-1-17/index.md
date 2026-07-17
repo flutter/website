@@ -1,6 +1,8 @@
 ---
 title: "Announcing Flutter 1.17"
-description: "Includes Metal support for faster iOS performance, new Material components, new Network tracking tooling and more!"
+description: >-
+  Includes Metal support for faster iOS performance,
+  new Material components, new Network tracking tooling, and more!
 publishDate: 2020-05-06
 author: csells
 image: images/14MIF2GwByNG1MJ7DNslb3Q.webp

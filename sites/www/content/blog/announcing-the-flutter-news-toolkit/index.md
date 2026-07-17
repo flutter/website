@@ -1,6 +1,7 @@
 ---
 title: "Announcing the Flutter News Toolkit"
-description: "An accelerated toolkit for building mobile apps for news and content"
+description: >-
+  An accelerated toolkit for building mobile apps for news and content
 publishDate: 2023-01-25
 author: zoeyfan
 image: images/0_Xb_zBUOvsH6CL9A.webp

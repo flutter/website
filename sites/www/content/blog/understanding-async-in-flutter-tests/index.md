@@ -1,6 +1,8 @@
 ---
 title: "Understanding Async in Flutter Tests"
-description: "Taking a look at the caveats and best practices of working with asynchronous behavior in your Flutter Widget Tests."
+description: >-
+  Taking a look at the caveats and best practices of working with asynchronous
+  behavior in your Flutter Widget Tests.
 publishDate: 2019-05-02
 author: arbullard
 category: tutorial

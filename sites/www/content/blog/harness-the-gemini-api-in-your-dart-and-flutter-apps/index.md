@@ -1,6 +1,7 @@
 ---
 title: "Harness the Gemini API in your Dart and Flutter Apps"
-description: "Introducing the Google AI Dart SDK"
+description: >-
+  Introducing the Google AI Dart SDK
 publishDate: 2024-02-15
 author: anderdobo
 image: images/1-KkJmzvv3jNhh88TWxIBJg.webp

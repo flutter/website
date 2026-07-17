@@ -1,6 +1,8 @@
 ---
 title: "Introducing background isolate channels"
-description: "Now as of Flutter 3.7, I’m pleased to announce that developers can use Plugins and Platform Channels from any isolate. This has been one of…"
+description: >-
+  Now as of Flutter 3.7, I’m pleased to announce that developers can use Plugins
+  and Platform Channels from any isolate. This has been one of…
 publishDate: 2023-01-09
 author: gaaclarke
 image: images/1bSKidxVM7-brUJFuyKdVFg.webp

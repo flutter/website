@@ -1,6 +1,8 @@
 ---
 title: "Enums with Extensions Dart"
-description: "About the author: Jose recently graduated from university and now works on Material, a design system that helps teams build high-quality…"
+description: >-
+  About the author: Jose recently graduated from university and now works on
+  Material, a design system that helps teams build high-quality…
 publishDate: 2020-07-17
 author: josealba
 image: images/1j9632GFfT3IT7sfeiHUZtw.webp

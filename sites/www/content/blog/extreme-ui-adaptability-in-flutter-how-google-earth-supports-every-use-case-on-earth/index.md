@@ -1,6 +1,8 @@
 ---
 title: "Extreme UI Adaptability in Flutter — How Google Earth supports every use case on earth"
-description: "When Google Earth set out to rewrite their mobile and web clients in Flutter, they knew they wanted to allow each and every one of their…"
+description: >-
+  When Google Earth set out to rewrite their mobile and web clients in Flutter,
+  they knew they wanted to allow each and every one of their…
 publishDate: 2024-02-07
 author: craiglabenz
 image: images/1RXf-GaJ4uz5_ZKU8QgIVkw.webp

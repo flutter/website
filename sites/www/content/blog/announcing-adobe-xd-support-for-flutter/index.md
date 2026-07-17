@@ -1,6 +1,7 @@
 ---
 title: "Announcing Adobe XD support for Flutter"
-description: "Create in XD and export to working Flutter code"
+description: >-
+  Create in XD and export to working Flutter code
 publishDate: 2020-05-13
 author: timsneath
 image: images/0N-K68XqE0DBUV0EK.webp

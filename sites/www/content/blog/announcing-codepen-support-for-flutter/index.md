@@ -1,6 +1,8 @@
 ---
 title: "Announcing CodePen support for Flutter"
-description: "Today we’re excited to announce that CodePen, the leading social development environment for millions of front-end developers and…"
+description: >-
+  Today we’re excited to announce that CodePen
+  is adding support for Flutter
 publishDate: 2020-04-15
 author: zoeyfan
 image: images/06wPqdCz_TzB2gAXr.webp

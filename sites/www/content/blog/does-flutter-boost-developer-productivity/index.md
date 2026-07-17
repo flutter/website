@@ -1,6 +1,8 @@
 ---
 title: "Does Flutter boost developer productivity?"
-description: "The Flutter team continues to run a quarterly user survey to hear from you, our Flutter developers. The first survey in 2022 ran between…"
+description: >-
+  The Flutter team continues to run a quarterly user survey to hear from you,
+  our Flutter developers. The first survey in 2022 ran between…
 publishDate: 2022-05-05
 author: jayoung-lee
 image: images/0hjsh42RwSy9QAK1S.webp

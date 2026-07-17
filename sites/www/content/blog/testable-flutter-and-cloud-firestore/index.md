@@ -1,6 +1,7 @@
 ---
 title: "Testable Flutter and Cloud Firestore"
-description: "Using dependency injection to test apps using Flutter and Firebase"
+description: >-
+  Using dependency injection to test apps using Flutter and Firebase
 publishDate: 2020-10-15
 author: craiglabenz
 image: images/1pQJzBr81G169df-ffo24Cg.webp

@@ -1,6 +1,7 @@
 ---
 title: "Flutter Hot Reload"
-description: "What happens during a hot reload, and how we made it faster for Flutter 2.2."
+description: >-
+  What happens during a hot reload, and how we made it faster for Flutter 2.2.
 publishDate: 2021-08-19
 author: jensjohansen
 image: images/1iaLz5LEBdsZJRR_W8UCQcQ.webp

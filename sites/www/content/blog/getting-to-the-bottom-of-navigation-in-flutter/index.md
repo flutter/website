@@ -1,6 +1,8 @@
 ---
 title: "Getting to the Bottom of Navigation in Flutter"
-description: "Bottom navigation in mobile apps is popular because our phones keep getting bigger but our thumbs do not. Here’s how to do it in Flutter."
+description: >-
+  Bottom navigation in mobile apps is popular because our phones keep getting
+  bigger but our thumbs do not. Here’s how to do it in Flutter.
 publishDate: 2019-06-27
 author: hansmuller
 image: images/1pzfLG6bpSs8KGe48AXZR_g.webp

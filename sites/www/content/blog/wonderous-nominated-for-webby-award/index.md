@@ -1,6 +1,8 @@
 ---
 title: "Wonderous nominated for Webby Award"
-description: "Wonderous has been nominated for a Webby award in the Best User Interface category."
+description: >-
+  Wonderous has been nominated for a Webby award in the Best User Interface
+  category.
 publishDate: 2023-04-06
 author: leighajarett
 image: images/1XksvK4Wq0YbZoIG8udUShw.webp

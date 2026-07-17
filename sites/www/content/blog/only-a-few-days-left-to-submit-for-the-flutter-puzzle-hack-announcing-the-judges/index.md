@@ -1,6 +1,7 @@
 ---
 title: "Only a few days left to submit for the Flutter Puzzle Hack + announcing the judges"
-description: "Get your project in before the submission deadline!"
+description: >-
+  Get your project in before the submission deadline!
 publishDate: 2022-03-09
 author: kkboateng
 image: images/0LgF82TK9xt1aI14Y.webp

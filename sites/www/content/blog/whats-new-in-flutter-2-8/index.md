@@ -1,6 +1,8 @@
 ---
 title: "What’s New in Flutter 2.8"
-description: "Performance improvements, new Firebase features, desktop status, tooling updates and more!"
+description: >-
+  Performance improvements, new Firebase features, desktop status, tooling
+  updates and more!
 publishDate: 2021-12-09
 author: csells
 image: images/00frogkEKgpNOgCVF.webp

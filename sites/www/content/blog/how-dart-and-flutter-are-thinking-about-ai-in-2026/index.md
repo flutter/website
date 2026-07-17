@@ -1,6 +1,8 @@
 ---
 title: "How Dart and Flutter are thinking about AI in 2026"
-description: "Last month, we published Flutter and Dart’s 2026 Roadmap, a peek into how our teams are approaching our core mission: Building the most…"
+description: >-
+  Last month, we published Flutter and Dart’s 2026 Roadmap, a peek into how our
+  teams are approaching our core mission: Building the most…
 publishDate: 2026-04-01
 author: mariam_hasnany
 image: images/1acnlJyV5J3HU4jFbo2LQog.gif

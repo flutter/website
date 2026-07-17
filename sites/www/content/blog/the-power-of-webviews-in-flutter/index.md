@@ -1,6 +1,8 @@
 ---
 title: "The Power of WebViews in Flutter"
-description: "Do you want to write an app that can display a web page without having to open your mobile device’s browser? Or maybe you already have a…"
+description: >-
+  Do you want to write an app that can display a web page without having to open
+  your mobile device’s browser? Or maybe you already have a…
 publishDate: 2019-01-31
 author: efortuna
 image: images/1aMgCX1bmq6hRNgmsDDVOXQ.gif

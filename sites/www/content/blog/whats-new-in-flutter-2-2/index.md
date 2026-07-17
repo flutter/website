@@ -1,6 +1,8 @@
 ---
 title: "What’s new in Flutter 2.2"
-description: "The Flutter 2.2 release focuses on polish and optimization, including iOS performance improvements, Android deferred components, updated…"
+description: >-
+  The Flutter 2.2 release focuses on polish and optimization, including iOS
+  performance improvements, Android deferred components, updated…
 publishDate: 2021-05-19
 author: csells
 image: images/0fS4WbRPwmo_FQgDo.webp

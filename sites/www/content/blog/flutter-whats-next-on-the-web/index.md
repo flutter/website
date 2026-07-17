@@ -1,6 +1,8 @@
 ---
 title: "Flutter: What’s next on the Web?"
-description: "Our priorities for upcoming releases, focusing on performance, developer experience and web integration"
+description: >-
+  Our priorities for upcoming releases, focusing on performance, developer
+  experience and web integration
 publishDate: 2021-09-14
 author: mariam_hasnany
 image: images/17iBUzC4UvwNi8agIsCrZ7w.webp

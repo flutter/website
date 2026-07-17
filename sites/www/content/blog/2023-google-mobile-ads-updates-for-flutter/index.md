@@ -1,6 +1,7 @@
 ---
 title: "2023 Google Mobile Ads Updates for Flutter"
-description: "We added new GMA Flutter features based on your feedback!"
+description: >-
+  We added new GMA Flutter features based on your feedback!
 publishDate: 2023-05-10
 author: timothyhoang
 image: images/1PLQQUPqp_e0LmXTbAgb_iQ.webp

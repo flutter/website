@@ -1,6 +1,7 @@
 ---
 title: "Introducing Google Fonts for Flutter v 1.0.0!"
-description: "By MH Johnson and Anthony Robledo"
+description: >-
+  By MH Johnson and Anthony Robledo
 publishDate: 2020-04-23
 author: clocksmith
 image: images/1ndZ8HED7jp2f0X4IFSwtdA.webp

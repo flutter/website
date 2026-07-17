@@ -1,6 +1,8 @@
 ---
 title: "Handling 404: Page not found error in Flutter"
-description: "Learn how to handle 404 errors and create a custom page not found error page in your Flutter web application."
+description: >-
+  Learn how to handle 404 errors and create a custom page not found error page
+  in your Flutter web application.
 publishDate: 2020-06-10
 author: josealba
 image: images/1eU-430nepv8cz3OYLIycng.webp

@@ -1,6 +1,7 @@
 ---
 title: "How to debug layout issues with the Flutter Inspector"
-description: "Exploring why they occur and how to solve them"
+description: >-
+  Exploring why they occur and how to solve them
 publishDate: 2020-07-27
 author: ktjlee
 image: images/1oWDuoKe1gCDL5UPrQUwePg.webp

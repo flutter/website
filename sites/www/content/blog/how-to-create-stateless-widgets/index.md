@@ -1,6 +1,8 @@
 ---
 title: "How to Create Stateless Widgets"
-description: "When getting started with Flutter, one of the first things you need to learn about is stateless widgets. We recorded a series that covers…"
+description: >-
+  When getting started with Flutter, one of the first things you need to learn
+  about is stateless widgets. We recorded a series that covers…
 publishDate: 2019-02-14
 author: aguinis
 image: images/0GoTVv7PbwxvjCh4S.webp

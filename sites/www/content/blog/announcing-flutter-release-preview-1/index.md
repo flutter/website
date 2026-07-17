@@ -1,6 +1,7 @@
 ---
 title: "Announcing Flutter Release Preview 1"
-description: "Community momentum builds on the path to release"
+description: >-
+  Community momentum builds on the path to release
 publishDate: 2018-06-20
 author: timsneath
 image: images/1PEcgvfvQj4Gd1hFBBfCX_g.webp

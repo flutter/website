@@ -1,6 +1,7 @@
 ---
 title: "What’s new in Flutter 3.3"
-description: "Exciting updates for text handling, performance improvements, and more!"
+description: >-
+  Exciting updates for text handling, performance improvements, and more!
 publishDate: 2022-08-30
 author: itsjustkevin
 image: images/04Mac8uQL3ynXVIuD.webp

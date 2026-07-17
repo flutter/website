@@ -1,6 +1,7 @@
 ---
 title: "Flutter web support hits the stable milestone"
-description: "Publish to web and mobile from the same codebase"
+description: >-
+  Publish to web and mobile from the same codebase
 publishDate: 2021-03-03
 author: mariam_hasnany
 image: images/1bbkcrsggiQLxNDRAgHiSBQ.webp

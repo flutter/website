@@ -1,6 +1,7 @@
 ---
 title: "What we learned from the Flutter Q2 2020 survey"
-description: "With a focus on code samples, app performance, and writing packages"
+description: >-
+  With a focus on code samples, app performance, and writing packages
 publishDate: 2020-07-22
 author: jayoung-lee
 image: images/1BJJb_evaKM8qgJV5VCn95Q.webp

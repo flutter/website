@@ -1,6 +1,8 @@
 ---
 title: "Performance Testing of Flutter apps"
-description: "The Flutter framework does a good job being fast by default, but does that mean you don’t need to think about performance at all? No. It…"
+description: >-
+  The Flutter framework does a good job being fast by default, but does that
+  mean you don’t need to think about performance at all? No. It…
 publishDate: 2019-05-09
 author: filiph
 image: images/1MxtHyEfdBlANwu7ZRyX2mw.webp

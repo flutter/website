@@ -1,6 +1,7 @@
 ---
 title: "Learn to build native mobile apps with Flutter with our free Udacity course!"
-description: "TL;DR: Sign up here to get started with our free Udacity course!"
+description: >-
+  TL;DR: Sign up here to get started with our free Udacity course!
 publishDate: 2018-07-02
 author: maryx
 image: images/1v_vdCNpmwHNcOM0xiqXIOQ.webp

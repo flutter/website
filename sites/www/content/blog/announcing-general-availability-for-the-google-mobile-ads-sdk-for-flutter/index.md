@@ -1,6 +1,9 @@
 ---
 title: "Announcing General Availability for the Google Mobile Ads SDK for Flutter"
-description: "There are many ways for apps to make money: accepting payments as a storefront for a physical business; offering subscriptions or in-app…"
+description: >-
+  There are many ways for apps to make money:
+  accepting payments as a storefront for a physical business;
+  offering subscriptions or in-app purchases.
 publishDate: 2021-11-16
 author: zoeyfan
 image: images/0zOegrJCYTuapgWgf.webp

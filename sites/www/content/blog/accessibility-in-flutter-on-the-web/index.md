@@ -1,6 +1,8 @@
 ---
 title: "Accessibility in Flutter on the Web"
-description: "How Flutter aims to make canvas-rendered apps accessible to users of assistive technologies"
+description: >-
+  How Flutter aims to make canvas-rendered apps
+  accessible to users of assistive technologies
 publishDate: 2024-04-16
 author: tomayac
 image: images/0pF3_jPjWNcie3LH0.webp

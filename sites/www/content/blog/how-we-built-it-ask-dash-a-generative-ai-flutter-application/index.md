@@ -1,6 +1,8 @@
 ---
 title: "How we built it: Ask Dash — A generative AI Flutter application"
-description: "As part of the Google Cloud Applied AI Summit, the Flutter and Vertex AI teams collaborated with Very Good Ventures to create an…"
+description: >-
+  As part of the Google Cloud Applied AI Summit, the Flutter and Vertex AI teams
+  collaborated with Very Good Ventures to create an…
 publishDate: 2023-12-13
 author: verygoodopensource
 image: images/092qfA1AlxG0HMJCE.webp

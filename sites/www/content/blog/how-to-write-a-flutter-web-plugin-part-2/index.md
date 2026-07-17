@@ -1,6 +1,7 @@
 ---
 title: "How To Write a Flutter Web Plugin: Part 2"
-description: "A guide for writing modern Flutter Web plugins"
+description: >-
+  A guide for writing modern Flutter Web plugins
 publishDate: 2020-02-13
 author: harryterkelsen
 image: images/1jLlh4b9zQ3u0aUA-hHAgKg.webp

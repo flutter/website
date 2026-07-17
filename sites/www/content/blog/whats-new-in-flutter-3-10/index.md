@@ -1,6 +1,8 @@
 ---
 title: "What’s new in Flutter 3.10"
-description: "Seamless web and mobile integration, breakthrough graphics performance via Impeller in stable, and more"
+description: >-
+  Seamless web and mobile integration, breakthrough graphics performance via
+  Impeller in stable, and more
 publishDate: 2023-05-10
 author: itsjustkevin
 image: images/1CPv57Dp1cYXPz-YtZ2jMcA.webp

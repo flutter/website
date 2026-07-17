@@ -1,6 +1,7 @@
 ---
 title: "Learn Flutter for free with Flutter Apprentice!"
-description: "A free book for learning Flutter, available for a time-limited period."
+description: >-
+  A free book for learning Flutter, available for a time-limited period.
 publishDate: 2021-10-06
 author: sfshaza
 image: images/1AvOHYfnMrCR81c4GltakzQ.webp

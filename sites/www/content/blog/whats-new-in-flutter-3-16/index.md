@@ -1,6 +1,8 @@
 ---
 title: "What’s new in Flutter 3.16"
-description: "Material 3 by default, Impeller preview for Android, DevTools extensions, and much more"
+description: >-
+  Material 3 by default, Impeller preview for Android, DevTools extensions, and
+  much more
 publishDate: 2023-11-15
 author: itsjustkevin
 image: images/1TDndNB8cS95g5faXBKitHA.webp

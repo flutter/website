@@ -1,6 +1,8 @@
 ---
 title: "What’s new in Flutter 3.19"
-description: "Revolutionizing App Development with the Gemini API, Impeller Updates, and Windows Arm64 Support"
+description: >-
+  Revolutionizing App Development with the Gemini API, Impeller Updates, and
+  Windows Arm64 Support
 publishDate: 2024-02-15
 author: itsjustkevin
 image: images/0ZX3bHJdGGZwwOQHt.gif

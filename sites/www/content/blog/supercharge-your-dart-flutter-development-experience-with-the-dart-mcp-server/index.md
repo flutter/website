@@ -1,6 +1,7 @@
 ---
 title: "Supercharge Your Dart & Flutter Development Experience with the Dart MCP Server"
-description: "By Ander Dobo — Product Manager, and Kenzie Davisson — Engineer"
+description: >-
+  By Ander Dobo — Product Manager, and Kenzie Davisson — Engineer
 publishDate: 2025-07-23
 author: anderdobo
 image: images/13K1rgoDtIBWbIFZPp1VCEQ.webp

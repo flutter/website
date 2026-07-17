@@ -1,6 +1,7 @@
 ---
 title: "Slivers, Demystified"
-description: "Or, how to do fancy scrolling techniques in your mobile app with Flutter"
+description: >-
+  Or, how to do fancy scrolling techniques in your mobile app with Flutter
 publishDate: 2018-10-18
 author: efortuna
 image: images/1acfGrRUFKsC4z_0wHHt_Lg.gif

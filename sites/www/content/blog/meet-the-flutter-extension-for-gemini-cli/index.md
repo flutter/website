@@ -1,6 +1,8 @@
 ---
 title: "Meet the Flutter Extension for Gemini CLI"
-description: "Build high quality, feature rich apps with the new Flutter Extension for Gemini CLI"
+description: >-
+  Build high quality, feature rich apps with the new Flutter Extension for
+  Gemini CLI
 publishDate: 2025-10-08
 author: johnpryan
 image: images/1CXyt0NsoasPW5__Ev4AGNg.webp

@@ -1,6 +1,8 @@
 ---
 title: "Improving Flutter’s Error Messages"
-description: "Can visual design be applied to error messages? We found that it drastically improves the usability of error messages in Flutter."
+description: >-
+  Can visual design be applied to error messages? We found that it drastically
+  improves the usability of error messages in Flutter.
 publishDate: 2019-09-09
 author: taodong
 image: images/1l8l2xWisc5Mtc6xzFaucmg.webp

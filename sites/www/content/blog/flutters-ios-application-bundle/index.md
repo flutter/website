@@ -1,6 +1,8 @@
 ---
 title: "Flutter’s iOS Application Bundle"
-description: "This document describes how Flutter’s build system converts your Flutter project (along with its assets), into an iOS application bundle. I…"
+description: >-
+  This document describes how Flutter’s build system converts your Flutter
+  project (along with its assets), into an iOS application bundle. I…
 publishDate: 2018-07-20
 author: chinmaygarde
 image: images/1xfvovQJT-5OsHBDBIQa92A.webp

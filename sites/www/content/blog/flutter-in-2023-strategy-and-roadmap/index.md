@@ -1,6 +1,7 @@
 ---
 title: "Flutter in 2023: strategy and roadmap"
-description: "A guide to our strategy and areas of investment"
+description: >-
+  A guide to our strategy and areas of investment
 publishDate: 2023-03-30
 author: timsneath
 image: images/1OMkiWPCxgYijkAvNn-e3MA.webp

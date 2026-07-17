@@ -1,6 +1,8 @@
 ---
 title: "Announcing Flutter 3.3 at Flutter Vikings"
-description: "A new Flutter release, a beautiful new app, work on improving rendering performance, and a note of farewell"
+description: >-
+  A new Flutter release, a beautiful new app,
+  work on improving rendering performance, and a note of farewell
 publishDate: 2022-08-30
 author: timsneath
 image: images/0bDz2chibrm3B6QZE.webp

@@ -1,6 +1,8 @@
 ---
 title: "Announcing Flutter Linux Alpha with Canonical"
-description: "The Ubuntu team has produced a new GTK+ based host for Flutter apps on all Linux distros"
+description: >-
+  The Ubuntu team has produced a new GTK+ based host for
+  Flutter apps on all Linux distros
 publishDate: 2020-07-08
 author: csells
 image: images/0uMT4fCQFO8VQwB0Q.webp

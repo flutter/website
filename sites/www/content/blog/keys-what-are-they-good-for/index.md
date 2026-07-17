@@ -1,6 +1,8 @@
 ---
 title: "Keys! What are they good for?"
-description: "The key parameter can be found on basically every widget constructor, but their use is less common. Keys preserve state when widgets move…"
+description: >-
+  The key parameter can be found on basically every widget constructor, but
+  their use is less common. Keys preserve state when widgets move…
 publishDate: 2019-03-29
 author: efortuna
 image: images/1sHDIVXBu9RpJYN9Zdn8iBw.gif

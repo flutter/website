@@ -1,6 +1,8 @@
 ---
 title: "Progress of the Flutter Package Ecosystem"
-description: "Continued growth, new Flutter Favorites, Ecosystem Virtual Summit and things to know"
+description: >-
+  Continued growth, new Flutter Favorites, Ecosystem Virtual Summit and things
+  to know
 publishDate: 2024-01-22
 author: anderdobo
 image: images/0tkq_040X0xa_Noms.webp

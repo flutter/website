@@ -1,6 +1,8 @@
 ---
 title: "Why you should smoke-test your sample code, and how to do it in Flutter"
-description: "Learn why sample apps need smoke tests and how to use Flutter widget tests with Travis CI to catch breakages on every change and across Flutter releases."
+description: >-
+  Learn why sample apps need smoke tests and how to use Flutter widget tests
+  with Travis CI to catch breakages on every change and across Flutter releases.
 publishDate: 2018-06-06
 author: filiph
 image: images/1khKciHLLdyG1gIY3qmwbLw.webp

@@ -1,6 +1,8 @@
 ---
 title: "Raster thread performance optimization tips"
-description: "Recently, I sat down to tweak the performance of FlutterFolio, an app that was built as a design showcase for Flutter Engage. With a…"
+description: >-
+  Recently, I sat down to tweak the performance of FlutterFolio, an app that was
+  built as a design showcase for Flutter Engage. With a…
 publishDate: 2021-09-01
 author: filiph
 image: images/116rv_KQNNU3IsAHCfI3G6A.webp

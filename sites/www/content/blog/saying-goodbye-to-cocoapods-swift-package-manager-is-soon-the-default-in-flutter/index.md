@@ -1,6 +1,8 @@
 ---
 title: "Saying goodbye to CocoaPods: Swift Package Manager is soon the default in Flutter!"
-description: "Starting with the next stable Flutter release, 3.44, Swift Package Manager (SwiftPM) replaces CocoaPods as the default dependency manager…"
+description: >-
+  Starting with the next stable Flutter release, 3.44, Swift Package Manager
+  (SwiftPM) replaces CocoaPods as the default dependency manager…
 publishDate: 2026-04-30
 author: magder
 image: images/12A_CUygcOEFYUv5ms5KAJw.webp

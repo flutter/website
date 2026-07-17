@@ -1,6 +1,8 @@
 ---
 title: "Managing Flutter Application State With InheritedWidgets"
-description: "Everyone has heard that interactive applications can be decomposed into three parts: model, view, and controller. Anyone who has given…"
+description: >-
+  Everyone has heard that interactive applications can be decomposed into three
+  parts: model, view, and controller. Anyone who has given…
 publishDate: 2018-12-20
 author: hansmuller
 image: images/1IVBU5tVCV5TFUI3E5V4fEg.webp

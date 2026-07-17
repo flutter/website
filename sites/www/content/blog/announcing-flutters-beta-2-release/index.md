@@ -1,6 +1,9 @@
 ---
 title: "Announcing Flutter’s beta 2 release"
-description: "We have a second beta build available of Flutter, Google’s new mobile UI framework that helps developers craft high-quality apps."
+description: >-
+  We have a second beta build available of Flutter,
+  Google’s new mobile UI framework that
+  helps developers craft high-quality apps.
 publishDate: 2018-04-09
 author: mit-mit
 image: images/14DxDp03lkhJN3engJhXhWQ.webp

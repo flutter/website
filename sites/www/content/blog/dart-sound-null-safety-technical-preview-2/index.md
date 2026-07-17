@@ -1,6 +1,7 @@
 ---
 title: "Dart sound null safety: technical preview 2"
-description: "Announcing null-safe support for the Flutter framework"
+description: >-
+  Announcing null-safe support for the Flutter framework
 publishDate: 2020-10-22
 author: mit-mit
 image: images/0FE-q5RdXwPgtRVE5.webp

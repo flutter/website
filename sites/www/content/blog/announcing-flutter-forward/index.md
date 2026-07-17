@@ -1,6 +1,7 @@
 ---
 title: "Announcing Flutter Forward"
-description: "Register for the next Flutter event, streaming live from Nairobi, Kenya"
+description: >-
+  Register for the next Flutter event, streaming live from Nairobi, Kenya
 publishDate: 2022-11-15
 author: kkboateng
 image: images/02u_pjVJlgpQw4XHy.webp

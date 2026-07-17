@@ -1,6 +1,8 @@
 ---
 title: "Announcing Flutter beta 1: Build beautiful native apps"
-description: "Today, as part of Mobile World Congress 2018, we are excited to announce the first beta release of Flutter. Flutter is Google’s new mobile…"
+description: >-
+  Today, as part of Mobile World Congress 2018,
+  we are excited to announce the first beta release of Flutter.
 publishDate: 2018-02-27
 author: sethladd
 image: images/1qo6Fo51uAmD3B3d6VfcbAQ.webp

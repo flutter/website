@@ -1,6 +1,7 @@
 ---
 title: "New tools for Flutter developers, built in Flutter"
-description: "Why we rebuilt Dart DevTools from scratch in Flutter"
+description: >-
+  Why we rebuilt Dart DevTools from scratch in Flutter
 publishDate: 2020-06-24
 author: filiph
 image: images/0VLibsxLD9Wv35Pr8.webp

@@ -1,6 +1,12 @@
 ---
 title: "Which factors affected users’ decisions to adopt Flutter? — Q1 2021 user survey results"
-description: "The Flutter team is here to share the results from this quarter’s user survey! This quarter, we collected over 8,000 responses over 7 days, between March 5th and 11th. The goal of this quarterly survey program is to hear from you, in a structured format, so that the Flutter team can focus on things that matter most to our users. Results from the previous surveys are published on Medium too."
+description: >-
+  The Flutter team is here to share the results from this quarter’s user survey!
+  This quarter, we collected over 8,000 responses over 7 days, between March 5th
+  and 11th. The goal of this quarterly survey program is to hear from you, in a
+  structured format, so that the Flutter team can focus on things that matter
+  most to our users. Results from the previous surveys are published on Medium
+  too.
 publishDate: 2021-05-13
 author: jayoung-lee
 image: images/0_m-0usdhsHPmeZ8U.webp

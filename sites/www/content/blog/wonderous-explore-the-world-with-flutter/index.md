@@ -1,6 +1,7 @@
 ---
 title: "Wonderous: Explore the World with Flutter"
-description: "A reference app that shows how to develop tailored UI using Flutter"
+description: >-
+  A reference app that shows how to develop tailored UI using Flutter
 publishDate: 2022-08-30
 author: leighajarett
 image: images/1Tb-JXZnxo2pu232C4c2KqQ.webp

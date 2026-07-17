@@ -1,6 +1,8 @@
 ---
 title: "Rich and dynamic user interfaces with Flutter and generative UI"
-description: "We’re thrilled to introduce GenUI SDK for Flutter, now available in alpha on pub.dev."
+description: >-
+  We’re thrilled to introduce GenUI SDK for Flutter, now available in alpha on
+  pub.dev.
 publishDate: 2025-11-18
 author: abdallahshaban557
 image: images/12R8k2Qbswy4G7h3yYIyk1A.webp

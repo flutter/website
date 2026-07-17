@@ -1,6 +1,7 @@
 ---
 title: "What’s new in Flutter 3.32"
-description: "Hot reload on web, native fidelity, and deeper integrations"
+description: >-
+  Hot reload on web, native fidelity, and deeper integrations
 publishDate: 2025-05-20
 author: itsjustkevin
 image: images/1FTpRgnrZGMzzCjEl4sCmiw.webp

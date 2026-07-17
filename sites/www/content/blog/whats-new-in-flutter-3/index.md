@@ -1,6 +1,8 @@
 ---
 title: "What’s new in Flutter 3"
-description: "Deep dive into our latest release, including macOS and Linux stable, performance improvements, and more!"
+description: >-
+  Deep dive into our latest release, including macOS and Linux stable,
+  performance improvements, and more!
 publishDate: 2022-05-11
 author: itsjustkevin
 image: images/1K1Ru7PVkH74N56hgjBTjjQ.webp

@@ -1,6 +1,8 @@
 ---
 title: "Learning Flutter’s new Navigation and Routing system"
-description: "This article explains how Flutter’s new Navigator and Router API works. If you follow Flutter’s open design docs, you might have seen…"
+description: >-
+  This article explains how Flutter’s new Navigator and Router API works. If you
+  follow Flutter’s open design docs, you might have seen…
 publishDate: 2020-09-30
 author: johnpryan
 image: images/1PYHrYurwAGyQC8vsnAaWiA.webp

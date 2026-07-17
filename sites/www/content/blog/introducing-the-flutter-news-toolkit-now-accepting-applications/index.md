@@ -1,6 +1,8 @@
 ---
 title: "Introducing the Flutter News Toolkit — now accepting applications"
-description: "Be among the first to launch news mobile applications with the Flutter News Toolkit"
+description: >-
+  Be among the first to launch news mobile applications with the Flutter News
+  Toolkit
 publishDate: 2022-11-10
 author: zoeyfan
 image: images/1eQsCJ1lXurwLVnD5wIDxkg.webp

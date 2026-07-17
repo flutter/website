@@ -1,6 +1,7 @@
 ---
 title: "Announcing Flutter 1.20"
-description: "Performance improvements, mobile autofill, a new widget and more!"
+description: >-
+  Performance improvements, mobile autofill, a new widget, and more!
 publishDate: 2020-08-05
 author: csells
 image: images/0Ve1UjCRej9MtX2kv.webp

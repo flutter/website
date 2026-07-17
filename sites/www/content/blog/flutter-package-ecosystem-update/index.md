@@ -1,6 +1,8 @@
 ---
 title: "Flutter Package Ecosystem Update"
-description: "New Flutter Favorites, Apple Sign In and bringing prerelease Flutter plugins into production"
+description: >-
+  New Flutter Favorites, Apple Sign In and bringing prerelease Flutter plugins
+  into production
 publishDate: 2020-05-20
 author: csells
 image: images/0jAThFFycWDnklih_.webp

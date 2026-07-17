@@ -1,6 +1,8 @@
 ---
 title: "Sharing Flutter’s 2024 roadmap"
-description: "As an open source project with a thriving community, we strive to be transparent about our plans, with everything from issues to design…"
+description: >-
+  As an open source project with a thriving community, we strive to be
+  transparent about our plans, with everything from issues to design…
 publishDate: 2024-02-15
 author: mit-mit
 image: images/18v__Z0fIVOBm4uxFnMLAVg.webp

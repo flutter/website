@@ -1,6 +1,8 @@
 ---
 title: "Accessible expression with Material Icons and Flutter"
-description: "Material Design and Flutter both help developers build experiences that are flexible, accessible, and expressive…"
+description: >-
+  Material Design and Flutter both help developers
+  build experiences that are flexible, accessible, and expressive
 publishDate: 2020-11-04
 author: andremobilelabonte
 image: images/1kcT41A5GvXp8XrjHjiuc4A.webp

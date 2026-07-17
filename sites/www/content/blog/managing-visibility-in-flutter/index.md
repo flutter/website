@@ -1,6 +1,7 @@
 ---
 title: "Managing visibility in Flutter"
-description: "How hiding widgets can also hide inefficiency in your code"
+description: >-
+  How hiding widgets can also hide inefficiency in your code
 publishDate: 2018-06-27
 author: lukeaf
 image: images/1q-Y9wu-ZE_4YHLYcPpjgGA.jpeg

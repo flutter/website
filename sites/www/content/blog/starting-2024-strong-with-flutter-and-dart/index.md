@@ -1,6 +1,8 @@
 ---
 title: "Starting 2024 strong with Flutter and Dart"
-description: "An introduction, two new SDK releases, and bringing Flutter and Dart into the Gemini era"
+description: >-
+  An introduction, two new SDK releases, and bringing Flutter and Dart into the
+  Gemini era
 publishDate: 2024-02-15
 author: brandonbadger
 image: images/0gO0yYMh4FUkpue3w.gif

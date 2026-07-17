@@ -1,6 +1,7 @@
 ---
 title: "Flutter Spring 2020 Update"
-description: "Continued momentum and enterprise growth, new release model"
+description: >-
+  Continued momentum and enterprise growth, new release model
 publishDate: 2020-04-22
 author: timsneath
 image: images/0T39T7UB0oJVIQy_H.webp

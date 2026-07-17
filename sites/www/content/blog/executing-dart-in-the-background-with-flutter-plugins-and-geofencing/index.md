@@ -1,6 +1,8 @@
 ---
 title: "Executing Dart in the Background with Flutter Plugins and Geofencing"
-description: "04/11/2022: This article has been updated to replace broken links due to docs and plugins changing names or locations."
+description: >-
+  04/11/2022: This article has been updated to replace broken links due to docs
+  and plugins changing names or locations.
 publishDate: 2018-09-20
 author: bkonyi
 image: images/0ae_YppUn96m93qkT.webp

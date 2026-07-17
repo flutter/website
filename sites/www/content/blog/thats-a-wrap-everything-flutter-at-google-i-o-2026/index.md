@@ -1,6 +1,8 @@
 ---
 title: "That’s a wrap: Everything Flutter at Google I/O 2026"
-description: "What a week! Google I/O 2026 is officially in the books. It’s time to recap the whirlwind of updates for the Flutter and Dart communities."
+description: >-
+  What a week! Google I/O 2026 is officially in the books. It’s time to recap
+  the whirlwind of updates for the Flutter and Dart communities.
 publishDate: 2026-05-28
 author: twerske
 image: images/1N5Jz1tLlbGEC9sU49O97IA.webp

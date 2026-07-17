@@ -1,6 +1,7 @@
 ---
 title: "Announcing the winners of the Global Gamers Challenge"
-description: "Our 10 top projects, and how to stay involved with sustainability games"
+description: >-
+  Our 10 top projects, and how to stay involved with sustainability games
 publishDate: 2024-05-14
 author: kkboateng
 image: images/0S_bBN0WiR_Q5F08J.webp

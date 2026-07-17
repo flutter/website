@@ -1,6 +1,8 @@
 ---
 title: "Flutter Outline, Hot Reload, and the implementation of a live widget preview"
-description: "In M22 of the Flutter plugin for IntelliJ we added a new tool window — the Flutter Outline view. It shows you the structure of your Dart…"
+description: >-
+  In M22 of the Flutter plugin for IntelliJ we added a new tool window — the
+  Flutter Outline view. It shows you the structure of your Dart…
 publishDate: 2018-04-04
 author: scheglov
 image: images/0TUzb7DjU9HweZAAI.webp

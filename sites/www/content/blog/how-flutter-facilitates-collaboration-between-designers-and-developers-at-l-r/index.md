@@ -1,6 +1,8 @@
 ---
 title: "How Flutter facilitates collaboration between designers and developers at L+R"
-description: "You might be familiar with Global Citizen (GC), an organization dedicated to ending world poverty and helping the planet. When GC wanted to…"
+description: >-
+  You might be familiar with Global Citizen (GC), an organization dedicated to
+  ending world poverty and helping the planet. When GC wanted to…
 publishDate: 2024-02-19
 author: ivan
 image: images/0dv6mhmjDb4HP59LA.webp

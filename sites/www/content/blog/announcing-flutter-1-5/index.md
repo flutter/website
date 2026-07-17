@@ -1,6 +1,9 @@
 ---
 title: "Announcing Flutter 1.5"
-description: "With Google I/O 2019 just around the corner, we’re pleased to announce the availability of our new stable build, Flutter 1.5. With 336…"
+description: >-
+  With Google I/O 2019 just around the corner,
+  we’re pleased to announce the availability of
+  our new stable build, Flutter 1.5
 publishDate: 2019-05-07
 author: csells
 image: images/1udBMeDS6NNhlgbXYyHA_iA.webp

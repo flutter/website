@@ -1,6 +1,7 @@
 ---
 title: "What can we do better to improve Flutter? — Q2 2021 user survey results"
-description: "Written by JaYoung & Mariam"
+description: >-
+  Written by JaYoung & Mariam
 publishDate: 2021-08-13
 author: jayoung-lee
 image: images/0m2ihVMc99emY4hQY.webp

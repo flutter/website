@@ -1,6 +1,8 @@
 ---
 title: "Flutter 1.0 Launch Wrap-up"
-description: "A few reflections on Flutter Live, our global celebration of the Flutter 1.0 launch."
+description: >-
+  A few reflections on Flutter Live, our global celebration of the Flutter 1.0
+  launch.
 publishDate: 2018-12-28
 author: csells
 image: images/14_hWh5hMP6F3W6DZ-6OK2Q.webp

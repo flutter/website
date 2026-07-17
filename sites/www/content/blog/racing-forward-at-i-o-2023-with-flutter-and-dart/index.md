@@ -1,6 +1,8 @@
 ---
 title: "Racing Forward at I/O 2023 with Flutter and Dart"
-description: "Major updates to graphics performance, web integration, developer productivity and security in Flutter 3.10"
+description: >-
+  Major updates to graphics performance, web integration, developer productivity
+  and security in Flutter 3.10
 publishDate: 2023-05-10
 author: timsneath
 image: images/1bzC0ul7jBVhOJiastVGKlw.webp

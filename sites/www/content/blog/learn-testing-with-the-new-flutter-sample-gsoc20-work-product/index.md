@@ -1,6 +1,7 @@
 ---
 title: "Learn testing with the new Flutter sample | GSoC’20 Work Product"
-description: "By Abdullah Deshmukh"
+description: >-
+  By Abdullah Deshmukh
 publishDate: 2020-08-29
 author: abd99
 image: images/15PoXySK4-tAKWAY1zCzfHg.webp

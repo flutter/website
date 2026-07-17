@@ -1,6 +1,8 @@
 ---
 title: "The Power of the Flutter’s Transform and GestureDetector Widgets"
-description: "When it first clicked for me that Flutter gives me full control of everything on the screen, right down to the last pixel, I immediately…"
+description: >-
+  When it first clicked for me that Flutter gives me full control of everything
+  on the screen, right down to the last pixel, I immediately…
 publishDate: 2019-06-13
 author: justinmc
 image: images/16hQYJrDKEE1r961qkxrMwQ.jpeg

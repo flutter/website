@@ -1,6 +1,8 @@
 ---
 title: "Some Options for Deserializing JSON with Flutter"
-description: "At some point, most apps need to reach out and grab data from an online endpoint. Making an HTTPS get request to pull down a weather report…"
+description: >-
+  At some point, most apps need to reach out and grab data from an online
+  endpoint. Making an HTTPS get request to pull down a weather report…
 publishDate: 2018-08-02
 author: redbrogdon
 category: tutorial

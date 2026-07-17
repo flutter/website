@@ -1,6 +1,8 @@
 ---
 title: "Animation Management with Flutter and Flux/Redux"
-description: "The Flux and Redux application architectures work well with reactive view frameworks like Flutter. Both architectures share two powerful…"
+description: >-
+  The Flux and Redux application architectures work well with
+  reactive view frameworks like Flutter
 publishDate: 2018-01-19
 author: amir_h
 image: images/10gdFpYTSo_TTCqd-XVcvYw.webp

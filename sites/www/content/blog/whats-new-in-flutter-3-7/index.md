@@ -1,6 +1,7 @@
 ---
 title: "What’s new in Flutter 3.7"
-description: "Material 3 updates, iOS improvements, and much more!"
+description: >-
+  Material 3 updates, iOS improvements, and much more!
 publishDate: 2023-01-24
 author: itsjustkevin
 image: images/1AsyYVtFMXY0iS6gLz_O4BA.png

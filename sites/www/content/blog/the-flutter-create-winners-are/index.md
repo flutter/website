@@ -1,6 +1,8 @@
 ---
 title: "The Flutter Create winners are…"
-description: "Flutter Create is a contest that challenges you to build something interesting, inspiring, and beautiful with Flutter using 5KB or less of…"
+description: >-
+  Flutter Create is a contest that challenges you to build something
+  interesting, inspiring, and beautiful with Flutter using 5KB or less of…
 publishDate: 2019-05-07
 author: aguinis
 image: images/1q-DyfLgHgeJRsrEsm9wOVw.jpeg

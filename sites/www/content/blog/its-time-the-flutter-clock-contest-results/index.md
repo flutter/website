@@ -1,6 +1,8 @@
 ---
 title: "🕒 It’s Time: The Flutter Clock Contest Results"
-description: "We are always amazed by what developers around the world are building with Flutter. This year we partnered with the Google Assistant and…"
+description: >-
+  We are always amazed by what developers around the world are building with
+  Flutter. This year we partnered with the Google Assistant and…
 publishDate: 2020-02-25
 author: aguinis
 image: images/10z33rzzkJfYqORqmhtjdMg.jpeg

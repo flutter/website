@@ -1,6 +1,7 @@
 ---
 title: "Flutter’s hot reload is so hot right now."
-description: "Testing how Flutter’s hot reload scales up."
+description: >-
+  Testing how Flutter’s hot reload scales up.
 publishDate: 2018-03-13
 author: swavkulinski
 image: images/17BKoEbJbiH08LxyMIpQdew.webp

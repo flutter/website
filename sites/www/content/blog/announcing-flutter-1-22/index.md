@@ -1,6 +1,8 @@
 ---
 title: "Announcing Flutter 1.22"
-description: "Supporting iOS 14 and Android 11, new i18n and l10n support, Google Maps and WebView plugins ready for production, a new App Size tool and…"
+description: >-
+  Supporting iOS 14 and Android 11, new i18n and l10n support,
+  Google Maps and WebView plugins ready for production, and much more!
 publishDate: 2020-10-01
 author: csells
 image: images/0luz0EiazQQqsAEC4.webp

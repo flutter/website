@@ -1,6 +1,7 @@
 ---
 title: "Modern Flutter Plugin Development"
-description: "by Amir Hardon, Chris Sells, Collin Jackson, Harry Terkelsen and Matt Carroll"
+description: >-
+  by Amir Hardon, Chris Sells, Collin Jackson, Harry Terkelsen and Matt Carroll
 publishDate: 2020-04-30
 author: csells
 image: images/1yM2BlF_ckdUzoDnSdAjPoA.webp

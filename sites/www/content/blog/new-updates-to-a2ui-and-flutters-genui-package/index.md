@@ -1,6 +1,8 @@
 ---
 title: "New updates to A2UI and Flutter’s GenUI package"
-description: "Generative UI, or GenUI for short, is a user experience pattern in which an agent not only generates content, but also makes decisions…"
+description: >-
+  Generative UI, or GenUI for short, is a user experience pattern in which an
+  agent not only generates content, but also makes decisions…
 publishDate: 2026-05-14
 author: redbrogdon
 image: images/1yPatUacknopOAVF_Vr86OA.webp

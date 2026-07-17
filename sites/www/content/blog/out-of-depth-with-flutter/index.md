@@ -1,6 +1,8 @@
 ---
 title: "Out of Depth with Flutter"
-description: "How reactive programming, widget composition, and UI-as-code might bury your view logic in deep nesting, and what you can do about it."
+description: >-
+  How reactive programming, widget composition, and UI-as-code might bury your
+  view logic in deep nesting, and what you can do about it.
 publishDate: 2018-07-10
 author: mravn
 image: images/1RNOof30wEFXsbUsQ0Jof7Q.webp

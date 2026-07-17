@@ -1,6 +1,8 @@
 ---
 title: "Q4 2021 user survey results: about null safety, ecosystem, text editing, and mobile development"
-description: "Last November, the Flutter UX team ran the 15th quarterly user survey. The survey was announced via Flutter’s IDE plugins, YouTube…"
+description: >-
+  Last November, the Flutter UX team ran the 15th quarterly user survey. The
+  survey was announced via Flutter’s IDE plugins, YouTube…
 publishDate: 2022-02-22
 author: jayoung-lee
 image: images/0Zw_zyVq5CfP7Y09o.webp

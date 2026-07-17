@@ -1,6 +1,8 @@
 ---
 title: "We rebuilt Flutter’s websites with Dart and Jaspr"
-description: "Despite Dart starting out as a web language and being used every day to build apps across platforms, including the web, our own websites…"
+description: >-
+  Despite Dart starting out as a web language and being used every day to build
+  apps across platforms, including the web, our own websites…
 publishDate: 2026-04-15
 author: parlough
 image: images/1y6lc2WLpxXBKsuoKJywapQ.webp

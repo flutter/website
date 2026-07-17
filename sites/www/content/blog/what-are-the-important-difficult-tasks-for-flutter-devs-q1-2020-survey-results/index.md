@@ -1,6 +1,7 @@
 ---
 title: "What are the important & difficult tasks for Flutter devs? — Q1 2020 survey results"
-description: "Written by JaYoung Lee and Youyang Hou"
+description: >-
+  Written by JaYoung Lee and Youyang Hou
 publishDate: 2020-05-15
 author: jayoung-lee
 image: images/0OfKgvG4OS6Jt7Wum.webp

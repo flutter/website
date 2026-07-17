@@ -1,6 +1,7 @@
 ---
 title: "How we use user surveys to prioritize engineering effort in Flutter — October 2018 edition"
-description: "Written by Ja Young Lee & Tao Dong"
+description: >-
+  Written by Ja Young Lee & Tao Dong
 publishDate: 2019-01-17
 author: jayoung-lee
 image: images/1gKUzs2GxDWCBIS-i218_zQ.webp

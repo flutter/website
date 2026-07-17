@@ -1,6 +1,8 @@
 ---
 title: "[Video] Hamilton app built in 3 months with Flutter reaches 1M+ installs"
-description: "Hamilton and Posse, a design and development agency in New York, had three short months to develop and launch mobile apps for the hit…"
+description: >-
+  Hamilton and Posse, a design and development agency in New York, had three
+  short months to develop and launch mobile apps for the hit…
 publishDate: 2018-03-26
 author: aguinis
 category: story

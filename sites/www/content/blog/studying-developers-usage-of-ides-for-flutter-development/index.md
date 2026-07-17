@@ -1,6 +1,7 @@
 ---
 title: "Studying developer’s usage of IDEs for Flutter development"
-description: "Findings from the Q2 2022 user survey. Written by JaYoung Lee and Ander Dobo."
+description: >-
+  Findings from the Q2 2022 user survey. Written by JaYoung Lee and Ander Dobo.
 publishDate: 2022-09-12
 author: jayoung-lee
 image: images/1lHHYRiiookkYcA-Uhq9pgg.webp

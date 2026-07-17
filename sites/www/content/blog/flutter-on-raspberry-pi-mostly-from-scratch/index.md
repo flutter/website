@@ -1,6 +1,8 @@
 ---
 title: "Flutter on Raspberry Pi (mostly) from Scratch"
-description: "This document describes an experiment in porting the Flutter engine to a target that is currently not supported. That fact that I used  a…"
+description: >-
+  This document describes an experiment in porting the Flutter engine to a
+  target that is currently not supported. That fact that I used a…
 publishDate: 2018-11-30
 author: chinmaygarde
 image: images/1K1lyX_AOOILKyv3stAtlQg.jpeg

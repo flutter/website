@@ -1,6 +1,7 @@
 ---
 title: "I/O Pinball Powered by Flutter and Firebase"
-description: "Take Flutter game development to the next level"
+description: >-
+  Take Flutter game development to the next level
 publishDate: 2022-05-10
 author: verygoodopensource
 image: images/1yuiVVfFOuPnrsHcUx7xf_Q.webp

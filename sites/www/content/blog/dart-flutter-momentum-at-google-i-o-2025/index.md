@@ -1,6 +1,8 @@
 ---
 title: "Dart & Flutter momentum at Google I/O 2025"
-description: "Today at the Google I/O conference, hosted at Shoreline Amphitheatre in Mountain View, California, we shared how Flutter continues to gain…"
+description: >-
+  Today at the Google I/O conference, hosted at Shoreline Amphitheatre in
+  Mountain View, California, we shared how Flutter continues to gain…
 publishDate: 2025-05-21
 author: mit-mit
 image: images/0XtA6olQqCpKPyrdO.webp

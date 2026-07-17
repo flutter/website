@@ -1,6 +1,7 @@
 ---
 title: "How to Choose Which Flutter Animation Widget is Right for You?"
-description: "There are many widgets for animations, but which one to use?"
+description: >-
+  There are many widgets for animations, but which one to use?
 publishDate: 2020-04-01
 author: fitzface
 image: images/0oiCAPHSQGyFgZlUd.webp

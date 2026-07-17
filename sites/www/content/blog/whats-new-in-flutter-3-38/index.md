@@ -1,6 +1,7 @@
 ---
 title: "What’s new in Flutter 3.38"
-description: "Write less, see more, build faster"
+description: >-
+  Write less, see more, build faster
 publishDate: 2025-11-12
 author: itsjustkevin
 image: images/1MMtTv_yj5ycI6is3vkXRow.webp

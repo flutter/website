@@ -1,6 +1,7 @@
 ---
 title: "Announcing Flutter 2.2 at Google I/O 2021"
-description: "Growing momentum for the leading UI toolkit for multiplatform development"
+description: >-
+  Growing momentum for the leading UI toolkit for multiplatform development
 publishDate: 2021-05-18
 author: timsneath
 image: images/0NCBwYFewFf602uvF.webp

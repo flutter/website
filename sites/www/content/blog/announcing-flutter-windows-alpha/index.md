@@ -1,6 +1,8 @@
 ---
 title: "Announcing Flutter Windows Alpha"
-description: "Native Windows app compilation, some early plugins, and a desktop-ready Flutter Gallery app"
+description: >-
+  Native Windows app compilation, some early plugins,
+  and a desktop-ready Flutter Gallery app
 publishDate: 2020-09-23
 author: csells
 image: images/039MKtw4ICepbL_8d.webp

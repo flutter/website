@@ -1,6 +1,8 @@
 ---
 title: "Tune in for #FlutterInProduction — coming soon to a screen near you!"
-description: "Mark your calendars and be sure to tune into #FlutterInProduction at 11:00am PT on December 17, 2024."
+description: >-
+  Mark your calendars and be sure to tune into #FlutterInProduction at 11:00am
+  PT on December 17, 2024.
 publishDate: 2024-12-03
 author: kkboateng
 image: images/1SSIgDyW3jMaOF5nxH5D9lw.gif

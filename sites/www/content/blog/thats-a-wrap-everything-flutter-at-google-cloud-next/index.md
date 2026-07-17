@@ -1,6 +1,8 @@
 ---
 title: "That’s a wrap: Everything Flutter at Google Cloud Next"
-description: "Our team has been hard at work this Spring, preparing to meet over 30,000 of you in Las Vegas for Google Cloud Next. For those who couldn’t…"
+description: >-
+  Our team has been hard at work this Spring, preparing to meet over 30,000 of
+  you in Las Vegas for Google Cloud Next. For those who couldn’t…
 publishDate: 2026-04-27
 author: twerske
 image: images/1MdrcuqmMZPxXdrkJbDAdIA.webp

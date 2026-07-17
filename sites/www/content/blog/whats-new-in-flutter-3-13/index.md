@@ -1,6 +1,7 @@
 ---
 title: "What’s new in Flutter 3.13"
-description: "2D scrolling, faster graphics, Material 3 updates and more"
+description: >-
+  2D scrolling, faster graphics, Material 3 updates and more
 publishDate: 2023-08-16
 author: itsjustkevin
 image: images/0H4kTD2wabl_kscFq.webp

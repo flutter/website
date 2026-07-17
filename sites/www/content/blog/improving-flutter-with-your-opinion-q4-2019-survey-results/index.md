@@ -1,6 +1,7 @@
 ---
 title: "Improving Flutter with your opinion — Q4 2019 survey results"
-description: "Written by JaYoung Lee and Tao Dong"
+description: >-
+  Written by JaYoung Lee and Tao Dong
 publishDate: 2020-02-11
 author: jayoung-lee
 image: images/0W4ladsI7F9pgXph1.webp

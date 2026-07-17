@@ -1,6 +1,7 @@
 ---
 title: "Announcing the #GlobalGamers Challenge"
-description: "Build epic Flutter games to assist in the battle to defend the planet"
+description: >-
+  Build epic Flutter games to assist in the battle to defend the planet
 publishDate: 2024-01-09
 author: kkboateng
 image: images/0e6DUZrDIvURyxTW2.webp

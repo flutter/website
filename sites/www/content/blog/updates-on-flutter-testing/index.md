@@ -1,6 +1,8 @@
 ---
 title: "Updates on Flutter Testing"
-description: "Updated integration testing that supports Firebase Test Lab on mobile; stand-alone support for web and desktop, too!"
+description: >-
+  Updated integration testing that supports Firebase Test Lab on mobile;
+  stand-alone support for web and desktop, too!
 publishDate: 2020-12-09
 author: csells
 image: images/0PEc27voy2YR_winG.webp

@@ -1,6 +1,8 @@
 ---
 title: "Build reactive mobile apps in Flutter — companion article"
-description: "UPDATE (March 2019) — If you’re just starting to learn about Flutter and state management, I recommend you read the state management…"
+description: >-
+  UPDATE (March 2019) — If you’re just starting to learn about Flutter and state
+  management, I recommend you read the state management…
 publishDate: 2018-06-01
 author: filiph
 image: images/1DnixY5zJXnLe_x_eqSKkUA.webp

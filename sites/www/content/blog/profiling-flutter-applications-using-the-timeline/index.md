@@ -1,6 +1,8 @@
 ---
 title: "Profiling Flutter Applications Using the Timeline"
-description: "Using the Timeline allows you to find and address specific performance issues in your application. It is also a great tool to identify the…"
+description: >-
+  Using the Timeline allows you to find and address specific performance issues
+  in your application. It is also a great tool to identify the…
 publishDate: 2019-03-01
 author: chinmaygarde
 image: images/1MBoVBDD8a68IiUpcaD3CjQ.webp

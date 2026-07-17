@@ -1,6 +1,7 @@
 ---
 title: "Deprecation Lifetime in Flutter"
-description: "Reliably removing deprecated code on a scheduled basis."
+description: >-
+  Reliably removing deprecated code on a scheduled basis.
 publishDate: 2020-11-18
 author: piinks
 image: images/0n5eFBwWfgtkuLtDf.jpg

@@ -1,6 +1,8 @@
 ---
 title: "Animation deep dive"
-description: "Last year, I got to record one of the episodes in the Flutter Animations series, and I thought I’d publish the same content for those who…"
+description: >-
+  Last year, I got to record one of the episodes in
+  the Flutter Animations series
 publishDate: 2020-04-17
 author: filiph
 image: images/14bIqmJ8DQLSnlFtkN6bjaA.webp

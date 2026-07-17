@@ -1,6 +1,8 @@
 ---
 title: "Flutter culture and how to preserve it"
-description: "A big part of what makes Flutter so delightful and productive is its community. We really want this to continue."
+description: >-
+  A big part of what makes Flutter so delightful and productive is its
+  community. We really want this to continue.
 publishDate: 2019-06-07
 author: filiph
 image: images/1pI9tDcnxm87Vq1hX1Yzwpg.jpeg

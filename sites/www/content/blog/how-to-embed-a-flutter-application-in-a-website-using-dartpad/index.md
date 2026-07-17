@@ -1,6 +1,8 @@
 ---
 title: "How to embed a Flutter application in a Website using DartPad"
-description: "Have you ever wanted to embed your mobile application into a website? This is now easy to do with Flutter."
+description: >-
+  Have you ever wanted to embed your mobile application into a website? This is
+  now easy to do with Flutter.
 publishDate: 2020-03-23
 author: josealba
 image: images/0u979IALi6tiDee8O.webp

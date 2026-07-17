@@ -1,6 +1,8 @@
 ---
 title: "Best practices for hosting a live streaming coding session"
-description: "Live streaming has become an emerging practice for knowledge sharing in developer communities, where developers broadcast their work to…"
+description: >-
+  Live streaming has become an emerging practice for knowledge sharing in
+  developer communities, where developers broadcast their work to…
 publishDate: 2019-10-28
 author: yanchenum
 image: images/05e8cSvZaG83--mC7.webp

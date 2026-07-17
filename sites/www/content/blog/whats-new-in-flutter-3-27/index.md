@@ -1,6 +1,7 @@
 ---
 title: "What’s new in Flutter 3.27"
-description: "Elevating App Development with Impeller, Cupertino Updates, and More"
+description: >-
+  Elevating App Development with Impeller, Cupertino Updates, and More
 publishDate: 2024-12-11
 author: itsjustkevin
 image: images/1auh3JCfdFKzK_licnLrEKQ.webp

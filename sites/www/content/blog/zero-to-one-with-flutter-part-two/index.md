@@ -1,6 +1,8 @@
 ---
 title: "Zero to One with Flutter, Part Two"
-description: "Discovering how to animate composite graphical objects in the context of a cross-platform mobile app. Join an avid concept miner in…"
+description: >-
+  Discovering how to animate composite graphical objects in the context of a
+  cross-platform mobile app. Join an avid concept miner in…
 publishDate: 2017-03-31
 author: mravn
 image: images/1OSc2sFHg8KH4ZQR2ymytKg.webp

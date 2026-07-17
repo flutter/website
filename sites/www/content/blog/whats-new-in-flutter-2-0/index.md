@@ -1,6 +1,8 @@
 ---
 title: "What’s New in Flutter 2.0"
-description: "Flutter web and Null Safety move to stable, Flutter desktop moves to beta and so much more!"
+description: >-
+  Flutter web and Null Safety move to stable, Flutter desktop moves to beta and
+  so much more!
 publishDate: 2021-03-03
 author: csells
 image: images/0KQZef4s2-koToHMA.webp

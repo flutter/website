@@ -1,6 +1,7 @@
 ---
 title: "Building a QR code Widget in Flutter"
-description: "Making Flutter Widgets is fun so get going!"
+description: >-
+  Making Flutter Widgets is fun so get going!
 publishDate: 2018-03-05
 author: lukeaf
 image: images/1iuOxHUF0bBlZtiktVx6XyA.webp

@@ -1,6 +1,7 @@
 ---
 title: "API design tip for complex Flutter Widgets"
-description: "Asking a widget to be something vs. do something"
+description: >-
+  Asking a widget to be something versus do something
 publishDate: 2019-03-14
 author: amir_h
 category: tutorial

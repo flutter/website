@@ -1,6 +1,8 @@
 ---
 title: "The future of iOS development with Flutter"
-description: "Our recent accomplishments and future priorities for making Flutter a better tool for developing iOS apps"
+description: >-
+  Our recent accomplishments and future priorities for making Flutter a better
+  tool for developing iOS apps
 publishDate: 2023-05-18
 author: leighajarett
 image: images/1OGs9_siPcMAYd1yDAp-AOA.webp

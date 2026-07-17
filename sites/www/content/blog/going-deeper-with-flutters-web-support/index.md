@@ -1,6 +1,7 @@
 ---
 title: "Going deeper with Flutter’s web support"
-description: "Harnessing the full power of the web platform for app-centric experiences"
+description: >-
+  Harnessing the full power of the web platform for app-centric experiences
 publishDate: 2020-07-29
 author: mariam_hasnany
 image: images/1dbcXXNRiMmMXxA1YsZYwcQ.webp

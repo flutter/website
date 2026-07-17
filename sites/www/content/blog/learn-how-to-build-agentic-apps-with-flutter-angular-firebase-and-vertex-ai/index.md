@@ -1,6 +1,8 @@
 ---
 title: "Learn how to build agentic apps with Flutter, Angular, Firebase, and Vertex AI"
-description: "The way we build applications is evolving. Imagine apps that don’t just respond to user input but proactively assist, automate tasks, and…"
+description: >-
+  The way we build applications is evolving. Imagine apps that don’t just
+  respond to user input but proactively assist, automate tasks, and…
 publishDate: 2025-04-24
 author: kkboateng
 image: images/0bWWt_FlITTVh_813.webp
