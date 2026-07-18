@@ -91,6 +91,12 @@ String parseMarkdownToHtml(String markdownString, {bool inline = false}) {
   return renderer.render(nodes);
 }
 
+/// Parses inline Markdown and returns only its rendered text content.
+String parseInlineMarkdownToText(String markdownString) {
+  final rendered = parseMarkdownToHtml(markdownString, inline: true);
+  return html.parseFragment(rendered).text ?? '';
+}
+
 final RegExp _markdownFilePattern = RegExp(r'.*\.md$');
 
 class DashMarkdownParser implements PageParser {

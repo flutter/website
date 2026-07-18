@@ -19,27 +19,37 @@ final class DataProcessor implements DataLoader {
   /// Adds data about the last modified date of the page.
   static void _loadLastModified(Page page) {
     final pageLoader = page.loader;
-    if (pageLoader is! FilesystemLoader) return;
-
-    final sourcePath = path.canonicalize(
-      path.absolute(path.join(pageLoader.directory, page.path)),
-    );
-
     final repositoryRoot = _repositoryRoot;
-    // Use native separators for filesystem paths,
-    // then POSIX separators for Git paths and source URLs.
-    final inputPath = repositoryRoot != null
-        ? path.posix.joinAll(
-            path.split(path.relative(sourcePath, from: repositoryRoot)),
-          )
-        : null;
-    final lastModifiedDate = inputPath != null
-        ? _lastModifiedDateForPath(inputPath)
-        : null;
+    String? inputPath;
+    String? projectInputPath;
+    if (repositoryRoot != null && pageLoader is FilesystemLoader) {
+      final sourcePath = path.canonicalize(
+        path.absolute(path.join(pageLoader.directory, page.path)),
+      );
+
+      // Use native separators for filesystem paths,
+      // then POSIX separators for Git paths and source URLs.
+      String toPosixRelative(String from) =>
+          path.posix.joinAll(path.split(path.relative(sourcePath, from: from)));
+      inputPath = toPosixRelative(repositoryRoot);
+      projectInputPath = toPosixRelative(_projectRoot);
+    }
+
+    final modifiedSources = <String>{
+      ?projectInputPath,
+      if (page.data.page['dateModifiedSources']
+          case final List<Object?> sources)
+        ...sources.whereType<String>(),
+    };
+    if (modifiedSources.isEmpty) return;
+
+    final lastModified = latestModifiedDateForPaths(modifiedSources);
+    final lastModifiedDate = lastModified?.formatted;
     page.apply(
       data: {
         'page': {
           'date': ?lastModifiedDate,
+          'dateModified': ?lastModified,
           'inputPath': ?inputPath,
           if (page.data.page['sitemap'] == null)
             'sitemap': {
@@ -70,22 +80,37 @@ final String? _repositoryRoot = () {
   return path.canonicalize((result.stdout as String).trim());
 }();
 
-/// Determines the last modified date for a given path
-/// in the form `yyyy-mm-dd`.
-///
-/// Uses `git log` to get the last modified date from the git history.
-/// Returns `null` if no date can be determined.
-String? _lastModifiedDateForPath(String inputPath) =>
-    _lastModifiedPerPath[inputPath]?.formatted;
+/// The project directory from which the docs site is built.
+final String _projectRoot = path.canonicalize(path.current);
 
-/// The most recent Git commit date for each content file path.
+/// Determines the newest Git modification time for [inputPaths].
 ///
-/// The paths are relative to the repository root.
+/// Input paths are relative to the docs project root.
+/// Uses dates collected from Git history.
+/// Returns `null` if no date can be determined for any input path.
+DateTime? latestModifiedDateForPaths(Iterable<String> inputPaths) {
+  DateTime? latestDate;
+  for (final inputPath in inputPaths) {
+    final modifiedDate = _lastModifiedPerPath[inputPath];
+    if (modifiedDate != null &&
+        (latestDate == null || modifiedDate.isAfter(latestDate))) {
+      latestDate = modifiedDate;
+    }
+  }
+  return latestDate;
+}
+
+/// The most recent Git commit date for each docs project file path.
+///
+/// The paths are relative to the docs project root.
 /// If Git metadata isn't available, the map is empty.
 final Map<String, DateTime> _lastModifiedPerPath = () {
   final fileLastModified = <String, DateTime>{};
   final repositoryRoot = _repositoryRoot;
   if (repositoryRoot == null) return fileLastModified;
+  final projectPath = path.posix.joinAll(
+    path.split(path.relative(_projectRoot, from: repositoryRoot)),
+  );
 
   final ProcessResult result;
   try {
@@ -96,7 +121,7 @@ final Map<String, DateTime> _lastModifiedPerPath = () {
         '--name-only',
         '--format=commit-date:%cI',
         '--',
-        path.posix.join('sites', 'docs', 'src', 'content'),
+        projectPath,
       ],
       workingDirectory: repositoryRoot,
     );
@@ -123,10 +148,14 @@ final Map<String, DateTime> _lastModifiedPerPath = () {
     } else if (line.isNotEmpty) {
       // If it's a non-empty line and a date is set, it's a file path.
       if (currentCommitDate case final lastModifiedTime?) {
+        final projectRelativePath = path.posix.relative(
+          line,
+          from: projectPath,
+        );
         // Only set the last modified time for this path
         // if we haven't already stored a later modified time.
         fileLastModified.putIfAbsent(
-          line,
+          projectRelativePath,
           () => lastModifiedTime,
         );
       }

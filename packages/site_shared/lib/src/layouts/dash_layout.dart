@@ -68,7 +68,10 @@ abstract class DashLayout implements PageLayout {
         ? '$pageTitle | $titleBase'
         : pageTitle;
 
-    final canonicalUrl = pageData['canonical'] as String?;
+    final canonicalUrl = switch (pageData['canonical']) {
+      final String url when url.trim().isNotEmpty => url.trim(),
+      _ => Uri.parse(siteData['url'] as String).resolve(page.url).toString(),
+    };
 
     return [
       Component.element(tag: 'title', children: [.text(windowTitle)]),
@@ -79,8 +82,7 @@ abstract class DashLayout implements PageLayout {
       if (pageData['noindex'] case final noIndex?
           when noIndex == true || noIndex == 'true')
         const meta(name: 'robots', content: 'noindex'),
-      if (canonicalUrl case final canonicalUrl? when canonicalUrl.isNotEmpty)
-        link(rel: 'canonical', href: canonicalUrl),
+      link(rel: 'canonical', href: canonicalUrl),
       if (pageData['redirectTo'] case final String redirectTo
           when redirectTo.isNotEmpty)
         RawText('<script>window.location.replace("$redirectTo");</script>'),
@@ -125,7 +127,7 @@ abstract class DashLayout implements PageLayout {
       meta(
         attributes: {
           'property': 'og:url',
-          'content': canonicalUrl ?? page.path,
+          'content': canonicalUrl,
         },
       ),
       meta(

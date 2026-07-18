@@ -26,7 +26,7 @@ Flutter supports deploying to the following platforms.
     name="Android"
     icon="mobile"
     arch="x64, Arm32, Arm64"
-    supported="24 to 36"
+    supported="24 to 37"
     ci-tested="24 to 36"
     unsupported="23 and earlier"
     deploy-to-link="/deployment/android"
