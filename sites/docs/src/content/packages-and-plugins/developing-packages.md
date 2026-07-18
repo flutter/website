@@ -145,7 +145,8 @@ in global or static variables, and clean it up when the plugin
 detaches from its engine.
 
 If plugin instances share a native singleton or other global resource,
-coordinate access across the instances.
+coordinate access across the instances, for example by using
+reference counting.
 Release the resource only after every plugin instance
 has stopped using it.
 
