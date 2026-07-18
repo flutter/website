@@ -5,7 +5,9 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/components/common/breadcrumbs.dart';
 import 'package:site_shared/layouts.dart';
+import 'package:site_shared/structured_data.dart';
 import 'package:site_shared/util.dart';
 
 import '../components/layout/footer.dart';
@@ -44,11 +46,42 @@ abstract class FlutterDocsLayout extends DashLayout {
 
   String get defaultSidenav => 'default';
 
+  bool get allowBreadcrumbs => true;
+
+  /// Whether breadcrumbs should be shown for [page],
+  /// honoring both the layout's [allowBreadcrumbs] and
+  /// the page's `showBreadcrumbs` metadata.
+  bool showBreadcrumbsFor(Page page) =>
+      allowBreadcrumbs && (page.data.page['showBreadcrumbs'] as bool? ?? true);
+
   @override
   Iterable<Component> buildExtraHead(Page page) {
-    return const [
+    return [
+      Builder(
+        builder: (context) {
+          final pageData = page.data.page;
+          final breadcrumbs = showBreadcrumbsFor(page)
+              ? breadcrumbsForPage(context.pages, page)
+              : null;
+          final structuredData = buildPageStructuredData(
+            siteUrl: page.data.site['url'] as String,
+            siteName: page.data.site['name'] as String,
+            siteDescription: page.data.site['description'] as String,
+            pageUrl: page.url,
+            title: pageData['title'] as String,
+            pageDescription: pageData['description'] as String?,
+            dateModified: pageData['dateModified'] as DateTime?,
+            breadcrumbs: breadcrumbs,
+          );
+
+          return script(
+            attributes: const {'type': 'application/ld+json'},
+            content: encodeJsonLdForHtml(structuredData),
+          );
+        },
+      ),
       if (productionBuild)
-        meta(
+        const meta(
           name: 'google-site-verification',
           content: 'HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4',
         ),
