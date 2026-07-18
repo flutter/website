@@ -133,6 +133,22 @@ you need to develop a plugin package.
 The API is connected to the platform-specific
 implementation(s) using a [platform channel][].
 
+### Supporting multiple Flutter instances
+
+All Flutter platforms allow apps to create
+[multiple Flutter engines][].
+Each engine creates its own instance of every registered plugin,
+and those plugin instances can have independent lifetimes.
+Don't assume that a plugin class has only one instance.
+Keep engine-specific state on the plugin instance rather than
+in global or static variables, and clean it up when the plugin
+detaches from its engine.
+
+If plugin instances share a native singleton or other global resource,
+coordinate access across the instances.
+Release the resource only after every plugin instance
+has stopped using it.
+
 ### Federated plugins
 
 **Federated plugins** are a way of splitting the API of a plugin
@@ -1035,6 +1051,7 @@ file, like any other Dart package.
 [How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
+[multiple Flutter engines]: /add-to-app/multiple-flutters
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
 [`package:ffigen`]: {{site.pub}}/packages/ffigen
