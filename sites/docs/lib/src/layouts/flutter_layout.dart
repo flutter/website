@@ -14,6 +14,7 @@ import '../components/layout/footer.dart';
 import '../components/layout/header.dart';
 import '../components/layout/sidenav.dart';
 import '../models/sidenav_model.dart';
+import '../pages/markdown.dart';
 import '../style_hash.dart';
 
 /// The base Jaspr Content layout for wrapping site content.
@@ -57,6 +58,13 @@ abstract class FlutterDocsLayout extends DashLayout {
   @override
   Iterable<Component> buildExtraHead(Page page) {
     return [
+      if (canonicalMarkdownOutput.routeForPage(page) case final markdownRoute?)
+        link(
+          rel: 'alternate',
+          type: 'text/markdown',
+          href: markdownRoute,
+          attributes: const {'title': 'Markdown'},
+        ),
       Builder(
         builder: (context) {
           final pageData = page.data.page;

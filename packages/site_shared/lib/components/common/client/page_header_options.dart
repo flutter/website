@@ -14,12 +14,14 @@ import '../dropdown.dart';
 final class PageHeaderOptions extends StatefulComponent {
   const PageHeaderOptions({
     required this.title,
+    this.markdownUrl,
     this.sourceUrl,
     this.issueUrl,
     super.key,
   });
 
   final String title;
+  final String? markdownUrl;
   final String? sourceUrl;
   final String? issueUrl;
 
@@ -91,12 +93,28 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
                   ),
               ],
             ),
+            if (component.markdownUrl case final markdownUrl?) ...[
+              li(
+                [
+                  Button(
+                    icon: 'markdown',
+                    content: 'View as Markdown',
+                    href: markdownUrl,
+                    attributes: const {
+                      'target': '_blank',
+                      'rel': 'noopener',
+                    },
+                  ),
+                ],
+              ),
+              const DropdownDivider(),
+            ],
             if (component.sourceUrl case final sourceUrl?)
               li(
                 [
                   Button(
                     icon: 'docs',
-                    content: 'View source',
+                    content: 'Open on GitHub',
                     href: sourceUrl,
                     attributes: const {
                       'target': '_blank',
@@ -110,7 +128,7 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
                 [
                   Button(
                     icon: 'bug_report',
-                    content: 'Report issue',
+                    content: 'Report an issue',
                     href: issueUrl,
                     attributes: const {
                       'target': '_blank',

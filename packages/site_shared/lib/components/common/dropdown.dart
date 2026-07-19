@@ -86,3 +86,15 @@ final class DropdownState extends State<Dropdown> {
     );
   }
 }
+
+/// A separator between groups of dropdown menu items.
+final class DropdownDivider extends StatelessComponent {
+  const DropdownDivider({super.key});
+
+  @override
+  Component build(BuildContext _) => const Component.element(
+    tag: 'li',
+    classes: 'dropdown-divider',
+    attributes: {'aria-hidden': 'true', 'role': 'separator'},
+  );
+}
