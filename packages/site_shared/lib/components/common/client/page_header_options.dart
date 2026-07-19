@@ -107,7 +107,7 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
                   ),
                 ],
               ),
-              const DropdownDivider(),
+              if (component.issueUrl != null) const DropdownDivider(),
             ],
             if (component.sourceUrl case final sourceUrl?)
               li(
