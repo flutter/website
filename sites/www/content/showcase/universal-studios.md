@@ -2,7 +2,7 @@
 title: Universal Studios
 description: Hear how the developers at Universal Destinations & Experiences utilize Flutter to create amazing guest experiences, so their visitors can spend more time enjoying their parks.
 headline: Universal Studios
-summary: Universal Studios build next generation experiences with Flutter
+summary: Universal Studios builds next-generation experiences with Flutter
 appName: Universal Studios
 companyName: Universal Studios
 logo: images/third_party/case_studies/universal-studios/logo.png
