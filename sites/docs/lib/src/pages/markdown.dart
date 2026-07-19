@@ -21,7 +21,13 @@ final class CanonicalMarkdownOutput extends MarkdownOutput {
   }
 
   @override
-  String createRoute(String route) => route == '/' ? '/index.md' : '$route.md';
+  String createRoute(String route) {
+    // Ensure `/foo/` maps to `/foo.md` rather than `/foo/.md`.
+    final normalizedRoute = route.endsWith('/')
+        ? route.substring(0, route.length - 1)
+        : route;
+    return normalizedRoute.isEmpty ? '/index.md' : '$normalizedRoute.md';
+  }
 }
 
 String _createHeader(Page page) {
