@@ -138,6 +138,14 @@ Set up each iOS device on which you want to test.
     Apple requires enabling **[Developer Mode][]**
     on the device to protect against malicious software.
 
+    :::note
+    If the **Developer Mode** option is not visible
+    under **Settings > Privacy & Security**, connect the device
+    to your Mac, unlock it, and trust the computer.
+    Open Xcode (or run `flutter run`) to initiate device configuration,
+    which makes the option appear.
+    :::
+
     1. Tap on **Settings** <span aria-label="and then">></span>
        **Privacy & Security** <span aria-label="and then">></span>
        **Developer Mode**.
