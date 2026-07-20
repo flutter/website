@@ -1,8 +1,8 @@
 ---
-title: UISceneDelegate adoption
+title: UIScene adoption
 description: >-
   Learn how to migrate your Flutter iOS app, add-to-app integration, or plugin
-  to Apple's required UIScene lifecycle using FlutterSceneDelegate.
+  to Apple's required UIScene lifecycle.
 ---
 
 {% render "docs/breaking-changes.md" %}
@@ -595,143 +595,8 @@ forward scene lifecycle events to Flutter.
 
 ### If your app supports multiple scenes
 
-When multiple scenes are enabled (`UIApplicationSupportsMultipleScenes`),
-Flutter can't automatically connect a `FlutterEngine` to its
-corresponding `UIScene` during the initial scene connection phase.
-
-To ensure that Flutter plugins can receive the initial scene setup options
-(such as deep link URLs or shortcut items passed inside the
-`UIScene.ConnectionOptions` payload), you must manually register the
-`FlutterEngine` with either your `FlutterSceneDelegate` or your
-`FlutterPluginSceneLifeCycleDelegate` inside the
-`scene:willConnectToSession:options:` method.
-
-If you don't perform this manual registration,
-the `FlutterEngine` still registers itself automatically once the view
-created by the `FlutterViewController` is added to the active view hierarchy.
-However, by that point, the engine and its plugins have already missed
-any launch connection events passed during `willConnectToSession:`.
-
-<Tabs key="ios-language-switcher">
-<Tab name="Swift">
-
-```swift title="SceneDelegate.swift"
-import Flutter
-import FlutterPluginRegistrant
-import UIKit
-
-class SceneDelegate: FlutterSceneDelegate {
-  let flutterEngine = FlutterEngine(name: "my flutter engine")
-
-  override func scene(
-    _ scene: UIScene,
-    willConnectTo session: UISceneSession,
-    options connectionOptions: UIScene.ConnectionOptions
-  ) {
-    guard let windowScene = scene as? UIWindowScene else { return }
-    window = UIWindow(windowScene: windowScene)
-
-    flutterEngine.run()
-    GeneratedPluginRegistrant.register(with: flutterEngine)
-
-    // If using FlutterSceneDelegate:
-    self.registerSceneLifeCycle(with: flutterEngine)
-
-    // If using FlutterSceneLifeCycleProvider:
-    // sceneLifeCycleDelegate.registerSceneLifeCycle(with: flutterEngine)
-
-    let viewController = ViewController(engine: flutterEngine)
-    window?.rootViewController = viewController
-    window?.makeKeyAndVisible()
-    super.scene(scene, willConnectTo: session, options: connectionOptions)
-  }
-}
-```
-
-</Tab>
-<Tab name="Objective-C">
-
-```objc title="SceneDelegate.h"
-#import <UIKit/UIKit.h>
-#import <Flutter/Flutter.h>
-#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
-
-@interface SceneDelegate : FlutterSceneDelegate
-@property(nonatomic, strong) FlutterEngine *flutterEngine;
-@end
-```
-
-```objc title="SceneDelegate.m"
-#import "SceneDelegate.h"
-#import "ViewController.h"
-
-@implementation SceneDelegate
-
-- (instancetype)init {
-  if (self = [super init]) {
-    _flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
-  }
-  return self;
-}
-
-- (void)scene:(UIScene *)scene
-    willConnectToSession:(UISceneSession *)session
-                 options:(UISceneConnectionOptions *)connectionOptions {
-  if (![scene isKindOfClass:[UIWindowScene class]]) {
-    return;
-  }
-  UIWindowScene *windowScene = (UIWindowScene *)scene;
-  self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
-
-  [self.flutterEngine run];
-  [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
-
-  // If using FlutterSceneDelegate:
-  [self registerSceneLifeCycleWithFlutterEngine:self.flutterEngine];
-
-  // If using FlutterSceneLifeCycleProvider:
-  // [self.sceneLifeCycleDelegate registerSceneLifeCycleWithFlutterEngine:self.flutterEngine];
-
-  ViewController *viewController = [[ViewController alloc] initWithEngine:self.flutterEngine];
-  self.window.rootViewController = viewController;
-  [self.window makeKeyAndVisible];
-  [super scene:scene willConnectToSession:session options:connectionOptions];
-}
-
-@end
-```
-
-</Tab>
-</Tabs>
-
-If you manually register a `FlutterEngine` with a scene,
-you must also unregister it if the view
-created by the `FlutterEngine` changes scenes.
-
-<Tabs key="ios-language-switcher">
-<Tab name="Swift">
-
-```swift
-// If using FlutterSceneDelegate:
-self.unregisterSceneLifeCycle(with: flutterEngine)
-
-// If using FlutterSceneLifeCycleProvider:
-sceneLifeCycleDelegate.unregisterSceneLifeCycle(with: flutterEngine)
-```
-
-</Tab>
-<Tab name="Objective-C">
-
-```objc
-// If using FlutterSceneDelegate:
-[self unregisterSceneLifeCycleWithFlutterEngine:self.flutterEngine];
-
-// If using FlutterSceneLifeCycleProvider:
-[self.sceneLifeCycleDelegate unregisterSceneLifeCycleWithFlutterEngine:self.flutterEngine];
-```
-
-</Tab>
-</Tabs>
+Flutter doesn't fully support multiple scenes yet,
+but support is in progress.
 
 <a id="migration-guide-for-flutter-plugins" aria-hidden="true"></a>
 
@@ -821,7 +686,6 @@ migrate it to UIKit's scene-based lifecycle as follows:
     | [`application:continueUserActivity:restorationHandler:`][]        | [`scene:continueUserActivity:`][]                                 |
     | [`application:performActionForShortcutItem:completionHandler:`][] | [`windowScene:performActionForShortcutItem:completionHandler:`][] |
     | [`application:openURL:options:`][]                                | [`scene:openURLContexts:`][]                                      |
-    | [`application:performFetchWithCompletionHandler:`][]              | [`BGAppRefreshTask`][]                                            |
     | [`application:willFinishLaunchingWithOptions:`][]                 | [`scene:willConnectToSession:options:`][]                         |
     | [`application:didFinishLaunchingWithOptions:`][]                  | [`scene:willConnectToSession:options:`][]                         |
 
@@ -911,8 +775,128 @@ migrate it to UIKit's scene-based lifecycle as follows:
     Move any logic that relies on the launch options to the
     `scene:willConnectToSession:options:` event.
 
- 1. Optional: Migrate other deprecated APIs to support
-    multiple scenes in the future.
+ 1. If your plugin uses an API that must be called before
+    `application:didFinishLaunchingWithOptions:` completes,
+    you should expose a public method that app developers
+    can call directly in their AppDelegate.
+
+    The following Apple APIs must be configured before app launch finishes:
+
+    - [`BGTaskScheduler.registerForTaskWithIdentifier:usingQueue:launchHandler:`][]
+    - [`UNUserNotificationCenterDelegate`][]
+    - [`HKHealthStore.enableBackgroundDeliveryForType:frequency:withCompletion:`][]
+
+    For example, to support `BGTaskScheduler`: 
+
+    <Tabs key="ios-language-switcher">
+    <Tab name="Swift">
+
+    ```swift diff
+      // Plugin
+
+      public class BGTaskPlugin: NSObject, FlutterPlugin {
+        public static let shared =  BGTaskPlugin()
+        public static func register(with registrar: FlutterPluginRegistrar) {
+          let channel = ...
+          registrar.addMethodCallDelegate(shared, channel: channel)
+          registrar.addApplicationDelegate(shared)
+        }
+    +   // A new API for apps to call in their `AppDelegate`'s `application:didFinishLaunchingWithOptions:`
+    +   public func registerBackgroundHandler(identifier: String) {
+    +     BGTaskScheduler.register(forTaskWithIdentifier: identifier, using: .main) { task in
+    +       // Handle background task execution
+    +     }
+    +   }
+    -   public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [AnyHashable : Any] = [:]) -> Bool {
+    -     BGTaskScheduler.register(forTaskWithIdentifier: identifier, using: .main) { task in
+    -       // Handle background task execution
+    -     }
+    -     return true
+    -   }
+      }
+
+      // App
+
+      class AppDelegate: FlutterAppDelegate {
+        override func application(
+          _ application: UIApplication,
+          didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+        ) -> Bool {
+    +     BGTaskPlugin.shared.registerBackgroundHandler(identifier: "com.example.task")
+          return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+        }
+      }
+    ```
+
+    </Tab>
+    <Tab name="Objective-C">
+
+    ```objc diff
+      // Plugin
+
+      @interface BGTaskPlugin : NSObject <FlutterPlugin>
+    + + (instancetype)sharedInstance;
+    + - (void)registerBackgroundHandlerWithIdentifier:(NSString *)identifier;
+      @end
+
+      @implementation BGTaskPlugin
+
+    + + (instancetype)sharedInstance {
+    +   static BGTaskPlugin *sharedInstance = nil;
+    +   static dispatch_once_t onceToken;
+    +   dispatch_once(&onceToken, ^{
+    +     sharedInstance = [[BGTaskPlugin alloc] init];
+    +   });
+    +   return sharedInstance;
+    + }
+
+      + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
+        FlutterMethodChannel *channel = ...
+        [registrar addMethodCallDelegate:[BGTaskPlugin sharedInstance] channel:channel];
+        [registrar addApplicationDelegate:[BGTaskPlugin sharedInstance]];
+      }
+
+    + // A new API for apps to call in their `AppDelegate`'s `application:didFinishLaunchingWithOptions:`
+    + - (void)registerBackgroundHandlerWithIdentifier:(NSString *)identifier {
+    +   [[BGTaskScheduler sharedScheduler] registerForTaskWithIdentifier:identifier
+    +                                                         usingQueue:dispatch_get_main_queue()
+    +                                                      launchHandler:^(BGTask *task) {
+    +     // Handle background task execution
+    +   }];
+    + }
+
+    - - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    -   [[BGTaskScheduler sharedScheduler] registerForTaskWithIdentifier:identifier
+    -                                                         usingQueue:dispatch_get_main_queue()
+    -                                                      launchHandler:^(BGTask *task) {
+    -     // Handle background task execution
+    -   }];
+    -   return YES;
+    - }
+      @end
+      
+      // App
+
+      @implementation AppDelegate
+      - (BOOL)application:(UIApplication *)application
+          didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    +   [[BGTaskPlugin sharedInstance] registerBackgroundHandlerWithIdentifier:@"com.example.task"];
+        return [super application:application didFinishLaunchingWithOptions:launchOptions];
+      }
+      @end
+    ```
+
+    </Tab>
+    </Tabs>
+
+    This change is required due to UIScene changing the app launch
+    sequence. For apps that adopt `UIScene`, Flutter calls
+    `application:willFinishLaunchingWithOptions:` and
+    `application:didFinishLaunchingWithOptions:` during the
+    `scene:willConnectToSession:options:` callback.
+
+ 1. Migrate other deprecated APIs to properly
+    access the `viewController`, `screen`, or `window`.
 
     | Deprecated API                     | UIScene replacement           |
     |:-----------------------------------|:------------------------------|
@@ -923,8 +907,11 @@ migrate it to UIKit's scene-based lifecycle as follows:
 
     {:.table}
 
-    Instead of accessing these APIs,
-    access the `windowScene` through the `viewController`,
+    Because `UIApplication.shared.delegate.window` is `nil`
+    after adopting `UIScene`,
+    you should access the `viewController`
+    via the plugin registrar's `viewController` property
+    and retrieve the window or `windowScene` from there,
     as shown in the following examples.
 
     <Tabs key="ios-language-switcher">
@@ -1022,7 +1009,6 @@ migrate it to UIKit's scene-based lifecycle as follows:
 [`application:continueUserActivity:restorationHandler:`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623072-application
 [`application:performActionForShortcutItem:completionHandler:`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/application(_:performactionfor:completionhandler:)
 [`application:openURL:options:`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623112-application
-[`application:performFetchWithCompletionHandler:`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623125-application
 [`application:willFinishLaunchingWithOptions:`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623032-application
 [`application:didFinishLaunchingWithOptions:`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1622921-application
 [`sceneDidBecomeActive`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate/3197915-scenedidbecomeactive
@@ -1032,7 +1018,6 @@ migrate it to UIKit's scene-based lifecycle as follows:
 [`scene:continueUserActivity:`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate/scene(_:continue:)
 [`windowScene:performActionForShortcutItem:completionHandler:`]: {{site.apple-dev}}/documentation/uikit/uiwindowscenedelegate/3238088-windowscene
 [`scene:openURLContexts:`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate/3238059-scene
-[`BGAppRefreshTask`]: {{site.apple-dev}}/documentation/backgroundtasks/bgapprefreshtask
 [`scene:willConnectToSession:options:`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate/3197914-scene
 [`UIScreen mainScreen`]: {{site.apple-dev}}/documentation/uikit/uiscreen/1617815-mainscreen
 [`UIWindowScene screen`]: {{site.apple-dev}}/documentation/uikit/uiwindowscene/screen?language=objc
@@ -1042,6 +1027,9 @@ migrate it to UIKit's scene-based lifecycle as follows:
 [`UIWindowScene windows`]: {{site.apple-dev}}/documentation/uikit/uiwindowscene/windows?language=objc
 [`UIApplicationDelegate window`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/window
 [`UIView window`]: {{site.apple-dev}}/documentation/uikit/uiview/window?language=objc
+[`BGTaskScheduler.registerForTaskWithIdentifier:usingQueue:launchHandler:`]: <{{site.apple-dev}}/documentation/backgroundtasks/bgtaskscheduler/register(fortaskwithidentifier:using:launchhandler:)?language=objc>
+[`UNUserNotificationCenterDelegate`]: {{site.apple-dev}}/documentation/usernotifications/unusernotificationcenterdelegate?language=objc
+[`HKHealthStore.enableBackgroundDeliveryForType:frequency:withCompletion:`]: <{{site.apple-dev}}/documentation/healthkit/hkhealthstore/enablebackgrounddelivery(for:frequency:withcompletion:)?language=objc>
 
 ## Bespoke FlutterViewController usage
 
