@@ -16,25 +16,53 @@ and images would fade in as they're loaded? Use the
 `FadeInImage` works with images of any type: in-memory, local assets,
 or images from the internet.
 
-## In-Memory
+## In-memory
 
-In this example, use the [`transparent_image`][]
-package for a simple transparent placeholder.
+Complete the following steps to use a
+one-pixel transparent PNG as the placeholder.
 
-<?code-excerpt "lib/memory_main.dart (MemoryNetwork)" replace="/^child\: //g"?>
-```dart
-FadeInImage.memoryNetwork(
-  placeholder: kTransparentImage,
-  image: 'https://picsum.photos/250?image=9',
-),
-```
+1.  **Create the transparent image data.**
+
+    Import `dart:convert` and `dart:typed_data`,
+    then decode the image from a Base64-encoded string:
+
+    <?code-excerpt "lib/memory_main.dart (TransparentImage)" plaster="none"?>
+    ```dart
+    import 'dart:convert';
+    import 'dart:typed_data';
+    final Uint8List transparentImage = base64Decode(
+      'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4'
+      'nGMAAQAABQABDQottAAAAABJRU5ErkJggg==',
+    );
+    ```
+
+1.  **Use the image data as a placeholder.**
+
+    Pass the decoded image data to the `placeholder` parameter:
+
+    <?code-excerpt "lib/memory_main.dart (MemoryNetwork)" replace="/^child\: //g"?>
+    ```dart
+    FadeInImage.memoryNetwork(
+      placeholder: transparentImage,
+      image: 'https://picsum.photos/250?image=9',
+    ),
+    ```
+
+{:.steps}
 
 ### Complete example
 
 <?code-excerpt "lib/memory_main.dart"?>
 ```dart
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
-import 'package:transparent_image/transparent_image.dart';
+
+final Uint8List transparentImage = base64Decode(
+  'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4'
+  'nGMAAQAABQABDQottAAAAABJRU5ErkJggg==',
+);
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +84,7 @@ class MyApp extends StatelessWidget {
             const Center(child: CircularProgressIndicator()),
             Center(
               child: FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
+                placeholder: transparentImage,
                 image: 'https://picsum.photos/250?image=9',
               ),
             ),
@@ -72,25 +100,36 @@ class MyApp extends StatelessWidget {
 
 ## From asset bundle
 
-You can also consider using local assets for placeholders.
-First, add the asset to the project's `pubspec.yaml` file
-(for more details, see [Adding assets and images][]):
+Complete the following steps to use a
+local image asset as the placeholder.
 
-```yaml diff
-  flutter:
-    assets:
-+     - assets/loading.gif
-```
+1.  **Add the placeholder to the asset bundle.**
 
-Then, use the [`FadeInImage.assetNetwork()`][] constructor:
+    Add a placeholder image to the project's `assets` directory,
+    such as `assets/loading.gif`.
+    Then, declare the asset in the project's `pubspec.yaml` file.
+    For more details, see [Adding assets and images][].
 
-<?code-excerpt "lib/asset_main.dart (AssetNetwork)" replace="/^child\: //g"?>
-```dart
-FadeInImage.assetNetwork(
-  placeholder: 'assets/loading.gif',
-  image: 'https://picsum.photos/250?image=9',
-),
-```
+    ```yaml diff
+      flutter:
+        assets:
+    +     - assets/loading.gif
+    ```
+
+1.  **Use the asset as a placeholder.**
+
+    Pass the asset path to the `placeholder` parameter of
+    the [`FadeInImage.assetNetwork`][] constructor:
+
+    <?code-excerpt "lib/asset_main.dart (AssetNetwork)" replace="/^child\: //g"?>
+    ```dart
+    FadeInImage.assetNetwork(
+      placeholder: 'assets/loading.gif',
+      image: 'https://picsum.photos/250?image=9',
+    ),
+    ```
+
+{:.steps}
 
 ### Complete example
 
@@ -130,5 +169,4 @@ class MyApp extends StatelessWidget {
 
 [Adding assets and images]: /ui/assets/assets-and-images
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
-[`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
-[`transparent_image`]: {{site.pub-pkg}}/transparent_image
+[`FadeInImage.assetNetwork`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
