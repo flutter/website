@@ -45,7 +45,7 @@ The impact of migrating to Flutter was felt immediately upon completing the tran
 
 *   **4x release cadence:** Since the migration, talabat's release cadence has increased by 4x, enabling them to ship features and fixes much faster than before.
 *   **Improved app stability:** The migration led to a clear improvement in app stability across both iOS and Android.
-*   **Enhanced performance:** talabat observed a Faster 'start-to-interactive' times and a significant reduction in frozen frames.
+*   **Enhanced performance:** talabat observed faster "start-to-interactive" times and a significant reduction in frozen frames.
 *   **Successful team transformation:** Over 50 native engineers were successfully upskilled to Flutter, breaking down team silos and enabling better collaboration and knowledge sharing.
 
 <br />

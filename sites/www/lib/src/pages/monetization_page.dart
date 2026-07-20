@@ -39,7 +39,7 @@ class MonetizationPage extends StatelessComponent {
             title: 'Ads',
             description:
                 'Easily integrate Google AdMob and Ad Manager ads '
-                'directly in your Flutter App',
+                'directly in your Flutter app',
             image: context.asset('images/ads.png'),
           ),
           FeatureColumn(
@@ -87,7 +87,7 @@ class MonetizationPage extends StatelessComponent {
                       ]),
                       p(classes: 'body', [
                         .text('''
-                  The Google Mobile Ads SDK for Flutter works with both AdMob and Ad Manager. It supports a variety of ads formats such as app open, banner, interstitial, native, rewarded, and rewarded interstitial formats, and features like mediation.
+                  The Google Mobile Ads SDK for Flutter works with both AdMob and Ad Manager. It supports a variety of ad formats such as app open, banner, interstitial, native, rewarded, and rewarded interstitial formats, and features like mediation.
                 '''),
                       ]),
                       div(classes: 'a-wrapper', [
@@ -134,7 +134,7 @@ class MonetizationPage extends StatelessComponent {
                 ),
               ),
               Tab(
-                label: 'Adsense for H5 games',
+                label: 'AdSense for H5 games',
                 content: ref(
                   .fragment([
                     div(classes: 'media', [
@@ -145,7 +145,7 @@ class MonetizationPage extends StatelessComponent {
                     ]),
                     const div(classes: 'text', [
                       h2(classes: 'title third-tab', [
-                        .text('Adsense for H5 games'),
+                        .text('AdSense for H5 games'),
                       ]),
                       p(classes: 'body', [
                         .text('''
@@ -254,7 +254,7 @@ class MonetizationPage extends StatelessComponent {
               FeatureGridItem(
                 title: 'See the sample',
                 description:
-                    'Start with an example for integrating in-app purchases in your Flutter App.',
+                    'Start with an example for integrating in-app purchases in your Flutter app.',
                 icon: context.asset('images/icons/see-the-sample.svg'),
                 url:
                     'https://github.com/flutter/packages/blob/main/packages/in_app_purchase/in_app_purchase/example/README.md',

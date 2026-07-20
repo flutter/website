@@ -608,7 +608,7 @@
     - "Enterprise"
   options_GCP_partner: true
 - title: "Pentagon Co., Ltd."
-  summary: '"Pentagon, Inc. is a software company based in Tokyo that specializes in app development using Flutter. The company also shares Flutter technical knowledge on YouTube and its blog."'
+  summary: "Pentagon, Inc. is a software company based in Tokyo that specializes in app development using Flutter. The company also shares Flutter technical knowledge on YouTube and its blog."
   card: "images/third_party/partners/Pentagon.png"
   external_url: "https://pentagon.tokyo/flutter/"
   options_location:
