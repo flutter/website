@@ -29,9 +29,10 @@ final class DropdownState extends State<Dropdown> {
   bool _expanded = false;
 
   void toggle({bool? to}) {
-    setState(() {
-      _expanded = to ?? !_expanded;
-    });
+    final expanded = to ?? !_expanded;
+    if (expanded == _expanded) return;
+
+    setState(() => _expanded = expanded);
   }
 
   @override
