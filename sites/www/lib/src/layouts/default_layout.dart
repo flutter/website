@@ -41,18 +41,23 @@ class DefaultLayout extends PageLayout {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
 
+    final canonicalUrl = switch (page.data.page['canonical']) {
+      final String url when url.trim().isNotEmpty => url.trim(),
+      _ => siteBaseUrl.resolve(page.url).toString(),
+    };
+    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
+
     return AsyncBuilder(
       builder: (context) async {
-        final socialPageUrl = _absoluteUrl(siteBaseUrl, page.url);
         final socialImageUrl = _absoluteUrl(
           siteBaseUrl,
           pageImage ?? context.asset('/images/flutter-logo-sharing.png'),
         );
-
         final banner = context.decodeJsonObject(
           'banner',
           BannerContent.fromJson,
         );
+
         return Document(
           title: title,
           head: [
@@ -63,6 +68,7 @@ class DefaultLayout extends PageLayout {
             ),
 
             meta(name: 'description', content: description),
+            link(rel: 'canonical', href: canonicalUrl),
             meta(
               name: 'twitter:card',
               content: pageImage != null ? 'summary_large_image' : 'summary',

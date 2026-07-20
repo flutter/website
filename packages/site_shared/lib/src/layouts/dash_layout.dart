@@ -74,8 +74,11 @@ abstract class DashLayout implements PageLayout {
         ? '$pageTitle | $titleBase'
         : pageTitle;
 
-    final canonicalUrl = pageData['canonical'] as String?;
-    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl ?? page.url);
+    final canonicalUrl = switch (pageData['canonical']) {
+      final String url when url.trim().isNotEmpty => url.trim(),
+      _ => siteBaseUrl.resolve(page.url).toString(),
+    };
+    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
     final socialImageUrl = _absoluteUrl(
       siteBaseUrl,
       pageImage ?? twitterDefaultImageUrl,
@@ -90,8 +93,7 @@ abstract class DashLayout implements PageLayout {
       if (pageData['noindex'] case final noIndex?
           when noIndex == true || noIndex == 'true')
         const meta(name: 'robots', content: 'noindex'),
-      if (canonicalUrl case final canonicalUrl? when canonicalUrl.isNotEmpty)
-        link(rel: 'canonical', href: canonicalUrl),
+      link(rel: 'canonical', href: canonicalUrl),
       if (pageData['redirectTo'] case final String redirectTo
           when redirectTo.isNotEmpty)
         RawText('<script>window.location.replace("$redirectTo");</script>'),

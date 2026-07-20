@@ -19,7 +19,7 @@ successMetrics:
     desc: >-
         (3.8⭐️  to 4.5⭐️)
 
-        increase in Play Store store rating
+        increase in Play Store rating
 tags:
   - mobile
   - android
@@ -43,7 +43,7 @@ What they needed was a way for all their developers to work collectively, solvin
 
 Before making a decision, QuintoAndar did some research to find out what other companies were doing. They noticed that most were using either React Native or Flutter, so the team decided to develop a proof of concept with each of the top two technologies.
 
-As a test, they built out a set of features in both React Native and Flutter, then compared them in terms of perfomance, modularization, ease of learning, look and feel, and several other metrics. Although the team had expected React Native to be a better fit for their needs, Flutter emerged the clear winner, and they decided to move forward with it right away.
+As a test, they built out a set of features in both React Native and Flutter, then compared them in terms of performance, modularization, ease of learning, look and feel, and several other metrics. Although the team had expected React Native to be a better fit for their needs, Flutter emerged the clear winner, and they decided to move forward with it right away.
 
 <Image src="images/third_party/case_studies/quintoandar/case_study_body_1.png" format="fullwidth" alt="" />
 

@@ -33,7 +33,9 @@ In November 2022, Whirlpool wanted to expand the growth of [Compra Certa](https:
 
 To save time, Kobe Apps wanted to leverage their existing SaaS e-commerce platform for the Compra Certa app, but needed an efficient way to apply Whirlpool’s branding on multiple platforms. As longtime Firebase users, Kobe Apps was aware of Flutter and interested in its flexible widgets, multi-platform codebase, and portability. After reaching out to the Flutter community online and doing some quick testing, they decided to migrate their existing e-commerce solution to Flutter.
 
-<Image src="images/third_party/case_studies/whirlpool/case_study_body_1.png" format="fullwidth" alt="" />**Their solution**
+<Image src="images/third_party/case_studies/whirlpool/case_study_body_1.png" format="fullwidth" alt="" />
+
+**Their solution**
 
 Flutter allowed Kobe Apps to leverage native features and integrations of their mobile commerce engine alongside customizations and third-party services where they added value, providing branding and UI consistency across multiple channels, and making it fast and easy to build new features like new cashback and loyalty program features, which have proven to be some of the most important features for the new app.
 
@@ -47,6 +49,6 @@ Flutter’s Hot Reload feature significantly accelerated their development cycle
 
 **Results**
 
-Leveraging Flutter's extensive library of pre-built widgets and Hot Reload, Kobe App’s platform delivered the first version of the Compra Certa app in just 30 days, with a 92% sharable codebase, a 50% reduction in development costs, and a 35% increase in development speed.
+Leveraging Flutter's extensive library of pre-built widgets and Hot Reload, Kobe Apps' platform delivered the first version of the Compra Certa app in just 30 days, with a 92% shareable codebase, a 50% reduction in development costs, and a 35% increase in development speed.
 
 Post-launch, Whirlpool uses insights from Firebase Analytics to improve the app's performance and user engagement, and Firebase Crashlytics to quickly identify and resolve any stability issues. They also use Firebase Remote Config to make dynamic updates to the app's content and features without a full app release, ensuring that they can continuously optimize and enhance the Compra Certa app based on user feedback and needs.

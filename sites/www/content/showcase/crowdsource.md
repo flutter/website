@@ -1,6 +1,6 @@
 ---
 title: Crowdsource
-description: Because Crowdsource relies on a diverse user base to train Google’s AI models, it needs to be available to the broadest possible audience. The team used Flutter to re-create their Android  app in record time, increasing their coverage from 73% to 96%.
+description: Because Crowdsource relies on a diverse user base to train Google’s AI models, it needs to be available to the broadest possible audience. The team used Flutter to re-create their Android app in record time, increasing their coverage from 73% to 96%.
 headline: CrowdSource
 summary: Increasing developer speed at Crowdsource with Flutter
 companyName: CrowdSource
@@ -46,6 +46,6 @@ After the resounding success with the “Smart Camera” feature, the team at Cr
 
 **Results**
 
-The recreated Android app helped Crowdsource reach considerably more users — from 73% of potential users to a whopping 96%. Currently, more than 20 million users have used the Crowdsource app to contribute data to Google with the express purpose of improving Google's AI for their language, culture or interest. Users are so passionate about the cause that they've self-organized into local communities across 200 cities in the world. Last quarter, the Crowdsource app collected its billionth label since inception.
+The recreated Android app helped Crowdsource reach considerably more users — from 73% of potential users to a whopping 96%. Currently, more than 20 million users have used the Crowdsource app to contribute data to Google with the express purpose of improving Google's AI for their language, culture, or interests. Users are so passionate about the cause that they've self-organized into local communities across 200 cities in the world. Last quarter, the Crowdsource app collected its billionth label since inception.
 
 With Flutter, the team found the process much more efficient, allowing them to cut their code size in half, reduce their technical debt, and double their development speed. Because of these improvements, Crowdsource is now in the process of rewriting the app with Flutter for Android and considering a rewrite for web.
