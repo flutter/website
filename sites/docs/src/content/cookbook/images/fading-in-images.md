@@ -18,8 +18,8 @@ or images from the internet.
 
 ## In-memory
 
-Complete the following steps to use a
-one-pixel transparent PNG as the placeholder.
+To use a single-pixel, transparent PNG as the placeholder image,
+complete the following steps:
 
 1.  **Create the transparent image data.**
 
@@ -100,8 +100,8 @@ class MyApp extends StatelessWidget {
 
 ## From asset bundle
 
-Complete the following steps to use a
-local image asset as the placeholder.
+To use a local image asset as the placeholder image,
+complete the following steps:
 
 1.  **Add the placeholder to the asset bundle.**
 
