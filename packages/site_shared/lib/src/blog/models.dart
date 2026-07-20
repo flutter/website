@@ -109,14 +109,17 @@ extension BlogData on Page {
     }
   }
 
+  Map<String, Object?> get blogAuthors {
+    if (data['blog'] case {'authors': final Map<String, Object?> authors}) {
+      return authors;
+    } else {
+      throw Exception('Missing or invalid blog authors.');
+    }
+  }
+
   /// Returns the author with the specified [id].
   Author authorById(String id) {
-    final authors = (data['blog'] as Map<String, Object?>)['authors'];
-    if (authors is! Map<String, Object?>) {
-      throw Exception('Authors data not found or invalid.');
-    }
-
-    final author = authors[id];
+    final author = blogAuthors[id];
     if (author == null) {
       throw Exception('Author not found: $id');
     }
