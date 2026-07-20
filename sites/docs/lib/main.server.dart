@@ -38,6 +38,7 @@ import 'src/layouts/toc_layout.dart';
 import 'src/layouts/tutorial_layout.dart';
 import 'src/loaders/data_processor.dart';
 import 'src/pages/custom_pages.dart';
+import 'src/pages/markdown.dart';
 import 'src/pages/robots_txt.dart';
 import 'src/templating/dash_template_engine.dart';
 
@@ -82,23 +83,7 @@ Component get _docsFlutterDevSite => ContentApp.custom(
     theme: const ContentTheme.none(),
     secondaryOutputs: [
       const RobotsTxtOutput(),
-      MarkdownOutput(
-        createHeader: (page) {
-          final header = StringBuffer();
-          if (page.data.page['title'] case final String title
-              when title.isNotEmpty) {
-            header.writeln('# $title');
-
-            if (page.data.page['description'] case final String description
-                when description.isNotEmpty) {
-              header.writeln();
-              header.writeln('> $description');
-            }
-          }
-
-          return header.toString();
-        },
-      ),
+      canonicalMarkdownOutput,
     ],
   ),
 );
