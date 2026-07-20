@@ -122,6 +122,7 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
   }
 
   void _scheduleMarkdownCopyReset() {
+    _markdownCopyResetTimer?.cancel();
     _markdownCopyResetTimer = Timer(const Duration(seconds: 2), () {
       if (!mounted) {
         return;
