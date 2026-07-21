@@ -32,6 +32,11 @@ class DefaultLayout extends PageLayout {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
 
+    final canonicalUrl = switch (page.data.page['canonical']) {
+      final String url when url.trim().isNotEmpty => url.trim(),
+      _ => Uri.https('flutter.dev').resolve(page.url).toString(),
+    };
+
     return AsyncBuilder(
       builder: (context) async {
         final banner = context.decodeJsonObject(
@@ -48,12 +53,13 @@ class DefaultLayout extends PageLayout {
             ),
 
             meta(name: 'description', content: description),
+            link(rel: 'canonical', href: canonicalUrl),
             const meta(name: 'twitter:card', content: 'summary_large_image'),
             const meta(name: 'twitter:site', content: '@flutterdev'),
             meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
               attributes: const {'property': 'og:url'},
-              content: '//flutter.dev${page.url}',
+              content: canonicalUrl,
             ),
             meta(
               attributes: const {'property': 'og:description'},

@@ -43,6 +43,6 @@ They also found that hot reload helped them to fine-tune UI details quickly, all
 
 **Results**
 
-Since relaunching their app with Flutter, CZ’s average Play store rating and Net Promoter Score have both improved. They have also reduced their time to market, allowing them to start releasing big new features every quarter, as well as continuing to improve existing ones.
+Since relaunching their app with Flutter, CZ’s average Play Store rating and Net Promoter Score have both improved. They have also reduced their time to market, allowing them to start releasing big new features every quarter, as well as continuing to improve existing ones.
 
 Based on their success, CZ is currently exploring the possibilities of using Firebase to extend their current toolset, including tools like Firebase Crashlytics, Remote Config, feature flags, remote messaging, AB testing, and push notifications.

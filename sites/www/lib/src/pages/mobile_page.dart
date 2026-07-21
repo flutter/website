@@ -55,7 +55,7 @@ class MobilePage extends StatelessComponent {
       FeatureColumn(
         title: 'Do more with less',
         description:
-            'Unite your mobile development team resources towards building one seamless customer experience.',
+            'Unite your mobile development team to build one seamless customer experience.',
         image: context.asset('images/do-more-with-less.png'),
       ),
       FeatureColumn(
@@ -115,7 +115,7 @@ class MobilePage extends StatelessComponent {
           FeatureGridItem(
             title: 'Watch the video',
             description:
-                'Learn how to build platform adaptive apps that look and feel natural on any mobile device with the same code.',
+                'Learn how to build platform-adaptive apps that look and feel natural on any mobile device with the same code.',
             icon: context.asset('../images/icons/watch-the-video.svg'),
             url: 'https://www.youtube.com/watch?v=RCdeSKVt7LI',
           ),

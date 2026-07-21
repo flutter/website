@@ -27,7 +27,7 @@ tags:
 
 **Introduction**
 
-[Expo City Dubai](https://www.expocitydubai.com/) (ECD) is a mixed-use smart-city district where people can live, work, build businesses, and visit—with residences, offices and coworking, retail and dining, plus tourism, museums/cultural venues, exhibitions, and major events in one place. It continues to grow on the foundations created for Expo 2020 Dubai.
+[Expo City Dubai](https://www.expocitydubai.com/) (ECD) is a mixed-use smart-city district where people can live, work, build businesses, and visit—with residences, offices and coworking spaces, retail and dining, tourism, museums and cultural venues, exhibitions, and major events in one place. It continues to grow on the foundations created for Expo 2020 Dubai.
 
 The core challenge was to create a mobile “companion” that works for very different audiences—tourists and day visitors, but also tenants, founders, and employees—coming from multiple cultural backgrounds and using different languages (including right-to-left scripts). The product was built for an **international, diverse set of users**, with a simple entry path and **no mandatory login** for general use. 
 
@@ -50,7 +50,7 @@ Expo City needed one team to ship consistently on iOS and Android, while keeping
 
 **Building with Flutter**
 
-[Merixstudio](https://www.merixstudio.com/development/flutter), Expo City tech partner, designed the product around a clear reality: for many people on site, “content” is secondary. The first question is: Where am I, where should I go next, and how do I get there?
+[Merixstudio](https://www.merixstudio.com/development/flutter), Expo City's tech partner, designed the product around a clear reality: for many people on site, “content” is secondary. The first question is: Where am I, where should I go next, and how do I get there?
 
 Flutter enabled a single, consistent **map-first experience** across iOS and Android—critical when the map is the primary UI and the product must stay visually and behaviorally consistent for a diverse, international user base. It also gave the team strong control over UI interactions around Mapbox (map-driven browsing, navigation entry points, saved places) while keeping delivery and maintenance centralized in one codebase.
 
@@ -71,7 +71,7 @@ On the data side, a headless CMS (Contentful) supported consistent content updat
 
 To keep performance predictable during traffic spikes (for example during major exhibitions and events), the backend and infrastructure were set up for autoscaling on Amazon Web Services. 
 
-Flutter also supported the project’s architecture and integrations by making it easier to keep “content services” wiring consistent across both platforms. The app consumed CMS-driven content and business data through API layers, with Flutter acting as the shared presentation and orchestration layer. Thanks to that, the Integration logic incl.data fetching, caching, error handling, and feature rollout rules didn’t have to be duplicated for iOS and Android. This reduced platform drift and made it simpler to evolve. 
+Flutter also supported the project’s architecture and integrations by making it easier to keep “content services” wiring consistent across both platforms. The app consumed CMS-driven content and business data through API layers, with Flutter acting as the shared presentation and orchestration layer. Thanks to that, the integration logic, including data fetching, caching, error handling, and feature rollout rules—didn’t have to be duplicated for iOS and Android. This reduced platform drift and made it simpler to evolve.
 
 The architecture relies on flutter_bloc for state management, get_it with injectable for dependency injection, Dio for networking, and go_router for routing. Storage is split between flutter_secure_storage for credentials and shared_preferences for lightweight state. Firebase powers analytics, crashlytics, remote config, and push notifications, while Tealium handles tag management. On the UI side, the team used cached_network_image, flutter_svg, video_player, and a Widgetbook-driven component library. 
 
@@ -83,7 +83,7 @@ This is where mobile decisions become product decisions. The app was built to be
 
 **Quality and trust (what's often invisible)**
 
-Trust is often "felt" rather than explicitly articulated. Here, it was tested. The codebase went through a security audit by the Expo City Dubai's security team, and the project also underwent a sustainability assessment by Ecovadis at the Expo City Dubai's request.
+Trust is often "felt" rather than explicitly articulated. Here, it was tested. The codebase went through a security audit by Expo City Dubai's security team, and the project also underwent a sustainability assessment by Ecovadis at Expo City Dubai's request.
 
 <Image src="images/case_studies/expo-city-dubai/case_study_body_2.png" format="fullwidth" alt="Event calendar in the Expo City Dubai app" />
 
@@ -92,10 +92,10 @@ Trust is often "felt" rather than explicitly articulated. Here, it was tested. T
 Below are the achieved outcomes: 
 
 * Scalability validated at high traffic: load tests verified stability for up to 400,000 simultaneous users during spikes like major events.   
-* Integration foundation: delivered several key integrations, including Contentful & Microsoft Dynamics as part of the initial solution, enabling the app to plug into the wider city ecosystem.   
+* Integration foundation: delivered several key integrations, including Contentful and Microsoft Dynamics as part of the initial solution, enabling the app to plug into the wider city ecosystem.
 * Client satisfaction: achieved a 10/10 NPS from users (with internal team satisfaction 4.5/5).   
 * Design recognition: earned second prize in the mobile category at the WaysConf Awards.   
-* Industry distinction: the app was listed among nominees in the “Travel & Transport” category of Mobile Trends Awards (awards announced in March 2025). 
+* Industry distinction: the app was listed among the nominees in the “Travel & Transport” category of the Mobile Trends Awards (awards announced in March 2025).
 
 And because the app’s growth is intertwined with the city’s growth, external recognition of Expo City matters too: in October 2025, Expo City Dubai was awarded the global “rising star” free zone of 2025 by fDi Intelligence. 
 
