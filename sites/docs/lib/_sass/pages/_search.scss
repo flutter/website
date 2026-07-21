@@ -1,4 +1,4 @@
-@use '../base/mixins';
+@use 'package:site_shared/_sass/base/mixins';
 
 #search-body {
   margin-block-start: 1.5rem;
@@ -27,6 +27,7 @@
     input.gsc-input {
       background-color: transparent !important;
       height: 2rem !important;
+      color: var(--site-base-fgColor);
     }
   }
 
@@ -36,6 +37,7 @@
     border: none;
     border-radius: var(--site-radius);
     padding-top: 0.5rem;
+    margin-top: 0.5rem;
 
     .gsc-completion-selected {
       background-color: var(--site-primary-color-highlight);
@@ -92,11 +94,13 @@
 
     .gsc-result {
       border: none;
+      background: none;
     }
   }
 
   .gsc-cursor-box {
     .gsc-cursor-page {
+      background: none;
       color: var(--site-base-fgColor-lighter);
     }
 

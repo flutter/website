@@ -406,7 +406,6 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
     // Start loading.
     bannerAd.load();
   }
-
 }
 ```
 

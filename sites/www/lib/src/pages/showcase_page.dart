@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/icon.dart';
@@ -16,7 +17,6 @@ import '../components/sections/hero_section.dart';
 import '../components/sections/quote_section.dart';
 import '../models/content/showcase_content.dart';
 import '../utils/asset_utils.dart';
-import '../utils/component_ref.dart';
 import '../utils/data_utils.dart';
 import '../utils/scroll_spy.dart';
 import '../utils/stories.dart';

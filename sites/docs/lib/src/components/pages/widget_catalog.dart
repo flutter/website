@@ -6,10 +6,10 @@ import 'package:collection/collection.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/markdown.dart';
+import 'package:site_shared/util.dart';
 
-import '../../markdown/markdown_parser.dart';
 import '../../models/widget_catalog_model.dart';
-import '../../util.dart';
 
 class WidgetCatalogCategories extends CustomComponentBase {
   const WidgetCatalogCategories();

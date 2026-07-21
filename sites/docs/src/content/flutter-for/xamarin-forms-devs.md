@@ -2336,12 +2336,13 @@ The [`camera`][] plugin is popular for accessing the camera.
 ### How do I log in with Facebook?
 
 To log in with Facebook, use the
-[`flutter_facebook_login`][] community plugin.
+[`flutter_facebook_auth`][] community plugin.
 
 ### How do I use Firebase features?
 
 Most Firebase functions are covered by [first party plugins][].
-These plugins are first-party integrations, maintained by the Flutter team:
+These plugins are first-party integrations,
+maintained by the Flutter and Firebase teams:
 
  * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
@@ -2349,7 +2350,7 @@ These plugins are first-party integrations, maintained by the Flutter team:
  * [`firebase_database`][] for Firebase RTDB
  * [`firebase_storage`][] for Firebase Cloud Storage
  * [`firebase_messaging`][] for Firebase Messaging (FCM)
- * [`flutter_firebase_ui`][] for quick Firebase Auth integrations
+ * [`firebase_ui_auth`][] for quick Firebase Auth integrations
    (Facebook, Google, Twitter and email)
  * [`cloud_firestore`][] for Firebase Cloud Firestore
 
@@ -2489,8 +2490,8 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
-[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
-[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
+[`flutter_facebook_auth`]: {{site.pub-pkg}}/flutter_facebook_auth
+[`firebase_ui_auth`]: {{site.pub-pkg}}/firebase_ui_auth
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http

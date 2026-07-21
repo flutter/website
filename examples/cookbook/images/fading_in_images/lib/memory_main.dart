@@ -1,5 +1,16 @@
+// #docregion TransparentImage
+import 'dart:convert';
+import 'dart:typed_data';
+// #enddocregion TransparentImage
+
 import 'package:flutter/material.dart';
-import 'package:transparent_image/transparent_image.dart';
+
+// #docregion TransparentImage
+final Uint8List transparentImage = base64Decode(
+  'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4'
+  'nGMAAQAABQABDQottAAAAABJRU5ErkJggg==',
+);
+// #enddocregion TransparentImage
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +33,7 @@ class MyApp extends StatelessWidget {
             Center(
               // #docregion MemoryNetwork
               child: FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
+                placeholder: transparentImage,
                 image: 'https://picsum.photos/250?image=9',
               ),
               // #enddocregion MemoryNetwork

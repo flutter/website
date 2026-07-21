@@ -4,6 +4,7 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/feature.dart';
@@ -14,7 +15,6 @@ import '../components/sections/feature_columns_section.dart';
 import '../components/sections/hero_section.dart';
 import '../models/content/ai_content.dart';
 import '../utils/asset_utils.dart';
-import '../utils/component_ref.dart';
 import '../utils/data_utils.dart';
 import '../utils/scroll_spy.dart';
 
@@ -29,7 +29,9 @@ class AiPage extends StatelessComponent {
       HeroSection(
         title: 'Build with AI',
         subtitle:
-            'Build and deploy AI-powered features that reach users on any platform with Flutter and Google\'s AI capabilities',
+            'Build and deploy AI-powered features that '
+            'reach users on any platform with '
+            'Flutter and Google\'s AI capabilities.',
         media: img(
           src: context.asset('images/build-with-ai/build-with-ai-hero.png'),
           alt: 'Build with AI',
@@ -62,7 +64,8 @@ class AiPage extends StatelessComponent {
           FeatureColumn(
             title: 'Expand your app\'s functionality',
             description:
-                'Add AI-based features like text generation, chat, and more to your Dart or Flutter apps with minimal setup',
+                'Add AI-based features like text generation, chat, '
+                'and more to your Dart or Flutter apps with minimal setup',
             image: context.asset(
               'images/build-with-ai/expand-functionality.png',
             ),
@@ -70,7 +73,9 @@ class AiPage extends StatelessComponent {
           FeatureColumn(
             title: 'Fast AI app development',
             description:
-                'Focus on your app logic and user experience, let Google SDKs handle the intricacies of interacting with AI models',
+                'Focus on your app logic and user experience, '
+                'and let Google SDKs handle the '
+                'intricacies of interacting with AI models',
             image: context.asset(
               'images/build-with-ai/fast-ai-development.png',
             ),
@@ -78,7 +83,9 @@ class AiPage extends StatelessComponent {
           FeatureColumn(
             title: 'The best of Google',
             description:
-                'Tap into models built on Google\'s extensive research and development, or explore popular alternatives',
+                'Tap into models built on '
+                'Google\'s extensive research and development, '
+                'or explore popular alternatives',
             image: context.asset('images/build-with-ai/the-best-of-google.png'),
           ),
         ]),
@@ -90,9 +97,7 @@ class AiPage extends StatelessComponent {
             div(classes: 'alternating-item', [
               div(classes: 'media', [
                 img(
-                  src: context.asset(
-                    'images/build-with-ai/vertex-tab.png',
-                  ),
+                  src: context.asset('images/build-with-ai/vertex-tab.png'),
                   alt: 'Vertex AI Logo',
                 ),
               ]),
@@ -100,7 +105,10 @@ class AiPage extends StatelessComponent {
                 h3([.text('Firebase AI Logic')]),
                 p([
                   .text(
-                    'Easily integrate generative AI into your apps - either directly via client-side access without setting up a backend, or through Genkit for robust server-side implementations.',
+                    'Easily integrate generative AI into your apps—either '
+                    'directly through client-side access without '
+                    'setting up a backend or '
+                    'through Genkit for robust server-side implementations.',
                   ),
                 ]),
                 a(
@@ -117,9 +125,7 @@ class AiPage extends StatelessComponent {
               div(classes: 'media', [
                 img(
                   classes: 'genkit-logo',
-                  src: context.asset(
-                    'images/genkit.jpg',
-                  ),
+                  src: context.asset('images/genkit.jpg'),
                   alt: 'Genkit Logo',
                 ),
               ]),
@@ -127,12 +133,16 @@ class AiPage extends StatelessComponent {
                 h3([.text('Genkit')]),
                 p([
                   .text(
-                    'Genkit Dart is Google\'s open source AI framework that helps you easily build AI features into your app. It provides a single API to access your preferred model provider and features a Dev UI for debugging and rapid iterations.',
+                    'Genkit Dart is Google\'s open source AI framework that '
+                    'helps you easily build AI features into your app. '
+                    'It provides a single API to '
+                    'access your preferred model provider and '
+                    'features a Dev UI for debugging and rapid iteration.',
                   ),
                 ]),
                 a(
                   classes: 'btn',
-                  href: 'https://genkit.dev/docs/dart/get-started/',
+                  href: 'https://genkit.dev/docs/dart/overview',
                   target: Target.blank,
                   [.text('Get started')],
                 ),
@@ -190,11 +200,13 @@ class AiPage extends StatelessComponent {
                 ),
               ),
               FeatureGridItem(
-                title:
-                    'How to build agentic apps with Flutter and Firebase AI Logic',
+                title: 'Build agentic apps with Flutter and Firebase AI Logic',
                 description:
-                    'Multimodal AI is transforming how users interact with applications. '
-                    'Join us for an exploration of how to build secure, scalable, and intelligent multiplatform and multimodal AI apps using Flutter, Firebase, and Gemini.',
+                    'Multimodal AI is transforming how '
+                    'users interact with applications. '
+                    'Join us for an exploration of how to '
+                    'build secure, scalable, and intelligent multiplatform and '
+                    'multimodal AI apps using Flutter, Firebase, and Gemini.',
                 url: 'https://youtu.be/xo271p-Fl_4?si=VmGUTTFJvsSY9-vZ',
                 icon: context.asset(
                   '/development/images/icons/watch-the-video.svg',
@@ -216,7 +228,7 @@ class AiPage extends StatelessComponent {
                 title: 'Build AI-powered apps with Genkit Dart',
                 description:
                     'Learn how to build AI-powered applications in Dart and Flutter using the Genkit framework.',
-                url: 'https://genkit.dev/docs/dart/get-started/',
+                url: 'https://genkit.dev/docs/dart/overview',
                 icon: context.asset(
                   '/development/images/icons/get-started-in-docs.svg',
                 ),
@@ -251,10 +263,7 @@ class AiPage extends StatelessComponent {
       a(href: item.href, target: Target.blank, [
         div([
           div(classes: 'image-container', [
-            img(
-              alt: item.title,
-              src: context.asset(item.image),
-            ),
+            img(alt: item.title, src: context.asset(item.image)),
           ]),
           div(classes: 'text', [
             h3([.text(item.title)]),

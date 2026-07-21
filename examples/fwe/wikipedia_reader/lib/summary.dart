@@ -245,5 +245,4 @@ String? getFileExtension(String file) {
 }
 
 const acceptableImageFormats = ['png', 'jpg', 'jpeg'];
-
 // #enddocregion All

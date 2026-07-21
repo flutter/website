@@ -6,8 +6,8 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../components/common/feature_grid.dart';
+import '../components/common/icon.dart';
 import '../components/sections/case_studies.dart';
-import '../components/sections/cta_section.dart';
 import '../components/sections/feature_columns_section.dart';
 import '../components/sections/hero_section.dart';
 import '../utils/asset_utils.dart';
@@ -20,10 +20,11 @@ class WebPage extends StatelessComponent {
   Component build(BuildContext context) {
     return main_([
       HeroSection(
-        title: 'Flutter on the Web',
+        title: 'Pixel-Perfect Web Applications',
         text:
-            'Easily reach more users in browsers with the same experience as '
-            'on mobile devices through the power of Flutter on the web.',
+            'Bring your native app experience to the browser. '
+            'Powered by WebAssembly for stable, 60fps performance. '
+            'Best for SPAs, PWAs, and complex web tools.',
         media: img(
           src: context.asset('images/flutter-on-web.png'),
           alt: 'Flutter on Web',
@@ -32,56 +33,99 @@ class WebPage extends StatelessComponent {
       section(classes: 'content-container', attributes: scroll.spyContent, [
         FeatureColumnsSection([
           FeatureColumn(
-            title: 'Shared codebase',
+            title: 'Same code',
             description:
-                'Share your Dart code between mobile and web applications; '
-                'web is just another device target for your app.',
+                'Your code — your Dart business logic and your Flutter widgets — '
+                'works identically across mobile, desktop, and the web, eliminating duplicate work.',
             image: context.asset('images/all-one-codebase.png'),
           ),
           FeatureColumn(
-            title: 'Reach more users',
+            title: 'Same experience',
             description:
-                'Acquire users beyond app stores without limitations from '
-                'just a click of a URL in a web browser.',
+                'Flutter uses the same rendering engine on the web and mobile, '
+                'ensuring your application looks and feels exactly the same without fighting browser and platform differences.',
             image: context.asset('images/reach-more-users.png'),
           ),
           FeatureColumn(
-            title: 'Powered by WebAssembly',
+            title: 'Great performance',
             description:
-                'Ship your app using WebAssembly for '
-                'an efficient and fast experience on the web.',
+                'Deploy your web application with WebAssembly (Wasm) for a blazing-fast, '
+                'jank-free experience across modern browsers.',
             image: context.asset('images/build-wasm.png'),
             imageAlt: 'Ship with WebAssembly',
           ),
         ]),
-        section([
-          div(classes: 'features container', [
-            div(classes: 'feature nospy', [
-              const div(classes: 'text', [
-                Component.element(
-                  tag: 'hgroup',
-                  children: [
-                    h4(classes: 'eyebrow', [.text('Flutter on the Web')]),
-                    h3([.text('Build better web apps')]),
-                  ],
-                ),
-                p([
-                  .text(
-                    'The web itself is a flexible platform, but Flutter is '
-                    'ideal for building web applications like PWAs or SPAs '
-                    'and bringing your existing mobile app to the web. ',
-                  ),
+        const section(classes: 'module', [
+          div(classes: 'use-cases-header stacked-header container', [
+            h2([.text('When to use Flutter on the web')]),
+          ]),
+          div(classes: 'container', [
+            div(classes: 'use-cases-grid', [
+              div(classes: 'use-case-col ideal', [
+                h4([.text('Ideal use cases ✅')]),
+                ul([
+                  li([
+                    .text(
+                      'Progressive Web Apps (PWAs) and single-page apps (SPAs).',
+                    ),
+                  ]),
+                  li([
+                    .text(
+                      'Code sharing: Reusing UI and logic between mobile, desktop, and web apps.',
+                    ),
+                  ]),
+                  li([
+                    .text(
+                      'Rich application UIs: Productivity, creative, or specialized business tools (for example, ',
+                    ),
+                    a(
+                      href: 'https://docs.flutter.dev/tools/devtools',
+                      [.text('Dart & Flutter DevTools')],
+                    ),
+                    .text(').'),
+                  ]),
+                  li([
+                    .text(
+                      'Highly interactive canvas apps: Complex dashboards, games, or visualization tools.',
+                    ),
+                  ]),
                 ]),
-                a(
-                  classes: 'btn',
-                  href: 'https://docs.flutter.dev/get-started/web',
-                  [.text('Learn more')],
-                ),
               ]),
-              div(classes: 'media', [
-                img(
-                  src: context.asset('images/build-better-web-apps.png'),
-                  alt: 'Build better web apps',
+              div(classes: 'use-case-col less-ideal', [
+                h4([.text('Less ideal use cases ⚠️')]),
+                ul([
+                  li([
+                    .text(
+                      'SEO-heavy sites: Static blogs, documentation, or public marketing pages.',
+                    ),
+                  ]),
+                  li([
+                    .text(
+                      'Simple static web pages: Simple landing pages or sites with minimal interaction.',
+                    ),
+                  ]),
+                  li([
+                    .text(
+                      'Heavy text selection: Pages where standard DOM-based text-selection and reader mode are critical.',
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
+            div(classes: 'use-cases-note', [
+              p([
+                .text(
+                  'Building content-centric or SEO-heavy sites? Consider ',
+                ),
+                a(href: 'https://jaspr.site/', [.text('Jaspr')]),
+                .text(' (which powers '),
+                a(href: 'https://dart.dev', [.text('dart.dev')]),
+                .text(', '),
+                a(href: 'https://flutter.dev', [.text('flutter.dev')]),
+                .text(', and '),
+                a(href: 'https://pub.dev', [.text('pub.dev')]),
+                .text(
+                  ') or combining Jaspr with Flutter Web for a hybrid experience.',
                 ),
               ]),
             ]),
@@ -130,7 +174,45 @@ class WebPage extends StatelessComponent {
         const section(id: 'case-studies', classes: 'module carousel-section', [
           CaseStudies(tag: 'web'),
         ]),
-        const CTASection(),
+        section(id: 'cta', classes: 'module', [
+          div(classes: 'insert cta-insert container', [
+            const div(classes: 'text', [
+              h3([.text('Get started')]),
+              p([.text('Choose the pathway that matches your experience:')]),
+              div(classes: 'cta-buttons', [
+                div(classes: 'cta-pathway', [
+                  h4([.text('Existing Flutter Developer')]),
+                  a(
+                    href: 'https://docs.flutter.dev/get-started/web',
+                    classes: 'btn',
+                    [
+                      .text('Add web support'),
+                    ],
+                  ),
+                ]),
+                div(classes: 'cta-pathway', [
+                  h4([.text('New to Flutter (Web Developer)')]),
+                  a(
+                    href:
+                        'https://docs.flutter.dev/get-started/flutter-for/web-devs',
+                    classes: 'btn quiet',
+                    [
+                      .text('Get started'),
+                      RawText('&nbsp;'),
+                      Icon.linkArrow(),
+                    ],
+                  ),
+                ]),
+              ]),
+            ]),
+            div(classes: 'media', [
+              img(
+                src: context.asset('/images/common/get-started-background.png'),
+                alt: 'Powered by Dart',
+              ),
+            ]),
+          ]),
+        ]),
       ]),
     ]);
   }

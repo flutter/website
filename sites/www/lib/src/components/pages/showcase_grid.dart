@@ -4,8 +4,8 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
-import '../../utils/component_ref.dart';
 import '../common/filters.dart';
 
 @client
@@ -30,20 +30,21 @@ class ShowcaseGrid extends StatelessComponent {
         ]),
         FilterType('industries', 'Industry', [
           'Banking & Finance',
-          'Health',
-          'Games',
-          'Travel & Lifestyle',
-          'Productivity',
           'Education',
+          'Games',
+          'Health',
+          'Media and Entertainment',
+          'Productivity',
           'Social',
+          'Travel & Lifestyle',
         ]),
         FilterType('locations', 'Location', [
-          'Asia',
           'Africa',
-          'North America',
-          'South America',
+          'Asia',
           'Europe',
+          'North America',
           'Oceania',
+          'South America',
         ]),
       ],
     );

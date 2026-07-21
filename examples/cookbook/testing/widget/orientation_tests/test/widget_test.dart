@@ -66,5 +66,4 @@ void main() {
     // #docregion scaffolding
   });
 }
-
 // #enddocregion scaffolding

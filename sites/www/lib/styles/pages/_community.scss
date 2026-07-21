@@ -21,10 +21,10 @@ body.community {
             margin-top: 8px;
             margin-bottom: 32px;
             font-size: 20px;
-            font-family: var(--font-roboto);
+            font-family: var(--font-body);
             color: var(--grey-6);
             line-height: 30px;
-            font-weight: 400;
+            font-weight: var(--font-weight-normal);
           }
         }
       }
@@ -86,7 +86,7 @@ body.community {
         }
 
         span {
-          font-family: var(--font-gsans);
+          font-family: var(--font-ui);
           font-size: var(--font-size-heading-5);
           color: var(--grey-6);
         }

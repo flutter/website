@@ -1,0 +1,18 @@
+@mixin interaction-style($percentage: 4%) {
+  background-image: linear-gradient(rgb(var(--site-interaction-base-values) / $percentage) 0 0);
+}
+
+// Hide an element visually while
+// keeping it available to assistive technologies,
+// such as for a live region that announces status updates.
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

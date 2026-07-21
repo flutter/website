@@ -81,7 +81,6 @@ class _MainAppState extends State<MainApp> {
       // Show Snackbar
     }
   }
-
   // #enddocregion _onViewModelChanged
 }
 
@@ -175,5 +174,4 @@ class Command extends ChangeNotifier {
     _completed = false;
   }
 }
-
 // #enddocregion Command

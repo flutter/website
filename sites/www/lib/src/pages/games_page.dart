@@ -4,6 +4,7 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/feature_grid.dart';
@@ -15,7 +16,6 @@ import '../components/sections/hero_section.dart';
 import '../models/content/games_content.dart';
 import '../models/video.dart';
 import '../utils/asset_utils.dart';
-import '../utils/component_ref.dart';
 import '../utils/data_utils.dart';
 import '../utils/scroll_spy.dart';
 
@@ -254,7 +254,7 @@ class GamesPage extends StatelessComponent {
                 ),
                 p(classes: 'body', [
                   .text(
-                    'Flame is a community built open source game engine built in Flutter that extends Flutter’s game development capabilities for games that require a game loop, collision, and maps. '
+                    'Flame is a community-built open source game engine built in Flutter that extends Flutter’s game development capabilities for games that require a game loop, collision, and maps. '
                     'It takes advantage of the powerful infrastructure provided by Flutter, but simplifies the code you need to build your game.',
                   ),
                 ]),
@@ -384,9 +384,9 @@ class GamesPage extends StatelessComponent {
                     a(
                       href:
                           'https://www.google.com/intl/en/ads/coupons/terms/flutter/',
-                      [.text('Click here')],
+                      [.text('Check the terms')],
                     ),
-                    .text(''' to check your region's elibility.
+                    .text(''' to check your region's eligibility.
                 '''),
                   ]),
                   a(
@@ -433,7 +433,7 @@ class GamesPage extends StatelessComponent {
           div(classes: 'insert cta-insert container', [
             const div(classes: 'text', [
               h3([.text('Start building')]),
-              p([.text('Get started with your first Flutter Game')]),
+              p([.text('Get started with your first Flutter game')]),
               div([
                 a(
                   classes: 'btn',

@@ -93,7 +93,6 @@ class LayoutBuilderExample extends StatelessWidget {
       },
     );
   }
-
   // #enddocregion layout-builder
 }
 

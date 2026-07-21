@@ -356,6 +356,12 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
@@ -512,7 +518,7 @@ Widget build(BuildContext context) {
 In Android, there are two main use cases for `Intent`s: navigating between
 Activities, and communicating with components. Flutter, on the other hand,
 does not have the concept of intents, although you can still start intents
-through native integrations (using [a plugin][]).
+through native integrations, such as the [`android_intent_plus`][] plugin.
 
 Flutter doesn't really have a direct equivalent to activities and fragments;
 rather, in Flutter you navigate between screens, using a `Navigator` and
@@ -845,7 +851,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
           .cast<Map<String, Object?>>();
     });
   }
-
 }
 ```
 
@@ -1084,7 +1089,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
-
 }
 ```
 
@@ -1672,6 +1676,12 @@ class _SampleAppState extends State<SampleApp>
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -2169,14 +2179,14 @@ for accessing the camera.
 ### How do I log in with Facebook?
 
 To Log in with Facebook, use the
-[`flutter_facebook_login`][] community plugin.
+[`flutter_facebook_auth`][] community plugin.
 
 ### How do I use Firebase features?
 
 Most Firebase functions are covered by
 [first party plugins][].
 These plugins are first-party integrations,
-maintained by the Flutter team:
+maintained by the Flutter and Firebase teams:
 
  * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
@@ -2184,7 +2194,7 @@ maintained by the Flutter team:
  * [`firebase_database`][] for Firebase RTDB
  * [`firebase_storage`][] for Firebase Cloud Storage
  * [`firebase_messaging`][] for Firebase Messaging (FCM)
- * [`flutter_firebase_ui`][] for quick Firebase Auth integrations
+ * [`firebase_ui_auth`][] for quick Firebase Auth integrations
    (Facebook, Google, Twitter and email)
  * [`cloud_firestore`][] for Firebase Cloud Firestore
 
@@ -2369,14 +2379,14 @@ see the [`firebase_messaging`][] plugin documentation.
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [DevTools]: /tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
-[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
+[`flutter_facebook_auth`]: {{site.pub-pkg}}/flutter_facebook_auth
 [`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
-[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
+[`firebase_ui_auth`]: {{site.pub-pkg}}/firebase_ui_auth
 [Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
@@ -2390,7 +2400,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Material Components]: {{site.material}}/develop/flutter
 [Material Design guidelines]: {{site.material}}/styles
 [optimized for all platforms]: {{site.material}}/develop
-[a plugin]: {{site.pub}}/packages/android_intent
+[`android_intent_plus`]: {{site.pub-pkg}}/android_intent_plus
 [pub.dev]: {{site.pub}}/flutter/packages/
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
 [Shared_Preferences plugin]: {{site.pub}}/packages/shared_preferences

@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 // #docregion app-localizations-import
 import 'l10n/app_localizations.dart';
+
 // #enddocregion app-localizations-import
 
 class MyApp extends StatelessWidget {

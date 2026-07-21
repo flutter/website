@@ -542,7 +542,6 @@ class ParallaxFlowDelegate extends FlowDelegate {
     required this.listItemContext,
     required this.backgroundImageKey,
   }) : super(repaint: scrollable.position);
-}
 ```
 
 Congratulations!
@@ -693,7 +692,6 @@ class ParallaxFlowDelegate extends FlowDelegate {
     required this.backgroundImageKey,
   }) : super(repaint: scrollable.position);
 
-
   final ScrollableState scrollable;
   final BuildContext listItemContext;
   final GlobalKey backgroundImageKey;
@@ -751,7 +749,6 @@ class ParallaxFlowDelegate extends FlowDelegate {
         listItemContext != oldDelegate.listItemContext ||
         backgroundImageKey != oldDelegate.backgroundImageKey;
   }
-
 }
 
 class Parallax extends SingleChildRenderObjectWidget {

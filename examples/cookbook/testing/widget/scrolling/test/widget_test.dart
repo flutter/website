@@ -29,5 +29,4 @@ void main() {
     expect(itemFinder, findsOneWidget);
   });
 }
-
 // #enddocregion ScrollWidgetTest

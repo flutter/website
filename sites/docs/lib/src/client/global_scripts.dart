@@ -3,10 +3,9 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/web_util.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
-
-import '../util.dart';
 
 /// Global scripts converted from JS.
 ///
@@ -132,12 +131,12 @@ void _setUpTabs() {
       // If this tab wrapper is for the archive page,
       // and no tab was retrieved from local storage,
       // switch to the tab for the current OS.
-      var currentOperatingSystem = getOS();
+      var currentOperatingSystem = browserOperatingSystem;
       if (currentOperatingSystem == null) {
-        currentOperatingSystem = OperatingSystem.windows;
-      } else if (currentOperatingSystem == OperatingSystem.chromeos) {
+        currentOperatingSystem = .windows;
+      } else if (currentOperatingSystem == .chromeOS) {
         // ChromeOS uses the Linux tab.
-        currentOperatingSystem = OperatingSystem.linux;
+        currentOperatingSystem = .linux;
       }
 
       _activateTabWithSaveId(element, currentOperatingSystem.name);
@@ -294,10 +293,10 @@ void _setUpExpandableCards() {
 }
 
 void _setUpPlatformKeys() {
-  final os = getOS();
+  final os = browserOperatingSystem;
   // Use Command key for macOS, Control key for other OS.
   final specialKey = switch (os) {
-    OperatingSystem.macos => 'Command',
+    .macOS => 'Command',
     _ => 'Control',
   };
   final keys = web.document.querySelectorAll('kbd.special-key');

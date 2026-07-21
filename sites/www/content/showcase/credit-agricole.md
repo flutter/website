@@ -49,6 +49,7 @@ For a deeper technical discussion of the team’s Flutter experience, check out 
 ***“Flutter is enterprise ready, meeting the high standards of product development procedures and security requirements of the banking industry.”***
 
 \- Łukasz Kosman, CEO @ LeanCode
+
 **Results**
 
 After 12 months, Crédit Agricole launched the MVP of their new app with Flutter. The new app is easier and cheaper to maintain and allows the team to react quickly to changes. It has also made managing and delegating tasks between developers easier by removing the need to distinguish between Android and iOS functionality. The new Flutter-based design system has allowed them to create new animations that help their app stand out, including their new avatar. Finally, Flutter saved the team a lot of time, as they no longer had to work on separate solutions for Android, iOS, or Huawei platforms, and could deliver new features more quickly, outpacing the rest in the banking market.

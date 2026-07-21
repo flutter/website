@@ -1,7 +1,7 @@
 @use '../core/breakpoints';
 
 body.partner {
-  font-family: var(--font-roboto);
+  font-family: var(--font-body);
 
   #notification.module {
     background-color: var(--grey-1);
@@ -16,17 +16,17 @@ body.partner {
     width: 90%;
 
     h2 {
-      font-family: var(--font-gsans);
+      font-family: var(--font-ui);
       margin: 0 !important;
       font-size: 2.625rem !important;
-      font-weight: 700 !important;
+      font-weight: var(--font-weight-bolder) !important;
       font-style: normal;
     }
 
     p {
       margin: 1.5rem 0 0;
       font-size: 1.5rem;
-      font-weight: 400;
+      font-weight: var(--font-weight-normal);
       font-style: normal;
     }
   }
@@ -47,7 +47,7 @@ body.partner {
 
     // Bold everything after the "PILOT AND AMENDMENTS" paragraph.
     section.content p:nth-child(n+4) {
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
     }
   }
 
@@ -56,15 +56,15 @@ body.partner {
     margin: 0 auto;
 
     h3 {
-      font-family: var(--font-gsans);
+      font-family: var(--font-ui);
       font-size: 1.5rem;
       font-style: normal;
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       margin-bottom: 1.5rem;
     }
 
     p {
-      font-family: var(--font-roboto);
+      font-family: var(--font-body);
       line-height: 1.5rem;
       font-size: 1rem;
       margin-bottom: 1.75rem;

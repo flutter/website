@@ -1,15 +1,13 @@
 title: Flutter
+name: Flutter docs
 url: https://docs.flutter.dev
+description: >-
+  Official documentation for learning Flutter and using it to
+  build multiplatform apps, with guides, tutorials, examples, and references.
 main-url: https://flutter.dev
 email: flutter-dev@googlegroups.com
 
 showBanner: true
-
-# The raw, inline HTML to display in the banner.
-# Is automatically wrapped in a paragraph tag.
-bannerHtml: >-
-  Help improve Flutter!
-  <a href="https://google.qualtrics.com/jfe/form/SV_3drKjSfjNeLZfq6?Source=Website" target="_blank" rel="noopener">Take our Q2 survey</a>
 
 branch: main
 repo:

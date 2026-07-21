@@ -4,9 +4,9 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../../models/video.dart';
-import '../../utils/component_ref.dart';
 import 'carousel.dart';
 
 class VideoCarousel extends StatelessComponent {

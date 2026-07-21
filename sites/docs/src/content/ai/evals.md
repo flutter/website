@@ -1,9 +1,9 @@
 ---
-title: AI Evaluations
+title: AI evaluations
 sidenav: ai
 description: >
-  Learn about Dart and Flutter's evaluation frameworks for measuring AI tooling
-  reliability.
+  Learn about Dart and Flutter's evaluation frameworks for
+  measuring AI tooling reliability.
 ---
 
 :::experimental

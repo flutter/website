@@ -79,6 +79,5 @@ class MyApp extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion stack
 }

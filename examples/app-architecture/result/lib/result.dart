@@ -55,5 +55,4 @@ final class Error<T> extends Result<T> {
   @override
   String toString() => 'Result<$T>.error($error)';
 }
-
 // #enddocregion Result

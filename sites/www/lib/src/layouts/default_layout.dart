@@ -32,6 +32,11 @@ class DefaultLayout extends PageLayout {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
 
+    final canonicalUrl = switch (page.data.page['canonical']) {
+      final String url when url.trim().isNotEmpty => url.trim(),
+      _ => Uri.https('flutter.dev').resolve(page.url).toString(),
+    };
+
     return AsyncBuilder(
       builder: (context) async {
         final banner = context.decodeJsonObject(
@@ -48,12 +53,13 @@ class DefaultLayout extends PageLayout {
             ),
 
             meta(name: 'description', content: description),
+            link(rel: 'canonical', href: canonicalUrl),
             const meta(name: 'twitter:card', content: 'summary_large_image'),
             const meta(name: 'twitter:site', content: '@flutterdev'),
             meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
               attributes: const {'property': 'og:url'},
-              content: '//flutter.dev${page.url}',
+              content: canonicalUrl,
             ),
             meta(
               attributes: const {'property': 'og:description'},
@@ -99,22 +105,10 @@ class DefaultLayout extends PageLayout {
               attributes: {'crossorigin': ''},
             ),
 
-            // Flutter Fonts
+            // Set up site fonts and icons.
             const link(
               href:
-                  'https://fonts.googleapis.com/css?family=Google+Sans:400,500,700',
-              rel: 'stylesheet',
-              attributes: {'media': 'all'},
-            ),
-            const link(
-              href:
-                  'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
-              rel: 'stylesheet',
-              attributes: {'media': 'all'},
-            ),
-            const link(
-              href:
-                  'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap',
+                  'https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..120,400..700&family=Google+Sans+Code:ital,wght@0,400..700;1,400..700&display=swap',
               rel: 'stylesheet',
             ),
             const link(
@@ -122,6 +116,8 @@ class DefaultLayout extends PageLayout {
                   'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block',
               rel: 'stylesheet',
             ),
+
+            // Set up standard cookie notification bar.
             const link(
               href:
                   'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css',

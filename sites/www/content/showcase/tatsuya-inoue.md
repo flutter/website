@@ -35,7 +35,7 @@ Tatsuya wanted to release his game as quickly as possible so he could start A/B 
 
 As he worked, he used hot reload to see what he was building in real time, which made it easier for him to develop quickly.
 
-*“Developing my first game with Flutter was so easy and fun — I think more people should try it!.”*
+*“Developing my first game with Flutter was so easy and fun — I think more people should try it!”*
 
 \- Tatsuya Inoue, developer
 

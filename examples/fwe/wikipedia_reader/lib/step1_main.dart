@@ -29,6 +29,4 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion MainApp
-
-// #enddocregion All
+// #enddocregion All, MainApp

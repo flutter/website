@@ -393,10 +393,10 @@
     - "Small-to-medium Business"
     - "Enterprise"
   options_GCP_partner: false
-- title: "Atomic Robot"
-  summary: "Atomic Robot is a mobile app design and development agency headquartered in Cincinnati.  We've helped companies from startups to enterprise bring exceptional mobile apps to market."
-  card: "images/third_party/partners/atomic_robot.png"
-  external_url: "https://atomicrobot.com/services/"
+- title: "Ingage Partners"
+  summary: "Ingage Partners helps clients reinvent how they work through AI-enabled product delivery, design, and engineering. Over 15+ years, the team has shipped 200+ apps and connected experiences across mobile, web, and cloud."
+  card: "images/third_party/partners/ingage_logo.png"
+  external_url: "https://ingagepartners.com/flutter"
   options_location:
     - "North America"
   options_customer_size:
@@ -459,6 +459,18 @@
     - "Europe"
   options_customer_size:
     - "Startup"
+  options_GCP_partner: false
+- title: "SolGuruz LLP"
+  summary: "Is a full-stack development agency for web and mobile applications, dedicated to delivering top-tier, customized software solutions that align with their clients' unique goals.  SolGuruz is driven by a true passion for craft and aims to surpass expectations across every project."
+  card: "images/third_party/partners/SolGoruz.png"
+  external_url: "https://solguruz.com/services/flutter-app-development/"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Small-to-medium Business"
   options_GCP_partner: false
 - title: "Paulonia"
   summary: "We are a human team with skills in design and development of cross-platform apps in Flutter with the vision of being a technological reference in Latin America."
@@ -596,7 +608,7 @@
     - "Enterprise"
   options_GCP_partner: true
 - title: "Pentagon Co., Ltd."
-  summary: '"Pentagon, Inc. is a software company based in Tokyo that specializes in app development using Flutter. The company also shares Flutter technical knowledge on YouTube and its blog."'
+  summary: "Pentagon, Inc. is a software company based in Tokyo that specializes in app development using Flutter. The company also shares Flutter technical knowledge on YouTube and its blog."
   card: "images/third_party/partners/Pentagon.png"
   external_url: "https://pentagon.tokyo/flutter/"
   options_location:
@@ -1131,6 +1143,69 @@
     - "Asia"
     - "Europe"
     - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Mobify"
+  summary: "A premier mobile development and digital growth studio based in France, dedicated to transforming concepts into high-performing, scalable mobile ecosystem."
+  card: "images/third_party/partners/Mobify_logo.png"
+  external_url: "https://mobify.fr/flutter-portfolio"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Hyper Pixel"
+  summary: "Hyper Pixel builds high-performance mobile apps designed to drive revenue. From pre-launch development to post-launch growth marketing."
+  card: "images/third_party/partners/HyperPixel_logo.png"
+  external_url: "https://hyperpixel.co.uk/services/mobile-app-development/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Mabiloft"
+  summary: "Is a UX-driven software engineering studio based in Italy, dedicated to building high impact digital products that scale."
+  card: "images/third_party/partners/Mabiloft.png"
+  external_url: "https://mabiloft.com/en/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Perpetio"
+  summary: "Is a boutique European agency that designs AI-first applications, from MVP to scalable products used by millions."
+  card: "images/third_party/partners/Perpetio_logo.png"
+  external_url: "https://perpet.io/services/flutter"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Yudiz Solutions Ltd"
+  summary: "Yudiz Solutions is a technology services company with 16+ years of experience, specializing in mobile app development with strong expertise in Flutter and cross-platform solutions."
+  card: "images/third_party/partners/Yudiz_logo.png"
+  external_url: "https://www.yudiz.com/mobile-app-development/"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "Oceania"
+    - "South America"
   options_customer_size:
     - "Startup"
     - "Small-to-medium Business"

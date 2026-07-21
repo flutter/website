@@ -1,4 +1,4 @@
-@use '../base/mixins';
+@use 'package:site_shared/_sass/base/mixins';
 
 #sidenav {
   margin: 0;
@@ -46,7 +46,7 @@
   }
 
   .nav-header {
-    font-weight: bolder;
+    font-weight: 650;
     font-size: 1rem;
     padding: 0.25rem 0.4rem 0;
     color: var(--site-base-fgColor-lighter);

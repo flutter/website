@@ -52,6 +52,5 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       ),
     );
   }
-
   // #enddocregion panel-and-divider
 }

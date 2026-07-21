@@ -32,7 +32,9 @@ The team did a comprehensive search for their new solution, reviewing Flutter al
 
 After a month-long review process, which included building demo apps on each framework, Caribou chose Flutter for its multi platform capabilities, flexibility, and developer efficiency. The team also liked Flutter’s seamless integration with the other Google tools they already used, including the Firebase SDK and platform to track and measure their mobile app usage and Remote Config for mobile features.
 
-<Image src="images/third_party/case_studies/caribou-coffee/case_study_body_1.png" format="fullwidth" alt="" />**Their solution**
+<Image src="images/third_party/case_studies/caribou-coffee/case_study_body_1.png" format="fullwidth" alt="" />
+
+**Their solution**
 
 Caribou invited Objective C, Kotlin, and JavaScript developers to get involved in the "launch" of their journey to Flutter. Initially, they worried that adopting Dart would be a challenge for some of their developers, but everyone was able to understand it quite easily. The team was able to quickly get prototypes working, and their existing CI/CD pipelines adapted nicely to the Flutter build process. So over the next few months, the team rewrote the Caribou Coffee app in Flutter, using a single codebase for both the iOS and Android apps.
 

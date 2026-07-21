@@ -34,5 +34,4 @@ class DemoPage extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion url-launcher
