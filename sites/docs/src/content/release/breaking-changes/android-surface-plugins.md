@@ -78,12 +78,12 @@ A full example of using this new API can be found in [PR 6989][] for the
 `video_player_android` plugin.
 
 :::note
-In Flutter 3.26 and earlier,
+If you're using Flutter 3.26 or earlier,
 override `onSurfaceCreated` instead of `onSurfaceAvailable`.
 However, note that Flutter invokes `onSurfaceCreated` even when
 the original surface isn't destroyed.
 
-In Flutter 3.28 and earlier,
+If you're using Flutter 3.28 or earlier,
 override `onSurfaceDestroyed` instead of `onSurfaceCleanup`.
 However, note that Flutter invokes `onSurfaceDestroyed` after
 the surface is destroyed and becomes invalid,
