@@ -137,9 +137,6 @@ check out the following resources.
   check out [Differentiate between ephemeral state
   and app state][state].
 
-* You might want to check out packages on pub.dev that
-  perform state restoration, such as [`statePersistence`][].
-
 * For more information on navigation and the
   [`go_router`][] package, check out [Navigation and routing][]
   and the [State restoration][] topic on pub.dev.
@@ -150,5 +147,4 @@ check out the following resources.
 [`RestorableProperty`]: {{site.api}}/flutter/widgets/RestorableProperty-class.html
 [`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView/restorationId.html
-[`statePersistence`]: {{site.pub-pkg}}/state_persistence
 [`TextField`]: {{site.api}}/flutter/material/TextField/restorationId.html
