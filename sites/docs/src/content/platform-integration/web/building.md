@@ -188,7 +188,7 @@ running integration tests in a browser, check out the [Integration testing][] pa
 [Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [Logging]: /tools/devtools/logging
 [Running Flutter inspector]: /tools/devtools/inspector
-[Setup-web]: {{site.url}}/platform-integration/web/setup
+[Setup-web]: /platform-integration/web/setup
 [Web FAQ]: /platform-integration/web/faq
 [Web renderers]: /platform-integration/web/renderers
 [Widget tests]: /testing/overview#widget-tests
