@@ -77,7 +77,7 @@ surfaceProducer.setCallback(
 A full example of using this new API can be found in [PR 6989][] for the
 `video_player_android` plugin.
 
-:::note
+:::version-note
 If you're using Flutter 3.26 or earlier,
 override `onSurfaceCreated` instead of `onSurfaceAvailable`.
 However, note that Flutter invokes `onSurfaceCreated` even when
