@@ -74,7 +74,7 @@ their properties.
 Padding(                         // <-- This is a Widget
   padding: EdgeInsets.all(10.0), // <-- So is this
   child: Text("Hello, World!"),  // <-- This, too
-)));
+)
 ```
 
 To compose layouts, both SwiftUI and Flutter nest UI components
