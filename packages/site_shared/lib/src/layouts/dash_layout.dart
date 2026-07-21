@@ -59,10 +59,14 @@ abstract class DashLayout implements PageLayout {
   Iterable<Component> _buildHead(Page page) {
     final pageData = page.data.page;
     final siteData = page.data.site;
+    final siteBaseUrl = Uri.parse(siteData['url'] as String);
 
     final pageTitle = (pageData['title'] ?? siteData['title']) as String;
     final pageDescription = pageData['description'] as String?;
     final pageImage = pageData['image'] as String?;
+    final socialImageUrl = siteBaseUrl
+        .resolve(pageImage ?? twitterDefaultImageUrl)
+        .toString();
 
     final windowTitle = titleBase != null
         ? '$pageTitle | $titleBase'
@@ -70,7 +74,7 @@ abstract class DashLayout implements PageLayout {
 
     final canonicalUrl = switch (pageData['canonical']) {
       final String url when url.trim().isNotEmpty => url.trim(),
-      _ => Uri.parse(siteData['url'] as String).resolve(page.url).toString(),
+      _ => siteBaseUrl.resolve(page.url).toString(),
     };
 
     return [
@@ -118,8 +122,7 @@ abstract class DashLayout implements PageLayout {
       meta(name: 'twitter:title', content: pageTitle),
       if (pageDescription case final String desc)
         meta(name: 'twitter:description', content: desc),
-      if (pageImage case final String img)
-        meta(name: 'twitter:image', content: img),
+      meta(name: 'twitter:image', content: socialImageUrl),
 
       meta(attributes: {'property': 'og:title', 'content': pageTitle}),
       if (pageDescription case final String desc)
@@ -133,7 +136,7 @@ abstract class DashLayout implements PageLayout {
       meta(
         attributes: {
           'property': 'og:image',
-          'content': pageImage ?? twitterDefaultImageUrl,
+          'content': socialImageUrl,
         },
       ),
 
