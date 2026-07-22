@@ -15,7 +15,7 @@ platforms:
   - Web
   - Desktop
 industries:
-  - Travel & Lifestyle
+  - E-commerce & Retail
 successMetrics:
   - perc: 30
     desc: increased developer efficiency
