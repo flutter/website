@@ -1057,7 +1057,7 @@ is designed to interface with the
 underlying operating system rather than a web browser.
 A different approach is therefore required.
 
-On the web, Flutter compiles your application code into either JavaScript or WebAssembly (when building with `--wasm`), rendering graphics using a WebAssembly build of the Skia engine.
+On the web, Flutter compiles your application code into either JavaScript or [WebAssembly][Dart WebAssembly support] (when building with `--wasm`), rendering graphics using a WebAssembly build of the Skia engine.
 
 {% comment %}
 The draw.io source for the following image is in /diagrams/resources
@@ -1091,6 +1091,7 @@ into multiple files through [deferred imports][].
 For more information on Flutter web, check out
 [Web support for Flutter][].
 
+[Dart WebAssembly support]: https://dart.dev/web/wasm
 [deferred imports]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 [Web support for Flutter]: /platform-integration/web
 
