@@ -14,7 +14,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - E-commerce & Retail
 tags:
   - mobile
   - android

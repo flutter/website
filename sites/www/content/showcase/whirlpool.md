@@ -14,7 +14,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - Smart Home & IoT
 successMetrics:
   - perc: 92
     desc: shared codebase

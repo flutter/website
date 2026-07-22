@@ -14,7 +14,7 @@ platforms:
   - Mobile
   - Web
 industries:
-  - Travel & Lifestyle
+  - Transit & Logistics
 publishDate: 2024-09-12
 ---
 
