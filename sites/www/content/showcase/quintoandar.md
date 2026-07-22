@@ -73,7 +73,7 @@ two technologies.
 
 <<<<<<< HEAD
 As a test, they built out a set of features in both React Native and Flutter,
-then compared them in terms of perfomance, modularization, ease of learning,
+then compared them in terms of performance, modularization, ease of learning,
 look and feel, and several other metrics. Although the team had expected React
 Native to be a better fit for their needs, Flutter emerged the clear winner, and
 they decided to move forward with it right away.
