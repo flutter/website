@@ -116,7 +116,8 @@ class WebPage extends StatelessComponent {
               p([
                 .text(
                   'Building content-centric or SEO-heavy sites? '
-                  'Want to share Dart business logic, but still use a traditional HTML+CSS based web framework? Consider ',
+                  'Want to share Dart business logic, but still use a '
+                  'traditional HTML+CSS based web framework? Consider ',
                 ),
                 a(href: 'https://jaspr.site/', [.text('Jaspr')]),
                 .text(' (A Dart-based web framework, which powers '),
