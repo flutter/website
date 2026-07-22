@@ -29,7 +29,9 @@ With the launch of their first vehicle, the Lucid Air, the Lucid Motors team nee
 
 The team considered using native frameworks to build each app independently, but quickly realized they wouldn’t be able to hit their release date in time. So when a colleague recommended Flutter, Lucid jumped in with both feet. The team combed through the documentation on Flutter.dev to make sure that Flutter met all their needs, including multi-platform coding from a single codebase and easy portability.
 
-<Image src="images/third_party/case_studies/lucid-motors/case_study_body_1.png" format="fullwidth" alt="" />**Their solution**
+<Image src="images/third_party/case_studies/lucid-motors/case_study_body_1.png" format="fullwidth" alt="" />
+
+**Their solution**
 
 The Lucid team found Flutter easy to learn and new UIs quick to implement. They began implementing new features such as remote locking, Google Assistant integration, real-time navigation that syncs with the car, over-the-air vehicle software updates, battery monitoring, and more.
 

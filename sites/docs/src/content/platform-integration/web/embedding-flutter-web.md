@@ -38,7 +38,7 @@ When Flutter web is launched without referencing `multiViewEnabled` or a
 To learn more about the `flutter_bootstrap.js` file,
 check out [Customize app initialization][].
 
-[Customize app initialization]: {{site.docs}}/platform-integration/web/initialization/
+[Customize app initialization]: /platform-integration/web/initialization
 
 ### `iframe` embedding
 
@@ -330,7 +330,7 @@ To learn more, check out the [`ViewConstraints` class][],
 and [Understanding constraints][].
 
 [`ViewConstraints` class]: {{site.api}}/flutter/dart-ui/ViewConstraints-class.html
-[Understanding constraints]: {{site.docs}}/ui/layout/constraints
+[Understanding constraints]: /ui/layout/constraints
 
 ## Custom element (`hostElement`)
 
@@ -359,4 +359,4 @@ if single view support is ever deprecated, it won't affect your app.
 To learn more about other configuration options,
 check out [Customizing web app initialization][].
 
-[Customizing web app initialization]: {{site.docs}}/platform-integration/web/initialization
+[Customizing web app initialization]: /platform-integration/web/initialization

@@ -122,7 +122,7 @@ class IosPage extends StatelessComponent {
             _buildStat(
               number: '#1',
               description:
-                  '#1 multi-platform framework\non JetBrains and StackOverflow surveys',
+                  '#1 multi-platform framework\non JetBrains and Stack Overflow surveys',
               source: '(JetBrains and StackOverflow, 2024)',
             ),
             _buildStat(
@@ -363,14 +363,14 @@ class IosPage extends StatelessComponent {
             div(classes: 'github-stats', [
               span(classes: 'stat', [
                 img(
-                  alt: 'Github Stars',
+                  alt: 'GitHub Stars',
                   src: context.asset('images/github-stars.svg'),
                 ),
                 const .text(' > 170K GitHub Stars'),
               ]),
               span(classes: 'stat', [
                 img(
-                  alt: 'Github Contributors',
+                  alt: 'GitHub Contributors',
                   src: context.asset('images/github-contributors.svg'),
                 ),
                 const .text(' > 1.5K GitHub Contributors'),
@@ -441,8 +441,8 @@ class IosPage extends StatelessComponent {
     return section(id: 'cta', classes: 'module', [
       div(classes: 'insert cta-insert try-flutter-insert container', [
         const div(classes: 'text', [
-          h2([.text('Next Steps')]),
-          p([.text('Start your journey with flutter')]),
+          h2([.text('Next steps')]),
+          p([.text('Start your journey with Flutter')]),
           div([
             a(
               href: 'https://docs.flutter.dev/get-started/install',

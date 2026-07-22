@@ -1,5 +1,9 @@
 title: Flutter
+name: Flutter docs
 url: https://docs.flutter.dev
+description: >-
+  Official documentation for learning Flutter and using it to
+  build multiplatform apps, with guides, tutorials, examples, and references.
 main-url: https://flutter.dev
 email: flutter-dev@googlegroups.com
 
@@ -52,7 +56,7 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-currentFlutterVersion: '3.44.0'
+currentFlutterVersion: '3.44.7'
 
 # Settings for Jaspr.
 

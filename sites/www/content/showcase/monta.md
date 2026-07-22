@@ -1,6 +1,6 @@
 ---
 title: Monta
-description: Monta delivers software solutions for the entire EV charging ecosystem, connecting drivers, businesses, and industry partners. With a thoughtfully designed product suite, Monta offers flexibility and transparency, empowering everyone to maintain control over their EV charging experience
+description: Monta delivers software solutions for the entire EV charging ecosystem, connecting drivers, businesses, and industry partners. With a thoughtfully designed product suite, Monta offers flexibility and transparency, empowering everyone to maintain control over their EV charging experience.
 headline: Monta
 summary: Monta powers platform growth with Flutter
 appName: Monta

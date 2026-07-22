@@ -91,12 +91,12 @@ final class StagePreviewCommand extends Command<int> {
     final project =
         argResults.option(_projectOption) ??
         selectedSite.defaultFirebaseProjectId;
-    final channel = _nonEmpty(argResults.option(_channelOption));
+    final channel = nonEmpty(argResults.option(_channelOption));
     final expires = argResults.option(_expiresOption)!;
-    final prNumberArg = _nonEmpty(argResults.option(_prNumberOption));
-    final repoFullName = _nonEmpty(argResults.option(_repoOption));
-    final commitSha = _nonEmpty(argResults.option(_commitShaOption));
-    final headBranch = _nonEmpty(argResults.option(_headBranchOption));
+    final prNumberArg = nonEmpty(argResults.option(_prNumberOption));
+    final repoFullName = nonEmpty(argResults.option(_repoOption));
+    final commitSha = nonEmpty(argResults.option(_commitShaOption));
+    final headBranch = nonEmpty(argResults.option(_headBranchOption));
 
     // Validate PR-context preconditions up front so a misconfigured
     // trigger fails before the build and deploy runs unnecessarily.
@@ -121,7 +121,7 @@ final class StagePreviewCommand extends Command<int> {
         return 1;
       }
       const githubPatTokenEnv = 'GH_PAT_TOKEN';
-      final githubToken = _nonEmpty(Platform.environment[githubPatTokenEnv]);
+      final githubToken = nonEmpty(Platform.environment[githubPatTokenEnv]);
       if (githubToken == null) {
         stderr.writeln(
           'Error: $githubPatTokenEnv must be set to '
@@ -347,12 +347,6 @@ String _firebaseChannelForSite(
     channel = channel.substring(0, 63);
   }
   return channel.replaceAll(RegExp(r'-+$'), '');
-}
-
-/// Returns [value] if it is non-null and non-empty, otherwise `null`.
-String? _nonEmpty(String? value) {
-  if (value == null || value.isEmpty) return null;
-  return value;
 }
 
 /// Everything required to post a preview comment on a GitHub pull request.

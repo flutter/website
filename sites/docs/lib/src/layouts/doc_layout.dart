@@ -21,8 +21,6 @@ class DocLayout extends FlutterDocsLayout {
   @override
   String get name => 'docs';
 
-  bool get allowBreadcrumbs => true;
-
   @override
   ({Set<String> prerender, Set<String> prefetch}) speculationUrls(Page page) {
     // On the homepage, prefetch pages commonly navigated to,
@@ -82,9 +80,7 @@ class DocLayout extends FlutterDocsLayout {
               PageHeader(
                 title: pageTitle,
                 description: pageDescription,
-                showBreadcrumbs:
-                    allowBreadcrumbs &&
-                    (pageData['showBreadcrumbs'] as bool? ?? true),
+                showBreadcrumbs: showBreadcrumbsFor(page),
               ),
 
               child,
