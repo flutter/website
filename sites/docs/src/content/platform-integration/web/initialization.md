@@ -208,7 +208,7 @@ The initialization process is split into the following stages:
   methods can be used to manage app views from the host app.
   To learn more, check out [Embedded mode][embedded-mode].
 
-[embedded-mode]: {{site.docs}}/platform-integration/web/embedding-flutter-web/#embedded-mode
+[embedded-mode]: /platform-integration/web/embedding-flutter-web#embedded-mode
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 :::warning

@@ -211,5 +211,5 @@ Relevant PRs:
 [`TransitionDurationObserver`]: {{site.api}}/flutter/flutter_test/TransitionDurationObserver-class.html
 [`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
 
-[Android predictive back route transitions]: {{site.github.com}}/flutter/flutter/issues/131961
+[Android predictive back route transitions]: {{site.github}}/flutter/flutter/issues/131961
 [Predictive back route transitions by default]: {{site.github}}/flutter/flutter/pull/165832
