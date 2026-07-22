@@ -410,8 +410,7 @@ a [`Dismissible`][] widget.
 Recall this code from the previous snippet:
 
 <CodePreview direction="row">
-
-  <DashImage 
+  <DashImage
     image="app-architecture/case-study/dismissible.webp"
     alt="A clip that demonstrates the 'dismissible' functionality of the Compass app."
     img-style="max-height: 480px; border-radius: 12px; border: black 2px solid;"
@@ -431,7 +430,6 @@ Recall this code from the previous snippet:
     ),
   ),
   ```
-
 </CodePreview>
 
 On the `HomeScreen`, a user's saved trip is represented by
