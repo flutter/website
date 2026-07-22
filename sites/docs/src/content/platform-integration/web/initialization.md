@@ -125,7 +125,7 @@ The `config` argument is an object that can have the following optional fields:
 |`debugShowSemanticsNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging). |`bool`|
 |`entrypointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/". |`String`|
 |`fontFallbackBaseUrl`| Base URL for downloading fallback fonts when bundled fonts lack required glyphs. Defaults to `"https://fonts.gstatic.com/s/"`. |`String`|
-|`forceSingleThreadedSkwasm`| Forces single-threaded SkWasm mode for compatibility (only impacts apps compiled with `--wasm` when WebAssembly is selected at runtime). |`bool`|
+|`forceSingleThreadedSkwasm`| Forces single-threaded SkWasm mode for compatibility (only impacts apps compiled with `--wasm` when [WebAssembly][wasm-support] is selected at runtime). |`bool`|
 |`hostElement`| HTML Element into which Flutter renders the app (see [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`multiViewEnabled`| Enables multi-view mode for [embedding Flutter views][embedding-flutter-web] into host DOM elements dynamically. |`bool`|
 |`nonce`| A [Content Security Policy (CSP) nonce][nonce-mdn] string applied to inline scripts and styles created by the engine. |`String`|
