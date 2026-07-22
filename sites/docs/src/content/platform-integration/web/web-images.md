@@ -72,15 +72,9 @@ Therefore, images must only come from servers that
 have a CORS policy configured to work with the domain
 that serves your application.
 
-:::note
-For more information about web renderers, see
-[Web renderers][].
-:::
-
 [CORS]: https://developer.mozilla.org/docs/Web/HTTP/CORS
 [XHR]: https://developer.mozilla.org/docs/Web/API/XMLHttpRequest
 [`fetch`]: https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch
-[Web renderers]: /platform-integration/web/renderers
 
 ## Solutions
 
