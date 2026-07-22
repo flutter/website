@@ -1211,7 +1211,7 @@
     - "Small-to-medium Business"
     - "Enterprise"
   options_GCP_partner: false
-  - title: "HotShots Labs"
+- title: "HotShots Labs"
   summary: "A boutique Flutter focused mobile app development agency delivering end-to-end iOS and Android solutions with a strong focus on business results. They specialize in cross-platform mobile apps, scalable backend systems, and high-performing digital products"
   card: "images/third_party/partners/HeadShots_logo.png"
   external_url: "https://hotshotslabs.com"
