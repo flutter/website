@@ -158,8 +158,6 @@
           &:not(.collapsible) {
             color: var(--site-link-fgColor);
             background-color: color-mix(in srgb, var(--site-primary-color) 12%, transparent);
-            border-inline-start: 3px solid var(--site-primary-color);
-            padding-inline-start: calc(0.4rem - 3px);
           }
         }
       }
