@@ -119,7 +119,7 @@ class WebPage extends StatelessComponent {
                   'Want to share Dart business logic, but still use a traditional HTML+CSS based web framework? Consider ',
                 ),
                 a(href: 'https://jaspr.site/', [.text('Jaspr')]),
-                .text(' (A Dart-based web framwwork, which powers '),
+                .text(' (A Dart-based web framework, which powers '),
                 a(href: 'https://dart.dev', [.text('dart.dev')]),
                 .text(', '),
                 a(href: 'https://flutter.dev', [.text('flutter.dev')]),
