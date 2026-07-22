@@ -1,6 +1,8 @@
 ---
 title: Abbey Road Studios
-description: Learn how Abbey Road Studios is using Flutter to reinvent the songwriting process.
+description:
+  Learn how Abbey Road Studios is using Flutter to reinvent the songwriting
+  process.
 headline: Abbey Road Studios
 summary: Reinventing the songwriting process with Flutter
 companyName: Abbey Road Studios
@@ -12,8 +14,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
-  - Productivity
+  - Music
 successMetrics:
   - perc: 100
     desc: feature parity across Android and iOS
@@ -24,4 +25,7 @@ tags:
 publishDate: 2021-10-21
 ---
 
-When Abbey Road Studios released the iOS version of the Topline app, they got one major request from users - an Android version. Watch the video to learn why the team turned to Flutter to deliver an experience-changing app to artists all over the world all on a time crunch.
+When Abbey Road Studios released the iOS version of the Topline app, they got
+one major request from users - an Android version. Watch the video to learn why
+the team turned to Flutter to deliver an experience-changing app to artists all
+over the world all on a time crunch.
