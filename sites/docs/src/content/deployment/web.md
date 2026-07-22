@@ -24,6 +24,12 @@ of your app and covers the following topics:
 Build the app for deployment using the `flutter build web` command.
 
 ```console
+flutter build web --wasm
+```
+
+You can also generate a standard JavaScript build by omitting the `--wasm` flag:
+
+```console
 flutter build web
 ```
 
@@ -53,7 +59,11 @@ to respect assertions and change the optimization level (using the `-O` flag.)
 Flutter web provides two build modes (default and WebAssembly) and two renderers
 (`canvaskit` and `skwasm`).
 
-For more information, see [Web renderers][].
+For more information, see [Support for WebAssembly (Wasm)][Wasm support] and [Web renderers][].
+
+:::important Serving WebAssembly builds
+WebAssembly builds use multiple threads for improved rendering performance and require your web server to return specific COEP/COOP HTTP response headers (`Cross-Origin-Embedder-Policy: credentialless` and `Cross-Origin-Opener-Policy: same-origin`). For full details, see [Support for WebAssembly (Wasm)][Wasm support].
+:::
 
 ## Deploying to the web
 
@@ -153,4 +163,5 @@ See [Embedding Flutter web][].
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting
+[Wasm support]: /platform-integration/web/wasm
 [Web renderers]: /platform-integration/web/renderers
