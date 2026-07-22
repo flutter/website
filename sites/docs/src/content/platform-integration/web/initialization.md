@@ -54,7 +54,7 @@ However, in some scenarios, you might have a reason to
 customize this initialization process, such as:
 
 * Setting a custom Flutter configuration for your app.
-* Changing the settings for the Flutter service worker.
+* Integrating a custom service worker for offline support or caching.
 * Writing custom JavaScript code to
   run at different stages of the startup process.
 
@@ -73,7 +73,7 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
-| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Common warning" info below). |
+| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version for custom service worker configurations (Flutter no longer generates a service worker by default; see the [Web FAQ](/platform-integration/web/faq#how-do-i-configure-a-service-worker)). |
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
 
 {:.table}
@@ -185,8 +185,7 @@ The initialization process is split into the following stages:
 
 **Loading the entrypoint script**
 : The `load` function calls the `onEntrypointLoaded` callback once the
-  Service Worker is initialized, and the `main.dart.js` entrypoint has
-  been downloaded and run by the browser.
+  main entrypoint script has been downloaded and run by the browser.
   Flutter also calls `onEntrypointLoaded` on
   every hot restart during development.
 
