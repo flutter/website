@@ -24,13 +24,13 @@ of your app and covers the following topics:
 Build the app for deployment using the `flutter build web` command.
 
 ```console
-flutter build web --wasm
+flutter build web
 ```
 
-You can also generate a standard JavaScript build by omitting the `--wasm` flag:
+To build your application with WebAssembly (Wasm), pass the `--wasm` flag:
 
 ```console
-flutter build web
+flutter build web --wasm
 ```
 
 This
@@ -54,10 +54,9 @@ Profile builds are specialized for performance profiling using Chrome DevTools,
 and debug builds can be used to configure dart2js
 to respect assertions and change the optimization level (using the `-O` flag.)
 
-## Choosing a build mode and a renderer
+## Opting-in to WebAssembly
 
-Flutter web provides two build modes (default and WebAssembly) and two renderers
-(`canvaskit` and `skwasm`).
+To compile and optimize your app for WebAssembly, use the `--wasm` flag when running or building.
 
 For more information, see [Support for WebAssembly (Wasm)][Wasm support] and [Web renderers][].
 
