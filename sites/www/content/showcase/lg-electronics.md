@@ -14,7 +14,7 @@ platforms:
   - Web
   - Embedded
 industries:
-  - Travel & Lifestyle
+  - Smart Home & IoT
 tags:
   - embedded
 publishDate: 2024-12-19

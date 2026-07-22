@@ -13,7 +13,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - Hospitality
 publishDate: 2024-12-19
 ---
 
