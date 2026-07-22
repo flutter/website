@@ -347,8 +347,8 @@ you can use. Here are a few of them:
     stack.
 *   [`restorablePush`]: Restore a route that was removed from the stack.
 
-[Cupertino]: {{site.docs}}/ui/widgets/cupertino
-[Material Components]: {{site.docs}}/ui/widgets/material
+[Cupertino]: /ui/widgets/cupertino
+[Material Components]: /ui/widgets/material
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
 [`CupertinoPageRoute`]: {{site.api}}/flutter/cupertino/CupertinoPageRoute-class.html

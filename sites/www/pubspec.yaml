@@ -15,10 +15,10 @@ dependencies:
   collection: ^1.19.1
   dart_mappable: ^4.8.0
   http: ^1.6.0
-  image: ^4.8.0
+  image: ^4.9.0
   intl: ^0.20.2
-  jaspr: ^0.23.1
-  jaspr_content: ^0.5.2
+  jaspr: ^0.23.2
+  jaspr_content: ^0.5.3
   path: ^1.9.1
   site_shared:
     path: ../../packages/site_shared
@@ -27,15 +27,15 @@ dependencies:
 dev_dependencies:
   analysis_defaults:
     path: ../../packages/analysis_defaults
-  build_runner: ^2.15.0
-  build_web_compilers: ^4.6.0
+  build_runner: ^2.15.1
+  build_web_compilers: ^4.8.0
   code_builder: ^4.11.1
   dart_mappable_builder: ^4.8.0
-  dart_style: ^3.1.7
-  jaspr_builder: ^0.23.1
+  dart_style: ^3.1.8
+  jaspr_builder: ^0.23.2
   sass_builder: ^2.4.0+1
-  sealed_countries: ^3.0.1
-  test: ^1.29.0
+  sealed_countries: ^3.2.1
+  test: ^1.31.0
   youtube_transcript_api: ^1.0.0
 
 jaspr:
