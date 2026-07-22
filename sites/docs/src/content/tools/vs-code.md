@@ -400,7 +400,7 @@ The Dart extension displays labels after
 the closing delimiters of multi-line constructs, such as
 constructor invocations, method calls, and list literals.
 Closing labels are editor annotations and don't change your source code,
-even though the default ` // ` prefix makes them look like comments.
+even though the default ` // ` prefix makes them look similar to comments.
 
 To change the prefix:
 
