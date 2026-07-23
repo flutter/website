@@ -38,13 +38,13 @@ class BlogCard extends StatelessComponent {
               alt: post.title,
               loading: switch (priority) {
                 .featured => MediaLoading.eager,
-                .high => null,
+                .high => MediaLoading.lazy,
                 .normal => MediaLoading.lazy,
               },
               attributes: {
                 if (priority == .featured)
                   'fetchpriority': 'high'
-                else if (priority == .normal)
+                else
                   'decoding': 'async',
               },
             ),
@@ -65,6 +65,8 @@ class BlogCard extends StatelessComponent {
                     img(
                       src: imageUrl,
                       alt: author.name,
+                      loading: MediaLoading.lazy,
+                      attributes: const {'decoding': 'async'},
                     ),
               ]),
               span(classes: 'author', [
