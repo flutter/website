@@ -181,7 +181,7 @@ flutter pub outdated
 
 To upgrade to newer major versions, run `flutter pub upgrade --major-versions`.
 This command automatically upgrades the constraints in your `pubspec.yaml` and
-then runs `pub get` to retrieve those upgraded dependencies.
+then runs `flutter pub get` to retrieve those upgraded dependencies.
 
 ### Use dependency overrides
 
