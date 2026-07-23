@@ -15,22 +15,34 @@ class Banner extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
+    final mobileText = switch (banner.mobileText) {
+      final mobileText? when mobileText != banner.text => mobileText,
+      _ => null,
+    };
+
     return a(
       classes: 'event-bar',
       href: banner.link,
       target: Target.blank,
       id: 'event-bar',
       [
-        span(classes: 'event-bar__content', [
-          .text(banner.text),
-          const .text('\u00A0'),
-          const Icon.linkArrow(large: true),
-        ]),
-        span(classes: 'event-bar__content mobile', [
-          .text(banner.text),
-          const .text('\u00A0'),
-          const Icon.linkArrow(),
-        ]),
+        span(
+          classes: [
+            'event-bar__content',
+            if (mobileText != null) 'desktop',
+          ].join(' '),
+          [
+            .text(banner.text),
+            const .text('\u00A0'),
+            const Icon.linkArrow(large: true),
+          ],
+        ),
+        if (mobileText != null)
+          span(classes: 'event-bar__content mobile', [
+            .text(mobileText),
+            const .text('\u00A0'),
+            const Icon.linkArrow(),
+          ]),
       ],
     );
   }
