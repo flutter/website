@@ -103,8 +103,8 @@ When compiling for WebAssembly, check for `dart.library.js_interop` (rather than
 
 ```dart
 import 'fallback.dart'
-  if (dart.library.js_interop) 'wasm_web_interop.dart'
-  if (dart.library.js) 'legacy_web_interop.dart';
+  if (dart.library.js) 'legacy_web_interop.dart'
+  if (dart.library.js_interop) 'wasm_web_interop.dart';
 ```
 
 For more details, see the [documentation for conditional imports][] on [dart.dev]({{site.dart-site}}).
