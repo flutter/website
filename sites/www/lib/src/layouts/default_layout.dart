@@ -32,7 +32,6 @@ class DefaultLayout extends PageLayout {
 
     final title = (pageData['title'] as String).trim();
     final description = (pageData['description'] as String).trim();
-    final pageImage = pageData['image'] as String?;
 
     if (title.isEmpty) {
       throw Exception('Page at ${page.path} can\'t have an empty title.');
@@ -40,6 +39,11 @@ class DefaultLayout extends PageLayout {
     if (description.isEmpty) {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
+
+    final pageImage = pageData['image'] as String?;
+    final titleBase =
+        (pageData['titleBase'] ?? siteData['titleBase']) as String?;
+    final documentTitle = titleBase == null ? title : '$title | $titleBase';
 
     final canonicalUrl = switch (page.data.page['canonical']) {
       final String url when url.trim().isNotEmpty => url.trim(),
@@ -59,7 +63,7 @@ class DefaultLayout extends PageLayout {
         );
 
         return Document(
-          title: title,
+          title: documentTitle,
           head: [
             link(rel: 'icon', href: context.asset('/images/favicon.png')),
             link(
