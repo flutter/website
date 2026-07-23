@@ -277,10 +277,10 @@
     font-size: 0.875rem;
     color: var(--site-base-fgColor-alt);
     display: flex;
-    align-items: center;
-    gap: 0.25rem 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
     margin-top: auto;
-    flex-wrap: wrap;
 
     .blog-card-authors {
         display: flex;
