@@ -97,8 +97,18 @@ controls the headers on an HTTP request.
 
 Some plugins require platform-specific imports, particularly if they use the
 file system, which is not accessible from the browser. To use these plugins
-in your app, see the [documentation for conditional imports][]
-on [dart.dev]({{site.dart-site}}).
+in your app, use conditional imports.
+
+When compiling for WebAssembly, check for `dart.library.js_interop` (rather than `dart.library.js` or `dart.library.html`, which are not supported on Wasm):
+
+```dart
+import 'fallback.dart'
+  if (dart.library.js_interop) 'wasm_web_interop.dart'
+  if (dart.library.js) 'legacy_web_interop.dart';
+```
+
+For more details, see the [documentation for conditional imports][] on [dart.dev]({{site.dart-site}}).
+
 
 ### Does Flutter web support concurrency?
 
@@ -221,7 +231,7 @@ value such as 0 or 60 seconds.
 
 [building a web app with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive
-[documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
+[documentation for conditional imports]: {{site.dart-site}}/interop/js-interop/package-web#conditional-imports
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [`http`]: {{site.pub}}/packages/http

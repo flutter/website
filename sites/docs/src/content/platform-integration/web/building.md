@@ -81,8 +81,8 @@ You can pass the `--wasm` flag to run your app using WebAssembly:
 $ flutter run -d chrome --wasm
 ```
 
-Flutter web offers multiple build modes and renderers.
-For more information, check out [Web renderers][].
+To learn more about WebAssembly compilation and server requirements,
+check out [Support for WebAssembly (Wasm)][Wasm support].
 
 ### Disable hot reload in VS Code
 
@@ -190,5 +190,6 @@ running integration tests in a browser, check out the [Integration testing][] pa
 [Running Flutter inspector]: /tools/devtools/inspector
 [Setup-web]: /platform-integration/web/setup
 [Web FAQ]: /platform-integration/web/faq
+[Wasm support]: /platform-integration/web/wasm
 [Web renderers]: /platform-integration/web/renderers
 [Widget tests]: /testing/overview#widget-tests

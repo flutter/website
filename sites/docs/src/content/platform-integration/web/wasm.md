@@ -157,6 +157,10 @@ static JS interop:
 - [`package:web`][], which replaces `dart:html` (and other web libraries)
 - [`dart:js_interop`][], which replaces `package:js` and `dart:js`
 
+For a detailed guide on migrating existing code, see the [`package:web` migration guide][].
+
+When compiling to Wasm, be aware of runtime differences in JS interop types (such as `is`/`as` type casts and Zone propagation in callbacks). For details, see Dart's [JS interop types documentation]({{site.dart-site}}/interop/js-interop/js-types#compatibility-type-checks-and-casts) and the [package:web Zones section]({{site.dart-site}}/interop/js-interop/package-web#zones).
+
 To learn more about JS interop in Dart,
 see Dart's [JS interop][] documentation page.
 
