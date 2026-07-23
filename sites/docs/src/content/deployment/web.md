@@ -56,12 +56,17 @@ to respect assertions and change the optimization level (using the `-O` flag.)
 
 ## Opting-in to WebAssembly
 
-To compile and optimize your app for WebAssembly, use the `--wasm` flag when running or building.
+To compile and optimize your app for WebAssembly,
+use the `--wasm` flag when running or building.
 
-For more information, see [Support for WebAssembly (Wasm)][Wasm support] and [Web renderers][].
+For more information, see [Support for WebAssembly (Wasm)][Wasm support].
 
 :::important Serving WebAssembly builds
-WebAssembly builds use multiple threads for improved rendering performance and require your web server to return specific COEP/COOP HTTP response headers (`Cross-Origin-Embedder-Policy: credentialless` and `Cross-Origin-Opener-Policy: same-origin`). For full details, see [Support for WebAssembly (Wasm)][Wasm support].
+WebAssembly builds use multiple threads for improved rendering performance
+and require your web server to return specific COEP/COOP HTTP response headers
+(`Cross-Origin-Embedder-Policy: credentialless` and
+`Cross-Origin-Opener-Policy: same-origin`).
+For full details, see [Support for WebAssembly (Wasm)][Wasm support].
 :::
 
 ## Deploying to the web
