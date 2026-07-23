@@ -206,9 +206,9 @@ then extract the SDK to where you want it stored.
     download one of the following installation bundles to get the
     latest stable release of the Flutter SDK.
 
-    | Apple Silicon (ARM64)                            | Intel                                          |
-    |--------------------------------------------------|------------------------------------------------|
-    | <DownloadLatestButton os="macos" arch="arm64" /> | <DownloadLatestButton os="macos" arch="x64" /> |
+    | Apple Silicon (ARM64)                                                 | Intel                                                               |
+    |-----------------------------------------------------------------------|---------------------------------------------------------------------|
+    | <DownloadLatestButton os="macos" arch="arm64"></DownloadLatestButton> | <DownloadLatestButton os="macos" arch="x64"></DownloadLatestButton> |
 
  1. <h3>Create a folder to store the SDK</h3>
 

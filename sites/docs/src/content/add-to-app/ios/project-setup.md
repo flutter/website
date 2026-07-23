@@ -166,6 +166,7 @@ The example directory structure resembles the following:
     1. Navigate to your target's **General** tab
        and add `FlutterNativeIntegration` under
        **Frameworks, Libraries, and Embedded Content**.
+
        <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutternativeintegration-library.png" caption="FlutterNativeIntegration under Frameworks, Libraries, and Embedded Content." />
 
  1. <h3>Add build settings</h3>
