@@ -651,7 +651,7 @@ From Fri Nov 29 19:41:00 2018 -0800 to Thu Feb 21 20:22:00 2019 -0800
 
 [26721](https://github.com/flutter/flutter/pull/26721) Respect EditableText.keyboardAppearance (a: text input, cla: yes, f: cupertino, framework)
 
-[26722](https://github.com/flutter/flutter/pull/26722) [Material] Refactor _build<Widget> methods in BottomNavBar (cla: yes, f: material design, framework)
+[26722](https://github.com/flutter/flutter/pull/26722) [Material] Refactor `_build<Widget>` methods in BottomNavBar (cla: yes, f: material design, framework)
 
 [26727](https://github.com/flutter/flutter/pull/26727) Roll engine to d470fc65ea1cb91ae66706b320d82c4536a4da8b (cla: yes)
 
@@ -1904,7 +1904,7 @@ From Fri Nov 29 19:41:00 2018 -0800 to Thu Feb 21 20:22:00 2019 -0800
 
 [1162](https://github.com/flutter/plugins/pull/1162) [In_app_purchase] Expose nslocale and expose currencySymbol instead of currencyCode to match android (cla: yes)
 
-[1163](https://github.com/flutter/plugins/pull/1163) Change from Rectangle<num>/Point<num> to Rect/Offset for ui convenience (cla: yes)
+[1163](https://github.com/flutter/plugins/pull/1163) Change from `Rectangle<num>`/`Point<num>` to Rect/Offset for ui convenience (cla: yes)
 
 [1169](https://github.com/flutter/plugins/pull/1169) [In_app_purchase] getproductlist basic draft (cla: yes)
 

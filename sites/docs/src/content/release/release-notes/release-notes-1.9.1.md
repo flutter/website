@@ -516,7 +516,7 @@ The core framework for Flutter saw several important features in this release, i
 
 [35143](https://github.com/flutter/flutter/pull/35143) More HttpClientResponse Uint8List fixes
 
-[35149](https://github.com/flutter/flutter/pull/35149) More HttpClientResponse implements Stream<Uint8List> fixes
+[35149](https://github.com/flutter/flutter/pull/35149) More `HttpClientResponse implements Stream<Uint8List>` fixes
 
 [35232](https://github.com/flutter/flutter/pull/35232) New benchmark: Gesture semantics
 
