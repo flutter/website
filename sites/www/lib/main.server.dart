@@ -19,6 +19,7 @@ import 'src/layouts/blog_layout.dart';
 import 'src/layouts/consultants_tos_layout.dart';
 import 'src/layouts/default_layout.dart';
 import 'src/layouts/showcase_story_layout.dart';
+import 'src/loaders/blog_data_processor.dart';
 import 'src/pages/ai_page.dart';
 import 'src/pages/brand_page.dart';
 import 'src/pages/community_page.dart';
@@ -84,7 +85,7 @@ void main() async {
       configResolver: PageConfig.all(
         dataLoaders: [
           FilesystemDataLoader('content'),
-
+          const BlogPostDataProcessor(),
           assetManager.dataLoader,
         ],
         parsers: [const MarkdownParser()],
