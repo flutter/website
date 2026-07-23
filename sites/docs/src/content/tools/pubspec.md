@@ -249,12 +249,8 @@ flutter:
 
 ### config field {: #config }
 
-A map of keys to flags (`true` or `false`) that influences how the `flutter` CLI
-is executed.
-
-> NOTE: This feature is only available as of
-> [#167953]({{site.github}}/flutter/flutter/pull/167953) on the `main`
-> channel.
+A map of keys to flags (`true` or `false`) that influences how
+the `flutter` CLI is executed.
 
 The available keys mirror those available in `flutter config --list`.
 
@@ -262,13 +258,40 @@ The available keys mirror those available in `flutter config --list`.
 flutter:
   config:
     cli-animations: false
-    enable-swift-package-manager: true
 ```
 
 Use `flutter config --help` for a description of each flag.
 
 Flags are only read from the current _application_ package, and have no effect
 in the context of a package or dependency.
+
+<a id="disable-swift-package-manager-field" aria-hidden="true"></a>
+
+#### enable-swift-package-manager field {: #enable-swift-package-manager }
+
+Control whether Flutter uses Swift Package Manager to
+manage native iOS and macOS dependencies for this project.
+To disable it for this project, set the field to `false`.
+
+```yaml title="pubspec.yaml"
+flutter:
+  config:
+    enable-swift-package-manager: false
+```
+
+:::version-note
+In Flutter versions earlier than 3.44,
+Swift Package Manager isn't enabled by default.
+
+Support for disabling Swift Package Manager will be
+removed in a future Flutter release.
+To get started with Swift Package Manager, check out
+[Swift Package Manager for app developers][] or
+[Swift Package Manager for plugin authors][].
+:::
+
+[Swift Package Manager for app developers]: /packages-and-plugins/swift-package-manager/for-app-developers
+[Swift Package Manager for plugin authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 
 ### default-flavor field
 
@@ -356,26 +379,6 @@ a Flutter Android app, see
 [Deferred components for Android].
 
 [Deferred components for Android]: /perf/deferred-components
-
-### disable-swift-package-manager field
-
-Disable the use of the Swift Package Manager (SPM) so that
-it no longer manages dependencies in your iOS and macOS
-Flutter projects.
-
-```yaml title="pubspec.yaml"
-flutter:
-  disable-swift-package-manager: true
-```
-
-> NOTE: As of [#168433]({{site.github}}/flutter/flutter/pull/168433) on the
-> `main` channel, this property has moved to the [`config`](#config) section:
->
-> ```yaml title="pubspec.yaml"
-> flutter:
->   config:
->     enable-swift-package-manager: false
-> ```
 
 ### flutter field
 

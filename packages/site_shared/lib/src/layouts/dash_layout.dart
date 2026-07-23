@@ -129,8 +129,7 @@ abstract class DashLayout implements PageLayout {
       meta(name: 'twitter:title', content: pageTitle),
       if (pageDescription case final String desc)
         meta(name: 'twitter:description', content: desc),
-      if (pageImage != null)
-        meta(name: 'twitter:image', content: socialImageUrl),
+      meta(name: 'twitter:image', content: socialImageUrl),
 
       meta(attributes: {'property': 'og:title', 'content': pageTitle}),
       if (pageDescription case final String desc)

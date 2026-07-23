@@ -169,8 +169,7 @@ investigate other resources that our community recommended.
 
 <Icon id="book_5" title="Cookbook recipe"></Icon> [Special effects][]<br>
 <Icon id="handyman" title="Desktop tool"></Icon> [Spriter Pro][]<br>
-<Icon id="package_2" title="Flutter package"></Icon> [rive][]<br>
-<Icon id="package_2" title="Flutter package"></Icon> [spritewidget][]
+<Icon id="package_2" title="Flutter package"></Icon> [rive][]
 
 </td>
 </tr>
@@ -373,7 +372,6 @@ investigate other resources that our community recommended.
 [game-svc-pkg]: {{site.pub-pkg}}/games_services
 [rive]: {{site.pub-pkg}}/rive
 [shared_preferences]: {{site.pub-pkg}}/shared_preferences
-[spritewidget]: {{site.pub-pkg}}/spritewidget
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
 [read how the game was created in 6 weeks]: {{site.flutter-blog}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31

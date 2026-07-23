@@ -9,7 +9,7 @@ logo: "images/third_party/case_studies/zoho-tables/zoho.png"
 card: "images/third_party/case_studies/zoho-tables/zoho.png"
 videoEmbedUrl: "https://www.youtube.com/embed/YWAuwAR28KY"
 locations:
-  - India
+  - Asia
 platforms:
   - Mobile
 industries:

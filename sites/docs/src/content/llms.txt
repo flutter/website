@@ -127,7 +127,6 @@ This file provides a curated list of resources to help Large Language Models und
     - [iOS integration](https://docs.flutter.dev/platform-integration/ios): The main landing page for iOS-specific information.
     - [Build and release for iOS](https://docs.flutter.dev/deployment/ios): A guide to packaging and deploying your Flutter app to the Apple App Store.
 - **Web:**
-    - [Web renderers](https://docs.flutter.dev/platform-integration/web/renderers): Learn about the HTML and CanvasKit renderers.
     - [Building a web application with Flutter](https://docs.flutter.dev/platform-integration/web/building): Configure, run, and build a web application using Flutter.
     - [Adding Flutter to any web application](https://docs.flutter.dev/platform-integration/web/embedding-flutter-web): Embed Flutter views in an existing web app or use Flutter for the full page.
     - [Support for WebAssembly (Wasm)](https://docs.flutter.dev/platform-integration/web/wasm): Compile Flutter web apps to WebAssembly.

@@ -127,7 +127,7 @@ To add Flutter to an existing app, build it normally, then follow the
 [Ruby on Rails]: https://rubyonrails.org/
 [Apache Struts]: https://struts.apache.org/
 [VanillaJS]: http://vanilla-js.com/
-[embedding instructions]: {{site.docs}}/platform-integration/web/embedding-flutter-web#embedded-mode
+[embedding instructions]: /platform-integration/web/embedding-flutter-web#embedded-mode
 
 ## Get started
 

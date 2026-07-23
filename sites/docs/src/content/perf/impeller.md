@@ -83,11 +83,8 @@ No action on your part is necessary for this fallback behavior.
 
 ### Web
 
-Flutter on the web offers [two renderers][] --
-`canvaskit` and `skwasm` -- which both currently use Skia.
-They might use Impeller in the future.
-
-[two renderers]: /platform-integration/web/renderers#renderers
+Flutter on the web currently uses Skia for rendering.
+It might use Impeller in the future.
 
 ### macOS
 
