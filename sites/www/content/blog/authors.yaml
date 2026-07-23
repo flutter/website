@@ -4,7 +4,7 @@
 #
 # Authors should have:
 #  - name: The author's display name (required).
-#  - image: The author's image file, located in /content/blog/authors/ (optional).
+#  - image: The author's image file, located in /content/blog/authors_images/ (optional).
 #  - imageUrl: A url to an image for the author, as an alternative to a local image (optional).
 #  - link: A link to their GitHub, social profile, or personal website (optional).
 abd99:

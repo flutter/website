@@ -73,7 +73,7 @@ extension type Author(Map<String, Object?> data) {
 
   String? resolveImageUrl(BuildContext context) {
     if (image case final localImage? when localImage.isNotEmpty) {
-      return context.resolveAsset('/blog/authors/$localImage');
+      return context.resolveAsset('/blog/authors_images/$localImage');
     }
     if (imageUrl case final url? when url.isNotEmpty) {
       return url;
