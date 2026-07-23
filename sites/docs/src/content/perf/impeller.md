@@ -83,7 +83,8 @@ No action on your part is necessary for this fallback behavior.
 
 ### Web
 
-Flutter on the web currently uses Skia for rendering. It might use Impeller in the future.
+Flutter on the web currently uses Skia for rendering.
+It might use Impeller in the future.
 
 ### macOS
 

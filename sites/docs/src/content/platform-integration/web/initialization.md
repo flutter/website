@@ -160,7 +160,8 @@ _flutter.loader.load({
 
 ## Example: Customizing Flutter configuration based on URL query parameters
 
-The following example shows a custom `flutter_bootstrap.js` that enables single-threaded mode when a `force_st` query parameter is present in the URL:
+The following example shows a custom `flutter_bootstrap.js` that enables
+single-threaded mode when a `force_st` query parameter is present in the URL:
 
 ```js
 {% raw %}{{flutter_js}}{% endraw %}
