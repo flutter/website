@@ -81,7 +81,7 @@ It’s been incredible to see [Gemini in Android Studio supercharge Dart and Flu
 
 We’re also announcing the [Flutter AI Toolkit](https://docs.flutter.dev/ai-toolkit) v1.0, now ready for your production workloads. The Flutter AI Toolkit is a set of AI-related widgets to make it easy to add an GenAI features to your Flutter app. Since our last beta release, the AI Toolkit has migrated to the Firebase AI Logic SDK, adding new features along the way, including multi-turn function calling for agentic workflows, the ability to plug-in custom speech-to-text translators, and full support for turning LLM responses into widgets.
 
-And speaking of new tools, Google introduced [**Antigravity**](https://docs.flutter.dev/ai/create-with-ai#antigravity), a new IDE experience aimed at boosting developer workflows with AI. We’re partnering with teams across Google to make Flutter development a world-class experience in all of the ways that Google AI is available. Watch [the Observable&lt;Flutter&gt; livestream](https://www.youtube.com/live/s5uGpolyHd4?si=7Jrct-RHW2lTiKq0) for more.
+And speaking of new tools, Google introduced [**Antigravity**](https://docs.flutter.dev/ai/create-with-ai#antigravity), a new IDE experience aimed at boosting developer workflows with AI. We’re partnering with teams across Google to make Flutter development a world-class experience in all of the ways that Google AI is available. Watch the [Observable Flutter livestream](https://www.youtube.com/live/s5uGpolyHd4?si=7Jrct-RHW2lTiKq0) for more.
 
 I want to share one more thing that we’re most excited about heading into 2026…
 

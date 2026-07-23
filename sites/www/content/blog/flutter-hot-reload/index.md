@@ -133,7 +133,7 @@ For the [Veggie Seasons](https://github.com/flutter/samples/tree/master/veggiese
 
 * Changing `lib/main.dart` offers no improvement. It compiled one file before and one file now.
 
-* Changing `lib/data/veggie.dart` gives improvements in the 30% range. Actual compilation time on my computer goes from 100+ ms to &lt;20 ms (it used to compile 18 files, now only compiles 1 file). This naturally is much more than 30%, but because recompilation was only one out of three timesinks (the other two being reloading and reassembly) the overall change comes out at around 30%.
+* Changing `lib/data/veggie.dart` gives improvements in the 30% range. Actual compilation time on my computer goes from 100+ ms to <20 ms (it used to compile 18 files, now only compiles 1 file). This naturally is much more than 30%, but because recompilation was only one out of three timesinks (the other two being reloading and reassembly) the overall change comes out at around 30%.
 
 For [Flutter Gallery](https://github.com/flutter/gallery) (a relatively large application):
 

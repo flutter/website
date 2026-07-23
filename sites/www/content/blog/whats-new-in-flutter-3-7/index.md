@@ -85,7 +85,7 @@ The team is pleased to announce that the new [Impeller rendering engine](https:/
 
 While we are increasingly confident that Impeller on iOS will meet the rendering needs of nearly all existing Flutter apps, there are still a few gaps in API coverage. The small number of remaining gaps are listed [on the Flutter wiki](https://github.com/flutter/flutter/wiki/Impeller#status). Users might also notice minor visual differences in rendering between Skia and Impeller. These minor differences might be bugs, so please don’t hesitate to [file issues](https://github.com/flutter/flutter/issues).
 
-Our progress on Impeller was greatly accelerated by contributions from the community. In particular, GitHub users [ColdPaleLight](https://github.com/ColdPaleLight), [guoguo338](https://github.com/guoguo338), [JsouLiang](https://github.com/JsouLiang), and [magicianA](https://github.com/magicianA) contributed 37 out of 291 (&gt;12%) Impeller-related patches to this release. Thank you!
+Our progress on Impeller was greatly accelerated by contributions from the community. In particular, GitHub users [ColdPaleLight](https://github.com/ColdPaleLight), [guoguo338](https://github.com/guoguo338), [JsouLiang](https://github.com/JsouLiang), and [magicianA](https://github.com/magicianA) contributed 37 out of 291 (>12%) Impeller-related patches to this release. Thank you!
 
 We continue to make progress on a Vulkan backend for Impeller (with fallback to OpenGL on older devices), but Impeller on Android isn’t yet ready for preview. Android support is under active development, and we hope to share more about it — with more news about support for desktop and web — in future releases.
 

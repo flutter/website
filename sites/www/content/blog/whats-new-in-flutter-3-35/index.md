@@ -205,7 +205,7 @@ On Android, you can now protect sensitive user content during media projection b
 
 * Migration: template project migrated to Android 24.
 
-* Fix: Fixed crash on Android &lt;= 14 from background image readers.
+* Fix: Fixed crash on Android <= 14 from background image readers.
 
 * Fix: Fixed uniform arrays in fragment shaders for OpenGLES Impeller.
 
@@ -285,7 +285,7 @@ Results vary depending on the source code, but in general, some short commands l
 
 With the release of the [Flutter IntelliJ Plugin](https://plugins.jetbrains.com/plugin/9212-flutter) version M87, there is now support for Android Studio [Meerkat](https://developer.android.com/studio/archive) and [Narwhal](https://developer.android.com/studio/preview). With this version, the Flutter plugin can now additionally be installed on CLion, GoLand, PyCharm, and several other JetBrains IDEs! For the full list, see the supported products [here](https://plugins.jetbrains.com/plugin/9212-flutter/versions/stable/818757). Thank you to Alex Li ([Flutter and Dart GDE](https://developers.google.com/profile/u/AlexV525)) whose [PR #7949](https://github.com/flutter/flutter-intellij/pull/7949) and diligent collaboration with our team was a driving force to expand the number of Jetbrains IDEs supported by the plugin.
 
-For a list of all the updates and fixes, see our [changelog](https://github.com/flutter/flutter-intellij/blob/master/CHANGELOG.md) and file issues [here](https://github.com/flutter/flutter-intellij/issues). To get the latest update: **Settings &gt; Plugins &gt; Flutter &gt; Update**.
+For a list of all the updates and fixes, see our [changelog](https://github.com/flutter/flutter-intellij/blob/master/CHANGELOG.md) and file issues [here](https://github.com/flutter/flutter-intellij/issues). To get the latest update: **Settings > Plugins > Flutter > Update**.
 
 Consider subscribing to the dev channel to test the latest updates as they are released weekly. Find instructions are [here](https://github.com/flutter/flutter-intellij/blob/master/docs/Dev-Channel.md).
 

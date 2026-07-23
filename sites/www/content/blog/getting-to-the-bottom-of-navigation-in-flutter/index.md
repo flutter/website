@@ -277,7 +277,7 @@ That’s it for cross fading. Hopefully it’s obvious that it would be easy to 
 
 ## Hiding the Bottom Navigation Bar on Scroll
 
-In this version of the demo, any destination view with scrollable content causes the bottom navigation bar to slide off screen when the content is scrolled downwards, and back on screen when the content scrolls upwards. We’ll use a [*NotificationListener&lt;ScrollNotification&gt;*](https://api.flutter.dev/flutter/widgets/NotificationListener-class.html) at the root of each destination view to detect changes in the scroll direction. Wrapping the bottom navigation bar with a [*SizeTransition*](https://api.flutter.dev/flutter/widgets/SizeTransition-class.html) makes it possible to animate the bar on and off screen.
+In this version of the demo, any destination view with scrollable content causes the bottom navigation bar to slide off screen when the content is scrolled downwards, and back on screen when the content scrolls upwards. We’ll use a [`NotificationListener<ScrollNotification>`](https://api.flutter.dev/flutter/widgets/NotificationListener-class.html) at the root of each destination view to detect changes in the scroll direction. Wrapping the bottom navigation bar with a [*SizeTransition*](https://api.flutter.dev/flutter/widgets/SizeTransition-class.html) makes it possible to animate the bar on and off screen.
 
 This version of the demo requires adding one more animation controller for showing and hiding the bottom navigation bar the destination view’s state:
 

@@ -340,7 +340,7 @@ For a while now, we’ve been maintaining two copies of some of our Flutter tool
 
 <DashImage figure src="images/0RQZ-EVyFP1-BqBIX.webp" />
 
-Notice the addition of the Layout Explorer, which you can use right next to your code. To toggle this option on, go to **Preferences** &gt; **Languages & Frameworks** &gt; **Flutter** &gt; **Enable embedded DevTools inspector**.
+Notice the addition of the Layout Explorer, which you can use right next to your code. To toggle this option on, go to **Preferences > Languages & Frameworks > Flutter > Enable embedded DevTools inspector**.
 
 ## Improved output linking in Visual Studio Code
 

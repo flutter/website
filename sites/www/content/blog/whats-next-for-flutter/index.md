@@ -67,7 +67,7 @@ We’re also making some big changes to the [js](https://pub.dev/packages/js) pa
 
 Combining these two new features opens up some exciting new scenarios for using Flutter on the web. In [a proof-of-concept demo](https://flutter-forward-demos.web.app/#/) that we showed at Flutter Forward, you can see a simple Flutter app embedded in a HTML-based webpage. Using CSS, we apply an animated rotation effect; even while rotating, the Flutter content remains interactive. The demo also shows that you can use an HTML button and JavaScript event handler to make changes to the Flutter state, and vice versa. When this work is complete, we think this will open up many new opportunities to use Flutter to add interactivity to an existing web app.
 
-<DashImage figure src="images/1QjyV-g_N50iwOVNSGglxxA.webp" alt="With Element Embedding, you can embed Flutter into a &lt;div&gt; element and use CSS to style it." caption="With Element Embedding, you can embed Flutter into a &lt;div&gt; element and use CSS to style it." />
+<DashImage figure src="images/1QjyV-g_N50iwOVNSGglxxA.webp" alt="With Element Embedding, you can embed Flutter into a 'div' element and use CSS to style it." caption="With Element Embedding, you can embed Flutter into a `<div>` element and use CSS to style it." />
 
 Turning to Android and iOS, Flutter has long supported integration with system APIs using platform channels, which offer a message-based approach for communicating with code written in a language like Kotlin or Swift. While this unlocks access to those libraries, it requires an app author to be conversant with multiple languages and requires a fair amount of boilerplate code.
 

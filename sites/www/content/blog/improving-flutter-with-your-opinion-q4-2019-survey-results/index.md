@@ -86,7 +86,7 @@ The Flutter team has plans to make hot reload easier to understand and more trus
 
 According to the survey, 70% of respondents think that hot reload is working as expected more than 90% of the time. When it doesn’t work, 23% of developers *seldom* or *never* know why. Even 20% of those who have used Flutter for over a year seldom or never know why it doesn’t work.
 
-<DashImage figure src="images/05DO-hJz2NO5xPsMT.webp" alt="*About 70% of respondents think that hot reload work as expected in &gt;90% of the cases*" caption="*About 70% of respondents think that hot reload work as expected in &gt;90% of the cases*" />
+<DashImage figure src="images/05DO-hJz2NO5xPsMT.webp" alt="*About 70% of respondents think that hot reload work as expected in >90% of the cases*" caption="*About 70% of respondents think that hot reload work as expected in >90% of the cases*" />
 
 <DashImage figure src="images/0nA3zAVD8v8ArX5ai.webp" alt="*20% to 27% of developers seldom or never know why hot reload doesn’t work (23% overall)*" caption="*20% to 27% of developers seldom or never know why hot reload doesn’t work (23% overall)*" />
 

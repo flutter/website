@@ -89,7 +89,7 @@ body: new Stack (
 ),
 ```
 
-Of course, testBGCarousel does not yet exist. In order to load an image into the background, we will have to create a new asset folder. Right click on the project folder and select New &gt; Directory. You can name the directory “images” or something comparable.
+Of course, testBGCarousel does not yet exist. In order to load an image into the background, we will have to create a new asset folder. Right click on the project folder and select New > Directory. You can name the directory “images” or something comparable.
 
 <DashImage figure src="images/1_CXIYvhlix6kCN5PaySSdw.webp" />
 
@@ -171,7 +171,7 @@ I have abbreviated the Widget build to keep the code snippet short. All you need
 .map((bgImg) => new Image(image: bgImg, width: 1500.0, height: 1500.0, fit: BoxFit.cover)).toList()
 ```
 
-We are mapping over the list of AssetImages one at a time. The first argument (bgImg) holds the value of the current AssetImage. Next, the fat arrow (=&gt;) executes a function where the value of *bgImg* is positioned within a new context. That context is the new Image(…).toList() statement.
+We are mapping over the list of AssetImages one at a time. The first argument (bgImg) holds the value of the current AssetImage. Next, the fat arrow (`=>`) executes a function where the value of *bgImg* is positioned within a new context. That context is the new Image(…).toList() statement.
 
 **Each New Image:** The first property, *image,* receives the mapped element *bgImg* as a value. Additional properties are assigned. Note that I am using **fit: BoxFit.cover** to automatically fit the images within the box. The large width and height values ensure image scales into a large enough space. Once the new Image is created, the .toList() method pushes that image to a new version of the Carousel’s children List.
 

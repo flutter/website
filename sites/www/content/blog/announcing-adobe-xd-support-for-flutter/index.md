@@ -23,7 +23,7 @@ Today, **we’re delighted to join Adobe in announcing that their XD to Flutter 
 
 Using the Flutter plugin in XD is straightforward. You can either export an individual drawing or component, or an artboard. Here’s how.
 
-Start by installing the [Flutter exporter plugin](https://adobe.com/go/xd_plugins_discover_plugin?pluginId=6eaf77ea). From Adobe XD, choose *Plugins &gt; Discover Plugins*, and search for Flutter. Once you’ve installed it, you can display the UI Panel shown in the screenshot above by choosing *Plugins &gt; Flutter &gt; UI Panel*.
+Start by installing the [Flutter exporter plugin](https://adobe.com/go/xd_plugins_discover_plugin?pluginId=6eaf77ea). From Adobe XD, choose *Plugins > Discover Plugins*, and search for Flutter. Once you’ve installed it, you can display the UI Panel shown in the screenshot above by choosing *Plugins > Flutter > UI Panel*.
 
 Now add the [adobe_xd](https://pub.dev/packages/adobe_xd) package to your Flutter project by including it in your `pubspec.yaml` app manifest. This package provides helper functions to minimize boilerplate in the generated XD code.
 
@@ -31,7 +31,7 @@ To export a single element, simply select the individual widget you’d like to 
 
 <DashImage figure src="images/0ADItKKHZGWwawDHa.webp" alt="Exported code can be integrated into your existing project and updated without reworking other files." caption="Exported code can be integrated into your existing project and updated without reworking other files." />
 
-Another approach is to export the entire project. Assuming you’ve already got a Flutter app that you want to load the content into (including the `adobe_xd` package reference in `pubspec.yaml`), you can simply choose *Plugins &gt; Flutter &gt; Export All Widgets* from the UI panel, and set any additional configuration options you want.
+Another approach is to export the entire project. Assuming you’ve already got a Flutter app that you want to load the content into (including the `adobe_xd` package reference in `pubspec.yaml`), you can simply choose *Plugins > Flutter > Export All Widgets* from the UI panel, and set any additional configuration options you want.
 
 This creates a series of classes in the `lib/` subdirectory of your project, which you can then use directly. You can continue to tweak the XD prototype and export again with ⇧⌘F (Ctrl+Shift+F on Windows) and, if you have enabled the Dart [*Hot Reload on Save Watcher* setting](https://dartcode.org/docs/settings/#dartpreviewhotreloadonsavewatcher) in Visual Studio Code, your app automatically reloads with any updates when you re-export the widgets.
 

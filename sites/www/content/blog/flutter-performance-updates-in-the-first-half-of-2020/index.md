@@ -256,13 +256,13 @@ contributors: [mkustermann](https://github.com/mkustermann), [mkustermann](https
 
 * Fixed “Real unboxed fields in the Dart VM [#40004](https://github.com/dart-lang/sdk/issues/40004)”
 
-### [speed] 20–25% speedup on Dart Pointer&lt;Int8,Int64,etc&gt; loads/stores in AOT
+### [speed] 20–25% speedup on Dart `Pointer<Int8,Int64,etc>` loads/stores in AOT
 
 contributors: [dcharkes](https://github.com/dcharkes), [mkustermann](https://github.com/mkustermann)
 
 * Commit [408123](https://dart-review.googlesource.com/c/sdk/+/137788)
 
-* Speeds up Pointer&lt;Int8,Int64,etc&gt; loads/stores by [20–25%](https://dart-review.googlesource.com/c/sdk/+/137788) in AOT on x64.
+* Speeds up `Pointer<Int8,Int64,etc>` loads/stores by [20–25%](https://dart-review.googlesource.com/c/sdk/+/137788) in AOT on x64.
 
 * Helped “stores and loads should support unboxed indices (in AOT) [#39432](https://github.com/dart-lang/sdk/issues/39432)”
 

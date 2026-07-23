@@ -17,7 +17,7 @@ A Flutter application’s model represents its persistent state. Widgets provide
 
 This article reviews how Flutter’s StatefulWidget and InheritedWidget classes can be used to bind an application’s visual elements to its model. It concludes with a small but hopefully useful ModelBinding class that should be easy to drop into an application. If you’re eager to get started you can [download the ModelBinding class along with a tiny demo](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5) now.
 
-<DashImage figure src="images/1DsbHptClIQire31aIDtF6A.webp" alt="[View the complete ModelBinding&lt;T&gt; example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." caption="[View the complete ModelBinding&lt;T&gt; example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." />
+<DashImage figure src="images/1DsbHptClIQire31aIDtF6A.webp" alt="[View the complete ModelBinding<T> example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." caption="[View the complete `ModelBinding<T>` example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." />
 
 ## Disclaimers, Reader Expectations
 
@@ -201,7 +201,7 @@ So, as before, any descendant of ModelBinding can get a model value with Model.o
 
 To enable rebuilding the model with the static Model.update() method, it’s necessary to introduce an extra stateful widget. This gets a little complicated, so if you’re wearing a hat, hold on to it.
 
-ModelBinding is now a stateful widget that tracks the current Model value. ModelBinding builds a private _ModelBindingScope InheritedWidget child that has a reference to the State&lt;ModelBinding&gt; — a _ModelBindingState; essentially to its stateful widget parent. To change ModelBinding’s current model value, rebuild the ModelBinding with setState(), which in turn rebuilds the inherited _ModelBindingScope widget. The static Model methods for getting the model or updating it, lookup _ModelBindingScope:
+ModelBinding is now a stateful widget that tracks the current Model value. ModelBinding builds a private _ModelBindingScope InheritedWidget child that has a reference to the `State<ModelBinding>` — a _ModelBindingState; essentially to its stateful widget parent. To change ModelBinding’s current model value, rebuild the ModelBinding with setState(), which in turn rebuilds the inherited _ModelBindingScope widget. The static Model methods for getting the model or updating it, lookup _ModelBindingScope:
 
 ```dart
 static Model of(BuildContext context) {
@@ -237,7 +237,7 @@ There is one limitation that really needs to be eliminated: the Model data type 
 
 ## Binding to the Model with InheritedWidget, Finale
 
-This version factors out the Model type. Now the type of the app’s model is ModelBinding’s type parameter, and ModelBinding provides the generic static functions of&lt;T&gt;(context) and update&lt;T&gt;(context).
+This version factors out the Model type. Now the type of the app’s model is ModelBinding’s type parameter, and ModelBinding provides the generic static functions `of<T>(context)` and `update<T>(context)`.
 
 The implementation is a bit more complicated (again) for the type parameter, which is why it was left for the finale. On the up side, the implementation is still very small, about 64 lines of code, and using the ModelBinding widget class and its two static methods should be very straightforward.
 
@@ -264,15 +264,15 @@ RaisedButton(
 
 ```
 
-The upshot is that ModelBinding et al. can be safely factored into a tiny library, rather than being wired into the application. Only the ModelBinding&lt;T&gt; class needs to be exported.
+The upshot is that ModelBinding et al. can be safely factored into a tiny library, rather than being wired into the application. Only the `ModelBinding<T>` class needs to be exported.
 
 ## Summary
 
 This article was intended to explain the basics of Flutter’s StatefulWidget and InheritedWidget classes and to show how the latter could be used to bind an application’s model to its widgets. There’s much more to share about both classes and about related classes like InheritedModel and InheritedNotifier. All of that will have to wait.
 
-ModelBinding&lt;T&gt; is a simple class based on InheritedWidget that can be used to bind an arbitrary model type of type T to an application’s widgets. Use it by [downloading the example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5), and dropping its page of code into your app. And if doesn’t work for you: change it.
+`ModelBinding<T>` is a simple class based on InheritedWidget that can be used to bind an arbitrary model type of type T to an application’s widgets. Use it by [downloading the example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5), and dropping its page of code into your app. And if doesn’t work for you: change it.
 
-<DashImage figure src="images/1IVBU5tVCV5TFUI3E5V4fEg.webp" alt="[View the complete ModelBinding&lt;T&gt; example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." caption="[View the complete ModelBinding&lt;T&gt; example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." />
+<DashImage figure src="images/1IVBU5tVCV5TFUI3E5V4fEg.webp" alt="The code behind the complete ModelBinding example. Open to read." caption="[View the complete `ModelBinding<T>` example.](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)" />
 
 ## Related Articles
 

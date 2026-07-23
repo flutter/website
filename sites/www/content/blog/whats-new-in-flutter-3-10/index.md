@@ -226,7 +226,7 @@ An example would be when an app tries to display one image from a pool of possib
 
 #### Wireless debugging
 
-You can now run and hot reload your Flutter iOS apps without a cable! After a successful wireless pairing of your iOS device in Xcode, you can deploy your app to that device using flutter run. If you encounter issues, verify the network icon appears next to your device under **Window &gt; Devices** and **Simulators &gt; Devices**. To learn more, check out our [documentation](https://docs.flutter.dev/get-started/install/macos#ios-setup).
+You can now run and hot reload your Flutter iOS apps without a cable! After a successful wireless pairing of your iOS device in Xcode, you can deploy your app to that device using flutter run. If you encounter issues, verify the network icon appears next to your device under **Window > Devices** and **Simulators > Devices**. To learn more, check out our [documentation](https://docs.flutter.dev/get-started/install/macos#ios-setup).
 
 #### Wide gamut image support
 

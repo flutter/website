@@ -57,7 +57,7 @@ Now let’s get started!
 
 What you will need:
 
-* Flutter SDK &gt;= `3.17.0–0.0.pre` & Dart SDK >= `3.2`.
+* Flutter SDK `>= 3.17.0–0.0.pre` & Dart SDK `>= 3.2`.
 
 * A [Pub](https://pub.dev/) package (existing or new) to add a DevTools extension to.
 > To use the latest [devtools_extensions](https://pub.dev/packages/devtools_extensions) and [devtools_app_shared](https://pub.dev/packages/devtools_app_shared) packages, it is acceptable to develop your extension from the Flutter master or beta channel.
