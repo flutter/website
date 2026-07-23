@@ -24,16 +24,25 @@
     font-size: var(--font-size-default);
     font-weight: var(--font-weight-bold);
     font-family: var(--font-ui);
+    line-height: 1.4;
+    padding-inline: var(--spacer-sm);
+    text-align: center;
 
     .event-bar__content {
-      display: none;
+      display: unset;
+
+      &.desktop {
+        display: none;
+      }
 
       &.mobile {
         display: unset;
       }
 
       @include breakpoints.screen(lg) {
-        display: unset;
+        &.desktop {
+          display: unset;
+        }
 
         &.mobile {
           display: none;
