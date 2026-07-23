@@ -1057,57 +1057,9 @@ is designed to interface with the
 underlying operating system rather than a web browser.
 A different approach is therefore required.
 
-On the web, Flutter offers two renderers:
-
-<table class="table table-striped">
-<tr>
-<th>Renderer</th>
-<th>Compilation target</th>
-</tr>
-
-<tr>
-<td>CanvasKit
-</td>
-<td>JavaScript
-</td>
-</tr>
-
-<tr>
-<td>Skwasm
-</td>
-<td>WebAssembly
-</td>
-</tr>
-</table>
-
-_Build modes_ are command-line options that dictate
-which renderers are available when you run the app.
-
-Flutter offers two _build_ modes:
-
-<table class="table table-striped">
-<tr>
-<th>Build mode</th>
-<th>Available renderer(s)</th>
-</tr>
-
-<tr>
-<td>default</td>
-<td>CanvasKit</td>
-</tr>
-
-<tr>
-<td>`--wasm`</td>
-<td>Skwasm (preferred), CanvasKit (fallback)</td>
-</tr>
-</table>
-
-
-The default mode makes only CanvasKit renderer available.
-The `--wasm` option makes both renderers available,
-and chooses the engine based on browser capabilities:
-preferring Skwasm if the browser is capable of running it,
-and falls back to CanvasKit otherwise.
+On the web, Flutter compiles your application code into either JavaScript
+or [WebAssembly][Dart WebAssembly support] (when building with `--wasm`),
+rendering graphics using a WebAssembly build of the Skia engine.
 
 {% comment %}
 The draw.io source for the following image is in /diagrams/resources
@@ -1119,7 +1071,7 @@ Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need
 for Flutter to provide a Dart runtime.
 Instead, the Flutter framework (along with any code you write)
-is compiled to JavaScript.
+is compiled to JavaScript or WebAssembly.
 It's also worthy to note that Dart has very few language
 semantic differences across all of its modes
 (JIT versus AOT, native versus web compilation),
@@ -1132,19 +1084,17 @@ a compiler that supports incremental compilation
 and therefore allows hot restart and
 [hot reload behind a flag][].
 Conversely, when you are ready to create a production app
-for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js),
-Dart's highly-optimized production JavaScript compiler is used,
-packaging the Flutter core and framework along with your
-application into a minified source file that
-can be deployed to any web server.
+for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js) or
+`dart2wasm` compiles the Flutter core and framework along with your
+application into optimized output that can be deployed to any web server.
 Code can be offered in a single file or split
 into multiple files through [deferred imports][].
 
 For more information on Flutter web, check out
-[Web support for Flutter][] and [Web renderers][].
+[Web support for Flutter][].
 
+[Dart WebAssembly support]: https://dart.dev/web/wasm
 [deferred imports]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
-[Web renderers]: /platform-integration/web/renderers
 [Web support for Flutter]: /platform-integration/web
 
 ## Further information
