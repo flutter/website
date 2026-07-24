@@ -786,7 +786,7 @@ migrate it to UIKit's scene-based lifecycle as follows:
     - [`UNUserNotificationCenterDelegate`][]
     - [`HKHealthStore.enableBackgroundDeliveryForType:frequency:withCompletion:`][]
 
-    For example, to support `BGTaskScheduler`: 
+    For example, to support `BGTaskScheduler`:
 
     <Tabs key="ios-language-switcher">
     <Tab name="Swift">
@@ -874,7 +874,7 @@ migrate it to UIKit's scene-based lifecycle as follows:
     -   return YES;
     - }
       @end
-      
+
       // App
 
       @implementation AppDelegate

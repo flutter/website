@@ -35,6 +35,15 @@ h6 {
   letter-spacing: -0.005em;
   font-weight: var(--font-weight-bold);
   color: black;
+}
+
+
+:is(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6):not(:where(.post-content *)) {
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;
@@ -66,11 +75,40 @@ h4.eyebrow {
   font-size: var(--font-size-heading-4);
 }
 
-p {
+p:not(:where(.post-content *)) {
   line-height: 1.4;
   color: var(--grey-6);
 
   a {
     color: var(--blue-6);
+  }
+}
+
+.material-symbols {
+  font-family: var(--site-icon-fontFamily);
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+
+  &.ms-filled {
+    font-variation-settings: 'FILL' 1;
   }
 }

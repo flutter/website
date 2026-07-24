@@ -59,14 +59,16 @@ abstract class DashLayout implements PageLayout {
   Iterable<Component> _buildHead(Page page) {
     final pageData = page.data.page;
     final siteData = page.data.site;
-    final siteBaseUrl = Uri.parse(siteData['url'] as String);
+
+    final siteUrl = siteData['url'];
+    if (siteUrl is! String) {
+      throw Exception('Site URL not configured in site data.');
+    }
+    final siteBaseUrl = Uri.parse(siteUrl);
 
     final pageTitle = (pageData['title'] ?? siteData['title']) as String;
     final pageDescription = pageData['description'] as String?;
     final pageImage = pageData['image'] as String?;
-    final socialImageUrl = siteBaseUrl
-        .resolve(pageImage ?? twitterDefaultImageUrl)
-        .toString();
 
     final windowTitle = titleBase != null
         ? '$pageTitle | $titleBase'
@@ -76,6 +78,11 @@ abstract class DashLayout implements PageLayout {
       final String url when url.trim().isNotEmpty => url.trim(),
       _ => siteBaseUrl.resolve(page.url).toString(),
     };
+    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
+    final socialImageUrl = _absoluteUrl(
+      siteBaseUrl,
+      pageImage ?? twitterDefaultImageUrl,
+    );
 
     return [
       Component.element(tag: 'title', children: [.text(windowTitle)]),
@@ -127,18 +134,8 @@ abstract class DashLayout implements PageLayout {
       meta(attributes: {'property': 'og:title', 'content': pageTitle}),
       if (pageDescription case final String desc)
         meta(attributes: {'property': 'og:description', 'content': desc}),
-      meta(
-        attributes: {
-          'property': 'og:url',
-          'content': canonicalUrl,
-        },
-      ),
-      meta(
-        attributes: {
-          'property': 'og:image',
-          'content': socialImageUrl,
-        },
-      ),
+      meta(attributes: {'property': 'og:url', 'content': socialPageUrl}),
+      meta(attributes: {'property': 'og:image', 'content': socialImageUrl}),
 
       // Set site fonts and related preconnection information.
       const link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
@@ -351,3 +348,9 @@ try {
     ];
   }
 }
+
+/// Resolves [url] against [siteBaseUrl] to produce an absolute URL.
+///
+/// If [url] already has a scheme, it's returned unchanged.
+String _absoluteUrl(Uri siteBaseUrl, String url) =>
+    Uri.parse(url).hasScheme ? url : siteBaseUrl.resolve(url).toString();

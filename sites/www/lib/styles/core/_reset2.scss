@@ -1,0 +1,45 @@
+html {
+  box-sizing: border-box;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+*:not(:where(.post-content *)),
+*:before,
+*:after {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+:is(ol, ul):not(:where(.post-content *)) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button {
+  background-color: transparent;
+}

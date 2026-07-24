@@ -12,6 +12,6 @@ insert_final_newline = true
 indent_style = space
 
 # Configuration for common code and data file formats.
-[*.{css,dart,json,yaml,yml}]
+[*.{css,dart,json,scss,yaml,yml}]
 indent_size = 2
 trim_trailing_whitespace = true

@@ -1861,7 +1861,7 @@ skipTemplateRendering: true
 [57487](https://github.com/flutter/flutter/pull/57487) Fix typo in cupertino datepicker error (cla: yes, f: cupertino, framework, waiting for tree to go green)
 
 
-[57500](https://github.com/flutter/flutter/pull/57500) SnackBarAction.createState() should have return type State<SnackBarAction> (cla: yes, f: material design, framework, waiting for tree to go green)
+[57500](https://github.com/flutter/flutter/pull/57500) SnackBarAction.createState() should have return type `State<SnackBarAction>` (cla: yes, f: material design, framework, waiting for tree to go green)
 
 
 [57511](https://github.com/flutter/flutter/pull/57511) Step 2 of 3: Change opt-in default for debugCheckHasMaterialLocalizations assertion on TextField (a: internationalization, a: text input, cla: yes, f: material design, framework, team, waiting for tree to go green)
@@ -2206,7 +2206,7 @@ skipTemplateRendering: true
 [59310](https://github.com/flutter/flutter/pull/59310) Dismiss modal routes with a keyboard shortcut (cla: yes, f: material design, framework, waiting for tree to go green)
 
 
-[59317](https://github.com/flutter/flutter/pull/59317) Implement Comparable<TimeOfDay> (cla: yes, f: material design, framework, waiting for tree to go green)
+[59317](https://github.com/flutter/flutter/pull/59317) Implement `Comparable<TimeOfDay>` (cla: yes, f: material design, framework, waiting for tree to go green)
 
 
 [59342](https://github.com/flutter/flutter/pull/59342) Add support for horizontal and vertical double-arrow system cursors (cla: yes, framework, waiting for tree to go green)
@@ -2341,7 +2341,7 @@ skipTemplateRendering: true
 [59966](https://github.com/flutter/flutter/pull/59966) Added a filterQuality parameter to texture (a: quality, a: video, cla: yes, framework, waiting for tree to go green)
 
 
-[59981](https://github.com/flutter/flutter/pull/59981) Revert "Implement Comparable<TimeOfDay>" (cla: yes, f: material design, framework)
+[59981](https://github.com/flutter/flutter/pull/59981) Revert "Implement `Comparable<TimeOfDay>`" (cla: yes, f: material design, framework)
 
 
 [59982](https://github.com/flutter/flutter/pull/59982) [flutter_driver] Fix tracing of startup events (a: tests, cla: yes, framework)
@@ -3671,7 +3671,7 @@ skipTemplateRendering: true
 [57332](https://github.com/flutter/flutter/pull/57332) Add autofill support for TextFormField (cla: yes, f: material design, framework, waiting for tree to go green)
 
 
-[57500](https://github.com/flutter/flutter/pull/57500) SnackBarAction.createState() should have return type State<SnackBarAction> (cla: yes, f: material design, framework, waiting for tree to go green)
+[57500](https://github.com/flutter/flutter/pull/57500) SnackBarAction.createState() should have return type `State<SnackBarAction>` (cla: yes, f: material design, framework, waiting for tree to go green)
 
 
 [57511](https://github.com/flutter/flutter/pull/57511) Step 2 of 3: Change opt-in default for debugCheckHasMaterialLocalizations assertion on TextField (a: internationalization, a: text input, cla: yes, f: material design, framework, team, waiting for tree to go green)
@@ -3848,7 +3848,7 @@ skipTemplateRendering: true
 [59310](https://github.com/flutter/flutter/pull/59310) Dismiss modal routes with a keyboard shortcut (cla: yes, f: material design, framework, waiting for tree to go green)
 
 
-[59317](https://github.com/flutter/flutter/pull/59317) Implement Comparable<TimeOfDay> (cla: yes, f: material design, framework, waiting for tree to go green)
+[59317](https://github.com/flutter/flutter/pull/59317) Implement `Comparable<TimeOfDay>` (cla: yes, f: material design, framework, waiting for tree to go green)
 
 
 [59363](https://github.com/flutter/flutter/pull/59363) Add material state mouse cursor to TextField (a: text input, cla: yes, customer: octopod, f: material design, framework, waiting for tree to go green)
@@ -3905,7 +3905,7 @@ skipTemplateRendering: true
 [59937](https://github.com/flutter/flutter/pull/59937) Update tooltip_theme_test to unblock Dart SDK roll (cla: yes, f: material design, framework, waiting for tree to go green)
 
 
-[59981](https://github.com/flutter/flutter/pull/59981) Revert "Implement Comparable<TimeOfDay>" (cla: yes, f: material design, framework)
+[59981](https://github.com/flutter/flutter/pull/59981) Revert "Implement `Comparable<TimeOfDay>`" (cla: yes, f: material design, framework)
 
 
 [59992](https://github.com/flutter/flutter/pull/59992) Revert "[PageTransitionsBuilder] Fix 'ZoomPageTransition' built more than once" (cla: yes, f: material design, framework)
@@ -7475,7 +7475,7 @@ There were 1243 pull requests.
 
 [57499](https://github.com/flutter/flutter/pull/57499) Roll engine aafd9f72283f..90f45bd3efce (4 commits) (cla: yes, waiting for tree to go green)
 
-[57500](https://github.com/flutter/flutter/pull/57500) SnackBarAction.createState() should have return type State<SnackBarAction> (cla: yes, f: material design, framework, waiting for tree to go green)
+[57500](https://github.com/flutter/flutter/pull/57500) SnackBarAction.createState() should have return type `State<SnackBarAction>` (cla: yes, f: material design, framework, waiting for tree to go green)
 
 [57506](https://github.com/flutter/flutter/pull/57506) [flutter_tools] chunk the hashing of large files (cla: yes, tool, waiting for tree to go green)
 
@@ -8089,7 +8089,7 @@ There were 1243 pull requests.
 
 [59310](https://github.com/flutter/flutter/pull/59310) Dismiss modal routes with a keyboard shortcut (cla: yes, f: material design, framework, waiting for tree to go green)
 
-[59317](https://github.com/flutter/flutter/pull/59317) Implement Comparable<TimeOfDay> (cla: yes, f: material design, framework, waiting for tree to go green)
+[59317](https://github.com/flutter/flutter/pull/59317) Implement `Comparable<TimeOfDay>` (cla: yes, f: material design, framework, waiting for tree to go green)
 
 [59334](https://github.com/flutter/flutter/pull/59334) Revert "Roll Engine from 965fbbed1776 to d417772d7acd (21 revisions)" (cla: yes, engine)
 
@@ -8277,7 +8277,7 @@ There were 1243 pull requests.
 
 [59966](https://github.com/flutter/flutter/pull/59966) Added a filterQuality parameter to texture (a: quality, a: video, cla: yes, framework, waiting for tree to go green)
 
-[59981](https://github.com/flutter/flutter/pull/59981) Revert "Implement Comparable<TimeOfDay>" (cla: yes, f: material design, framework)
+[59981](https://github.com/flutter/flutter/pull/59981) Revert "Implement `Comparable<TimeOfDay>`" (cla: yes, f: material design, framework)
 
 [59982](https://github.com/flutter/flutter/pull/59982) [flutter_driver] Fix tracing of startup events (a: tests, cla: yes, framework)
 
