@@ -919,7 +919,7 @@ migrate it to UIKit's scene-based lifecycle as follows:
 
     ```swift diff
       public class MyPlugin: NSObject, FlutterPlugin {
-    +   var registrar: FlutterPluginRegistrar
+    +   weak var registrar: FlutterPluginRegistrar?
 
     +   init(registrar: FlutterPluginRegistrar) {
     +     self.registrar = registrar
@@ -932,21 +932,21 @@ migrate it to UIKit's scene-based lifecycle as follows:
 
         func someMethod() {
     -     let screen = UIScreen.main
-    +     let screen = self.registrar.viewController?.view.window?.windowScene?.screen
+    +     let screen = self.registrar?.viewController?.view.window?.windowScene?.screen
 
     -     let window = UIApplication.shared.delegate?.window
-    +     let window = self.registrar.viewController?.view.window
+    +     let window = self.registrar?.viewController?.view.window
 
     -     let keyWindow = UIApplication.shared.keyWindow
     +     if #available(iOS 15.0, *) {
-    +       let keyWindow = self.registrar.viewController?.view.window?.windowScene?.keyWindow
+    +       let keyWindow = self.registrar?.viewController?.view.window?.windowScene?.keyWindow
     +     } else {
-    +       let keyWindow = self.registrar.viewController?.view.window?.windowScene?.windows
+    +       let keyWindow = self.registrar?.viewController?.view.window?.windowScene?.windows
     +         .filter({ $0.isKeyWindow }).first
     +     }
 
     -     let windows = UIApplication.shared.windows
-    +     let windows = self.registrar.viewController?.view.window?.windowScene?.windows
+    +     let windows = self.registrar?.viewController?.view.window?.windowScene?.windows
         }
       }
     ```
