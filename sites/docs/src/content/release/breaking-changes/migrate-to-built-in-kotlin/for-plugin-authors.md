@@ -419,11 +419,13 @@ the newly released plugin version:
 
 ## Validate
 
-Before enabling Built-in Kotlin, confirm that you have migrated
-your plugin example app and any Flutter plugins it uses.
+Before enabling Built-in Kotlin,
+confirm that you have migrated your plugin example app
+and any Flutter plugins it uses.
 
-To enable Built-in Kotlin, set the `android.builtInKotlin` property
-to `true` in your gradle.properties file:
+To enable Built-in Kotlin,
+set the `android.builtInKotlin` property to `true`
+in your `gradle.properties` file:
 
 ```properties diff title="<flutter-project>/android/gradle.properties"
 # ...
