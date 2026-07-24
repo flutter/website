@@ -22,29 +22,48 @@ class DefaultLayout extends PageLayout {
 
   @override
   Component buildLayout(Page page, Component child) {
-    final title = (page.data.page['title'] as String).trim();
-    final description = (page.data.page['description'] as String).trim();
+    final pageData = page.data.page;
+    final siteData = page.data.site;
+    final siteUrl = siteData['url'];
+    if (siteUrl is! String) {
+      throw Exception('Site URL not configured in site data.');
+    }
+    final siteBaseUrl = Uri.parse(siteUrl);
+
+    final title = (pageData['title'] as String).trim();
+    final description = (pageData['description'] as String).trim();
+
     if (title.isEmpty) {
       throw Exception('Page at ${page.path} can\'t have an empty title.');
     }
-
     if (description.isEmpty) {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
 
+    final pageImage = pageData['image'] as String?;
+    final titleBase =
+        (pageData['titleBase'] ?? siteData['titleBase']) as String?;
+    final documentTitle = titleBase == null ? title : '$title | $titleBase';
+
     final canonicalUrl = switch (page.data.page['canonical']) {
       final String url when url.trim().isNotEmpty => url.trim(),
-      _ => Uri.https('flutter.dev').resolve(page.url).toString(),
+      _ => siteBaseUrl.resolve(page.url).toString(),
     };
+    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
 
     return AsyncBuilder(
       builder: (context) async {
+        final socialImageUrl = _absoluteUrl(
+          siteBaseUrl,
+          pageImage ?? context.asset('/images/flutter-logo-sharing.png'),
+        );
         final banner = context.decodeJsonObject(
           'banner',
           BannerContent.fromJson,
         );
+
         return Document(
-          title: title,
+          title: documentTitle,
           head: [
             link(rel: 'icon', href: context.asset('/images/favicon.png')),
             link(
@@ -54,20 +73,28 @@ class DefaultLayout extends PageLayout {
 
             meta(name: 'description', content: description),
             link(rel: 'canonical', href: canonicalUrl),
-            const meta(name: 'twitter:card', content: 'summary_large_image'),
-            const meta(name: 'twitter:site', content: '@flutterdev'),
-            meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
-              attributes: const {'property': 'og:url'},
-              content: canonicalUrl,
+              name: 'twitter:card',
+              content: pageImage != null ? 'summary_large_image' : 'summary',
             ),
+            const meta(name: 'twitter:site', content: '@flutterdev'),
+            meta(name: 'twitter:title', content: title),
+            meta(name: 'twitter:description', content: description),
+            if (pageImage != null)
+              meta(name: 'twitter:image', content: socialImageUrl),
+
+            meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
               attributes: const {'property': 'og:description'},
               content: description,
             ),
             meta(
+              attributes: const {'property': 'og:url'},
+              content: socialPageUrl,
+            ),
+            meta(
               attributes: const {'property': 'og:image'},
-              content: context.asset('/images/flutter-logo-sharing.png'),
+              content: socialImageUrl,
             ),
 
             // Google Analytics
@@ -112,9 +139,37 @@ class DefaultLayout extends PageLayout {
               rel: 'stylesheet',
             ),
             const link(
+              rel: 'stylesheet',
+              href:
+                  'https://fonts.googleapis.com/css2?'
+                  'family=Roboto+Serif:ital,opsz,wght@'
+                  '0,8..72,400..700;1,8..72,400..700'
+                  '&display=swap',
+            ),
+            const link(
               href:
                   'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block',
               rel: 'stylesheet',
+            ),
+
+            const link(
+              rel: 'stylesheet',
+              href:
+                  'https://fonts.googleapis.com/css2?'
+                  'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
+                  '24,400,0..1,0',
+            ),
+
+            const script(
+              src:
+                  'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.8.2/lite-youtube.js',
+              attributes: {
+                'type': 'module',
+                'integrity':
+                    'sha256-Jy0j0fUMJ2T3WxSEs2WjHLrS+3DlO7S9DItQtP55FII=',
+                'crossorigin': 'anonymous',
+                'referrerpolicy': 'no-referrer',
+              },
             ),
 
             // Set up standard cookie notification bar.
@@ -165,3 +220,9 @@ class DefaultLayout extends PageLayout {
     );
   }
 }
+
+/// Resolves [url] against [siteBaseUrl] to produce an absolute URL.
+///
+/// If [url] already has a scheme, it's returned unchanged.
+String _absoluteUrl(Uri siteBaseUrl, String url) =>
+    Uri.parse(url).hasScheme ? url : siteBaseUrl.resolve(url).toString();

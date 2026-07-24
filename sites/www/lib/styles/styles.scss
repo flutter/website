@@ -1,6 +1,7 @@
 // Must be imported first to ensure that
 // the reset is applied before any other styles are applied.
-@use 'core/reset';
+@use 'package:site_shared/_sass/base/reset';
+@use 'core/reset2';
 
 // Must be imported first after reset to ensure that our
 // defined CSS variables are defined before any other
@@ -9,9 +10,10 @@
 @use 'core/base';
 @use 'core/structure';
 
-@use 'components/button';
+@use 'components/btn';
 @use 'components/carousel';
 @use 'components/cookies';
+@use 'components/content';
 @use 'components/embeds';
 @use 'components/features';
 @use 'components/filters-dropdown';
@@ -30,6 +32,7 @@
 @use 'components/testimonial';
 
 @use 'pages/brand';
+@use 'pages/blog_page';
 @use 'pages/buildWithAI';
 @use 'pages/community';
 @use 'pages/culture';
@@ -47,3 +50,8 @@
 @use 'pages/notfound';
 @use 'pages/partner';
 @use 'pages/showcase';
+
+@use 'package:site_shared/_sass/components/breadcrumbs';
+@use 'package:site_shared/_sass/components/blog';
+@use 'package:site_shared/_sass/components/code';
+@use 'package:site_shared/_sass/components/dropdown';
