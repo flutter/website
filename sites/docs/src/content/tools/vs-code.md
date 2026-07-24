@@ -420,7 +420,7 @@ set the prefix to a single space (` `):
 ```
 
 To hide closing labels, turn off **Dart: Closing Labels**.
-For the complete list of closing-label options,
+For the complete list of closing label options,
 see the [extension's settings reference][closing-label-options].
 
 [closing-label-options]: https://dartcode.org/docs/settings/#dartclosinglabels
