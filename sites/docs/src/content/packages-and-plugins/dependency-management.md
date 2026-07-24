@@ -211,7 +211,7 @@ forces the version solver to use `^2.0.0`.
 :::warning
 Use dependency overrides only as a temporary fix.
 If the packages aren't actually compatible,
-Bypassing the version solver can cause
+bypassing the version solver can cause
 compilation errors or runtime crashes (such as `NoSuchMethodError`).
 Thoroughly test your app after applying an override.
 :::
