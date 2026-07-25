@@ -10,7 +10,7 @@ summary: "Empowering global sea turtle conservation with Flutter"
 appName: "We Spot Turtles!"
 companyName: "We Spot Turtles!"
 logo: "images/third_party/case_studies/we-spot-turtles/logo.webp"
-card: "images/third_party/case_studies/we-spot-turtles/case_study_card.png"
+card: "images/third_party/case_studies/we-spot-turtles/case_study_card.webp"
 locations:
   - Europe
   - Oceania
@@ -23,7 +23,6 @@ tags:
   - android
   - ios
   - web
-  - developer-story
 publishDate: 2026-07-30
 ---
 
