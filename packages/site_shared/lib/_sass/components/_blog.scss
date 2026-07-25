@@ -84,6 +84,7 @@
   &:hover button {
     color: var(--site-base-fgColor);
     background-color: transparent;
+    cursor: pointer;
   }
 
   &.active {
