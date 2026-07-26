@@ -89,6 +89,14 @@ first complete the following setup.
     $ sudo apt-get update -y && sudo apt-get upgrade -y
     $ sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa
     ```
+    
+    On Arch-based distros with `pacman`, such as CachyOS,
+    install these packages using the following commands:
+
+    ```console
+    $ sudo pacman -Syu
+    $ sudo pacman -S --needed curl git unzip xz zip glu
+    ```
 
 1. <h3>Set up an editor or IDE</h3>
 
