@@ -78,7 +78,7 @@
     - developer tools
   type: codelab
   link:
-    label: Medium
+    label: Flutter blog
     url: https://blog.flutter.dev/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
 - name: MDC-101 - Material Components (MDC) Basics
