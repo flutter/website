@@ -132,7 +132,7 @@ final class _ResourceCard extends StatelessComponent {
         ),
       ],
     ),
-    'Flutter docs' || 'Flutter blog' || _ => const img(
+    _ => const img(
       src: '/assets/images/branding/flutter/icon/1080.png',
       alt: 'Flutter logo',
       width: 24,
