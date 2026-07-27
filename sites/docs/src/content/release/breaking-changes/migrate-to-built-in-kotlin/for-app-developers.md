@@ -11,6 +11,13 @@ an AGP version created before 9.0.0 to an AGP version 9.0.0+.
 You should also use the minimum compatible dependency versions
 listed in the [Android Gradle Plugin docs][AGP block].
 
+:::warning
+This guide only applies to apps that already use the
+Kotlin Gradle Plugin (KGP).
+If your project doesn't currently apply KGP,
+don't migrate to built-in Kotlin.
+:::
+
 :::note
 To update Flutter plugins to use built-in Kotlin,
 follow the [migration guide for plugin authors][].

@@ -6,6 +6,13 @@ description: >-
 
 This guide outlines the migration steps specifically for plugin authors.
 
+:::warning
+This guide only applies to plugins that already use the
+Kotlin Gradle Plugin (KGP).
+If your plugin project doesn't currently apply KGP,
+don't migrate to built-in Kotlin.
+:::
+
 :::note
 To update Flutter apps to use built-in Kotlin,
 follow the [migration guide for app developers][].
