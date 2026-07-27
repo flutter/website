@@ -1,8 +1,8 @@
-# Blog Redirects
+# Legacy blog redirects
 
-This directory contains the Firebase Hosting configuration used to redirect
-legacy Medium blog URLs (previously hosted at `blog.flutter.dev`) to the
-official Flutter blog on `flutter.dev/blog`.
+This directory contains the Firebase Hosting configuration used to
+redirect legacy Medium blog URLs (previously hosted at `blog.flutter.dev`) to
+the official Flutter blog at `flutter.dev/blog`.
 
 ## Overview
 
@@ -10,4 +10,5 @@ official Flutter blog on `flutter.dev/blog`.
   Contains the redirect rules mapping specific legacy Medium URL patterns
   and hash-suffixes to their corresponding paths under `flutter.dev/blog`.
 - **`public/index.html`**:
-  A fallback page that redirects users to `flutter.dev/blog` via a meta refresh.
+  A fallback page that redirects users to `flutter.dev/blog` with
+  an immediate meta refresh.
