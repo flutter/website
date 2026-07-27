@@ -296,11 +296,11 @@ kotlin {
 
 ## Validate
 
-Before enabling Built-in Kotlin,
+Before enabling built-in Kotlin,
 confirm that you have migrated your application
 and any Flutter plugins it uses.
 
-To enable Built-in Kotlin,
+To enable built-in Kotlin,
 set the `android.builtInKotlin` property to `true`
 in your `gradle.properties` file:
 
@@ -310,10 +310,10 @@ in your `gradle.properties` file:
 ```
 
 :::version-note
-Enabling Built-in Kotlin requires Flutter 3.47 or later.
+Enabling built-in Kotlin requires Flutter 3.47 or later.
 :::
 
-After enabling Built-in Kotlin,
+After enabling built-in Kotlin,
 execute `flutter run` or `flutter build apk`
 to confirm that your app builds and launches
 on a connected Android device or emulator.
