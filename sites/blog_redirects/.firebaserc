@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "flutter-dev-230821"
+  },
+  "targets": {
+    "flutter-dev-230821": {
+      "hosting": {
+        "blog": [
+          "flutter-blog"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

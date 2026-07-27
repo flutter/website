@@ -1,0 +1,90 @@
+{
+  "hosting": {
+    "target": "blog",
+    "public": "public",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ],
+    "rewrites": [],
+    "redirects": [
+      {
+        "source": "/flutter-2025-roadmap-f127882b117f",
+        "destination": "https://flutter.dev/blog/flutter-2025-roadmap-update",
+        "type": 301
+      },
+      {
+        "source": "/flutter-3-24-dart-3-5-204b7d20c45d",
+        "destination": "https://flutter.dev/blog/announcing-flutter-3-24-and-dart-3-5",
+        "type": 301
+      },
+      {
+        "source": "/flutter-beta-3-7d88125245dc",
+        "destination": "https://flutter.dev/blog/whats-new-in-flutter-beta-3",
+        "type": 301
+      },
+      {
+        "source": "/flutter-in-production-f9418261d8e1",
+        "destination": "https://flutter.dev/blog/celebrating-flutters-production-era",
+        "type": 301
+      },
+      {
+        "source": "/flutter-live-wrapup-57c535ef8994",
+        "destination": "https://flutter.dev/blog/flutter-1-0-launch-wrap-up",
+        "type": 301
+      },
+      {
+        "source": "/flutter-release-preview-1-943a9b6ee65a",
+        "destination": "https://flutter.dev/blog/announcing-flutter-release-preview-1",
+        "type": 301
+      },
+      {
+        "source": "/https-medium-com-flutter-io-announcing-flutters-beta-2-c85ba1557d5e",
+        "destination": "https://flutter.dev/blog/announcing-flutters-beta-2-release",
+        "type": 301
+      },
+      {
+        "source": "/https-medium-com-flutter-io-pitching-flutter-2d4f494e47d1",
+        "destination": "https://flutter.dev/blog/pitching-flutter-to-your-company-or-client",
+        "type": 301
+      },
+      {
+        "source": "/https-medium-com-flutter-issues-bugs-and-backlogs-5fb3adab5e25",
+        "destination": "https://flutter.dev/blog/issues-bugs-and-backlogs",
+        "type": 301
+      },
+      {
+        "source": "/io24-5e211f708a37",
+        "destination": "https://flutter.dev/blog/landing-flutter-3-22-and-dart-3-4-at-google-i-o-2024",
+        "type": 301
+      },
+      {
+        "source": "/null-safety-flutter-tech-preview-cb5c98aba187",
+        "destination": "https://flutter.dev/blog/dart-sound-null-safety-technical-preview-2",
+        "type": 301
+      },
+      {
+        "source": "/what-do-flutter-package-users-need-6ecba57ed1d6",
+        "destination": "https://flutter.dev/blog/what-do-flutter-package-users-need-findings-from-q2-user-survey",
+        "type": 301
+      },
+      {
+        "regex": "\/(.*)-([0-9a-f]{10,12})\/?",
+        "destination": "https://flutter.dev/blog/:1",
+        "type": 301
+      },
+      {
+        "source": "/",
+        "destination": "https://flutter.dev/blog",
+        "type": 301
+      },
+      {
+        "regex": "\/(.+)",
+        "destination": "https://flutter.dev/blog/:1",
+        "type": 301
+      }
+    ]
+  }
+}
