@@ -432,9 +432,9 @@ in your `gradle.properties` file:
 + android.builtInKotlin=true
 ```
 
-::::note
+:::version-note
 Enabling Built-in Kotlin requires Flutter 3.47 or later.
-::::
+:::
 
 After enabling Built-in Kotlin,
 execute `flutter run` or `flutter build apk`
