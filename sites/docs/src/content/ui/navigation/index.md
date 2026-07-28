@@ -132,7 +132,7 @@ routes after (up until the next _page-backed_ route) are removed too.
 You can't prevent navigation from page-backed screens using `PopScope`
 or the deprecated `WillPopScope`.
 Instead, you should consult your routing package's API documentation.
-For information on migrating to `PopScope`, see the
+For more information on migrating to `PopScope`, check out the
 [Android predictive back migration guide](
 /release/breaking-changes/android-predictive-back).
 :::

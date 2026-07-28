@@ -72,6 +72,6 @@ PopScope(
 )
 ```
 
-For more details on API migrations, see the
+For more details on API migrations, check out the
 [Android predictive back migration guide](
 /release/breaking-changes/android-predictive-back).

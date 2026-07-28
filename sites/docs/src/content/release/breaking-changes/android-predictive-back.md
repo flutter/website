@@ -343,7 +343,7 @@ return PopScope(
 ### Supporting predictive back
 
 For complete setup instructions, guidelines on predictive back gesture
-animations, and Android manifest configuration, see the primary guide:
+animations, and Android manifest configuration, check out the primary guide:
 [Add the predictive-back gesture](
 /platform-integration/android/predictive-back).
 
