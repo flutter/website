@@ -428,7 +428,8 @@ the newly released plugin version:
 
 Before enabling built-in Kotlin,
 confirm that you have migrated your plugin example app
-and any Flutter plugins it uses.
+and any Flutter plugins it uses. Also confirm you have updated your
+plugin example app to AGP version 9.0.0+.
 
 To enable built-in Kotlin,
 set the `android.builtInKotlin` property to `true`
