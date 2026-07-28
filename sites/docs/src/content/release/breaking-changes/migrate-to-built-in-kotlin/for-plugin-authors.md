@@ -419,8 +419,26 @@ the newly released plugin version:
 
 ## Validate
 
-Execute `flutter run` or `flutter build apk` to
-confirm that your plugin example app builds and launches
+Before enabling built-in Kotlin,
+confirm that you have migrated your plugin example app
+and any Flutter plugins it uses.
+
+To enable built-in Kotlin,
+set the `android.builtInKotlin` property to `true`
+in your `gradle.properties` file:
+
+```properties diff title="<flutter-project>/android/gradle.properties"
+# ...
++ android.builtInKotlin=true
+```
+
+:::version-note
+Enabling built-in Kotlin requires Flutter 3.47 or later.
+:::
+
+After enabling built-in Kotlin,
+execute `flutter run` or `flutter build apk`
+to confirm that your plugin example app builds and launches
 on a connected Android device or emulator.
 
 If your plugin example app also applies KGP,
