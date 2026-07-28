@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "_site",
+    "public": "build/jaspr",
     "cleanUrls": true,
     "trailingSlash": false,
     "ignore": [

@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "flutter-docs-prod",
+    "devtools-staging": "flutter-website-dt-staging"
+    "sz": "sz-flutter",
+    "sz2": "sz-flutter-2"
+  }
+}
