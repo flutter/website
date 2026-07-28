@@ -274,6 +274,36 @@ With the OS signals forwarded to Flutter,
 your `FlutterFragment` works as expected.
 You have now added a `FlutterFragment` to your existing Android app.
 
+### Automatic back button and predictive back handling
+
+When embedding a `FlutterFragment` into a native Android app on Android 13 or
+higher (API level 33+), you can configure the fragment to automatically handle
+system back button presses and predictive back gestures without manually
+forwarding `onBackPressed()`.
+
+Set `shouldAutomaticallyHandleOnBackPressed(true)` when building your fragment:
+
+<Tabs key="android-language">
+<Tab name="Kotlin">
+
+```kotlin
+val flutterFragment = FlutterFragment.withNewEngine()
+    .shouldAutomaticallyHandleOnBackPressed(true)
+    .build()
+```
+
+</Tab>
+<Tab name="Java">
+
+```java
+FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
+    .shouldAutomaticallyHandleOnBackPressed(true)
+    .build();
+```
+
+</Tab>
+</Tabs>
+
 The simplest integration path uses a new `FlutterEngine`,
 which comes with a non-trivial initialization time,
 leading to a blank UI until Flutter is
