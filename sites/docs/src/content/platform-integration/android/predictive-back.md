@@ -40,7 +40,7 @@ Android 13+:
 
 To customize back navigation or prevent users from accidentally leaving a
 screen, use the `PopScope` widget. `PopScope` replaces the deprecated
-`WillPopScope` widget and works seamlessly with predictive back gestures.
+`WillPopScope` widget and supports predictive back gestures.
 
 ### Callback parameters
 
