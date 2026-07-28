@@ -186,10 +186,11 @@ your current constraints, run:
 flutter pub outdated
 ```
 
-To upgrade to newer major versions, run `flutter pub upgrade --major-versions`.
+To upgrade to newer major versions,
+run `flutter pub upgrade --major-versions`.
 This command upgrades the constraints in your `pubspec.yaml` file
-to allow the latest resolvable versions, and then runs `flutter pub get`
-to retrieve those upgraded dependencies.
+to allow the latest resolvable versions, and then
+runs `flutter pub get` to retrieve those upgraded dependencies.
 
 ### Use dependency overrides
 
