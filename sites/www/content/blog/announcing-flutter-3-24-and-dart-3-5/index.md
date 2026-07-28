@@ -9,7 +9,7 @@ category: release
 layout: blog
 ---
 
-Today, we’re unveiling [Flutter 3.24](https://medium.com/p/6c040f87d1e4/edit) and [Dart 3.5](https://dart.dev/blog/announcing-dart-3-5-and-an-update-on-the-dart-roadmap) alongside the last stop [in the I/O 2024 Connect series,](https://ioconnectchina.googlecnapps.cn/) happening in just a few hours in China — one of Flutter’s most prolific communities in the world, making this moment very special.
+Today, we’re unveiling [Flutter 3.24](https://flutter.dev/blog/whats-new-in-flutter-3-24) and [Dart 3.5](https://dart.dev/blog/announcing-dart-3-5-and-an-update-on-the-dart-roadmap) alongside the last stop [in the I/O 2024 Connect series,](https://ioconnectchina.googlecnapps.cn/) happening in just a few hours in China — one of Flutter’s most prolific communities in the world, making this moment very special.
 
 <DashImage figure src="images/1jzRGig761LnPlvokq2FaVA.gif" />
 
@@ -65,6 +65,6 @@ Several other exciting examples of Flutter apps popping up all over the world:
 
 ## Wrap up
 
-The above are just a few of many new features and updates to Flutter and Dart in these releases, and you can learn more in the [Flutter 3.24 technical blog](https://medium.com/p/6c040f87d1e4/edit) post and in the [Dart 3.5 blog post](https://dart.dev/blog/announcing-dart-3-5-and-an-update-on-the-dart-roadmap).
+The above are just a few of many new features and updates to Flutter and Dart in these releases, and you can learn more in the [Flutter 3.24 technical blog](https://flutter.dev/blog/whats-new-in-flutter-3-24) post and in the [Dart 3.5 blog post](https://dart.dev/blog/announcing-dart-3-5-and-an-update-on-the-dart-roadmap).
 
 Looking ahead, we’re filled with excitement for the future of Flutter. We remain committed to our mission, and we’re grateful to you — whether a contributor, community member, or Flutter developer — for being part of this amazing journey. We can’t wait to see what you build next!

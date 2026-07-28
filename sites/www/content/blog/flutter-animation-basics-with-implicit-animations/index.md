@@ -157,7 +157,7 @@ For everything else, visit [flutter.dev](https://flutter.dev).
 
 Articles in this series:
 
-* [How to Choose Which Flutter Animation Widget is Right for You?](https://medium.com/p/79ecfb7e72b5/edit)
+* [How to Choose Which Flutter Animation Widget is Right for You?](https://flutter.dev/blog/how-to-choose-which-flutter-animation-widget-is-right-for-you)
 
 * [Flutter animation basics with implicit animations](https://flutter.dev/blog/flutter-animation-basics-with-implicit-animations) (this article)
 
