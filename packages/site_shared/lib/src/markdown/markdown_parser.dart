@@ -173,8 +173,13 @@ class DashMarkdownParser implements PageParser {
           }
         }
       } else if (node is md.Text) {
+        final fragment = html.HtmlParser(
+          node.text,
+          strict: true,
+          generateSpans: true,
+        ).parseFragment();
         currentNodes.addAll(
-          HtmlParser.buildNodes(html.parseFragment(node.text).nodes),
+          HtmlParser.buildNodes(fragment.nodes),
         );
       } else if (node is md.Element) {
         final nodeChildren = node.children;

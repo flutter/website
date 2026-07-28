@@ -260,7 +260,7 @@ From Fri Jun 21 22:31:55 2019 -0400 to Sun Aug 18 12:22:00 2019 -0700
 
 [35574](https://github.com/flutter/flutter/pull/35574) Fix semantics for floating pinned sliver app bar (a: accessibility, cla: yes, f: scrolling, framework, waiting for tree to go green)
 
-[35646](https://github.com/flutter/flutter/pull/35646) Prepare for Socket implements Stream<Uint8List> (cla: yes)
+[35646](https://github.com/flutter/flutter/pull/35646) Prepare for `Socket implements Stream<Uint8List>` (cla: yes)
 
 [35657](https://github.com/flutter/flutter/pull/35657) Remove paused check for tooling tests (cla: yes, tool)
 
@@ -806,7 +806,7 @@ From Fri Jun 21 22:31:55 2019 -0400 to Sun Aug 18 12:22:00 2019 -0700
 
 [37514](https://github.com/flutter/flutter/pull/37514) [flutter_tool] Remove unintended analytics screen send (cla: yes, tool)
 
-[37515](https://github.com/flutter/flutter/pull/37515) Upstream web support for IterableProperty<double> (cla: yes, framework, ☸ platform-web)
+[37515](https://github.com/flutter/flutter/pull/37515) Upstream web support for `IterableProperty<double>` (cla: yes, framework, ☸ platform-web)
 
 [37516](https://github.com/flutter/flutter/pull/37516) Kill stale TODO (a: tests, cla: yes, framework, team)
 

@@ -25,7 +25,7 @@ To see examples of each of these types of tests, you can
 [create a new plugin from the plugin template][plugin-tests]
 and look in the indicated directories.
 
-* <strong>Dart [unit tests][] and [widget tests][]</strong>.
+* **Dart [unit tests][] and [widget tests][]**.
   These tests allow you to test the Dart portion of your plugin
   just as you would test the Dart code of a non-plugin package.
   However, the plugin's native code [won't be loaded][],
@@ -33,7 +33,7 @@ and look in the indicated directories.
 
   See the `test` directory for an example.
 
-* <strong>Dart [integration tests][]</strong>.
+* **Dart [integration tests][]**.
   Since integration tests run in the context of a
   Flutter application (the example app),
   they can test both the Dart and native code,
@@ -49,7 +49,7 @@ and look in the indicated directories.
 
   See the  `example/integration_test` directory for an example.
 
-* <strong>Native unit tests.</strong>
+* **Native unit tests.**
   Just as Dart unit tests can test the Dart portions
   of a plugin in isolation, native unit tests can
   test the native parts in isolation.
@@ -65,22 +65,22 @@ and look in the indicated directories.
   you are familiar with for each platform,
   but the following are already configured in the plugin template:
 
-  * <strong>Android</strong>:
+  * **Android**:
     [JUnit][] tests can be found in `android/src/test/`.
 
-  * <strong>iOS</strong> and <strong>macOS</strong>:
+  * **iOS** and **macOS**:
     [XCTest][] tests can be found in `example/ios/RunnerTests/`
     and `example/macos/RunnerTests/` respectively.
     These are in the example directory,
     not the top-level package directory,
     because they are run via the example app's project.
 
-  * <strong>Linux</strong> and <strong>Windows</strong>:
+  * **Linux** and **Windows**:
     [GoogleTest][] tests can be found in `linux/test/`
     and `windows/test/`, respectively.
 
 Other types of tests, which aren't currently pre-configured
-in the template, are <strong>native UI tests</strong>.
+in the template, are **native UI tests**.
 Running your application under a native UI testing framework,
 such as [Espresso][] or [XCUITest][],
 enables tests that interact with both native and Flutter UI elements,
@@ -123,7 +123,7 @@ application at least once before running the unit tests,
 to ensure that all of the platform-specific build
 files have been created.
 
-<strong>Android JUnit</strong><br>
+**Android JUnit**<br>
 
 If you have the example opened as an Android project
 in Android Studio, you can run the unit tests using
@@ -136,7 +136,7 @@ use the following command in the `example/android` directory:
 ./gradlew testDebugUnitTest
 ```
 
-<strong>iOS and macOS XCTest</strong><br>
+**iOS and macOS XCTest**<br>
 
 If you have the example app opened in Xcode,
 you can run the unit tests using the [Xcode Test UI][].
@@ -152,7 +152,7 @@ xcodebuild test -workspace Runner.xcworkspace -scheme Runner -configuration Debu
 For iOS tests, you might need to first open
 `Runner.xcworkspace` in Xcode to configure code signing.
 
-<strong>Linux GoogleTest</strong><br>
+**Linux GoogleTest**<br>
 
 To run the tests from the command line,
 use the following command in the example directory,
@@ -165,7 +165,7 @@ build/linux/plugins/x64/debug/my_plugin/my_plugin_test
 If you built the example app in release mode rather than
 debug, replace "debug" with "release".
 
-<strong>Windows GoogleTest</strong><br>
+**Windows GoogleTest**<br>
 
 If you have the example app opened in Visual Studio,
 you can run the unit tests using the [Visual Studio test UI][].
