@@ -902,6 +902,7 @@
       { "source": "/to/review-gradle-config", "destination": "/deployment/android#review-the-gradle-build-configuration", "type": 301 },
       { "source": "/to/roadmap", "destination": "https://github.com/flutter/flutter/blob/main/docs/roadmap/Roadmap.md", "type": 301 },
       { "source": "/to/save-layer-perf", "destination": "/perf/best-practices#use-savelayer-thoughtfully", "type": 301 },
+      { "source": "/to/site-redirects", "destination": "https://github.com/flutter/website/blob/main/firebase.json", "type": 301 },
       { "source": "/to/spm", "destination": "/packages-and-plugins/swift-package-manager", "type": 301 },
       { "source": "/to/state-management-sample", "destination": "/data-and-backend/state-mgmt/simple", "type": 301 },
       { "source": "/to/switch-flutter-version", "destination": "/install/upgrade#switch-to-a-specific-flutter-version", "type": 301 },
