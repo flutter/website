@@ -193,6 +193,6 @@ The [DartPad #1](https://dartpad.dev/d16345202d0e26d40fe14904657dc24a) example d
 
 ## Closing remarks
 
-In Flutter you have access to web-specific APIs. The `FocusableActionDetector` widget lets you handle web-specific functions in Flutter. To learn more about Flutter web, see the Medium post, [Handling 404: Page not found error in Flutter](https://flutter.dev/blog/handling-404-page-not-found-error-in-flutter).
+In Flutter you have access to web-specific APIs. The `FocusableActionDetector` widget lets you handle web-specific functions in Flutter. To learn more about Flutter web, see the blog post, [Handling 404: Page not found error in Flutter](https://flutter.dev/blog/handling-404-page-not-found-error-in-flutter).
 
 *About the author: Jose recently graduated from university and now works on [Material](https://material.io/), a design system that helps teams build high-quality digital experiences. Jose’s team maintains the Flutter [material library](https://api.flutter.dev/flutter/material/material-library.html). To learn more, visit his Jose’s pages on [GitHub](https://github.com/JoseAlba), [LinkedIn](https://www.linkedin.com/in/josealba1996/), [YouTube](https://www.youtube.com/channel/UCOdKA_On0oPe1tz02z1QfxA?view_as=subscriber), and [Instagram](https://www.instagram.com/jose.alba/).*

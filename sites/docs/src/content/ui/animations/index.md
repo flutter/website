@@ -387,7 +387,7 @@ shows how to write animation code.
   how to create your own custom explicit animations.
 
 * [Zero to One with Flutter, part 1][] and [part 2][]<br>
-  Medium articles showing how to create an animated chart using tweening.
+  Flutter blog posts showing how to create an animated chart using tweening.
 
 * [Casual games toolkit][]<br>
   A toolkit with game templates that contain examples of how to use Flutter

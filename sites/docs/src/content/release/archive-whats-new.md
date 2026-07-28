@@ -422,8 +422,8 @@ You might also check out [Dart 3.2 release][].
 
 **Articles**
 
-The following articles were published on the [Flutter Medium][]
-publication since Flutter 3.13:
+The following articles were published on the [Flutter blog][]
+since Flutter 3.13:
 
 * [How IBM is creating a Flutter Center of Excellence][ibm]
 * [Introducing the Flutter Consulting Directory][fcd]
@@ -507,8 +507,8 @@ The following codelab has been published since Flutter 3.10:
 
 **Articles**
 
-The following articles were published on the [Flutter Medium][]
-publication since Flutter 3.10:
+The following articles were published on the [Flutter blog][]
+since Flutter 3.10:
 
 * [The Future of iOS development with Flutter][]
 * [How it's made: I/O Flip][]
@@ -658,8 +658,8 @@ The following codelabs have been published since Flutter 3.7:
 
 **Articles**
 
-The Flutter team published the following articles on the [Flutter Medium][]
-publication since Flutter 3.7:
+The Flutter team published the following articles on the [Flutter blog][]
+since Flutter 3.7:
 
 * [Flutter in 2023: strategy and roadmap][]
 * [Wonderous nominated for Webby Award][]
@@ -712,7 +712,7 @@ and [Introducing Dart 3 alpha][].
   For more information, check out
   [Writing custom platform-specific code][]
   and the [Introducing isolate background channels][]
-  article on Medium.
+  article on the Flutter blog.
 * We've updated our Swift documentation.
   New and updated pages include:
   * [Flutter for SwiftUI developers][] - updated
@@ -819,8 +819,8 @@ to reflect the latest available codelabs.
 
 **Articles**
 
-We've published the following articles on the [Flutter Medium][]
-publication since the last stable release:
+We've published the following articles on the [Flutter blog][]
+since the last stable release:
 
 * [What's next for Flutter][]
 * [Adapting Wonderous to larger device formats][]
@@ -848,10 +848,9 @@ publication since the last stable release:
 
 ## 31 Aug 2022: Flutter Vikings: 3.3 release
 
-Flutter 3.3 is live! For more information, see
-
+Flutter 3.3 is live! For more information, read
 [What's new in Flutter 3.3][],
-and [Dart 2.18: Objective-C & Swift interop][] (free articles on Medium),
+[Dart 2.18: Objective-C & Swift interop][],
 and the [Flutter 3.3 release notes][3.3 release notes].
 
 [3.3 release notes]: /release/release-notes/release-notes-3.3.0
@@ -894,8 +893,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
 
 Flutter 3 is live!!! For more information, see
 [Introducing Flutter 3][], [What's new in Flutter 3][],
-and [Dart 2.17: Productivity and integration][]
-(free articles on Medium),
+[Dart 2.17: Productivity and integration][],
 and the [Flutter 3 release notes][].
 
 [Dart 2.17: Productivity and integration]: https://dart.dev/blog/dart-2-17-productivity-and-integration
@@ -981,10 +979,10 @@ on the [videos] page.
 
 Desktop support for Microsoft Windows
 (a central feature of the 2.10 release) is live!
-For more information, see
+For more information, read
 [Announcing Flutter for Windows][]
-and [What's new in Flutter 2.10][],
-free articles on Medium.
+and [What's new in Flutter 2.10][]
+on the Flutter blog.
 
 <YouTubeEmbed id="g-0B_Vfc9qM" title="Flutter Update: Windows"></YouTubeEmbed>
 
@@ -1018,8 +1016,8 @@ for more information.
 
 **Articles**
 
-We've published the following articles on the [Flutter Medium][]
-publication since the last stable release:
+We've published the following articles on the [Flutter blog][]
+since the last stable release:
 
 * [Raster thread performance optimization tips][]
 * [Writing a good code sample][]
@@ -1109,8 +1107,8 @@ If you are interested, check out the following resources:
 
 **Articles**
 
-We've published the following articles on the [Flutter Medium][]
-publication since the last stable release:
+We've published the following articles on the [Flutter blog][]
+since the last stable release:
 
 * [How It's Made: I/O Photo Booth][]
 * [Which factors affected users' decisions to adopt Flutter? - Q1 2021 user survey results][Q1 2021 survey]
@@ -1191,8 +1189,8 @@ For a complete list, see [Flutter codelabs][].
 
 **Articles**
 
-We've published the following articles on the [Flutter Medium][]
-publication since the last stable release:
+We've published the following articles on the [Flutter blog][]
+since the last stable release:
 
 * [Flutter performance updates in the first half of 2020][perf-H1-2020]
 * [Are you happy with Flutter? - Q4 2020 user survey results][Q4]
@@ -1286,8 +1284,8 @@ For a complete list, see [Flutter codelabs][].
 
 **Articles**
 
-We've published the following articles on the [Flutter Medium][]
-publication since the last stable release:
+We've published the following articles on the [Flutter blog][]
+since the last stable release:
 
 * [Learning Flutter's new navigation and routing][]
 * [Integration testing with flutter_driver][]
@@ -1360,8 +1358,8 @@ For a complete list, see [Flutter codelabs][].
 
 **Articles**
 
-We've published the following articles on the [Flutter Medium][]
-publication since the last stable release:
+We've published the following articles on the [Flutter blog][]
+since the last stable release:
 
 * [Announcing Adobe XD support for Flutter][]
 * [What are the important & difficult tasks for Flutter
@@ -1456,8 +1454,8 @@ Docs added and updated since the last announcement include:
 
 Other newness:
 
-* We've published a number of articles on the [Flutter Medium][]
-  publication since the last stable release:
+* We've published a number of articles on the [Flutter blog][]
+  since the last stable release:
   * [Custom implicit animations in Flutter…with TweenAnimationBuilder][]
   * [Directional animations with build-in explicit animations][]
   * [When should I use AnimatedBuilder or AnimatedWidget?][]
@@ -1486,7 +1484,7 @@ Other newness:
 [Developing packages and plugins]: /packages-and-plugins/developing-packages
 [Developing plugin packages]: /packages-and-plugins/developing-packages#federated-plugins
 [Directional animations with build-in explicit animations]: {{site.flutter-blog}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
-[Flutter Medium]: https://flutter.dev/blog
+[Flutter blog]: https://flutter.dev/blog
 [Flutter Spring 2020 update]: {{site.flutter-blog}}/spring-2020-update-f723d898d7af
 [Flutter web: Navigating URLs using named routes]: {{site.flutter-blog}}/web-navigating-urls-using-named-routes-307e1b1e2050
 [Flutter web support updates]: {{site.flutter-blog}}/web-support-updates-8b14bfe6a908
@@ -1524,7 +1522,7 @@ Docs added and updated since the last announcement include:
   [Migrating your plugin to the new Android APIs][].
 * Web support has moved to the beta channel. For more information,
   see [Web support for Flutter][] and
-  [Web support for Flutter goes beta][] on the Medium publication.
+  [Web support for Flutter goes beta][] on the Flutter blog.
   Also, the [building a web app with Flutter][] page is updated.
 * A new write your first Flutter app on the web codelab
   is added to the [Get started][] docs, and includes
@@ -1560,7 +1558,6 @@ Happy Fluttering!
 [Flutter 1.12.13]: /release/release-notes/release-notes-1.12.13
 [Flutter Gallery]: {{site.gallery-archive}}
 [Flutter Layout Explorer]: /tools/devtools/legacy-inspector#flutter-layout-explorer
-[Flutter Medium publication]: https://flutter.dev/blog
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
 [Web support for Flutter goes beta]: {{site.flutter-blog}}/web-support-for-flutter-goes-beta-35b64a1217c0
 [Get started]: /install
@@ -1609,7 +1606,7 @@ Other relevant docs:
 * Error messages have been improved in SDK 1.9.
   For more information, read
   [Improving Flutter's Error Messages][]
-  on the [Flutter Medium publication][].
+  on the [Flutter blog][].
 * If you already have a web app that depends on the
   flutter_web package, the following instructions tell
   you how to migrate to the flutter package:
@@ -1643,7 +1640,7 @@ Happy Fluttering!
 Flutter 1.7 is live!
 
 For more information, see [Announcing Flutter 1.7][]
-on the [Flutter Medium Publication][], and the
+on the [Flutter blog][], and the
 [1.7.8 release notes][].
 
 New and updated docs on the site include:

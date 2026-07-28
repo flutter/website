@@ -22,7 +22,7 @@ Below, you’ll find an overview of everything we shared at Google I/O 2024, as 
 
 ## Blog posts
 
-We launched **four new blog posts** across the Dart and Medium blogs:
+We launched **four new blog posts** across the Dart and Flutter blogs:
 
 * [Landing Flutter 3.22 and Dart 3.4 at Google I/O 2024](https://flutter.dev/blog/landing-flutter-3-22-and-dart-3-4-at-google-i-o-2024)
 

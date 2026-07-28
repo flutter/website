@@ -80,7 +80,7 @@ Because we do not want you to compromise your UI as a consequence of these issue
 
 In the meantime, if you’re new to slivers and want to learn more, visit the following resources:
 
-* [Slivers, demystified](https://flutter.dev/blog/slivers-demystified) (Medium article)
+* [Slivers, demystified](https://flutter.dev/blog/slivers-demystified) (blog post)
 
 * [Slivers explained — making dynamic layouts](https://www.youtube.com/watch?v=Mz3kHQxBjGg) (The Boring Flutter Development Show on YouTube, Ep. 12)
 

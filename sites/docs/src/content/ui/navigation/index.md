@@ -156,8 +156,8 @@ resources:
 * [Understanding navigation][], a page from the Material Design documentation,
   outlines concepts for designing the navigation in your app, including
   explanations for forward, upward, and chronological navigation.
-* [Learning Flutter's new navigation and routing system][], an article on
-  Medium, describes how to use the `Router` widget directly, without
+* [Learning Flutter's new navigation and routing system][], a Flutter blog
+  post, describes how to use the `Router` widget directly, without
   a routing package.
 * The [Router design document][] contains the motivation and design of the
   `Router` API.

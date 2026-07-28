@@ -19,7 +19,7 @@ A minimal package consists of the following:
 
 :::note
 For a list of dos and don'ts when writing an effective plugin,
-see the Medium article by Mehmet Fidanboylu,
+see the Flutter blog post by Mehmet Fidanboylu,
 [Writing a good plugin][].
 :::
 
@@ -48,7 +48,7 @@ Packages can contain more than one kind of content:
   A concrete example is the [`url_launcher`][] plugin package.
   To see how to use the `url_launcher` package, and how it
   was extended to implement support for web,
-  see the Medium article by Harry Terkelsen,
+  see the Flutter blog post by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
 
 **FFI packages**
@@ -227,7 +227,7 @@ endorsed plugin implementation of `foobar`.
 
 For more information on federated plugins,
 why they are useful, and how they are
-implemented, see the Medium article by Harry Terkelsen,
+implemented, see the Flutter blog post by Harry Terkelsen,
 [How To Write a Flutter Web Plugin, Part 2][].
 
 ### Specifying a plugin's supported platforms {:#plugin-platforms}

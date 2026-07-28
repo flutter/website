@@ -32,6 +32,6 @@ We’ve got a couple surprises and announcements to make along the way, so be su
 
 1. [Set a reminder](https://calndr.link/event/jqZQr0d7nH) for the event time on your calendar, or on [YouTube](https://www.youtube.com/@flutterdev).
 
-1. Follow us on [Twitter](https://www.youtube.com/redirect?event=channel_description&redir_token=QUFFLUhqbkRYNDVxWGRFUUZYNVdmMlg4QTB4akhOeXNVd3xBQ3Jtc0trWWpSSHo0Tnh3QjlKdF81Z0lsSkQzQWdxVEpBNVdOSVE5Q01tUUltMUFvV2k5Z1RfUzVtc0JET0pFejVRLTl1UUdPNG9DMHk3ZWpUcGtRVGVtUk1yUzA3SEx4STVpM09Kd0dSczVxOGhyQkxRb1EwNA&q=https%3A%2F%2Ftwitter.com%2FFlutterDev), [LinkedIn](https://www.linkedin.com/showcase/flutterdevofficial/), or here on Medium!
+1. Follow us on [Twitter](https://www.youtube.com/redirect?event=channel_description&redir_token=QUFFLUhqbkRYNDVxWGRFUUZYNVdmMlg4QTB4akhOeXNVd3xBQ3Jtc0trWWpSSHo0Tnh3QjlKdF81Z0lsSkQzQWdxVEpBNVdOSVE5Q01tUUltMUFvV2k5Z1RfUzVtc0JET0pFejVRLTl1UUdPNG9DMHk3ZWpUcGtRVGVtUk1yUzA3SEx4STVpM09Kd0dSczVxOGhyQkxRb1EwNA&q=https%3A%2F%2Ftwitter.com%2FFlutterDev), [LinkedIn](https://www.linkedin.com/showcase/flutterdevofficial/), or here on the Flutter blog!
 
 We can’t wait to share #**FlutterinProduction** with you!

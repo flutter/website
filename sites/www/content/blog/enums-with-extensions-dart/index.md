@@ -20,7 +20,7 @@ Dart has recently released support for extension methods, which means that you c
 
 I’ve always used enums in my Flutter code, but integrating enums and extension methods has made developing in Flutter easier and the code cleaner to read.
 
-Let’s say you make an enumeration and your text is dependent on your enum. Previously, I would have used a switch statement within the `Widget` by using [IIFE](https://en.wikipedia.org/wiki/Immediately_invoked_function_expression) ([medium post](https://dart.dev/blog/3-cool-dart-patterns)). An *immediately invoked function expression* lets you invoke an anonymous method, which is a useful Dart pattern. But using this pattern might lead to spaghetti code, as shown in the example below. Also, if you need to add the same text elsewhere, you would have to copy the entire code snippet instead of just making a function call.
+Let’s say you make an enumeration and your text is dependent on your enum. Previously, I would have used a switch statement within the `Widget` by using [IIFE](https://en.wikipedia.org/wiki/Immediately_invoked_function_expression) ([blog post](https://dart.dev/blog/3-cool-dart-patterns)). An *immediately invoked function expression* lets you invoke an anonymous method, which is a useful Dart pattern. But using this pattern might lead to spaghetti code, as shown in the example below. Also, if you need to add the same text elsewhere, you would have to copy the entire code snippet instead of just making a function call.
 
 ```dart
 Text((){
