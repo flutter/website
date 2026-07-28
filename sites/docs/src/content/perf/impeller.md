@@ -88,24 +88,60 @@ It might use Impeller in the future.
 
 ### macOS
 
-You can try out Impeller for macOS behind a flag.
-In a future release, the ability to opt-out of
-using Impeller will be removed.
+Impeller is **available and enabled by default on Flutter 3.47**. In a future
+release, the ability to opt-out of using Impeller will be removed.
 
-To enable Impeller on macOS when debugging,
-pass `--enable-impeller` to the `flutter run` command.
+To disable Impeller on macOS when debugging, pass `--no-enable-impeller` to the
+`flutter run` command.
 
 ```console
-flutter run --enable-impeller
+flutter run --no-enable-impeller
 ```
 
-To enable Impeller on macOS when deploying your app,
-add the following tags under the top-level
-`<dict>` tag in your app's `Info.plist` file.
+To disable Impeller on macOS when deploying your app, add the following tags
+under the top-level `<dict>` tag in your app's `Info.plist` file.
 
 ```xml
   <key>FLTEnableImpeller</key>
-  <true />
+  <false />
+```
+
+### Linux
+
+Impeller is **available and enabled by default on Flutter 3.47**. In a future
+release, the ability to opt-out of using Impeller will be removed.
+
+To disable Impeller on Linux when debugging, pass `--no-enable-impeller` to the
+`flutter run` command.
+
+```console
+flutter run --no-enable-impeller
+```
+
+To disable Impeller on Linux when deploying your app, add the following setup to
+your project in `linux/runner/my_application.cc`.
+
+```c
+fl_dart_project_set_enable_impeller(project, FALSE);
+```
+
+### Windows
+
+Impeller is **available and enabled by default on Flutter 3.47**. In a future
+release, the ability to opt-out of using Impeller will be removed.
+
+To disable Impeller on Windows when debugging, pass `--no-enable-impeller` to the
+`flutter run` command.
+
+```console
+flutter run --no-enable-impeller
+```
+
+To disable Impeller on Windows when deploying your app, add the following setup to
+your project in `windows\runner\main.cpp`.
+
+```c++
+project.set_impeller_switch(flutter::ImpellerSwitch::Disabled);
 ```
 
 ### Bugs and issues
