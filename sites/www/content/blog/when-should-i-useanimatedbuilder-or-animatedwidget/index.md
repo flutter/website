@@ -12,7 +12,7 @@ layout: blog
 
 We know you have many choices when you fly, I mean animate, in Flutter, so thank you for choosing `AnimatedBuilder` and `AnimatedWidget`. Wait, what? No! Flutter has many different animation widgets, but unlike commercial airlines, each type of widget is right for a different type of job. Sure, you can accomplish the same animation in a couple of different ways, but using the right animation widget for the job will make your life much easier.
 
-This article covers why you might want to use `AnimatedBuilder` or `AnimatedWidget` versus other animation widgets, and how to use them. Suppose you want to add an animation to your app. This article is [part](https://medium.com/flutter/flutter-animation-basics-with-implicit-animations-95db481c5916) [of](https://medium.com/flutter/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185) [a](https://medium.com/flutter/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7) series, walking through why you might want to use each type of animation widget. The particular animation you want to do repeats a couple of times or needs to be able to pause and resume in response to something, like a finger tap. Because your animation needs to repeat, or stop and start, you’ll need to use an *explicit* animation.
+This article covers why you might want to use `AnimatedBuilder` or `AnimatedWidget` versus other animation widgets, and how to use them. Suppose you want to add an animation to your app. This article is [part](https://flutter.dev/blog/flutter-animation-basics-with-implicit-animations) [of](https://flutter.dev/blog/custom-implicit-animations-in-flutter-with-tweenanimationbuilder) [a](https://flutter.dev/blog/directional-animations-with-built-in-explicit-animations) series, walking through why you might want to use each type of animation widget. The particular animation you want to do repeats a couple of times or needs to be able to pause and resume in response to something, like a finger tap. Because your animation needs to repeat, or stop and start, you’ll need to use an *explicit* animation.
 
 As a reminder, we have two broad categories of animations in Flutter: explicit and implicit. For explicit animations, you need an animation controller. For implicit animations, you don’t. We introduced animation controllers in the previous article about built-in explicit animations. If you’d like to learn more about those, please check that out first.
 
@@ -186,7 +186,7 @@ class BeamClipper extends CustomClipper<Path> {
 }
 ```
 
-You may recall in the [`TweenAnimationBuilder` article](https://medium.com/flutter/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185) that we used the child parameter as a performance optimization, and we can do that with `AnimatedBuilder` too. Basically, if we have an object that never changes over the course of the animation, we can build it ahead of time, and just pass it to `AnimatedBuilder`.
+You may recall in the [`TweenAnimationBuilder` article](https://flutter.dev/blog/custom-implicit-animations-in-flutter-with-tweenanimationbuilder) that we used the child parameter as a performance optimization, and we can do that with `AnimatedBuilder` too. Basically, if we have an object that never changes over the course of the animation, we can build it ahead of time, and just pass it to `AnimatedBuilder`.
 
 In this specific case, a *better* way to accomplish the same thing is to give `BeamClipper` a `const` constructor and just make it `const`. It’s less code, and the object is created at compile time, making things even faster. Sometimes, though, you’ll be coding something that doesn’t have a const constructor, and that’s a good case for when to make use of that optional child parameter.
 
@@ -280,12 +280,12 @@ Articles in this series:
 
 * [How to Choose Which Flutter Animation Widget is Right for You?](https://medium.com/p/79ecfb7e72b5/edit)
 
-* [Flutter animation basics with implicit animations](https://medium.com/flutter/flutter-animation-basics-with-implicit-animations-95db481c5916)
+* [Flutter animation basics with implicit animations](https://flutter.dev/blog/flutter-animation-basics-with-implicit-animations)
 
-* [Custom Implicit Animations in Flutter…with TweenAnimationBuilder](https://medium.com/flutter/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185)
+* [Custom Implicit Animations in Flutter…with TweenAnimationBuilder](https://flutter.dev/blog/custom-implicit-animations-in-flutter-with-tweenanimationbuilder)
 
-* [Directional animations with built-in explicit animations](https://medium.com/flutter/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7)
+* [Directional animations with built-in explicit animations](https://flutter.dev/blog/directional-animations-with-built-in-explicit-animations)
 
-* [When should I useAnimatedBuilder or AnimatedWidget?](https://medium.com/flutter/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8) (this article)
+* [When should I useAnimatedBuilder or AnimatedWidget?](https://flutter.dev/blog/when-should-i-useanimatedbuilder-or-animatedwidget) (this article)
 
-* [Animation deep dive](https://medium.com/flutter/animation-deep-dive-39d3ffea111f)
+* [Animation deep dive](https://flutter.dev/blog/animation-deep-dive)

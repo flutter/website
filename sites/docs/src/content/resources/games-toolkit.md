@@ -329,7 +329,7 @@ investigate other resources that our community recommended.
 [Cloud, Firebase]: https://cloud.google.com/free
 [Flame game engine]: https://flame-engine.org/
 [Games]: {{site.main-url}}/games
-[I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
+[I/O Pinball Powered by Flutter and Firebase]: https://flutter.dev/blog/i-o-pinball-powered-by-flutter-and-firebase
 [install Flutter]: /install
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
 [basic-template-readme]: {{site.repo.games}}/blob/main/templates/basic/README.md

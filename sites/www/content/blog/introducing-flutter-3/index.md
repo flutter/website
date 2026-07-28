@@ -40,7 +40,7 @@ In a [recent blog post by Sonos](https://tech-blog.sonos.com/posts/renovating-se
 
 Today, we’re introducing Flutter 3**,** which is the culmination of our journey to fill out the platforms supported by Flutter. With Flutter 3, you can build beautiful experiences for six platforms from a single codebase, giving developers unparalleled productivity and enabling startups to bring new ideas to the full addressable market from day one.
 
-In previous releases, we supplemented iOS and Android with [web](https://medium.com/flutter/flutter-web-support-hits-the-stable-milestone-d6b84e83b425) and [Windows support](https://medium.com/flutter/announcing-flutter-for-windows-6979d0d01fed), and now **Flutter 3 adds stable support for macOS and Linux apps**. Adding platform support requires more than rendering pixels: it includes new input and interaction models, compilation and build support, accessibility and internationalization, and platform-specific integration. Our goal is to give you the flexibility to take full advantage of the underlying operating system while sharing as much UI and logic as you choose.
+In previous releases, we supplemented iOS and Android with [web](https://flutter.dev/blog/flutter-web-support-hits-the-stable-milestone) and [Windows support](https://flutter.dev/blog/announcing-flutter-for-windows), and now **Flutter 3 adds stable support for macOS and Linux apps**. Adding platform support requires more than rendering pixels: it includes new input and interaction models, compilation and build support, accessibility and internationalization, and platform-specific integration. Our goal is to give you the flexibility to take full advantage of the underlying operating system while sharing as much UI and logic as you choose.
 
 On macOS, we’ve invested in supporting both Intel and Apple Silicon, with [Universal Binary](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary) support that allows apps to package executables that run natively on both architectures. On Linux, Canonical and Google have collaborated to offer a highly-integrated, best-of-breed option for development.
 
@@ -50,7 +50,7 @@ A great example of how Flutter enables beautiful desktop experiences is [Superli
 
 Flutter 3 also improves on many of the fundamentals, with improved performance, Material You support, and productivity updates.
 
-In addition to the work mentioned above, with this version, Flutter is fully native on [Apple silicon](https://support.apple.com/en-us/HT211814) for *development*. While Flutter has been compatible with M1-powered Apple devices since their release, Flutter now takes full advantage of [Dart’s support for Apple silicon](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67), enabling much faster compilation on M1-powered devices and support for [universal binaries](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary) for macOS apps.
+In addition to the work mentioned above, with this version, Flutter is fully native on [Apple silicon](https://support.apple.com/en-us/HT211814) for *development*. While Flutter has been compatible with M1-powered Apple devices since their release, Flutter now takes full advantage of [Dart’s support for Apple silicon](https://dart.dev/blog/announcing-dart-2-14), enabling much faster compilation on M1-powered devices and support for [universal binaries](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary) for macOS apps.
 
 Our work for [Material Design 3](https://m3.material.io/) is largely complete in this release, allowing developers to take advantage of an adaptable, cross-platform design system that offers dynamic color schemes and updated visual components:
 
@@ -58,7 +58,7 @@ Our work for [Material Design 3](https://m3.material.io/) is largely complete in
 
 Our detailed technical blog post expands on these and the many other new features in Flutter 3.
 
-Flutter is powered by Dart, a high-productivity, portable language for multiplatform development. Our work on Dart in this cycle includes new language features that reduce boilerplate and aid readability, experimental RISC-V support, an upgraded linter, and new documentation. For further details on all the new improvements in Dart 2.17, check out the [dedicated blog](https://medium.com/dartlang).
+Flutter is powered by Dart, a high-productivity, portable language for multiplatform development. Our work on Dart in this cycle includes new language features that reduce boilerplate and aid readability, experimental RISC-V support, an upgraded linter, and new documentation. For further details on all the new improvements in Dart 2.17, check out the [dedicated blog](https://dart.dev/blog/dart-2-17-productivity-and-integration).
 
 ## Firebase and Flutter
 

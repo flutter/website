@@ -11,7 +11,7 @@ category: tutorial
 layout: blog
 ---
 
-To make animations in Flutter, there are many different options available. How do you choose the right animation widget? This article, [part](https://medium.com/flutter/flutter-animation-basics-with-implicit-animations-95db481c5916) of [our](https://medium.com/flutter/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7) animation series, delves into the best use cases for `TweenAnimationBuilder` versus when a different widget is best for the job. The previous article in this series explains just how powerful all the built-in implicit animation widgets are and how much you can accomplish with them.
+To make animations in Flutter, there are many different options available. How do you choose the right animation widget? This article, [part](https://flutter.dev/blog/flutter-animation-basics-with-implicit-animations) of [our](https://flutter.dev/blog/directional-animations-with-built-in-explicit-animations) animation series, delves into the best use cases for `TweenAnimationBuilder` versus when a different widget is best for the job. The previous article in this series explains just how powerful all the built-in implicit animation widgets are and how much you can accomplish with them.
 
 <DashImage figure src="images/11wJWHHPYfOYUCDBAcmIpjg.webp" alt="A flow chart for understanding what animation to use in any scenario. This article focuses on the second-from-the-right “end state”, TweenAnimationBuilder." caption="A flow chart for understanding what animation to use in any scenario. This article focuses on the second-from-the-right “end state”, TweenAnimationBuilder." />
 
@@ -224,7 +224,7 @@ class _NopeNopeNopeState extends State<NopeNopeNope> {
 
 ## onEnd and child
 
-There are a few other parameters that I haven’t talked about yet. The first one is the curve, to describe how we should transition between the beginning and end values in our `Tween` range. In the [previous article](https://medium.com/flutter/flutter-animation-basics-with-implicit-animations-95db481c5916) we talked about how you can even create a custom curve, but there are a lot of great predefined options too.
+There are a few other parameters that I haven’t talked about yet. The first one is the curve, to describe how we should transition between the beginning and end values in our `Tween` range. In the [previous article](https://flutter.dev/blog/flutter-animation-basics-with-implicit-animations) we talked about how you can even create a custom curve, but there are a lot of great predefined options too.
 
 The second one is a callback you can specify, so you can do something when the animation completes. Perhaps you want to make another widget appear after this animation finishes. You can also use this callback as a way to reverse your animation back and forth. I recommend that you think carefully before doing this though. The callback makes the type of animation you’re trying to do less clear because the value setting is distributed through your code. Because the values are discontinuous (jumping back to the start again), if you want a repeating animation you’ll need some sort of explicit animation: either a built-in explicit animated widget or extending `AnimatedWidget`.
 
@@ -309,12 +309,12 @@ Articles in this series:
 
 * [How to Choose Which Flutter Animation Widget is Right for You?](https://medium.com/p/79ecfb7e72b5/edit)
 
-* [Flutter animation basics with implicit animations](https://medium.com/flutter/flutter-animation-basics-with-implicit-animations-95db481c5916)
+* [Flutter animation basics with implicit animations](https://flutter.dev/blog/flutter-animation-basics-with-implicit-animations)
 
-* [Custom Implicit Animations in Flutter…with TweenAnimationBuilder](https://medium.com/flutter/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185) (this article)
+* [Custom Implicit Animations in Flutter…with TweenAnimationBuilder](https://flutter.dev/blog/custom-implicit-animations-in-flutter-with-tweenanimationbuilder) (this article)
 
-* [Directional animations with built-in explicit animations](https://medium.com/flutter/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7)
+* [Directional animations with built-in explicit animations](https://flutter.dev/blog/directional-animations-with-built-in-explicit-animations)
 
-* [When should I useAnimatedBuilder or AnimatedWidget?](https://medium.com/flutter/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8)
+* [When should I useAnimatedBuilder or AnimatedWidget?](https://flutter.dev/blog/when-should-i-useanimatedbuilder-or-animatedwidget)
 
-* [Animation deep dive](https://medium.com/flutter/animation-deep-dive-39d3ffea111f)
+* [Animation deep dive](https://flutter.dev/blog/animation-deep-dive)

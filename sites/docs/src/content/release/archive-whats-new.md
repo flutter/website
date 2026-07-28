@@ -20,8 +20,8 @@ Flutter 3.32 is live! For more information,
 check out the [Flutter 3.32 technical blog post][3.32-tech].
 You might also check out the [Dart 3.8 release][] blog post.
 
-[3.32-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-32-40c1086bab6e
-[Dart 3.8 release]: {{site.medium}}/dartlang/announcing-dart-3-8-724eaaec9f47
+[3.32-tech]: https://flutter.dev/blog/whats-new-in-flutter-3-32
+[Dart 3.8 release]: https://dart.dev/blog/announcing-dart-3-8
 
 **Website update**
 
@@ -85,8 +85,8 @@ Flutter 3.29 is live! For more information,
 check out the [Flutter 3.29 technical blog post][3.29-tech].
 You might also check out the [Dart 3.7 release][] blog post.
 
-[3.29-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-29-f90c380c2317
-[Dart 3.7 release]: {{site.medium}}/dartlang/announcing-dart-3-7-bf864a1b195c
+[3.29-tech]: https://flutter.dev/blog/whats-new-in-flutter-3-29
+[Dart 3.7 release]: https://dart.dev/blog/announcing-dart-3-7
 
 **Docs updated or added since the 3.27 release**
 
@@ -106,7 +106,7 @@ You might also check out the [Dart 3.7 release][] blog post.
 
 [Architectural overview page]: /resources/architectural-overview
 [bc-3.29]: /release/breaking-changes#released-in-flutter-3-29
-[Dart 3.7 release]: {{site.medium}}/dartlang/announcing-dart-3-7-bf864a1b195c
+[Dart 3.7 release]: https://dart.dev/blog/announcing-dart-3-7
 [Flutter for Jetpack Compose devs]: /flutter-for/compose-devs
 [Test orientation]: /cookbook/testing/widget/orientation
 
@@ -119,9 +119,9 @@ check out the [Flutter 3.27 umbrella blog post][3.27-umbrella]
 and the [Flutter 3.27 technical blog post][3.27-tech].
 You might also check out the [Dart 3.6 release][] blog post.
 
-[3.27-umbrella]: {{site.medium}}/flutter/flutter-in-production-f9418261d8e1
-[3.27-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-27-28341129570c
-[Dart 3.6 release]: {{site.medium}}/dartlang/announcing-dart-3-6-778dd7a80983
+[3.27-umbrella]: https://flutter.dev/blog/celebrating-flutters-production-era
+[3.27-tech]: https://flutter.dev/blog/whats-new-in-flutter-3-27
+[Dart 3.6 release]: https://dart.dev/blog/announcing-dart-3-6
 
 **Docs updated or added since the 3.24 release**
 
@@ -184,7 +184,7 @@ This website release includes several important updates!
   page for this release. That's also where you'll find useful
   migration info.
 
-[ad-bp]: {{site.medium}}/flutter/video-web-ad-support-in-flutter-f50e5a3480a8
+[ad-bp]: https://flutter.dev/blog/video-web-ad-support-in-flutter
 [app-authors]: /packages-and-plugins/swift-package-manager/for-app-developers
 [Architecting Flutter apps]: /app-architecture
 [bc-3.27]: /release/breaking-changes#released-in-flutter-3-27
@@ -212,7 +212,7 @@ You might also check out the [Dart 3.5 release][] blog post.
 
 [3.24-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-24-6c040f87d1e4
 [3.24-umbrella]: {{site.flutter-blog}}/flutter-3-24-dart-3-5-204b7d20c45d
-[Dart 3.5 release]: {{site.medium}}/dartlang/dart-3-5-6ca36259fa2f
+[Dart 3.5 release]: https://dart.dev/blog/announcing-dart-3-5-and-an-update-on-the-dart-roadmap
 
 **Docs updated or added since the 3.22 release**
 
@@ -295,7 +295,7 @@ To learn more, check out [dart.dev/go/macros][].
 
 [3.22-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-22-fbde6c164fe3
 [3.22-umbrella]: {{site.flutter-blog}}/io24-5e211f708a37
-[Dart 3.4 release]: {{site.medium}}/dartlang/dart-3-4-bd8d23b4462a
+[Dart 3.4 release]: https://dart.dev/blog/announcing-dart-3-4
 [dart.dev/go/macros]: http://dart.dev/go/macros
 
 **Docs updated or added since the 3.19 release**
@@ -354,7 +354,7 @@ You might also check out the [Dart 3.3 release][] blog post.
 
 [3.19-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-19-58b1aae242d2
 [3.19-umbrella]: {{site.flutter-blog}}/starting-2024-strong-with-flutter-and-dart-cae9845264fe
-[Dart 3.3 release]: {{site.medium}}/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13
+[Dart 3.3 release]: https://dart.dev/blog/new-in-dart-3-3-extension-types-javascript-interop-and-more
 
 **Docs updated or added since the 3.16 release**
 
@@ -433,7 +433,7 @@ publication since Flutter 3.13:
 
 [3.16-umbrella]: {{site.flutter-blog}}/flutter-3-16-dart-3-2-high-level-umbrella-post-b9218b17f0f7
 [Casual Games Toolkit]: /resources/games-toolkit
-[Dart 3.2 release]: {{site.medium}}/dartlang/dart-3-2-c8de8fe1b91f
+[Dart 3.2 release]: https://dart.dev/blog/announcing-dart-3-2
 [dt-ext]: {{site.flutter-blog}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
 [fcd]: {{site.flutter-blog}}/introducing-the-flutter-consulting-directory-f6fc4c1d2ba3
 [games-2]: {{site.flutter-blog}}/building-your-next-casual-game-with-flutter-716ef457e440
@@ -488,7 +488,7 @@ recipes into the sidenav.
   * Also check out the [deprecated APIs since 3.10][deprecated-3.10]
 
 [blog-general]: {{site.flutter-blog}}/whats-new-in-flutter-3-13-479d9b11df4d
-[Dart 3.1 & a retrospective on functional style programming in Dart 3]: {{site.medium}}/dartlang/dart-3-1-a-retrospective-on-functional-style-programming-in-dart-3-a1f4b3a7cdda
+[Dart 3.1 & a retrospective on functional style programming in Dart 3]: https://dart.dev/blog/dart-3-1-a-retrospective-on-functional-style-programming-in-dart-3
 [Flutter Favorites program]: /packages-and-plugins/favorites
 [breaking-changes]: /release/breaking-changes
 [deprecated-3.10]: /release/breaking-changes/3-10-deprecations
@@ -583,7 +583,7 @@ You might also check out [Introducing Dart 3][].
 
 [3.10 blog post]: {{site.flutter-blog}}/whats-new-in-flutter-3-10-b21db2c38c73
 [3.10 release notes]: /release/release-notes/release-notes-3.10.0
-[Introducing Dart 3]: {{site.medium}}/dartlang/announcing-dart-3-53f065a10635
+[Introducing Dart 3]: https://dart.dev/blog/announcing-dart-3
 
 **Docs updated or added since the 3.7 release**
 
@@ -679,7 +679,7 @@ and [Introducing Dart 3 alpha][].
 
 [3.7 blog post]: {{site.flutter-blog}}/whats-new-in-flutter-3-7-38cbea71133c
 [3.7 release notes]: /release/release-notes/release-notes-3.7.0
-[Introducing Dart 3 alpha]: {{site.medium}}/dartlang/dart-3-alpha-f1458fb9d232
+[Introducing Dart 3 alpha]: https://dart.dev/blog/introducing-dart-3-alpha
 [What's next for Flutter]: {{site.flutter-blog}}/whats-next-for-flutter-b94ce089f49c
 
 **Docs updated or added since the 3.3 release**
@@ -762,7 +762,7 @@ and [Introducing Dart 3 alpha][].
 [Flutter FAQ]: /resources/faq
 [Flutter for SwiftUI developers]: /flutter-for/swiftui-devs
 [Internationalizing Flutter apps]: /ui/internationalization
-[Introducing isolate background channels]: {{site.medium}}/flutter/introducing-background-isolate-channels-7a299609cad8
+[Introducing isolate background channels]: https://flutter.dev/blog/introducing-background-isolate-channels
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
 [Security false positives]: /reference/security-false-positives
 [Using the memory view]: /tools/devtools/memory
@@ -837,14 +837,14 @@ publication since the last stable release:
 
 [Announcing the Flutter News Toolkit]: {{site.flutter-blog}}/announcing-the-flutter-news-toolkit-180a0d32c012
 [Adapting Wonderous to larger device formats]: {{site.flutter-blog}}/adapting-wonderous-to-larger-device-formats-ac51e1c00bc0
-[How can we improve the Flutter experience for desktop?]: {{site.medium}}/flutter/how-can-we-improve-the-flutter-experience-for-desktop-70b34bff9392
+[How can we improve the Flutter experience for desktop?]: https://flutter.dev/blog/how-can-we-improve-the-flutter-experience-for-desktop
 [How it's made: Holobooth]: {{site.flutter-blog}}/how-its-made-holobooth-6473f3d018dd
 [Introducing background isolate channels]: {{site.flutter-blog}}/introducing-background-isolate-channels-7a299609cad8
 [Material 3 for Flutter]: {{site.flutter-blog}}/material-3-for-flutter-d417a8a65564
-[Playful typography with Flutter]: {{site.medium}}/flutter/playful-typography-with-flutter-f030385058b4
-[Studying developer's usage of IDEs for Flutter development]: {{site.medium}}/flutter/studying-developers-usage-of-ides-for-flutter-development-4c0a648a48
-[Supporting six platforms with two keyboards]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
-[What we learned from the Flutter Q3 2022 survey]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
+[Playful typography with Flutter]: https://flutter.dev/blog/playful-typography-with-flutter
+[Studying developer's usage of IDEs for Flutter development]: https://flutter.dev/blog/studying-developers-usage-of-ides-for-flutter-development
+[Supporting six platforms with two keyboards]: https://flutter.dev/blog/what-we-learned-from-the-flutter-q3-2022-survey
+[What we learned from the Flutter Q3 2022 survey]: https://flutter.dev/blog/what-we-learned-from-the-flutter-q3-2022-survey
 
 ## 31 Aug 2022: Flutter Vikings: 3.3 release
 
@@ -855,8 +855,8 @@ and [Dart 2.18: Objective-C & Swift interop][] (free articles on Medium),
 and the [Flutter 3.3 release notes][3.3 release notes].
 
 [3.3 release notes]: /release/release-notes/release-notes-3.3.0
-[Dart 2.18: Objective-C & Swift interop]: {{site.medium}}/dartlang/dart-2-18-f4b3101f146c
-[What's new in Flutter 3.3]: {{site.medium}}/flutter/whats-new-in-flutter-3-3-893c7b9af1ff
+[Dart 2.18: Objective-C & Swift interop]: https://dart.dev/blog/dart-2-18-objective-c-swift-interop
+[What's new in Flutter 3.3]: https://flutter.dev/blog/whats-new-in-flutter-3-3
 
 **Docs updated or added since the 3.0 release**
 
@@ -898,10 +898,10 @@ and [Dart 2.17: Productivity and integration][]
 (free articles on Medium),
 and the [Flutter 3 release notes][].
 
-[Dart 2.17: Productivity and integration]: {{site.medium}}/dartlang/dart-2-17-b216bfc80c5d
+[Dart 2.17: Productivity and integration]: https://dart.dev/blog/dart-2-17-productivity-and-integration
 [Flutter 3 release notes]: /release/release-notes/release-notes-3.0.0
-[Introducing Flutter 3]: {{site.medium}}/flutter/introducing-flutter-3-5eb69151622f
-[What's new in Flutter 3]: {{site.medium}}/flutter/whats-new-in-flutter-3-8c74a5bc32d0
+[Introducing Flutter 3]: https://flutter.dev/blog/introducing-flutter-3
+[What's new in Flutter 3]: https://flutter.dev/blog/whats-new-in-flutter-3
 
 **Docs updated or added since the 2.10 release**
 
@@ -1212,7 +1212,7 @@ publication since the last stable release:
 [Adding AdMob banner and native inline ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
 [Adding a Flutter view to an Android app]: /add-to-app/android/add-flutter-view
 [Announcing Dart null safety beta]: {{site.flutter-blog}}/announcing-dart-null-safety-beta-4491da22077a
-[Announcing Dart 2.12]: {{site.medium}}/dartlang/announcing-dart-2-12-499a6e689c87
+[Announcing Dart 2.12]: https://dart.dev/blog/announcing-dart-2-12
 [Announcing Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
 [comp]: {{site.flutter-blog}}/providing-operating-system-compatibility-on-a-large-scale-374cc2fb0dad
 [Configuring the URL strategy on the web]: /ui/navigation/url-strategies
@@ -1486,7 +1486,7 @@ Other newness:
 [Developing packages and plugins]: /packages-and-plugins/developing-packages
 [Developing plugin packages]: /packages-and-plugins/developing-packages#federated-plugins
 [Directional animations with build-in explicit animations]: {{site.flutter-blog}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
-[Flutter Medium]: {{site.medium}}/flutter
+[Flutter Medium]: https://flutter.dev/blog
 [Flutter Spring 2020 update]: {{site.flutter-blog}}/spring-2020-update-f723d898d7af
 [Flutter web: Navigating URLs using named routes]: {{site.flutter-blog}}/web-navigating-urls-using-named-routes-307e1b1e2050
 [Flutter web support updates]: {{site.flutter-blog}}/web-support-updates-8b14bfe6a908
@@ -1560,7 +1560,7 @@ Happy Fluttering!
 [Flutter 1.12.13]: /release/release-notes/release-notes-1.12.13
 [Flutter Gallery]: {{site.gallery-archive}}
 [Flutter Layout Explorer]: /tools/devtools/legacy-inspector#flutter-layout-explorer
-[Flutter Medium publication]: {{site.medium}}/flutter
+[Flutter Medium publication]: https://flutter.dev/blog
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
 [Web support for Flutter goes beta]: {{site.flutter-blog}}/web-support-for-flutter-goes-beta-35b64a1217c0
 [Get started]: /install

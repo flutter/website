@@ -20,7 +20,7 @@ So far, we’ve seen momentum that has exceeded our expectations, with nearly ha
 
 <DashImage figure src="images/0w2gBpEJcFceqjIRv.webp" />
 
-Our own data backs this up, with a consistent [92% of Flutter developers expressing positive satisfaction](https://medium.com/flutter/about-web-community-and-code-samples-q3-2021-survey-results-b67f5b997dca) with our tools in all four quarterly surveys in 2021. (And to the other 8% of you, we’re listening to your feedback and want you to be happy as well!)
+Our own data backs this up, with a consistent [92% of Flutter developers expressing positive satisfaction](https://flutter.dev/blog/q4-2021-user-survey-results-about-null-safety-ecosystem-text-editing-and-mobile-development) with our tools in all four quarterly surveys in 2021. (And to the other 8% of you, we’re listening to your feedback and want you to be happy as well!)
 
 One common request has been for Windows support.
 > # Today, we’re thrilled to announce the full availability of support for Windows apps for Flutter in stable builds.
@@ -94,7 +94,7 @@ It’s very exciting for us to see a mature ecosystem built around Flutter, and 
 
 ## Windows support arrives in Flutter 2.10
 
-Stable, production-quality support for building Windows apps is available as part of [Flutter 2.10, which releases today](https://docs.flutter.dev/get-started/install). Flutter 2.10 also includes many other features, performance improvements and bug fixes, which are covered in more detail [in a separate blog post](https://medium.com/flutter/whats-new-in-flutter-2-10-5aafb0314b12).
+Stable, production-quality support for building Windows apps is available as part of [Flutter 2.10, which releases today](https://docs.flutter.dev/get-started/install). Flutter 2.10 also includes many other features, performance improvements and bug fixes, which are covered in more detail [in a separate blog post](https://flutter.dev/blog/whats-new-in-flutter-2-10).
 
 In the coming months, you’ll hear more from us on completing stable support for macOS and Linux, making the full set of desktop, web, and mobile platforms available for your production Flutter apps.
 

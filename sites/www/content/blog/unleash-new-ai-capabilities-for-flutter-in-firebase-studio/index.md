@@ -47,7 +47,7 @@ With the upgraded Flutter template, we’ve incorporated AI instructions into a 
 
 Firebase Studio now includes foundational support for the Model Context Protocol (MCP), and we’re excited to share that it works with our [Dart MCP Server](https://dart.dev/tools/mcp-server). When integrated within Firebase Studio, the Dart MCP Server empowers Gemini in Firebase Studio to analyze and automatically fix Dart and Flutter-specific errors in your project’s code. You can also efficiently search pub.dev for optimal packages, manage dependencies in `pubspec.yaml`, run tests, and much more. For example, when building a Flutter app similar to the one we demoed on stage at I/O Connect India, Gemini should identify and autonomously correct both static and runtime errors. Currently, Dart MCP Server is in beta.
 
-To learn how you can use the Dart MCP Server while building your Flutter app in Firebase Studio, see the [Supercharge Your Dart & Flutter Development Experience with the Dart MCP Server](https://medium.com/flutter/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49) blog post.
+To learn how you can use the Dart MCP Server while building your Flutter app in Firebase Studio, see the [Supercharge Your Dart & Flutter Development Experience with the Dart MCP Server](https://flutter.dev/blog/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server) blog post.
 
 <DashImage figure src="images/0CHTpeFMydBD0KQY9.webp" alt="Dart MCP Server configuration for a Flutter app in Firebase Studio" caption="Dart MCP Server configuration for a Flutter app in Firebase Studio" />
 

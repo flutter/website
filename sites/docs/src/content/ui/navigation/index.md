@@ -173,6 +173,6 @@ resources:
 [`pages`]: {{site.api}}/flutter/widgets/Navigator/pages.html
 [reverse chronological navigation]: https://material.io/design/navigation/understanding-navigation.html#reverse-navigation
 [Understanding navigation]: https://material.io/design/navigation/understanding-navigation.html
-[Learning Flutter's new navigation and routing system]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Learning Flutter's new navigation and routing system]: https://flutter.dev/blog/learning-flutters-new-navigation-and-routing-system
 [Router design document]: {{site.main-url}}/go/navigator-with-router
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html

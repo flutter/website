@@ -55,9 +55,9 @@ Finally, **64-bit iOS architectures get a new feature to reduce memory usage: [c
 
 A 64-bit architecture represents pointers as a 8-byte data structure. When you have a lot of objects, the space taken up by the pointers themselves adds to the overall memory usage of your app, especially if you have larger, more complicated apps that have more GC churn. However, your iOS app is very unlikely to have enough objects to require a significant portion of even the 32-bit address space (2 billion objects), let alone the enormity of the 64-bit address space (9 million billion objects).
 
-Compressed pointers were provided in Dart 2.15 and in this release of Flutter, we use them to reduce the memory usage for 64-bit iOS apps. You can [check out the Dart 2.15 blog post for details](https://medium.com/dartlang/dart-2-15-7e7a598e508a).
+Compressed pointers were provided in Dart 2.15 and in this release of Flutter, we use them to reduce the memory usage for 64-bit iOS apps. You can [check out the Dart 2.15 blog post for details](https://dart.dev/blog/announcing-dart-2-15).
 
-And while you’re reading Dart blog posts, don’t forget to [check out the Dart 2.16 announcement](https://medium.com/dartlang/dd87abd6bad1) for updates on supporting Flutter for Windows with package platform tagging and a new search experience on pub.dev.
+And while you’re reading Dart blog posts, don’t forget to [check out the Dart 2.16 announcement](https://dart.dev/blog/dart-2-16-improved-tooling-and-platform-handling) for updates on supporting Flutter for Windows with package platform tagging and a new search experience on pub.dev.
 
 ## Android updates
 
@@ -105,7 +105,7 @@ Updates can be found in [the issue tracking our Material 3 work](https://github.
 
 ## Integration testing improvements
 
-In December of 2020, we announced a new way to [do end-to-end testing using the integration_test package](https://medium.com/flutter/updates-on-flutter-testing-f54aa9f74c7e). This new package replaced the flutter_driver package as the recommended way to do integration testing, providing new features, like Firebase Test Lab support as well as support for web and desktop.
+In December of 2020, we announced a new way to [do end-to-end testing using the integration_test package](https://flutter.dev/blog/updates-on-flutter-testing). This new package replaced the flutter_driver package as the recommended way to do integration testing, providing new features, like Firebase Test Lab support as well as support for web and desktop.
 
 Since that time, we’ve made further improvements in the integration testing story, including **bundling the integration_test package into the Flutter SDK itself**, making it easier to integrate with your app. There’s also **a new [migration guide if you’re moving your existing flutter_driver tests to integration_test](https://docs.flutter.dev/testing/integration-tests/migration)**.
 
@@ -145,7 +145,7 @@ You can read about the details of this update and more in [this post](https://gr
 
 ## Removing the dev channel
 
-In [the Flutter 2.8 release](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181), we announced that we were doing the work to **remove the dev channel**, simplifying your choices, and removing engineering overhead. In this release, [we’ve completed that work](https://github.com/flutter/flutter/issues/94962), including:
+In [the Flutter 2.8 release](https://flutter.dev/blog/whats-new-in-flutter-2-8), we announced that we were doing the work to **remove the dev channel**, simplifying your choices, and removing engineering overhead. In this release, [we’ve completed that work](https://github.com/flutter/flutter/issues/94962), including:
 
 * Updated Flutter tool to help migrate developers off the dev channel
 

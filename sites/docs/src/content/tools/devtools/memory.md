@@ -42,7 +42,7 @@ The Dart VM allocates memory for the object at the moment of the object creation
 and releases (or deallocates) the memory when the object
 is no longer used (see [Dart garbage collection][]).
 
-[Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
+[Dart garbage collection]: https://flutter.dev/blog/flutter-dont-fear-the-garbage-collector
 
 ### Object types
 

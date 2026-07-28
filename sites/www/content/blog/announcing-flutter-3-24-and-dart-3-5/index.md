@@ -9,11 +9,11 @@ category: release
 layout: blog
 ---
 
-Today, we’re unveiling [Flutter 3.24](https://medium.com/p/6c040f87d1e4/edit) and [Dart 3.5](https://medium.com/dartlang/dart-3.5-6ca36259fa2f) alongside the last stop [in the I/O 2024 Connect series,](https://ioconnectchina.googlecnapps.cn/) happening in just a few hours in China — one of Flutter’s most prolific communities in the world, making this moment very special.
+Today, we’re unveiling [Flutter 3.24](https://medium.com/p/6c040f87d1e4/edit) and [Dart 3.5](https://dart.dev/blog/announcing-dart-3-5-and-an-update-on-the-dart-roadmap) alongside the last stop [in the I/O 2024 Connect series,](https://ioconnectchina.googlecnapps.cn/) happening in just a few hours in China — one of Flutter’s most prolific communities in the world, making this moment very special.
 
 <DashImage figure src="images/1jzRGig761LnPlvokq2FaVA.gif" />
 
-We kicked off [Google I/O](https://io.google/2024/) in May with an [exciting slew of updates](https://medium.com/flutter/io24-5e211f708a37), including the graduation of support for WebAssembly compilation to the stable channel, improvements to Impeller, and an early look at the future of Dart macros.
+We kicked off [Google I/O](https://io.google/2024/) in May with an [exciting slew of updates](https://flutter.dev/blog/landing-flutter-3-22-and-dart-3-4-at-google-i-o-2024), including the graduation of support for WebAssembly compilation to the stable channel, improvements to Impeller, and an early look at the future of Dart macros.
 
 The Flutter 3.24 and Dart 3.5 releases build upon our mission to help you craft stunning, performant apps that reach users across mobile, web, and desktop — all from a single, shared codebase. They include an early preview of the new Flutter GPU API, enhancements to element embedding on the web, and several exciting updates for those interested in building for the iOS ecosystem, including early support for Swift Package Manager, and updated functionality to Cupertino widgets.
 
@@ -31,7 +31,7 @@ Given how low-level the API is, we expect a learning curve for developers who do
 
 <YoutubeEmbed id="Y-DFVKPikVM" title="3D scene demo" fullwidth="true"/>
 
-While the Flutter GPU API offers exciting possibilities, it’s still in early preview and we might make breaking changes to the API. We recommend developing against Flutter’s main channel when using Flutter GPU. Learn more in the blog post [Introducing Flutter GPU & Flutter Scene](https://medium.com/flutter/getting-started-with-flutter-gpu-f33d497b7c11).
+While the Flutter GPU API offers exciting possibilities, it’s still in early preview and we might make breaking changes to the API. We recommend developing against Flutter’s main channel when using Flutter GPU. Learn more in the blog post [Introducing Flutter GPU & Flutter Scene](https://flutter.dev/blog/getting-started-with-flutter-gpu).
 
 ## Flutter for iOS and macOS: making it easier to deliver beautiful, fast apps for the Apple ecosystem
 
@@ -65,6 +65,6 @@ Several other exciting examples of Flutter apps popping up all over the world:
 
 ## Wrap up
 
-The above are just a few of many new features and updates to Flutter and Dart in these releases, and you can learn more in the [Flutter 3.24 technical blog](https://medium.com/p/6c040f87d1e4/edit) post and in the [Dart 3.5 blog post](https://medium.com/dartlang/dart-3.5-6ca36259fa2f).
+The above are just a few of many new features and updates to Flutter and Dart in these releases, and you can learn more in the [Flutter 3.24 technical blog](https://medium.com/p/6c040f87d1e4/edit) post and in the [Dart 3.5 blog post](https://dart.dev/blog/announcing-dart-3-5-and-an-update-on-the-dart-roadmap).
 
 Looking ahead, we’re filled with excitement for the future of Flutter. We remain committed to our mission, and we’re grateful to you — whether a contributor, community member, or Flutter developer — for being part of this amazing journey. We can’t wait to see what you build next!
