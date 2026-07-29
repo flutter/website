@@ -387,7 +387,7 @@ shows how to write animation code.
   how to create your own custom explicit animations.
 
 * [Zero to One with Flutter, part 1][] and [part 2][]<br>
-  Medium articles showing how to create an animated chart using tweening.
+  Flutter blog posts showing how to create an animated chart using tweening.
 
 * [Casual games toolkit][]<br>
   A toolkit with game templates that contain examples of how to use Flutter
@@ -460,11 +460,11 @@ Learn more about Flutter animations at the following links:
 [Material widgets]: /ui/widgets/material
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
-[part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
+[part 2]: https://flutter.dev/blog/zero-to-one-with-flutter-part-two
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [Sample app catalog]: {{site.github}}/flutter/samples
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: /ui/animations/staggered-animations
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
 [`TweenSequence`]: {{site.api}}/flutter/animation/TweenSequence-class.html
-[Zero to One with Flutter, part 1]: {{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354
+[Zero to One with Flutter, part 1]: https://flutter.dev/blog/zero-to-one-with-flutter

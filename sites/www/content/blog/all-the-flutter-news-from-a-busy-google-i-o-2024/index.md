@@ -22,15 +22,15 @@ Below, you’ll find an overview of everything we shared at Google I/O 2024, as 
 
 ## Blog posts
 
-We launched **four new blog posts** across the Dart and Medium blogs:
+We launched **four new blog posts** across the Dart and Flutter blogs:
 
-* [Landing Flutter 3.22 and Dart 3.4 at Google I/O 2024](https://medium.com/flutter/io24-5e211f708a37)
+* [Landing Flutter 3.22 and Dart 3.4 at Google I/O 2024](https://flutter.dev/blog/landing-flutter-3-22-and-dart-3-4-at-google-i-o-2024)
 
-* [What’s new in Flutter 3.22](https://medium.com/flutter/fbde6c164fe3)
+* [What’s new in Flutter 3.22](https://flutter.dev/blog/whats-new-in-flutter-3-22)
 
-* [Announcing the winners of the Global Gamers Challenge](https://medium.com/flutter/announcing-the-winners-of-the-global-gamers-challenge-1ccf4d271226)
+* [Announcing the winners of the Global Gamers Challenge](https://flutter.dev/blog/announcing-the-winners-of-the-global-gamers-challenge)
 
-* [Announcing Dart 3.4](https://medium.com/dartlang/dart-3-4-bd8d23b4462a)
+* [Announcing Dart 3.4](https://dart.dev/blog/announcing-dart-3-4)
 
 We also partnered with the Android team on a blog post to offer some guidance on **how to choose the right framework** for your project; Flutter, Jetpack Compose, and Kotlin Multi-Platform:
 

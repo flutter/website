@@ -11,7 +11,7 @@ layout: blog
 
 Last year, we partnered with the team at gSkinner to develop [Wonderous](https://wonderous.app/), a reference app to showcase the high-quality experiences possible with Flutter.
 
-[One of the goals for creating Wonderous](https://medium.com/flutter/wonderous-explore-the-world-with-flutter-f43cce052e1) was to provide an open-source example that demonstrates best practices. In that same spirit, we audited Wonderous against [Android’s large screen guidelines](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality). We wanted to ensure a high-quality Flutter app across all Android devices. Android has three tiers for meeting their guidelines:
+[One of the goals for creating Wonderous](https://flutter.dev/blog/wonderous-explore-the-world-with-flutter) was to provide an open-source example that demonstrates best practices. In that same spirit, we audited Wonderous against [Android’s large screen guidelines](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality). We wanted to ensure a high-quality Flutter app across all Android devices. Android has three tiers for meeting their guidelines:
 
 **Tier 3** — large screen ready — app runs on full screen (or full window in multi-window mode), but app layout might not be ideal
 
@@ -19,7 +19,7 @@ Last year, we partnered with the team at gSkinner to develop [Wonderous](https:/
 
 **Tier 1** — large screen differentiated — app designed specifically with foldables in mind, ensuring the layout supports table-top mode with the hinge
 
-In January 2023, we updated the [Wonderous app to adapt to different device formats](https://medium.com/flutter/adapting-wonderous-to-larger-device-formats-ac51e1c00bc0). While these updates made the app “large screen ready”, the app wasn’t yet “large screen optimized”.
+In January 2023, we updated the [Wonderous app to adapt to different device formats](https://flutter.dev/blog/adapting-wonderous-to-larger-device-formats). While these updates made the app “large screen ready”, the app wasn’t yet “large screen optimized”.
 
 So we again engaged gSkinner to elevate Wonderous to Tier 2 (or better) and optimized for [Android’s new large screen pixel devices](https://android-developers.googleblog.com/2023/06/the-new-pixel-fold-pixel-tablet-are-here-optimizing-for-large-screens.html).
 

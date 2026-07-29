@@ -154,7 +154,7 @@ To read one engineer's experience
 customizing variable fonts and animating them as they
 morph (and was the basis for the above video),
 check out [Playful typography with Flutter][article],
-a free article on Medium. The associated example also
+a post on the Flutter blog. The associated example also
 uses a custom shader.
 
 [article]: {{site.flutter-blog}}/playful-typography-with-flutter-f030385058b4

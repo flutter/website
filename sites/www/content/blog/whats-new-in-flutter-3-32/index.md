@@ -309,7 +309,7 @@ We have continued to make improvements to the Dart Analyzer, and hence the devel
 
 Gemini in Android Studio now offers first-class support for Dart and Flutter development! This means you can leverage the power of Gemini directly within your favorite IDE to build beautiful, high-performance Flutter apps faster and easier than ever before.
 
-[Read this blog post](https://medium.com/flutter/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274) to learn more.
+[Read this blog post](https://flutter.dev/blog/gemini-in-android-studio-now-speaks-fluent-flutter) to learn more.
 
 <DashImage figure src="images/151UZbL3Qb7BGDEuujTTg6A.gif" />
 
@@ -351,7 +351,7 @@ On Android, semantic announcement events are now [deprecated, as of API 36](http
 
 ### Discontinued support for 6 packages
 
-As we planned and shared in our [Flutter 3.29 release blog post](https://medium.com/flutter/whats-new-in-flutter-3-29-f90c380c2317) we have discontinued support for the following packages:
+As we planned and shared in our [Flutter 3.29 release blog post](https://flutter.dev/blog/whats-new-in-flutter-3-29) we have discontinued support for the following packages:
 
 * `flutter_markdown`; see [flutter_markdown planned to be discontinued #162966](https://github.com/flutter/flutter/issues/162966)
 

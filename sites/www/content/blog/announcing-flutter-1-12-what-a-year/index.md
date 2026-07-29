@@ -52,7 +52,7 @@ To try Add-to-App, see the [website documentation](https://flutter.dev/docs/deve
 
 ## Dart 2.7
 
-Of course, everything we do in Flutter is based on Dart, so if you haven’t already read about extension methods and safe string handling (including emojis), or want an update on null safety using non-nullable types, you can find that information in the [Dart 2.7 announcement](https://medium.com/dartlang/dart-2-7-a3710ec54e97).
+Of course, everything we do in Flutter is based on Dart, so if you haven’t already read about extension methods and safe string handling (including emojis), or want an update on null safety using non-nullable types, you can find that information in the [Dart 2.7 announcement](https://dart.dev/blog/announcing-dart-2-7-a-safer-more-expressive-dart).
 
 ## Beyond Flutter 1.12 stable
 
@@ -66,7 +66,7 @@ The Flutter 1.12 master, dev and beta channels all provide improved support for 
 
 One happy customer of Flutter on the web is [Rivet](https://rivet.area120.com/link/flutter), pictured above. Rivet is an education project that currently has a mobile app in production. They’re using Flutter and Firebase to build a web version of their app that they plan to launch in early 2020.
 
-You can learn more about what other customers are doing with Flutter’s web support as well as the rest of the details in the [Flutter web blog post](https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0).
+You can learn more about what other customers are doing with Flutter’s web support as well as the rest of the details in the [Flutter web blog post](https://flutter.dev/blog/web-support-for-flutter-goes-beta).
 
 ### macOS moving to alpha
 
@@ -132,7 +132,7 @@ If you aren’t already using [DartPad](https://dartpad.dev), you should try it 
 
 The new DartPad leverages Flutter’s web support so that when you’re writing Flutter code on the left, you’re running a real, live Flutter (web) program on the right. The chief difference is that using DartPad, you can get started with Flutter without installing a thing.
 
-In addition to the stand-alone DartPad playground, we’ve also started adding DartPad with Flutter support into our docs and in our codelabs (like [Basic Flutter layout concepts](https://flutter.dev/docs/codelabs/layout-basics) and [Implicit animations](https://flutter.dev/docs/codelabs/implicit-animations)), so that you can learn about Flutter from the comfort of your browser. For more information on DartPad, please check out our [DartPad announcement post](https://medium.com/dartlang/a-brand-new-dartpad-dev-with-flutter-support-16fe6027784).
+In addition to the stand-alone DartPad playground, we’ve also started adding DartPad with Flutter support into our docs and in our codelabs (like [Basic Flutter layout concepts](https://flutter.dev/docs/codelabs/layout-basics) and [Implicit animations](https://flutter.dev/docs/codelabs/implicit-animations)), so that you can learn about Flutter from the comfort of your browser. For more information on DartPad, please check out our [DartPad announcement post](https://dart.dev/blog/a-brand-new-dartpad-dev-with-flutter-support).
 
 ### Build your widgets inline with Hot UI
 
@@ -182,7 +182,7 @@ We’re so lucky to have such a great set of developers in the Flutter community
 
 ### Flutter Favorite packages
 
-When we released Flutter 1.0 in December, 2018, there were about 1000 packages on pub.dev that supported Flutter and we thought that was a huge number. As of this writing, that number has increased by more than 6x. With that many options, it’s sometimes hard to know which packages to choose. The overall score on pub.dev helps as well as the new [Verified Publishers](https://medium.com/dartlang/verified-publishers-98f05466558a) feature. Now, pub.dev is getting [a rating system](https://dart.dev/blog/announcing-dart-2-7-a-safer-more-expressive-dart#liking-packages-on-pub-dev), which should help even more.
+When we released Flutter 1.0 in December, 2018, there were about 1000 packages on pub.dev that supported Flutter and we thought that was a huge number. As of this writing, that number has increased by more than 6x. With that many options, it’s sometimes hard to know which packages to choose. The overall score on pub.dev helps as well as the new [Verified Publishers](https://dart.dev/blog/announcing-verified-publishers-on-pub-dev) feature. Now, pub.dev is getting [a rating system](https://dart.dev/blog/announcing-dart-2-7-a-safer-more-expressive-dart#liking-packages-on-pub-dev), which should help even more.
 
 Still, our users have asked again and again for a set of “recommended” packages and plugins. With that in mind, we’re pleased to announce [the Flutter Favorite program](https://flutter.dev/docs/development/packages-and-plugins/favorites).
 
