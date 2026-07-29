@@ -83,8 +83,8 @@ downloads the requested skills into your project.
 
 ### Using the Claude Code plugin
 
-If you use Claude Code, you can install the official Flutter plugin directly
-from GitHub. This installs Flutter and Dart agent skills alongside the
+If you use Claude Code, you can install the official Flutter plugin. This
+installs the Flutter and Dart agent skills alongside the
 [Dart and Flutter MCP server](/ai/mcp-server):
 
 1.  Add the Flutter marketplace for Claude plugins:
