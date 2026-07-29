@@ -54,6 +54,8 @@ tailored specifically for our frameworks.
 By default, compatible AI agents discover Agent Skills within the
 `.agents/skills` directory of your project workspace.
 
+### Using the skills CLI
+
 To easily download and manage skills in that folder, you can use the `skills`
 CLI tool. It's distributed through npm, so you'll need
 [Node.js](https://nodejs.org/) installed to run it with `npx`.
@@ -78,6 +80,30 @@ npx skills add dart-lang/skills --skill '*' --agent universal
 
 Running these commands automatically creates the `.agents/skills` directory and
 downloads the requested skills into your project.
+
+### Using the Claude Code plugin
+
+If you use Claude Code, you can install the official Flutter plugin directly
+from GitHub. This installs Flutter and Dart agent skills alongside the
+[Dart and Flutter MCP server](/ai/mcp-server):
+
+1.  Add the Flutter marketplace for Claude plugins:
+
+    ```console
+    $ claude plugin marketplace add flutter/agent-plugins
+    ```
+
+2.  Install the plugin:
+
+    ```console
+    $ claude plugin install dart-flutter@dart-flutter
+    ```
+
+3.  Verify the installation:
+
+    ```console
+    $ claude plugin marketplace list
+    ```
 
 For more details on available skills, updating, and contributing, see the
 [Dart skills repository](https://github.com/dart-lang/skills) and the
