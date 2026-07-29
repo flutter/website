@@ -48,7 +48,7 @@ We continue to evolve the Dart language — here’s a visualization of all the 
 
 ### Null-aware elements
 
-Today [in Dart 3.8](https://medium.com/dartlang/announcing-dart-3-8-724eaaec9f47), we’re adding **null-aware elements**, which allows you to include an element in a collection *only* if its runtime value is non-null. You can use this feature to rewrite code like this:
+Today [in Dart 3.8](https://dart.dev/blog/announcing-dart-3-8), we’re adding **null-aware elements**, which allows you to include an element in a collection *only* if its runtime value is non-null. You can use this feature to rewrite code like this:
 
 ```dart
 // Code without null-aware elements.
@@ -192,7 +192,7 @@ That feature was built using the [Gemini API](https://ai.google.dev/). Its full 
 
 ### Android Studio, VSCode, IntelliJ IDEA and Gemini
 
-Another place that now has Gemini support is Android Studio. The Flutter and Android Studio teams [collaborated](https://medium.com/flutter/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274) on this so, as of the most recent Android Studio release (Meerkat Feature Drop), Gemini support for Dart and Flutter is now first-class.
+Another place that now has Gemini support is Android Studio. The Flutter and Android Studio teams [collaborated](https://flutter.dev/blog/gemini-in-android-studio-now-speaks-fluent-flutter) on this so, as of the most recent Android Studio release (Meerkat Feature Drop), Gemini support for Dart and Flutter is now first-class.
 
 And if you’re a VSCode or IntelliJ IDEA user, rest easy. The [Gemini Code Assist](https://codeassist.google/) extension and a Google account brings Gemini-powered code assistance to your workflows right in VS Code.
 

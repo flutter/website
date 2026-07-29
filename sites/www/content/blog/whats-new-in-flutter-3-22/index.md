@@ -28,7 +28,7 @@ With the release of Flutter 3.22, Wasm is now available on the stable channel, o
 
 <DashImage figure src="images/0x6HEkml8cFGc96hg.webp" />
 
-These enhancements are vital for apps with animations and rich transitions, where maintaining a smooth frame rate is essential. Wasm helps achieve this by reducing performance bottlenecks, resulting in smoother animations and transitions. To start using Wasm with your Flutter web apps, check out our [Dart Wasm documentation](https://dart.dev/web/wasm) and [Flutter Wasm documentation](https://docs.flutter.dev/platform-integration/web/wasm). For the full announcement, visit the [Flutter at Google I/O blog post](https://medium.com/flutter/io24-5e211f708a37).
+These enhancements are vital for apps with animations and rich transitions, where maintaining a smooth frame rate is essential. Wasm helps achieve this by reducing performance bottlenecks, resulting in smoother animations and transitions. To start using Wasm with your Flutter web apps, check out our [Dart Wasm documentation](https://dart.dev/web/wasm) and [Flutter Wasm documentation](https://docs.flutter.dev/platform-integration/web/wasm). For the full announcement, visit the [Flutter at Google I/O blog post](https://flutter.dev/blog/landing-flutter-3-22-and-dart-3-4-at-google-i-o-2024).
 
 ## Engine
 

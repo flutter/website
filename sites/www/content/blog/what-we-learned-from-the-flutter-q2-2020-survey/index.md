@@ -71,7 +71,7 @@ We also learned that satisfaction with Flutter’s app memory usage is slightly 
 
 Flutter developers can use packages on pub.dev to quickly build their apps, without having to write everything from scratch. While there are [over 10,000 Flutter-compatible packages](https://pub.dev/flutter/packages) available on pub.dev, only a small number of them are directly maintained by the Google Flutter team. Thus, Flutter’s ecosystem is, by design, heavily dependent on community contributions.
 
-We are dedicated to building a great development environment that supports package authors’ creation and curation of high-quality packages. Just this week, we launched a complete [redesign of the pub.dev site](https://medium.com/dartlang/pub-dev-redesign-747406dcb486) based on previous feedback.
+We are dedicated to building a great development environment that supports package authors’ creation and curation of high-quality packages. Just this week, we launched a complete [redesign of the pub.dev site](https://dart.dev/blog/introducing-a-brand-new-pub-dev) based on previous feedback.
 
 Now our user-experience researchers want to understand what motivates package authors to publish and maintain packages. We talked to numerous package authors earlier this year, and based on those findings, we added quantitative questions to this survey to explore the area further.
 

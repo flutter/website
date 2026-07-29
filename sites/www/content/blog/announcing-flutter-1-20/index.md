@@ -19,7 +19,7 @@ To make sure that you continue to be more *productive*, we’ve got updates to t
 
 And it’s because of Flutter’s *openness* and amazing community contributors that this release includes 3,029 merged PRs and 5,485 closed issues from 359 contributors from around the world, including 270 contributors from the Flutter community at large. In fact, this marks the largest number of contributors we’ve ever had for a Flutter release. Special shoutout to community contributor [CareF](https://github.com/CareF) for 28 PRs, [AyushBherwani1998](https://github.com/AyushBherwani1998) for 26 PRs, including 10 to the Flutter samples as part of his Google Summer of Code project, and [a14n](https://github.com/a14n) for 13 PRs, many of which are in service of landing null safety for Flutter (more on that topic soon!). We couldn’t create Flutter without a broad team of community contributors, so thank you!
 
-Each new release of Flutter brings with it increased usage and momentum. In fact, in April, [we reported](https://medium.com/flutter/flutter-spring-2020-update-f723d898d7af) that the number of Flutter apps in the Google Play store had reached 50,000, with a peak rate of 10,000 new apps/month. Now, just over three months later, there are more than 90,000 Flutter apps in Google Play. We’re seeing a lot of this growth in India, which is now the #1 region for Flutter developers, having doubled in the last six months, which aligns well with [Google’s increased investment](https://www.businessinsider.com/google-alphabet-india-health-agriculture-education-tech-ai-sundar-pichai-2020-7) in that region. And finally, Flutter isn’t Flutter without Dart, so it’s great to see the that [the IEEE has reported that Dart has moved up 4 slots since last year to be #12](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2020) in the top 50 languages that they track.
+Each new release of Flutter brings with it increased usage and momentum. In fact, in April, [we reported](https://flutter.dev/blog/flutter-spring-2020-update) that the number of Flutter apps in the Google Play store had reached 50,000, with a peak rate of 10,000 new apps/month. Now, just over three months later, there are more than 90,000 Flutter apps in Google Play. We’re seeing a lot of this growth in India, which is now the #1 region for Flutter developers, having doubled in the last six months, which aligns well with [Google’s increased investment](https://www.businessinsider.com/google-alphabet-india-health-agriculture-education-tech-ai-sundar-pichai-2020-7) in that region. And finally, Flutter isn’t Flutter without Dart, so it’s great to see the that [the IEEE has reported that Dart has moved up 4 slots since last year to be #12](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2020) in the top 50 languages that they track.
 
 ## Performance improvements for Flutter and Dart
 
@@ -63,7 +63,7 @@ Check out [this sample](https://github.com/monkeyswarm/DragTargetDetailsExample)
 
 ## Updated Material Slider, RangeSlider, TimePicker, and DatePicker
 
-In addition to new widgets, this release includes a number of updated widgets to match [the latest Material guidelines](https://material.io/components/sliders). These include `Slider` and `RangeSlider`. For more information, see [What’s new with the Slider widget?](https://medium.com/flutter/whats-new-with-the-slider-widget-ce48a22611a3)
+In addition to new widgets, this release includes a number of updated widgets to match [the latest Material guidelines](https://material.io/components/sliders). These include `Slider` and `RangeSlider`. For more information, see [What’s new with the Slider widget?](https://flutter.dev/blog/whats-new-with-the-slider-widget)
 
 <DashImage figure src="images/0q-1IbQugDfhrwqDK.webp" alt="updated Material Slider" caption="updated Material Slider" />
 
@@ -175,7 +175,7 @@ So much great stuff has happened to the tools in the Flutter 1.20 timeframe that
 
 * [Flutter IntelliJ Plugin M48 Release](https://groups.google.com/g/flutter-announce/c/i9NTk5o9rZQ)
 
-* [New tools for Flutter developers, built in Flutter](https://medium.com/flutter/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86)
+* [New tools for Flutter developers, built in Flutter](https://flutter.dev/blog/new-tools-for-flutter-developers-built-in-flutter)
 
 ## Breaking Changes
 

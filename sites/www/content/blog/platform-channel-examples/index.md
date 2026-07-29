@@ -57,7 +57,7 @@ Related PR: [#462](https://github.com/flutter/samples/pull/462)
 
 ### Platform Image demo
 
-The Platform Image demo demonstrates how to use [`BasicMessageChannel`](https://api.flutter.dev/flutter/services/BasicMessageChannel-class.html) with [`StandardMessageCodec`](https://api.flutter.dev/flutter/services/StandardMessageCodec-class.html) to load an image from native assets. It also solves [issue #20879: Would like an example of sending an image across `PlatformChannels`](https://medium.com/r?url=https%3A%2F%2Fgithub.com%2Fflutter%2Fflutter%2Fissues%2F20879).
+The Platform Image demo demonstrates how to use [`BasicMessageChannel`](https://api.flutter.dev/flutter/services/BasicMessageChannel-class.html) with [`StandardMessageCodec`](https://api.flutter.dev/flutter/services/StandardMessageCodec-class.html) to load an image from native assets. It also solves [issue #20879: Would like an example of sending an image across `PlatformChannels`](https://github.com/flutter/flutter/issues/20879).
 
 Related PR: [475](https://github.com/flutter/samples/pull/475)
 

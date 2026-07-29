@@ -167,7 +167,7 @@ check out the [Flutter 3.35 technical blog post][3.35-tech].
 You might also check out the [Dart 3.9 release][] blog post.
 
 [3.35-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-35-c58ef72e3766
-[Dart 3.9 release]: {{site.medium}}/dartlang/announcing-dart-3-9-ba49e8f38298
+[Dart 3.9 release]: https://dart.dev/blog/announcing-dart-3-9
 
 **Docs updated or added since the 3.32 release**
 
