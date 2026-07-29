@@ -894,7 +894,7 @@ migrate it to UIKit's scene-based lifecycle as follows:
     `application:willFinishLaunchingWithOptions:` and
     `application:didFinishLaunchingWithOptions:` during the
     `scene:willConnectToSession:options:` callback. Plugin registration 
-    methods are also deferred until scene connection.
+    methods are also deferred until the `FlutterViewController` is loaded.
 
  1. Migrate other deprecated APIs to properly
     access the `viewController`, `screen`, or `window`.
