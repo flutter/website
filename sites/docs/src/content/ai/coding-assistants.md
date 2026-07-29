@@ -54,4 +54,4 @@ $ claude plugin install dart-flutter@dart-flutter
 ```
 
 For more details on setting up skills and tools with Claude Code, see the
-[Agent skills](/ai/agent-skills) and [MCP server](/ai/mcp-server) pages.
+[agent skills](/ai/agent-skills) and [MCP server](/ai/mcp-server) pages.
