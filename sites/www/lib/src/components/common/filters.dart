@@ -4,6 +4,7 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/util.dart';
 import 'package:universal_web/web.dart' as web;
 
 import 'filters_dropdown.dart';
@@ -79,14 +80,10 @@ class _FiltersState extends State<Filters> {
       }
     }
 
-    final newUrl = newQueryParameters.isEmpty
-        ? url.replace(query: '').toString().replaceFirst('?', '')
-        : url.replace(queryParameters: newQueryParameters).toString();
-
     web.window.history.replaceState(
       web.window.history.state,
       '',
-      newUrl,
+      url.withQueryParameters(newQueryParameters).toString(),
     );
 
     setState(() {

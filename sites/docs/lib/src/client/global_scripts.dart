@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/util.dart';
 import 'package:site_shared/web_util.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
@@ -165,16 +166,10 @@ void _updateTabsFromQueryParameters() {
 
   if (originalQueryParameters.length != updatedQueryParameters.length) {
     // If the query parameters were updated, update the user's URL.
-    final newUrl = updatedQueryParameters.isEmpty
-        ? currentUrl.replace(query: '').toString().replaceFirst('?', '')
-        : currentUrl
-              .replace(queryParameters: updatedQueryParameters)
-              .toString();
-
     web.window.history.replaceState(
       null,
       '',
-      newUrl,
+      currentUrl.withQueryParameters(updatedQueryParameters).toString(),
     );
   }
 }
