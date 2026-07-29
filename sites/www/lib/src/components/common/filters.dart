@@ -79,10 +79,23 @@ class _FiltersState extends State<Filters> {
       }
     }
 
+    final newUrl = newQueryParameters.isEmpty
+        ? Uri(
+            scheme: url.scheme.isEmpty ? null : url.scheme,
+            userInfo: url.userInfo.isEmpty ? null : url.userInfo,
+            host: url.host.isEmpty ? null : url.host,
+            port: url.hasPort ? url.port : null,
+            path: url.path,
+            fragment: url.hasFragment ? url.fragment : null,
+          ).toString()
+        : url
+            .replace(queryParameters: newQueryParameters)
+            .toString();
+
     web.window.history.replaceState(
       web.window.history.state,
       '',
-      url.replace(queryParameters: newQueryParameters).toString(),
+      newUrl,
     );
 
     setState(() {

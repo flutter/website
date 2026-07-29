@@ -165,10 +165,23 @@ void _updateTabsFromQueryParameters() {
 
   if (originalQueryParameters.length != updatedQueryParameters.length) {
     // If the query parameters were updated, update the user's URL.
+    final newUrl = updatedQueryParameters.isEmpty
+        ? Uri(
+            scheme: currentUrl.scheme.isEmpty ? null : currentUrl.scheme,
+            userInfo: currentUrl.userInfo.isEmpty ? null : currentUrl.userInfo,
+            host: currentUrl.host.isEmpty ? null : currentUrl.host,
+            port: currentUrl.hasPort ? currentUrl.port : null,
+            path: currentUrl.path,
+            fragment: currentUrl.hasFragment ? currentUrl.fragment : null,
+          ).toString()
+        : currentUrl
+            .replace(queryParameters: updatedQueryParameters)
+            .toString();
+
     web.window.history.replaceState(
       null,
       '',
-      currentUrl.replace(queryParameters: updatedQueryParameters).toString(),
+      newUrl,
     );
   }
 }
