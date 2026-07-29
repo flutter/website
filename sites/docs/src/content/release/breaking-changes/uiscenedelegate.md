@@ -893,8 +893,8 @@ migrate it to UIKit's scene-based lifecycle as follows:
     sequence. For apps that adopt `UIScene`, Flutter calls
     `application:willFinishLaunchingWithOptions:` and
     `application:didFinishLaunchingWithOptions:` during the
-    `scene:willConnectToSession:options:` callback. Plugins'
-    `init` methods are also deferred until scene connection.
+    `scene:willConnectToSession:options:` callback. Plugin registration 
+    methods are also deferred until scene connection.
 
  1. Migrate other deprecated APIs to properly
     access the `viewController`, `screen`, or `window`.
