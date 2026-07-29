@@ -168,8 +168,8 @@ void _updateTabsFromQueryParameters() {
     final newUrl = updatedQueryParameters.isEmpty
         ? currentUrl.replace(query: '').toString().replaceFirst('?', '')
         : currentUrl
-            .replace(queryParameters: updatedQueryParameters)
-            .toString();
+              .replace(queryParameters: updatedQueryParameters)
+              .toString();
 
     web.window.history.replaceState(
       null,
