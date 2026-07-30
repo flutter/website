@@ -52,12 +52,12 @@ tailored specifically for our frameworks.
 ## Getting started
 
 You can install official Flutter and Dart agent skills into your AI agent or
-coding assistant. Select your tool below for installation instructions:
+coding assistant. Select your agent below for installation instructions:
 
 <Tabs key="ai-client-tabs">
 <Tab name="Claude Code">
 
-If you use Claude Code, you can install the official Flutter plugin.
+If you use Claude Code, install the official Flutter plugin.
 This installs the Flutter and Dart agent skills alongside the
 [Dart and Flutter MCP server](/ai/mcp-server):
 
