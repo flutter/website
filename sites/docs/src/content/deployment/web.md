@@ -63,9 +63,9 @@ pass the `--source-maps` flag:
 flutter build web --source-maps
 ```
 
-Generating source maps creates a separate `.js.map` or `.wasm.map` file
-in the `build/web` directory without adding binary overhead
-to the compiled output.
+Generating source maps creates separate `.js.map` or `.wasm.map` files
+(or both, depending on your build target) in the `build/web` directory
+without adding binary overhead to the compiled output.
 
 :::warning Exclude source maps from public hosting
 By default, standard web deployment tools upload all files in `build/web/`.
@@ -75,7 +75,7 @@ class hierarchies, and local file paths.
 
 Upload `.map` files to your private error-monitoring service
 (such as Sentry or Datadog) during CI/CD, and exclude `*.map` files
-from public web hosting (for example, using `ignore: ["**/*.map"]`
+from public web hosting (for example, using `"ignore": ["**/*.map"]`
 in `firebase.json` or stripping them prior to deployment).
 :::
 
