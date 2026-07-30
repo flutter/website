@@ -28,7 +28,7 @@ The I/O FLIP user interface, animations, hologram effects, and backend, were all
 
 To start, we leveraged the [Flutter Casual Games Toolkit](https://docs.flutter.dev/resources/games-toolkit). We used the out-of-the-box audio functionality, game lifecycle, and app navigation with [go_router](https://pub.dev/packages/go_router) as a foundation. From there, we built out the game logic and UI. I/O FLIP is a [responsive web app](https://docs.flutter.dev/ui/layout/adaptive-responsive). It resizes its UI based on the players’ screen. The app also handles input based on the device the player uses. It receives touch input when accessed on a mobile device or tablet and mouse input on desktop.
 
-Playing cards are a key element of I/O FLIP. Thousands of cards could end up in a player’s deck. Each card displays a Google mascot, element, and power value. The elements come into play when they go up against each other. For example, when someone plays a fire card and their opponent plays a water card, the water card receives a penalty of 10 points. We also used records, a [new feature of Dart 3](https://medium.com/dartlang/dart-3-alpha-f1458fb9d232), to render a frame based on the card element.
+Playing cards are a key element of I/O FLIP. Thousands of cards could end up in a player’s deck. Each card displays a Google mascot, element, and power value. The elements come into play when they go up against each other. For example, when someone plays a fire card and their opponent plays a water card, the water card receives a penalty of 10 points. We also used records, a [new feature of Dart 3](https://dart.dev/blog/introducing-dart-3-alpha), to render a frame based on the card element.
 
 ```dart
 …

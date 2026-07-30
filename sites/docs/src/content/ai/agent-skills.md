@@ -15,16 +15,16 @@ with domain-specific capabilities using Agent Skills.
 AI agents can write Flutter and Dart code, but they sometimes are unaware of
 tools and best practices that professional developers use.
 
-[Agent Skills](https://agentskills.io/) help solve this problem by providing a
+[Agent skills](https://agentskills.io/) help solve this problem by providing a
 standardized way to give your AI agent a set of task-oriented blueprints to
 follow. By giving the agent actual domain expertise and repeatable workflows,
 you drastically reduce mistakes and can enforce consistent patterns.
 
-To understand how Agent Skills fit into your workflow, consider how they compare
+To understand how agent skills fit into your workflow, consider how they compare
 to other AI capabilities:
 
 *   **Rules files:** While [rules files](/ai/ai-rules) configure the agent's
-    general behavior across all tasks, Agent Skills give the AI step-by-step
+    general behavior across all tasks, agent skills give the AI step-by-step
     instructions for one specific job.
 *   **Model Context Protocol (MCP):** The [Dart and Flutter MCP
     server](/ai/mcp-server) gives your agent access to specialized tools. If MCP
@@ -49,21 +49,52 @@ tailored specifically for our frameworks.
     These skills help the AI build responsive layouts,
     set up declarative routing, and implement JSON serialization.
 
-## Getting started
+## Install agent skills
 
-By default, compatible AI agents discover Agent Skills within the
+Select your AI coding agent below for instructions on how to install the official
+Flutter and Dart agent skills.
+
+<Tabs key="ai-client-tabs">
+<Tab name="Claude Code">
+
+If you use Claude Code, install the official Flutter plugin.
+This installs the Flutter and Dart agent skills alongside the
+[Dart and Flutter MCP server](/ai/mcp-server):
+
+1.  Add the Flutter marketplace for Claude plugins:
+
+    ```console
+    $ claude plugin marketplace add flutter/agent-plugins
+    ```
+
+2.  Install the plugin:
+
+    ```console
+    $ claude plugin install dart-flutter@dart-flutter
+    ```
+
+3.  Verify the installation:
+
+    ```console
+    $ claude plugin marketplace list
+    ```
+
+</Tab>
+<Tab name="Other agents">
+
+By default, compatible AI agents discover agent skills within the
 `.agents/skills` directory of your project workspace.
 
-To easily download and manage skills in that folder, you can use the `skills`
-CLI tool. It's distributed through npm, so you'll need
+To easily download and manage skills in that folder, you can use the
+`skills` CLI tool. It's distributed through npm, so you'll need
 [Node.js](https://nodejs.org/) installed to run it with `npx`.
 
 To install the official Flutter skills:
 
 :::note
-The `flutter/skills` repository has been renamed to `flutter/agent-plugins`.
-If you previously installed skills using `flutter/skills`,
-update your commands to use `flutter/agent-plugins`.
+The `flutter/skills` repository has been renamed to
+`flutter/agent-plugins`. If you previously installed skills using
+`flutter/skills`, update your commands to use `flutter/agent-plugins`.
 :::
 
 ```bash
@@ -76,8 +107,13 @@ And to install the official Dart skills:
 npx skills add dart-lang/skills --skill '*' --agent universal
 ```
 
-Running these commands automatically creates the `.agents/skills` directory and
-downloads the requested skills into your project.
+Running these commands automatically creates the `.agents/skills`
+directory and downloads the requested skills into your project.
+
+</Tab>
+</Tabs>
+
+## Manage and verify agent skills
 
 For more details on available skills, updating, and contributing, see the
 [Dart skills repository](https://github.com/dart-lang/skills) and the
@@ -85,7 +121,7 @@ For more details on available skills, updating, and contributing, see the
 
 :::tip
 Once you've added skills to your project, try asking your AI agent to review
-the `.agents/skills` directory. You can ask, "Which of my installed skills
+your installed skills. You can ask, "Which of my installed skills
 can help me with [your current task]?" or "Summarize the capabilities of the
 skills I have available."
 :::

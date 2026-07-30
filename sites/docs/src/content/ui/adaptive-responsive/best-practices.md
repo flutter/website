@@ -230,7 +230,7 @@ For more information on a real-world case
 where this occurred, check out
 [Problem: Folding/unfolding causes state loss][state-loss]
 in [Developing Flutter apps for Large screens][article],
-a free article on Medium.
+a post on the Flutter blog.
 
 [app state]: {{site.android-dev}}/jetpack/compose/state#store-state
 [article]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10

@@ -26,7 +26,7 @@ Keep reading to learn about all the new additions and improvements the Flutter c
 
 ### Gemini Google AI Dart SDK beta release
 
-The Google AI Dart SDK has been released to beta. This enables you to build generative AI features into your Dart or Flutter app, powered by Gemini, Google’s latest family of AI models. There is now a [`google_generative_ai`](https://pub.dev/packages/google_generative_ai) package on pub.dev. Learn more about how to build with the Google AI Dart SDK in [this blog post](https://medium.com/flutter/harness-gemini-in-your-dart-and-flutter-apps-00573e560381) or jump straight into the [Dart quickstart](https://ai.google.dev/tutorials/dart_quickstart).
+The Google AI Dart SDK has been released to beta. This enables you to build generative AI features into your Dart or Flutter app, powered by Gemini, Google’s latest family of AI models. There is now a [`google_generative_ai`](https://pub.dev/packages/google_generative_ai) package on pub.dev. Learn more about how to build with the Google AI Dart SDK in [this blog post](https://flutter.dev/blog/harness-the-gemini-api-in-your-dart-and-flutter-apps) or jump straight into the [Dart quickstart](https://ai.google.dev/tutorials/dart_quickstart).
 
 <DashImage figure src="images/013y0iIXD9nN5wCcX.webp" />
 
@@ -190,7 +190,7 @@ Flutter now includes a privacy manifest on iOS to meet [upcoming Apple requireme
 
 ### Progress of the Flutter and Dart package ecosystem
 
-In case you missed it, check out the blogpost from January on the [progress of the Flutter and Dart package ecosystem](https://medium.com/flutter/progress-of-the-flutter-package-ecosystem-17cded9a0703).
+In case you missed it, check out the blogpost from January on the [progress of the Flutter and Dart package ecosystem](https://flutter.dev/blog/progress-of-the-flutter-package-ecosystem).
 
 ## Deprecations and breaking changes
 
@@ -220,4 +220,4 @@ As we highlighted the remarkable number of contributors at the start of this ann
 
 To dive into the specifics of what has been achieved with this release, we invite you to view the [release notes and change log](https://docs.flutter.dev/release/release-notes/release-notes-3.19.0) for a comprehensive list of additions in Flutter 3.19.
 
-Flutter 3.19, alongside [Dart 3.3](https://medium.com/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13), is now available on the stable channel. Embarking on this latest journey with Flutter is as straightforward as running flutter upgrade.
+Flutter 3.19, alongside [Dart 3.3](https://dart.dev/blog/new-in-dart-3-3-extension-types-javascript-interop-and-more), is now available on the stable channel. Embarking on this latest journey with Flutter is as straightforward as running flutter upgrade.

@@ -12,7 +12,7 @@ layout: blog
 ## Material RangeSlider in Flutter
 
 The range slider, a highly customizable component for selecting a range of values, has been released in Flutter 1.7. This article explains what a range slider is, why you might use it, and how you can use Material Theming to customize the behavior and appearance of the Flutter `RangeSlider`.e
-> Note: To learn about updates to the `Slider` and `RangeSlider` widgets, see [What’s new with the Slider widget?](https://medium.com/flutter/whats-new-with-the-slider-widget-ce48a22611a3)
+> Note: To learn about updates to the `Slider` and `RangeSlider` widgets, see [What’s new with the Slider widget?](https://flutter.dev/blog/whats-new-with-the-slider-widget)
 
 ### Why Range Slider?
 

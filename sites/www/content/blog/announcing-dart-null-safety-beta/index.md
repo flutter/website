@@ -9,7 +9,7 @@ category: announcement
 layout: blog
 ---
 
-*Cross-posted here and on the [Dart blog](https://medium.com/dartlang).*
+*Cross-posted here and on the [Dart blog](https://dart.dev/blog/announcing-dart-null-safety-beta).*
 
 Today we’re announcing that **sound null safety is available in beta** for Dart and Flutter. Null safety is our latest major productivity feature, intended to [help you avoid null errors](https://dart.dev/null-safety), a class of bugs that are often hard to spot. If you’re looking for a quick summary of why we’re excited about null safety, check out this new video:
 
@@ -133,7 +133,7 @@ For full details on migration and versioning, see the [migration guide](https://
 
 ## The benefits of sound null safety
 
-Our previous blog posts for the technical previews of null safety [in Dart](https://medium.com/dartlang/announcing-sound-null-safety-defd2216a6f3) and [in Flutter](https://medium.com/flutter/null-safety-flutter-tech-preview-cb5c98aba187) have discussed the benefits of null safety via a number of examples. Now that null safety is nearing completion, we’re seeing several real-world examples of this benefit.
+Our previous blog posts for the technical previews of null safety [in Dart](https://dart.dev/blog/announcing-sound-null-safety) and [in Flutter](https://flutter.dev/blog/dart-sound-null-safety-technical-preview-2) have discussed the benefits of null safety via a number of examples. Now that null safety is nearing completion, we’re seeing several real-world examples of this benefit.
 
 ### Safer code
 

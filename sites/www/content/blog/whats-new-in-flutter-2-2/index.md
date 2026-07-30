@@ -38,7 +38,7 @@ typedef StringList = List<String>;
 typedef OldClassName<T> = NewClassName<T>;
 ```
 
-Type aliases make it possible to give nice short names to long, complicated types, and it also lets you rename your classes in a non-breaking way. There’s more that’s new in Dart 2.13 as well; check out the details in [the Dart 2.13 release announcement](https://medium.com/dartlang/announcing-dart-2-13-c6d547b57067).
+Type aliases make it possible to give nice short names to long, complicated types, and it also lets you rename your classes in a non-breaking way. There’s more that’s new in Dart 2.13 as well; check out the details in [the Dart 2.13 release announcement](https://dart.dev/blog/announcing-dart-2-13).
 
 ### Flutter web updates
 

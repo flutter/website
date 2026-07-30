@@ -749,7 +749,7 @@ Check out an [example of using isolates with Flutter][].
 ### Can I run Dart code in the background of a Flutter app?
 
 Yes, you can run Dart code in a background process on both
-iOS and Android. For more information, see the free Medium article
+iOS and Android. For more information, see the Flutter blog post
 [Executing Dart in the Background with Flutter Plugins and Geofencing][backgnd].
 
 [backgnd]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124

@@ -22,13 +22,13 @@ Judging by the millions of talented and creative developers who support Flutter 
 
 **Bringing Flutter and Dart into the Gemini era**
 
-Today we launched the [Google AI Dart SDK](https://medium.com/flutter/harness-gemini-in-your-dart-and-flutter-apps-00573e560381), a new pub.dev package, [google_generative_ai,](https://pub.dev/packages/google_generative_ai) and [supporting resources](https://ai.google.dev/tutorials/dart_quickstart); together these enable you to build your own generative AI-based features like smart chat bots, visual search engines, and image descriptions into Dart and Flutter apps using the Gemini API. Flutter and Dart’s cross-platform capabilities and this new SDK make it easier for you to build interactive experiences across platforms.
+Today we launched the [Google AI Dart SDK](https://flutter.dev/blog/harness-the-gemini-api-in-your-dart-and-flutter-apps), a new pub.dev package, [google_generative_ai,](https://pub.dev/packages/google_generative_ai) and [supporting resources](https://ai.google.dev/tutorials/dart_quickstart); together these enable you to build your own generative AI-based features like smart chat bots, visual search engines, and image descriptions into Dart and Flutter apps using the Gemini API. Flutter and Dart’s cross-platform capabilities and this new SDK make it easier for you to build interactive experiences across platforms.
 
 <DashImage figure src="images/05hGoIuMtVnvrZ2id.webp" />
 
 And this is only the beginning of the innovations that we’re bringing to Flutter and Dart development with AI. For instance, soon Flutter and Dart developers can copy Dart code directly from [Google’s AI Studio](https://aistudio.google.com/?utm_source=flutter&utm_medium=referral&utm_campaign=blog_umbrella_announcement&utm_content=) after honing prompts for your use case.
 
-Learn more about the Google AI Dart SDK in the [deep dive blog post](https://medium.com/flutter/harness-gemini-in-your-dart-and-flutter-apps-00573e560381).
+Learn more about the Google AI Dart SDK in the [deep dive blog post](https://flutter.dev/blog/harness-the-gemini-api-in-your-dart-and-flutter-apps).
 
 Many developers have already begun to bring Flutter and AI tools together in exciting ways:
 
@@ -48,19 +48,19 @@ As you explore the Gemini model’s capabilities, be sure to share the new and i
 
 Aside from the excitement that AI brings, we remain focused on continuing to build a strong UI framework, capable of delivering any experience you want to build on any screen you want to build for. You’ll see progress towards that vision in today’s SDK releases, Flutter 3.19 and Dart 3.3.
 
-These releases are focused on refinements and performance improvements that build upon the trajectory that Flutter and Dart set out [last year](https://medium.com/flutter/whats-next-for-flutter-b94ce089f49c). In this Flutter release, you’ll find:
+These releases are focused on refinements and performance improvements that build upon the trajectory that Flutter and Dart set out [last year](https://flutter.dev/blog/whats-next-for-flutter). In this Flutter release, you’ll find:
 
 * Updates to our work to generate breakthrough graphics performance through our continued work on Impeller
 
 * Additional steps towards providing seamless integration between platforms with Flutter iOS native fonts and an early version of a deep linking web validator
 
-* Continued focus on the developer experience with updates to DevTools and a [progress report on the Flutter package ecosystem](https://medium.com/flutter/progress-of-the-flutter-package-ecosystem-17cded9a0703?source=collection_home---4------1-----------------------)
+* Continued focus on the developer experience with updates to DevTools and a [progress report on the Flutter package ecosystem](https://flutter.dev/blog/progress-of-the-flutter-package-ecosystem)
 
 * And finally, we’re excited to share progress on our mission to help define the future of the web with Wasm
 
 <DashImage figure src="images/02UG76__vsbp6NHtN.webp" />
 
-Dart 3.3 in turn, introduces extension types, a new model for interacting with JavaScript on the web, and updates to our work to support access to more and better web libraries. You can learn more about each release in the blog posts for [Flutter 3.19](https://medium.com/flutter/whats-new-in-flutter-3-19-58b1aae242d2) and [Dart 3.3](https://medium.com/dartlang/dart-3-3-325bf2bf6c13), respectively.
+Dart 3.3 in turn, introduces extension types, a new model for interacting with JavaScript on the web, and updates to our work to support access to more and better web libraries. You can learn more about each release in the blog posts for [Flutter 3.19](https://flutter.dev/blog/whats-new-in-flutter-3-19) and [Dart 3.3](https://dart.dev/blog/new-in-dart-3-3-extension-types-javascript-interop-and-more), respectively.
 
 **2024 Strategy and Roadmap**
 

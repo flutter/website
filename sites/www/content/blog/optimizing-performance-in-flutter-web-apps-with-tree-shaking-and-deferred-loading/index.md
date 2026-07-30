@@ -103,6 +103,6 @@ This post is a part of a series about what we learned when improving performance
 
 * Optimizing performance in Flutter web apps with tree shaking and deferred loading (this article)
 
-* [Improving perceived performance with image placeholders, precaching, and disabled navigation transitions](https://medium.com/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b)
+* [Improving perceived performance with image placeholders, precaching, and disabled navigation transitions](https://flutter.dev/blog/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation)
 
-* [Building performant Flutter widgets](https://medium.com/flutter/building-performant-flutter-widgets-3b2558aa08fa)
+* [Building performant Flutter widgets](https://flutter.dev/blog/building-performant-flutter-widgets)
