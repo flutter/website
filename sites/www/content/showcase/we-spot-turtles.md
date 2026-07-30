@@ -26,78 +26,119 @@ tags:
 publishDate: 2026-07-30
 ---
 
-[We Spot Turtles!](https://wespotturtles.org/) is a citizen science platform
-that helps people around the world report sea turtle sightings. Built with
-Flutter, the app connects citizens, researchers, and conservation organizations
-to transform everyday encounters into valuable data for protecting sea turtle
-populations.
+**Intro on the company**
 
-**Goal**
+[We Spot Turtles\!](https://wespotturtles.org/) is a citizen science platform
+dedicated to sea turtle conservation. The mobile application allows anyone, from
+tourists and snorkelers to divers, volunteers, and researchers, to report sea
+turtle sightings in just a few taps.
 
-The goal of We Spot Turtles! is to make sea turtle conservation accessible by
-enabling anyone to contribute valuable field observations. As a solo developer,
-the founder needed a solution to quickly build and scale across iOS, Android,
-and web while keeping development and ongoing maintenance manageable.
+By collecting these observations, We Spot Turtles\! helps conservation
+organizations better understand sea turtle populations and supports scientific
+research and protection efforts around the world.
 
 **Why Flutter?**
 
-After discovering Flutter at DevFest Brest in February 2019, the developer
-evaluated different mechanisms for building apps. Flutter stood out due to its
-multiplatform capabilities, rich widget selection, and strong Google ecosystem
-support.
+We Spot Turtle's journey with Flutter began at DevFest Brest, where they came
+across a Flutter codelab. Nicolas Guillot the maintainer of the We Spot
+Turtles\! app was immediately impressed by how quickly it was possible to create
+beautiful and high-performance mobile applications.
 
-Choosing Flutter enabled the founder who was a solo developer at the time to
-maintain a unified Dart codebase for the mobile app on iOS and Android as well
-as the web dashboard used by conservation organizations.
+A few years later, We Spot Turtles\! became that project.
 
-**Building with Flutter**
+As a solo developer, Flutter was the perfect choice because it allowed Nicolas
+to build the entire platform with a consistent technology stack. The mobile
+applications for Android and iOS, as well as the web dashboard used by
+conservation organizations, are all built with Flutter.
 
-Flutter's fast iteration cycle and Hot Reload enabled rapid testing and UI
-refinements without waiting for long native build cycles. Leaning on the Flutter
-community package ecosystem helped add complex features quickly:
+This approach allowed Nicolas to move faster, share knowledge and components
+between platforms, and maintain the whole ecosystem more efficiently as a single
+developer.
+
+Beyond the technology itself, the Flutter community has been a key part of this
+journey. Through meetups, conferences, and exchanges with other developers,
+Nicolas has continuously learned and improved his skills. Flutter is not only
+the framework that powers We Spot Turtles\!, it is also the community that
+helped him bring this project to life.
+
+**Their solution: Building with Flutter**
+
+We Spot Turtles\! is built entirely with Flutter, from the mobile application
+used by citizens to report sea turtle sightings, to the web dashboard used by
+conservation organizations to review, validate, and analyze collected data.
+
+Using Flutter allows the We Spot Turtles\! team to maintain a unified codebase
+across Android, iOS, and web, making it possible to develop new features faster
+and provide a consistent experience across platforms. That shared codebase pays
+off in a shared geographic qualification engine: the mobile app uses it to
+classify every observation the moment it is captured, and the web dashboard uses
+the very same logic to scope what each partner organization can see, so a
+conservation NGO like [Te Mana O Te Moana](https://www.temanaotemoana.org/) only
+accesses observations recorded inside the French Polynesian EEZ it is authorized
+to monitor:
+
+- **Geo-gating**: KML and CSV data parsed with the
+  [xml](https://pub.dev/packages/xml) and [csv](https://pub.dev/packages/csv)
+  packages are processed using a custom geometry utilities and the
+  [geodesy](https://pub.dev/packages/geodesy) package, to determine which zone
+  any given coordinate belongs to, global abundance areas, rare-sighting zones,
+  or national EEZs.
+- **Context-aware species picker:** Combining the
+  [google_maps_flutter](https://pub.dev/packages/google_maps_flutter) and
+  [geolocator](https://pub.dev/packages/geolocator) packages with an abundance
+  table attached to each zone reorders the species list at capture time,
+  surfacing the sea turtles most frequently sighted locally so field observers
+  get a shortlist that matches local ecology.
+- **Offline-first pipeline:** The
+  [isar-community](https://pub.dev/packages/isar_community) package embedded
+  database keeps observations and reference zones available without a network
+  connection, so field workers on remote beaches capture data first and sync
+  opportunistically when connectivity returns.
+- **Encrypted coordinates:** Latitudes and longitudes are AES-encrypted with the
+  [encrypt](https://pub.dev/packages/encrypt) package before being written to
+  Cloud Firestore, with build-time key obfuscation via
+  [envied](https://pub.dev/packages/envied) package, keeping sensitive
+  hatchling, nesting and sea turtles locations protected end-to-end.
+
+Leaning on the Flutter community package ecosystem helped add complex features
+quickly:
 
 - **Home screen widgets**: Leveraging the
-  [home_widget](https://pub.dev/packages/home_widget) package allows users to
-  log sightings with a single tap directly from their device home screen.
-- **Mapping and geolocation**: Combining the
-  [google_maps_flutter](https://pub.dev/packages/google_maps_flutter) package
-  with location tools enables users to pinpoint observations on land or at sea.
+  [home_widget](https://pub.dev/packages/home_widget) package, users can log
+  sightings with a single tap directly from their device home screen, with the
+  observed species already pre-selected, one widget per turtle species pinned to
+  the home screen jumps straight into the right form.
+- **Photo-first observation flow:** The
+  [native_exif](https://pub.dev/packages/native_exif) package reads GPS
+  coordinates and capture time directly from imported photos, so an observer can
+  log a sighting simply by picking a photo, the form pre-fills itself with the
+  coordinates and timestamp embedded by the camera at the moment of the shot.
+- **Scalable map rendering:** The
+  [google_maps_cluster_manager_2](https://pub.dev/packages/google_maps_cluster_manager_2)
+  package groups thousands of observation markers into dynamic clusters as users
+  zoom out, keeping the map readable and performant even in densely monitored
+  areas.
 - **Integrated backend**: Powered by Google Maps Platform and the
   [Firebase](https://firebase.google.com/) suite of tools (Authentication, Cloud
   Firestore, Firebase Storage, and Cloud Messaging).
 
-**Feature spotlight: "Guardian of the fenua"**
+By combining Flutter with Google's technologies, We Spot Turtles\! provides a
+scalable platform that connects citizens, researchers, and conservation
+organizations to collect and share valuable data for sea turtle conservation.
 
-Inside the app, a specialized geo-gated feature called "Guardian of the fenua"
-serves guests staying at The Brando, an eco-resort in Tetiaroa, French
-Polynesia. When guest GPS coordinates cross a certain point, a dedicated hub
-unlocks inside the app:
+**Key results and business impact**
 
-- **Geo-gating**: KML and CSV data parsed with the `xml` and `csv` packages are
-  processed using a geometry library (Isar with custom geometry utilities and
-  the `geodesy` package) to determine when a user enters a protected area.
-- **Editorial UI**: Driven by a per-locale `PartnerContent` JSON model and
-  styled with the [google_fonts](https://pub.dev/packages/google_fonts) package
-  for a magazine aesthetic.
-- **Custom Painter seals**: Custom Painter renders animated orbital light-catch
-  effects over radial gradients to produce metallic seal badges without image
-  assets.
-- **Shareable certificates**: `RepaintBoundary.toImage` exports 1080×1080 PNG
-  certificates, which guests share via
-  [share_plus](https://pub.dev/packages/share_plus).
-- **Unified workflow**: Routes scientist codes, pledges, and automatic
-  photo-trigger unlocks through a single `openPartnerSealFlow` function.
+We Spot Turtles\! makes it possible for anyone to contribute to marine
+conservation by sharing their observations, while providing organizations with
+the tools they need to manage and analyze this data.
 
-**Future plans**
+- More than 6,000 Android downloads and a growing community of users
+  contributing observations.
+- Partnerships with conservation organizations, including
+  [Te Mana O Te Moana](https://www.temanaotemoana.org/) in French Polynesia.
+- A complete mobile and web platform built and maintained by a single developer,
+  demonstrating how Flutter enables ambitious projects with limited resources.
 
-Future iterations of We Spot Turtles aim to integrate artificial intelligence
-capabilities, including on-device AI models to assist with species recognition
-from photos. The platform also plans to explore individual turtle tracking and
-health indicator analysis to give conservationists deeper research tools.
-
-**Results**
-
-- Launched the initial cross-platform app on iOS and Android in 3 months.
-- Maintained 100% code sharing across mobile apps and the web dashboard.
-- Demonstrated that a solo developer using Flutter can build a scalable,
-  multiplatform product with a real-world environmental impact.
+By combining Flutter, Firebase, and citizen participation, We Spot Turtles\!
+helps transform individual observations into valuable knowledge to better
+protect sea turtles worldwide.
