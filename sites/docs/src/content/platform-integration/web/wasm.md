@@ -70,6 +70,23 @@ $ flutter build web --wasm
 The command produces output into the `build/web` directory relative to the
 package root, just like `flutter build web`.
 
+#### Wasm Production Debugging
+
+By default, Wasm release builds strip debug symbols and omit source maps
+to minimize binary size.
+
+- **For Error Monitoring (Recommended)**: Pass `--source-maps` to generate
+  a `main.dart.wasm.map` file for symbolication in tools like Sentry or Datadog
+  without adding binary overhead to `main.dart.wasm`. Always exclude `*.map`
+  files from public web hosting.
+- **For Staging / QA Builds**: Pass `--no-strip-wasm` to preserve Wasm
+  function names directly in browser console stack traces, at the cost of
+  **~47% Wasm binary size increase**.
+
+```console
+$ flutter build web --wasm --source-maps
+```
+
 ### Open the app in a compatible web browser
 Even with the `--wasm` flag, Flutter will still compile the application to
 JavaScript. If WasmGC support is not detected at runtime, the JavaScript output

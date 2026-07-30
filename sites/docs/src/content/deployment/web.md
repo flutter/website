@@ -54,6 +54,31 @@ Profile builds are specialized for performance profiling using Chrome DevTools,
 and debug builds can be used to configure dart2js
 to respect assertions and change the optimization level (using the `-O` flag.)
 
+### Source maps
+
+To generate source maps for symbolication in crash reporting services,
+pass the `--source-maps` flag:
+
+```console
+flutter build web --source-maps
+```
+
+Generating source maps creates a separate `.js.map` or `.wasm.map` file
+in the `build/web` directory without adding binary overhead
+to the compiled output.
+
+:::warning Exclude source maps from public hosting
+By default, standard web deployment tools upload all files in `build/web/`.
+If source maps are deployed publicly, browser DevTools will
+automatically download them, exposing un-minified symbol names,
+class hierarchies, and local file paths.
+
+Upload `.map` files to your private error-monitoring service
+(such as Sentry or Datadog) during CI/CD, and exclude `*.map` files
+from public web hosting (for example, using `ignore: ["**/*.map"]`
+in `firebase.json` or stripping them prior to deployment).
+:::
+
 ## Opting-in to WebAssembly
 
 To compile and optimize your app for WebAssembly,
