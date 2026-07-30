@@ -95,7 +95,7 @@ The full technical details can be found at the [Flutter build release channels](
 
 Our first release using this new versioning model will be **our next stable release, which we plan to ship next week**. Come back then for a full rundown of all the new features.
 
-In the meantime, check out some of the other announcements we’ve made over the last couple of weeks. Last week, we announced [CodePen support of Flutter](https://medium.com/flutter/announcing-codepen-support-for-flutter-bb346406fe50). We are enjoying seeing the pens that various creators have built over the last few days. Here are a few of our favorites:
+In the meantime, check out some of the other announcements we’ve made over the last couple of weeks. Last week, we announced [CodePen support of Flutter](https://flutter.dev/blog/announcing-codepen-support-for-flutter). We are enjoying seeing the pens that various creators have built over the last few days. Here are a few of our favorites:
 
 * [Twitter clone](https://codepen.io/mkiisoft/pen/KKdgdad) (mkiisoft)
 
@@ -111,6 +111,6 @@ In the meantime, check out some of the other announcements we’ve made over the
 
 <DashImage figure src="images/0vX4VeEgvAD364f_2.webp" />
 
-And if you’re looking for Flutter learning resources, we now have [a free introductory Flutter training course](https://medium.com/flutter/learn-flutter-for-free-c9bc3b898c4d) available online. This ten hour course presented by Angela Yu provides tutorials and labs to help you get started on your Flutter journey.
+And if you’re looking for Flutter learning resources, we now have [a free introductory Flutter training course](https://flutter.dev/blog/learn-flutter-for-free) available online. This ten hour course presented by Angela Yu provides tutorials and labs to help you get started on your Flutter journey.
 
 See you next week. In the meantime, stay home and stay healthy!

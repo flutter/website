@@ -117,7 +117,7 @@ Just because an issue makes it to secondary triage does not mean that the core e
 
 * How does working on this issue affect our roadmap and architecture?
 
-For details on how we accomplish this, you can see our previous blog post on the topic, [“Issues, Bugs, and Backlogs](https://medium.com/flutter/https-medium-com-flutter-issues-bugs-and-backlogs-5fb3adab5e25)”.
+For details on how we accomplish this, you can see our previous blog post on the topic, [“Issues, Bugs, and Backlogs](https://flutter.dev/blog/issues-bugs-and-backlogs)”.
 
 ## How you can help
 

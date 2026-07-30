@@ -56,7 +56,7 @@ The Flutter web team also collected feedback regarding various issues around cre
 
 <DashImage figure src="images/08WXtO7Mx_n5Gs0m_.webp" alt="*Users selected “browser navigation and routing history” as the most critical feature in creating a web-like experience using Flutter.*" caption="*Users selected “browser navigation and routing history” as the most critical feature in creating a web-like experience using Flutter.*" />
 
-The Flutter team is actively making improvements based on the feedback we receive. To address the top user issues around navigation and routing, the team recently released [Navigator 2](https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade). We also added support for [copying/pasting selectable text](https://github.com/flutter/flutter/issues/47234), and have plans to improve the [selectable text](https://github.com/flutter/flutter/projects/173#card-43620465) functionality (especially for rich text). We are continuing our efforts to enhance scrolling physics and performance based on issues reported by the community.
+The Flutter team is actively making improvements based on the feedback we receive. To address the top user issues around navigation and routing, the team recently released [Navigator 2](https://flutter.dev/blog/learning-flutters-new-navigation-and-routing-system). We also added support for [copying/pasting selectable text](https://github.com/flutter/flutter/issues/47234), and have plans to improve the [selectable text](https://github.com/flutter/flutter/projects/173#card-43620465) functionality (especially for rich text). We are continuing our efforts to enhance scrolling physics and performance based on issues reported by the community.
 
 Finally, the team received feedback around workflows, performance, and third-party APIs. Within basic workflows, respondents found debugging the most difficult. Page loading speed and scrolling were the most common performance issues respondents ran into. Respondents wanted Flutter on the web to have better support for local storage (for example, SQLite), Firebase storage, and Google Maps. These areas will shape up as the team makes progress in Flutter on the web.
 
@@ -80,13 +80,13 @@ Because we do not want you to compromise your UI as a consequence of these issue
 
 In the meantime, if you’re new to slivers and want to learn more, visit the following resources:
 
-* [Slivers, demystified](https://medium.com/flutter/slivers-demystified-6ff68ab0296f) (Medium article)
+* [Slivers, demystified](https://flutter.dev/blog/slivers-demystified) (blog post)
 
 * [Slivers explained — making dynamic layouts](https://www.youtube.com/watch?v=Mz3kHQxBjGg) (The Boring Flutter Development Show on YouTube, Ep. 12)
 
 ## Debugging platform-specific issues
 
-In the [previous survey](https://medium.com/flutter/what-are-the-important-difficult-tasks-for-flutter-devs-q1-2020-survey-results-a5ef2305429b), we found that *troubleshooting platform specific issues* and *testing apps across platforms* are the most difficult tasks for Flutter developers. Although we saw some bugs related to platform-specific issues, we didn’t know the relative priorities of the issues and if they’re bundled in themes or spread out. To find the true reasons why troubleshooting and testing are difficult to perform, we added questions that ask what specific issues users encountered.
+In the [previous survey](https://flutter.dev/blog/what-are-the-important-difficult-tasks-for-flutter-devs-q1-2020-survey-results), we found that *troubleshooting platform specific issues* and *testing apps across platforms* are the most difficult tasks for Flutter developers. Although we saw some bugs related to platform-specific issues, we didn’t know the relative priorities of the issues and if they’re bundled in themes or spread out. To find the true reasons why troubleshooting and testing are difficult to perform, we added questions that ask what specific issues users encountered.
 
 First, we asked which platform-specific issues users debugged. We found the most *common* platform-specific issues are tooling issues (32%), visual differences in different platforms (28%), dependency management issues (28%), behavioral differences in different platforms (27%), plugin behavior differences in different platforms (26%), and missing native features (25%).
 

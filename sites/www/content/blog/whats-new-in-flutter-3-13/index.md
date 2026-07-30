@@ -321,6 +321,6 @@ As we come to the end of this announcement, I want to acknowledge that we would 
 
 For a full list of PRs that were included in this release, please check out the [release notes and change log](https://docs.flutter.dev/release/release-notes) section for this release.
 
-Flutter 3.13 is available in stable today, and includes [Dart 3.1](https://medium.com/dartlang/a1f4b3a7cdda/). To get started with these newest updates, all it takes is a [`flutter upgrade`](https://docs.flutter.dev/release/upgrade).
+Flutter 3.13 is available in stable today, and includes [Dart 3.1](https://dart.dev/blog/dart-3-1-a-retrospective-on-functional-style-programming-in-dart-3). To get started with these newest updates, all it takes is a [`flutter upgrade`](https://docs.flutter.dev/release/upgrade).
 
 See you all again soon!

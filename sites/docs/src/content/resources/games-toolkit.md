@@ -144,7 +144,7 @@ and Very Good Ventures created new games.
 
 * VGV created the [I/O Pinball game][pinball-game] using the Flame engine.
   To learn about this game,
-  check out [I/O Pinball Powered by Flutter and Firebase][] on Medium
+  read [I/O Pinball Powered by Flutter and Firebase][] on the Flutter blog
   and [play the game][pinball-game] in your browser.
 
 * The Flutter team created [I/O Flip][flip-game], a virtual [CCG].
@@ -329,7 +329,7 @@ investigate other resources that our community recommended.
 [Cloud, Firebase]: https://cloud.google.com/free
 [Flame game engine]: https://flame-engine.org/
 [Games]: {{site.main-url}}/games
-[I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
+[I/O Pinball Powered by Flutter and Firebase]: https://flutter.dev/blog/i-o-pinball-powered-by-flutter-and-firebase
 [install Flutter]: /install
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
 [basic-template-readme]: {{site.repo.games}}/blob/main/templates/basic/README.md

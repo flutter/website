@@ -241,7 +241,7 @@ With the Dart and Flutter MCP Server, you can ask your AI assistant to:
 
 By connecting your favorite AI tools like Gemini Code Assist, Firebase Studio, Gemini CLI, GitHub Copilot, and Cursor to the Dart and Flutter MCP Server, you can unlock a new level of productivity.
 
-For a comprehensive guide on what the Dart and Flutter MCP Server can do and how to configure it in your editor of choice, check out our detailed blog post [Supercharge Your Dart & Flutter Development Experience with the Dart and Flutter MCP Server](https://medium.com/flutter/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49), and [the documentation](https://dart.dev/tools/mcp-server).
+For a comprehensive guide on what the Dart and Flutter MCP Server can do and how to configure it in your editor of choice, check out our detailed blog post [Supercharge Your Dart & Flutter Development Experience with the Dart and Flutter MCP Server](https://flutter.dev/blog/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server), and [the documentation](https://dart.dev/tools/mcp-server).
 
 <DashImage figure src="images/13K1rgoDtIBWbIFZPp1VCEQ.webp" alt="*Fixing a layout issue, enabled by the Dart and Flutter MCP Server (Note: For brevity, parts of this recording have been sped up.)*" caption="*Fixing a layout issue, enabled by the Dart and Flutter MCP Server (Note: For brevity, parts of this recording have been sped up.)*" />
 
