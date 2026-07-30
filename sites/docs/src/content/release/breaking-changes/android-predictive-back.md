@@ -60,7 +60,7 @@ PopScope(
 )
 ```
 
-### Form.canPop and Form.onPopInvokedWithResultWithResult
+### Form.canPop and Form.onPopInvokedWithResult
 
 These two new parameters are based on `PopScope` and replace the deprecated
 `Form.onWillPop` parameter. They are used with `PopScope` in the same way as
