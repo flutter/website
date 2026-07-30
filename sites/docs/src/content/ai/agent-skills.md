@@ -55,55 +55,59 @@ By default, compatible AI agents discover Agent Skills within the
 `.agents/skills` directory of your project workspace.
 
 <Tabs key="ai-client-tabs">
-    <Tab name="skills CLI">
-        To easily download and manage skills in that folder, you can use the
-        `skills` CLI tool. It's distributed through npm, so you'll need
-        [Node.js](https://nodejs.org/) installed to run it with `npx`.
+<Tab name="skills CLI">
 
-        To install the official Flutter skills:
+To easily download and manage skills in that folder, you can use the
+`skills` CLI tool. It's distributed through npm, so you'll need
+[Node.js](https://nodejs.org/) installed to run it with `npx`.
 
-        :::note
-        The `flutter/skills` repository has been renamed to
-        `flutter/agent-plugins`. If you previously installed skills using
-        `flutter/skills`, update your commands to use `flutter/agent-plugins`.
-        :::
+To install the official Flutter skills:
 
-        ```bash
-        npx skills add flutter/agent-plugins --skill '*' --agent universal
-        ```
+:::note
+The `flutter/skills` repository has been renamed to
+`flutter/agent-plugins`. If you previously installed skills using
+`flutter/skills`, update your commands to use `flutter/agent-plugins`.
+:::
 
-        And to install the official Dart skills:
+```bash
+npx skills add flutter/agent-plugins --skill '*' --agent universal
+```
 
-        ```bash
-        npx skills add dart-lang/skills --skill '*' --agent universal
-        ```
+And to install the official Dart skills:
 
-        Running these commands automatically creates the `.agents/skills`
-        directory and downloads the requested skills into your project.
-    </Tab>
-    <Tab name="Claude Code">
-        If you use Claude Code, you can install the official Flutter plugin.
-        This installs the Flutter and Dart agent skills alongside the
-        [Dart and Flutter MCP server](/ai/mcp-server):
+```bash
+npx skills add dart-lang/skills --skill '*' --agent universal
+```
 
-        1.  Add the Flutter marketplace for Claude plugins:
+Running these commands automatically creates the `.agents/skills`
+directory and downloads the requested skills into your project.
 
-            ```console
-            $ claude plugin marketplace add flutter/agent-plugins
-            ```
+</Tab>
+<Tab name="Claude Code">
 
-        2.  Install the plugin:
+If you use Claude Code, you can install the official Flutter plugin.
+This installs the Flutter and Dart agent skills alongside the
+[Dart and Flutter MCP server](/ai/mcp-server):
 
-            ```console
-            $ claude plugin install dart-flutter@dart-flutter
-            ```
+1.  Add the Flutter marketplace for Claude plugins:
 
-        3.  Verify the installation:
+    ```console
+    $ claude plugin marketplace add flutter/agent-plugins
+    ```
 
-            ```console
-            $ claude plugin marketplace list
-            ```
-    </Tab>
+2.  Install the plugin:
+
+    ```console
+    $ claude plugin install dart-flutter@dart-flutter
+    ```
+
+3.  Verify the installation:
+
+    ```console
+    $ claude plugin marketplace list
+    ```
+
+</Tab>
 </Tabs>
 
 For more details on available skills, updating, and contributing, see the
