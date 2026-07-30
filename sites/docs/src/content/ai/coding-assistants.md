@@ -44,14 +44,12 @@ For more details about Gemini CLI, visit the [Gemini CLI](https://geminicli.com/
 ## Claude Code
 
 [Claude Code](https://code.claude.com/) is an agentic coding assistant from
-Anthropic that runs in your terminal. You can equip Claude Code with domain
-expertise and tools for Flutter and Dart by installing the official Flutter
-plugin:
+Anthropic that runs in your terminal.
 
-```console
-$ claude plugin marketplace add flutter/agent-plugins
-$ claude plugin install dart-flutter@dart-flutter
-```
+You can equip Claude Code with domain expertise and tools for Flutter and Dart
+by installing the official Flutter plugin, which bundles official
+[agent skills](/ai/agent-skills) and the
+[Dart and Flutter MCP server](/ai/mcp-server).
 
-For more details on setting up skills and tools with Claude Code, see the
-[agent skills](/ai/agent-skills) and [MCP server](/ai/mcp-server) pages.
+To install the plugin, follow the Claude Code instructions in
+[Getting started with agent skills](/ai/agent-skills#getting-started).

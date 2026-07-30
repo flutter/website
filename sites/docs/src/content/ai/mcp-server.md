@@ -308,26 +308,11 @@ by installing the official plugin or by configuring the server manually.
 #### Install via plugin (recommended)
 
 The easiest way to set up the Dart and Flutter MCP server in Claude Code is to
-install the official Flutter plugin. This installs both the MCP
-server and official [agent skills](/ai/agent-skills):
+install the official Flutter plugin, which bundles both the MCP server and
+official [agent skills](/ai/agent-skills).
 
-1.  Add the Flutter marketplace for Claude plugins:
-
-    ```console
-    $ claude plugin marketplace add flutter/agent-plugins
-    ```
-
-2.  Install the plugin:
-
-    ```console
-    $ claude plugin install dart-flutter@dart-flutter
-    ```
-
-3.  Verify the installation:
-
-    ```console
-    $ claude plugin marketplace list
-    ```
+To install the plugin, follow the Claude Code instructions in
+[Getting started with agent skills](/ai/agent-skills#getting-started).
 
 #### Configure manually
 
