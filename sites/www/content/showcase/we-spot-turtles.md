@@ -102,7 +102,7 @@ to monitor:
   [encrypt](https://pub.dev/packages/encrypt) package before being written to
   Cloud Firestore, with build-time key obfuscation via
   [envied](https://pub.dev/packages/envied) package, keeping sensitive
-  hatchling, nesting and sea turtles locations protected end-to-end.
+  hatchling, nesting, and sea turtle locations protected end-to-end.
 
 Leaning on the Flutter community package ecosystem helped add complex features
 quickly:
