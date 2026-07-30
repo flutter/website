@@ -9,6 +9,16 @@ This guide outlines the migration steps specifically for plugin authors.
 :::warning
 This guide only applies to plugins that already use the
 Kotlin Gradle Plugin (KGP).
+
+To verify whether your plugin applies KGP,
+find the `kotlin-android` plugin
+(or the `org.jetbrains.kotlin.android` plugin).
+It is likely located in the
+`<plugin-project>/build.gradle` or
+`<plugin-project>/build.gradle.kts` file.
+To view the KGP application code,
+see [Update the Gradle file](#update-the-gradle-file).
+
 If your plugin project doesn't currently apply KGP,
 don't migrate to built-in Kotlin.
 :::
@@ -428,8 +438,9 @@ the newly released plugin version:
 
 Before enabling built-in Kotlin,
 confirm that you have migrated your plugin example app
-and any Flutter plugins it uses. Also confirm you have updated your
-plugin example app to AGP version 9.0.0+.
+and any Flutter plugins it uses.
+Also, confirm that you updated your plugin example app
+to AGP 9+, because built-in Kotlin requires AGP 9+.
 
 To enable built-in Kotlin,
 set the `android.builtInKotlin` property to `true`
