@@ -312,7 +312,7 @@ install the official Flutter plugin, which bundles both the MCP server and
 official [agent skills](/ai/agent-skills).
 
 To install the plugin, follow the Claude Code instructions in
-[Getting started with agent skills](/ai/agent-skills#getting-started).
+[Install agent skills](/ai/agent-skills#install-agent-skills).
 
 #### Configure manually
 

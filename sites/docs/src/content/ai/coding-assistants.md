@@ -52,4 +52,4 @@ by installing the official Flutter plugin, which bundles official
 [Dart and Flutter MCP server](/ai/mcp-server).
 
 To install the plugin, follow the Claude Code instructions in
-[Getting started with agent skills](/ai/agent-skills#getting-started).
+[Install agent skills](/ai/agent-skills#install-agent-skills).
