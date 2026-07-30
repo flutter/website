@@ -891,10 +891,13 @@ migrate it to UIKit's scene-based lifecycle as follows:
 
     This change is required due to UIScene changing the app launch
     sequence. For apps that adopt `UIScene`, Flutter calls
-    `application:willFinishLaunchingWithOptions:` and
+    plugin's `application:willFinishLaunchingWithOptions:` and
     `application:didFinishLaunchingWithOptions:` during the
-    `scene:willConnectToSession:options:` callback. Plugin registration 
-    methods are also deferred until the `FlutterViewController` is loaded.
+    `scene:willConnectToSession:options:` callback, after UIKit's 
+    `application:didFinishLaunchingWithOptions:` returns. 
+
+    Plugin registration methods are also deferred until after UIKit's 
+    `application:didFinishLaunchingWithOptions:` returns.
 
  1. Migrate other deprecated APIs to properly
     access the `viewController`, `screen`, or `window`.
