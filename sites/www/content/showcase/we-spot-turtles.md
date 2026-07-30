@@ -110,7 +110,7 @@ quickly:
 - **Home screen widgets**: Leveraging the
   [home_widget](https://pub.dev/packages/home_widget) package, users can log
   sightings with a single tap directly from their device home screen, with the
-  observed species already pre-selected, one widget per turtle species pinned to
+  observed species already pre-selected. One widget per turtle species pinned to
   the home screen jumps straight into the right form.
 - **Photo-first observation flow:** The
   [native_exif](https://pub.dev/packages/native_exif) package reads GPS
