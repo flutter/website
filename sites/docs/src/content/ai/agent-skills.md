@@ -15,16 +15,16 @@ with domain-specific capabilities using Agent Skills.
 AI agents can write Flutter and Dart code, but they sometimes are unaware of
 tools and best practices that professional developers use.
 
-[Agent Skills](https://agentskills.io/) help solve this problem by providing a
+[Agent skills](https://agentskills.io/) help solve this problem by providing a
 standardized way to give your AI agent a set of task-oriented blueprints to
 follow. By giving the agent actual domain expertise and repeatable workflows,
 you drastically reduce mistakes and can enforce consistent patterns.
 
-To understand how Agent Skills fit into your workflow, consider how they compare
+To understand how agent skills fit into your workflow, consider how they compare
 to other AI capabilities:
 
 *   **Rules files:** While [rules files](/ai/ai-rules) configure the agent's
-    general behavior across all tasks, Agent Skills give the AI step-by-step
+    general behavior across all tasks, agent skills give the AI step-by-step
     instructions for one specific job.
 *   **Model Context Protocol (MCP):** The [Dart and Flutter MCP
     server](/ai/mcp-server) gives your agent access to specialized tools. If MCP
@@ -49,10 +49,10 @@ tailored specifically for our frameworks.
     These skills help the AI build responsive layouts,
     set up declarative routing, and implement JSON serialization.
 
-## Getting started
+## Install agent skills
 
-You can install official Flutter and Dart agent skills into your AI agent or
-coding assistant. Select your agent below for installation instructions:
+Select your AI coding agent below for instructions on how to install the official
+Flutter and Dart agent skills.
 
 <Tabs key="ai-client-tabs">
 <Tab name="Claude Code">
@@ -113,7 +113,7 @@ directory and downloads the requested skills into your project.
 </Tab>
 </Tabs>
 
-## Manage and verify skills
+## Manage and verify agent skills
 
 For more details on available skills, updating, and contributing, see the
 [Dart skills repository](https://github.com/dart-lang/skills) and the
