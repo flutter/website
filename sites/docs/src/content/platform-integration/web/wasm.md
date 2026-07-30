@@ -70,6 +70,19 @@ $ flutter build web --wasm
 The command produces output into the `build/web` directory relative to the
 package root, just like `flutter build web`.
 
+:::note
+Enabling Wasm compilation for a Flutter web app does not use deferred loading
+by default. Deferred loading in Wasm is experimental and can be enabled
+using the `--enable-wasm-deferred-loading` flag:
+
+```console
+$ flutter build web --wasm --enable-wasm-deferred-loading
+```
+
+This is available on the flutter main branch and will become generally
+available later this year in the 3.47.0 flutter stable release.
+:::
+
 #### Wasm production debugging
 
 By default, Wasm release builds strip debug symbols and omit source maps
