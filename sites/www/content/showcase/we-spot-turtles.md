@@ -41,9 +41,9 @@ research and protection efforts around the world.
 
 **Why Flutter?**
 
-We Spot Turtle's journey with Flutter began at DevFest Brest, where they came
-across a Flutter codelab. Nicolas Guillot the maintainer of the We Spot
-Turtles\! app was immediately impressed by how quickly it was possible to create
+We Spot Turtles' journey with Flutter began at DevFest Brest, where they came
+across a Flutter codelab. Nicolas Guillot, the maintainer of the We Spot
+Turtles\! app, was immediately impressed by how quickly it was possible to create
 beautiful and high-performance mobile applications.
 
 A few years later, We Spot Turtles\! became that project.
