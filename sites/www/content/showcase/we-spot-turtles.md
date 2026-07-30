@@ -83,7 +83,7 @@ to monitor:
 
 - **Geo-gating**: KML and CSV data parsed with the
   [xml](https://pub.dev/packages/xml) and [csv](https://pub.dev/packages/csv)
-  packages are processed using a custom geometry utilities and the
+  packages are processed using custom geometry utilities and the
   [geodesy](https://pub.dev/packages/geodesy) package, to determine which zone
   any given coordinate belongs to, global abundance areas, rare-sighting zones,
   or national EEZs.
