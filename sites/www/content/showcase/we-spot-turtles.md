@@ -115,7 +115,7 @@ quickly:
 - **Photo-first observation flow:** The
   [native_exif](https://pub.dev/packages/native_exif) package reads GPS
   coordinates and capture time directly from imported photos, so an observer can
-  log a sighting simply by picking a photo, the form pre-fills itself with the
+  log a sighting simply by picking a photo. The form pre-fills itself with the
   coordinates and timestamp embedded by the camera at the moment of the shot.
 - **Scalable map rendering:** The
   [google_maps_cluster_manager_2](https://pub.dev/packages/google_maps_cluster_manager_2)
