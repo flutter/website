@@ -11,6 +11,8 @@ appName: "We Spot Turtles!"
 companyName: "We Spot Turtles!"
 logo: "images/third_party/case_studies/we-spot-turtles/logo.webp"
 card: "images/third_party/case_studies/we-spot-turtles/case_study_card.webp"
+videoEmbedUrl: "https://www.youtube.com/embed/CfzhLOiczDQ"
+poster: "images/third_party/case_studies/we-spot-turtles/logo.webp"
 locations:
   - Europe
   - Oceania
@@ -26,8 +28,6 @@ tags:
 publishDate: 2026-07-30
 ---
 
-**Intro on the company**
-
 [We Spot Turtles\!](https://wespotturtles.org/) is a citizen science platform
 dedicated to sea turtle conservation. The mobile application allows anyone, from
 tourists and snorkelers to divers, volunteers, and researchers, to report sea
@@ -36,6 +36,8 @@ turtle sightings in just a few taps.
 By collecting these observations, We Spot Turtles\! helps conservation
 organizations better understand sea turtle populations and supports scientific
 research and protection efforts around the world.
+
+<Image src="images/third_party/case_studies/we-spot-turtles/turtles.png" format="fullwidth" alt="We Spot Turtles species selection and observation flow" />
 
 **Why Flutter?**
 
@@ -60,6 +62,8 @@ journey. Through meetups, conferences, and exchanges with other developers,
 Nicolas has continuously learned and improved his skills. Flutter is not only
 the framework that powers We Spot Turtles\!, it is also the community that
 helped him bring this project to life.
+
+<Image src="images/third_party/case_studies/we-spot-turtles/map.png" format="fullwidth" alt="We Spot Turtles interactive map showing turtle sighting locations" />
 
 **Their solution: Building with Flutter**
 
@@ -121,6 +125,8 @@ quickly:
 - **Integrated backend**: Powered by Google Maps Platform and the
   [Firebase](https://firebase.google.com/) suite of tools (Authentication, Cloud
   Firestore, Firebase Storage, and Cloud Messaging).
+
+<Image src="images/third_party/case_studies/we-spot-turtles/web_portal.png" format="fullwidth" alt="We Spot Turtles mobile application and web dashboard" />
 
 By combining Flutter with Google's technologies, We Spot Turtles\! provides a
 scalable platform that connects citizens, researchers, and conservation
