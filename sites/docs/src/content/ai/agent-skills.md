@@ -51,11 +51,39 @@ tailored specifically for our frameworks.
 
 ## Getting started
 
-By default, compatible AI agents discover Agent Skills within the
-`.agents/skills` directory of your project workspace.
+You can install official Flutter and Dart agent skills into your AI agent or
+coding assistant. Select your tool below for installation instructions:
 
 <Tabs key="ai-client-tabs">
-<Tab name="skills CLI">
+<Tab name="Claude Code">
+
+If you use Claude Code, you can install the official Flutter plugin.
+This installs the Flutter and Dart agent skills alongside the
+[Dart and Flutter MCP server](/ai/mcp-server):
+
+1.  Add the Flutter marketplace for Claude plugins:
+
+    ```console
+    $ claude plugin marketplace add flutter/agent-plugins
+    ```
+
+2.  Install the plugin:
+
+    ```console
+    $ claude plugin install dart-flutter@dart-flutter
+    ```
+
+3.  Verify the installation:
+
+    ```console
+    $ claude plugin marketplace list
+    ```
+
+</Tab>
+<Tab name="Other agents">
+
+By default, compatible AI agents discover agent skills within the
+`.agents/skills` directory of your project workspace.
 
 To easily download and manage skills in that folder, you can use the
 `skills` CLI tool. It's distributed through npm, so you'll need
@@ -83,32 +111,9 @@ Running these commands automatically creates the `.agents/skills`
 directory and downloads the requested skills into your project.
 
 </Tab>
-<Tab name="Claude Code">
-
-If you use Claude Code, you can install the official Flutter plugin.
-This installs the Flutter and Dart agent skills alongside the
-[Dart and Flutter MCP server](/ai/mcp-server):
-
-1.  Add the Flutter marketplace for Claude plugins:
-
-    ```console
-    $ claude plugin marketplace add flutter/agent-plugins
-    ```
-
-2.  Install the plugin:
-
-    ```console
-    $ claude plugin install dart-flutter@dart-flutter
-    ```
-
-3.  Verify the installation:
-
-    ```console
-    $ claude plugin marketplace list
-    ```
-
-</Tab>
 </Tabs>
+
+## Manage and verify skills
 
 For more details on available skills, updating, and contributing, see the
 [Dart skills repository](https://github.com/dart-lang/skills) and the
@@ -116,7 +121,7 @@ For more details on available skills, updating, and contributing, see the
 
 :::tip
 Once you've added skills to your project, try asking your AI agent to review
-the `.agents/skills` directory. You can ask, "Which of my installed skills
+your installed skills. You can ask, "Which of my installed skills
 can help me with [your current task]?" or "Summarize the capabilities of the
 skills I have available."
 :::
