@@ -419,8 +419,8 @@ Relevant PRs:
 [`Platform.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-io/Platform/packageConfig.html
 [`Isolate.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-isolate/Isolate/packageConfig.html
 [`Platform.packageConfig`]: {{site.pub-api}}/platform/3.0.0/platform/Platform/packageConfig.html
-[#47769]: {{site.github}}/dart-lang/sdk/issues/47769
-[PR #38]: {{site.github}}/google/platform.dart/pull/38
+[#47769]: {{site.repo.dart-sdk}}/issues/47769
+[PR #38]: https://github.com/google/platform.dart/pull/38
 [PR #94603]: {{site.repo.flutter}}/pull/94603
 
 ---

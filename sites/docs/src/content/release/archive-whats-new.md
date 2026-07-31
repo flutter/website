@@ -339,7 +339,7 @@ To learn more, check out [dart.dev/go/macros][].
 [Flutter fundamentals docs]: /learn/pathway
 [Flutter install]: /install
 [Flutter web app initialization]: /platform-integration/web/initialization
-[website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
+[website README]: {{site.repo.this}}/?tab=readme-ov-file#flutter-documentation-website
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [Validate deep links]: /tools/devtools/deep-links
@@ -367,10 +367,10 @@ You might also check out the [Dart 3.3 release][] blog post.
   [let us know][] if you have any feedback.
 * The [Concurrency and isolates][] page has been reworked.
 
-[@TahaTesser]: {{site.github}}/TahaTesser
+[@TahaTesser]: https://github.com/TahaTesser
 [Concurrency and isolates]: /perf/isolates
 [Flutter install]: /install
-[let us know]: {{site.github}}/flutter/website/issues/new/choose
+[let us know]: {{site.repo.this}}/issues/new/choose
 [migrating from Material 2 to Material 3]: /release/breaking-changes/material-3-migration
 [Use themes to share colors and font styles]: /cookbook/design/themes
 
@@ -380,7 +380,7 @@ You might also check out the [Dart 3.3 release][] blog post.
   [Flutter and Dart 2024 Roadmap][].
 * Check out [Harness the Gemini API in your Dart and Flutter apps][].
 
-[Flutter and Dart 2024 Roadmap]: {{site.github}}/flutter/flutter/blob/main/docs/roadmap/Roadmap.md
+[Flutter and Dart 2024 Roadmap]: {{site.repo.flutter}}/blob/main/docs/roadmap/Roadmap.md
 [Harness the Gemini API in your Dart and Flutter apps]: {{site.flutter-blog}}/harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381
 
 ## 15 November 2023: 3.16 release
@@ -962,7 +962,7 @@ We have a new codelab since the last stable release:
 Also, check out the workshops written by our GDEs
 and available on the [Flutter community blog][].
 
-[Flutter community blog]: {{site.medium}}/@flutter_community/622b52f70173
+[Flutter community blog]: https://medium.com/@flutter_community/622b52f70173
 [Take your Flutter app from boring to beautiful]: https://web.archive.org/web/20251204045151/https://codelabs.developers.google.com/codelabs/flutter-boring-to-beautiful
 
 **Videos**
@@ -1117,11 +1117,11 @@ since the last stable release:
 [Announcing Flutter 2.2]: {{site.flutter-blog}}/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
 [Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Building your first Flutter app]: {{site.yt.watch}}?v=Z6KZ3cTGBWw
-[DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
-[DartPad Workshop Authoring Guide]: {{site.github}}/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
+[DartPad Sharing Guide (using a Gist file)]: https://github.com/dart-lang/dart-pad/wiki/Sharing-Guide
+[DartPad Workshop Authoring Guide]: https://github.com/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
 [Deferred components]: /perf/deferred-components
 [Embedded Support for Flutter]: /embedded
-[Embedding DartPad in your web page]: {{site.github}}/dart-lang/dart-pad/wiki/Embedding-Guide
+[Embedding DartPad in your web page]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
 [Firebase for Flutter]: {{site.yt.watch}}?v=4wunbF29Kkg
 [Flutter and Dialogflow voice bots]: {{site.yt.watch}}?v=O7JfSF3CJ84
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter#0
@@ -1622,7 +1622,7 @@ Happy Fluttering!
 [1.9.1 release notes]: /release/release-notes/release-notes-1.9.1
 [building a web application]: /platform-integration/web/building
 [`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
-[ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
+[ColorFiltered demo]: https://github.com/csells/flutter_color_filter
 [creating responsive apps]: /ui/adaptive-responsive
 [Flutter for web]: /platform-integration/web
 [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: {{site.google-blog}}/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
@@ -1632,7 +1632,7 @@ Happy Fluttering!
 [`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
 [Showcase]: {{site.main-url}}/showcase
 [`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
-[ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
+[ToggleButtons demo]: https://github.com/csells/flutter_toggle_buttons
 [using the dart:ffi library]: /platform-integration/legacy-ffi-plugin
 
 ## 09 Jul 2019: 1.7 release

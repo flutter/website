@@ -20,7 +20,7 @@ to predictive back behavior. For more info, check out
 [Issue #132504][].
 :::
 
-[Issue #132504]: {{site.github}}/flutter/flutter/issues/132504#issuecomment-2025776552
+[Issue #132504]: {{site.repo.flutter}}/issues/132504#issuecomment-2025776552
 
 ## Background
 

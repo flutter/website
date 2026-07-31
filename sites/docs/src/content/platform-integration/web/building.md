@@ -127,8 +127,8 @@ session by selecting a sample app provided by DartPad.
 [Hot restart]: /tools/hot-reload
 [How to switch channels]: /install/upgrade#switching-flutter-channels
 [`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
-[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml
-[GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
+[Web Hot Reload issue template]: {{site.repo.dart-sdk}}/issues/new?template=5_web_hot_reload.yml
+[GitHub project]: https://github.com/orgs/dart-lang/projects/107/views/1
 
 ## Build your app
 

@@ -11,7 +11,7 @@ Flutter and Dart support
 as a compilation target when building
 applications for the web.
 
-[`stable`]: {{site.github}}/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md#stable
+[`stable`]: {{site.repo.flutter}}/blob/master/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/dart-js_interop/dart-js_interop-library.html
 
@@ -142,7 +142,7 @@ Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
 Firefox announced stable support for WasmGC in Firefox 120,
 but currently doesn't work due to a known limitation (see details below).
 
-[WasmGC]: {{site.github}}/WebAssembly/gc/tree/main/proposals/gc
+[WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
 [support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
 [issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206

@@ -122,4 +122,4 @@ Examples:
 * Using [Firebase Functions][].
 
 [CloudFlare Workers]: https://developers.cloudflare.com/workers/examples/cors-header-proxy
-[Firebase Functions]: {{site.github}}/7kfpun/cors-proxy
+[Firebase Functions]: https://github.com/7kfpun/cors-proxy

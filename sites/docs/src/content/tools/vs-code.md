@@ -467,6 +467,6 @@ When filing new issues, include [flutter doctor][] output.
 [Flutter's build modes]: /testing/build-modes
 [Hot reload]: /tools/hot-reload
 [let us know]: {{site.repo.this}}/issues/new
-[issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
+[issue tracker]: https://github.com/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /tools/devtools/vscode
 [VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png

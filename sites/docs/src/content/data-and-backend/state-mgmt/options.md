@@ -44,7 +44,7 @@ The low-level approach to use for widget-specific, ephemeral state.
 * [Basic state management in Google Flutter][], by Agung Surya
 
 [Adding interactivity to your Flutter app]: /ui/interactivity
-[Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
+[Basic state management in Google Flutter]: https://medium.com/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 
 <a id="valuenotifier-inheritednotifier" aria-hidden="true"></a>
 
@@ -79,7 +79,7 @@ Other useful docs include:
 * [Widget - State - Context - InheritedWidget][], by Didier Bolelens
 
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
+[Inheriting Widgets]: https://medium.com/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
 [Managing Flutter Application State With InheritedWidgets]: {{site.flutter-blog}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
 [Widget - State - Context - InheritedWidget]: https://flutteris.com/blog/en/widget-state-context-inheritedwidget
 

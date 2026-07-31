@@ -2474,7 +2474,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Animations overview]: /ui/animations
 [Animations tutorial]: /ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
-[arb]: {{site.github}}/google/app-resource-bundle
+[arb]: https://github.com/google/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /resources/architectural-overview#composition
