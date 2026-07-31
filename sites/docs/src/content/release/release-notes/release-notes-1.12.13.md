@@ -2588,7 +2588,7 @@ For more information, refer to [Federated plugins][].
 
 [2136](https://github.com/flutter/plugins/pull/2136) [url_launcher_web] Fix [README.md](http://readme.md/) pubspec example
 
-[2217](https://github.com/plugins/pull/2217) [url_launcher] Add url_launcher_platform_interface package
+[2217](https://github.com/flutter/plugins/pull/2217) [url_launcher] Add url_launcher_platform_interface package
 
 [2220](https://github.com/flutter/plugins/pull/2220) [url_launcher]remove AndroidX constraint
 
