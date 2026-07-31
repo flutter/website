@@ -33,6 +33,7 @@ class ShowcaseGrid extends StatelessComponent {
           'Banking & Finance',
           'E-commerce & Retail',
           'Education',
+          'Environment & Sustainability',
           'Games',
           'Health',
           'Hospitality',
