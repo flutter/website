@@ -106,7 +106,6 @@ You might also check out the [Dart 3.7 release][] blog post.
 
 [Architectural overview page]: /resources/architectural-overview
 [bc-3.29]: /release/breaking-changes#released-in-flutter-3-29
-[Dart 3.7 release]: {{site.dart-blog}}/announcing-dart-3-7
 [Flutter for Jetpack Compose devs]: /flutter-for/compose-devs
 [Test orientation]: /cookbook/testing/widget/orientation
 
