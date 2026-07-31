@@ -4,6 +4,7 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/util.dart';
 import 'package:universal_web/web.dart' as web;
 
 import 'filters_dropdown.dart';
@@ -82,7 +83,7 @@ class _FiltersState extends State<Filters> {
     web.window.history.replaceState(
       web.window.history.state,
       '',
-      url.replace(queryParameters: newQueryParameters).toString(),
+      url.withQueryParameters(newQueryParameters).toString(),
     );
 
     setState(() {

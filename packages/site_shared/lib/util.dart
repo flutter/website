@@ -134,3 +134,21 @@ extension ListToClasses on List<String> {
   /// that can be added to an HTML element.
   String get toClasses => join(' ');
 }
+
+extension UriQueryParameters on Uri {
+  /// Matches an empty query delimiter before a fragment or the end of the URI.
+  static final RegExp _emptyQueryPattern = RegExp(r'\?(?=#|$)');
+
+  /// Returns a copy of this URI with the specified
+  /// [parameters] as its query parameters.
+  ///
+  /// An empty map removes the query component entirely.
+  Uri withQueryParameters(Map<String, Object?> parameters) {
+    if (parameters.isNotEmpty) {
+      return replace(queryParameters: parameters);
+    }
+
+    final withEmptyQuery = replace(query: '').toString();
+    return Uri.parse(withEmptyQuery.replaceFirst(_emptyQueryPattern, ''));
+  }
+}
