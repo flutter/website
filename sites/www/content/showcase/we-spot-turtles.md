@@ -37,7 +37,7 @@ By collecting these observations, We Spot Turtles\! helps conservation
 organizations better understand sea turtle populations and supports scientific
 research and protection efforts around the world.
 
-<Image src="images/third_party/case_studies/we-spot-turtles/turtles.png" format="fullwidth" alt="We Spot Turtles species selection and observation flow" />
+<Image src="images/third_party/case_studies/we-spot-turtles/turtles.webp" format="fullwidth" alt="We Spot Turtles species selection and observation flow" />
 
 **Why Flutter?**
 
@@ -63,7 +63,7 @@ Nicolas has continuously learned and improved his skills. Flutter is not only
 the framework that powers We Spot Turtles\!, it is also the community that
 helped him bring this project to life.
 
-<Image src="images/third_party/case_studies/we-spot-turtles/map.png" format="fullwidth" alt="We Spot Turtles interactive map showing turtle sighting locations" />
+<Image src="images/third_party/case_studies/we-spot-turtles/map.webp" format="fullwidth" alt="We Spot Turtles interactive map showing turtle sighting locations" />
 
 **Their solution: Building with Flutter**
 
@@ -126,7 +126,7 @@ quickly:
   [Firebase](https://firebase.google.com/) suite of tools (Authentication, Cloud
   Firestore, Firebase Storage, and Cloud Messaging).
 
-<Image src="images/third_party/case_studies/we-spot-turtles/web_portal.png" format="fullwidth" alt="We Spot Turtles mobile application and web dashboard" />
+<Image src="images/third_party/case_studies/we-spot-turtles/web_portal.webp" format="fullwidth" alt="We Spot Turtles mobile application and web dashboard" />
 
 By combining Flutter with Google's technologies, We Spot Turtles\! provides a
 scalable platform that connects citizens, researchers, and conservation
