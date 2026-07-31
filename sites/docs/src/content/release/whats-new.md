@@ -17,9 +17,9 @@ join the [flutter-announce][] Google group.
 For Dart, you can join the [Dart Announce][] Google group,
 and review the [Dart changelog][].
 
-[Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
-[Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart Announce]: {{site.groups.dart-announce}}
+[Dart changelog]: {{site.repo.dart-sdk}}/blob/main/CHANGELOG.md
+[flutter-announce]: {{site.groups.flutter-announce}}
 [release notes]: /release/release-notes
 
 ## 18 May 2026: Google I/O Release 3.44
@@ -73,7 +73,7 @@ significant changes:
 [Flutter API docs]: {{site.api}}
 [few]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
 [learning pathway]: /learn
-[navaronbracke]: {{site.github}}/navaronbracke
+[navaronbracke]: https://github.com/navaronbracke
 [official glossary]: /resources/glossary
 [onReorder]: /release/breaking-changes/separated-builder-find-child-index-callback
 

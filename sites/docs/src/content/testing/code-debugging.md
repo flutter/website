@@ -784,7 +784,7 @@ To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 [Debugging]: /testing/debugging
 [DevTools]: /tools/devtools
 [DiagnosticsProperty]: {{site.api}}/flutter/foundation/DiagnosticsProperty-class.html
-[file an issue]: {{site.github}}/flutter/devtools/issues
+[file an issue]: https://github.com/flutter/devtools/issues
 [Flutter inspector]: /tools/devtools/inspector
 [frame callback]: {{site.api}}/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html
 [Inspector view]: /tools/devtools/inspector

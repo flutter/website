@@ -70,5 +70,5 @@ Depending on the editor, you can integrate the Dart SDK's support for the
 [Language Server Protocol][lsp] and the [Debug Adapter Protocol][dap] to
 enable rich code editing and debugging features for both Dart and Flutter.
 
-[lsp]: https://github.com/dart-lang/sdk/tree/main/pkg/analysis_server/tool/lsp_spec/README.md
-[dap]: https://github.com/dart-lang/sdk/blob/main/third_party/pkg/dap/tool/README.md
+[lsp]: {{site.repo.dart-sdk}}/tree/main/pkg/analysis_server/tool/lsp_spec/README.md
+[dap]: {{site.repo.dart-sdk}}/blob/main/third_party/pkg/dap/tool/README.md
