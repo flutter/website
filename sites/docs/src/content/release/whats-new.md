@@ -149,7 +149,7 @@ Other relevant resources:
 [3.38 release notes and changelog]: /release/release-notes/release-notes-3.38.0
 [accessibility docs]: /ui/accessibility
 [bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
-[Dart 3.10 release]: https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088
+[Dart 3.10 release]: {{site.dart-blog}}/announcing-dart-3-10-ea8b952b6088
 [Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
 [DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
 [Flutter on latest iOS]: /platform-integration/ios/ios-latest
@@ -167,7 +167,7 @@ check out the [Flutter 3.35 technical blog post][3.35-tech].
 You might also check out the [Dart 3.9 release][] blog post.
 
 [3.35-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-35-c58ef72e3766
-[Dart 3.9 release]: https://dart.dev/blog/announcing-dart-3-9
+[Dart 3.9 release]: {{site.dart-blog}}/announcing-dart-3-9
 
 **Docs updated or added since the 3.32 release**
 
