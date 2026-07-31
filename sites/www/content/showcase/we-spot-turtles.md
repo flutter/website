@@ -25,7 +25,7 @@ tags:
   - android
   - ios
   - web
-publishDate: 2026-07-30
+publishDate: "2026-07-30"
 ---
 
 [We Spot Turtles\!](https://wespotturtles.org/) is a citizen science platform
