@@ -100,7 +100,7 @@ to monitor:
   opportunistically when connectivity returns.
 - **Encrypted coordinates:** Latitudes and longitudes are AES-encrypted with the
   [encrypt](https://pub.dev/packages/encrypt) package before being written to
-  Cloud Firestore, with build-time key obfuscation via
+  Cloud Firestore, with build-time key obfuscation using the
   [envied](https://pub.dev/packages/envied) package, keeping sensitive
   hatchling, nesting, and sea turtle locations protected end-to-end.
 
