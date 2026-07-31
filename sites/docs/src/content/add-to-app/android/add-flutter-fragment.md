@@ -281,7 +281,8 @@ higher (API level 33+), you can configure the fragment to automatically handle
 system back button presses and predictive back gestures without manually
 forwarding `onBackPressed()`.
 
-Set `shouldAutomaticallyHandleOnBackPressed(true)` when building your fragment:
+Instead of overriding `onBackPressed` as shown above, set
+`shouldAutomaticallyHandleOnBackPressed(true)` when building your fragment:
 
 <Tabs key="android-language">
 <Tab name="Kotlin">

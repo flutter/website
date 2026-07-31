@@ -39,8 +39,9 @@ Android 13+:
 ## Handle back gestures with PopScope
 
 To customize back navigation or prevent users from accidentally leaving a
-screen, use the `PopScope` widget. `PopScope` replaces the deprecated
-`WillPopScope` widget and supports predictive back gestures.
+screen, use the [`PopScope`]({{site.api}}/flutter/widgets/PopScope-class.html)
+widget. `PopScope` replaces the deprecated `WillPopScope` widget and
+supports predictive back gestures.
 
 ### Callback parameters
 
@@ -49,7 +50,7 @@ screen, use the `PopScope` widget. `PopScope` replaces the deprecated
 * `didPop`: A boolean indicating whether the pop operation succeeded. If
   `canPop` is `false`, `didPop` is `false`.
 * `result`: An optional return payload passed when popping the route
-  (for example, via `Navigator.pop(context, result)`).
+  (for example, with `Navigator.pop(context, result)`).
 
 ### Example: Intercepting back navigation
 
@@ -72,6 +73,9 @@ PopScope(
 )
 ```
 
+## More information
+
 For more details on API migrations, check out the
 [Android predictive back migration guide](
 /release/breaking-changes/android-predictive-back).
+

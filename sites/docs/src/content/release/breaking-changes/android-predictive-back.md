@@ -49,7 +49,7 @@ whether it was successful.
 The `PopScope` class directly replaces `WillPopScope` in order to enable
 predictive back. Instead of deciding whether a pop is possible at the time it
 occurs, this is set ahead of time with the `canPop` boolean. You can still
-listen to pops by using `onPopInvoked`.
+listen to pops by using `onPopInvokedWithResult`.
 
 ```dart
 PopScope(
@@ -135,11 +135,11 @@ PopScope(
 ```
 
 For cases where it's necessary to be notified that a
-pop was attempted, the `onPopInvoked` method can be
+pop was attempted, the `onPopInvokedWithResult` method can be
 used in a similar way to `onWillPop`. Keep in mind
 that while `onWillPop` was called before the pop
 was handled and had the ability to cancel it,
-`onPopInvoked` is called after the pop is finished being handled.
+`onPopInvokedWithResult` is called after the pop is finished being handled.
 
 Code before migration:
 
@@ -197,12 +197,12 @@ NavigatorPopHandler(
 )
 ```
 
-### Migrating from Form.onWillPop to Form.canPop and Form.onPopInvoked
+### Migrating from Form.onWillPop to Form.canPop and Form.onPopInvokedWithResult
 
 Previously, `Form` used a `WillPopScope` instance under
 the hood and exposed its `onWillPop` method.
 This has been replaced with a `PopScope` that exposes its
-`canPop` and `onPopInvoked` methods.
+`canPop` and `onPopInvokedWithResult` methods.
 Migrating is identical to migrating from
 `WillPopScope` to `PopScope`, detailed above.
 
@@ -326,7 +326,7 @@ Code after migration:
 ```dart
 return PopScope(
   canPop: false,
-  onPopInvoked: (bool didPop) async {
+  onPopInvokedWithResult: (bool didPop, Object? result) async {
     if (didPop) {
       return;
     }
