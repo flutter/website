@@ -5,9 +5,10 @@ description: >-
   Learn how to enable and handle Android predictive back gestures in Flutter.
 ---
 
-Android predictive back navigation lets users preview the animation of
-swiping back to a previous screen or returning to the home screen before
-releasing the gesture.
+The Android predictive back gesture lets users preview
+where a back gesture will navigate to,
+whether that's the previous screen or the home screen,
+before they commit to or cancel it.
 
 ## Overview
 
@@ -18,13 +19,12 @@ default page route transitions and custom pop handling.
 
 ## Enable predictive back in Android
 
-To support predictive back gestures in your Flutter application on
-Android 13+:
+To support predictive back gestures in your Flutter app
+on Android 13 or later:
 
 1. Open `android/app/src/main/AndroidManifest.xml`.
 2. Add `android:enableOnBackInvokedCallback="true"` to the `<application>` tag:
 
-```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
         android:label="my_app"
@@ -47,8 +47,8 @@ supports predictive back gestures.
 
 `PopScope` uses the `onPopInvokedWithResult` callback:
 
-* `didPop`: A boolean indicating whether the pop operation succeeded. If
-  `canPop` is `false`, `didPop` is `false`.
+* `didPop`: A boolean indicating whether the pop operation succeeded.
+  If `canPop` is `false`, `didPop` is `false`.
 * `result`: An optional return payload passed when popping the route
   (for example, with `Navigator.pop(context, result)`).
 
