@@ -274,6 +274,14 @@ With the OS signals forwarded to Flutter,
 your `FlutterFragment` works as expected.
 You have now added a `FlutterFragment` to your existing Android app.
 
+The simplest integration path uses a new `FlutterEngine`,
+which comes with a non-trivial initialization time,
+leading to a blank UI until Flutter is
+initialized and rendered the first time.
+Most of this time overhead can be avoided by using a cached, pre-warmed
+`FlutterEngine`, which is discussed in
+[Using a pre-warmed `FlutterEngine`](#using-a-pre-warmed-flutterengine).
+
 ### Automatic back button and predictive back handling
 
 When embedding a `FlutterFragment` into a native Android app on Android 13 or
@@ -304,13 +312,6 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
 
 </Tab>
 </Tabs>
-
-The simplest integration path uses a new `FlutterEngine`,
-which comes with a non-trivial initialization time,
-leading to a blank UI until Flutter is
-initialized and rendered the first time.
-Most of this time overhead can be avoided by using
-a cached, pre-warmed `FlutterEngine`, which is discussed next.
 
 ## Using a pre-warmed `FlutterEngine`
 
