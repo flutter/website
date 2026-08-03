@@ -54,6 +54,15 @@
   overflow: hidden;
   position: relative;
 
+  // `core/_base.scss` sets `color: black` directly on h1..h6 and a grey on
+  // body copy. Inheriting white from the section can't override a direct
+  // declaration, so the dark-background text restates it.
+  h1,
+  h2,
+  p {
+    color: white;
+  }
+
   .why-us-hero-glow {
     background: radial-gradient(
       ellipse 80% 60% at 50% 45%,
@@ -311,6 +320,7 @@
   gap: var(--spacer);
 }
 
+// The media column is first in the DOM; stacked, the copy should lead.
 .why-us-row-reverse { flex-direction: column-reverse; }
 
 .why-us-shared-media {
@@ -421,6 +431,7 @@
   }
 
   p {
+    color: var(--site-base-fgColor);
     font-size: var(--font-size-heading-4);
     line-height: 1.4;
     margin: 0;
@@ -609,7 +620,9 @@
 
   .why-us-case-media {
     bottom: -8px;
+    height: 275px;
     left: 50%;
+    overflow: hidden;
     position: absolute;
     transform: translateX(-50%);
     width: 270px;
@@ -617,12 +630,14 @@
 }
 
 .why-us-case-company {
+  color: var(--site-base-fgColor);
   font-size: var(--font-size-heading-4);
   font-weight: var(--font-weight-bold);
   margin: 0;
 }
 
 .why-us-case-quote {
+  color: var(--site-base-fgColor);
   font-size: var(--font-size-heading-2);
   letter-spacing: -0.18px;
   line-height: 1.2;
@@ -645,8 +660,25 @@
 .why-us-case-media {
   position: relative;
 
-  img { display: block; width: 100%; }
-  .why-us-case-screenshot { border-radius: 22px; padding: 4%; position: absolute; }
+  img {
+    display: block;
+    position: absolute;
+  }
+
+  // Percentages of the 385px-square media box, matching the design's
+  // 347px frame over a 313px screenshot.
+  .why-us-case-frame {
+    left: 1.3%;
+    top: 3.1%;
+    width: 90.1%;
+  }
+
+  .why-us-case-screenshot {
+    border-radius: 22px;
+    left: 5.5%;
+    top: 5.7%;
+    width: 81.3%;
+  }
 }
 
 .why-us-case-arrows {
@@ -749,7 +781,8 @@
     justify-content: space-between;
   }
 
-  .why-us-row-reverse { flex-direction: row-reverse; }
+  // Media first in the DOM already yields media-left at this width.
+  .why-us-row-reverse { flex-direction: row; }
 
   .why-us-shared-media { transform: none; }
 
@@ -814,6 +847,7 @@
     .why-us-case-quote { max-width: 616px; }
 
     .why-us-case-media {
+      height: 385px;
       overflow: hidden;
       position: absolute;
       right: 0;
@@ -822,7 +856,17 @@
     }
 
     &.theme-earth .why-us-case-media,
-    &.theme-lg .why-us-case-media { width: 487px; }
+    &.theme-lg .why-us-case-media {
+      width: 487px;
+
+      img {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        top: 0;
+        width: 100%;
+      }
+    }
   }
 
   .why-us-resource {
