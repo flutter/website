@@ -16,6 +16,23 @@
   --why-us-case-stride: 1220px;
 
   // Shared section furniture.
+  .stacked-header {
+    margin-bottom: var(--spacer);
+
+    .why-us-kicker {
+      margin-bottom: var(--spacer-sm);
+    }
+
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    .why-us-sub {
+      margin-bottom: 0;
+      max-width: 840px;
+    }
+  }
+
   .why-us-kicker {
     color: var(--primary);
     font-size: var(--font-size-heading-4);
@@ -738,7 +755,7 @@
     font-size: var(--font-size-heading-3);
     font-weight: var(--font-weight-bold);
     line-height: 1.2;
-    margin: 0;
+    margin: 0 0 6px;
   }
 
   p { margin: 0; }
