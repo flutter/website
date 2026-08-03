@@ -413,7 +413,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [66504](https://github.com/flutter/flutter/pull/66504) Re-land ScaffoldMessenger (a: quality, cla: yes, customer: money (g3), f: material design, framework, severe: new feature, waiting for tree to go green)
 
 
-[66506](https://github.com/flutter/flutter/pull/66506) Allow futures that resolve to null (incl. Future<void>) in Future/StreamBuilder (cla: yes, framework)
+[66506](https://github.com/flutter/flutter/pull/66506) Allow futures that resolve to null (incl. `Future<void>`) in Future/StreamBuilder (cla: yes, framework)
 
 
 [66508](https://github.com/flutter/flutter/pull/66508) [Docs] [Material] Fix Icons api docs (cla: yes, f: material design, framework, team)
@@ -9693,7 +9693,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [21172](https://github.com/flutter/engine/pull/21172) Roll Skia from 2bc4077c9e42 to aecd484d03d7 (2 revisions) (cla: yes, waiting for tree to go green)
 
 
-[21176](https://github.com/flutter/engine/pull/21176) Add missing <cstring> header for (strcmp, strrchr) (cla: yes)
+[21176](https://github.com/flutter/engine/pull/21176) Add missing `<cstring>` header for (strcmp, strrchr) (cla: yes)
 
 
 [21178](https://github.com/flutter/engine/pull/21178) Roll Skia from aecd484d03d7 to 22aa7d791515 (5 revisions) (cla: yes, waiting for tree to go green)
@@ -13383,7 +13383,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [23099](https://github.com/flutter/engine/pull/23099) Roll Skia from f2876b0b9e4a to 2078cbe3d4d9 (1 revision) (cla: yes, waiting for tree to go green)
 
 
-[23101](https://github.com/flutter/engine/pull/23101) Return null in Future<WebSocketChannel>.catchError handler (cla: yes, platform-web)
+[23101](https://github.com/flutter/engine/pull/23101) Return null in `Future<WebSocketChannel>`.catchError handler (cla: yes, platform-web)
 
 
 [23102](https://github.com/flutter/engine/pull/23102) removed variable-sized array (cla: yes)
@@ -13953,7 +13953,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [23429](https://github.com/flutter/engine/pull/23429) Use syslog for logging on Fuchsia (cla: yes, platform-fuchsia)
 
 
-[23430](https://github.com/flutter/engine/pull/23430) Add flt-renderer and flt-build-mode debug attributes to <body> (cla: yes, platform-web)
+[23430](https://github.com/flutter/engine/pull/23430) Add flt-renderer and flt-build-mode debug attributes to `<body>` (cla: yes, platform-web)
 
 
 [23431](https://github.com/flutter/engine/pull/23431) Roll Skia from 6356cb1904b8 to 2833b08efbe6 (6 revisions) (cla: yes, waiting for tree to go green)
@@ -19754,7 +19754,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [23098](https://github.com/flutter/engine/pull/23098) [web] Rich paragraph getBoxesForRange (cla: yes, platform-web)
 
 
-[23101](https://github.com/flutter/engine/pull/23101) Return null in Future<WebSocketChannel>.catchError handler (cla: yes, platform-web)
+[23101](https://github.com/flutter/engine/pull/23101) Return null in `Future<WebSocketChannel>`.catchError handler (cla: yes, platform-web)
 
 
 [23133](https://github.com/flutter/engine/pull/23133) [web] Rich paragraph getPositionForOffset (cla: yes, platform-web)
@@ -19772,7 +19772,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [23348](https://github.com/flutter/engine/pull/23348) Roll CanvasKit to 0.22 (cla: yes, platform-web)
 
 
-[23430](https://github.com/flutter/engine/pull/23430) Add flt-renderer and flt-build-mode debug attributes to <body> (cla: yes, platform-web)
+[23430](https://github.com/flutter/engine/pull/23430) Add flt-renderer and flt-build-mode debug attributes to `<body>` (cla: yes, platform-web)
 
 
 [23470](https://github.com/flutter/engine/pull/23470) [web] Draw shadows for text in rich paragraphs (cla: yes, platform-web)
@@ -21696,7 +21696,7 @@ There were 1974 pull requests.
 
 [66505](https://github.com/flutter/flutter/pull/66505) Roll Engine from dd35b5b65917 to b0fb2c8a988f (2 revisions) (cla: yes, waiting for tree to go green)
 
-[66506](https://github.com/flutter/flutter/pull/66506) Allow futures that resolve to null (incl. Future<void>) in Future/StreamBuilder (cla: yes, framework)
+[66506](https://github.com/flutter/flutter/pull/66506) Allow futures that resolve to null (incl. `Future<void>`) in Future/StreamBuilder (cla: yes, framework)
 
 [66507](https://github.com/flutter/flutter/pull/66507) [flutter_tools] enable single widget reload optimization by default on master (cla: yes, tool, waiting for tree to go green)
 
@@ -25319,7 +25319,7 @@ There were 1864 pull requests.
 
 [21172](https://github.com/flutter/engine/pull/21172) Roll Skia from 2bc4077c9e42 to aecd484d03d7 (2 revisions) (cla: yes, waiting for tree to go green)
 
-[21176](https://github.com/flutter/engine/pull/21176) Add missing <cstring> header for (strcmp, strrchr) (cla: yes)
+[21176](https://github.com/flutter/engine/pull/21176) Add missing `<cstring>` header for (strcmp, strrchr) (cla: yes)
 
 [21178](https://github.com/flutter/engine/pull/21178) Roll Skia from aecd484d03d7 to 22aa7d791515 (5 revisions) (cla: yes, waiting for tree to go green)
 
@@ -27779,7 +27779,7 @@ There were 1864 pull requests.
 
 [23099](https://github.com/flutter/engine/pull/23099) Roll Skia from f2876b0b9e4a to 2078cbe3d4d9 (1 revision) (cla: yes, waiting for tree to go green)
 
-[23101](https://github.com/flutter/engine/pull/23101) Return null in Future<WebSocketChannel>.catchError handler (cla: yes, platform-web)
+[23101](https://github.com/flutter/engine/pull/23101) Return null in `Future<WebSocketChannel>`.catchError handler (cla: yes, platform-web)
 
 [23102](https://github.com/flutter/engine/pull/23102) removed variable-sized array (cla: yes)
 
@@ -28159,7 +28159,7 @@ There were 1864 pull requests.
 
 [23429](https://github.com/flutter/engine/pull/23429) Use syslog for logging on Fuchsia (cla: yes, platform-fuchsia)
 
-[23430](https://github.com/flutter/engine/pull/23430) Add flt-renderer and flt-build-mode debug attributes to <body> (cla: yes, platform-web)
+[23430](https://github.com/flutter/engine/pull/23430) Add flt-renderer and flt-build-mode debug attributes to `<body>` (cla: yes, platform-web)
 
 [23431](https://github.com/flutter/engine/pull/23431) Roll Skia from 6356cb1904b8 to 2833b08efbe6 (6 revisions) (cla: yes, waiting for tree to go green)
 

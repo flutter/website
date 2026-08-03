@@ -824,7 +824,7 @@ see our [CHANGELOG][].
 * OpenGL <4.x does not support stencil-only formats, so delete the TODO by @matanlurey in [47286](https://github.com/flutter/engine/pull/47286)
 * [Impeller] Update shader compilation pipeline documentation to detail multi-arch archives. by @chinmaygarde in [47289](https://github.com/flutter/engine/pull/47289)
 * Adds lint for checking argument commments by @gaaclarke in [47305](https://github.com/flutter/engine/pull/47305)
-* [Impeller] Remove use of FML_DISALLOW_<FOO> macros in Impeller. by @chinmaygarde in [47307](https://github.com/flutter/engine/pull/47307)
+* [Impeller] Remove use of `FML_DISALLOW_<FOO>` macros in Impeller. by @chinmaygarde in [47307](https://github.com/flutter/engine/pull/47307)
 * Missed linter argument comment violations by @gaaclarke in [47310](https://github.com/flutter/engine/pull/47310)
 * Cleanup Dart package dependencies a bit by @zanderso in [47306](https://github.com/flutter/engine/pull/47306)
 * [Impeller] Cache location in metadata. by @jonahwilliams in [46640](https://github.com/flutter/engine/pull/46640)

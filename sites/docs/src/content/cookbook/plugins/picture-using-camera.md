@@ -27,7 +27,7 @@ check out the Google I/O 2024 talk,
 
 [`camera_android_camerax`]: {{site.pub-pkg}}/camera_android_camerax
 [CameraX]: https://developer.android.com/training/camerax
-[camerax-video]: {{site.youtube-site}}/watch?v=d1sRCa5k2Sg&t=1s
+[camerax-video]: {{site.yt.watch}}?v=d1sRCa5k2Sg&t=1s
 
 This recipe demonstrates how to use the `camera` plugin to display a preview,
 take a photo, and display it using the following steps:

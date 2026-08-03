@@ -639,4 +639,4 @@ using DevTools, check out a guided
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
 [Understanding constraints]: /ui/layout/constraints
-[inspector-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7
+[inspector-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7

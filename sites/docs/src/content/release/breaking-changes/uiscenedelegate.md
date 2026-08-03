@@ -786,7 +786,7 @@ migrate it to UIKit's scene-based lifecycle as follows:
     - [`UNUserNotificationCenterDelegate`][]
     - [`HKHealthStore.enableBackgroundDeliveryForType:frequency:withCompletion:`][]
 
-    For example, to support `BGTaskScheduler`: 
+    For example, to support `BGTaskScheduler`:
 
     <Tabs key="ios-language-switcher">
     <Tab name="Swift">
@@ -874,7 +874,7 @@ migrate it to UIKit's scene-based lifecycle as follows:
     -   return YES;
     - }
       @end
-      
+
       // App
 
       @implementation AppDelegate
@@ -891,9 +891,13 @@ migrate it to UIKit's scene-based lifecycle as follows:
 
     This change is required due to UIScene changing the app launch
     sequence. For apps that adopt `UIScene`, Flutter calls
-    `application:willFinishLaunchingWithOptions:` and
+    plugin's `application:willFinishLaunchingWithOptions:` and
     `application:didFinishLaunchingWithOptions:` during the
-    `scene:willConnectToSession:options:` callback.
+    `scene:willConnectToSession:options:` callback, after UIKit's 
+    `application:didFinishLaunchingWithOptions:` returns. 
+
+    Plugin registration methods are also deferred until after UIKit's 
+    `application:didFinishLaunchingWithOptions:` returns.
 
  1. Migrate other deprecated APIs to properly
     access the `viewController`, `screen`, or `window`.
@@ -919,7 +923,7 @@ migrate it to UIKit's scene-based lifecycle as follows:
 
     ```swift diff
       public class MyPlugin: NSObject, FlutterPlugin {
-    +   var registrar: FlutterPluginRegistrar
+    +   weak var registrar: FlutterPluginRegistrar?
 
     +   init(registrar: FlutterPluginRegistrar) {
     +     self.registrar = registrar
@@ -932,21 +936,21 @@ migrate it to UIKit's scene-based lifecycle as follows:
 
         func someMethod() {
     -     let screen = UIScreen.main
-    +     let screen = self.registrar.viewController?.view.window?.windowScene?.screen
+    +     let screen = self.registrar?.viewController?.view.window?.windowScene?.screen
 
     -     let window = UIApplication.shared.delegate?.window
-    +     let window = self.registrar.viewController?.view.window
+    +     let window = self.registrar?.viewController?.view.window
 
     -     let keyWindow = UIApplication.shared.keyWindow
     +     if #available(iOS 15.0, *) {
-    +       let keyWindow = self.registrar.viewController?.view.window?.windowScene?.keyWindow
+    +       let keyWindow = self.registrar?.viewController?.view.window?.windowScene?.keyWindow
     +     } else {
-    +       let keyWindow = self.registrar.viewController?.view.window?.windowScene?.windows
+    +       let keyWindow = self.registrar?.viewController?.view.window?.windowScene?.windows
     +         .filter({ $0.isKeyWindow }).first
     +     }
 
     -     let windows = UIApplication.shared.windows
-    +     let windows = self.registrar.viewController?.view.window?.windowScene?.windows
+    +     let windows = self.registrar?.viewController?.view.window?.windowScene?.windows
         }
       }
     ```
@@ -1093,4 +1097,4 @@ crash on startup when built with the latest SDK.
 
 - [Issue 167267][]: The initial reported issue.
 
-[Issue 167267]: {{site.github}}/flutter/flutter/issues/167267
+[Issue 167267]: {{site.repo.flutter}}/issues/167267

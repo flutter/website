@@ -105,8 +105,8 @@ which are not supported on Wasm):
 
 ```dart
 import 'fallback.dart'
-  if (dart.library.js) 'legacy_web_interop.dart'
-  if (dart.library.js_interop) 'wasm_web_interop.dart';
+  if (dart.library.js_interop) 'wasm_web_interop.dart'
+  if (dart.library.js) 'legacy_web_interop.dart';
 ```
 
 For more details, see the [documentation for conditional imports][]
@@ -242,7 +242,7 @@ value such as 0 or 60 seconds.
 [isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
 [Preparing a web app for release]: /deployment/web
-[roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md#web-platform
+[roadmap]: {{site.repo.flutter}}/blob/master/docs/roadmap/Roadmap.md#web-platform
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
 [Using service workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
 [Web content in Flutter]: /platform-integration/web/web-content-in-flutter

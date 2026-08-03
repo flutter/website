@@ -450,8 +450,6 @@
           permalink: /platform-integration/web/embedding-flutter-web
         - title: Web content in Flutter
           permalink: /platform-integration/web/web-content-in-flutter
-        - title: Web renderers
-          permalink: /platform-integration/web/renderers
         - title: Display images on the web
           permalink: /platform-integration/web/web-images
         - title: Web FAQ

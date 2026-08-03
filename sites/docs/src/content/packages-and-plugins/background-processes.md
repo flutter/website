@@ -20,7 +20,7 @@ Additionally, the [WorkManager] plugin enables persistent background processing
 that keeps tasks scheduled through app restarts and system reboots.
 
 For more information and a geofencing example that uses background
-execution of Dart code, see the Medium article by Ben Konyi,
+execution of Dart code, see the Flutter blog post by Ben Konyi,
 [Executing Dart in the Background with Flutter Plugins and
 Geofencing][background-processes].  At the end of this article,
 you'll find links to example code, and relevant documentation for Dart,

@@ -147,6 +147,8 @@ class _HeaderState extends State<Header> {
       'site-header',
     ].join(' ');
 
+    final isBlog = component.pageUrl.startsWith('/blog');
+
     return header(
       classes: headerClasses,
       attributes: const {'role': 'banner'},
@@ -164,6 +166,13 @@ class _HeaderState extends State<Header> {
                 img(src: component.defaultLogoSrc, alt: 'Flutter'),
               ]),
             ]),
+            if (isBlog)
+              const a(
+                href: '/blog',
+                classes: 'subtype',
+                attributes: {'translate': 'no'},
+                [.text('Blog')],
+              ),
           ]),
           div(classes: 'tray', [
             nav(

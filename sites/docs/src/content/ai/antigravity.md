@@ -112,6 +112,6 @@ when you prompt it to modify your app.
 This enables a hands-free, "prompt-to-reload" workflow
 that reduces context switching and development latency.
 
-[ag-video]: {{site.youtube-site}}/watch?v=YY2w2JEX2xk&t=1s
+[ag-video]: {{site.yt.watch}}?v=YY2w2JEX2xk&t=1s
 [Create a new Flutter app]: /reference/create-new-app#antigravity
 [vs-code]: /tools/vs-code

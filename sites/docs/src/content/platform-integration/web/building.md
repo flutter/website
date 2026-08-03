@@ -81,8 +81,8 @@ You can pass the `--wasm` flag to run your app using WebAssembly:
 $ flutter run -d chrome --wasm
 ```
 
-Flutter web offers multiple build modes and renderers.
-For more information, check out [Web renderers][].
+To learn more about WebAssembly compilation and server requirements,
+check out [Support for WebAssembly (Wasm)][Wasm support].
 
 ### Disable hot reload in VS Code
 
@@ -127,8 +127,8 @@ session by selecting a sample app provided by DartPad.
 [Hot restart]: /tools/hot-reload
 [How to switch channels]: /install/upgrade#switching-flutter-channels
 [`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
-[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml
-[GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
+[Web Hot Reload issue template]: {{site.repo.dart-sdk}}/issues/new?template=5_web_hot_reload.yml
+[GitHub project]: https://github.com/orgs/dart-lang/projects/107/views/1
 
 ## Build your app
 
@@ -190,5 +190,6 @@ running integration tests in a browser, check out the [Integration testing][] pa
 [Running Flutter inspector]: /tools/devtools/inspector
 [Setup-web]: /platform-integration/web/setup
 [Web FAQ]: /platform-integration/web/faq
+[Wasm support]: /platform-integration/web/wasm
 [Web renderers]: /platform-integration/web/renderers
 [Widget tests]: /testing/overview#widget-tests

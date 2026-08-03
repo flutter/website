@@ -25,8 +25,6 @@
 
       { "source": "/adoptawidget", "destination": "https://docs.flutter.dev/adoptawidget", "type": 301 },
       { "source": "/ads", "destination": "/monetization", "type": 301 },
-      { "source": "/blog", "destination": "https://blog.flutter.dev/", "type": 302 },
-      { "source": "/blog/:rest*", "destination": "https://blog.flutter.dev/:rest*", "type": 302 },
       { "source": "/clock", "destination": "https://docs.flutter.dev/clock", "type": 302 },
       { "source": "/community/china", "destination": "https://docs.flutter.dev/community/china", "type": 301 },
       { "source": "/desktop", "destination": "/development/desktop", "type": 301 },
