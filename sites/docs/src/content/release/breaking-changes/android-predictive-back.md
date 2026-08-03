@@ -49,18 +49,18 @@ whether it was successful.
 The `PopScope` class directly replaces `WillPopScope` in order to enable
 predictive back. Instead of deciding whether a pop is possible at the time it
 occurs, this is set ahead of time with the `canPop` boolean. You can still
-listen to pops by using `onPopInvoked`.
+listen to pops by using `onPopInvokedWithResult`.
 
 ```dart
 PopScope(
   canPop: _myPopDisableEnableLogic(),
-  onPopInvoked: (bool didPop) {
+  onPopInvokedWithResult: (bool didPop, Object? result) {
     // Handle the pop. If `didPop` is false, it was blocked.
   },
 )
 ```
 
-### Form.canPop and Form.onPopInvoked
+### Form.canPop and Form.onPopInvokedWithResult
 
 These two new parameters are based on `PopScope` and replace the deprecated
 `Form.onWillPop` parameter. They are used with `PopScope` in the same way as
@@ -69,7 +69,7 @@ above.
 ```dart
 Form(
   canPop: _myPopDisableEnableLogic(),
-  onPopInvoked: (bool didPop) {
+  onPopInvokedWithResult: (bool didPop, Object? result) {
     // Handle the pop. If `didPop` is false, it was blocked.
   },
 )
@@ -135,11 +135,11 @@ PopScope(
 ```
 
 For cases where it's necessary to be notified that a
-pop was attempted, the `onPopInvoked` method can be
+pop was attempted, the `onPopInvokedWithResult` method can be
 used in a similar way to `onWillPop`. Keep in mind
 that while `onWillPop` was called before the pop
 was handled and had the ability to cancel it,
-`onPopInvoked` is called after the pop is finished being handled.
+`onPopInvokedWithResult` is called after the pop is finished being handled.
 
 Code before migration:
 
@@ -158,7 +158,7 @@ Code after migration:
 ```dart
 PopScope(
   canPop: true,
-  onPopInvoked: (bool didPop) {
+  onPopInvokedWithResult: (bool didPop, Object? result) {
     _myHandleOnPopMethod();
   },
   child: ...
@@ -197,12 +197,12 @@ NavigatorPopHandler(
 )
 ```
 
-### Migrating from Form.onWillPop to Form.canPop and Form.onPopInvoked
+### Migrating from Form.onWillPop to Form.canPop and Form.onPopInvokedWithResult
 
 Previously, `Form` used a `WillPopScope` instance under
 the hood and exposed its `onWillPop` method.
 This has been replaced with a `PopScope` that exposes its
-`canPop` and `onPopInvoked` methods.
+`canPop` and `onPopInvokedWithResult` methods.
 Migrating is identical to migrating from
 `WillPopScope` to `PopScope`, detailed above.
 
@@ -326,7 +326,7 @@ Code after migration:
 ```dart
 return PopScope(
   canPop: false,
-  onPopInvoked: (bool didPop) async {
+  onPopInvokedWithResult: (bool didPop, Object? result) async {
     if (didPop) {
       return;
     }
@@ -342,22 +342,9 @@ return PopScope(
 
 ### Supporting predictive back
 
-  1. Run Android 14 (API level 34) or above.
-  1. Enable the feature flag for predictive back on
-     the device under "Developer options".
-     This will be unnecessary on future versions of Android.
-  1. Set `android:enableOnBackInvokedCallback="true"` in
-     `android/app/src/main/AndroidManifest.xml`.
-      If needed, refer to
-     [Android's full guide]({{site.android-dev}}/guide/navigation/custom-back/predictive-back-gesture).
-     for migrating Android apps to support predictive back.
-  1. Make sure you're using version `3.14.0-7.0.pre`
-     of Flutter or greater.
-  1. Make sure your Flutter app doesn't use the
-     `WillPopScope` widget. Using it disables
-     predictive back. If needed, use `PopScope` instead.
-  1. Run the app and perform a back gesture (swipe from the
-     left side of the screen).
+For complete setup instructions, guidelines on predictive back gesture
+animations, and Android manifest configuration, check out how to [add the
+predictive-back gesture](/platform-integration/android/predictive-back).
 
 ## Timeline
 
@@ -372,7 +359,7 @@ API documentation:
 * [`NavigatorPopHandler`][]
 * [`PopEntry`][]
 * [`Form.canPop`][]
-* [`Form.onPopInvoked`][]
+* [`Form.onPopInvokedWithResult`][]
 * [`Route.popDisposition`][]
 * [`ModalRoute.registerPopEntry`][]
 * [`ModalRoute.unregisterPopEntry`][]
@@ -390,7 +377,7 @@ Relevant PRs:
 [`NavigatorPopHandler`]: {{site.api}}/flutter/widgets/NavigatorPopHandler-class.html
 [`PopEntry`]: {{site.api}}/flutter/widgets/PopEntry-class.html
 [`Form.canPop`]: {{site.api}}/flutter/widgets/Form/canPop.html
-[`Form.onPopInvoked`]: {{site.api}}/flutter/widgets/Form/onPopInvoked.html
+[`Form.onPopInvokedWithResult`]: {{site.api}}/flutter/widgets/Form/onPopInvokedWithResult.html
 [`Route.popDisposition`]: {{site.api}}/flutter/widgets/Route/popDisposition.html
 [`ModalRoute.registerPopEntry`]: {{site.api}}/flutter/widgets/ModalRoute/registerPopEntry.html
 [`ModalRoute.unregisterPopEntry`]: {{site.api}}/flutter/widgets/ModalRoute/unregisterPopEntry.html

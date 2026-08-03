@@ -129,9 +129,15 @@ navigates by removing a _page-backed_ route from the Navigator, all _pageless_
 routes after (up until the next _page-backed_ route) are removed too.
 
 :::note
-You can't prevent navigation from page-backed screens using `WillPopScope`.
+You can't prevent navigation from page-backed screens using `PopScope`
+or the deprecated `WillPopScope`.
 Instead, you should consult your routing package's API documentation.
+
+For guidelines on migrating to `PopScope`,
+check out the [Android predictive back migration guide][].
 :::
+
+[Android predictive back migration guide]: /release/breaking-changes/android-predictive-back
 
 ## Web support
 

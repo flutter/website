@@ -99,7 +99,9 @@ Some plugins require platform-specific imports, particularly if they use the
 file system, which is not accessible from the browser. To use these plugins
 in your app, use conditional imports.
 
-When compiling for WebAssembly, check for `dart.library.js_interop` (rather than `dart.library.js` or `dart.library.html`, which are not supported on Wasm):
+When compiling for WebAssembly, check for `dart.library.js_interop`
+(rather than `dart.library.js` or `dart.library.html`,
+which are not supported on Wasm):
 
 ```dart
 import 'fallback.dart'
@@ -107,8 +109,8 @@ import 'fallback.dart'
   if (dart.library.js) 'legacy_web_interop.dart';
 ```
 
-For more details, see the [documentation for conditional imports][] on [dart.dev]({{site.dart-site}}).
-
+For more details, see the [documentation for conditional imports][]
+on [dart.dev]({{site.dart-site}}).
 
 ### Does Flutter web support concurrency?
 
