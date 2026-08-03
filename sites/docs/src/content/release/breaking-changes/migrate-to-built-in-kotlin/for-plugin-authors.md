@@ -14,8 +14,8 @@ To verify whether your plugin applies KGP,
 find the `kotlin-android` plugin
 (or the `org.jetbrains.kotlin.android` plugin).
 It is likely located in the
-`<plugin-project>/build.gradle` or
-`<plugin-project>/build.gradle.kts` file.
+`<plugin-project>/android/build.gradle` or
+`<plugin-project>/android/build.gradle.kts` file.
 To view the KGP application code,
 see [Update the Gradle file](#update-the-gradle-file).
 
@@ -41,9 +41,9 @@ follow the instructions to
 First, find the `kotlin-android` plugin
 (or the `org.jetbrains.kotlin.android` plugin).
 It is likely located in the `plugins` block of the
-`<plugin-project>/build.gradle` or the `<plugin-project>/build.gradle.kts` file.
+`<plugin-project>/android/build.gradle` or the `<plugin-project>/android/build.gradle.kts` file.
 If you use the legacy `apply` syntax,
-it will be located in the Groovy-based `<plugin-project>/build.gradle` file,
+it will be located in the Groovy-based `<plugin-project>/android/build.gradle` file,
 as this syntax isn't supported in Kotlin DSL.
 
 The following examples demonstrate how to migrate a Flutter plugin:
