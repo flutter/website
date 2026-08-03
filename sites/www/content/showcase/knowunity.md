@@ -9,12 +9,11 @@ summary:
   delivery with Flutter
 appName: Knowunity
 companyName: Knowunity
-logo: images/third_party/case_studies/knowunity/knowunity_logo.png
-card: images/third_party/case_studies/knowunity/knowunity_card.png
+logo: images/third_party/case_studies/knowunity/knowunity_logo.webp
+card: images/third_party/case_studies/knowunity/knowunity_logo.webp
 videoEmbedUrl: "https://www.youtube.com/embed/sfBYTVI2Cd0"
 locations:
   - Europe
-  - North America
 platforms:
   - Mobile
 industries:
@@ -23,7 +22,7 @@ successMetrics:
   - text: "8-10M"
     desc: monthly active users
   - text: "3x"
-    desc: faster A/B testing and product improvements
+    desc: faster A/B testing and improvements
   - perc: 50
     desc: reduction in bug resolution time
 tags:
@@ -32,7 +31,7 @@ tags:
   - ios
   - ai
   - education
-publishDate: 2026-07-24
+publishDate: 2026-08-03
 ---
 
 [Knowunity](https://knowunity.com) is a leading mobile learning platform
@@ -41,29 +40,41 @@ over 26 countries with 8 to 10 million monthly active users, the AI-powered app
 helps students study for school, prepare for exams, and get homework help
 through interactive learning methods tailored to how they study best.
 
+<Image
+  src="images/third_party/case_studies/knowunity/knowunity_body_1.webp"
+  format="fullwidth"
+  alt="Knowunity interactive study plan and quiz interface"
+/>
+
 Back in 2020, Knowunity faced the challenge of scaling their product quickly to
 reach a goal of one billion students. With only one mobile developer on the team
 at the time, they needed a development framework that would allow them to ship
 features rapidly, learn from user feedback, and grow their user base without
 maintaining two separate codebases for iOS and Android.
 
-**Why Flutter?**
+**Why Flutter? Accelerating Time-to-Market**
 
-Knowunity chose Flutter in 2020 because it enabled their single mobile developer
-to build and ship features for both iOS and Android from a single codebase,
+Knowunity chose Flutter because it enabled their single mobile developer to
+build and ship features for both iOS and Android from a single codebase,
 accelerating their time-to-market. Flutter’s multi-platform capabilities enabled
 the team to grow and scale their product far faster than would have been
 possible with native development.
 
-As the engineering team expanded, Flutter also simplified hiring. Because Dart
-is easy to learn and pick up, Knowunity could hire web, Android, or iOS
-developers who were able to become productive with the Flutter codebase almost
-immediately. Additionally, as the app expanded into new countries, Flutter’s
-built-in localization package (`l10n`) and ARB files made it seamless for the
-team to localize content and adapt to regional requirements across their 26+
-target markets.
+<Image
+  src="images/third_party/case_studies/knowunity/knowunity_body_2.webp"
+  format="fullwidth"
+  alt="Knowunity AI study notes and AI companion chat"
+/>
 
-**Their solution: Building with Flutter**
+As the engineering team expanded, Flutter also simplified hiring. Because Dart
+is easy to learn, Knowunity could hire web, Android, or iOS developers who were
+able to become productive with the Flutter codebase almost immediately.
+Additionally, as the app expanded into new countries, Flutter’s built-in
+localization package (`l10n`) and ARB files made it seamless for the team to
+localize content and adapt to regional requirements across their 26+ target
+markets.
+
+**Building with Flutter: Delightful UX meets AI**
 
 To create an engaging and joyful learning experience, Knowunity focused heavily
 on high-quality animations and transitions. They leveraged Flutter’s built-in
@@ -91,13 +102,13 @@ correctness, and present the completed work for developer review.
 Switching to Flutter and integrating AI has transformed Knowunity's development
 efficiency and user growth:
 
-- **Rapid scaling:** Grown to 8 to 10 million monthly active users globally
-  across 26 countries.
 - **Immediate traction:** Crossed 50,000 users in the first two weeks and
   reached 1 million users within a year of launching.
-- **Accelerated delivery:** Chose Flutter to ship, learn, and grow faster. Now,
-  utilizing AI agents, the team ships A/B tests and product improvements 3 times
-  faster.
+- **Rapid scaling:** Reached 8 to 10 million monthly active users globally
+  across 26 countries.
+- **Accelerated delivery:** Choosing Flutter helped Knowunity ship, learn, and
+  grow faster. Now, using AI agents, the team ships A/B tests and product
+  improvements 3 times faster.
 - **Streamlined maintenance:** Cut the time required to resolve bugs in half.
 
 <br />
