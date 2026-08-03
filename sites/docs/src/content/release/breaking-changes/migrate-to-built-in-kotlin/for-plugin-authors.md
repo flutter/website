@@ -14,8 +14,8 @@ To verify whether your plugin applies KGP,
 find the `kotlin-android` plugin
 (or the `org.jetbrains.kotlin.android` plugin).
 It is likely located in the
-`<plugin-project>/build.gradle` or
-`<plugin-project>/build.gradle.kts` file.
+`<plugin-project>/android/build.gradle` or
+`<plugin-project>/android/build.gradle.kts` file.
 To view the KGP application code,
 see [Update the Gradle file](#update-the-gradle-file).
 
