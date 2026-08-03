@@ -228,7 +228,7 @@ Context: The unavailable library 'dart:html' is imported through these packages:
 
     main.dart => package:my_app => dart:html
 
-Detailed import paths for (some of) the these imports:
+Detailed import paths for (some of) these imports:
 
     main.dart => package:my_app/main.dart => dart:html
 ```
