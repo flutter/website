@@ -97,9 +97,9 @@ class _WhyFlutterCasesSectionState extends State<WhyFlutterCasesSection> {
     return section(id: 'success-cases', classes: 'module why-flutter-cases', [
       const div(classes: 'stacked-header container', [
         p(classes: 'why-flutter-kicker', [.text('Success cases')]),
-        h2([.text('What switching actually returned')]),
+        h2([.text('How Flutter helps your business scale')]),
         p(classes: 'why-flutter-sub', [
-          .text('The measurable ROI teams achieved after making the switch.'),
+          .text('The measurable ROI teams achieved after selecting Flutter.'),
         ]),
       ]),
       div(classes: 'why-flutter-case-viewport', [
@@ -153,7 +153,10 @@ class _CaseCard extends StatelessComponent {
   Component build(BuildContext context) {
     return div(
       classes: [
-        if (isCompact) 'why-flutter-case-card-compact' else 'why-flutter-case-card',
+        if (isCompact)
+          'why-flutter-case-card-compact'
+        else
+          'why-flutter-case-card',
         'theme-${study.theme}',
         if (study.isDark) 'is-dark',
       ].join(' '),
