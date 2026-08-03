@@ -241,14 +241,21 @@ packages to modern WebAssembly-compatible alternatives:
 - Replace `dart:html` and other legacy web libraries with [`package:web`][].
 - Replace `dart:js` and `package:js` with [`dart:js_interop`][].
 
+For comprehensive migration instructions, check out the
+[`package:web` migration guide on dart.dev]({{site.dart-site}}/interop/js-interop/package-web)
+and Dart's [JS interop usage guide]({{site.dart-site}}/interop/js-interop).
+
 If you need to support both legacy and modern environments during your
 migration, use conditional imports by checking for `dart.library.js_interop`:
 
 ```dart
 import 'fallback.dart'
-  if (dart.library.js_interop) 'wasm_web_interop.dart'
-  if (dart.library.js) 'legacy_web_interop.dart';
+  if (dart.library.js) 'legacy_web_interop.dart'
+  if (dart.library.js_interop) 'wasm_web_interop.dart';
 ```
+
+To learn more about selecting implementations at compile time, see the
+[conditional imports documentation on dart.dev]({{site.dart-site}}/interop/js-interop/package-web#conditional-imports).
 
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web

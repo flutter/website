@@ -105,8 +105,8 @@ which are not supported on Wasm):
 
 ```dart
 import 'fallback.dart'
-  if (dart.library.js_interop) 'wasm_web_interop.dart'
-  if (dart.library.js) 'legacy_web_interop.dart';
+  if (dart.library.js) 'legacy_web_interop.dart'
+  if (dart.library.js_interop) 'wasm_web_interop.dart';
 ```
 
 For more details, see the [documentation for conditional imports][]
