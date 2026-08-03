@@ -133,8 +133,11 @@ Map<String, Object?> __consultants_gridConsultantsGrid(
   _consultants_grid.ConsultantsGrid c,
 ) => {'data': c.data, 'items': c.items.map((i) => i.toId()).toList()};
 Map<String, Object?> __events_gridEventsGrid(_events_grid.EventsGrid c) => {
+  'title': c.title,
   'data': c.data,
   'items': c.items.map((i) => i.toId()).toList(),
+  'emptyDataMessage': c.emptyDataMessage,
+  'filterScope': c.filterScope,
 };
 Map<String, Object?> __games_adaptive_mediaGamesAdaptiveMedia(
   _games_adaptive_media.GamesAdaptiveMedia c,

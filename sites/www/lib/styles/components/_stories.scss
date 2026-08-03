@@ -21,6 +21,15 @@ section#stories {
     row-gap: var(--gutter);
   }
 
+  .filters-empty-results {
+    padding: var(--gutter-md) 0;
+    text-align: center;
+
+    p {
+      margin-bottom: var(--gutter-sm);
+    }
+  }
+
   @include breakpoints.screen(md) {
     .story-grid-items {
       grid-template-columns: repeat(2, 1fr);

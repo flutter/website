@@ -16,12 +16,18 @@ class FiltersDropdown extends StatefulComponent {
     required this.filters,
     required this.activeFilters,
     required this.applyFilters,
+    this.scope = '',
     super.key,
   });
 
   final List<FilterType> filters;
   final Map<FilterType, Set<String>> activeFilters;
+
   final void Function(Map<FilterType, Set<String>>) applyFilters;
+
+  /// Prefix applied to the checkbox element IDs,
+  /// so multiple dropdowns can coexist on one page.
+  final String scope;
 
   @override
   State<FiltersDropdown> createState() => _FiltersDropdownState();
@@ -45,12 +51,31 @@ class _FiltersDropdownState extends State<FiltersDropdown> {
           .forTarget(web.window)
           .listen((_) => onResize());
       onResize();
-      _selectedFilters = {
-        for (final type in component.filters)
-          type: {...component.activeFilters[type] ?? {}},
-      };
+    }
+
+    _selectedFilters = _copyActiveFilters();
+  }
+
+  @override
+  void didUpdateComponent(covariant FiltersDropdown oldComponent) {
+    super.didUpdateComponent(oldComponent);
+    // Rebuilds that don't touch the filters, such as showing more items,
+    // shouldn't discard the options the user has checked but not applied.
+    if (!identical(oldComponent.activeFilters, component.activeFilters)) {
+      _selectedFilters = _copyActiveFilters();
     }
   }
+
+  /// A mutable copy of [FiltersDropdown.activeFilters],
+  /// so toggling a checkbox doesn't apply to the grid until confirmed.
+  Map<FilterType, Set<String>> _copyActiveFilters() => {
+    for (final type in component.filters)
+      type: {...component.activeFilters[type] ?? {}},
+  };
+
+  /// The page-unique DOM element ID of the checkbox for [option] of [type].
+  String _optionId(FilterType type, String option) =>
+      '${component.scope}${type.optionId(option)}';
 
   void onResize() {
     setState(() {
@@ -79,9 +104,10 @@ class _FiltersDropdownState extends State<FiltersDropdown> {
     toggleDropdown();
   }
 
+  /// Deselects every option and immediately applies the empty selection.
   void clearAllFilters() {
     setState(() {
-      _selectedFilters = {for (final type in component.filters) type: {}};
+      _selectedFilters = {};
     });
 
     applyFilters();
@@ -199,9 +225,9 @@ class _FiltersDropdownState extends State<FiltersDropdown> {
         ].join(' '),
         [
           for (final option in type.options)
-            label(htmlFor: type.optionId(option), [
+            label(htmlFor: _optionId(type, option), [
               input(
-                id: type.optionId(option),
+                id: _optionId(type, option),
                 type: InputType.checkbox,
                 value: option,
                 checked: _selectedFilters[type]?.contains(option) ?? false,
