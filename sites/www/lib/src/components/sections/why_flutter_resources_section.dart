@@ -49,8 +49,8 @@ class WhyFlutterResourcesSection extends StatelessComponent {
         h2([.text("Don't take our word for it.")]),
         p(classes: 'why-flutter-sub', [
           .text(
-            'Discover reports, case studies, and research from organizations '
-            'shaping the future of Flutter.',
+            'Discover reports, case studies, and research on building '
+            'with Flutter at scale.',
           ),
         ]),
       ]),

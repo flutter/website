@@ -36,40 +36,44 @@ class WhyFlutterFeaturesSection extends StatelessComponent {
           '120 FPS across phones, tablets, desktops, and embedded devices.',
     ),
     (
-      symbol: 'hub',
-      tint: 'system',
-      title: 'One Design System',
-      body:
-          'Maintain a single design system across iOS, Android, web, and '
-          'desktop for a consistent brand experience everywhere.',
-    ),
-    (
       symbol: 'insights',
       tint: 'smooth',
-      title: 'Smooth by Default',
+      title: 'Smooth experiences',
       body:
-          "Impeller's precompiled shaders eliminate first-run jank, "
-          'delivering fluid interactions from the very first launch.',
+          "Flutter's Impeller renderer eliminates jank, delivering fluid "
+          'animations and interactions on every platform.',
+    ),
+    (
+      symbol: 'hub',
+      tint: 'system',
+      title: 'Tools included',
+      body:
+          'Integrated IDE, debugging, DevTools, and platform-specific tools, '
+          'with an AI-powered development workflow.',
     ),
   ];
 
   @override
   Component build(BuildContext context) {
-    return section(id: 'design-fidelity', classes: 'module why-flutter-features', [
-      const div(classes: 'stacked-header container', [
-        p(classes: 'why-flutter-kicker', [.text('Design fidelity')]),
-        h2([.text('Every pixel, on brand')]),
-        p(classes: 'why-flutter-sub', [
-          .text(
-            "Don't compromise your brand. Control every pixel with a single "
-            'rendering engine.',
-          ),
+    return section(
+      id: 'design-fidelity',
+      classes: 'module why-flutter-features',
+      [
+        const div(classes: 'stacked-header container', [
+          p(classes: 'why-flutter-kicker', [.text('Design fidelity')]),
+          h2([.text('Every pixel, on brand')]),
+          p(classes: 'why-flutter-sub', [
+            .text(
+              "Don't compromise your brand. Control every pixel with a single "
+              'rendering engine.',
+            ),
+          ]),
         ]),
-      ]),
-      div(classes: 'why-flutter-feature-grid', [
-        for (final feature in _features) _FeatureCard(feature: feature),
-      ]),
-    ]);
+        div(classes: 'why-flutter-feature-grid', [
+          for (final feature in _features) _FeatureCard(feature: feature),
+        ]),
+      ],
+    );
   }
 }
 
