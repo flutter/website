@@ -217,7 +217,9 @@ class _ProductivityChart extends StatelessComponent {
           const p(classes: 'why-flutter-bar-label label-flutter', [
             .text('Teams with Flutter'),
           ]),
-          const p(classes: 'why-flutter-chart-axis-label', [.text('Productivity')]),
+          const p(classes: 'why-flutter-chart-axis-label', [
+            .text('Productivity'),
+          ]),
           const div(classes: 'why-flutter-chart-badge', [
             Icon(symbol: 'arrow_upward'),
           ]),

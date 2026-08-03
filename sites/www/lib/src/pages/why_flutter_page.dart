@@ -40,7 +40,9 @@ class WhyFlutterPage extends StatelessComponent {
           for (var index = 1; index <= _heroScreenCount; index++)
             image('hero-screens/s${index.toString().padLeft(2, '0')}.webp'),
         ],
-        whitepaperUrl: context.asset('/why-flutter/flutter-whitepaper-2026.pdf'),
+        whitepaperUrl: context.asset(
+          '/why-flutter/flutter-whitepaper-2026.pdf',
+        ),
         flutterLogo: image('flutter-logo-mark.svg'),
       ),
       WhyFlutterCodeSharedSection(
