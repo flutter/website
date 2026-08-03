@@ -88,9 +88,9 @@ so can be useful if your plugin can't be tested without
 native UI interactions.
 
 [Espresso]: {{site.repo.packages}}/tree/main/packages/espresso
-[GoogleTest]: {{site.github}}/google/googletest
+[GoogleTest]: https://github.com/google/googletest
 [integration tests]: /cookbook/testing/integration/introduction
-[JUnit]: {{site.github}}/junit-team/junit4/wiki/Getting-started
+[JUnit]: https://github.com/junit-team/junit4/wiki/Getting-started
 [mocked in tests]: /testing/plugins-in-tests#mock-the-platform-channel
 [`patrol`]: {{site.pub-pkg}}/patrol
 [plugin-tests]: /packages-and-plugins/developing-packages#step-1-create-the-package-1

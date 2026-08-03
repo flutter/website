@@ -2080,7 +2080,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Animations tutorial]: /ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources
 [`AppLifecycleState` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
-[arb]: {{site.github}}/googlei18n/app-resource-bundle
+[arb]: https://github.com/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [composing]: /resources/architectural-overview#composition
 [Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html

@@ -11,7 +11,7 @@ Flutter and Dart support
 as a compilation target when building
 applications for the web.
 
-[`stable`]: {{site.github}}/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md#stable
+[`stable`]: {{site.repo.flutter}}/blob/master/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/dart-js_interop/dart-js_interop-library.html
 
@@ -70,6 +70,27 @@ $ flutter build web --wasm
 The command produces output into the `build/web` directory relative to the
 package root, just like `flutter build web`.
 
+#### Wasm production debugging
+
+By default, Wasm release builds strip debug symbols and omit source maps
+to minimize binary size.
+
+- **For error monitoring (recommended)**: Pass `--source-maps` to generate
+  a `main.dart.wasm.map` file for symbolication in error tracking services.
+  For security recommendations and deployment warnings, see
+  [Source maps](/deployment/web#source-maps).
+- **For staging or QA builds**: Pass `--no-strip-wasm` to preserve Wasm
+  function names directly in browser console stack traces, at the cost of
+  an approximate **47% increase** in Wasm binary size.
+
+```console
+# Generate source maps for production error tracking:
+$ flutter build web --wasm --source-maps
+
+# Preserve Wasm function names for staging/QA debugging:
+$ flutter build web --wasm --no-strip-wasm
+```
+
 ### Open the app in a compatible web browser
 Even with the `--wasm` flag, Flutter will still compile the application to
 JavaScript. If WasmGC support is not detected at runtime, the JavaScript output
@@ -121,7 +142,7 @@ Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
 Firefox announced stable support for WasmGC in Firefox 120,
 but currently doesn't work due to a known limitation (see details below).
 
-[WasmGC]: {{site.github}}/WebAssembly/gc/tree/main/proposals/gc
+[WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
 [support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
 [issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206

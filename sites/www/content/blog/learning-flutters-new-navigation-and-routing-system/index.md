@@ -1212,7 +1212,7 @@ This class only affects the *declarative* API, which is why the **back** button 
 
 #### Nested routers
 
-This larger demo shows how to add a `Router` within another `Router`. Many apps require routes for the destinations in a `BottomAppBar`, and routes for a stack of views above it, which [requires two Navigators](https://medium.com/flutter/getting-to-the-bottom-of-navigation-in-flutter-b3e440b9386). To do this, the app uses an application state object to store app-specific navigation state (the selected menu index and the selected `Book` object). This example also shows how to configure which `Router` handles the back button.
+This larger demo shows how to add a `Router` within another `Router`. Many apps require routes for the destinations in a `BottomAppBar`, and routes for a stack of views above it, which [requires two Navigators](https://flutter.dev/blog/getting-to-the-bottom-of-navigation-in-flutter). To do this, the app uses an application state object to store app-specific navigation state (the selected menu index and the selected `Book` object). This example also shows how to configure which `Router` handles the back button.
 
 [Nested router sample(Gist)](https://gist.github.com/bbca91e23bbb4d39247fa922533be7c9)
 

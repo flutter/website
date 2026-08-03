@@ -18,8 +18,8 @@ you can [file an issue][] or
 submit a [pull request][] on GitHub.
 
 [community support channels]: #community-support
-[file an issue]: {{site.github}}/flutter/website/issues/new
-[pull request]: {{site.github}}/flutter/website/pulls
+[file an issue]: {{site.repo.this}}/issues/new
+[pull request]: {{site.repo.this}}/pulls
 
 ## Get the Flutter SDK
 

@@ -12,7 +12,7 @@ layout: blog
 
 ## Are you happy with Flutter? — Q4 2020 user survey results
 
-The Flutter team at Google has been running a quarterly survey program to collect your feedback [since 2018](https://medium.com/flutter/search?q=survey). The survey for the last quarter launched on November 23, 2020 and remained open for 8 days. The team collected 8,285 responses, and we want to share the results with you! Even though this survey was half the length of our usual surveys, we learned a lot from your answers, as always. We truly appreciate those of you who took the time to provide valuable feedback.
+The Flutter team at Google has been running a quarterly survey program to collect your feedback [since 2018](https://flutter.dev/blog/what-weve-learned-from-the-july-2018-flutter-user-survey). The survey for the last quarter launched on November 23, 2020 and remained open for 8 days. The team collected 8,285 responses, and we want to share the results with you! Even though this survey was half the length of our usual surveys, we learned a lot from your answers, as always. We truly appreciate those of you who took the time to provide valuable feedback.
 
 ## User satisfaction
 

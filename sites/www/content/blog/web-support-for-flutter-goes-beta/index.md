@@ -18,7 +18,7 @@ Developers build apps that need to run both on mobile and web. It’s important 
 
 ## More than a preview
 
-Since releasing web support as a [tech preview](https://medium.com/flutter/bringing-flutter-to-the-web-904de05f0df0) at Google I/O this year, and the start of the [early adopter program](https://medium.com/flutter/flutter-for-web-early-adopter-program-now-open-9f1fb146e4c4) in July, we’ve been working hard to support the growing interest in extending Flutter’s web support both at Google and in the wider public.
+Since releasing web support as a [tech preview](https://flutter.dev/blog/bringing-flutter-to-the-web) at Google I/O this year, and the start of the [early adopter program](https://flutter.dev/blog/flutter-for-web-early-adopter-program-now-open) in July, we’ve been working hard to support the growing interest in extending Flutter’s web support both at Google and in the wider public.
 
 ### So, what does beta for web mean?
 
@@ -54,7 +54,7 @@ A companion app is a web experience built using Flutter to support your primary 
 
 ## Plugins are here!
 
-Flutter has a concept of plugins, which allows you to talk to native libraries for the platform you are running on. When running your Flutter app on the web, you can get full access to existing JS libraries. We do all the JS-interop code behind the scenes so the plugin works as you’d expect on both mobile and web. We’ve already implemented a handful of the top-requested plugins so they work consistently across your native and web applications. Now, you can also [write your own plugins](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) as [Ben Hagan](https://github.com/cbenhagen) did for video_player, and [Hadrien Lejard](https://github.com/lejard-h) did for the sentry package. The following packages are updated:
+Flutter has a concept of plugins, which allows you to talk to native libraries for the platform you are running on. When running your Flutter app on the web, you can get full access to existing JS libraries. We do all the JS-interop code behind the scenes so the plugin works as you’d expect on both mobile and web. We’ve already implemented a handful of the top-requested plugins so they work consistently across your native and web applications. Now, you can also [write your own plugins](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin) as [Ben Hagan](https://github.com/cbenhagen) did for video_player, and [Hadrien Lejard](https://github.com/lejard-h) did for the sentry package. The following packages are updated:
 
 * [shared_preferences](https://pub.dev/packages/shared_preferences)
 
@@ -100,7 +100,7 @@ Since the preview, we increased our test coverage both on the framework and on t
 
 Now is the perfect time to try Flutter’s web support! Go to flutter.dev/web to get started, and find examples, documentation, and more. If you’ve already experimented with Flutter’s web support, you can [switch to the beta channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels).
 
-There are over 1800 Flutter plugins that exist today; however, most are for iOS or Android. You can help bridge the gap between mobile and web by adding web support to existing plugins or by building your own. To help guide you, we published an article about [how to write a web plugin](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1).
+There are over 1800 Flutter plugins that exist today; however, most are for iOS or Android. You can help bridge the gap between mobile and web by adding web support to existing plugins or by building your own. To help guide you, we published an article about [how to write a web plugin](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin).
 
 ## Closing thoughts
 

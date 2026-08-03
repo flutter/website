@@ -66,7 +66,7 @@ Flutter isn’t just the framework, the engine, and the tools — there are more
 
 ### GA of Flutter Ads
 
-First and foremost is the [release of the Google Mobile SDK for Flutter into general availability](https://medium.com/flutter/announcing-general-availability-for-the-google-mobile-ads-sdk-for-flutter-574e51ea6783) in November.
+First and foremost is the [release of the Google Mobile SDK for Flutter into general availability](https://flutter.dev/blog/announcing-general-availability-for-the-google-mobile-ads-sdk-for-flutter) in November.
 
 <DashImage figure src="images/0hRLh9gi5n3E82lXG.webp" />
 

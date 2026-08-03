@@ -33,7 +33,7 @@ Flutter is a new platform for developing Android and iOS apps from a single code
 
 <DashImage figure src="images/1OKV3RzTg89W3VxXnpAH3Eg.webp" alt="A simple animated bar chart, captured from an iOS simulator during development" caption="A simple animated bar chart, captured from an iOS simulator during development" />
 
-This is part one of a [two-part](https://medium.com/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb) introduction to Flutter and its ‘widget’ and ‘tween’ concepts. I’ll illustrate the strength of these concepts by using them to display and animate charts like the one shown above. Full code samples should provide an impression of the level of code clarity achievable with Dart. And I’ll include enough detail that you should be able to follow along on your own laptop (and emulator or device), and experience the length of the Flutter development cycle.
+This is part one of a [two-part](https://flutter.dev/blog/zero-to-one-with-flutter-part-two) introduction to Flutter and its ‘widget’ and ‘tween’ concepts. I’ll illustrate the strength of these concepts by using them to display and animate charts like the one shown above. Full code samples should provide an impression of the level of code clarity achievable with Dart. And I’ll include enough detail that you should be able to follow along on your own laptop (and emulator or device), and experience the length of the Flutter development cycle.
 
 The starting point is a fresh [installation of Flutter](https://flutter.io/setup). Run
 
