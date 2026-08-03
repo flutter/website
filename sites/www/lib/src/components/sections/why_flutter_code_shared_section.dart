@@ -13,17 +13,17 @@ import '../../utils/visibility_observer.dart';
 /// On scrolling into view the Dash-at-laptop sprite plays through once, and
 /// the percentage begins counting up 1.5 seconds later.
 @client
-class WhyUsCodeSharedSection extends StatefulComponent {
-  const WhyUsCodeSharedSection({required this.laptopSprite, super.key});
+class WhyFlutterCodeSharedSection extends StatefulComponent {
+  const WhyFlutterCodeSharedSection({required this.laptopSprite, super.key});
 
   /// Resolved URL of the Dash-at-laptop sprite sheet.
   final String laptopSprite;
 
   @override
-  State<WhyUsCodeSharedSection> createState() => _WhyUsCodeSharedSectionState();
+  State<WhyFlutterCodeSharedSection> createState() => _WhyFlutterCodeSharedSectionState();
 }
 
-class _WhyUsCodeSharedSectionState extends State<WhyUsCodeSharedSection> {
+class _WhyFlutterCodeSharedSectionState extends State<WhyFlutterCodeSharedSection> {
   static const _sharedPercentage = 97;
 
   bool _isSpriteRunning = false;
@@ -34,7 +34,7 @@ class _WhyUsCodeSharedSectionState extends State<WhyUsCodeSharedSection> {
     super.initState();
     if (!kIsWeb) return;
 
-    observeOnce('#why-us-code-shared', () {
+    observeOnce('#why-flutter-code-shared', () {
       setState(() => _isSpriteRunning = true);
 
       Timer(const Duration(milliseconds: 1500), () {
@@ -52,29 +52,29 @@ class _WhyUsCodeSharedSectionState extends State<WhyUsCodeSharedSection> {
 
   @override
   Component build(BuildContext context) {
-    return section(id: 'code-shared', classes: 'module why-us-shared', [
-      div(classes: 'why-us-row why-us-row-reverse container', [
-        div(classes: 'why-us-shared-media', [
-          div(id: 'why-us-code-shared', classes: 'why-us-shared-stat', [
-            const p(classes: 'why-us-kicker', [.text('Code shared')]),
-            span(classes: 'why-us-stat-number', [.text('$_percentage%')]),
+    return section(id: 'code-shared', classes: 'module why-flutter-shared', [
+      div(classes: 'why-flutter-row why-flutter-row-reverse container', [
+        div(classes: 'why-flutter-shared-media', [
+          div(id: 'why-flutter-code-shared', classes: 'why-flutter-shared-stat', [
+            const p(classes: 'why-flutter-kicker', [.text('Code shared')]),
+            span(classes: 'why-flutter-stat-number', [.text('$_percentage%')]),
           ]),
           div(
             classes: [
-              'why-us-laptop-sprite',
+              'why-flutter-laptop-sprite',
               if (_isSpriteRunning) 'is-running',
             ].join(' '),
             styles: Styles(
               raw: {
-                '--why-us-sprite': 'url(${component.laptopSprite})',
+                '--why-flutter-sprite': 'url(${component.laptopSprite})',
               },
             ),
             const [],
           ),
         ]),
-        const div(classes: 'why-us-shared-copy', [
+        const div(classes: 'why-flutter-shared-copy', [
           h2([.text('One team, not three')]),
-          p(classes: 'why-us-body', [
+          p(classes: 'why-flutter-body', [
             .text(
               'One codebase. Lower costs. Eliminate the overhead of '
               'maintaining separate native development teams.',
@@ -82,7 +82,7 @@ class _WhyUsCodeSharedSectionState extends State<WhyUsCodeSharedSection> {
           ]),
           a(
             href: '/showcase',
-            classes: 'btn why-us-outline-btn',
+            classes: 'btn why-flutter-outline-btn',
             [.text('See success cases')],
           ),
         ]),

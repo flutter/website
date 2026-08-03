@@ -13,8 +13,8 @@ import '../common/icon.dart';
 /// The Dash and Gemini sprite starts looping once it scrolls into view, so the
 /// section hydrates on the client.
 @client
-class WhyUsAiEraSection extends StatefulComponent {
-  const WhyUsAiEraSection({required this.geminiSprite, super.key});
+class WhyFlutterAiEraSection extends StatefulComponent {
+  const WhyFlutterAiEraSection({required this.geminiSprite, super.key});
 
   /// Resolved URL of the Dash and Gemini sprite sheet.
   ///
@@ -23,10 +23,10 @@ class WhyUsAiEraSection extends StatefulComponent {
   final String geminiSprite;
 
   @override
-  State<WhyUsAiEraSection> createState() => _WhyUsAiEraSectionState();
+  State<WhyFlutterAiEraSection> createState() => _WhyFlutterAiEraSectionState();
 }
 
-class _WhyUsAiEraSectionState extends State<WhyUsAiEraSection> {
+class _WhyFlutterAiEraSectionState extends State<WhyFlutterAiEraSection> {
   static const _capabilities = ['MCP Server', 'GenUI', 'LLM-fluent'];
 
   bool _isSpriteRunning = false;
@@ -36,39 +36,39 @@ class _WhyUsAiEraSectionState extends State<WhyUsAiEraSection> {
     super.initState();
     if (!kIsWeb) return;
 
-    observeOnce('#why-us-gemini', () {
+    observeOnce('#why-flutter-gemini', () {
       setState(() => _isSpriteRunning = true);
     });
   }
 
   @override
   Component build(BuildContext context) {
-    return section(id: 'ai-era', classes: 'module why-us-ai', [
-      div(classes: 'why-us-row container', [
-        div(classes: 'why-us-ai-copy', [
+    return section(id: 'ai-era', classes: 'module why-flutter-ai', [
+      div(classes: 'why-flutter-row container', [
+        div(classes: 'why-flutter-ai-copy', [
           const h2([.text('Built for the AI era')]),
-          const p(classes: 'why-us-body', [
+          const p(classes: 'why-flutter-body', [
             .text(
               'Flutter provides a scalable foundation for AI-powered '
               'experiences, making it easy to integrate agentic features and '
               'evolve your product.',
             ),
           ]),
-          div(classes: 'why-us-chips', [
+          div(classes: 'why-flutter-chips', [
             for (final capability in _capabilities)
               _CapabilityChip(label: capability),
           ]),
         ]),
-        div(classes: 'why-us-ai-media', [
+        div(classes: 'why-flutter-ai-media', [
           div(
-            id: 'why-us-gemini',
+            id: 'why-flutter-gemini',
             classes: [
-              'why-us-gemini-sprite',
+              'why-flutter-gemini-sprite',
               if (_isSpriteRunning) 'is-running',
             ].join(' '),
             styles: Styles(
               raw: {
-                '--why-us-sprite': 'url(${component.geminiSprite})',
+                '--why-flutter-sprite': 'url(${component.geminiSprite})',
               },
             ),
             const [],
@@ -87,8 +87,8 @@ class _CapabilityChip extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return div(classes: 'why-us-chip', [
-      const div(classes: 'why-us-chip-check', [Icon(symbol: 'check')]),
+    return div(classes: 'why-flutter-chip', [
+      const div(classes: 'why-flutter-chip-check', [Icon(symbol: 'check')]),
       span([.text(label)]),
     ]);
   }

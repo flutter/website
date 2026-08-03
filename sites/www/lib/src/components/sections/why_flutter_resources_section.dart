@@ -21,8 +21,8 @@ typedef _Resource = ({
 /// research on Flutter's business value.
 ///
 /// All hover behaviour is CSS, so this section stays server-rendered.
-class WhyUsResourcesSection extends StatelessComponent {
-  const WhyUsResourcesSection({super.key});
+class WhyFlutterResourcesSection extends StatelessComponent {
+  const WhyFlutterResourcesSection({super.key});
 
   static const List<_Resource> _resources = [
     (
@@ -43,18 +43,18 @@ class WhyUsResourcesSection extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return section(id: 'resources', classes: 'module why-us-resources', [
+    return section(id: 'resources', classes: 'module why-flutter-resources', [
       const div(classes: 'stacked-header container', [
-        p(classes: 'why-us-kicker', [.text('Resources')]),
+        p(classes: 'why-flutter-kicker', [.text('Resources')]),
         h2([.text("Don't take our word for it.")]),
-        p(classes: 'why-us-sub', [
+        p(classes: 'why-flutter-sub', [
           .text(
             'Discover reports, case studies, and research from organizations '
             'shaping the future of Flutter.',
           ),
         ]),
       ]),
-      div(classes: 'why-us-resource-list container', [
+      div(classes: 'why-flutter-resource-list container', [
         for (final resource in _resources) _ResourceRow(resource: resource),
       ]),
     ]);
@@ -73,21 +73,21 @@ class _ResourceRow extends StatelessComponent {
       href: resource.href,
       target: Target.blank,
       attributes: const {'rel': 'noopener'},
-      classes: 'why-us-resource',
+      classes: 'why-flutter-resource',
       [
         img(
-          src: context.asset('/why-us/images/${resource.logo}'),
+          src: context.asset('/why-flutter/images/${resource.logo}'),
           alt: resource.logoAlt,
-          classes: 'why-us-resource-logo',
+          classes: 'why-flutter-resource-logo',
         ),
-        div(classes: 'why-us-resource-copy', [
+        div(classes: 'why-flutter-resource-copy', [
           h3([.text(resource.title)]),
-          p(classes: 'why-us-body', [.text(resource.summary)]),
+          p(classes: 'why-flutter-body', [.text(resource.summary)]),
         ]),
-        const div(classes: 'why-us-resource-tile', [
+        const div(classes: 'why-flutter-resource-tile', [
           Icon(symbol: 'arrow_outward'),
         ]),
-        const div(classes: 'why-us-resource-button', [
+        const div(classes: 'why-flutter-resource-button', [
           span([.text('Read more')]),
           Icon(symbol: 'north_east'),
         ]),

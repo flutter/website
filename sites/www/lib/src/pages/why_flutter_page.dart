@@ -6,15 +6,15 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../components/sections/cta_section.dart';
-import '../components/sections/why_us_ai_era_section.dart';
-import '../components/sections/why_us_cases_section.dart';
-import '../components/sections/why_us_code_shared_section.dart';
-import '../components/sections/why_us_features_section.dart';
-import '../components/sections/why_us_hero_section.dart';
-import '../components/sections/why_us_resources_section.dart';
+import '../components/sections/why_flutter_ai_era_section.dart';
+import '../components/sections/why_flutter_cases_section.dart';
+import '../components/sections/why_flutter_code_shared_section.dart';
+import '../components/sections/why_flutter_features_section.dart';
+import '../components/sections/why_flutter_hero_section.dart';
+import '../components/sections/why_flutter_resources_section.dart';
 import '../utils/asset_utils.dart';
 
-/// The "Why us" page, making the business case for adopting Flutter.
+/// The "Why Flutter" page, making the business case for adopting Flutter.
 ///
 /// The site's `DefaultLayout` supplies the header and footer, and the closing
 /// call to action reuses the shared [CTASection].
@@ -23,31 +23,31 @@ import '../utils/asset_utils.dart';
 /// client. Those sections must not resolve assets themselves: the asset
 /// helpers import `dart:io`, which would pull the server-only SDK into the
 /// client bundle and stop it compiling.
-class WhyUsPage extends StatelessComponent {
-  const WhyUsPage({super.key});
+class WhyFlutterPage extends StatelessComponent {
+  const WhyFlutterPage({super.key});
 
   /// Number of app screenshots cycling in the hero.
   static const _heroScreenCount = 12;
 
   @override
   Component build(BuildContext context) {
-    String image(String name) => context.asset('/why-us/images/$name');
+    String image(String name) => context.asset('/why-flutter/images/$name');
 
-    return main_(classes: 'why-us', [
-      WhyUsHeroSection(
+    return main_(classes: 'why-flutter', [
+      WhyFlutterHeroSection(
         typingSprite: image('dash-typing-sprite.webp'),
         screens: [
           for (var index = 1; index <= _heroScreenCount; index++)
             image('hero-screens/s${index.toString().padLeft(2, '0')}.webp'),
         ],
-        whitepaperUrl: context.asset('/why-us/flutter-whitepaper-2026.pdf'),
+        whitepaperUrl: context.asset('/why-flutter/flutter-whitepaper-2026.pdf'),
       ),
-      WhyUsCodeSharedSection(
+      WhyFlutterCodeSharedSection(
         laptopSprite: image('dash-laptop-sprite-v2.webp'),
       ),
-      const WhyUsFeaturesSection(),
-      WhyUsAiEraSection(geminiSprite: image('dash-gemini-sprite.webp')),
-      WhyUsCasesSection(
+      const WhyFlutterFeaturesSection(),
+      WhyFlutterAiEraSection(geminiSprite: image('dash-gemini-sprite.webp')),
+      WhyFlutterCasesSection(
         media: {
           'headspace': image('headspace-app.png'),
           'universal': image('universal-app.png'),
@@ -56,7 +56,7 @@ class WhyUsPage extends StatelessComponent {
           'lg': image('lg-tv.png'),
         },
       ),
-      const WhyUsResourcesSection(),
+      const WhyFlutterResourcesSection(),
       const CTASection(),
     ]);
   }

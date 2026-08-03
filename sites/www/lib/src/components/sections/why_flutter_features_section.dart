@@ -15,8 +15,8 @@ typedef _Feature = ({String symbol, String tint, String title, String body});
 /// A 2x2 grid on wide viewports that becomes a horizontal snap-scroll carousel
 /// on small ones. The decorative blobs animate purely in CSS on hover, so this
 /// section needs no client-side code.
-class WhyUsFeaturesSection extends StatelessComponent {
-  const WhyUsFeaturesSection({super.key});
+class WhyFlutterFeaturesSection extends StatelessComponent {
+  const WhyFlutterFeaturesSection({super.key});
 
   static const List<_Feature> _features = [
     (
@@ -55,18 +55,18 @@ class WhyUsFeaturesSection extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return section(id: 'design-fidelity', classes: 'module why-us-features', [
+    return section(id: 'design-fidelity', classes: 'module why-flutter-features', [
       const div(classes: 'stacked-header container', [
-        p(classes: 'why-us-kicker', [.text('Design fidelity')]),
+        p(classes: 'why-flutter-kicker', [.text('Design fidelity')]),
         h2([.text('Every pixel, on brand')]),
-        p(classes: 'why-us-sub', [
+        p(classes: 'why-flutter-sub', [
           .text(
             "Don't compromise your brand. Control every pixel with a single "
             'rendering engine.',
           ),
         ]),
       ]),
-      div(classes: 'why-us-feature-grid', [
+      div(classes: 'why-flutter-feature-grid', [
         for (final feature in _features) _FeatureCard(feature: feature),
       ]),
     ]);
@@ -82,14 +82,14 @@ class _FeatureCard extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return div(classes: 'why-us-feature-card tint-${feature.tint}', [
-      const div(classes: 'why-us-blob why-us-blob-top', []),
-      div(classes: 'why-us-feature-icon', [Icon(symbol: feature.symbol)]),
-      div(classes: 'why-us-feature-body', [
+    return div(classes: 'why-flutter-feature-card tint-${feature.tint}', [
+      const div(classes: 'why-flutter-blob why-flutter-blob-top', []),
+      div(classes: 'why-flutter-feature-icon', [Icon(symbol: feature.symbol)]),
+      div(classes: 'why-flutter-feature-body', [
         h3([.text(feature.title)]),
         p([.text(feature.body)]),
       ]),
-      const div(classes: 'why-us-blob why-us-blob-bottom', []),
+      const div(classes: 'why-flutter-blob why-flutter-blob-bottom', []),
     ]);
   }
 }

@@ -22,8 +22,8 @@ typedef _Case = ({
 /// On wide viewports the track translates one card at a time; below the medium
 /// breakpoint it becomes a native snap-scroll strip driven by the same arrows.
 @client
-class WhyUsCasesSection extends StatefulComponent {
-  const WhyUsCasesSection({required this.media, super.key});
+class WhyFlutterCasesSection extends StatefulComponent {
+  const WhyFlutterCasesSection({required this.media, super.key});
 
   /// Resolved URLs of the device imagery, keyed by card theme.
   ///
@@ -32,10 +32,10 @@ class WhyUsCasesSection extends StatefulComponent {
   final Map<String, String> media;
 
   @override
-  State<WhyUsCasesSection> createState() => _WhyUsCasesSectionState();
+  State<WhyFlutterCasesSection> createState() => _WhyFlutterCasesSectionState();
 }
 
-class _WhyUsCasesSectionState extends State<WhyUsCasesSection> {
+class _WhyFlutterCasesSectionState extends State<WhyFlutterCasesSection> {
   /// Width of one card plus the gap between cards.
   static const _cardStride = 1220;
 
@@ -76,7 +76,7 @@ class _WhyUsCasesSectionState extends State<WhyUsCasesSection> {
   int _index = 0;
 
   void _step(int delta) {
-    final strip = web.document.querySelector('#why-us-case-strip');
+    final strip = web.document.querySelector('#why-flutter-case-strip');
     if (strip != null && web.window.innerWidth < 768) {
       strip.scrollBy(
         web.ScrollToOptions(
@@ -94,17 +94,17 @@ class _WhyUsCasesSectionState extends State<WhyUsCasesSection> {
 
   @override
   Component build(BuildContext context) {
-    return section(id: 'success-cases', classes: 'module why-us-cases', [
+    return section(id: 'success-cases', classes: 'module why-flutter-cases', [
       const div(classes: 'stacked-header container', [
-        p(classes: 'why-us-kicker', [.text('Success cases')]),
+        p(classes: 'why-flutter-kicker', [.text('Success cases')]),
         h2([.text('What switching actually returned')]),
-        p(classes: 'why-us-sub', [
+        p(classes: 'why-flutter-sub', [
           .text('The measurable ROI teams achieved after making the switch.'),
         ]),
       ]),
-      div(classes: 'why-us-case-viewport', [
+      div(classes: 'why-flutter-case-viewport', [
         div(
-          classes: 'why-us-case-track',
+          classes: 'why-flutter-case-track',
           styles: Styles(
             raw: {'transform': 'translateX(${-_index * _cardStride}px)'},
           ),
@@ -114,11 +114,11 @@ class _WhyUsCasesSectionState extends State<WhyUsCasesSection> {
           ],
         ),
       ]),
-      div(id: 'why-us-case-strip', classes: 'why-us-case-strip', [
+      div(id: 'why-flutter-case-strip', classes: 'why-flutter-case-strip', [
         for (final study in _cases)
           _CaseCard(study: study, media: component.media, isCompact: true),
       ]),
-      div(classes: 'why-us-case-arrows', [
+      div(classes: 'why-flutter-case-arrows', [
         _ArrowButton(
           symbol: 'arrow_back',
           label: 'Previous success case',
@@ -153,21 +153,21 @@ class _CaseCard extends StatelessComponent {
   Component build(BuildContext context) {
     return div(
       classes: [
-        if (isCompact) 'why-us-case-card-compact' else 'why-us-case-card',
+        if (isCompact) 'why-flutter-case-card-compact' else 'why-flutter-case-card',
         'theme-${study.theme}',
         if (study.isDark) 'is-dark',
       ].join(' '),
       [
-        div(classes: 'why-us-case-copy', [
-          p(classes: 'why-us-case-company', [.text(study.company)]),
-          p(classes: 'why-us-case-quote', [.text(study.quote)]),
+        div(classes: 'why-flutter-case-copy', [
+          p(classes: 'why-flutter-case-company', [.text(study.company)]),
+          p(classes: 'why-flutter-case-quote', [.text(study.quote)]),
           if (study.storyUrl case final url?)
-            a(href: url, classes: 'why-us-case-link', const [
+            a(href: url, classes: 'why-flutter-case-link', const [
               .text('Read story'),
               Icon.linkArrow(),
             ]),
         ]),
-        div(classes: 'why-us-case-media', [
+        div(classes: 'why-flutter-case-media', [
           _CaseMedia(study: study, media: media),
         ]),
       ],
@@ -194,12 +194,12 @@ class _CaseMedia extends StatelessComponent {
         img(
           src: media[theme]!,
           alt: '${study.company} app',
-          classes: 'why-us-case-screenshot',
+          classes: 'why-flutter-case-screenshot',
         ),
         img(
           src: media['phoneFrame']!,
           alt: '',
-          classes: 'why-us-case-frame',
+          classes: 'why-flutter-case-frame',
         ),
       ]),
     };
@@ -221,7 +221,7 @@ class _ArrowButton extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return button(
-      classes: 'why-us-arrow',
+      classes: 'why-flutter-arrow',
       attributes: {'aria-label': label},
       onClick: onPressed,
       [Icon(symbol: symbol)],

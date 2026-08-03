@@ -24,14 +24,14 @@ import 'package:flutter_website/src/components/pages/games_adaptive_media.dart'
     deferred as _games_adaptive_media;
 import 'package:flutter_website/src/components/pages/showcase_grid.dart'
     deferred as _showcase_grid;
-import 'package:flutter_website/src/components/sections/why_us_ai_era_section.dart'
-    deferred as _why_us_ai_era_section;
-import 'package:flutter_website/src/components/sections/why_us_cases_section.dart'
-    deferred as _why_us_cases_section;
-import 'package:flutter_website/src/components/sections/why_us_code_shared_section.dart'
-    deferred as _why_us_code_shared_section;
-import 'package:flutter_website/src/components/sections/why_us_hero_section.dart'
-    deferred as _why_us_hero_section;
+import 'package:flutter_website/src/components/sections/why_flutter_ai_era_section.dart'
+    deferred as _why_flutter_ai_era_section;
+import 'package:flutter_website/src/components/sections/why_flutter_cases_section.dart'
+    deferred as _why_flutter_cases_section;
+import 'package:flutter_website/src/components/sections/why_flutter_code_shared_section.dart'
+    deferred as _why_flutter_code_shared_section;
+import 'package:flutter_website/src/components/sections/why_flutter_hero_section.dart'
+    deferred as _why_flutter_hero_section;
 import 'package:flutter_website/src/models/content/banner_content.dart'
     as _banner_content;
 import 'package:site_shared/components/blog/client/blog_categories.dart'
@@ -153,31 +153,31 @@ ClientOptions get defaultClientOptions => ClientOptions(
       ),
       loader: _showcase_grid.loadLibrary,
     ),
-    'why_us_ai_era_section': ClientLoader(
-      (p) => _why_us_ai_era_section.WhyUsAiEraSection(
+    'why_flutter_ai_era_section': ClientLoader(
+      (p) => _why_flutter_ai_era_section.WhyFlutterAiEraSection(
         geminiSprite: p['geminiSprite'] as String,
       ),
-      loader: _why_us_ai_era_section.loadLibrary,
+      loader: _why_flutter_ai_era_section.loadLibrary,
     ),
-    'why_us_cases_section': ClientLoader(
-      (p) => _why_us_cases_section.WhyUsCasesSection(
+    'why_flutter_cases_section': ClientLoader(
+      (p) => _why_flutter_cases_section.WhyFlutterCasesSection(
         media: (p['media'] as Map<String, Object?>).cast<String, String>(),
       ),
-      loader: _why_us_cases_section.loadLibrary,
+      loader: _why_flutter_cases_section.loadLibrary,
     ),
-    'why_us_code_shared_section': ClientLoader(
-      (p) => _why_us_code_shared_section.WhyUsCodeSharedSection(
+    'why_flutter_code_shared_section': ClientLoader(
+      (p) => _why_flutter_code_shared_section.WhyFlutterCodeSharedSection(
         laptopSprite: p['laptopSprite'] as String,
       ),
-      loader: _why_us_code_shared_section.loadLibrary,
+      loader: _why_flutter_code_shared_section.loadLibrary,
     ),
-    'why_us_hero_section': ClientLoader(
-      (p) => _why_us_hero_section.WhyUsHeroSection(
+    'why_flutter_hero_section': ClientLoader(
+      (p) => _why_flutter_hero_section.WhyFlutterHeroSection(
         typingSprite: p['typingSprite'] as String,
         screens: (p['screens'] as List<Object?>).cast<String>(),
         whitepaperUrl: p['whitepaperUrl'] as String,
       ),
-      loader: _why_us_hero_section.loadLibrary,
+      loader: _why_flutter_hero_section.loadLibrary,
     ),
     'site_shared:blog_categories': ClientLoader(
       (p) => _blog_categories.BlogCategories(
