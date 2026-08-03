@@ -176,6 +176,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
         typingSprite: p['typingSprite'] as String,
         screens: (p['screens'] as List<Object?>).cast<String>(),
         whitepaperUrl: p['whitepaperUrl'] as String,
+        flutterLogo: p['flutterLogo'] as String,
       ),
       loader: _why_flutter_hero_section.loadLibrary,
     ),

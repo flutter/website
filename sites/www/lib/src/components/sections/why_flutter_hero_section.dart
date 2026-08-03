@@ -20,6 +20,7 @@ class WhyFlutterHeroSection extends StatefulComponent {
     required this.typingSprite,
     required this.screens,
     required this.whitepaperUrl,
+    required this.flutterLogo,
     super.key,
   });
 
@@ -31,6 +32,9 @@ class WhyFlutterHeroSection extends StatefulComponent {
 
   /// Resolved URL of the downloadable business whitepaper.
   final String whitepaperUrl;
+
+  /// Resolved URL of the Flutter logo mark for the chart bar.
+  final String flutterLogo;
 
   @override
   State<WhyFlutterHeroSection> createState() => _WhyFlutterHeroSectionState();
@@ -75,7 +79,11 @@ class _WhyFlutterHeroSectionState extends State<WhyFlutterHeroSection> {
           ),
           const [],
         ),
-        _ProductivityChart(isBarGrown: _isBarGrown, multiple: _multiple),
+        _ProductivityChart(
+          isBarGrown: _isBarGrown,
+          multiple: _multiple,
+          flutterLogo: component.flutterLogo,
+        ),
       ]),
     ]);
   }
@@ -144,10 +152,15 @@ class _ScreenCarousel extends StatelessComponent {
 
 /// The "Faster time-to-market" block and its productivity bar chart.
 class _ProductivityChart extends StatelessComponent {
-  const _ProductivityChart({required this.isBarGrown, required this.multiple});
+  const _ProductivityChart({
+    required this.isBarGrown,
+    required this.multiple,
+    required this.flutterLogo,
+  });
 
   final bool isBarGrown;
   final int multiple;
+  final String flutterLogo;
 
   @override
   Component build(BuildContext context) {
@@ -180,7 +193,13 @@ class _ProductivityChart extends StatelessComponent {
               'why-flutter-bar-flutter',
               if (isBarGrown) 'is-grown',
             ].join(' '),
-            const [],
+            [
+              img(
+                src: flutterLogo,
+                alt: 'Flutter',
+                classes: 'why-flutter-bar-logo',
+              ),
+            ],
           ),
           const div(classes: 'why-flutter-chart-axis', []),
           span(classes: 'why-flutter-chart-multiple', [.text('${multiple}X')]),

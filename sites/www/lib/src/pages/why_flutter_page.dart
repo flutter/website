@@ -41,6 +41,7 @@ class WhyFlutterPage extends StatelessComponent {
             image('hero-screens/s${index.toString().padLeft(2, '0')}.webp'),
         ],
         whitepaperUrl: context.asset('/why-flutter/flutter-whitepaper-2026.pdf'),
+        flutterLogo: image('flutter-logo-mark.svg'),
       ),
       WhyFlutterCodeSharedSection(
         laptopSprite: image('dash-laptop-sprite-v2.webp'),

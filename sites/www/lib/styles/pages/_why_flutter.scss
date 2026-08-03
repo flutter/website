@@ -259,12 +259,34 @@
   }
 
   .why-flutter-bar-flutter {
+    align-items: center;
     background: linear-gradient(180deg, var(--blue-3) 0%, var(--green-2) 84%);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     height: 0;
+    justify-content: center;
     left: 279.7px;
+    overflow: hidden;
     transition: height 1.6s cubic-bezier(0.22, 1, 0.36, 1);
 
-    &.is-grown { height: 251.7px; }
+    &.is-grown {
+      height: 251.7px;
+
+      .why-flutter-bar-logo {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .why-flutter-bar-logo {
+      height: auto;
+      object-fit: contain;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.4s ease 0.8s, transform 0.4s ease 0.8s;
+      width: 40px;
+    }
   }
 
   .why-flutter-chart-axis {

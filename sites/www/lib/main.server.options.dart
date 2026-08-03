@@ -188,6 +188,7 @@ Map<String, Object?> __why_flutter_hero_sectionWhyFlutterHeroSection(
   'typingSprite': c.typingSprite,
   'screens': c.screens,
   'whitepaperUrl': c.whitepaperUrl,
+  'flutterLogo': c.flutterLogo,
 };
 Map<String, Object?> __blog_categoriesBlogCategories(
   _blog_categories.BlogCategories c,
