@@ -324,20 +324,21 @@
 .why-us-row-reverse { flex-direction: column-reverse; }
 
 .why-us-shared-media {
+  flex-shrink: 0;
   height: 458px;
   position: relative;
   transform: scale(0.78);
-  width: 439px;
+  width: 471px;
 
   .why-us-shared-stat {
     align-items: center;
     display: flex;
     flex-direction: column;
     gap: var(--spacer-sm);
-    left: -16px;
+    left: 0;
     position: absolute;
     top: 70px;
-    width: 471px;
+    width: 100%;
   }
 
   .why-us-stat-number {
@@ -354,7 +355,7 @@
 .why-us-laptop-sprite {
   background-size: 3600% 200%;
   height: 247px;
-  left: 58px;
+  left: 64.5px;
   mask-image: radial-gradient(
     ellipse 72% 72% at 50% 52%,
     #000 62%,
@@ -377,8 +378,10 @@
 .why-us-shared-copy,
 .why-us-ai-copy {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: var(--spacer-md);
+  min-width: 0;
 }
 
 .why-us-outline-btn {
@@ -777,7 +780,9 @@
 @include breakpoints.screen(md) {
   .why-us-row {
     align-items: center;
+    display: flex;
     flex-direction: row;
+    gap: var(--gutter-md);
     justify-content: space-between;
   }
 
