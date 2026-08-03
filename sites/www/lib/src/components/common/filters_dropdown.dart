@@ -61,7 +61,8 @@ class _FiltersDropdownState extends State<FiltersDropdown> {
     super.didUpdateComponent(oldComponent);
     // Rebuilds that don't touch the filters, such as showing more items,
     // shouldn't discard the options the user has checked but not applied.
-    if (!identical(oldComponent.activeFilters, component.activeFilters)) {
+    if (!identical(oldComponent.activeFilters, component.activeFilters) ||
+        !identical(oldComponent.filters, component.filters)) {
       _selectedFilters = _copyActiveFilters();
     }
   }
@@ -78,8 +79,13 @@ class _FiltersDropdownState extends State<FiltersDropdown> {
       '${component.scope}${type.optionId(option)}';
 
   void onResize() {
+    // Resize events fire continuously while dragging,
+    // but the layout only changes when the breakpoint is crossed.
+    final isMobile = web.window.innerWidth < 768;
+    if (isMobile == _isMobile) return;
+
     setState(() {
-      _isMobile = web.window.innerWidth < 768;
+      _isMobile = isMobile;
     });
   }
 
@@ -224,28 +230,32 @@ class _FiltersDropdownState extends State<FiltersDropdown> {
           if (_openedMobileDropdowns.contains(type)) 'show',
         ].join(' '),
         [
-          for (final option in type.options)
-            label(htmlFor: _optionId(type, option), [
-              input(
-                id: _optionId(type, option),
-                type: InputType.checkbox,
-                value: option,
-                checked: _selectedFilters[type]?.contains(option) ?? false,
-                onChange: (bool? value) {
-                  setState(() {
-                    final options = _selectedFilters[type] ??= {};
-                    if (value ?? false) {
-                      options.add(option);
-                    } else {
-                      options.remove(option);
-                    }
-                  });
-                },
-              ),
-              .text(option),
-            ]),
+          for (final option in type.options) _buildOption(type, option),
         ],
       ),
+    ]);
+  }
+
+  Component _buildOption(FilterType type, String option) {
+    final optionId = _optionId(type, option);
+    return label(htmlFor: optionId, [
+      input(
+        id: optionId,
+        type: InputType.checkbox,
+        value: option,
+        checked: _selectedFilters[type]?.contains(option) ?? false,
+        onChange: (bool? value) {
+          setState(() {
+            final options = _selectedFilters[type] ??= {};
+            if (value ?? false) {
+              options.add(option);
+            } else {
+              options.remove(option);
+            }
+          });
+        },
+      ),
+      .text(option),
     ]);
   }
 }

@@ -5,6 +5,10 @@ section#stories {
   padding-bottom: var(--gutter-lg);
 }
 
+.story-grid + .story-grid {
+  margin-top: var(--gutter-lg);
+}
+
 .story-grid {
   .story-grid-header {
     h3 {

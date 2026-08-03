@@ -115,39 +115,22 @@ class EventsPage extends StatelessComponent {
         .sorted(_byDateThenTitle((event) => event.endDate, newestFirst: true));
 
     return section(id: 'stories', [
-      _buildEventsGrid(
-        context,
-        title: 'Upcoming events',
-        events: upcomingEvents,
-        emptyDataMessage:
-            'No upcoming events are listed right now. Check back soon.',
-      ),
-      _buildEventsGrid(
-        context,
-        title: 'Past events',
-        events: pastEvents,
-        emptyDataMessage: 'No past events are listed right now.',
-        filterScope: 'past-',
-      ),
+      _buildEventsGrid(context, upcomingEvents),
+      _buildEventsGrid(context, pastEvents, past: true),
     ]);
   }
 
-  /// Builds a grid of cards for the specified [events],
-  /// labeled with the specified [title].
+  /// Builds a grid of cards for the specified [events].
   Component _buildEventsGrid(
-    BuildContext context, {
-    required String title,
-    required List<CalendarEvent> events,
-    required String emptyDataMessage,
-    String filterScope = '',
+    BuildContext context,
+    List<CalendarEvent> events, {
+    bool past = false,
   }) => EventsGrid(
-    title: title,
     data: _extractFilterData(events),
     items: [
       for (final event in events) ref(_buildEventItem(context, event)),
     ],
-    emptyDataMessage: emptyDataMessage,
-    filterScope: filterScope,
+    past: past,
   );
 
   List<Map<String, Object?>> _extractFilterData(List<CalendarEvent> data) {

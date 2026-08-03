@@ -200,10 +200,6 @@ body.events {
   }
 
   #stories {
-    .story-grid + .story-grid {
-      margin-top: var(--gutter-lg);
-    }
-
     .story-grid-header {
       display: flex;
       flex-direction: column;

@@ -116,15 +116,13 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'events_grid': ClientLoader(
       (p) => _events_grid.EventsGrid(
-        title: p['title'] as String,
         data: (p['data'] as List<Object?>)
             .map((i) => (i as Map<String, Object?>))
             .toList(),
         items: (p['items'] as List<Object?>)
             .map((i) => _component_ref.ComponentRef.fromId(i as String))
             .toList(),
-        emptyDataMessage: p['emptyDataMessage'] as String,
-        filterScope: p['filterScope'] as String,
+        past: p['past'] as bool,
       ),
       loader: _events_grid.loadLibrary,
     ),

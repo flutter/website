@@ -24,8 +24,9 @@ class FilterType {
 
   /// Filter types are equal when they share an [id].
   ///
-  /// They are used as map keys, and callers rebuild their filter lists on
-  /// every build, so identity equality would drop the active selections.
+  /// They are used as map keys, so a caller that
+  /// rebuilds an equivalent filter list keeps its
+  /// active selections rather than dropping them.
   @override
   bool operator ==(Object other) => other is FilterType && other.id == id;
 
@@ -77,36 +78,33 @@ class _FiltersState extends State<Filters> {
   bool get _hasActiveFilters =>
       _activeFilters.values.any((options) => options.isNotEmpty);
 
-  /// The indexes of every item, in order, for when nothing is filtered out.
-  List<int> get _allIndexes =>
-      List.generate(component.items.length, (index) => index);
-
   /// The URL parameter name that stores the active options of [type].
   String _paramName(FilterType type) => '${component.scope}${type.id}';
 
   @override
   void initState() {
     super.initState();
-    _matchingIndexes = _allIndexes;
+    _matchingIndexes = [
+      for (var index = 0; index < component.items.length; index++) index,
+    ];
 
-    // Only rerun the filters if the URL actually requested some,
-    // as every item is already visible.
-    if (kIsWeb && _loadFiltersFromUrl()) {
-      _applyFilters(_activeFilters);
+    if (kIsWeb) {
+      _loadFiltersFromUrl();
+
+      // Only rerun the filters if the URL actually requested some,
+      // as every item is already visible.
+      if (_hasActiveFilters) _applyFilters(_activeFilters);
     }
   }
 
-  /// Reads the active filters out of the URL,
-  /// returning whether any options were requested.
-  bool _loadFiltersFromUrl() {
+  /// Reads the active filters out of the URL.
+  void _loadFiltersFromUrl() {
     final url = Uri.parse(web.window.location.href);
 
     for (final type in component.filters) {
       final params = url.queryParameters[_paramName(type)]?.split(',');
       _activeFilters[type] = params?.toSet() ?? {};
     }
-
-    return _hasActiveFilters;
   }
 
   /// Narrows the visible items down to those matching [filters],
@@ -131,12 +129,10 @@ class _FiltersState extends State<Filters> {
 
     setState(() {
       _activeFilters = filters;
-      _matchingIndexes = _hasActiveFilters
-          ? [
-              for (var index = 0; index < component.items.length; index++)
-                if (_matchesFilters(index)) index,
-            ]
-          : _allIndexes;
+      _matchingIndexes = [
+        for (var index = 0; index < component.items.length; index++)
+          if (_matchesFilters(index)) index,
+      ];
     });
   }
 

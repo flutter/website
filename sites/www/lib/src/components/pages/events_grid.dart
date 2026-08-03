@@ -12,26 +12,20 @@ import '../common/filters.dart';
 @client
 class EventsGrid extends StatelessComponent {
   const EventsGrid({
-    required this.title,
     required this.data,
     required this.items,
-    required this.emptyDataMessage,
-    this.filterScope = '',
+    this.past = false,
     super.key,
   });
 
-  /// The heading displayed above the grid of events.
-  final String title;
   final List<Map<String, Object?>> data;
   final List<ComponentRef> items;
 
-  /// Message displayed when the grid has no events.
-  final String emptyDataMessage;
-
-  /// Prefix for the filter URL parameters and dropdown element IDs.
+  /// Whether these events have already finished.
   ///
-  /// Use a unique value when multiple event grids appear on one page.
-  final String filterScope;
+  /// The heading, empty state, and filter scope all follow from this,
+  /// so the two grids the events page renders don't collide with each other.
+  final bool past;
 
   /// The dimensions every event grid can be filtered by.
   static final List<FilterType> _filters = [
@@ -46,13 +40,15 @@ class EventsGrid extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return Filters(
-      title: h2([.text(title)]),
+      title: h2([.text(past ? 'Past events' : 'Upcoming events')]),
       data: data,
       items: items,
       filters: _filters,
-      scope: filterScope,
+      scope: past ? 'past-' : '',
       emptyResultsMessage: 'No events match these filters.',
-      emptyDataMessage: emptyDataMessage,
+      emptyDataMessage: past
+          ? 'No past events are listed right now.'
+          : 'No upcoming events are listed right now. Check back soon.',
     );
   }
 }
