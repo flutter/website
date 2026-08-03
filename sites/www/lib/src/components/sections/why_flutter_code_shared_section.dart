@@ -8,8 +8,6 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import '../../utils/visibility_observer.dart';
 
-/// The "One team, not three" section, anchored by the 97% code-shared stat.
-///
 /// On scrolling into view the Dash-at-laptop sprite plays through once, and
 /// the percentage begins counting up 1.5 seconds later.
 @client
@@ -20,10 +18,12 @@ class WhyFlutterCodeSharedSection extends StatefulComponent {
   final String laptopSprite;
 
   @override
-  State<WhyFlutterCodeSharedSection> createState() => _WhyFlutterCodeSharedSectionState();
+  State<WhyFlutterCodeSharedSection> createState() =>
+      _WhyFlutterCodeSharedSectionState();
 }
 
-class _WhyFlutterCodeSharedSectionState extends State<WhyFlutterCodeSharedSection> {
+class _WhyFlutterCodeSharedSectionState
+    extends State<WhyFlutterCodeSharedSection> {
   static const _sharedPercentage = 97;
 
   bool _isSpriteRunning = false;
@@ -55,10 +55,16 @@ class _WhyFlutterCodeSharedSectionState extends State<WhyFlutterCodeSharedSectio
     return section(id: 'code-shared', classes: 'module why-flutter-shared', [
       div(classes: 'why-flutter-row why-flutter-row-reverse container', [
         div(classes: 'why-flutter-shared-media', [
-          div(id: 'why-flutter-code-shared', classes: 'why-flutter-shared-stat', [
-            const p(classes: 'why-flutter-kicker', [.text('Code shared')]),
-            span(classes: 'why-flutter-stat-number', [.text('$_percentage%')]),
-          ]),
+          div(
+            id: 'why-flutter-code-shared',
+            classes: 'why-flutter-shared-stat',
+            [
+              const p(classes: 'why-flutter-kicker', [.text('Code shared')]),
+              span(classes: 'why-flutter-stat-number', [
+                .text('$_percentage%'),
+              ]),
+            ],
+          ),
           div(
             classes: [
               'why-flutter-laptop-sprite',
@@ -73,17 +79,16 @@ class _WhyFlutterCodeSharedSectionState extends State<WhyFlutterCodeSharedSectio
           ),
         ]),
         const div(classes: 'why-flutter-shared-copy', [
-          h2([.text('One team, not three')]),
+          h2([.text('One codebase, one team')]),
           p(classes: 'why-flutter-body', [
             .text(
-              'One codebase. Lower costs. Eliminate the overhead of '
-              'maintaining separate native development teams.',
+              'Eliminate the cost and overhead of maintaining seperate apps, codebases, and development teams.',
             ),
           ]),
           a(
             href: '/showcase',
             classes: 'btn why-flutter-outline-btn',
-            [.text('See success cases')],
+            [.text('Read our showcases')],
           ),
         ]),
       ]),
