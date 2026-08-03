@@ -48,15 +48,6 @@ class _WhyFlutterCasesSectionState extends State<WhyFlutterCasesSection> {
       isDark: false,
     ),
     (
-      company: 'Google Earth',
-      quote:
-          '3x faster. Flutter has vastly increased our ability to deliver '
-          'multi-platform',
-      storyUrl: null,
-      theme: 'earth',
-      isDark: true,
-    ),
-    (
       company: 'Universal',
       quote:
           '45% reduction in codebase size and near-zero crashes with Flutter',
@@ -70,6 +61,15 @@ class _WhyFlutterCasesSectionState extends State<WhyFlutterCasesSection> {
       storyUrl: '/showcase/lg-electronics',
       theme: 'lg',
       isDark: false,
+    ),
+    (
+      company: 'Google Earth',
+      quote:
+          '3x faster. Flutter has vastly increased our ability to deliver '
+          'multi-platform',
+      storyUrl: null,
+      theme: 'earth',
+      isDark: true,
     ),
   ];
 
