@@ -202,7 +202,7 @@ tree, but this output can be buried in a long terminal exception stack trace.
 
 #### 1. Perform early detection
 
-You can detect incompatibilities early via dry-run warnings. When you run
+You can detect incompatibilities early with dry-run warnings. When you run
 `flutter build web` without the `--wasm` flag, a Wasm dry run is still performed
 automatically. If incompatibilities are found, you will see a non-fatal warning
 like this:
