@@ -1,5 +1,5 @@
 ---
-title: Localized messages are generated into source, not a synthetic package.
+title: Localized messages are generated into source, not a synthetic package
 description: >-
   When using `package:flutter_localizations`, the default generated location
   (and eventually, only possible location) is within your source (`lib/`)
@@ -55,9 +55,10 @@ const MaterialApp(
 );
 ```
 
-There is one way to migrate away from importing `package:flutter_gen`:
+To migrate away from importing `package:flutter_gen`:
 
- 1. Specify `synthetic-package: false` in the accompanying [`l10n.yaml`][] file:
+ 1. **Update configuration**. Specify `synthetic-package: false` in the
+    accompanying [`l10n.yaml`][] file:
 
     ```yaml title="l10n.yaml"
     synthetic-package: false
@@ -67,6 +68,18 @@ There is one way to migrate away from importing `package:flutter_gen`:
 
     # Or, specifically provide an output path:
     output-dir: lib/src/generated/i18n
+    ```
+
+ 2. **Update imports**. Update your Dart import statements to point to the
+    new location of the generated files, replacing `my_app` with your
+    application's package name:
+
+    ```dart
+    // Before
+    import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+    // After (assuming arb-dir: lib/i18n)
+    import 'package:my_app/i18n/app_localizations.dart';
     ```
 
 ## Timeline
