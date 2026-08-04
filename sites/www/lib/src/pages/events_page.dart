@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 
+import 'package:collection/collection.dart';
 import 'package:intl/intl.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
@@ -94,40 +95,43 @@ class EventsPage extends StatelessComponent {
     ]);
   }
 
+  /// Builds the separate grids of upcoming and past events,
+  /// splitting the calendar on whether each event has already finished.
   Component _buildStoriesSection(BuildContext context) {
     final rawEvents = context.decodeJsonList(
       'events.data.calendar',
       CalendarEvent.fromJson,
     );
 
-    // Keep events listed for a few extra days after their end date
-    // because recently ended events might still be relevant.
-    const visibleAfterDays = 3;
-    final now = DateTime.now().toUtc();
-    final cutoff = DateTime.utc(
-      now.year,
-      now.month,
-      now.day - visibleAfterDays,
-    );
-    final events = rawEvents
-        .where(
-          (event) => !DateTime.utc(
-            event.endDate.year,
-            event.endDate.month,
-            event.endDate.day,
-          ).isBefore(cutoff),
-        )
-        .toList(growable: false);
+    final today = _dateOnly(DateTime.now().toUtc());
+    bool hasEnded(CalendarEvent event) =>
+        _dateOnly(event.endDate).isBefore(today);
+
+    final upcomingEvents = rawEvents
+        .whereNot(hasEnded)
+        .sorted(_byDateThenTitle((event) => event.startDate));
+    final pastEvents = rawEvents
+        .where(hasEnded)
+        .sorted(_byDateThenTitle((event) => event.endDate, newestFirst: true));
 
     return section(id: 'stories', [
-      EventsGrid(
-        data: _extractFilterData(events),
-        items: [
-          for (final event in events) ref(_buildEventItem(context, event)),
-        ],
-      ),
+      _buildEventsGrid(context, upcomingEvents),
+      _buildEventsGrid(context, pastEvents, past: true),
     ]);
   }
+
+  /// Builds a grid of cards for the specified [events].
+  Component _buildEventsGrid(
+    BuildContext context,
+    List<CalendarEvent> events, {
+    bool past = false,
+  }) => EventsGrid(
+    data: _extractFilterData(events),
+    items: [
+      for (final event in events) ref(_buildEventItem(context, event)),
+    ],
+    past: past,
+  );
 
   List<Map<String, Object?>> _extractFilterData(List<CalendarEvent> data) {
     return data.map((item) {
@@ -144,7 +148,13 @@ class EventsPage extends StatelessComponent {
             'style': 'background-color: ${event.backgroundColor}',
         },
         [
-          img(src: context.asset(event.card), alt: event.title),
+          img(
+            src: context.asset(event.card),
+            alt: event.title,
+            // Most cards start offscreen, and every past event adds another,
+            // so only fetch each one as it approaches the viewport.
+            loading: MediaLoading.lazy,
+          ),
         ],
       ),
       div(classes: 'text', [
@@ -180,6 +190,25 @@ class EventsPage extends StatelessComponent {
   static final DateFormat _eventDateFormat = .new('MMM d, yyyy', 'en-US');
   static final DateFormat _eventRangeStartFormat = .new('MMM d', 'en-US');
 
+  /// The UTC calendar date of [date], with its time of day discarded.
+  static DateTime _dateOnly(DateTime date) =>
+      DateTime.utc(date.year, date.month, date.day);
+
+  /// Orders events by the date returned by [dateOf],
+  /// most recent first if [newestFirst] is set, and otherwise earliest first.
+  ///
+  /// Ties fall back to the title so that events sharing a date
+  /// keep a stable order between builds.
+  static Comparator<CalendarEvent> _byDateThenTitle(
+    DateTime Function(CalendarEvent event) dateOf, {
+    bool newestFirst = false,
+  }) => (first, second) {
+    final byDate = newestFirst
+        ? dateOf(second).compareTo(dateOf(first))
+        : dateOf(first).compareTo(dateOf(second));
+    return byDate != 0 ? byDate : first.title.compareTo(second.title);
+  };
+
   /// Formats a single calendar date for display on event cards.
   static String _formatDate(DateTime date) => _eventDateFormat.format(date);
 
@@ -197,7 +226,5 @@ class EventsPage extends StatelessComponent {
 
   /// Determines whether two [DateTime] values occur on the same calendar date.
   static bool _isSameDate(DateTime startDate, DateTime endDate) =>
-      startDate.year == endDate.year &&
-      startDate.month == endDate.month &&
-      startDate.day == endDate.day;
+      _dateOnly(startDate) == _dateOnly(endDate);
 }
