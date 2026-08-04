@@ -204,14 +204,10 @@ this file should resemble the following content:
 ```json
 {
   "applinks": {
-    "apps": [],
     "details": [
       {
         "appIDs": [
           "S8QB4VV633.com.example.deeplinkCookbook"
-        ],
-        "paths": [
-          "*"
         ],
         "components": [
           {
@@ -220,11 +216,6 @@ this file should resemble the following content:
         ]
       }
     ]
-  },
-  "webcredentials": {
-    "apps": [
-      "S8QB4VV633.com.example.deeplinkCookbook"
-    ]
   }
 }
 ```
@@ -232,11 +223,11 @@ this file should resemble the following content:
 1. Set one value in the `appIDs` array to
    `<team id>.<bundle id>`.
 
-1. Set the `paths` array to `["*"]`.
-   The `paths` array specifies the allowed universal links.
-   Using the asterisk, `*` redirects every path to the Flutter app.
-   If needed, change the `paths` array value to a setting more
-   appropriate to your app.
+1. Set the `components` array to specify the allowed paths.
+   In this example, the `/` key represents the URL path.
+   The value `/*` matches and redirects any path to the Flutter app.
+   If needed, customize the `components` array
+   to match only the paths appropriate for your app.
 
 1. Host the file at a URL that resembles the following structure.
 
