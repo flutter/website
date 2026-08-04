@@ -64,14 +64,14 @@ For a seamless workflow, we've started with a
 new Flutter project called `flavors_example`, but you can
 always start with an existing project.
 
-1.  Create a new Flutter project called `flavors_example`.
+1.  Create a new Flutter project called `flavors_example`:
 
     ```console title="console"
     $ flutter create flavors_example
     ```
 
 1.  Open the default Xcode workspace for the iOS version of
-    the `flavors_example` project.
+    the `flavors_example` project:
 
     ```console title="console"
     $ cd flavors_example && open ios/Runner.xcworkspace
@@ -130,6 +130,8 @@ always start with an existing project.
       * Click **+**, select
         **Duplicate "Debug" configuration**, and name the
         new configuration `Debug-staging`.
+        Ensure that the appended flavor name is lowercase
+        if you want to use it with the Flutter CLI command.
       * Click **+**, select
         **Duplicate "Debug" configuration**, and name the
         new configuration `Debug-production`.
@@ -144,17 +146,13 @@ always start with an existing project.
       ![Scheme configurations for Flutter flavors](/assets/images/docs/flavors/flavors-ios-scheme-configurations.png){:width="100%"}
 
     :::note
-    The scheme name (example: `staging`) that is appended to
-    a configuration name must be lowercase if you want to
-    use it with the Flutter CLI command.
-    :::
-
-    :::note
     Your configurations should be based on your
-    `Debug.xcconfig`, `Profile.xcconfig`,
-    and `Release.xcconfig` files, not the
-    `Pods-Runner.xcconfig` file. You can check this by
-    expanding the configuration names in Xcode.
+    `Debug.xcconfig` and `Release.xcconfig` files,
+    not the `Pods-Runner.xcconfig` file.
+    By default, both Profile and Release configurations
+    use `Release.xcconfig`.
+    You can check this by expanding the configuration
+    names in Xcode.
     :::
 
 1.  Assign the configurations to the schemes in Xcode:
@@ -178,8 +176,8 @@ always start with an existing project.
     * Repeat the previous steps for the `production` scheme.
 
 1.  If you are working with a pre-existing Flutter project
-    that has at least one Podfile, update it. For more
-    information, see [Update Podfiles][].
+    that has at least one Podfile, update it.
+    For details, see [Update Podfiles][].
 
 1.  To make sure that you've set up everything correctly,
     run your app on the new schemes in Xcode. You won't see
@@ -201,8 +199,8 @@ always start with an existing project.
     * Repeat the previous steps for the `production` scheme.
 
 1.  If everything runs, you're ready to customize your
-    configurations. For more information, see
-    [Customize configurations][].
+    configurations.
+    For details, see [Customize configurations][].
 
 [Update Podfiles]: #update-podfiles
 [Customize configurations]: #customize-configurations
@@ -241,14 +239,16 @@ Flutter CLI using the following steps:
 
 ### Access the current flavor
 
-1.  **Import the services library:**
-    To access the `appFlavor` constant, add the following import to your Dart file:
+1.  **Import the services library.**
+    To access the `appFlavor` constant,
+    add the following import to your Dart file:
     ```dart
     import 'package:flutter/services.dart';
     ```
 
-1.  **Check the flavor value:**
-    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+1.  **Check the flavor value.**
+    Use the `appFlavor` constant in your application logic
+    (often in `main()`) to handle flavor-specific configurations:
 
     ```dart
     void main() {
@@ -344,8 +344,8 @@ names in Xcode for two schemes called `staging` and
 
 1.  Launch the app for each scheme (`staging`, `production`)
     and check to make sure that the app display name has
-    changed for each. To launch a scheme, see the steps in
-    [Launch an Xcode scheme][].
+    changed for each. To learn how to launch a scheme,
+    see [Launch an Xcode scheme][].
 
 [Launch an Xcode scheme]: #launch-an-xcode-scheme
 
@@ -420,8 +420,8 @@ an iOS project called `flavors_example`.
 
 1.  Launch the app for each scheme (`staging`, `production`)
     and check to make sure that the app icon has
-    changed for each. To launch a scheme, see the steps in
-    [Launch an Xcode scheme][].
+    changed for each. To learn how to launch a scheme,
+    see [Launch an Xcode scheme][].
 
 [Launch an Xcode scheme]: #launch-an-xcode-scheme
 [App Icon Generator]: https://www.appicon.co/
@@ -452,7 +452,7 @@ and `production` in an iOS project called `flavors_example`.
 1.  Navigate to the **Packaging** section.
 
 1.  Expand the **Product Bundle Identifier** setting to
-    see the different build configurations.
+    view the different build configurations.
 
 1.  For each scheme's build configuration, set the
     desired bundle identifier. For example:
@@ -478,8 +478,8 @@ in your app, you can configure them to only be bundled into
 your app when launching that flavor. This prevents your
 app bundle size from being bloated by unused assets. To
 bundle assets for each flavor, add the `flavors` subfield
-to the `assets` field in your project's pubspec. To learn
-more, see the [`assets` field][] in
+to the `assets` field in your project's pubspec.
+For details, see the [`assets` field][] in
 [Flutter pubspec options][].
 
 [`assets` field]: /tools/pubspec#assets
@@ -499,7 +499,7 @@ You can also use these steps to update a macOS
 project by replacing any reference to `iOS` with `macOS`.
 
 1. In your IDE, open the `ios/Podfile` file.
-1. Make the following updates and save your changes.
+1. Make the following updates and save your changes:
 
     ```ruby title="flavors_example/ios/Podfile"
     project 'Runner', {
@@ -522,9 +522,10 @@ You can use [build settings][] to govern your iOS build
 process from compilation and linking to debugging and
 distribution. One way that you can use build settings
 with Flutter flavors is to assign those build settings
-to Xcode build configurations. For example, you might want
-to assign different API URLs to  `Debug-staging` and
-`Debug-production`. For example:
+to Xcode build configurations.
+For example, you might want to assign different API URLs
+to `Debug-staging` and `Debug-production`.
+The following configurations show example build settings:
 
 ```plaintext title="debug-staging-settings.xcconfig"
 # Debug-staging build settings
@@ -536,8 +537,8 @@ API_BASE_URL = staging.flavors.com/api
 API_BASE_URL = flavors.com/api
 ```
 
-If you would like to add additional build settings for
-a specific build configuration, see Apple's
+To learn how to add additional build settings for a
+specific build configuration, see Apple's
 [Adding a build configuration file to your project][].
 
 [build settings]: {{site.apple-dev}}/documentation/xcode/build-settings-reference/
@@ -554,8 +555,8 @@ To learn about them, see
 
 ## More information
 
-For more information on creating and using flavors, check
-out the following resources:
+To learn about creating and using flavors, check out
+the following resources:
 
 * [How to set up Flutter & Firebase with Multiple Flavors
   using the FlutterFire CLI][flutterfire-cli]
