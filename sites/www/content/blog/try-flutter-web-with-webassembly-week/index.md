@@ -164,5 +164,5 @@ By identifying and resolving package dependency bottlenecks together as a
 community this week, you are helping us validate the steps we need to take to
 make **WebAssembly on by default** in an upcoming Flutter stable release.
 
-Upgrade your SDK and append `--wasm` to your build command today to advance the
-high-performance future of Flutter on the web.
+Upgrade Flutter, run the `flutter build web --wasm` command today, and share
+your migration feedback with us.
