@@ -132,7 +132,7 @@ Flutter supports deploying to the following platforms.
 
 ## Previous Flutter versions
 
-For more information about support for previous versions of Flutter,
+To learn about support for previous versions of Flutter,
 see the following resources:
 
 *   [Flutter SDK release notes][].
