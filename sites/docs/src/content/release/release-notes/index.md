@@ -22,7 +22,6 @@ outlined in the [Beta channel][] section of the [SDK archive][] page.
 
 ## Stable releases
 
-
 * 3.47.0 _(Tentative)_
   * [3.47.0 release notes & change log][]
   * [3.47.0 breaking changes & migrations][]
