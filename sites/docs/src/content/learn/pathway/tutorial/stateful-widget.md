@@ -234,6 +234,7 @@ convert `GuessInput` into a `StatefulWidget`:
 
 Your modified `GuessInput` widget should look like this:
 
+<?code-excerpt "fwe/birdle/lib/step5_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatefulWidget {
   const GuessInput({super.key, required this.onSubmitGuess});
