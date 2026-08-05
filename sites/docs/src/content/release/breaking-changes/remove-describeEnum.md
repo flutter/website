@@ -9,7 +9,7 @@ description: >-
 
 ## Summary
 
-The `describeEnum` has been removed from the framework because it's redundant to the `name`
+The `describeEnum` has been removed from the framework because it's redundant with the `name`
 getter on `Enum` which was introduced in `Dart 2.14`.
 
 ## Context
