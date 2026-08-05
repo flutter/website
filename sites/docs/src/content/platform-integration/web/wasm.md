@@ -80,7 +80,7 @@ $ flutter build web --wasm --enable-wasm-deferred-loading
 ```
 
 This is available on the flutter main branch and will become generally
-available later this year in the 3.50.0 flutter stable release.
+available later this year in the 3.50 flutter stable release.
 :::
 
 #### Wasm production debugging
