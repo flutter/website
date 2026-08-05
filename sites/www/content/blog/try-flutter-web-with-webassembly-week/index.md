@@ -12,63 +12,51 @@ layout: blog
 <!-- TODO(graphics): Replace with finalized banner artwork featuring Dash and WebAssembly branding -->
 <DashImage figure src="images/header_placeholder.webp" alt="Dash celebrating Try Flutter Web with WebAssembly Week" caption="Welcome to Try Flutter Web with WebAssembly Week" />
 
-When building interactive web portals, enterprise tooling, and data-driven
-dashboards, Flutter enables you to deliver expressive, multi-platform
-experiences directly to browsers from a single codebase.
+Flutter lets you build expressive, multi-platform apps for the web from a
+single codebase. Whether you're building a dashboard, a tool for your team, or
+a full web application, Flutter Web gives you the power to bring your app to
+any browser.
 
-From August 17 to August 21, you can help advance the next tier of web
-application speed by participating in our live community-wide sprint, **"Try
-Flutter Web with WebAssembly Week"**. Throughout this event week, Dart and
-Flutter engineers are conducting daily triage on incoming issue reports to
-resolve migration bottlenecks in real-time, while our developer relations team
-monitors community channels daily to highlight your migration success stories.
+From August 17 to August 21, we're hosting **Try Flutter Web with WebAssembly
+Week**! Throughout the week, Dart and Flutter engineers will triage incoming
+issues in real time to help unblock migrations, and our developer relations team
+will share your wins across community channels.
 
 ---
 
-## Why WebAssembly?
+## WebAssembly in Flutter Web
 
-In May 2024, with the release of Flutter 3.22, our Flutter and Dart engineering
-teams officially stabilized WebAssembly compilation (graduating it from
-experimental status) by integrating the Dart compiler directly with modern
-WebAssembly Garbage Collection (WasmGC) runtimes and WebAssembly-native
-rendering optimizations.
+We stabilized WebAssembly (Wasm) support in Flutter 3.22 back in May 2024 by
+pairing the Dart compiler with WebAssembly Garbage Collection (WasmGC).
 
-This architectural integration provides a verified enterprise solution. **Dart
-DevTools** (`dartdevtools`), a complex and highly interactive Flutter web
-application, ships with WebAssembly enabled by default. Today, over 97% of
-weekly active developers running modern DevTools sessions execute on
-WebAssembly, achieving smooth UI inspection with rock-solid stability and zero
-variance in exception rates compared to legacy `dart2js` builds.
+Since then, Wasm compilation has proven itself on real-world apps. For
+example, **Dart DevTools** (`dartdevtools`)—a complex, highly interactive
+Flutter web app—has shipped with WebAssembly by default since late 2024.
+Today, over 97% of developers using DevTools run it on Wasm, benefiting from
+smooth UI inspection, fast loading, and rock-solid stability.
 
-This capability is ready for production workloads today. Automated analysis
-across hundreds of thousands of Flutter web builds demonstrates that **over 58%
-of existing applications compile without error to WebAssembly today with zero
-code changes**.
+Wasm compilation is battle-tested and production-ready. In fact, our analysis
+shows that **over 58% of existing Flutter web apps compile to WebAssembly
+today with zero code changes**.
 
-When you target WebAssembly, your application unlocks substantial performance
-potential:
+When you compile to WebAssembly, your app can unlock huge performance gains:
 
 > [!WARNING]
 > **🚧 EDITORIAL HOLD / NEEDS REAL-WORLD VALIDATION 🚧**
-> *The performance multipliers below derive from internal micro-benchmarks and
-> synthetic test suites (Golem and LUCI). Because micro-benchmarks often
-> exaggerate real-world performance differences, validate these figures against
-> enterprise production applications and carefully frame them with "up to"
-> caveats before public release:*
+> 
+> *The performance multipliers below come from internal micro-benchmarks
+> (Golem and LUCI). Because micro-benchmarks don't always match real-world
+> apps, validate these figures against production applications and frame them
+> with "up to" caveats before public release:*
 >
-> *   ⚡ **Up to 5x faster application boot times**: Measured on targeted
->     start-up micro-benchmarks, drastically compressing Time-to-Interactive
->     (TTI) and initial load execution.
-> *   ⚡ **Up to 2x faster runtime execution speed**: Powered by optimized
->     `dart2wasm` compilation and native WasmGC execution in computational
->     micro-benchmarks.
-> *   ⚡ **Up to 3–4x faster UI rendering**: WebAssembly-native engine
->     execution eliminates serialization overhead, demonstrating up to a 4x
->     reduction in frame build times in rendering suites and supporting
->     consistent 60–120 FPS performance.
-> *   📦 **Minimal bundle size delta**: These execution gains arrive with an
->     average compressed bundle size increase of ~1.5% across benchmark
->     workloads.
+> *   ⚡ **Up to 5x faster app load times**: Drastically reduces initial
+>     loading and Time-to-Interactive (TTI).
+> *   ⚡ **Up to 2x faster execution speed**: Powered by `dart2wasm` and
+>     native WasmGC execution.
+> *   ⚡ **Up to 3–4x faster UI rendering**: Reduces frame build times and
+>     delivers smooth 60–120 FPS performance.
+> *   📦 **Minimal bundle size change**: Adds only ~1.5% on average to
+>     compressed bundle sizes.
 >
 > **🚧 END EDITORIAL HOLD 🚧**
 
@@ -77,92 +65,72 @@ potential:
 
 ---
 
-## Why JavaScript remains the default compilation target
+## Why JavaScript is still the default compiler target
 
-If WebAssembly delivers superior speed and stability, why does `flutter build
-web` still default to JavaScript (`dart2js`) compilation?
+If Wasm delivers better speed and stability, why does `flutter build web`
+still default to JavaScript (`dart2js`)?
 
-Switching default toolchain behavior across an ecosystem of millions of
-developers and tens of thousands of packages requires methodical structural
-evolution. While over half of existing apps compile immediately, many community
-packages historically relied on older JavaScript interop patterns or
-browser-specific bindings that require targeted modernization to operate
-without error across strict WebAssembly memory boundaries.
+Changing the default compiler for millions of developers is a big move. While
+over half of Flutter web apps build with Wasm out of the box, some `pub.dev`
+packages still rely on legacy JavaScript interop (`dart:html` or `dart:js`)
+that needs to be updated for Wasm compatibility.
 
-This requirement creates a classic dependency loop:
-*   The default compiler target cannot shift to `--wasm` until developers test
-    and migrate a critical volume of community packages and plugins.
-*   At the same time, package authors rarely prioritize migration until
-    application developers actively opt out of default compiler settings and
-    demand WasmGC compatibility.
+This creates a classic chicken-and-egg dilemma:
+* We can't make `--wasm` the default until more ecosystem packages update
+  their JS interop code.
+* Package authors often don't prioritize updating until developers opt in to
+  Wasm and request Wasm support.
 
 ---
 
-## Explore your WebAssembly migration and documentation toolbox
+## WebAssembly migration resources
 
-To make your transition to WebAssembly as straightforward as possible, our team
-has refreshed our core web documentation suites. Before testing your builds,
-explore these primary migration guides:
+To help you migrate, we've updated our web documentation. Check out these
+guides before building:
 
 *   **[WebAssembly on Flutter Web](https://docs.flutter.dev/platform-integration/web/wasm)**:
-    The comprehensive architectural manual for WasmGC in Flutter. Learn how to
-    configure recommended cross-origin server headers
-    (`Cross-Origin-Embedder-Policy: credentialless` and
-    `Cross-Origin-Opener-Policy: same-origin`) to unlock multi-threaded
-    rendering, handle production debugging, and detect compiler targets at
-    runtime.
+    Learn how to set server headers (`COEP: credentialless` and `COOP:
+    same-origin`), debug production builds, and detect Wasm support at runtime.
 *   **[Migrating to `package:web` and modern JS interop](https://dart.dev/interop/js-interop)**:
-    Moving away from legacy `dart:html` and `dart:js` is the single most
-    critical step for WebAssembly compatibility. This interop guide explains
-    how to transition your bindings to modern, statically-typed
-    **`package:web`** and **`dart:js_interop`**.
+    Moving away from `dart:html` and `dart:js` is key for Wasm compatibility.
+    This guide shows how to migrate to `package:web` and `dart:js_interop`.
 *   **[Web building and deployment guide](https://docs.flutter.dev/deployment/web)**:
-    Step-by-step instructions for optimizing production release builds,
-    generating source maps, setting up framework-aware Firebase CLI hosting, and
-    implementing CDN caching strategies.
+    Find instructions for release builds, source maps, Firebase Hosting, and CDN
+    caching.
 *   **[Flutter web technical FAQ](https://docs.flutter.dev/platform-integration/web/faq)**:
-    Answers to frequent architectural questions covering multi-threaded
-    WebAssembly execution on Web Workers, Service Worker independence, and
-    conditional import patterns (`dart.library.js_interop`).
+    Get answers about web workers, service workers, and conditional imports.
 
 ---
 
-## Participate in Try Flutter Web with WebAssembly Week and report your results
+## Try WebAssembly this week
 
-Whether you maintain an open-source package on `pub.dev`, manage a production
-web app, or build experimental projects, test your code under WebAssembly this
-week.
+Whether you maintain a `pub.dev` package, manage a production web app, or
+build side projects, test your code with WebAssembly this week!
 
-### Follow these steps to evaluate your application
-1.  **Upgrade to the latest stable release:** Run `flutter upgrade` to verify
-    that you are running **Flutter 3.47** (the stable release launched on August
-    12, 2026). This release incorporates recent WasmGC compiler optimizations,
-    lockfile enhancements, and runtime fixes.
-2.  **Build with WebAssembly:** Compile your web application using the direct
-    command flag:
-    ```bash
-    flutter build web --wasm
-    ```
-3.  **Report blockers or failures:** When your build encounters a transitive
-    dependency problem, lockfile incompatibility, or runtime exception, report
-    the finding directly to our team. Submit a report using this intake link to
-    help unblock package migration during our sprint:
+### How to get started
+1.  **Upgrade to Flutter 3.47:** Run `flutter upgrade` to ensure you're on
+    the latest stable release with our newest WasmGC optimizations and runtime
+    fixes.
+2.  **Build with Wasm:** Run `flutter build web --wasm` in your project
+    terminal.
+3.  **Report any blockers:** If you run into package dependencies or runtime
+    issues, let us know! File a report at
     👉 **[https://goo.gle/flutter-wasm-feedback](https://goo.gle/flutter-wasm-feedback)**
-4.  **Share your successful builds:** When your application compiles without error
-    and achieves superior framerates, share your progress with the Flutter
-    community. Submit your before-and-after performance metrics, frame rate
-    comparisons, and migration stories using the official intake form:
-    👉 **[https://goo.gle/flutter-web-wasm-win](https://goo.gle/flutter-web-wasm-win)**
+    so our engineers can help unblock migration.
+5.  **Share your wins:** If your app builds cleanly and runs faster, tell us!
+   Share your before-and-after metrics or framerate gains at
+    👉 **[https://goo.gle/flutter-web-wasm-win](https://goo.gle/flutter-web-wasm-win)**.
 
-To share your experience on social media, use the hashtag **`#FlutterWasmWeek`**.
+When posting on social media, use **`#FlutterWasmWeek`** so we can feature
+your results!
 
 ---
 
-## Accelerate the path to default WebAssembly compilation
+## Building a Wasm-by-default web future
 
-By identifying and resolving package dependency bottlenecks together as a
-community this week, you are helping us validate the steps we need to take to
-make **WebAssembly on by default** in an upcoming Flutter stable release.
+By testing your apps and resolving package dependencies together this week,
+we can pave the way to making **WebAssembly the default compiler for Flutter
+Web**.
 
-Upgrade Flutter, run the `flutter build web --wasm` command today, and share
-your migration feedback with us.
+Run `flutter upgrade`, try `flutter build web --wasm`, and let us know how it
+goes!
