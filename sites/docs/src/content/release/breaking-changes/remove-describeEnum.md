@@ -1,26 +1,26 @@
 ---
 title: Remove describeEnum
 description: >-
-  The describeEnum method has been removed from the Flutter framework.
-  since Dart 2.14 Enums has the name getter which does the same thing.
+  The `describeEnum` method has been removed from the Flutter framework.
+  Since Dart 2.14, enums have a `name` getter that does the same thing.
 ---
 
 {% render "docs/breaking-changes.md" %}
 
 ## Summary
 
-The `describeEnum` has been removed from the framework because it's redundant with the `name`
+The `describeEnum` method has been removed from the framework because it's redundant with the `name`
 getter on `Enum` which was introduced in `Dart 2.14`.
 
 ## Context
 
-Historically, Flutter used used `describeEnum` to get a short description of an enum value,
-this became redundant when `name` getter of `Enum` was introduced in `Dart 2.14`, all methods
-that uses `describeEnum` in the framework have migrated to using `name` getter.
+Historically, Flutter used `describeEnum` to get a short description of an enum value.
+This became redundant when the `name` getter of `Enum` was introduced in `Dart 2.14`. All methods
+that use `describeEnum` in the framework have migrated to using the `name` getter.
 
 ## Migration guide
 
-If your code previously used `describeEnum` method to get the value name of an enum member.
+If your code previously used the `describeEnum` method to get the value name of an enum member,
 migrate your code to use the `name` getter on the instance itself.
 
 Code before migration:
@@ -28,14 +28,14 @@ Code before migration:
 ```dart
 enum Theme { light, dark }
 
-final theme = describeEnum(Theme.light)
+final theme = describeEnum(Theme.light);
 // theme will contain `light`
 ```
 
 Code after migration:
 
 ```dart
-Theme.light.name
+Theme.light.name;
 // theme will contain `light`
 ```
 
