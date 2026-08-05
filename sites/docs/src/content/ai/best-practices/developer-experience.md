@@ -154,5 +154,5 @@ Doing this a few times keeps the code in good shape for AI agents and humans
 alike.
 
 
-[requirements]: {{site.github}}/flutter/demos/blob/main/crossword_companion/specs/requirements.md
-[tasks-spec]: {{site.github}}/flutter/demos/blob/main/crossword_companion/specs/tasks.md
+[requirements]: {{site.repo.demos}}/blob/main/crossword_companion/specs/requirements.md
+[tasks-spec]: {{site.repo.demos}}/blob/main/crossword_companion/specs/tasks.md

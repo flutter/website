@@ -17,9 +17,9 @@ join the [flutter-announce][] Google group.
 For Dart, you can join the [Dart Announce][] Google group,
 and review the [Dart changelog][].
 
-[Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
-[Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart Announce]: {{site.groups.dart-announce}}
+[Dart changelog]: {{site.repo.dart-sdk}}/blob/main/CHANGELOG.md
+[flutter-announce]: {{site.groups.flutter-announce}}
 [release notes]: /release/release-notes
 
 ## 18 May 2026: Google I/O Release 3.44
@@ -73,7 +73,7 @@ significant changes:
 [Flutter API docs]: {{site.api}}
 [few]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
 [learning pathway]: /learn
-[navaronbracke]: {{site.github}}/navaronbracke
+[navaronbracke]: https://github.com/navaronbracke
 [official glossary]: /resources/glossary
 [onReorder]: /release/breaking-changes/separated-builder-find-child-index-callback
 
@@ -149,7 +149,7 @@ Other relevant resources:
 [3.38 release notes and changelog]: /release/release-notes/release-notes-3.38.0
 [accessibility docs]: /ui/accessibility
 [bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
-[Dart 3.10 release]: https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088
+[Dart 3.10 release]: {{site.dart-blog}}/announcing-dart-3-10
 [Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
 [DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
 [Flutter on latest iOS]: /platform-integration/ios/ios-latest
@@ -167,7 +167,7 @@ check out the [Flutter 3.35 technical blog post][3.35-tech].
 You might also check out the [Dart 3.9 release][] blog post.
 
 [3.35-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-35-c58ef72e3766
-[Dart 3.9 release]: https://dart.dev/blog/announcing-dart-3-9
+[Dart 3.9 release]: {{site.dart-blog}}/announcing-dart-3-9
 
 **Docs updated or added since the 3.32 release**
 

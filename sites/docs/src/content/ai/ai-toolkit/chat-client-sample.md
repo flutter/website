@@ -34,4 +34,4 @@ To build and run the sample, follow the instructions in the [AI Chat README][].
 {% comment %} TODO: If Mit agrees, move this to an official Flutter repo Chris
 didn't want to do it so close to release {% endcomment %}
 
-[AI Chat README]: {{site.github}}/csells/flutter_ai_chat
+[AI Chat README]: https://github.com/csells/flutter_ai_chat

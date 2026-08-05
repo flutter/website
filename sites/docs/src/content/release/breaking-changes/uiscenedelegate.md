@@ -1097,4 +1097,4 @@ crash on startup when built with the latest SDK.
 
 - [Issue 167267][]: The initial reported issue.
 
-[Issue 167267]: {{site.github}}/flutter/flutter/issues/167267
+[Issue 167267]: {{site.repo.flutter}}/issues/167267
