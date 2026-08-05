@@ -54,7 +54,7 @@ tailored specifically for our frameworks.
 Select your AI coding agent below for instructions on how to install the official
 Flutter and Dart agent skills.
 
-<Tabs key="ai-client-tabs">
+<Tabs key="ai-client-tabs" wrapped="true">
 <Tab name="Claude Code">
 
 If you use Claude Code, install the official Flutter plugin.
