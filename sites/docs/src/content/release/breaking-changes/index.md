@@ -34,6 +34,9 @@ consider submitting your tests to the framework's [test registry][].
 The following guides are available.
 They're sorted by release and listed in alphabetical order:
 
+<a id="released-in-flutter-3-47" aria-hidden="true"></a>
+<a id="released-in-flutter-347" aria-hidden="true"></a>
+
 ### Not yet released to stable
 
 * [Added enabled property and made onChanged optional for DropdownButton][]
