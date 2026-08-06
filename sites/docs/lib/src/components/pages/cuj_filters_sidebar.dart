@@ -5,10 +5,10 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/common/button.dart';
-import 'package:site_shared/components/common/material_icon.dart';
 
 import '../../models/cuj_model.dart';
 import 'cuj_filters.dart';
+import 'filterable_index.dart';
 
 // TODO(ewindmill): Replace with the real feedback destination once it exists.
 const _feedbackUrl = 'https://github.com/flutter/evals/issues';
@@ -25,67 +25,53 @@ class CujFiltersSidebar extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return div(classes: 'right-col', [
-      const input(
-        type: InputType.checkbox,
-        id: 'open-filter-toggle',
-        attributes: {'hidden': 'true'},
-      ),
-      div(id: 'resource-filter-group-wrapper', [
-        div(id: 'resource-filter-group', [
-          const div(classes: 'filter-header', [
-            label(
-              attributes: {'for': 'open-filter-toggle', 'aria-hidden': 'true'},
-              classes: 'close-icon',
-              [MaterialIcon('close')],
-            ),
-          ]),
-          const div(classes: 'table-title', [.text('Filter by')]),
-          ListenableBuilder(
-            listenable: filters,
-            builder: (context) {
-              return div(classes: 'table-content', [
-                const h4([.text('Persona')]),
-                ul([
-                  for (final persona in CujPersona.values)
-                    li([
-                      input(
-                        type: InputType.checkbox,
-                        attributes: {
-                          'role': 'checkbox',
-                          'name': 'filter-${persona.name}',
-                        },
-                        id: 'filter-${persona.name}',
-                        checked: filters.selectedPersonas.contains(persona),
-                        onChange: (checked) {
-                          filters.setPersona(persona, checked as bool);
-                        },
-                      ),
-                      label(
-                        attributes: {'for': 'filter-${persona.name}'},
-                        [.text(persona.label)],
-                      ),
-                    ]),
-                ]),
-              ]);
+    return FiltersSidebar(
+      footer: const [
+        div(classes: 'cuj-feedback', [
+          Button(
+            href: _feedbackUrl,
+            content: 'Feedback',
+            style: ButtonStyle.outlined,
+            title: 'Leave feedback or suggest new CUJs',
+            attributes: {
+              'target': '_blank',
+              'rel': 'noopener',
             },
           ),
         ]),
-      ]),
-      const div(classes: 'cuj-feedback', [
-        Button(
-          href: _feedbackUrl,
-          content: 'Feedback',
-          icon: 'feedback',
-          style: ButtonStyle.outlined,
-          title: 'Leave feedback or suggest new CUJs',
-          attributes: {
-            'target': '_blank',
-            'rel': 'noopener',
+      ],
+      children: [
+        ListenableBuilder(
+          listenable: filters,
+          builder: (context) {
+            return div(classes: 'table-content', [
+              const h4([.text('Persona')]),
+              ul([
+                for (final persona in CujPersona.values)
+                  li([
+                    input(
+                      type: InputType.checkbox,
+                      attributes: {
+                        'role': 'checkbox',
+                        'name': 'cuj-filter-${persona.name}',
+                      },
+                      id: 'cuj-filter-${persona.name}',
+                      checked: filters.selectedPersonas.contains(persona),
+                      onChange: (checked) {
+                        filters.setPersona(persona, checked as bool);
+                      },
+                    ),
+                    label(
+                      attributes: {'for': 'cuj-filter-${persona.name}'},
+                      [.text(persona.label)],
+                    ),
+                  ]),
+              ]),
+            ]);
           },
         ),
-      ]),
-    ]);
+      ],
+    );
   }
 }
 

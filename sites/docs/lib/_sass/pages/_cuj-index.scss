@@ -1,45 +1,27 @@
 @use 'sass:color';
 
 // The critical user journey index reuses the two column layout, search field,
-// and filter sidebar of the learning resources index, so the ids it shares
-// with that page are styled in `_learning-resources-index.scss`.
+// and filter sidebar of the learning resources index, which are styled in
+// `_filterable-index.scss`.
 //
 // The journeys themselves render as full-width expandable cards, following
 // the glossary in `_glossary.scss`. Expanding and collapsing is wired up
 // by the `_setUpExpandableCards` global script.
 
-// The feedback button sits below the filter card in the sidebar.
+// The feedback button is the sidebar footer, so it sits below the filter card
+// and slides in with it when the sidebar becomes a drawer.
 .cuj-feedback {
   margin-block-start: 1rem;
-  display: flex;
-  justify-content: center;
 
   .outlined-button {
     width: 100%;
     justify-content: center;
   }
-}
 
-// Below this width the filter card becomes an off-canvas drawer, so the
-// feedback button has to slide in with it or it stays off screen.
-// Mirrors the `#resource-filter-group-wrapper` rules in
-// `_learning-resources-index.scss`.
-@media (max-width: 839px) {
-  .cuj-feedback {
-    position: fixed;
-    right: -220px;
-    bottom: 0;
-    width: 220px;
+  @media (max-width: 839px) {
     margin-block-start: 0;
     padding: 0.75rem;
-    background-color: var(--site-inset-bgColor);
     border-top: 1px solid var(--site-inset-borderColor);
-    transition: right 0.3s ease-in-out;
-    z-index: 1001;
-  }
-
-  #open-filter-toggle:checked ~ .cuj-feedback {
-    right: 0;
   }
 }
 

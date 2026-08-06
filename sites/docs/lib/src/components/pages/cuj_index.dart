@@ -24,8 +24,8 @@ final class CujIndex extends StatelessComponent {
         Cuj.fromMap(cuj as Map<String, Object?>),
     ];
 
-    return div(id: 'resource-index-content', [
-      div(classes: 'left-col', id: 'resource-index-main-content', [
+    return div(classes: 'filterable-index', [
+      div(classes: 'left-col', [
         const CujFilters(),
         div(classes: 'card-list', id: 'all-cujs-list', [
           for (final cuj in cujs) _CujCard(cuj),
