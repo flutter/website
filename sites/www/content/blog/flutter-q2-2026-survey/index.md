@@ -134,10 +134,7 @@ Not every subsystem is trending well.
 Cupertino widgets, web, Windows,
 and Linux are our lowest-rated areas in this survey.
 
-<DashImage figure src="images/subsystem-satisfaction.webp" alt="Bar chart of satisfaction by
-subsystem" caption="Dart language (92%), core framework (90%),
-and Android app (91%) lead; Cupertino widgets (61%) is the lowest-rated area,
-down 6 points from Q4 2025." />
+<DashImage figure src="images/subsystem-satisfaction.webp" alt="Bar chart of satisfaction by subsystem" caption="Dart language (92%), core framework (90%), and Android app (91%) lead; Cupertino widgets (61%) is the lowest-rated area, down 6 points from Q4 2025." />
 
 Satisfaction across Web (72%), Linux (73%), and Windows (74%)
 all improved compared to Q4 2025.
