@@ -97,12 +97,7 @@ both now ahead of GitHub Copilot (19%), Cursor (18%), and Codex (17%).
 (A note on methodology: respondents can use one or multiple editors,
 so these numbers add up way beyond 100%.)
 
-<DashImage figure src="images/editor-agent-usage.webp" alt="Bar chart of editor and agent
-usage among Flutter developers,
-ranked highest to lowest" caption="VS Code (66%) and Android Studio (40%) still
-lead,
-but Claude Code (32%) and Antigravity (23%) are now ahead of every other AI
-coding tool." />
+<DashImage figure src="images/editor-agent-usage.webp" alt="Bar chart of editor and agent usage among Flutter developers, ranked highest to lowest" caption="VS Code (66%) and Android Studio (40%) still lead, but Claude Code (32%) and Antigravity (23%) are now ahead of every other AI coding tool." />
 
 Satisfaction with most editors clustered high: VS Code at 88% top-2 box,
 Claude Code at 86%, and Codex at 85%.
