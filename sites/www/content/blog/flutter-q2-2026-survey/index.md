@@ -191,9 +191,8 @@ with 92 of the top 100 iOS plugins already migrated.
   Centered on wanting deeper Android Studio integration:
 more AI tooling, more native support, better visualization.
 Our current AI investments are to build AI tooling that can be used with any
-agent agnostic of your IDE,
-this includes the Dart MCP server and Agent Skills work
-which predates this survey's fielding.
+agent agnostic of your IDE. This includes the Dart MCP server and Agent Skills work,
+which predate this survey's fielding.
 That said, Android Studio didn’t have MCP support when we first launched
 Dart MCP,
 but we now have it on our to-do list to ensure our tooling works there.
