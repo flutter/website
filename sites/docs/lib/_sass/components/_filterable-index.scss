@@ -172,6 +172,20 @@ $sidebar-width: 220px;
 // right. Opening and closing is driven entirely by the hidden
 // `#open-filter-toggle` checkbox that precedes it.
 @media (max-width: $mobile-breakpoint) {
+  .filterable-index {
+    flex-direction: column;
+  }
+
+  .left-col {
+    margin-right: 0;
+  }
+
+  // The drawer itself is fixed-positioned, so this column no longer needs to
+  // reserve width for it in the flex layout.
+  .right-col {
+    width: auto;
+  }
+
   .filter-header {
     display: block;
   }
