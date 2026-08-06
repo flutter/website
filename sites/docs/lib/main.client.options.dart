@@ -14,6 +14,10 @@ import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     deferred as _pagenav;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     deferred as _archive_table;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj_search_section.dart'
+    deferred as _cuj_search_section;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj_table_client.dart'
+    deferred as _cuj_table_client;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
     deferred as _glossary_search_section;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
@@ -95,6 +99,16 @@ ClientOptions get defaultClientOptions => ClientOptions(
         channel: p['channel'] as String,
       ),
       loader: _archive_table.loadLibrary,
+    ),
+    'cuj_search_section': ClientLoader(
+      (p) => _cuj_search_section.CujSearchSection(),
+      loader: _cuj_search_section.loadLibrary,
+    ),
+    'cuj_table_client': ClientLoader(
+      (p) => _cuj_table_client.CujTableClient(
+        rawData: (p['rawData'] as List<Object?>),
+      ),
+      loader: _cuj_table_client.loadLibrary,
     ),
     'glossary_search_section': ClientLoader(
       (p) => _glossary_search_section.GlossarySearchSection(),

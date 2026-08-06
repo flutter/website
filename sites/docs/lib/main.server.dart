@@ -27,6 +27,7 @@ import 'src/components/common/code_preview.dart';
 import 'src/components/common/dash_image.dart';
 import 'src/components/pages/architecture_recommendations.dart';
 import 'src/components/pages/archive_table.dart';
+import 'src/components/pages/cuj_card_index.dart';
 import 'src/components/pages/cuj_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
@@ -133,12 +134,13 @@ List<CustomComponent> get _embeddableComponents => [
   defineComponentWithChild('Card', Card.fromAttributes),
   defineComponent('LearningResourceIndex', const LearningResourceIndex()),
   defineComponentWithAttrs('ArchiveTable', ArchiveTable.fromAttributes),
+  defineComponent('CujTable', const CujTable()),
+  defineComponent('CujCardIndex', const CujCardIndex()),
   defineComponentWithAttrs(
     'DownloadLatestButton',
     DownloadLatestButton.fromAttributes,
   ),
-  defineComponentWithAttrs('ExpansionList', ExpansionList.fromAttributes),
-  defineComponentWithAttrs('CujTable', CujTable.fromAttributes),
+defineComponentWithAttrs('ExpansionList', ExpansionList.fromAttributes),
   defineComponent(
     'DevToolsReleaseNotesIndex',
     const DevToolsReleaseNotesIndex(),

@@ -13,6 +13,10 @@ import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     as _pagenav;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     as _archive_table;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj_search_section.dart'
+    as _cuj_search_section;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj_table_client.dart'
+    as _cuj_table_client;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
     as _glossary_search_section;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
@@ -80,6 +84,15 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'archive_table',
       params: __archive_tableArchiveTable,
     ),
+    _cuj_search_section.CujSearchSection:
+        ClientTarget<_cuj_search_section.CujSearchSection>(
+          'cuj_search_section',
+        ),
+    _cuj_table_client.CujTableClient:
+        ClientTarget<_cuj_table_client.CujTableClient>(
+          'cuj_table_client',
+          params: __cuj_table_clientCujTableClient,
+        ),
     _glossary_search_section.GlossarySearchSection:
         ClientTarget<_glossary_search_section.GlossarySearchSection>(
           'glossary_search_section',
@@ -162,6 +175,9 @@ Map<String, Object?> __pagenavPageNav(_pagenav.PageNav c) => {
 Map<String, Object?> __archive_tableArchiveTable(
   _archive_table.ArchiveTable c,
 ) => {'os': c.os, 'channel': c.channel};
+Map<String, Object?> __cuj_table_clientCujTableClient(
+  _cuj_table_client.CujTableClient c,
+) => {'rawData': c.rawData};
 Map<String, Object?> __collapse_buttonCollapseButton(
   _collapse_button.CollapseButton c,
 ) => {'classes': c.classes, 'title': c.title};

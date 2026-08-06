@@ -29,10 +29,23 @@ Evals measure both deterministic code correctness
 (reasoning, safety, and conciseness) using automated model judges
 and expert human grading.
 
+INSERT DATA HERE !
+
+## Methodology
+
 ## Dataset
 
-The Flutter and Dart evaluation dataset consists of Critical User Journeys (CUJs) representing real-world developer tasks across different personas and goals.
+The Flutter and Dart evaluation dataset is based on our canonical list of CUJS. A CUJ is a critical user journey. We took the CUJ, and we turned it into a task. A task has the following info:
 
-To view the complete, scrollable dataset table, visit the [Critical User Journeys (CUJs)](/ai/cujs) page.
+1. task
+2. some other thing
+3. some other thing
 
+The tasks themselves are private, because we don't want the model to "cheat on the test". But you can
+see the CUJs that we wrote tasks for on the [Critical User Journeys (CUJs)](/resources/cujs) page.
+
+Here's one example of CUJ => task:
+
+CUJ: "A cuj" 
+Task: "A task from CUJ"
 
