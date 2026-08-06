@@ -111,7 +111,7 @@ Vibe coding with Flutter has been on our radar for a while.
 We shipped the [Dart MCP server](https://docs.flutter.dev/ai/mcp-server)
 in mid-2025,
 and Google I/O included the launch of
-[official Agent Skills for Flutter and Dart](https://github.com/flutter/skills)
+[official Agent Skills for Flutter and Dart](https://docs.flutter.dev/ai/agent-skills)
 along with [agentic hot
 reload](https://docs.flutter.dev/ai/antigravity#agentic-hot-reload)
 (task-oriented instructions that work across any agent).
