@@ -37,8 +37,7 @@ to drive these improvements.
 Transparency is a core value for Flutter,
 so we want to use this post to hold our work accountable to what you told us.
 We reviewed our recent releases and
-[2026
-roadmap](https://github.com/flutter/flutter/blob/master/docs/roadmap/Roadmap.md)
+[2026 roadmap](https://github.com/flutter/flutter/blob/master/docs/roadmap/Roadmap.md)
 directly against your feedback to see how our plans align with your
 real-world experience.
 
