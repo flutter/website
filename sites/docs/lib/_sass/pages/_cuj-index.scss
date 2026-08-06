@@ -1,0 +1,159 @@
+@use 'sass:color';
+
+// The critical user journey index reuses the two column layout, search field,
+// and filter sidebar of the learning resources index, so the ids it shares
+// with that page are styled in `_learning-resources-index.scss`.
+//
+// The journeys themselves render as full-width expandable cards, following
+// the glossary in `_glossary.scss`. Expanding and collapsing is wired up
+// by the `_setUpExpandableCards` global script.
+
+// The feedback button sits below the filter card in the sidebar.
+.cuj-feedback {
+  margin-block-start: 1rem;
+  display: flex;
+  justify-content: center;
+
+  .outlined-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+// Below this width the filter card becomes an off-canvas drawer, so the
+// feedback button has to slide in with it or it stays off screen.
+// Mirrors the `#resource-filter-group-wrapper` rules in
+// `_learning-resources-index.scss`.
+@media (max-width: 839px) {
+  .cuj-feedback {
+    position: fixed;
+    right: -220px;
+    bottom: 0;
+    width: 220px;
+    margin-block-start: 0;
+    padding: 0.75rem;
+    background-color: var(--site-inset-bgColor);
+    border-top: 1px solid var(--site-inset-borderColor);
+    transition: right 0.3s ease-in-out;
+    z-index: 1001;
+  }
+
+  #open-filter-toggle:checked ~ .cuj-feedback {
+    right: 0;
+  }
+}
+
+#all-cujs-list {
+  margin-block-start: 1rem;
+
+  .cuj-card {
+    height: auto;
+    padding: 0.75rem 1rem;
+    gap: 0.25rem;
+
+    .card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .cuj-card-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+      // Allow long goals to wrap instead of widening the flex item.
+      min-width: 0;
+    }
+
+    .card-title {
+      display: block;
+      margin: 0;
+      font-family: var(--site-ui-fontFamily);
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.35;
+      text-wrap: pretty;
+    }
+
+    .card-header-buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.25rem;
+      flex-shrink: 0;
+
+      .icon-button {
+        border-radius: 1.5rem;
+
+        > span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .cuj-task-count {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--site-base-fgColor-lighter);
+    }
+
+    // The shared card styles lay `.card-content` out as a centered row.
+    // Journeys need a plain block so the task list stacks below the divider.
+    .card-content {
+      display: block;
+      border-top: 0.05rem solid var(--site-inset-borderColor);
+      margin-block-start: 0.5rem;
+      padding-block-start: 0.5rem;
+    }
+
+    &.collapsed {
+      .card-content {
+        display: none;
+      }
+
+      .expand-button {
+        transform: rotate(180deg);
+      }
+    }
+
+    .expand-button {
+      &:hover,
+      &:focus-within {
+        transition: transform .25s ease-out;
+      }
+    }
+
+    .cuj-task-list {
+      margin: 0;
+      padding-left: 1.15rem;
+
+      li {
+        padding-left: 0;
+        margin-block-end: 0.5rem;
+        font-size: 0.9rem;
+        line-height: 1.45;
+        color: var(--site-base-fgColor-alt);
+
+        &:last-child {
+          margin-block-end: 0;
+        }
+      }
+    }
+
+    // Two additional persona colors, following the `.pill-sm` modifiers.
+    // TODO(parlough): Consider if these colors can be shared and if
+    // compatible with dark mode.
+    .pill-sm.magenta {
+      color: color.scale(#FBD9EF, $lightness: 10%);
+      background: #9A2E6E;
+    }
+
+    .pill-sm.amber {
+      color: color.scale(#FCEBC8, $lightness: 10%);
+      background: #8A5300;
+    }
+  }
+}
