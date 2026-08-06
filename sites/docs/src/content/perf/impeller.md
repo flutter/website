@@ -88,8 +88,8 @@ It might use Impeller in the future.
 
 ### macOS
 
-Impeller is **available and enabled by default on Flutter 3.47**. In a future
-release, the ability to opt-out of using Impeller will be removed.
+Impeller is **available and enabled by default as of Flutter 3.47**.
+In a future release, the ability to opt out of using Impeller will be removed.
 
 To disable Impeller on macOS when debugging, pass `--no-enable-impeller` to the
 `flutter run` command.
@@ -108,8 +108,8 @@ under the top-level `<dict>` tag in your app's `Info.plist` file.
 
 ### Linux
 
-Impeller is **available and enabled by default on Flutter 3.47**. In a future
-release, the ability to opt-out of using Impeller will be removed.
+Impeller is **available and enabled by default as of Flutter 3.47**.
+In a future release, the ability to opt out of using Impeller will be removed.
 
 To disable Impeller on Linux when debugging, pass `--no-enable-impeller` to the
 `flutter run` command.
@@ -127,8 +127,8 @@ fl_dart_project_set_enable_impeller(project, FALSE);
 
 ### Windows
 
-Impeller is **available and enabled by default on Flutter 3.47**. In a future
-release, the ability to opt-out of using Impeller will be removed.
+Impeller is **available and enabled by default as of Flutter 3.47**.
+In a future release, the ability to opt out of using Impeller will be removed.
 
 To disable Impeller on Windows when debugging, pass `--no-enable-impeller` to the
 `flutter run` command.
