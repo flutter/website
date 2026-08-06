@@ -6,12 +6,12 @@ description: >-
   and updates on Cupertino widgets.
 publishDate: 2026-08-06
 author: twerske
-image: images/image4.webp
+image: images/q2-survey-header.webp
 category: announcement
 layout: blog
 ---
 
-<DashImage figure src="images/image4.webp" />
+<DashImage figure src="images/q2-survey-header.webp" />
 
 The Flutter team has been running user surveys twice a year
 since Flutter's 1.0 release in 2018.
@@ -97,7 +97,7 @@ both now ahead of GitHub Copilot (19%), Cursor (18%), and Codex (17%).
 (A note on methodology: respondents can use one or multiple editors,
 so these numbers add up way beyond 100%.)
 
-<DashImage figure src="images/image1.webp" alt="Bar chart of editor and agent
+<DashImage figure src="images/editor-agent-usage.webp" alt="Bar chart of editor and agent
 usage among Flutter developers,
 ranked highest to lowest" caption="VS Code (66%) and Android Studio (40%) still
 lead,
@@ -140,7 +140,7 @@ Not every subsystem is trending well.
 Cupertino widgets, web, Windows,
 and Linux are our lowest-rated areas in this survey.
 
-<DashImage figure src="images/image2.webp" alt="Bar chart of satisfaction by
+<DashImage figure src="images/subsystem-satisfaction.webp" alt="Bar chart of satisfaction by
 subsystem" caption="Dart language (92%), core framework (90%),
 and Android app (91%) lead; Cupertino widgets (61%) is the lowest-rated area,
 down 6 points from Q4 2025." />
@@ -276,7 +276,7 @@ consistent across company sizes.
 This is a strong signal supporting our continued investment in growing our
 maintainer group beyond Google.
 
-<DashImage figure src="images/image3.webp" alt="Grouped bar chart comparing
+<DashImage figure src="images/trust-flutter-vs-google.webp" alt="Grouped bar chart comparing
 trust in Flutter versus trust in Google to consistently meet development needs,
 split by company size" caption="Flutter (83% top-2 box) outpaces Google (62%) by
 20+ points across every company-size segment." />
