@@ -72,8 +72,7 @@ compile and debug native Swift and Objective-C code.
     To support [Flutter plugins][] that use native macOS code,
     install the latest version of [CocoaPods][].
 
-    We recommend using [Homebrew][] to install CocoaPods.
-    Run the following command:
+    Install CocoaPods using [Homebrew][] by running the following command:
 
     ```console
     $ brew install cocoapods

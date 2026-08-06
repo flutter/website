@@ -79,8 +79,7 @@ an iOS physical device or on the iOS Simulator.
     To support [Flutter plugins][] that use native iOS or macOS code,
     install the latest version of [CocoaPods][].
 
-    We recommend using [Homebrew][] to install CocoaPods.
-    Run the following command:
+    Install CocoaPods using [Homebrew][] by running the following command:
 
     ```console
     $ brew install cocoapods
