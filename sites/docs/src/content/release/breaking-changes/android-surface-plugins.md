@@ -67,7 +67,7 @@ surfaceProducer.setCallback(
       }
 
       @Override
-      public void onSurfaceDestroyed() {
+      public void onSurfaceCleanup() {
          // Do surface cleanup here, and stop drawing frames.
       }
    }
@@ -77,10 +77,17 @@ surfaceProducer.setCallback(
 A full example of using this new API can be found in [PR 6989][] for the
 `video_player_android` plugin.
 
-:::note
-In early versions of this API, the callback was named `onSurfaceCreated`, and
-was invoked even if the original surface was not destroyed. This has been fixed
-in the latest (pending 3.27) version of the API.
+:::version-note
+If you're using Flutter 3.26 or earlier,
+override `onSurfaceCreated` instead of `onSurfaceAvailable`.
+However, note that Flutter invokes `onSurfaceCreated` even when
+the original surface isn't destroyed.
+
+If you're using Flutter 3.28 or earlier,
+override `onSurfaceDestroyed` instead of `onSurfaceCleanup`.
+However, note that Flutter invokes `onSurfaceDestroyed` after
+the surface is destroyed and becomes invalid,
+so it doesn't provide time to stop rendering beforehand.
 :::
 
 ## Note on camera previews
@@ -118,17 +125,21 @@ this fix, check out [this `camera_android_camerax` PR][].
 
 ## Timeline
 
-Landed in version: 3.22
-
-:::note
-This feature landed in the _previous_ version of the SDK but was non-functional;
-plugins that migrate to this API should set `3.24` as a minimum version constraint.
-:::
-
+Landed in version: 3.22<br>
 In stable release: 3.24
 
-In the upcoming stable release, 3.27, `onSurfaceCreated` is deprecated, and
-`onSurfaceAvailable` and `handlesCropAndRotation` are added.
+:::note
+This feature landed in Flutter 3.22, but it wasn't functional.
+Plugins that migrate to this API should
+set `3.24` as a minimum version constraint.
+:::
+
+In Flutter 3.27,
+`onSurfaceCreated` was deprecated in favor of `onSurfaceAvailable` and
+`SurfaceProducer.handlesCropAndRotation` was added.
+
+In Flutter 3.29,
+`onSurfaceDestroyed` was deprecated in favor of `onSurfaceCleanup`.
 
 ## References
 
@@ -145,10 +156,13 @@ Relevant issues:
 
 Relevant PRs:
 
-- [PR 51061][], where we test the new API in the engine tests.
-- [PR 6456][], where we migrate the `video_player` plugin to use the new API.
-- [PR 6461][], where we migrate the `camera_android` plugin to use the new API.
-- [PR 6989][], where we add a full example of using the new API in the `video_player_android` plugin.
+- [PR 51061][], which tests the new API in the engine tests.
+- [PR 6456][], which migrates the `video_player` plugin to use the new API.
+- [PR 6461][], which migrates the `camera_android` plugin to use the new API.
+- [PR 6989][], which adds a full example of
+  using the new API in the `video_player_android` plugin.
+- [PR 160937][], which adds `onSurfaceCleanup` and
+  deprecates `onSurfaceDestroyed`.
 
 [Impeller]: /perf/impeller
 [OpenGLES]: https://www.khronos.org/opengles/
@@ -172,3 +186,4 @@ Relevant PRs:
 [PR 6456]: {{site.repo.packages}}/pull/6456
 [PR 6461]: {{site.repo.packages}}/pull/6461
 [PR 6989]: {{site.repo.packages}}/pull/6989
+[PR 160937]: {{site.repo.flutter}}/pull/160937

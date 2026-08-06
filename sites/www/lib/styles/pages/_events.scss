@@ -205,8 +205,12 @@ body.events {
       flex-direction: column;
       align-items: flex-end;
 
-      h3 {
+      // The shared `.story-grid-header` rule in `components/_stories.scss`
+      // only sizes `h3` headings, so size these ones here.
+      h2 {
+        font-size: var(--font-size-heading-2);
         margin-bottom: var(--gutter-sm);
+        text-align: center;
         width: 100%;
       }
 
@@ -215,7 +219,7 @@ body.events {
       }
 
       @include breakpoints.screen(md) {
-        h3 {
+        h2 {
           margin-bottom: var(--gutter-md);
           text-align: left;
         }

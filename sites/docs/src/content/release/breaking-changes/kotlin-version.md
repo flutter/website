@@ -17,8 +17,8 @@ your build scripts to the newest form. For more information,
 see [Issue 10380][] and [Issue 135392].
 :::
 
-[Issue 10380]:  {{site.github}}/flutter/website/issues/10380
-[Issue 135392]: {{site.github}}/flutter/flutter/issues/135392
+[Issue 10380]:  {{site.repo.this}}/issues/10380
+[Issue 135392]: {{site.repo.flutter}}/issues/135392
 
 ## Summary
 

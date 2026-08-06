@@ -217,7 +217,7 @@ class DevelopmentPage extends StatelessComponent {
               title: 'Extensive Flutter docs',
               description:
                   'Find documentation for everything Flutter - '
-                  'from interactive examples and tutorials, to '
+                  'from interactive examples and tutorials to '
                   'building and deploying your first Flutter app.',
               actions: const [
                 FeatureAction(

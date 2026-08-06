@@ -450,8 +450,6 @@
           permalink: /platform-integration/web/embedding-flutter-web
         - title: Web content in Flutter
           permalink: /platform-integration/web/web-content-in-flutter
-        - title: Web renderers
-          permalink: /platform-integration/web/renderers
         - title: Display images on the web
           permalink: /platform-integration/web/web-images
         - title: Web FAQ
@@ -470,6 +468,8 @@
   children:
     - title: Use packages & plugins
       permalink: /packages-and-plugins/using-packages
+    - title: Package dependency management
+      permalink: /packages-and-plugins/dependency-management
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
     - title: Swift Package Manager

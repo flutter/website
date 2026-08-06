@@ -47,7 +47,7 @@ Here's what the demo example looks like hosting the AI Toolkit:
 
 The [source code for this demo][src-code] is available in the repo on GitHub.
 
-[src-code]: {{site.github}}/flutter/ai/blob/main/example/lib/demo/demo.dart
+[src-code]: https://github.com/flutter/ai/blob/main/example/lib/demo/demo.dart
 
 ## Get started
 
@@ -163,9 +163,9 @@ examples.
 [options]:
     https://firebase.google.com/docs/vertex-ai/gemini-models#available-model-names
 [gemini.dart]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/gemini/gemini.dart
+    https://github.com/flutter/ai/blob/main/example/lib/gemini/gemini.dart
 [vertex.dart]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/vertex/vertex.dart
+    https://github.com/flutter/ai/blob/main/example/lib/vertex/vertex.dart
 </li>
 
 <li><b>Set up device permissions</b>
@@ -247,7 +247,7 @@ the AI Toolkit is just as robust and useful as it can be for your real-world
 apps.
 
 [add-fb]: https://firebase.google.com/docs/flutter/setup
-[example apps]: {{site.github}}/flutter/ai/tree/main/example/lib
-[file-issues]: {{site.github}}/flutter/ai/issues
-[submit]: {{site.github}}/flutter/ai/pulls
-[vertex-ex]: {{site.github}}/flutter/ai/blob/main/example/lib/vertex/vertex.dart
+[example apps]: https://github.com/flutter/ai/tree/main/example/lib
+[file-issues]: https://github.com/flutter/ai/issues
+[submit]: https://github.com/flutter/ai/pulls
+[vertex-ex]: https://github.com/flutter/ai/blob/main/example/lib/vertex/vertex.dart

@@ -157,6 +157,7 @@
 
           &:not(.collapsible) {
             color: var(--site-link-fgColor);
+            background-color: color-mix(in srgb, var(--site-primary-color) 10%, transparent);
           }
         }
       }
@@ -171,7 +172,7 @@
     }
 
     ul {
-      margin-left: 0.675rem;
+      margin-inline-start: 1rem;
     }
 
     >.nav-header {

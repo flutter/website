@@ -12,7 +12,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - Real Estate
 tags:
   - mobile
 publishDate: 2021-10-29

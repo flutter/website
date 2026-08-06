@@ -169,7 +169,7 @@ capabilities can help your business logic code,
 check out the 2022 Google I/O talk,
 [Flutter lessons for federated plugin development][].
 
-[Flutter lessons for federated plugin development]: {{site.youtube-site}}/watch?v=GAnSNplNpCA
+[Flutter lessons for federated plugin development]: {{site.yt.watch}}?v=GAnSNplNpCA
 
 ### Support a variety of input devices
 
@@ -208,9 +208,9 @@ when the device's orientation changes,
 you might have to do a bit of math ([example][])
 to change the scroll position on screen rotation.
 
-[example]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39
+[example]: {{site.repo.wonderous}}/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39
 [`PageStorageKey`]: {{site.api}}/flutter/widgets/PageStorageKey-class.html
-[Wonderous app]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64
+[Wonderous app]: {{site.repo.wonderous}}/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64
 
 ## Save app state
 
@@ -230,7 +230,7 @@ For more information on a real-world case
 where this occurred, check out
 [Problem: Folding/unfolding causes state loss][state-loss]
 in [Developing Flutter apps for Large screens][article],
-a free article on Medium.
+a post on the Flutter blog.
 
 [app state]: {{site.android-dev}}/jetpack/compose/state#store-state
 [article]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10

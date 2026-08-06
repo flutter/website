@@ -60,6 +60,12 @@ abstract class DashLayout implements PageLayout {
     final pageData = page.data.page;
     final siteData = page.data.site;
 
+    final siteUrl = siteData['url'];
+    if (siteUrl is! String) {
+      throw Exception('Site URL not configured in site data.');
+    }
+    final siteBaseUrl = Uri.parse(siteUrl);
+
     final pageTitle = (pageData['title'] ?? siteData['title']) as String;
     final pageDescription = pageData['description'] as String?;
     final pageImage = pageData['image'] as String?;
@@ -68,7 +74,15 @@ abstract class DashLayout implements PageLayout {
         ? '$pageTitle | $titleBase'
         : pageTitle;
 
-    final canonicalUrl = pageData['canonical'] as String?;
+    final canonicalUrl = switch (pageData['canonical']) {
+      final String url when url.trim().isNotEmpty => url.trim(),
+      _ => siteBaseUrl.resolve(page.url).toString(),
+    };
+    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
+    final socialImageUrl = _absoluteUrl(
+      siteBaseUrl,
+      pageImage ?? twitterDefaultImageUrl,
+    );
 
     return [
       Component.element(tag: 'title', children: [.text(windowTitle)]),
@@ -79,8 +93,7 @@ abstract class DashLayout implements PageLayout {
       if (pageData['noindex'] case final noIndex?
           when noIndex == true || noIndex == 'true')
         const meta(name: 'robots', content: 'noindex'),
-      if (canonicalUrl case final canonicalUrl? when canonicalUrl.isNotEmpty)
-        link(rel: 'canonical', href: canonicalUrl),
+      link(rel: 'canonical', href: canonicalUrl),
       if (pageData['redirectTo'] case final String redirectTo
           when redirectTo.isNotEmpty)
         RawText('<script>window.location.replace("$redirectTo");</script>'),
@@ -116,24 +129,13 @@ abstract class DashLayout implements PageLayout {
       meta(name: 'twitter:title', content: pageTitle),
       if (pageDescription case final String desc)
         meta(name: 'twitter:description', content: desc),
-      if (pageImage case final String img)
-        meta(name: 'twitter:image', content: img),
+      meta(name: 'twitter:image', content: socialImageUrl),
 
       meta(attributes: {'property': 'og:title', 'content': pageTitle}),
       if (pageDescription case final String desc)
         meta(attributes: {'property': 'og:description', 'content': desc}),
-      meta(
-        attributes: {
-          'property': 'og:url',
-          'content': canonicalUrl ?? page.path,
-        },
-      ),
-      meta(
-        attributes: {
-          'property': 'og:image',
-          'content': pageImage ?? twitterDefaultImageUrl,
-        },
-      ),
+      meta(attributes: {'property': 'og:url', 'content': socialPageUrl}),
+      meta(attributes: {'property': 'og:image', 'content': socialImageUrl}),
 
       // Set site fonts and related preconnection information.
       const link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
@@ -346,3 +348,9 @@ try {
     ];
   }
 }
+
+/// Resolves [url] against [siteBaseUrl] to produce an absolute URL.
+///
+/// If [url] already has a scheme, it's returned unchanged.
+String _absoluteUrl(Uri siteBaseUrl, String url) =>
+    Uri.parse(url).hasScheme ? url : siteBaseUrl.resolve(url).toString();

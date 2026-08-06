@@ -200,15 +200,32 @@ then extract the SDK to where you want it stored.
 
 {: .steps .windows-only}
 
+<div class="macos-only">
+
+:::warning
+**Note for Intel Macs:**
+Flutter is deprecating support for Intel-based Macs (x64).
+Future Flutter releases will require Apple Silicon.
+For details, check out the
+[macOS Intel deprecation strategy](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+:::
+
+</div>
+
  1. <h3>Download the Flutter SDK bundle</h3>
+
+    To choose the correct bundle,
+    you need to know your Mac's processor type.
+    *(To check, go to **Apple menu () > About This Mac**
+    and look at the **Processor** or **Chip** section.)*
 
     Depending on your macOS device's cpu architecture,
     download one of the following installation bundles to get the
     latest stable release of the Flutter SDK.
 
-    | Apple Silicon (ARM64)                            | Intel                                          |
-    |--------------------------------------------------|------------------------------------------------|
-    | <DownloadLatestButton os="macos" arch="arm64" /> | <DownloadLatestButton os="macos" arch="x64" /> |
+    | Apple Silicon (ARM64)                                                 | Intel                                                               |
+    |-----------------------------------------------------------------------|---------------------------------------------------------------------|
+    | <DownloadLatestButton os="macos" arch="arm64"></DownloadLatestButton> | <DownloadLatestButton os="macos" arch="x64"></DownloadLatestButton> |
 
  1. <h3>Create a folder to store the SDK</h3>
 

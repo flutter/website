@@ -195,7 +195,7 @@ Relevant PRs:
 [issue-80524]: {{site.repo.flutter}}/issues/80524
 [pull-25747]: {{site.repo.engine}}/pull/25747
 [pull-364]: {{site.repo.packages}}/pull/364
-[pull-3964]: {{site.github}}/flutter/plugins/pull/3964
+[pull-3964]: https://github.com/flutter/plugins/pull/3964
 [pull-82926]: {{site.repo.flutter}}/pull/82926
 [shadow root]: https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot
 [slot elements]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot

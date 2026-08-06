@@ -1,0 +1,356 @@
+# List of all blog authors.
+# New authors should be added here and
+# referenced in the post frontmatter by their ID.
+#
+# Authors should have:
+#  - name: The author's display name (required).
+#  - image: The author's image file, located in /content/blog/authors_images/ (optional).
+#  - imageUrl: A url to an image for the author, as an alternative to a local image (optional).
+#  - link: A link to their GitHub, social profile, or personal website (optional).
+abd99:
+  name: "Abdullah Deshmukh"
+  image: "1uLWpn1jOuAz8_lEu1M9Srw.webp"
+  link: "https://github.com/abd99"
+abdallahshaban557:
+  name: "Abdallah W Shaban"
+  image: "1beM676ZukZSi32yoyuhqxw.jpeg"
+  link: "https://github.com/abdallahshaban557"
+aguinis:
+  name: "Martin Aguinis"
+  image: "2AZjKy9ApAXsgYd9ElZSvlg.jpeg"
+  link: "https://github.com/maguinis"
+amir_h:
+  name: "Amir Hardon"
+  image: "1BgqwW36VvDjTOlmJk5VQ-A.jpeg"
+  link: "https://twitter.com/AmirHardon"
+anderdobo:
+  name: "Ander Dobo"
+  image: "19QBbBTP_oiuZGZf0I49AKA.webp"
+  link: "https://github.com/anderdobo"
+andremobilelabonte:
+  name: "André Labonté"
+  image: "0MWQEEWaslbr-PNFW.webp"
+  link: "https://github.com/andrelabonte"
+anjannarain:
+  name: "Anjan Narain"
+  image: "0Rcs4RmjLKoM8oYfZ.webp"
+  link: null
+antfitch:
+  name: "Amanda Fitch"
+  image: "1JXjnwMAb89ePR-FoV4-5Hg.jpeg"
+  link: "https://github.com/antfitch"
+arbullard:
+  name: "Anthony Bullard"
+  image: "0tNv4NL4miSZG0eeS.jpg"
+  link: "https://github.com/gamebox"
+ayushbherwani1998:
+  name: "Ayush Bherwani"
+  image: "2Iw2blcHT-LRD9lr8NTx8HQ.jpeg"
+  link: "https://github.com/AyushBherwani1998"
+bdero:
+  name: "Brandon DeRosier"
+  image: "0Jzj4ct7CmcvOiR3g.webp"
+  link: "https://github.com/bdero"
+bkonyi:
+  name: "Ben Konyi"
+  image: "1d1hf9rmd3uJL8yb1sPMIDA.webp"
+  link: "https://github.com/bkonyi"
+brandonbadger:
+  name: "Brandon Badger"
+  image: "1nFmOI6gpDMxUgSzNIZ19Kg.webp"
+  link: null
+chinmaygarde:
+  name: "Chinmay Garde"
+  image: "0xM4OOQfKuCiHd5rI.webp"
+  link: "https://github.com/chinmaygarde"
+clocksmith:
+  name: "Anthony Robledo"
+  image: "1fcJn7cFYnwInCzoug_PoDA.jpeg"
+  link: "https://github.com/clocksmith"
+craiglabenz:
+  name: "Craig Labenz"
+  image: "1PpHwzypsYF2ce75cfkt0_w.webp"
+  link: "https://github.com/craiglabenz"
+csells:
+  name: "Chris Sells"
+  image: "06LK838dGSbGJRtat.webp"
+  link: "https://github.com/csells"
+devoncarew:
+  name: "Devon Carew"
+  image: "1Wio_YseYYApcaC6FSU52aQ.webp"
+  link: "https://github.com/devoncarew"
+domesticmouse:
+  name: "Brett Morgan"
+  image: "0R7VUzyb9_HQm9afP.jpg"
+  link: "https://github.com/domesticmouse"
+efortuna:
+  name: "Emily Fortuna"
+  image: "1f-mpgT2KL1I-4NugTuv2Rg.jpeg"
+  link: "https://github.com/efortuna"
+ericwindmill:
+  name: "Eric Windmill"
+  image: "1_vDVbsLisergcnpUiXcPRQ.webp"
+  link: "https://github.com/ericwindmill"
+esouthren:
+  name: "Eilidh Southren"
+  image: "1X-6ifCWQoKYCZ-uLGdPa4w.webp"
+  link: "https://github.com/esouthren"
+ezra-sandzer-bell:
+  name: "Ezra Sandzer-Bell"
+  image: "1tTlm5zfgYWqtvLbIzUByLQ.webp"
+  link: "https://twitter.com/EzraSandzer"
+filiph:
+  name: "Filip Hracek"
+  image: "1dZx7Dxmr4VXmjc5U8yDf3w.jpeg"
+  link: "https://github.com/filiph"
+fitzface:
+  name: "Andrew Fitz Gibbon"
+  image: "2wcnmZEJVlZsf2nNvDOziRA.jpeg"
+  link: null
+gaaclarke:
+  name: "Aaron Clarke"
+  image: "0ALqtMy61v8ANAVWO.webp"
+  link: "https://github.com/gaaclarke"
+gskinner:
+  name: "Grant Skinner"
+  image: "1QrcTxiCCIAj38rUnnPTryg.jpeg"
+  link: "https://github.com/gskinner"
+guidez:
+  name: "Pierre-Louis Guidez"
+  link: "https://github.com/guidezpl"
+haddadniaj:
+  name: "Justin Haddadnia"
+  image: "0gNIf0pPqSsP1oOcM.jpg"
+  link: "https://github.com/Haddadnia"
+hansmuller:
+  name: "Hans Muller"
+  image: "09ombi9JukiF7Z1-d.webp"
+  link: "https://github.com/HansMuller"
+harryterkelsen:
+  name: "Harry Terkelsen"
+  image: "0ob8GIJbyVIHe-aQu.jpg"
+  link: "https://github.com/harryterkelsen"
+hellobrianjames:
+  name: "Brian James"
+  image: "1EAeJ6vonuQM5daZCF9CfeQ.jpeg"
+  link: "https://github.com/malloc-error"
+itsjustkevin:
+  name: "Kevin Chisholm"
+  image: "1HEfsynQuQpVrGR-qdGeSvg.jpeg"
+  link: "https://github.com/itsjustkevin"
+ivan:
+  name: "Ivan Leider"
+  image: "0SQ_vs0LMPjY6ejrP.webp"
+  link: "https://github.com/ileider"
+jayoung-lee:
+  name: "JaYoung Lee"
+  image: "109ekgauj46kjGlHoi94FwA.jpeg"
+  link: "https://github.com/jayoung-lee"
+jensjohansen:
+  name: "Jens Johansen"
+  image: "0Qp4aTK0f2iGxt-UF.webp"
+  link: "https://github.com/jensjohansen"
+jjmutter:
+  name: "John Mutter"
+  image: "1yJ9UamxmYZ_VwVDeM4mDzA.jpeg"
+  link: null
+johnpryan:
+  name: "John Ryan"
+  image: "1XqSzX8F7rKZnrHwIVIr71A.jpeg"
+  link: "https://github.com/johnpryan"
+josealba:
+  name: "Jose Alba"
+  image: "0hPHb0U1EVsdSI-ZK.jpg"
+  link: "https://github.com/JoseAlba"
+justinmc:
+  name: "Justin McCandless"
+  image: "16L6xLJHqC5vlGBrTFHc6xg.jpeg"
+  link: "https://github.com/justinmc"
+jwren:
+  name: "Jaime Wren"
+  image: "0VdlGNyd_YGGPFkrc.jpg"
+  link: "https://github.com/jwren"
+kenzieschmoll:
+  name: "Kenzie Davisson"
+  image: "06siHzzkrp68l6H-V.jpg"
+  link: "https://github.com/kenzieschmoll"
+kevmoo:
+  name: "Kevin Moore"
+  image: "1iUVmcyWC2Pj7ERaoSF-Onw.jpeg"
+  link: "https://github.com/kevmoo"
+kf6gpe:
+  name: "Ray Rischpater, KF6GPE"
+  image: "2stkoPD1JQ5tooR-s76YSmw.jpeg"
+  link: "https://github.com/kf6gpe"
+khanhnwin:
+  name: "Khanh Nguyen"
+  image: "1Nmt27LItpgVqSBTY8WIPwg.jpeg"
+  link: "https://github.com/khanhnwin"
+kkboateng:
+  name: "Kelvin Boateng"
+  image: "0IxpUINuAJhraX2My.jpg"
+  link: "https://github.com/kkboateng"
+ktjlee:
+  name: "Katie Lee"
+  image: "1vRMW7uCsV7VsqqC6dIghNA.jpeg"
+  link: null
+lamek:
+  name: "Kevin Lamenzo"
+  image: "0z8A7a6gvtNuF-TxZ.jpg"
+  link: "https://github.com/lamek"
+leighajarett:
+  name: "Leigha Jarett"
+  image: "12P-T3BTzLSSPrvomuK_oRQ.webp"
+  link: "https://github.com/leighajarett"
+liyuqian:
+  name: "Yuqian Li"
+  image: "1T1lv65-OBsGrBSs6mvgvqg.jpeg"
+  link: "https://github.com/liyuqian"
+lukeaf:
+  name: "Luke Freeman"
+  image: "1osRrOD-rpUZlVPFwpn2_GQ.webp"
+  link: "https://twitter.com/lukeaf"
+magder:
+  name: "Jenn Magder"
+  image: "1N3hr8E92Mseta1S7yCX2Mg.webp"
+  link: "https://github.com/magder"
+mariam_hasnany:
+  name: "Mariam Hasnany"
+  image: "1TDttyOKULZENb7QG-0Wl3w.jpeg"
+  link: "https://github.com/mariamhas"
+maryx:
+  name: "Mary"
+  image: "19Ub8P3iIx6Ji3hUUrSCZlg.webp"
+  link: "https://github.com/maryx"
+matthew-carroll:
+  name: "Matt Carroll"
+  image: "2j6fhR3Uq9ariRWaoB1MGPg.webp"
+  link: "https://github.com/matthew-carroll"
+mehmetf:
+  name: "Mehmet Fidanboylu"
+  image: "1snI23_LOekhWjI-XVYtHmQ.jpeg"
+  link: "https://github.com/mehmetf"
+melyndahoover:
+  name: "Mindy Hoover"
+  image: "1NC_dwnZV11nnMuK4D0mXYA.jpeg"
+  link: "https://github.com/melyndahoover"
+mhclin113:
+  name: "Cheng Lin"
+  image: "1WKhF9u7jo7OkE26I5PjGiw.webp"
+  link: "https://x.com/chenglinlim"
+mit-mit:
+  name: "Michael Thomsen"
+  image: "0Y_CFLc1qadgr3tPK.jpg"
+  link: "https://github.com/mit-mit"
+mjohnsullivan:
+  name: "Matt Sullivan"
+  image: "0cgL8XWJBpDSy2mHs.jpg"
+  link: "https://github.com/mjohnsullivan"
+mravn:
+  name: "Mikkel Ravn"
+  image: "1HcMDVJ2lxSQDClP1IUCGzg.jpeg"
+  link: "https://github.com/mravn"
+nikkitagandhi:
+  name: "Nikita Gandhi"
+  image: "2G__H_oe3299HvlPy7YkpKg.webp"
+  link: "https://twitter.com/Nikkitagandhi"
+parlough:
+  name: "Parker Lougheed"
+  image: "1Yh3FMfH210BvJATo22X4Aw.jpeg"
+  link: "https://github.com/parlough"
+perclasson:
+  name: "Per Classon"
+  image: "2d-UpSVU0saEV2On5JBvYaQ.jpeg"
+  link: "https://github.com/perclasson"
+piinks:
+  name: "Kate Lovett"
+  image: "00yA7OjxKWthRwjK2.webp"
+  link: "https://github.com/Piinks"
+redbrogdon:
+  name: "Andrew Brogdon"
+  image: "0UfXdwppirgDYRNaj.webp"
+  link: "https://github.com/redbrogdon"
+rich_hall:
+  name: "Rich Hall"
+  image: "1w7Y-bThACd0V1YJ6N7QePg.webp"
+  link: "https://twitter.com/rich_hall_"
+rodydavis:
+  name: "Rody Davis"
+  image: "rodydavis.jpg"
+  link: "https://github.com/rodydavis"
+scheglov:
+  name: "Konstantin Scheglov"
+  image: "0m23OLfjD-pystWVb.jpg"
+  link: "https://github.com/scheglov"
+sethladd:
+  name: "Seth Ladd"
+  image: "10pSgo-h67AMv_gytSDEiJg.webp"
+  link: "https://github.com/sethladd"
+sfshaza:
+  name: "Shams Zakhour"
+  image: "0LHz-9FgHd3doKgCM.jpg"
+  link: "https://github.com/sfshaza2"
+shamiramarshall:
+  name: "Shamira Marshall"
+  image: "0vHty7_58DD6eW53D.webp"
+  link: "https://github.com/MiraMarshall"
+swavkulinski:
+  name: "Swav Kulinski"
+  image: "0Qgrum-sTozr6lXCm.jpg"
+  link: "https://github.com/swavkulinski"
+taodong:
+  name: "Tao Dong"
+  image: "0jbYlQ-K9Yh-HVUBp.jpg"
+  link: "https://github.com/InMatrix"
+theaflowers:
+  name: "Alethea K. Flowers"
+  image: "0cNAKYVA08TeS6TVB.webp"
+  link: "https://github.com/theacodes"
+tianguang:
+  name: "Tianguang Zhang"
+  image: "0xV6b-152TcEMSjUr.webp"
+  link: null
+timothyhoang:
+  name: "Timothy Hoang"
+  image: "1krC2R3xE1FCZTdIbXQDT_A.jpeg"
+  link: null
+timsneath:
+  name: "Tim Sneath"
+  image: "14HRhyWLOwtZEN7MQ8zLuHA.jpeg"
+  link: "https://github.com/timsneath"
+tomayac:
+  name: "Thomas Steiner"
+  image: "15Yq8VeVDQqM51HKi50phdg.jpeg"
+  link: "https://github.com/tomayac"
+tvolkert:
+  name: "Todd Volkert"
+  image: "0EUSBYlBzvqL9j_Xr.webp"
+  link: "https://github.com/tvolkert"
+twerske:
+  name: "Emma Twersky"
+  image: "0lw25USWxDjT-i0kV.jpg"
+  link: "https://github.com/twerske"
+verygoodopensource:
+  name: "Very Good Ventures"
+  image: "1XUX_mTFnhm4BKyT9q9sOUQ.webp"
+  link: "https://github.com/VeryGoodOpenSource"
+wmleler1:
+  name: "Wm Leler"
+  image: "0c8OAb9nT35XgY56T.jpg"
+  link: "https://github.com/wmleler"
+xster:
+  name: "xster"
+  image: "1h_lwkzhaAtW5WTkM750_Xw.jpeg"
+  link: "https://github.com/xster"
+yanchenum:
+  name: "Yan Chen"
+  image: "0PSrFnoWOMMa0YZUM.jpg"
+  link: "https://twitter.com/yanchenum"
+yegorj:
+  name: "Yegor Jbanov"
+  image: "08pUBYXbTsN324CAB.jpg"
+  link: "https://github.com/yjbanov"
+zoeyfan:
+  name: "Zoey Fan"
+  image: "2Cl8MkXie_Fr91CEmLGzQtw.jpeg"
+  link: "https://github.com/zoeyfan"

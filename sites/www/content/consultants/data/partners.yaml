@@ -460,6 +460,18 @@
   options_customer_size:
     - "Startup"
   options_GCP_partner: false
+- title: "SolGuruz"
+  summary: "SolGuruz is an AI-assisted Flutter development company building cross-platform products for startups and enterprises. They use Spec-Driven Development and 30+ AI tools across every phase."
+  card: "images/third_party/partners/SolGoruz.png"
+  external_url: "https://solguruz.com/services/flutter-app-development/"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
 - title: "Paulonia"
   summary: "We are a human team with skills in design and development of cross-platform apps in Flutter with the vision of being a technological reference in Latin America."
   card: "images/third_party/partners/Paulonia.png"
@@ -596,7 +608,7 @@
     - "Enterprise"
   options_GCP_partner: true
 - title: "Pentagon Co., Ltd."
-  summary: '"Pentagon, Inc. is a software company based in Tokyo that specializes in app development using Flutter. The company also shares Flutter technical knowledge on YouTube and its blog."'
+  summary: "Pentagon, Inc. is a software company based in Tokyo that specializes in app development using Flutter. The company also shares Flutter technical knowledge on YouTube and its blog."
   card: "images/third_party/partners/Pentagon.png"
   external_url: "https://pentagon.tokyo/flutter/"
   options_location:
@@ -1183,4 +1195,40 @@
     - "Startup"
     - "Small-to-medium Business"
     - "Enterprise"
+  options_GCP_partner: false
+- title: "Yudiz Solutions Ltd"
+  summary: "Yudiz Solutions is a technology services company with 16+ years of experience, specializing in mobile app development with strong expertise in Flutter and cross-platform solutions."
+  card: "images/third_party/partners/Yudiz_logo.png"
+  external_url: "https://www.yudiz.com/mobile-app-development/"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "HotShots Labs"
+  summary: "A boutique Flutter-focused mobile app development agency delivering end-to-end iOS and Android solutions with a strong focus on business results. They specialize in cross-platform mobile apps, scalable backend systems, and high-performing digital products."
+  card: "images/third_party/partners/HeadShots_logo.png"
+  external_url: "https://hotshotslabs.com"
+  options_location:
+    - "Europe"
+    - "Oceania"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "muun"
+  summary: "A Hamburg-based studio that builds scalable online shops and Flutter apps for commerce. They combine strategy, UX/UI design, and development to create high-performance cross-platform applications."
+  card: "images/third_party/partners/muun_logo.png"
+  external_url: "https://muun.studio/en/flutter-agentur"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
   options_GCP_partner: false

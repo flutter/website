@@ -37,6 +37,10 @@ List<MemoryPage> get widgetCatalogPages {
             'description':
                 'A catalog of Flutter\'s ${category.title.unCapitalize()}. '
                 '${category.description}',
+            'dateModifiedSources': [
+              'src/data/catalog/index.yml',
+              'src/data/catalog/widgets.yml',
+            ],
           },
         },
         builder: (context) {

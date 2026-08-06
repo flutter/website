@@ -248,6 +248,7 @@ This page has release notes for Flutter 3.44.
 * [Dot shorthands] Migrate examples/api/test by @loic-sharma in [183966](https://github.com/flutter/flutter/pull/183966)
 * Warn about the use of TestSemantics by @justinmc in [184369](https://github.com/flutter/flutter/pull/184369)
 * [CP-beta]Fix an ordering dependency in the services/system_chrome_test.dart test suite by @flutteractionsbot in [185104](https://github.com/flutter/flutter/pull/185104)
+* [CP-beta] Update Flutter Android templates to AGP 9 by @jesswrd in [186099](https://github.com/flutter/flutter/pull/186099)
 
 ### Material
 
@@ -366,6 +367,8 @@ This page has release notes for Flutter 3.44.
 * [cupertino.dart] Implement CupertinoMenuAnchor and CupertinoMenuItem using RawMenuAnchor by @davidhicks980 in [182036](https://github.com/flutter/flutter/pull/182036)
 * Remove editable_text_utils cross-imports from material and cupertino … by @xfce0 in [184519](https://github.com/flutter/flutter/pull/184519)
 * Add more error handling to unawaited callsites by @victorsanni in [184526](https://github.com/flutter/flutter/pull/184526)
+* [CP-beta] Enable the `avoid_final_parameters` lint. (#185216) by @walley892 in [186199](https://github.com/flutter/flutter/pull/186199)
+* Revert "[CP-beta] Enable the `avoid_final_parameters` lint. (#185216)" by @walley892 in [186270](https://github.com/flutter/flutter/pull/186270)
 
 ### iOS
 
@@ -400,6 +403,7 @@ This page has release notes for Flutter 3.44.
 * [CP-beta]Fix killing wrong xcrun command by @flutteractionsbot in [185097](https://github.com/flutter/flutter/pull/185097)
 * [CP-beta]Only use LLDB breakpoint in debug mode by @flutteractionsbot in [185343](https://github.com/flutter/flutter/pull/185343)
 * [CP-beta][SwiftPM] Enable package resolution on xcodebuild commands by @flutteractionsbot in [185746](https://github.com/flutter/flutter/pull/185746)
+* [CP-beta]Match on process name before killing for SwiftPM by @flutteractionsbot in [185856](https://github.com/flutter/flutter/pull/185856)
 
 ### Android
 
@@ -452,6 +456,7 @@ This page has release notes for Flutter 3.44.
 * Reland "Apply rect clipping to surface views" by @gmackall in [184732](https://github.com/flutter/flutter/pull/184732)
 * Fix Android engine flags defaulting to true for malformed values by @realmeylisdev in [184631](https://github.com/flutter/flutter/pull/184631)
 * [CP-beta][Android] Gboard Text Shift Stuck Fix by @flutteractionsbot in [185749](https://github.com/flutter/flutter/pull/185749)
+* [CP-beta]Fix Broken Flutter Docs Link by @flutteractionsbot in [186106](https://github.com/flutter/flutter/pull/186106)
 
 ### Windows
 
@@ -463,6 +468,7 @@ This page has release notes for Flutter 3.44.
 * [Windows] Restore and enable IAccessibleEx implementation by @loic-peron-inetum-public in [175406](https://github.com/flutter/flutter/pull/175406)
 * Windows: Get graphics adapter from engine instead of view by @knopp in [184479](https://github.com/flutter/flutter/pull/184479)
 * [CP-beta][Win32] FlutterDesktopEngineGetGraphicsAdapter should use out parameter by @flutteractionsbot in [185634](https://github.com/flutter/flutter/pull/185634)
+* [CP-beta] Fix pointer position by @loic-sharma in [186034](https://github.com/flutter/flutter/pull/186034)
 
 ### Linux
 
@@ -639,7 +645,7 @@ This page has release notes for Flutter 3.44.
 * Improve error message when `dart-define` content are not `base64 encoded` and add more test cases by @AbdeMohlbi in [184219](https://github.com/flutter/flutter/pull/184219)
 * [ Widget Preview ] Use analysis server for widget preview detection by @bkonyi in [184473](https://github.com/flutter/flutter/pull/184473)
 * [data_assets] Cleanup tests by @dcharkes in [184209](https://github.com/flutter/flutter/pull/184209)
-* Enable SwiftPM by default on Stable by @okorohelijah in [184495](https://github.com/flutter/flutter/pull/184495)
+* Enable SPM by default on Stable by @okorohelijah in [184495](https://github.com/flutter/flutter/pull/184495)
 * [ Widget Preview ] Handle collections and records in custom preview annotations by @bkonyi in [184518](https://github.com/flutter/flutter/pull/184518)
 * forward an application name to DDS by @jakemac53 in [184459](https://github.com/flutter/flutter/pull/184459)
 * Reverts "[data_assets] Cleanup tests (#184209)" by @auto-submit[bot] in [184575](https://github.com/flutter/flutter/pull/184575)
@@ -656,6 +662,8 @@ This page has release notes for Flutter 3.44.
 * [CP-beta]Use relative path for reloadedSourcesUri and reloaded modules by @flutteractionsbot in [185540](https://github.com/flutter/flutter/pull/185540)
 * [CP-beta][Widget Preview] Fix flaky integration test timeout during flutter clean (#184991) by @bkonyi in [185300](https://github.com/flutter/flutter/pull/185300)
 * [CP-beta]Fix `--enable-hcpp` flag being ignored in release by @flutteractionsbot in [185717](https://github.com/flutter/flutter/pull/185717)
+* [CP-beta] Update iOS tools to fat binaries (#185868) by @vashworth in [186063](https://github.com/flutter/flutter/pull/186063)
+* [CP-beta] [AGP 9] Update AGP Error With Flutter Docs (#185043) by @jesswrd in [186040](https://github.com/flutter/flutter/pull/186040)
 
 ### Documentation
 
@@ -938,6 +946,10 @@ This page has release notes for Flutter 3.44.
 * [CP-beta]Fix sdfs being enabled for MacOS regardless of FLTEnableSDFs value by @flutteractionsbot in [185680](https://github.com/flutter/flutter/pull/185680)
 * [flutter-3.44-candidate.0] Update Flutter DEPS to Dart 9dc12969f5526d1bf1c2b48197d1608a68075866 by @flutteractionsbot in [185757](https://github.com/flutter/flutter/pull/185757)
 * [flutter-3.44-candidate.0] Sync engine.version to 73dc1ccd62aec198da4aefde1dae20b1167b131d by @flutteractionsbot in [185771](https://github.com/flutter/flutter/pull/185771)
+* Update dart version to 3.12.0-327.5.beta by @walley892 in [186276](https://github.com/flutter/flutter/pull/186276)
+* [flutter-3.44-candidate.0] Sync engine.version to 4b520f6012e613925f891f7fdcbe731909fdfbd9 by @flutteractionsbot in [186279](https://github.com/flutter/flutter/pull/186279)
+* [flutter-3.44-candidate.0] Update Flutter DEPS to Dart 98116461144f4429ab873f8497023a5ec3b08127 by @flutteractionsbot in [186420](https://github.com/flutter/flutter/pull/186420)
+* [flutter-3.44-candidate.0] Sync engine.version to 4c525dac5ebe5971c5708ef73558ed8edcf4a362 by @flutteractionsbot in [186587](https://github.com/flutter/flutter/pull/186587)
 
 ## New contributors
 
@@ -1003,4 +1015,4 @@ This page has release notes for Flutter 3.44.
 * @nikb7 made their first contribution in [183650](https://github.com/flutter/flutter/pull/183650)
 * @TrangLeQuynh made their first contribution in [183488](https://github.com/flutter/flutter/pull/183488)
 
-**Full Changelog**: https://github.com/flutter/flutter/compare/3.41.0...3.44.0-0.3.pre
+**Full Changelog**: https://github.com/flutter/flutter/compare/3.41.0...3.44.0

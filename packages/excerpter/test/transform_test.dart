@@ -93,6 +93,13 @@ void _amountTransforms() {
     );
   });
 
+  test('skip negative greater than length', () {
+    expect(
+      SkipTransform(-5).transform(['aaa', 'aabb', 'abc', 'cccc']),
+      orderedEquals([]),
+    );
+  });
+
   test('skip zero', () {
     final all = ['aaa', 'aabb', 'abc', 'cccc'];
     expect(SkipTransform(0).transform(all), orderedEquals(all));
@@ -117,6 +124,11 @@ void _amountTransforms() {
       TakeTransform(-2).transform(['aaa', 'aabb', 'abc', 'cccc']),
       orderedEquals(['abc', 'cccc']),
     );
+  });
+
+  test('take negative greater than length', () {
+    final all = ['aaa', 'aabb', 'abc', 'cccc'];
+    expect(TakeTransform(-5).transform(all), orderedEquals(all));
   });
 
   test('take zero', () {
@@ -186,6 +198,27 @@ void _replaceTransforms() {
     );
   });
 
+  test('replace unmatched optional capture group with empty string', () {
+    expect(
+      BackReferenceReplaceTransform(RegExp(r'(a)?b'), r'$1').transform(['b']),
+      orderedEquals(['']),
+    );
+  });
+
+  test('replace matched optional capture group with captured text', () {
+    expect(
+      BackReferenceReplaceTransform(RegExp(r'(a)?b'), r'$1').transform(['ab']),
+      orderedEquals(['a']),
+    );
+  });
+
+  test('replace unmatched capture group within surrounding text', () {
+    expect(
+      BackReferenceReplaceTransform(RegExp(r'(a)?b'), r'[$1]').transform(['b']),
+      orderedEquals(['[]']),
+    );
+  });
+
   test('replace backreferences entire captured', () {
     expect(
       BackReferenceReplaceTransform(
@@ -216,6 +249,13 @@ void _stringToReplaceTransforms() {
   test('missing ending', () {
     expect(
       () => stringToReplaceTransforms('/Hello/Halo/', errorExpected),
+      throwsA(isA<_ExpectedException>()),
+    );
+  });
+
+  test('invalid regular expression', () {
+    expect(
+      () => stringToReplaceTransforms('/[/replacement/g;', errorExpected),
       throwsA(isA<_ExpectedException>()),
     );
   });

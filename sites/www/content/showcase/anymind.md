@@ -43,9 +43,9 @@ By utilizing the Flutter News Toolkit, AnyMind was able to quickly develop a fea
 
 **Quote**
 
-*“Flutter News Toolkit is essentially a business accelerator, because it allows publishers to focus even more on improving the user experience, which is what they should be focusing on. ”*
+*“Flutter News Toolkit is essentially a business accelerator, because it allows publishers to focus even more on improving the user experience, which is what they should be focusing on.”*
 
-\- Hiko(Takahiko Iwabuchi), Regional Head of Publisher Growth, AnyMind Group
+\- Hiko (Takahiko Iwabuchi), Regional Head of Publisher Growth, AnyMind Group
 
 **Results**
 

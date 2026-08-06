@@ -32,7 +32,7 @@ transition. When using a predictive back gesture, the page animates along
 with the gesture and allows canceling or committing to the back navigation.
 
 In this example, no page transition is explicitly given, so the
-[default]({{site.github}}/flutter/flutter/blob/e983e4bd81f29b17215057fa5c9f46f96cbaf183/packages/flutter/lib/src/material/page_transitions_theme.dart#L806-L813)
+[default]({{site.repo.flutter}}/blob/e983e4bd81f29b17215057fa5c9f46f96cbaf183/packages/flutter/lib/src/material/page_transitions_theme.dart#L806-L813)
 is set to [`PredictiveBackPageTransitionsBuilder`][] in the theme on Android.
 
 ```dart
@@ -211,5 +211,5 @@ Relevant PRs:
 [`TransitionDurationObserver`]: {{site.api}}/flutter/flutter_test/TransitionDurationObserver-class.html
 [`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
 
-[Android predictive back route transitions]: {{site.github.com}}/flutter/flutter/issues/131961
-[Predictive back route transitions by default]: {{site.github}}/flutter/flutter/pull/165832
+[Android predictive back route transitions]: {{site.repo.flutter}}/issues/131961
+[Predictive back route transitions by default]: {{site.repo.flutter}}/pull/165832

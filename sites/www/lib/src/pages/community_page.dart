@@ -197,7 +197,7 @@ class CommunityPage extends StatelessComponent {
             div(classes: 'features container', [
               Feature.stacked(
                 eyebrow: 'Contribute',
-                title: 'Contribute to\nFlutter on Github',
+                title: 'Contribute to\nFlutter on GitHub',
                 features: const [
                   FeatureInfo(
                     title: 'Read the Contributing Guide',

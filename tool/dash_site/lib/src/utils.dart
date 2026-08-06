@@ -30,7 +30,7 @@ int installJasprCliIfNecessary() {
     'global',
     'activate',
     'jaspr_cli',
-    '^0.23.1',
+    '^0.23.2',
   ]);
 
   if (activateOutput.exitCode != 0) {
@@ -77,6 +77,12 @@ int runPubGetIfNecessary(String directory) {
   }
 
   return 0;
+}
+
+/// Returns [value] if it is non-null and non-empty, otherwise `null`.
+String? nonEmpty(String? value) {
+  if (value == null || value.isEmpty) return null;
+  return value;
 }
 
 extension ArgResultExtensions on ArgResults? {

@@ -10,6 +10,7 @@ import 'package:site_shared/components/common/client/page_header_options.dart';
 import 'package:site_shared/markdown.dart';
 import 'package:site_shared/util.dart';
 
+import '../../pages/markdown.dart';
 import '../../utils/page_source_info.dart';
 
 final class PageHeader extends StatelessComponent {
@@ -28,7 +29,8 @@ final class PageHeader extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    final sourceInfo = context.page.sourceInfo;
+    final page = context.page;
+    final sourceInfo = page.sourceInfo;
 
     return header(
       id: 'site-content-title',
@@ -47,6 +49,7 @@ final class PageHeader extends StatelessComponent {
           ),
         PageHeaderOptions(
           title: title,
+          markdownUrl: canonicalMarkdownOutput.routeForPage(page),
           sourceUrl: sourceInfo.sourceUrl,
           issueUrl: sourceInfo.issueUrl,
         ),

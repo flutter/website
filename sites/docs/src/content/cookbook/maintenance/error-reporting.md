@@ -111,7 +111,7 @@ To view a working example,
 see the [Sentry flutter example][] app.
 
 
-[Sentry flutter example]: {{site.github}}/getsentry/sentry-dart/tree/main/flutter/example
+[Sentry flutter example]: https://github.com/getsentry/sentry-dart/tree/main/flutter/example
 [Create an account with Sentry]: https://sentry.io/signup/
 [Bugsnag]: https://www.bugsnag.com/platforms/flutter
 [Datadog]: https://docs.datadoghq.com/real_user_monitoring/flutter/

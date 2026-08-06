@@ -129,9 +129,15 @@ navigates by removing a _page-backed_ route from the Navigator, all _pageless_
 routes after (up until the next _page-backed_ route) are removed too.
 
 :::note
-You can't prevent navigation from page-backed screens using `WillPopScope`.
+You can't prevent navigation from page-backed screens using `PopScope`
+or the deprecated `WillPopScope`.
 Instead, you should consult your routing package's API documentation.
+
+For guidelines on migrating to `PopScope`,
+check out the [Android predictive back migration guide][].
 :::
+
+[Android predictive back migration guide]: /release/breaking-changes/android-predictive-back
 
 ## Web support
 
@@ -156,8 +162,8 @@ resources:
 * [Understanding navigation][], a page from the Material Design documentation,
   outlines concepts for designing the navigation in your app, including
   explanations for forward, upward, and chronological navigation.
-* [Learning Flutter's new navigation and routing system][], an article on
-  Medium, describes how to use the `Router` widget directly, without
+* [Learning Flutter's new navigation and routing system][], a Flutter blog
+  post, describes how to use the `Router` widget directly, without
   a routing package.
 * The [Router design document][] contains the motivation and design of the
   `Router` API.
@@ -173,6 +179,6 @@ resources:
 [`pages`]: {{site.api}}/flutter/widgets/Navigator/pages.html
 [reverse chronological navigation]: https://material.io/design/navigation/understanding-navigation.html#reverse-navigation
 [Understanding navigation]: https://material.io/design/navigation/understanding-navigation.html
-[Learning Flutter's new navigation and routing system]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Learning Flutter's new navigation and routing system]: https://flutter.dev/blog/learning-flutters-new-navigation-and-routing-system
 [Router design document]: {{site.main-url}}/go/navigator-with-router
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html

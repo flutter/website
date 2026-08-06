@@ -16,12 +16,18 @@ class FiltersDropdown extends StatefulComponent {
     required this.filters,
     required this.activeFilters,
     required this.applyFilters,
+    this.scope = '',
     super.key,
   });
 
   final List<FilterType> filters;
   final Map<FilterType, Set<String>> activeFilters;
+
   final void Function(Map<FilterType, Set<String>>) applyFilters;
+
+  /// Prefix applied to the checkbox element IDs,
+  /// so multiple dropdowns can coexist on one page.
+  final String scope;
 
   @override
   State<FiltersDropdown> createState() => _FiltersDropdownState();
@@ -45,16 +51,41 @@ class _FiltersDropdownState extends State<FiltersDropdown> {
           .forTarget(web.window)
           .listen((_) => onResize());
       onResize();
-      _selectedFilters = {
-        for (final type in component.filters)
-          type: {...component.activeFilters[type] ?? {}},
-      };
+    }
+
+    _selectedFilters = _copyActiveFilters();
+  }
+
+  @override
+  void didUpdateComponent(covariant FiltersDropdown oldComponent) {
+    super.didUpdateComponent(oldComponent);
+    // Rebuilds that don't touch the filters, such as showing more items,
+    // shouldn't discard the options the user has checked but not applied.
+    if (!identical(oldComponent.activeFilters, component.activeFilters) ||
+        !identical(oldComponent.filters, component.filters)) {
+      _selectedFilters = _copyActiveFilters();
     }
   }
 
+  /// A mutable copy of [FiltersDropdown.activeFilters],
+  /// so toggling a checkbox doesn't apply to the grid until confirmed.
+  Map<FilterType, Set<String>> _copyActiveFilters() => {
+    for (final type in component.filters)
+      type: {...component.activeFilters[type] ?? {}},
+  };
+
+  /// The page-unique DOM element ID of the checkbox for [option] of [type].
+  String _optionId(FilterType type, String option) =>
+      '${component.scope}${type.optionId(option)}';
+
   void onResize() {
+    // Resize events fire continuously while dragging,
+    // but the layout only changes when the breakpoint is crossed.
+    final isMobile = web.window.innerWidth < 768;
+    if (isMobile == _isMobile) return;
+
     setState(() {
-      _isMobile = web.window.innerWidth < 768;
+      _isMobile = isMobile;
     });
   }
 
@@ -79,9 +110,10 @@ class _FiltersDropdownState extends State<FiltersDropdown> {
     toggleDropdown();
   }
 
+  /// Deselects every option and immediately applies the empty selection.
   void clearAllFilters() {
     setState(() {
-      _selectedFilters = {for (final type in component.filters) type: {}};
+      _selectedFilters = {};
     });
 
     applyFilters();
@@ -198,28 +230,32 @@ class _FiltersDropdownState extends State<FiltersDropdown> {
           if (_openedMobileDropdowns.contains(type)) 'show',
         ].join(' '),
         [
-          for (final option in type.options)
-            label(htmlFor: type.optionId(option), [
-              input(
-                id: type.optionId(option),
-                type: InputType.checkbox,
-                value: option,
-                checked: _selectedFilters[type]?.contains(option) ?? false,
-                onChange: (bool? value) {
-                  setState(() {
-                    final options = _selectedFilters[type] ??= {};
-                    if (value ?? false) {
-                      options.add(option);
-                    } else {
-                      options.remove(option);
-                    }
-                  });
-                },
-              ),
-              .text(option),
-            ]),
+          for (final option in type.options) _buildOption(type, option),
         ],
       ),
+    ]);
+  }
+
+  Component _buildOption(FilterType type, String option) {
+    final optionId = _optionId(type, option);
+    return label(htmlFor: optionId, [
+      input(
+        id: optionId,
+        type: InputType.checkbox,
+        value: option,
+        checked: _selectedFilters[type]?.contains(option) ?? false,
+        onChange: (bool? value) {
+          setState(() {
+            final options = _selectedFilters[type] ??= {};
+            if (value ?? false) {
+              options.add(option);
+            } else {
+              options.remove(option);
+            }
+          });
+        },
+      ),
+      .text(option),
     ]);
   }
 }

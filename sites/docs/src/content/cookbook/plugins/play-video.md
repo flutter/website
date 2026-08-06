@@ -361,5 +361,5 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 [`play()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html
 [`video_player`]: {{site.pub-pkg}}/video_player
 [`VideoPlayer`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html
-[mac-entitlement]: {{site.url}}/platform-integration/macos/building#entitlements-and-the-app-sandbox
+[mac-entitlement]: /platform-integration/macos/building#entitlements-and-the-app-sandbox
 [video_player_web]: {{site.pub-pkg}}/video_player_web
