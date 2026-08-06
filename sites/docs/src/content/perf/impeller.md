@@ -122,6 +122,7 @@ To disable Impeller on Linux when deploying your app, add the following setup to
 your project in `linux/runner/my_application.cc`.
 
 ```c
+g_autoptr(FlDartProject) project = fl_dart_project_new();
 fl_dart_project_set_enable_impeller(project, FALSE);
 ```
 
@@ -141,6 +142,7 @@ To disable Impeller on Windows when deploying your app, add the following setup 
 your project in `windows\runner\main.cpp`.
 
 ```c++
+flutter::DartProject project(L"data");
 project.set_impeller_switch(flutter::ImpellerSwitch::Disabled);
 ```
 
