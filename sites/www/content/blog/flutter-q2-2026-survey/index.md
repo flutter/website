@@ -23,7 +23,7 @@ We asked about:
 - Which editors and AI coding agents you use in your daily workflow
 - Your perception of Flutter and Google
 
-Overall, 93% of the 3,500+ respondents were positively satisfied
+Overall, 93% of the 3,500+ respondents reported positive satisfaction
 (top-2 box: very + somewhat), holding steady compared to Q4 2025.
 Where things get really interesting is underneath that headline number:
 58% of you are now very satisfied
@@ -125,7 +125,7 @@ well-supported target for every major agentic coding tool,
 and we're partnering both inside Google and with outside teams to make
 that true.
 Our current investment spans core models, eval systems,
-and a combination of Skills and MCP tools to ensure a high-quality
+and a combination of skills and MCP tools to ensure a high-quality
 Flutter agentic developer experience and code generation.
 
 ## Where the experience still falls short
@@ -167,7 +167,8 @@ to reduce breakage when new AGP versions ship.
 for a more stable build process,
 and **Flutter 3.38** published an official version matrix across Java, Kotlin,
 AGP, and Gradle.
-Most recently, **Flutter 3.41** added AGP 9 support, and **Flutter 3.44** included
+Most recently, **Flutter 3.41** added AGP 9 support,
+and **Flutter 3.44** included
 [migrations to use built-in Kotlin](https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin).
 
 To eliminate the usual version-matching guesswork,
@@ -190,12 +191,13 @@ with 92 of the top 100 iOS plugins already migrated.
 - **Tooling and IDE experience (33%)**:
   Centered on wanting deeper Android Studio integration:
 more AI tooling, more native support, better visualization.
-Our current AI investments are to build AI tooling that can be used with any
-agent agnostic of your IDE. This includes the Dart MCP server and Agent Skills work,
+Our current AI investments are focused on building AI tooling
+that can be used with any agent, regardless of your IDE.
+This includes the Dart MCP server and Agent Skills work,
 which predate this survey's fielding.
 That said, Android Studio didn’t have MCP support when we first launched
 Dart MCP,
-but we now have it on our to-do list to ensure our tooling works there.
+but we're working on making sure our tooling works there next.
 
 - **Bugs and stability (24%)**:
 Pointed at debug tooling specifically, such as breakpoints
@@ -221,7 +223,7 @@ hadn't kept pace specifically for iOS-style design,
 expressing concern that native design systems got deprioritized
 once they became difficult to maintain inside the core framework.
 While we are watching this feedback closely, this doesn’t come as a surprise.
-We intentionally paused work in Cupertino to execute on decoupling
+We intentionally paused work on Cupertino widgets to execute on decoupling
 to get to that better world where we can ship faster.
 
 In the August release, we're shipping the first step of that decoupling,
