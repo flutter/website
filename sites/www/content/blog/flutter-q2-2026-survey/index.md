@@ -267,10 +267,7 @@ consistent across company sizes.
 This is a strong signal supporting our continued investment in growing our
 maintainer group beyond Google.
 
-<DashImage figure src="images/trust-flutter-vs-google.webp" alt="Grouped bar chart comparing
-trust in Flutter versus trust in Google to consistently meet development needs,
-split by company size" caption="Flutter (83% top-2 box) outpaces Google (62%) by
-20+ points across every company-size segment." />
+<DashImage figure src="images/trust-flutter-vs-google.webp" alt="Grouped bar chart comparing trust in Flutter versus trust in Google to consistently meet development needs, split by company size" caption="Flutter (83% top-2 box) outpaces Google (62%) by 20+ points across every company-size segment." />
 
 When we asked what actually builds that trust,
 framework performance and stability topped the list at 26%,
