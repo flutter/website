@@ -7,6 +7,13 @@ description: >-
 
 {% render "docs/breaking-changes.md" %}
 
+:::warning
+This guide only applies to apps and plugins that already use the
+Kotlin Gradle Plugin (KGP).
+If your project doesn't currently apply KGP,
+don't migrate to built-in Kotlin.
+:::
+
 ## Summary
 
 To build a Flutter app for Android,
