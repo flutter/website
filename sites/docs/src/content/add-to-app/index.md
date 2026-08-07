@@ -192,6 +192,15 @@ see our API usage guides at the following links:
   </a>
 </div>
 
+## Migrating from add-to-app to a standalone Flutter app
+
+If your project began as an add-to-app module and you want to convert it into a full, standalone Flutter application:
+
+1. **Create a standalone project structure**: Run `flutter create <app_name>` to generate fresh native platform harnesses (`android/`, `ios/`, `macos/`, etc.).
+2. **Copy Dart source code and assets**: Move your `lib/`, `pubspec.yaml`, `assets/`, and tests from your Flutter module into the newly created standalone application root.
+3. **Port platform integration code**: Move any custom platform channel handlers or native plugin initializations from the host app into the new native platform projects (`android/app/src/main/` or `ios/Runner/`).
+4. **Clean up host app integration**: Remove the add-to-app module dependencies (such as AAR or Swift package dependencies and embedding hooks) from your original host app repositories.
+
 ## Limitations
 
 Mobile limitations:
