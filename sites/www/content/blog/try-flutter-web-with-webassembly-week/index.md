@@ -117,8 +117,8 @@ build side projects, test your code with WebAssembly this week!
     issues, let us know! File a report at
     👉 **[https://goo.gle/flutter-wasm-feedback](https://goo.gle/flutter-wasm-feedback)**
     so our engineers can help unblock migration.
-5.  **Share your wins:** If your app builds cleanly and runs faster, tell us!
-   Share your before-and-after metrics or framerate gains at
+4.  **Share your wins:** If your app builds cleanly and runs faster, tell us!
+    Share your before-and-after metrics or framerate gains at
     👉 **[https://goo.gle/flutter-web-wasm-win](https://goo.gle/flutter-web-wasm-win)**.
 
 When posting on social media, use **`#FlutterWasmWeek`** so we can feature
