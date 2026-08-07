@@ -57,8 +57,35 @@ in a directory of your choice with the `flutter create` command.
 $ flutter create <name_of_flutter_app>
 ```
 
-Then specify `localizationsDelegates` and `supportedLocales` for your
-`MaterialApp` or `CupertinoApp`:
+To use `flutter_localizations`, add the package as a dependency to your
+`pubspec.yaml` file, as well as the `intl` package:
+
+```console
+$ flutter pub add flutter_localizations --sdk=flutter
+$ flutter pub add intl:any
+```
+
+This creates a `pubspec.yml` file with the following entries:
+
+<?code-excerpt "gen_l10n_example/pubspec.yaml (flutter-localizations)"?>
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+```
+
+Then import the `flutter_localizations` library and specify
+`localizationsDelegates` and `supportedLocales` for
+your `MaterialApp` or `CupertinoApp`:
+
+<?code-excerpt "gen_l10n_example/lib/main.dart (localization-delegates-import)"?>
+```dart
+import 'package:flutter_localizations/flutter_localizations.dart' as
+    flutter_localizations;
+```
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (material-app)" remove="AppLocalizations.delegate"?>
 ```dart
