@@ -1,6 +1,6 @@
 ---
-title: Stricter Android Intent Verification for App Entrypoints
-description: Android Intent extras for routing, entrypoints, and cached engines are now strictly verified.
+title: Stricter Android `Intent` Verification for App Entrypoints
+description: Android `Intent` extras for routing, entrypoints, and cached engines are now strictly verified.
 ---
 
 {% render "docs/breaking-changes.md" %}
