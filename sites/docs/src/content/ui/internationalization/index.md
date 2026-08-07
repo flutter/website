@@ -83,15 +83,17 @@ your `MaterialApp` or `CupertinoApp`:
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (localization-delegates-import)"?>
 ```dart
-import 'package:flutter_localizations/flutter_localizations.dart' as
-    flutter_localizations;
+import 'package:flutter_localizations/flutter_localizations.dart'
+    as flutter_localizations;
 ```
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (material-app)" remove="AppLocalizations.delegate"?>
 ```dart
 return const MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: GlobalMaterialLocalizations.delegates,
+  localizationsDelegates: [
+    ...GlobalMaterialLocalizations.delegate,
+  ],
   supportedLocales: [
     Locale('en'), // English
     Locale('es'), // Spanish
@@ -281,8 +283,8 @@ dependencies:
    return const MaterialApp(
      title: 'Localizations Sample App',
      localizationsDelegates: [
-       AppLocalizations.delegate, // Add this delegate
-       ...GlobalMaterialLocalizations.delegates,
+       AppLocalizations.delegate, // Add this line
+       ...GlobalMaterialLocalizations.delegate,
      ],
      supportedLocales: [
        Locale('en'), // English
@@ -1148,7 +1150,8 @@ adds the `NnMaterialLocalizations` delegate instance to the app's
 ```dart
 const MaterialApp(
   localizationsDelegates: [
-    ...GlobalMaterialLocalizations.delegates,
+    GlobalWidgetsLocalizations.delegate,
+    GlobalMaterialLocalizations.delegate,
     NnMaterialLocalizations.delegate, // Add the newly created delegate
   ],
   supportedLocales: [Locale('en', 'US'), Locale('nn')],
