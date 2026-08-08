@@ -15,8 +15,7 @@ getter on `Enum` which was introduced in `Dart 2.14`.
 ## Context
 
 Historically, Flutter used `describeEnum` to return a `String` description of an enum value.
-This became redundant when the `name` getter of `Enum` was introduced in `Dart 2.14`. All methods
-that use `describeEnum` in the framework have migrated to using the `name` getter.
+This became redundant when the `name` getter of `Enum` was introduced in `Dart 2.14`.
 
 ## Migration guide
 
