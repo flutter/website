@@ -52,9 +52,11 @@ API documentation:
 
 Relevant PRs:
 
+* [PR 94496][]
 * [PR 190076][]
 
 [`enums`]: {{site.dart-site}}/language/enums
+[PR 94496]: {{site.repo.flutter}}/pull/94496
 [PR 190076]: {{site.repo.flutter}}/pull/190076
 
 
