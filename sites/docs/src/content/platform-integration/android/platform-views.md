@@ -482,18 +482,6 @@ For more information, visit the API docs for:
 [`PlatformViewFactory`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
 [`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
 
-Finally, modify your `build.gradle` file
-to require one of the minimal Android SDK versions:
-
-```kotlin
-android {
-    defaultConfig {
-        minSdk = 19 // if using hybrid composition
-        minSdk = 20 // if using virtual display.
-    }
-}
-```
-
 ### Manual view invalidation
 
 Certain Android Views don't invalidate themselves when their content changes.

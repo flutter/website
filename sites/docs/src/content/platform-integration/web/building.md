@@ -158,6 +158,9 @@ To learn more about how to deploy these assets to the web,
 visit [Build and release a web app][].
 For answers to other common questions, visit the [Web FAQ][].
 
+If you encounter errors when compiling your app with Wasm, check out
+[Diagnosing Wasm compilation errors](/platform-integration/web/wasm#diagnosing-wasm-compilation-errors).
+
 ## Debugging
 
 Use [Flutter DevTools][] for the following tasks:

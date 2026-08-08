@@ -178,12 +178,84 @@ static JS interop:
 - [`package:web`][], which replaces `dart:html` (and other web libraries)
 - [`dart:js_interop`][], which replaces `package:js` and `dart:js`
 
-For a detailed guide on migrating existing code, see the [`package:web` migration guide][].
+For a detailed guide on migrating existing code,
+see the [`package:web` migration guide][].
 
-When compiling to Wasm, be aware of runtime differences in JS interop types (such as `is`/`as` type casts and Zone propagation in callbacks). For details, see Dart's [JS interop types documentation]({{site.dart-site}}/interop/js-interop/js-types#compatibility-type-checks-and-casts) and the [package:web Zones section]({{site.dart-site}}/interop/js-interop/package-web#zones).
+When compiling to Wasm, be aware of runtime differences
+in JS interop types (such as `is`/`as` type casts
+and Zone propagation in callbacks).
+For details, check out Dart's
+[JS interop types documentation]({{site.dart-site}}/interop/js-interop/js-types#compatibility-type-checks-and-casts)
+and the [package:web Zones section]({{site.dart-site}}/interop/js-interop/package-web#zones).
 
 To learn more about JS interop in Dart,
 see Dart's [JS interop][] documentation page.
+
+### Diagnosing Wasm compilation errors {:#diagnosing-wasm-compilation-errors}
+
+When compiling a Flutter web project with `--wasm`, if your application or its
+packages import unsupported web APIs (such as `dart:html` or `package:js`),
+the compilation will fail. 
+
+By default, the Dart Wasm compiler emits a clean, structured dependency chain
+tree, but this output can be buried in a long terminal exception stack trace.
+
+#### 1. Perform early detection
+
+You can detect incompatibilities early with dry-run warnings. When you run
+`flutter build web` without the `--wasm` flag, a Wasm dry run is still performed
+automatically. If incompatibilities are found, you will see a non-fatal warning
+like this:
+
+```console
+Wasm dry run failed:
+Found incompatibilities with WebAssembly.
+
+package:my_app/main.dart 1:1 - dart:html unsupported (0)
+```
+
+#### 2. Isolate the compiler dependency tree
+
+If you run `flutter build web --wasm` and it fails, `flutter_tools` outputs
+a large exception stack trace (for example, `Target dart2wasm failed...`). 
+
+**Ignore the long stack trace and command string.** Instead, scroll up to the
+top of the error output to find the structured `Context` tree. This clean tree
+tells you exactly which package and file imported the unsupported library:
+
+```console
+Context: The unavailable library 'dart:html' is imported through these packages:
+
+    main.dart => package:my_app => dart:html
+
+Detailed import paths for (some of) these imports:
+
+    main.dart => package:my_app/main.dart => dart:html
+```
+
+#### 3. Migrate legacy imports
+
+To fix these compilation errors, you must migrate from legacy JS interop
+packages to modern WebAssembly-compatible alternatives:
+
+- Replace `dart:html` and other legacy web libraries with [`package:web`][].
+- Replace `dart:js` and `package:js` with [`dart:js_interop`][].
+
+For comprehensive migration instructions, check out the
+[`package:web` migration guide on dart.dev]({{site.dart-site}}/interop/js-interop/package-web)
+and Dart's [JS interop usage guide]({{site.dart-site}}/interop/js-interop).
+
+If you need to support both legacy and modern environments during your
+migration, use conditional imports by checking for `dart.library.js_interop`:
+
+```dart
+import 'fallback.dart'
+  if (dart.library.js) 'legacy_web_interop.dart'
+  if (dart.library.js_interop) 'wasm_web_interop.dart';
+```
+
+To learn more about selecting implementations at compile time, see the
+[conditional imports documentation on dart.dev]({{site.dart-site}}/interop/js-interop/package-web#conditional-imports).
 
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
