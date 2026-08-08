@@ -22,21 +22,17 @@ This became redundant when the `name` getter of `Enum` was introduced in `Dart 2
 If your code previously used the `describeEnum` method to get the value name of an enum member,
 migrate your code to use the `name` getter on the instance itself.
 
-Code before migration:
+```dart diff
+  enum Theme { light, dark }
 
-```dart
-enum Theme { light, dark }
+- final theme = describeEnum(Theme.light);
 
-final theme = describeEnum(Theme.light);
-// theme will contain `light`
++ Theme.light.name;
 ```
 
-Code after migration:
-
-```dart
-Theme.light.name;
-// theme will contain `light`
-```
+:::important
+This migration isn't supported by `dart fix`.
+:::
 
 ## Timeline
 
