@@ -376,7 +376,7 @@ should be aware of:
 
   When previewing web widgets, the previewer automatically synchronizes assets
   from your host project's `web/` directory, applying custom theming or
-  `index.html` customizations automatically.
+  `index.html` customizations.
 
 - **Unconstrained widgets**: Unconstrained widgets are
   automatically constrained to approximately half the
