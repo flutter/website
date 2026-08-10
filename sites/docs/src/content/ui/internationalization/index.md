@@ -57,6 +57,15 @@ in a directory of your choice with the `flutter create` command.
 $ flutter create <name_of_flutter_app>
 ```
 
+In the near future, Flutter projects will be encouraged to use the `material_ui`
+and `cupertino_ui` packages, but the `flutter create` command has not yet been
+updated to do this by default. You can get ahead of things and migrate now by
+running the following command:
+
+```console
+$ dart fix --apply --code=migrate_design_widgets
+```
+
 To use `flutter_localizations`, add the package as a dependency to your
 `pubspec.yaml` file, as well as the `intl` package:
 
@@ -87,13 +96,11 @@ import 'package:flutter_localizations/flutter_localizations.dart'
     as flutter_localizations;
 ```
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (material-app)" remove="AppLocalizations.delegate"?>
+<?code-excerpt "gen_l10n_example/lib/no_app_localizations.dart (material-app)"?>
 ```dart
 return const MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: [
-    ...GlobalMaterialLocalizations.delegate,
-  ],
+  localizationsDelegates: GlobalMaterialLocalizations.delegates,
   supportedLocales: [
     Locale('en'), // English
     Locale('es'), // Spanish
@@ -103,7 +110,7 @@ return const MaterialApp(
 ```
 
 After introducing the `flutter_localizations` package and adding the previous
-code, the `Material` and `Cupertino` packages should now be correctly localized
+code, the `Material` and `Cupertino` libraries should now be correctly localized
 in one of the supported locales. Widgets should be adapted to the localized
 messages, along with correct left-to-right or right-to-left layout.
 
