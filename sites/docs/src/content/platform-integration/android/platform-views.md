@@ -531,7 +531,7 @@ Flutter rasterizes frames on a dedicated raster thread,
 while platform code, such as plugins and Android views,
 runs on the platform thread, which is the Android main thread.
 This separation keeps Flutter rendering fast and fluid,
-as the platform thread is rarely blocked by rasterization work.
+as the platform thread is not blocked by rasterization work.
 
 However, when a platform view is rendered on Android using
 hybrid composition,
