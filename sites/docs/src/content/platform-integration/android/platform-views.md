@@ -78,7 +78,7 @@ It is currently available as an opt-in feature.
 * **Impeller with the Vulkan backend**: The device must be capable of
   rendering with Vulkan. Impeller also has an OpenGLES backend, and
   falls back to it on devices without usable Vulkan support.
-  HCPP isn't available in that configuration.
+  HCPP is not available in that configuration.
 
 If these requirements are not met on the end-user device,
 Flutter will automatically fall back to the existing platform view strategy
