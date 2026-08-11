@@ -33,7 +33,7 @@ Equip Antigravity with official Dart and Flutter tools
 by installing the plugin from the **Build with Google** screen in settings:
 
 1. Open **Settings** in Antigravity by clicking the gear icon
-   or pressing <kbd>Cmd</kbd>+<kbd>,</kbd> (<kbd>Ctrl</kbd>+<kbd>,</kbd>).
+   or pressing <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>,</kbd>.
 1. Navigate to the **Build with Google** screen in settings.
 1. Select **Dart & Flutter** and click **Install**.
 
