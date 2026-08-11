@@ -20,6 +20,7 @@ void setUpSite() {
   _setUpPlatformKeys();
   _setUpToc();
   _setUpSteppers();
+  _setUpIdeExplorers();
 }
 
 void _setUpSearchKeybindings() {
@@ -459,6 +460,128 @@ void _setUpSteppers() {
       }
     }
   }
+}
+
+/// Set up interactivity of the file/detail explorer created with
+/// the `<IdeExplorer>` custom component.
+void _setUpIdeExplorers() {
+  final explorers = web.document.querySelectorAll('.ide-explorer');
+  for (var i = 0; i < explorers.length; i++) {
+    _setUpIdeExplorer(explorers.item(i) as web.Element);
+  }
+}
+
+void _setUpIdeExplorer(web.Element explorer) {
+  void selectIdeNode(String domId) {
+    final selectTargets = explorer.querySelectorAll('[data-ide-select]');
+    web.Element? sidebarTarget;
+    for (var i = 0; i < selectTargets.length; i++) {
+      final target = selectTargets.item(i) as web.Element;
+      final isMatch = target.getAttribute('data-ide-select') == domId;
+      target.classList.toggle('active', isMatch);
+      if (isMatch && target.closest('.ide-tree') != null) {
+        sidebarTarget = target;
+      }
+    }
+
+    final panels = explorer.querySelectorAll('[data-ide-panel]');
+    for (var i = 0; i < panels.length; i++) {
+      final panel = panels.item(i) as web.Element;
+      panel.classList.toggle(
+        'active',
+        panel.getAttribute('data-ide-panel') == domId,
+      );
+    }
+
+    // Expand every ancestor folder so the selected item stays visible.
+    // Skip the clicked node's own <details> (when a folder's summary was
+    // clicked directly) so the browser's native open/close toggle on that
+    // element isn't fought by also forcing it open here.
+    final ownDetails = sidebarTarget?.tagName.toLowerCase() == 'summary'
+        ? sidebarTarget!.parentElement
+        : null;
+    var current = sidebarTarget;
+    while (current != null) {
+      final ancestorDetails = current.closest('details');
+      if (ancestorDetails == null) break;
+      if (ancestorDetails != ownDetails) {
+        (ancestorDetails as web.HTMLDetailsElement).open = true;
+      }
+      current = ancestorDetails.parentElement;
+    }
+  }
+
+  void switchIdeRoot(String rootId) {
+    final tabs = explorer.querySelectorAll('.ide-root-tab');
+    for (var i = 0; i < tabs.length; i++) {
+      final tab = tabs.item(i) as web.Element;
+      tab.classList.toggle(
+        'active',
+        tab.getAttribute('data-ide-root') == rootId,
+      );
+    }
+
+    final trees = explorer.querySelectorAll('.ide-tree');
+    web.Element? activeTree;
+    for (var i = 0; i < trees.length; i++) {
+      final tree = trees.item(i) as web.Element;
+      final isMatch = tree.getAttribute('data-ide-root') == rootId;
+      tree.classList.toggle('active', isMatch);
+      if (isMatch) activeTree = tree;
+    }
+
+    final firstDomId = activeTree
+        ?.querySelector('[data-ide-select]')
+        ?.getAttribute('data-ide-select');
+    if (firstDomId != null) {
+      selectIdeNode(firstDomId);
+    }
+  }
+
+  void toggleAllIdeFolders() {
+    final activeTree =
+        explorer.querySelector('.ide-tree.active') ??
+        explorer.querySelector('.ide-tree');
+    if (activeTree == null) return;
+
+    final allDetails = activeTree.querySelectorAll('details');
+    var anyClosed = false;
+    for (var i = 0; i < allDetails.length; i++) {
+      if (!(allDetails.item(i) as web.HTMLDetailsElement).open) {
+        anyClosed = true;
+        break;
+      }
+    }
+
+    for (var i = 0; i < allDetails.length; i++) {
+      (allDetails.item(i) as web.HTMLDetailsElement).open = anyClosed;
+    }
+  }
+
+  void handleClick(web.Event event) {
+    final target = event.target as web.Element?;
+    if (target == null) return;
+
+    final selectTarget = target.closest('[data-ide-select]');
+    if (selectTarget != null) {
+      final domId = selectTarget.getAttribute('data-ide-select');
+      if (domId != null) selectIdeNode(domId);
+      return;
+    }
+
+    final rootTab = target.closest('.ide-root-tab');
+    if (rootTab != null) {
+      final rootId = rootTab.getAttribute('data-ide-root');
+      if (rootId != null) switchIdeRoot(rootId);
+      return;
+    }
+
+    if (target.closest('[data-ide-toggle-all]') != null) {
+      toggleAllIdeFolders();
+    }
+  }
+
+  explorer.addEventListener('click', handleClick.toJS);
 }
 
 void _scrollTo(web.Element element, {required bool smooth}) {

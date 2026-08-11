@@ -1,0 +1,186 @@
+roots:
+  - id: task
+    label: theme_from_design_file/
+    children:
+      - id: instruction
+        label: instruction.md
+        oneLiner: The prompt the agent receives
+        badge: input
+        description: |
+          A realistic prompt written the way developers talk to agents:
+          typically one or two sentences, behavior-focused rather than
+          prescriptive.
+        tips:
+          - Prompts avoid naming exact APIs so the agent has to make
+            reasonable implementation choices, just like a real request.
+          - Some tasks include a follow-up instruction to simulate a
+            second turn of human feedback.
+        example: |
+          Create a Material theme data in `./lib` folder in a file called
+          `theme.dart`. Include both light and dark versions named
+          `lightTheme` and `darkTheme`.
+        exampleLanguage: markdown
+        exampleTitle: instruction.md
+        docsLink: https://docs.flutter.dev/ai/evals
+        docsLinkLabel: How prompts are authored
+
+      - id: target-codebase
+        label: target_codebase/
+        oneLiner: A containerized Flutter or Dart project
+        badge:
+          label: input
+          tone: info
+        description: |
+          A containerized environment that can be preseeded with a Flutter
+          or Dart project.
+
+          Some more ambitious evals start from scratch, while other tasks
+          start from existing codebases and add features, fix bugs, or
+          refactor code. These codebases are large projects, but are not
+          known open-source apps, to avoid contaminating the evaluation
+          process.
+        children:
+          - id: lib
+            label: lib/
+            oneLiner: Application source code
+            children:
+              - id: main-dart
+                label: main.dart
+                oneLiner: App entry point
+                example: |
+                  void main() => runApp(const MyApp());
+                exampleLanguage: dart
+              - id: theme-dart
+                label: theme.dart
+                oneLiner: Created by the agent during the eval
+                badge:
+                  label: agent-authored
+                  tone: warning
+                note: |
+                  This file doesn't exist when the task starts. It's the
+                  file the agent is expected to create.
+                noteTitle: Doesn't exist yet
+              - id: widgets
+                label: widgets/
+                closed: true
+                oneLiner: Shared widgets used across the sample app
+                children:
+                  - id: app-bar-dart
+                    label: app_bar.dart
+                  - id: card-dart
+                    label: card.dart
+          - id: test
+            label: test/
+            oneLiner: Existing and agent-authored tests
+            closed: true
+            children:
+              - id: theme-test-dart
+                label: theme_test.dart
+                oneLiner: Golden test the agent's code must satisfy
+                badge: hidden
+              - id: widget-test-dart
+                label: widget_test.dart
+          - id: pubspec
+            label: pubspec.yaml
+            oneLiner: Declares the project's dependencies
+            example: |
+              name: sample_app
+              environment:
+                sdk: ^3.6.0
+              dependencies:
+                flutter:
+                  sdk: flutter
+            exampleLanguage: yaml
+          - id: analysis-options
+            label: analysis_options.yaml
+            oneLiner: Lint rules the agent's code is checked against
+
+      - id: verification
+        label: verification/
+        oneLiner: Automated tests and scoring guidelines
+        badge:
+          label: hidden from agent
+          tone: warning
+        description: |
+          Automated tests and scoring guidelines, discussed in depth later
+          on this page. The agent never sees this directory; it's mounted
+          only when the grading harness runs.
+        tips:
+          - Rubrics are graded by a separate model judge, not the agent
+            being evaluated, to avoid the agent grading its own work.
+        children:
+          - id: rubric
+            label: rubric.yaml
+            oneLiner: Grading criteria for this task
+            example: |
+              - criterion: Uses ThemeData.light() and ThemeData.dark()
+                weight: 0.4
+              - criterion: Exposes lightTheme and darkTheme top-level getters
+                weight: 0.4
+              - criterion: No analyzer warnings introduced
+                weight: 0.2
+            exampleLanguage: yaml
+          - id: verification-tests
+            label: tests/
+            oneLiner: Scripts that check the resulting codebase
+            children:
+              - id: check-analyze-sh
+                label: check_analyze.sh
+                oneLiner: Fails the task if `flutter analyze` reports issues
+              - id: check-theme-py
+                label: check_theme.py
+                oneLiner: Statically inspects theme.dart for required symbols
+
+      - id: metadata
+        label: metadata.yaml
+        oneLiner: Slicing and re-targeting info for this task
+        badge: config
+        description: |
+          Each task has a related metadata file that allows us to
+          customize the task to test with different inputs and slice the
+          output data.
+        example: |
+          cuj_id: theme-from-design-file
+          task_type: feature-add
+          priority_tier: p0
+          expected_tools: [Read, Write, Edit, Bash]
+        exampleLanguage: yaml
+        docsLink: https://docs.flutter.dev/ai/evals
+        docsLinkLabel: How tasks are sliced and prioritized
+
+  - id: global
+    label: Shared config
+    children:
+      - id: harness-config
+        label: harness_config.yaml
+        oneLiner: Settings shared by every task in the benchmark
+        badge:
+          label: shared
+          tone: success
+        description: |
+          Model, timeout, and sandboxing defaults that apply across the
+          whole suite unless a task's own `metadata.yaml` overrides them.
+        example: |
+          default_model: claude-sonnet-5
+          timeout_seconds: 900
+          sandbox: docker
+        exampleLanguage: yaml
+      - id: judge-prompts
+        label: judge_prompts/
+        oneLiner: Prompt templates used by the automated grading model
+        closed: true
+        children:
+          - id: reasoning-judge-md
+            label: reasoning_judge.md
+            oneLiner: Scores whether the agent's approach was sound
+          - id: safety-judge-md
+            label: safety_judge.md
+            oneLiner: Flags destructive or unsafe actions
+          - id: conciseness-judge-md
+            label: conciseness_judge.md
+            oneLiner: Penalizes unnecessary steps or verbosity
+      - id: readme
+        label: README.md
+        oneLiner: How to add a new task to the benchmark
+        docsLink: https://docs.flutter.dev/ai/evals
+        docsLinkLabel: Read the full evals methodology
