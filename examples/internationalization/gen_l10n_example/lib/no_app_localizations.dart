@@ -1,14 +1,9 @@
 import 'package:material_ui/material_ui.dart';
 
-// #docregion localization-delegates-import
 import 'package:flutter_localizations/flutter_localizations.dart'
     as flutter_localizations;
-// #enddocregion localization-delegates-import
 
-// #docregion app-localizations-import
 import 'l10n/app_localizations.dart';
-
-// #enddocregion app-localizations-import
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,10 +13,7 @@ class MyApp extends StatelessWidget {
     // #docregion material-app
     return const MaterialApp(
       title: 'Localizations Sample App',
-      localizationsDelegates: [
-        AppLocalizations.delegate, // Add this line
-        ...GlobalMaterialLocalizations.delegate,
-      ],
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: [
         Locale('en'), // English
         Locale('es'), // Spanish
@@ -43,7 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // #docregion internationalized-title
       appBar: AppBar(
         // The [AppBar] title text should update its message
         // according to the system locale of the target platform.
@@ -51,7 +42,6 @@ class _MyHomePageState extends State<MyHomePage> {
         // cause this text to update.
         title: Text(AppLocalizations.of(context)!.helloWorld),
       ),
-      // #enddocregion internationalized-title
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -65,7 +55,6 @@ class _MyHomePageState extends State<MyHomePage> {
               // will pass the updated BuildContext to the new widget.
               child: Builder(
                 builder: (context) {
-                  // #docregion placeholder
                   // Examples of internationalized strings.
                   return Column(
                     children: <Widget>[
@@ -85,7 +74,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       Text(AppLocalizations.of(context)!.pronoun('other')),
                     ],
                   );
-                  // #enddocregion placeholder
                 },
               ),
             ),
