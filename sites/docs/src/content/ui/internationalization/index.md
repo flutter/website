@@ -57,9 +57,17 @@ in a directory of your choice with the `flutter create` command.
 $ flutter create <name_of_flutter_app>
 ```
 
-To use `flutter_localizations`,
-add the package as a dependency to your `pubspec.yaml` file,
-as well as the `intl` package:
+In the near future, Flutter projects will be encouraged to use the `material_ui`
+and `cupertino_ui` packages, but the `flutter create` command has not yet been
+updated to do this by default. You can get ahead of things and migrate now by
+running the following command:
+
+```console
+$ dart fix --apply --code=migrate_design_widgets
+```
+
+To use `flutter_localizations`, add the package as a dependency to your
+`pubspec.yaml` file, as well as the `intl` package:
 
 ```console
 $ flutter pub add flutter_localizations --sdk=flutter
@@ -84,18 +92,15 @@ your `MaterialApp` or `CupertinoApp`:
 
 <?code-excerpt "gen_l10n_example/lib/main.dart (localization-delegates-import)"?>
 ```dart
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    as flutter_localizations;
 ```
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (material-app)" remove="AppLocalizations.delegate"?>
+<?code-excerpt "gen_l10n_example/lib/no_app_localizations.dart (material-app)"?>
 ```dart
 return const MaterialApp(
   title: 'Localizations Sample App',
-  localizationsDelegates: [
-    GlobalMaterialLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-  ],
+  localizationsDelegates: GlobalMaterialLocalizations.delegates,
   supportedLocales: [
     Locale('en'), // English
     Locale('es'), // Spanish
@@ -104,19 +109,17 @@ return const MaterialApp(
 );
 ```
 
-After introducing the `flutter_localizations` package
-and adding the previous code,
-the `Material` and `Cupertino`
-packages should now be correctly localized in
-one of the supported locales.
-Widgets should be adapted to the localized messages,
-along with correct left-to-right or right-to-left layout.
+After introducing the `flutter_localizations` package and adding the previous
+code, the `Material` and `Cupertino` libraries should now be correctly localized
+in one of the supported locales. Widgets should be adapted to the localized
+messages, along with correct left-to-right or right-to-left layout.
 
 Try switching the target platform's locale to
 Spanish (`es`) and the messages should be localized.
 
-Apps based on `WidgetsApp` are similar except that the
-`GlobalMaterialLocalizations.delegate` isn't needed.
+Apps that are not based on `MaterialApp` should instead use
+`GlobalCupertinoLocalizations.delegates` or
+`flutter_localizations.GlobalWidgetsLocalizations.delegate`.
 
 The full `Locale.fromSubtags` constructor is preferred
 as it supports [`scriptCode`][], though the `Locale` default
@@ -128,7 +131,7 @@ The elements of the `localizationsDelegates` list are
 factories that produce collections of localized values.
 `GlobalMaterialLocalizations.delegate` provides localized
 strings and other values for the Material Components
-library. `GlobalWidgetsLocalizations.delegate`
+library. `flutter_localizations.GlobalWidgetsLocalizations.delegate`
 defines the default text direction,
 either left-to-right or right-to-left, for the widgets library.
 
@@ -190,18 +193,29 @@ widget should re-render in Spanish.
 
 <a id="adding-localized-messages"></a>
 ### Adding your own localized messages
-
-After adding the `flutter_localizations` package,
-you can configure localization.
 To add localized text to your application,
 complete the following instructions:
 
-1. Add the `intl` package as a dependency, pulling
-   in the version pinned by `flutter_localizations`:
+1. Add the package `flutter_localizations` as a dependency to your
+   `pubspec.yaml` file, as well as the `intl` package, at the version pinned by
+   `flutter_localizations`:
 
-   ```console
-   $ flutter pub add intl:any
-   ```
+```console
+$ flutter pub add flutter_localizations --sdk=flutter
+$ flutter pub add intl:any
+```
+
+This creates the following entries in the `pubspec.yml` file:
+
+<?code-excerpt "gen_l10n_example/pubspec.yaml (flutter-localizations)"?>
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+```
 
 2. Open the `pubspec.yaml` file and enable the `generate` flag.
    This flag is found in the `flutter` section in the pubspec file.
@@ -277,9 +291,7 @@ complete the following instructions:
      title: 'Localizations Sample App',
      localizationsDelegates: [
        AppLocalizations.delegate, // Add this line
-       GlobalMaterialLocalizations.delegate,
-       GlobalWidgetsLocalizations.delegate,
-       GlobalCupertinoLocalizations.delegate,
+       ...GlobalMaterialLocalizations.delegate,
      ],
      supportedLocales: [
        Locale('en'), // English
