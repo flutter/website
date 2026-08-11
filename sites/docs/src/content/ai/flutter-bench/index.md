@@ -49,24 +49,24 @@ Evaluation tasks derive directly from Flutter's canonical
 developers perform regularly. This approach ensures evaluations reflect
 real-world developer needs.
 
-Each CUJ represents a combination of:
+Each CUJ represents a combination of a persona, a high-level goal, and 
+a list of tasks required to achieve that goal. For example:
 
-* A Flutter developer persona (such as app developer, plugin developer, or
-  full-stack developer)
-* A high-level goal
-* The specific tasks required to achieve that goal
+![CUJ example visual](/assets/images/docs/ai/flutter-bench/cuj-chart.png)
 
-One or more CUJ's are converted into a single task's prompt. We can't
-open-source the full tasks without contaminating the evals. However, you
-can see our [canonical list of CUJs][] to get an idea of what tasks we're
-testing with FlutterBench and an example of how we convert a CUJ to a task
-below.
+One or more CUJ's convert into one task's prompt. We can't
+open-source the full tasks without contaminating the evals, but we 
+can share our [canonical list of CUJs][]. With this, along with the 
+example task below, you can get an idea of our dataset philosphy with 
+FlutterBench.
 
 ### Task structure
 
 These CUJs are converted into [Harbor](https://harborframework.com/)
 tasks. Harbor is the framework used to run the tasks (described in more
 detail later on this page).
+
+[//]: # (Make this look more code-y, i.e. with a filesystem, etc)
 
 Each task contains:
 
@@ -75,7 +75,7 @@ Each task contains:
   prescriptive).
 * **Target codebase and environment**: A containerized environment that can
   be preseeded with a Flutter or Dart project.
-    +
+  
   Some more ambitious evals start from scratch, while other tasks start
   from existing codebases and add features, fix bugs or refactor code.
   These codebases are large projects, but are not known open-source apps to
@@ -89,11 +89,11 @@ Each task contains:
 
 ### Converting a CUJ
 
-This is an example of how we convert a CUJ to a task taken from our
-dataset. Generally, we're targeting more complex tasks that often combine
-several CUJs into one task, but for brevity this is a one-to-one example.
+[//]: # (update this such that it's a table or image or something nicer 
+looking.)
 
-Given this CUJ (slightly edited for readability):
+This is an example of how we convert a CUJ into a task, taken directly 
+from our dataset. Given this CUJ (slightly edited for readability):
 
 ```yaml
   goal: | 
@@ -124,7 +124,13 @@ Create a Material theme data in `./lib` folder in a file called
 `lightTheme` and `darkTheme`.
 ```
 
-<!-- TODO: the rest of this -->
+Often, this resulting task prompt represents one step in a larger 
+hill-climbing evaluation.    
+
+[//]: # (Add more information: i.e. what does the metadata looklike?)
+
+
+## I think the following three items belong in a different order (i.e. above the conversion) or under a separate heading.
 
 ### Task categories
 
