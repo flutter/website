@@ -148,11 +148,15 @@ For advanced or manual skill installation, see
 
 <Tab name="Other agents">
 
-If you are using another compatible agentic assistant, you can install official
-skills directly into your project's `.agents/skills` workspace directory.
+If you are using another compatible agentic assistant:
 
-For instructions on manually installing skills using the `skills` CLI tool, see
-[Install agent skills](/ai/agent-skills#install-agent-skills).
+* **MCP Server**: To connect your agent to Dart and Flutter developer tools,
+  see the [Dart & Flutter MCP server](/ai/mcp-server) setup guide.
+* **Agent Skills**: To manually install agent skills into your project's
+  `.agents/skills` directory using the `skills` CLI tool, see
+  [Install agent skills](/ai/agent-skills#install-agent-skills).
+* **Rules**: To configure rules and project best practices for your assistant,
+  see [Rules for Flutter and Dart](/ai/ai-rules).
 
 </Tab>
 
