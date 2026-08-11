@@ -5,7 +5,7 @@
   display: flex;
   align-items: stretch;
   overflow: hidden;
-  height: 600px;
+  height: min(600px, 80vh);
   margin-block: 1.71em;
   border: 1px solid var(--site-outline);
   border-radius: var(--site-radius);

@@ -100,7 +100,7 @@ List<CustomComponent> get _embeddableComponents => [
   const CodePreview(),
   const YoutubeEmbed(),
   const FileTree(),
-  const IdeExplorer(),
+  const DashIdeExplorer(),
   const Quiz(),
   const ProgressRing(),
   const SummaryCard(),
