@@ -105,8 +105,8 @@ interacting with the previewed widget. From left to right:
   restarting the entire application.
 
 For the case where global state has been modified
-(for example, a static initializer has been changed), the
-entire widget previewer can be told to hot restart using the
+(for example, a static initializer has been changed), you
+can hot restart the entire widget previewer using the
 button at the bottom right of the environment.
 
 ## Search and filter previews
@@ -233,14 +233,14 @@ final class TransformativePreview extends Preview {
   @override
   Preview transform() {
     final originalPreview = super.transform();
-    // Create's a PreviewBuilder that can be used to modify
+    // Creates a PreviewBuilder that can be used to modify
     // the preview contents.
     final builder = originalPreview.toBuilder();
     builder
       ..name = 'Transformed - ${originalPreview.name}'
       ..theme = _themeBuilder;
 
-    // Return the updated Preview instance.
+    // Returns the updated Preview instance.
     return builder.toPreview();
   }
 }
@@ -269,7 +269,7 @@ Widget buttonPreview() => const ButtonShowcase();
 ![Multiple previews in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/multi-preview.png "Multiple preview example")
 
 To simplify creating multiple previews with common configurations, you
-can extend the [`MultiPreview`][] to create a custom annotation that creates
+can extend the [`MultiPreview`][] to define a custom annotation that creates
 multiple previews. The following [`MultiPreview`][] creates
 the same two previews as the previous example:
 
@@ -389,5 +389,4 @@ should be aware of:
 [`MultiPreview`]: {{site.api}}/flutter/widget_previews/MultiPreview-class.html
 [`MultiPreview.transform()`]: {{site.api}}/flutter/widget_previews/MultiPreview/transform.html
 [Dart documentation on conditional imports]: {{site.dart-site}}/tools/pub/create-packages#conditionally-importing-and-exporting-library-files
-[#166431]: https://github.com/flutter/flutter/issues/166431
 [#173550]: https://github.com/flutter/flutter/issues/173550
