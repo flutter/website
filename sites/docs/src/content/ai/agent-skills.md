@@ -4,11 +4,11 @@ sidenav: ai
 shortTitle: Agent skills
 description: >-
   Learn how to give AI agents new capabilities and expertise
-  using Agent Skills.
+  using agent skills.
 ---
 
 This guide covers how to enhance your AI agents and coding assistants
-with domain-specific capabilities using Agent Skills.
+with domain-specific capabilities using agent skills.
 
 ## Overview
 
