@@ -124,8 +124,9 @@ which criteria to match against:
   [`@Preview`][] annotation.
 - **Group name**: Filters by the group name specified in the
   `@Preview(group: ...)` parameter.
-- **Script name**: Filters by the file or script name containing the preview.
-- **Package name**: Filters by the package name containing the preview.
+- **Containing script**: Filters by the URI of the Dart file containing the
+  preview.
+- **Containing package**: Filters by the package name containing the preview.
 
 For example, the parameters in the following preview annotation match against
 the **Preview name** (`'Submit Button'`) and **Group name** (`'Form Controls'`) filters:
