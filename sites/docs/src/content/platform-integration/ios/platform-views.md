@@ -225,7 +225,7 @@ Finally, register the platform view.
 This can be done in an app or a plugin.
 
 :::version-note
-Starting from Flutter 3.41.0,
+In Flutter 3.41 and later,
 iOS apps use the `UIScene` lifecycle by default.
 For apps using `UIScene`,
 you must implement `FlutterImplicitEngineDelegate`
@@ -359,7 +359,7 @@ Finally, register the platform view.
 This can be done in an app or a plugin.
 
 :::version-note
-Starting from Flutter 3.41.0,
+In Flutter 3.41 and later,
 iOS apps use the `UIScene` lifecycle by default.
 For apps using `UIScene`,
 you must implement `FlutterImplicitEngineDelegate`
@@ -484,4 +484,4 @@ There are some limitations when composing iOS Platform Views.
 [`BackdropFilter`]: {{site.api}}/flutter/foundation/BackdropFilter.html
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [design-doc]: {{site.main-url}}/go/ios-platformview-backdrop-filter-blur
-[UISceneDelegate adoption guide]: /release/breaking-changes/uiscenedelegate
+[UISceneDelegate adoption guide]: /release/breaking-changes/uiscenedelegate#migrate-appdelegate
