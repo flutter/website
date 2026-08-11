@@ -9,11 +9,12 @@ bodyClass: wide-site-content
 showToc: false
 ---
 
-
 A _[critical user journey][]_ (CUJ) is a goal a developer sets out to
 accomplish, like "make an application accessible to all users" or
 "diagnose and resolve layout overflow errors" and it's broken down into the
 concrete tasks they take to get there.
+
+![CUJ example visual](/assets/images/docs/ai/flutter-bench/cuj-chart.png)
 
 Product teams at Google treat CUJs as a source of truth: they're how teams align
 on priorities, shape roadmaps, measure product health and more. And we use
@@ -25,7 +26,7 @@ the list is incomplete, and we encourage [your feedback][].
 
 <CujIndex />
 
-[FlutterBench]: /ai/evals
+[FlutterBench]: /ai/flutter-bench
 
 [critical user journey]: https://static.googleusercontent.com/media/sre.google/en//static/pdf/art-of-slos-handbook-a4.pdf
 

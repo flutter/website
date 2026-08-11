@@ -21,8 +21,8 @@
           permalink: /ai/antigravity-cli
     - title: Developer experience
       permalink: /ai/best-practices/developer-experience
-    - title: "AI evaluations (experimental)"
-      permalink: /ai/evals
+    - title: Flutter Bench
+      permalink: /ai/flutter-bench
 
 - title: Build AI-powered apps
   expanded: true
