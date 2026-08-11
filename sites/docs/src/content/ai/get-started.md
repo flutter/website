@@ -56,13 +56,13 @@ installing the official plugin from
    $ claude plugin marketplace add flutter/agent-plugins
    ```
 
-2. Install the Flutter and Dart plugin:
+1. Install the Flutter and Dart plugin:
 
    ```console
    $ claude plugin install dart-flutter@dart-flutter
    ```
 
-3. Verify the installation:
+1. Verify the installation:
 
    ```console
    $ claude plugin marketplace list
@@ -77,7 +77,7 @@ You can configure rules for your project by following [Rules for Flutter and Dar
 
 <Tab name="Codex">
 
-[Codex](https://github.com/features/copilot) is an agentic coding assistant
+[Codex](https://chatgpt.com/codex) is an agentic coding assistant
 designed for terminal and IDE workflows.
 
 ### Install the official plugin
@@ -90,7 +90,7 @@ Equip Codex with official Flutter and Dart skills and MCP configuration:
    $ codex plugin marketplace add flutter/agent-plugins
    ```
 
-2. Install the Dart and Flutter plugin:
+1. Install the Dart and Flutter plugin:
 
    ```console
    $ codex plugin add dart-flutter@dart-flutter
@@ -111,14 +111,19 @@ You can configure rules for your project by following [Rules for Flutter and Dar
 
 You can install the plugin locally by copying it to your Cursor plugins directory:
 
-1. Copy the repository directory to your local Cursor plugins folder:
 
+1. Clone the repository:
    ```bash
-   mkdir -p ~/.cursor/plugins/local
-   cp -r /path/to/flutter/agent-plugins ~/.cursor/plugins/local/dart-flutter
+   git clone https://github.com/flutter/agent-plugins.git
    ```
 
-2. Restart Cursor. The editor automatically discovers and loads the skills
+1. Copy the repository directory to your local Cursor plugins folder:
+   ```bash
+   mkdir -p ~/.cursor/plugins/local
+   cp -r agent-plugins ~/.cursor/plugins/local/dart-flutter
+   ```
+
+1. Restart Cursor. The editor automatically discovers and loads the skills
    under `skills/` and configures the MCP server defined in `.mcp.json`.
 
 </Tab>
