@@ -18,7 +18,7 @@ Edit: updated for Dart 2 on August 8, 2018. [GitHub repo](https://github.com/mra
 
 How do you enter into a new field of programming? Experimentation is obviously key, as is studying and emulating programs written by more experienced peers. I personally like to complement these approaches with concept mining: Trying to work from first principles, identifying concepts, exploring their strength, deliberately seeking their guidance. It is a rationalistic approach which cannot stand on its own, but one that is intellectually stimulating and may lead you to deeper insights faster.
 
-This is the second and final part of an introduction to Flutter and its widget and tween concepts. At the end of [part one](https://medium.com/dartlang/zero-to-one-with-flutter-43b13fd7b354), we [arrived](https://github.com/mravn/charts/tree/992e11e9cdec5a9fb626d6e4c7b62c0d6c558a9d) at a widget tree containing, among various layout and state-handling widgets,
+This is the second and final part of an introduction to Flutter and its widget and tween concepts. At the end of [part one](https://flutter.dev/blog/zero-to-one-with-flutter), we [arrived](https://github.com/mravn/charts/tree/992e11e9cdec5a9fb626d6e4c7b62c0d6c558a9d) at a widget tree containing, among various layout and state-handling widgets,
 
 * a widget for painting a single `Bar` using custom, animation-aware drawing code,
 

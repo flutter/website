@@ -60,4 +60,4 @@ practices to use when you're building your own AI apps with Flutter. So let's
 get to it!
 
 
-[crossword-app]: {{site.github}}/flutter/demos/tree/main/crossword_companion
+[crossword-app]: {{site.repo.demos}}/tree/main/crossword_companion

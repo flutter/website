@@ -30,3 +30,9 @@
   image: "images/featured/flutterconflatam26-featured.png"
   link: "https://flutterconflatam.dev/"
   backgroundColor: "#042B59"
+
+- title: "Full Stack Flutter"
+  description: "Join us online for Full Stack Flutter on October 21, 2026."
+  image: "images/featured/fullstackflutter-featured.png"
+  link: "https://fullstackflutter.dev/"
+  backgroundColor: "#c72bd1"

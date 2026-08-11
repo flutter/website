@@ -149,7 +149,7 @@ For more information and a migration guide, see [Adding ImageProvider.loadBuffer
 
 ### iOS pointer compression disabled
 
-In the 2.10 stable release, we enabled Dart’s [pointer compression optimization](https://medium.com/dartlang/dart-2-15-7e7a598e508a#0c15) on iOS. However, [Yeatse](https://github.com/Yeatse), on GitHub, [alerted us](https://github.com/flutter/flutter/issues/105183) to an unintended consequence of the optimization. Dart’s pointer compression works by reserving a large virtual memory region for Dart’s heap. Since the total virtual memory allocation allowed on iOS is less than on other platforms, this large reservation reduces the amount of memory available for use by other components that reserve their own memory, for example, Flutter plugins.
+In the 2.10 stable release, we enabled Dart’s [pointer compression optimization](https://dart.dev/blog/announcing-dart-2-15#compressed-pointers) on iOS. However, [Yeatse](https://github.com/Yeatse), on GitHub, [alerted us](https://github.com/flutter/flutter/issues/105183) to an unintended consequence of the optimization. Dart’s pointer compression works by reserving a large virtual memory region for Dart’s heap. Since the total virtual memory allocation allowed on iOS is less than on other platforms, this large reservation reduces the amount of memory available for use by other components that reserve their own memory, for example, Flutter plugins.
 
 While disabling pointer compression increases the memory consumed by Dart objects, it also increases the memory *available* for non-Dart parts of a Flutter application, which is more desirable overall.
 

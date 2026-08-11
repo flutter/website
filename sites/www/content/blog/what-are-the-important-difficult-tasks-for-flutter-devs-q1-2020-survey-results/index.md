@@ -26,7 +26,7 @@ Similarly, when we asked about their primary purpose for using Flutter, 48% of t
 
 Finally, we found that 69% of the developers who have published a complete production app are building both iOS and Android apps. 16% said that they are trying Web, in addition to the two mobile platforms. Currently, there are approximately 50,000 Flutter apps published in the Play Store. This number has been growing exponentially, and we hope to see this trend continue in the coming months.
 
-For more stats, insights, and future plans, see the “[Flutter Spring 2020 Update](https://medium.com/flutter/flutter-spring-2020-update-f723d898d7af)” article.
+For more stats, insights, and future plans, see the “[Flutter Spring 2020 Update](https://flutter.dev/blog/flutter-spring-2020-update)” article.
 
 ## About tasks
 

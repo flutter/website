@@ -127,8 +127,8 @@ session by selecting a sample app provided by DartPad.
 [Hot restart]: /tools/hot-reload
 [How to switch channels]: /install/upgrade#switching-flutter-channels
 [`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
-[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml
-[GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
+[Web Hot Reload issue template]: {{site.repo.dart-sdk}}/issues/new?template=5_web_hot_reload.yml
+[GitHub project]: https://github.com/orgs/dart-lang/projects/107/views/1
 
 ## Build your app
 
@@ -157,6 +157,9 @@ which need to be served together.
 To learn more about how to deploy these assets to the web,
 visit [Build and release a web app][].
 For answers to other common questions, visit the [Web FAQ][].
+
+If you encounter errors when compiling your app with Wasm, check out
+[Diagnosing Wasm compilation errors](/platform-integration/web/wasm#diagnosing-wasm-compilation-errors).
 
 ## Debugging
 

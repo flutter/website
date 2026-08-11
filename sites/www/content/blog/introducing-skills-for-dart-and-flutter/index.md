@@ -21,7 +21,7 @@ Today, we’re introducing **Agent Skills** for Flutter and Dart — a new way t
 
 ## Beyond the knowledge gap
 
-One of the primary challenges in AI development is the “knowledge gap.” Flutter and Dart can launch new features more quickly than LLMs can update their fixed training data. As a part of [how we are thinking about AI](https://medium.com/flutter/how-dart-and-flutter-are-thinking-about-ai-in-2026-e2fd64e1fdd0), we are looking for ways to not only address the knowledge gap but also ensure the agent applies that knowledge to achieve the task accurately and efficiently following the most optimal workflows.
+One of the primary challenges in AI development is the “knowledge gap.” Flutter and Dart can launch new features more quickly than LLMs can update their fixed training data. As a part of [how we are thinking about AI](https://flutter.dev/blog/how-dart-and-flutter-are-thinking-about-ai-in-2026), we are looking for ways to not only address the knowledge gap but also ensure the agent applies that knowledge to achieve the task accurately and efficiently following the most optimal workflows.
 
 A little over a year ago, Model Context Protocols (MCP) were the way to provide more AI domain-specific expertise. While MCP gives an agent access to specialized tools, an Agent Skill teaches the agent *how* to use those tools for a specific task. Think of it this way: MCP provides the hammer and nails (the tools), while a Skill provides the blueprint and the professional know-how to build the house.
 

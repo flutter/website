@@ -201,9 +201,9 @@ use [the dotprompt_dart package][dotprompt-dart].
 
 
 
-[crossword-readme]: {{site.github}}/flutter/demos/tree/main/crossword_companion
+[crossword-readme]: {{site.repo.demos}}/tree/main/crossword_companion
 [gemini-app]: https://gemini.google.com/app
 [ai-toolkit]: /ai-toolkit
-[crossword-demo]: {{site.github}}/flutter/demos/raw/refs/heads/main/crossword_companion/readme/screen-recording.mov
+[crossword-demo]: {{site.repo.demos}}/raw/refs/heads/main/crossword_companion/readme/screen-recording.mov
 [dotprompt]: https://google.github.io/dotprompt/getting-started/
 [dotprompt-dart]: {{site.pub-pkg}}/dotprompt_dart

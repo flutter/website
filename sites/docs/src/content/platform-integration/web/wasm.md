@@ -11,7 +11,7 @@ Flutter and Dart support
 as a compilation target when building
 applications for the web.
 
-[`stable`]: {{site.github}}/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md#stable
+[`stable`]: {{site.repo.flutter}}/blob/master/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/dart-js_interop/dart-js_interop-library.html
 
@@ -70,6 +70,27 @@ $ flutter build web --wasm
 The command produces output into the `build/web` directory relative to the
 package root, just like `flutter build web`.
 
+#### Wasm production debugging
+
+By default, Wasm release builds strip debug symbols and omit source maps
+to minimize binary size.
+
+- **For error monitoring (recommended)**: Pass `--source-maps` to generate
+  a `main.dart.wasm.map` file for symbolication in error tracking services.
+  For security recommendations and deployment warnings, see
+  [Source maps](/deployment/web#source-maps).
+- **For staging or QA builds**: Pass `--no-strip-wasm` to preserve Wasm
+  function names directly in browser console stack traces, at the cost of
+  an approximate **47% increase** in Wasm binary size.
+
+```console
+# Generate source maps for production error tracking:
+$ flutter build web --wasm --source-maps
+
+# Preserve Wasm function names for staging/QA debugging:
+$ flutter build web --wasm --no-strip-wasm
+```
+
 ### Open the app in a compatible web browser
 Even with the `--wasm` flag, Flutter will still compile the application to
 JavaScript. If WasmGC support is not detected at runtime, the JavaScript output
@@ -121,7 +142,7 @@ Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
 Firefox announced stable support for WasmGC in Firefox 120,
 but currently doesn't work due to a known limitation (see details below).
 
-[WasmGC]: {{site.github}}/WebAssembly/gc/tree/main/proposals/gc
+[WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
 [support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
 [issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
@@ -157,12 +178,84 @@ static JS interop:
 - [`package:web`][], which replaces `dart:html` (and other web libraries)
 - [`dart:js_interop`][], which replaces `package:js` and `dart:js`
 
-For a detailed guide on migrating existing code, see the [`package:web` migration guide][].
+For a detailed guide on migrating existing code,
+see the [`package:web` migration guide][].
 
-When compiling to Wasm, be aware of runtime differences in JS interop types (such as `is`/`as` type casts and Zone propagation in callbacks). For details, see Dart's [JS interop types documentation]({{site.dart-site}}/interop/js-interop/js-types#compatibility-type-checks-and-casts) and the [package:web Zones section]({{site.dart-site}}/interop/js-interop/package-web#zones).
+When compiling to Wasm, be aware of runtime differences
+in JS interop types (such as `is`/`as` type casts
+and Zone propagation in callbacks).
+For details, check out Dart's
+[JS interop types documentation]({{site.dart-site}}/interop/js-interop/js-types#compatibility-type-checks-and-casts)
+and the [package:web Zones section]({{site.dart-site}}/interop/js-interop/package-web#zones).
 
 To learn more about JS interop in Dart,
 see Dart's [JS interop][] documentation page.
+
+### Diagnosing Wasm compilation errors {:#diagnosing-wasm-compilation-errors}
+
+When compiling a Flutter web project with `--wasm`, if your application or its
+packages import unsupported web APIs (such as `dart:html` or `package:js`),
+the compilation will fail. 
+
+By default, the Dart Wasm compiler emits a clean, structured dependency chain
+tree, but this output can be buried in a long terminal exception stack trace.
+
+#### 1. Perform early detection
+
+You can detect incompatibilities early with dry-run warnings. When you run
+`flutter build web` without the `--wasm` flag, a Wasm dry run is still performed
+automatically. If incompatibilities are found, you will see a non-fatal warning
+like this:
+
+```console
+Wasm dry run failed:
+Found incompatibilities with WebAssembly.
+
+package:my_app/main.dart 1:1 - dart:html unsupported (0)
+```
+
+#### 2. Isolate the compiler dependency tree
+
+If you run `flutter build web --wasm` and it fails, `flutter_tools` outputs
+a large exception stack trace (for example, `Target dart2wasm failed...`). 
+
+**Ignore the long stack trace and command string.** Instead, scroll up to the
+top of the error output to find the structured `Context` tree. This clean tree
+tells you exactly which package and file imported the unsupported library:
+
+```console
+Context: The unavailable library 'dart:html' is imported through these packages:
+
+    main.dart => package:my_app => dart:html
+
+Detailed import paths for (some of) these imports:
+
+    main.dart => package:my_app/main.dart => dart:html
+```
+
+#### 3. Migrate legacy imports
+
+To fix these compilation errors, you must migrate from legacy JS interop
+packages to modern WebAssembly-compatible alternatives:
+
+- Replace `dart:html` and other legacy web libraries with [`package:web`][].
+- Replace `dart:js` and `package:js` with [`dart:js_interop`][].
+
+For comprehensive migration instructions, check out the
+[`package:web` migration guide on dart.dev]({{site.dart-site}}/interop/js-interop/package-web)
+and Dart's [JS interop usage guide]({{site.dart-site}}/interop/js-interop).
+
+If you need to support both legacy and modern environments during your
+migration, use conditional imports by checking for `dart.library.js_interop`:
+
+```dart
+import 'fallback.dart'
+  if (dart.library.js) 'legacy_web_interop.dart'
+  if (dart.library.js_interop) 'wasm_web_interop.dart';
+```
+
+To learn more about selecting implementations at compile time, see the
+[conditional imports documentation on dart.dev]({{site.dart-site}}/interop/js-interop/package-web#conditional-imports).
 
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web

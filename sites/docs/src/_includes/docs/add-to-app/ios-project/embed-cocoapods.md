@@ -15,13 +15,6 @@ commands outside of Xcode.
 To learn more about CocoaPods,
 consult the [CocoaPods getting started guide][].
 
-#### Watch the video
-
-If watching a video helps you learn,
-this video covers adding Flutter to an iOS app:
-
-<YouTubeEmbed id="IIcrfrTshTs" title="Step by step on how to add Flutter to an existing iOS app"></YouTubeEmbed>
-
 #### Requirements {:#method-a-reqs}
 
 Every developer working on your project must have a local version

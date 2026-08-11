@@ -175,7 +175,7 @@ For more information, see the updated [Internationalizing Flutter apps](https://
 
 ## Background isolates
 
-Now [Platform Channels](https://docs.flutter.dev/development/platform-integration/platform-channels) can be invoked from any [`Isolate`](https://docs.flutter.dev/development/packages-and-plugins/background-processes). Previously, users were only able to invoke Platform Channels from Flutter’s supplied main isolate. This makes working with isolates and host platform code in [Plugins](https://docs.flutter.dev/development/packages-and-plugins/developing-packages) or [Add-to-app](https://docs.flutter.dev/development/add-to-app) better. For more information, check out [Writing custom platform-specific code](https://docs.flutter.dev/development/platform-integration/platform-channels) on flutter.dev, and the in-depth article, [Introducing background isolate channels](https://medium.com/flutter/introducing-background-isolate-channels-7a299609cad8), a free article on Medium.
+Now [Platform Channels](https://docs.flutter.dev/development/platform-integration/platform-channels) can be invoked from any [`Isolate`](https://docs.flutter.dev/development/packages-and-plugins/background-processes). Previously, users were only able to invoke Platform Channels from Flutter’s supplied main isolate. This makes working with isolates and host platform code in [Plugins](https://docs.flutter.dev/development/packages-and-plugins/developing-packages) or [Add-to-app](https://docs.flutter.dev/development/add-to-app) better. For more information, check out [Writing custom platform-specific code](https://docs.flutter.dev/development/platform-integration/platform-channels) on flutter.dev, and the in-depth article, [Introducing background isolate channels](https://flutter.dev/blog/introducing-background-isolate-channels), on the Flutter blog.
 
 ## Text magnifier
 
@@ -241,7 +241,7 @@ In this release, the Flutter Engine also does a better job of dynamically updati
 
 ## Sunsetting macOS 10.11 through 10.13
 
-As [previously announced](https://medium.com/flutter/whats-new-in-flutter-3-3-893c7b9af1ff#19cd), Flutter no longer supports macOS versions 10.11 and 10.12. Since that announcement, [further analysis](https://github.com/flutter/flutter/issues/114445) revealed that removing support for 10.13 as well would have limited additional impact, and would help the team to greatly simplify the codebase. This means that apps built against stable Flutter SDKs with this release and onward will no longer work on these versions, and the minimum macOS version supported by Flutter increases to 10.14 Mojave.
+As [previously announced](https://flutter.dev/blog/whats-new-in-flutter-3-3#sunsetting-macos-1011-and-1012), Flutter no longer supports macOS versions 10.11 and 10.12. Since that announcement, [further analysis](https://github.com/flutter/flutter/issues/114445) revealed that removing support for 10.13 as well would have limited additional impact, and would help the team to greatly simplify the codebase. This means that apps built against stable Flutter SDKs with this release and onward will no longer work on these versions, and the minimum macOS version supported by Flutter increases to 10.14 Mojave.
 
 As a consequence, since all versions of iOS and macOS supported by Flutter include Metal support, the OpenGL backend has been removed from both the iOS and macOS embedders. Removing these backends reduced the compressed size of the Flutter engine by about 100KB.
 

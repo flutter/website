@@ -57,4 +57,4 @@ Check out what Twitter user [Roaa](https://twitter.com/roaakdm/status/1493614287
 
 ## There’s still time!
 
-If you’re still thinking about starting a submission, it’s not too late. Check out the starter [sample app](https://flutter.github.io/samples/slide_puzzle.html), the [blog post](https://medium.com/flutter/how-to-build-your-own-flutter-slide-puzzle-93721ac5fad2) explaining how the app works, and then head over to [flutterhack.devpost.com](https://flutterhack.devpost.com/) to check out the rules for the challenge.
+If you’re still thinking about starting a submission, it’s not too late. Check out the starter [sample app](https://flutter.github.io/samples/slide_puzzle.html), the [blog post](https://flutter.dev/blog/how-to-build-your-own-flutter-slide-puzzle) explaining how the app works, and then head over to [flutterhack.devpost.com](https://flutterhack.devpost.com/) to check out the rules for the challenge.
