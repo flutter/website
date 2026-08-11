@@ -16,7 +16,7 @@ Flutter Widget Previewer.
 
 With the Flutter Widget Previewer, you can instantly render, inspect,
 and iterate on individual UI components in real-time,
-separate from a full app, in the Chrome browser.
+separate from a full app, in your IDE or browser.
 
 The following sections explain how to open the previewer, preview your
 widgets, search and filter previews, and customize preview configurations.
@@ -52,15 +52,10 @@ flutter widget-preview start
 ```
 
 This launches a local server and opens a real-time preview environment
-in Chrome.
+in your browser.
 
 To optimize startup times, the previewer automatically caches project builds
 in a `.widget_preview/` folder in your project root.
-
-:::tip
-Add `.widget_preview/` to your project's `.gitignore` file to avoid
-committing cached build artifacts to version control.
-:::
 
 ## Preview a widget
 
@@ -353,10 +348,8 @@ should be aware of:
   the `dart:io` or `dart:ffi` libraries are not supported.
   This is because the widget previewer is built with
   Flutter Web, which doesn't have access to the underlying
-  native platform APIs. While web plugins might work when
-  using Chrome, there is no guarantee that they will work
-  within other environments, such as when embedded in
-  IDEs.
+  native platform APIs. While web plugins might work in your
+  browser, there is no guarantee that they will work in your IDE.
 
   Widgets with transitive dependencies on `dart:io` or `dart:ffi` will
   load correctly, but all APIs from these libraries will throw an
