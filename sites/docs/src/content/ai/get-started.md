@@ -77,9 +77,7 @@ installing the official plugin from
 
 :::note Rules status
 Claude Code plugins currently cannot bundle rules files automatically.
-We recommend installing Flutter rules manually into your project's
-`CLAUDE.md` file. Official recommended rules for Claude Code are currently TBD.
-For general guidance on formatting rules, see
+You can configure rules for your project by following [Rules for Flutter and Dart](/ai/ai-rules).
 [Rules for Flutter and Dart](/ai/ai-rules).
 :::
 
@@ -110,9 +108,7 @@ Equip Codex with official Flutter and Dart skills and MCP configuration:
 
 :::note Rules status
 Codex plugins currently cannot bundle rules files automatically.
-We recommend configuring rules manually for your project.
-Official recommended rules for Codex are currently TBD.
-For more information, see [Rules for Flutter and Dart](/ai/ai-rules).
+You can configure rules for your project by following [Rules for Flutter and Dart](/ai/ai-rules).
 :::
 
 </Tab>
@@ -134,9 +130,6 @@ You can install the plugin locally by copying it to your Cursor plugins director
 
 2. Restart Cursor. The editor automatically discovers and loads the skills
    under `skills/` and configures the MCP server defined in `.mcp.json`.
-
-For advanced or manual skill installation, see
-[Install agent skills](/ai/agent-skills#install-agent-skills).
 
 </Tab>
 
