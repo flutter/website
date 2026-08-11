@@ -10,7 +10,7 @@ $breakpoints: (
         '3xl': 1920px,
 );
 
-@mixin screen-above($name) {
+@mixin screen($name) {
   $value: map.get($breakpoints, $name);
   @if $value == null {
     @error 'Unknown breakpoint: #{$name}';
