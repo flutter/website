@@ -24,10 +24,10 @@ To avoid being broken by future versions of Flutter,
 consider submitting your tests to the framework's [test registry][].
 
 [breaking change policy]: /release/compatibility-policy
-[Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Dart announce]: {{site.groups}}/a/dartlang.org/g/announce
+[Flutter announce]: {{site.groups.flutter-announce}}
+[Dart announce]: {{site.groups.dart-announce}}
 [`dart fix`]: /tools/flutter-fix
-[test registry]: {{site.github}}/flutter/tests
+[test registry]: https://github.com/flutter/tests
 
 ## Breaking changes by release
 

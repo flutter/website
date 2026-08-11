@@ -287,4 +287,4 @@ latest versions of build files.
 [legacy, imperative apply script method]: https://docs.gradle.org/8.5/userguide/plugins.html#sec:script_plugins
 [declarative plugins {} block]: https://docs.gradle.org/8.5/userguide/plugins.html#sec:plugins_block
 [plugins block]: https://docs.gradle.org/current/userguide/plugins.html#plugins_dsl_limitations
-[issue #135392]: {{site.github}}/flutter/flutter/issues/135392
+[issue #135392]: {{site.repo.flutter}}/issues/135392

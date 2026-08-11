@@ -156,7 +156,7 @@ This release includes a number of improvements to existing Material components, 
 The work on web functionality continues with merging of the code from the flutter_web repo
 into the main flutter repo, providing a simpler developer experience for this pre-release
 technology. We've already
-[compiled many of the existing Flutter samples for web]({{site.github}}/flutter/samples/).
+[compiled many of the existing Flutter samples for web]({{site.repo.samples}}/).
 Enjoy!
 
 

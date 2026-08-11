@@ -159,6 +159,16 @@
   location: "NA"
   host: "Industry"
 
+- title: "Full Stack Flutter"
+  description: "Join us online for Full Stack Flutter."
+  startDate: "2026-10-21"
+  endDate: "2026-10-22"
+  link: "https://fullstackflutter.dev"
+  card: "images/calendar/fullstackflutter.png"
+  location: "NA"
+  host: "Community"
+  backgroundColor: "#c72bd1"
+
 - title: "Flutter Kaigi/Ninjas"
   description: "Join us in Tokyo, Japan for Flutter Kaigi/Ninjas."
   startDate: "2026-10-29"

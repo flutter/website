@@ -375,7 +375,7 @@ investigate other resources that our community recommended.
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
 [read how the game was created in 6 weeks]: {{site.flutter-blog}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
-[view the open source code repo]: {{site.github}}/flutter/super_dash
+[view the open source code repo]: https://github.com/flutter/super_dash
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
 [flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
@@ -391,5 +391,5 @@ Check out the following videos:
   from Google I/O 2024.
 
 [Game Developer Conference (GDC)]: https://gdconf.com/
-[forge2d-video]: {{site.youtube-site}}/watch?v=nsnQJrYHHNQ
-[gdc-talk]: {{site.youtube-site}}/watch?v=7mG_sW40tsw
+[forge2d-video]: {{site.yt.watch}}?v=nsnQJrYHHNQ
+[gdc-talk]: {{site.yt.watch}}?v=7mG_sW40tsw

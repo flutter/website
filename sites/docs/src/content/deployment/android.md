@@ -617,7 +617,7 @@ This section describes two.
 1. [Generate a set of APKs][apk-set] from your app bundle.
 1. [Deploy the APKs][apk-deploy] to connected devices.
 
-[bundletool-github]: {{site.github}}/google/bundletool/releases/latest
+[bundletool-github]: https://github.com/google/bundletool/releases/latest
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 

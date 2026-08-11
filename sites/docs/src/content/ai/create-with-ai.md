@@ -52,7 +52,7 @@ resources:
   AI-powered features in Flutter.
 
 [Firebase AI Logic]: {{site.firebase}}/docs/ai-logic
-[Firebase AI Logic Showcase]: {{site.github}}/flutter/demos/tree/main/firebase_ai_logic_showcase
+[Firebase AI Logic Showcase]: {{site.repo.demos}}/tree/main/firebase_ai_logic_showcase
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
 [Genkit Dart]: https://genkit.dev
 [genkit-dart-quickstart]: https://genkit.dev/docs/dart/overview

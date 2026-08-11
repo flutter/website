@@ -11743,7 +11743,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [27382](https://github.com/flutter/engine/pull/27382) Revert "Make FlutterFragment usable without requiring it to be attached to an Android Activity." (platform-android, cla: yes)
 
 
-[27392](https://github.com/flutter/engine/pull/27392) Add embedder unit test that reproduces https://github.com/dart-lang/sdk/issues/46275 (cla: yes, embedder)
+[27392](https://github.com/flutter/engine/pull/27392) Add embedder unit test that reproduces {{site.repo.dart-sdk}}/issues/46275 (cla: yes, embedder)
 
 
 [27397](https://github.com/flutter/engine/pull/27397) Make FlutterFragment usable without requiring it to be attached to an Android Activity. (Attempt 2) (platform-android, cla: yes, waiting for tree to go green)
@@ -18307,7 +18307,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [27048](https://github.com/flutter/engine/pull/27048) Temporarily opt out of reduced shaders variants till roll issues are resolved. (cla: yes, waiting for tree to go green, needs tests, embedder)
 
 
-[27392](https://github.com/flutter/engine/pull/27392) Add embedder unit test that reproduces https://github.com/dart-lang/sdk/issues/46275 (cla: yes, embedder)
+[27392](https://github.com/flutter/engine/pull/27392) Add embedder unit test that reproduces {{site.repo.dart-sdk}}/issues/46275 (cla: yes, embedder)
 
 
 [27506](https://github.com/flutter/engine/pull/27506) MacOS: Fix external texture not working in OpenGL mode (cla: yes, waiting for tree to go green, needs tests, embedder)
