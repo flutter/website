@@ -1,10 +1,5 @@
 import 'package:material_ui/material_ui.dart';
 
-// #docregion localization-delegates-import
-import 'package:flutter_localizations/flutter_localizations.dart'
-    as flutter_localizations;
-// #enddocregion localization-delegates-import
-
 // #docregion app-localizations-import
 import 'l10n/app_localizations.dart';
 
@@ -20,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Localizations Sample App',
       localizationsDelegates: [
         AppLocalizations.delegate, // Add this line
-        ...GlobalMaterialLocalizations.delegate,
+        ...GlobalMaterialLocalizations.delegates,
       ],
       supportedLocales: [
         Locale('en'), // English
