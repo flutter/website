@@ -4,6 +4,8 @@
 - title: Develop with AI
   expanded: true
   children:
+    - title: Get started
+      permalink: /ai/get-started
     - title: Rules for Flutter and Dart
       permalink: /ai/ai-rules
     - title: Agent skills

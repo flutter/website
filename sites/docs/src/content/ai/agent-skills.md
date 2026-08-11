@@ -51,67 +51,34 @@ tailored specifically for our frameworks.
 
 ## Install agent skills
 
-Select your AI coding agent below for instructions on how to install the official
-Flutter and Dart agent skills.
+The recommended way to install skills for your project is by following the
+[Get started with AI](/ai/get-started) guide, which provides step-by-step
+plugin and skill installation for Claude Code, Codex, Antigravity, Cursor, and
+other tools.
 
-<Tabs key="ai-client-tabs" wrapped="true">
-<Tab name="Claude Code">
-
-If you use Claude Code, install the official Flutter plugin.
-This installs the Flutter and Dart agent skills alongside the
-[Dart and Flutter MCP server](/ai/mcp-server):
-
-1.  Add the Flutter marketplace for Claude plugins:
-
-    ```console
-    $ claude plugin marketplace add flutter/agent-plugins
-    ```
-
-2.  Install the plugin:
-
-    ```console
-    $ claude plugin install dart-flutter@dart-flutter
-    ```
-
-3.  Verify the installation:
-
-    ```console
-    $ claude plugin marketplace list
-    ```
-
-</Tab>
-<Tab name="Other agents">
+### Universal agent installation
 
 By default, compatible AI agents discover agent skills within the
 `.agents/skills` directory of your project workspace.
 
-To easily download and manage skills in that folder, you can use the
-`skills` CLI tool. It's distributed through npm, so you'll need
-[Node.js](https://nodejs.org/) installed to run it with `npx`.
+To download and manage skills in that folder, you can use the `skills` CLI tool.
+It's distributed through npm, so you need [Node.js](https://nodejs.org/)
+installed to run it with `npx`.
 
 To install the official Flutter skills:
 
-:::note
-The `flutter/skills` repository has been renamed to
-`flutter/agent-plugins`. If you previously installed skills using
-`flutter/skills`, update your commands to use `flutter/agent-plugins`.
-:::
-
 ```bash
-npx skills add flutter/agent-plugins --skill '*' --agent universal
+npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
 ```
 
 And to install the official Dart skills:
 
 ```bash
-npx skills add dart-lang/skills --skill '*' --agent universal
+npx skills add dart-lang/skills --skill '*' --agent universal --yes
 ```
 
 Running these commands automatically creates the `.agents/skills`
 directory and downloads the requested skills into your project.
-
-</Tab>
-</Tabs>
 
 ## Manage and verify agent skills
 

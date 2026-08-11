@@ -9,6 +9,9 @@ description: >
 AI tools are not only features in your app,
 but can also be powerful assistants in your development workflow.
 
+To set up your favorite AI coding agent with official Flutter plugins,
+skills, and rules, check out the [Get started with AI](/ai/get-started) guide.
+
 Tools like Antigravity can help you write code faster,
 understand complex concepts, and reduce boilerplate.
 
