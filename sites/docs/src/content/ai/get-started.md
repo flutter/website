@@ -121,7 +121,7 @@ For more information, see [Rules for Flutter and Dart](/ai/ai-rules).
 
 [Cursor](https://cursor.com/) is an AI-first code editor built on VS Code.
 
-### 1. Local plugin installation
+### Install the local plugin
 
 You can install the plugin locally by copying it to your Cursor plugins directory:
 
@@ -134,12 +134,6 @@ You can install the plugin locally by copying it to your Cursor plugins director
 
 2. Restart Cursor. The editor automatically discovers and loads the skills
    under `skills/` and configures the MCP server defined in `.mcp.json`.
-
-### 2. Rules support
-
-Cursor supports rules files (`.cursor/rules` or `AGENTS.md`) directly within
-your workspace context. For more details on rules configuration, see
-[Rules for Flutter and Dart](/ai/ai-rules).
 
 For advanced or manual skill installation, see
 [Install agent skills](/ai/agent-skills#install-agent-skills).
