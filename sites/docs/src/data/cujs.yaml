@@ -690,7 +690,7 @@
   persona: The Full Stack Developer
   tasks:
     - id: 121
-      name: integrate-supabase-auth-+-database
+      name: integrate-supabase-auth-database
       task: Integrate Supabase authentication, relational database services, and real-time
         data subscriptions into the application architecture.
 - id: 46

@@ -16,9 +16,8 @@ accomplish, like "make an application accessible to all users" or
 concrete tasks they take to get there.
 
 Product teams at Google treat CUJs as a source of truth: they're how teams align
-on priorities, shape roadmaps, measure product health and more. And recently, we
-started using CUJs for our agent [evaluation][] tasks. The FlutterBench prompts
-are derived from the tasks below.
+on priorities, shape roadmaps, measure product health and more. And we use
+CUJs to derive evaluation tasks and prompts for [FlutterBench][].
 
 The catalog below is the Flutter team's CUJs. It's a claim about what matters in
 Flutter development. If the way you build Flutter apps isn't represented here,
@@ -26,8 +25,8 @@ the list is incomplete, and we encourage [your feedback][].
 
 <CujIndex />
 
-[evaluation]: /ai/evals
+[FlutterBench]: /ai/evals
 
-[critical user journeys]: https://static.googleusercontent.com/media/sre.google/en//static/pdf/art-of-slos-handbook-a4.pdf
+[critical user journey]: https://static.googleusercontent.com/media/sre.google/en//static/pdf/art-of-slos-handbook-a4.pdf
 
 [your feedback]: todo/link/to/form
