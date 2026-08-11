@@ -25,22 +25,17 @@ set up rules for Flutter development.
 <Tab name="Antigravity">
 
 [Antigravity](https://antigravity.google/) is a suite of agentic development
-tools built by Google that includes the Antigravity IDE and Antigravity CLI
-(`agy`).
+tools built by Google that includes the Antigravity IDE and Antigravity CLI.
 
-### Plugin, skills, and rules support
+### Install the official plugin
 
-Antigravity natively supports bundled agent skills, MCP tools, and rules files
-out-of-the-box.
+Equip Antigravity with official Dart and Flutter tools
+by installing the plugin from the **Build with Google** screen in settings:
 
-* **Antigravity IDE**: Features an integrated agent panel, automatic rule
-  loading, and native support for Dart and Flutter tools. See the
-  [Antigravity IDE](/ai/antigravity) guide.
-* **Antigravity CLI**: A terminal-based agentic workflow tool (`agy`). See the
-  [Antigravity CLI](/ai/antigravity-cli) guide.
-
-For advanced or manual skill installation, see
-[Install agent skills](/ai/agent-skills#install-agent-skills).
+1. Open **Settings** in Antigravity by clicking the gear icon
+   or pressing <kbd>Cmd</kbd>+<kbd>,</kbd> (<kbd>Ctrl</kbd>+<kbd>,</kbd>).
+1. Navigate to the **Build with Google** screen in settings.
+1. Select **Dart & Flutter** and click **Install**.
 
 </Tab>
 
@@ -49,7 +44,7 @@ For advanced or manual skill installation, see
 [Claude Code](https://code.claude.com/) is an agentic coding assistant from
 Anthropic that runs in your terminal.
 
-### 1. Install the official plugin
+### Install the official plugin
 
 Equip Claude Code with domain expertise and tools for Flutter and Dart by
 installing the official plugin from
@@ -73,13 +68,10 @@ installing the official plugin from
    $ claude plugin marketplace list
    ```
 
-### 2. Rules setup
+### Rules setup
 
-:::note Rules status
 Claude Code plugins currently cannot bundle rules files automatically.
 You can configure rules for your project by following [Rules for Flutter and Dart](/ai/ai-rules).
-[Rules for Flutter and Dart](/ai/ai-rules).
-:::
 
 </Tab>
 
@@ -88,7 +80,7 @@ You can configure rules for your project by following [Rules for Flutter and Dar
 [Codex](https://github.com/features/copilot) is an agentic coding assistant
 designed for terminal and IDE workflows.
 
-### 1. Install the official plugin
+### Install the official plugin
 
 Equip Codex with official Flutter and Dart skills and MCP configuration:
 
@@ -104,12 +96,10 @@ Equip Codex with official Flutter and Dart skills and MCP configuration:
    $ codex plugin add dart-flutter@dart-flutter
    ```
 
-### 2. Rules setup
+### Rules setup
 
-:::note Rules status
 Codex plugins currently cannot bundle rules files automatically.
 You can configure rules for your project by following [Rules for Flutter and Dart](/ai/ai-rules).
-:::
 
 </Tab>
 
