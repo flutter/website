@@ -140,3 +140,17 @@ you can continue using older Flutter releases from the [SDK archive](/install/ar
     deploy-to-link="/deployment/web"
   />
 </PlatformsGrid>
+
+## Previous Flutter versions
+
+To learn about support for previous versions of Flutter,
+see the following resources:
+
+*   [Flutter SDK release notes][].
+    Find breaking changes and support updates listed by release.
+*   [Supported platforms page history][supported-platforms-history].
+    To see historical support matrices,
+    view previous versions of this page.
+
+[Flutter SDK release notes]: /release/release-notes
+[supported-platforms-history]: {{site.repo.this}}/commits/main/sites/docs/src/content/reference/supported-platforms.md
