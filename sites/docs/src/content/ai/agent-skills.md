@@ -4,11 +4,11 @@ sidenav: ai
 shortTitle: Agent skills
 description: >-
   Learn how to give AI agents new capabilities and expertise
-  using Agent Skills.
+  using agent skills.
 ---
 
 This guide covers how to enhance your AI agents and coding assistants
-with domain-specific capabilities using Agent Skills.
+with domain-specific capabilities using agent skills.
 
 ## Overview
 
@@ -28,7 +28,7 @@ to other AI capabilities:
     instructions for one specific job.
 *   **Model Context Protocol (MCP):** The [Dart and Flutter MCP
     server](/ai/mcp-server) gives your agent access to specialized tools. If MCP
-    provides the raw machinery, an Agent Skill provides the professional
+    provides the raw machinery, an agent skill provides the professional
     know-how to operate that machinery correctly.
 
 Skills use what we call "progressive disclosure," which is similar to deferred
