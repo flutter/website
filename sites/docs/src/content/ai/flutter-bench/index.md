@@ -66,26 +66,10 @@ These CUJs are converted into [Harbor](https://harborframework.com/)
 tasks. Harbor is the framework used to run the tasks (described in more
 detail later on this page).
 
-[//]: # (Make this look more code-y, i.e. with a filesystem, etc)
+Each task contains an instruction, a target codebase and environment,
+verification criteria, and metadata. Explore each part of a task below:
 
-Each task contains:
-
-* **Instruction**: A realistic prompt written the way developers talk to
-  agents (typically 1–2 sentences, behavior-focused rather than
-  prescriptive).
-* **Target codebase and environment**: A containerized environment that can
-  be preseeded with a Flutter or Dart project.
-  
-  Some more ambitious evals start from scratch, while other tasks start
-  from existing codebases and add features, fix bugs or refactor code.
-  These codebases are large projects, but are not known open-source apps to
-  avoid contaminating the evaluation process.
-* **Verification criteria**: Automated tests and scoring guidelines,
-  discussed in depth later on this page.
-* **Metadata**: Each task has a related metadata file that allows us to
-  customize the task to test with different inputs and slice the output
-  data. Metadata includes things like associated CUJ id, task type,
-  priority tier, and expected tool, skill, and subagent usage.
+<IdeExplorer data="flutterBenchTaskStructure" />
 
 ### Converting a CUJ
 
