@@ -3,17 +3,16 @@ title: Get started developing with AI
 sidenav: ai
 shortTitle: Get started
 description: >-
-  Learn how to set up and use AI agent plugins for Flutter and Dart,
-  tailored for Antigravity, Claude Code, Codex, and Cursor.
+  Learn how to set up and use AI agent plugins for Flutter and Dart using
+  your preferred coding assistant.
 ---
 
 AI coding assistants can accelerate your Flutter development workflow by
 writing code, fixing errors, and building complete features.
 
-To get the best experience with AI coding assistants, we recommend installing
-the official Flutter agent plugins, which bundle
-[agent skills](/ai/agent-skills) and configuration for the
-[Dart and Flutter MCP server](/ai/mcp-server).
+To get the best experience with AI coding assistants, install the official
+Flutter agent plugins, which bundle [agent skills](/ai/agent-skills) and
+configuration for the [Dart and Flutter MCP server](/ai/mcp-server).
 
 ## Choose your AI coding agent
 
@@ -27,15 +26,16 @@ set up rules for Flutter development.
 [Antigravity](https://antigravity.google/) is a suite of agentic development
 tools built by Google that includes the Antigravity IDE and Antigravity CLI.
 
-### Install the official plugin
+**Install the official plugin**
 
 Equip Antigravity with official Dart and Flutter tools
-by installing the plugin from the **Build with Google** screen in settings:
+by installing the plugin from settings:
 
 1. Open **Settings** in Antigravity by clicking the gear icon
    or pressing <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>,</kbd>.
-1. Navigate to the **Build with Google** screen in settings.
-1. Select **Dart & Flutter** and click **Install**.
+1. Click the **Customizations** tab.
+1. In the **Build with Google Plugins** section, click **Customize**.
+1. Click **Download** next to the **Dart and Flutter** integration.
 
 </Tab>
 
@@ -44,7 +44,7 @@ by installing the plugin from the **Build with Google** screen in settings:
 [Claude Code](https://code.claude.com/) is an agentic coding assistant from
 Anthropic that runs in your terminal.
 
-### Install the official plugin
+**Install the official plugin**
 
 Equip Claude Code with domain expertise and tools for Flutter and Dart by
 installing the official plugin from
@@ -68,7 +68,7 @@ installing the official plugin from
    $ claude plugin marketplace list
    ```
 
-### Rules setup
+**Rules setup**
 
 Claude Code plugins currently cannot bundle rules files automatically.
 You can configure rules for your project by following [Rules for Flutter and Dart](/ai/ai-rules).
@@ -80,7 +80,7 @@ You can configure rules for your project by following [Rules for Flutter and Dar
 [Codex](https://chatgpt.com/codex) is an agentic coding assistant
 designed for terminal and IDE workflows.
 
-### Install the official plugin
+**Install the official plugin**
 
 Equip Codex with official Flutter and Dart skills and MCP configuration:
 
@@ -96,7 +96,7 @@ Equip Codex with official Flutter and Dart skills and MCP configuration:
    $ codex plugin add dart-flutter@dart-flutter
    ```
 
-### Rules setup
+**Rules setup**
 
 Codex plugins currently cannot bundle rules files automatically.
 You can configure rules for your project by following [Rules for Flutter and Dart](/ai/ai-rules).
@@ -107,7 +107,7 @@ You can configure rules for your project by following [Rules for Flutter and Dar
 
 [Cursor](https://cursor.com/) is an AI-first code editor built on VS Code.
 
-### Install the local plugin
+**Install the local plugin**
 
 You can install the plugin locally by copying it to your Cursor plugins directory:
 
@@ -130,10 +130,10 @@ You can install the plugin locally by copying it to your Cursor plugins director
 
 <Tab name="Other agents">
 
-If you are using another compatible agentic assistant:
+If you're using another compatible agentic assistant:
 
 * **MCP Server**: To connect your agent to Dart and Flutter developer tools,
-  see the [Dart & Flutter MCP server](/ai/mcp-server) setup guide.
+  see the [Dart and Flutter MCP server](/ai/mcp-server) setup guide.
 * **Agent Skills**: To manually install agent skills into your project's
   `.agents/skills` directory using the `skills` CLI tool, see
   [Install agent skills](/ai/agent-skills#install-agent-skills).
@@ -144,8 +144,21 @@ If you are using another compatible agentic assistant:
 
 </Tabs>
 
+## The AI tooling stack
+
+To get the most out of AI, it helps to understand how the different pieces work together:
+
+| Component | What it is | How it helps |
+| :--- | :--- | :--- |
+| **Plugins** | Packages MCP and Skills together for your editor. | **Start here.** Recommended for quick setup. |
+| **MCP Server** | Connects the AI to Flutter developer tools (hot reload, widget tree). | Provides the raw machinery for advanced tools. |
+| **Agent Skills** | Step-by-step blueprints for specific tasks. | Provides the professional know-how to operate tools. |
+| **AI Rules** | General guidelines and best practices for your project. | Enforces consistent coding standards. |
+
+{:.table .table-striped}
+
 ## Next steps
 
 * Learn more about [Agent skills](/ai/agent-skills) and how agents use them.
-* Explore the [Dart & Flutter MCP server](/ai/mcp-server) integration.
+* Explore the [Dart and Flutter MCP server](/ai/mcp-server) integration.
 * Check out [Rules for Flutter and Dart](/ai/ai-rules) to customize model behavior.

@@ -1,5 +1,5 @@
 ---
-title: AI Coding Assistants
+title: AI coding assistants
 sidenav: ai
 description: >
   Learn how to use AI-powered coding assistants like Antigravity
@@ -9,7 +9,7 @@ description: >
 AI tools are not only features in your app,
 but can also be powerful assistants in your development workflow.
 
-To set up your favorite AI coding agent with official Flutter plugins,
+To set up your preferred AI coding agent with official Flutter plugins,
 skills, and rules, check out the [Get started with AI](/ai/get-started) guide.
 
 Tools like Antigravity can help you write code faster,
@@ -28,13 +28,21 @@ Some of Antigravity's capabilities include:
 *   **Complex reasoning**: It can plan and execute multi-step workflows which makes it suitable for larger refactors or feature implementations.
 *   **Verification**: It can run tests and verify its own changes to ensure correctness.
 
-<YouTubeEmbed
-  id="YY2w2JEX2xk"
-  title="Flutter + Antigravity in 10 minutes">
-</YouTubeEmbed>
-
 To get started with the editor experience, see the [Antigravity IDE](/ai/antigravity) page.
 To get started with the command-line tool, see the [Antigravity CLI](/ai/antigravity-cli) page.
+
+## Gemini Code Assist
+
+[Gemini Code Assist](https://codeassist.google/) is an AI-powered collaborator
+available for IDEs like Visual Studio Code, JetBrains IDEs, and Android Studio.
+It has a deep understanding of your project's codebase and can help you with:
+
+* **Code completion and generation**: It suggests and generates entire blocks of
+  code based on the context of what you're writing.
+* **In-editor chat**: You can ask questions about your code, Flutter concepts,
+  or best practices directly within your IDE.
+* **Debugging and explanation**: If you encounter an error, you can ask Gemini
+  Code Assist to explain it and suggest a fix.
 
 ## Gemini CLI (Legacy)
 

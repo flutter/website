@@ -6,25 +6,23 @@
   children:
     - title: Get started
       permalink: /ai/get-started
-    - title: Rules for Flutter and Dart
-      permalink: /ai/ai-rules
-    - title: Agent skills
-      permalink: /ai/agent-skills
-    - title: Dart & Flutter MCP server
-      permalink: /ai/mcp-server
     - title: AI coding assistants
       permalink: /ai/coding-assistants
       children:
         - title: Overview
           permalink: /ai/coding-assistants
-        - title: Antigravity IDE
+        - title: Antigravity
           permalink: /ai/antigravity
         - title: Antigravity CLI
           permalink: /ai/antigravity-cli
+    - title: Agent skills
+      permalink: /ai/agent-skills
+    - title: Dart and Flutter MCP server
+      permalink: /ai/mcp-server
+    - title: AI rules
+      permalink: /ai/ai-rules
     - title: Developer experience
       permalink: /ai/best-practices/developer-experience
-    - title: "AI evaluations (experimental)"
-      permalink: /ai/evals
 
 - title: Build AI-powered apps
   expanded: true
@@ -38,7 +36,7 @@
       children:
         - title: Overview
           permalink: /ai/genui
-        - title: Main components & concepts
+        - title: Main components and concepts
           permalink: /ai/genui/components
         - title: Get started
           permalink: /ai/genui/get-started
@@ -64,9 +62,12 @@
           permalink: /ai/best-practices
         - title: Prompting
           permalink: /ai/best-practices/prompting
-        - title: Structure & output
+        - title: Structure and output
           permalink: /ai/best-practices/structure-output
         - title: Tool calls (aka function calls)
           permalink: /ai/best-practices/tool-calls
         - title: Mode of interaction
           permalink: /ai/best-practices/mode-of-interaction
+
+- title: "AI evaluations (experimental)"
+  permalink: /ai/evals

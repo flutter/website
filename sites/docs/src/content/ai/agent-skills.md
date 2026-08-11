@@ -20,16 +20,6 @@ standardized way to give your AI agent a set of task-oriented blueprints to
 follow. By giving the agent actual domain expertise and repeatable workflows,
 you drastically reduce mistakes and can enforce consistent patterns.
 
-To understand how agent skills fit into your workflow, consider how they compare
-to other AI capabilities:
-
-*   **Rules files:** While [rules files](/ai/ai-rules) configure the agent's
-    general behavior across all tasks, agent skills give the AI step-by-step
-    instructions for one specific job.
-*   **Model Context Protocol (MCP):** The [Dart and Flutter MCP
-    server](/ai/mcp-server) gives your agent access to specialized tools. If MCP
-    provides the raw machinery, an Agent Skill provides the professional
-    know-how to operate that machinery correctly.
 
 Skills use what we call "progressive disclosure," which is similar to deferred
 loading in Flutter. Instead of loading every single instruction into the context
@@ -53,8 +43,10 @@ tailored specifically for our frameworks.
 
 The recommended way to install skills for your project is by following the
 [Get started with AI](/ai/get-started) guide, which provides step-by-step
-plugin and skill installation for Claude Code, Codex, Antigravity, Cursor, and
-other tools.
+instructions on how to install the official Flutter and Dart agent plugins for
+Claude Code, Codex, Antigravity, Cursor, and other tools. These plugins act as a
+complete package, bundling agent skills with the configuration for the Dart and
+Flutter MCP server.
 
 ### Universal agent installation
 
