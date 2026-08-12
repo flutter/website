@@ -8,7 +8,10 @@ void examples(BuildContext context) {
   // #docregion material-app
   const MaterialApp(
     title: 'Localizations Sample App',
-    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    localizationsDelegates: [
+      AppLocalizations.delegate,
+      ...GlobalMaterialLocalizations.delegates,
+    ],
     supportedLocales: AppLocalizations.supportedLocales,
   );
   // #enddocregion material-app
