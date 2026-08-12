@@ -1232,3 +1232,19 @@
   options_customer_size:
     - "Small-to-medium Business"
   options_GCP_partner: false
+- title: "Mallow Technologies Private Limited"
+  summary: "Mallow Technologies is an AI-driven custom software development company with 14+ years of experience building scalable web, mobile, and cloud solutions, specializing in Flutter."
+  card: "images/third_party/partners/MalowT_logo.png"
+  external_url: "https://mallow-tech.com/technologies/flutter-app-development/"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "Oceania"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
