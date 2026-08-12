@@ -127,7 +127,7 @@ outlined in the [Beta channel][] section of the [SDK archive][] page.
 * Earlier
   * [Archived release notes][]
 
-[3.47.0 announcement]: /blog/whats-new-in-flutter-3-47
+[3.47.0 announcement]: {{site.main-url}}/blog/whats-new-in-flutter-3-47
 [3.47.0 release notes & change log]: /release/release-notes/release-notes-3.47.0
 [3.47.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-47
 [3.44.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-44-b0cc1ad3c527
