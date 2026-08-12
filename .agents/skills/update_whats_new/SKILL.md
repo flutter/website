@@ -79,6 +79,7 @@ Use this skill when a new Flutter release has occurred and you need to update `s
     * **Formatting Rule:** Do NOT use bold topic prefixes followed by colons (e.g. do NOT write `* **Widget Previews:** Flutter [Widget Previews]...`). Instead, write clean, natural sentences with the links integrated inline, matching the style of past entries (e.g. `The Flutter [Widget Previews][widget-previewer] tool has graduated to stable...`).
     * Add a link to the relevant section or new page using markdown reference links.
     * If a community contributor was involved, thank them by including their GitHub handle in parentheses, for example: `(Thank you, [username][].)`. Only thank community contributors, not Flutter team members.
+    * **Breaking Changes Note:** Place the standard breaking changes note (e.g., `As always, check out the [breaking changes][bc-3-47] page...`) as a **standalone paragraph** directly below the bulleted list, separated by a blank line, rather than including it as a bullet point.
 
 7.  **Add and format link definitions**
 
@@ -89,6 +90,16 @@ Use this skill when a new Flutter release has occurred and you need to update `s
     [username]: https://github.com/username
     ```
 
-8.  **Request review**
+8.  **Output Writer Verification Guide**
 
-    Notify the developer that the `whats-new.md` page has been updated and ask them to verify the changes.
+    In your final chat response to the developer, provide a structured **Writer Verification Guide** to help the writer review your draft. This guide must contain:
+    *   A **Markdown Table** mapping:
+        *   The drafted bullet point description.
+        *   The local file path(s) modified or added in the codebase.
+        *   The Git commit hash or PR number that introduced the change.
+        *   The local preview URL (e.g., `http://lamek.c.googlers.com:5000/...`).
+    *   A **Step-by-Step Verification Checklist** explaining how to run the local preview server, navigate to the `/release/whats-new` page, and click through each link to verify it exists and is correct.
+
+9.  **Request review**
+
+    Notify the developer that the `whats-new.md` page has been updated and ask them to verify the changes using the Writer Verification Guide.
