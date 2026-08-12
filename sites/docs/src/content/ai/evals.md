@@ -29,4 +29,4 @@ Evals measure both deterministic code correctness
 (reasoning, safety, and conciseness) using automated model judges
 and expert human grading.
 
-<IdeExplorer data="flutter_bench_task_example" />
+{% render "docs/ai/flutter_bench_task_explorer.md" %}

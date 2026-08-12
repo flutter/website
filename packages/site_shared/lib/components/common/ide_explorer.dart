@@ -19,7 +19,6 @@ import 'wrapped_code_block.dart';
 /// 
 /// When you have multiple projects to display, they're displayed as
 /// tabs that you can switch between.
-/// 
 class IdeExplorerProjectRoot {
   const IdeExplorerProjectRoot({
     required this.id,
@@ -204,6 +203,7 @@ class IdeExplorer extends StatelessComponent {
     super.key,
     required this.roots,
     this.instanceId,
+    this.customContents = const {},
   });
 
   /// Creates an [IdeExplorer] with a single root from a list of [children].
@@ -212,6 +212,7 @@ class IdeExplorer extends StatelessComponent {
     required List<IdeTreeNode> children,
     String rootLabel = '',
     this.instanceId,
+    this.customContents = const {},
   }) : roots = [
          IdeExplorerProjectRoot(
            id: 'root',
@@ -220,12 +221,14 @@ class IdeExplorer extends StatelessComponent {
          ),
        ];
 
-  // TODO: What is this used for? Is it not always 0 given that its static?
+  // Prevents DOM id collisions
   static int _nextInstanceId = 0;
 
   final List<IdeExplorerProjectRoot> roots;
 
   final String? instanceId;
+  
+  final Map<String, Component> customContents;
 
   String _domId(String effectiveInstanceId, String nodeId) =>
       'ide-$effectiveInstanceId-$nodeId';
@@ -323,7 +326,6 @@ class IdeExplorer extends StatelessComponent {
     );
   }
 
-  // TODO: The _BreadcumbNode class can just be a record
   List<_BreadcrumbNode> _flatten(
     List<IdeTreeNode> nodes, {
     required String instanceId,
@@ -456,44 +458,50 @@ class IdeExplorer extends StatelessComponent {
               [.text(badge.label)],
             ),
         ]),
-        if (node.note case final note?)
-          div(classes: 'ide-note', [
-            if (node.noteTitle case final title?)
-              div(classes: 'ide-note-title', [.text(title)]),
-            DashMarkdown(content: note, inline: true),
-          ]),
-        if (node.description case final description?)
-          div(
-            classes: 'ide-description',
-            [DashMarkdown(content: description)],
-          ),
-        if (node.tips.isNotEmpty)
-          div(classes: 'ide-tips', [
-            const div(classes: 'ide-tips-title', [.text('Tips')]),
-            ul([
-              for (final tip in node.tips)
-                li([DashMarkdown(content: tip, inline: true)]),
+        
+        if (customContents[node.id] case final customChild?)
+          div(classes: 'ide-custom-body', [customChild])
+        else ...[
+          if (node.note case final note?)
+            div(classes: 'ide-note', [
+              if (node.noteTitle case final title?)
+                div(classes: 'ide-note-title', [.text(title)]),
+              DashMarkdown(content: note, inline: true),
             ]),
-          ]),
-        if (node.example case final example?)
-          div(classes: 'ide-example', [
-            WrappedCodeBlock(
-              content: CodeBlockProcessor.highlightCode(
-                [
-                  for (final line in example.trimRight().split('\n'))
-                    CodeLine(content: line, highlights: const []),
-                ],
-                language: node.exampleLanguage,
-              ),
-              language: node.exampleLanguage,
-              title: node.exampleTitle,
+          if (node.description case final description?)
+            div(
+              classes: 'ide-description',
+              [DashMarkdown(content: description)],
             ),
-          ]),
-        if (node.docsLink case final docsLink?)
-          a(href: docsLink, classes: 'ide-docs-link', [
-            .text(node.docsLinkLabel),
-            const MaterialIcon('arrow_forward'),
-          ]),
+          if (node.tips.isNotEmpty)
+            div(classes: 'ide-tips', [
+              const div(classes: 'ide-tips-title', [.text('Tips')]),
+              ul([
+                for (final tip in node.tips)
+                  li([DashMarkdown(content: tip, inline: true)]),
+              ]),
+            ]),
+          if (node.example case final example?)
+            div(classes: 'ide-example', [
+              WrappedCodeBlock(
+                content: CodeBlockProcessor.highlightCode(
+                  [
+                    for (final line in example.trimRight().split('\n'))
+                      CodeLine(content: line, highlights: const []),
+                  ],
+                  language: node.exampleLanguage,
+                ),
+                language: node.exampleLanguage,
+                title: node.exampleTitle,
+              ),
+            ]),
+          if (node.docsLink case final docsLink?)
+            a(href: docsLink, classes: 'ide-docs-link', [
+              .text(node.docsLinkLabel),
+              const MaterialIcon('arrow_forward'),
+            ]),
+        ],
+        
         if (node.children.isNotEmpty)
           div(classes: 'ide-contents', [
             const div(classes: 'ide-contents-title', [.text('Contents')]),
@@ -530,47 +538,45 @@ class IdeExplorer extends StatelessComponent {
 /// attribute, which names a top-level key in the page's data (loaded from
 /// a YAML/JSON file in the site's `src/data` directory). The data can
 /// either be a single list of nodes, or a map with a `roots` list if the
-/// explorer should offer more than one top-level tree (e.g. "Project" and
-/// "Global", shown as tabs above the sidebar):
+/// explorer should offer more than one top-level tree.
 ///
-/// ```yaml
-/// # A single implicit root:
-/// - id: main-dart
-///   label: main.dart
-///   oneLiner: The app's entry point.
-///   example: |
-///     void main() => runApp(const MyApp());
-///   exampleLanguage: dart
-///
-/// # Or, multiple named roots shown as tabs:
-/// roots:
-///   - id: project
-///     label: my_app/
-///     children: [ ... ]
-///   - id: global
-///     label: "~/"
-///     children: [ ... ]
+/// Usage from Markdown:
+/// ```html
+/// <IdeExplorer data="myTreeData">
+///   <IdePage id="someNodeId">
+///     Arbitrary markdown content for the node with id 'someNodeId'.
+///   </IdePage>
+/// </IdeExplorer>
 /// ```
-///
-/// Usage from Markdown: `<IdeExplorer data="myTreeData" />`.
-class DashIdeExplorer extends CustomComponentBase {
-  const DashIdeExplorer();
+class DashIdeExplorer extends CustomComponent {
+  const DashIdeExplorer() : super.base();
 
   @override
-  Pattern get pattern => RegExp(r'^(Dash)?IdeExplorer$', caseSensitive: false);
+  Component? create(Node node, NodesBuilder builder) {
+    if (node is! ElementNode ||
+        !(node.tag == 'IdeExplorer' || node.tag == 'DashIdeExplorer')) {
+      return null;
+    }
 
-  @override
-  Component apply(
-    String name,
-    Map<String, String> attributes,
-    Component? child,
-  ) {
-    final dataKey = attributes['data'];
+    final dataKey = node.attributes['data'];
     if (dataKey == null) {
       throw ArgumentError(
         'The <IdeExplorer> element requires a "data" attribute naming a key '
         'in the page data.',
       );
+    }
+
+    final pages = node.children
+        ?.whereType<ElementNode>()
+        .where((n) => n.tag == 'IdePage')
+        .toList(growable: false) ?? [];
+
+    final customContents = <String, Component>{};
+    for (final page in pages) {
+      final id = page.attributes['id'];
+      if (id != null) {
+        customContents[id] = builder.build(page.children);
+      }
     }
 
     return Builder(
@@ -580,9 +586,15 @@ class DashIdeExplorer extends CustomComponentBase {
           throw ArgumentError('No page data found for "$dataKey".');
         }
 
-        final roots = parseRoots(rawData, rootLabel: attributes['rootLabel']);
+        final roots = parseRoots(
+          rawData,
+          rootLabel: node.attributes['rootLabel'],
+        );
 
-        return IdeExplorer(roots: roots);
+        return IdeExplorer(
+          roots: roots,
+          customContents: customContents,
+        );
       },
     );
   }

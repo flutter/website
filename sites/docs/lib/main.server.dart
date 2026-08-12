@@ -30,6 +30,7 @@ import 'src/components/pages/architecture_recommendations.dart';
 import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
+import 'src/components/pages/flutter_bench_task_ide_explorer.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/pages/platforms_grid.dart';
 import 'src/components/pages/widget_catalog.dart';
@@ -128,4 +129,5 @@ List<CustomComponent> get _embeddableComponents => [
     'DevToolsReleaseNotesIndex',
     const DevToolsReleaseNotesIndex(),
   ),
+  const FlutterBenchTaskExplorer(),
 ];

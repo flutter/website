@@ -6,23 +6,6 @@ roots:
         label: instruction.md
         oneLiner: The prompt the agent receives
         badge: input
-        description: |
-          A realistic prompt written the way developers talk to agents:
-          typically one or two sentences, behavior-focused rather than
-          prescriptive.
-        tips:
-          - Prompts avoid naming exact APIs so the agent has to make
-            reasonable implementation choices, just like a real request.
-          - Some tasks include a follow-up instruction to simulate a
-            second turn of human feedback.
-        example: |
-          Create a Material theme data in `./lib` folder in a file called
-          `theme.dart`. Include both light and dark versions named
-          `lightTheme` and `darkTheme`.
-        exampleLanguage: markdown
-        exampleTitle: instruction.md
-        docsLink: https://docs.flutter.dev/ai/evals
-        docsLinkLabel: How prompts are authored
 
       - id: target-codebase
         label: target_codebase/
@@ -135,18 +118,6 @@ roots:
         label: metadata.yaml
         oneLiner: Slicing and re-targeting info for this task
         badge: config
-        description: |
-          Each task has a related metadata file that allows us to
-          customize the task to test with different inputs and slice the
-          output data.
-        example: |
-          cuj_id: theme-from-design-file
-          task_type: feature-add
-          priority_tier: p0
-          expected_tools: [Read, Write, Edit, Bash]
-        exampleLanguage: yaml
-        docsLink: https://docs.flutter.dev/ai/evals
-        docsLinkLabel: How tasks are sliced and prioritized
 
   - id: global
     label: Shared config
