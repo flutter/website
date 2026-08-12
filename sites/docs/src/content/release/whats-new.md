@@ -22,6 +22,43 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups.flutter-announce}}
 [release notes]: /release/release-notes
 
+## 12 August 2026: Release 3.47
+
+Flutter 3.47 is live! For details, check out the [Flutter 3.47 blog post][3.47-blog-post].
+
+**Docs updated or added since the 3.44 release**
+
+* The Flutter [Widget Previews][widget-previewer] tool has graduated to stable, introducing local build caching for faster startup times and real-time preview search and filtering.
+
+* We reorganized the AI documentation to improve navigation and help you get started quickly with agent-plugins (formerly known as skills) using the new [Antigravity CLI][antigravity-cli] and IDE integration. We also added a topic page for experimental [AI Evaluations][ai-evals].
+
+* There is a new guide page on [Dependency management][dependency-mgmt] to help you configure, manage, and upgrade package dependencies.
+
+* We expanded the [Swift Package Manager][swiftpm] guide for iOS and macOS, and updated [Add-to-App][add-to-app] documentation with SwiftPM integration guides.
+
+* The web documentation now includes troubleshooting guidance for [Wasm compilation errors][wasm] and instructions for using the `--source-maps` flag during web builds.
+
+* We added a new section to the assets guide explaining how to bundle [platform-specific assets][platform-assets] in `pubspec.yaml`.
+
+* We added guidance for migrating plugins and apps to use [built-in Kotlin][kotlin-migration] Gradle plugins.
+
+As always, check out the [breaking changes][bc-3-47] page for this release, which includes links to migration guides and other vital information.
+
+[3.47-blog-post]: /blog/whats-new-in-flutter-3-47
+[widget-previewer]: /tools/widget-previewer
+[antigravity]: /ai/antigravity
+[antigravity-cli]: /ai/antigravity-cli
+[ai-evals]: /ai/evals
+[dependency-mgmt]: /packages-and-plugins/dependency-management
+[swiftpm]: /packages-and-plugins/swift-package-manager
+[add-to-app]: /add-to-app
+[wasm]: /platform-integration/web/wasm
+[platform-assets]: /ui/assets/assets-and-images
+[kotlin-migration]: /release/breaking-changes/migrate-to-built-in-kotlin
+[bc-3-47]: /release/breaking-changes#released-in-flutter-3-47
+
+---
+
 ## 18 May 2026: Google I/O Release 3.44
 
 Flutter 3.44 is live! This release is jam packed.
@@ -158,51 +195,6 @@ Other relevant resources:
 [Widget Previewer tool page]: /tools/widget-previewer
 [web-config-file]: /platform-integration/web/web-dev-config-file
 
---- 
-
-## 13 August 2025: Release 3.35
-
-Flutter 3.35 is live! For more information,
-check out the [Flutter 3.35 technical blog post][3.35-tech].
-You might also check out the [Dart 3.9 release][] blog post.
-
-[3.35-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-35-c58ef72e3766
-[Dart 3.9 release]: {{site.dart-blog}}/announcing-dart-3-9
-
-**Docs updated or added since the 3.32 release**
-
-* Hot reload is now available on the web and no longer
-  requires an experimental flag. For more information,
-  check out [hot reload][].
-
-* There is a new [Create with AI][] guide which covers
-  how you can leverage AI tools like Gemini Code Assist,
-  GeminiCLI, and the Dart and Flutter MCP Server to build
-  AI-powered features for your Flutter apps.
-
-* You can now use the [Flutter Widget Previewer][] guide
-  to help you view a preview of your Flutter widgets in
-  Chrome.
-
-* Each stable release affects which versions of
-  deployed platforms that Flutter supports.
-  For more information, visit the updated
-  [supported platforms][] page.
-
-* On Android, you can now protect sensitive content,
-  such as customer information, when you share your screen.
-  Learn more by visiting [Protect your app's sensitive content][].
-
-* Also, don't forget to check out the [breaking changes][bc-3.35]
-  page for this release. That's also where you'll find useful
-  migration info.
-
-[Flutter Widget Previewer]: /tools/widget-previewer
-[Create with AI]: /ai/create-with-ai
-[bc-3.35]: /release/breaking-changes#released-in-flutter-3-35
-[hot reload]: /tools/hot-reload
-[Protect your app's sensitive content]: /platform-integration/android/sensitive-content
-[supported platforms]: /reference/supported-platforms
 
 ---
 
