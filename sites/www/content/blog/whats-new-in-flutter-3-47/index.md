@@ -149,7 +149,7 @@ You can opt in to building ARM64-only macOS apps immediately by running `flutter
 
 The community has made incredible progress transitioning to Swift Package Manager, with 92 of the top 100 iOS plugins now migrated. If you previously turned Swift Package Manager off, you can try it again by running `flutter config --enable-swift-package-manager`.
 
-Because CocoaPods is now in maintenance mode, plugins that do not migrate to SwiftPM will eventually stop working. Unmigrated plugins also receive lower `pub.dev` scores. If you maintain a plugin, consult the Migration Guide and read our previous blog post for more details.
+Because CocoaPods is now in maintenance mode, plugins that do not migrate to SwiftPM will eventually stop working. Unmigrated plugins also receive lower `pub.dev` scores. If you maintain a plugin, consult the [Migration Guide](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors) and read our [previous blog post](/blog/saying-goodbye-to-cocoapods-swift-package-manager-is-soon-the-default-in-flutter) for more details.
 
 This release also features optimized build times, thanks to community contributor @lukemmtt, who improved build pipelines by filtering out unnecessary SwiftPM package schemes early in the build process.
 
@@ -334,7 +334,7 @@ flutter upgrade
 
 While your SDK updates in the background, we've got some homework (the fun kind) for you:
 
-* Meet the Contributors: Grab some popcorn and tune into our new video series, Introducing: Flutter Notable Commits, celebrating the community members who made this release possible.
-* Check the Details: Give the Breaking Changes Page a quick scan so you are prepped for the standalone UI package migrations.
+* Meet the Contributors: Grab some popcorn and tune into our new video series, [Introducing: Flutter Notable Commits](https://www.youtube.com/watch?v=NR4F-P-5a1o), celebrating the community members who made this release possible.
+* Check the Details: Give the [Breaking Changes Page](https://docs.flutter.dev/release/breaking-changes) a quick scan so you are prepped for the standalone UI package migrations.
 
 We are excited to see what you all will build with this new and improved version of Flutter!
