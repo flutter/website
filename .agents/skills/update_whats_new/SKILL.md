@@ -68,12 +68,13 @@ Use this skill when a new Flutter release has occurred and you need to update `s
       <YouTubeEmbed id="VIDEO_ID" title="What's New in Dart and Flutter 3.47" fullWidth></YouTubeEmbed>
       </div>
       ```
-    * A list heading: `**Docs updated or added since the <Previous Version> release**`.
+    * A list heading: `**Docs updated or added since the <Previous Version> release**`. This heading should be followed immediately by the bulleted list (do not add extra filler sentences in between).
 
 6.  **Add entries for meaningful changes**
 
     For each meaningful change identified in Step 4:
     * Add a bullet point under the new release section.
+    * Leave a blank line between each bullet point in the list to ensure consistent spacing and readability.
     * Write a concise explanation of the change.
     * **Formatting Rule:** Do NOT use bold topic prefixes followed by colons (e.g. do NOT write `* **Widget Previews:** Flutter [Widget Previews]...`). Instead, write clean, natural sentences with the links integrated inline, matching the style of past entries (e.g. `The Flutter [Widget Previews][widget-previewer] tool has graduated to stable...`).
     * Add a link to the relevant section or new page using markdown reference links.
