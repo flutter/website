@@ -60,7 +60,7 @@ Use this skill when a new Flutter release has occurred and you need to update `s
     In `sites/docs/src/content/release/whats-new.md`, create a new section at the top of the file (just below the introduction) for the new release.
     Follow the formatting and structure of past releases on the page:
     * A heading with the release date and version, like `## 12 August 2026: Release 3.47`.
-    * An announcement paragraph linking to the release blog post: `check out the [Flutter 3.47 blog post][3.47-blog-post]`.
+    * A concise announcement paragraph linking ONLY to the release blog post (e.g., `Flutter 3.47 is live! For details, check out the [Flutter 3.47 blog post][3.47-blog-post].`). Do not link breaking changes or release notes in this paragraph.
     * If a release video is available, embed it using the `<YouTubeEmbed>` component:
       ```html
       <div class="video-wrapper">
@@ -75,6 +75,7 @@ Use this skill when a new Flutter release has occurred and you need to update `s
     For each meaningful change identified in Step 4:
     * Add a bullet point under the new release section.
     * Write a concise explanation of the change.
+    * **Formatting Rule:** Do NOT use bold topic prefixes followed by colons (e.g. do NOT write `* **Widget Previews:** Flutter [Widget Previews]...`). Instead, write clean, natural sentences with the links integrated inline, matching the style of past entries (e.g. `The Flutter [Widget Previews][widget-previewer] tool has graduated to stable...`).
     * Add a link to the relevant section or new page using markdown reference links.
     * If a community contributor was involved, thank them by including their GitHub handle in parentheses, for example: `(Thank you, [username][].)`. Only thank community contributors, not Flutter team members.
 
