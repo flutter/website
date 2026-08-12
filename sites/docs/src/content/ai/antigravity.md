@@ -56,10 +56,10 @@ the [Antigravity site](https://antigravity.google/download).
 
  1. <h3>Install the Dart and Flutter extensions</h3>
 
-    Open the **Extensions** menu in the left nav and search for Dart.
-    The search results bring up both the Dart and Flutter extensions.
-    Click the **Install** button for Dart and then do the same
-    for Flutter.
+    1. Open **Settings** (press <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>,</kbd>).
+    1. Click the **Customizations** tab.
+    1. In the **Build with Google Plugins** section, click **Customize**.
+    1. Click **Download** next to the **Dart and Flutter** integration.
 
  1. <h3>Set up any MCP servers that you use</h3>
 
