@@ -91,15 +91,16 @@ It might use Impeller in the future.
 Impeller is **available and enabled by default as of Flutter 3.47**.
 In a future release, the ability to opt out of using Impeller will be removed.
 
-To disable Impeller on macOS when debugging, pass `--no-enable-impeller` to the
-`flutter run` command.
+To disable Impeller on macOS when debugging,
+pass `--no-enable-impeller` to the `flutter run` command:
 
 ```console
 flutter run --no-enable-impeller
 ```
 
-To disable Impeller on macOS when deploying your app, add the following tags
-under the top-level `<dict>` tag in your app's `Info.plist` file.
+To disable Impeller on macOS when deploying your app,
+add the following tags under the top-level `<dict>` tag in
+your app's `Info.plist` file:
 
 ```xml
   <key>FLTEnableImpeller</key>
@@ -111,15 +112,15 @@ under the top-level `<dict>` tag in your app's `Info.plist` file.
 Impeller is **available and enabled by default as of Flutter 3.47**.
 In a future release, the ability to opt out of using Impeller will be removed.
 
-To disable Impeller on Linux when debugging, pass `--no-enable-impeller` to the
-`flutter run` command.
+To disable Impeller on Linux when debugging,
+pass `--no-enable-impeller` to the `flutter run` command:
 
 ```console
 flutter run --no-enable-impeller
 ```
 
-To disable Impeller on Linux when deploying your app, add the following setup to
-your project in `linux/runner/my_application.cc`.
+To disable Impeller on Linux when deploying your app,
+add the following setup to your project in `linux/runner/my_application.cc`:
 
 ```c
 g_autoptr(FlDartProject) project = fl_dart_project_new();
@@ -131,15 +132,15 @@ fl_dart_project_set_enable_impeller(project, FALSE);
 Impeller is **available and enabled by default as of Flutter 3.47**.
 In a future release, the ability to opt out of using Impeller will be removed.
 
-To disable Impeller on Windows when debugging, pass `--no-enable-impeller` to the
-`flutter run` command.
+To disable Impeller on Windows when debugging,
+pass `--no-enable-impeller` to the `flutter run` command.
 
 ```console
 flutter run --no-enable-impeller
 ```
 
-To disable Impeller on Windows when deploying your app, add the following setup to
-your project in `windows\runner\main.cpp`.
+To disable Impeller on Windows when deploying your app,
+add the following setup to your project in `windows\runner\main.cpp`:
 
 ```cpp
 flutter::DartProject project(L"data");
