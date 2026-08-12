@@ -141,7 +141,7 @@ flutter run --no-enable-impeller
 To disable Impeller on Windows when deploying your app, add the following setup to
 your project in `windows\runner\main.cpp`.
 
-```c++
+```cpp
 flutter::DartProject project(L"data");
 project.set_impeller_switch(flutter::ImpellerSwitch::Disabled);
 ```
