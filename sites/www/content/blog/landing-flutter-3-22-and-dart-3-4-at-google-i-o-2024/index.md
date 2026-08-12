@@ -20,7 +20,7 @@ Flutter 3.22 and Dart 3.4 offer performance improvements and platform-specific r
 
 Today, we’ll also spotlight top companies using Flutter to increase productivity and build performant experiences. We’ll highlight just a few particularly exciting features that move us closer to our goal to deliver native-like performance across platforms, and include selected updates on our investments in productivity, developer experience, and games.
 
-If you want more details on everything included in the releases, check out the dedicated [Flutter](https://medium.com/flutter/fbde6c164fe3) and [Dart](https://medium.com/dartlang/dart-3-4-bd8d23b4462a) posts. It’s time to Dash!
+If you want more details on everything included in the releases, check out the dedicated [Flutter](https://flutter.dev/blog/whats-new-in-flutter-3-22) and [Dart](https://dart.dev/blog/announcing-dart-3-4) posts. It’s time to Dash!
 
 ## Flutter in action
 
@@ -72,7 +72,7 @@ Macros are code that creates more code. They’re like code generation, except t
 
 We’re excited to see macros solve all kinds of problems for our developers. Take, for example, data classes, the [highest voted](https://github.com/dart-lang/language/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc) Dart language feature. Beyond specific applications, our eventual goal is to have a macro system in Dart that allows users to create their own macros and raise the abstraction level of Dart programming.
 
-Designing and implementing such a powerful macro system is a large task, so there is currently no date set for a stable release — for more details check out the [Dart 3.4 post](https://medium.com/dartlang/dart-3-4-bd8d23b4462a). In the meantime, try out a preview of the `JsonCodable` macro today. For more information, check out [macros documentation](https://dart.dev/go/json-codable).
+Designing and implementing such a powerful macro system is a large task, so there is currently no date set for a stable release — for more details check out the [Dart 3.4 post](https://dart.dev/blog/announcing-dart-3-4). In the meantime, try out a preview of the `JsonCodable` macro today. For more information, check out [macros documentation](https://dart.dev/go/json-codable).
 
 ## New resources for Flutter game development
 
@@ -86,11 +86,11 @@ Today, we’re excited to continue to build on that momentum with these new reso
 
 * Learn how to [generate expansive crossword-style grids](https://codelabs.developers.google.com/codelabs/flutter-word-puzzle#0) of interlocking words without compromising the user experience, and [craft game mechanics in a Flutter and Flame game using a 2D physics simulation](https://codelabs.developers.google.com/codelabs/flutter-flame-forge2d#0) along the lines of Box2D called [Forge2D](https://pub.dev/packages/forge2d).
 
-* A new guide for [optimizing Flutter web-based game loading speed](https://medium.com/flutter/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c): Long load times are a major deterrent in web-based games. Follow this guide (authored by [Cheng Lin](https://twitter.com/chenglinlim)) to optimize your loading speed so that players don’t abandon your game because it loads slowly.
+* A new guide for [optimizing Flutter web-based game loading speed](https://flutter.dev/blog/best-practices-for-optimizing-flutter-web-loading-speed): Long load times are a major deterrent in web-based games. Follow this guide (authored by [Cheng Lin](https://twitter.com/chenglinlim)) to optimize your loading speed so that players don’t abandon your game because it loads slowly.
 
 ## Empowering sustainable game development
 
-In January 2024, inspired by the [story](https://www.youtube.com/watch?v=qgOlg173gcI&pp=ygUWR2xvYmFsIENpdGl6ZW4gRmx1dHRlcg%3D%3D) behind their use of Flutter, we partnered with Global Citizen to challenge our communities to design, build, and publish sustainability games using Flutter. These games are meant to inspire and empower players to take small, but meaningful actions for the environment. Today, we’re announcing [the 10 winners](https://medium.com/flutter/announcing-the-winners-of-the-global-gamers-challenge-1ccf4d271226).
+In January 2024, inspired by the [story](https://www.youtube.com/watch?v=qgOlg173gcI&pp=ygUWR2xvYmFsIENpdGl6ZW4gRmx1dHRlcg%3D%3D) behind their use of Flutter, we partnered with Global Citizen to challenge our communities to design, build, and publish sustainability games using Flutter. These games are meant to inspire and empower players to take small, but meaningful actions for the environment. Today, we’re announcing [the 10 winners](https://flutter.dev/blog/announcing-the-winners-of-the-global-gamers-challenge).
 
 <YoutubeEmbed id="_GgqdB9md1w" title="" fullwidth="true"/>
 
@@ -116,7 +116,7 @@ That’s all we have time to spotlight today, but there are many more exciting i
 
 * **DevTools** now supports advanced filtering and CPU samples in the timeline.
 
-Head over to the [Flutter technical post](https://medium.com/flutter/fbde6c164fe3) and the [Dart 3.4 post](https://medium.com/dartlang/dart-3-4-bd8d23b4462a) for more details on each of these, and more.
+Head over to the [Flutter technical post](https://flutter.dev/blog/whats-new-in-flutter-3-22) and the [Dart 3.4 post](https://dart.dev/blog/announcing-dart-3-4) for more details on each of these, and more.
 
 As always, we’re incredibly grateful for your continued support, passion, enthusiasm, and feedback. This project wouldn’t be possible without you, and we can’t wait to see how you continue to push Flutter forward.
 

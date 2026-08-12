@@ -749,7 +749,7 @@ Check out an [example of using isolates with Flutter][].
 ### Can I run Dart code in the background of a Flutter app?
 
 Yes, you can run Dart code in a background process on both
-iOS and Android. For more information, see the free Medium article
+iOS and Android. For more information, see the Flutter blog post
 [Executing Dart in the Background with Flutter Plugins and Geofencing][backgnd].
 
 [backgnd]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
@@ -1059,7 +1059,7 @@ If you think you've encountered a bug, file it in our
 [issue tracker][]. You might also use
 [Stack Overflow][] for "HOWTO" type questions.
 For discussions, join our mailing list at
-[{{site.email}}][] or seek us out on [Discord][].
+[flutter-dev@googlegroups.com][] or seek us out on [Discord][].
 
 For more information, see our [Community][] page.
 
@@ -1067,7 +1067,7 @@ For more information, see our [Community][] page.
 [Community]: {{site.main-url}}/community
 [Discord]: https://discord.com/invite/rflutterdev
 [issue tracker]: {{site.repo.flutter}}/issues
-[{{site.email}}]: mailto:{{site.email}}
+[flutter-dev@googlegroups.com]: mailto:flutter-dev@googlegroups.com
 [Stack Overflow]: {{site.so}}/tags/flutter
 
 ### How do I get involved?
@@ -1077,7 +1077,7 @@ You can start by simply filing issues for feature requests
 and bugs in our [issue tracker][].
 
 We recommend that you join our mailing list at
-[{{site.email}}][] and let us know how you're
+[flutter-dev@googlegroups.com][] and let us know how you're
 using Flutter and what you'd like to do with it.
 
 If you're interested in contributing code, you can start

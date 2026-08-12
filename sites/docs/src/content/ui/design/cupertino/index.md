@@ -65,7 +65,7 @@ cd examples/api
 flutter run lib/cupertino/switch/cupertino_switch.0.dart
 ```
 
-[Cupertino API examples]: {{site.github}}/flutter/flutter/tree/main/examples/api/lib/cupertino
+[Cupertino API examples]: {{site.repo.flutter}}/tree/main/examples/api/lib/cupertino
 [Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Cupertino widget catalog]: /ui/widgets/cupertino
-[Instructions]: {{site.github}}/flutter/flutter/tree/main/examples/api#api-example-code
+[Instructions]: {{site.repo.flutter}}/tree/main/examples/api#api-example-code

@@ -32,7 +32,7 @@ What’s the first step of any optimization? Measurement. Knowing that an app se
 
 1. We can compare the before and the after. Sometimes, a code change seems like a good idea, but in reality, it doesn’t make a significant difference. Having a baseline (the before) means that we can quantify the effect of our changes. We can compare the before with the after.
 
-Performance profiling of apps is hard. I wrote [a long article](https://medium.com/flutter/performance-testing-of-flutter-apps-df7669bb7df7) about it in 2019. So, let’s start simple. We run the app in profile mode, turn on the performance overlay, and use the app, while watching the performance overlay graph.
+Performance profiling of apps is hard. I wrote [a long article](https://flutter.dev/blog/performance-testing-of-flutter-apps) about it in 2019. So, let’s start simple. We run the app in profile mode, turn on the performance overlay, and use the app, while watching the performance overlay graph.
 
 <DashImage figure src="images/0H6YKXQ1-ToTZ50v2.webp" />
 

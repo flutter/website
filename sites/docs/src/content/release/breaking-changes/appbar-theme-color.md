@@ -117,4 +117,4 @@ API documentation:
 
 Relevant PRs:
 
-- [AppBar theme color parameter deprecation #170624]({{site.github}}/flutter/flutter/pull/170624)
+- [AppBar theme color parameter deprecation #170624]({{site.repo.flutter}}/pull/170624)

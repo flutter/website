@@ -291,9 +291,9 @@ check your code against the interactive lakes example on GitHub.
 TODO: replace the following links with tabbed code panes.
 {% endcomment -%}
 
-* [`lib/main.dart`]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/lib/main.dart)
-* [`pubspec.yaml`]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/pubspec.yaml)
-* [`lakes.jpg`]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/images/lake.jpg)
+* [`lib/main.dart`]({{site.repo.this}}/tree/main/examples/layout/lakes/interactive/lib/main.dart)
+* [`pubspec.yaml`]({{site.repo.this}}/tree/main/examples/layout/lakes/interactive/pubspec.yaml)
+* [`lakes.jpg`]({{site.repo.this}}/tree/main/examples/layout/lakes/interactive/images/lake.jpg)
 
 If you still have questions, refer to any one of the developer
 [community][] channels.

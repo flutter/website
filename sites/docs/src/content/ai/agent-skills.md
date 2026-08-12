@@ -4,32 +4,22 @@ sidenav: ai
 shortTitle: Agent skills
 description: >-
   Learn how to give AI agents new capabilities and expertise
-  using Agent Skills.
+  using agent skills.
 ---
 
 This guide covers how to enhance your AI agents and coding assistants
-with domain-specific capabilities using Agent Skills.
+with domain-specific capabilities using agent skills.
 
 ## Overview
 
 AI agents can write Flutter and Dart code, but they sometimes are unaware of
 tools and best practices that professional developers use.
 
-[Agent Skills](https://agentskills.io/) help solve this problem by providing a
+[Agent skills](https://agentskills.io/) help solve this problem by providing a
 standardized way to give your AI agent a set of task-oriented blueprints to
 follow. By giving the agent actual domain expertise and repeatable workflows,
 you drastically reduce mistakes and can enforce consistent patterns.
 
-To understand how Agent Skills fit into your workflow, consider how they compare
-to other AI capabilities:
-
-*   **Rules files:** While [rules files](/ai/ai-rules) configure the agent's
-    general behavior across all tasks, Agent Skills give the AI step-by-step
-    instructions for one specific job.
-*   **Model Context Protocol (MCP):** The [Dart and Flutter MCP
-    server](/ai/mcp-server) gives your agent access to specialized tools. If MCP
-    provides the raw machinery, an Agent Skill provides the professional
-    know-how to operate that machinery correctly.
 
 Skills use what we call "progressive disclosure," which is similar to deferred
 loading in Flutter. Instead of loading every single instruction into the context
@@ -49,35 +39,40 @@ tailored specifically for our frameworks.
     These skills help the AI build responsive layouts,
     set up declarative routing, and implement JSON serialization.
 
-## Getting started
+## Install agent skills
 
-By default, compatible AI agents discover Agent Skills within the
+The recommended way to install skills for your project is by following the
+[Get started with AI](/ai/get-started) guide, which provides step-by-step
+instructions on how to install the official Flutter and Dart agent plugins for
+Claude Code, Codex, Antigravity, Cursor, and other tools. These plugins act as a
+complete package, bundling agent skills with the configuration for the Dart and
+Flutter MCP server.
+
+### Universal agent installation
+
+By default, compatible AI agents discover agent skills within the
 `.agents/skills` directory of your project workspace.
 
-To easily download and manage skills in that folder, you can use the `skills`
-CLI tool. It's distributed through npm, so you'll need
-[Node.js](https://nodejs.org/) installed to run it with `npx`.
+To download and manage skills in that folder, you can use the `skills` CLI tool.
+It's distributed through npm, so you need [Node.js](https://nodejs.org/)
+installed to run it with `npx`.
 
 To install the official Flutter skills:
 
-:::note
-The `flutter/skills` repository has been renamed to `flutter/agent-plugins`.
-If you previously installed skills using `flutter/skills`,
-update your commands to use `flutter/agent-plugins`.
-:::
-
 ```bash
-npx skills add flutter/agent-plugins --skill '*' --agent universal
+npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
 ```
 
 And to install the official Dart skills:
 
 ```bash
-npx skills add dart-lang/skills --skill '*' --agent universal
+npx skills add dart-lang/skills --skill '*' --agent universal --yes
 ```
 
-Running these commands automatically creates the `.agents/skills` directory and
-downloads the requested skills into your project.
+Running these commands automatically creates the `.agents/skills`
+directory and downloads the requested skills into your project.
+
+## Manage and verify agent skills
 
 For more details on available skills, updating, and contributing, see the
 [Dart skills repository](https://github.com/dart-lang/skills) and the
@@ -85,7 +80,7 @@ For more details on available skills, updating, and contributing, see the
 
 :::tip
 Once you've added skills to your project, try asking your AI agent to review
-the `.agents/skills` directory. You can ask, "Which of my installed skills
+your installed skills. You can ask, "Which of my installed skills
 can help me with [your current task]?" or "Summarize the capabilities of the
 skills I have available."
 :::

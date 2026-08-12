@@ -485,7 +485,7 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 
 [`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
 [`public_header_files`]: https://guides.cocoapods.org/syntax/podspec.html#public_header_files
-[Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
+[Swift Package Manager's documentation]: https://github.com/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
 [Pigeon]: https://pub.dev/packages/pigeon
 [CocoaPods `dependency`]: https://guides.cocoapods.org/syntax/podspec.html#dependency
 [Swift Package Manager dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency

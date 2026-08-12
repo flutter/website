@@ -136,8 +136,8 @@ Thank you for reading!
 
 This post is a part of a series about what we learned when improving performance for the [Flutter Gallery](https://gallery.flutter.dev/#/). Articles in the *Creating performant Flutter web apps* series:
 
-* [Optimizing performance in Flutter web apps with tree shaking and deferred loading](https://medium.com/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674)
+* [Optimizing performance in Flutter web apps with tree shaking and deferred loading](https://flutter.dev/blog/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading)
 
 * Improving perceived performance with image placeholders, precaching, and disabled navigation transitions (this article)
 
-* [Building performant Flutter widgets](https://medium.com/flutter/building-performant-flutter-widgets-3b2558aa08fa)
+* [Building performant Flutter widgets](https://flutter.dev/blog/building-performant-flutter-widgets)

@@ -257,7 +257,7 @@ see [The Framework architecture][] in the
 [debug mode]: /testing/build-modes#debug
 [Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
 [UIKit]: {{site.apple-dev}}/documentation/uikit
-[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 [The Framework architecture]: {{site.repo.flutter}}/blob/main/docs/about/The-Framework-architecture.md
 [MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
 

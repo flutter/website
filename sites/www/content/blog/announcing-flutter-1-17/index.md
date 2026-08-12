@@ -14,9 +14,9 @@ layout: blog
 
 Today we’re pleased to announce Flutter 1.17, our first stable release of 2020.
 
-This year has been a challenging one for everyone. Our goal is to ship stable releases on a roughly quarterly cadence; however, this release took a little longer because we’ve been [retooling our infrastructure for a new release process](https://medium.com/p/f723d898d7af#d6e5). We continue to make quality our #1 priority and believe that the new release model will improve our ability to service the stable branch with quality hotfixes. This release is full of fixes, with an unprecedented 6,339 issues closed since our 1.12 stable release. A great deal of this increase is due to [our partnership with Nevercode](https://blog.codemagic.io/flutter-and-codemagic-join-forces-on-github/), which has given us increased responsiveness when it comes to responding to customer issues. So far this year, we’ve closed more bugs than have been opened, resulting in a net decrease of ~800 issues. Many of these bugs were fixed by the 3,164 PRs we merged from 231 contributors. These are huge numbers and our heartfelt thanks goes out to everyone for their hard work and continued contributions during this challenging time.
+This year has been a challenging one for everyone. Our goal is to ship stable releases on a roughly quarterly cadence; however, this release took a little longer because we’ve been [retooling our infrastructure for a new release process](https://flutter.dev/blog/flutter-spring-2020-update#updating-our-release-process). We continue to make quality our #1 priority and believe that the new release model will improve our ability to service the stable branch with quality hotfixes. This release is full of fixes, with an unprecedented 6,339 issues closed since our 1.12 stable release. A great deal of this increase is due to [our partnership with Nevercode](https://blog.codemagic.io/flutter-and-codemagic-join-forces-on-github/), which has given us increased responsiveness when it comes to responding to customer issues. So far this year, we’ve closed more bugs than have been opened, resulting in a net decrease of ~800 issues. Many of these bugs were fixed by the 3,164 PRs we merged from 231 contributors. These are huge numbers and our heartfelt thanks goes out to everyone for their hard work and continued contributions during this challenging time.
 
-If you’re interested in the full list of PRs we’ve merged in this release, you can see that on [the flutter.dev site](https://flutter.dev/docs/development/tools/sdk/release-notes/changelogs/changelog-1.17.0). In addition to the quality improvements, we’ve managed to sneak some new features into this release as well, including Metal support on iOS, new Material components, new Network tracking tooling and more! This release also includes Dart 2.8, about which you can [read more on the Dart blog](https://medium.com/dartlang/announcing-dart-2-8-7750918db0a).
+If you’re interested in the full list of PRs we’ve merged in this release, you can see that on [the flutter.dev site](https://flutter.dev/docs/development/tools/sdk/release-notes/changelogs/changelog-1.17.0). In addition to the quality improvements, we’ve managed to sneak some new features into this release as well, including Metal support on iOS, new Material components, new Network tracking tooling and more! This release also includes Dart 2.8, about which you can [read more on the Dart blog](https://dart.dev/blog/announcing-dart-2-8).
 
 ## Mobile performance and size improvements
 
@@ -76,7 +76,7 @@ Notice that the `TextStyles` called `body1` and `body2` in the Material Design s
 
 ## Google Fonts for Flutter
 
-Text and fonts go hand in hand, so if you’re excited about the new Material Text Scale implementation, then you’re probably also going to be excited about [the new Google Fonts for Flutter v1.0 release](https://medium.com/flutter/introducing-google-fonts-for-flutter-v-1-0-0-c0e993617118).
+Text and fonts go hand in hand, so if you’re excited about the new Material Text Scale implementation, then you’re probably also going to be excited about [the new Google Fonts for Flutter v1.0 release](https://flutter.dev/blog/introducing-google-fonts-for-flutter-v-1-0-0).
 
 <DashImage figure src="images/0_Vc08nu8x7JFksB0.gif" alt="Google Fonts are easy to use in your Flutter apps" caption="Google Fonts are easy to use in your Flutter apps" />
 
@@ -122,7 +122,7 @@ If you’re an Android Studio or IntelliJ user, you’ll find that the Hot Reloa
 
 If you’d like earlier access to changes like these in the Flutter plugin for Android Studio or IntelliJ, we now have a dev channel for the IntelliJ plugin that you may opt into for a faster cadence of updates. The goal with the Dev Channel is to gather feedback from Flutter developers on new IDE integration features before we make them more broadly available. If you’re adventurous and would like to provide early feedback to the Flutter tooling team, please [sign up today](https://groups.google.com/forum/m/#!topic/flutter-announce/tTgQcTgqrKg)!
 
-For Visual Studio Code users, we recommend the new **Dart: List Outdated Packages** command that runs [the new ‘pub outdated’ command](https://medium.com/dartlang/announcing-dart-2-8-7750918db0a).
+For Visual Studio Code users, we recommend the new **Dart: List Outdated Packages** command that runs [the new ‘pub outdated’ command](https://dart.dev/blog/announcing-dart-2-8).
 
 <DashImage figure src="images/0kfSA8iTjVjrsPIyG.webp" />
 
@@ -144,7 +144,7 @@ Superformula worked with the MGM Resorts design team to create a new MGM design 
 
 ## Breaking Changes
 
-As always, we try to minimize the number of breaking changes with each new release of Flutter while still balancing our ability to ensure that Flutter provides an intuitive, flexible API that can support new idioms on new platforms. In [a user survey last year](https://medium.com/p/3659b02303a5#4bad), you told us that you were tolerant of carefully-considered breaking changes that improve the framework. So we’re continuing to gently evolve the API. These are the breaking changes in this release.
+As always, we try to minimize the number of breaking changes with each new release of Flutter while still balancing our ability to ensure that Flutter provides an intuitive, flexible API that can support new idioms on new platforms. In [a user survey last year](https://flutter.dev/blog/insights-from-flutters-first-user-survey-of-2019#breaking-changes-for-the-greater-good), you told us that you were tolerant of carefully-considered breaking changes that improve the framework. So we’re continuing to gently evolve the API. These are the breaking changes in this release.
 
 * [#42100](https://github.com/flutter/flutter/pull/42100) [Run secondary animation of previous route when using pushReplacement(…](https://groups.google.com/g/flutter-announce/c/y0SvesRHlcE/m/39TuR5FVDQAJ)
 
@@ -170,4 +170,4 @@ As always, we try to minimize the number of breaking changes with each new relea
 
 ## Conclusion
 
-As our mobile support continues to mature while we bring the [web closer to production quality](https://medium.com/flutter/flutter-web-support-updates-8b14bfe6a908), Flutter brings with it the promise of solving a problem that our industry has wrestled with for decades: how can you build great apps from a single source code base across multiple platforms? With all of the power and capability that Flutter provides, we think we’re on a good path to answer that question. What are you going to build?
+As our mobile support continues to mature while we bring the [web closer to production quality](https://flutter.dev/blog/flutter-web-support-updates), Flutter brings with it the promise of solving a problem that our industry has wrestled with for decades: how can you build great apps from a single source code base across multiple platforms? With all of the power and capability that Flutter provides, we think we’re on a good path to answer that question. What are you going to build?

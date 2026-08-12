@@ -137,7 +137,7 @@ The API allows for full control over render pass attachments, the vertex stage, 
 
 Developers can start using Flutter GPU by switching to the main channel and adding the flutter_gpu package to their projects. The upcoming months will see more functionality and stability improvements, with higher-level rendering libraries like flutter_scene simplifying the use of these advanced features.
 
-For a deeper dive into Flutter GPU and to see how you can leverage it in your projects, check out the detailed [Flutter GPU blog post](https://medium.com/flutter/getting-started-with-flutter-gpu-f33d497b7c11). Whether you’re creating games or complex graphics, Flutter’s new GPU capabilities make it a robust choice for your product.
+For a deeper dive into Flutter GPU and to see how you can leverage it in your projects, check out the detailed [Flutter GPU blog post](https://flutter.dev/blog/getting-started-with-flutter-gpu). Whether you’re creating games or complex graphics, Flutter’s new GPU capabilities make it a robust choice for your product.
 
 ## Web
 

@@ -1310,7 +1310,7 @@ If you prefer, you can grab the code from
 
 The examples are explained in the following sections.
 
-[this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
+[this GitHub repo]: https://github.com/marcglasberg/flutter_layout_article
 
 ### Example 1
 
@@ -2193,10 +2193,10 @@ You can find Marcelo on [GitHub][] and [pub.dev][].
 Also, thanks to [Simon Lightfoot][] for creating the
 header image at the top of the article.
 
-[article]: {{site.medium}}/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
-[GitHub]: {{site.github}}/marcglasberg
+[article]: https://medium.com/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
+[GitHub]: https://github.com/marcglasberg
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
-[Simon Lightfoot]: {{site.github}}/slightfoot
+[Simon Lightfoot]: https://github.com/slightfoot
 
 :::note
 To better understand how Flutter implements layout

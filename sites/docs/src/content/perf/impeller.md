@@ -165,8 +165,8 @@ submitting an issue for Impeller:
   Zip the file and attach it to the GitHub issue.
 
 [export of the performance trace]:/tools/devtools/performance#import-and-export
-[file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
-[Impeller project board]: {{site.github}}/orgs/flutter/projects/21
+[file-issue]: {{site.repo.flutter}}/issues/new/choose
+[Impeller project board]: https://github.com/orgs/flutter/projects/21
 
 ## Architecture
 

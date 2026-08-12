@@ -83,7 +83,7 @@ class MyHomePage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             Text(
-              'This Flutter application might be within an iFrame within a Medium post. \n',
+              'This Flutter application might be within an iFrame within a Flutter blog post. \n',
               textAlign: TextAlign.center,
             ),
           ],
