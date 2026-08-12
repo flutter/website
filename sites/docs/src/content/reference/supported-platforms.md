@@ -35,24 +35,27 @@ Flutter supports deploying to the following platforms.
     name="iOS"
     icon="mobile"
     arch="Arm64"
-    supported="13 to 26"
-    ci-tested="18"
-    unsupported="12 and earlier"
+    supported="15 to 26"
+    ci-tested="18 and 26"
+    unsupported="14 and earlier"
     deploy-to-link="/deployment/ios"
   />
 </PlatformsGrid>
 
 ## Desktop platforms
 
-:::warning
-**macOS Intel (x64) Deprecation:**
+:::warning macOS Intel (x64) deprecation
 As Apple phases out Intel-based Macs,
 Flutter is phasing out support for Intel (x64) hardware.
 For details on the timeline and impact,
-check out the [macOS Intel deprecation strategy](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+check out the [macOS Intel deprecation strategy][].
 
-If you cannot migrate to an Apple Silicon Mac,
-you can continue using older Flutter releases from the [SDK archive](/install/archive).
+If you can't migrate to an [Apple Silicon Mac][],
+you can continue using older Flutter releases from the [SDK archive][].
+
+[macOS Intel deprecation strategy]: {{site.main-url}}/go/macos-intel-deprecation
+[Apple Silicon Mac]: https://support.apple.com/en-us/116943
+[SDK archive]: /install/archive
 :::
 
 <PlatformsGrid>
@@ -69,9 +72,9 @@ you can continue using older Flutter releases from the [SDK archive](/install/ar
     name="macOS"
     icon="laptop_mac"
     arch="x64, Arm64"
-    supported="Catalina (10.15) to Tahoe (26)"
+    supported="Monterey (12) to Tahoe (26)"
     ci-tested="Sequoia (15)"
-    unsupported="Mojave (10.14) and earlier"
+    unsupported="Big Sur (11) and earlier"
     deploy-to-link="/deployment/macos"
   />
   <PlatformCard
