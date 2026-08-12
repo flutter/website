@@ -93,8 +93,7 @@ class MonetizationPage extends StatelessComponent {
                       div(classes: 'a-wrapper', [
                         a(
                           classes: 'btn',
-                          href:
-                              'https://docs.flutter.dev/cookbook/plugins/google-mobile-ads',
+                          href: 'https://docs.flutter.dev/cookbook/plugins/google-mobile-ads',
                           [.text('Get started')],
                         ),
                       ]),
@@ -155,8 +154,7 @@ class MonetizationPage extends StatelessComponent {
                       div(classes: 'a-wrapper', [
                         a(
                           classes: 'btn',
-                          href:
-                              'https://adsense.google.com/start/h5-beta/?src=flutter',
+                          href: 'https://adsense.google.com/start/h5-beta/?src=flutter',
                           [.text('Apply for beta')],
                         ),
                       ]),
@@ -177,33 +175,27 @@ class MonetizationPage extends StatelessComponent {
             items: [
               FeatureGridItem(
                 title: 'Watch the video',
-                description:
-                    'Learn about monetization strategies for apps built with Flutter to turn a successful app into a successful business.',
+                description: 'Learn about monetization strategies for apps built with Flutter to turn a successful app into a successful business.',
                 icon: context.asset('images/icons/watch-the-video.svg'),
                 url: 'https://www.youtube.com/watch?v=m0d_pbgeeG8',
               ),
               FeatureGridItem(
                 title: 'Get started in docs',
-                description:
-                    'Documentation and tutorials for getting started with Google Mobile Ads in Flutter.',
+                description: 'Documentation and tutorials for getting started with Google Mobile Ads in Flutter.',
                 icon: context.asset('images/icons/get-started-in-docs.svg'),
                 url: 'https://developers.google.com/admob/flutter/quick-start',
               ),
               FeatureGridItem(
                 title: 'Flutter ads codelab 1',
-                description:
-                    'Learn how to implement inline banner and native ads in this codelab.',
+                description: 'Learn how to implement inline banner and native ads in this codelab.',
                 icon: context.asset('images/icons/flutter-ads-codelab-2.svg'),
-                url:
-                    'https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter#0',
+                url: 'https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter#0',
               ),
               FeatureGridItem(
                 title: 'Flutter ads codelab 2',
-                description:
-                    'Learn how to implement banner, interstitial, and rewarded video ads in this codelab.',
+                description: 'Learn how to implement banner, interstitial, and rewarded video ads in this codelab.',
                 icon: context.asset('images/icons/flutter-ads-codelab-2.svg'),
-                url:
-                    'https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter#0',
+                url: 'https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter#0',
               ),
             ],
           ),
@@ -253,24 +245,20 @@ class MonetizationPage extends StatelessComponent {
             items: [
               FeatureGridItem(
                 title: 'See the sample',
-                description:
-                    'Start with an example for integrating in-app purchases in your Flutter app.',
+                description: 'Start with an example for integrating in-app purchases in your Flutter app.',
                 icon: context.asset('images/icons/see-the-sample.svg'),
-                url:
-                    'https://github.com/flutter/packages/blob/main/packages/in_app_purchase/in_app_purchase/example/README.md',
+                url: 'https://github.com/flutter/packages/blob/main/packages/in_app_purchase/in_app_purchase/example/README.md',
               ),
               FeatureGridItem(
                 title: 'Codelab',
                 description:
                     'Learn how to add in-app purchases to your Flutter app.',
                 icon: context.asset('images/icons/codelab.svg'),
-                url:
-                    'https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0',
+                url: 'https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0',
               ),
               FeatureGridItem(
                 title: 'Get started in docs',
-                description:
-                    'Documentation and tutorials for getting started with in-app purchases in Flutter.',
+                description: 'Documentation and tutorials for getting started with in-app purchases in Flutter.',
                 icon: context.asset('images/icons/get-started-in-docs.svg'),
                 url: 'https://pub.dev/documentation/in_app_purchase/latest/',
               ),
@@ -278,8 +266,7 @@ class MonetizationPage extends StatelessComponent {
                 title: 'See the code',
                 description: 'Dive into the open source plugin on GitHub.',
                 icon: context.asset('images/icons/see-the-code.svg'),
-                url:
-                    'https://github.com/flutter/packages/blob/main/packages/in_app_purchase/in_app_purchase',
+                url: 'https://github.com/flutter/packages/blob/main/packages/in_app_purchase/in_app_purchase',
               ),
             ],
           ),

@@ -147,142 +147,146 @@ class HomePage extends StatelessComponent {
   }
 
   Component _buildTabs(BuildContext context) {
-    return section(id: 'tabs', classes: 'module', attributes: scroll.spy(-300), [
-      Tabs(
-        header: ref(
-          const h2([
-            .text(
-              'Flutter is an open-source framework for building beautiful, natively compiled, multi-platform applications from a single codebase.',
+    return section(
+      id: 'tabs',
+      classes: 'module',
+      attributes: scroll.spy(-300),
+      [
+        Tabs(
+          header: ref(
+            const h2([
+              .text(
+                'Flutter is an open-source framework for building beautiful, natively compiled, multi-platform applications from a single codebase.',
+              ),
+            ]),
+          ),
+          tabs: [
+            Tab(
+              label: 'Fast',
+              content: ref(
+                .fragment([
+                  div(classes: 'media', [
+                    video(
+                      attributes: {
+                        'muted': '',
+                        'autoplay': '',
+                        'loop': '',
+                        'playsinline': '',
+                        'src': context.asset('home/images/feature-fast.mp4'),
+                        'type': 'video/mp4',
+                      },
+                      [
+                        img(
+                          src: context.asset('home/images/fast.png'),
+                          alt: 'Fast',
+                        ),
+                      ],
+                    ),
+                  ]),
+                  const div(classes: 'text', [
+                    h3(classes: 'text-green', [.text('Fast')]),
+                    p([
+                      .text(
+                        'Flutter code compiles to ARM or Intel machine code as well as JavaScript, for fast performance on any device.',
+                      ),
+                    ]),
+                    a(
+                      classes: 'btn',
+                      href: 'https://dartpad.dev/?id=e66e420f2f0201c772f73819711bf290',
+                      attributes: {'target': '_blank'},
+                      [.text('Try it in DartPad')],
+                    ),
+                  ]),
+                ]),
+              ),
             ),
-          ]),
+            Tab(
+              label: 'Productive',
+              content: ref(
+                .fragment([
+                  div(classes: 'media', [
+                    video(
+                      attributes: {
+                        'muted': '',
+                        'autoplay': '',
+                        'loop': '',
+                        'playsinline': '',
+                        'src': context.asset(
+                          'home/images/feature-productive.mp4',
+                        ),
+                        'type': 'video/mp4',
+                      },
+                      [
+                        img(
+                          src: context.asset('home/images/productive.png'),
+                          alt: 'Productive',
+                        ),
+                      ],
+                    ),
+                  ]),
+                  const div(classes: 'text', [
+                    h3(classes: 'text-violet', [.text('Productive')]),
+                    p([
+                      .text(
+                        'Build and iterate quickly with Hot Reload. '
+                        'Update code and see changes almost instantly, without losing state.',
+                      ),
+                    ]),
+                    a(
+                      classes: 'btn',
+                      href: 'https://dartpad.dev/?id=bbd3f10c2593f0add04dd770318b33f7',
+                      attributes: {'target': '_blank'},
+                      [.text('Try it in DartPad')],
+                    ),
+                  ]),
+                ]),
+              ),
+            ),
+            Tab(
+              label: 'Flexible',
+              content: ref(
+                .fragment([
+                  div(classes: 'media', [
+                    video(
+                      attributes: {
+                        'muted': '',
+                        'autoplay': '',
+                        'loop': '',
+                        'playsinline': '',
+                        'src': context.asset(
+                          'home/images/feature-flexible.mp4',
+                        ),
+                        'type': 'video/mp4',
+                      },
+                      [
+                        img(
+                          src: context.asset('home/images/flexible.png'),
+                          alt: 'Flexible',
+                        ),
+                      ],
+                    ),
+                  ]),
+                  const div(classes: 'text', [
+                    h3(classes: 'text-coral', [.text('Flexible')]),
+                    p([
+                      .text(
+                        'Control every pixel to create customized, adaptive designs that look and feel great on any screen.',
+                      ),
+                    ]),
+                    a(
+                      classes: 'btn',
+                      href: 'https://dartpad.dev/?id=1ab1b78a18039bbbd5cfbb4b835b5b8d',
+                      attributes: {'target': '_blank'},
+                      [.text('Try it in DartPad')],
+                    ),
+                  ]),
+                ]),
+              ),
+            ),
+          ],
         ),
-        tabs: [
-          Tab(
-            label: 'Fast',
-            content: ref(
-              .fragment([
-                div(classes: 'media', [
-                  video(
-                    attributes: {
-                      'muted': '',
-                      'autoplay': '',
-                      'loop': '',
-                      'playsinline': '',
-                      'src': context.asset('home/images/feature-fast.mp4'),
-                      'type': 'video/mp4',
-                    },
-                    [
-                      img(
-                        src: context.asset('home/images/fast.png'),
-                        alt: 'Fast',
-                      ),
-                    ],
-                  ),
-                ]),
-                const div(classes: 'text', [
-                  h3(classes: 'text-green', [.text('Fast')]),
-                  p([
-                    .text(
-                      'Flutter code compiles to ARM or Intel machine code as well as JavaScript, for fast performance on any device.',
-                    ),
-                  ]),
-                  a(
-                    classes: 'btn',
-                    href:
-                        'https://dartpad.dev/?id=e66e420f2f0201c772f73819711bf290',
-                    attributes: {'target': '_blank'},
-                    [.text('Try it in DartPad')],
-                  ),
-                ]),
-              ]),
-            ),
-          ),
-          Tab(
-            label: 'Productive',
-            content: ref(
-              .fragment([
-                div(classes: 'media', [
-                  video(
-                    attributes: {
-                      'muted': '',
-                      'autoplay': '',
-                      'loop': '',
-                      'playsinline': '',
-                      'src': context.asset(
-                        'home/images/feature-productive.mp4',
-                      ),
-                      'type': 'video/mp4',
-                    },
-                    [
-                      img(
-                        src: context.asset('home/images/productive.png'),
-                        alt: 'Productive',
-                      ),
-                    ],
-                  ),
-                ]),
-                const div(classes: 'text', [
-                  h3(classes: 'text-violet', [.text('Productive')]),
-                  p([
-                    .text(
-                      'Build and iterate quickly with Hot Reload. '
-                      'Update code and see changes almost instantly, without losing state.',
-                    ),
-                  ]),
-                  a(
-                    classes: 'btn',
-                    href:
-                        'https://dartpad.dev/?id=bbd3f10c2593f0add04dd770318b33f7',
-                    attributes: {'target': '_blank'},
-                    [.text('Try it in DartPad')],
-                  ),
-                ]),
-              ]),
-            ),
-          ),
-          Tab(
-            label: 'Flexible',
-            content: ref(
-              .fragment([
-                div(classes: 'media', [
-                  video(
-                    attributes: {
-                      'muted': '',
-                      'autoplay': '',
-                      'loop': '',
-                      'playsinline': '',
-                      'src': context.asset('home/images/feature-flexible.mp4'),
-                      'type': 'video/mp4',
-                    },
-                    [
-                      img(
-                        src: context.asset('home/images/flexible.png'),
-                        alt: 'Flexible',
-                      ),
-                    ],
-                  ),
-                ]),
-                const div(classes: 'text', [
-                  h3(classes: 'text-coral', [.text('Flexible')]),
-                  p([
-                    .text(
-                      'Control every pixel to create customized, adaptive designs that look and feel great on any screen.',
-                    ),
-                  ]),
-                  a(
-                    classes: 'btn',
-                    href:
-                        'https://dartpad.dev/?id=1ab1b78a18039bbbd5cfbb4b835b5b8d',
-                    attributes: {'target': '_blank'},
-                    [.text('Try it in DartPad')],
-                  ),
-                ]),
-              ]),
-            ),
-          ),
-        ],
-      ),
-    ]);
+      ],
+    );
   }
 
   Component _buildFeatured(BuildContext context) {
@@ -292,8 +296,7 @@ class HomePage extends StatelessComponent {
           eyebrow: 'Development',
           eyebrowClass: 'text-blue',
           title: 'Reach users on every screen',
-          description:
-              'Deploy to multiple devices from a single codebase: mobile, web, desktop, and embedded devices.',
+          description: 'Deploy to multiple devices from a single codebase: mobile, web, desktop, and embedded devices.',
           actions: const [
             FeatureAction(
               label: 'See the target platforms',
@@ -310,8 +313,7 @@ class HomePage extends StatelessComponent {
           eyebrow: 'Developer experience',
           eyebrowClass: 'text-green',
           title: 'Transform your workflow',
-          description:
-              'Take control of your codebase with automated testing, developer tooling, and everything else you need to build production-quality apps.',
+          description: 'Take control of your codebase with automated testing, developer tooling, and everything else you need to build production-quality apps.',
           actions: const [
             FeatureAction(label: 'Flutter for developers', url: '/development'),
           ],
@@ -329,8 +331,7 @@ class HomePage extends StatelessComponent {
           eyebrow: 'Stable & reliable',
           eyebrowClass: 'text-coral',
           title: 'Trusted by many',
-          description:
-              'Flutter is supported and used by Google, trusted by well-known brands around the world, and maintained by a community of global developers.',
+          description: 'Flutter is supported and used by Google, trusted by well-known brands around the world, and maintained by a community of global developers.',
           actions: const [
             FeatureAction(label: 'Explore the ecosystem', url: '/ecosystem'),
           ],
@@ -347,8 +348,7 @@ class HomePage extends StatelessComponent {
           eyebrow: 'Flutter and Google',
           eyebrowClass: 'text-violet',
           title: 'Seamless integration with Google services',
-          description:
-              'Connect to Google\'s app development ecosystem, allowing you to streamline development and reach a wider audience through seamless integration with Firebase, Google Ads, Google Play, Google Pay, Google Wallet, Google Maps, and more.',
+          description: 'Connect to Google\'s app development ecosystem, allowing you to streamline development and reach a wider audience through seamless integration with Firebase, Google Ads, Google Play, Google Pay, Google Wallet, Google Maps, and more.',
           actions: const [
             FeatureAction(
               label: 'Explore Google integrations',
