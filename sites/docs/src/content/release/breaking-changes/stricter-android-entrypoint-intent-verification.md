@@ -1,6 +1,6 @@
 ---
 title: Stricter Android `Intent` Verification for App Entrypoints
-description: >
+description: >-
   Android `Intent` extras for routing, entrypoints, and cached engines
   are now strictly verified.
 ---
@@ -57,7 +57,7 @@ This exposed applications to security vulnerabilities, including:
    (via `EXTRA_CACHED_ENGINE_ID` and `EXTRA_CACHED_ENGINE_GROUP_ID`)
    to access user-restricted states.
 
-To mitigate these issues, we introduced a strict verification check using
+To mitigate these issues, Flutter introduced a strict verification check using
 Android's `getLaunchedFromUid()` (on Android 14+)
 and `getCallingPackage()` (on Android 13 and below).
 
@@ -99,7 +99,7 @@ will no longer have an effect in release builds.
 * **Internal Cached Engine & Entrypoint Launches:**
   If an application launches a pre-warmed cached engine
   or custom entrypoint dynamically from its own native code
-  (e.g. from a background [`Service`][] or [`BroadcastReceiver`][]
+  (for example, from a background [`Service`][] or [`BroadcastReceiver`][]
   using standard `startActivity(intent)`),
   it will fail to resolve the cached engine or entrypoint parameters
   on Android 13 and below if the target activity is exported.
@@ -111,7 +111,7 @@ You are **NOT affected** and do not need to migrate
 if **ANY** of the following are true:
 - **You do not use custom intent extras:** You only use the default
   entrypoint (`main()`) and route (`/`), and do not launch cached engines
-  (i.e., you never pass `route`, `dart_entrypoint`, `dart_entrypoint_args`,
+  (that is, you never pass `route`, `dart_entrypoint`, `dart_entrypoint_args`,
   `cached_engine_id`, or `cached_engine_group_id` as `Intent` extras).
 - **Your activity is internal:** Your target `FlutterActivity` or
   `FlutterFragmentActivity` is non-exported (`android:exported="false"`).
@@ -123,7 +123,7 @@ Depending on your application's use case,
 you should migrate using one of the following methods:
 
 ### For Push Notifications, App Shortcuts, and Home Screen Widgets
-We recommend migrating to use standard [deep links][]
+Migrate to standard [deep links][]
 instead of `Intent` extras.
 
 **Before (Insecure):**
@@ -219,7 +219,7 @@ In your `AndroidManifest.xml`:
 
 #### Option 4: Subclass and programmatically define parameters
 For dynamic configurations that cannot use `startActivityForResult`
-(e.g. launches from background `Services` or `BroadcastReceivers`),
+(for example, launches from background `Services` or `BroadcastReceivers`),
 you can subclass `FlutterActivity` or `FlutterFragmentActivity`
 and programmatically supply the parameters:
 
