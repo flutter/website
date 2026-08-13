@@ -61,7 +61,6 @@ which includes links to migration guides and other vital information.
 
 [3.47-blog-post]: /blog/whats-new-in-flutter-3-47
 [widget-previewer]: /tools/widget-previewer
-[antigravity]: /ai/antigravity
 [antigravity-cli]: /ai/antigravity-cli
 [ai-evals]: /ai/evals
 [dependency-mgmt]: /packages-and-plugins/dependency-management
