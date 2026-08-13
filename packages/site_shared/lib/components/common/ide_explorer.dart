@@ -8,7 +8,6 @@ import 'package:jaspr_content/components/file_icon.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../src/markdown/markdown_parser.dart';
-import '../../src/utils/slugify.dart';
 import '../../util.dart';
 import 'material_icon.dart';
 
@@ -32,7 +31,7 @@ class IdeExplorerProjectRoot {
   factory IdeExplorerProjectRoot.fromMap(Map<Object?, Object?> map) {
     if (map case {
       'id': final String id,
-      'lable': final String label,
+      'label': final String label,
       'children': final List<Map<Object?, Object?>> children,
     }) {
       final treeNodes = children.map(IdeTreeNode.fromMap).toList();
@@ -43,7 +42,7 @@ class IdeExplorerProjectRoot {
       );
     }
 
-    throw Exception('Malformed IdeExplorerProjectRoot data, failed to create');
+    throw Exception('Malformed IdeExplorerProjectRoot data');
   }
 }
 
@@ -52,59 +51,70 @@ class IdeTreeNode {
   const IdeTreeNode({
     required this.id,
     required this.label,
-    bool? isFolder,
     this.startsClosed = false,
     this.badge,
     this.subtitle,
     this.note,
-    this.noteTitle,
+    this.title,
     this.children = const [],
-  }) : _explicitIsFolder = isFolder;
+  });
 
   final String id;
   final String label;
-  final bool? _explicitIsFolder;
   final bool startsClosed;
   final IdeBadge? badge;
+  final String? title;
   final String? subtitle;
   final String? note;
-  final String? noteTitle;
   final List<IdeTreeNode> children;
 
-  bool get isFolder =>
-      _explicitIsFolder ?? (children.isNotEmpty || label.endsWith('/'));
+  bool get isFolder => children.isNotEmpty || label.endsWith('/');
 
   factory IdeTreeNode.fromMap(Map<Object?, Object?> map) {
-    final id = map['id']?.toString() ?? '';
-    final label = map['label']?.toString() ?? '';
-    final type = map['type']?.toString();
-    final isFolder = type != null ? type == 'folder' : null;
-    final startsClosed = map['closed'] == true;
-    final badge = map['badge'] != null ? IdeBadge.from(map['badge']) : null;
-    final subtitle = map['subtitle']?.toString();
-    final note = map['note']?.toString();
-    final noteTitle = map['noteTitle']?.toString();
-    final rawChildren = map['children'];
-    final children = switch (rawChildren) {
-      final List<Object?> list =>
-        list
-            .whereType<Map<Object?, Object?>>()
-            .map(IdeTreeNode.fromMap)
-            .toList(growable: false),
-      _ => const <IdeTreeNode>[],
-    };
+    switch (map) {
+      // explicit case to handle folder
+      case {
+            'id': final String id,
+            'label': final String label,
+            'children': final List<Map<Object?, Object?>> children,
+          }
+          when children.isNotEmpty || label.endsWith('/'):
+        final treeNodes = children.map(IdeTreeNode.fromMap).toList();
+        final startsClosed =
+            map.containsKey('startsClosed') && map['startsClosed'] == true;
+        // TODO: this doesn't allow for tone
+        final badge = IdeBadge.from(map['badge']);
 
-    return IdeTreeNode(
-      id: id,
-      label: label,
-      isFolder: isFolder,
-      startsClosed: startsClosed,
-      badge: badge,
-      subtitle: subtitle,
-      note: note,
-      noteTitle: noteTitle,
-      children: children,
-    );
+        return IdeTreeNode(
+          id: id,
+          label: label,
+          startsClosed: startsClosed,
+          badge: badge,
+          title: map['title']?.toString(),
+          subtitle: map['subtitle']?.toString(),
+          note: map['note']?.toString(),
+          children: treeNodes,
+        );
+      // explicit case to handle files
+      case {
+            'id': final String id,
+            'label': final String label,
+            // Files shouldn't be empty, that's bad UX
+          }
+          when map.containsKey('note'):
+        // TODO: this doesn't allow for tone
+        final badge = IdeBadge.from(map['badge']);
+        return IdeTreeNode(
+          id: id,
+          label: label,
+          badge: badge,
+          title: map['title']?.toString() ?? label,
+          subtitle: map['subtitle']?.toString() ?? '',
+          note: map['note']!.toString(),
+        );
+      default:
+        throw Exception('Malformed IdeTreeNode data');
+    }
   }
 }
 
@@ -423,7 +433,7 @@ class IdeExplorer extends StatelessComponent {
         else ...[
           if (node.note case final note?)
             div(classes: 'ide-note', [
-              if (node.noteTitle case final title?)
+              if (node.title case final title?)
                 div(classes: 'ide-note-title', [.text(title)]),
               DashMarkdown(content: note, inline: true),
             ]),
@@ -652,7 +662,7 @@ class DashIdeExplorer extends CustomComponent {
         IdeTreeNode(
           id: id,
           label: label,
-          isFolder: isFolder,
+
           startsClosed: startsClosed,
           badge: badge,
           subtitle: subtitle,
