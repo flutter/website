@@ -81,8 +81,7 @@ class ShareButton extends StatelessComponent {
                   Component.element(
                     tag: 'use',
                     attributes: {
-                      'href':
-                          '/packages/site_shared/assets/social/bluesky.svg#bluesky',
+                      'href': '/packages/site_shared/assets/social/bluesky.svg#bluesky',
                     },
                   ),
                 ]),
@@ -100,8 +99,7 @@ class ShareButton extends StatelessComponent {
                   Component.element(
                     tag: 'use',
                     attributes: {
-                      'href':
-                          '/packages/site_shared/assets/social/linkedin.svg#linkedin',
+                      'href': '/packages/site_shared/assets/social/linkedin.svg#linkedin',
                     },
                   ),
                 ]),

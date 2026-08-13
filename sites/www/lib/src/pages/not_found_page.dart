@@ -56,8 +56,7 @@ class NotFoundPage extends StatelessComponent {
                   ]),
                   li([
                     a(
-                      href:
-                          'https://docs.flutter.dev/reference/learning-resources',
+                      href: 'https://docs.flutter.dev/reference/learning-resources',
                       target: Target.blank,
                       [.text('Learning resources')],
                     ),

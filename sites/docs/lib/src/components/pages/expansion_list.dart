@@ -140,8 +140,7 @@ class _ExpansionListState extends State<ExpansionList> {
                     )
                   else
                     const img(
-                      src:
-                          '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
+                      src: '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
                       alt: 'An icon showing a generic application.',
                     ),
                 ]),

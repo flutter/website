@@ -24,8 +24,7 @@ class FlipPage extends StatelessComponent {
           div(classes: 'embed-container', [
             iframe(
               src: 'https://www.youtube.com/embed/ZKp6TQCW2qQ',
-              allow:
-                  'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture',
+              allow: 'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture',
               attributes: {'allowfullscreen': '', 'frameborder': '0'},
               [],
             ),
@@ -80,8 +79,7 @@ class FlipPage extends StatelessComponent {
                             ]),
                             a(
                               classes: 'btn',
-                              href:
-                                  'https://developers.googleblog.com/2023/05/how-its-made-io-flip-adds-twist-to.html',
+                              href: 'https://developers.googleblog.com/2023/05/how-its-made-io-flip-adds-twist-to.html',
                               target: Target.blank,
                               [.text('Learn more')],
                             ),

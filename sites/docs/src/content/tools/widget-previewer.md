@@ -5,38 +5,32 @@ description: >-
   widgets render in real-time, separate from your full app.
 ---
 
+:::version-note
+The Flutter Widget Previewer is stable as of Flutter 3.47.
+:::
+
 In this guide, you will learn how to use the
 Flutter Widget Previewer.
 
 ## Overview
 
-With the Flutter Widget Previewer, you can see your widgets
-render in real-time, separate from a full app, in the
-Chrome browser. To start the previewer, show a widget
-in it, and customize a preview, see the following sections.
+With the Flutter Widget Previewer, you can instantly render, inspect,
+and iterate on individual UI components in real-time,
+separate from a full app, in your IDE or browser.
 
-:::version-note
-The Flutter Widget Preview requires Flutter version 3.35 or
-higher. IDE support requires Flutter version 3.38 or higher.
-
-Please be aware that this is an **experimental feature**
-available in the Flutter stable channel. The APIs are not
-stable and _will change_. This guide is for the current
-early access version, and you should expect future updates
-to introduce breaking changes.
-:::
+The following sections explain how to open the previewer, preview your
+widgets, search and filter previews, and customize preview configurations.
 
 ## Opening the previewer
 
 ### IDEs
 
-As of Flutter 3.38, Android Studio, Intellij, and Visual
-Studio Code automatically start the Flutter Widget Previewer
-on launch.
+Android Studio, IntelliJ, and Visual Studio Code automatically
+start the Flutter Widget Previewer on launch.
 
-#### Android Studio and Intellij
+#### Android Studio and IntelliJ
 
-To open the Widget Previewer in Android Studio or Intellij, open
+To open the Widget Previewer in Android Studio or IntelliJ, open
 the "Flutter Widget Preview" tab in the sidebar:
 
 ![Flutter Widget Previewer in Android Studio](/assets/images/docs/tools/widget-previewer/android-studio.png "Android Studio")
@@ -50,15 +44,18 @@ To open the Widget Previewer in Visual Studio Code, open the
 
 ### Command line
 
-To start the Flutter Widget Previewer, navigate to your
-Flutter project's root directory and run the following
-command in your terminal. This will launch a local server
-and open a Widget Preview environment in Chrome that
-automatically updates based on changes to your project.
+To start the Flutter Widget Previewer from your terminal, navigate to your
+Flutter project's root directory and run the following command:
 
 ```shell
 flutter widget-preview start
 ```
+
+This launches a local server and opens a real-time preview environment
+in your browser.
+
+To optimize startup times, the previewer automatically caches project builds
+in a `.widget_preview/` folder in your project root.
 
 ## Preview a widget
 
@@ -108,20 +105,46 @@ interacting with the previewed widget. From left to right:
   restarting the entire application.
 
 For the case where global state has been modified
-(for example, a static initializer has been changed), the
-entire widget previewer can be told to hot restart using the
+(for example, a static initializer has been changed), you
+can hot restart the entire widget previewer using the
 button at the bottom right of the environment.
 
-### Filter previews by selected file
+## Search and filter previews
 
-When viewing previews within an IDE, the widget previewer is
-configured to filter the set of previews based on the currently
-selected file:
+The Widget Previewer environment includes search and filtering
+capabilities to help navigate projects with many annotated previews.
 
-![Filter by previews selected file in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/filter-by-file.gif "Filter previews by selected file")
+### Search bar and filtering criteria
 
-To disable this behavior, toggle the "Filter previews by selected file"
-option at the bottom left of the environment.
+Use the search bar at the top of the environment to filter previews
+in real-time. Click the filter dropdown next to the search field to choose
+which criteria to match against:
+
+- **Preview name**: Filters by the descriptive name set in the
+  [`@Preview`][] annotation.
+- **Group name**: Filters by the group name specified in the
+  `@Preview(group: ...)` parameter.
+- **Containing script**: Filters by the URI of the Dart file containing the
+  preview.
+- **Containing package**: Filters by the package name containing the preview.
+
+For example, the parameters in the following preview annotation match against
+the **Preview name** (`'Submit Button'`) and **Group name** (`'Form Controls'`) filters:
+
+```dart
+@Preview(name: 'Submit Button', group: 'Form Controls')
+Widget submitButtonPreview() => const SubmitButton();
+```
+
+### Filter previews by selected file in IDEs
+
+When viewing previews within an IDE, the widget previewer can also filter
+previews based on the currently selected file:
+
+![Filter previews by selected file in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/filter-by-file.gif "Filter previews by selected file")
+
+To toggle this behavior, select the **Filter previews by selected file**
+option at the bottom of the environment.
 
 ## Customize a preview
 
@@ -143,8 +166,9 @@ use to customize the preview:
   application state into the widget tree with an
   `InheritedWidget`).
 
-- **`theme`**: A function to provide Material and
-  Cupertino theming data.
+- **`theme`**: A function returning a `PreviewThemeData` instance
+  to provide custom and generic theming data with sequential theme layering
+  support for complex matrix testing.
 
 - **`brightness`**: The initial theme brightness.
 
@@ -210,14 +234,14 @@ final class TransformativePreview extends Preview {
   @override
   Preview transform() {
     final originalPreview = super.transform();
-    // Create's a PreviewBuilder that can be used to modify
+    // Creates a PreviewBuilder that can be used to modify
     // the preview contents.
     final builder = originalPreview.toBuilder();
     builder
       ..name = 'Transformed - ${originalPreview.name}'
       ..theme = _themeBuilder;
 
-    // Return the updated Preview instance.
+    // Returns the updated Preview instance.
     return builder.toPreview();
   }
 }
@@ -246,7 +270,7 @@ Widget buttonPreview() => const ButtonShowcase();
 ![Multiple previews in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/multi-preview.png "Multiple preview example")
 
 To simplify creating multiple previews with common configurations, you
-can extend the [`MultiPreview`][] to create a custom annotation that creates
+can extend the [`MultiPreview`][] to define a custom annotation that creates
 multiple previews. The following [`MultiPreview`][] creates
 the same two previews as the previous example:
 
@@ -325,10 +349,8 @@ should be aware of:
   the `dart:io` or `dart:ffi` libraries are not supported.
   This is because the widget previewer is built with
   Flutter Web, which doesn't have access to the underlying
-  native platform APIs. While web plugins might work when
-  using Chrome, there is no guarantee that they will work
-  within other environments, such as when embedded in
-  IDEs.
+  native platform APIs. While web plugins might work in your
+  browser, there is no guarantee that they will work in your IDE.
 
   Widgets with transitive dependencies on `dart:io` or `dart:ffi` will
   load correctly, but all APIs from these libraries will throw an
@@ -345,6 +367,10 @@ should be aware of:
   and loaded within the previewer's web environment. For
   example, use `'packages/my_package_name/assets/my_image.png'`
   instead of `'assets/my_image.png'`.
+
+  When previewing web widgets, the previewer automatically synchronizes assets
+  from your host project's `web/` directory, applying custom theming or
+  `index.html` customizations.
 
 - **Unconstrained widgets**: Unconstrained widgets are
   automatically constrained to approximately half the
@@ -364,5 +390,4 @@ should be aware of:
 [`MultiPreview`]: {{site.api}}/flutter/widget_previews/MultiPreview-class.html
 [`MultiPreview.transform()`]: {{site.api}}/flutter/widget_previews/MultiPreview/transform.html
 [Dart documentation on conditional imports]: {{site.dart-site}}/tools/pub/create-packages#conditionally-importing-and-exporting-library-files
-[#166431]: https://github.com/flutter/flutter/issues/166431
 [#173550]: https://github.com/flutter/flutter/issues/173550
