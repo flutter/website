@@ -511,16 +511,14 @@ void _setUpIdeExplorer(web.Element explorer) {
     }
 
     // Expand every ancestor folder so the selected item stays visible.
-    final ownDetails = sidebarTarget?.tagName.toLowerCase() == 'summary'
-        ? sidebarTarget!.parentElement
-        : null;
-    var current = sidebarTarget;
+    final ownDetails = sidebarTarget?.closest('details');
+    final isFolderSelf =
+        sidebarTarget?.parentElement?.tagName.toLowerCase() == 'summary';
+    var current = isFolderSelf ? ownDetails?.parentElement : ownDetails;
     while (current != null) {
       final ancestorDetails = current.closest('details');
       if (ancestorDetails == null) break;
-      if (ancestorDetails != ownDetails) {
-        (ancestorDetails as web.HTMLDetailsElement).open = true;
-      }
+      (ancestorDetails as web.HTMLDetailsElement).open = true;
       current = ancestorDetails.parentElement;
     }
   }
@@ -580,26 +578,7 @@ void _setUpIdeExplorer(web.Element explorer) {
     if (selectTarget != null) {
       final domId = selectTarget.getAttribute('data-ide-select');
       if (domId != null) selectIdeNode(domId);
-      
-      if (selectTarget.tagName.toLowerCase() == 'summary') {
-        var isClickOnArrow = false;
-        if (target == selectTarget) {
-          final mouseEvent = event as web.MouseEvent;
-          final rect = selectTarget.getBoundingClientRect();
-          final clickX = mouseEvent.clientX - rect.left;
-          // The arrow marker is rendered using a ::before pseudo-element
-          // on the left side of the summary element. The total width of the
-          // padding and arrow is around 20-30px.
-          // TODO: this can't possibly be the right way to do this.
-          if (clickX < 30) {
-            isClickOnArrow = true;
-          }
-        }
-
-        if (!isClickOnArrow) {
-          event.preventDefault();
-        }
-      }
+      event.preventDefault();
       return;
     }
 

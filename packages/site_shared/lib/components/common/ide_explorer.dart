@@ -145,10 +145,10 @@ enum IdeBadgeColor {
     if (data == null) return IdeBadgeColor.neutral;
     return switch (data.toLowerCase()) {
       'info' => IdeBadgeColor.info,
-      'tip' || 'success' => IdeBadgeColor.tip,
+      'tip' => IdeBadgeColor.tip,
       'important' => IdeBadgeColor.important,
       'warning' => IdeBadgeColor.warning,
-      'error' || 'danger' => IdeBadgeColor.error,
+      'error' => IdeBadgeColor.error,
       _ => IdeBadgeColor.neutral,
     };
   }
@@ -357,17 +357,28 @@ class IdeExplorer extends StatelessComponent {
         open: !node.startsClosed,
         [
           summary(
-            classes: isSelected ? 'active' : null,
-            attributes: {
-              'data-ide-select': domId,
-              if (isSelected) 'aria-current': 'true',
-            },
+            classes: 'ide-folder-summary',
             [
-              icon,
-              span(classes: 'ide-node-label', [.text(node.label)]),
-              _buildBadgeDot(
-                node.badge,
-                node.badgeColor ?? IdeBadgeColor.neutral,
+              const span(
+                classes: 'ide-folder-arrow',
+                attributes: {'aria-hidden': 'true'},
+                [],
+              ),
+              button(
+                classes: ['ide-node-row', if (isSelected) 'active'].toClasses,
+                type: ButtonType.button,
+                attributes: {
+                  'data-ide-select': domId,
+                  if (isSelected) 'aria-current': 'true',
+                },
+                [
+                  icon,
+                  span(classes: 'ide-node-label', [.text(node.label)]),
+                  _buildBadgeDot(
+                    node.badge,
+                    node.badgeColor ?? IdeBadgeColor.neutral,
+                  ),
+                ],
               ),
             ],
           ),

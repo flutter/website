@@ -35,9 +35,8 @@ target artifacts evaluated during grading.
 
 - `artifacts`: Lists files that must be present in the workspace after the
   run.
-- `difficulty_explanation`: Identifies common subtle pitfalls (like fixing only one axis or altering
-  item structures), which inform the grading rubrics.
-- `verifier` and `agent` timeouts: Provides sufficient execution budget for cold compilation and multistep agent tool iterations.
+- `task` definition: Task-related data, like name, author and tags. 
+-  infra and agent configurations, such as timeout limits and retries.
 
 </IdePage>
 
