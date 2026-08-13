@@ -7,17 +7,17 @@ body.home {
     overflow: hidden;
 
     /** PALETTE
-      tl      #9D9AF1  rgba(157, 154, 241, 1)
-      tr      #71C7EE  rgba(113, 199, 238, 1)
-      br      #3282DA  rgba(50,  130, 218, 1)
-      bl      #4D85F4  rgba(77,  133, 244, 1)
-      top     #3680F6  rgba(54,  128, 246, 1)
-      bottom  #1A68D3  rgba(26,  104, 211, 1)
-      center  #1A68D3  rgba(26,  104, 211, 1)
-      shape   #BFC2F4
+      tl      #9d9af1  rgba(157, 154, 241, 1)
+      tr      #71c7ee  rgba(113, 199, 238, 1)
+      br      #3282da  rgba(50,  130, 218, 1)
+      bl      #4d85f4  rgba(77,  133, 244, 1)
+      top     #3680f6  rgba(54,  128, 246, 1)
+      bottom  #1a68d3  rgba(26,  104, 211, 1)
+      center  #1a68d3  rgba(26,  104, 211, 1)
+      shape   #bfc2f4
     */
     background-color: #1a68d3;
-    background-image: 
+    background-image:
       /* Top down */
       /* Blue glow upward from bottom center */ radial-gradient(
         ellipse at bottom,
@@ -48,28 +48,14 @@ body.home {
     --anim-delay-2: 100ms;
     --anim-offset: 400px;
 
-    @keyframes slideup {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-        top: 0;
-      }
-    }
-
     h1 {
       color: white;
       position: relative;
       top: 110px;
       opacity: 0;
       margin-bottom: 80px;
-      animation-duration: var(--anim-dur);
-      animation-delay: var(--anim-delay-2);
-      animation-name: slideup;
-      animation-iteration-count: 1;
-      animation-timing-function: var(--ui-anim-func);
-      animation-fill-mode: forwards;
+      animation: marketing-slide-up var(--anim-dur) var(--ui-anim-func)
+        var(--anim-delay-2) forwards;
     }
 
     h2 {
@@ -119,16 +105,6 @@ body.home {
         }
       }
 
-      @keyframes slideup-center {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-          top: 0;
-        }
-      }
-
       .inner-fixed {
         display: grid;
         grid-template-columns: 1fr var(--center-width) 1fr;
@@ -157,7 +133,7 @@ body.home {
       .col-center {
         animation-duration: var(--anim-dur);
         animation-delay: var(--anim-delay-2);
-        animation-name: slideup-center;
+        animation-name: marketing-slide-up;
         animation-iteration-count: 1;
         animation-timing-function: var(--ui-anim-func);
         animation-fill-mode: forwards;
@@ -171,7 +147,7 @@ body.home {
           height: var(--center-card-height);
           width: 100%;
           border-radius: var(--center-border-radius);
-          box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
         }
       }
 
@@ -242,13 +218,8 @@ body.home {
     }
   }
 
-  #notification {
-    padding-top: var(--gutter);
-    padding-bottom: 0 !important;
-  }
-
   #tabs {
-    padding-bottom: 00px;
+    padding-bottom: 0;
 
     .tabs-header {
       margin-bottom: 50px;

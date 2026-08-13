@@ -31,7 +31,7 @@ class FlipPage extends StatelessComponent {
           ]),
           div(classes: 'hero-details', [
             a(
-              classes: 'btn secondary',
+              classes: 'btn white',
               href: 'https://flip.withgoogle.com',
               target: Target.blank,
               [.text('Play now')],
