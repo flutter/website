@@ -39,21 +39,21 @@ check out the [Flutter 3.47 blog post][3.47-blog-post].
   IDE integrations, and other coding assistants.
   An experimental [AI Evaluations][ai-evals] topic page has also been added.
 
-* There is a new guide page on [Dependency management][dependency-mgmt]
-  to help you configure, manage, and upgrade package dependencies.
+* A new guide on [Dependency management][dependency-mgmt] explains
+  how to configure, manage, and upgrade package dependencies.
 
-* The [Swift Package Manager][swiftpm] guide for iOS and macOS has been
-  expanded, and the [Add-to-App][add-to-app] documentation has been updated
-  with SwiftPM integration guides.
+* The [Swift Package Manager][swiftpm] guides for iOS and macOS have expanded,
+  and the [Add-to-app][add-to-app] documentation now includes
+  SwiftPM integration instructions.
 
 * The web documentation now includes troubleshooting guidance for
   [Wasm compilation errors][wasm] and instructions for using the
   `--source-maps` flag during web builds.
 
-* A new section has been added to the assets guide explaining how to bundle
+* The assets guide now explains how to bundle
   [platform-specific assets][platform-assets] in `pubspec.yaml`.
 
-* Guidance has been added for migrating plugins and apps to use
+* A new migration guide helps you migrate plugins and apps to
   [built-in Kotlin][kotlin-migration] Gradle plugins.
 
 As always, check out the [breaking changes][bc-3-47] page for this release,
