@@ -7,16 +7,15 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/components/file_icon.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../../src/extensions/code_block_processor.dart';
 import '../../src/markdown/markdown_parser.dart';
+import '../../src/utils/slugify.dart';
 import '../../util.dart';
 import 'material_icon.dart';
-import 'wrapped_code_block.dart';
 
-/// A single top-level tree shown by an [IdeExplorer], such as
+/// A single top-level file tree shown by an [IdeExplorer], such as
 /// "Project" or "Global". It contains all of the 'files' (IdeTreeNodes)
-/// inside the project thats displayed in the IDE. 
-/// 
+/// inside the project thats displayed in the IDE.
+///
 /// When you have multiple projects to display, they're displayed as
 /// tabs that you can switch between.
 class IdeExplorerProjectRoot {
@@ -31,23 +30,20 @@ class IdeExplorerProjectRoot {
   final List<IdeTreeNode> children;
 
   factory IdeExplorerProjectRoot.fromMap(Map<Object?, Object?> map) {
-    final id = map['id']?.toString() ?? 'root';
-    final label = map['label']?.toString() ?? '';
-    final rawChildren = map['children'];
-    final children = switch (rawChildren) {
-      final List<Object?> list =>
-        list
-            .whereType<Map<Object?, Object?>>()
-            .map(IdeTreeNode.fromMap)
-            .toList(growable: false),
-      _ => const <IdeTreeNode>[],
-    };
+    if (map case {
+      'id': final String id,
+      'lable': final String label,
+      'children': final List<Map<Object?, Object?>> children,
+    }) {
+      final treeNodes = children.map(IdeTreeNode.fromMap).toList();
+      return IdeExplorerProjectRoot(
+        id: id,
+        label: label,
+        children: treeNodes.toList(),
+      );
+    }
 
-    return IdeExplorerProjectRoot(
-      id: id,
-      label: label,
-      children: children,
-    );
+    throw Exception('Malformed IdeExplorerProjectRoot data, failed to create');
   }
 }
 
@@ -59,16 +55,9 @@ class IdeTreeNode {
     bool? isFolder,
     this.startsClosed = false,
     this.badge,
-    this.oneLiner,
+    this.subtitle,
     this.note,
     this.noteTitle,
-    this.description,
-    this.tips = const [],
-    this.example,
-    this.exampleLanguage = 'plaintext',
-    this.exampleTitle,
-    this.docsLink,
-    this.docsLinkLabel = 'Learn more',
     this.children = const [],
   }) : _explicitIsFolder = isFolder;
 
@@ -77,16 +66,9 @@ class IdeTreeNode {
   final bool? _explicitIsFolder;
   final bool startsClosed;
   final IdeBadge? badge;
-  final String? oneLiner;
+  final String? subtitle;
   final String? note;
   final String? noteTitle;
-  final String? description;
-  final List<String> tips;
-  final String? example;
-  final String exampleLanguage;
-  final String? exampleTitle;
-  final String? docsLink;
-  final String docsLinkLabel;
   final List<IdeTreeNode> children;
 
   bool get isFolder =>
@@ -99,24 +81,9 @@ class IdeTreeNode {
     final isFolder = type != null ? type == 'folder' : null;
     final startsClosed = map['closed'] == true;
     final badge = map['badge'] != null ? IdeBadge.from(map['badge']) : null;
-    final oneLiner = map['oneLiner']?.toString();
+    final subtitle = map['subtitle']?.toString();
     final note = map['note']?.toString();
     final noteTitle = map['noteTitle']?.toString();
-    final description = map['description']?.toString();
-    final rawTips = map['tips'];
-    final tips = switch (rawTips) {
-      final List<Object?> list =>
-        list
-            .map((e) => e?.toString() ?? '')
-            .where((tip) => tip.isNotEmpty)
-            .toList(growable: false),
-      _ => const <String>[],
-    };
-    final example = map['example']?.toString();
-    final exampleLanguage = map['exampleLanguage']?.toString() ?? 'plaintext';
-    final exampleTitle = map['exampleTitle']?.toString();
-    final docsLink = map['docsLink']?.toString();
-    final docsLinkLabel = map['docsLinkLabel']?.toString() ?? 'Learn more';
     final rawChildren = map['children'];
     final children = switch (rawChildren) {
       final List<Object?> list =>
@@ -133,16 +100,9 @@ class IdeTreeNode {
       isFolder: isFolder,
       startsClosed: startsClosed,
       badge: badge,
-      oneLiner: oneLiner,
+      subtitle: subtitle,
       note: note,
       noteTitle: noteTitle,
-      description: description,
-      tips: tips,
-      example: example,
-      exampleLanguage: exampleLanguage,
-      exampleTitle: exampleTitle,
-      docsLink: docsLink,
-      docsLinkLabel: docsLinkLabel,
       children: children,
     );
   }
@@ -187,7 +147,6 @@ final class IdeBadge {
 /// leading to it, used to render the breadcrumb in its detail pane.
 typedef _BreadcrumbNode = ({IdeTreeNode node, String domId, List<String> path});
 
-
 /// An interactive file-tree explorer, similar to an IDE's sidebar.
 ///
 /// Renders a clickable directory tree next to a detail pane that shows
@@ -227,7 +186,7 @@ class IdeExplorer extends StatelessComponent {
   final List<IdeExplorerProjectRoot> roots;
 
   final String? instanceId;
-  
+
   final Map<String, Component> customContents;
 
   String _domId(String effectiveInstanceId, String nodeId) =>
@@ -446,8 +405,8 @@ class IdeExplorer extends StatelessComponent {
           node.isFolder ? FileIcon.folderIcon : FileIcon.forFile(node.label),
           div(classes: 'ide-detail-heading', [
             div(classes: 'ide-detail-title', [.text(node.label)]),
-            if (node.oneLiner case final oneLiner?)
-              div(classes: 'ide-detail-one-liner', [.text(oneLiner)]),
+            if (node.subtitle case final subtitle?)
+              div(classes: 'ide-detail-subtitle', [.text(subtitle)]),
           ]),
           if (node.badge case final badge?)
             span(
@@ -458,7 +417,7 @@ class IdeExplorer extends StatelessComponent {
               [.text(badge.label)],
             ),
         ]),
-        
+
         if (customContents[node.id] case final customChild?)
           div(classes: 'ide-custom-body', [customChild])
         else ...[
@@ -468,40 +427,8 @@ class IdeExplorer extends StatelessComponent {
                 div(classes: 'ide-note-title', [.text(title)]),
               DashMarkdown(content: note, inline: true),
             ]),
-          if (node.description case final description?)
-            div(
-              classes: 'ide-description',
-              [DashMarkdown(content: description)],
-            ),
-          if (node.tips.isNotEmpty)
-            div(classes: 'ide-tips', [
-              const div(classes: 'ide-tips-title', [.text('Tips')]),
-              ul([
-                for (final tip in node.tips)
-                  li([DashMarkdown(content: tip, inline: true)]),
-              ]),
-            ]),
-          if (node.example case final example?)
-            div(classes: 'ide-example', [
-              WrappedCodeBlock(
-                content: CodeBlockProcessor.highlightCode(
-                  [
-                    for (final line in example.trimRight().split('\n'))
-                      CodeLine(content: line, highlights: const []),
-                  ],
-                  language: node.exampleLanguage,
-                ),
-                language: node.exampleLanguage,
-                title: node.exampleTitle,
-              ),
-            ]),
-          if (node.docsLink case final docsLink?)
-            a(href: docsLink, classes: 'ide-docs-link', [
-              .text(node.docsLinkLabel),
-              const MaterialIcon('arrow_forward'),
-            ]),
         ],
-        
+
         if (node.children.isNotEmpty)
           div(classes: 'ide-contents', [
             const div(classes: 'ide-contents-title', [.text('Contents')]),
@@ -518,10 +445,10 @@ class IdeExplorer extends StatelessComponent {
                         ? FileIcon.folderIcon
                         : FileIcon.forFile(child.label),
                     span(classes: 'ide-node-label', [.text(child.label)]),
-                    if (child.oneLiner case final oneLiner?)
+                    if (child.subtitle case final subtitle?)
                       span(
                         classes: 'ide-content-one-liner',
-                        [.text(oneLiner)],
+                        [.text(subtitle)],
                       ),
                   ],
                 ),
@@ -534,20 +461,23 @@ class IdeExplorer extends StatelessComponent {
 
 /// A custom markdown component wrapper for [IdeExplorer].
 ///
-/// The tree is authored as data, referenced by the required `data`
-/// attribute, which names a top-level key in the page's data (loaded from
-/// a YAML/JSON file in the site's `src/data` directory). The data can
-/// either be a single list of nodes, or a map with a `roots` list if the
-/// explorer should offer more than one top-level tree.
-///
-/// Usage from Markdown:
+/// Can be authored in Markdown using HTML-like tags:
 /// ```html
-/// <IdeExplorer data="myTreeData">
-///   <IdePage id="someNodeId">
-///     Arbitrary markdown content for the node with id 'someNodeId'.
-///   </IdePage>
+/// <IdeExplorer>
+///   <IdeRoot label="my_project/" id="project">
+///     <IdePage label="main.dart" subtitle="App entry point">
+///       Main entry point content.
+///     </IdePage>
+///     <IdeFolder label="lib/">
+///       <IdePage label="app.dart">
+///         App widget definition.
+///       </IdePage>
+///     </IdeFolder>
+///   </IdeRoot>
 /// </IdeExplorer>
 /// ```
+///
+/// Or referenced by a `data` attribute pointing to a YAML/JSON data key.
 class DashIdeExplorer extends CustomComponent {
   const DashIdeExplorer() : super.base();
 
@@ -558,45 +488,180 @@ class DashIdeExplorer extends CustomComponent {
       return null;
     }
 
-    final dataKey = node.attributes['data'];
-    if (dataKey == null) {
-      throw ArgumentError(
-        'The <IdeExplorer> element requires a "data" attribute naming a key '
-        'in the page data.',
+    final customContents = <String, Component>{};
+    final roots = parseRootsFromNode(
+      node,
+      builder,
+      customContents,
+      rootLabel: node.attributes['rootLabel'],
+    );
+
+    if (roots.isEmpty && node.attributes['data'] != null) {
+      final dataKey = node.attributes['data']!;
+      return Builder(
+        builder: (context) {
+          final rawData = context.page.data[dataKey];
+          if (rawData == null) {
+            throw ArgumentError('No page data found for "$dataKey".');
+          }
+
+          final parsedRoots = parseRoots(
+            rawData,
+            rootLabel: node.attributes['rootLabel'],
+          );
+
+          return IdeExplorer(
+            roots: parsedRoots,
+            customContents: customContents,
+          );
+        },
       );
     }
 
-    final pages = node.children
-        ?.whereType<ElementNode>()
-        .where((n) => n.tag == 'IdePage')
-        .toList(growable: false) ?? [];
-
-    final customContents = <String, Component>{};
-    for (final page in pages) {
-      final id = page.attributes['id'];
-      if (id != null) {
-        customContents[id] = builder.build(page.children);
-      }
+    if (roots.isEmpty) {
+      return const Component.empty();
     }
 
-    return Builder(
-      builder: (context) {
-        final rawData = context.page.data[dataKey];
-        if (rawData == null) {
-          throw ArgumentError('No page data found for "$dataKey".');
-        }
-
-        final roots = parseRoots(
-          rawData,
-          rootLabel: node.attributes['rootLabel'],
-        );
-
-        return IdeExplorer(
-          roots: roots,
-          customContents: customContents,
-        );
-      },
+    return IdeExplorer(
+      roots: roots,
+      customContents: customContents,
     );
+  }
+
+  /// Parses [IdeExplorerProjectRoot]s from child AST [ElementNode]s.
+  static List<IdeExplorerProjectRoot> parseRootsFromNode(
+    ElementNode node,
+    NodesBuilder builder,
+    Map<String, Component> customContents, {
+    String? rootLabel,
+  }) {
+    final directElementChildren =
+        node.children?.whereType<ElementNode>().toList(growable: false) ?? [];
+
+    final rootElements = directElementChildren
+        .where((n) => n.tag == 'IdeRoot')
+        .toList(growable: false);
+
+    if (rootElements.isNotEmpty) {
+      return [
+        for (final (index, rootEl) in rootElements.indexed)
+          IdeExplorerProjectRoot(
+            id:
+                rootEl.attributes['id'] ??
+                (rootEl.attributes['label'] != null
+                    ? slugify(rootEl.attributes['label']!)
+                    : 'root-$index'),
+            label: rootEl.attributes['label'] ?? '',
+            children: _parseTreeNodes(rootEl.children, builder, customContents),
+          ),
+      ];
+    }
+
+    final treeElements = directElementChildren
+        .where((n) => n.tag == 'IdeFolder' || n.tag == 'IdePage')
+        .toList(growable: false);
+
+    if (treeElements.isNotEmpty) {
+      return [
+        IdeExplorerProjectRoot(
+          id: node.attributes['id'] ?? 'root',
+          label: rootLabel ?? node.attributes['rootLabel'] ?? '',
+          children: _parseTreeNodes(node.children, builder, customContents),
+        ),
+      ];
+    }
+
+    return const [];
+  }
+
+  static List<IdeTreeNode> _parseTreeNodes(
+    List<Node>? nodes,
+    NodesBuilder builder,
+    Map<String, Component> customContents,
+  ) {
+    if (nodes == null || nodes.isEmpty) return const [];
+
+    final result = <IdeTreeNode>[];
+
+    for (final (index, child) in nodes.whereType<ElementNode>().indexed) {
+      if (child.tag != 'IdeFolder' && child.tag != 'IdePage') {
+        continue;
+      }
+
+      final label = child.attributes['label'] ?? child.attributes['name'] ?? '';
+      final id =
+          child.attributes['id'] ??
+          (label.isNotEmpty ? slugify(label) : 'node-$index');
+      final isFolder =
+          child.tag == 'IdeFolder' || child.attributes['isFolder'] == 'true';
+      final startsClosed =
+          child.attributes['closed'] == 'true' ||
+          child.attributes['startsClosed'] == 'true';
+
+      final badgeLabel = child.attributes['badge'];
+      final badgeToneStr =
+          child.attributes['badgeTone'] ?? child.attributes['tone'];
+      final badgeTone = switch (badgeToneStr) {
+        'info' => IdeBadgeTone.info,
+        'success' => IdeBadgeTone.success,
+        'warning' => IdeBadgeTone.warning,
+        _ => IdeBadgeTone.neutral,
+      };
+      final badge = badgeLabel != null
+          ? IdeBadge(label: badgeLabel, tone: badgeTone)
+          : null;
+
+      final subtitle = child.attributes['subtitle'];
+
+      final nestedTreeNodes = _parseTreeNodes(
+        child.children,
+        builder,
+        customContents,
+      );
+
+      final hasBody =
+          child.children?.any((n) {
+            if (n is ElementNode &&
+                (n.tag == 'IdeFolder' || n.tag == 'IdePage')) {
+              return false;
+            }
+            if (n is TextNode && n.text.trim().isEmpty) {
+              return false;
+            }
+            return true;
+          }) ??
+          false;
+
+      if (hasBody) {
+        final contentNodes = child.children!
+            .where((n) {
+              if (n is ElementNode &&
+                  (n.tag == 'IdeFolder' || n.tag == 'IdePage')) {
+                return false;
+              }
+              return true;
+            })
+            .toList(growable: false);
+
+        if (contentNodes.isNotEmpty) {
+          customContents[id] = builder.build(contentNodes);
+        }
+      }
+
+      result.add(
+        IdeTreeNode(
+          id: id,
+          label: label,
+          isFolder: isFolder,
+          startsClosed: startsClosed,
+          badge: badge,
+          subtitle: subtitle,
+          children: nestedTreeNodes,
+        ),
+      );
+    }
+
+    return result;
   }
 
   /// Parses raw page data (from YAML/JSON) into a list of [IdeExplorerProjectRoot]s.

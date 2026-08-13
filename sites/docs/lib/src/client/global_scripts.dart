@@ -462,6 +462,23 @@ void _setUpSteppers() {
   }
 }
 
+void _scrollTo(web.Element element, {required bool smooth}) {
+  // Scroll the next step into view, accounting for the fixed header and toc.
+  final headerOffset =
+      web.document.getElementById('site-header')?.clientHeight ?? 0;
+  final tocOffset = web.document.getElementById('pagenav')?.clientHeight ?? 0;
+  final elementPosition = element.getBoundingClientRect().top;
+  final offsetPosition =
+      elementPosition + web.window.scrollY - headerOffset - tocOffset;
+
+  web.window.scrollTo(
+    web.ScrollToOptions(
+      top: offsetPosition,
+      behavior: smooth ? 'smooth' : 'auto',
+    ),
+  );
+}
+
 /// Set up interactivity of the file/detail explorer created with
 /// the `<IdeExplorer>` custom component.
 void _setUpIdeExplorers() {
@@ -494,9 +511,6 @@ void _setUpIdeExplorer(web.Element explorer) {
     }
 
     // Expand every ancestor folder so the selected item stays visible.
-    // Skip the clicked node's own <details> (when a folder's summary was
-    // clicked directly) so the browser's native open/close toggle on that
-    // element isn't fought by also forcing it open here.
     final ownDetails = sidebarTarget?.tagName.toLowerCase() == 'summary'
         ? sidebarTarget!.parentElement
         : null;
@@ -566,6 +580,26 @@ void _setUpIdeExplorer(web.Element explorer) {
     if (selectTarget != null) {
       final domId = selectTarget.getAttribute('data-ide-select');
       if (domId != null) selectIdeNode(domId);
+      
+      if (selectTarget.tagName.toLowerCase() == 'summary') {
+        var isClickOnArrow = false;
+        if (target == selectTarget) {
+          final mouseEvent = event as web.MouseEvent;
+          final rect = selectTarget.getBoundingClientRect();
+          final clickX = mouseEvent.clientX - rect.left;
+          // The arrow marker is rendered using a ::before pseudo-element
+          // on the left side of the summary element. The total width of the
+          // padding and arrow is around 20-30px.
+          // TODO: this can't possibly be the right way to do this.
+          if (clickX < 30) {
+            isClickOnArrow = true;
+          }
+        }
+
+        if (!isClickOnArrow) {
+          event.preventDefault();
+        }
+      }
       return;
     }
 
@@ -582,21 +616,4 @@ void _setUpIdeExplorer(web.Element explorer) {
   }
 
   explorer.addEventListener('click', handleClick.toJS);
-}
-
-void _scrollTo(web.Element element, {required bool smooth}) {
-  // Scroll the next step into view, accounting for the fixed header and toc.
-  final headerOffset =
-      web.document.getElementById('site-header')?.clientHeight ?? 0;
-  final tocOffset = web.document.getElementById('pagenav')?.clientHeight ?? 0;
-  final elementPosition = element.getBoundingClientRect().top;
-  final offsetPosition =
-      elementPosition + web.window.scrollY - headerOffset - tocOffset;
-
-  web.window.scrollTo(
-    web.ScrollToOptions(
-      top: offsetPosition,
-      behavior: smooth ? 'smooth' : 'auto',
-    ),
-  );
 }

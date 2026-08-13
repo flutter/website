@@ -14,38 +14,43 @@ final class FlutterBenchTaskExplorer extends CustomComponent {
       return null;
     }
 
-    final dataKey = node.attributes['data'] ?? 'flutter_bench_task_example';
-    final rootLabel = node.attributes['rootLabel'];
-
-    final pages = node.children
-        ?.whereType<ElementNode>()
-        .where((n) => n.tag == 'IdePage')
-        .toList(growable: false) ?? [];
-
     final customContents = <String, Component>{};
-    for (final page in pages) {
-      final id = page.attributes['id'];
-      if (id != null) {
-        customContents[id] = builder.build(page.children);
-      }
+    final roots = DashIdeExplorer.parseRootsFromNode(
+      node,
+      builder,
+      customContents,
+      rootLabel: node.attributes['rootLabel'],
+    );
+
+    if (roots.isEmpty && node.attributes['data'] != null) {
+      final dataKey = node.attributes['data']!;
+      return Builder(
+        builder: (context) {
+          final rawData = context.page.data[dataKey];
+          if (rawData == null) {
+            throw ArgumentError('No page data found for "$dataKey".');
+          }
+
+          final parsedRoots = DashIdeExplorer.parseRoots(
+            rawData,
+            rootLabel: node.attributes['rootLabel'],
+          );
+
+          return div(classes: 'flutter-bench-task-explorer', [
+            IdeExplorer(
+              roots: parsedRoots,
+              customContents: customContents,
+            ),
+          ]);
+        },
+      );
     }
 
-    return Builder(
-      builder: (context) {
-        final rawData = context.page.data[dataKey];
-        if (rawData == null) {
-          throw ArgumentError('No page data found for "$dataKey".');
-        }
-
-        final roots = DashIdeExplorer.parseRoots(rawData, rootLabel: rootLabel);
-
-        return div(classes: 'flutter-bench-task-explorer', [
-          IdeExplorer(
-            roots: roots,
-            customContents: customContents,
-          ),
-        ]);
-      },
-    );
+    return div(classes: 'flutter-bench-task-explorer', [
+      IdeExplorer(
+        roots: roots,
+        customContents: customContents,
+      ),
+    ]);
   }
 }

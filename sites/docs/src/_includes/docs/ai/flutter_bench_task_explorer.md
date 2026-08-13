@@ -2,7 +2,7 @@
 
 <IdeRoot label="Task" id="task">
 
-<IdePage label="instruction.md" id="instruction" badge="input" oneLiner="The prompt the agent receives">
+<IdePage label="instruction.md" id="instruction" badge="input" subtitle="The prompt the agent receives">
 
 The instruction is the task prompt provided to the agent. It mimics
 real-world workflows from developers, and is written in a way that real
@@ -10,8 +10,8 @@ developers interact with agents.
 
 **Design principles**
 
-- Prompts state symptoms and expected outcomes without naming exact remedy
-  widgets..
+- Prompts state symptoms and expected outcomes without naming exact 
+  remedy widgets.
 - Prompts require the agent to write regression tests, measuring both
   implementation skills and testing rigor.
 
@@ -26,7 +26,7 @@ Write widget tests in
 
 </IdePage>
 
-<IdePage label="task.toml" id="task-toml" badge="config" oneLiner="Task definition, difficulty notes, and timeouts">
+<IdePage label="task.toml" id="task-toml" badge="config" subtitle="Task definition, difficulty notes, and timeouts">
 
 The task configuration file specifies execution bounds, metadata, and
 target artifacts evaluated during grading.
@@ -35,16 +35,13 @@ target artifacts evaluated during grading.
 
 - `artifacts`: Lists files that must be present in the workspace after the
   run.
-- `difficulty_explanation`:
-  Identifies common subtle pitfalls (like fixing only one axis or altering
+- `difficulty_explanation`: Identifies common subtle pitfalls (like fixing only one axis or altering
   item structures), which inform the grading rubrics.
-- `verifier` and `agent` timeouts:
-  Provides sufficient execution budget for cold compilation and multistep
-  agent tool iterations.
+- `verifier` and `agent` timeouts: Provides sufficient execution budget for cold compilation and multistep agent tool iterations.
 
 </IdePage>
 
-<IdeFolder label="environment/" id="environment" badge="workspace" badgeTone="info" oneLiner="Containerized Flutter workspace pre-seeded for the agent">
+<IdeFolder label="environment/" id="environment" badge="workspace" badgeTone="info" subtitle="Containerized Flutter workspace pre-seeded for the agent">
 
 The target codebase is an isolated, containerized Flutter workspace.
 
@@ -57,7 +54,7 @@ The agent only sees the files inside this directory. Grading scripts and
 reference solutions remain strictly isolated outside the container until
 the agent completes its run.
 
-<IdePage label="Dockerfile" id="dockerfile" oneLiner="Container setup, SDK caching, and baseline commit">
+<IdePage label="Dockerfile" id="dockerfile" subtitle="Container setup, SDK caching, and baseline commit">
 
 Defines the container image for the task environment.
 
@@ -73,7 +70,7 @@ Defines the container image for the task environment.
 
 </IdePage>
 
-<IdeFolder label="lib/" id="lib" oneLiner="Application source code">
+<IdeFolder label="lib/" id="lib" subtitle="Application source code">
 
 Contains the Flutter application source code.
 
@@ -81,7 +78,7 @@ In this evaluation task, the agent inspects `lib/main.dart` to locate the
 source of the
 `RenderFlex` layout errors and applies appropriate widget modifications.
 
-<IdePage label="main.dart" id="main-dart" badge="starter code" badgeTone="warning" oneLiner="Flutter app containing horizontal and vertical overflow bugs">
+<IdePage label="main.dart" id="main-dart" badge="starter code" badgeTone="warning" subtitle="Flutter app containing horizontal and vertical overflow bugs">
 
 The starter code for the Flutter application. Alternatively, the docker
 file may point to a remote codebase.
@@ -90,7 +87,7 @@ file may point to a remote codebase.
 
 </IdeFolder>
 
-<IdeFolder label="test/" id="test" oneLiner="Target directory for agent-authored widget tests">
+<IdeFolder label="test/" id="test" subtitle="Target directory for agent-authored widget tests">
 
 The test directory for the target project.
 
@@ -98,7 +95,7 @@ Initially, this directory is empty. The task instruction directs the agent
 to create `test/main_test.dart`
 to verify its bug fix with automated widget tests.
 
-<IdePage label="main_test.dart" id="main-test-dart" badge="agent-authored" badgeTone="warning" oneLiner="Widget tests the agent must write to verify its fix">
+<IdePage label="main_test.dart" id="main-test-dart" badge="agent-authored" badgeTone="warning" subtitle="Widget tests the agent must write to verify its fix">
 
 The widget test file that the agent is expected to author.
 
@@ -106,13 +103,13 @@ The widget test file that the agent is expected to author.
 
 </IdeFolder>
 
-<IdePage label="pubspec.yaml" id="pubspec" oneLiner="Project manifest declaring Flutter and lint dependencies">
+<IdePage label="pubspec.yaml" id="pubspec" subtitle="Project manifest declaring Flutter and lint dependencies">
 
 Declares dependencies and environment constraints for the Flutter project.
 
 </IdePage>
 
-<IdePage label="analysis_options.yaml" id="analysis-options" oneLiner="Linter configuration enforcing const and style rules">
+<IdePage label="analysis_options.yaml" id="analysis-options" subtitle="Linter configuration enforcing const and style rules">
 
 Defines the static analysis rules enforced across the project.
 
@@ -134,7 +131,7 @@ linter:
 
 </IdeFolder>
 
-<IdeFolder label="tests/" id="tests" badge="hidden from agent" badgeTone="warning" oneLiner="Multi-dimensional evaluation harness hidden from the agent">
+<IdeFolder label="tests/" id="tests" badge="hidden from agent" badgeTone="warning" subtitle="Multi-dimensional evaluation harness hidden from the agent">
 
 The automated verification harness used to grade the agent's performance.
 
@@ -147,44 +144,24 @@ The harness evaluates the agent's output across three weighted dimensions:
 - **Quality**: Static analysis, formatting, and code craftsmanship.
 - **DX**: Developer experience and tool interaction efficiency.
 
-<IdePage label="graders.dart" id="graders-dart" badge="rubric" badgeTone="info" oneLiner="Outcome, quality, and craftsmanship scoring rules via eval_scoring">
+<IdePage label="graders.dart" id="graders-dart" badge="rubric" badgeTone="info" subtitle="Outcome, quality, and craftsmanship scoring rules via eval_scoring">
 
 Defines the multi-dimensional scoring pipeline using
 `package:eval_scoring`.
 
 ```dart
-// Heavily edited as to not risk contamination
-AggregateGrader grader(EvaluationContext context) =>
+// Heavily edited
+AggregateGrader grader(context) =>
     AggregateGrader.result(
-      outcome: AggregateGrader.outcome(
-        testing: TestingGrader(),
-        heuristics: AggregateGrader.outcomeHeuristics(
-          graderWeights: {Grader _grader: int weight},
-        ),
-      ),
-      quality: AggregateGrader.quality(
-        staticAnalysis: StaticAnalysisGrader(),
-        heuristics: FormattingGrader(filesToInclude: const ['...']),
-        idiomaticReview: LLMGrader(
-          contextBuilders: [
-            FileContentContextBuilder(
-              files: ['...'],
-            ),
-          ],
-          criteria: [
-            LLMCriterion(
-              description: '''TODO: add grading instructions''',
-            ),
-          ],
-        ),
-      ),
-      dx: AggregateGrader.dx(),
+      outcome: _outcomeGraders,
+      quality: _qualityGraders,
+      dx: _dxGraders,
     );
 ```
 
 </IdePage>
 
-<IdePage label="test.sh" id="test-sh" oneLiner="Verification entry point running the eval_scoring suite">
+<IdePage label="test.sh" id="test-sh" subtitle="Verification entry point running the eval_scoring suite">
 
 The test harness entrypoint script executed inside the grading container.
 
@@ -197,7 +174,7 @@ eval_scoring run [tasks]
 
 </IdeFolder>
 
-<IdeFolder label="solution/" id="solution" badge="ground truth" badgeTone="success" oneLiner="Oracle reference solution used to validate the eval task">
+<IdeFolder label="solution/" id="solution" badge="ground truth" badgeTone="success" subtitle="Oracle reference solution used to validate the eval task">
 
 Contains the ground truth reference implementation maintained by the
 benchmark authors.
@@ -207,7 +184,7 @@ executed through the grading harness to confirm that it achieves a full
 `1.0` reward. This ensures the task is solvable, unambiguous, and
 calibrated correctly.
 
-<IdePage label="solve.sh" id="solve-sh" oneLiner="Reference script fixing layout bugs and adding layout tests">
+<IdePage label="solve.sh" id="solve-sh" subtitle="Reference script fixing layout bugs and adding layout tests">
 
 The reference shell script that applies the canonical fix and generates
 comprehensive tests. Not safe to share publicly.
@@ -220,7 +197,7 @@ comprehensive tests. Not safe to share publicly.
 
 <IdeRoot label="Shared" id="shared">
 
-<IdePage label="eval_scoring/" id="eval-scoring" badge="package" badgeTone="info" oneLiner="Dart scoring framework combining automated tools and LLM judges">
+<IdePage label="eval_scoring/" id="eval-scoring" badge="package" badgeTone="info" subtitle="Dart scoring framework combining automated tools and LLM judges">
 
 The `eval_scoring` Dart package powers all grading across the benchmark
 suite.
@@ -241,7 +218,7 @@ suite.
 
 </IdePage>
 
-<IdePage label="docker/flutter-linux" id="base-image" badge="container" badgeTone="neutral" oneLiner="Base container with pre-warmed Flutter SDK and tools">
+<IdePage label="docker/flutter-linux" id="base-image" badge="container" badgeTone="neutral" subtitle="Base container with pre-warmed Flutter SDK and tools">
 
 Prebuilt Linux Docker container images (`flutter-linux` and `dart-linux`).
 
@@ -255,7 +232,7 @@ Prebuilt Linux Docker container images (`flutter-linux` and `dart-linux`).
 
 </IdePage>
 
-<IdePage label="gemini-cli.config.yaml" id="job-config" badge="runner" badgeTone="success" oneLiner="Harness configuration for agent variants, tools, and MCP servers">
+<IdePage label="gemini-cli.config.yaml" id="job-config" badge="runner" badgeTone="success" subtitle="Harness configuration for agent variants, tools, and MCP servers">
 
 The evaluation job configuration file that specifies which models, tools,
 and agent variants to evaluate.
