@@ -41,7 +41,7 @@ target artifacts evaluated during grading.
 
 </IdePage>
 
-<IdeFolder label="environment/" id="environment" badge="workspace" badgeTone="info" subtitle="Containerized Flutter workspace pre-seeded for the agent">
+<IdeFolder label="environment/" id="environment" badge="workspace" badgeColor="info" subtitle="Containerized Flutter workspace pre-seeded for the agent">
 
 The target codebase is an isolated, containerized Flutter workspace.
 
@@ -78,7 +78,7 @@ In this evaluation task, the agent inspects `lib/main.dart` to locate the
 source of the
 `RenderFlex` layout errors and applies appropriate widget modifications.
 
-<IdePage label="main.dart" id="main-dart" badge="starter code" badgeTone="warning" subtitle="Flutter app containing horizontal and vertical overflow bugs">
+<IdePage label="main.dart" id="main-dart" badge="starter code" badgeColor="warning" subtitle="Flutter app containing horizontal and vertical overflow bugs">
 
 The starter code for the Flutter application. Alternatively, the docker
 file may point to a remote codebase.
@@ -95,7 +95,7 @@ Initially, this directory is empty. The task instruction directs the agent
 to create `test/main_test.dart`
 to verify its bug fix with automated widget tests.
 
-<IdePage label="main_test.dart" id="main-test-dart" badge="agent-authored" badgeTone="warning" subtitle="Widget tests the agent must write to verify its fix">
+<IdePage label="main_test.dart" id="main-test-dart" badge="agent-authored" badgeColor="warning" subtitle="Widget tests the agent must write to verify its fix">
 
 The widget test file that the agent is expected to author.
 
@@ -131,7 +131,7 @@ linter:
 
 </IdeFolder>
 
-<IdeFolder label="tests/" id="tests" badge="hidden from agent" badgeTone="warning" subtitle="Multi-dimensional evaluation harness hidden from the agent">
+<IdeFolder label="tests/" id="tests" badge="hidden from agent" badgeColor="warning" subtitle="Multi-dimensional evaluation harness hidden from the agent">
 
 The automated verification harness used to grade the agent's performance.
 
@@ -144,7 +144,7 @@ The harness evaluates the agent's output across three weighted dimensions:
 - **Quality**: Static analysis, formatting, and code craftsmanship.
 - **DX**: Developer experience and tool interaction efficiency.
 
-<IdePage label="graders.dart" id="graders-dart" badge="rubric" badgeTone="info" subtitle="Outcome, quality, and craftsmanship scoring rules via eval_scoring">
+<IdePage label="graders.dart" id="graders-dart" badge="rubric" badgeColor="info" subtitle="Outcome, quality, and craftsmanship scoring rules via eval_scoring">
 
 Defines the multi-dimensional scoring pipeline using
 `package:eval_scoring`.
@@ -174,7 +174,7 @@ eval_scoring run [tasks]
 
 </IdeFolder>
 
-<IdeFolder label="solution/" id="solution" badge="ground truth" badgeTone="success" subtitle="Oracle reference solution used to validate the eval task">
+<IdeFolder label="solution/" id="solution" badge="ground truth" badgeColor="success" subtitle="Oracle reference solution used to validate the eval task">
 
 Contains the ground truth reference implementation maintained by the
 benchmark authors.
@@ -197,7 +197,7 @@ comprehensive tests. Not safe to share publicly.
 
 <IdeRoot label="Shared" id="shared">
 
-<IdePage label="eval_scoring/" id="eval-scoring" badge="package" badgeTone="info" subtitle="Dart scoring framework combining automated tools and LLM judges">
+<IdePage label="eval_scoring/" id="eval-scoring" badge="package" badgeColor="info" subtitle="Dart scoring framework combining automated tools and LLM judges">
 
 The `eval_scoring` Dart package powers all grading across the benchmark
 suite.
@@ -218,7 +218,7 @@ suite.
 
 </IdePage>
 
-<IdePage label="docker/flutter-linux" id="base-image" badge="container" badgeTone="neutral" subtitle="Base container with pre-warmed Flutter SDK and tools">
+<IdePage label="docker/flutter-linux" id="base-image" badge="container" badgeColor="neutral" subtitle="Base container with pre-warmed Flutter SDK and tools">
 
 Prebuilt Linux Docker container images (`flutter-linux` and `dart-linux`).
 
@@ -232,7 +232,7 @@ Prebuilt Linux Docker container images (`flutter-linux` and `dart-linux`).
 
 </IdePage>
 
-<IdePage label="gemini-cli.config.yaml" id="job-config" badge="runner" badgeTone="success" subtitle="Harness configuration for agent variants, tools, and MCP servers">
+<IdePage label="gemini-cli.config.yaml" id="job-config" badge="runner" badgeColor="success" subtitle="Harness configuration for agent variants, tools, and MCP servers">
 
 The evaluation job configuration file that specifies which models, tools,
 and agent variants to evaluate.

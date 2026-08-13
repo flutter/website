@@ -201,6 +201,8 @@
   text-transform: uppercase;
 }
 
+.ide-badge-color-info,
+.ide-color-info,
 .ide-tone-info {
   &.ide-badge-dot,
   &.ide-badge {
@@ -213,6 +215,11 @@
   }
 }
 
+.ide-badge-color-tip,
+.ide-color-tip,
+.ide-tone-tip,
+.ide-badge-color-success,
+.ide-color-success,
 .ide-tone-success {
   &.ide-badge-dot,
   &.ide-badge {
@@ -225,6 +232,22 @@
   }
 }
 
+.ide-badge-color-important,
+.ide-color-important,
+.ide-tone-important {
+  &.ide-badge-dot,
+  &.ide-badge {
+    background-color: var(--site-alert-important-color);
+  }
+
+  &.ide-badge {
+    background-color: color-mix(in srgb, var(--site-alert-important-color) 12%, transparent);
+    color: var(--site-alert-important-color);
+  }
+}
+
+.ide-badge-color-warning,
+.ide-color-warning,
 .ide-tone-warning {
   &.ide-badge-dot,
   &.ide-badge {
@@ -234,6 +257,33 @@
   &.ide-badge {
     background-color: color-mix(in srgb, var(--site-alert-warning-color) 12%, transparent);
     color: var(--site-alert-warning-color);
+  }
+}
+
+.ide-badge-color-error,
+.ide-color-error,
+.ide-tone-error {
+  &.ide-badge-dot,
+  &.ide-badge {
+    background-color: var(--site-alert-error-color);
+  }
+
+  &.ide-badge {
+    background-color: color-mix(in srgb, var(--site-alert-error-color) 12%, transparent);
+    color: var(--site-alert-error-color);
+  }
+}
+
+.ide-badge-color-neutral,
+.ide-color-neutral,
+.ide-tone-neutral {
+  &.ide-badge-dot {
+    background-color: var(--site-base-fgColor-alt);
+  }
+
+  &.ide-badge {
+    background-color: var(--site-raised-bgColor);
+    color: var(--site-base-fgColor-alt);
   }
 }
 

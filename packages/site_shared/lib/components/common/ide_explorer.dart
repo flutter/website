@@ -82,8 +82,10 @@ class IdeTreeNode {
         final treeNodes = children.map(IdeTreeNode.fromMap).toList();
         final startsClosed =
             map.containsKey('startsClosed') && map['startsClosed'] == true;
-        // TODO: this doesn't allow for tone
-        final badge = IdeBadge.from(map['badge']);
+        final badge = IdeBadge.tryFrom(
+          map['badge'],
+          map['badgeColor'] ?? map['badgeTone'],
+        );
 
         return IdeTreeNode(
           id: id,
@@ -95,15 +97,18 @@ class IdeTreeNode {
           note: map['note']?.toString(),
           children: treeNodes,
         );
+
       // explicit case to handle files
       case {
             'id': final String id,
             'label': final String label,
-            // Files shouldn't be empty, that's bad UX
           }
+          // Files shouldn't be empty, that's bad UX
           when map.containsKey('note'):
-        // TODO: this doesn't allow for tone
-        final badge = IdeBadge.from(map['badge']);
+        final badge = IdeBadge.tryFrom(
+          map['badge'],
+          map['badgeColor'] ?? map['badgeTone'],
+        );
         return IdeTreeNode(
           id: id,
           label: label,
@@ -119,7 +124,29 @@ class IdeTreeNode {
 }
 
 /// Corresponds to colors used for the [IdeBadge]
-enum IdeBadgeTone { neutral, info, success, warning }
+enum IdeBadgeColor {
+  neutral,
+  info,
+  tip,
+  important,
+  warning,
+  error;
+
+  static IdeBadgeColor from(Object? data) {
+    if (data is IdeBadgeColor) return data;
+    return switch (data?.toString().toLowerCase()) {
+      'info' => IdeBadgeColor.info,
+      'tip' || 'success' => IdeBadgeColor.tip,
+      'important' => IdeBadgeColor.important,
+      'warning' => IdeBadgeColor.warning,
+      'error' || 'danger' => IdeBadgeColor.error,
+      _ => IdeBadgeColor.neutral,
+    };
+  }
+}
+
+/// Alias for [IdeBadgeColor].
+typedef IdeBadgeTone = IdeBadgeColor;
 
 /// A highlighted pill-style label displayed next to an [IdeTreeNode] title.
 /// Intended to be used to display a single word of crucial metadata,
@@ -128,28 +155,42 @@ enum IdeBadgeTone { neutral, info, success, warning }
 final class IdeBadge {
   const IdeBadge({
     required this.label,
-    this.tone = IdeBadgeTone.neutral,
+    this.color = IdeBadgeColor.neutral,
   });
 
   final String label;
-  final IdeBadgeTone tone;
+  final IdeBadgeColor color;
 
-  factory IdeBadge.from(Object? data) {
+  /// Backwards-compatible getter for [color].
+  IdeBadgeColor get tone => color;
+
+  factory IdeBadge.from(Object? data, [Object? colorData]) {
     if (data is String) {
-      return IdeBadge(label: data);
+      final color = IdeBadgeColor.from(colorData);
+      return IdeBadge(label: data, color: color);
     }
     if (data is Map<Object?, Object?>) {
       final label = data['label']?.toString() ?? '';
-      final toneStr = data['tone']?.toString();
-      final tone = switch (toneStr) {
-        'info' => IdeBadgeTone.info,
-        'success' => IdeBadgeTone.success,
-        'warning' => IdeBadgeTone.warning,
-        _ => IdeBadgeTone.neutral,
-      };
-      return IdeBadge(label: label, tone: tone);
+      final colorStr =
+          data['color'] ??
+          data['badgeColor'] ??
+          data['tone'] ??
+          data['badgeTone'] ??
+          colorData;
+      final color = IdeBadgeColor.from(colorStr);
+      return IdeBadge(label: label, color: color);
     }
     throw ArgumentError('Invalid badge data: $data');
+  }
+
+  static IdeBadge? tryFrom(Object? data, [Object? colorData]) {
+    if (data == null) return null;
+    if (data is String && data.isEmpty) return null;
+    try {
+      return IdeBadge.from(data, colorData);
+    } catch (_) {
+      return null;
+    }
   }
 }
 
@@ -380,7 +421,11 @@ class IdeExplorer extends StatelessComponent {
   Component _buildBadgeDot(IdeBadge? badge) {
     if (badge == null) return const Component.empty();
     return span(
-      classes: ['ide-badge-dot', 'ide-tone-${badge.tone.name}'].toClasses,
+      classes: [
+        'ide-badge-dot',
+        'ide-badge-color-${badge.color.name}',
+        'ide-tone-${badge.color.name}',
+      ].toClasses,
       attributes: {
         'role': 'img',
         'aria-label': badge.label,
@@ -422,7 +467,8 @@ class IdeExplorer extends StatelessComponent {
             span(
               classes: [
                 'ide-badge',
-                'ide-tone-${badge.tone.name}',
+                'ide-badge-color-${badge.color.name}',
+                'ide-tone-${badge.color.name}',
               ].toClasses,
               [.text(badge.label)],
             ),
@@ -602,24 +648,14 @@ class DashIdeExplorer extends CustomComponent {
       final id =
           child.attributes['id'] ??
           (label.isNotEmpty ? slugify(label) : 'node-$index');
-      final isFolder =
-          child.tag == 'IdeFolder' || child.attributes['isFolder'] == 'true';
       final startsClosed =
           child.attributes['closed'] == 'true' ||
           child.attributes['startsClosed'] == 'true';
 
       final badgeLabel = child.attributes['badge'];
-      final badgeToneStr =
-          child.attributes['badgeTone'] ?? child.attributes['tone'];
-      final badgeTone = switch (badgeToneStr) {
-        'info' => IdeBadgeTone.info,
-        'success' => IdeBadgeTone.success,
-        'warning' => IdeBadgeTone.warning,
-        _ => IdeBadgeTone.neutral,
-      };
-      final badge = badgeLabel != null
-          ? IdeBadge(label: badgeLabel, tone: badgeTone)
-          : null;
+      final badgeColorStr =
+          child.attributes['badgeColor'] ?? child.attributes['badgeTone'];
+      final badge = IdeBadge.tryFrom(badgeLabel, badgeColorStr);
 
       final subtitle = child.attributes['subtitle'];
 
