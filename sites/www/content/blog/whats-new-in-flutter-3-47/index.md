@@ -535,7 +535,7 @@ we've got some homework (the fun kind) for you:
 We are excited to see what you all will build
 with this new and improved version of Flutter!
 
-[notable-commits]: https://www.youtube.com/watch?v=NR4F-P-5a1o
+[notable-commits]: https://www.youtube.com/watch?v=NR4F9y8uTvw
 [breaking-changes-page]: https://docs.flutter.dev/release/breaking-changes
 [migration-guide]: https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors
 [spm-blog-post]: /blog/saying-goodbye-to-cocoapods-swift-package-manager-is-soon-the-default-in-flutter
