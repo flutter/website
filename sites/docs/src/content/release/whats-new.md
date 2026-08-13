@@ -53,7 +53,7 @@ check out the [Flutter 3.47 blog post][3.47-blog-post].
 * A new section has been added to the assets guide explaining how to bundle
   [platform-specific assets][platform-assets] in `pubspec.yaml`.
 
-* We added guidance for migrating plugins and apps to use
+* Guidance has been added for migrating plugins and apps to use
   [built-in Kotlin][kotlin-migration] Gradle plugins.
 
 As always, check out the [breaking changes][bc-3-47] page for this release,
