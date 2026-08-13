@@ -107,11 +107,23 @@
     padding-inline-start: 0.9rem;
   }
 
-  > ul {
+  >ul {
     padding-inline-start: 0;
   }
 
+  ul>li.ide-node:last-child {
+    margin-bottom: .5rem;
+  }
+
   li.ide-node {
+    margin-bottom: 0;
+  }
+
+  details {
+    margin: 0;
+  }
+
+  details[open]>summary {
     margin: 0;
   }
 
@@ -158,7 +170,7 @@
     }
   }
 
-  details[open] > summary .ide-folder-arrow::before {
+  details[open]>summary .ide-folder-arrow::before {
     transform: rotate(90deg);
   }
 
@@ -196,18 +208,20 @@
     }
   }
 
-  li.ide-node-file > .ide-node-row {
+  li.ide-node-file>.ide-node-row {
     padding-inline-start: 1.25rem;
   }
 
-  .ide-folder-summary > .ide-node-row {
+  .ide-folder-summary>.ide-node-row {
     padding-inline-start: 0;
+    margin: 0;
   }
 
   .ide-node-label {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    flex: 2;
   }
 }
 
@@ -234,6 +248,7 @@
 }
 
 .ide-badge-color-info {
+
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-info-color);
@@ -246,6 +261,7 @@
 }
 
 .ide-badge-color-tip {
+
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-tip-color);
@@ -258,6 +274,7 @@
 }
 
 .ide-badge-color-important {
+
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-important-color);
@@ -270,6 +287,7 @@
 }
 
 .ide-badge-color-warning {
+
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-warning-color);
@@ -282,6 +300,7 @@
 }
 
 .ide-badge-color-error {
+
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-error-color);
@@ -343,7 +362,9 @@
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  margin-block-end: 0.6rem;
+  margin-block-end: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: .5px solid;
 
   svg {
     flex-shrink: 0;
@@ -356,6 +377,12 @@
 .ide-detail-heading {
   flex: 1;
   min-width: 0;
+}
+
+.ide-detail-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .ide-detail-title {

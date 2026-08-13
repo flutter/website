@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:collection/collection.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/components/file_icon.dart';
@@ -51,7 +52,8 @@ class IdeTreeNode {
   const IdeTreeNode({
     required this.id,
     required this.label,
-    this.startsClosed = false,
+    this.isDefaultPage = false,
+    this.startsClosed = true,
     this.badge,
     this.badgeColor,
     this.subtitle,
@@ -62,6 +64,7 @@ class IdeTreeNode {
 
   final String id;
   final String label;
+  final bool isDefaultPage;
   final bool startsClosed;
   final String? badge;
   final IdeBadgeColor? badgeColor;
@@ -83,19 +86,18 @@ class IdeTreeNode {
           when children.isNotEmpty || label.endsWith('/'):
         final treeNodes = children.map(IdeTreeNode.fromMap).toList();
         final startsClosed =
-            map.containsKey('startsClosed') && map['startsClosed'] == true;
+            (map['starts-closed'] ?? map['startsClosed']) as bool? ?? true;
+        final isDefaultPage =
+            (map['is-default-page'] ?? map['isDefaultPage']) == true;
 
         return IdeTreeNode(
           id: id,
           label: label,
+          isDefaultPage: isDefaultPage,
           startsClosed: startsClosed,
           badge: map['badge']?.toString(),
           badgeColor: IdeBadgeColor.fromString(
-            (map['badgeColor'] ??
-                    map['badge_color'] ??
-                    map['badge-color'] ??
-                    map['badgecolor'])
-                ?.toString(),
+            (map['badge-color'] ?? map['badgeColor'])?.toString(),
           ),
           title: map['title']?.toString(),
           subtitle: map['subtitle']?.toString(),
@@ -110,17 +112,16 @@ class IdeTreeNode {
           }
           // Files shouldn't be empty, that's bad UX
           when map.containsKey('note'):
-       
+        final isDefaultPage =
+            (map['is-default-page'] ?? map['isDefaultPage']) == true;
+
         return IdeTreeNode(
           id: id,
           label: label,
+          isDefaultPage: isDefaultPage,
           badge: map['badge']?.toString(),
           badgeColor: IdeBadgeColor.fromString(
-            (map['badgeColor'] ??
-                    map['badge_color'] ??
-                    map['badge-color'] ??
-                    map['badgecolor'])
-                ?.toString(),
+            (map['badge-color'] ?? map['badgeColor'])?.toString(),
           ),
           title: map['title']?.toString() ?? label,
           subtitle: map['subtitle']?.toString() ?? '',
@@ -219,10 +220,31 @@ class IdeExplorer extends StatelessComponent {
           path: root.label.isEmpty ? [] : [root.label],
         ),
     };
+
     final allFlatNodes = flatNodesByRoot.values
         .expand((nodes) => nodes)
         .toList(growable: false);
-    final firstNodeDomId = flatNodesByRoot[roots.first.id]?.firstOrNull?.domId;
+
+    final defaultFlatNode = allFlatNodes.firstWhereOrNull(
+      (flat) => flat.node.isDefaultPage,
+    );
+
+    final activeRootId = defaultFlatNode != null
+        ? (roots
+                  .firstWhereOrNull(
+                    (r) =>
+                        flatNodesByRoot[r.id]?.any(
+                          (n) => n.domId == defaultFlatNode.domId,
+                        ) ??
+                        false,
+                  )
+                  ?.id ??
+              roots.first.id)
+        : roots.first.id;
+
+    final selectedNodeDomId =
+        defaultFlatNode?.domId ??
+        flatNodesByRoot[activeRootId]?.firstOrNull?.domId;
 
     return div(classes: 'ide-explorer not-content', [
       div(classes: 'ide-sidebar', [
@@ -231,16 +253,16 @@ class IdeExplorer extends StatelessComponent {
             classes: 'ide-root-tabs',
             attributes: {'role': 'tablist'},
             [
-              for (final (rootIndex, root) in roots.indexed)
+              for (final root in roots)
                 button(
                   classes: [
                     'ide-root-tab',
-                    if (rootIndex == 0) 'active',
+                    if (root.id == activeRootId) 'active',
                   ].toClasses,
                   attributes: {
                     'data-ide-root': root.id,
                     'role': 'tab',
-                    'aria-selected': '${rootIndex == 0}',
+                    'aria-selected': '${root.id == activeRootId}',
                   },
                   [.text(root.label.isEmpty ? root.id : root.label)],
                 ),
@@ -251,11 +273,13 @@ class IdeExplorer extends StatelessComponent {
           div(classes: 'ide-root-tabs ide-root-tabs-single', [
             _buildToggleAllButton(),
           ]),
-        for (final (rootIndex, root) in roots.indexed)
+
+        //TODO Start Tree portion (move to separate method?)
+        for (final root in roots)
           div(
             classes: [
               'ide-tree',
-              if (rootIndex == 0) 'active',
+              if (root.id == activeRootId) 'active',
             ].toClasses,
             attributes: {'data-ide-root': root.id},
             [
@@ -264,7 +288,7 @@ class IdeExplorer extends StatelessComponent {
                   _buildTreeNode(
                     node,
                     instanceId: effectiveInstanceId,
-                    selectedDomId: firstNodeDomId,
+                    selectedDomId: selectedNodeDomId,
                   ),
               ]),
             ],
@@ -275,7 +299,7 @@ class IdeExplorer extends StatelessComponent {
           _buildDetailPanel(
             flat,
             instanceId: effectiveInstanceId,
-            isActive: flat.domId == firstNodeDomId,
+            isActive: flat.domId == selectedNodeDomId,
           ),
       ]),
     ]);
@@ -320,6 +344,19 @@ class IdeExplorer extends StatelessComponent {
     return result;
   }
 
+  bool _hasSelectedChild(
+    IdeTreeNode node,
+    String instanceId,
+    String? selectedDomId,
+  ) {
+    if (selectedDomId == null) return false;
+    for (final child in node.children) {
+      if (_domId(instanceId, child.id) == selectedDomId) return true;
+      if (_hasSelectedChild(child, instanceId, selectedDomId)) return true;
+    }
+    return false;
+  }
+
   Component _buildTreeNode(
     IdeTreeNode node, {
     required String instanceId,
@@ -352,9 +389,13 @@ class IdeExplorer extends StatelessComponent {
       ]);
     }
 
+    final isOpen =
+        !node.startsClosed ||
+        _hasSelectedChild(node, instanceId, selectedDomId);
+
     return li(classes: 'ide-node ide-node-folder', [
       details(
-        open: !node.startsClosed,
+        open: isOpen,
         [
           summary(
             classes: 'ide-folder-summary',
@@ -436,21 +477,40 @@ class IdeExplorer extends StatelessComponent {
             ],
           ),
         div(classes: 'ide-detail-header', [
+          // icon
           node.isFolder ? FileIcon.folderIcon : FileIcon.forFile(node.label),
+          // everything else
           div(classes: 'ide-detail-heading', [
-            div(classes: 'ide-detail-title', [.text(node.title ?? node.label)]),
+            div(classes: 'ide-detail-title-row', [
+              div(classes: 'ide-detail-title', [
+                .text(node.title ?? node.label),
+              ]),
+
+              if (node.badge case final badge?)
+                span(
+                  classes: [
+                    'ide-badge',
+                    'ide-badge-color-'
+                        '${node.badgeColor?.name ?? IdeBadgeColor.neutral.name}',
+                  ].toClasses,
+                  [.text(badge)],
+                ),
+            ]),
+
+            // Subtitle row
             if (node.subtitle case final subtitle?)
               div(classes: 'ide-detail-subtitle', [.text(subtitle)]),
           ]),
-          if (node.badge case final badge?)
-            span(
-              classes: [
-                'ide-badge',
-                'ide-badge-color-'
-                    '${node.badgeColor?.name ?? IdeBadgeColor.neutral.name}',
-              ].toClasses,
-              [.text(badge)],
-            ),
+
+          // if (node.badge case final badge?)
+          //   span(
+          //     classes: [
+          //       'ide-badge',
+          //       'ide-badge-color-'
+          //           '${node.badgeColor?.name ?? IdeBadgeColor.neutral.name}',
+          //     ].toClasses,
+          //     [.text(badge)],
+          //   ),
         ]),
 
         if (customContents[node.id] case final customChild?)
@@ -524,9 +584,7 @@ class DashIdeExplorer extends CustomComponent {
     }
 
     final customContents = <String, Component>{};
-    final rootLabel = node.attributes['rootLabel'] ??
-        node.attributes['rootlabel'] ??
-        node.attributes['root-label'];
+    final rootLabel = node.attributes['root-label'];
     final roots = parseRootsFromNode(
       node,
       builder,
@@ -603,11 +661,7 @@ class DashIdeExplorer extends CustomComponent {
       return [
         IdeExplorerProjectRoot(
           id: node.attributes['id'] ?? 'root',
-          label: rootLabel ??
-              node.attributes['rootLabel'] ??
-              node.attributes['rootlabel'] ??
-              node.attributes['root-label'] ??
-              '',
+          label: rootLabel ?? node.attributes['root-label'] ?? '',
           children: _parseTreeNodes(node.children, builder, customContents),
         ),
       ];
@@ -630,21 +684,17 @@ class DashIdeExplorer extends CustomComponent {
         continue;
       }
 
-      final label = child.attributes['label'] ?? child.attributes['name'] ?? '';
+      final label = child.attributes['label'] ?? '';
       final id =
           child.attributes['id'] ??
           (label.isNotEmpty ? slugify(label) : 'node-$index');
-      final startsClosed =
-          child.attributes['closed'] == 'true' ||
-          child.attributes['startsClosed'] == 'true' ||
-          child.attributes['startsclosed'] == 'true' ||
-          child.attributes['starts-closed'] == 'true';
+      final isDefaultPage = child.attributes['is-default-page'] == 'true';
+      final startsClosed = child.attributes['starts-closed'] != null
+          ? child.attributes['starts-closed'] == 'true'
+          : true;
 
       final badge = child.attributes['badge'];
-      final badgeColorStr =
-          child.attributes['badgeColor'] ??
-          child.attributes['badgecolor'] ??
-          child.attributes['badge-color'];
+      final badgeColorStr = child.attributes['badge-color'];
       final badgeColor = badgeColorStr != null
           ? IdeBadgeColor.fromString(badgeColorStr)
           : null;
@@ -690,6 +740,7 @@ class DashIdeExplorer extends CustomComponent {
         IdeTreeNode(
           id: id,
           label: label,
+          isDefaultPage: isDefaultPage,
           startsClosed: startsClosed,
           badge: badge,
           badgeColor: badgeColor,
