@@ -42,9 +42,9 @@ check out the [Flutter 3.47 blog post][3.47-blog-post].
 * There is a new guide page on [Dependency management][dependency-mgmt]
   to help you configure, manage, and upgrade package dependencies.
 
-* We expanded the [Swift Package Manager][swiftpm] guide for iOS and macOS,
-  and updated [Add-to-App][add-to-app] documentation with
-  SwiftPM integration guides.
+* The [Swift Package Manager][swiftpm] guide for iOS and macOS has been
+  expanded, and the [Add-to-App][add-to-app] documentation has been updated
+  with SwiftPM integration guides.
 
 * The web documentation now includes troubleshooting guidance for
   [Wasm compilation errors][wasm] and instructions for using the
