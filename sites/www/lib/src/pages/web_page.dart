@@ -195,8 +195,7 @@ class WebPage extends StatelessComponent {
                 div(classes: 'cta-pathway', [
                   h4([.text('New to Flutter (Web Developer)')]),
                   a(
-                    href:
-                        'https://docs.flutter.dev/get-started/flutter-for/web-devs',
+                    href: 'https://docs.flutter.dev/get-started/flutter-for/web-devs',
                     classes: 'btn quiet',
                     [
                       .text('Get started'),
