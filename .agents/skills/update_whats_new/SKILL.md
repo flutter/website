@@ -75,7 +75,8 @@ Use this skill when a new Flutter release has occurred and you need to update `s
     For each meaningful change identified in Step 4:
     * Add a bullet point under the new release section.
     * Leave a blank line between each bullet point in the list to ensure consistent spacing and readability.
-    * Write a concise explanation of the change.
+    * Format all Markdown text using semantic line breaks and keep lines under 80 characters.
+    * **No First-Person Pronouns:** In accordance with the [Google developer documentation style guide](https://developers.google.com/style/voice), avoid first-person pronouns like "we", "I", "our", or "us" (e.g. do NOT write "* We reorganized...", "* We expanded...", "* We added..."). Instead, use neutral phrasing (e.g. "* A new guide page covers...", "* The AI documentation has been reorganized to...", "* Guidance has been added for...").
     * **Formatting Rule:** Do NOT use bold topic prefixes followed by colons (e.g. do NOT write `* **Widget Previews:** Flutter [Widget Previews]...`). Instead, write clean, natural sentences with the links integrated inline, matching the style of past entries (e.g. `The Flutter [Widget Previews][widget-previewer] tool has graduated to stable...`).
     * Add a link to the relevant section or new page using markdown reference links.
     * If a community contributor was involved, thank them by including their GitHub handle in parentheses, for example: `(Thank you, [username][].)`. Only thank community contributors, not Flutter team members.
@@ -84,6 +85,7 @@ Use this skill when a new Flutter release has occurred and you need to update `s
 7.  **Add and format link definitions**
 
     Add the link definitions (reference links) to the bottom of the new release section, matching the style used throughout the document.
+    * **No Unused Link Definitions:** Verify that every link definition defined at the bottom is actively referenced in the text above. Remove any unused link definitions.
     For example:
     ```markdown
     [3.47-blog-post]: /blog/whats-new-in-flutter-3-47
