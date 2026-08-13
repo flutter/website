@@ -60,13 +60,8 @@
 
 .features {
   margin-bottom: var(--gutter-sm);
-  
-  --anim-offset: 200px;
 
-  @keyframes slideup {
-    0%   { opacity: 0; }
-    100% { opacity: 1; top: 0px }
-  }
+  --anim-offset: 200px;
 
   .stacked-feature {
     .feature {
@@ -157,13 +152,8 @@
     }
 
     &.active {
+      animation: marketing-slide-up 600ms var(--ui-anim-func) forwards;
       display: grid;
-      animation-duration: 600ms;
-      animation-delay: 0ms;
-      animation-name: slideup;
-      animation-iteration-count: 1;
-      animation-timing-function: var(--ui-anim-func);
-      animation-fill-mode: forwards;
     }
 
     .text {
@@ -180,7 +170,7 @@
           font-size: var(--font-size-heading-3);
         }
       }
-  
+
       p {
         margin-bottom: var(--gutter-sm);
         font-size: var(--font-size-heading-4);
@@ -194,10 +184,9 @@
 
     .media {
       margin-bottom: var(--gutter);
-      width: var(--feature-img-width);
       overflow: hidden;
       order: 1;
-      
+
       img {
         width: 100%;
         max-width: 600px;
@@ -227,8 +216,8 @@
       &.reverse {
         grid-template-columns: 40% 1fr;
 
-        .text  { 
-          order: 2; 
+        .text  {
+          order: 2;
           padding: 0 var(--gutter) 0 var(--gutter-xl);
         }
 
@@ -314,7 +303,7 @@
 
       &:hover {
         transition: background-color 300ms, box-shadow 200ms var(--ui-anim-func);
-        background-color: rgba(255, 255, 255, 0.15); /* #5298E3; */ 
+        background-color: rgba(255, 255, 255, 0.15);
         box-shadow: var(--ui-drop-shadow);
 
         h3 .link-arrow-icon {
@@ -364,7 +353,7 @@
         grid-template-columns: minmax(0, 400px) minmax(0, 400px);
         column-gap: var(--gutter);
       }
-  
+
       &.col-3 {
         grid-template-columns: minmax(0, 400px) minmax(0, 400px);
         column-gap: var(--gutter-sm);
@@ -378,7 +367,7 @@
         grid-template-columns: minmax(0, 500px) minmax(0, 500px);
         column-gap: 90px;
       }
-  
+
       &.col-3 {
         grid-template-columns: minmax(0, 400px) minmax(0, 400px) minmax(0, 400px);
         column-gap: var(--gutter-sm);
@@ -408,14 +397,14 @@
         font-size: var(--font-size-heading-2);
         line-height: 1; /* tighter */
       }
-  
+
       p {
         margin-bottom: var(--gutter-sm);
         font-size: var(--font-size-heading-4);
       }
     }
   }
-  
+
   @include breakpoints.screen(md) {
     grid-template-columns: 1fr 1fr;
   }

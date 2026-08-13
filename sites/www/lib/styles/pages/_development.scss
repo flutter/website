@@ -134,10 +134,6 @@ body.development {
     }
   }
 
-  #notification.module {
-    padding-bottom: 0;
-  }
-
   /* iOS */
   &.ios {
     .partial-border {
@@ -152,7 +148,7 @@ body.development {
       position: absolute;
       left: 50%;
       transform: translate(-50%, -50%);
-      bottom: 0px;
+      bottom: 0;
 
       @include breakpoints.screen(lg) {
         width: 60%;
@@ -325,6 +321,13 @@ body.development {
               max-width: 40%; /* Max width when at scale(1) in center */
               max-height: 80%; /* Max height for items */
               object-fit: contain; /* Ensure items are contained within their bounds */
+
+              /* How far the side cards travel from the center. */
+              --carousel-shift: 93%;
+
+              @include breakpoints.screen(sm) {
+                --carousel-shift: 100%;
+              }
 
               animation-name: carouselRotate3D;
               animation-duration: 10s;
@@ -835,26 +838,22 @@ body.development {
     }
 
     .container {
-      /* margin: 200px auto; */
-
       min-height: 75vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: var(--gutter);
 
-
       &.has-subtitle {
         justify-content: flex-start;
-        margin-bottom: 100px
+        margin-bottom: 100px;
       }
-      
-      
+
       @include breakpoints.screen(sm) {
         gap: var(--gutter-lg);
-        
+
         &.has-subtitle {
-          margin-bottom: 200px
+          margin-bottom: 200px;
         }
       }
     }
@@ -869,21 +868,6 @@ body.development {
       z-index: -1;
     }
 
-    /* .video-container {
-      .title {
-        margin-top: var(--gutter-md);
-      }
-
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-
-      .container {
-        max-width: 90%;
-      }
-    } */
-
     .embed-container {
       border-radius: 30px;
     }
@@ -893,15 +877,15 @@ body.development {
 @keyframes carouselRotate3D {
   0% {
     /* Center State */
-    transform: translate(-50%, -50%) translateX(0%) translateZ(0px) scale(1);
+    transform: translate(-50%, -50%) translateX(0%) translateZ(0) scale(1);
     opacity: 1;
     z-index: 3;
   }
 
   25% {
     /* Right State */
-    transform: translate(-50%, -50%) translateX(93%) translateZ(-100px)
-      scale(0.95);
+    transform: translate(-50%, -50%) translateX(var(--carousel-shift))
+      translateZ(-100px) scale(0.95);
     opacity: 1;
     z-index: 2;
   }
@@ -916,7 +900,8 @@ body.development {
 
   75% {
     /* Left State */
-    transform: translate(-50%, -50%) translateX(-93%) translateZ(-100px)
+    transform: translate(-50%, -50%)
+      translateX(calc(var(--carousel-shift) * -1)) translateZ(-100px)
       scale(0.95);
     opacity: 1;
     z-index: 2;
@@ -924,50 +909,8 @@ body.development {
 
   100% {
     /* Loop back to Center State */
-    transform: translate(-50%, -50%) translateX(0%) translateZ(0px) scale(1);
+    transform: translate(-50%, -50%) translateX(0%) translateZ(0) scale(1);
     opacity: 1;
     z-index: 3;
-  }
-}
-
-@include breakpoints.screen(sm) {
-  @keyframes carouselRotate3D {
-    0% {
-      /* Center State */
-      transform: translate(-50%, -50%) translateX(0%) translateZ(0px) scale(1);
-      opacity: 1;
-      z-index: 3;
-    }
-
-    25% {
-      /* Right State */
-      transform: translate(-50%, -50%) translateX(100%) translateZ(-100px)
-        scale(0.95);
-      opacity: 1;
-      z-index: 2;
-    }
-
-    50% {
-      /* Back State */
-      transform: translate(-50%, -50%) translateX(0%) translateZ(-200px)
-        scale(0.85);
-      opacity: 1;
-      z-index: 1;
-    }
-
-    75% {
-      /* Left State */
-      transform: translate(-50%, -50%) translateX(-100%) translateZ(-100px)
-        scale(0.95);
-      opacity: 1;
-      z-index: 2;
-    }
-
-    100% {
-      /* Loop back to Center State */
-      transform: translate(-50%, -50%) translateX(0%) translateZ(0px) scale(1);
-      opacity: 1;
-      z-index: 3;
-    }
   }
 }

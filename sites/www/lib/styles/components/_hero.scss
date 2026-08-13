@@ -31,7 +31,7 @@ body.interior {
           }
         }
       }
-      
+
       .text {
         text-align: center;
         order: 2;
@@ -72,20 +72,20 @@ body.interior {
       .mantle {
         grid-template-columns: 1fr minmax(0, var(--img-width));
         gap: var(--gutter-md);
-  
+
         .text {
           text-align: left;
-          order: 1; 
+          order: 1;
           padding-left: var(--gutter);
-  
+
           h1 {
             margin: 0;
             font-size: 70px;
           }
         }
-  
-        .media { 
-          order: 2; 
+
+        .media {
+          order: 2;
 
           img {
             max-width: 100%;
