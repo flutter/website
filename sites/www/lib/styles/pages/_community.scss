@@ -2,31 +2,28 @@
 
 body.community {
   section.hero {
-    background: linear-gradient(225deg,
-        rgba(231, 248, 255, 0.5) 0%,
-        rgba(184, 234, 254, 0.5) 100%);
+    background: linear-gradient(
+      225deg,
+      rgba(231, 248, 255, 0.5) 0%,
+      rgba(184, 234, 254, 0.5) 100%
+    );
 
-    .container {
-      .mantle {
-        .text {
-          @include breakpoints.screen(lg) {
-            width: 553px;
-          }
+    .mantle .text {
+      @include breakpoints.screen(lg) {
+        width: 553px;
+      }
 
-          h1 {
-            font-size: 48px;
-          }
+      h1 {
+        font-size: 48px;
+      }
 
-          h3 {
-            margin-top: 8px;
-            margin-bottom: 32px;
-            font-size: 20px;
-            font-family: var(--font-body);
-            color: var(--grey-6);
-            line-height: 30px;
-            font-weight: var(--font-weight-normal);
-          }
-        }
+      h3 {
+        color: var(--grey-6);
+        font-family: var(--font-body);
+        font-size: 20px;
+        font-weight: var(--font-weight-normal);
+        line-height: 30px;
+        margin: 8px 0 32px;
       }
     }
   }
@@ -35,137 +32,50 @@ body.community {
     padding-top: var(--gutter-md);
   }
 
-  #events,
-  #gdes {
+  #events, #gdes {
     background-image: var(--grad-liteyellow-blue);
-  }
 
-  #events .features,
-  #gdes .features {
-    margin-bottom: 0;
-  }
-
-  #community-events {
-    .feature-header hgroup {
-      max-width: 750px;
-    }
-  }
-
-  #map {
-    .map {
-      background-color: #eee;
-      height: 700px;
-
-      .cluster img {
-        width: 100% !important;
-        height: 100% !important;
-      }
-    }
-  }
-
-  #twitter {
-    padding: var(--gutter-sm) 0;
-
-    .text {
-      order: 1 !important;
-    }
-
-    .media {
-      order: 2 !important;
-    }
-
-    .social-icons {
-      margin-bottom: var(--gutter);
-
-      >div {
-        display: flex;
-        align-items: center;
-
-        a {
-          margin-right: 1.25rem;
-        }
-
-        span {
-          font-family: var(--font-ui);
-          font-size: var(--font-size-heading-5);
-          color: var(--grey-6);
-        }
-      }
-    }
-
-    @include breakpoints.screen(lg) {
-      .feature {
-        align-items: flex-start;
-        grid-template-columns: 1fr 55%;
-      }
-
-      .twitter-embed {
-        position: relative;
-        top: -8px;
-      }
-
-      .social-icons {
-        margin-bottom: 0;
-      }
+    .features {
+      margin-bottom: 0;
     }
   }
 
   #community-grid {
     --dk-purple: #0e0e4c;
-    --md-purple: #00186b;
     --lt-purple: #34137e;
 
     background-color: var(--dk-purple);
-    background-image: linear-gradient(to bottom,
-        var(--dk-purple) 20%,
-        transparent 60%),
-      radial-gradient(ellipse at -50% -150%,
+    background-image:
+      linear-gradient(to bottom, var(--dk-purple) 20%, transparent 60%),
+      radial-gradient(
+        ellipse at -50% -150%,
         transparent 80%,
-        var(--dk-purple) 80%),
+        var(--dk-purple) 80%
+      ),
       linear-gradient(145deg, var(--dk-purple) 0%, var(--lt-purple) 60%);
 
-    /* TODO can likely be merged with main feature-grid styles */
-    >div a {
-      .community-icon {
-        max-width: 74px;
-        max-height: 74px;
-        margin-bottom: var(--spacer-md);
+    > div a .community-icon {
+      margin-bottom: var(--spacer-md);
+      max-height: 74px;
+      max-width: 74px;
 
-        &.framed-icon {
-          border-radius: 5px;
-          background-color: white;
-          padding: 12px;
-          height: 74px;
-          width: 74px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          img {
-            width: 100%;
-          }
-        }
+      &.framed-icon {
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        height: 74px;
+        justify-content: center;
+        padding: 12px;
+        width: 74px;
 
         img {
-          margin-bottom: 0;
+          width: 100%;
         }
       }
-    }
-  }
-
-  .dart-insert {
-    background-image: linear-gradient(to right, #5bccfc, #beeafe);
-    overflow: hidden;
-    grid-template-columns: 1fr;
-
-    .media {
-      position: static;
 
       img {
-        height: 100%;
-        bottom: auto;
-        top: 0;
-        width: auto;
+        margin-bottom: 0;
       }
     }
   }
