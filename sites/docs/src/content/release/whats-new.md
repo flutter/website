@@ -33,11 +33,11 @@ check out the [Flutter 3.47 blog post][3.47-blog-post].
   introducing local build caching for faster startup times
   and real-time preview search and filtering.
 
-* We reorganized the AI documentation to improve navigation
+* The AI documentation has been reorganized to improve navigation
   and help you get started quickly with agent-plugins
   (formerly known as skills) using the [Antigravity CLI][antigravity-cli],
   IDE integrations, and other coding assistants.
-  We also added a topic page for experimental [AI Evaluations][ai-evals].
+  An experimental [AI Evaluations][ai-evals] topic page has also been added.
 
 * There is a new guide page on [Dependency management][dependency-mgmt]
   to help you configure, manage, and upgrade package dependencies.
