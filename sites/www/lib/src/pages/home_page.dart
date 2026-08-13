@@ -53,7 +53,7 @@ class HomePage extends StatelessComponent {
                   styles: Styles(
                     backgroundImage: .url(
                       context.asset(
-                        'home/images/hero/hero-the-debertz.png',
+                        'home/images/hero/hero-the-debertz.webp',
                         width: 800,
                       ),
                     ),
@@ -65,7 +65,7 @@ class HomePage extends StatelessComponent {
                   styles: Styles(
                     backgroundImage: .url(
                       context.asset(
-                        'home/images/hero/movement-app.png',
+                        'home/images/hero/movement-app.webp',
                         width: 400,
                       ),
                     ),
@@ -77,7 +77,7 @@ class HomePage extends StatelessComponent {
                   styles: Styles(
                     backgroundImage: .url(
                       context.asset(
-                        'home/images/hero/sua-musica-app.png',
+                        'home/images/hero/sua-musica-app.webp',
                         width: 400,
                       ),
                     ),
@@ -91,7 +91,7 @@ class HomePage extends StatelessComponent {
                   styles: Styles(
                     backgroundImage: .url(
                       context.asset(
-                        'home/images/hero/hero-bmw-mobile.png',
+                        'home/images/hero/hero-bmw-mobile.webp',
                         width: 600,
                       ),
                     ),
@@ -105,7 +105,7 @@ class HomePage extends StatelessComponent {
                   styles: Styles(
                     backgroundImage: .url(
                       context.asset(
-                        'home/images/hero/hero-trivia-crack.png',
+                        'home/images/hero/hero-trivia-crack.webp',
                         width: 400,
                       ),
                     ),
@@ -117,7 +117,7 @@ class HomePage extends StatelessComponent {
                   styles: Styles(
                     backgroundImage: .url(
                       context.asset(
-                        'home/images/hero/google-assistant-tablet.png',
+                        'home/images/hero/google-assistant-tablet.webp',
                         width: 800,
                       ),
                     ),
@@ -129,7 +129,7 @@ class HomePage extends StatelessComponent {
                   styles: Styles(
                     backgroundImage: .url(
                       context.asset(
-                        'home/images/hero/nu-app.png',
+                        'home/images/hero/nu-app.webp',
                         width: 400,
                       ),
                     ),
@@ -141,7 +141,7 @@ class HomePage extends StatelessComponent {
                   styles: Styles(
                     backgroundImage: .url(
                       context.asset(
-                        'home/images/hero/mgm-app.jpg',
+                        'home/images/hero/mgm-app.webp',
                         width: 400,
                       ),
                     ),
@@ -199,7 +199,7 @@ class HomePage extends StatelessComponent {
                       },
                       [
                         img(
-                          src: context.asset('home/images/fast.png'),
+                          src: context.asset('home/images/fast.webp'),
                           alt: 'Fast',
                         ),
                       ],
@@ -214,7 +214,8 @@ class HomePage extends StatelessComponent {
                     ]),
                     a(
                       classes: 'btn',
-                      href: 'https://dartpad.dev/?id=e66e420f2f0201c772f73819711bf290',
+                      href:
+                          'https://dartpad.dev/?id=e66e420f2f0201c772f73819711bf290',
                       attributes: {'target': '_blank'},
                       [.text('Try it in DartPad')],
                     ),
@@ -240,7 +241,7 @@ class HomePage extends StatelessComponent {
                       },
                       [
                         img(
-                          src: context.asset('home/images/productive.png'),
+                          src: context.asset('home/images/productive.webp'),
                           alt: 'Productive',
                         ),
                       ],
@@ -256,7 +257,8 @@ class HomePage extends StatelessComponent {
                     ]),
                     a(
                       classes: 'btn',
-                      href: 'https://dartpad.dev/?id=bbd3f10c2593f0add04dd770318b33f7',
+                      href:
+                          'https://dartpad.dev/?id=bbd3f10c2593f0add04dd770318b33f7',
                       attributes: {'target': '_blank'},
                       [.text('Try it in DartPad')],
                     ),
@@ -282,7 +284,7 @@ class HomePage extends StatelessComponent {
                       },
                       [
                         img(
-                          src: context.asset('home/images/flexible.png'),
+                          src: context.asset('home/images/flexible.webp'),
                           alt: 'Flexible',
                         ),
                       ],
@@ -297,7 +299,8 @@ class HomePage extends StatelessComponent {
                     ]),
                     a(
                       classes: 'btn',
-                      href: 'https://dartpad.dev/?id=1ab1b78a18039bbbd5cfbb4b835b5b8d',
+                      href:
+                          'https://dartpad.dev/?id=1ab1b78a18039bbbd5cfbb4b835b5b8d',
                       attributes: {'target': '_blank'},
                       [.text('Try it in DartPad')],
                     ),
@@ -326,7 +329,7 @@ class HomePage extends StatelessComponent {
             ),
           ],
           media: img(
-            src: context.asset('home/images/development.jpg', width: 600),
+            src: context.asset('home/images/development.webp', width: 600),
             alt: 'Development',
           ),
           noSpy: true,
@@ -341,7 +344,7 @@ class HomePage extends StatelessComponent {
           ],
           media: img(
             src: context.asset(
-              'home/images/developer-experience.jpg',
+              'home/images/developer-experience.webp',
               width: 600,
             ),
             alt: 'Developer experience',
@@ -360,7 +363,7 @@ class HomePage extends StatelessComponent {
           media: img(
             alt: 'Ecosystem',
             src: context.asset(
-              'home/images/stable-and-reliable.jpg',
+              'home/images/stable-and-reliable.webp',
               width: 600,
             ),
           ),
@@ -380,7 +383,7 @@ class HomePage extends StatelessComponent {
           media: img(
             alt: 'Seamless Integrations',
             src: context.asset(
-              'home/images/seamless-integrations-home.png',
+              'home/images/seamless-integrations-home.webp',
               width: 600,
             ),
           ),
@@ -410,7 +413,7 @@ class HomePage extends StatelessComponent {
         div(classes: 'media', [
           img(
             src: context.asset(
-              'home/images/gpay-developer-story.png',
+              'home/images/gpay-developer-story.webp',
               width: 385,
             ),
             alt: 'Google Pay Developer Story',
