@@ -24,25 +24,40 @@ and review the [Dart changelog][].
 
 ## 12 August 2026: Release 3.47
 
-Flutter 3.47 is live! For details, check out the [Flutter 3.47 blog post][3.47-blog-post].
+Flutter 3.47 is live! For details,
+check out the [Flutter 3.47 blog post][3.47-blog-post].
 
 **Docs updated or added since the 3.44 release**
 
-* The Flutter [Widget Previews][widget-previewer] tool has graduated to stable, introducing local build caching for faster startup times and real-time preview search and filtering.
+* The Flutter [Widget Previews][widget-previewer] tool has graduated to stable,
+  introducing local build caching for faster startup times
+  and real-time preview search and filtering.
 
-* We reorganized the AI documentation to improve navigation and help you get started quickly with agent-plugins (formerly known as skills) using the new [Antigravity CLI][antigravity-cli] and IDE integration. We also added a topic page for experimental [AI Evaluations][ai-evals].
+* We reorganized the AI documentation to improve navigation
+  and help you get started quickly with agent-plugins
+  (formerly known as skills) using the [Antigravity CLI][antigravity-cli],
+  IDE integrations, and other coding assistants.
+  We also added a topic page for experimental [AI Evaluations][ai-evals].
 
-* There is a new guide page on [Dependency management][dependency-mgmt] to help you configure, manage, and upgrade package dependencies.
+* There is a new guide page on [Dependency management][dependency-mgmt]
+  to help you configure, manage, and upgrade package dependencies.
 
-* We expanded the [Swift Package Manager][swiftpm] guide for iOS and macOS, and updated [Add-to-App][add-to-app] documentation with SwiftPM integration guides.
+* We expanded the [Swift Package Manager][swiftpm] guide for iOS and macOS,
+  and updated [Add-to-App][add-to-app] documentation with
+  SwiftPM integration guides.
 
-* The web documentation now includes troubleshooting guidance for [Wasm compilation errors][wasm] and instructions for using the `--source-maps` flag during web builds.
+* The web documentation now includes troubleshooting guidance for
+  [Wasm compilation errors][wasm] and instructions for using the
+  `--source-maps` flag during web builds.
 
-* We added a new section to the assets guide explaining how to bundle [platform-specific assets][platform-assets] in `pubspec.yaml`.
+* We added a new section to the assets guide explaining how to bundle
+  [platform-specific assets][platform-assets] in `pubspec.yaml`.
 
-* We added guidance for migrating plugins and apps to use [built-in Kotlin][kotlin-migration] Gradle plugins.
+* We added guidance for migrating plugins and apps to use
+  [built-in Kotlin][kotlin-migration] Gradle plugins.
 
-As always, check out the [breaking changes][bc-3-47] page for this release, which includes links to migration guides and other vital information.
+As always, check out the [breaking changes][bc-3-47] page for this release,
+which includes links to migration guides and other vital information.
 
 [3.47-blog-post]: /blog/whats-new-in-flutter-3-47
 [widget-previewer]: /tools/widget-previewer
