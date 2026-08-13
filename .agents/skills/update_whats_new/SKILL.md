@@ -107,14 +107,24 @@ documentation site since the previous release.
       to ensure consistent spacing and readability.
     * Format all Markdown text using semantic line breaks and keep lines
       under 80 characters.
-    * **No First-Person Pronouns:** In accordance with the
-      [Google developer documentation style guide][style-guide-voice],
-      avoid first-person pronouns like "we", "I", "our", or "us"
-      (for example, do NOT write "* We reorganized...", "* We expanded...",
-      or "* We added..."). Instead, use neutral phrasing
-      (for example, "* A new guide page covers...",
-      "* The AI documentation has been reorganized to...",
-      or "* Guidance has been added for...").
+    * **Active Voice & Strong Verbs (No First-Person or Passive Voice):**
+      * Avoid first-person pronouns like "we", "I", "our", or "us"
+        in accordance with the
+        [Google developer documentation style guide][style-guide-voice]
+        (for example, do NOT write "* We reorganized...", "* We expanded...",
+        or "* We added...").
+      * Avoid passive voice constructions (for example, do NOT write
+        `* Guidance has been added...` or `* The page has been updated...`).
+      * Avoid weak existential lead-ins (for example, do NOT write
+        `* There is a new guide...`).
+      * Make the documentation, guide, or tool the active subject
+        * `* A new guide on [Dependency management][dependency-mgmt]`
+          `explains how to...`
+        * `* The assets guide now explains how to bundle...`
+        * `* The [Add-to-app][add-to-app] documentation now includes...`
+        * `* A new migration guide helps you migrate...`
+        * `* The Flutter [Widget Previews][widget-previewer] tool has`
+          `graduated to stable...`
     * **Formatting Rule:** Do NOT use bold topic prefixes followed by colons
       (for example, do not write
       `* **Widget Previews:** Flutter [Widget Previews]...`).
