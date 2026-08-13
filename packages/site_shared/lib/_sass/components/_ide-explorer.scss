@@ -201,9 +201,7 @@
   text-transform: uppercase;
 }
 
-.ide-badge-color-info,
-.ide-color-info,
-.ide-tone-info {
+.ide-badge-color-info {
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-info-color);
@@ -215,12 +213,7 @@
   }
 }
 
-.ide-badge-color-tip,
-.ide-color-tip,
-.ide-tone-tip,
-.ide-badge-color-success,
-.ide-color-success,
-.ide-tone-success {
+.ide-badge-color-tip {
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-tip-color);
@@ -232,9 +225,7 @@
   }
 }
 
-.ide-badge-color-important,
-.ide-color-important,
-.ide-tone-important {
+.ide-badge-color-important {
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-important-color);
@@ -246,9 +237,7 @@
   }
 }
 
-.ide-badge-color-warning,
-.ide-color-warning,
-.ide-tone-warning {
+.ide-badge-color-warning {
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-warning-color);
@@ -260,9 +249,7 @@
   }
 }
 
-.ide-badge-color-error,
-.ide-color-error,
-.ide-tone-error {
+.ide-badge-color-error {
   &.ide-badge-dot,
   &.ide-badge {
     background-color: var(--site-alert-error-color);
@@ -274,9 +261,7 @@
   }
 }
 
-.ide-badge-color-neutral,
-.ide-color-neutral,
-.ide-tone-neutral {
+.ide-badge-color-neutral {
   &.ide-badge-dot {
     background-color: var(--site-base-fgColor-alt);
   }
