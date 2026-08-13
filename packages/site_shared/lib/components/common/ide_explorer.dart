@@ -90,7 +90,13 @@ class IdeTreeNode {
           label: label,
           startsClosed: startsClosed,
           badge: map['badge']?.toString(),
-          badgeColor: IdeBadgeColor.fromString(map['badgeColor']?.toString()),
+          badgeColor: IdeBadgeColor.fromString(
+            (map['badgeColor'] ??
+                    map['badge_color'] ??
+                    map['badge-color'] ??
+                    map['badgecolor'])
+                ?.toString(),
+          ),
           title: map['title']?.toString(),
           subtitle: map['subtitle']?.toString(),
           note: map['note']?.toString(),
@@ -109,7 +115,13 @@ class IdeTreeNode {
           id: id,
           label: label,
           badge: map['badge']?.toString(),
-          badgeColor: IdeBadgeColor.fromString(map['badgeColor']?.toString()),
+          badgeColor: IdeBadgeColor.fromString(
+            (map['badgeColor'] ??
+                    map['badge_color'] ??
+                    map['badge-color'] ??
+                    map['badgecolor'])
+                ?.toString(),
+          ),
           title: map['title']?.toString() ?? label,
           subtitle: map['subtitle']?.toString() ?? '',
           note: map['note']!.toString(),
@@ -133,10 +145,10 @@ enum IdeBadgeColor {
     if (data == null) return IdeBadgeColor.neutral;
     return switch (data.toLowerCase()) {
       'info' => IdeBadgeColor.info,
-      'tip' => IdeBadgeColor.tip,
+      'tip' || 'success' => IdeBadgeColor.tip,
       'important' => IdeBadgeColor.important,
       'warning' => IdeBadgeColor.warning,
-      'error' => IdeBadgeColor.error,
+      'error' || 'danger' => IdeBadgeColor.error,
       _ => IdeBadgeColor.neutral,
     };
   }
@@ -381,7 +393,6 @@ class IdeExplorer extends StatelessComponent {
       classes: [
         'ide-badge-dot',
         'ide-badge-color-${color.name}',
-        'ide-tone-${color.name}',
       ].toClasses,
       attributes: {
         'role': 'img',
@@ -502,11 +513,14 @@ class DashIdeExplorer extends CustomComponent {
     }
 
     final customContents = <String, Component>{};
+    final rootLabel = node.attributes['rootLabel'] ??
+        node.attributes['rootlabel'] ??
+        node.attributes['root-label'];
     final roots = parseRootsFromNode(
       node,
       builder,
       customContents,
-      rootLabel: node.attributes['rootLabel'],
+      rootLabel: rootLabel,
     );
 
     if (roots.isEmpty && node.attributes['data'] != null) {
@@ -520,7 +534,7 @@ class DashIdeExplorer extends CustomComponent {
 
           final parsedRoots = parseRoots(
             rawData,
-            rootLabel: node.attributes['rootLabel'],
+            rootLabel: rootLabel,
           );
 
           return IdeExplorer(
@@ -578,7 +592,11 @@ class DashIdeExplorer extends CustomComponent {
       return [
         IdeExplorerProjectRoot(
           id: node.attributes['id'] ?? 'root',
-          label: rootLabel ?? node.attributes['rootLabel'] ?? '',
+          label: rootLabel ??
+              node.attributes['rootLabel'] ??
+              node.attributes['rootlabel'] ??
+              node.attributes['root-label'] ??
+              '',
           children: _parseTreeNodes(node.children, builder, customContents),
         ),
       ];
@@ -607,11 +625,15 @@ class DashIdeExplorer extends CustomComponent {
           (label.isNotEmpty ? slugify(label) : 'node-$index');
       final startsClosed =
           child.attributes['closed'] == 'true' ||
-          child.attributes['startsClosed'] == 'true';
+          child.attributes['startsClosed'] == 'true' ||
+          child.attributes['startsclosed'] == 'true' ||
+          child.attributes['starts-closed'] == 'true';
 
       final badge = child.attributes['badge'];
       final badgeColorStr =
-          child.attributes['badgeColor'] ?? child.attributes['badgeTone'];
+          child.attributes['badgeColor'] ??
+          child.attributes['badgecolor'] ??
+          child.attributes['badge-color'];
       final badgeColor = badgeColorStr != null
           ? IdeBadgeColor.fromString(badgeColorStr)
           : null;

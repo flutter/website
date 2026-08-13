@@ -2,7 +2,7 @@
 
 <IdeRoot label="Task" id="task">
 
-<IdePage label="instruction.md" id="instruction" badge="input" badge-color='tip' subtitle="The prompt the agent receives">
+<IdePage label="instruction.md" id="instruction" badge="input" badgeColor='tip' subtitle="The prompt the agent receives">
 
 The instruction is the task prompt provided to the agent. It mimics
 real-world workflows from developers, and is written in a way that real
