@@ -1237,12 +1237,7 @@
   card: "images/third_party/partners/MalowT_logo.png"
   external_url: "https://mallow-tech.com/technologies/flutter-app-development/"
   options_location:
-    - "Africa"
     - "Asia"
-    - "Europe"
-    - "Oceania"
-    - "North America"
-    - "South America"
   options_customer_size:
     - "Startup"
     - "Small-to-medium Business"
