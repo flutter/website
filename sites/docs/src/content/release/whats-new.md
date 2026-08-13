@@ -50,7 +50,7 @@ check out the [Flutter 3.47 blog post][3.47-blog-post].
   [Wasm compilation errors][wasm] and instructions for using the
   `--source-maps` flag during web builds.
 
-* We added a new section to the assets guide explaining how to bundle
+* A new section has been added to the assets guide explaining how to bundle
   [platform-specific assets][platform-assets] in `pubspec.yaml`.
 
 * We added guidance for migrating plugins and apps to use
