@@ -52,7 +52,10 @@ class HomePage extends StatelessComponent {
                   classes: 'card card-a',
                   styles: Styles(
                     backgroundImage: .url(
-                      context.asset('home/images/hero/hero-the-debertz.png'),
+                      context.asset(
+                        'home/images/hero/hero-the-debertz.png',
+                        width: 800,
+                      ),
                     ),
                   ),
                   const [],
@@ -61,7 +64,10 @@ class HomePage extends StatelessComponent {
                   classes: 'card card-b',
                   styles: Styles(
                     backgroundImage: .url(
-                      context.asset('home/images/hero/movement-app.png'),
+                      context.asset(
+                        'home/images/hero/movement-app.png',
+                        width: 400,
+                      ),
                     ),
                   ),
                   const [],
@@ -70,7 +76,10 @@ class HomePage extends StatelessComponent {
                   classes: 'card card-c',
                   styles: Styles(
                     backgroundImage: .url(
-                      context.asset('home/images/hero/sua-musica-app.png'),
+                      context.asset(
+                        'home/images/hero/sua-musica-app.png',
+                        width: 400,
+                      ),
                     ),
                   ),
                   const [],
@@ -81,7 +90,10 @@ class HomePage extends StatelessComponent {
                   classes: 'card card-a',
                   styles: Styles(
                     backgroundImage: .url(
-                      context.asset('home/images/hero/hero-bmw-mobile.png'),
+                      context.asset(
+                        'home/images/hero/hero-bmw-mobile.png',
+                        width: 600,
+                      ),
                     ),
                   ),
                   const [],
@@ -92,7 +104,10 @@ class HomePage extends StatelessComponent {
                   classes: 'card card-a',
                   styles: Styles(
                     backgroundImage: .url(
-                      context.asset('home/images/hero/hero-trivia-crack.png'),
+                      context.asset(
+                        'home/images/hero/hero-trivia-crack.png',
+                        width: 400,
+                      ),
                     ),
                   ),
                   const [],
@@ -103,6 +118,7 @@ class HomePage extends StatelessComponent {
                     backgroundImage: .url(
                       context.asset(
                         'home/images/hero/google-assistant-tablet.png',
+                        width: 800,
                       ),
                     ),
                   ),
@@ -112,7 +128,10 @@ class HomePage extends StatelessComponent {
                   classes: 'card card-c',
                   styles: Styles(
                     backgroundImage: .url(
-                      context.asset('home/images/hero/nu-app.png'),
+                      context.asset(
+                        'home/images/hero/nu-app.png',
+                        width: 400,
+                      ),
                     ),
                   ),
                   const [],
@@ -121,7 +140,10 @@ class HomePage extends StatelessComponent {
                   classes: 'card card-d',
                   styles: Styles(
                     backgroundImage: .url(
-                      context.asset('home/images/hero/mgm-app.jpg'),
+                      context.asset(
+                        'home/images/hero/mgm-app.jpg',
+                        width: 400,
+                      ),
                     ),
                   ),
                   const [],
