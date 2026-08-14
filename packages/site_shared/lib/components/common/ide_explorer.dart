@@ -11,28 +11,48 @@ import 'package:jaspr_content/jaspr_content.dart';
 import '../../util.dart';
 import 'material_icon.dart';
 
-
 /// A custom markdown component that parses `<IdeExplorer>` and its
 /// `<IdeRoot>`, `<IdeFolder>`, and `<IdePage>` children. Defers
 /// building the IDE html to the [IdeExplorer] component.
 class DashIdeExplorer extends CustomComponent {
   const DashIdeExplorer() : super.base();
 
+  // Tag name constants
+  static const String _tagIdeExplorer = 'IdeExplorer';
+  static const String _tagDashIdeExplorer = 'DashIdeExplorer';
+  static const String _tagIdeRoot = 'IdeRoot';
+  static const String _tagIdeFolder = 'IdeFolder';
+  static const String _tagIdePage = 'IdePage';
+
+  // Attribute name constants
+  static const String _attrId = 'id';
+  static const String _attrLabel = 'label';
+  static const String _attrIsDefaultPage = 'is-default-page';
+  static const String _attrStartsClosed = 'starts-closed';
+  static const String _attrBadge = 'badge';
+  static const String _attrBadgeColor = 'badge-color';
+  static const String _attrSubtitle = 'subtitle';
+
+  // Default values
+  static const String _defaultRootPrefix = 'root';
+  static const String _defaultNodePrefix = 'node';
+  static const String _defaultTrue = 'true';
+
   @override
   Component? create(Node node, NodesBuilder builder) {
     if (node is! ElementNode ||
-        !(node.tag == 'IdeExplorer' || node.tag == 'DashIdeExplorer')) {
+        !(node.tag == _tagIdeExplorer || node.tag == _tagDashIdeExplorer)) {
       return null;
     }
 
     final rootElements = node.children
         ?.whereType<ElementNode>()
-        .where((n) => n.tag == 'IdeRoot')
+        .where((n) => n.tag == _tagIdeRoot)
         .toList(growable: false);
 
     if (rootElements == null || rootElements.isEmpty) {
       print(
-        '[ERROR] <IdeExplorer> requires at least one <IdeRoot> child element.',
+        '[ERROR] <$_tagIdeExplorer> requires at least one <$_tagIdeRoot> child element.',
       );
       return const Component.empty();
     }
@@ -41,12 +61,12 @@ class DashIdeExplorer extends CustomComponent {
     final roots = [
       for (final (index, rootEl) in rootElements.indexed)
         IdeExplorerProjectRoot(
-          id:
-              rootEl.attributes['id'] ??
-              (rootEl.attributes['label'] != null
-                  ? slugify(rootEl.attributes['label']!)
-                  : 'root-$index'),
-          label: rootEl.attributes['label'] ?? '',
+          id: _generateNodeId(
+            rootEl.attributes,
+            _defaultRootPrefix,
+            index,
+          ),
+          label: rootEl.attributes[_attrLabel] ?? '',
           children: _parseTreeNodes(
             rootEl.children,
             builder,
@@ -61,6 +81,62 @@ class DashIdeExplorer extends CustomComponent {
     );
   }
 
+  /// Generates a node ID from attributes or creates a default one.
+  static String _generateNodeId(
+    Map<String, String> attributes,
+    String prefix,
+    int index,
+  ) {
+    if (attributes[_attrId] != null) {
+      return attributes[_attrId]!;
+    }
+    final label = attributes[_attrLabel];
+    if (label != null && label.isNotEmpty) {
+      return slugify(label);
+    }
+    return '$prefix-$index';
+  }
+
+  /// Parses a boolean attribute value, returning [defaultValue] if not present.
+  static bool _getBoolAttribute(
+    Map<String, String> attributes,
+    String key, {
+    required bool defaultValue,
+  }) {
+    final value = attributes[key];
+    return value != null ? value == _defaultTrue : defaultValue;
+  }
+
+  /// Checks if a node represents body content (not a folder/page structure).
+  static bool _isBodyContent(Node node) {
+    if (node is ElementNode &&
+        (node.tag == _tagIdeFolder || node.tag == _tagIdePage)) {
+      return false;
+    }
+    if (node is TextNode && node.text.trim().isEmpty) {
+      return false;
+    }
+    return true;
+  }
+
+  /// Checks if a node has custom body content.
+  static bool _hasCustomBodyContent(List<Node>? children) {
+    return children?.any(_isBodyContent) ?? false;
+  }
+
+  /// Extracts non-structural content nodes from children.
+  static List<Node> _extractContentNodes(List<Node> children) {
+    return children
+        .where((n) {
+          if (n is ElementNode &&
+              (n.tag == _tagIdeFolder || n.tag == _tagIdePage)) {
+            return false;
+          }
+          return true;
+        })
+        .toList(growable: false);
+  }
+
   static List<IdeTreeNode> _parseTreeNodes(
     List<Node>? nodes,
     NodesBuilder builder,
@@ -71,77 +147,96 @@ class DashIdeExplorer extends CustomComponent {
     final result = <IdeTreeNode>[];
 
     for (final (index, child) in nodes.whereType<ElementNode>().indexed) {
-      if (child.tag != 'IdeFolder' && child.tag != 'IdePage') {
+      if (child.tag != _tagIdeFolder && child.tag != _tagIdePage) {
         continue;
       }
 
-      final label = child.attributes['label'] ?? '';
-      final id =
-          child.attributes['id'] ??
-          (label.isNotEmpty ? slugify(label) : 'node-$index');
-      final isDefaultPage = child.attributes['is-default-page'] == 'true';
-      final startsClosed = child.attributes['starts-closed'] != null
-          ? child.attributes['starts-closed'] == 'true'
-          : true;
-
-      final badge = child.attributes['badge'];
-      final badgeColorStr = child.attributes['badge-color'];
-      final badgeColor = badgeColorStr != null
-          ? IdeBadgeColor.fromString(badgeColorStr)
-          : null;
-
-      final subtitle = child.attributes['subtitle'];
-
-      final nestedTreeNodes = _parseTreeNodes(
-        child.children,
+      final treeNode = _buildTreeNodeFromElement(
+        child,
+        index,
         builder,
         customContents,
       );
 
-      final hasBody =
-          child.children?.any((n) {
-            if (n is ElementNode &&
-                (n.tag == 'IdeFolder' || n.tag == 'IdePage')) {
-              return false;
-            }
-            if (n is TextNode && n.text.trim().isEmpty) {
-              return false;
-            }
-            return true;
-          }) ??
-          false;
-
-      if (hasBody) {
-        final contentNodes = child.children!
-            .where((n) {
-              if (n is ElementNode &&
-                  (n.tag == 'IdeFolder' || n.tag == 'IdePage')) {
-                return false;
-              }
-              return true;
-            })
-            .toList(growable: false);
-
-        if (contentNodes.isNotEmpty) {
-          customContents[id] = builder.build(contentNodes);
-        }
-      }
-
-      result.add(
-        IdeTreeNode(
-          id: id,
-          label: label,
-          isDefaultPage: isDefaultPage,
-          startsClosed: startsClosed,
-          badge: badge,
-          badgeColor: badgeColor,
-          subtitle: subtitle,
-          children: nestedTreeNodes,
-        ),
-      );
+      result.add(treeNode);
     }
 
     return result;
+  }
+
+  /// Builds a single [IdeTreeNode] from an [ElementNode].
+  static IdeTreeNode _buildTreeNodeFromElement(
+    ElementNode element,
+    int index,
+    NodesBuilder builder,
+    Map<String, Component> customContents,
+  ) {
+    final attributes = element.attributes;
+    final label = attributes[_attrLabel] ?? '';
+    final id = _generateNodeId(attributes, _defaultNodePrefix, index);
+
+    // Parse boolean attributes
+    final isDefaultPage = _getBoolAttribute(
+      attributes,
+      _attrIsDefaultPage,
+      defaultValue: false,
+    );
+    final startsClosed = _getBoolAttribute(
+      attributes,
+      _attrStartsClosed,
+      defaultValue: true,
+    );
+
+    // Parse badge attributes
+    final badge = attributes[_attrBadge];
+    final badgeColor = attributes[_attrBadgeColor] != null
+        ? IdeBadgeColor.fromString(attributes[_attrBadgeColor])
+        : null;
+
+    final subtitle = attributes[_attrSubtitle];
+
+    // Recursively parse children
+    final nestedTreeNodes = _parseTreeNodes(
+      element.children,
+      builder,
+      customContents,
+    );
+
+    // Extract and store custom body content if present
+    _storeCustomContentIfPresent(
+      element.children,
+      id,
+      builder,
+      customContents,
+    );
+
+    return IdeTreeNode(
+      id: id,
+      label: label,
+      isDefaultPage: isDefaultPage,
+      startsClosed: startsClosed,
+      badge: badge,
+      badgeColor: badgeColor,
+      subtitle: subtitle,
+      children: nestedTreeNodes,
+    );
+  }
+
+  /// Stores custom body content for a node if it exists.
+  static void _storeCustomContentIfPresent(
+    List<Node>? children,
+    String nodeId,
+    NodesBuilder builder,
+    Map<String, Component> customContents,
+  ) {
+    if (!_hasCustomBodyContent(children)) {
+      return;
+    }
+
+    final contentNodes = _extractContentNodes(children!);
+    if (contentNodes.isNotEmpty) {
+      customContents[nodeId] = builder.build(contentNodes);
+    }
   }
 }
 
@@ -220,7 +315,6 @@ typedef _BreadcrumbNode = ({
   List<String> path,
 });
 
-
 /// An interactive file-tree explorer, similar to an IDE's sidebar.
 ///
 /// Renders a clickable directory tree next to a detail pane that shows
@@ -235,6 +329,29 @@ class IdeExplorer extends StatelessComponent {
   });
 
   static int _nextInstanceId = 0;
+
+  // CSS class constants
+  static const String _cssIdeExplorer = 'ide-explorer';
+  static const String _cssNotContent = 'not-content';
+  static const String _cssIdeSidebar = 'ide-sidebar';
+  static const String _cssIdeDetail = 'ide-detail';
+  static const String _cssIdeDetailPanel = 'ide-detail-panel';
+  static const String _cssActive = 'active';
+  static const String _cssIdePath = 'ide-path';
+  static const String _cssIdePathSep = 'ide-path-sep';
+  static const String _cssIdeDetailHeader = 'ide-detail-header';
+  static const String _cssIdeDetailHeading = 'ide-detail-heading';
+  static const String _cssIdeDetailTitleRow = 'ide-detail-title-row';
+  static const String _cssIdeDetailTitle = 'ide-detail-title';
+  static const String _cssIdeDetailSubtitle = 'ide-detail-subtitle';
+  static const String _cssIdeBadge = 'ide-badge';
+  static const String _cssIdeCustomBody = 'ide-custom-body';
+  static const String _cssIdeContents = 'ide-contents';
+  static const String _cssIdeContentsTitle = 'ide-contents-title';
+  static const String _cssIdeContentsList = 'ide-contents-list';
+  static const String _cssIdeContentLink = 'ide-content-link';
+  static const String _cssIdeNodeLabel = 'ide-node-label';
+  static const String _cssIdeContentOneLiner = 'ide-content-one-liner';
 
   final List<IdeExplorerProjectRoot> roots;
   final String? instanceId;
@@ -251,7 +368,41 @@ class IdeExplorer extends StatelessComponent {
 
     final effectiveInstanceId = instanceId ?? '${_nextInstanceId++}';
 
-    final flatNodesByRoot = {
+    final flatNodesByRoot = _buildFlatNodesByRoot(effectiveInstanceId);
+    final allFlatNodes = flatNodesByRoot.values
+        .expand((nodes) => nodes)
+        .toList(growable: false);
+
+    final defaultFlatNode = _findDefaultNode(allFlatNodes);
+    final activeRootId = _determineActiveRoot(
+      defaultFlatNode,
+      flatNodesByRoot,
+    );
+    final selectedNodeDomId = _determineSelectedNode(
+      defaultFlatNode,
+      flatNodesByRoot,
+      activeRootId,
+    );
+
+    return div(classes: '$_cssIdeExplorer $_cssNotContent', [
+      _buildSidebar(
+        activeRootId: activeRootId,
+        effectiveInstanceId: effectiveInstanceId,
+        selectedNodeDomId: selectedNodeDomId,
+      ),
+      _buildDetailPane(
+        allFlatNodes: allFlatNodes,
+        effectiveInstanceId: effectiveInstanceId,
+        selectedNodeDomId: selectedNodeDomId,
+      ),
+    ]);
+  }
+
+  /// Builds a map of flattened nodes organized by root ID.
+  Map<String, List<_BreadcrumbNode>> _buildFlatNodesByRoot(
+    String effectiveInstanceId,
+  ) {
+    return {
       for (final root in roots)
         root.id: _flatten(
           root.children,
@@ -259,56 +410,82 @@ class IdeExplorer extends StatelessComponent {
           path: root.label.isEmpty ? [] : [root.label],
         ),
     };
+  }
 
-    final allFlatNodes = flatNodesByRoot.values
-        .expand((nodes) => nodes)
-        .toList(growable: false);
-
-    final defaultFlatNode = allFlatNodes.firstWhereOrNull(
+  /// Finds the first node marked as the default page.
+  _BreadcrumbNode? _findDefaultNode(List<_BreadcrumbNode> allFlatNodes) {
+    return allFlatNodes.firstWhereOrNull(
       (flat) => flat.node.isDefaultPage,
     );
+  }
 
-    final activeRootId = defaultFlatNode != null
-        ? (roots
-                  .firstWhereOrNull(
-                    (r) =>
-                        flatNodesByRoot[r.id]?.any(
-                          (n) => n.domId == defaultFlatNode.domId,
-                        ) ??
-                        false,
-                  )
-                  ?.id ??
-              roots.first.id)
-        : roots.first.id;
+  /// Determines which root should be active based on the default node.
+  String _determineActiveRoot(
+    _BreadcrumbNode? defaultFlatNode,
+    Map<String, List<_BreadcrumbNode>> flatNodesByRoot,
+  ) {
+    if (defaultFlatNode == null) {
+      return roots.first.id;
+    }
 
-    final selectedNodeDomId =
-        defaultFlatNode?.domId ??
+    // Find which root contains the default node
+    final rootWithDefault = roots.firstWhereOrNull(
+      (r) =>
+          flatNodesByRoot[r.id]?.any(
+            (n) => n.domId == defaultFlatNode.domId,
+          ) ??
+          false,
+    );
+
+    return rootWithDefault?.id ?? roots.first.id;
+  }
+
+  /// Determines which node should be selected initially.
+  String? _determineSelectedNode(
+    _BreadcrumbNode? defaultFlatNode,
+    Map<String, List<_BreadcrumbNode>> flatNodesByRoot,
+    String activeRootId,
+  ) {
+    return defaultFlatNode?.domId ??
         flatNodesByRoot[activeRootId]?.firstOrNull?.domId;
+  }
 
-    return div(classes: 'ide-explorer not-content', [
-      div(classes: 'ide-sidebar', [
-        if (roots.length > 1)
-          _buildRootTabs(activeRootId: activeRootId)
-        else
-          div(classes: 'ide-root-tabs ide-root-tabs-single', [
-            _buildToggleAllButton(),
-          ]),
-        for (final root in roots)
-          _buildTree(
-            root,
-            activeRootId: activeRootId,
-            effectiveInstanceId: effectiveInstanceId,
-            selectedNodeDomId: selectedNodeDomId,
-          ),
-      ]),
-      div(classes: 'ide-detail', [
-        for (final flat in allFlatNodes)
-          _buildDetailPanel(
-            flat,
-            instanceId: effectiveInstanceId,
-            isActive: flat.domId == selectedNodeDomId,
-          ),
-      ]),
+  /// Builds the sidebar containing the file tree.
+  Component _buildSidebar({
+    required String activeRootId,
+    required String effectiveInstanceId,
+    required String? selectedNodeDomId,
+  }) {
+    return div(classes: _cssIdeSidebar, [
+      if (roots.length > 1)
+        _buildRootTabs(activeRootId: activeRootId)
+      else
+        div(classes: 'ide-root-tabs ide-root-tabs-single', [
+          _buildToggleAllButton(),
+        ]),
+      for (final root in roots)
+        _buildTree(
+          root,
+          activeRootId: activeRootId,
+          effectiveInstanceId: effectiveInstanceId,
+          selectedNodeDomId: selectedNodeDomId,
+        ),
+    ]);
+  }
+
+  /// Builds the detail pane showing node content.
+  Component _buildDetailPane({
+    required List<_BreadcrumbNode> allFlatNodes,
+    required String effectiveInstanceId,
+    required String? selectedNodeDomId,
+  }) {
+    return div(classes: _cssIdeDetail, [
+      for (final flat in allFlatNodes)
+        _buildDetailPanel(
+          flat,
+          instanceId: effectiveInstanceId,
+          isActive: flat.domId == selectedNodeDomId,
+        ),
     ]);
   }
 
@@ -511,71 +688,102 @@ class IdeExplorer extends StatelessComponent {
     final node = flat.node;
 
     return div(
-      classes: ['ide-detail-panel', if (isActive) 'active'].toClasses,
+      classes: [_cssIdeDetailPanel, if (isActive) _cssActive].toClasses,
       attributes: {'data-ide-panel': flat.domId},
       [
-        if (flat.path.isNotEmpty)
-          div(
-            classes: 'ide-path',
-            [
-              for (final (i, segment) in flat.path.indexed) ...[
-                if (i > 0) const span(classes: 'ide-path-sep', [.text('/')]),
-                span([.text(segment.replaceFirst(RegExp(r'/$'), ''))]),
-              ],
-            ],
-          ),
-        div(classes: 'ide-detail-header', [
-          node.isFolder ? FileIcon.folderIcon : FileIcon.forFile(node.label),
-          div(classes: 'ide-detail-heading', [
-            div(classes: 'ide-detail-title-row', [
-              div(classes: 'ide-detail-title', [
-                .text(node.title ?? node.label),
-              ]),
-              if (node.badge case final badge?)
-                span(
-                  classes: [
-                    'ide-badge',
-                    'ide-badge-color-${node.badgeColor?.name ?? 'neutral'}',
-                  ].toClasses,
-                  [.text(badge)],
-                ),
-            ]),
-            if (node.subtitle case final subtitle?)
-              div(classes: 'ide-detail-subtitle', [.text(subtitle)]),
-          ]),
-        ]),
-
+        if (flat.path.isNotEmpty) _buildBreadcrumb(flat.path),
+        _buildDetailPanelHeader(node),
         if (customContents[node.id] case final customChild?)
-          div(classes: 'ide-custom-body', [customChild]),
-
+          _buildCustomBody(customChild),
         if (node.children.isNotEmpty)
-          div(classes: 'ide-contents', [
-            const div(classes: 'ide-contents-title', [.text('Contents')]),
-            div(classes: 'ide-contents-list', [
-              for (final child in node.children)
-                button(
-                  classes: 'ide-content-link',
-                  type: ButtonType.button,
-                  attributes: {
-                    'data-ide-select': _domId(instanceId, child.id),
-                  },
-                  [
-                    child.isFolder
-                        ? FileIcon.folderIcon
-                        : FileIcon.forFile(child.label),
-                    span(classes: 'ide-node-label', [.text(child.label)]),
-                    if (child.subtitle case final subtitle?)
-                      span(
-                        classes: 'ide-content-one-liner',
-                        [.text(subtitle)],
-                      ),
-                  ],
-                ),
-            ]),
-          ]),
+          _buildContentsSection(node.children, instanceId),
+      ],
+    );
+  }
+
+  /// Builds the breadcrumb path display.
+  Component _buildBreadcrumb(List<String> path) {
+    return div(
+      classes: _cssIdePath,
+      [
+        for (final (i, segment) in path.indexed) ...[
+          if (i > 0) const span(classes: _cssIdePathSep, [.text('/')]),
+          span([.text(segment.replaceFirst(RegExp(r'/$'), ''))]),
+        ],
+      ],
+    );
+  }
+
+  /// Builds the detail panel header with icon, title, and badge.
+  Component _buildDetailPanelHeader(IdeTreeNode node) {
+    return div(classes: _cssIdeDetailHeader, [
+      node.isFolder ? FileIcon.folderIcon : FileIcon.forFile(node.label),
+      div(classes: _cssIdeDetailHeading, [
+        _buildTitleRow(node),
+        if (node.subtitle case final subtitle?)
+          div(classes: _cssIdeDetailSubtitle, [.text(subtitle)]),
+      ]),
+    ]);
+  }
+
+  /// Builds the title row with title text and optional badge.
+  Component _buildTitleRow(IdeTreeNode node) {
+    return div(classes: _cssIdeDetailTitleRow, [
+      div(classes: _cssIdeDetailTitle, [
+        .text(node.title ?? node.label),
+      ]),
+      if (node.badge case final badge?) _buildBadge(node, badge),
+    ]);
+  }
+
+  /// Builds a badge component.
+  Component _buildBadge(IdeTreeNode node, String badge) {
+    return span(
+      classes: [
+        _cssIdeBadge,
+        'ide-badge-color-${node.badgeColor?.name ?? 'neutral'}',
+      ].toClasses,
+      [
+        .text(badge),
+      ],
+    );
+  }
+
+  /// Builds the custom body content wrapper.
+  Component _buildCustomBody(Component customChild) {
+    return div(classes: _cssIdeCustomBody, [customChild]);
+  }
+
+  /// Builds the contents section listing child nodes.
+  Component _buildContentsSection(
+    List<IdeTreeNode> children,
+    String instanceId,
+  ) {
+    return div(classes: _cssIdeContents, [
+      const div(classes: _cssIdeContentsTitle, [.text('Contents')]),
+      div(classes: _cssIdeContentsList, [
+        for (final child in children) _buildContentLink(child, instanceId),
+      ]),
+    ]);
+  }
+
+  /// Builds a single content link for a child node.
+  Component _buildContentLink(IdeTreeNode child, String instanceId) {
+    return button(
+      classes: _cssIdeContentLink,
+      type: ButtonType.button,
+      attributes: {
+        'data-ide-select': _domId(instanceId, child.id),
+      },
+      [
+        child.isFolder ? FileIcon.folderIcon : FileIcon.forFile(child.label),
+        span(classes: _cssIdeNodeLabel, [.text(child.label)]),
+        if (child.subtitle case final subtitle?)
+          span(
+            classes: _cssIdeContentOneLiner,
+            [.text(subtitle)],
+          ),
       ],
     );
   }
 }
-
-

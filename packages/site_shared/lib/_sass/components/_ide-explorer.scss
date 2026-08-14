@@ -1,6 +1,99 @@
 @use '../base/mixins';
 @use '../base/breakpoints';
 
+// ============================================================================
+// Variables
+// ============================================================================
+
+// Spacing
+$ide-spacing-xs: 0.25rem;
+$ide-spacing-sm: 0.3rem;
+$ide-spacing-md: 0.4rem;
+$ide-spacing-lg: 0.5rem;
+$ide-spacing-xl: 0.6rem;
+$ide-spacing-2xl: 0.75rem;
+$ide-spacing-3xl: 0.85rem;
+$ide-spacing-4xl: 1rem;
+$ide-spacing-5xl: 1.25rem;
+$ide-spacing-6xl: 1.5rem;
+
+// Icon sizes
+$ide-icon-xs: 0.55rem;
+$ide-icon-sm: 0.9rem;
+$ide-icon-md: 1.1rem;
+$ide-icon-lg: 1.5rem;
+$ide-icon-xl: 1.75rem;
+
+// Font sizes
+$ide-font-xs: 0.6875rem;
+$ide-font-sm: 0.75rem;
+$ide-font-md: 0.8125rem;
+$ide-font-lg: 0.9rem;
+$ide-font-xl: 0.9375rem;
+$ide-font-2xl: 1.25rem;
+
+// Border radius
+$ide-radius-sm: 0.2rem;
+$ide-radius-md: 0.3rem;
+$ide-radius-lg: 1rem;
+
+// Other sizes
+$ide-button-size: 1.75rem;
+$ide-folder-arrow-width: 1.25rem;
+$ide-folder-arrow-height: 1.5rem;
+
+// Badge colors map
+$badge-colors: (
+  'info': var(--site-alert-info-color),
+  'tip': var(--site-alert-tip-color),
+  'important': var(--site-alert-important-color),
+  'warning': var(--site-alert-warning-color),
+  'error': var(--site-alert-error-color),
+);
+
+// ============================================================================
+// Mixins
+// ============================================================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin no-shrink {
+  flex-shrink: 0;
+}
+
+@mixin reset-list {
+  margin: 0;
+  list-style: none;
+}
+
+@mixin interactive-hover {
+  &:hover {
+    @include mixins.interaction-style(4%);
+  }
+}
+
+@mixin ide-button-base {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  @include interactive-hover;
+}
+
+@mixin uppercase-label {
+  font-size: $ide-font-xs;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+// ============================================================================
+// Main Component
+// ============================================================================
+
 .ide-explorer {
   display: flex;
   align-items: stretch;
@@ -36,9 +129,8 @@
 }
 
 .ide-root-tabs {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
+  @include flex-center;
+  gap: $ide-spacing-xs;
   padding: 0.375rem;
   border-bottom: 1px solid var(--site-outline-variant);
 
@@ -48,20 +140,13 @@
 }
 
 .ide-root-tab {
+  @include ide-button-base;
   flex: 1;
-  padding: 0.3rem 0;
-  border: none;
-  border-radius: 0.2rem;
-  background: transparent;
+  padding: $ide-spacing-sm 0;
+  border-radius: $ide-radius-sm;
   color: var(--site-base-fgColor-alt);
-  font-family: inherit;
-  font-size: 0.75rem;
+  font-size: $ide-font-sm;
   font-weight: 500;
-  cursor: pointer;
-
-  &:hover {
-    @include mixins.interaction-style(4%);
-  }
 
   &.active {
     background-color: var(--site-base-bgColor);
@@ -70,24 +155,17 @@
 }
 
 .ide-toggle-all {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
+  @include no-shrink;
+  @include flex-center;
+  @include ide-button-base;
   justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  border: none;
-  border-radius: 0.2rem;
-  background: transparent;
+  width: $ide-button-size;
+  height: $ide-button-size;
+  border-radius: $ide-radius-sm;
   color: var(--site-base-fgColor-alt);
-  cursor: pointer;
 
   .material-symbols {
-    font-size: 1.1rem;
-  }
-
-  &:hover {
-    @include mixins.interaction-style(4%);
+    font-size: $ide-icon-md;
   }
 }
 
@@ -102,17 +180,16 @@
   }
 
   ul {
-    list-style: none;
-    margin: 0;
+    @include reset-list;
     padding-inline-start: 0.9rem;
   }
 
-  >ul {
+  > ul {
     padding-inline-start: 0;
   }
 
-  ul>li.ide-node:last-child {
-    margin-bottom: .5rem;
+  ul > li.ide-node:last-child {
+    margin-bottom: $ide-spacing-lg;
   }
 
   li.ide-node {
@@ -123,13 +200,12 @@
     margin: 0;
   }
 
-  details[open]>summary {
+  details[open] > summary {
     margin: 0;
   }
 
   summary {
-    display: flex;
-    align-items: center;
+    @include flex-center;
     width: 100%;
     list-style: none;
     padding: 0;
@@ -142,12 +218,12 @@
   }
 
   .ide-folder-arrow {
+    @include no-shrink;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    width: 1.25rem;
-    height: 1.5rem;
+    width: $ide-folder-arrow-width;
+    height: $ide-folder-arrow-height;
     padding: 0;
     padding-inline-start: 0.35rem;
     border: none;
@@ -157,9 +233,9 @@
     &::before {
       content: '';
       display: inline-block;
-      flex-shrink: 0;
-      width: 0.55rem;
-      height: 0.55rem;
+      @include no-shrink;
+      width: $ide-icon-xs;
+      height: $ide-icon-xs;
       background-color: var(--site-base-fgColor-alt);
       clip-path: polygon(15% 0%, 100% 50%, 15% 100%);
       transition: transform 0.1s ease;
@@ -170,29 +246,22 @@
     }
   }
 
-  details[open]>summary .ide-folder-arrow::before {
+  details[open] > summary .ide-folder-arrow::before {
     transform: rotate(90deg);
   }
 
   .ide-node-row {
-    display: flex;
-    align-items: center;
+    @include flex-center;
+    @include ide-button-base;
     flex: 1;
     min-width: 0;
-    padding: 0.25rem 0.6rem;
-    border: none;
-    border-radius: 0.2rem;
-    background: transparent;
+    padding: $ide-spacing-xs $ide-spacing-xl;
+    border-radius: $ide-radius-sm;
     color: inherit;
     font-family: var(--site-code-fontFamily);
-    font-size: 0.8125rem;
+    font-size: $ide-font-md;
     text-align: left;
-    cursor: pointer;
     outline-offset: -2px;
-
-    &:hover {
-      @include mixins.interaction-style(4%);
-    }
 
     &.active {
       background-color: var(--site-primary-color-highlight);
@@ -201,20 +270,19 @@
     }
 
     svg {
-      flex-shrink: 0;
-      width: 0.9rem;
-      height: 0.9rem;
-      margin-inline-end: 0.4rem;
+      @include no-shrink;
+      width: $ide-icon-sm;
+      height: $ide-icon-sm;
+      margin-inline-end: $ide-spacing-md;
     }
   }
 
   li.ide-node-file {
-    display: flex;
-    align-items: center;
+    @include flex-center;
     width: 100%;
 
-    >.ide-node-row {
-      margin-inline-start: 1.25rem;
+    > .ide-node-row {
+      margin-inline-start: $ide-folder-arrow-width;
     }
   }
 
@@ -228,92 +296,42 @@
 }
 
 .ide-badge-dot {
-  flex-shrink: 0;
-  width: 0.4rem;
-  height: 0.4rem;
-  margin-inline-start: 0.4rem;
+  @include no-shrink;
+  width: $ide-spacing-md;
+  height: $ide-spacing-md;
+  margin-inline-start: $ide-spacing-md;
   border-radius: 50%;
   background-color: var(--site-base-fgColor-alt);
 }
 
 .ide-badge {
-  flex-shrink: 0;
-  padding: 0.1rem 0.5rem;
-  border-radius: 1rem;
+  @include no-shrink;
+  padding: 0.1rem $ide-spacing-lg;
+  border-radius: $ide-radius-lg;
   background-color: var(--site-raised-bgColor);
   color: var(--site-base-fgColor-alt);
   font-family: var(--site-ui-fontFamily);
-  font-size: 0.6875rem;
+  font-size: $ide-font-xs;
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
-.ide-badge-color-info {
+// Generate badge color variants
+@each $name, $color in $badge-colors {
+  .ide-badge-color-#{$name} {
+    &.ide-badge-dot {
+      background-color: $color;
+    }
 
-  &.ide-badge-dot,
-  &.ide-badge {
-    background-color: var(--site-alert-info-color);
-  }
-
-  &.ide-badge {
-    background-color: color-mix(in srgb, var(--site-alert-info-color) 12%, transparent);
-    color: var(--site-alert-info-color);
-  }
-}
-
-.ide-badge-color-tip {
-
-  &.ide-badge-dot,
-  &.ide-badge {
-    background-color: var(--site-alert-tip-color);
-  }
-
-  &.ide-badge {
-    background-color: color-mix(in srgb, var(--site-alert-tip-color) 12%, transparent);
-    color: var(--site-alert-tip-color);
+    &.ide-badge {
+      background-color: color-mix(in srgb, $color 12%, transparent);
+      color: $color;
+    }
   }
 }
 
-.ide-badge-color-important {
-
-  &.ide-badge-dot,
-  &.ide-badge {
-    background-color: var(--site-alert-important-color);
-  }
-
-  &.ide-badge {
-    background-color: color-mix(in srgb, var(--site-alert-important-color) 12%, transparent);
-    color: var(--site-alert-important-color);
-  }
-}
-
-.ide-badge-color-warning {
-
-  &.ide-badge-dot,
-  &.ide-badge {
-    background-color: var(--site-alert-warning-color);
-  }
-
-  &.ide-badge {
-    background-color: color-mix(in srgb, var(--site-alert-warning-color) 12%, transparent);
-    color: var(--site-alert-warning-color);
-  }
-}
-
-.ide-badge-color-error {
-
-  &.ide-badge-dot,
-  &.ide-badge {
-    background-color: var(--site-alert-error-color);
-  }
-
-  &.ide-badge {
-    background-color: color-mix(in srgb, var(--site-alert-error-color) 12%, transparent);
-    color: var(--site-alert-error-color);
-  }
-}
-
+// Neutral badge color (special case)
 .ide-badge-color-neutral {
   &.ide-badge-dot {
     background-color: var(--site-base-fgColor-alt);
@@ -328,11 +346,11 @@
 .ide-detail {
   flex: 1;
   min-width: 0;
-  padding: 1.25rem 1.5rem;
+  padding: $ide-spacing-5xl $ide-spacing-6xl;
   overflow-y: auto;
 
   @include breakpoints.screen-below('md') {
-    padding: 1rem;
+    padding: $ide-spacing-4xl;
   }
 }
 
@@ -349,29 +367,29 @@
 }
 
 .ide-path {
-  margin-block-end: 0.5rem;
+  margin-block-end: $ide-spacing-lg;
   color: var(--site-base-fgColor-alt);
   font-family: var(--site-code-fontFamily);
-  font-size: 0.75rem;
+  font-size: $ide-font-sm;
 }
 
 .ide-path-sep {
-  margin-inline: 0.3rem;
+  margin-inline: $ide-spacing-sm;
   color: var(--site-outline);
 }
 
 .ide-detail-header {
   display: flex;
   align-items: flex-start;
-  gap: 0.6rem;
-  margin-block-end: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: .5px solid;
+  gap: $ide-spacing-xl;
+  margin-block-end: $ide-spacing-4xl;
+  padding-bottom: $ide-spacing-4xl;
+  border-bottom: 0.5px solid;
 
   svg {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 1.5rem;
+    @include no-shrink;
+    width: $ide-icon-lg;
+    height: $ide-icon-lg;
     margin-block-start: 0.15rem;
   }
 }
@@ -389,23 +407,23 @@
 
 .ide-detail-title {
   font-family: var(--site-code-fontFamily);
-  font-size: 1.25rem;
+  font-size: $ide-font-2xl;
   font-weight: 600;
 }
 
 .ide-detail-subtitle {
   margin-block-start: 0.15rem;
   color: var(--site-base-fgColor-alt);
-  font-size: 0.9375rem;
+  font-size: $ide-font-xl;
 }
 
 .ide-note {
-  padding: 0.6rem 0.75rem;
-  margin-block-end: 1rem;
-  border-radius: 0.3rem;
+  padding: $ide-spacing-xl $ide-spacing-2xl;
+  margin-block-end: $ide-spacing-4xl;
+  border-radius: $ide-radius-md;
   background-color: var(--site-inset-bgColor);
   color: var(--site-inset-fgColor);
-  font-size: 0.9rem;
+  font-size: $ide-font-lg;
 
   p {
     margin: 0;
@@ -413,31 +431,28 @@
 }
 
 .ide-note-title {
+  @include uppercase-label;
   margin-block-end: 0.2rem;
   color: var(--site-base-fgColor-alt);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
 }
 
 .ide-description {
-  margin-block-end: 1rem;
+  margin-block-end: $ide-spacing-4xl;
 }
 
 .ide-tips {
-  padding: 0.6rem 0.85rem;
-  margin-block-end: 1rem;
+  padding: $ide-spacing-xl $ide-spacing-3xl;
+  margin-block-end: $ide-spacing-4xl;
   border: 1px solid var(--site-outline-variant);
-  border-radius: 0.3rem;
+  border-radius: $ide-radius-md;
 
   ul {
-    margin: 0;
+    @include reset-list;
     padding-inline-start: 1.1rem;
   }
 
   li {
-    margin-block-end: 0.25rem;
+    margin-block-end: $ide-spacing-xs;
 
     &:last-child {
       margin-block-end: 0;
@@ -446,33 +461,30 @@
 }
 
 .ide-tips-title {
-  margin-block-end: 0.4rem;
+  @include uppercase-label;
+  margin-block-end: $ide-spacing-md;
   color: var(--site-primary-color);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
 }
 
 .ide-example {
-  margin-block-end: 1rem;
+  margin-block-end: $ide-spacing-4xl;
 }
 
 .ide-docs-link {
+  @include flex-center;
   display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.3rem 0.75rem;
-  margin-block-end: 1rem;
-  border-radius: 1rem;
+  gap: $ide-spacing-sm;
+  padding: $ide-spacing-sm $ide-spacing-2xl;
+  margin-block-end: $ide-spacing-4xl;
+  border-radius: $ide-radius-lg;
   background-color: var(--site-primary-color-highlight);
   color: var(--site-primary-color);
-  font-size: 0.8125rem;
+  font-size: $ide-font-md;
   font-weight: 600;
   text-decoration: none;
 
   .material-symbols {
-    font-size: 1rem;
+    font-size: $ide-spacing-4xl;
   }
 
   &:hover {
@@ -481,49 +493,40 @@
 }
 
 .ide-contents-title {
-  margin-block-end: 0.5rem;
+  @include uppercase-label;
+  margin-block-end: $ide-spacing-lg;
   color: var(--site-base-fgColor-alt);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
 }
 
 .ide-contents-list {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: $ide-spacing-xs;
 }
 
 .ide-content-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 0.6rem;
-  border: none;
-  border-radius: 0.3rem;
+  @include flex-center;
+  @include ide-button-base;
+  gap: $ide-spacing-lg;
+  padding: $ide-spacing-md $ide-spacing-xl;
+  border-radius: $ide-radius-md;
   background-color: var(--site-raised-bgColor-translucent);
   color: inherit;
   font-family: var(--site-code-fontFamily);
-  font-size: 0.8125rem;
+  font-size: $ide-font-md;
   text-align: left;
-  cursor: pointer;
-
-  &:hover {
-    @include mixins.interaction-style(4%);
-  }
 
   svg {
-    flex-shrink: 0;
-    width: 0.9rem;
-    height: 0.9rem;
+    @include no-shrink;
+    width: $ide-icon-sm;
+    height: $ide-icon-sm;
   }
 
   .ide-content-one-liner {
     overflow: hidden;
     color: var(--site-base-fgColor-alt);
     font-family: var(--site-ui-fontFamily);
-    font-size: 0.75rem;
+    font-size: $ide-font-sm;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
