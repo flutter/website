@@ -60,6 +60,15 @@ acceleration (`dart2wasm`) and multithreaded rendering (`skwasm`):
 <!-- TODO(graphics): Replace with finalized artwork if updated by design -->
 <DashImage figure src="images/perf_comparison_placeholder.webp" alt="WebAssembly versus JavaScript framerate and performance comparison" caption="Live performance comparison on flutter-wasm-compare.web.app: WebAssembly delivers 2.0x faster total frame times (17.4ms vs 34.5ms), 2.5x faster widget build speeds (11.4ms vs 29.3ms), and 3.0x lower jitter." />
 
+Try it yourself! You can test and compare performance on your own hardware
+using our interactive demo at
+[flutter-wasm-compare.web.app](https://flutter-wasm-compare.web.app/)
+([source code](https://github.com/kevmoo/flutter-wasm-compare)).
+
+*Benchmark metrics above measured in Google Chrome 151 (151.0.7922.109) on an
+Apple M4 Pro MacBook Pro (48 GB, macOS Sequoia 15.7.7) at a 60 Hz display
+refresh cap under medium stress (200 animated churn nodes).*
+
 ---
 
 ## Why JavaScript is still the default compiler target
