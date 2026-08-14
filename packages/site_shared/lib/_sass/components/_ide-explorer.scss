@@ -208,16 +208,19 @@
     }
   }
 
-  li.ide-node-file>.ide-node-row {
-    padding-inline-start: 1.25rem;
-  }
+  li.ide-node-file {
+    display: flex;
+    align-items: center;
+    width: 100%;
 
-  .ide-folder-summary>.ide-node-row {
-    padding-inline-start: 0;
-    margin: 0;
+    >.ide-node-row {
+      margin-inline-start: 1.25rem;
+    }
   }
 
   .ide-node-label {
+    flex: 1;
+    min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
