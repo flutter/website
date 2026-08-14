@@ -60,8 +60,6 @@ acceleration (`dart2wasm`) and multithreaded rendering (`skwasm`):
 <!-- TODO(graphics): Replace with finalized artwork if updated by design -->
 <DashImage figure src="images/perf_comparison_placeholder.webp" alt="WebAssembly versus JavaScript framerate and performance comparison" caption="Live performance comparison on flutter-wasm-compare.web.app: WebAssembly delivers 2.0x faster total frame times (17.4ms vs 34.5ms), 2.5x faster widget build speeds (11.4ms vs 29.3ms), and 3.0x lower jitter." />
 
-<DashImage figure src="images/bundle_size_comparison.webp" alt="Chrome DevTools network tab showing JavaScript and WebAssembly bundle sizes" caption="Comparing compressed wire transfer sizes in Chrome DevTools: JavaScript (508 kB) versus WebAssembly loader and module (531.7 kB total), demonstrating less than a 5% difference over the wire." />
-
 ---
 
 ## Why JavaScript is still the default compiler target
