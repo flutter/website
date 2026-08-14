@@ -12,7 +12,7 @@ layout: blog
 <!-- TODO(graphics): Replace with finalized banner artwork featuring Dash and WebAssembly branding -->
 <DashImage figure src="images/header_placeholder.webp" alt="Dash celebrating Try Flutter Web with WebAssembly Week" caption="Welcome to Try Flutter Web with WebAssembly Week" />
 
-Flutter lets you build expressive, multi-platform apps for the web from a
+Flutter lets you build expressive, multi-platform apps from a
 single codebase. Whether you're building a dashboard, a tool for your team, or
 a full web application, Flutter Web gives you the power to bring your app to
 any browser.
@@ -113,19 +113,18 @@ guides before building:
 Whether you maintain a `pub.dev` package, manage a production web app, or
 build side projects, test your code with WebAssembly this week!
 
-### How to get started
+### Get started
 1.  **Upgrade to Flutter 3.47:** Run `flutter upgrade` to ensure you're on
     the latest stable release with our newest WasmGC optimizations and runtime
     fixes.
 2.  **Build with Wasm:** Run `flutter build web --wasm` in your project
     terminal.
 3.  **Report any blockers:** If you run into package dependencies or runtime
-    issues, let us know! File a report at
-    👉 **[https://goo.gle/flutter-wasm-feedback](https://goo.gle/flutter-wasm-feedback)**
+    issues, let us know!
+    👉 [File a report on the Flutter Wasm feedback form](https://goo.gle/flutter-wasm-feedback)
     so our engineers can help unblock migration.
 4.  **Share your wins:** If your app builds cleanly and runs faster, tell us!
-    Share your before-and-after metrics or framerate gains at
-    👉 **[https://goo.gle/flutter-web-wasm-win](https://goo.gle/flutter-web-wasm-win)**.
+    👉 [Share your metrics and framerate gains](https://goo.gle/flutter-web-wasm-win).
 
 When posting on social media, use **`#FlutterWasmWeek`** so we can feature
 your results!
