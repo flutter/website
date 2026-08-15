@@ -13,7 +13,6 @@ class NotFoundPage extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return main_([
-      const section(classes: 'hero', []),
       section(
         classes: 'content-container',
         attributes: const {
@@ -57,8 +56,7 @@ class NotFoundPage extends StatelessComponent {
                   ]),
                   li([
                     a(
-                      href:
-                          'https://docs.flutter.dev/reference/learning-resources',
+                      href: 'https://docs.flutter.dev/reference/learning-resources',
                       target: Target.blank,
                       [.text('Learning resources')],
                     ),

@@ -20,7 +20,7 @@
     font-size: var(--font-size-heading-5);
   }
 
-  &.solid {
+  &.solid, &.primary {
     background-color: var(--blue-6);
     color: white;
   }
@@ -35,17 +35,11 @@
     }
   }
 
-  &.primary {
-    background-color: var(--blue-6);
-    color: white;
-  }
-
   &.quiet {
     background-color: transparent !important;
     border: none !important;
     color: black;
     padding: 0 var(--gutter-sm);
-    ;
 
     &:hover {
       background-color: transparent !important;
@@ -54,19 +48,16 @@
   }
 
   &.collapsed {
-    padding: 0 !important
+    padding: 0 !important;
   }
 
   .link-arrow-icon {
-    position: relative;
-    left: 0;
+    transform: translateX(0);
+    transition: transform 400ms var(--ui-anim-func);
   }
 
-  &:hover {
-    .link-arrow-icon {
-      transition: left 400ms var(--ui-anim-func);
-      left: 3px;
-    }
+  &:hover .link-arrow-icon {
+    transform: translateX(3px);
   }
 }
 
@@ -81,22 +72,18 @@
   cursor: pointer;
   padding: 0;
 
-  &:hover,
-  &.active {
-    transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+
+  &:hover, &.active {
     background-color: rgba(250, 250, 250, 0.15);
   }
 }
 
+main .btn {
+  border: 1px solid var(--blue-6);
 
-main {
-  .btn {
-    border: 1px solid var(--blue-6);
-    font-size: var(--font-size-default);
-
-    &:hover {
-      background-color: var(--blue-6);
-      color: white;
-    }
+  &:hover {
+    background-color: var(--blue-6);
+    color: white;
   }
 }
