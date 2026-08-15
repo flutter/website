@@ -1,6 +1,6 @@
 <IdeExplorer>
 
-<IdeRoot label="Task" id="task">
+<IdeProjectRoot label="Task" id="task">
 
 <IdeFolder label="environment/" id="environment" subtitle="Containerized Flutter workspace pre-seeded for the agent">
 
@@ -191,6 +191,6 @@ target artifacts evaluated during grading.
 
 </IdePage>
 
-</IdeRoot>
+</IdeProjectRoot>
 
 </IdeExplorer>

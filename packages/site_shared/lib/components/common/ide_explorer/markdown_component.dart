@@ -5,15 +5,14 @@ import '../../../util.dart';
 import 'ide_explorer.dart';
 
 /// A custom markdown component that parses `<IdeExplorer>` and its
-/// `<IdeRoot>`, `<IdeFolder>`, and `<IdePage>` children. Defers
+/// `<IdeProjectRoot>`, `<IdeFolder>`, and `<IdePage>` children. Defers
 /// building the IDE html to the [IdeExplorer] component.
 class IdeExplorerMarkdownComponent extends CustomComponent {
   const IdeExplorerMarkdownComponent() : super.base();
 
   // Tag name constants
   static const String _tagIdeExplorer = 'IdeExplorer';
-  static const String _tagDashIdeExplorer = 'DashIdeExplorer';
-  static const String _tagIdeRoot = 'IdeRoot';
+  static const String _tagIdeProjectRoot = 'IdeProjectRoot';
   static const String _tagIdeFolder = 'IdeFolder';
   static const String _tagIdePage = 'IdePage';
 
@@ -29,30 +28,29 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
   // Default values
   static const String _defaultRootPrefix = 'root';
   static const String _defaultNodePrefix = 'node';
-  static const String _defaultTrue = 'true';
 
   @override
   Component? create(Node node, NodesBuilder builder) {
-    if (node is! ElementNode ||
-        !(node.tag == _tagIdeExplorer || node.tag == _tagDashIdeExplorer)) {
+    if (node is! ElementNode || node.tag != _tagIdeExplorer) {
       return null;
     }
 
-    final rootElements = node.children
+    final projectRootElements = node.children
         ?.whereType<ElementNode>()
-        .where((n) => n.tag == _tagIdeRoot)
-        .toList(growable: false);
+        .where((n) => n.tag == _tagIdeProjectRoot)
+        .toList();
 
-    if (rootElements == null || rootElements.isEmpty) {
+    if (projectRootElements == null || projectRootElements.isEmpty) {
       print(
-        '[ERROR] <$_tagIdeExplorer> requires at least one <$_tagIdeRoot> child element.',
+        '[ERROR] <$_tagIdeExplorer> requires at '
+        'least one <$_tagIdeProjectRoot> child element.',
       );
       return const Component.empty();
     }
 
     final customContents = <String, Component>{};
     final roots = [
-      for (final (index, rootEl) in rootElements.indexed)
+      for (final (index, rootEl) in projectRootElements.indexed)
         IdeExplorerProjectRoot(
           id: _generateNodeId(
             rootEl.attributes,
@@ -75,7 +73,7 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
   }
 
   /// Generates a node ID from attributes or creates a default one.
-  static String _generateNodeId(
+  String _generateNodeId(
     Map<String, String> attributes,
     String prefix,
     int index,
@@ -90,47 +88,7 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
     return '$prefix-$index';
   }
 
-  /// Parses a boolean attribute value, returning [defaultValue] if not present.
-  static bool _getBoolAttribute(
-    Map<String, String> attributes,
-    String key, {
-    required bool defaultValue,
-  }) {
-    final value = attributes[key];
-    return value != null ? value == _defaultTrue : defaultValue;
-  }
-
-  /// Checks if a node represents body content (not a folder/page structure).
-  static bool _isBodyContent(Node node) {
-    if (node is ElementNode &&
-        (node.tag == _tagIdeFolder || node.tag == _tagIdePage)) {
-      return false;
-    }
-    if (node is TextNode && node.text.trim().isEmpty) {
-      return false;
-    }
-    return true;
-  }
-
-  /// Checks if a node has custom body content.
-  static bool _hasCustomBodyContent(List<Node>? children) {
-    return children?.any(_isBodyContent) ?? false;
-  }
-
-  /// Extracts non-structural content nodes from children.
-  static List<Node> _extractContentNodes(List<Node> children) {
-    return children
-        .where((n) {
-          if (n is ElementNode &&
-              (n.tag == _tagIdeFolder || n.tag == _tagIdePage)) {
-            return false;
-          }
-          return true;
-        })
-        .toList(growable: false);
-  }
-
-  static List<IdeTreeNode> _parseTreeNodes(
+  List<IdeTreeNode> _parseTreeNodes(
     List<Node>? nodes,
     NodesBuilder builder,
     Map<String, Component> customContents,
@@ -158,7 +116,7 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
   }
 
   /// Builds a single [IdeTreeNode] from an [ElementNode].
-  static IdeTreeNode _buildTreeNodeFromElement(
+  IdeTreeNode _buildTreeNodeFromElement(
     ElementNode element,
     int index,
     NodesBuilder builder,
@@ -215,8 +173,43 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
     );
   }
 
+  /// Parses a boolean attribute value, returning [defaultValue] if not present.
+  bool _getBoolAttribute(
+    Map<String, String> attributes,
+    String key, {
+    required bool defaultValue,
+  }) {
+    final value = attributes[key];
+    return value != null ? value == 'true' : defaultValue;
+  }
+
+  /// Checks if a node represents body content (not a folder/page structure).
+  bool _isBodyContent(Node node) {
+    if (node is ElementNode &&
+        (node.tag == _tagIdeFolder || node.tag == _tagIdePage)) {
+      return false;
+    }
+    if (node is TextNode && node.text.trim().isEmpty) {
+      return false;
+    }
+    return true;
+  }
+
+  /// Extracts non-structural content nodes from children.
+  List<Node> _extractContentNodes(List<Node> children) {
+    return children
+        .where((n) {
+          if (n is ElementNode &&
+              (n.tag == _tagIdeFolder || n.tag == _tagIdePage)) {
+            return false;
+          }
+          return true;
+        })
+        .toList(growable: false);
+  }
+
   /// Stores custom body content for a node if it exists.
-  static void _storeCustomContentIfPresent(
+  void _storeCustomContentIfPresent(
     List<Node>? children,
     String nodeId,
     NodesBuilder builder,
@@ -230,5 +223,10 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
     if (contentNodes.isNotEmpty) {
       customContents[nodeId] = builder.build(contentNodes);
     }
+  }
+
+  /// Checks if a node has custom body content.
+  bool _hasCustomBodyContent(List<Node>? children) {
+    return children?.any(_isBodyContent) ?? false;
   }
 }

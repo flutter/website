@@ -8,7 +8,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
 import 'package:site_shared/components/common/card.dart';
-import 'package:site_shared/components/common/ide_explorer/ide_explorer.dart';
+import 'package:site_shared/components/common/ide_explorer/markdown_component.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/common/tabs.dart';
 import 'package:site_shared/components/common/youtube_embed.dart';
