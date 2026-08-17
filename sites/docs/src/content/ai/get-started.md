@@ -1,6 +1,5 @@
 ---
 title: Get started developing with AI
-sidenav: ai
 shortTitle: Get started
 description: >-
   Learn how to set up and use AI agent plugins for Flutter and Dart using

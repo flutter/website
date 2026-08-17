@@ -1,7 +1,6 @@
 ---
 title: Antigravity CLI
 shortTitle: CLI
-sidenav: ai
 description: Learn how to use the Antigravity CLI for Dart and Flutter.
 ---
 
