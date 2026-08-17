@@ -371,7 +371,7 @@ endif()
    and icon based on `FLUTTER_APP_FLAVOR`.
 
 </Tab>
-<Tabs>
+</Tabs>
 
 ### Bundle assets by flavor {: #bundle-assets }
 
