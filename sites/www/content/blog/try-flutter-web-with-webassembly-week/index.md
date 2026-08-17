@@ -4,13 +4,12 @@ description: >-
   Unlock up to 2x to 5x faster web performance by opting into Wasm compilation today
 publishDate: 2026-08-17
 author: kevmoo
-image: images/header_placeholder.webp
+image: images/header.webp
 category: event
 layout: blog
 ---
 
-<!-- TODO(graphics): Replace with finalized banner artwork featuring Dash and WebAssembly branding -->
-<DashImage figure src="images/header_placeholder.webp" alt="Dash celebrating Try Flutter Web with WebAssembly Week" caption="Welcome to Try Flutter Web with WebAssembly Week" />
+<DashImage figure src="images/header.webp" alt="Dash celebrating Try Flutter Web with WebAssembly Week" caption="Welcome to Try Flutter Web with WebAssembly Week" />
 
 Flutter lets you build expressive, multi-platform apps from a
 single codebase. Whether you're building a dashboard, a tool for your team, or
@@ -114,17 +113,18 @@ Whether you maintain a `pub.dev` package, manage a production web app, or
 build side projects, test your code with WebAssembly this week!
 
 ### Get started
-1.  **Upgrade to Flutter 3.47:** Run `flutter upgrade` to ensure you're on
-    the latest stable release with our newest WasmGC optimizations and runtime
-    fixes.
-2.  **Build with Wasm:** Run `flutter build web --wasm` in your project
-    terminal.
-3.  **Report any blockers:** If you run into package dependencies or runtime
-    issues, let us know!
-    👉 [File a report on the Flutter Wasm feedback form](https://goo.gle/flutter-wasm-feedback)
+1.  🚀 **Upgrade to Flutter 3.47:** Run `flutter upgrade` to ensure
+    you're on the latest stable release with our newest WasmGC optimizations
+    and runtime fixes.
+2.  ⚙️ **Build with Wasm:** Run `flutter build web --wasm` in your
+    project terminal.
+3.  📝 **Report any blockers:** If you run into package dependencies
+    or runtime issues, let us know!
+    [File a report on the Flutter Wasm feedback form](https://goo.gle/flutter-wasm-feedback)
     so our engineers can help unblock migration.
-4.  **Share your wins:** If your app builds cleanly and runs faster, tell us!
-    👉 [Share your metrics and framerate gains](https://goo.gle/flutter-web-wasm-win).
+4.  🎉 **Share your wins:** If your app builds cleanly and runs faster,
+    tell us!
+    [Share your metrics and framerate gains](https://goo.gle/flutter-web-wasm-win).
 
 When posting on social media, use **`#FlutterWasmWeek`** so we can feature
 your results!
