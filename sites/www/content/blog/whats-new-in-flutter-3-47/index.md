@@ -3,12 +3,13 @@ title: "What’s new in Flutter 3.47"
 description: "Modular by design: Standalone UI Packages and Impeller on Desktop"
 publishDate: 2026-08-12
 author: twerske
-image: images/hero_image.gif
+image: images/hero_image.webp
+socialImage: images/hero_image_cover.webp
 category: release
 layout: blog
 ---
 
-<DashImage figure src="images/hero_image.gif" alt="What's new in Flutter 3.47" caption="What's new in Flutter 3.47" />
+<DashImage figure src="images/hero_image.webp" alt="What's new in Flutter 3.47" caption="What's new in Flutter 3.47" />
 
 Flutter 3.47 is here, and with it, we’ve got some exciting new updates.
 

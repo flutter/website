@@ -49,7 +49,7 @@ void main() async {
   final assetManager = AssetManager(
     directory: 'content',
     outputPrefix: 'assets',
-    dataProperties: const {'page.image'},
+    dataProperties: const {'page.image', 'page.socialImage'},
     assetTransformers: [
       TrackingAssetTransformer(),
       ResizingAssetTransformer(),
