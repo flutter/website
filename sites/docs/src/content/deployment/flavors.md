@@ -399,8 +399,12 @@ When setting `abiFilters` in product flavors, pass
 For more information on creating and using flavors, check out
 the following resources:
 
+* [Set up Flutter flavors for iOS and macOS][]
+* [Set up Flutter flavors for Windows and Linux][]
 * [Build flavors in Flutter (Android and iOS) with Firebase][]
 * [How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI][flutterfireCLI]
 
+[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+[Set up Flutter flavors for Windows and Linux]: /deployment/flavors-windows-linux
 [Build flavors in Flutter (Android and iOS) with Firebase]: https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
 [flutterfireCLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/

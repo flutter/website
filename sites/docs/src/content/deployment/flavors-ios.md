@@ -557,10 +557,14 @@ To learn about them, see
 For more information on creating and using flavors, check
 out the following resources:
 
+* [Set up Flutter flavors for Android][]
+* [Set up Flutter flavors for Windows and Linux][]
 * [How to set up Flutter & Firebase with Multiple Flavors
   using the FlutterFire CLI][flutterfire-cli]
 * [Build flavors in Flutter (Android and iOS) with different
   Firebase projects per flavor Flutter Ready to Go][flavors-firebase]
 
+[Set up Flutter flavors for Android]: /deployment/flavors
+[Set up Flutter flavors for Windows and Linux]: /deployment/flavors-windows-linux
 [flutterfire-cli]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/
 [flavors-firebase]: https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
