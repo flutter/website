@@ -49,8 +49,7 @@ class CulturePage extends StatelessComponent {
         FeatureColumnsSection([
           FeatureColumn(
             title: 'Be open',
-            description:
-                'Three senses of openness: Open as in open minded, open as in accessible, and open as in Open Source.',
+            description: 'Three senses of openness: Open as in open minded, open as in accessible, and open as in Open Source.',
             image: context.asset('images/be-open.png'),
           ),
           FeatureColumn(
@@ -87,8 +86,7 @@ class CulturePage extends StatelessComponent {
                   'We expect our community to act professionally and respectfully to one another, and we expect our social spaces to be safe and dignified environments. From our ',
                 ),
                 a(
-                  href:
-                      'https://github.com/flutter/flutter/blob/main/CODE_OF_CONDUCT.md',
+                  href: 'https://github.com/flutter/flutter/blob/main/CODE_OF_CONDUCT.md',
                   [.text('code of conduct')],
                 ),
                 .text(':'),
@@ -107,16 +105,14 @@ class CulturePage extends StatelessComponent {
               p([
                 .text('We recognize that we are a work in progress, and that '),
                 a(
-                  href:
-                      'https://blog.flutter.dev/black-lives-matter-a8824c8cc245',
+                  href: 'https://blog.flutter.dev/black-lives-matter-a8824c8cc245',
                   [.text('we all have much to learn about how to be allies')],
                 ),
                 .text(
                   '. Many Flutter contributors are based in the US, where there is plenty of work remaining to improve ',
                 ),
                 a(
-                  href:
-                      'https://docs.google.com/presentation/d/e/2PACX-1vRZ0x82ziFIBdHeqvz2VKh218CoxhxLPBNo657GAPkN34CYKbzrPdaLOsmAdUXEAj7xEmmTEFp-xBaJ/pub?start=false&loop=false&delayms=3000&slide=id.gc0d8ac0a20_0_0',
+                  href: 'https://docs.google.com/presentation/d/e/2PACX-1vRZ0x82ziFIBdHeqvz2VKh218CoxhxLPBNo657GAPkN34CYKbzrPdaLOsmAdUXEAj7xEmmTEFp-xBaJ/pub?start=false&loop=false&delayms=3000&slide=id.gc0d8ac0a20_0_0',
                   [.text('racial equity')],
                 ),
                 .text(' in particular.'),
@@ -180,8 +176,7 @@ class CulturePage extends StatelessComponent {
                 ]),
                 a(
                   classes: 'btn',
-                  href:
-                      'https://blog.flutter.dev/flutter-culture-and-how-to-preserve-it-436b4ed1031d',
+                  href: 'https://blog.flutter.dev/flutter-culture-and-how-to-preserve-it-436b4ed1031d',
                   [.text('Learn more')],
                 ),
               ]),

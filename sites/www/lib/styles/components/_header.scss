@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(124.64deg, #027DFD 0%, #833EF2 100%);
+    background: linear-gradient(124.64deg, #027dfd 0%, #833ef2 100%);
     border-radius: 0;
     color: white;
     font-size: var(--font-size-default);
@@ -254,9 +254,8 @@
       z-index: 15;
       position: fixed;
       left: var(--gutter-sm);
-      width: calc(100% - calc(var(--gutter-sm) * 2));
+      width: calc(100% - var(--gutter-sm) * 2);
       justify-content: center;
-      /* when global-gamers-challenge button removed put: bottom: 44px; */
       bottom: 44px;
     }
 
@@ -275,7 +274,7 @@
     /* Expand nav to 100% */
     nav {
       background-color: var(--blue-6);
-      box-shadow: var(--ui-box-shadow);
+      box-shadow: var(--ui-drop-shadow);
       padding: var(--gutter-lg) var(--gutter-sm);
       display: block;
       position: fixed;
@@ -284,8 +283,6 @@
       width: 100%;
       height: 100%;
       top: 0;
-      /* overflow-y: auto;
-      overflow-x: hidden; */
       overflow: hidden;
 
       animation-duration: 300ms;
@@ -299,7 +296,6 @@
         position: relative;
         top: 70px;
         display: inline-block;
-        /* when global-gamers-challenge button removed put: height: 90%; */
         height: 85%;
         width: 100%;
         overflow-y: auto;
@@ -370,7 +366,6 @@
                 font-weight: var(--font-weight-bold);
               }
 
-              /* &.active, */
               &:active,
               &:hover {
                 background-color: rgba(250, 250, 250, 0.15);

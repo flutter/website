@@ -11,8 +11,6 @@ appName: "We Spot Turtles!"
 companyName: "We Spot Turtles!"
 logo: "images/third_party/case_studies/we-spot-turtles/logo.webp"
 card: "images/third_party/case_studies/we-spot-turtles/case_study_card.webp"
-videoEmbedUrl: "https://www.youtube.com/embed/CfzhLOiczDQ"
-poster: "images/third_party/case_studies/we-spot-turtles/logo.webp"
 locations:
   - Europe
   - Oceania

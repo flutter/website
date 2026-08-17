@@ -9,7 +9,6 @@
     min-width: 8rem;
 
     .post-info .post-info-actions {
-
       a,
       button {
         color: var(--site-base-fgColor-lighter);
@@ -29,17 +28,15 @@
 
     > .content {
       padding: 1.5rem;
-      color: var(--site-base-fgColor)
+      color: var(--site-base-fgColor);
     }
 
-    @media(min-width: 576px) {
+    @media (min-width: 576px) {
       > .content {
-        padding: 2rem
+        padding: 2rem;
       }
     }
   }
-
-
 }
 
 :where(.blog main) a {
@@ -51,7 +48,6 @@
 }
 
 .blog header {
-
   .subtype {
     padding: 0 0.3rem;
     font-size: 1.25rem;

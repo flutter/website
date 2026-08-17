@@ -18,8 +18,7 @@ class GoogleIntegrationsPage extends StatelessComponent {
     return main_([
       HeroSection(
         title: 'Build with the best of Google',
-        text:
-            'Seamless integrations to help you tap into the power of Google\'s services for building, launching, growing, and monetizing your Flutter apps across platforms',
+        text: 'Seamless integrations to help you tap into the power of Google\'s services for building, launching, growing, and monetizing your Flutter apps across platforms',
         media: img(
           src: context.asset('images/google-integrations-dash.png'),
           alt: 'Google Integrations Dash',
@@ -122,8 +121,7 @@ class GoogleIntegrationsPage extends StatelessComponent {
               div([
                 a(
                   classes: 'btn',
-                  href:
-                      'https://docs.flutter.dev/resources/in-app-purchases-overview',
+                  href: 'https://docs.flutter.dev/resources/in-app-purchases-overview',
                   [.text('Learn more')],
                 ),
               ]),
@@ -183,8 +181,7 @@ class GoogleIntegrationsPage extends StatelessComponent {
               div([
                 a(
                   classes: 'btn',
-                  href:
-                      'https://developers.google.com/maps/flutter-package/overview',
+                  href: 'https://developers.google.com/maps/flutter-package/overview',
                   [.text('Learn more')],
                 ),
               ]),

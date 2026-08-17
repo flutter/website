@@ -361,9 +361,11 @@ final class _ActiveNavigationPath {
       final entry = entries[entryIndex];
       final newPath = [...currentPath, entryIndex];
 
-      if (entry case NavLink(
-        :final permalink,
-      ) when !_isExternalLink(permalink)) {
+      if (entry
+          case NavLink(
+            :final permalink,
+          )
+          when !_isExternalLink(permalink)) {
         final normalizedPermalink = _normalizePermalink(permalink);
         results[normalizedPermalink] = newPath;
       } else if (entry case NavSection(:final children)) {
