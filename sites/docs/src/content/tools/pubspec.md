@@ -44,7 +44,7 @@ publish_to: 'none'  # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.14.0-95.1.beta
+  sdk: ^3.14.0-95
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -324,10 +324,10 @@ flutter:
 ```
 
 ```console title="console"
-// Use this command to run the default flavor (production).
+# Use this command to run the default flavor (production).
 $ flutter run
 
-// Use this command to run non-default flavors (staging).
+# Use this command to run non-default flavors (staging).
 $ flutter run --flavor staging
 ```
 
@@ -522,7 +522,6 @@ The `module` field has the following structure:
 ```yaml title="pubspec.yaml"
 flutter:
   module:
-    androidX: true # Optional
     androidPackage: com.example.my_module # Optional
     iosBundleIdentifier: com.example.myModule # Optional
 ```
