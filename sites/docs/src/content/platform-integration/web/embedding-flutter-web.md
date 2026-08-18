@@ -73,23 +73,30 @@ based on your isolation, performance, and communication requirements:
   <tbody>
     <tr>
       <td><strong>Isolation &amp; sandboxing</strong></td>
-      <td>Full browser sandboxing with separate JS global scope, DOM tree, and CSS styles.</td>
-      <td>Shares the same DOM tree, JavaScript context, and CSS styles with the host page.</td>
+      <td>Full browser sandboxing with separate JS global scope, DOM tree,
+          and CSS styles.</td>
+      <td>Shares the same DOM tree, JavaScript context,
+          and CSS styles with the host page.</td>
     </tr>
     <tr>
       <td><strong>Memory &amp; engine instances</strong></td>
-      <td>Each <code>iframe</code> initializes its own Flutter engine, WebAssembly/JS runtime, and memory heap.</td>
-      <td>A single Flutter engine instance and memory heap can manage one or more views.</td>
+      <td>Each <code>iframe</code> initializes its own Flutter engine,
+          WebAssembly/JS runtime, and memory heap.</td>
+      <td>A single Flutter engine instance and memory heap can manage
+          one or more views (when using multiview).</td>
     </tr>
     <tr>
       <td><strong>JavaScript interop</strong></td>
-      <td>Communication requires asynchronous messaging (such as <code>postMessage</code>).</td>
-      <td>Direct synchronous communication using <code>package:web</code> and <code>dart:js_interop</code>.</td>
+      <td>Communication requires asynchronous messaging
+          (such as <code>postMessage</code>).</td>
+      <td>Direct synchronous communication using
+          <code>package:web</code> and <code>dart:js_interop</code>.</td>
     </tr>
     <tr>
       <td><strong>Styling &amp; layout</strong></td>
       <td>Independent frame isolated from host page CSS.</td>
-      <td>Direct integration into host page CSS layout (such as flexbox and grid).</td>
+      <td>Direct integration into host page CSS layout
+          (such as flexbox and grid).</td>
     </tr>
     <tr>
       <td><strong>State sharing</strong></td>
@@ -98,8 +105,10 @@ based on your isolation, performance, and communication requirements:
     </tr>
     <tr>
       <td><strong>Best for</strong></td>
-      <td>Third-party widgets, untrusted content, isolated micro-frontends, or simple drop-in embeds.</td>
-      <td>Embedded UI components in existing web apps, multi-view dashboards, and tight host-app integration.</td>
+      <td>Third-party widgets, untrusted content, isolated micro-frontends,
+          or simple drop-in embeds.</td>
+      <td>Embedded UI components in existing web apps, multi-view dashboards,
+          and tight host-app integration.</td>
     </tr>
   </tbody>
 </table>
@@ -418,8 +427,8 @@ rendering canvas based on the computed dimensions of the host container.
 
 HTML container elements like `<div>` default to `height: auto` and
 `position: static`. Without explicit CSS styling, an empty host element
-has a computed height of `0px`. This causes Flutter's internal
-`CustomElementDimensionsProvider` to compute the view height as zero,
+has a computed height of `0px`.
+This causes Flutter to compute the view height as zero,
 which collapses the Flutter view and prevents content from rendering.
 
 ### Mandatory CSS properties {: #mandatory-css-properties }
