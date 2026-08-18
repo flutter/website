@@ -28,3 +28,20 @@ Evals measure both deterministic code correctness
 (compilation, lints, automated tests) and qualitative performance
 (reasoning, safety, and conciseness) using automated model judges
 and expert human grading.
+
+```mermaid
+flowchart TB
+    c1:::myStyle-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+    one --> two
+    three --> two
+    two --> c2
+```

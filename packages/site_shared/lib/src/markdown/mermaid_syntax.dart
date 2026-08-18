@@ -1,5 +1,20 @@
 import 'package:markdown/markdown.dart' as md;
 
+/// A custom Markdown block syntax for diagrams authored
+/// between ```mermaid code fences.
+///
+/// Example:
+///
+/// ````markdown
+/// ```mermaid
+/// flowchart TD
+///     A --> B
+/// ```
+/// ````
+///
+/// This renders as a `<div class="mermaid-container">` containing
+/// a `<pre class="mermaid">` element that hydrates on the client
+/// via [MermaidViewer].
 final class MermaidBlockSyntax extends md.BlockSyntax {
   const MermaidBlockSyntax();
 

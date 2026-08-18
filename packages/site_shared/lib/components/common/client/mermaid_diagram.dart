@@ -79,6 +79,7 @@ final class _MermaidViewerState extends State<MermaidViewer> {
           startOnLoad: false.toJS,
           theme: theme.toJS,
           securityLevel: 'loose'.toJS,
+          fontFamily: 'Google Sans Flex, sans-serif'.toJS,
         ),
       );
 
@@ -148,6 +149,7 @@ extension type MermaidConfig._(JSObject _) implements JSObject {
     JSBoolean? startOnLoad,
     JSString? theme,
     JSString? securityLevel,
+    JSString? fontFamily,
   });
 }
 
