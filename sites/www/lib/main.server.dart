@@ -91,6 +91,7 @@ void main() async {
         parsers: [const MarkdownParser()],
         extensions: [
           ShowcaseStoryExtension(),
+          const TableWrapperExtension(),
           const CodeBlockProcessor(defaultTitle: 'Runnable Flutter example'),
           assetManager.pageExtension,
         ],
