@@ -55,6 +55,55 @@ check out the [Inline Frame element][] docs on MDN.
 
 [Inline Frame element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 
+### Compare `iframe` and direct DOM embedding {: #compare-iframe-and-dom-embedding }
+
+When integrating Flutter into an existing web application,
+choose between `iframe` embedding and direct DOM embedding
+(`hostElement` or multi-view)
+based on your isolation, performance, and communication requirements:
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th><code>iframe</code> embedding</th>
+      <th>Direct DOM embedding (<code>hostElement</code> / multi-view)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Isolation &amp; sandboxing</strong></td>
+      <td>Full browser sandboxing with separate JS global scope, DOM tree, and CSS styles.</td>
+      <td>Shares the same DOM tree, JavaScript context, and CSS styles with the host page.</td>
+    </tr>
+    <tr>
+      <td><strong>Memory &amp; engine instances</strong></td>
+      <td>Each <code>iframe</code> initializes its own Flutter engine, WebAssembly/JS runtime, and memory heap.</td>
+      <td>A single Flutter engine instance and memory heap can manage one or more views.</td>
+    </tr>
+    <tr>
+      <td><strong>JavaScript interop</strong></td>
+      <td>Communication requires asynchronous messaging (such as <code>postMessage</code>).</td>
+      <td>Direct synchronous communication using <code>package:web</code> and <code>dart:js_interop</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Styling &amp; layout</strong></td>
+      <td>Independent frame isolated from host page CSS.</td>
+      <td>Direct integration into host page CSS layout (such as flexbox and grid).</td>
+    </tr>
+    <tr>
+      <td><strong>State sharing</strong></td>
+      <td>State must be synchronized across window boundaries.</td>
+      <td>Direct state sharing in Dart across all attached views.</td>
+    </tr>
+    <tr>
+      <td><strong>Best for</strong></td>
+      <td>Third-party widgets, untrusted content, isolated micro-frontends, or simple drop-in embeds.</td>
+      <td>Embedded UI components in existing web apps, multi-view dashboards, and tight host-app integration.</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Embedded mode
 
 Flutter web applications can also render content into an arbitrary number of
@@ -360,3 +409,46 @@ To learn more about other configuration options,
 check out [Customizing web app initialization][].
 
 [Customizing web app initialization]: /platform-integration/web/initialization
+
+## Host element CSS requirements {: #host-element-css-requirements }
+
+When embedding Flutter directly into a DOM element (using `hostElement`
+with single-view or `addView` in multi-view mode), Flutter sizes its
+rendering canvas based on the computed dimensions of the host container.
+
+HTML container elements like `<div>` default to `height: auto` and
+`position: static`. Without explicit CSS styling, an empty host element
+has a computed height of `0px`. This causes Flutter's internal
+`CustomElementDimensionsProvider` to compute the view height as zero,
+which collapses the Flutter view and prevents content from rendering.
+
+### Mandatory CSS properties {: #mandatory-css-properties }
+
+To ensure Flutter renders correctly, apply the following CSS properties
+to your host element:
+
+* **`width` and `height`**:
+  Set explicit or relative dimensions (for example,
+  `width: 100%; height: 500px;` or `height: 100%` within a sized parent).
+  The element must evaluate to a non-zero width and height.
+* **`position: relative`** (or `position: absolute` / `position: fixed`):
+  Establishes a positioning context for the canvas and DOM overlay layers
+  that Flutter creates inside the container.
+* **`overflow: hidden`**:
+  Prevents Flutter canvas and interaction elements from overflowing
+  the container boundaries or causing unexpected scrollbars on the host page.
+
+### Example CSS {: #example-css }
+
+```css title="styles.css"
+#flutter_host {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+```
+
+```html title="index.html"
+<div id="flutter_host"></div>
+```
