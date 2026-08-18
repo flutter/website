@@ -633,8 +633,8 @@ applying each where it is most effective:
 
 **Generic programming**
 : Generic types enforce type safety across the framework,
-  such as parameterizing [`State<T>`][] with its widget type
-  and [`GlobalKey<T>`][] with its state type.
+  such as parameterizing [`State`][]`<T>` with its widget type
+  and [`GlobalKey`][]`<T>` with its state type.
 
 **Concurrent programming**
 : Flutter uses [`Future`][] and [`Stream`][] for asynchronous operations,
@@ -648,7 +648,7 @@ applying each where it is most effective:
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
-[`GlobalKey<T>`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
+[`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
 [`IconTheme`]: {{site.api}}/flutter/widgets/IconTheme-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
@@ -658,7 +658,7 @@ applying each where it is most effective:
 [`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
 [`ScrollPhysics`]: {{site.api}}/flutter/widgets/ScrollPhysics-class.html
-[`State<T>`]: {{site.api}}/flutter/widgets/State-class.html
+[`State`]: {{site.api}}/flutter/widgets/State-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
