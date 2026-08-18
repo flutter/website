@@ -15,7 +15,7 @@ expert human grading.
 
 ## Findings
 
-<!-- <Loading data......> -->
+TODO
 
 ## Methodology
 
@@ -40,13 +40,15 @@ real-world developer needs.
 Each CUJ represents a combination of a persona, a high-level goal, and 
 a list of tasks required to achieve that goal. For example:
 
-![CUJ example visual](/assets/images/docs/ai/flutter-bench/cuj-chart.png)
+![CUJ example visual](/assets/images/docs/ai/flutter-bench/cuj-chart.png){:width="60%" .diagram-wrap}
 
-One or more CUJ's convert into one task's prompt. We can't
-open-source the full tasks without contaminating the evals, but we 
+
+:::note 
+We can't open-source the full tasks without contaminating the evals, but we 
 can share our [canonical list of CUJs][]. With this, along with the 
 example task below, you can get an idea of our dataset philosphy with 
 FlutterBench.
+:::
 
 ### Task structure
 
@@ -54,13 +56,10 @@ These CUJs are converted into [Harbor](https://harborframework.com/)
 tasks. Harbor is the framework used to run the tasks (described in more
 detail later on this page).
 
-Each task contains an instruction, a target codebase and environment,
-verification criteria, and metadata. Explore each part of a task below:
-
-{% render "docs/ai/flutter_bench_task_explorer.md" %}
-
-
-## I think the following three items belong in a different order (i.e. above the conversion) or under a separate heading.
+CUJs and Harbor tasks don't map cleanly 1-to-1. Rather, the CUJ list is used as a guide 
+so we know we're evaluating core developer workflows. In some cases, several CUJs combine
+to make up one task, and vise-versa. Our most ambitious evaluations combine
+multiple Harbor Tasks, and thus can combine many CUJs.
 
 ### Task categories
 
@@ -103,7 +102,26 @@ results as:
 This process ensures that the dataset produces reliable, actionable signals
 rather than noise.
 
+## Task example
+
+Each task contains an instruction, a target codebase and environment,
+verification criteria, and metadata. Using the CUJ example above, a Harbor
+a corresponding Harbor task looks like this:
+
+{% render "docs/ai/flutter_bench_task_explorer.md" %}
+
 ## Test matrix
+
+<!-- TODO START HERE  -->
+
+```mermaid
+flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+```
 
 To draw statistically sound conclusions, FlutterBench evaluates tasks
 across a 4-axis matrix:
