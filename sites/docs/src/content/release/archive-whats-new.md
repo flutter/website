@@ -1586,7 +1586,6 @@ Docs added and updated since the last announcement include:
 * An alpha release of Flutter Layout Explorer, a new feature
   (and part of the Flutter inspector) that allows you to
   explore a visual representation of your layout is available.
-  For more information, see the [Flutter Layout Explorer][] docs.
 
 Other newness:
 
@@ -1602,7 +1601,6 @@ Happy Fluttering!
 [Flutter Favorite program]: /packages-and-plugins/favorites
 [Flutter 1.12.13]: /release/release-notes/release-notes-1.12.13
 [Flutter Gallery]: {{site.gallery-archive}}
-[Flutter Layout Explorer]: /tools/devtools/legacy-inspector#flutter-layout-explorer
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
 [Web support for Flutter goes beta]: {{site.flutter-blog}}/web-support-for-flutter-goes-beta-35b64a1217c0
 [Get started]: /install
