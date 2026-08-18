@@ -436,22 +436,33 @@ class _IdeNodeRow extends StatelessComponent {
     final icon = node.isFolder
         ? FileIcon.folderIcon
         : FileIcon.forFile(node.label);
+    final classesList = ['ide-node-row', if (isSelected) 'active'].toClasses;
+    final attributesMap = {
+      'data-ide-select': domId,
+      if (isSelected) 'aria-current': 'true',
+    };
+    final childrenList = [
+      icon,
+      span(classes: 'ide-node-label', [.text(node.label)]),
+      _IdeBadgeDot(
+        badge: node.badge,
+        color: node.badgeColor ?? IdeBadgeColor.neutral,
+      ),
+    ];
+
+    if (node.isFolder) {
+      return span(
+        classes: classesList,
+        attributes: attributesMap,
+        childrenList,
+      );
+    }
 
     return button(
-      classes: ['ide-node-row', if (isSelected) 'active'].toClasses,
+      classes: classesList,
       type: ButtonType.button,
-      attributes: {
-        'data-ide-select': domId,
-        if (isSelected) 'aria-current': 'true',
-      },
-      [
-        icon,
-        span(classes: 'ide-node-label', [.text(node.label)]),
-        _IdeBadgeDot(
-          badge: node.badge,
-          color: node.badgeColor ?? IdeBadgeColor.neutral,
-        ),
-      ],
+      attributes: attributesMap,
+      childrenList,
     );
   }
 }

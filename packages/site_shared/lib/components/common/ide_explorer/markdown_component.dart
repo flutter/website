@@ -49,22 +49,26 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
     }
 
     final customContents = <String, Component>{};
-    final roots = [
-      for (final (index, rootEl) in projectRootElements.indexed)
+    final roots = <IdeExplorerProjectRoot>[];
+    for (final (index, rootEl) in projectRootElements.indexed) {
+      final rootId = _generateNodeId(
+        rootEl.attributes,
+        _defaultRootPrefix,
+        index,
+      );
+      roots.add(
         IdeExplorerProjectRoot(
-          id: _generateNodeId(
-            rootEl.attributes,
-            _defaultRootPrefix,
-            index,
-          ),
+          id: rootId,
           label: rootEl.attributes[_attrLabel] ?? '',
           children: _parseTreeNodes(
             rootEl.children,
             builder,
             customContents,
+            rootId,
           ),
         ),
-    ];
+      );
+    }
 
     return IdeExplorer(
       roots: roots,
@@ -76,22 +80,24 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
   String _generateNodeId(
     Map<String, String> attributes,
     String prefix,
-    int index,
-  ) {
+    int index, [
+    String? parentId,
+  ]) {
     if (attributes[_attrId] != null) {
       return attributes[_attrId]!;
     }
     final label = attributes[_attrLabel];
-    if (label != null && label.isNotEmpty) {
-      return slugify(label);
-    }
-    return '$prefix-$index';
+    final localId = (label != null && label.isNotEmpty)
+        ? slugify(label)
+        : '$prefix-$index';
+    return parentId != null ? '$parentId-$localId' : localId;
   }
 
   List<IdeTreeNode> _parseTreeNodes(
     List<Node>? nodes,
     NodesBuilder builder,
     Map<String, Component> customContents,
+    String parentId,
   ) {
     if (nodes == null || nodes.isEmpty) return const [];
 
@@ -107,6 +113,7 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
         index,
         builder,
         customContents,
+        parentId,
       );
 
       result.add(treeNode);
@@ -121,10 +128,11 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
     int index,
     NodesBuilder builder,
     Map<String, Component> customContents,
+    String parentId,
   ) {
     final attributes = element.attributes;
     final label = attributes[_attrLabel] ?? '';
-    final id = _generateNodeId(attributes, _defaultNodePrefix, index);
+    final id = _generateNodeId(attributes, _defaultNodePrefix, index, parentId);
 
     // Parse boolean attributes
     final isDefaultPage = _getBoolAttribute(
@@ -151,6 +159,7 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
       element.children,
       builder,
       customContents,
+      id,
     );
 
     // Extract and store custom body content if present
