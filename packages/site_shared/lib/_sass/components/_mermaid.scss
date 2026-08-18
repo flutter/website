@@ -1,0 +1,55 @@
+// Copyright 2026 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+.mermaid-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.75rem 0;
+  padding: 1.5rem 1rem;
+  overflow-x: auto;
+  background-color: var(--site-raised-bgColor-translucent);
+  border: 1px solid var(--site-outline-variant);
+  border-radius: var(--site-radius);
+
+  // Fallback while loading or during SSR
+  pre.mermaid {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-family: var(--site-code-fontFamily);
+  }
+
+  // Rendered SVG styling
+  // You must use !important to override styles for specific elements within 
+  // the rendered SVG. For styling individual graphs, use Mermaid's built-in
+  // classRef system 
+  svg {
+    max-width: 100%;
+    height: auto;
+
+    // Use Google Sans Flex for diagram labels
+    text,
+    .label,
+    .nodeLabel,
+    .edgeLabel {
+      font-family: var(--site-ui-fontFamily), sans-serif !important;
+    }
+
+    // Sharper node outlines matching site borders
+    .node rect,
+    .node circle,
+    .node ellipse,
+    .node polygon,
+    .node path {
+      stroke-width: 1.5px;
+      fill:  var(--site-secondaryContainer-bgColor) !important;
+    }
+
+    // Edge lines & arrows
+    .edgePath .path {
+      stroke-width: 1.5px;
+    }
+  }
+}

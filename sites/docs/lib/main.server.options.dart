@@ -13,10 +13,6 @@ import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     as _pagenav;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     as _archive_table;
-import 'package:docs_flutter_dev_site/src/components/pages/cuj_filters.dart'
-    as _cuj_filters;
-import 'package:docs_flutter_dev_site/src/components/pages/cuj_filters_sidebar.dart'
-    as _cuj_filters_sidebar;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
     as _glossary_search_section;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
@@ -34,6 +30,8 @@ import 'package:site_shared/components/common/client/download_button.dart'
     as _download_button;
 import 'package:site_shared/components/common/client/feedback.dart'
     as _feedback;
+import 'package:site_shared/components/common/client/mermaid_diagram.dart'
+    as _mermaid_diagram;
 import 'package:site_shared/components/common/client/on_this_page_button.dart'
     as _on_this_page_button;
 import 'package:site_shared/components/common/client/page_header_options.dart'
@@ -84,13 +82,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'archive_table',
       params: __archive_tableArchiveTable,
     ),
-    _cuj_filters.CujFilters: ClientTarget<_cuj_filters.CujFilters>(
-      'cuj_filters',
-    ),
-    _cuj_filters_sidebar.CujFiltersSidebar:
-        ClientTarget<_cuj_filters_sidebar.CujFiltersSidebar>(
-          'cuj_filters_sidebar',
-        ),
     _glossary_search_section.GlossarySearchSection:
         ClientTarget<_glossary_search_section.GlossarySearchSection>(
           'glossary_search_section',
@@ -125,6 +116,11 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'site_shared:feedback',
       params: __feedbackFeedbackComponent,
     ),
+    _mermaid_diagram.MermaidViewer:
+        ClientTarget<_mermaid_diagram.MermaidViewer>(
+          'site_shared:mermaid_diagram',
+          params: __mermaid_diagramMermaidViewer,
+        ),
     _on_this_page_button.OnThisPageButton:
         ClientTarget<_on_this_page_button.OnThisPageButton>(
           'site_shared:on_this_page_button',
@@ -191,6 +187,9 @@ Map<String, Object?> __download_buttonDownloadButton(
 Map<String, Object?> __feedbackFeedbackComponent(
   _feedback.FeedbackComponent c,
 ) => {'issueUrl': c.issueUrl};
+Map<String, Object?> __mermaid_diagramMermaidViewer(
+  _mermaid_diagram.MermaidViewer c,
+) => {'diagram': c.diagram};
 Map<String, Object?> __page_header_optionsPageHeaderOptions(
   _page_header_options.PageHeaderOptions c,
 ) => {

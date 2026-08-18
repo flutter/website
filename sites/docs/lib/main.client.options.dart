@@ -14,10 +14,6 @@ import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     deferred as _pagenav;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     deferred as _archive_table;
-import 'package:docs_flutter_dev_site/src/components/pages/cuj_filters.dart'
-    deferred as _cuj_filters;
-import 'package:docs_flutter_dev_site/src/components/pages/cuj_filters_sidebar.dart'
-    deferred as _cuj_filters_sidebar;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
     deferred as _glossary_search_section;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
@@ -34,6 +30,8 @@ import 'package:site_shared/components/common/client/download_button.dart'
     deferred as _download_button;
 import 'package:site_shared/components/common/client/feedback.dart'
     deferred as _feedback;
+import 'package:site_shared/components/common/client/mermaid_diagram.dart'
+    deferred as _mermaid_diagram;
 import 'package:site_shared/components/common/client/on_this_page_button.dart'
     deferred as _on_this_page_button;
 import 'package:site_shared/components/common/client/page_header_options.dart'
@@ -100,14 +98,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
       ),
       loader: _archive_table.loadLibrary,
     ),
-    'cuj_filters': ClientLoader(
-      (p) => _cuj_filters.CujFilters(),
-      loader: _cuj_filters.loadLibrary,
-    ),
-    'cuj_filters_sidebar': ClientLoader(
-      (p) => _cuj_filters_sidebar.CujFiltersSidebar(),
-      loader: _cuj_filters_sidebar.loadLibrary,
-    ),
     'glossary_search_section': ClientLoader(
       (p) => _glossary_search_section.GlossarySearchSection(),
       loader: _glossary_search_section.loadLibrary,
@@ -151,6 +141,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
     'site_shared:feedback': ClientLoader(
       (p) => _feedback.FeedbackComponent(issueUrl: p['issueUrl'] as String),
       loader: _feedback.loadLibrary,
+    ),
+    'site_shared:mermaid_diagram': ClientLoader(
+      (p) => _mermaid_diagram.MermaidViewer(diagram: p['diagram'] as String),
+      loader: _mermaid_diagram.loadLibrary,
     ),
     'site_shared:on_this_page_button': ClientLoader(
       (p) => _on_this_page_button.OnThisPageButton(),
