@@ -125,7 +125,9 @@ always start with an existing project.
     * Open the **Info tab** if it isn’t open.
 
     * Go to the **Configurations** section and add new
-      `Debug` configurations.
+      `Debug` configurations. Always use lowercase for the
+      appended flavor name (such as `staging` or `production`)
+      so the Flutter CLI recognizes it:
 
       * Click **+**, select
         **Duplicate "Debug" configuration**, and name the
@@ -143,19 +145,12 @@ always start with an existing project.
 
       ![Scheme configurations for Flutter flavors](/assets/images/docs/flavors/flavors-ios-scheme-configurations.png){:width="100%"}
 
-    :::note
-    Your configurations should be based on your
-    `Debug.xcconfig` and `Release.xcconfig` files,
-    not the `Pods-Runner.xcconfig` file.
-    By default, both Profile and Release configurations
-    use `Release.xcconfig`.
-    You can check this by expanding the configuration
-    names in Xcode.
-
-    The scheme name (for example, `staging`) that is
-    appended to a configuration name must be lowercase
-    if you want to use it with the Flutter CLI command.
-    :::
+      Your configurations should be based on `Debug.xcconfig`
+      and `Release.xcconfig` (not `Pods-Runner.xcconfig`).
+      By default, both Profile and Release configurations
+      use `Release.xcconfig`.
+      You can check this by expanding the configuration
+      names in Xcode.
 
 1.  Assign the configurations to the schemes in Xcode:
 
