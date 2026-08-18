@@ -71,15 +71,14 @@ To migrate away from importing `package:flutter_gen`:
     ```
 
  2. **Update imports**. Update your Dart import statements to point to the
-    new location of the generated files, replacing `my_app` with your
-    application's package name:
+    new location of the generated files:
 
     ```dart
     // Before
     import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-    // After (assuming arb-dir: lib/i18n)
-    import 'package:my_app/i18n/app_localizations.dart';
+    // After (assuming arb-dir: lib/i18n, importing from lib/main.dart)
+    import 'i18n/app_localizations.dart';
     ```
 
 ## Timeline
