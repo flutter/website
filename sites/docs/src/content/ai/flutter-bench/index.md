@@ -15,7 +15,7 @@ expert human grading.
 
 ## Findings
 
-<Loading data......>
+<!-- <Loading data......> -->
 
 ## Methodology
 
@@ -57,49 +57,7 @@ detail later on this page).
 Each task contains an instruction, a target codebase and environment,
 verification criteria, and metadata. Explore each part of a task below:
 
-<IdeExplorer data="flutterBenchTaskStructure" />
-
-### Converting a CUJ
-
-[//]: # (update this such that it's a table or image or something nicer 
-looking.)
-
-This is an example of how we convert a CUJ into a task, taken directly 
-from our dataset. Given this CUJ (slightly edited for readability):
-
-```yaml
-  goal: | 
-    Implement a consistent visual design theme and 
-    styling across an application
-  persona: The App Developer
-  name: theme-from-design-file
-  tasks:
-    - name: create-theme-data-from-design-document
-      task: | 
-        Implement application ThemeData configurations 
-        derived from specifications in a design document.
-    - name: add-dark-mode-support
-      task: | 
-        Implement dark mode theming and color scheme switching.
-    - name: change-dropdown-popup-buttons-styling
-      task: | 
-        Customize visual styling for dropdown menus, popup dialogs,
-        and interactive buttons by extending central ThemeData 
-        configurations.
-```
-
-The resulting task looks like this:
-
-```html
-Create a Material theme data in `./lib` folder in a file called
-`theme.dart` from the `DESIGN.md` file. It should export at least a
-`lightTheme` and `darkTheme`.
-```
-
-Often, this resulting task prompt represents one step in a larger 
-hill-climbing evaluation.    
-
-[//]: # (Add more information: i.e. what does the metadata looklike?)
+{% render "docs/ai/flutter_bench_task_explorer.md" %}
 
 
 ## I think the following three items belong in a different order (i.e. above the conversion) or under a separate heading.

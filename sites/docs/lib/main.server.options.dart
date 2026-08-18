@@ -13,6 +13,10 @@ import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     as _pagenav;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     as _archive_table;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj_filters.dart'
+    as _cuj_filters;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj_filters_sidebar.dart'
+    as _cuj_filters_sidebar;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
     as _glossary_search_section;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
@@ -80,6 +84,13 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'archive_table',
       params: __archive_tableArchiveTable,
     ),
+    _cuj_filters.CujFilters: ClientTarget<_cuj_filters.CujFilters>(
+      'cuj_filters',
+    ),
+    _cuj_filters_sidebar.CujFiltersSidebar:
+        ClientTarget<_cuj_filters_sidebar.CujFiltersSidebar>(
+          'cuj_filters_sidebar',
+        ),
     _glossary_search_section.GlossarySearchSection:
         ClientTarget<_glossary_search_section.GlossarySearchSection>(
           'glossary_search_section',
