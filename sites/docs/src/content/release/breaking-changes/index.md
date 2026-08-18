@@ -45,9 +45,11 @@ They're sorted by release and listed in alphabetical order:
 
 * [OpenGL ES render-to-texture content is stored top-down][]
 * [Update semantics header and headingLevel behavior on iOS and Android][]
+* [Removal of `describeEnum`][]
 
 [OpenGL ES render-to-texture content is stored top-down]: /release/breaking-changes/opengles-render-to-texture-top-down
 [Update semantics header and headingLevel behavior on iOS and Android]: /release/breaking-changes/semantics-header-heading-level
+[Removal of `describeEnum`]: /release/breaking-changes/remove-describeEnum
 
 <a id="released-in-flutter-344" aria-hidden="true"></a>
 ### Released in Flutter 3.44

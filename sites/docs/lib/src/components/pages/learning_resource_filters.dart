@@ -8,15 +8,13 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/analytics.dart';
 import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/components/common/search.dart';
+import 'package:site_shared/components/utils/global_event_listener.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../models/learning_resource_model.dart';
-import 'filterable_index.dart';
 import 'learning_resource_filters_sidebar.dart';
-
-/// The id of the search field, so its result count can label it.
-const _searchId = 'learning-resource-search';
 
 @client
 class LearningResourceFilters extends StatefulComponent {
@@ -123,46 +121,71 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
 
   @override
   Component build(BuildContext context) {
-    return FilterSearchGroup(
-      searchId: _searchId,
-      placeholder: 'Try "button" or "networking"...',
-      label: 'Search learning resources by name and category',
-      value: searchQuery,
-      onInput: (value) {
-        setFilters(() {
-          searchQuery = value;
-        });
-      },
-      children: [
-        div(classes: 'label-row', [
-          label(
-            attributes: {'for': _searchId},
-            [
-              const .text('Showing '),
-              span([.text('$filteredResourcesCount')]),
-              const .text(' / '),
-              span([.text('${resources.length}')]),
-            ],
-          ),
+    return div(id: 'resource-search-group', classes: 'chip-filters-group', [
+      SearchBar(
+        placeholder: 'Try "button" or "networking"...',
+        label: 'Search learning resources by name and category',
+        value: searchQuery,
+        id: 'resource-search',
+        onInput: (value) {
+          setFilters(() {
+            searchQuery = value;
+          });
+        },
+        trailing: GlobalEventListener(
+          onClick: (event) {
+            final target = event.target as web.Element?;
+            // If clicking outside the filters or toggle, close the filters.
+            if (target?.closest('#resource-filter-group-wrapper') == null &&
+                target?.closest('.show-filters-button') == null) {
+              final toggle = web.document.getElementById(
+                'open-filter-toggle',
+              ) as web.HTMLInputElement?;
+              toggle?.checked = false;
+            }
+          },
           button(
-            attributes: {
-              if (searchQuery.isEmpty &&
-                  filters.selectedTags.isEmpty &&
-                  filters.selectedTypes.isEmpty)
-                'disabled': 'true',
-            },
+            classes: 'icon-button show-filters-button',
             onClick: () {
-              // No setState needed, since resetting filters will trigger it.
-              searchQuery = '';
-              filters.reset();
+              final toggle = web.document.getElementById(
+                'open-filter-toggle',
+              ) as web.HTMLInputElement?;
+              toggle?.checked = !toggle.checked;
             },
             [
-              const MaterialIcon('close_small'),
-              const span([.text('Clear filters')]),
+              const MaterialIcon('filter_list'),
             ],
           ),
-        ]),
-      ],
-    );
+        ),
+      ),
+      div(classes: 'label-row', [
+        label(
+          attributes: {'for': 'resource-search'},
+          [
+            const .text('Showing '),
+            span([.text('$filteredResourcesCount')]),
+            const .text(' / '),
+            span([.text('${resources.length}')]),
+          ],
+        ),
+        button(
+          attributes: {
+            if (searchQuery.isEmpty &&
+                filters.selectedTags.isEmpty &&
+                filters.selectedTypes.isEmpty)
+              'disabled': 'true',
+          },
+          onClick: () {
+            // No setState needed, since resetting filters will trigger it.
+            searchQuery = '';
+            filters.reset();
+          },
+          [
+            const MaterialIcon('close_small'),
+            const span([.text('Clear filters')]),
+          ],
+        ),
+      ]),
+    ]);
   }
 }

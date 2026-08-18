@@ -1,10 +1,6 @@
 @use '../core/breakpoints';
 
 body.games {
-  #notification.module {
-    background-color: var(--blue-10);
-  }
-
   section.hero {
     --mobile-header-max-height: 360px;
     --desktop-header-max-height: 460px;
@@ -750,7 +746,7 @@ body.games {
     h2 {
       color: var(--grey-1);
     }
-    
+
     @include breakpoints.screen(lg) {
       padding: var(--gutter-lg) 0;
     }
@@ -1142,10 +1138,6 @@ body.games {
         }
       }
     }
-  }
-
-  #notification.module {
-    padding-bottom: 0;
   }
 
   .carousel .carousel-progress {

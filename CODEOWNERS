@@ -6,6 +6,10 @@
 # with @flutter/website-reviewers available to approve as well as a fallback.
 /sites/www/ @flutter/website-reviewers @abdallahshaban557
 
+# @sfshaza2 is the default reviewer for the blog on the marketing site,
+# with @flutter/website-reviewers available to approve as well as a fallback.
+/sites/www/content/blog @flutter/website-reviewers @sfshaza2
+
 ## Notes
 ## --------------------------------------------------
 ## Default reviewer will triage to others.

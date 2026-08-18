@@ -323,6 +323,7 @@
       { "source": "/go/android-dependency-versions", "destination": "https://docs.google.com/document/d/1qeeM5QG-jiafttSgvc7yvC19IDRggFFZQTktBVxL6sI/edit?usp=sharing&resourcekey=0-HLEAiBOMxAlQxDs-mEeffw", "type": 301 },
       { "source": "/go/android-embedding-dependencies", "destination": "https://docs.google.com/document/d/1vITp2mUZRa-cmll0sPH0zjNgPlyvOMx7awxPNRAPyic/edit", "type": 301 },
       { "source": "/go/android-embedding-move", "destination": "https://docs.google.com/document/d/1nQujwZfEe3QOHTyZn160eImpoJOYioADP09DtumcLcc/edit?ts=5d8041db#", "type": 301 },
+      { "source": "/go/android-hide-passwords-physical-keyboards", "destination": "https://docs.google.com/document/d/1j2rgUcPdZ35BeJYwkC4xR7MFfW54lgAVyUtwLCrPO9Y/edit", "type": 301 },
       { "source": "/go/android-java-gradle-error", "destination": "/release/breaking-changes/android-java-gradle-migration-guide", "type": 301 },
       { "source": "/go/android-local-area-permission", "destination": "https://docs.google.com/document/d/1mxBIzO-tWEa_RJk0aMWVQjooE5FUmrmWalGQ402D2Ck", "type": 301 },
       { "source": "/go/android-migration-summary", "destination": "https://docs.google.com/document/d/1wKspwf6LQu6uo32uQ9NcukfiKhLL4ButV9cwpjeb8QI", "type": 301 },
