@@ -130,8 +130,6 @@ always start with an existing project.
       * Click **+**, select
         **Duplicate "Debug" configuration**, and name the
         new configuration `Debug-staging`.
-        Ensure that the appended flavor name is lowercase
-        if you want to use it with the Flutter CLI command.
       * Click **+**, select
         **Duplicate "Debug" configuration**, and name the
         new configuration `Debug-production`.
@@ -153,6 +151,10 @@ always start with an existing project.
     use `Release.xcconfig`.
     You can check this by expanding the configuration
     names in Xcode.
+
+    The scheme name (for example, `staging`) that is
+    appended to a configuration name must be lowercase
+    if you want to use it with the Flutter CLI command.
     :::
 
 1.  Assign the configurations to the schemes in Xcode:
