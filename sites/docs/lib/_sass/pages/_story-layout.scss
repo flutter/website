@@ -1,0 +1,306 @@
+@use 'sass:color';
+@use 'package:site_shared/_sass/base/breakpoints';
+
+// -----------------------------------------------------------------------------
+// Storytelling Layout Styles
+// -----------------------------------------------------------------------------
+
+// D. Non-intrusive Proximity Snapping on Root Scroll Container
+html:has(body.layout-story) {
+  // scroll-snap-type: y proximity;
+}
+
+// E. Scroll-Driven Reading Progress Line directly underneath sticky navbar
+.story-reading-progress {
+  position: fixed;
+  top: var(--site-header-height, 4rem);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: var(--site-z-top, 1000);
+  background: rgb(216, 216, 216);
+  pointer-events: none;
+
+  .story-reading-progress-bar {
+    height: 100%;
+    width: 100%;
+    transform-origin: 0% 50%;
+    transform: scaleX(0);
+    background: linear-gradient(90deg, #0284c7 0%, #6366f1 50%, #059669 100%);
+    box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);
+
+    @supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+      animation: story-reading-progress-grow linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
+@keyframes story-reading-progress-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+// A. Generous Pacing & Breakout Canvas Layout
+body.layout-story {
+  scroll-padding-top: calc(var(--site-header-height, 4rem) + 1.5rem);
+
+  #page-content article {
+    max-width: 1240px;
+    width: 100%;
+    padding-inline: clamp(1.25rem, 3.5vw, 3rem);
+  }
+
+  .story-canvas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  // Chapter Sections
+  .story-chapter {
+    position: relative;
+    padding-block: clamp(6rem, 12vh, 12rem);
+    min-height: clamp(500px, 70vh, 850px);
+    border-bottom: 1px solid var(--site-outline-variant);
+    scroll-snap-align: start;
+    scroll-margin-top: calc(var(--site-header-height, 4rem) + 1.5rem);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+
+    // C. Chapter Accent Palettes & Ambient Lighting
+    --chapter-accent: #0284c7;
+    --chapter-accent-rgb: 2, 132, 199;
+
+    &[data-chapter="00"] {
+      --chapter-accent: #0284c7;
+      --chapter-accent-rgb: 2, 132, 199;
+    }
+
+    &[data-chapter="01"] {
+      --chapter-accent: #059669;
+      --chapter-accent-rgb: 5, 150, 105;
+    }
+
+    &[data-chapter="02"] {
+      --chapter-accent: #7c3aed;
+      --chapter-accent-rgb: 124, 58, 237;
+    }
+
+    &[data-chapter="03"] {
+      --chapter-accent: #6366f1;
+      --chapter-accent-rgb: 99, 102, 241;
+    }
+
+    &[data-chapter="04"] {
+      --chapter-accent: #0284c7;
+      --chapter-accent-rgb: 2, 132, 199;
+    }
+
+    &[data-chapter="05"] {
+      --chapter-accent: #64748b;
+      --chapter-accent-rgb: 100, 116, 139;
+    }
+
+    // Soft Ambient Atmosphere Vignette
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -2rem;
+      right: -2rem;
+      height: 100%;
+      background: radial-gradient(850px circle at 50% 12%, rgba(var(--chapter-accent-rgb), 0.05), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    &:first-of-type {
+      padding-top: clamp(2rem, 5vh, 4rem);
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+      padding-bottom: clamp(6rem, 12vh, 12rem);
+    }
+
+    // Prologue (Intro content before chapter 01)
+    &.story-prologue {
+      min-height: auto;
+      padding-bottom: clamp(3rem, 6vh, 5rem);
+    }
+
+    // B. Sticky Chapter Header & Eyebrow Waypoint
+    .chapter-header-group {
+      position: sticky;
+      top: calc(var(--site-header-height, 4rem) + 3px);
+      z-index: 10;
+      background: var(--site-base-bgColor);
+      padding-block: 0.85rem 0.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--site-outline-variant);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      .chapter-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.35rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--chapter-accent);
+
+        .chapter-number {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.15rem 0.55rem;
+          border-radius: 9999px;
+          background: rgba(var(--chapter-accent-rgb), 0.08);
+          border: 1px solid rgba(var(--chapter-accent-rgb), 0.25);
+          font-family: var(--site-code-fontFamily);
+          font-size: 0.8rem;
+          line-height: 1.2;
+          color: var(--chapter-accent);
+        }
+
+        .chapter-rule {
+          display: inline-block;
+          width: 2rem;
+          height: 1px;
+          background: currentColor;
+          opacity: 0.35;
+        }
+      }
+
+      > .header-wrapper {
+        margin: 0;
+
+        h2 {
+          font-size: clamp(1.65rem, 2.5vw, 2.35rem);
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          line-height: 1.25;
+          margin: 0;
+        }
+      }
+    }
+
+    // A. Prose Centering vs. Component Breakouts
+    .chapter-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      // Body prose constrained to optimal reading measure
+      > p,
+      > ul,
+      > ol,
+      > blockquote {
+        max-width: 68ch;
+        line-height: 1.75;
+        font-size: 1.075rem;
+      }
+
+      > p.description {
+        font-size: 1.2rem;
+        line-height: 1.65;
+        color: var(--site-base-fgColor-alt);
+      }
+
+      // Sub-headings inside chapter
+      > .header-wrapper h3 {
+        font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        max-width: 68ch;
+      }
+
+      > .header-wrapper h4 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        max-width: 68ch;
+      }
+
+      > .table-wrapper {
+        max-width: 68ch;
+      }
+
+      // Interactive components break out into full container width
+      > .interactive-detail-card,
+      > .matrix-carousel,
+      > .comparison-cards-grid,
+      > .dimension-cards-grid,
+      > .spec-panels,
+      > .cuj-diagram-wrapper,
+      > .tabs-wrapper,
+      > .code-tabs {
+        width: 100%;
+        max-width: 100%;
+        margin-block: 2rem;
+      }
+    }
+  }
+}
+
+// Dark mode adjustments
+body.layout-story.dark-mode {
+  .story-reading-progress {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .story-chapter {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+
+    .chapter-header-group {
+      background: var(--site-base-bgColor);
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    &::before {
+      background: radial-gradient(850px circle at 50% 12%, rgba(var(--chapter-accent-rgb), 0.1), transparent 70%);
+    }
+
+    .chapter-kicker .chapter-number {
+      background: rgba(var(--chapter-accent-rgb), 0.15);
+      border-color: rgba(var(--chapter-accent-rgb), 0.35);
+    }
+  }
+}
+
+// Accessibility: Respect user motion preferences
+@media (prefers-reduced-motion: reduce) {
+  html:has(body.layout-story) {
+    scroll-snap-type: none;
+  }
+
+  body.layout-story {
+    scroll-behavior: auto;
+
+    .story-reading-progress .story-reading-progress-bar {
+      animation: none !important;
+      display: none;
+    }
+
+    .story-chapter {
+      transition: none !important;
+
+      .chapter-header-group {
+        position: static;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+    }
+  }
+}

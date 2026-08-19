@@ -37,6 +37,7 @@ import 'src/components/pages/platforms_grid.dart';
 import 'src/components/pages/widget_catalog.dart';
 import 'src/extensions/registry.dart';
 import 'src/layouts/doc_layout.dart';
+import 'src/layouts/story_layout.dart';
 import 'src/layouts/toc_layout.dart';
 import 'src/layouts/tutorial_layout.dart';
 import 'src/loaders/data_processor.dart';
@@ -80,6 +81,7 @@ Component get _docsFlutterDevSite => ContentApp.custom(
     components: _embeddableComponents,
     layouts: const [
       DocLayout(),
+      StoryLayout(),
       TocLayout(),
       TutorialLayout(),
     ],
