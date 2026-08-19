@@ -26,6 +26,8 @@
     - title: Flutter Bench
       permalink: /ai/flutter-bench
       children:
+       - title: Overview
+         permalink: /ai/flutter-bench
        - title: Methodology
          permalink: /ai/flutter-bench/methodology  
        - title: User journeys

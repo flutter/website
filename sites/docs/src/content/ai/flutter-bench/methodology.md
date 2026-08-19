@@ -6,18 +6,31 @@ description: >
   measuring AI tooling reliability.
 ---
 
+<div class="methodology-hero">
+  <div class="hero-badge">
+    <span class="material-symbols">verified</span>
+    <span>Primary Metric Architecture</span>
+  </div>
+  <h3 class="hero-title">The Result Score</h3>
+  <p>
+    Each task run produces a composite <code>reward.json</code> score on a
+    <strong>0.0 to 1.0 scale</strong>, synthesizing deterministic code
+    correctness, maintainability, and developer experience.
+  </p>
+</div>
+
 ## Methodology
 
-The FlutterBench is made up of four components:
+FlutterBench is made up of four key components:
 
 1. **Dataset**: A collection of real-world development tasks derived from
-   critical user journeys.
-1. **Test matrix**: A multidimensional testing framework across models,
-   agents, tooling configurations, and SDK versions.
-1. **Scoring system**: A comprehensive grading approach that evaluates both
+   canonical critical user journeys.
+2. **Test matrix**: A multidimensional testing framework across models,
+   agents, tooling configurations, and SDK branches.
+3. **Scoring system**: A comprehensive grading approach that evaluates both
    functional outcomes and developer experience.
-1. **Harness**: The automation infrastructure that runs evaluations at
-   scale.
+4. **Harness**: The containerized automation infrastructure that executes
+   evaluations at scale.
 
 ## Dataset
 
@@ -31,29 +44,28 @@ a list of tasks required to achieve that goal. For example:
 
 ![CUJ example visual](/assets/images/docs/ai/flutter-bench/cuj-chart.png){:width="60%" .diagram-wrap}
 
-
-:::note 
-We can't open-source the full tasks without contaminating the evals, but we 
-can share our [canonical list of CUJs][]. With this, along with the 
-example task below, you can get an idea of our dataset philosphy with 
-FlutterBench.
+:::note
+We can't open-source the full evaluation tasks without contaminating the
+benchmark dataset, but we publish our [canonical list of CUJs][]. With
+this list, along with the example task below, you can understand our
+evaluation philosophy for FlutterBench.
 :::
 
 ### Task structure
 
 These CUJs are converted into [Harbor](https://harborframework.com/)
-tasks. Harbor is the framework used to run the tasks (described in more
-detail later on this page).
+tasks. Harbor is the framework used to run containerized evaluation tasks.
 
-CUJs and Harbor tasks don't map cleanly 1-to-1. Rather, the CUJ list is used as a guide 
-so we know we're evaluating core developer workflows. In some cases, several CUJs combine
-to make up one task, and vise-versa. Our most ambitious evaluations combine
-multiple Harbor Tasks, and thus can combine many CUJs.
+CUJs and Harbor tasks don't map cleanly one-to-one. Instead, the CUJ list
+serves as a guide to verify that core developer workflows are evaluated.
+In some cases, several CUJs combine into a single task, and vice-versa.
+Our most ambitious evaluations combine multiple Harbor tasks, and thus
+cover many CUJs.
 
 ### Task categories
 
-Tasks are categorized by the type of agent capability they test. A task can
-belong to multiple categories, particularly hill-climbing tasks.
+Tasks are categorized by the type of agent capability they test. A task
+can belong to multiple categories, particularly hill-climbing tasks.
 
 * **Greenfield generation**: Creating new features or applications from
   scratch.
@@ -68,7 +80,7 @@ belong to multiple categories, particularly hill-climbing tasks.
 
 ### Task prioritization
 
-Tasks are prioritized based on impact and frequency:
+Tasks are prioritized based on user impact and frequency:
 
 | Priority | Description                                                         |
 |:---------|:--------------------------------------------------------------------|
@@ -83,10 +95,10 @@ Before a task graduates into the core benchmark suite, it undergoes an
 engineering audit. Human reviewers inspect initial trial runs and label
 results as:
 
-* **True positive**: Agent correctly passed
-* **True negative**: Agent correctly failed
-* **False positive**: Agent passed incorrectly
-* **False negative**: Agent failed incorrectly
+* **True positive**: Agent correctly passed the task.
+* **True negative**: Agent correctly failed the task.
+* **False positive**: Agent passed incorrectly due to lenient checks.
+* **False negative**: Agent failed incorrectly due to brittle tests.
 
 This process ensures that the dataset produces reliable, actionable signals
 rather than noise.
@@ -94,26 +106,29 @@ rather than noise.
 ## Task example
 
 Each task contains an instruction, a target codebase and environment,
-verification criteria, and metadata. Using the CUJ example above, a Harbor
+verification criteria, and metadata. Using the CUJ example above,
 a corresponding Harbor task looks like this:
 
 {% render "docs/ai/flutter_bench_task_explorer.md" %}
 
 ## Test matrix
 
-<!-- TODO START HERE  -->
+To draw statistically sound conclusions, FlutterBench evaluates tasks
+across a 4-axis matrix:
 
 ```mermaid
 flowchart TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
+    subgraph Matrix["4-Axis Evaluation Matrix"]
+        direction TB
+        A["1. Tooling Configurations<br/>(Baseline, Enhanced, Enhanced Minus N)"]
+        B["2. Frontier Models<br/>(Gemini, Claude, ChatGPT)"]
+        C["3. Agent Harnesses<br/>(Claude Code, Antigravity CLI)"]
+        D["4. SDK Branches<br/>(Stable, Beta)"]
+    end
+    Matrix --> E["Harbor Task Container<br/>(Ephemeral Docker Workspace)"]
+    E --> F["Grading & Telemetry<br/>(Deterministic, LLM Judge, Diagnostics)"]
+    F --> G["reward.json<br/>(Composite Result Score: 0.0 – 1.0)"]
 ```
-
-To draw statistically sound conclusions, FlutterBench evaluates tasks
-across a 4-axis matrix:
 
 ### 1. Tooling configuration
 
@@ -122,9 +137,9 @@ Flutter AI tools:
 
 | Configuration        | Description                                                                             |
 |:---------------------|:----------------------------------------------------------------------------------------|
-| **Baseline**         | No specialized Dart/Flutter tools—tests raw model capability                            |
-| **Enhanced**         | Full suite of Dart/Flutter skills and MCP server tools                                  |
-| **Enhanced Minus N** | Full suite except for one specific tool or group—used to measure individual tool impact |
+| **Baseline**         | No specialized Dart/Flutter tools—tests raw model capability.                           |
+| **Enhanced**         | Full suite of Dart/Flutter skills and MCP server tools.                                 |
+| **Enhanced Minus N** | Full suite except for one specific tool or group—used to measure individual tool impact.|
 
 This A/B testing approach helps answer questions such as:
 "Does adding the Flutter widget tree skill improve success rates? By how
@@ -132,14 +147,13 @@ much? Does the improvement vary by model?"
 
 ### 2. Model selection
 
-Testing covers major frontier models based on developer usage data,
-including:
+Testing covers major frontier models based on developer usage data:
 
 * **Gemini**
 * **Claude**
 * **ChatGPT**
 
-Additional providers will be added based on community feedback.
+Additional providers are added based on community feedback and usage.
 
 ### 3. Agent harnesses
 
@@ -149,7 +163,7 @@ Evaluations run against the agents Flutter developers use most:
 * **Claude Code**
 * **Antigravity CLI**
 
-This helps measure how the same model performs across different agent
+This measures how the same model performs across different agent
 environments.
 
 ### 4. SDK branch
@@ -171,85 +185,98 @@ Because the Flutter team focuses on building the tooling, documentation,
 and SDKs that agents consume rather than the models or agents themselves,
 scoring reflects this focus:
 
-* **Primary focus**: The quality of the final code artifact
-* **Secondary signals**: Developer experience and resource efficiency
+* **Primary focus**: The quality of the final code artifact.
+* **Secondary signals**: Developer experience and resource efficiency.
 
 If an agent produces idiomatic Flutter code that passes all tests, the
 evaluation passes—even if it took an unconventional path. However, the
 system tracks process and efficiency metrics as diagnostic signals to
 improve tooling.
 
-### Three-score architecture
+### Three core dimensions
 
-Each evaluation produces three independent scores (0.0 to 1.0):
+Each evaluation produces three independent dimensions that compute the
+composite result score:
 
-#### 1. Result score (primary metric)
+<ThreeDimensionsCards />
 
-The result score determines pass/fail status and is calculated as a
-weighted average of:
+### Grader matrix
 
-* **Outcome**: Does the code functionally work?
-* **Quality**: Is it maintainable and idiomatic?
-* **Developer experience**: Was the agent frustrating to work with?
+FlutterBench deploys a mix of deterministic, LLM-as-a-judge, and
+heuristic graders across all three dimensions:
 
-**Outcome graders:**
+<GraderMatrix />
 
-* **Build and run**: Binary pass/fail—does the code compile and run?
-* **Testing**: Ratio of passing tests to total affected tests across unit,
-  widget, integration, and golden tests.
-* **Visual validation**: LLM-as-a-judge comparison of before and after
-  screenshots for UI tasks.
-* **Heuristics**: Task-specific checks (such as verifying that the correct
-  dependency was added or that a test file was edited).
+### Grader implementation
 
-**Quality graders:**
+Evaluations use three types of graders:
 
-* **Static analysis**: `dart analyze` with strict lints.
-* **DCM (Dart Code Metrics)**: Advanced linting for architectural issues,
-  dead code, memory leaks, and complexity.
-* **Structural validation**: Correct project structure, naming conventions,
-  and required files.
-* **Idiomatic review**: LLM-as-a-judge evaluating modern Dart usage
-  (such as records and patterns) and adherence to Effective Dart.
-* **Heuristics**: Task-specific checks such as preferred package usage and
-  new language feature adoption.
+* **Code-based graders** provide deterministic, objective verification:
+  * Compilers, test runners, linters, and formatters.
+  * Fast and unambiguous source of truth.
+* **LLM-as-a-judge graders** handle qualitative evaluation:
+  * Idiomatic style review, plan adherence, and trajectory analysis.
+  * Follow strict rubrics using a **BINEVAL** approach (decomposing criteria
+    into binary yes/no questions).
+  * Nondeterministic but calibrated for nuanced assessment.
+* **Human graders** serve as the ultimate authority:
+  * Calibrate automated graders on initial runs.
+  * Perform root-cause analysis on failures.
+  * Resolve disagreements between automated graders.
 
-**Developer experience graders:**
+### Multi-run reliability
 
-* **Tool usage**: Did the agent call expected tools? Did tool calls fail?
-* **Trajectory**: LLM-as-a-judge analyzing execution logs for retries,
-  hallucinated commands, and human-in-the-loop (HITL) compliance.
-* **Error recovery**: How well did the agent navigate and learn from
-  errors?
+Single-run trials only sample luck. True agent trust requires measuring
+multi-trial stability across repeated runs:
 
-#### 2. Process score (diagnostic)
+<ReliabilityCards />
+
+* **Capability ($pass@k$)**: The probability that an agent succeeds at least
+  once across $k$ attempts. This indicates what a model can achieve under
+  ideal conditions.
+* **Consistency ($pass^k$)**: The probability that an agent succeeds every
+  single time across all $k$ attempts. This represents our north star
+  metric, measuring whether developers can reliably depend on the agent in
+  production workflows.
+
+### Diagnostic scores
+
+In addition to the primary result score, FlutterBench captures diagnostic
+telemetry:
+
+#### Process score (diagnostic)
 
 This score tracks agent behavior to identify tooling improvement
-opportunities. It evaluates:
+opportunities:
 
-* Tool usage patterns and discoverability
-* Reasoning trace quality and plan adherence
-* Error recovery strategies
-* Accurate reporting (does the agent's summary match reality?)
+* Tool usage patterns and discoverability.
+* Reasoning trace quality and plan adherence.
+* Error recovery strategies.
+* Accurate reporting (whether the agent's summary matches reality).
 
 Process scores help triage failures to determine whether an agent failed
 because tool definitions are unclear, documentation is missing, or the
 model fundamentally misunderstood the task.
 
-#### 3. Efficiency score (diagnostic)
+#### Efficiency score (diagnostic)
 
 This score measures resource consumption:
 
 * **Token usage**: Compares actual token consumption against task-specific
   baselines.
-* **Step efficiency**: LLM-as-a-judge detecting redundant steps,
-  unnecessary tool calls, or loops.
+* **Step efficiency**: Detects redundant steps, unnecessary tool calls, or
+  loops.
 
 Efficiency data helps developers make informed trade-offs. An agent using
 2× the tokens but producing correct code on the first try can be preferable
 to one using half the tokens but requiring manual intervention.
 
-### Score interpretation
+### Score triage and action matrix
+
+Click a score tier to view its grading criteria and actionable engineering
+triage steps:
+
+<ScoreTriage />
 
 | Result score  | Classification              | Criteria                                                                                                                                       |
 |:--------------|:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -258,28 +285,6 @@ to one using half the tokens but requiring manual intervention.
 | **0.50–0.74** | Partial success             | Core features work, but some tests fail or minor compilation issues exist. Or working code with significant lints or low developer experience. |
 | **0.25–0.49** | Poor implementation         | Significant errors. Fails to compile, ignores constraints, or catastrophic developer experience friction.                                      |
 | **0.00**      | Total failure               | No working code or agent stuck in an infinite loop.                                                                                            |
-
-### Grader implementation
-
-Evaluations use three types of graders:
-
-**Code-based graders** provide deterministic, objective verification:
-
-* Compilers, test runners, linters, and formatters.
-* Fast and unambiguous source of truth.
-
-**LLM-as-a-judge graders** handle qualitative evaluation:
-
-* Idiomatic style review, plan adherence, and trajectory analysis.
-* Follow strict rubrics using a "BINEVAL" approach (decomposing criteria
-  into binary yes/no questions).
-* Nondeterministic but necessary for nuanced assessment.
-
-**Human graders** serve as the ultimate authority:
-
-* Calibrate automated graders on initial runs.
-* Perform root-cause analysis on failures.
-* Resolve disagreements between automated graders.
 
 ### Combining scores for analysis
 

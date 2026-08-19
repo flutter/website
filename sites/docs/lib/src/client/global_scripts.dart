@@ -21,6 +21,8 @@ void setUpSite() {
   _setUpToc();
   _setUpSteppers();
   _setUpIdeExplorers();
+  _setUpGraderMatrix();
+  _setUpScoreTriage();
 }
 
 void _setUpSearchKeybindings() {
@@ -595,4 +597,86 @@ void _setUpIdeExplorer(web.Element explorer) {
   }
 
   explorer.addEventListener('click', handleClick.toJS);
+}
+
+/// Set up interactivity for the FlutterBench grader matrix component.
+void _setUpGraderMatrix() {
+  final matrices = web.document.querySelectorAll('.grader-matrix');
+  for (var i = 0; i < matrices.length; i++) {
+    _setUpSingleGraderMatrix(matrices.item(i) as web.Element);
+  }
+}
+
+void _setUpSingleGraderMatrix(web.Element matrix) {
+  final buttons = matrix.querySelectorAll('.matrix-filters .filter-btn');
+  final cards = matrix.querySelectorAll('.grader-cards-grid .grader-card');
+
+  for (var i = 0; i < buttons.length; i++) {
+    final btn = buttons.item(i) as web.HTMLElement;
+    final filter = btn.dataset['filter'];
+
+    void handleClick(web.Event event) {
+      event.preventDefault();
+      for (var j = 0; j < buttons.length; j++) {
+        (buttons.item(j) as web.Element).classList.remove('active');
+      }
+      btn.classList.add('active');
+
+      for (var k = 0; k < cards.length; k++) {
+        final card = cards.item(k) as web.HTMLElement;
+        if (filter == 'all') {
+          card.classList.remove('hidden');
+        } else if (filter == 'llm') {
+          card.classList.toggle('hidden', !card.classList.contains('cat-llm'));
+        } else if (filter == 'deterministic') {
+          card.classList.toggle(
+            'hidden',
+            !card.classList.contains('cat-deterministic'),
+          );
+        } else {
+          card.classList.toggle(
+            'hidden',
+            !card.classList.contains('cat-$filter'),
+          );
+        }
+      }
+    }
+
+    btn.addEventListener('click', handleClick.toJS);
+  }
+}
+
+/// Set up interactivity for the FlutterBench score triage component.
+void _setUpScoreTriage() {
+  final triages = web.document.querySelectorAll('.score-triage');
+  for (var i = 0; i < triages.length; i++) {
+    _setUpSingleScoreTriage(triages.item(i) as web.Element);
+  }
+}
+
+void _setUpSingleScoreTriage(web.Element triage) {
+  final buttons = triage.querySelectorAll(
+    '.triage-tiers-grid .triage-tier-btn',
+  );
+  final panels = triage.querySelectorAll('.triage-detail-card .triage-panel');
+
+  for (var i = 0; i < buttons.length; i++) {
+    final btn = buttons.item(i) as web.HTMLElement;
+    final tier = btn.dataset['tier'];
+
+    void handleClick(web.Event event) {
+      event.preventDefault();
+      for (var j = 0; j < buttons.length; j++) {
+        (buttons.item(j) as web.Element).classList.remove('active');
+      }
+      btn.classList.add('active');
+
+      for (var k = 0; k < panels.length; k++) {
+        final panel = panels.item(k) as web.HTMLElement;
+        panel.classList.toggle('active', panel.dataset['tier'] == tier);
+      }
+    }
+
+    btn.addEventListener('click', handleClick.toJS);
+  }
 }

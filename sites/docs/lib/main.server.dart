@@ -31,6 +31,7 @@ import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/cuj_index.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
+import 'src/components/pages/flutter_bench_components.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/pages/platforms_grid.dart';
 import 'src/components/pages/widget_catalog.dart';
@@ -120,6 +121,10 @@ List<CustomComponent> get _embeddableComponents => [
   defineComponentWithChild('Card', Card.fromAttributes),
   defineComponent('LearningResourceIndex', const LearningResourceIndex()),
   defineComponent('CujIndex', const CujIndex()),
+  defineComponent('ThreeDimensionsCards', const ThreeDimensionsCards()),
+  defineComponent('GraderMatrix', const GraderMatrix()),
+  defineComponent('ReliabilityCards', const ReliabilityCards()),
+  defineComponent('ScoreTriage', const ScoreTriage()),
   defineComponentWithAttrs('ArchiveTable', ArchiveTable.fromAttributes),
   defineComponentWithAttrs(
     'DownloadLatestButton',
