@@ -4,7 +4,7 @@ description: >-
   We aren't posting a #FlutterGoodNewsWednesday article this week.
 publishDate: 2020-06-03
 author: timsneath
-category: announcement
+category: news
 layout: blog
 ---
 

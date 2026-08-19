@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-11-11
 author: haddadniaj
 image: images/10kWrLLh_g2Ywwgcs_iAL-w.webp
-category: announcement
+category: news
 layout: blog
 ---
 

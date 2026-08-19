@@ -5,7 +5,7 @@ description: >-
 publishDate: 2024-08-06
 author: bdero
 image: images/1jfeUgpEP9AgAz94yVxVW1g.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

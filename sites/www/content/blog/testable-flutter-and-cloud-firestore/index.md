@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-10-15
 author: craiglabenz
 image: images/1pQJzBr81G169df-ffo24Cg.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

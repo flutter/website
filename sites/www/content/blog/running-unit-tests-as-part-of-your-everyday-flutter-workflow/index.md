@@ -7,7 +7,7 @@ description: >-
 publishDate: 2018-03-06
 author: devoncarew
 image: images/1GKGBr7v55mRKhQyOkNaFoA.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

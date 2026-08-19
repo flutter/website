@@ -5,7 +5,7 @@ description: >-
 publishDate: 2022-02-09
 author: timsneath
 image: images/1_CcfyhAWUIV8pWwuvdoSPA.webp
-category: announcement
+category: news
 layout: blog
 ---
 
