@@ -228,7 +228,6 @@ $transition-normal: 0.2s ease;
   padding: $spacing-md;
   margin-block: $spacing-md;
   position: relative;
-  overflow: hidden;
 
   .matrix-header {
     display: flex;
@@ -291,32 +290,44 @@ $transition-normal: 0.2s ease;
   }
 
   .grader-carousel-wrapper {
-    display: flex;
-    align-items: center;
     position: relative;
     width: 100%;
 
     .carousel-nav-btn {
-      flex-shrink: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       width: 2rem;
       height: 2rem;
+      border-radius: 50%;
+      border: 1px solid var(--site-inset-borderColor);
+      background-color: var(--site-base-bgColor);
       color: var(--site-base-fgColor);
       cursor: pointer;
-      transition: 0.2s ease;
+      transition: $transition-normal;
+      box-shadow: $shadow-sm;
       z-index: 2;
+
+      &.prev {
+        left: -$spacing-md;
+      }
+
+      &.next {
+        right: -$spacing-md;
+      }
 
       &:hover:not(:disabled) {
         background-color: var(--site-raised-bgColor);
         border-color: var(--site-primary-color);
         color: var(--site-primary-color);
-        transform: scale(1.05);
+        transform: translateY(-50%) scale(1.05);
       }
 
       &:active:not(:disabled) {
-        transform: scale(0.95);
+        transform: translateY(-50%) scale(0.95);
       }
 
       &:disabled {
@@ -330,8 +341,7 @@ $transition-normal: 0.2s ease;
     }
 
     .grader-cards-track {
-      flex: 1;
-      min-width: 0;
+      width: 100%;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
@@ -341,11 +351,15 @@ $transition-normal: 0.2s ease;
       scroll-snap-type: x mandatory;
       padding: $spacing-sm;
       background-color: var(--site-base-bgColor);
+      border-radius: var(--site-radius, $spacing-xs);
+      // Adds "padding" where overflow-x automatically removes it
+      border-left: $spacing-sm solid var(--site-base-bgColor);
+      border-right: $spacing-sm solid var(--site-base-bgColor);
+
       -webkit-overflow-scrolling: touch;
       scrollbar-width: thin;
       scrollbar-color: var(--site-inset-borderColor) transparent;
-      border-left: $spacing-sm solid var(--site-base-bgColor); 
-      border-right: $spacing-sm solid var(--site-base-bgColor);
+
 
       &::-webkit-scrollbar {
         height: 6px;
