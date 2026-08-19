@@ -314,8 +314,8 @@ class Tile extends StatelessWidget {
 Hot reload, and a single green tile containing the letter **A**
 appears in the center of your app.
 To test different colors,
-try replacing the `HitType` argument passed to `Tile` in `MainApp`
-with one of the following values, then hot reload:
+try replacing the Tile widget in MainApp
+with one of the following examples, then hot reload:
 
 <?code-excerpt "fwe/birdle/lib/step2_main.dart (TileUsage)"?>
 ```dart
