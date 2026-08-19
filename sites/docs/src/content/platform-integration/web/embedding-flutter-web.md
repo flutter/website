@@ -75,8 +75,7 @@ based on your isolation, performance, and communication requirements:
       <td><strong>Isolation &amp; sandboxing</strong></td>
       <td>Full browser sandboxing with separate JS global scope, DOM tree,
           and CSS styles.</td>
-      <td>Shares the same DOM tree, JavaScript context,
-          and CSS styles with the host page.</td>
+      <td>Shares the same DOM tree and JavaScript context.</td>
     </tr>
     <tr>
       <td><strong>Memory &amp; engine instances</strong></td>
