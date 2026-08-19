@@ -6,6 +6,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/util.dart';
 
 /// Renders text with optional inline code segments delimited by backticks.
 Component _renderDescription(String text) {
@@ -163,6 +164,136 @@ final class ReliabilityCards extends StatelessComponent {
   }
 }
 
+/// Model for a single tab/panel within [InteractiveDetailCard].
+final class InteractiveDetailTab {
+  const InteractiveDetailTab({
+    required this.id,
+    required this.primaryLabel,
+    required this.secondaryLabel,
+    required this.heading,
+    this.badge,
+    this.variant = 'blue',
+    required this.overview,
+    this.itemsLabel,
+    this.items = const [],
+    this.footerText,
+  });
+
+  final String id;
+  final String primaryLabel;
+  final String secondaryLabel;
+  final String heading;
+  final String? badge;
+  final String variant;
+  final String overview;
+  final String? itemsLabel;
+  final List<InteractiveDetailItem> items;
+  final String? footerText;
+}
+
+/// Key-value item within [InteractiveDetailTab].
+final class InteractiveDetailItem {
+  const InteractiveDetailItem({
+    required this.label,
+    required this.detail,
+  });
+
+  final String label;
+  final String detail;
+}
+
+/// A reusable interactive card featuring selectable tabs and responsive detail
+/// panels.
+final class InteractiveDetailCard extends StatelessComponent {
+  const InteractiveDetailCard({
+    required this.title,
+    required this.description,
+    required this.tabs,
+    this.classes = 'interactive-detail-card',
+    super.key,
+  });
+
+  final String title;
+  final String description;
+  final List<InteractiveDetailTab> tabs;
+  final String classes;
+
+  @override
+  Component build(BuildContext context) {
+    return div(classes: classes, [
+      div(classes: 'card-header-area triage-header', [
+        h3([.text(title)]),
+        p([.text(description)]),
+      ]),
+      div(classes: 'card-tabs-grid triage-tiers-grid', [
+        for (var i = 0; i < tabs.length; i++)
+          button(
+            classes: [
+              'card-tab-btn',
+              'triage-tier-btn',
+              'variant-${tabs[i].variant}',
+              'tier-${tabs[i].variant}',
+              if (i == 0) 'active',
+            ].toClasses,
+            attributes: {'data-tab': tabs[i].id, 'data-tier': tabs[i].id},
+            [
+              div(
+                classes: 'tab-primary-label tier-score',
+                [.text(tabs[i].primaryLabel)],
+              ),
+              div(
+                classes: 'tab-secondary-label tier-name',
+                [.text(tabs[i].secondaryLabel)],
+              ),
+            ],
+          ),
+      ]),
+      div(classes: 'card-panels-container triage-detail-card', [
+        for (var i = 0; i < tabs.length; i++)
+          div(
+            classes: [
+              'card-panel',
+              'triage-panel',
+              if (i == 0) 'active',
+            ].toClasses,
+            attributes: {'data-tab': tabs[i].id, 'data-tier': tabs[i].id},
+            [
+              div(classes: 'panel-heading', [
+                h4([.text(tabs[i].heading)]),
+                if (tabs[i].badge case final badge?)
+                  span(
+                    classes: 'panel-badge badge-${tabs[i].variant}',
+                    [.text(badge)],
+                  ),
+              ]),
+              p(
+                classes: 'panel-overview criteria-text',
+                [_renderDescription(tabs[i].overview)],
+              ),
+              if (tabs[i].items.isNotEmpty)
+                div(classes: 'panel-items-section actions-section', [
+                  if (tabs[i].itemsLabel case final label?)
+                    div(classes: 'items-label actions-label', [.text(label)]),
+                  ul([
+                    for (final item in tabs[i].items)
+                      li([
+                        strong([.text('${item.label}: ')]),
+                        _renderDescription(item.detail),
+                      ]),
+                  ]),
+                ]),
+              if (tabs[i].footerText case final footer?)
+                p(
+                  classes: 'panel-footer-text',
+                  [_renderDescription(footer)],
+                ),
+            ],
+          ),
+      ]),
+    ]);
+  }
+}
+
 /// Interactive score interpretation and engineering triage matrix.
 final class ScoreTriage extends StatelessComponent {
   const ScoreTriage({super.key});
@@ -172,50 +303,158 @@ final class ScoreTriage extends StatelessComponent {
     final data = FlutterBenchData.fromContext(context);
     final triage = data.scoreTriage;
 
-    return div(classes: 'score-triage', [
-      div(classes: 'triage-header', [
-        h3([.text(triage.title)]),
-        p([.text(triage.description)]),
-      ]),
-      div(classes: 'triage-tiers-grid', [
-        for (var i = 0; i < triage.tiers.length; i++)
-          button(
-            classes: i == 0
-                ? 'triage-tier-btn tier-${triage.tiers[i].id} active'
-                : 'triage-tier-btn tier-${triage.tiers[i].id}',
-            attributes: {'data-tier': triage.tiers[i].id},
-            [
-              div(classes: 'tier-score', [.text(triage.tiers[i].score)]),
-              div(classes: 'tier-name', [.text(triage.tiers[i].name)]),
+    return InteractiveDetailCard(
+      title: triage.title,
+      description: triage.description,
+      classes: 'interactive-detail-card score-triage',
+      tabs: [
+        for (final tier in triage.tiers)
+          InteractiveDetailTab(
+            id: tier.id,
+            primaryLabel: tier.score,
+            secondaryLabel: tier.name,
+            heading: tier.heading,
+            badge: tier.badge,
+            variant: tier.id,
+            overview: tier.criteria,
+            itemsLabel: tier.actionsLabel,
+            items: [
+              for (final action in tier.actions)
+                InteractiveDetailItem(
+                  label: action.label,
+                  detail: action.detail,
+                ),
             ],
           ),
-      ]),
-      div(classes: 'triage-detail-card', [
-        for (var i = 0; i < triage.tiers.length; i++)
-          div(
-            classes: i == 0 ? 'triage-panel active' : 'triage-panel',
-            attributes: {'data-tier': triage.tiers[i].id},
+      ],
+    );
+  }
+}
+
+/// Interactive 4-axis evaluation test matrix tabs component.
+final class EvaluationMatrixTabs extends StatelessComponent {
+  const EvaluationMatrixTabs({super.key});
+
+  @override
+  Component build(BuildContext context) {
+    final data = FlutterBenchData.fromContext(context);
+    final matrix = data.evaluationMatrix;
+
+    return InteractiveDetailCard(
+      title: matrix.title,
+      description: matrix.description,
+      classes: 'interactive-detail-card evaluation-matrix-card',
+      tabs: [
+        for (final axis in matrix.axes)
+          InteractiveDetailTab(
+            id: axis.id,
+            primaryLabel: axis.tabLabel,
+            secondaryLabel: axis.tabSublabel,
+            heading: axis.heading,
+            badge: axis.badge,
+            variant: axis.variant,
+            overview: axis.overview,
+            itemsLabel: axis.itemsLabel,
+            items: [
+              for (final item in axis.items)
+                InteractiveDetailItem(
+                  label: item.label,
+                  detail: item.detail,
+                ),
+            ],
+            footerText: axis.footerText,
+          ),
+      ],
+    );
+  }
+}
+
+/// Expansion panels displaying Task Structure, Categories, Tiers, and Quality
+/// Assurance.
+final class TaskSpecifications extends StatelessComponent {
+  const TaskSpecifications({super.key});
+
+  @override
+  Component build(BuildContext context) {
+    final data = FlutterBenchData.fromContext(context);
+    final specs = data.taskSpecifications;
+
+    return div(classes: 'task-specs-list', [
+      for (final spec in specs)
+        div(classes: 'task-spec-panel', [
+          a(
+            classes: [
+              'collapsible',
+              if (!spec.expanded) 'collapsed',
+            ].toClasses,
+            href: '#task-spec-${spec.id}',
+            attributes: {
+              'data-toggle': 'collapse',
+              'data-target': '#task-spec-${spec.id}',
+              'role': 'button',
+              'aria-expanded': spec.expanded ? 'true' : 'false',
+              'aria-controls': '#task-spec-${spec.id}',
+            },
             [
-              div(classes: 'panel-heading', [
-                h4([.text(triage.tiers[i].heading)]),
-                span(classes: 'panel-badge', [.text(triage.tiers[i].badge)]),
-              ]),
-              p(classes: 'criteria-text', [.text(triage.tiers[i].criteria)]),
-              div(classes: 'actions-section', [
-                div(classes: 'actions-label', [
-                  .text(triage.tiers[i].actionsLabel),
+              div(classes: 'panel-header-left', [
+                div(classes: 'panel-icon-wrap variant-${spec.badgeVariant}', [
+                  MaterialIcon(spec.icon),
                 ]),
-                ul([
-                  for (final action in triage.tiers[i].actions)
-                    li([
-                      strong([.text('${action.label}: ')]),
-                      .text(action.detail),
+                div(classes: 'panel-header-content', [
+                  div(classes: 'panel-title-row', [
+                    h4([.text(spec.title)]),
+                    span(
+                      classes: 'badge badge-${spec.badgeVariant}',
+                      [.text(spec.badge)],
+                    ),
+                  ]),
+                  if (spec.description.isNotEmpty)
+                    p(classes: 'panel-description', [
+                      .text(spec.description),
                     ]),
                 ]),
               ]),
             ],
           ),
-      ]),
+          div(
+            id: 'task-spec-${spec.id}',
+            classes: [
+              'task-spec-body collapse',
+              if (spec.expanded) 'show',
+            ].toClasses,
+            [
+              if (spec.leadText.isNotEmpty)
+                p(classes: 'lead-text', [_renderDescription(spec.leadText)]),
+              for (final tableData in spec.tables) ...[
+                if (tableData.title.isNotEmpty)
+                  h5(classes: 'table-subheading', [.text(tableData.title)]),
+                div(classes: 'table-wrapper', [
+                  table(classes: 'spec-table', [
+                    if (tableData.headers.isNotEmpty)
+                      thead([
+                        tr([
+                          for (final header in tableData.headers)
+                            th([.text(header)]),
+                        ]),
+                      ]),
+                    tbody([
+                      for (final row in tableData.rows)
+                        tr([
+                          td([strong([.text(row.label)])]),
+                          td([_renderDescription(row.description)]),
+                        ]),
+                    ]),
+                  ]),
+                ]),
+              ],
+              if (spec.footerText.isNotEmpty)
+                p(
+                  classes: 'footer-text',
+                  [_renderDescription(spec.footerText)],
+                ),
+            ],
+          ),
+        ]),
     ]);
   }
 }
@@ -293,6 +532,12 @@ extension type FlutterBenchData._(Map<String, Object?> _data) {
     return FlutterBenchData._(raw);
   }
 
+  List<TaskSpecificationData> get taskSpecifications =>
+      (_data['task_specifications'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(TaskSpecificationData._)
+          .toList();
+
   List<CujDiagramSection> get cujExampleSections =>
       (_data['cuj_example'] as List<Object?>? ?? const [])
           .cast<Map<String, Object?>>()
@@ -316,6 +561,77 @@ extension type FlutterBenchData._(Map<String, Object?> _data) {
   ScoreTriageData get scoreTriage => ScoreTriageData._(
     _data['score_triage'] as Map<String, Object?>? ?? const {},
   );
+
+  EvaluationMatrixData get evaluationMatrix => EvaluationMatrixData._(
+    _data['evaluation_matrix'] as Map<String, Object?>? ?? const {},
+  );
+}
+
+extension type EvaluationMatrixData._(Map<String, Object?> _data) {
+  String get title => _data['title'] as String? ?? '';
+  String get description => _data['description'] as String? ?? '';
+  List<EvaluationMatrixAxisData> get axes =>
+      (_data['axes'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(EvaluationMatrixAxisData._)
+          .toList();
+}
+
+extension type EvaluationMatrixAxisData._(Map<String, Object?> _data) {
+  String get id => _data['id'] as String? ?? '';
+  String get tabLabel => _data['tab_label'] as String? ?? '';
+  String get tabSublabel => _data['tab_sublabel'] as String? ?? '';
+  String get heading => _data['heading'] as String? ?? '';
+  String get badge => _data['badge'] as String? ?? '';
+  String get variant => _data['variant'] as String? ?? 'blue';
+  String get overview => _data['overview'] as String? ?? '';
+  String get itemsLabel => _data['items_label'] as String? ?? '';
+  String get footerText => _data['footer_text'] as String? ?? '';
+  List<EvaluationMatrixItemData> get items =>
+      (_data['items'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(EvaluationMatrixItemData._)
+          .toList();
+}
+
+extension type EvaluationMatrixItemData._(Map<String, Object?> _data) {
+  String get label => _data['label'] as String? ?? '';
+  String get detail => _data['detail'] as String? ?? '';
+}
+
+extension type TaskSpecificationData._(Map<String, Object?> _data) {
+  String get id => _data['id'] as String? ?? '';
+  String get title => _data['title'] as String? ?? '';
+  String get badge => _data['badge'] as String? ?? '';
+  String get badgeVariant => _data['badge_variant'] as String? ?? 'blue';
+  String get icon => _data['icon'] as String? ?? 'info';
+  bool get expanded => _data['expanded'] as bool? ?? false;
+  String get description => _data['description'] as String? ?? '';
+  String get leadText => _data['lead_text'] as String? ?? '';
+  String get footerText => _data['footer_text'] as String? ?? '';
+  List<TaskSpecTableData> get tables =>
+      (_data['tables'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(TaskSpecTableData._)
+          .toList();
+}
+
+extension type TaskSpecTableData._(Map<String, Object?> _data) {
+  String get title => _data['title'] as String? ?? '';
+  List<String> get headers =>
+      (_data['headers'] as List<Object?>? ?? const [])
+          .map((h) => h.toString())
+          .toList();
+  List<TaskSpecTableRowData> get rows =>
+      (_data['rows'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(TaskSpecTableRowData._)
+          .toList();
+}
+
+extension type TaskSpecTableRowData._(Map<String, Object?> _data) {
+  String get label => _data['label'] as String? ?? '';
+  String get description => _data['description'] as String? ?? '';
 }
 
 extension type DimensionData._(Map<String, Object?> _data) {

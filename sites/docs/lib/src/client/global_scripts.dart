@@ -22,7 +22,7 @@ void setUpSite() {
   _setUpSteppers();
   _setUpIdeExplorers();
   _setUpGraderMatrix();
-  _setUpScoreTriage();
+  _setUpInteractiveDetailCards();
 }
 
 void _setUpSearchKeybindings() {
@@ -767,25 +767,32 @@ void _setUpSingleGraderMatrix(web.Element matrix) {
   }
 }
 
-/// Set up interactivity for the FlutterBench score triage component.
-void _setUpScoreTriage() {
-  final triages = web.document.querySelectorAll('.score-triage');
-  for (var i = 0; i < triages.length; i++) {
-    _setUpSingleScoreTriage(triages.item(i) as web.Element);
+/// Set up interactivity for FlutterBench interactive detail cards
+/// (e.g. ScoreTriage and EvaluationMatrix).
+void _setUpInteractiveDetailCards() {
+  final cards = web.document.querySelectorAll(
+    '.interactive-detail-card, .score-triage',
+  );
+  for (var i = 0; i < cards.length; i++) {
+    _setUpSingleInteractiveDetailCard(cards.item(i) as web.Element);
   }
 }
 
-void _setUpSingleScoreTriage(web.Element triage) {
-  final buttons = triage.querySelectorAll(
-    '.triage-tiers-grid .triage-tier-btn',
+void _setUpSingleInteractiveDetailCard(web.Element card) {
+  final buttons = card.querySelectorAll(
+    '.card-tabs-grid .card-tab-btn, .triage-tiers-grid .triage-tier-btn',
   );
-  final panels = triage.querySelectorAll('.triage-detail-card .triage-panel');
-  final detailCard =
-      triage.querySelector('.triage-detail-card') as web.HTMLElement?;
+  final panels = card.querySelectorAll(
+    '.card-panels-container .card-panel, .triage-detail-card .triage-panel',
+  );
+  final detailCard = card.querySelector(
+    '.card-panels-container, .triage-detail-card',
+  ) as web.HTMLElement?;
 
   for (var i = 0; i < buttons.length; i++) {
     final btn = buttons.item(i) as web.HTMLElement;
-    final tier = btn.dataset['tier'];
+    final tabAttr = btn.dataset['tab'];
+    final tabId = tabAttr.isNotEmpty ? tabAttr : btn.dataset['tier'];
 
     void handleClick(web.Event event) {
       event.preventDefault();
@@ -796,7 +803,10 @@ void _setUpSingleScoreTriage(web.Element triage) {
 
       for (var k = 0; k < panels.length; k++) {
         final panel = panels.item(k) as web.HTMLElement;
-        panel.classList.toggle('active', panel.dataset['tier'] == tier);
+        final panelTabAttr = panel.dataset['tab'];
+        final panelId =
+            panelTabAttr.isNotEmpty ? panelTabAttr : panel.dataset['tier'];
+        panel.classList.toggle('active', panelId == tabId);
       }
 
       if (detailCard != null) {

@@ -125,7 +125,10 @@ List<CustomComponent> get _embeddableComponents => [
   defineComponent('GraderMatrix', const GraderMatrix()),
   defineComponent('ReliabilityCards', const ReliabilityCards()),
   defineComponent('ScoreTriage', const ScoreTriage()),
+  defineComponent('EvaluationMatrix', const EvaluationMatrixTabs()),
+  defineComponent('EvaluationMatrixTabs', const EvaluationMatrixTabs()),
   defineComponent('CujDiagram', const CujDiagram()),
+  defineComponent('TaskSpecifications', const TaskSpecifications()),
   defineComponentWithAttrs('ArchiveTable', ArchiveTable.fromAttributes),
   defineComponentWithAttrs(
     'DownloadLatestButton',

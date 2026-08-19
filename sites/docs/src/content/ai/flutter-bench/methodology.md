@@ -69,66 +69,9 @@ In some cases, several CUJs combine into a single task, and vice-versa.
 Our most ambitious evaluations combine multiple Harbor tasks, and thus
 cover many CUJs.
 
-### Task structure
+### Task specifications
 
-Each task lives in its own directory and contains four elements:
-
-| Element | Description |
-|:---|:---|
-| **Instruction** | A realistic prompt written the way developers talk to agents (typically 1–2 sentences, behavior-focused rather than prescriptive). |
-| **Target codebase & environment** | A containerized Docker environment preseeded with a Dart or Flutter codebase, testing greenfield generation or existing codebases with bugs or debt. |
-| **Verification criteria** | Verification scripts (`tests/graders.dart` and `test.sh`) executing `package:eval_scoring`. |
-| **Configuration & metadata** | The `task.toml` configuration defining associated CUJs, priority tiers, expected skills, and MCP tools. |
-
-### Task categories
-
-Tasks are categorized by the primary agent capability being evaluated:
-
-| Category | Description |
-|:---|:---|
-| **Greenfield generation** | Creating new features or applications from scratch. |
-| **Hill climbing** | Iterative debugging, test repair, and multi-turn problem-solving. |
-| **Refactoring** | Restructuring existing code while maintaining functionality. |
-| **Migration** | Upgrading deprecated APIs or transitioning between architectural patterns. |
-| **Integration** | Adding platform-specific features, native plugins, or third-party packages. |
-
-### Task tiers & prioritization
-
-To balance comprehensive coverage with evaluation speed, tasks are organized
-into execution tiers and priorities:
-
-#### Execution tiers
-
-| Tier | Description |
-|:---|:---|
-| **Tier 1** | Core benchmark tasks executed monthly across the complete evaluation matrix. |
-| **Tier 2** | Maturing tasks slated to graduate into Tier 1 once calibrated. |
-| **Tier 3** | Experimental tasks used for ad-hoc investigations and targeted questions. |
-
-#### Task priority
-
-| Priority | Description |
-|:---|:---|
-| **P0** | Critical production workflows and high-frequency productivity tasks |
-| **P1** | Core functionality and API consistency verification |
-| **P2** | Standard features and application maturity tasks |
-| **P3** | Edge cases and cosmetic polish |
-
-### Quality assurance
-
-Before a task graduates into the core benchmark suite, it undergoes an
-engineering audit. Human reviewers inspect initial trial runs and label
-results as:
-
-| Audit label | Definition |
-|:---|:---|
-| **True positive** | Agent correctly passed the task. |
-| **True negative** | Agent correctly failed the task. |
-| **False positive** | Agent passed incorrectly due to overly lenient checks. |
-| **False negative** | Agent failed incorrectly due to brittle or flaky tests. |
-
-This process ensures that the dataset produces reliable, actionable signals
-rather than noise.
+<TaskSpecifications />
 
 ### Interactive task anatomy
 
@@ -140,71 +83,7 @@ a corresponding Harbor task looks like this:
 
 ## Evaluation test matrix
 
-### Matrix overview
-
-To draw statistically sound conclusions, FlutterBench evaluates tasks
-across a 4-axis matrix:
-
-```mermaid
-flowchart TD
-    subgraph Matrix["4-Axis Evaluation Matrix"]
-        direction TB
-        A["1. Tooling Configurations<br/>(Baseline, Enhanced, Enhanced Minus N)"]
-        B["2. Frontier Models<br/>(Gemini, Claude, ChatGPT)"]
-        C["3. Agent Harnesses<br/>(Claude Code, Antigravity CLI)"]
-        D["4. SDK Branches<br/>(Stable, Beta)"]
-    end
-    Matrix --> E["Harbor Task Container<br/>(Ephemeral Docker Workspace)"]
-    E --> F["Grading & Telemetry<br/>(Deterministic, LLM Judge, Diagnostics)"]
-    F --> G["reward.json<br/>(Composite Result Score: 0.0 – 1.0)"]
-```
-
-### Tooling configurations
-
-FlutterBench tests three configurations to measure the impact of Dart and
-Flutter AI tools:
-
-| Configuration | Description |
-|:---|:---|
-| **Baseline** | No specialized Dart/Flutter tools—tests raw model capability. |
-| **Enhanced** | Full suite of Dart/Flutter skills and MCP server tools loaded. |
-| **Enhanced Minus N** | Full suite with a specific tool or skill group ablated to measure its isolated delta. |
-
-This A/B testing approach helps answer questions such as:
-"Does adding the Flutter widget tree skill improve success rates? By how
-much? Does the improvement vary by model?"
-
-### Frontier models
-
-Testing covers major frontier model families across high-capability and
-low-latency tiers:
-
-* **Gemini** (Pro and Flash)
-* **Claude** (Opus and Sonnet)
-* **ChatGPT** (GPT-4o series)
-
-Additional providers are added based on community feedback and usage data.
-
-### Agent harnesses
-
-Different agents use different system prompts, context management techniques,
-and tool-loading strategies. Evaluations run against the CLI agents Flutter
-developers use most:
-
-* **Antigravity CLI**
-* **Claude Code**
-
-This measures how the same model performs across different agent runtime
-environments.
-
-### SDK release channels
-
-Evaluations run against both channels:
-
-| Channel | Evaluation focus |
-|:---|:---|
-| **Stable** | The current production SDK release; measures developer-ready reliability. |
-| **Beta** | Monthly beta releases; catches regressions before reaching stable. |
+<EvaluationMatrixTabs />
 
 ## Scoring architecture
 
@@ -272,23 +151,12 @@ multi-trial stability across repeated runs:
 
 <ReliabilityCards />
 
-### Score triage matrix
+### Score interpretation & triage
 
 Click a score tier to view its grading criteria and actionable engineering
 triage steps:
 
 <ScoreTriage />
-
-### How scores drive engineering decisions
-
-By combining the Result Score with diagnostic telemetry and human audits,
-we systematically triage issues:
-
-| Result score range | Classification | Engineering diagnosis & action |
-|:---|:---|:---|
-| **1.00** | Perfect Success | Code is correct, idiomatic, and clean with flawless DX.<br>• **Expected tools check**: If called, tool design is validated. If skipped, evaluate if the tool is necessary for this CUJ.<br>• **Token efficiency**: If token burn was high, streamline prompt context or add shortcut tools. |
-| **0.50–0.99** | Medium Result | Functional success achieved, but with minor flaws (lints, unidiomatic patterns) or moderate DX friction.<br>• **Action**: Tune skill prompts, refine tool parameter schemas and validation logic (MCP/CLI errors), or collaborate with model teams on code polish. |
-| **< 0.50** | Low Result | Code failed (compile errors, broken logic) or suffered severe DX breakdown.<br>• **If expected tools ignored**: Tool discoverability issue or ambiguous prompt $\rightarrow$ refine descriptions, frontmatter, and guidelines.<br>• **If expected tools used but failed**: Output was insufficient $\rightarrow$ build stronger helper tools or refine APIs.<br>• **If token burn was high**: Agent caught in repetitive debugging loops $\rightarrow$ improve compiler diagnostic messages for single-step self-healing.<br>• **If token burn was low**: Agent surrendered prematurely $\rightarrow$ refine prompt constraints and system instructions. |
 
 #### Human root-cause audits
 
