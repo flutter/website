@@ -155,10 +155,10 @@ class MainApp extends StatelessWidget {
 Because `GamePage` initializes a non-constant field
 (`final Game _game = Game();`),
 its constructor cannot be `const`.
-If you previously had `return const MaterialApp(...)`,
+If you previously had const Center(...) or const MaterialApp(...),
 Dart reports an error:
 "The constructor being called isn't a const constructor."
-To resolve this, remove the `const` keyword from `MaterialApp`
+To resolve this, remove the const keyword from Center (or MaterialApp)
 (or the enclosing parent widget)
 and only use `const` on widgets with constant arguments,
 like `const Align(...)`.
