@@ -14,10 +14,11 @@ categories:
     label: Deep dives
     description: >-
       Explanations of Flutter and Dart architecture, implementation,
-      technical decisions, and project processes.
+      technical decisions, and project processes as well as
+      practical guides and how-tos.
     showFeatured: false
   - slug: case-study
-    label: Case studies
+    label: Case studies & stories
     description: >-
       Case studies and community, customer, partner, and project showcases.
     showFeatured: false
