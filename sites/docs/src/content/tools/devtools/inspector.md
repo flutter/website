@@ -27,13 +27,12 @@ trees, and can be used for the following:
 
 ![Screenshot of the Flutter inspector window](/assets/images/docs/tools/devtools/inspector_screenshot.png){:width="100%"}
 
-## The new Flutter inspector {:#new}
+## The Flutter inspector {:#new}
 
-As part of Flutter 3.29, the new Flutter inspector is enabled by default.
-However, it can be disabled from the [inspector settings dialog][].
+The Flutter inspector is enabled by default.
+It can be configured from the [inspector settings dialog][].
 
 [inspector settings dialog]: #inspector-settings
-[legacy inspector]: /tools/devtools/legacy-inspector
 [filing a bug]: https://github.com/flutter/devtools/issues/new
 
 ### Debugging layout issues visually
@@ -569,17 +568,6 @@ Toggling this value enables or disables the hover inspection functionality.
 
 When enabled, the widget tree automatically refreshes after
 a hot-reload or a navigation event.
-
-### Use legacy inspector
-
-When enabled, use the [legacy inspector][] instead of the new inspector.
-
-:::note
-The [legacy inspector][] will be removed in a future release.
-Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
-:::
-
-[legacy inspector]: /tools/devtools/legacy-inspector
 
 ### Package directories
 

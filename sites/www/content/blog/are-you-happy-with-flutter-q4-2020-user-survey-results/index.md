@@ -6,7 +6,7 @@ description: >-
 publishDate: 2021-02-11
 author: jayoung-lee
 image: images/0hs9oiR_zpBhkzT9u.webp
-category: announcement
+category: news
 layout: blog
 ---
 
