@@ -24,8 +24,6 @@ cuj_example:
 task_specifications:
   - id: "structure"
     title: "Task Structure"
-    badge: "4 Elements"
-    badge_variant: "blue"
     icon: "schema"
     expanded: true
     description: "Directory layout, instructions, environments, and verification criteria."
@@ -43,8 +41,6 @@ task_specifications:
             description: "The `task.toml` configuration defining associated CUJs, priority tiers, expected skills, and MCP tools."
   - id: "categories"
     title: "Task Categories"
-    badge: "5 Categories"
-    badge_variant: "quality"
     icon: "category"
     expanded: false
     description: "Primary agent capabilities and workflows evaluated across benchmarks."
@@ -64,8 +60,6 @@ task_specifications:
             description: "Adding platform-specific features, native plugins, or third-party packages."
   - id: "tiers"
     title: "Task Tiers & Prioritization"
-    badge: "Tiers & Priorities"
-    badge_variant: "dx"
     icon: "layers"
     expanded: false
     description: "Execution cadences and priority levels balancing coverage and speed."
@@ -93,8 +87,6 @@ task_specifications:
             description: "Edge cases and cosmetic polish"
   - id: "qa"
     title: "Quality Assurance"
-    badge: "Audit Labels"
-    badge_variant: "outcome"
     icon: "verified"
     expanded: false
     description: "Engineering audits and human reviewer calibration for dataset integrity."
@@ -229,7 +221,7 @@ grader_matrix:
       category: "outcome"
       category_label: "Outcome"
       type: "llm"
-      type_label: "LLM Judge (BINEVAL)"
+      type_label: "LLM-as-Judge"
       description: "Compares DevTools screenshot captures against visual UI expectations."
     - name: "Task Heuristics"
       category: "outcome"
@@ -253,7 +245,7 @@ grader_matrix:
       category: "quality"
       category_label: "Quality"
       type: "llm"
-      type_label: "LLM Judge (BINEVAL)"
+      type_label: "LLM-as-Judge"
       description: "Evaluates modern Dart 3 pattern compliance and adherence to Effective Dart."
     - name: "Structural Validation"
       category: "quality"
@@ -277,7 +269,7 @@ grader_matrix:
       category: "dx"
       category_label: "DX"
       type: "llm"
-      type_label: "LLM Judge (BINEVAL)"
+      type_label: "LLM-as-Judge"
       description: "Rates how fluidly the agent adapts to compiler, analysis, and test errors."
 
 reliability:

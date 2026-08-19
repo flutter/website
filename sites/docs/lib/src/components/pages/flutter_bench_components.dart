@@ -405,7 +405,8 @@ final class TaskSpecifications extends StatelessComponent {
                 div(classes: 'panel-header-content', [
                   div(classes: 'panel-title-row', [
                     h4([.text(spec.title)]),
-                    span(
+                    if (spec.badge.isNotEmpty)
+                      span(
                       classes: 'badge badge-${spec.badgeVariant}',
                       [.text(spec.badge)],
                     ),
@@ -432,13 +433,6 @@ final class TaskSpecifications extends StatelessComponent {
                   h5(classes: 'table-subheading', [.text(tableData.title)]),
                 div(classes: 'table-wrapper', [
                   table(classes: 'spec-table', [
-                    if (tableData.headers.isNotEmpty)
-                      thead([
-                        tr([
-                          for (final header in tableData.headers)
-                            th([.text(header)]),
-                        ]),
-                      ]),
                     tbody([
                       for (final row in tableData.rows)
                         tr([
