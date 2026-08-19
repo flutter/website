@@ -7,7 +7,7 @@ description: >-
 publishDate: 2026-04-07
 author: justinmc
 image: images/1JN1_t6kPRkgGFVJyetZE0w.webp
-category: announcement
+category: news
 layout: blog
 ---
 
