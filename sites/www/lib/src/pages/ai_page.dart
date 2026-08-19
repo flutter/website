@@ -41,7 +41,7 @@ class AiPage extends StatelessComponent {
         div(classes: 'notification container', [
           div(classes: 'notification-message', [
             img(
-              src: context.asset('/home/images/banner-megaphone.png'),
+              src: context.asset('/home/images/banner-megaphone.webp'),
               alt: 'Notification',
             ),
             const a(

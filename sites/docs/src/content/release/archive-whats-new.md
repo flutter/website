@@ -14,6 +14,52 @@ check out the [current what's new][] page.
 
 ---
 
+## 13 August 2025: Release 3.35
+
+Flutter 3.35 is live! For more information,
+check out the [Flutter 3.35 technical blog post][3.35-tech].
+You might also check out the [Dart 3.9 release][] blog post.
+
+[3.35-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-35-c58ef72e3766
+[Dart 3.9 release]: {{site.dart-blog}}/announcing-dart-3-9
+
+**Docs updated or added since the 3.32 release**
+
+* Hot reload is now available on the web and no longer
+  requires an experimental flag. For more information,
+  check out [hot reload][].
+
+* There is a new [Create with AI][] guide which covers
+  how you can leverage AI tools like Gemini Code Assist,
+  GeminiCLI, and the Dart and Flutter MCP Server to build
+  AI-powered features for your Flutter apps.
+
+* You can now use the [Flutter Widget Previewer][] guide
+  to help you view a preview of your Flutter widgets in
+  Chrome.
+
+* Each stable release affects which versions of
+  deployed platforms that Flutter supports.
+  For more information, visit the updated
+  [supported platforms][] page.
+
+* On Android, you can now protect sensitive content,
+  such as customer information, when you share your screen.
+  Learn more by visiting [Protect your app's sensitive content][].
+
+* Also, don't forget to check out the [breaking changes][bc-3.35]
+  page for this release. That's also where you'll find useful
+  migration info.
+
+[Flutter Widget Previewer]: /tools/widget-previewer
+[Create with AI]: /ai/create-with-ai
+[bc-3.35]: /release/breaking-changes#released-in-flutter-3-35
+[hot reload]: /tools/hot-reload
+[Protect your app's sensitive content]: /platform-integration/android/sensitive-content
+[supported platforms]: /reference/supported-platforms
+
+---
+
 ## 20 May 2025: Google I/O release 3.32
 
 Flutter 3.32 is live! For more information,
@@ -1540,7 +1586,6 @@ Docs added and updated since the last announcement include:
 * An alpha release of Flutter Layout Explorer, a new feature
   (and part of the Flutter inspector) that allows you to
   explore a visual representation of your layout is available.
-  For more information, see the [Flutter Layout Explorer][] docs.
 
 Other newness:
 
@@ -1556,7 +1601,6 @@ Happy Fluttering!
 [Flutter Favorite program]: /packages-and-plugins/favorites
 [Flutter 1.12.13]: /release/release-notes/release-notes-1.12.13
 [Flutter Gallery]: {{site.gallery-archive}}
-[Flutter Layout Explorer]: /tools/devtools/legacy-inspector#flutter-layout-explorer
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
 [Web support for Flutter goes beta]: {{site.flutter-blog}}/web-support-for-flutter-goes-beta-35b64a1217c0
 [Get started]: /install

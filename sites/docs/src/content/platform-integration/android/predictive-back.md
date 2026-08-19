@@ -1,6 +1,6 @@
 ---
-title: Add the predictive-back gesture
-shortTitle: Predictive-back
+title: Add the predictive back gesture
+shortTitle: Predictive back
 description: >-
   Learn how to enable and handle Android predictive back gestures in Flutter.
 ---
@@ -12,8 +12,9 @@ before they commit to or cancel it.
 
 ## Overview
 
-Starting with Android 14 (API level 34), predictive back animations are
-enabled by default for system gestures when supported by the application.
+Starting with Android 14 (API level 34),
+predictive back animations are enabled by default for system gestures
+when supported by the application.
 Flutter provides built-in support for predictive back animations across
 default page route transitions and custom pop handling.
 
@@ -23,8 +24,9 @@ To support predictive back gestures in your Flutter app
 on Android 13 or later:
 
 1. Open `android/app/src/main/AndroidManifest.xml`.
-2. Add `android:enableOnBackInvokedCallback="true"` to the `<application>` tag:
+1. Add `android:enableOnBackInvokedCallback="true"` to the `<application>` tag:
 
+```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
         android:label="my_app"
@@ -38,10 +40,11 @@ on Android 13 or later:
 
 ## Handle back gestures with PopScope
 
-To customize back navigation or prevent users from accidentally leaving a
-screen, use the [`PopScope`]({{site.api}}/flutter/widgets/PopScope-class.html)
-widget. `PopScope` replaces the deprecated `WillPopScope` widget and
-supports predictive back gestures.
+To customize back navigation or prevent users
+from accidentally leaving a screen,
+use the [`PopScope`][] widget.
+`PopScope` replaces the deprecated `WillPopScope` widget
+and supports predictive back gestures.
 
 ### Callback parameters
 
@@ -75,7 +78,9 @@ PopScope(
 
 ## More information
 
-For more details on API migrations, check out the
-[Android predictive back migration guide](
-/release/breaking-changes/android-predictive-back).
+For more details on API migrations,
+see the [Android predictive back migration guide][].
+
+[`PopScope`]: {{site.api}}/flutter/widgets/PopScope-class.html
+[Android predictive back migration guide]: /release/breaking-changes/android-predictive-back
 

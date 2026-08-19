@@ -41,6 +41,7 @@ class DefaultLayout extends PageLayout {
     }
 
     final pageImage = pageData['image'] as String?;
+    final socialImage = pageData['socialImage'] as String? ?? pageImage;
     final titleBase =
         (pageData['titleBase'] ?? siteData['titleBase']) as String?;
     final documentTitle = titleBase == null ? title : '$title | $titleBase';
@@ -55,7 +56,7 @@ class DefaultLayout extends PageLayout {
       builder: (context) async {
         final socialImageUrl = _absoluteUrl(
           siteBaseUrl,
-          pageImage ?? context.asset('/images/flutter-logo-sharing.png'),
+          socialImage ?? context.asset('/images/flutter-logo-sharing.png'),
         );
         final banner = context.decodeJsonObject(
           'banner',
@@ -75,12 +76,12 @@ class DefaultLayout extends PageLayout {
             link(rel: 'canonical', href: canonicalUrl),
             meta(
               name: 'twitter:card',
-              content: pageImage != null ? 'summary_large_image' : 'summary',
+              content: socialImage != null ? 'summary_large_image' : 'summary',
             ),
             const meta(name: 'twitter:site', content: '@flutterdev'),
             meta(name: 'twitter:title', content: title),
             meta(name: 'twitter:description', content: description),
-            if (pageImage != null)
+            if (socialImage != null)
               meta(name: 'twitter:image', content: socialImageUrl),
 
             meta(attributes: const {'property': 'og:title'}, content: title),

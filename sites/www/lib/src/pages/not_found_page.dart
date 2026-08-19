@@ -13,7 +13,6 @@ class NotFoundPage extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return main_([
-      const section(classes: 'hero', []),
       section(
         classes: 'content-container',
         attributes: const {
