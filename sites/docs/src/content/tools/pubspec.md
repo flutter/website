@@ -3,7 +3,8 @@ title: "Flutter pubspec options"
 description: "Describes the Flutter-only fields in the pubspec file."
 ---
 
-Every app written in the Dart language, including all Flutter apps,
+Every project written in the Dart language,
+including all Flutter apps and libraries,
 includes a `pubspec.yaml` file, referred to as _the pubspec_.
 Creating a new project generates a basic pubspec at the top of the
 project tree that contains metadata and lists project dependencies.
