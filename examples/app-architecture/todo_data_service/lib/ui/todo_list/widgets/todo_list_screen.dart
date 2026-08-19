@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../viewmodel/todo_list_viewmodel.dart';
 
 class TodoListScreen extends StatefulWidget {

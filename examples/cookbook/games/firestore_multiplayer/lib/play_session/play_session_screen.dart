@@ -8,7 +8,6 @@ import '../game_internals/board_state.dart';
 
 // #docregion imports
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import '../multiplayer/firestore_controller.dart';
 
 // #enddocregion imports

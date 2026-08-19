@@ -195,9 +195,9 @@ class _TabMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Wrap all the main menu buttons in Expanded() so they fill up the screen horizontally
-    List<Expanded> tabButtons = getMainMenuChildren(context)
-        .map((btn) => Expanded(child: btn))
-        .toList();
+    List<Expanded> tabButtons = getMainMenuChildren(
+      context,
+    ).map((btn) => Expanded(child: btn)).toList();
     return Column(
       children: [
         // Top Divider

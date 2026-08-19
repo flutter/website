@@ -50,20 +50,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _loadPlants() {
-    DefaultAssetBundle.of(context)
-        .loadString('assets/plants.json')
-        .then((data) {
-          setState(() {
-            final jsonResult = jsonDecode(data);
-            final birdsJson = jsonResult['plants'] as List<dynamic>;
-            for (final birdJson in birdsJson) {
-              final name = birdJson['name'] as String;
-              final species = birdJson['species'] as String;
-              final plant = Plant(name, species);
-              _listOfPlants.add(plant);
-            }
-          });
-        });
+    DefaultAssetBundle.of(context).loadString('assets/plants.json').then((
+      data,
+    ) {
+      setState(() {
+        final jsonResult = jsonDecode(data);
+        final birdsJson = jsonResult['plants'] as List<dynamic>;
+        for (final birdJson in birdsJson) {
+          final name = birdJson['name'] as String;
+          final species = birdJson['species'] as String;
+          final plant = Plant(name, species);
+          _listOfPlants.add(plant);
+        }
+      });
+    });
   }
 
   @override

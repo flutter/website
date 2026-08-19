@@ -1,10 +1,8 @@
 // ignore_for_file: directives_ordering
 
 import 'error_handler.dart';
-
 // #docregion all-errors
 import 'package:flutter/material.dart';
-
 import 'dart:ui';
 
 Future<void> main() async {

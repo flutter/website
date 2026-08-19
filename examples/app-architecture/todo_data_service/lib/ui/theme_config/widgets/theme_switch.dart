@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../viewmodel/theme_switch_viewmodel.dart';
 
 // #docregion ThemeSwitch

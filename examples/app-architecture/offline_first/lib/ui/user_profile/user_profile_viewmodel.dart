@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../data/repositories/user_profile_repository.dart';
 import '../../domain/model/user_profile.dart';
 

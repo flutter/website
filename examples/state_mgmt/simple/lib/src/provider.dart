@@ -2,7 +2,6 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'common.dart';
 
 CartModel somehowGetMyCartModel(BuildContext context) {

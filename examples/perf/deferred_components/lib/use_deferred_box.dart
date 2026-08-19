@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'box.dart' deferred as box;
 
 class SomeWidget extends StatefulWidget {
