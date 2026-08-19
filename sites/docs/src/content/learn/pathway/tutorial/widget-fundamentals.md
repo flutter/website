@@ -53,7 +53,6 @@ When you're testing your app, make sure to use the words from those lists.
 Alternatively, you can find the full lists in
 [this GitHub repository][full-words], as well as
 instructions to import it into your project.
-
 :::
 
 [full-words]: https://github.com/ericwindmill/legal_wordle_words
@@ -101,8 +100,9 @@ Passing data into widget constructors is at the core of making widgets reusable.
 
 #### Build method
 
-Finally, there's the all important `build` method, which must be defined on
-every widget, and will always return another widget.
+Finally, there's the all important `build` method,
+which must be defined on every widget,
+and will always return another widget.
 
 <?code-excerpt "fwe/birdle/lib/step2b_main.dart (Tile)"?>
 ```dart
@@ -124,8 +124,10 @@ class Tile extends StatelessWidget {
 
 When the app is finished,
 there will be 25 instances of this widget on the screen.
-For now, though, display just one so you can see the updates as they're made.
-In the `MainApp.build` method, replace the `Text` widget with the following:
+For now, display just a single tile in the center of the screen
+so you can see styling updates as you make them.
+In the `MainApp.build` method,
+replace the `Text` widget with your `Tile` widget:
 
 <?code-excerpt "fwe/birdle/lib/step2_main.dart (MainApp)"?>
 ```dart
@@ -145,9 +147,9 @@ class MainApp extends StatelessWidget {
 }
 ```
 
-At the moment, your app will be blank,
+At the moment, your app appears blank
 because the `Tile` widget returns an empty `Container`,
-which doesn't display anything by default.
+which doesn't render anything by default.
 
 ### The `Container` widget
 
@@ -218,9 +220,9 @@ class Tile extends StatelessWidget {
 `BoxDecoration` is an object that knows how to
 add any number of decorations to a widget, from
 background color to borders to box shadows and more.
-In this case, you've added a border.
-When you hot reload, there should be
-a lightly colored border around the white square.
+In this case, you added a border.
+When you hot reload,
+a lightly colored border appears around the tile.
 
 When this game is complete,
 the color of the tile will depend on the user's guess.
@@ -309,8 +311,11 @@ class Tile extends StatelessWidget {
 }
 ```
 
-Hot reload and a green box appears. To toggle the color,
-update and hot reload the `HitType` passed into the `Tile` you created:
+Hot reload, and a single green tile containing the letter **A**
+appears in the center of your app.
+To test different colors,
+try replacing the `HitType` argument passed to `Tile` in `MainApp`
+with one of the following values, then hot reload:
 
 <?code-excerpt "fwe/birdle/lib/step2_main.dart (TileUsage)"?>
 ```dart
@@ -323,8 +328,9 @@ Tile('A', HitType.miss);
 Tile('A', HitType.partial);
 ```
 
-Soon, this small box will be one of many widgets on the screen. In the next
-lesson, you'll start building the game grid itself.
+Soon, this small box will be one of many widgets on the screen.
+In the next lesson,
+you'll build the full 5x5 grid of tiles for the game board.
 
 ### Review
 
