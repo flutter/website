@@ -51,16 +51,15 @@ The simplest way to add an app bar to your app is by using two widgets:
 `Scaffold` and `AppBar`.
 
 `Scaffold` is a convenience widget that provides a Material-style page layout,
-making it simple to add an app bar, drawer, navigation bar, and more to a page of
-your app. `AppBar` is, of course, the app bar.
+making it simple to add an app bar, drawer, navigation bar,
+and more to a page of your app.
+`AppBar` is, of course, the app bar.
 
-The code generated from the `flutter create --empty` command already
-contains an `AppBar` widget and a `Scaffold` widget.
-The following code updates it to use an additional layout widget: [`Align`][].
+Add an `AppBar` to the `Scaffold` widget
+within your `MainApp` widget's `build` method.
+The following code uses an additional layout widget: [`Align`][].
 This positions the title to the left, which would be centered by default.
 The `Text` widget contains the title itself.
-
-Modify the `Scaffold` within your `MainApp` widget's `build` method.
 
 Passing an enum or static property directly (like `Alignment.centerLeft`)
 can also be shortened using [Dart's dot shorthands][] syntax,
@@ -79,12 +78,14 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Align(
+          title: const Align(
             alignment: Alignment.centerLeft,
             child: Text('Birdle'),
           ),
         ),
-        body: Center(child: Text('Hello World!')),
+        body: const Center(
+          child: Tile('A', HitType.hit),
+        ),
       ),
     );
   }
@@ -125,7 +126,7 @@ class GamePage extends StatelessWidget {
 ```
 
 Then update your `MainApp` widget to create and
-display a `GamePage` widget instead of "Hello World!".
+display a `GamePage` widget instead of the `Tile` widget.
 
 <?code-excerpt "fwe/birdle/lib/step3_main.dart (MainApp)"?>
 ```dart highlightLines=14
@@ -148,6 +149,20 @@ class MainApp extends StatelessWidget {
   }
 }
 ```
+
+:::note Resolving `const` constructor errors
+
+Because `GamePage` initializes a non-constant field
+(`final Game _game = Game();`),
+its constructor cannot be `const`.
+If you previously had `return const MaterialApp(...)`,
+Dart reports an error:
+"The constructor being called isn't a const constructor."
+To resolve this, remove the `const` keyword from `MaterialApp`
+(or the enclosing parent widget)
+and only use `const` on widgets with constant arguments,
+like `const Align(...)`.
+:::
 
 ### Arrange widgets with `Column` and `Row`
 
