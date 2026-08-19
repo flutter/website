@@ -439,7 +439,7 @@ io/flutter/util/PathUtils.class
 
 Also, include any other classes used in app startup.
 To learn about adding multidex support manually,
-see the official [Android documentation][multidex-docs].
+consult the official [Android documentation][multidex-docs].
 
 [multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
