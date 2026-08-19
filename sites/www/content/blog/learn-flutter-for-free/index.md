@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-04-08
 author: aguinis
 image: images/0li3Xi9x6pYTCZYE2.webp
-category: announcement
+category: news
 layout: blog
 ---
 

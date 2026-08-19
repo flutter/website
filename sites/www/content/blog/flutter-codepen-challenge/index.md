@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-07-01
 author: anjannarain
 image: images/0lBCX1cQ8WF56oRAq.webp
-category: event
+category: news
 layout: blog
 ---
 

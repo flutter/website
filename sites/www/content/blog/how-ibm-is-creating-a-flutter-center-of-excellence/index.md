@@ -5,7 +5,7 @@ description: >-
 publishDate: 2023-09-13
 author: jjmutter
 image: images/1YqawQ_2If_xPlvIbC0mj3g.webp
-category: story
+category: case-study
 layout: blog
 ---
 
