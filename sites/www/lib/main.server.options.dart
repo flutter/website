@@ -30,6 +30,8 @@ import 'package:site_shared/components/common/client/collapse_button.dart'
     as _collapse_button;
 import 'package:site_shared/components/common/client/copy_button.dart'
     as _copy_button;
+import 'package:site_shared/components/common/client/mermaid_diagram.dart'
+    as _mermaid_diagram;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     as _dartpad_injector;
 
@@ -103,6 +105,11 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'site_shared:copy_button',
       params: __copy_buttonCopyButton,
     ),
+    _mermaid_diagram.MermaidViewer:
+        ClientTarget<_mermaid_diagram.MermaidViewer>(
+          'site_shared:mermaid_diagram',
+          params: __mermaid_diagramMermaidViewer,
+        ),
     _dartpad_injector.DartPadInjector:
         ClientTarget<_dartpad_injector.DartPadInjector>(
           'site_shared:dartpad_injector',
@@ -159,6 +166,9 @@ Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
   'classes': c.classes,
   'title': c.title,
 };
+Map<String, Object?> __mermaid_diagramMermaidViewer(
+  _mermaid_diagram.MermaidViewer c,
+) => {'diagram': c.diagram};
 Map<String, Object?> __dartpad_injectorDartPadInjector(
   _dartpad_injector.DartPadInjector c,
 ) => {

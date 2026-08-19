@@ -16,6 +16,11 @@ dependencies:
   jaspr_content: ^0.5.3
   markdown: ^7.3.1
   markdown_description_list: ^0.2.0
+  mermaid_core:
+    git:
+      url: https://github.com/orestesgaolin/mermaid.git
+      ref: round3-fixes-and-packaging
+      path: packages/mermaid_core
   meta: ^1.18.2
   nanoid2: ^2.0.1
   opal: ^0.2.4

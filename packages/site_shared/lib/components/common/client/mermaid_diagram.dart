@@ -1,7 +1,6 @@
-import 'dart:async';
-
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:mermaid_core/mermaid_core.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
@@ -16,20 +15,29 @@ final class MermaidViewer extends StatefulComponent {
 }
 
 final class _MermaidViewerState extends State<MermaidViewer> {
-  static int _idCounter = 0;
-  final String _diagramId = 'mermaid-diagram-${_idCounter++}';
-
   String? _svg;
   web.MutationObserver? _themeObserver;
 
   @override
   void initState() {
     super.initState();
+    final isDark =
+        kIsWeb && (web.document.body?.classList.contains('dark-mode') ?? false);
+    _svg = _renderDiagram(isDark: isDark);
+
     if (kIsWeb) {
-      context.binding.addPostFrameCallback(() {
-        unawaited(_renderDiagram());
-        _observeTheme();
-      });
+      _observeTheme();
+    }
+  }
+
+  @override
+  void didUpdateComponent(MermaidViewer oldComponent) {
+    super.didUpdateComponent(oldComponent);
+    if (oldComponent.diagram != component.diagram) {
+      final isDark =
+          kIsWeb &&
+          (web.document.body?.classList.contains('dark-mode') ?? false);
+      _svg = _renderDiagram(isDark: isDark);
     }
   }
 
@@ -49,7 +57,9 @@ final class _MermaidViewerState extends State<MermaidViewer> {
         final newIsDark = body.classList.contains('dark-mode');
         if (newIsDark != isDark) {
           isDark = newIsDark;
-          unawaited(_renderDiagram());
+          setState(() {
+            _svg = _renderDiagram(isDark: isDark);
+          });
         }
       }).toJS,
     );
@@ -63,39 +73,21 @@ final class _MermaidViewerState extends State<MermaidViewer> {
     );
   }
 
-  Future<void> _renderDiagram() async {
+  String? _renderDiagram({required bool isDark}) {
     try {
-      final isDark =
-          web.document.body?.classList.contains('dark-mode') ?? false;
-      final theme = isDark ? 'dark' : 'default';
-
-      // Dynamically import Mermaid ESM from CDN only when a
-      // diagram component mounts
-      final module = await _importMermaid();
-      final mermaid = module.defaultExport;
-
-      mermaid.initialize(
-        MermaidConfig(
-          startOnLoad: false.toJS,
-          theme: theme.toJS,
-          securityLevel: 'loose'.toJS,
-          fontFamily: 'Google Sans Flex, sans-serif'.toJS,
-        ),
+      final theme =
+          isDark ? MermaidTheme.darkTheme : MermaidTheme.defaultTheme;
+      final mermaid = Mermaid(
+        measurer: const ApproximateTextMeasurer(),
+        theme: theme,
       );
-
-      final result = await mermaid
-          .render(_diagramId.toJS, component.diagram.toJS)
-          .toDart;
-
-      if (mounted) {
-        setState(() {
-          _svg = result.svg.toDart;
-        });
-      }
+      final scene = mermaid.render(component.diagram);
+      return renderSceneToSvg(scene);
     } catch (e) {
       if (kDebugMode) {
         print('Failed to render Mermaid diagram: $e');
       }
+      return null;
     }
   }
 
@@ -116,43 +108,4 @@ final class _MermaidViewerState extends State<MermaidViewer> {
       ],
     );
   }
-}
-
-// -----------------------------------------------------------------------------
-// JS Interop Bindings (Dart 3 Extension Types)
-// -----------------------------------------------------------------------------
-
-@JS('eval')
-external JSAny? _eval(JSString code);
-
-Future<MermaidModule> _importMermaid() {
-  final importFn = _eval('(url) => import(url)'.toJS) as JSFunction;
-  final promise = importFn.callAsFunction(
-    null,
-    'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'.toJS,
-  ) as JSPromise<MermaidModule>;
-  return promise.toDart;
-}
-
-extension type MermaidModule._(JSObject _) implements JSObject {
-  @JS('default')
-  external MermaidApi get defaultExport;
-}
-
-extension type MermaidApi._(JSObject _) implements JSObject {
-  external void initialize(MermaidConfig config);
-  external JSPromise<MermaidRenderResult> render(JSString id, JSString text);
-}
-
-extension type MermaidConfig._(JSObject _) implements JSObject {
-  external factory MermaidConfig({
-    JSBoolean? startOnLoad,
-    JSString? theme,
-    JSString? securityLevel,
-    JSString? fontFamily,
-  });
-}
-
-extension type MermaidRenderResult._(JSObject _) implements JSObject {
-  external JSString get svg;
 }
