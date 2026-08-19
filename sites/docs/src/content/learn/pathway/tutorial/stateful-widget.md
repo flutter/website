@@ -217,10 +217,10 @@ needs to repaint the screen, and the user wouldn't see any updates.
 When `GamePage` rebuilds after calling `setState`,
 all of its child widgets are rebuilt as well.
 Because `GuessInput` was originally created as a `StatelessWidget`,
-every rebuild creates a new `GuessInput` instance,
-along with a new `TextEditingController` and `FocusNode`.
-This causes the text input field to lose focus after submitting a guess
-and leaves unused controllers without proper disposal.
+its `TextEditingController` and `FocusNode` were stored directly in the widget class.
+Since a new widget instance is created on every rebuild, these controllers
+were recreated each time, causing the text input field to lose focus
+and leaving unused controllers without proper disposal.
 
 To keep focus on the text field between guesses and
 manage controller lifecycles properly,
