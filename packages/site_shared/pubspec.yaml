@@ -31,4 +31,3 @@ dependencies:
 
 dev_dependencies:
   analysis_defaults: any
-  test: ^1.31.1
