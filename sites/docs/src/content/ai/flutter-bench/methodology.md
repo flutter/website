@@ -2,7 +2,6 @@
 title: FlutterBench methodology
 layout: story
 showToc: false
-sidenav: ai
 description: >
   Learn about Dart and Flutter's evaluation frameworks for
   measuring AI tooling reliability.

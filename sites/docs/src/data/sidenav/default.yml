@@ -664,15 +664,16 @@
       permalink: /ai/ai-rules
     - title: Developer experience
       permalink: /ai/best-practices/developer-experience
-    - title: Flutter Bench
+
+- title: Flutter Bench
+  permalink: /ai/flutter-bench
+  children:
+    - title: Overview
       permalink: /ai/flutter-bench
-      children:
-       - title: Overview
-         permalink: /ai/flutter-bench
-       - title: Methodology
-         permalink: /ai/flutter-bench/methodology  
-       - title: User journeys
-         permalink: /ai/flutter-be
+    - title: Methodology
+      permalink: /ai/flutter-bench/methodology
+    - title: User journeys
+      permalink: /ai/flutter-bench/cujs
 
 - title: Build AI-powered apps
   permalink: /ai/genui
@@ -965,4 +966,3 @@
           permalink: /reference/flutter-cli
         - title: API docs
           permalink: https://api.flutter.dev
-
