@@ -4,7 +4,37 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/material_icon.dart';
+
+/// Renders text with optional inline code segments delimited by backticks.
+Component _renderDescription(String text) {
+  if (!text.contains('`')) {
+    return .text(text);
+  }
+  final parts = text.split('`');
+  final children = <Component>[];
+  for (var i = 0; i < parts.length; i++) {
+    if (i.isOdd) {
+      children.add(code([.text(parts[i])]));
+    } else if (parts[i].isNotEmpty) {
+      children.add(.text(parts[i]));
+    }
+  }
+  return .fragment(children);
+}
+
+/// Renders structured rich text parts for reliability metric descriptions.
+Component _renderReliabilityDescription(ReliabilityCardData card) {
+  return p([
+    for (final part in card.descriptionParts) ...[
+      if (part['text'] case final String text) .text(text),
+      if (part['em'] case final String emText) em([.text(emText)]),
+      if (part['strong'] case final String strongText)
+        strong([.text(strongText)]),
+    ],
+  ]);
+}
 
 /// Cards displaying the Three Core Dimensions of FlutterBench evaluation.
 final class ThreeDimensionsCards extends StatelessComponent {
@@ -12,278 +42,88 @@ final class ThreeDimensionsCards extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return const div(classes: 'dimension-cards-grid', [
-      div(classes: 'dimension-card', [
-        div(classes: 'card-icon-wrap outcome', [
-          MaterialIcon('check_circle'),
+    final data = FlutterBenchData.fromContext(context);
+    final dimensions = data.dimensions;
+
+    return div(classes: 'dimension-cards-grid', [
+      for (final dim in dimensions)
+        div(classes: 'dimension-card', [
+          div(classes: 'card-icon-wrap ${dim.category}', [
+            MaterialIcon(dim.icon),
+          ]),
+          h4([.text(dim.title)]),
+          p([.text(dim.description)]),
+          div(classes: 'card-footer-info', [
+            span([.text(dim.footerItems)]),
+            span(classes: 'badge ${dim.category}', [.text(dim.badge)]),
+          ]),
         ]),
-        h4([.text('1. Outcome')]),
-        p([
-          .text(
-            'Evaluates whether the generated code compiles, runs, and '
-            'fulfills all functional UI and task requirements correctly.',
-          ),
-        ]),
-        div(classes: 'card-footer-info', [
-          span([.text('Build, Tests, Visual, Heuristics')]),
-          span(classes: 'badge outcome', [.text('Functional')]),
-        ]),
-      ]),
-      div(classes: 'dimension-card', [
-        div(classes: 'card-icon-wrap quality', [
-          MaterialIcon('code'),
-        ]),
-        h4([.text('2. Code Quality')]),
-        p([
-          .text(
-            'Measures code maintainability, static analysis lints, '
-            'architectural health, and idiomatic Dart 3 standards.',
-          ),
-        ]),
-        div(classes: 'card-footer-info', [
-          span([.text('Lints, DCM, Structure, Patterns')]),
-          span(classes: 'badge quality', [.text('Maintainable')]),
-        ]),
-      ]),
-      div(classes: 'dimension-card', [
-        div(classes: 'card-icon-wrap dx', [
-          MaterialIcon('bolt'),
-        ]),
-        h4([.text('3. Developer Experience')]),
-        p([
-          .text(
-            'Tracks agent execution friction, tool call accuracy, '
-            'error recovery loops, and step efficiency.',
-          ),
-        ]),
-        div(classes: 'card-footer-info', [
-          span([.text('Tooling, Trajectory, Recovery')]),
-          span(classes: 'badge dx', [.text('Efficiency')]),
-        ]),
-      ]),
     ]);
   }
 }
 
-/// Interactive filterable Grader Matrix showing evaluation graders.
+/// Interactive filterable Grader Matrix showing evaluation graders in a
+/// carousel.
 final class GraderMatrix extends StatelessComponent {
   const GraderMatrix({super.key});
 
   @override
   Component build(BuildContext context) {
-    return const div(classes: 'grader-matrix', [
+    final data = FlutterBenchData.fromContext(context);
+    final matrixData = data.graderMatrix;
+
+    return div(classes: 'grader-matrix', [
       div(classes: 'matrix-header', [
         div(classes: 'matrix-title-area', [
-          h3([.text('Grader Matrix')]),
-          p([
-            .text(
-              'Explore deterministic, LLM-as-a-judge, and '
-              'heuristic evaluation graders.',
-            ),
-          ]),
+          h3([.text(matrixData.title)]),
+          p([.text(matrixData.description)]),
         ]),
         div(classes: 'matrix-filters', [
-          button(
-            classes: 'filter-btn active',
-            attributes: {'data-filter': 'all'},
-            [.text('All Graders')],
-          ),
-          button(
-            classes: 'filter-btn',
-            attributes: {'data-filter': 'outcome'},
-            [.text('Outcome')],
-          ),
-          button(
-            classes: 'filter-btn',
-            attributes: {'data-filter': 'quality'},
-            [.text('Quality')],
-          ),
-          button(
-            classes: 'filter-btn',
-            attributes: {'data-filter': 'dx'},
-            [.text('DX')],
-          ),
-          button(
-            classes: 'filter-btn',
-            attributes: {'data-filter': 'deterministic'},
-            [.text('Deterministic')],
-          ),
-          button(
-            classes: 'filter-btn',
-            attributes: {'data-filter': 'llm'},
-            [.text('LLM Judge (BINEVAL)')],
-          ),
+          for (var i = 0; i < matrixData.filters.length; i++)
+            button(
+              classes: i == 0 ? 'filter-btn active' : 'filter-btn',
+              attributes: {'data-filter': matrixData.filters[i].id},
+              [.text(matrixData.filters[i].label)],
+            ),
         ]),
       ]),
-      div(classes: 'grader-cards-grid', [
-        // Outcome Graders
-        div(classes: 'grader-card cat-outcome cat-deterministic', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat outcome', [.text('Outcome')]),
-            span(classes: 'grader-badge badge-deterministic', [
-              .text('Deterministic'),
-            ]),
-          ]),
-          h4([.text('Build & Run')]),
-          p([
-            .text(
-              'Binary pass/fail checking if code compiles and launches cleanly.',
+      div(classes: 'grader-carousel-wrapper', [
+        const button(
+          classes: 'carousel-nav-btn prev',
+          attributes: {
+            'aria-label': 'Previous grader card',
+            'title': 'Previous card',
+          },
+          [MaterialIcon('chevron_left')],
+        ),
+        div(classes: 'grader-cards-track', [
+          for (final grader in matrixData.graders)
+            div(
+              classes: 'grader-card cat-${grader.category} cat-${grader.type}',
+              [
+                div(classes: 'grader-header', [
+                  span(
+                    classes: 'grader-cat ${grader.category}',
+                    [.text(grader.categoryLabel)],
+                  ),
+                  span(
+                    classes: 'grader-badge badge-${grader.type}',
+                    [.text(grader.typeLabel)],
+                  ),
+                ]),
+                h4([.text(grader.name)]),
+                p([_renderDescription(grader.description)]),
+              ],
             ),
-          ]),
         ]),
-        div(classes: 'grader-card cat-outcome cat-deterministic', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat outcome', [.text('Outcome')]),
-            span(classes: 'grader-badge badge-deterministic', [
-              .text('Deterministic'),
-            ]),
-          ]),
-          h4([.text('Unit & Widget Testing')]),
-          p([
-            .text(
-              'Executes test suites and scores passing test ratio '
-              'across affected code.',
-            ),
-          ]),
-        ]),
-        div(classes: 'grader-card cat-outcome cat-llm', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat outcome', [.text('Outcome')]),
-            span(classes: 'grader-badge badge-llm', [
-              .text('LLM Judge (BINEVAL)'),
-            ]),
-          ]),
-          h4([.text('Visual Validation')]),
-          p([
-            .text(
-              'Compares DevTools screenshot captures against visual '
-              'UI expectations.',
-            ),
-          ]),
-        ]),
-        div(classes: 'grader-card cat-outcome cat-heuristic', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat outcome', [.text('Outcome')]),
-            span(classes: 'grader-badge badge-heuristic', [
-              .text('Heuristic'),
-            ]),
-          ]),
-          h4([.text('Task Heuristics')]),
-          p([
-            .text(
-              'Task-specific checks verifying dependency additions, '
-              'required config, and files.',
-            ),
-          ]),
-        ]),
-
-        // Quality Graders
-        div(classes: 'grader-card cat-quality cat-deterministic', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat quality', [.text('Quality')]),
-            span(classes: 'grader-badge badge-deterministic', [
-              .text('Deterministic'),
-            ]),
-          ]),
-          h4([.text('Static Analysis')]),
-          p([
-            .text('Runs '),
-            code([.text('dart analyze')]),
-            .text(' enforcing strict project lint rules.'),
-          ]),
-        ]),
-        div(classes: 'grader-card cat-quality cat-deterministic', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat quality', [.text('Quality')]),
-            span(classes: 'grader-badge badge-deterministic', [
-              .text('Deterministic'),
-            ]),
-          ]),
-          h4([.text('Dart Code Metrics (DCM)')]),
-          p([
-            .text(
-              'Detects dead code, widget complexity, undisposed '
-              'controllers, and memory leaks.',
-            ),
-          ]),
-        ]),
-        div(classes: 'grader-card cat-quality cat-llm', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat quality', [.text('Quality')]),
-            span(classes: 'grader-badge badge-llm', [
-              .text('LLM Judge (BINEVAL)'),
-            ]),
-          ]),
-          h4([.text('Idiomatic Dart Review')]),
-          p([
-            .text(
-              'Evaluates modern Dart 3 pattern compliance and '
-              'adherence to Effective Dart.',
-            ),
-          ]),
-        ]),
-        div(classes: 'grader-card cat-quality cat-deterministic', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat quality', [.text('Quality')]),
-            span(classes: 'grader-badge badge-deterministic', [
-              .text('Deterministic'),
-            ]),
-          ]),
-          h4([.text('Structural Validation')]),
-          p([
-            .text(
-              'Verifies directory structure, naming conventions, '
-              'and required file placement.',
-            ),
-          ]),
-        ]),
-
-        // DX Graders
-        div(classes: 'grader-card cat-dx cat-deterministic', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat dx', [.text('DX')]),
-            span(classes: 'grader-badge badge-deterministic', [
-              .text('Deterministic'),
-            ]),
-          ]),
-          h4([.text('Tool Usage Analysis')]),
-          p([
-            .text(
-              'Detects invalid tool calls, incorrect tool selection, '
-              'or broken arguments.',
-            ),
-          ]),
-        ]),
-        div(classes: 'grader-card cat-dx cat-llm', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat dx', [.text('DX')]),
-            span(classes: 'grader-badge badge-llm', [
-              .text('LLM Judge (BINEVAL)'),
-            ]),
-          ]),
-          h4([.text('Trajectory & Step Efficiency')]),
-          p([
-            .text(
-              'Checks HITL compliance, retry frequency, and flags '
-              'infinite execution loops.',
-            ),
-          ]),
-        ]),
-        div(classes: 'grader-card cat-dx cat-llm', [
-          div(classes: 'grader-header', [
-            span(classes: 'grader-cat dx', [.text('DX')]),
-            span(classes: 'grader-badge badge-llm', [
-              .text('LLM Judge (BINEVAL)'),
-            ]),
-          ]),
-          h4([.text('Error Recovery')]),
-          p([
-            .text(
-              'Rates how fluidly the agent adapts to compiler, '
-              'analysis, and test errors.',
-            ),
-          ]),
-        ]),
+        const button(
+          classes: 'carousel-nav-btn next',
+          attributes: {
+            'aria-label': 'Next grader card',
+            'title': 'Next card',
+          },
+          [MaterialIcon('chevron_right')],
+        ),
       ]),
     ]);
   }
@@ -295,44 +135,30 @@ final class ReliabilityCards extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return const div(classes: 'reliability-comparison-grid', [
-      div(classes: 'reliability-card', [
-        div(classes: 'reliability-header', [
-          span(classes: 'tag', [.text('Ceiling Metric')]),
-          span(classes: 'math-pill', [.text('pass@k')]),
-        ]),
-        h4([.text('Capability')]),
-        p([
-          .text('The probability that an agent succeeds '),
-          em([.text('at least once')]),
-          .text(' across '),
-          strong([.text('k')]),
-          .text(
-            ' attempts. Shows what the model can achieve under ideal '
-            'sample runs.',
-          ),
-        ]),
-      ]),
-      div(classes: 'reliability-card north-star', [
-        div(classes: 'reliability-header', [
-          span(classes: 'tag', [
-            MaterialIcon('star'),
-            .text('Our North Star'),
-          ]),
-          span(classes: 'math-pill', [.text('pass^k')]),
-        ]),
-        h4([.text('Consistency')]),
-        p([
-          .text('The probability that an agent succeeds '),
-          em([.text('every single time')]),
-          .text(' across all '),
-          strong([.text('k')]),
-          .text(
-            ' attempts. Solves unreliability friction for '
-            'real developer workflows.',
-          ),
-        ]),
-      ]),
+    final data = FlutterBenchData.fromContext(context);
+    final cards = data.reliability.cards;
+
+    return div(classes: 'reliability-comparison-grid', [
+      for (final card in cards)
+        div(
+          classes: card.isNorthStar
+              ? 'reliability-card north-star'
+              : 'reliability-card',
+          [
+            div(classes: 'reliability-header', [
+              span(classes: 'tag', [
+                if (card.tagIcon case final icon?) ...[
+                  MaterialIcon(icon),
+                  const .text(' '),
+                ],
+                .text(card.tag),
+              ]),
+              span(classes: 'math-pill', [.text(card.mathPill)]),
+            ]),
+            h4([.text(card.title)]),
+            _renderReliabilityDescription(card),
+          ],
+        ),
     ]);
   }
 }
@@ -343,288 +169,240 @@ final class ScoreTriage extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return const div(classes: 'score-triage', [
+    final data = FlutterBenchData.fromContext(context);
+    final triage = data.scoreTriage;
+
+    return div(classes: 'score-triage', [
       div(classes: 'triage-header', [
-        h3([.text('Score Triage & Action Matrix')]),
-        p([
-          .text(
-            'Select a score range to view its criteria and immediate '
-            'engineering triage actions.',
-          ),
-        ]),
+        h3([.text(triage.title)]),
+        p([.text(triage.description)]),
       ]),
       div(classes: 'triage-tiers-grid', [
-        button(
-          classes: 'triage-tier-btn tier-perfect active',
-          attributes: {'data-tier': 'perfect'},
-          [
-            div(classes: 'tier-score', [.text('1.00')]),
-            div(classes: 'tier-name', [.text('Perfect Success')]),
-          ],
-        ),
-        button(
-          classes: 'triage-tier-btn tier-functional',
-          attributes: {'data-tier': 'functional'},
-          [
-            div(classes: 'tier-score', [.text('0.75 – 0.99')]),
-            div(classes: 'tier-name', [.text('Minor Flaws')]),
-          ],
-        ),
-        button(
-          classes: 'triage-tier-btn tier-partial',
-          attributes: {'data-tier': 'partial'},
-          [
-            div(classes: 'tier-score', [.text('0.50 – 0.74')]),
-            div(classes: 'tier-name', [.text('Partial Success')]),
-          ],
-        ),
-        button(
-          classes: 'triage-tier-btn tier-poor',
-          attributes: {'data-tier': 'poor'},
-          [
-            div(classes: 'tier-score', [.text('0.25 – 0.49')]),
-            div(classes: 'tier-name', [.text('Poor Execution')]),
-          ],
-        ),
-        button(
-          classes: 'triage-tier-btn tier-failure',
-          attributes: {'data-tier': 'failure'},
-          [
-            div(classes: 'tier-score', [.text('0.00')]),
-            div(classes: 'tier-name', [.text('Total Failure')]),
-          ],
-        ),
+        for (var i = 0; i < triage.tiers.length; i++)
+          button(
+            classes: i == 0
+                ? 'triage-tier-btn tier-${triage.tiers[i].id} active'
+                : 'triage-tier-btn tier-${triage.tiers[i].id}',
+            attributes: {'data-tier': triage.tiers[i].id},
+            [
+              div(classes: 'tier-score', [.text(triage.tiers[i].score)]),
+              div(classes: 'tier-name', [.text(triage.tiers[i].name)]),
+            ],
+          ),
       ]),
       div(classes: 'triage-detail-card', [
-        // Tier 1: Perfect
-        div(
-          classes: 'triage-panel active',
-          attributes: {'data-tier': 'perfect'},
-          [
-            div(classes: 'panel-heading', [
-              h4([.text('Score 1.00 — Perfect Success')]),
-              span(classes: 'panel-badge', [.text('Criteria & Triage')]),
-            ]),
-            p(classes: 'criteria-text', [
-              .text(
-                'Code compiles, runs, and passes all unit and widget tests. '
-                'Zero analyzer or DCM warnings. Idiomatic Dart 3 and '
-                'flawless DX.',
-              ),
-            ]),
-            div(classes: 'actions-section', [
-              div(classes: 'actions-label', [
-                .text('Engineering Triage Actions:'),
+        for (var i = 0; i < triage.tiers.length; i++)
+          div(
+            classes: i == 0 ? 'triage-panel active' : 'triage-panel',
+            attributes: {'data-tier': triage.tiers[i].id},
+            [
+              div(classes: 'panel-heading', [
+                h4([.text(triage.tiers[i].heading)]),
+                span(classes: 'panel-badge', [.text(triage.tiers[i].badge)]),
               ]),
-              ul([
-                li([
-                  strong([.text('Telemetry check: ')]),
-                  .text(
-                    'Validate whether all expected tools were utilized.',
-                  ),
+              p(classes: 'criteria-text', [.text(triage.tiers[i].criteria)]),
+              div(classes: 'actions-section', [
+                div(classes: 'actions-label', [
+                  .text(triage.tiers[i].actionsLabel),
                 ]),
-                li([
-                  strong([.text('Skip optimization: ')]),
-                  .text(
-                    'If expected tools were skipped successfully, '
-                    're-evaluate if the tool is redundant.',
-                  ),
-                ]),
-                li([
-                  strong([.text('Token burn review: ')]),
-                  .text(
-                    'If token consumption was high, optimize prompt '
-                    'context and create fast-path shortcut tools.',
-                  ),
+                ul([
+                  for (final action in triage.tiers[i].actions)
+                    li([
+                      strong([.text('${action.label}: ')]),
+                      .text(action.detail),
+                    ]),
                 ]),
               ]),
-            ]),
-          ],
-        ),
-
-        // Tier 2: Functional / Minor Flaws
-        div(
-          classes: 'triage-panel',
-          attributes: {'data-tier': 'functional'},
-          [
-            div(classes: 'panel-heading', [
-              h4([.text('Score 0.75 – 0.99 — Minor Flaws')]),
-              span(classes: 'panel-badge', [.text('Criteria & Triage')]),
-            ]),
-            p(classes: 'criteria-text', [
-              .text(
-                'Code works and functional tests pass, but exhibits minor '
-                'lint warnings, slightly unidiomatic patterns, or '
-                'minor DX friction.',
-              ),
-            ]),
-            div(classes: 'actions-section', [
-              div(classes: 'actions-label', [
-                .text('Engineering Triage Actions:'),
-              ]),
-              ul([
-                li([
-                  strong([.text('Prompt tuning: ')]),
-                  .text(
-                    'Tune skill prompt instructions for better Dart 3 '
-                    'style enforcement.',
-                  ),
-                ]),
-                li([
-                  strong([.text('Schema refinement: ')]),
-                  .text(
-                    'Refine tool parameter schemas and validation logic '
-                    'to prevent minor parameter retry hiccups.',
-                  ),
-                ]),
-                li([
-                  strong([.text('Model collaboration: ')]),
-                  .text(
-                    'Collaborate with model team to polish code '
-                    'generation formatting.',
-                  ),
-                ]),
-              ]),
-            ]),
-          ],
-        ),
-
-        // Tier 3: Partial Success
-        div(
-          classes: 'triage-panel',
-          attributes: {'data-tier': 'partial'},
-          [
-            div(classes: 'panel-heading', [
-              h4([.text('Score 0.50 – 0.74 — Partial Success')]),
-              span(classes: 'panel-badge', [.text('Criteria & Triage')]),
-            ]),
-            p(classes: 'criteria-text', [
-              .text(
-                'Core requirements work but some widget or unit tests fail, '
-                'lint warnings are significant, or the agent entered '
-                'noticeable recovery loops.',
-              ),
-            ]),
-            div(classes: 'actions-section', [
-              div(classes: 'actions-label', [
-                .text('Engineering Triage Actions:'),
-              ]),
-              ul([
-                li([
-                  strong([.text('Assertion triage: ')]),
-                  .text('Investigate specific test assertion failures.'),
-                ]),
-                li([
-                  strong([.text('Context gap analysis: ')]),
-                  .text(
-                    'Analyze whether the agent lacked key framework '
-                    'or package context.',
-                  ),
-                ]),
-                li([
-                  strong([.text('Diagnostic feedback: ')]),
-                  .text(
-                    'Refine compiler diagnostic feedback to help '
-                    'the agent self-correct faster.',
-                  ),
-                ]),
-              ]),
-            ]),
-          ],
-        ),
-
-        // Tier 4: Poor Execution
-        div(
-          classes: 'triage-panel',
-          attributes: {'data-tier': 'poor'},
-          [
-            div(classes: 'panel-heading', [
-              h4([.text('Score 0.25 – 0.49 — Poor Implementation')]),
-              span(classes: 'panel-badge', [.text('Criteria & Triage')]),
-            ]),
-            p(classes: 'criteria-text', [
-              .text(
-                'Fails to compile, ignores constraints, or encountered '
-                'severe developer experience breakdown during execution.',
-              ),
-            ]),
-            div(classes: 'actions-section', [
-              div(classes: 'actions-label', [
-                .text('Engineering Triage Actions:'),
-              ]),
-              ul([
-                li([
-                  strong([.text('Tool discoverability: ')]),
-                  .text(
-                    'If expected tools were ignored, fix tool '
-                    'discoverability, frontmatter, and prompt instructions.',
-                  ),
-                ]),
-                li([
-                  strong([.text('Tool output clarity: ')]),
-                  .text(
-                    'If tools were used but failed, improve helper '
-                    'tool output clarity and error messaging.',
-                  ),
-                ]),
-                li([
-                  strong([.text('Loop prevention: ')]),
-                  .text(
-                    'If token burn was high due to endless fix loops, '
-                    'improve compiler errors for single-step healing.',
-                  ),
-                ]),
-              ]),
-            ]),
-          ],
-        ),
-
-        // Tier 5: Total Failure
-        div(
-          classes: 'triage-panel',
-          attributes: {'data-tier': 'failure'},
-          [
-            div(classes: 'panel-heading', [
-              h4([.text('Score 0.00 — Total Failure')]),
-              span(classes: 'panel-badge', [.text('Criteria & Triage')]),
-            ]),
-            p(classes: 'criteria-text', [
-              .text(
-                'No working code produced, severe runtime crash, or '
-                'agent caught in an infinite loop.',
-              ),
-            ]),
-            div(classes: 'actions-section', [
-              div(classes: 'actions-label', [
-                .text('Engineering Triage Actions:'),
-              ]),
-              ul([
-                li([
-                  strong([.text('Human root-cause audit: ')]),
-                  .text(
-                    'Engineers inspect reasoning traces, plan adherence, '
-                    'and test harness logs.',
-                  ),
-                ]),
-                li([
-                  strong([.text('Behavior categorization: ')]),
-                  .text(
-                    'Identify premature surrender versus infinite '
-                    'loop traps.',
-                  ),
-                ]),
-                li([
-                  strong([.text('Constraint refinement: ')]),
-                  .text(
-                    'Update benchmark task prompt constraints and '
-                    'bounding parameters.',
-                  ),
-                ]),
-              ]),
-            ]),
-          ],
-        ),
+            ],
+          ),
       ]),
     ]);
   }
+}
+
+/// A structured, reusable diagram component visualizing a user journey flow
+/// across configurable sections and nested elements.
+final class CujDiagram extends StatelessComponent {
+  const CujDiagram({
+    super.key,
+    this.sections,
+  });
+
+  final List<CujDiagramSection>? sections;
+
+  @override
+  Component build(BuildContext context) {
+    final effectiveSections = sections ??
+        FlutterBenchData.fromContext(context).cujExampleSections;
+
+    return div(classes: 'cuj-diagram-card', [
+      for (final section in effectiveSections)
+        div(classes: 'cuj-diagram-section', [
+          div(classes: 'section-sidebar', [
+            div(classes: 'section-icon variant-${section.variant}', [
+              MaterialIcon(section.icon),
+            ]),
+            span(classes: 'section-label', [.text(section.label)]),
+          ]),
+          div(classes: 'section-items', [
+            for (final item in section.items)
+              div(classes: 'cuj-pill pill-${section.variant}', [
+                .text(item),
+              ]),
+          ]),
+        ]),
+    ]);
+  }
+}
+
+/// Reusable section model for [CujDiagram].
+final class CujDiagramSection {
+  const CujDiagramSection({
+    required this.label,
+    required this.icon,
+    this.variant = 'blue',
+    required this.items,
+  });
+
+  factory CujDiagramSection.fromMap(Map<String, Object?> map) {
+    return CujDiagramSection(
+      label: map['label'] as String? ?? '',
+      icon: map['icon'] as String? ?? 'info',
+      variant: map['variant'] as String? ?? 'blue',
+      items: (map['items'] as List<Object?>? ?? const [])
+          .map((item) => item.toString())
+          .toList(),
+    );
+  }
+
+  final String label;
+  final String icon;
+  final String variant;
+  final List<String> items;
+}
+
+// -----------------------------------------------------------------------------
+// Data Model & Extension Types
+// -----------------------------------------------------------------------------
+
+/// Root data model for FlutterBench content loaded from `src/data/flutterbench.yml`.
+extension type FlutterBenchData._(Map<String, Object?> _data) {
+  static FlutterBenchData fromContext(BuildContext context) {
+    final raw =
+        context.page.data['flutterbench'] as Map<String, Object?>? ?? const {};
+    return FlutterBenchData._(raw);
+  }
+
+  List<CujDiagramSection> get cujExampleSections =>
+      (_data['cuj_example'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(CujDiagramSection.fromMap)
+          .toList();
+
+  List<DimensionData> get dimensions =>
+      (_data['dimensions'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(DimensionData._)
+          .toList();
+
+  GraderMatrixData get graderMatrix => GraderMatrixData._(
+    _data['grader_matrix'] as Map<String, Object?>? ?? const {},
+  );
+
+  ReliabilityData get reliability => ReliabilityData._(
+    _data['reliability'] as Map<String, Object?>? ?? const {},
+  );
+
+  ScoreTriageData get scoreTriage => ScoreTriageData._(
+    _data['score_triage'] as Map<String, Object?>? ?? const {},
+  );
+}
+
+extension type DimensionData._(Map<String, Object?> _data) {
+  String get title => _data['title'] as String? ?? '';
+  String get icon => _data['icon'] as String? ?? '';
+  String get category => _data['category'] as String? ?? '';
+  String get description => _data['description'] as String? ?? '';
+  String get footerItems => _data['footer_items'] as String? ?? '';
+  String get badge => _data['badge'] as String? ?? '';
+}
+
+extension type GraderMatrixData._(Map<String, Object?> _data) {
+  String get title => _data['title'] as String? ?? '';
+  String get description => _data['description'] as String? ?? '';
+  List<GraderFilterData> get filters =>
+      (_data['filters'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(GraderFilterData._)
+          .toList();
+  List<GraderCardData> get graders =>
+      (_data['graders'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(GraderCardData._)
+          .toList();
+}
+
+extension type GraderFilterData._(Map<String, Object?> _data) {
+  String get id => _data['id'] as String? ?? '';
+  String get label => _data['label'] as String? ?? '';
+}
+
+extension type GraderCardData._(Map<String, Object?> _data) {
+  String get name => _data['name'] as String? ?? '';
+  String get category => _data['category'] as String? ?? '';
+  String get categoryLabel => _data['category_label'] as String? ?? '';
+  String get type => _data['type'] as String? ?? '';
+  String get typeLabel => _data['type_label'] as String? ?? '';
+  String get description => _data['description'] as String? ?? '';
+}
+
+extension type ReliabilityData._(Map<String, Object?> _data) {
+  List<ReliabilityCardData> get cards =>
+      (_data['cards'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(ReliabilityCardData._)
+          .toList();
+}
+
+extension type ReliabilityCardData._(Map<String, Object?> _data) {
+  String get tag => _data['tag'] as String? ?? '';
+  String? get tagIcon => _data['tag_icon'] as String?;
+  String get mathPill => _data['math_pill'] as String? ?? '';
+  String get title => _data['title'] as String? ?? '';
+  bool get isNorthStar => _data['is_north_star'] as bool? ?? false;
+  List<Map<String, Object?>> get descriptionParts =>
+      (_data['description_parts'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .toList();
+}
+
+extension type ScoreTriageData._(Map<String, Object?> _data) {
+  String get title => _data['title'] as String? ?? '';
+  String get description => _data['description'] as String? ?? '';
+  List<ScoreTierData> get tiers =>
+      (_data['tiers'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(ScoreTierData._)
+          .toList();
+}
+
+extension type ScoreTierData._(Map<String, Object?> _data) {
+  String get id => _data['id'] as String? ?? '';
+  String get score => _data['score'] as String? ?? '';
+  String get name => _data['name'] as String? ?? '';
+  String get heading => _data['heading'] as String? ?? '';
+  String get badge => _data['badge'] as String? ?? 'Criteria & Triage';
+  String get criteria => _data['criteria'] as String? ?? '';
+  String get actionsLabel =>
+      _data['actions_label'] as String? ?? 'Engineering Triage Actions:';
+  List<ScoreTierActionData> get actions =>
+      (_data['actions'] as List<Object?>? ?? const [])
+          .cast<Map<String, Object?>>()
+          .map(ScoreTierActionData._)
+          .toList();
+}
+
+extension type ScoreTierActionData._(Map<String, Object?> _data) {
+  String get label => _data['label'] as String? ?? '';
+  String get detail => _data['detail'] as String? ?? '';
 }
