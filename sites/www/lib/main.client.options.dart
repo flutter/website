@@ -34,8 +34,6 @@ import 'package:site_shared/components/common/client/collapse_button.dart'
     deferred as _collapse_button;
 import 'package:site_shared/components/common/client/copy_button.dart'
     deferred as _copy_button;
-import 'package:site_shared/components/common/client/mermaid_diagram.dart'
-    deferred as _mermaid_diagram;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
 import 'package:site_shared/components/utils/component_ref.dart'
@@ -182,10 +180,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
         title: p['title'] as String?,
       ),
       loader: _copy_button.loadLibrary,
-    ),
-    'site_shared:mermaid_diagram': ClientLoader(
-      (p) => _mermaid_diagram.MermaidViewer(diagram: p['diagram'] as String),
-      loader: _mermaid_diagram.loadLibrary,
     ),
     'site_shared:dartpad_injector': ClientLoader(
       (p) => _dartpad_injector.DartPadInjector(
