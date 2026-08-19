@@ -24,10 +24,14 @@ and [Flutter concurrency for Swift developers][].
 
 Your iOS and UIKit knowledge and experience
 are highly valuable when building with Flutter.
-{% comment %}
-  TODO: Add talk about plugin system for interacting with OS and hardware
-  when [iOS and Apple hardware interactions with Flutter][] is released.
-{% endcomment -%}
+
+To access device hardware and OS features—such as
+the camera, location services, and Bluetooth—Flutter uses a plugin system.
+Plugins are Dart packages that wrap native iOS (Swift or Objective-C) APIs,
+making them available to your Flutter app.
+Find community and first-party plugins on [pub.dev][].
+For features not covered by an existing plugin,
+use a [platform channel][] to call iOS APIs directly from Dart.
 
 Flutter also makes a number of adaptations
 to app behavior when running on iOS.
@@ -2072,6 +2076,95 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
+## Platform integration
+
+### How do I access the camera?
+
+In **UIKit**, you use `UIImagePickerController` or `PHPickerViewController`
+to pick images or capture photos with the camera.
+
+In **Flutter**, use the [`image_picker`][] plugin.
+It provides a unified API for picking images and videos
+from the gallery or capturing with the camera.
+
+```dart
+import 'package:image_picker/image_picker.dart';
+
+final picker = ImagePicker();
+
+// Pick from gallery
+final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+
+// Capture with camera
+final XFile? photo = await picker.pickImage(source: ImageSource.camera);
+```
+
+### How do I access location services?
+
+In **UIKit**, you use the `CoreLocation` framework and
+a `CLLocationManager` to request and receive the device's location.
+
+In **Flutter**, use the [`geolocator`][] plugin,
+which wraps the platform location APIs into a single cross-platform interface.
+
+```dart
+import 'package:geolocator/geolocator.dart';
+
+final position = await Geolocator.getCurrentPosition(
+  desiredAccuracy: LocationAccuracy.high,
+);
+print('${position.latitude}, ${position.longitude}');
+```
+
+### How do I call native iOS APIs from Flutter?
+
+In **UIKit**, you call iOS frameworks such as `AVFoundation`,
+`CoreBluetooth`, or `StoreKit` directly from Swift or Objective-C.
+
+In **Flutter**, use a [platform channel][] to communicate between Dart and
+native code. A `MethodChannel` sends method calls across the boundary
+and returns results back to Dart.
+
+In Dart:
+
+```dart
+import 'package:flutter/services.dart';
+
+const channel = MethodChannel('com.example.app/channel');
+
+Future<void> callNativeMethod() async {
+  final String result = await channel.invokeMethod('nativeMethod');
+  print(result);
+}
+```
+
+On the Swift side (in `AppDelegate.swift` or a `FlutterViewController` subclass):
+
+```swift
+let channel = FlutterMethodChannel(
+  name: "com.example.app/channel",
+  binaryMessenger: controller.binaryMessenger
+)
+channel.setMethodCallHandler { call, result in
+  if call.method == "nativeMethod" {
+    result("Hello from Swift!")
+  } else {
+    result(FlutterMethodNotImplemented)
+  }
+}
+```
+
+For a complete walkthrough, see [Writing custom platform-specific code][].
+
+### How do I build my own plugin?
+
+If no existing plugin covers your use case, you can package your
+platform channel code as a reusable Flutter plugin.
+A plugin wraps native iOS (and optionally Android) APIs and
+exposes them as a Dart package that can be shared on [pub.dev][].
+
+To get started, see [Developing Packages & Plugins][].
+
 [Flutter for SwiftUI developers]: /flutter-for/swiftui-devs
 [Add Flutter to existing app]: /add-to-app
 [Adding Assets and Images in Flutter]: /ui/assets/assets-and-images
@@ -2109,3 +2202,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [widget catalog]: /ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [Learning Dart as a Swift Developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
+[`image_picker`]: {{site.pub-pkg}}/image_picker
+[`geolocator`]: {{site.pub-pkg}}/geolocator
+[Writing custom platform-specific code]: /platform-integration/platform-channels
+[Developing Packages & Plugins]: /packages-and-plugins/developing-packages
