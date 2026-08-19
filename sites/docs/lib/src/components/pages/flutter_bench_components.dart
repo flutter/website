@@ -49,10 +49,12 @@ final class ThreeDimensionsCards extends StatelessComponent {
     return div(classes: 'dimension-cards-grid', [
       for (final dim in dimensions)
         div(classes: 'dimension-card', [
-          div(classes: 'card-icon-wrap ${dim.category}', [
-            MaterialIcon(dim.icon),
+          div(classes: 'card-header-row', [
+            div(classes: 'card-icon-wrap ${dim.category}', [
+              MaterialIcon(dim.icon),
+            ]),
+            h4([.text(dim.title)]),
           ]),
-          h4([.text(dim.title)]),
           p([.text(dim.description)]),
           div(classes: 'card-footer-info', [
             span([.text(dim.footerItems)]),
@@ -440,7 +442,9 @@ final class TaskSpecifications extends StatelessComponent {
                     tbody([
                       for (final row in tableData.rows)
                         tr([
-                          td([strong([.text(row.label)])]),
+                          td([
+                            strong([.text(row.label)]),
+                          ]),
                           td([_renderDescription(row.description)]),
                         ]),
                     ]),
@@ -471,8 +475,8 @@ final class CujDiagram extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    final effectiveSections = sections ??
-        FlutterBenchData.fromContext(context).cujExampleSections;
+    final effectiveSections =
+        sections ?? FlutterBenchData.fromContext(context).cujExampleSections;
 
     return div(classes: 'cuj-diagram-card', [
       for (final section in effectiveSections)
@@ -618,10 +622,9 @@ extension type TaskSpecificationData._(Map<String, Object?> _data) {
 
 extension type TaskSpecTableData._(Map<String, Object?> _data) {
   String get title => _data['title'] as String? ?? '';
-  List<String> get headers =>
-      (_data['headers'] as List<Object?>? ?? const [])
-          .map((h) => h.toString())
-          .toList();
+  List<String> get headers => (_data['headers'] as List<Object?>? ?? const [])
+      .map((h) => h.toString())
+      .toList();
   List<TaskSpecTableRowData> get rows =>
       (_data['rows'] as List<Object?>? ?? const [])
           .cast<Map<String, Object?>>()

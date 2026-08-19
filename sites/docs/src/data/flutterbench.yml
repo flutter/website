@@ -212,10 +212,6 @@ grader_matrix:
       label: "Quality"
     - id: "dx"
       label: "DX"
-    - id: "deterministic"
-      label: "Deterministic"
-    - id: "llm"
-      label: "LLM Judge (BINEVAL)"
   graders:
     - name: "Build & Run"
       category: "outcome"

@@ -32,7 +32,8 @@
     }
   }
 
-  h3, .hero-title {
+  h3,
+  .hero-title {
     color: #ffffff;
     font-size: 1.6rem;
     font-weight: 700;
@@ -64,58 +65,69 @@
 
 // Three Core Dimensions Grid
 .dimension-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 1.25rem;
+  // display: fle;
+  // grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  // gap: 1.25rem;
   margin-block: 1.5rem 2rem;
 
   .dimension-card {
     background-color: var(--site-inset-bgColor);
     border: 1px solid var(--site-inset-borderColor);
     border-radius: var(--site-radius, 0.5rem);
-    padding: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 
+    // TODO(ewindmill) Not sure we should have a hover animation since it isn't clickable
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
       border-color: var(--site-primary-color);
     }
 
-    .card-icon-wrap {
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 0.5rem;
+    .card-header-row {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
 
-      &.outcome {
-        background-color: rgba(16, 185, 129, 0.15);
-        color: #059669;
-      }
-      &.quality {
-        background-color: rgba(99, 102, 241, 0.15);
-        color: #6366f1;
-      }
-      &.dx {
-        background-color: rgba(245, 158, 11, 0.15);
-        color: #d97706;
+      .card-icon-wrap {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1rem 1rem 0;
+
+        &.outcome {
+          background-color: rgba(16, 185, 129, 0.15);
+          color: #059669;
+        }
+
+        &.quality {
+          background-color: rgba(99, 102, 241, 0.15);
+          color: #6366f1;
+        }
+
+        &.dx {
+          background-color: rgba(245, 158, 11, 0.15);
+          color: #d97706;
+        }
+
+        .material-symbols {
+          font-size: 1.5rem;
+        }
       }
 
-      .material-symbols {
-        font-size: 1.5rem;
+      h4 {
+        flex: 2;
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+        color: var(--site-base-fgColor);
       }
-    }
-
-    h4 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem 0;
-      color: var(--site-base-fgColor);
     }
 
     p {
@@ -125,6 +137,8 @@
       margin: 0;
       flex-grow: 1;
     }
+
+
 
     .card-footer-info {
       margin-top: 1.25rem;
@@ -145,10 +159,12 @@
           background: rgba(16, 185, 129, 0.12);
           color: #059669;
         }
+
         &.quality {
           background: rgba(99, 102, 241, 0.12);
           color: #6366f1;
         }
+
         &.dx {
           background: rgba(245, 158, 11, 0.12);
           color: #d97706;
@@ -187,6 +203,7 @@
         font-weight: 600;
         color: var(--site-base-fgColor);
       }
+
       p {
         margin: 0;
         font-size: 0.875rem;
@@ -336,9 +353,17 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
 
-            &.outcome { color: #059669; }
-            &.quality { color: #6366f1; }
-            &.dx { color: #d97706; }
+            &.outcome {
+              color: #059669;
+            }
+
+            &.quality {
+              color: #6366f1;
+            }
+
+            &.dx {
+              color: #d97706;
+            }
           }
 
           .grader-badge {
@@ -352,11 +377,13 @@
               color: #059669;
               border: 1px solid rgba(16, 185, 129, 0.25);
             }
+
             &.badge-llm {
               background-color: rgba(139, 92, 246, 0.12);
               color: #7c3aed;
               border: 1px solid rgba(139, 92, 246, 0.25);
             }
+
             &.badge-heuristic {
               background-color: rgba(59, 130, 246, 0.12);
               color: #2563eb;
@@ -444,7 +471,8 @@
       color: var(--site-base-fgColor-alt);
       margin: 0;
 
-      strong, em {
+      strong,
+      em {
         color: var(--site-base-fgColor);
       }
     }
@@ -481,7 +509,8 @@
       p {
         color: #e2e8f0;
 
-        strong, em {
+        strong,
+        em {
           color: #ffffff;
         }
       }
@@ -555,8 +584,12 @@
 
       &.variant-perfect,
       &.tier-perfect {
+
         .tab-primary-label,
-        .tier-score { color: #059669; }
+        .tier-score {
+          color: #059669;
+        }
+
         &.active {
           border: 2px solid #059669;
           background-color: rgba(16, 185, 129, 0.08);
@@ -567,8 +600,12 @@
       &.variant-functional,
       &.variant-blue,
       &.tier-functional {
+
         .tab-primary-label,
-        .tier-score { color: #0284c7; }
+        .tier-score {
+          color: #0284c7;
+        }
+
         &.active {
           border: 2px solid #0284c7;
           background-color: rgba(2, 132, 199, 0.08);
@@ -578,8 +615,12 @@
 
       &.variant-quality,
       &.variant-purple {
+
         .tab-primary-label,
-        .tier-score { color: #6366f1; }
+        .tier-score {
+          color: #6366f1;
+        }
+
         &.active {
           border: 2px solid #6366f1;
           background-color: rgba(99, 102, 241, 0.08);
@@ -591,8 +632,12 @@
       &.variant-dx,
       &.variant-amber,
       &.tier-partial {
+
         .tab-primary-label,
-        .tier-score { color: #d97706; }
+        .tier-score {
+          color: #d97706;
+        }
+
         &.active {
           border: 2px solid #d97706;
           background-color: rgba(217, 119, 6, 0.08);
@@ -602,8 +647,12 @@
 
       &.variant-poor,
       &.tier-poor {
+
         .tab-primary-label,
-        .tier-score { color: #ea580c; }
+        .tier-score {
+          color: #ea580c;
+        }
+
         &.active {
           border: 2px solid #ea580c;
           background-color: rgba(234, 88, 12, 0.08);
@@ -613,8 +662,12 @@
 
       &.variant-failure,
       &.tier-failure {
+
         .tab-primary-label,
-        .tier-score { color: #e11d48; }
+        .tier-score {
+          color: #e11d48;
+        }
+
         &.active {
           border: 2px solid #e11d48;
           background-color: rgba(225, 29, 72, 0.08);
@@ -1011,7 +1064,7 @@
       border-bottom: none;
     }
 
-    > a.collapsible {
+    >a.collapsible {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1371,4 +1424,3 @@ body.dark-mode {
     border-color: rgba(59, 130, 246, 0.35);
   }
 }
-

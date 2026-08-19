@@ -14,18 +14,7 @@ accomplish, like "make an application accessible to all users" or
 "diagnose and resolve layout overflow errors" and it's broken down into the
 concrete tasks they take to get there.
 
-```mermaid
-flowchart LR
- subgraph tasks
-    direction TB
-        t2("do second thing")
-        t1("Do first thing")
-  end
-    User["`As an...
-  **App developer**`"] -- i want to --> Goal("fix overflow errors")
-    Goal --> t1
-    t1 --> t2
-```
+<CujDiagram />
 
 Product teams at Google treat CUJs as a source of truth: they're how teams align
 on priorities, shape roadmaps, measure product health and more. And we use

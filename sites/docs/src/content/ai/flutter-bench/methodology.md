@@ -49,10 +49,6 @@ Each CUJ represents a combination of:
 * A high-level goal
 * The specific sequential steps required to achieve that goal
 
-For example:
-
-<CujDiagram />
-
 :::note
 We can't open-source the full evaluation tasks without contaminating the
 benchmark dataset, but we publish our [canonical list of CUJs][]. With
