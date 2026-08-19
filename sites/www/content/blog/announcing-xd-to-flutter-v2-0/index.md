@@ -5,7 +5,7 @@ description: >-
 publishDate: 2021-04-29
 author: gskinner
 image: images/1OoVDCYfw18QB91Fpe5jDAg.webp
-category: announcement
+category: news
 layout: blog
 ---
 

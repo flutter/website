@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-05-07
 author: craiglabenz
 image: images/1-u0y5vTqoC_sCyOHpvUnNA.webp
-category: story
+category: case-study
 layout: blog
 ---
 

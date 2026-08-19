@@ -6,7 +6,7 @@ description: >-
 publishDate: 2023-05-18
 author: verygoodopensource
 image: images/1nGcHw9zmkDT1oGhYwuZMqA.jpeg
-category: story
+category: case-study
 layout: blog
 ---
 

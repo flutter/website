@@ -6,7 +6,7 @@ description: >-
 publishDate: 2026-04-15
 author: parlough
 image: images/1y6lc2WLpxXBKsuoKJywapQ.webp
-category: engineering
+category: case-study
 layout: blog
 ---
 
