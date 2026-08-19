@@ -9,5 +9,4 @@ export 'src/extensions/attribute_processor.dart';
 export 'src/extensions/code_block_processor.dart';
 export 'src/extensions/header_extractor.dart';
 export 'src/extensions/header_processor.dart';
-export 'src/extensions/mermaid_processor.dart';
 export 'src/extensions/table_processor.dart';

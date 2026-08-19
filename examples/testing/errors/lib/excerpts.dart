@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 
 // #docregion catch-error
 import 'package:flutter/material.dart';
+
 import 'dart:ui';
 
 void main() {

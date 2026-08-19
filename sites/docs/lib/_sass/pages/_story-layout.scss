@@ -5,12 +5,7 @@
 // Storytelling Layout Styles
 // -----------------------------------------------------------------------------
 
-// D. Non-intrusive Proximity Snapping on Root Scroll Container
-html:has(body.layout-story) {
-  // scroll-snap-type: y proximity;
-}
-
-// E. Scroll-Driven Reading Progress Line directly underneath sticky navbar
+// Scroll-Driven Reading Progress Line directly underneath sticky navbar
 .story-reading-progress {
   position: fixed;
   top: var(--site-header-height, 4rem);
@@ -53,6 +48,16 @@ body.layout-story {
     max-width: 1240px;
     width: 100%;
     padding-inline: clamp(1.25rem, 3.5vw, 3rem);
+
+    > #site-content-title,
+    > .site-breadcrumbs,
+    > p.description,
+    > .prev-next-nav,
+    > .trailing-content {
+      max-width: 68ch;
+      margin-inline: auto;
+      width: 100%;
+    }
   }
 
   .story-canvas {
@@ -138,15 +143,21 @@ body.layout-story {
       position: sticky;
       top: calc(var(--site-header-height, 4rem) + 3px);
       z-index: 10;
-      background: var(--site-base-bgColor);
       padding-block: 0.85rem 0.5rem;
       margin-bottom: 2rem;
       border-bottom: 1px solid var(--site-outline-variant);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
 
+      .chapter-kicker,
+      > .header-wrapper {
+        max-width: 68ch;
+        width: 100%;
+        margin-inline: auto;
+      }
+
       .chapter-kicker {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         gap: 0.75rem;
         margin-bottom: 0.35rem;
@@ -199,13 +210,21 @@ body.layout-story {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      width: 100%;
 
-      // Body prose constrained to optimal reading measure
+      // Body prose, lists, blockquotes, tables, notes centered in narrow column
       > p,
       > ul,
       > ol,
-      > blockquote {
+      > blockquote,
+      > .table-wrapper,
+      > .alert,
+      > .callout,
+      > .katex-display,
+      > math {
+        width: 100%;
         max-width: 68ch;
+        margin-inline: auto;
         line-height: 1.75;
         font-size: 1.075rem;
       }
@@ -214,30 +233,32 @@ body.layout-story {
         font-size: 1.2rem;
         line-height: 1.65;
         color: var(--site-base-fgColor-alt);
-      }
-
-      // Sub-headings inside chapter
-      > .header-wrapper h3 {
-        font-size: clamp(1.3rem, 1.8vw, 1.55rem);
-        font-weight: 600;
-        margin-top: 2rem;
-        margin-bottom: 0.5rem;
         max-width: 68ch;
+        margin-inline: auto;
       }
 
-      > .header-wrapper h4 {
-        font-size: 1.15rem;
-        font-weight: 600;
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
+      // Sub-headings inside chapter centered to match prose
+      > .header-wrapper {
+        width: 100%;
         max-width: 68ch;
+        margin-inline: auto;
+
+        h3 {
+          font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+          font-weight: 600;
+          margin-top: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        h4 {
+          font-size: 1.15rem;
+          font-weight: 600;
+          margin-top: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
       }
 
-      > .table-wrapper {
-        max-width: 68ch;
-      }
-
-      // Interactive components break out into full container width
+      // Interactive components break out symmetrically left and right
       > .interactive-detail-card,
       > .matrix-carousel,
       > .comparison-cards-grid,
@@ -245,10 +266,13 @@ body.layout-story {
       > .spec-panels,
       > .cuj-diagram-wrapper,
       > .tabs-wrapper,
-      > .code-tabs {
+      > .code-tabs,
+      > .ide-explorer-wrapper,
+      > .code-preview {
         width: 100%;
         max-width: 100%;
-        margin-block: 2rem;
+        margin-inline: auto;
+        margin-block: 2.5rem;
       }
     }
   }

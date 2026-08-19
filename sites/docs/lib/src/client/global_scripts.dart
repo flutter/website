@@ -804,8 +804,9 @@ void _setUpSingleInteractiveDetailCard(web.Element card) {
       for (var k = 0; k < panels.length; k++) {
         final panel = panels.item(k) as web.HTMLElement;
         final panelTabAttr = panel.dataset['tab'];
-        final panelId =
-            panelTabAttr.isNotEmpty ? panelTabAttr : panel.dataset['tier'];
+        final panelId = panelTabAttr.isNotEmpty
+            ? panelTabAttr
+            : panel.dataset['tier'];
         panel.classList.toggle('active', panelId == tabId);
       }
 
