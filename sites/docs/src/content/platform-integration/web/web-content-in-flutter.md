@@ -172,7 +172,7 @@ Scaffold(
       ),
     ),
   ),
-  body: const HtmlElementView.fromTagName(tagName: 'iframe'),
+  body: HtmlElementView.fromTagName(tagName: 'iframe'),
 )
 ```
 
