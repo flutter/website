@@ -5,7 +5,7 @@ description: >-
 publishDate: 2025-07-23
 author: antfitch
 image: images/1lPy6kRkj2N5ybEhHIKjbVw.webp
-category: announcement
+category: news
 layout: blog
 ---
 

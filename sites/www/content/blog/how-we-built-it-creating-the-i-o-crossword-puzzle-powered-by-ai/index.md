@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-06-26
 author: verygoodopensource
 image: images/04ylubp836_tc4Nni.webp
-category: story
+category: case-study
 layout: blog
 ---
 

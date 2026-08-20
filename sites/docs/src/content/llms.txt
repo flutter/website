@@ -41,7 +41,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Retrieve the value of a text field](https://docs.flutter.dev/cookbook/forms/retrieve-input): Get the text a user has entered.
 - [Focus a text field](https://docs.flutter.dev/cookbook/forms/focus): Programmatically focus a text field.
 - [Basic list](https://docs.flutter.dev/cookbook/lists/basic-list): Create a simple scrolling list.
-- [Grid list](https://docs.flutter.dev/cookbook/lists/grid-list): Display items in a grid.
+- [Grid list](https://docs.flutter.dev/cookbook/lists/grid-lists): Display items in a grid.
 - [Horizontal list](https://docs.flutter.dev/cookbook/lists/horizontal-list): Create a list that scrolls horizontally.
 
 ## Adding interactivity & navigation
