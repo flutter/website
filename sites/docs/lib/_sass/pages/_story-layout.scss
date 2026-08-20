@@ -48,7 +48,6 @@ body.layout-story {
   #page-content article {
     max-width: 1240px;
     width: 100%;
-    padding-inline: clamp(1.25rem, 3.5vw, 3rem);
 
     >#site-content-title,
     >.site-breadcrumbs,
@@ -195,11 +194,7 @@ body.layout-story {
     margin: 0;
 
     h2 {
-      font-size: clamp(1.65rem, 2.5vw, 2.35rem);
       font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-      margin: 0;
     }
   }
 }

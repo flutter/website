@@ -8,18 +8,10 @@ description: >
   measuring AI tooling reliability.
 ---
 
-<!-- TODO: maybe remove, but KEEP AS COMKMENT FOR NOW -->
 <header class="methodology-hero">
-  <div class="hero-badge">
-    <span class="material-symbols">verified</span>
-    <span>Some nonsense!!!!</span>
-  </div>
-  <h3 class="hero-title">True nonsense</h3>
+  <h1 class="hero-title">FlutterBench methodology</h1>
   <p>
-    This is some generated nonsense, but it could be some smart cool text. 
-    Each task run produces a composite <code>reward.json</code> score on a
-    <strong>0.0 to 1.0 scale</strong>, synthesizing deterministic code
-    correctness, maintainability, and developer experience.
+    Learn about Dart and Flutter's evaluation frameworks for measuring AI tooling reliability.
   </p>
 </header>
 

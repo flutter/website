@@ -63,34 +63,11 @@ $transition-normal: 0.2s ease;
   color: $color-white;
   border-radius: var(--site-radius, $spacing-sm);
   padding: $spacing-xl;
-  margin-block: $spacing-lg $spacing-xl;
-  position: relative;
-  overflow: hidden;
   box-shadow: $shadow-hero;
 
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: $spacing-sm;
-    background: rgba(4, 104, 215, 0.25);
-    border: 1px solid rgba(184, 234, 254, 0.35);
-    color: #b8eafe;
-    font-size: $font-size-xs;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: $spacing-xs $spacing-sm;
-    border-radius: 9999px;
-    margin-bottom: $spacing-sm;
-
-    .material-symbols {
-      font-size: $font-size-md;
-    }
-  }
-
-  h3,
+  h1,
   .hero-title {
     color: $color-white;
-    font-size: $font-size-xl;
     font-weight: 700;
     margin: 0 0 $spacing-sm 0;
   }
