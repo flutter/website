@@ -84,7 +84,7 @@ disabling dithering (due to performance, crashes).
 
 If you must draw gradients without dithering, you can write a custom fragment
 shader. Describing how to write shaders is outside the scope of this migration
-guide. For more information, see
+guide. For more information, refer to
 [Writing and using fragment shaders](/ui/design/graphics/fragment-shaders).
 
 **NOTE**: Flutter web does not support dithering: [Issue 134250][].
