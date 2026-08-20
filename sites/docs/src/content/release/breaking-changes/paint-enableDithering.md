@@ -82,12 +82,10 @@ As the plan is to _permanently_ remove the `enableDithering` property, please
 provide feedback in [Issue 112498][] if you have a use case that requires
 disabling dithering (due to performance, crashes).
 
-If for some reason you _must_ draw gradients without dithering, you'll need to
-write your own custom shader. Describing that is out of the scope of this
-migration guide, but you can find some resources and examples:
-
-- [Writing and using fragment shaders][]
-- [`hsl_linear_gradient.frag`][]
+If you must draw gradients without dithering, you can write a custom fragment
+shader. Describing how to write shaders is outside the scope of this migration
+guide. For more information, see
+[Writing and using fragment shaders](/ui/design/graphics/fragment-shaders).
 
 **NOTE**: Flutter web does not support dithering: [Issue 134250][].
 
@@ -131,5 +129,3 @@ Relevant PRs:
 [Issue 112498]: {{site.repo.flutter}}/issues/112498
 [Issue 118073]: {{site.repo.flutter}}/issues/118073
 [Issue 134250]: {{site.repo.flutter}}/issues/134250
-[Writing and using fragment shaders]: /ui/design/graphics/fragment-shaders
-[`hsl_linear_gradient.frag`]: https://github.com/jonahwilliams/awesome_gradients/blob/a4e09c47ef1760bd7073beb60f49dad8ede5bb2e/shaders/hsl_linear_gradient.frag
