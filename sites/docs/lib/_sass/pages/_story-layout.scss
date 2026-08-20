@@ -205,7 +205,7 @@ body.layout-story {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: .5rem;
   width: 100%;
 
   // Body prose, lists, blockquotes, tables, notes centered in narrow column
@@ -222,7 +222,6 @@ body.layout-story {
     max-width: 800px;
     margin-inline: auto;
     line-height: 1.75;
-    font-size: 1.075rem;
   }
 
   >p.description {
@@ -254,22 +253,7 @@ body.layout-story {
     }
   }
 
-  // Interactive components break out symmetrically left and right
-  >.interactive-detail-card,
-  >.matrix-carousel,
-  >.comparison-cards-grid,
-  >.dimension-cards-grid,
-  >.spec-panels,
-  >.cuj-diagram-wrapper,
-  >.tabs-wrapper,
-  >.code-tabs,
-  >.ide-explorer-wrapper,
-  >.code-preview {
-    width: 100%;
-    max-width: 100%;
-    margin-inline: auto;
-    margin-block: 2.5rem;
-  }
+
 }
 }
 }

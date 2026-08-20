@@ -46,6 +46,7 @@ $border-width: 2px;
 $icon-size: 2.75rem;
 $btn-size: 2rem;
 $card-width: 280px;
+$bench-content-max-width: 1000px;
 
 // Shadows & Transitions
 $shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -53,6 +54,16 @@ $shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
 $shadow-hero: 0 4px 12px rgba(0, 0, 0, 0.2);
 $shadow-hero-dark: 0 4px 12px rgba(0, 0, 0, 0.4);
 $transition-normal: 0.2s ease;
+
+// -----------------------------------------------------------------------------
+// Mixins
+// -----------------------------------------------------------------------------
+
+@mixin bench-element-width($max-width: $bench-content-max-width) {
+  width: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
+}
 
 // -----------------------------------------------------------------------------
 // Component Styles
@@ -94,6 +105,7 @@ $transition-normal: 0.2s ease;
 
 // Three Core Dimensions Grid
 .dimension-cards-grid {
+  @include bench-element-width;
   margin-block: $spacing-lg $spacing-xl;
 
   .dimension-card {
@@ -199,6 +211,7 @@ $transition-normal: 0.2s ease;
 
 // Grader Matrix Carousel
 .grader-matrix {
+  @include bench-element-width;
   background-color: var(--site-inset-bgColor);
   border: 1px solid var(--site-inset-borderColor);
   border-radius: var(--site-radius, $spacing-sm);
@@ -448,6 +461,7 @@ $transition-normal: 0.2s ease;
 
 // Multi-Run Reliability
 .reliability-comparison-grid {
+  @include bench-element-width;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: $spacing-md;
@@ -547,6 +561,7 @@ $transition-normal: 0.2s ease;
 // Interactive Detail Card & Score Triage
 .interactive-detail-card,
 .score-triage {
+  @include bench-element-width;
   background-color: var(--site-inset-bgColor);
   border: 1px solid var(--site-inset-borderColor);
   border-radius: var(--site-radius, $spacing-sm);
@@ -844,6 +859,7 @@ $transition-normal: 0.2s ease;
 // Styled tables for FlutterBench pages
 #page-content:has(.methodology-hero, .grader-matrix, .dimension-cards-grid) {
   .table-wrapper:not(.task-specs-list *) {
+    @include bench-element-width;
     background-color: var(--site-base-bgColor);
     border: 1px solid var(--site-inset-borderColor);
     border-radius: var(--site-radius, $spacing-sm);
@@ -937,6 +953,7 @@ $transition-normal: 0.2s ease;
 
 // CUJ Diagram Component
 .cuj-diagram-card {
+  @include bench-element-width;
   background-color: var(--site-base-bgColor);
   border: 1px solid var(--site-inset-borderColor);
   border-radius: var(--site-radius, $spacing-md);
@@ -1066,6 +1083,7 @@ $transition-normal: 0.2s ease;
 
 // Task Specifications Expansion Panels
 .task-specs-list {
+  @include bench-element-width;
   background-color: var(--site-inset-bgColor);
   border: 1px solid var(--site-inset-borderColor);
   border-radius: var(--site-radius, $spacing-md);

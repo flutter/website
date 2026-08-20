@@ -15,7 +15,7 @@ cuj_example:
       - "I want to resolve layout overflow errors in UI component trees"
   - label: "Tasks"
     icon: "apps"
-    variant: "amber"
+    variant: "purple"
     items:
       - "I use the error messaging to identify widgets causing the layout overflow in the widget tree."
       - "I refactor the layout using flexible scrolling or bounding widgets to resolve the overflow error."
