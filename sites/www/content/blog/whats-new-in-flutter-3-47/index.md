@@ -232,7 +232,8 @@ and read our [previous blog post][spm-blog-post] for more details.
 This release also features optimized build times,
 thanks to community contributor [@lukemmtt](https://github.com/lukemmtt),
 who improved build pipelines by filtering out unnecessary SwiftPM package
-schemes early in the build process ([#186006](https://github.com/flutter/flutter/pull/186006)).
+schemes early in the build process
+([#186006](https://github.com/flutter/flutter/pull/186006)).
 
 ________________
 
@@ -361,7 +362,8 @@ Use the `--flavor` option to specify your flavor. For example:
 * `flutter build linux --flavor flavor_a`
 
 Thanks to [@AngeloAvv](https://github.com/AngeloAvv)
-for the wonderful contributions ([#187034](https://github.com/flutter/flutter/pull/187034),
+for the wonderful contributions
+([#187034](https://github.com/flutter/flutter/pull/187034),
 [#187029](https://github.com/flutter/flutter/pull/187029))!
 
 ### Sharper desktop text
@@ -471,7 +473,8 @@ added stylus rotation and pressure reporting
 In the engine, fragment shaders targeting OpenGLES no longer need
 conditional coordinate flipping when reading textures.
 This is now handled in the vertex shader.
-Consult the [OpenGLES render-to-texture breaking change page][opengles-breaking-change]
+Consult the
+[OpenGLES render-to-texture breaking change page][opengles-breaking-change]
 for more details.
 
 ### Framework polish
@@ -520,8 +523,10 @@ active scroll view, preventing auto-scrolling on locked lists.
 <DashImage figure src="images/edge_scroller_demo.gif" alt="EdgeDraggingAutoScroller demo" caption="EdgeDraggingAutoScroller demo" />
 
 **Core Widget enhancements:** Preserve original colors inside `ImageIcon`
-with `useOriginalColors: true` ([#180491](https://github.com/flutter/flutter/pull/180491)),
-specify clipping behavior in `AnimatedCrossFade` ([#184545](https://github.com/flutter/flutter/pull/184545)),
+with `useOriginalColors: true`
+([#180491](https://github.com/flutter/flutter/pull/180491)),
+specify clipping behavior in `AnimatedCrossFade`
+([#184545](https://github.com/flutter/flutter/pull/184545)),
 and track image stream errors directly with `ImageStreamListener`.
 
 ________________
