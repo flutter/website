@@ -20,6 +20,9 @@ void setUpSite() {
   _setUpPlatformKeys();
   _setUpToc();
   _setUpSteppers();
+  _setUpIdeExplorers();
+  _setUpGraderMatrix();
+  _setUpInteractiveDetailCards();
 }
 
 void _setUpSearchKeybindings() {
@@ -476,4 +479,342 @@ void _scrollTo(web.Element element, {required bool smooth}) {
       behavior: smooth ? 'smooth' : 'auto',
     ),
   );
+}
+
+/// Set up interactivity of the file/detail explorer created with
+/// the `<IdeExplorer>` custom component.
+void _setUpIdeExplorers() {
+  final explorers = web.document.querySelectorAll('.ide-explorer');
+  for (var i = 0; i < explorers.length; i++) {
+    _setUpIdeExplorer(explorers.item(i) as web.Element);
+  }
+}
+
+void _setUpIdeExplorer(web.Element explorer) {
+  void selectIdeNode(String domId) {
+    final selectTargets = explorer.querySelectorAll('[data-ide-select]');
+    web.Element? sidebarTarget;
+    for (var i = 0; i < selectTargets.length; i++) {
+      final target = selectTargets.item(i) as web.Element;
+      final isMatch = target.getAttribute('data-ide-select') == domId;
+      target.classList.toggle('active', isMatch);
+      if (isMatch && target.closest('.ide-tree') != null) {
+        sidebarTarget = target;
+      }
+    }
+
+    final panels = explorer.querySelectorAll('[data-ide-panel]');
+    for (var i = 0; i < panels.length; i++) {
+      final panel = panels.item(i) as web.Element;
+      panel.classList.toggle(
+        'active',
+        panel.getAttribute('data-ide-panel') == domId,
+      );
+    }
+
+    // Expand every ancestor folder so the selected item stays visible.
+    final ownDetails = sidebarTarget?.closest('details');
+    final isFolderSelf =
+        sidebarTarget?.parentElement?.tagName.toLowerCase() == 'summary';
+    var current = isFolderSelf ? ownDetails?.parentElement : ownDetails;
+    while (current != null) {
+      final ancestorDetails = current.closest('details');
+      if (ancestorDetails == null) break;
+      (ancestorDetails as web.HTMLDetailsElement).open = true;
+      current = ancestorDetails.parentElement;
+    }
+  }
+
+  void switchIdeRoot(String rootId) {
+    final tabs = explorer.querySelectorAll('.ide-root-tab');
+    for (var i = 0; i < tabs.length; i++) {
+      final tab = tabs.item(i) as web.Element;
+      tab.classList.toggle(
+        'active',
+        tab.getAttribute('data-ide-root') == rootId,
+      );
+    }
+
+    final trees = explorer.querySelectorAll('.ide-tree');
+    web.Element? activeTree;
+    for (var i = 0; i < trees.length; i++) {
+      final tree = trees.item(i) as web.Element;
+      final isMatch = tree.getAttribute('data-ide-root') == rootId;
+      tree.classList.toggle('active', isMatch);
+      if (isMatch) activeTree = tree;
+    }
+
+    final firstDomId = activeTree
+        ?.querySelector('[data-ide-select]')
+        ?.getAttribute('data-ide-select');
+    if (firstDomId != null) {
+      selectIdeNode(firstDomId);
+    }
+  }
+
+  void toggleAllIdeFolders() {
+    final activeTree =
+        explorer.querySelector('.ide-tree.active') ??
+        explorer.querySelector('.ide-tree');
+    if (activeTree == null) return;
+
+    final allDetails = activeTree.querySelectorAll('details');
+    var anyClosed = false;
+    for (var i = 0; i < allDetails.length; i++) {
+      if (!(allDetails.item(i) as web.HTMLDetailsElement).open) {
+        anyClosed = true;
+        break;
+      }
+    }
+
+    for (var i = 0; i < allDetails.length; i++) {
+      (allDetails.item(i) as web.HTMLDetailsElement).open = anyClosed;
+    }
+  }
+
+  void handleClick(web.Event event) {
+    final target = event.target as web.Element?;
+    if (target == null) return;
+
+    final selectTarget = target.closest('[data-ide-select]');
+    if (selectTarget != null) {
+      final domId = selectTarget.getAttribute('data-ide-select');
+      if (domId != null) selectIdeNode(domId);
+      event.preventDefault();
+      return;
+    }
+
+    final rootTab = target.closest('.ide-root-tab');
+    if (rootTab != null) {
+      final rootId = rootTab.getAttribute('data-ide-root');
+      if (rootId != null) switchIdeRoot(rootId);
+      return;
+    }
+
+    if (target.closest('[data-ide-toggle-all]') != null) {
+      toggleAllIdeFolders();
+    }
+  }
+
+  explorer.addEventListener('click', handleClick.toJS);
+}
+
+/// Set up interactivity for the FlutterBench grader matrix component.
+void _setUpGraderMatrix() {
+  final matrices = web.document.querySelectorAll('.grader-matrix');
+  for (var i = 0; i < matrices.length; i++) {
+    _setUpSingleGraderMatrix(matrices.item(i) as web.Element);
+  }
+}
+
+void _setUpSingleGraderMatrix(web.Element matrix) {
+  final buttons = matrix.querySelectorAll('.matrix-filters .filter-btn');
+  final cards = matrix.querySelectorAll('.grader-cards-track .grader-card');
+  final track = matrix.querySelector('.grader-cards-track') as web.HTMLElement?;
+  final prevBtn =
+      matrix.querySelector('.carousel-nav-btn.prev') as web.HTMLElement?;
+  final nextBtn =
+      matrix.querySelector('.carousel-nav-btn.next') as web.HTMLElement?;
+
+  if (track == null) return;
+
+  List<web.HTMLElement> getVisibleCards() {
+    final list = <web.HTMLElement>[];
+    for (var i = 0; i < cards.length; i++) {
+      final card = cards.item(i) as web.HTMLElement;
+      if (!card.classList.contains('hidden')) {
+        list.add(card);
+      }
+    }
+    return list;
+  }
+
+  void scrollNext() {
+    final visibleCards = getVisibleCards();
+    if (visibleCards.isEmpty) return;
+
+    final maxScroll = track.scrollWidth - track.clientWidth;
+    final currentScroll = track.scrollLeft;
+
+    // Find the first visible card that starts after currentScroll + 10px.
+    var scrolled = false;
+    for (final card in visibleCards) {
+      final cardOffset = card.offsetLeft - track.offsetLeft;
+      if (cardOffset > currentScroll + 10) {
+        track.scrollTo(
+          web.ScrollToOptions(
+            left: cardOffset.toDouble(),
+            behavior: 'smooth',
+          ),
+        );
+        scrolled = true;
+        break;
+      }
+    }
+
+    // If already at or near the end, rotate back to the start.
+    if (!scrolled || currentScroll >= maxScroll - 10) {
+      track.scrollTo(
+        web.ScrollToOptions(
+          left: 0,
+          behavior: 'smooth',
+        ),
+      );
+    }
+  }
+
+  void scrollPrev() {
+    final visibleCards = getVisibleCards();
+    if (visibleCards.isEmpty) return;
+
+    final maxScroll = track.scrollWidth - track.clientWidth;
+    final currentScroll = track.scrollLeft;
+
+    // If at or near the beginning, rotate to the end.
+    if (currentScroll <= 10) {
+      track.scrollTo(
+        web.ScrollToOptions(
+          left: maxScroll.toDouble(),
+          behavior: 'smooth',
+        ),
+      );
+      return;
+    }
+
+    // Find the last visible card that starts before currentScroll - 10px.
+    for (var i = visibleCards.length - 1; i >= 0; i--) {
+      final card = visibleCards[i];
+      final cardOffset = card.offsetLeft - track.offsetLeft;
+      if (cardOffset < currentScroll - 10) {
+        track.scrollTo(
+          web.ScrollToOptions(
+            left: cardOffset.toDouble(),
+            behavior: 'smooth',
+          ),
+        );
+        return;
+      }
+    }
+
+    track.scrollTo(
+      web.ScrollToOptions(
+        left: 0,
+        behavior: 'smooth',
+      ),
+    );
+  }
+
+  if (nextBtn != null) {
+    nextBtn.addEventListener(
+      'click',
+      ((web.Event e) {
+        e.preventDefault();
+        scrollNext();
+      }).toJS,
+    );
+  }
+
+  if (prevBtn != null) {
+    prevBtn.addEventListener(
+      'click',
+      ((web.Event e) {
+        e.preventDefault();
+        scrollPrev();
+      }).toJS,
+    );
+  }
+
+  for (var i = 0; i < buttons.length; i++) {
+    final btn = buttons.item(i) as web.HTMLElement;
+    final filter = btn.dataset['filter'];
+
+    void handleClick(web.Event event) {
+      event.preventDefault();
+      for (var j = 0; j < buttons.length; j++) {
+        (buttons.item(j) as web.Element).classList.remove('active');
+      }
+      btn.classList.add('active');
+
+      for (var k = 0; k < cards.length; k++) {
+        final card = cards.item(k) as web.HTMLElement;
+        if (filter == 'all') {
+          card.classList.remove('hidden');
+        } else if (filter == 'llm') {
+          card.classList.toggle('hidden', !card.classList.contains('cat-llm'));
+        } else if (filter == 'deterministic') {
+          card.classList.toggle(
+            'hidden',
+            !card.classList.contains('cat-deterministic'),
+          );
+        } else {
+          card.classList.toggle(
+            'hidden',
+            !card.classList.contains('cat-$filter'),
+          );
+        }
+      }
+
+      // Reset scroll position to beginning on filter change.
+      track.scrollTo(
+        web.ScrollToOptions(
+          left: 0,
+          behavior: 'smooth',
+        ),
+      );
+    }
+
+    btn.addEventListener('click', handleClick.toJS);
+  }
+}
+
+/// Set up interactivity for FlutterBench interactive detail cards
+/// (e.g. ScoreTriage and EvaluationMatrix).
+void _setUpInteractiveDetailCards() {
+  final cards = web.document.querySelectorAll(
+    '.interactive-detail-card, .score-triage',
+  );
+  for (var i = 0; i < cards.length; i++) {
+    _setUpSingleInteractiveDetailCard(cards.item(i) as web.Element);
+  }
+}
+
+void _setUpSingleInteractiveDetailCard(web.Element card) {
+  final buttons = card.querySelectorAll(
+    '.card-tabs-grid .card-tab-btn, .triage-tiers-grid .triage-tier-btn',
+  );
+  final panels = card.querySelectorAll(
+    '.card-panels-container .card-panel, .triage-detail-card .triage-panel',
+  );
+  final detailCard = card.querySelector(
+    '.card-panels-container, .triage-detail-card',
+  ) as web.HTMLElement?;
+
+  for (var i = 0; i < buttons.length; i++) {
+    final btn = buttons.item(i) as web.HTMLElement;
+    final tabAttr = btn.dataset['tab'];
+    final tabId = tabAttr.isNotEmpty ? tabAttr : btn.dataset['tier'];
+
+    void handleClick(web.Event event) {
+      event.preventDefault();
+      for (var j = 0; j < buttons.length; j++) {
+        (buttons.item(j) as web.Element).classList.remove('active');
+      }
+      btn.classList.add('active');
+
+      for (var k = 0; k < panels.length; k++) {
+        final panel = panels.item(k) as web.HTMLElement;
+        final panelTabAttr = panel.dataset['tab'];
+        final panelId = panelTabAttr.isNotEmpty
+            ? panelTabAttr
+            : panel.dataset['tier'];
+        panel.classList.toggle('active', panelId == tabId);
+      }
+
+      if (detailCard != null) {
+        detailCard.scrollTop = 0;
+      }
+    }
+
+    btn.addEventListener('click', handleClick.toJS);
+  }
 }

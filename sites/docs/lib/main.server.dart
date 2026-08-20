@@ -8,6 +8,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
 import 'package:site_shared/components/common/card.dart';
+import 'package:site_shared/components/common/ide_explorer/markdown_component.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/common/tabs.dart';
 import 'package:site_shared/components/common/youtube_embed.dart';
@@ -27,13 +28,16 @@ import 'src/components/common/code_preview.dart';
 import 'src/components/common/dash_image.dart';
 import 'src/components/pages/architecture_recommendations.dart';
 import 'src/components/pages/archive_table.dart';
+import 'src/components/pages/cuj_index.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
+import 'src/components/pages/flutter_bench_components.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/pages/platforms_grid.dart';
 import 'src/components/pages/widget_catalog.dart';
 import 'src/extensions/registry.dart';
 import 'src/layouts/doc_layout.dart';
+import 'src/layouts/story_layout.dart';
 import 'src/layouts/toc_layout.dart';
 import 'src/layouts/tutorial_layout.dart';
 import 'src/loaders/data_processor.dart';
@@ -77,6 +81,7 @@ Component get _docsFlutterDevSite => ContentApp.custom(
     components: _embeddableComponents,
     layouts: const [
       DocLayout(),
+      StoryLayout(),
       TocLayout(),
       TutorialLayout(),
     ],
@@ -99,6 +104,7 @@ List<CustomComponent> get _embeddableComponents => [
   const CodePreview(),
   const YoutubeEmbed(),
   const FileTree(),
+  const IdeExplorerMarkdownComponent(),
   const Quiz(),
   const ProgressRing(),
   const SummaryCard(),
@@ -116,6 +122,15 @@ List<CustomComponent> get _embeddableComponents => [
   defineComponent('OSSelector', const OsSelector()),
   defineComponentWithChild('Card', Card.fromAttributes),
   defineComponent('LearningResourceIndex', const LearningResourceIndex()),
+  defineComponent('CujIndex', const CujIndex()),
+  defineComponent('ThreeDimensionsCards', const ThreeDimensionsCards()),
+  defineComponent('GraderMatrix', const GraderMatrix()),
+  defineComponent('ReliabilityCards', const ReliabilityCards()),
+  defineComponent('ScoreTriage', const ScoreTriage()),
+  defineComponent('EvaluationMatrix', const EvaluationMatrixTabs()),
+  defineComponent('EvaluationMatrixTabs', const EvaluationMatrixTabs()),
+  defineComponent('CujDiagram', const CujDiagram()),
+  defineComponent('TaskSpecifications', const TaskSpecifications()),
   defineComponentWithAttrs('ArchiveTable', ArchiveTable.fromAttributes),
   defineComponentWithAttrs(
     'DownloadLatestButton',

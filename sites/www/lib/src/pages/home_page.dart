@@ -214,8 +214,7 @@ class HomePage extends StatelessComponent {
                     ]),
                     a(
                       classes: 'btn',
-                      href:
-                          'https://dartpad.dev/?id=e66e420f2f0201c772f73819711bf290',
+                      href: 'https://dartpad.dev/?id=e66e420f2f0201c772f73819711bf290',
                       attributes: {'target': '_blank'},
                       [.text('Try it in DartPad')],
                     ),
@@ -257,8 +256,7 @@ class HomePage extends StatelessComponent {
                     ]),
                     a(
                       classes: 'btn',
-                      href:
-                          'https://dartpad.dev/?id=bbd3f10c2593f0add04dd770318b33f7',
+                      href: 'https://dartpad.dev/?id=bbd3f10c2593f0add04dd770318b33f7',
                       attributes: {'target': '_blank'},
                       [.text('Try it in DartPad')],
                     ),
@@ -299,8 +297,7 @@ class HomePage extends StatelessComponent {
                     ]),
                     a(
                       classes: 'btn',
-                      href:
-                          'https://dartpad.dev/?id=1ab1b78a18039bbbd5cfbb4b835b5b8d',
+                      href: 'https://dartpad.dev/?id=1ab1b78a18039bbbd5cfbb4b835b5b8d',
                       attributes: {'target': '_blank'},
                       [.text('Try it in DartPad')],
                     ),

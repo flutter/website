@@ -14,6 +14,7 @@
 @use 'components/content';
 @use 'components/expansion-list';
 @use 'components/filter-search';
+@use 'components/filterable-index';
 @use 'components/footer';
 @use 'components/header';
 @use 'components/icons';
@@ -37,6 +38,7 @@
 @use 'package:site_shared/_sass/components/code';
 @use 'package:site_shared/_sass/components/cookie-notice';
 @use 'package:site_shared/_sass/components/dropdown';
+@use 'package:site_shared/_sass/components/ide-explorer';
 @use 'package:site_shared/_sass/components/menu-toggle';
 @use 'package:site_shared/_sass/components/progress-ring';
 @use 'package:site_shared/_sass/components/quiz';
@@ -48,10 +50,13 @@
 @use 'package:site_shared/_sass/components/tooltip';
 
 // Styles for specific pages, alphabetically ordered.
+@use 'pages/cuj-index';
+@use 'pages/flutter-bench';
 @use 'pages/glossary';
 @use 'pages/learning-resources-index';
 @use 'pages/not-found';
 @use 'pages/search';
+@use 'pages/story-layout';
 
 // Must be imported last to ensure that
 // the print overrides take priority over earlier defined styles.
