@@ -200,7 +200,8 @@ However, manual migration is required
 if you have custom native code in your `AppDelegate` or use plugins
 that still rely on the legacy application lifecycle.
 In those cases,
-you must migrate manually by following the UIScene/Delegate Adoption Guide.
+you must migrate manually
+by following the [UIScene/Delegate Adoption Guide][uiscene-guide].
 
 ### Phasing out Intel Macs
 
@@ -281,7 +282,7 @@ them dynamically at runtime.
 This eliminates the brief stutter, called shader compilation jank,
 the first time an animation plays,
 delivering consistently smooth transitions from the very first frame.
-Learn more in the Impeller rendering engine documentation.
+Learn more in the [Impeller rendering engine documentation][impeller-doc].
 
 If you need to temporarily opt out of Impeller, follow these steps:
 
@@ -356,10 +357,7 @@ Use the `--flavor` option to specify your flavor. For example:
 * `flutter build linux --flavor flavor_a`
 
 Thanks to [@AngeloAvv](https://github.com/AngeloAvv)
-for the wonderful contributions!
-
-* https://github.com/flutter/flutter/pull/187034
-* https://github.com/flutter/flutter/pull/187029
+for the wonderful contributions ([#187034](https://github.com/flutter/flutter/pull/187034), [#187029](https://github.com/flutter/flutter/pull/187029))!
 
 ### Sharper desktop text
 
@@ -464,7 +462,8 @@ added stylus rotation and pressure reporting.
 In the engine, fragment shaders targeting OpenGLES no longer need
 conditional coordinate flipping when reading textures.
 This is now handled in the vertex shader.
-See the OpenGLES render-to-texture breaking change page for more details.
+Consult the [OpenGLES render-to-texture breaking change page][opengles-breaking-change]
+for more details.
 
 ### Framework polish
 
@@ -509,9 +508,9 @@ active scroll view, preventing auto-scrolling on locked lists.
 <DashImage figure src="images/edge_scroller_demo.gif" alt="EdgeDraggingAutoScroller demo" caption="EdgeDraggingAutoScroller demo" />
 
 **Core Widget enhancements:** Preserve original colors inside `ImageIcon`
-with `useOriginalColors: true`, specify clipping behavior
-in `AnimatedCrossFade`, and track image stream errors directly
-with `ImageStreamListener`.
+with `useOriginalColors: true` ([#180491](https://github.com/flutter/flutter/pull/180491)),
+specify clipping behavior in `AnimatedCrossFade` ([#184545](https://github.com/flutter/flutter/pull/184545)),
+and track image stream errors directly with `ImageStreamListener`.
 
 ________________
 
@@ -540,3 +539,6 @@ with this new and improved version of Flutter!
 [breaking-changes-page]: https://docs.flutter.dev/release/breaking-changes
 [migration-guide]: https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors
 [spm-blog-post]: /blog/saying-goodbye-to-cocoapods-swift-package-manager-is-soon-the-default-in-flutter
+[uiscene-guide]: https://docs.flutter.dev/release/breaking-changes/uiscene-lifecycle-ios
+[impeller-doc]: https://docs.flutter.dev/perf/impeller
+[opengles-breaking-change]: https://docs.flutter.dev/release/breaking-changes/opengles-render-to-texture
