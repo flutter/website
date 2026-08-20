@@ -77,7 +77,7 @@ Future<int> _checkLinks({
       '--only',
       'hosting',
       '--project',
-      'default',
+      site.defaultFirebaseProjectId,
       '--config',
       firebaseConfigFileName,
       '--log-verbosity',
