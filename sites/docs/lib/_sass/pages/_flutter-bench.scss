@@ -64,7 +64,8 @@ $transition-normal: 0.2s ease;
 @mixin bench-element-width($max-width: $bench-content-max-width) {
   width: 100%;
   max-width: $max-width;
-  margin-inline: auto;
+  margin-left: $spacing-sm;
+  margin-right: $spacing-sm;
 }
 
 // Consistent scrollbar styling across components
@@ -287,6 +288,7 @@ $transition-normal: 0.2s ease;
 // Three Core Dimensions Grid
 .dimension-cards-grid {
   @include bench-element-width;
+  max-width: 700px;
   margin-block: $spacing-lg $spacing-xl;
 
   .dimension-card {
