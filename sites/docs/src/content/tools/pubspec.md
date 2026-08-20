@@ -703,7 +703,7 @@ dependencies:
     sdk: flutter
 ```
 
-### flutter_localizations package {: #flutter_localizations }
+### flutter_localizations package {: #flutter-localizations }
 
 A package provided by the Flutter SDK that enables
 localization of `ARB` files. Often used with the `intl` package.
