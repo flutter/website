@@ -1,6 +1,8 @@
+@use '../base/breakpoints';
+
 // Toggle between menu and close buttons if sidenav is open or not.
 body:not(.sidenav-closed) #menu-toggle {
-  @media (min-width: 1024px) {
+  @include breakpoints.screen(lg) {
     display: none;
   }
 }

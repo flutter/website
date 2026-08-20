@@ -1,6 +1,7 @@
 @use 'sass:map';
 
 $breakpoints: (
+<<<<<<< HEAD
         'sm': 640px,
         'md': 768px,
         'lg': 1024px,
@@ -11,6 +12,22 @@ $breakpoints: (
 );
 
 @mixin screen($name) {
+=======
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  'max': 1440px,
+  '2xl': 1536px,
+  '3xl': 1920px,
+);
+
+/// Emits a minimum-width media query for the specified named breakpoint.
+///
+/// @param {string} $name - A key in `$breakpoints`.
+/// @content Styles to emit at or above the breakpoint width.
+@mixin screen($breakpoint-name) {
+>>>>>>> b3f6aeb09d7e180c8ddadd9ed376904f612d0dce
   $value: map.get($breakpoints, $name);
   @if $value == null {
     @error 'Unknown breakpoint: #{$name}';
@@ -20,12 +37,28 @@ $breakpoints: (
   }
 }
 
+<<<<<<< HEAD
 @mixin screen-below($name) {
+=======
+/// Emits a max-width media query that ends just below
+/// the specified named breakpoint.
+///
+/// @param {string} $name - A key in `$breakpoints`.
+/// @content Styles to emit below the breakpoint width.
+@mixin screen-below($breakpoint-name) {
+>>>>>>> b3f6aeb09d7e180c8ddadd9ed376904f612d0dce
   $value: map.get($breakpoints, $name);
   @if $value == null {
     @error 'Unknown breakpoint: #{$name}';
   }
+<<<<<<< HEAD
   @media (max-width: $value - 1px) {
     @content;
   }
 }
+=======
+  @media (max-width: $value - 0.02px) {
+    @content;
+  }
+}
+>>>>>>> b3f6aeb09d7e180c8ddadd9ed376904f612d0dce
