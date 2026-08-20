@@ -216,8 +216,8 @@ class TrafficLightMachine extends StateMachine<TrafficLightModel> {
 
 The point of all this was more to produce a set of reusable skills for myself
 rather than to create and publish a new Dart package.
-I'm not in a position to watch for reported issues and maintain this over time,
-I can't vouch for all of the code that was created (though it worked when I've
+I'm not in a position to watch for reported issues and maintain this over time.
+I can't vouch for all of the code that was created (though it worked when I
 tested it),
 and there are already several well-maintained packages in the ecosystem.
 Hopefully, though,
