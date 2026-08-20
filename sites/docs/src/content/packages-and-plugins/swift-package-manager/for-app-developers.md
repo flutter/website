@@ -87,7 +87,8 @@ To remove CocoaPods from your project:
 
 1. Check your configuration files:
 
-   In `ios/Flutter/Debug.xcconfig` and `ios/Flutter/Release.xcconfig`
+   In `ios/Flutter/Debug.xcconfig`, `ios/Flutter/Profile.xcconfig`,
+   and `ios/Flutter/Release.xcconfig`
    (and macOS equivalents under `macos/Flutter/`),
    remove any `#include` lines referencing `Pods/Target Support Files`
    or CocoaPods `.xcconfig` files if they are still present.
