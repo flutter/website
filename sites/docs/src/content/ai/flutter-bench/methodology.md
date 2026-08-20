@@ -7,7 +7,7 @@ description: >
   measuring AI tooling reliability.
 ---
 
-<!-- TODO: maybe remove, but KEEP AS COMKMENT FOR NOW
+<!-- TODO: maybe remove, but KEEP AS COMKMENT FOR NOW -->
 <div class="methodology-hero">
   <div class="hero-badge">
     <span class="material-symbols">verified</span>
@@ -19,7 +19,7 @@ description: >
     <strong>0.0 to 1.0 scale</strong>, synthesizing deterministic code
     correctness, maintainability, and developer experience.
   </p>
-</div> -->
+</div>
 
 ## Methodology overview
 
