@@ -329,7 +329,11 @@ in your `gradle.properties` file:
 ```
 
 :::version-note
-Enabling built-in Kotlin requires Flutter 3.47 or later.
+Enabling built-in Kotlin (`android.builtInKotlin=true`)
+requires Flutter 3.47 or later.
+Flutter 3.44 added support for AGP 9 with built-in Kotlin disabled
+(`android.builtInKotlin=false`),
+while enabling built-in Kotlin requires Flutter 3.47 or later.
 :::
 
 After enabling built-in Kotlin,

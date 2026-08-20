@@ -199,10 +199,19 @@ kotlin {
 Using the `kotlin.compilerOptions {}` DSL block requires
 a minimum Kotlin Gradle Plugin (KGP) version of 2.0.0.
 Beginning with Flutter 3.44, the minimum required KGP version is 2.0.0.
-To ensure that apps using your plugin can safely migrate to built-in Kotlin,
-you should require a minimum Flutter version of 3.44 for this plugin version.
+To ensure that apps using your plugin can build on AGP 9,
+require a minimum Flutter version of 3.44 for this plugin version.
+This allows apps using your plugin to build on AGP 9 with
+built-in Kotlin disabled (`android.builtInKotlin=false`).
 
-Since you are updating the minimum Flutter version,
+:::note
+Setting the plugin's minimum Flutter version to 3.44 allows
+apps using your plugin to build on AGP 9 with built-in Kotlin disabled.
+Enabling built-in Kotlin (`android.builtInKotlin=true`)
+in the plugin's example app requires Flutter 3.47 or later.
+:::
+
+Because you are updating the minimum Flutter version,
 you must also update the minimum associated Dart version.
 
 Update the minimum Flutter version and the minimum Dart version:
@@ -452,7 +461,11 @@ in your `gradle.properties` file:
 ```
 
 :::version-note
-Enabling built-in Kotlin requires Flutter 3.47 or later.
+Enabling built-in Kotlin (`android.builtInKotlin=true`)
+requires Flutter 3.47 or later.
+Flutter 3.44 added support for AGP 9 with built-in Kotlin disabled
+(`android.builtInKotlin=false`),
+while enabling built-in Kotlin requires Flutter 3.47 or later.
 :::
 
 After enabling built-in Kotlin,

@@ -23,11 +23,15 @@ To use AGP 9 and later, the following migrations are required.
 First, built-in Kotlin is the default in AGP 9 and later.
 Apps that use the `kotlin-android` plugin,
 also known as the Kotlin Gradle Plugin (KGP),
-will fail to build ([Issue #181383][]).
-However, the Flutter team has added temporary support for the legacy
-Kotlin Gradle Plugin in AGP 9 and later ([Issue #183909][]).
-This allows app and plugin developers to safely build their projects
-regardless of their migration state.
+fail to build without migration ([Issue #181383][]).
+Flutter 3.44 added temporary support for the legacy
+Kotlin Gradle Plugin in AGP 9 and later with `android.builtInKotlin=false`
+([Issue #183909][]).
+This allows app and plugin developers to build their projects
+while migrating off KGP.
+Flutter 3.47 added support for enabling built-in Kotlin
+(`android.builtInKotlin=true`)
+once an app and all its plugins have migrated.
 
 Second, AGP 9 and later only use the new AGP DSL interfaces.
 This means any old DSL types will not be recognized.
