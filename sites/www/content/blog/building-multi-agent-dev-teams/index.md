@@ -150,7 +150,7 @@ Python and Dart handle types differently,
 and things that are iterable by default in Python aren't necessarily so in Dart.
 I had to add some explicit instructions on things that needed to implement
 `Iterable` as a result.
-- **"Foreign-Accented" Dynamic Typing**: Here again,
+- **"Foreign-accented" dynamic typing**: Here again,
 the different type systems caused problems.
 The original Python library used `hasattr` checks in a few places.
 I had to refine `tdd-dart-architect/SKILL.md` to force the Architect to use
