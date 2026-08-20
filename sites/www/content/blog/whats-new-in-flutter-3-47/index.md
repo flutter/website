@@ -232,7 +232,7 @@ and read our [previous blog post][spm-blog-post] for more details.
 This release also features optimized build times,
 thanks to community contributor [@lukemmtt](https://github.com/lukemmtt),
 who improved build pipelines by filtering out unnecessary SwiftPM package
-schemes early in the build process.
+schemes early in the build process ([#186006](https://github.com/flutter/flutter/pull/186006)).
 
 ________________
 
@@ -304,14 +304,17 @@ In partnership with Canonical,
 and thanks to maintainers [@robert-ancell](https://github.com/robert-ancell)
 and [@mattkae](https://github.com/mattkae),
 we are expanding our experimental desktop windowing APIs.
-Linux and Windows now support popup windows,
+Linux and Windows now support popup windows
+([#185866](https://github.com/flutter/flutter/pull/185866),
+[#184516](https://github.com/flutter/flutter/pull/184516)),
 allowing you to build native context menus and utility palettes.
 
 <DashImage figure src="images/popup_windows.png" alt="Popup windows on Win32" caption="Popup windows on Win32" />
 
 You can also now query `windowHandle` on platform-specific controllers
 to get a direct pointer to the underlying native window
-(`HWND`, `NSWindow`, or `GtkWindow`).
+(`HWND`, `NSWindow`, or `GtkWindow`)
+([#184662](https://github.com/flutter/flutter/pull/184662)).
 This enables advanced native feature access like dockable panes on Windows,
 such as this dockable panes demo contributed by
 [@orestesgaolin](https://github.com/orestesgaolin):
@@ -321,17 +324,22 @@ such as this dockable panes demo contributed by
 We also resolved several window focus and realization bugs.
 On Windows, activating a window no longer pulls background windows forward
 or steals focus back on app resume,
-courtesy of contributor [@9AZX](https://github.com/9AZX):
+courtesy of contributor [@9AZX](https://github.com/9AZX)
+([#188016](https://github.com/flutter/flutter/pull/188016)):
 
 <DashImage figure src="images/focus_realization_fix.gif" alt="Window focus and realization fix on Windows" caption="Window focus and realization fix" />
 
 On Linux,
 multi-window creation now explicitly realizes windows before they receive their
-first frame from the compositor, fixing early rendering warnings
-and compositor assertions.
+first frame from the compositor
+([#184956](https://github.com/flutter/flutter/pull/184956)),
+fixing early rendering warnings and compositor assertions.
 
-We also added a new sized-to-content API that lets you create regular
-and dialog windows that are automatically sized to fit their content.
+We also added a new sized-to-content API
+([#184977](https://github.com/flutter/flutter/pull/184977),
+[#186829](https://github.com/flutter/flutter/pull/186829))
+that lets you create regular and dialog windows that are automatically
+sized to fit their content.
 
 ### Flavors for desktop
 
@@ -440,27 +448,33 @@ with the following default values:
 
 For iOS developers, code signing is now more transparent.
 Thanks to community member [@alex-medinsh](https://github.com/alex-medinsh),
-the CLI displays both the Team ID and Team Name when selecting a certificate.
+the CLI displays both the Team ID and Team Name when selecting a certificate
+([#184665](https://github.com/flutter/flutter/pull/184665)).
 
 Additionally, community member
 [@mozammal-hossain](https://github.com/mozammal-hossain)
 improved troubleshooting by providing clearer provisioning profile
-error messages when signing fails.
+error messages when signing fails
+([#184051](https://github.com/flutter/flutter/pull/184051)).
 
 ### Desktop
 
 Desktop platforms also received targeted refinements.
 Caret positioning for Korean text composition is resolved on Windows
-(thanks to [@CHOIgoung](https://github.com/CHOIgoung)),
+(thanks to [@CHOIgoung](https://github.com/CHOIgoung),
+[#186353](https://github.com/flutter/flutter/pull/186353)),
 and Windows plugins can now move expensive tasks off the platform thread
-using `FlutterEngine::PostPlatformThreadTask`.
+using `FlutterEngine::PostPlatformThreadTask`
+([#187365](https://github.com/flutter/flutter/pull/187365)).
 On Linux, [@CodeDoctorDE](https://github.com/CodeDoctorDE)
-added stylus rotation and pressure reporting.
+added stylus rotation and pressure reporting
+([#186831](https://github.com/flutter/flutter/pull/186831)).
 
 ### Graphics and engine
 
 In the engine, fragment shaders targeting OpenGLES no longer need
-conditional coordinate flipping when reading textures.
+conditional coordinate flipping when reading textures
+([#187247](https://github.com/flutter/flutter/pull/187247)).
 This is now handled in the vertex shader.
 Consult the [OpenGLES render-to-texture breaking change page][opengles-breaking-change]
 for more details.
@@ -473,44 +487,53 @@ with improvements split across key components:
 **Accessibility and semantics:** Android high-contrast and color inversion
 settings are now detected automatically,
 thanks to [@xxxOVALxxx](https://github.com/xxxOVALxxx)
-(`MediaQueryData.highContrast` and `MediaQueryData.invertColors`).
+(`MediaQueryData.highContrast` and `MediaQueryData.invertColors`,
+[#182263](https://github.com/flutter/flutter/pull/182263)).
 Nested text spans inside `Text.rich` now match their layout sequence
-in the semantics tree,
-and keyboard focus blocking is added for `BlockSemantics`.
+in the semantics tree ([#186116](https://github.com/flutter/flutter/pull/186116)),
+and keyboard focus blocking is added for `BlockSemantics`
+([#186206](https://github.com/flutter/flutter/pull/186206)).
 
 <DashImage figure src="images/android_accessibility.gif" alt="Android accessibility settings" caption="Android accessibility settings" />
 
 **Text and selection:** Text selection handles on mobile now remain stable
-during minor scrolling,
-and keyboard shortcuts can now dismiss open selection menus.
+during minor scrolling ([#185054](https://github.com/flutter/flutter/pull/185054)),
+and keyboard shortcuts can now dismiss open selection menus
+([#184788](https://github.com/flutter/flutter/pull/184788)).
 On Android, selection handles no longer obscure the context menu
 when positioned near the top of the screen,
-thanks to [@JhonaCodes](https://github.com/JhonaCodes).
+thanks to [@JhonaCodes](https://github.com/JhonaCodes)
+([#182663](https://github.com/flutter/flutter/pull/182663)).
 
 | BEFORE | AFTER |
 | :---: | :---: |
 | <DashImage src="images/selection_handle_before.gif" alt="Selection handles overlapping menu" /> | <DashImage src="images/selection_handle_after.gif" alt="Selection handles correctly placed" /> |
 
 We also fixed a crash in `SelectableRegion` when selection began
-in an empty scrollable container,
+in an empty scrollable container
+([#184420](https://github.com/flutter/flutter/pull/184420)),
 and resolved visual highlight artifacts on faded selectable text,
-thanks to [@ikramhasan](https://github.com/ikramhasan).
+thanks to [@ikramhasan](https://github.com/ikramhasan)
+([#183628](https://github.com/flutter/flutter/pull/183628)).
 
 | BEFORE | AFTER |
 | :---: | :---: |
 | <DashImage src="images/copy_highlight_before.png" alt="Before highlight" /> | <DashImage src="images/copy_highlight_after.png" alt="After highlight" /> |
 
 **Gestures and scrolling:** Improved gesture propagation
-for native iOS views embedded via platform views.
+for native iOS views embedded via platform views
+([#185126](https://github.com/flutter/flutter/pull/185126)).
 `EdgeDraggingAutoScroller` now respects the `ScrollPhysics` of the
-active scroll view, preventing auto-scrolling on locked lists.
+active scroll view, preventing auto-scrolling on locked lists
+([#186541](https://github.com/flutter/flutter/pull/186541)).
 
 <DashImage figure src="images/edge_scroller_demo.gif" alt="EdgeDraggingAutoScroller demo" caption="EdgeDraggingAutoScroller demo" />
 
 **Core Widget enhancements:** Preserve original colors inside `ImageIcon`
 with `useOriginalColors: true` ([#180491](https://github.com/flutter/flutter/pull/180491)),
 specify clipping behavior in `AnimatedCrossFade` ([#184545](https://github.com/flutter/flutter/pull/184545)),
-and track image stream errors directly with `ImageStreamListener`.
+and track image stream errors directly with `ImageStreamListener`
+([#180327](https://github.com/flutter/flutter/pull/180327)).
 
 ________________
 
