@@ -1,8 +1,6 @@
 @use 'package:site_shared/_sass/base/mixins';
 
-// The learning resources index shares its two column layout, search field,
-// and filter sidebar with the critical user journey index, so those styles
-// live in `_filterable-index.scss`.
+// Shared styles live in `_filterable-index.scss`.
 
 #all-resources-grid {
   margin-block-start: 1rem;
