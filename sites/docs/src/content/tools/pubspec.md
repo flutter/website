@@ -482,7 +482,7 @@ flutter:
 
 ### generate field {: #generate }
 
-Enables generation of localized strings and assets from `.arb` files.
+Enables generation of Dart files with localized strings from `.arb` files.
 
 Enable general localization:
 
