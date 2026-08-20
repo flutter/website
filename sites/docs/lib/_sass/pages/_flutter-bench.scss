@@ -8,15 +8,17 @@
 // -----------------------------------------------------------------------------
 
 // Core Category Colors
-$color-outcome: #059669;
-$color-quality: #6366f1;
-$color-dx: #d97706;
-$color-functional: #0284c7;
-$color-llm: #7c3aed;
-$color-heuristic: #2563eb;
-$color-poor: #ea580c;
-$color-failure: #e11d48;
-$color-grey: #64748b;
+// NOTE: These colors are intentionally coordinated with _story-layout.scss
+// chapter accent colors to maintain visual consistency across FlutterBench pages
+$color-outcome: #059669;     // Green - successful outcomes
+$color-quality: #6366f1;     // Indigo - code quality metrics
+$color-dx: #d97706;          // Amber - developer experience
+$color-functional: #0284c7;  // Sky blue - functional correctness
+$color-llm: #7c3aed;         // Violet - LLM grading
+$color-heuristic: #2563eb;   // Blue - heuristic grading
+$color-poor: #ea580c;        // Orange - poor performance
+$color-failure: #e11d48;     // Rose - failures
+$color-grey: #64748b;        // Slate - neutral/baseline
 
 // Hero & Special Colors
 $color-white: #ffffff;
@@ -44,7 +46,6 @@ $spacing-xl: 2rem;
 // Dimensions & Layout
 $border-width: 2px;
 $icon-size: 2.75rem;
-$btn-size: 2rem;
 $card-width: 280px;
 $bench-content-max-width: 1000px;
 
@@ -59,10 +60,190 @@ $transition-normal: 0.2s ease;
 // Mixins
 // -----------------------------------------------------------------------------
 
+// Centers content with consistent max-width
 @mixin bench-element-width($max-width: $bench-content-max-width) {
   width: 100%;
   max-width: $max-width;
   margin-inline: auto;
+}
+
+// Consistent scrollbar styling across components
+@mixin custom-scrollbar($orientation: 'vertical') {
+  scrollbar-width: thin;
+  scrollbar-color: var(--site-inset-borderColor) transparent;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    @if $orientation == 'horizontal' {
+      height: 6px;
+    } @else {
+      width: 6px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--site-inset-borderColor);
+    border-radius: 3px;
+  }
+}
+
+// Category badge styling with optional border
+@mixin category-badge($with-border: false) {
+  font-size: $font-size-xs;
+  font-weight: 600;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: var(--site-radius, $spacing-xs);
+
+  &.badge-outcome,
+  &.outcome {
+    background: rgba($color-outcome, 0.12);
+    color: $color-outcome;
+    @if $with-border {
+      border: 1px solid rgba($color-outcome, 0.25);
+    }
+  }
+
+  &.badge-quality,
+  &.quality {
+    background: rgba($color-quality, 0.12);
+    color: $color-quality;
+    @if $with-border {
+      border: 1px solid rgba($color-quality, 0.25);
+    }
+  }
+
+  &.badge-dx,
+  &.dx {
+    background: rgba($color-dx, 0.12);
+    color: $color-dx;
+    @if $with-border {
+      border: 1px solid rgba($color-dx, 0.25);
+    }
+  }
+
+  &.badge-functional,
+  &.badge-blue {
+    background: rgba($color-functional, 0.12);
+    color: $color-functional;
+    @if $with-border {
+      border: 1px solid rgba($color-functional, 0.25);
+    }
+  }
+
+  &.badge-llm {
+    background: rgba($color-llm, 0.12);
+    color: $color-llm;
+    @if $with-border {
+      border: 1px solid rgba($color-llm, 0.25);
+    }
+  }
+
+  &.badge-heuristic {
+    background: rgba($color-heuristic, 0.12);
+    color: $color-heuristic;
+    @if $with-border {
+      border: 1px solid rgba($color-heuristic, 0.25);
+    }
+  }
+
+  &.badge-poor {
+    background: rgba($color-poor, 0.12);
+    color: $color-poor;
+    @if $with-border {
+      border: 1px solid rgba($color-poor, 0.25);
+    }
+  }
+
+  &.badge-failure {
+    background: rgba($color-failure, 0.12);
+    color: $color-failure;
+    @if $with-border {
+      border: 1px solid rgba($color-failure, 0.25);
+    }
+  }
+
+  &.badge-grey {
+    background: rgba($color-grey, 0.12);
+    color: $color-grey;
+    @if $with-border {
+      border: 1px solid rgba($color-grey, 0.25);
+    }
+  }
+
+  &.badge-deterministic {
+    background: rgba($color-outcome, 0.12);
+    color: $color-outcome;
+    @if $with-border {
+      border: 1px solid rgba($color-outcome, 0.25);
+    }
+  }
+
+  &.badge-perfect,
+  &.badge-green {
+    background: rgba($color-outcome, 0.12);
+    color: $color-outcome;
+    @if $with-border {
+      border: 1px solid rgba($color-outcome, 0.25);
+    }
+  }
+
+  &.badge-purple {
+    background: rgba($color-quality, 0.12);
+    color: $color-quality;
+    @if $with-border {
+      border: 1px solid rgba($color-quality, 0.25);
+    }
+  }
+
+  &.badge-amber {
+    background: rgba($color-dx, 0.12);
+    color: $color-dx;
+    @if $with-border {
+      border: 1px solid rgba($color-dx, 0.25);
+    }
+  }
+}
+
+// Icon background with category colors
+@mixin category-icon-background {
+  width: $icon-size;
+  height: $icon-size;
+  border-radius: $spacing-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.outcome,
+  &.variant-outcome {
+    background-color: rgba($color-outcome, 0.15);
+    color: $color-outcome;
+  }
+
+  &.quality,
+  &.variant-quality {
+    background-color: rgba($color-quality, 0.15);
+    color: $color-quality;
+  }
+
+  &.dx,
+  &.variant-dx {
+    background-color: rgba($color-dx, 0.15);
+    color: $color-dx;
+  }
+
+  &.variant-blue {
+    background-color: rgba($color-functional, 0.12);
+    color: $color-functional;
+  }
+
+  &.variant-grey {
+    background-color: rgba($color-grey, 0.15);
+    color: $color-grey;
+  }
+
+  .material-symbols {
+    font-size: $font-size-xl;
+  }
 }
 
 // -----------------------------------------------------------------------------
@@ -72,7 +253,7 @@ $transition-normal: 0.2s ease;
 .methodology-hero {
   background: $hero-bg-light;
   color: $color-white;
-  border-radius: var(--site-radius, $spacing-sm);
+  border-radius: var(--site-radius);
   padding: $spacing-xl;
   box-shadow: $shadow-hero;
 
@@ -94,7 +275,7 @@ $transition-normal: 0.2s ease;
       color: #93c5fd;
       border: 1px solid rgba(59, 130, 246, 0.3);
       padding: $spacing-xs $spacing-sm;
-      border-radius: var(--site-radius, $spacing-xs);
+      border-radius: var(--site-radius);
     }
 
     strong {
@@ -111,52 +292,19 @@ $transition-normal: 0.2s ease;
   .dimension-card {
     background-color: var(--site-inset-bgColor);
     border: 1px solid var(--site-inset-borderColor);
-    border-radius: var(--site-radius, $spacing-sm);
+    border-radius: var(--site-radius);
     padding: $spacing-md;
     margin-bottom: $spacing-md;
-
     display: flex;
     flex-direction: column;
-    transition: transform $transition-normal, box-shadow $transition-normal, border-color $transition-normal;
-
-    // TODO(ewindmill) Not sure we should have a hover animation since it isn't clickable
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: $shadow-md;
-      border-color: var(--site-primary-color);
-    }
 
     .card-header-row {
       display: flex;
       align-items: center;
 
       .card-icon-wrap {
-        width: $icon-size;
-        height: $icon-size;
-        border-radius: $spacing-sm;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include category-icon-background;
         margin: 0 $spacing-md $spacing-md 0;
-
-        &.outcome {
-          background-color: rgba($color-outcome, 0.15);
-          color: $color-outcome;
-        }
-
-        &.quality {
-          background-color: rgba($color-quality, 0.15);
-          color: $color-quality;
-        }
-
-        &.dx {
-          background-color: rgba($color-dx, 0.15);
-          color: $color-dx;
-        }
-
-        .material-symbols {
-          font-size: $font-size-xl;
-        }
       }
 
       h4 {
@@ -186,24 +334,7 @@ $transition-normal: 0.2s ease;
       color: var(--site-base-fgColor-lighter);
 
       .badge {
-        font-weight: 600;
-        padding: $spacing-xs $spacing-sm;
-        border-radius: var(--site-radius, $spacing-xs);
-
-        &.outcome {
-          background: rgba($color-outcome, 0.12);
-          color: $color-outcome;
-        }
-
-        &.quality {
-          background: rgba($color-quality, 0.12);
-          color: $color-quality;
-        }
-
-        &.dx {
-          background: rgba($color-dx, 0.12);
-          color: $color-dx;
-        }
+        @include category-badge;
       }
     }
   }
@@ -214,7 +345,7 @@ $transition-normal: 0.2s ease;
   @include bench-element-width;
   background-color: var(--site-inset-bgColor);
   border: 1px solid var(--site-inset-borderColor);
-  border-radius: var(--site-radius, $spacing-sm);
+  border-radius: var(--site-radius);
   padding: $spacing-md;
   margin-block: $spacing-md;
   position: relative;
@@ -257,7 +388,7 @@ $transition-normal: 0.2s ease;
       .filter-btn {
         background: transparent;
         border: none;
-        border-radius: var(--site-radius, $spacing-xs);
+        border-radius: var(--site-radius);
         padding: $spacing-xs $spacing-sm;
         font-size: $font-size-xs;
         font-weight: 500;
@@ -299,7 +430,7 @@ $transition-normal: 0.2s ease;
       cursor: pointer;
       transition: $transition-normal;
       box-shadow: $shadow-sm;
-      z-index: 2;
+      z-index: var(--site-z-floating, 10);
 
       &.prev {
         left: -$spacing-md;
@@ -331,6 +462,7 @@ $transition-normal: 0.2s ease;
     }
 
     .grader-cards-track {
+      @include custom-scrollbar('horizontal');
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -341,24 +473,10 @@ $transition-normal: 0.2s ease;
       scroll-snap-type: x mandatory;
       padding: $spacing-sm;
       background-color: var(--site-base-bgColor);
-      border-radius: var(--site-radius, $spacing-xs);
-      // Adds "padding" where overflow-x automatically removes it
+      border-radius: var(--site-radius);
+      // Preserves padding when overflow-x clips it
       border-left: $spacing-sm solid var(--site-base-bgColor);
       border-right: $spacing-sm solid var(--site-base-bgColor);
-
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: var(--site-inset-borderColor) transparent;
-
-
-      &::-webkit-scrollbar {
-        height: 6px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: var(--site-inset-borderColor);
-        border-radius: 3px;
-      }
 
       .grader-card {
         flex: 0 0 $card-width;
@@ -367,17 +485,15 @@ $transition-normal: 0.2s ease;
         scroll-snap-align: start;
         background-color: var(--site-base-bgColor);
         border: 1px solid var(--site-inset-borderColor);
-        border-radius: var(--site-radius, $spacing-sm);
+        border-radius: var(--site-radius);
         padding: $spacing-md;
         display: flex;
         flex-direction: column;
         gap: $spacing-sm;
-        transition: transform $transition-normal, border-color $transition-normal, box-shadow $transition-normal;
+        transition: border-color $transition-normal;
 
         &:hover {
-          transform: translateY(-2px);
           border-color: var(--site-primary-color);
-          box-shadow: $shadow-md;
         }
 
         &.hidden {
@@ -409,28 +525,8 @@ $transition-normal: 0.2s ease;
           }
 
           .grader-badge {
-            font-size: $font-size-xs;
-            font-weight: 600;
-            padding: $spacing-xs $spacing-sm;
+            @include category-badge(true);
             border-radius: 9999px;
-
-            &.badge-deterministic {
-              background-color: rgba($color-outcome, 0.12);
-              color: $color-outcome;
-              border: 1px solid rgba($color-outcome, 0.25);
-            }
-
-            &.badge-llm {
-              background-color: rgba($color-llm, 0.12);
-              color: $color-llm;
-              border: 1px solid rgba($color-llm, 0.25);
-            }
-
-            &.badge-heuristic {
-              background-color: rgba($color-heuristic, 0.12);
-              color: $color-heuristic;
-              border: 1px solid rgba($color-heuristic, 0.25);
-            }
           }
         }
 
@@ -451,7 +547,7 @@ $transition-normal: 0.2s ease;
             font-size: 0.9em;
             background-color: rgba(0, 0, 0, 0.05);
             padding: $spacing-xs;
-            border-radius: var(--site-radius, $spacing-xs);
+            border-radius: var(--site-radius);
           }
         }
       }
@@ -470,7 +566,7 @@ $transition-normal: 0.2s ease;
   .reliability-card {
     background-color: var(--site-inset-bgColor);
     border: 1px solid var(--site-inset-borderColor);
-    border-radius: var(--site-radius, $spacing-sm);
+    border-radius: var(--site-radius);
     padding: $spacing-lg;
     display: flex;
     flex-direction: column;
@@ -495,7 +591,7 @@ $transition-normal: 0.2s ease;
         background-color: rgba(4, 104, 215, 0.1);
         color: var(--site-primary-color);
         padding: $spacing-xs $spacing-sm;
-        border-radius: var(--site-radius, $spacing-xs);
+        border-radius: var(--site-radius);
       }
     }
 
@@ -564,7 +660,7 @@ $transition-normal: 0.2s ease;
   @include bench-element-width;
   background-color: var(--site-inset-bgColor);
   border: 1px solid var(--site-inset-borderColor);
-  border-radius: var(--site-radius, $spacing-sm);
+  border-radius: var(--site-radius);
   padding: $spacing-lg;
   margin-block: $spacing-lg $spacing-xl;
 
@@ -597,7 +693,7 @@ $transition-normal: 0.2s ease;
     .triage-tier-btn {
       background-color: var(--site-base-bgColor);
       border: 1px solid var(--site-inset-borderColor);
-      border-radius: var(--site-radius, $spacing-xs);
+      border-radius: var(--site-radius);
       padding: $spacing-sm $spacing-md;
       text-align: left;
       cursor: pointer;
@@ -606,7 +702,6 @@ $transition-normal: 0.2s ease;
 
       &:hover {
         opacity: 1;
-        transform: translateY(-1px);
       }
 
       .tab-primary-label,
@@ -623,9 +718,9 @@ $transition-normal: 0.2s ease;
         color: var(--site-base-fgColor);
       }
 
+      // Color variants for tabs
       &.variant-perfect,
       &.tier-perfect {
-
         .tab-primary-label,
         .tier-score {
           color: $color-outcome;
@@ -641,7 +736,6 @@ $transition-normal: 0.2s ease;
       &.variant-functional,
       &.variant-blue,
       &.tier-functional {
-
         .tab-primary-label,
         .tier-score {
           color: $color-functional;
@@ -656,7 +750,6 @@ $transition-normal: 0.2s ease;
 
       &.variant-quality,
       &.variant-purple {
-
         .tab-primary-label,
         .tier-score {
           color: $color-quality;
@@ -673,7 +766,6 @@ $transition-normal: 0.2s ease;
       &.variant-dx,
       &.variant-amber,
       &.tier-partial {
-
         .tab-primary-label,
         .tier-score {
           color: $color-dx;
@@ -688,7 +780,6 @@ $transition-normal: 0.2s ease;
 
       &.variant-poor,
       &.tier-poor {
-
         .tab-primary-label,
         .tier-score {
           color: $color-poor;
@@ -703,7 +794,6 @@ $transition-normal: 0.2s ease;
 
       &.variant-failure,
       &.tier-failure {
-
         .tab-primary-label,
         .tier-score {
           color: $color-failure;
@@ -720,26 +810,15 @@ $transition-normal: 0.2s ease;
 
   .card-panels-container,
   .triage-detail-card {
+    @include custom-scrollbar;
     background-color: var(--site-base-bgColor);
     border: 1px solid var(--site-inset-borderColor);
-    border-radius: var(--site-radius, $spacing-xs);
+    border-radius: var(--site-radius);
     padding: $spacing-md;
     position: relative;
     min-height: 220px;
     max-height: 380px;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--site-inset-borderColor) transparent;
-    -webkit-overflow-scrolling: touch;
-
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--site-inset-borderColor);
-      border-radius: 3px;
-    }
 
     .card-panel,
     .triage-panel {
@@ -765,36 +844,7 @@ $transition-normal: 0.2s ease;
         }
 
         .panel-badge {
-          font-size: $font-size-xs;
-          font-weight: 600;
-          padding: $spacing-xs $spacing-sm;
-          border-radius: var(--site-radius, $spacing-xs);
-          background-color: var(--site-raised-bgColor);
-          color: var(--site-base-fgColor-alt);
-
-          &.badge-functional,
-          &.badge-blue {
-            background-color: rgba($color-functional, 0.12);
-            color: $color-functional;
-          }
-
-          &.badge-quality,
-          &.badge-purple {
-            background-color: rgba($color-quality, 0.12);
-            color: $color-quality;
-          }
-
-          &.badge-dx,
-          &.badge-amber {
-            background-color: rgba($color-dx, 0.12);
-            color: $color-dx;
-          }
-
-          &.badge-perfect,
-          &.badge-green {
-            background-color: rgba($color-outcome, 0.12);
-            color: $color-outcome;
-          }
+          @include category-badge;
         }
       }
 
@@ -836,7 +886,7 @@ $transition-normal: 0.2s ease;
               font-size: 0.85em;
               background-color: var(--site-raised-bgColor);
               padding: $spacing-xs;
-              border-radius: var(--site-radius, $spacing-xs);
+              border-radius: var(--site-radius);
             }
 
             &:last-child {
@@ -862,7 +912,7 @@ $transition-normal: 0.2s ease;
     @include bench-element-width;
     background-color: var(--site-base-bgColor);
     border: 1px solid var(--site-inset-borderColor);
-    border-radius: var(--site-radius, $spacing-sm);
+    border-radius: var(--site-radius);
     margin-block: $spacing-md $spacing-lg;
     overflow-x: auto;
     box-shadow: $shadow-sm;
@@ -931,7 +981,7 @@ $transition-normal: 0.2s ease;
               font-size: 0.85em;
               background-color: var(--site-raised-bgColor);
               padding: $spacing-xs $spacing-sm;
-              border-radius: var(--site-radius, $spacing-xs);
+              border-radius: var(--site-radius);
             }
 
             &:first-child {
@@ -956,7 +1006,7 @@ $transition-normal: 0.2s ease;
   @include bench-element-width;
   background-color: var(--site-base-bgColor);
   border: 1px solid var(--site-inset-borderColor);
-  border-radius: var(--site-radius, $spacing-md);
+  border-radius: var(--site-radius);
   padding: $spacing-md;
   margin-block: $spacing-lg $spacing-xl;
   box-shadow: $shadow-sm;
@@ -967,7 +1017,7 @@ $transition-normal: 0.2s ease;
   .cuj-diagram-section {
     background-color: var(--site-inset-bgColor);
     border: 1px solid var(--site-inset-borderColor);
-    border-radius: var(--site-radius, $spacing-sm);
+    border-radius: var(--site-radius);
     padding: $spacing-md $spacing-lg;
     display: grid;
     grid-template-columns: 4.5rem 1fr;
@@ -1041,11 +1091,7 @@ $transition-normal: 0.2s ease;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: transform $transition-normal, box-shadow $transition-normal;
-
-        &:hover {
-          transform: translateY(-1px);
-        }
+        transition: transform $transition-normal;
 
         &.pill-grey {
           background-color: #d1d5db;
@@ -1086,7 +1132,7 @@ $transition-normal: 0.2s ease;
   @include bench-element-width;
   background-color: var(--site-inset-bgColor);
   border: 1px solid var(--site-inset-borderColor);
-  border-radius: var(--site-radius, $spacing-md);
+  border-radius: var(--site-radius);
   margin-block: $spacing-lg $spacing-xl;
   overflow: hidden;
   box-shadow: $shadow-sm;
@@ -1148,42 +1194,8 @@ $transition-normal: 0.2s ease;
         }
 
         .panel-icon-wrap {
-          width: $icon-size;
-          height: $icon-size;
-          border-radius: $spacing-sm;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include category-icon-background;
           flex-shrink: 0;
-
-          .material-symbols {
-            font-size: $font-size-xl;
-          }
-
-          &.variant-blue {
-            background-color: rgba($color-functional, 0.12);
-            color: $color-functional;
-          }
-
-          &.variant-quality {
-            background-color: rgba($color-quality, 0.15);
-            color: $color-quality;
-          }
-
-          &.variant-dx {
-            background-color: rgba($color-dx, 0.15);
-            color: $color-dx;
-          }
-
-          &.variant-outcome {
-            background-color: rgba($color-outcome, 0.15);
-            color: $color-outcome;
-          }
-
-          &.variant-grey {
-            background-color: rgba($color-grey, 0.15);
-            color: $color-grey;
-          }
         }
 
         .panel-header-content {
@@ -1208,35 +1220,7 @@ $transition-normal: 0.2s ease;
             }
 
             .badge {
-              font-size: $font-size-xs;
-              font-weight: 600;
-              padding: $spacing-xs $spacing-sm;
-              border-radius: var(--site-radius, $spacing-xs);
-
-              &.badge-blue {
-                background: rgba($color-functional, 0.12);
-                color: $color-functional;
-              }
-
-              &.badge-quality {
-                background: rgba($color-quality, 0.12);
-                color: $color-quality;
-              }
-
-              &.badge-dx {
-                background: rgba($color-dx, 0.12);
-                color: $color-dx;
-              }
-
-              &.badge-outcome {
-                background: rgba($color-outcome, 0.12);
-                color: $color-outcome;
-              }
-
-              &.badge-grey {
-                background: rgba($color-grey, 0.12);
-                color: $color-grey;
-              }
+              @include category-badge;
             }
           }
 
@@ -1266,7 +1250,7 @@ $transition-normal: 0.2s ease;
           font-size: 0.85em;
           background-color: var(--site-raised-bgColor);
           padding: $spacing-xs $spacing-sm;
-          border-radius: var(--site-radius, $spacing-xs);
+          border-radius: var(--site-radius);
         }
       }
 
@@ -1281,7 +1265,6 @@ $transition-normal: 0.2s ease;
       }
 
       .table-wrapper {
-
         table.spec-table,
         table {
           width: 100%;
@@ -1304,7 +1287,7 @@ $transition-normal: 0.2s ease;
                 code {
                   font-size: 0.85em;
                   padding: $spacing-xs $spacing-sm;
-                  border-radius: var(--site-radius, $spacing-xs);
+                  border-radius: var(--site-radius);
                 }
 
                 &:first-child {
@@ -1316,7 +1299,6 @@ $transition-normal: 0.2s ease;
                 &:last-child {
                   color: var(--site-base-fgColor-alt);
                   padding-right: 0;
-
                 }
               }
             }
@@ -1334,7 +1316,7 @@ $transition-normal: 0.2s ease;
           font-size: 0.85em;
           background-color: var(--site-raised-bgColor);
           padding: $spacing-xs $spacing-sm;
-          border-radius: var(--site-radius, $spacing-xs);
+          border-radius: var(--site-radius);
           font-style: normal;
         }
       }
@@ -1391,7 +1373,6 @@ body.dark-mode {
   }
 
   .grader-matrix {
-
     .grader-cards-track .grader-card.cat-llm,
     .grader-cards-grid .grader-card.cat-llm {
       background-color: rgba($color-llm, 0.08);

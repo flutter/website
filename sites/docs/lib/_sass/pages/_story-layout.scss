@@ -5,7 +5,20 @@
 // Storytelling Layout Styles
 // -----------------------------------------------------------------------------
 
-// Scroll-Driven Reading Progress Line directly underneath sticky navbar
+// Color palette shared with _flutter-bench.scss for visual consistency
+// NOTE: These colors intentionally match the FlutterBench category colors
+$story-progress-gradient: linear-gradient(90deg, #0284c7 0%, #6366f1 50%, #059669 100%);
+
+$chapter-colors: (
+  (rgb: "2, 132, 199", hex: #0284c7),    // Sky blue (functional)
+  (rgb: "5, 150, 105", hex: #059669),    // Green (outcome)
+  (rgb: "124, 58, 237", hex: #7c3aed),   // Violet (llm)
+  (rgb: "99, 102, 241", hex: #6366f1),   // Indigo (quality)
+  (rgb: "217, 119, 6", hex: #d97706),    // Amber (dx)
+  (rgb: "100, 116, 139", hex: #64748b)   // Slate (grey)
+);
+
+// Scroll-Driven Reading Progress Line
 .story-reading-progress {
   position: sticky;
   top: var(--site-header-height, 4rem);
@@ -20,7 +33,7 @@
     width: 100%;
     transform-origin: 0% 50%;
     transform: scaleX(0);
-    background: linear-gradient(90deg, #0284c7 0%, #6366f1 50%, #059669 100%);
+    background: $story-progress-gradient;
     box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);
 
     @supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
@@ -40,7 +53,7 @@
   }
 }
 
-// A layout that provides generous space and visual cues to 
+// A layout that provides generous space and visual cues to
 // encourage reading a longer doc page.
 body.layout-story {
   scroll-padding-top: calc(var(--site-header-height, 4rem) + 1.5rem);
@@ -74,188 +87,175 @@ body.layout-story {
     scroll-snap-align: start;
     scroll-margin-top: calc(var(--site-header-height, 4rem) + 1.5rem);
     transition: background-color 0.4s ease, border-color 0.4s ease;
-    // Default Fallback
+
+    // Default fallback accent color
     --chapter-accent: #0284c7;
     --chapter-accent-rgb: 2, 132, 199;
     --chapter-next-rgb: 5, 150, 105;
 
-    $palette: (
-      (rgb: "2, 132, 199", hex: #0284c7),
-      (rgb: "5, 150, 105", hex: #059669),
-      (rgb: "124, 58, 237", hex: #7c3aed),
-      (rgb: "99, 102, 241", hex: #6366f1),
-      (rgb: "217, 119, 6", hex: #d97706),
-      (rgb: "100, 116, 139", hex: #64748b) // 6. Slate
-    );
+    // Generate chapter accent colors from palette
+    @for $i from 0 through 20 {
+      $formatted: if($i < 10, "0#{$i}", "#{$i}");
+      $curr-idx: ($i % length($chapter-colors)) + 1;
+      $next-idx: (($i + 1) % length($chapter-colors)) + 1;
 
-  @for $i from 0 through 20 {
-    $formatted: if($i < 10, "0#{$i}", "#{$i}");
-    $curr-idx: (
-      $i % length($palette)) + 1;
-    $next-idx: (
-      ($i + 1) % length($palette)) + 1;
+      $curr: nth($chapter-colors, $curr-idx);
+      $next: nth($chapter-colors, $next-idx);
 
-    $curr: nth($palette, $curr-idx
-    );
-  $next: nth($palette, $next-idx);
-
-  &[data-chapter="#{$formatted}"] {
-    --chapter-accent: #{map-get($curr, hex)};
-    --chapter-accent-rgb: #{map-get($curr, rgb)};
-    --chapter-next-rgb: #{map-get($next, rgb)};
-  }
-}
-
-// Soft Ambient Atmosphere Vignette
-&::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -2rem;
-  right: -2rem;
-  height: 100%;
-  background:
-    // linear-gradient(rgba(var(--chapter-accent-rgb), 0.05) 30%, var(--site-base-bgColor) 85%, rgba(var(--chapter-next-rgb), 0.05) 100%);
-    // main section gradient
-    radial-gradient(650px circle at 50% 0%, rgba(var(--chapter-accent-rgb), 0.08), transparent 90%),
-    // ease into next chapters gradient
-    radial-gradient(650px circle at 50% 100%, rgba(var(--chapter-next-rgb), 0.08), transparent 90%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-&:first-of-type {
-  padding-top: clamp(2rem, 5vh, 4rem);
-}
-
-&:last-of-type {
-  border-bottom: none;
-  padding-bottom: clamp(6rem, 12vh, 12rem);
-}
-
-// Prologue (Intro content before chapter 01)
-&.story-prologue {
-  min-height: auto;
-  padding-bottom: clamp(3rem, 6vh, 5rem);
-}
-
-// B. Sticky Chapter Header & Eyebrow Waypoint
-.chapter-header-group {
-  position: sticky;
-  top: calc(var(--site-header-height, 4rem) + 3px);
-  z-index: 10;
-  padding-block: 0.85rem 0.5rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--site-outline-variant);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  .chapter-kicker,
-  >.header-wrapper {
-    width: 100%;
-    margin-inline: auto;
-  }
-
-  .chapter-kicker {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.35rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--chapter-accent);
-
-    .chapter-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.15rem 0.55rem;
-      border-radius: 9999px;
-      background: rgba(var(--chapter-accent-rgb), 0.08);
-      border: 1px solid rgba(var(--chapter-accent-rgb), 0.25);
-      font-family: var(--site-code-fontFamily);
-      font-size: 0.8rem;
-      line-height: 1.2;
-      color: var(--chapter-accent);
+      &[data-chapter="#{$formatted}"] {
+        --chapter-accent: #{map-get($curr, hex)};
+        --chapter-accent-rgb: #{map-get($curr, rgb)};
+        --chapter-next-rgb: #{map-get($next, rgb)};
+      }
     }
 
-    .chapter-rule {
-      display: inline-block;
-      width: 2rem;
-      height: 1px;
-      background: currentColor;
-      opacity: 0.35;
-    }
-  }
-
-  >.header-wrapper {
-    margin: 0;
-
-    h2 {
-      font-weight: 700;
-    }
-  }
-}
-
-// A. Prose Centering vs. Component Breakouts
-.chapter-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-  width: 100%;
-
-  // Body prose, lists, blockquotes, tables, notes centered in narrow column
-  >p,
-  >ul,
-  >ol,
-  >blockquote,
-  >.table-wrapper,
-  >.alert,
-  >.callout,
-  >.katex-display,
-  >math {
-    width: 100%;
-    max-width: 800px;
-    margin-inline: auto;
-    line-height: 1.75;
-  }
-
-  >p.description {
-    font-size: 1.2rem;
-    line-height: 1.65;
-    color: var(--site-base-fgColor-alt);
-    max-width: 800px;
-    margin-inline: auto;
-  }
-
-  // Sub-headings inside chapter centered to match prose
-  >.header-wrapper {
-    width: 100%;
-    max-width: 800px;
-    margin-inline: auto;
-
-    h3 {
-      font-size: clamp(1.3rem, 1.8vw, 1.55rem);
-      font-weight: 600;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
+    // Ambient atmosphere vignette
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -2rem;
+      right: -2rem;
+      height: 100%;
+      background:
+        // Main section gradient
+        radial-gradient(650px circle at 50% 0%, rgba(var(--chapter-accent-rgb), 0.08), transparent 90%),
+        // Ease into next chapter's gradient
+        radial-gradient(650px circle at 50% 100%, rgba(var(--chapter-next-rgb), 0.08), transparent 90%);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    h4 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
+    &:first-of-type {
+      padding-top: clamp(2rem, 5vh, 4rem);
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+      padding-bottom: clamp(6rem, 12vh, 12rem);
+    }
+
+    // Prologue (intro content before chapter 01)
+    &.story-prologue {
+      min-height: auto;
+      padding-bottom: clamp(3rem, 6vh, 5rem);
+    }
+
+    // Sticky Chapter Header & Eyebrow Waypoint
+    .chapter-header-group {
+      position: sticky;
+      top: calc(var(--site-header-height, 4rem) + 3px);
+      z-index: var(--site-z-floating, 10);
+      padding-block: 0.85rem 0.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--site-outline-variant);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      .chapter-kicker,
+      >.header-wrapper {
+        width: 100%;
+        margin-inline: auto;
+      }
+
+      .chapter-kicker {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.35rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--chapter-accent);
+
+        .chapter-number {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.15rem 0.55rem;
+          border-radius: 9999px;
+          background: rgba(var(--chapter-accent-rgb), 0.08);
+          border: 1px solid rgba(var(--chapter-accent-rgb), 0.25);
+          font-family: var(--site-code-fontFamily);
+          font-size: 0.8rem;
+          line-height: 1.2;
+          color: var(--chapter-accent);
+        }
+
+        .chapter-rule {
+          display: inline-block;
+          width: 2rem;
+          height: 1px;
+          background: currentColor;
+          opacity: 0.35;
+        }
+      }
+
+      >.header-wrapper {
+        margin: 0;
+
+        h2 {
+          font-weight: 700;
+        }
+      }
+    }
+
+    // Prose Centering vs. Component Breakouts
+    .chapter-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+
+      // Body prose, lists, blockquotes, tables, notes centered in narrow column
+      >p,
+      >ul,
+      >ol,
+      >blockquote,
+      >.table-wrapper,
+      >.alert,
+      >.callout,
+      >.katex-display,
+      >math {
+        width: 100%;
+        max-width: 800px;
+        margin-inline: auto;
+        line-height: 1.75;
+      }
+
+      >p.description {
+        font-size: 1.2rem;
+        line-height: 1.65;
+        color: var(--site-base-fgColor-alt);
+        max-width: 800px;
+        margin-inline: auto;
+      }
+
+      // Sub-headings inside chapter centered to match prose
+      >.header-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin-inline: auto;
+
+        h3 {
+          font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+          font-weight: 600;
+          margin-top: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        h4 {
+          font-size: 1.15rem;
+          font-weight: 600;
+          margin-top: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
     }
   }
-
-
-}
-}
 }
 
 // Dark mode adjustments
