@@ -55,7 +55,7 @@ body.layout-story {
     >p.description,
     >.prev-next-nav,
     >.trailing-content {
-      max-width: 68ch;
+      max-width: 800px;
       margin-inline: auto;
       width: 100%;
     }
@@ -224,7 +224,7 @@ body.layout-story {
   >.katex-display,
   >math {
     width: 100%;
-    max-width: 68ch;
+    max-width: 800px;
     margin-inline: auto;
     line-height: 1.75;
     font-size: 1.075rem;
@@ -234,14 +234,14 @@ body.layout-story {
     font-size: 1.2rem;
     line-height: 1.65;
     color: var(--site-base-fgColor-alt);
-    max-width: 68ch;
+    max-width: 800px;
     margin-inline: auto;
   }
 
   // Sub-headings inside chapter centered to match prose
   >.header-wrapper {
     width: 100%;
-    max-width: 68ch;
+    max-width: 800px;
     margin-inline: auto;
 
     h3 {
