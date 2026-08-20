@@ -205,8 +205,6 @@ This allows apps using your plugin to build on AGP 9 with
 built-in Kotlin disabled (`android.builtInKotlin=false`).
 
 :::note
-Setting the plugin's minimum Flutter version to 3.44 allows
-apps using your plugin to build on AGP 9 with built-in Kotlin disabled.
 Enabling built-in Kotlin (`android.builtInKotlin=true`)
 in the plugin's example app requires Flutter 3.47 or later.
 :::
