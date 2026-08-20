@@ -313,8 +313,7 @@ allowing you to build native context menus and utility palettes.
 
 You can also now query `windowHandle` on platform-specific controllers
 to get a direct pointer to the underlying native window
-(`HWND`, `NSWindow`, or `GtkWindow`)
-([#184662](https://github.com/flutter/flutter/pull/184662)).
+(`HWND`, `NSWindow`, or `GtkWindow`).
 This enables advanced native feature access like dockable panes on Windows,
 such as this dockable panes demo contributed by
 [@orestesgaolin](https://github.com/orestesgaolin):
@@ -331,13 +330,10 @@ courtesy of contributor [@9AZX](https://github.com/9AZX)
 
 On Linux,
 multi-window creation now explicitly realizes windows before they receive their
-first frame from the compositor
-([#184956](https://github.com/flutter/flutter/pull/184956)),
+first frame from the compositor,
 fixing early rendering warnings and compositor assertions.
 
 We also added a new sized-to-content API
-([#184977](https://github.com/flutter/flutter/pull/184977),
-[#186829](https://github.com/flutter/flutter/pull/186829))
 that lets you create regular and dialog windows that are automatically
 sized to fit their content.
 
@@ -464,8 +460,7 @@ Caret positioning for Korean text composition is resolved on Windows
 (thanks to [@CHOIgoung](https://github.com/CHOIgoung),
 [#186353](https://github.com/flutter/flutter/pull/186353)),
 and Windows plugins can now move expensive tasks off the platform thread
-using `FlutterEngine::PostPlatformThreadTask`
-([#187365](https://github.com/flutter/flutter/pull/187365)).
+using `FlutterEngine::PostPlatformThreadTask`.
 On Linux, [@CodeDoctorDE](https://github.com/CodeDoctorDE)
 added stylus rotation and pressure reporting
 ([#186831](https://github.com/flutter/flutter/pull/186831)).
@@ -473,8 +468,7 @@ added stylus rotation and pressure reporting
 ### Graphics and engine
 
 In the engine, fragment shaders targeting OpenGLES no longer need
-conditional coordinate flipping when reading textures
-([#187247](https://github.com/flutter/flutter/pull/187247)).
+conditional coordinate flipping when reading textures.
 This is now handled in the vertex shader.
 Consult the [OpenGLES render-to-texture breaking change page][opengles-breaking-change]
 for more details.
@@ -490,16 +484,14 @@ thanks to [@xxxOVALxxx](https://github.com/xxxOVALxxx)
 (`MediaQueryData.highContrast` and `MediaQueryData.invertColors`,
 [#182263](https://github.com/flutter/flutter/pull/182263)).
 Nested text spans inside `Text.rich` now match their layout sequence
-in the semantics tree ([#186116](https://github.com/flutter/flutter/pull/186116)),
-and keyboard focus blocking is added for `BlockSemantics`
-([#186206](https://github.com/flutter/flutter/pull/186206)).
+in the semantics tree,
+and keyboard focus blocking is added for `BlockSemantics`.
 
 <DashImage figure src="images/android_accessibility.gif" alt="Android accessibility settings" caption="Android accessibility settings" />
 
 **Text and selection:** Text selection handles on mobile now remain stable
-during minor scrolling ([#185054](https://github.com/flutter/flutter/pull/185054)),
-and keyboard shortcuts can now dismiss open selection menus
-([#184788](https://github.com/flutter/flutter/pull/184788)).
+during minor scrolling,
+and keyboard shortcuts can now dismiss open selection menus.
 On Android, selection handles no longer obscure the context menu
 when positioned near the top of the screen,
 thanks to [@JhonaCodes](https://github.com/JhonaCodes)
@@ -510,8 +502,7 @@ thanks to [@JhonaCodes](https://github.com/JhonaCodes)
 | <DashImage src="images/selection_handle_before.gif" alt="Selection handles overlapping menu" /> | <DashImage src="images/selection_handle_after.gif" alt="Selection handles correctly placed" /> |
 
 We also fixed a crash in `SelectableRegion` when selection began
-in an empty scrollable container
-([#184420](https://github.com/flutter/flutter/pull/184420)),
+in an empty scrollable container,
 and resolved visual highlight artifacts on faded selectable text,
 thanks to [@ikramhasan](https://github.com/ikramhasan)
 ([#183628](https://github.com/flutter/flutter/pull/183628)).
@@ -521,19 +512,16 @@ thanks to [@ikramhasan](https://github.com/ikramhasan)
 | <DashImage src="images/copy_highlight_before.png" alt="Before highlight" /> | <DashImage src="images/copy_highlight_after.png" alt="After highlight" /> |
 
 **Gestures and scrolling:** Improved gesture propagation
-for native iOS views embedded via platform views
-([#185126](https://github.com/flutter/flutter/pull/185126)).
+for native iOS views embedded via platform views.
 `EdgeDraggingAutoScroller` now respects the `ScrollPhysics` of the
-active scroll view, preventing auto-scrolling on locked lists
-([#186541](https://github.com/flutter/flutter/pull/186541)).
+active scroll view, preventing auto-scrolling on locked lists.
 
 <DashImage figure src="images/edge_scroller_demo.gif" alt="EdgeDraggingAutoScroller demo" caption="EdgeDraggingAutoScroller demo" />
 
 **Core Widget enhancements:** Preserve original colors inside `ImageIcon`
 with `useOriginalColors: true` ([#180491](https://github.com/flutter/flutter/pull/180491)),
 specify clipping behavior in `AnimatedCrossFade` ([#184545](https://github.com/flutter/flutter/pull/184545)),
-and track image stream errors directly with `ImageStreamListener`
-([#180327](https://github.com/flutter/flutter/pull/180327)).
+and track image stream errors directly with `ImageStreamListener`.
 
 ________________
 
