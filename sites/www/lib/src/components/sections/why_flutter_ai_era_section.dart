@@ -27,7 +27,7 @@ class WhyFlutterAiEraSection extends StatefulComponent {
 }
 
 class _WhyFlutterAiEraSectionState extends State<WhyFlutterAiEraSection> {
-  static const _capabilities = ['MCP Server', 'GenUI', 'LLM-fluent'];
+  static const _capabilities = ['MCP Server', 'Skills', 'GenUI'];
 
   bool _isSpriteRunning = false;
 
