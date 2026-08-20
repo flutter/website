@@ -180,9 +180,8 @@ Subfields of `assets`:
 * `path`: The path to an asset file or directory.
 * `flavors`: A list of flutter flavors to use with assets
   at a specific path. To learn more about
-  flavors, visit [Set up flavors for iOS and macOS],
-  [Set up flavors for Android], and
-  [Set up flavors for Windows and Linux].
+  flavors, visit [Set up flavors for iOS and macOS] and
+  [Set up flavors for Android].
 * `platforms`: A list of platforms to use with assets at a
   specific path. Valid values are `android`, `ios`, `web`, `linux`,
   `macos`, and `windows`.
@@ -251,7 +250,6 @@ flutter:
 
 [Set up flavors for iOS and macOS]: /deployment/flavors-ios
 [Set up flavors for Android]: /deployment/flavors
-[Set up flavors for Windows and Linux]: /deployment/flavors-windows-linux
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [Assets and images]: /ui/assets/assets-and-images
 [asset images in package dependencies]: /ui/assets/assets-and-images#from-packages
@@ -333,13 +331,11 @@ $ flutter run --flavor staging
 ```
 
 To learn how to create Flutter flavors,
-visit [Set up Flutter flavors for Android][],
-[Set up Flutter flavors for iOS and macOS][], and
-[Set up Flutter flavors for Windows and Linux][].
+visit [Set up Flutter flavors for Android][] and
+[Set up Flutter flavors for iOS and macOS][].
 
 [Set up Flutter flavors for Android]: /deployment/flavors
 [Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
-[Set up Flutter flavors for Windows and Linux]: /deployment/flavors-windows-linux
 
 ### deferred-components field {: #deferred-components }
 
@@ -780,7 +776,6 @@ and pubspec files, visit the following:
 * [Package dependencies][] on dart.dev
 * [Set up Flutter flavors for Android][]
 * [Set up Flutter flavors for iOS and macOS][]
-* [Set up Flutter flavors for Windows and Linux][]
 * [Transforming assets at build time][]
 * [Using packages][]
 * [What not to commit][] on dart.dev
