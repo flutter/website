@@ -145,7 +145,7 @@ Once the Coder implemented the real library classes in `lib/src/`,
 the Coordinator had to clean up the temporary compilation stubs left in the test
 files. It kept getting the stubs and the real thing confused,
 so it required clear comment headers to make the real implementation distinct.
-- **Spread Operator (`...`) Type Mismatches**:
+- **Spread operator (`...`) type mismatches**:
 Python and Dart handle types differently,
 and things that are iterable by default in Python aren't necessarily so in Dart.
 I had to add some explicit instructions on things that needed to implement
