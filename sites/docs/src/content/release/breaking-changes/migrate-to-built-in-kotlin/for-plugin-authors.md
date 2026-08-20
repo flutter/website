@@ -200,7 +200,7 @@ Using the `kotlin.compilerOptions {}` DSL block requires
 a minimum Kotlin Gradle Plugin (KGP) version of 2.0.0.
 Beginning with Flutter 3.44, the minimum required KGP version is 2.0.0.
 To ensure that apps using your plugin can build on AGP 9,
-require a minimum Flutter version of 3.44 for this plugin version.
+require a minimum Flutter version of 3.44 for the plugin version.
 This allows apps using your plugin to build on AGP 9 with
 built-in Kotlin disabled (`android.builtInKotlin=false`).
 

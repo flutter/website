@@ -25,7 +25,7 @@ Apps that use the `kotlin-android` plugin,
 also known as the Kotlin Gradle Plugin (KGP),
 fail to build without migration ([Issue #181383][]).
 Flutter 3.44 added temporary support for the legacy
-Kotlin Gradle Plugin in AGP 9 and later with `android.builtInKotlin=false`
+KGP in AGP 9 and later with `android.builtInKotlin=false`
 ([Issue #183909][]).
 This allows app and plugin developers to build their projects
 while migrating off KGP.
