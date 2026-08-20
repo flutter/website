@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-06-18
 author: josealba
 image: images/10vbyZT-NITTvqljO8HtU4w.webp
-category: announcement
+category: news
 layout: blog
 ---
 

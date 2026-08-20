@@ -1,6 +1,5 @@
 ---
 title: Dart and Flutter MCP server
-sidenav: ai
 shortTitle: MCP server
 description: >
   Learn about the Dart and Flutter MCP server tool that

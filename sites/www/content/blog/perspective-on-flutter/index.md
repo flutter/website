@@ -5,7 +5,7 @@ description: >-
 publishDate: 2018-06-18
 author: wmleler1
 image: images/1WdpLQEC_L1PYDO1KgxxfMQ.webp
-category: story
+category: case-study
 layout: blog
 ---
 

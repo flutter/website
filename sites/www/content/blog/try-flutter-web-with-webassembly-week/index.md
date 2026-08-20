@@ -5,7 +5,7 @@ description: >-
 publishDate: 2026-08-17
 author: kevmoo
 image: images/header.webp
-category: event
+category: news
 layout: blog
 ---
 

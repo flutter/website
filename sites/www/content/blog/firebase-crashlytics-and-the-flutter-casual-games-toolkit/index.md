@@ -6,7 +6,7 @@ description: >-
 publishDate: 2022-08-03
 author: rich_hall
 image: images/1B5i6MSUhz554dVTR484AuA.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

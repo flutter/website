@@ -7,7 +7,7 @@ description: >-
 publishDate: 2021-01-26
 author: nikkitagandhi
 image: images/1v7ytVK_8WbqA7Gc-Uol-wQ.webp
-category: event
+category: news
 layout: blog
 ---
 

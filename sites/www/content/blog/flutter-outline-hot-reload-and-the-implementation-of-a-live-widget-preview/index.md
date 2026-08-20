@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-04-04
 author: scheglov
 image: images/0TUzb7DjU9HweZAAI.webp
-category: engineering
+category: deep-dive
 layout: blog
 ---
 

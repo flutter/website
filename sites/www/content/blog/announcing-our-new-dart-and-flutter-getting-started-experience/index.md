@@ -6,7 +6,7 @@ description: >-
 publishDate: 2026-02-03
 author: ericwindmill
 image: images/1rHBScksI6g6at1HsqSuPhA.webp
-category: announcement
+category: news
 layout: blog
 ---
 

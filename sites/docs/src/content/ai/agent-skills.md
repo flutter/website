@@ -1,6 +1,5 @@
 ---
 title: Agent skills for Flutter and Dart
-sidenav: ai
 shortTitle: Agent skills
 description: >-
   Learn how to give AI agents new capabilities and expertise
