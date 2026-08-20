@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-04-30
 author: csells
 image: images/1yM2BlF_ckdUzoDnSdAjPoA.webp
-category: engineering
+category: deep-dive
 layout: blog
 ---
 
@@ -417,4 +417,4 @@ For more information about plugin testing, see [Testing your plugin](https://flu
 
 ## Summary
 
-As you can see, there’s a lot of new features for the Flutter plugin developer, allowing you to build more full-featured and more robust plugins across more platforms. If you’re interested in some web-specific details, I recommend Harry Terkelsen’s two-part series on How to Write a Flutter Web Plugin ([part 1](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) and [part 2](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6)). For more information on writing plugins in general, the [Developing plugin packages](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin) documentation on flutter.dev is also a great resource.
+As you can see, there’s a lot of new features for the Flutter plugin developer, allowing you to build more full-featured and more robust plugins across more platforms. If you’re interested in some web-specific details, I recommend Harry Terkelsen’s two-part series on How to Write a Flutter Web Plugin ([part 1](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin) and [part 2](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin-part-2)). For more information on writing plugins in general, the [Developing plugin packages](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin) documentation on flutter.dev is also a great resource.

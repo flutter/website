@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-04-17
 author: filiph
 image: images/14bIqmJ8DQLSnlFtkN6bjaA.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 
@@ -271,14 +271,14 @@ We saw what `Ticker` really is. We saw how to manually listen to an `AnimationCo
 
 Articles in this series:
 
-* [How to Choose Which Flutter Animation Widget is Right for You?](https://medium.com/p/79ecfb7e72b5/edit)
+* [How to Choose Which Flutter Animation Widget is Right for You?](https://flutter.dev/blog/how-to-choose-which-flutter-animation-widget-is-right-for-you)
 
-* [Flutter animation basics with implicit animations](https://medium.com/flutter/flutter-animation-basics-with-implicit-animations-95db481c5916)
+* [Flutter animation basics with implicit animations](https://flutter.dev/blog/flutter-animation-basics-with-implicit-animations)
 
-* [Custom Implicit Animations in Flutter…with TweenAnimationBuilder](https://medium.com/flutter/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185)
+* [Custom Implicit Animations in Flutter…with TweenAnimationBuilder](https://flutter.dev/blog/custom-implicit-animations-in-flutter-with-tweenanimationbuilder)
 
-* [Directional animations with built-in explicit animations](https://medium.com/flutter/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7)
+* [Directional animations with built-in explicit animations](https://flutter.dev/blog/directional-animations-with-built-in-explicit-animations)
 
-* [When should I useAnimatedBuilder or AnimatedWidget?](https://medium.com/flutter/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8)
+* [When should I useAnimatedBuilder or AnimatedWidget?](https://flutter.dev/blog/when-should-i-useanimatedbuilder-or-animatedwidget)
 
-* [Animation deep dive](https://medium.com/flutter/animation-deep-dive-39d3ffea111f) (this article)
+* [Animation deep dive](https://flutter.dev/blog/animation-deep-dive) (this article)

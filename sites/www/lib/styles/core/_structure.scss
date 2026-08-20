@@ -20,7 +20,7 @@ main {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 2.19%;
   margin: 0 auto;
-  max-width: var(--screen-xl-min);  
+  max-width: var(--screen-xl-min);
 }
 
 .centered {

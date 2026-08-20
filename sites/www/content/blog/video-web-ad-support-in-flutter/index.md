@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-12-17
 author: zoeyfan
 image: images/0xsAbaMexfbR30wgK.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -79,4 +79,4 @@ We’re committed to providing you, the Flutter developer, with the tools and re
 
 * Master the art of deep linking: [Flutter documentation](https://docs.flutter.dev/development/ui/navigation/deep-linking)
 
-* Stay updated with the latest Flutter news: [Flutter blog](https://medium.com/flutter)
+* Stay updated with the latest Flutter news: [Flutter blog](https://flutter.dev/blog)

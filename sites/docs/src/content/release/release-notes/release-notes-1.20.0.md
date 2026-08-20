@@ -10301,7 +10301,7 @@ There were 1316 pull requests.
 
 [18752](https://github.com/flutter/engine/pull/18752) started polling the gpu usage (cla: yes, platform-ios)
 
-[18755](https://github.com/flutter/engine/pull/18755) Pin the analyzer version as a temporary workaround for https://github.com/dart-lang/sdk/issues/42163 (cla: yes)
+[18755](https://github.com/flutter/engine/pull/18755) Pin the analyzer version as a temporary workaround for {{site.repo.dart-sdk}}/issues/42163 (cla: yes)
 
 [18756](https://github.com/flutter/engine/pull/18756) Implement GetAllocationSize for Vertices (cla: yes)
 

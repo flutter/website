@@ -45,8 +45,7 @@ class ConsultantsPage extends StatelessComponent {
               div([
                 a(
                   classes: 'btn primary',
-                  href:
-                      'https://docs.google.com/forms/d/1CS1Ysbwyeya4o0kzu1acPFie8ozHrUgEmAK4kx0_MZM/edit?usp=drive_open&resourcekey=0-Qi5RvEWxp_WT86zHombxgg',
+                  href: 'https://docs.google.com/forms/d/1CS1Ysbwyeya4o0kzu1acPFie8ozHrUgEmAK4kx0_MZM/edit?usp=drive_open&resourcekey=0-Qi5RvEWxp_WT86zHombxgg',
                   [.text('Become a Flutter Consultant')],
                 ),
               ]),

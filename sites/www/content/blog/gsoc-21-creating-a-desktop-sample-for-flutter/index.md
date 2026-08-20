@@ -6,7 +6,7 @@ description: >-
 publishDate: 2021-08-22
 author: abd99
 image: images/1aRiqWvnUYD-cSbGhxTnUsw.jpeg
-category: story
+category: case-study
 layout: blog
 ---
 
@@ -58,7 +58,7 @@ There are a few more things that I’d like to add to the project. The two main 
 
 ## Experience
 
-My experience with Google Summer of Code (GSoC) this time was even better than last year. (Check out [Learn testing with the new Flutter sample](https://medium.com/flutter/learn-testing-with-the-new-flutter-sample-gsoc20-work-product-e872c7f6492a) to read more about the project I worked on last year.) I think this year was better because the project was more technical, covered more concepts, and was related to something that I never worked on before. I also knew a lot more people on the team this time. I think GSoC will be a part of my life that I won’t ever forget.
+My experience with Google Summer of Code (GSoC) this time was even better than last year. (Check out [Learn testing with the new Flutter sample](https://flutter.dev/blog/learn-testing-with-the-new-flutter-sample-gsoc20-work-product) to read more about the project I worked on last year.) I think this year was better because the project was more technical, covered more concepts, and was related to something that I never worked on before. I also knew a lot more people on the team this time. I think GSoC will be a part of my life that I won’t ever forget.
 
 ### Mentorship
 

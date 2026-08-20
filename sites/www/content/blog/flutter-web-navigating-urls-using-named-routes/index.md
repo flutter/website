@@ -7,11 +7,11 @@ description: >-
 publishDate: 2020-03-30
 author: perclasson
 image: images/0Uoo0IGsUFUf8GJsT.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 
-👉 Update: [Flutter’s new Navigation and Routing system](https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade) is now available, and it is the preferred way to handle URLs in Flutter.
+👉 Update: [Flutter’s new Navigation and Routing system](https://flutter.dev/blog/learning-flutters-new-navigation-and-routing-system) is now available, and it is the preferred way to handle URLs in Flutter.
 
 Named routes can be used to navigate between pages inside a Flutter mobile app, but they also work for URLs in Flutter web apps. This article explains how to add named routes to your app, and how you can customize them, to have pattern matching inside the routes.
 

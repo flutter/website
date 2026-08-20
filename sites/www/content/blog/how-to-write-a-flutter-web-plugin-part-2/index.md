@@ -5,13 +5,13 @@ description: >-
 publishDate: 2020-02-13
 author: harryterkelsen
 image: images/1jLlh4b9zQ3u0aUA-hHAgKg.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 
 ## Introduction
 
-In [Part 1](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) of this guide, you learned how to add web support to a Flutter plugin using the same technologies that Android and iOS plugins use: `MethodChannel`s. While this is a viable method for adding web support to a Flutter plugin, it does have some disadvantages.
+In [Part 1](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin) of this guide, you learned how to add web support to a Flutter plugin using the same technologies that Android and iOS plugins use: `MethodChannel`s. While this is a viable method for adding web support to a Flutter plugin, it does have some disadvantages.
 
 For one, there is unnecessary overhead of sending plugin method calls over a `MethodChannel`. On the web, your entire app is compiled into one JavaScript bundle, so the plugin code is needlessly serializing the method call into a byte array, which is then instantly deserialized by the web plugin.
 
@@ -163,7 +163,7 @@ abstract class UrlLauncherPlatform extends PlatformInterface {
 
 In the code comments above, once again implementers of platform implementations are told to use `extends` rather than `implements` to write their implementations of `UrlLauncherPlatform`. This is the same warning as in the `pubspec.yaml` and `README.md` files. Not only does the class warn implementers to use `extends` rather than `implements`, it enforces this by extending `PlatformInterface`. If you’re interested in seeing how `PlatformInterface` enforces that subtypes use `extends` rather than `implements`, check out [`package:plugin_platform_interface`](https://pub.dev/packages/plugin_platform_interface). The main thing you should take away from the code above is that you must have the same boilerplate in your platform interface classes in order to prevent implementers from using `implements`.
 
-Notice also the `instance` getter and setter in the platform interface. New platforms can support a plugin by `extend`ing the platform interface and setting their platform-specific class as the default instance. The default instance for any platform interface should always be one that uses `MethodChannel` to send the method call on the channel to the platform backend. Defaulting to an implementation backed by a `MethodChannel` means that the existing Android and iOS implementations will continue to work by default (as well as web implementations if they were implemented using `MethodChannel` as shown in [Part 1](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) of this guide).
+Notice also the `instance` getter and setter in the platform interface. New platforms can support a plugin by `extend`ing the platform interface and setting their platform-specific class as the default instance. The default instance for any platform interface should always be one that uses `MethodChannel` to send the method call on the channel to the platform backend. Defaulting to an implementation backed by a `MethodChannel` means that the existing Android and iOS implementations will continue to work by default (as well as web implementations if they were implemented using `MethodChannel` as shown in [Part 1](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin) of this guide).
 
 The last thing to note is that all of the methods in the platform interface should have a default implementation that just throws an `UnimplementedError`. Since every implementation of `UrlLauncherPlatform` must use `extends`, then if a new method is added to the interface, it won’t be a breaking change that causes apps to break. If an implementation used `implements`, it would be a breaking change because that implementation would no longer implement every method in the interface.
 
@@ -194,7 +194,7 @@ class MethodChannelUrlLauncher extends UrlLauncherPlatform {
 }
 ```
 
-If you followed [Part 1](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) of this guide, you will recognize the code to invoke the method on the `MethodChannel` above. In the next step, when we refactor `package:url_launcher` to use `package:url_launcher_platform_interface`, since the default platform interface uses `MethodChannel` to dispatch the calls, all currently existing platforms for `package:url_launcher` should continue to work.
+If you followed [Part 1](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin) of this guide, you will recognize the code to invoke the method on the `MethodChannel` above. In the next step, when we refactor `package:url_launcher` to use `package:url_launcher_platform_interface`, since the default platform interface uses `MethodChannel` to dispatch the calls, all currently existing platforms for `package:url_launcher` should continue to work.
 
 ###### Finishing package:url_launcher_platform_interface
 
@@ -221,7 +221,7 @@ dependencies:
 
 ##### Refactoring all usages of MethodChannel
 
-If you recall from [Part 1](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) of this guide, our (simplified) `package:url_launcher` contained the following `launch()` method:
+If you recall from [Part 1](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin) of this guide, our (simplified) `package:url_launcher` contained the following `launch()` method:
 
 ```dart
 const MethodChannel _channel = MethodChannel('plugins.flutter.io/url_launcher');
@@ -256,7 +256,7 @@ Make sure to add an entry to the `CHANGELOG.md` saying that you are migrating `p
 
 #### Step 3: Implementing package:url_launcher_web using the platform interface
 
-In [Part 1](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) of this guide, we created a `package:url_launcher_web` that uses `MethodChannel` for communication with the plugin. Let’s refactor this plugin to use the platform interface instead.
+In [Part 1](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin) of this guide, we created a `package:url_launcher_web` that uses `MethodChannel` for communication with the plugin. Let’s refactor this plugin to use the platform interface instead.
 
 Replace the contents of `lib/url_launcher_web.dart` with the following:
 

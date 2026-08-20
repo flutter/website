@@ -53,7 +53,7 @@ see [Adding assets and images][].
 [Adding assets and images]: /ui/assets/assets-and-images
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: /packages-and-plugins/developing-packages
-[FlutterFire]: {{site.github}}/firebase/flutterfire
+[FlutterFire]: {{site.repo.flutterfire}}
 
 [`go_router`]: {{site.pub-pkg}}/go_router
 [`http`]: /cookbook/networking/fetch-data

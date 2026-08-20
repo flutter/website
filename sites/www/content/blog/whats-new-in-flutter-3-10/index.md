@@ -10,7 +10,7 @@ category: release
 layout: blog
 ---
 
-Welcome to Flutter 3.10! We can’t wait to show off the huge efforts of our amazing Flutter community. This Flutter release runs the incredible [Dart 3](https://medium.com/dartlang/announcing-dart-3-53f065a10635) also available *today*!
+Welcome to Flutter 3.10! We can’t wait to show off the huge efforts of our amazing Flutter community. This Flutter release runs the incredible [Dart 3](https://dart.dev/blog/announcing-dart-3) also available *today*!
 
 Flutter 3.10 includes many improvements to web, mobile, graphics, security and so much more. Let’s get down to business!
 

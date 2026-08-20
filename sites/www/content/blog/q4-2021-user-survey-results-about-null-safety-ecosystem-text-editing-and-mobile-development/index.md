@@ -6,7 +6,7 @@ description: >-
 publishDate: 2022-02-22
 author: jayoung-lee
 image: images/0Zw_zyVq5CfP7Y09o.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -26,7 +26,7 @@ To keep the survey short, we asked different questions to different cohorts, so 
 
 ## Dart null safety
 
-The stable version of Dart null safety was [released](https://medium.com/dartlang/announcing-dart-2-12-499a6e689c87) in March 2021. It was one of the largest additions to the language, and we provided a migration tool and a [guide](https://dart.dev/null-safety/migration-guide) to help developers migrate existing code to null safety. We wanted to know how the migration experience has been for you, so that we can do better if we attempt to make similar language changes in the future.
+The stable version of Dart null safety was [released](https://dart.dev/blog/announcing-dart-2-12) in March 2021. It was one of the largest additions to the language, and we provided a migration tool and a [guide](https://dart.dev/null-safety/migration-guide) to help developers migrate existing code to null safety. We wanted to know how the migration experience has been for you, so that we can do better if we attempt to make similar language changes in the future.
 
 Overall, 89.5% of those who have used Dart null safety in the past 6 months were satisfied with the feature. Those who had previous experience with null safety (such as Kotlin) were more likely to be satisfied with the feature (+3 percentage points). The biggest benefit of Dart null safety was “reduced bugs in code” (79.4%), followed by “easier-to-understand code” (49.7%).
 
@@ -50,7 +50,7 @@ Nevertheless, we continue to hear from you that there still are many packages an
 
 <DashImage figure src="images/0tySCnxRM1tJCRUFQ.webp" alt="*While various packages contributed to decreased productivity of developers. The top choice “Firebase” got votes from 22%.*" caption="*While various packages contributed to decreased productivity of developers. The top choice “Firebase” got votes from 22%.*" />
 
-Firebase is widely used by Flutter users, which contributed to the relatively large number (22.1%). We’re continuing to invest into Firebase plugins (“[FlutterFire](https://firebase.flutter.dev/)” plugins). For example, last December, we [released stable versions of the FlutterFire plugins](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) and standardized them. It means that all the FlutterFire plugins now use the same underlying version of the SDKs, and developers won’t run into version incompatibility issues when they mix and match the plugins. We plan to monitor this and we’re hoping to see Firebase become a more productive service for developers when we next field this question.
+Firebase is widely used by Flutter users, which contributed to the relatively large number (22.1%). We’re continuing to invest into Firebase plugins (“[FlutterFire](https://firebase.flutter.dev/)” plugins). For example, last December, we [released stable versions of the FlutterFire plugins](https://flutter.dev/blog/whats-new-in-flutter-2-8) and standardized them. It means that all the FlutterFire plugins now use the same underlying version of the SDKs, and developers won’t run into version incompatibility issues when they mix and match the plugins. We plan to monitor this and we’re hoping to see Firebase become a more productive service for developers when we next field this question.
 
 What’s also notable in the graph above was that 42 common items could not cover all the needs, and 19.2% chose to specify “Other” types of packages and plugins that decrease their productivity. It highlights that there are so many diverse needs that we can only solve as a community.
 
@@ -84,7 +84,7 @@ When it comes to debugging, in both platforms, users had to deal with platform s
 
 <DashImage figure src="images/0AiW2zfqRgJcWNqKn.webp" alt="*Debugging platform issues happened more often while adding or upgrading packages or plugins*" caption="*Debugging platform issues happened more often while adding or upgrading packages or plugins*" />
 
-We also learned that dealing with Xcode (iOS) and Gradle (Android) was the most common issue while releasing an app, which matched our hunch. We already made the Flutter CLI show user-friendly error messages for common Gradle errors, which was released in the latest update, [Flutter 2.10](https://medium.com/flutter/whats-new-in-flutter-2-10-5aafb0314b12).
+We also learned that dealing with Xcode (iOS) and Gradle (Android) was the most common issue while releasing an app, which matched our hunch. We already made the Flutter CLI show user-friendly error messages for common Gradle errors, which was released in the latest update, [Flutter 2.10](https://flutter.dev/blog/whats-new-in-flutter-2-10).
 
 We will continue to improve the way these build system errors are presented, so that it’s easier to understand and more actionable. For iOS, we will add features to `flutter build ipa` in an upcoming release ([related issue here](https://github.com/flutter/flutter/issues/97179)) that makes release easier. More Xcode settings will be automatically populated in new projects as well ([issue](https://github.com/flutter/flutter/issues/90020)). For Android, we are working on an auto-migration tool, which will be handy to find small discrepancies in Gradle config files.
 

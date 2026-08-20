@@ -1,6 +1,5 @@
 ---
 title: Feature integration
-sidenav: ai
 description: >
   How to integrate with other Flutter features.
 prev:
@@ -75,7 +74,7 @@ To see a complete example of setting the welcome message, check out the [welcome
 example][].
 
 [welcome example]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/welcome/welcome.dart
+    https://github.com/flutter/ai/blob/main/example/lib/welcome/welcome.dart
 
 ## Suggested prompts
 
@@ -116,7 +115,7 @@ To see a complete example of setting up suggestions for the user, take a look at
 the [suggestions example][].
 
 [suggestions example]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/suggestions/suggestions.dart
+    https://github.com/flutter/ai/blob/main/example/lib/suggestions/suggestions.dart
 
 ## LLM instructions
 
@@ -187,7 +186,7 @@ To use function calling, you need to define your tools and pass them to the
 `FirebaseProvider`. Check out the [function calling example][] for details.
 
 [function calling example]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/function_calls/function_calls.dart
+    https://github.com/flutter/ai/blob/main/example/lib/function_calls/function_calls.dart
 
 ## Disable attachments and audio input
 
@@ -235,7 +234,7 @@ LlmChatView(
 Check out the [custom STT example][] for details.
 
 [custom STT example]:
-    {{site.github}}/flutter/ai/tree/main/example/lib/custom_stt
+    https://github.com/flutter/ai/tree/main/example/lib/custom_stt
 
 ## Manage cancel or error behavior
 
@@ -356,8 +355,8 @@ To see history in action, check out the [recipes example app][] and the [history
 example app][].
 
 [history example app]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/history/history.dart
-[recipes example app]: {{site.github}}/flutter/ai/tree/main/example/lib/recipes
+    https://github.com/flutter/ai/blob/main/example/lib/history/history.dart
+[recipes example app]: https://github.com/flutter/ai/tree/main/example/lib/recipes
 
 ## Chat serialization/deserialization
 
@@ -413,7 +412,7 @@ every time and, in the face of binary attachments, that could take a while.
 To see this in action, check out the [history example app][].
 
 [history example app]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/history/history.dart
+    https://github.com/flutter/ai/blob/main/example/lib/history/history.dart
 
 ## Custom response widgets
 
@@ -592,11 +591,11 @@ example][custom-ex] and the [styles example][styles-ex], check out the [dark
 mode example][] and the [demo app][].
 
 [custom-ex]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/custom_styles/custom_styles.dart
-[styles-ex]: {{site.github}}/flutter/ai/blob/main/example/lib/styles/styles.dart
+    https://github.com/flutter/ai/blob/main/example/lib/custom_styles/custom_styles.dart
+[styles-ex]: https://github.com/flutter/ai/blob/main/example/lib/styles/styles.dart
 [dark mode example]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/dark_mode/dark_mode.dart
-[demo app]: {{site.github}}/flutter/ai#online-demo
+    https://github.com/flutter/ai/blob/main/example/lib/dark_mode/dark_mode.dart
+[demo app]: https://github.com/flutter/ai#online-demo
 [reference documentation]:
     {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/LlmChatViewStyle-class.html
 
@@ -685,7 +684,7 @@ To see this in action, check out the [Edit Recipe page][] of the recipes
 example.
 
 [Edit Recipe page]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/recipes/pages/edit_recipe_page.dart
+    https://github.com/flutter/ai/blob/main/example/lib/recipes/pages/edit_recipe_page.dart
 
 ## Rerouting prompts
 
@@ -744,4 +743,4 @@ Retrieval Augmented Generation (RAG).
 To see this in action, check out the [logging example app][].
 
 [logging example app]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/logging/logging.dart
+    https://github.com/flutter/ai/blob/main/example/lib/logging/logging.dart

@@ -5,7 +5,7 @@ description: >-
 publishDate: 2023-01-25
 author: timsneath
 image: images/01m_CqCW7oMEoqPrl.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -19,7 +19,7 @@ Flutter has proven popular, with over 700,000 published apps to date: from [smal
 
 > “With Flutter, we reduced the code size by 66% for the same functionality… this means less bugs for each platform and less tech debt in the future.” (Kenechi Ufondu, Software Engineer, Google Classroom)
 
-The first release of Flutter provided a UI toolkit for building mobile apps on Android and iOS, but with Flutter 3, we expanded production support to include Windows, macOS, Linux, and the web, while also enabling embedded platforms to use Flutter. Building on that, [this week we shipped our latest stable release, Flutter 3.7](https://medium.com/flutter/whats-new-in-flutter-3-7-38cbea71133c), which adds a broad set of new features including a new rendering engine on iOS, enhanced support for Material 3 and iOS-style widgets, revamped support for internationalization, background processing improvements, and updates to developer tooling.
+The first release of Flutter provided a UI toolkit for building mobile apps on Android and iOS, but with Flutter 3, we expanded production support to include Windows, macOS, Linux, and the web, while also enabling embedded platforms to use Flutter. Building on that, [this week we shipped our latest stable release, Flutter 3.7](https://flutter.dev/blog/whats-new-in-flutter-3-7), which adds a broad set of new features including a new rendering engine on iOS, enhanced support for Material 3 and iOS-style widgets, revamped support for internationalization, background processing improvements, and updates to developer tooling.
 
 But at this event, we’re looking ***forward***, offering a preview of the next wave of investments we’re making in Flutter: breakthrough graphics performance, seamless integration for web and mobile, early support for new and emerging architectures, and a continued focus on developer experience. We’re showcasing work that will gradually be delivered over the coming months, and we hope that this leaves you excited about our vision for Flutter as a powerful toolkit for any developer who wants to build high-quality, beautiful user experiences that can go anywhere pixels are painted.
 
@@ -93,7 +93,7 @@ At Flutter Forward, we’re previewing some of our early work on some major new 
 
 We’re also **formally announcing Dart 3**, which is the culmination of our work to introduce sound null safety to the language. Dart 3 also removes other long-deprecated features to further modernize the language. We have started publishing alpha-quality builds of Dart 3, along with matching Flutter builds, enabling developers to test packages and apps. For more information on Dart 3, check out the [separate blog post on the Dart channel](https://medium.com/dart-lang/dart-3-alpha-f1458fb9d232).
 
-We’re investing in the developer experience for Flutter as well, of course. Following on from the success of the casual game toolkit we [announced at I/O](https://medium.com/flutter/announcing-the-flutter-casual-games-toolkit-c22e401d8fee) last year, we’re sharing [the first version of our **news toolkit**](https://medium.com/flutter/announcing-the-flutter-news-toolkit-180a0d32c012), which accelerates mobile development for news publishers and other content providers who want to reach mobile users without having to design an app from scratch. It includes everything you need to build an article-centric app, with navigation and search, authentication, ad integrations, notifications, profiles and subscriptions, while incorporating best practices from Google News Initiative’s research. We’re today featuring three early adopters here in Africa who are building apps based on this toolkit, including [Hespress](https://www.hespress.com/), one of the largest news sites in Morocco, [Bold Sports](https://boldsportsng.com/), a popular the Nigerian sports site; and [The Standard](https://www.standardmedia.co.ke/), the oldest newspaper in Kenya.
+We’re investing in the developer experience for Flutter as well, of course. Following on from the success of the casual game toolkit we [announced at I/O](https://flutter.dev/blog/announcing-the-flutter-casual-games-toolkit) last year, we’re sharing [the first version of our **news toolkit**](https://flutter.dev/blog/announcing-the-flutter-news-toolkit), which accelerates mobile development for news publishers and other content providers who want to reach mobile users without having to design an app from scratch. It includes everything you need to build an article-centric app, with navigation and search, authentication, ad integrations, notifications, profiles and subscriptions, while incorporating best practices from Google News Initiative’s research. We’re today featuring three early adopters here in Africa who are building apps based on this toolkit, including [Hespress](https://www.hespress.com/), one of the largest news sites in Morocco, [Bold Sports](https://boldsportsng.com/), a popular the Nigerian sports site; and [The Standard](https://www.standardmedia.co.ke/), the oldest newspaper in Kenya.
 
 <YoutubeEmbed id="YnJwjZ3jCTc" title="FOO041 v8" fullwidth="true"/>
 

@@ -3,14 +3,14 @@
 body.brand {
 
   section.hero {
-    --lt-blue: #196BD4;
-    --dk-blue: #1783E1;
+    --lt-blue: #196bd4;
+    --dk-blue: #1783e1;
 
     background-color: var(--primary);
-    background-image: 
+    background-image:
       linear-gradient(
-        to bottom, 
-        var(--lt-blue) 20%, 
+        to bottom,
+        var(--lt-blue) 20%,
         transparent 60%
       ),
       radial-gradient(
@@ -19,8 +19,8 @@ body.brand {
         var(--lt-blue) 80%
       ),
       linear-gradient(
-        145deg, 
-        var(--lt-blue) 0%, 
+        145deg,
+        var(--lt-blue) 0%,
         var(--dk-blue) 60%
       );
     padding: var(--gutter-xl) 0;
@@ -32,7 +32,7 @@ body.brand {
         h4, h1 {
           color: white;
         }
-  
+
         h1 {
           max-width: 375px !important;
           margin-bottom: var(--spacer) !important;
@@ -183,7 +183,7 @@ body.brand {
 
   .compare-cols {
     --green: #158477;
-    --red: #D43324;
+    --red: #d43324;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -203,7 +203,7 @@ body.brand {
     .compare-label {
       padding: var(--spacer-sm) 0;
       font-weight: var(--font-weight-normal);
-      font-size: var(----font-size-default);
+      font-size: var(--font-size-default);
 
       span {
         font-weight: var(--font-weight-bolder);
@@ -230,7 +230,7 @@ body.brand {
 
     hgroup {
       margin-bottom: var(--gutter);
-      
+
       h3 {
         font-size: var(--font-size-heading-2);
         margin-bottom: var(--gutter-sm);
@@ -289,8 +289,8 @@ body.brand {
         padding: 110px 70px;
       }
 
-      > div:nth-child(1) .downloadable-image { 
-        background-color: white; 
+      > div:nth-child(1) .downloadable-image {
+        background-color: white;
       }
     }
 
@@ -311,7 +311,7 @@ body.brand {
 
     .variation-grid {
       > div .downloadable-image {
-        background-color: white; 
+        background-color: white;
         height: 370px;
         display: flex;
         justify-content: center;
@@ -355,7 +355,7 @@ body.brand {
       }
     }
   }
-  
+
   section#logo-sizing-spacing {
     padding-bottom: var(--spacer);
 
@@ -367,7 +367,7 @@ body.brand {
       gap: 30px;
     }
 
-    @include breakpoints.screen(md) {      
+    @include breakpoints.screen(md) {
       .compare-cols {
         grid-template-columns: 1fr;
         padding: 80px;
@@ -404,11 +404,11 @@ body.brand {
       }
 
       > div:nth-child(1) .image-harness {
-        background-color: #2968D0;
+        background-color: #2968d0;
       }
 
       > div:nth-child(2) .image-harness {
-        background-color: #53B7F7;
+        background-color: #53b7f7;
       }
     }
   }
@@ -456,21 +456,21 @@ body.brand {
       grid-template-columns: 1fr;
       gap: 0;
       align-items: center;
-      
+
       &.colors-primary .colors-grid {
-        .color:nth-child(1) .color-chip { background-color: #042B59; }
-        .color:nth-child(2) .color-chip { background-color: #0553B1; }
-        .color:nth-child(3) .color-chip { background-color: #027DFD; }
+        .color:nth-child(1) .color-chip { background-color: #042b59; }
+        .color:nth-child(2) .color-chip { background-color: #0553b1; }
+        .color:nth-child(3) .color-chip { background-color: #027dfd; }
       }
 
       &.colors-secondary {
         padding-bottom: var(--spacer-md);
 
         .colors-grid {
-          .color:nth-child(1) .color-chip { background-color: #F25D50; }
-          .color:nth-child(2) .color-chip { background-color: #FFF275; }
-          .color:nth-child(3) .color-chip { background-color: #6200EE; }
-          .color:nth-child(4) .color-chip { background-color: #1CDAC5; }
+          .color:nth-child(1) .color-chip { background-color: #f25d50; }
+          .color:nth-child(2) .color-chip { background-color: #fff275; }
+          .color:nth-child(3) .color-chip { background-color: #6200ee; }
+          .color:nth-child(4) .color-chip { background-color: #1cdac5; }
         }
       }
     }
@@ -512,7 +512,7 @@ body.brand {
       .color-chip {
         border-radius: var(--ui-border-radius-sm);
       }
-  
+
       .color-desc {
         min-width: 100%;
         display: block;
@@ -543,12 +543,12 @@ body.brand {
         gap: var(--gutter-lg);
 
         .colors-grid {
-          gap: var(--gutter-sm); 
-          order: 1; 
+          gap: var(--gutter-sm);
+          order: 1;
         }
 
-        .colors-desc { 
-          order: 2; 
+        .colors-desc {
+          order: 2;
         }
       }
 
@@ -568,7 +568,7 @@ body.brand {
     .feature {
       gap: var(--gutter);
       padding: 0;
-      
+
       .text {
         order: 1;
         padding-right: var(--gutter);

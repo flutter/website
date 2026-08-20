@@ -37,8 +37,8 @@ The following matrix summarizes the different implementations and their trade-of
 
 | Mode | Benefits | Considerations | Enabler |
 | :--- | :--- | :--- | :--- |
-| **Texture layer** | • Good Flutter performance<br>• Full widget transforms work | • Janky during quick scrolling<br>• SurfaceViews lose accessibility and text magnifier breaks | Default behavior or standard `AndroidView` |
-| **Hybrid composition** | • Full native fidelity<br>• Correct accessibility and SurfaceView support | • Causes thread merging of raster & platform, which degrades Flutter FPS<br>• Platform View -> Renders to texture -> Uploads to Impeller -> Impeller composites Flutter content and Platform View content |• `PlatformViewLink` with `AndroidViewSurface`<br>• [`AndroidViewController` builds either a TLHC or an HC Platform View][AC] |
+| **Texture layer** | • Good Flutter performance<br>• Full widget transforms work | • Janky during quick scrolling<br>• SurfaceViews lose accessibility and text magnifier breaks<br>• Platform View -> Renders to texture -> Uploads to Impeller -> Impeller composites Flutter content and Platform View content | Default behavior or standard `AndroidView` |
+| **Hybrid composition** | • Full native fidelity<br>• Correct accessibility and SurfaceView support | • Causes thread merging of raster & platform, which degrades Flutter FPS<br>• Platform View -> Renders into the Android view hierarchy as usual, Flutter content renders into `ImageReader`-backed `FlutterImageView`s (a background layer, plus an overlay layer for content drawn above a platform view), the Android view hierarchy composites them together |• `PlatformViewLink` with `AndroidViewSurface`<br>• [`AndroidViewController` builds either a TLHC or an HC Platform View][AC] |
 | **HCPP** (Experimental) | • Full fidelity and performance<br>• Solves original sync overhead | • Requires Android API 34+, Vulkan support, and use of the Impeller rendering engine<br>• Platform View -> Renders to native Android Surface, Impeller renders to native Android Surface, SurfaceFlinger composites the two together | • `<meta-data>` in `AndroidManifest.xml`<br>• `--enable-hcpp` local flag<br> •[`AndroidViewController` builds either a TLHC or an HC Platform View][AC] |
 
 {:.table .table-striped}
@@ -47,9 +47,18 @@ The following matrix summarizes the different implementations and their trade-of
 
 ## Hybrid composition {: #hybrid-composition }
 
-Platform Views are rendered as they are normally.
-Flutter content is rendered into a texture.
-SurfaceFlinger composes the Flutter content and the platform views.
+Platform views are rendered as they normally are,
+directly in the Android view hierarchy.
+Flutter content is rendered into `ImageReader`s and painted by
+`FlutterImageView`s that sit in the same window as the platform views,
+so the Android view hierarchy composites them together.
+
+Flutter uses two kinds of these layers.
+The main Flutter render surface is swapped for a background
+`FlutterImageView` once a platform view is added.
+Flutter content that draws on top of a platform view
+goes into an additional overlay `FlutterImageView`,
+allocated from a pool and recycled between frames.
 
 ## Hybrid composition++ (HCPP) {: #hcpp }
 
@@ -66,8 +75,10 @@ It is currently available as an opt-in feature.
 
 * **Android API 34 or later**: Required for native transaction
   synchronization capabilities.
-* **Vulkan rendering**: The device must be capable of rendering with Vulkan.
-  Required for Impeller to be enabled.
+* **Impeller with the Vulkan backend**: The device must be capable of
+  rendering with Vulkan. Impeller also has an OpenGLES backend, and
+  falls back to it on devices without usable Vulkan support.
+  HCPP is not available in that configuration.
 
 If these requirements are not met on the end-user device,
 Flutter will automatically fall back to the existing platform view strategy
@@ -482,18 +493,6 @@ For more information, visit the API docs for:
 [`PlatformViewFactory`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
 [`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
 
-Finally, modify your `build.gradle` file
-to require one of the minimal Android SDK versions:
-
-```kotlin
-android {
-    defaultConfig {
-        minSdk = 19 // if using hybrid composition
-        minSdk = 20 // if using virtual display.
-    }
-}
-```
-
 ### Manual view invalidation
 
 Certain Android Views don't invalidate themselves when their content changes.
@@ -516,15 +515,21 @@ Check out the [existing Platform View issues][] on GitHub.
 Platform views in Flutter come with performance trade-offs.
 
 In a typical Flutter app,
-the Flutter UI is composed on a dedicated raster thread,
-while platform code runs on the UI/platform thread.
-This separation keeps Flutter rendering fast and fluid.
+Flutter rasterizes frames on a dedicated raster thread,
+while platform code, such as plugins and Android views,
+runs on the platform thread, which is the Android main thread.
+This separation keeps Flutter rendering fast and fluid,
+as the platform thread is not blocked by rasterization work.
 
-However, when a platform view is rendered on Android using hybrid
-composition, Flutter merges the raster and UI threads into a single thread to
-ensure correct synchronization between the native Android views and the Flutter canvas.
-Because of this thread merging, rendering complex Flutter widgets
-alongside a platform view can compete with OS messages and plugin interactions,
+However, when a platform view is rendered on Android using
+hybrid composition,
+Flutter merges the raster thread into the platform thread
+to ensure correct synchronization between
+the native Android views and the Flutter canvas.
+Because of this thread merging,
+rasterizing complex Flutter widgets alongside a platform view
+competes with other work on the platform thread,
+such as OS messages and plugin interactions,
 potentially causing lower application FPS and frame drops.
 
 Also, prior to Android 10, hybrid composition copied each Flutter frame

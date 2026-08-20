@@ -30,7 +30,7 @@ Another performance improvement in Flutter 2.5 is the latency when sending messa
 
 <DashImage figure src="images/0TvARS8SsME4sl-Ib.webp" alt="*iOS message latencies before and after*" caption="*iOS message latencies before and after*" />
 
-You can read more about the details of this work in the [Improving Platform Channel Performance in Flutter](https://medium.com/flutter/improving-platform-channel-performance-in-flutter-e5b4e5df04af) blog post by Aaron Clarke.
+You can read more about the details of this work in the [Improving Platform Channel Performance in Flutter](https://flutter.dev/blog/improving-platform-channel-performance-in-flutter) blog post by Aaron Clarke.
 
 One final performance update if you’re targeting iOS: In this release, Flutter apps built on on Apple Silicon M1 Macs run natively on ARM iOS simulators ([#pull/85642](https://github.com/flutter/flutter/pull/85642)). This means there’s no Rosetta translation between the Intel x86_64 instructions and ARM, which increases performance during your iOS app testing and allows you to avoid some subtle Rosetta issues ([#74970](https://github.com/flutter/flutter/issues/74970#issuecomment-858170914), [#79641](https://github.com/flutter/flutter/issues/79641)). This is another step along the path for full support in Flutter for Apple Silicon. Stay tuned for more.
 
@@ -40,7 +40,7 @@ Of course, Flutter isn’t Flutter without the Dart language and runtime on whic
 
 <DashImage figure src="images/0CNbVsc26rivkp2vI.webp" alt="*`flutter create` comes out of the box with an analysis_options.yaml file pre-populated with recommended Flutter lints*" caption="*`flutter create` comes out of the box with an analysis_options.yaml file pre-populated with recommended Flutter lints*" />
 
-Not only do you get these lints when you create a new Dart or Flutter project, but with [just a few steps](https://flutter.dev/docs/release/breaking-changes/flutter-lints-package#migration-guide), you can add this same analysis to your existing apps as well. For the details of these lints, the new language features and more, check out [the release announcement for Dart 2.14](https://medium.com/dartlang/announcing-dart-2-13-c6d547b57067).
+Not only do you get these lints when you create a new Dart or Flutter project, but with [just a few steps](https://flutter.dev/docs/release/breaking-changes/flutter-lints-package#migration-guide), you can add this same analysis to your existing apps as well. For the details of these lints, the new language features and more, check out [the release announcement for Dart 2.14](https://dart.dev/blog/announcing-dart-2-13).
 
 ## Framework: Android full screen, Material You & text editing shortcuts
 
@@ -60,7 +60,7 @@ And while we’re talking about scrolling, another improvement is the addition o
 
 In this case, you don’t have to write any code but if you want to capture the [`ScrollMetricNotification`](https://master-api.flutter.dev/flutter/widgets/ScrollMetricsNotification-class.html) changes, you can. Special thanks goes out to community contributor [xu-baolin](https://github.com/xu-baolin) who worked hard on this and came up with a great solution.
 
-Another excellent contribution from the community is the addition of Material banner support to the `ScaffoldMessenger`. You may remember the `ScaffoldMessenger` from [the Flutter 2.0 release announcement](https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65) as a more robust way to show `SnackBars` at the bottom of the screen to provide users with notifications. In Flutter 2.5, you can now add a banner to the top of your scaffold that stays in place until the user dismisses it.
+Another excellent contribution from the community is the addition of Material banner support to the `ScaffoldMessenger`. You may remember the `ScaffoldMessenger` from [the Flutter 2.0 release announcement](https://flutter.dev/blog/whats-new-in-flutter-2-0) as a more robust way to show `SnackBars` at the bottom of the screen to provide users with notifications. In Flutter 2.5, you can now add a banner to the top of your scaffold that stays in place until the user dismisses it.
 
 <DashImage figure src="images/0WnLtflm5SF1I9GxK.webp" />
 

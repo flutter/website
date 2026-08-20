@@ -1,15 +1,18 @@
 article.content {
-  .table {
+  table {
     width: 100%;
     border-spacing: 0;
 
     thead {
       vertical-align: bottom;
-      background-color: var(--site-raised-bgColor);
+      background-color: var(--site-raised-bgColor, var(--site-inset-bgColor));
 
       th {
         border-top: 1px solid var(--site-outline-variant);
-        text-align: start;
+
+        &:not([align]) {
+          text-align: start;
+        }
       }
     }
 
@@ -18,7 +21,7 @@ article.content {
         vertical-align: top;
 
         &:nth-of-type(odd) {
-          background-color: rgb(var(--site-interaction-base-values) / 3%)
+          background-color: rgb(var(--site-interaction-base-values, 0 0 0) / 3%);
         }
       }
     }

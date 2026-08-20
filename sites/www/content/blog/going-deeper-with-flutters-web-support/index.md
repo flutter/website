@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-07-29
 author: mariam_hasnany
 image: images/1dbcXXNRiMmMXxA1YsZYwcQ.webp
-category: engineering
+category: deep-dive
 layout: blog
 ---
 
@@ -13,7 +13,7 @@ Today we want to give an update on our progress towards bringing Flutter to the 
 
 <DashImage figure src="images/1dbcXXNRiMmMXxA1YsZYwcQ.webp" />
 
-Our vision for Flutter is to provide a portable toolkit for building beautiful experiences wherever you might want to paint pixels on the screen. As [we’ve noted previously](https://medium.com/flutter/flutter-web-support-updates-8b14bfe6a908), we are deliberately app-centric with our framework and API choices, building a layered architecture that can scale across mobile, desktop, and embedded devices without compromising performance or quality.
+Our vision for Flutter is to provide a portable toolkit for building beautiful experiences wherever you might want to paint pixels on the screen. As [we’ve noted previously](https://flutter.dev/blog/flutter-web-support-updates), we are deliberately app-centric with our framework and API choices, building a layered architecture that can scale across mobile, desktop, and embedded devices without compromising performance or quality.
 
 The web is at the core of our work. Flutter was originally born out of explorations from the Chrome team. It draws inspiration from the productivity and iterative development model of the web, and many of our engineers have years of experience building browser engines and web standards. We target the web browser because it is the beating heart of the internet: the most pervasive, flexible, and extensive app model that has existed in computing history.
 
@@ -33,7 +33,7 @@ Let’s start with a recap of Flutter’s web architecture. Flutter is a [multil
 
 * an *engine* that renders to the target device using the system APIs it exposes.
 
-The framework code is written in Dart. We combine that with your own code and at compile time apply [tree-shaking algorithms](https://medium.com/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674) so that only the code used by your application is downloaded to the browser. Flutter adopts a reactive model, rendering the user interface in response to state changes. Within each frame Flutter builds widgets, performs layout, and lastly paints changes to the UI using the underlying browser APIs.
+The framework code is written in Dart. We combine that with your own code and at compile time apply [tree-shaking algorithms](https://flutter.dev/blog/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading) so that only the code used by your application is downloaded to the browser. Flutter adopts a reactive model, rendering the user interface in response to state changes. Within each frame Flutter builds widgets, performs layout, and lastly paints changes to the UI using the underlying browser APIs.
 
 <DashImage figure src="images/0RAaqRbmWskcjj6j2.webp" alt="Flutter’s architecture for the web is multilayer system with a Framework on top of a browser engine." caption="Flutter’s architecture for the web is multilayer system with a Framework on top of a browser engine." />
 

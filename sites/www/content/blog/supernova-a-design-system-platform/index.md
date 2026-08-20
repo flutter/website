@@ -5,11 +5,11 @@ description: >-
 publishDate: 2021-09-30
 author: mariam_hasnany
 image: images/1GOSImwOIA3oqItUMRmq5Kw.webp
-category: story
+category: case-study
 layout: blog
 ---
 
-Two years ago, Flutter announced an [early adopter program](https://medium.com/flutter/flutter-for-web-early-adopter-program-now-open-9f1fb146e4c4) for companies that were ready to build with Flutter’s web support. Today one of those early adopters, [Supernova](https://www.supernova.io/), is launching their design system platform, which is both built with Flutter and exports code for Flutter.
+Two years ago, Flutter announced an [early adopter program](https://flutter.dev/blog/flutter-for-web-early-adopter-program-now-open) for companies that were ready to build with Flutter’s web support. Today one of those early adopters, [Supernova](https://www.supernova.io/), is launching their design system platform, which is both built with Flutter and exports code for Flutter.
 
 We think Supernova is a good example of the kind of experience Flutter enables on the web. I sat down with Supernova’s CEO [Jiří Třečák](https://twitter.com/JiriTrecak) and CTO [Artem Ufimtcev](https://twitter.com/ArtemUfimtcev) to learn more about what they have built with Flutter’s web support.
 

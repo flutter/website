@@ -35,14 +35,28 @@ Flutter supports deploying to the following platforms.
     name="iOS"
     icon="mobile"
     arch="Arm64"
-    supported="13 to 26"
-    ci-tested="18"
-    unsupported="12 and earlier"
+    supported="15 to 26"
+    ci-tested="18 and 26"
+    unsupported="14 and earlier"
     deploy-to-link="/deployment/ios"
   />
 </PlatformsGrid>
 
 ## Desktop platforms
+
+:::warning macOS Intel (x64) deprecation
+As Apple phases out Intel-based Macs,
+Flutter is phasing out support for Intel (x64) hardware.
+For details on the timeline and impact,
+check out the [macOS Intel deprecation strategy][].
+
+If you can't migrate to an [Apple Silicon Mac][],
+you can continue using older Flutter releases from the [SDK archive][].
+
+[macOS Intel deprecation strategy]: {{site.main-url}}/go/macos-intel-deprecation
+[Apple Silicon Mac]: https://support.apple.com/en-us/116943
+[SDK archive]: /install/archive
+:::
 
 <PlatformsGrid>
   <PlatformCard
@@ -58,9 +72,9 @@ Flutter supports deploying to the following platforms.
     name="macOS"
     icon="laptop_mac"
     arch="x64, Arm64"
-    supported="Catalina (10.15) to Tahoe (26)"
+    supported="Monterey (12) to Tahoe (26)"
     ci-tested="Sequoia (15)"
-    unsupported="Mojave (10.14) and earlier"
+    unsupported="Big Sur (11) and earlier"
     deploy-to-link="/deployment/macos"
   />
   <PlatformCard
@@ -129,3 +143,17 @@ Flutter supports deploying to the following platforms.
     deploy-to-link="/deployment/web"
   />
 </PlatformsGrid>
+
+## Previous Flutter versions
+
+To learn about support for previous versions of Flutter,
+see the following resources:
+
+*   [Flutter SDK release notes][].
+    Find breaking changes and support updates listed by release.
+*   [Supported platforms page history][supported-platforms-history].
+    To see historical support matrices,
+    view previous versions of this page.
+
+[Flutter SDK release notes]: /release/release-notes
+[supported-platforms-history]: {{site.repo.this}}/commits/main/sites/docs/src/content/reference/supported-platforms.md

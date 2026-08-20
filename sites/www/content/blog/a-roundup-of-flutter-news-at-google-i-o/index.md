@@ -6,7 +6,7 @@ description: >-
 publishDate: 2019-05-08
 author: timsneath
 image: images/13XedGb879lTK2vbCP0uscA.webp
-category: event
+category: news
 layout: blog
 ---
 
@@ -46,7 +46,7 @@ Flutter expands from mobile devices to support the web and desktop: same codebas
 
 * [Announcing Flutter 1.5](https://medium.com/flutter-io/announcing-flutter-1-5-d203c6072e5c)
 
-* [Dart 2.3: optimized for building user interfaces](https://medium.com/dartlang/announcing-dart-2-3-optimized-for-building-user-interfaces-e84919ca1dff)
+* [Dart 2.3: optimized for building user interfaces](https://dart.dev/blog/announcing-dart-2-3-optimized-for-building-user-interfaces)
 
 * [Chrome OS and Flutter: better together](https://medium.com/googleplaydev/flutter-and-chrome-os-better-together-14b257ed6776)
 

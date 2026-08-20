@@ -6,7 +6,7 @@ description: >-
 publishDate: 2025-12-17
 author: twerske
 image: images/138nWNBqHADyCszyyX-h98Q.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -30,7 +30,7 @@ As you might know, Dart and Flutter ship quarterly updates. In 2025, we shipped 
 
 3. **[Flutter 3.35](https://blog.flutter.dev/whats-new-in-flutter-3-35-c58ef72e3766) & [Dart 3.9](https://blog.dart.dev/announcing-dart-3-9-ba49e8f38298) (Aug 2025):** Web hot reload became default, we launched experimental Widget Previews, introduced the Dart & Flutter [MCP server](https://docs.flutter.dev/ai/mcp-server), and announced the Material/Cupertino decoupling.
 
-4. **[Flutter 3.38](https://medium.com/r?url=https%3A%2F%2Fblog.flutter.dev%2Fwhats-new-in-flutter-3-38-3f7b258f7228) & [Dart 3.10](https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088) (Nov 2025):** Dart added dot shorthands, web tooling improved, and Widget Previews got IDE integration! Plus, crucial iOS 26/Xcode 26 support and the UIScene migration path.
+4. **[Flutter 3.38](https://flutter.dev/blog/whats-new-in-flutter-3-38) & [Dart 3.10](https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088) (Nov 2025):** Dart added dot shorthands, web tooling improved, and Widget Previews got IDE integration! Plus, crucial iOS 26/Xcode 26 support and the UIScene migration path.
 
 5. We laid out our vision early in the year, sharing our [**Flutter 2025 Roadmap Update**](https://blog.flutter.dev/flutter-2025-roadmap-f127882b117f) and it’s exciting to see how much has been delivered and the continued focus on multi-platform excellence and AI integration.
 

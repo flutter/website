@@ -79,18 +79,20 @@ to make sure that the flavors work as expected.
     * In the `flavors_example` project, navigate to the
       `android/app/` directory and open `build.gradle.kts`.
 
-    * Add the `flavorsDimension` property and the
-      `productFlavors` properties inside of the
-      `android {} block`. Make sure that the `android {}`
-      block also contains the default
-      `debug` and `release` build types:
+    * Add the `flavorDimensions` property and the
+      `productFlavors` properties inside the
+      `android {}` block. The default template explicitly defines
+      the `release` build type, while the `debug` build type is implicit:
 
       ```kotlin title="build.gradle.kts"
       android {
           ...
           buildTypes {
-            getByName("debug") {...}
-            getByName("release") {...}
+              release {
+                  // TODO: Add your own signing config for the release build.
+                  // Signing with the debug keys for now, so `flutter run --release` works.
+                  signingConfig = signingConfigs.getByName("debug")
+              }
           }
           ...
           flavorDimensions += "default"
@@ -400,5 +402,5 @@ the following resources:
 * [Build flavors in Flutter (Android and iOS) with Firebase][]
 * [How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI][flutterfireCLI]
 
-[Build flavors in Flutter (Android and iOS) with Firebase]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
+[Build flavors in Flutter (Android and iOS) with Firebase]: https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
 [flutterfireCLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/

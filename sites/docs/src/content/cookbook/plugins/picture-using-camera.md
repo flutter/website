@@ -27,7 +27,7 @@ check out the Google I/O 2024 talk,
 
 [`camera_android_camerax`]: {{site.pub-pkg}}/camera_android_camerax
 [CameraX]: https://developer.android.com/training/camerax
-[camerax-video]: {{site.youtube-site}}/watch?v=d1sRCa5k2Sg&t=1s
+[camerax-video]: {{site.yt.watch}}?v=d1sRCa5k2Sg&t=1s
 
 This recipe demonstrates how to use the `camera` plugin to display a preview,
 take a photo, and display it using the following steps:
@@ -59,16 +59,15 @@ $ flutter pub add camera path_provider path
 ```
 
 :::tip
-- For android, You must update `minSdkVersion` to 21 (or higher).
-- On iOS, the following lines must be added inside
-  `ios/Runner/Info.plist` to the access the camera and microphone.
+On iOS, the following lines must be added inside
+`ios/Runner/Info.plist` to access the camera and microphone:
 
-  ```xml
-  <key>NSCameraUsageDescription</key>
-  <string>Explanation on why the camera access is needed.</string>
-  <key>NSMicrophoneUsageDescription</key>
-  <string>Explanation on why the microphone access is needed.</string>
-  ```
+```xml
+<key>NSCameraUsageDescription</key>
+<string>Explanation on why the camera access is needed.</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>Explanation on why the microphone access is needed.</string>
+```
 :::
 
 ## 2. Get a list of the available cameras

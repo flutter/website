@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-06-18
 author: josealba
 image: images/10vbyZT-NITTvqljO8HtU4w.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -52,7 +52,7 @@ The biggest visual difference between the old slider and the new slider widgets 
 
 ### Value indicator paints on the overlay
 
-The updated value indicator is now painted on the overlay. This means that the indicator is no longer restricted to the scope of the slider’s `MediaQuery` and can be displayed over other widgets. This is expected because the indicator is only activated when dealing with the gesture detector, which means that it’s only shown when the user interacts with the slider. By integrating the [`Overlay`](https://api.flutter.dev/flutter/widgets/Overlay-class.html) with the [`CompositedTransformTarget`](https://api.flutter.dev/flutter/widgets/CompositedTransformTarget-class.html), [`CompositedTransformFollower`](https://api.flutter.dev/flutter/widgets/CompositedTransformFollower-class.html), and [`Layerlink`](https://api.flutter.dev/flutter/rendering/LayerLink-class.html) widgets, the value indicator can display over other widgets. To learn more about this mechanism, see [How to float an overlay widget over a (possibly transformed) UI widget](https://medium.com/flutter/how-to-float-an-overlay-widget-over-a-possibly-transformed-ui-widget-1d15ca7667b6).
+The updated value indicator is now painted on the overlay. This means that the indicator is no longer restricted to the scope of the slider’s `MediaQuery` and can be displayed over other widgets. This is expected because the indicator is only activated when dealing with the gesture detector, which means that it’s only shown when the user interacts with the slider. By integrating the [`Overlay`](https://api.flutter.dev/flutter/widgets/Overlay-class.html) with the [`CompositedTransformTarget`](https://api.flutter.dev/flutter/widgets/CompositedTransformTarget-class.html), [`CompositedTransformFollower`](https://api.flutter.dev/flutter/widgets/CompositedTransformFollower-class.html), and [`Layerlink`](https://api.flutter.dev/flutter/rendering/LayerLink-class.html) widgets, the value indicator can display over other widgets. To learn more about this mechanism, see [How to float an overlay widget over a (possibly transformed) UI widget](https://flutter.dev/blog/how-to-float-an-overlay-widget-over-a-possibly-transformed-ui-widget).
 
 The following diagram shows how the `Slider` and `RangeSlider` widgets are made:
 
@@ -172,6 +172,6 @@ When the thumb slider component is activated, there is now a `Shadow` that appea
 
 You can try these changes by switching to Flutter version 1.18.0–9.0. This version is available only on the master branch during the release of this article. You can switch to the master branch by running `flutter channel master` and then `flutter upgrade`.
 
-Learn more about the development of the `RangeSlider` in [Material RangeSlider in Flutter](https://medium.com/flutter/material-range-slider-in-flutter-a285c6e3447d).
+Learn more about the development of the `RangeSlider` in [Material RangeSlider in Flutter](https://flutter.dev/blog/material-range-slider-in-flutter).
 
 *About the author: Jose recently graduated from university and now works on [Material](https://material.io/), a design system that helps teams build high-quality digital experiences. Jose’s team maintains the Flutter [material library](https://api.flutter.dev/flutter/material/material-library.html). To learn more, visit his Jose’s pages on [GitHub](https://github.com/JoseAlba), [LinkedIn](https://www.linkedin.com/in/josealba1996/), [YouTube](https://www.youtube.com/channel/UCOdKA_On0oPe1tz02z1QfxA?view_as=subscriber), and [Instagram](https://www.instagram.com/jose.alba/).*

@@ -16,7 +16,7 @@ layout: blog
 
 ### Material 3 by default, Impeller preview for Android, DevTools extensions, and much more
 
-Welcome back to the quarterly Flutter stable release, this time for Flutter 3.16. This release sets Material 3 as the new default theme, brings a preview of Impeller to Android, allows adding extensions for DevTools, and much more! It also coincides with [significant updates to the Flutter Casual Games Toolkit](https://medium.com/flutter/building-your-next-casual-game-with-flutter-716ef457e440)!
+Welcome back to the quarterly Flutter stable release, this time for Flutter 3.16. This release sets Material 3 as the new default theme, brings a preview of Impeller to Android, allows adding extensions for DevTools, and much more! It also coincides with [significant updates to the Flutter Casual Games Toolkit](https://flutter.dev/blog/building-your-next-casual-game-with-flutter)!
 
 In only three months since our last release, we’ve had 928 pull requests merged by 145 community members with 40 community members authoring their first commit to Flutter!
 
@@ -195,7 +195,7 @@ Over the past few years, we’ve seen a growing community around casual game dev
 
 <DashImage figure src="images/1yWHI-1YwQAFUIVFvr5jGHQ.gif" />
 
-To help game developers become more productive, today Flutter is launching a major update to its [Casual Games Toolkit.](https://flutter.dev) It is a collection of new resources to help you move from concept to launch with more genre-specific templates such as a card game, an endless runner game, and service integrations like Play Games Services, in-app purchase, ads, achievements, crashlytics and multiplayer support. To learn more, check out the [games toolkit launch post](https://medium.com/flutter/building-your-next-casual-game-with-flutter-716ef457e440) by [Zoey Fan](https://medium.com/@zoeyfan_43394).
+To help game developers become more productive, today Flutter is launching a major update to its [Casual Games Toolkit.](https://flutter.dev) It is a collection of new resources to help you move from concept to launch with more genre-specific templates such as a card game, an endless runner game, and service integrations like Play Games Services, in-app purchase, ads, achievements, crashlytics and multiplayer support. To learn more, check out the [games toolkit launch post](https://flutter.dev/blog/building-your-next-casual-game-with-flutter) by [Zoey Fan](https://medium.com/@zoeyfan_43394).
 
 ## Web
 
@@ -211,7 +211,7 @@ To learn more, check out [Debugging performance for web apps](https://docs.flutt
 
 ### Mouse scroll wheel support
 
-While optimizing [Wonderous to meet Android’s large screen guidelines](https://medium.com/flutter/developing-flutter-apps-for-large-screens-53b7b0e17f10), one issue we discovered was that the mouse scroll wheel didn’t work well on tablets or foldables. It was [well known](https://github.com/flutter/flutter/issues/82973) that the user had to move the scroll wheel a significant amount for the screen to respond.
+While optimizing [Wonderous to meet Android’s large screen guidelines](https://flutter.dev/blog/developing-flutter-apps-for-large-screens), one issue we discovered was that the mouse scroll wheel didn’t work well on tablets or foldables. It was [well known](https://github.com/flutter/flutter/issues/82973) that the user had to move the scroll wheel a significant amount for the screen to respond.
 
 With this release, scrolling with a mouse on a flutter view matches the scroll speed on Android devices. ([44724](https://github.com/flutter/engine/pull/44724))
 
@@ -311,7 +311,7 @@ Thanks to the package authors of [Provider](https://pub.dev/packages/provider), 
 
 <DashImage figure src="images/0PlGmgXXrK7LBpiPR.webp" alt="Drift" caption="Drift" />
 
-For a deep dive into DevTools extensions, check out the [Dart and Flutter DevTools Extensions announcement](https://medium.com/flutter/dart-flutter-devtools-extensions-c8bc1aaf8e5f) by [Kenzie Davisson](https://medium.com/@kenzieschmoll).
+For a deep dive into DevTools extensions, check out the [Dart and Flutter DevTools Extensions announcement](https://flutter.dev/blog/dart-flutter-devtools-extensions) by [Kenzie Davisson](https://medium.com/@kenzieschmoll).
 
 ### DevTools updates
 
@@ -371,6 +371,6 @@ We called out the number of contributors at the beginning of this announcement, 
 
 For a full list of PRs that were included in this release, check out the [release notes and change log](https://docs.flutter.dev/release/release-notes).
 
-Flutter 3.16 is available on the stable channel today, and includes [Dart 3.2](https://medium.com/dartlang/dart-3-2-c8de8fe1b91f). To get started with these newest updates, all it takes is a [`flutter upgrade`](https://docs.flutter.dev/release/upgrade).
+Flutter 3.16 is available on the stable channel today, and includes [Dart 3.2](https://dart.dev/blog/announcing-dart-3-2). To get started with these newest updates, all it takes is a [`flutter upgrade`](https://docs.flutter.dev/release/upgrade).
 
 See you all again soon!

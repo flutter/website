@@ -73,7 +73,7 @@ include a copy of the following files in your issue:
 </Tab>
 </Tabs>
 
-[file an issue]: {{site.github}}/flutter/flutter/issues/new?template=02_bug.yml
+[file an issue]: {{site.repo.flutter}}/issues/new?template=02_bug.yml
 
 ### Add to an existing app (add-to-app)
 

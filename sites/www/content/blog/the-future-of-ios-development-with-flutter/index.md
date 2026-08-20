@@ -6,11 +6,11 @@ description: >-
 publishDate: 2023-05-18
 author: leighajarett
 image: images/1OGs9_siPcMAYd1yDAp-AOA.webp
-category: announcement
+category: news
 layout: blog
 ---
 
-Since its launch in 2017, [Flutter](https://flutter.dev) has quickly become a top choice for iOS app development. Developers worldwide *love* Flutter. Using Flutter, they can code once and deploy their apps to iOS, Android, web and desktop. This has led to a massive following, with over [a million apps](https://medium.com/flutter/racing-forward-at-i-o-2023-with-flutter-and-dart-df2a8fa841ab) built using Flutter.
+Since its launch in 2017, [Flutter](https://flutter.dev) has quickly become a top choice for iOS app development. Developers worldwide *love* Flutter. Using Flutter, they can code once and deploy their apps to iOS, Android, web and desktop. This has led to a massive following, with over [a million apps](https://flutter.dev/blog/racing-forward-at-i-o-2023-with-flutter-and-dart) built using Flutter.
 
 For iOS developers who value innovative design, Flutter has become a go-to platform. By providing a blank canvas, Flutter gives designers endless possibilities. They can create original experiences that break free from pre-set design systems.
 

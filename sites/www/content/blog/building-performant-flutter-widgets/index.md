@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-07-23
 author: guidez
 image: images/0GWFHSeCrjUgPdkJ-.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 
@@ -165,7 +165,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-For more on lazily building lists, see [Slivers, Demystified](https://medium.com/flutter/slivers-demystified-6ff68ab0296f).
+For more on lazily building lists, see [Slivers, Demystified](https://flutter.dev/blog/slivers-demystified).
 
 ## How we improved the Flutter Gallery web page render time by more than 2x with a single line of code
 
@@ -280,9 +280,9 @@ Effective performance debugging requires understanding what’s happening under 
 
 This post is a part of a series about what we learned when improving performance for the Flutter Gallery. Articles in the *Creating performant Flutter web apps* series:
 
-* [Optimizing performance in Flutter web apps with tree shaking and deferred loading](https://medium.com/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674)
+* [Optimizing performance in Flutter web apps with tree shaking and deferred loading](https://flutter.dev/blog/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading)
 
-* [Improving perceived performance with image placeholders, precaching, and disabled navigation transitions](https://medium.com/flutter/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b)
+* [Improving perceived performance with image placeholders, precaching, and disabled navigation transitions](https://flutter.dev/blog/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation)
 
 * Building performant Flutter widgets (this article)
 

@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-07-01
 author: anjannarain
 image: images/0lBCX1cQ8WF56oRAq.webp
-category: event
+category: news
 layout: blog
 ---
 
@@ -13,7 +13,7 @@ layout: blog
 
 From the outset, one of our goals with Flutter was to enable developers to create beautiful user experiences. And every day the worldwide community amazes us with [countless apps and experiments](https://twitter.com/i/events/1275593667017834502?s=20) that showcase Flutter’s creative potential. Today, we’re pleased to partner with CodePen on a fun series of new challenges to let you show off your Flutter skills.
 
-CodePen is one of the top destinations on the internet for front-end developers to experiment, share, and iterate. Ever since we announced our [partnership with CodePen](https://medium.com/flutter/announcing-codepen-support-for-flutter-bb346406fe50) in April, we’ve been amazed by the Flutter Pens you’ve created. And so we want to give you the opportunity to show off your amazing Flutter designs to CodePen’s community of over a million designers and coders.
+CodePen is one of the top destinations on the internet for front-end developers to experiment, share, and iterate. Ever since we announced our [partnership with CodePen](https://flutter.dev/blog/announcing-codepen-support-for-flutter) in April, we’ve been amazed by the Flutter Pens you’ve created. And so we want to give you the opportunity to show off your amazing Flutter designs to CodePen’s community of over a million designers and coders.
 
 ## Challenge details
 

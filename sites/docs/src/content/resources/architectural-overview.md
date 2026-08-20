@@ -806,9 +806,9 @@ sizing, thread management, and platform messages.
 Flutter includes platform embedders for Android, iOS, Windows,
 macOS, and Linux; you can also create a
 custom platform embedder, as in [this worked
-example]({{site.github}}/chinmaygarde/fluttercast) that supports remoting
+example](https://github.com/chinmaygarde/fluttercast) that supports remoting
 Flutter sessions through a VNC-style framebuffer or [this worked example for
-Raspberry Pi]({{site.github}}/ardera/flutter-pi).
+Raspberry Pi](https://github.com/ardera/flutter-pi).
 
 Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:

@@ -6,11 +6,11 @@ description: >-
 publishDate: 2022-12-12
 author: melyndahoover
 image: images/1VbmSF-liAOyeParju2Y4kw.webp
-category: announcement
+category: news
 layout: blog
 ---
 
-In February, Flutter launched official [support for developing Windows](https://medium.com/flutter/announcing-flutter-for-windows-6979d0d01fed) apps, extending its cross-platform capabilities to desktop. With the release of [Flutter 3](https://medium.com/flutter/introducing-flutter-3-5eb69151622f) in May 2022, Flutter announced stable support for macOS and Linux, completing the trifecta of desktop support! Now that Flutter users have had a few months to experiment with these new capabilities, we wanted to know: *how can Flutter better support desktop developers?*
+In February, Flutter launched official [support for developing Windows](https://flutter.dev/blog/announcing-flutter-for-windows) apps, extending its cross-platform capabilities to desktop. With the release of [Flutter 3](https://flutter.dev/blog/introducing-flutter-3) in May 2022, Flutter announced stable support for macOS and Linux, completing the trifecta of desktop support! Now that Flutter users have had a few months to experiment with these new capabilities, we wanted to know: *how can Flutter better support desktop developers?*
 
 To answer that question, we collected data from 1,901 Flutter desktop developers in the Q3 Flutter survey. If you attended Flutter Vikings in August, you might have seen UX researchers chatting with developers during focus group sessions as well. Here’s what we found and how we’ll use it to improve Flutter.
 

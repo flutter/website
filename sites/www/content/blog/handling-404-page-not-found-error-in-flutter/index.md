@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-06-10
 author: josealba
 image: images/1eU-430nepv8cz3OYLIycng.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 
@@ -50,6 +50,6 @@ PageNotFound is a custom widget that creates the 404 page . This page might expl
 
 When creating a Flutter application it is important to handle any issues that might arise. Using the `onUnknownRoute` property within `MaterialApp`, `CupertinoApp`, or `WidgetApp` lets you handle the inevitable “page not found” errors in your website.
 
-To learn more about routes in Flutter, see the Medium post [“Navigating URLs using named routes”](https://medium.com/flutter/flutter-web-navigating-urls-using-named-routes-307e1b1e2050).
+To learn more about routes in Flutter, see the blog post [“Navigating URLs using named routes”](https://flutter.dev/blog/flutter-web-navigating-urls-using-named-routes).
 
 *About the author: Jose recently graduated from university and now works on [Material](https://material.io), a design system that helps teams build high-quality digital experiences. Jose’s team maintains the Flutter [material library](https://api.flutter.dev/flutter/material/material-library.html). To learn more, visit his Jose’s pages on [GitHub](https://github.com/JoseAlba), [LinkedIn](https://www.linkedin.com/in/josealba1996/), [YouTube](https://www.youtube.com/channel/UCOdKA_On0oPe1tz02z1QfxA?view_as=subscriber), and [Instagram](https://www.instagram.com/jose.alba/).*

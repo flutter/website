@@ -5,7 +5,7 @@ description: >-
 publishDate: 2023-09-13
 author: leighajarett
 image: images/1m5eYW0Qgmdse1bpkqbsPLQ.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -39,9 +39,9 @@ As part of this launch, we’re highlighting resources to help prospective consu
 
 <DashImage figure src="images/0H35eVj4imixLHgDv.gif" />
 
-### [**How IBM Created their Flutter Center of Excellence**](https://medium.com/flutter/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441)
+### [**How IBM Created their Flutter Center of Excellence**](https://flutter.dev/blog/how-ibm-is-creating-a-flutter-center-of-excellence)
 
-*Learn why and how IBM built out a Flutter Center of Excellence with hundreds of Flutter developers. [Read the blog post](https://medium.com/flutter/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441).*
+*Learn why and how IBM built out a Flutter Center of Excellence with hundreds of Flutter developers. [Read the blog post](https://flutter.dev/blog/how-ibm-is-creating-a-flutter-center-of-excellence).*
 
 <DashImage figure src="images/1wgS4PLHJhlegD-knIZhEFA.webp" />
 

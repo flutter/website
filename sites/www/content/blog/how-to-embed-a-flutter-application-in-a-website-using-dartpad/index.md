@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-03-23
 author: josealba
 image: images/0u979IALi6tiDee8O.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 
@@ -83,7 +83,7 @@ class MyHomePage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             Text(
-              'This Flutter application might be within an iFrame within a Medium post. \n',
+              'This Flutter application might be within an iFrame within a Flutter blog post. \n',
               textAlign: TextAlign.center,
             ),
           ],

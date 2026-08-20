@@ -5,7 +5,7 @@ description: >-
 publishDate: 2019-11-19
 author: jayoung-lee
 image: images/0UMfWbaBispXV0tMD.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -13,9 +13,9 @@ layout: blog
 
 <DashImage figure src="images/1kC6Z0A82B9Yk4mV88fo9CQ.webp" />
 
-Flutter’s User Experience team runs a survey every quarter to understand what we can do to help you be successful with Flutter. Over 7,500 users participated in the Q3 survey, and we’re here to share what we learned, [as always](https://medium.com/flutter/search?q=survey).
+Flutter’s User Experience team runs a survey every quarter to understand what we can do to help you be successful with Flutter. Over 7,500 users participated in the Q3 survey, and we’re here to share what we learned, [as always](https://flutter.dev/blog/what-weve-learned-from-the-july-2018-flutter-user-survey).
 
-Overall, 92% of the users were either *somewhat satisfied* or *very satisfied* with Flutter. This is the first question we ask in every survey, because it is important for us to build a product that you love. We are excited to see the same level of satisfaction as [last quarter](https://medium.com/flutter/what-do-flutter-package-users-need-6ecba57ed1d6).
+Overall, 92% of the users were either *somewhat satisfied* or *very satisfied* with Flutter. This is the first question we ask in every survey, because it is important for us to build a product that you love. We are excited to see the same level of satisfaction as [last quarter](https://flutter.dev/blog/what-do-flutter-package-users-need-findings-from-q2-user-survey).
 
 ## Performance
 
@@ -39,7 +39,7 @@ The survey also helped the team identify future plans, such as which UI pattern 
 
 ## Plugins
 
-Ecosystem is another crucial part of Flutter; this enables developers to extend the capabilities of Flutter with packages and plugins when the core framework doesn’t support a particular feature. In the Q2 survey, we covered a number of [ecosystem-related questions](https://medium.com/flutter/what-do-flutter-package-users-need-6ecba57ed1d6) to understand your pain points. In Q3, we added two open-ended questions to better understand which plugins (or lack of plugins) are impeding the development and release of your apps.
+Ecosystem is another crucial part of Flutter; this enables developers to extend the capabilities of Flutter with packages and plugins when the core framework doesn’t support a particular feature. In the Q2 survey, we covered a number of [ecosystem-related questions](https://flutter.dev/blog/what-do-flutter-package-users-need-findings-from-q2-user-survey) to understand your pain points. In Q3, we added two open-ended questions to better understand which plugins (or lack of plugins) are impeding the development and release of your apps.
 
 16% of all respondents answered these questions, and we identified over 70 common themes. Some of the frequently-mentioned themes are listed below. The main takeaway for us is that the listed plugins already exist on pub.dev. This tells us that raising the quality of existing plugins should be one of the most important goals in the coming quarters.
 
@@ -63,7 +63,7 @@ Ecosystem is another crucial part of Flutter; this enables developers to extend 
 
 1. Background services
 
-We will focus on improving your experience around Flutter’s ecosystem and also make it easier for you to find quality plugins. As a starting point, Dart has recently released a “[verified publishers](https://medium.com/dartlang/verified-publishers-98f05466558a)” feature for [pub.dev](https://pub.dev) (on Dart’s 8th birthday!) to make it easy for users to identify trustworthy publishers. This was one of the planned improvements mentioned in the recap of the [previous survey](https://medium.com/flutter/what-do-flutter-package-users-need-6ecba57ed1d6). Please keep your eye out for further improvements.
+We will focus on improving your experience around Flutter’s ecosystem and also make it easier for you to find quality plugins. As a starting point, Dart has recently released a “[verified publishers](https://dart.dev/blog/announcing-verified-publishers-on-pub-dev)” feature for [pub.dev](https://pub.dev) (on Dart’s 8th birthday!) to make it easy for users to identify trustworthy publishers. This was one of the planned improvements mentioned in the recap of the [previous survey](https://flutter.dev/blog/what-do-flutter-package-users-need-findings-from-q2-user-survey). Please keep your eye out for further improvements.
 
 <DashImage figure src="images/0rHPbdMZoe86uwe1H.webp" alt="*First page of dart.dev features some verified Flutter packages*" caption="*First page of dart.dev features some verified Flutter packages*" />
 

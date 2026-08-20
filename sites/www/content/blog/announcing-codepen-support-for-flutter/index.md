@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-04-15
 author: zoeyfan
 image: images/06wPqdCz_TzB2gAXr.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -51,4 +51,4 @@ What we particularly love about CodePen is the social and community features it 
 
 ## Give it a try!
 
-We hope this new Flutter playground on [CodePen](https://codepen.io/flutter) empowers you to build and showcase your cool Flutter animations, ideas, vignettes, and more. Please share your designs with us on Twitter using **#FlutterPen**. We can’t wait to see what you build! If you missed last week’s announcement about [free training](https://medium.com/flutter/learn-flutter-for-free-c9bc3b898c4d), you might want to check that out. And keep an eye out: we’ll have more news very soon.
+We hope this new Flutter playground on [CodePen](https://codepen.io/flutter) empowers you to build and showcase your cool Flutter animations, ideas, vignettes, and more. Please share your designs with us on Twitter using **#FlutterPen**. We can’t wait to see what you build! If you missed last week’s announcement about [free training](https://flutter.dev/blog/learn-flutter-for-free), you might want to check that out. And keep an eye out: we’ll have more news very soon.

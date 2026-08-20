@@ -5,13 +5,13 @@ description: >-
 publishDate: 2020-10-22
 author: mit-mit
 image: images/0FE-q5RdXwPgtRVE5.webp
-category: announcement
+category: news
 layout: blog
 ---
 
-Dart serves a special role in Flutter, powering developer features such as hot reload, and enabling multi-platform apps for mobile, desktop, and web via Dart’s flexible compiler technology. We strive to make the Dart language the most productive for Flutter app developers; for example, we added [UI-as-code language constructs](https://medium.com/dartlang/announcing-dart-2-3-optimized-for-building-user-interfaces-e84919ca1dff) to optimize the Dart syntax for coding Flutter widget trees.
+Dart serves a special role in Flutter, powering developer features such as hot reload, and enabling multi-platform apps for mobile, desktop, and web via Dart’s flexible compiler technology. We strive to make the Dart language the most productive for Flutter app developers; for example, we added [UI-as-code language constructs](https://dart.dev/blog/announcing-dart-2-3-optimized-for-building-user-interfaces) to optimize the Dart syntax for coding Flutter widget trees.
 
-In June we offered a [first tech preview](https://medium.com/dartlang/announcing-sound-null-safety-defd2216a6f3) of null safety for Dart. Today is another major milestone, which we’ve [looked forward to](https://medium.com/dartlang/announcing-dart-2-10-350823952bd5) for a while: We’re announcing a second tech preview of **sound null safety**, including support for the Flutter framework.
+In June we offered a [first tech preview](https://dart.dev/blog/announcing-sound-null-safety) of null safety for Dart. Today is another major milestone, which we’ve [looked forward to](https://dart.dev/blog/announcing-dart-2-10) for a while: We’re announcing a second tech preview of **sound null safety**, including support for the Flutter framework.
 
 Null safety is a major new productivity feature that helps you avoid null exceptions, a class of bugs that are often hard to spot. As an added bonus, this feature also enables a range of performance improvements. We’re really looking forward to your feedback.
 

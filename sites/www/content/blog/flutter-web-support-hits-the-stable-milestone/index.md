@@ -5,13 +5,13 @@ description: >-
 publishDate: 2021-03-03
 author: mariam_hasnany
 image: images/1bbkcrsggiQLxNDRAgHiSBQ.webp
-category: announcement
+category: news
 layout: blog
 ---
 
 <DashImage figure src="images/1bbkcrsggiQLxNDRAgHiSBQ.webp" />
 
-Our vision for Flutter is to be a portable UI framework for building beautiful app experiences on any platform. Today, as part of [Flutter 2](https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65), we’re announcing that Flutter’s web support has hit the stable milestone.
+Our vision for Flutter is to be a portable UI framework for building beautiful app experiences on any platform. Today, as part of [Flutter 2](https://flutter.dev/blog/whats-new-in-flutter-2-0), we’re announcing that Flutter’s web support has hit the stable milestone.
 
 The first Flutter release supported iOS and Android, and has been used to bring over 150,000 apps to mobile app stores. Now, adding web support means that those same apps can reach an even broader audience, as well as opening up new ways to build interactive experiences on the web.
 
@@ -51,7 +51,7 @@ Our goal for Flutter is to offer a new way to target the web platform, build on 
 
 ## Delivering a production-quality stable release
 
-Since our [beta release of web support](https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0) a year ago, we’ve learned a lot about how early adopters are using it, and we’ve worked with a few customers who have now shipped their Flutter web apps to production.
+Since our [beta release of web support](https://flutter.dev/blog/web-support-for-flutter-goes-beta) a year ago, we’ve learned a lot about how early adopters are using it, and we’ve worked with a few customers who have now shipped their Flutter web apps to production.
 
 Over this period, we have made major architectural improvements and added features that extend and optimize Flutter for the web, focusing on four areas: **performance**, **web-specific features**, **desktop form factors,** and **plugins.**
 

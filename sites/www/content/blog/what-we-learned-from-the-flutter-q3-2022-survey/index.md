@@ -5,7 +5,7 @@ description: >-
 publishDate: 2022-12-08
 author: jayoung-lee
 image: images/0XaZXV1SPtqbuZhFc.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -35,7 +35,7 @@ In the survey, a number of developers also selected “API design was too compli
 
 ## Quick fixes and refactorings
 
-In the [first survey of 2022](https://medium.com/flutter/does-flutter-boost-developer-productivity-475f713724b3), developers indicated that quick fixes and refactorings are the top missing or insufficiently-supported features in our IDEs. As you can see in **Figure 4**, we support quick fixes and refactorings in the IDE, but we wanted to identify *why* developers think that the IDEs are missing or not supporting these features.
+In the [first survey of 2022](https://flutter.dev/blog/does-flutter-boost-developer-productivity), developers indicated that quick fixes and refactorings are the top missing or insufficiently-supported features in our IDEs. As you can see in **Figure 4**, we support quick fixes and refactorings in the IDE, but we wanted to identify *why* developers think that the IDEs are missing or not supporting these features.
 
 <DashImage figure src="images/08Ewc1lTs1hnn1Y0w.webp" alt="Figure 4. Quick fixes and refactorings in VS Code" caption="Figure 4. Quick fixes and refactorings in VS Code" />
 

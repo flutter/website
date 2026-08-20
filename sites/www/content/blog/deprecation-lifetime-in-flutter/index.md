@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-11-18
 author: piinks
 image: images/0n5eFBwWfgtkuLtDf.jpg
-category: engineering
+category: deep-dive
 layout: blog
 ---
 
@@ -25,9 +25,9 @@ The process for deprecating code in Flutter begins with [our breaking change pol
 
 Authors of breaking changes migrate customer code affected by a breaking change. In the last update to our breaking change policy, [we invited](https://groups.google.com/g/flutter-announce/c/Z09a317E21o) you to submit your tests to our [customer test repo](https://github.com/flutter/tests). These tests are our signal that a change is breaking, and we are committed to working with the test authors to migrate their code before making the change.
 
-We also provide [migration guides](https://flutter.dev/docs/release/breaking-changes) for our breaking changes. These guides are intended to help users migrate their code after updating to the latest version of Flutter. If you’ve seen one of our [release announcements](https://medium.com/flutter/announcing-flutter-1-22-44f146009e5f), we also call out breaks in a given release, and we point users to helpful resources for updating their applications.
+We also provide [migration guides](https://flutter.dev/docs/release/breaking-changes) for our breaking changes. These guides are intended to help users migrate their code after updating to the latest version of Flutter. If you’ve seen one of our [release announcements](https://flutter.dev/blog/announcing-flutter-1-22), we also call out breaks in a given release, and we point users to helpful resources for updating their applications.
 
-In a [past survey](https://medium.com/flutter/insights-from-flutters-first-user-survey-of-2019-3659b02303a5), we asked users about their preferences for breaking changes. We learned that our users thought breaking changes made code cleaner and were valuable to them, which is why we usually prefer a breaking change over a deprecation. According to the study:
+In a [past survey](https://flutter.dev/blog/insights-from-flutters-first-user-survey-of-2019), we asked users about their preferences for breaking changes. We learned that our users thought breaking changes made code cleaner and were valuable to them, which is why we usually prefer a breaking change over a deprecation. According to the study:
 
 Overall, 78% said that they prefer breaking changes that result in the cleanest possible API; this also makes the API easier to learn and use.
 

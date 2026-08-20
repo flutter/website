@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-05-07
 author: craiglabenz
 image: images/1-u0y5vTqoC_sCyOHpvUnNA.webp
-category: story
+category: case-study
 layout: blog
 ---
 
@@ -26,7 +26,7 @@ The most visible of Classroom’s issues — UI variations — forced teachers t
 
 <DashImage figure src="images/1-u0y5vTqoC_sCyOHpvUnNA.webp" />
 
-The conventional approach is for separate client apps, developed by separate teams, that diverge over time. Only consistent, painstaking work to synchronize every feature can prevent this. In contrast, Flutter’s very nature inverts this default outcome. With Flutter, UIs are the same by default [1] until active work ([often in pursuit of adaptability](https://medium.com/flutter/extreme-ui-adaptability-in-flutter-how-google-earth-supports-every-use-case-on-earth-6db4661e7a17)) forces them to diverge for the benefit of the user.
+The conventional approach is for separate client apps, developed by separate teams, that diverge over time. Only consistent, painstaking work to synchronize every feature can prevent this. In contrast, Flutter’s very nature inverts this default outcome. With Flutter, UIs are the same by default [1] until active work ([often in pursuit of adaptability](https://flutter.dev/blog/extreme-ui-adaptability-in-flutter-how-google-earth-supports-every-use-case-on-earth)) forces them to diverge for the benefit of the user.
 > [1] In Classroom’s Flutter client, small, intentional differences remain, like system bars and bottom controls. Flutter preserves those idiomatic platform details while leaving the middle 90% of the screen to be filled by a single UI implementation.
 
 ### Muddled business logic

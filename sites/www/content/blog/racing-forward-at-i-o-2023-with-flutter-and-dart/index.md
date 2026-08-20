@@ -6,7 +6,7 @@ description: >-
 publishDate: 2023-05-10
 author: timsneath
 image: images/1bzC0ul7jBVhOJiastVGKlw.webp
-category: event
+category: news
 layout: blog
 ---
 
@@ -38,7 +38,7 @@ Rewriting Classroom in Flutter has even improved performance. The new version of
 
 <YoutubeEmbed id="_5CIATSDSPI" title="Comparison of the previous Google Classroom with the new Flutter-powered version" fullwidth="true"/>
 
-We are continuing to invest in packages to connect your Flutter app with the rest of the Google developer ecosystem. This includes major updates to our [Google Ads support](https://medium.com/flutter/2023-google-mobile-ads-updates-for-flutter-16b603df9ec9) for native ads; [new Windows and better web support for Firebase](https://github.com/firebase/flutterfire); and new experimental support for [deeper Android interoperability](https://io.google/2023/program/2f02692d-9a41-49c0-8786-1a22b7155628/).
+We are continuing to invest in packages to connect your Flutter app with the rest of the Google developer ecosystem. This includes major updates to our [Google Ads support](https://flutter.dev/blog/2023-google-mobile-ads-updates-for-flutter) for native ads; [new Windows and better web support for Firebase](https://github.com/firebase/flutterfire); and new experimental support for [deeper Android interoperability](https://io.google/2023/program/2f02692d-9a41-49c0-8786-1a22b7155628/).
 
 With Flutter support on six platforms (Android, iOS, web, Windows, macOS, and Linux), **over one million published apps now use Flutter**. They come from all over the world: from [SNCF Connect](https://play.google.com/store/apps/details?id=com.vsct.vsc.mobile.horaireetresa.android&hl=en_US&gl=US), the train travel app for the French railway; to Apple App of the Day winner [SO VEGAN](https://apps.apple.com/us/app/so-vegan/id1572826611); from [Rive’s blazing-fast desktop apps](https://rive.app/downloads) for creating animated graphics to the relationship-empowering [Agapé](https://www.getdailyagape.com/) mobile and tablet app; from the beautiful, [newly-redesigned Global Citizen app](https://www.globalcitizen.org/en/content/new-global-citizen-app-impact-activism-every-day/) to the [new Ubuntu Linux installer](https://9to5linux.com/first-look-at-ubuntu-23-04s-brand-new-desktop-installer-written-in-flutter). We’re so glad to see proof of Flutter’s value!
 
@@ -77,18 +77,18 @@ As we wait for browser support to become more pervasive, we have introduced prev
 
 ## Continued focus on developer experience
 
-While we hope to delight many with the breakthrough graphics performance and richer web support listed earlier, we also introduce many improvements to developer velocity and productivity in this release. And [our detailed technical blog captures hundreds of improvements to Flutter itself](https://medium.com/flutter/whats-new-in-flutter-3-10-b21db2c38c73), which will be of great interest to existing Flutter developers.
+While we hope to delight many with the breakthrough graphics performance and richer web support listed earlier, we also introduce many improvements to developer velocity and productivity in this release. And [our detailed technical blog captures hundreds of improvements to Flutter itself](https://flutter.dev/blog/whats-new-in-flutter-3-10), which will be of great interest to existing Flutter developers.
 
 But perhaps the most significant improvement in this release to the core developer experience is **the release of [Dart 3](https://dart.dev), which is included in Flutter 3.10**.
 
 Dart 3 completes a long journey to bring sound null safety to the Dart ecosystem. Writing null-safe code protects against a whole class of programming bugs that come from uninitialized values being used without checks. While we’ve supported null safe code since Dart 2.0, we’ve now turned off the legacy “unsafe” mode. As an ecosystem, we’ve been preparing for this for some time, and with 99% of the top 1,000 packages supporting null safety, we believe now is the right time to make the transition.
 > # “Dart 3 completes a long journey to bring sound null safety to the Dart ecosystem.”
 
-Dart 3 introduces many other new features, including records, patterns, and class modifiers, which will improve the readability and fluidity of Dart code. Head to the [main Dart 3 blog](https://medium.com/dartlang/announcing-dart-3-53f065a10635) for more information and examples. Flutter itself is already taking advantage of these new Dart 3 features, so you’ll see improvements to our own codebase as these roll in. And we think you’ll enjoy using them in your own code.
+Dart 3 introduces many other new features, including records, patterns, and class modifiers, which will improve the readability and fluidity of Dart code. Head to the [main Dart 3 blog](https://dart.dev/blog/announcing-dart-3) for more information and examples. Flutter itself is already taking advantage of these new Dart 3 features, so you’ll see improvements to our own codebase as these roll in. And we think you’ll enjoy using them in your own code.
 
 ## SLSA and software supply chain security
 
-In the modern age, protecting against threats to critical software infrastructure is unfortunately a necessity. So in addition to the headline features listed earlier, our engineering team has [made a priority this year](https://medium.com/flutter/flutter-in-2023-strategy-and-roadmap-60efc8d8b0c7) of investing in security. This investment spans security testing, automation, and supply chain security.
+In the modern age, protecting against threats to critical software infrastructure is unfortunately a necessity. So in addition to the headline features listed earlier, our engineering team has [made a priority this year](https://flutter.dev/blog/flutter-in-2023-strategy-and-roadmap) of investing in security. This investment spans security testing, automation, and supply chain security.
 > # “Our team has prioritized investments in security”
 
 By undertaking the following work, we aim to give businesses further confidence in adopting Flutter:

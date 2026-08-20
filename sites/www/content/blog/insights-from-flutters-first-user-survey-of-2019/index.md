@@ -6,7 +6,7 @@ description: >-
 publishDate: 2019-04-12
 author: jayoung-lee
 image: images/1BvDZf83WrPTc4yqukshP-w.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -28,7 +28,7 @@ We identified some room for improvement. First, satisfaction with package and pl
 
 Second, we found that the satisfaction with Cupertino (iOS-style) widgets is still much lower than that of Material Design widgets (66% vs. 88%), though we’ve made a lot of improvements in the past few quarters. Respondents said that it is hard to learn how to use the existing Cupertino widgets (42%), and the widgets are incomplete in their functionality (40%) or not available (38%). This is probably because our official documentation mainly focuses on customizing UIs more than using platform-specific widgets like Cupertino. We will continue our effort on dedicating more website resources to document iOS specific features, supporting more widgets, and improving the fidelity of the widgets. As we address these needs, you can track the improvements in our [changelog](https://github.com/flutter/flutter/wiki/Changelog) and [documentation](https://flutter.dev/docs/development/ui/widgets/cupertino).
 
-Lastly, we learned that three quarters (75%) of respondents were satisfied with Dart programming language. Similar to Cupertino widgets, unsatisfied users said that Dart lacks learning materials (39%), although it is easy to learn (only 8% finding it difficult). Users also mentioned that Dart lacks language features (37%). We internalize it as a shortfall of documentation and socialization, as well as room for improvement as a language. To respond to these needs, the Dart team is working on a redesigned Dart website with additional documentation, and on evolving the Dart programming language, for example with the recently introduced [Set Literal](https://medium.com/dartlang/announcing-dart-2-2-faster-native-code-support-for-set-literals-7e2ab19cc86d), the upcoming [UI-as-code features](https://medium.com/dartlang/making-dart-a-better-language-for-ui-f1ccaf9f546c), and investigations of a larger set of [potential future features](https://github.com/dart-lang/language/projects/1).
+Lastly, we learned that three quarters (75%) of respondents were satisfied with Dart programming language. Similar to Cupertino widgets, unsatisfied users said that Dart lacks learning materials (39%), although it is easy to learn (only 8% finding it difficult). Users also mentioned that Dart lacks language features (37%). We internalize it as a shortfall of documentation and socialization, as well as room for improvement as a language. To respond to these needs, the Dart team is working on a redesigned Dart website with additional documentation, and on evolving the Dart programming language, for example with the recently introduced [Set Literal](https://dart.dev/blog/announcing-dart-2-2-faster-native-code-support-for-set-literals), the upcoming [UI-as-code features](https://dart.dev/blog/making-dart-a-better-language-for-ui), and investigations of a larger set of [potential future features](https://github.com/dart-lang/language/projects/1).
 
 ## Breaking changes for the greater good?
 

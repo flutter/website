@@ -5,7 +5,7 @@ description: >-
 publishDate: 2021-05-17
 author: verygoodopensource
 image: images/0diM5YKjX2b2OgNvD.webp
-category: story
+category: case-study
 layout: blog
 ---
 
@@ -15,7 +15,7 @@ We (the folks at Very Good Ventures) teamed up with Google to bring an interacti
 
 <DashImage figure src="images/0OQnK58irOAv-Pjzq.webp" alt="Flutter’s Dash, Firebase’s Sparky, Android Jetpack, and Chrome’s Dino" caption="Flutter’s Dash, Firebase’s Sparky, Android Jetpack, and Chrome’s Dino" />
 
-We built the I/O Photo Booth using [Flutter on the web](https://flutter.dev/web) and [Firebase](https://firebase.google.com/). Because [Flutter now offers support for web apps](https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65), we thought it would be a great way to make this app easily accessible to attendees all over the world for this year’s virtual Google I/O. Flutter’s web support eliminates the barrier of having to install an app from an app store and also gives you the flexibility to run it on your device of choice: mobile, desktop, or tablet. That opens up the I/O Photo Booth experience to anyone with access to any browser and device without requiring a download.
+We built the I/O Photo Booth using [Flutter on the web](https://flutter.dev/web) and [Firebase](https://firebase.google.com/). Because [Flutter now offers support for web apps](https://flutter.dev/blog/whats-new-in-flutter-2-0), we thought it would be a great way to make this app easily accessible to attendees all over the world for this year’s virtual Google I/O. Flutter’s web support eliminates the barrier of having to install an app from an app store and also gives you the flexibility to run it on your device of choice: mobile, desktop, or tablet. That opens up the I/O Photo Booth experience to anyone with access to any browser and device without requiring a download.
 
 Even though I/O Photo Booth was designed to be a web experience, all of the code is written with a platform-agnostic architecture. When native support for elements like the camera plugin are available for their respective platforms, the same code works across all platforms (desktop, web, and mobile).
 

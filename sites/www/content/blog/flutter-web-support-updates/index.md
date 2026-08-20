@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-04-29
 author: mariam_hasnany
 image: images/1w9xtjSXgRDPcCtNJLYhzpQ.webp
-category: announcement
+category: news
 layout: blog
 ---
 
@@ -58,7 +58,7 @@ When we launched beta, only a few plugins supported the web. Since then, we’re
 
 * [cloud_functions](https://pub.dev/packages/cloud_functions): access serverless cloud functions, hosted by Firebase
 
-While we plan on extending a few more popular Google-authored plugins for the web ourselves, we largely depend on the community to help bring web support to existing packages. To help you get started, we have published a couple of articles explaining [how to write a web plugin](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1).
+While we plan on extending a few more popular Google-authored plugins for the web ourselves, we largely depend on the community to help bring web support to existing packages. To help you get started, we have published a couple of articles explaining [how to write a web plugin](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin).
 
 ### Web Debugging with Expression Evaluation
 
@@ -149,4 +149,4 @@ We hope there are some fun surprises in this article: we’ve made a lot of prog
 
 If you are new to developing with Flutter on the web, check out [flutter.dev/web](https://flutter.dev/web) to learn more and try out your code on [dartpad.dev](https://dartpad.dev/) or [codepen.io/flutter](https://codepen.io/flutter).
 
-For those that are currently developing Flutter web apps, thank you for your support and contributions, we hope you continue experimenting, [filing issues](https://github.com/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version) and [updating plugins](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6) to support the web!
+For those that are currently developing Flutter web apps, thank you for your support and contributions, we hope you continue experimenting, [filing issues](https://github.com/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version) and [updating plugins](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin-part-2) to support the web!

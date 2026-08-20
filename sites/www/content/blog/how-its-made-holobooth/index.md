@@ -5,7 +5,7 @@ description: >-
 publishDate: 2023-01-24
 author: verygoodopensource
 image: images/18zOCQg2Qwh_dzC4ndMzoqg.webp
-category: story
+category: case-study
 layout: blog
 ---
 
@@ -13,7 +13,7 @@ Introducing the Flutter Forward [Holobooth](https://holobooth.flutter.dev/), a n
 
 <DashImage figure src="images/18zOCQg2Qwh_dzC4ndMzoqg.webp" alt="Try out the Flutter Forward Holobooth at [holobooth.flutter.dev](https://holobooth.flutter.dev/)" caption="Try out the Flutter Forward Holobooth at [holobooth.flutter.dev](https://holobooth.flutter.dev/)" />
 
-The Holobooth builds on the first version of the [Photo Booth app from Google I/O 2021](https://medium.com/flutter/how-its-made-i-o-photo-booth-3b8355d35883). Instead of taking photos of you and Dash or Sparky, Holobooth uses machine learning to control animations of Dash or Sparky using your facial expressions.
+The Holobooth builds on the first version of the [Photo Booth app from Google I/O 2021](https://flutter.dev/blog/how-its-made-i-o-photo-booth). Instead of taking photos of you and Dash or Sparky, Holobooth uses machine learning to control animations of Dash or Sparky using your facial expressions.
 
 We’ll break down how our team collaborated with Google to create a more immersive and futuristic photo booth experience by tapping into the power of Google tools. We used [Flutter](https://flutter.dev/) and [Firebase](https://firebase.google.com/) to build the Holobooth app. Web ML in JavaScript allowed us to take the experience to the next level with virtual, interactive, 3D avatars. Let’s dive into how we built it!
 

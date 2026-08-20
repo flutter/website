@@ -6,7 +6,7 @@ description: >-
 publishDate: 2019-07-18
 author: aguinis
 image: images/0wAn4IQgexh-pkr6K.webp
-category: event
+category: news
 layout: blog
 ---
 
@@ -14,7 +14,7 @@ The Flutter community continues to impress us. We often see new initiatives to h
 
 <DashImage figure src="images/0wAn4IQgexh-pkr6K.webp" />
 
-Hamilton was [one of the first apps built with Flutter](https://medium.com/flutter/video-hamilton-app-built-in-3-months-with-flutter-reaches-1m-installs-f37f81856be4). The app was built in 3 months, reached 1M+ installs, and was featured on the Apple App and Google Play stores. Here is a video we made about the app:
+Hamilton was [one of the first apps built with Flutter](https://flutter.dev/blog/video-hamilton-app-built-in-3-months-with-flutter-reaches-1m-installs). The app was built in 3 months, reached 1M+ installs, and was featured on the Apple App and Google Play stores. Here is a video we made about the app:
 
 <YoutubeEmbed id="kfd-oLypqFI" title="Hamilton app built with Flutter and featured on iOS and Android (Flutter Developer Story)" fullwidth="true"/>
 
