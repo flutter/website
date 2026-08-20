@@ -144,8 +144,7 @@ I had to pause and update my skill files (`SKILL.md`) to resolve three issues:
 Once the Coder implemented the real library classes in `lib/src/`,
 the Coordinator had to clean up the temporary compilation stubs left in the test
 files. It kept getting the stubs and the real thing confused,
-so required explicit comment headers for the real implementation to make things
-explicit.
+so it required clear comment headers to make the real implementation distinct.
 - **Spread Operator (`...`) Type Mismatches**:
 Python and Dart handle types differently,
 and things that are iterable by default in Python aren't necessarily so in Dart.
