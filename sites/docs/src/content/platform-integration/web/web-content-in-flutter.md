@@ -69,52 +69,13 @@ The resulting code has two steps per platform view type:
 For more details about this approach, check out the
 [`HtmlElementView` widget][] docs.
 
-## DOM slot layering
+## Fixing hit testing issues
 
-To render platform views alongside Flutter widgets on the web,
-Flutter creates and manages elements in the DOM tree.
+Because of how Flutter web performs hit testing,
+underlying platform views might sometimes swallow
+pointer events before they can reach Flutter.
 
-### DOM structure
-
-Flutter web organizes its rendered output using custom elements
-and the browser's shadow DOM:
-
-* **Scene host (`<flt-scene-host>`)**:
-  The container element that holds canvas layers and platform views.
-* **Platform view slot (`<flt-platform-view-slot>`)**:
-  A DOM container inside the scene host that holds a `<slot>` element.
-  Flutter projects your custom HTML elements into this slot.
-
-### Canvas and DOM interleaving
-
-Flutter web draws widgets onto WebGL or WebGPU `<canvas>` elements.
-When your application includes an `HtmlElementView`,
-Flutter splits its canvas rendering to maintain correct visual paint order:
-
-1. Canvas elements below the platform view render widgets that appear
-   behind the HTML content.
-1. The `<flt-platform-view-slot>` renders the HTML element at the
-   specified z-index.
-1. Canvas elements above the platform view render widgets that appear
-   in front of the HTML content.
-
-### Pointer event behavior
-
-By default, `<flt-platform-view-slot>` sets `pointer-events: auto`.
-This allows embedded HTML elements, such as interactive maps,
-video controls, and form fields, to receive native browser events directly.
-
-However, because the platform view consumes browser pointer events,
-Flutter widgets positioned over an `HtmlElementView`
-(such as buttons, navigation drawers, menus, and dialogs)
-cannot receive mouse clicks or touch events within that overlapping area.
-The browser delivers the pointer event directly to the underlying DOM node
-before Flutter can process it.
-
-## Intercept pointer events with PointerInterceptor
-
-To prevent underlying platform views from swallowing pointer events
-intended for Flutter widgets,
+To prevent losing pointer events intended for Flutter widgets,
 use the [`package:pointer_interceptor`][] package.
 
 The [`PointerInterceptor`][] widget creates
