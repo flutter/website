@@ -361,7 +361,8 @@ Use the `--flavor` option to specify your flavor. For example:
 * `flutter build linux --flavor flavor_a`
 
 Thanks to [@AngeloAvv](https://github.com/AngeloAvv)
-for the wonderful contributions ([#187034](https://github.com/flutter/flutter/pull/187034), [#187029](https://github.com/flutter/flutter/pull/187029))!
+for the wonderful contributions ([#187034](https://github.com/flutter/flutter/pull/187034),
+[#187029](https://github.com/flutter/flutter/pull/187029))!
 
 ### Sharper desktop text
 
