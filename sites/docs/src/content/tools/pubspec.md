@@ -243,6 +243,7 @@ flutter:
 
 [Set up flavors for iOS and macOS]: /deployment/flavors-ios
 [Set up flavors for Android]: /deployment/flavors
+[Set up flavors for Windows and Linux]: /deployment/flavors-windows-linux
 [Assets and images]: /ui/assets/assets-and-images
 [asset images in package dependencies]: /ui/assets/assets-and-images#from-packages
 [resolution aware]: /ui/assets/assets-and-images#resolution-aware
@@ -323,11 +324,13 @@ flutter run --flavor staging
 ```
 
 To learn how to create Flutter flavors,
-see [Set up Flutter flavors for Android][] and
-[Set up Flutter flavors for iOS and macOS][].
+see [Set up Flutter flavors for Android][],
+[Set up Flutter flavors for iOS and macOS][], and
+[Set up Flutter flavors for Windows and Linux][].
 
 [Set up Flutter flavors for Android]: /deployment/flavors
 [Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+[Set up Flutter flavors for Windows and Linux]: /deployment/flavors-windows-linux
 
 ### deferred-components field
 

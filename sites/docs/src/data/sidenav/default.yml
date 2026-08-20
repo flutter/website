@@ -577,6 +577,8 @@
       permalink: /deployment/flavors
     - title: Create app flavors for iOS and macOS
       permalink: /deployment/flavors-ios
+    - title: Create app flavors for Windows and Linux
+      permalink: /deployment/flavors-windows-linux
     - title: Build and release an Android app
       permalink: /deployment/android
     - title: Build and release an iOS app
