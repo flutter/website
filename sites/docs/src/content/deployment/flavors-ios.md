@@ -174,13 +174,13 @@ always start with an existing project.
 
 1.  If you are working with a pre-existing Flutter project
     that has at least one Podfile, update it.
-    For details, see [Update Podfiles][].
+    For details, refer to [Update Podfiles][].
 
 1.  To make sure that you've set up everything correctly,
-    run your app on the new schemes in Xcode. You won't see
-    any differences because the configuration settings
-    haven't changed, but you do want to make sure that the
-    app can run.
+    run your app on the new schemes in Xcode. The app won't
+    have any visual differences yet because the configuration
+    settings haven't changed, but you should verify that
+    it runs without errors.
 
     * Select the `staging` scheme
       (**Product > Schemes > staging**).
@@ -197,7 +197,7 @@ always start with an existing project.
 
 1.  If everything runs, you're ready to customize your
     configurations.
-    For details, see [Customize configurations][].
+    For details, refer to [Customize configurations][].
 
 [Update Podfiles]: #update-podfiles
 [Customize configurations]: #customize-configurations
@@ -342,7 +342,7 @@ names in Xcode for two schemes called `staging` and
 1.  Launch the app for each scheme (`staging`, `production`)
     and check to make sure that the app display name has
     changed for each. To learn how to launch a scheme,
-    see [Launch an Xcode scheme][].
+    refer to [Launch an Xcode scheme][].
 
 [Launch an Xcode scheme]: #launch-an-xcode-scheme
 
@@ -418,7 +418,7 @@ an iOS project called `flavors_example`.
 1.  Launch the app for each scheme (`staging`, `production`)
     and check to make sure that the app icon has
     changed for each. To learn how to launch a scheme,
-    see [Launch an Xcode scheme][].
+    refer to [Launch an Xcode scheme][].
 
 [Launch an Xcode scheme]: #launch-an-xcode-scheme
 [App Icon Generator]: https://www.appicon.co/
@@ -476,7 +476,7 @@ your app when launching that flavor. This prevents your
 app bundle size from being bloated by unused assets. To
 bundle assets for each flavor, add the `flavors` subfield
 to the `assets` field in your project's pubspec.
-For details, see the [`assets` field][] in
+For details, refer to the [`assets` field][] in
 [Flutter pubspec options][].
 
 [`assets` field]: /tools/pubspec#assets
@@ -535,7 +535,7 @@ API_BASE_URL = flavors.com/api
 ```
 
 To learn how to add additional build settings for a
-specific build configuration, see Apple's
+specific build configuration, consult Apple's
 [Adding a build configuration file to your project][].
 
 [build settings]: {{site.apple-dev}}/documentation/xcode/build-settings-reference/
@@ -545,14 +545,14 @@ specific build configuration, see Apple's
 
 This document contains a few common Xcode scheme
 configurations, but there are many more that you can apply.
-To learn about them, see
+To learn about them, consult
 [Customizing the build schemes for a project][].
 
 [Customizing the build schemes for a project]: {{site.apple-dev}}/documentation/xcode/customizing-the-build-schemes-for-a-project
 
 ## More information
 
-To learn about creating and using flavors, check out
+To learn about creating and using flavors, consult
 the following resources:
 
 * [How to set up Flutter & Firebase with Multiple Flavors
