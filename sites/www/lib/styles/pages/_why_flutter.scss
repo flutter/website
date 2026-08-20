@@ -119,13 +119,14 @@
   }
 
   .why-flutter-hero-btn {
-    background-color: var(--blue-3);
-    color: var(--blue-9);
+    background-color: white;
+    border: 1px solid transparent;
+    color: var(--blue-6);
     gap: var(--spacer-sm);
 
     &:hover {
-      background-color: var(--blue-2);
-      color: var(--blue-9);
+      background-color: var(--grey-1);
+      color: var(--blue-6);
     }
   }
 }
