@@ -7,9 +7,8 @@
 
 // Scroll-Driven Reading Progress Line directly underneath sticky navbar
 .story-reading-progress {
-  position: fixed;
+  position: sticky;
   top: var(--site-header-height, 4rem);
-  left: 0;
   width: 100%;
   height: 3px;
   z-index: var(--site-z-top, 1000);
@@ -40,7 +39,8 @@
   }
 }
 
-// A. Generous Pacing & Breakout Canvas Layout
+// A layout that provides generous space and visual cues to 
+// encourage reading a longer doc page.
 body.layout-story {
   scroll-padding-top: calc(var(--site-header-height, 4rem) + 1.5rem);
 
@@ -76,7 +76,7 @@ body.layout-story {
     scroll-margin-top: calc(var(--site-header-height, 4rem) + 1.5rem);
     transition: background-color 0.4s ease, border-color 0.4s ease;
 
-    // C. Chapter Accent Palettes & Ambient Lighting
+    // Chapter Accent Palettes & Ambient Lighting
     --chapter-accent: #0284c7;
     --chapter-accent-rgb: 2, 132, 199;
 
@@ -118,7 +118,7 @@ body.layout-story {
       left: -2rem;
       right: -2rem;
       height: 100%;
-      background: radial-gradient(850px circle at 50% 12%, rgba(var(--chapter-accent-rgb), 0.05), transparent 70%);
+      background: radial-gradient(850px circle at 50% 12%, rgba(var(--chapter-accent-rgb), 0.05), transparent 90%);
       pointer-events: none;
       z-index: 0;
     }
@@ -151,7 +151,6 @@ body.layout-story {
 
       .chapter-kicker,
       > .header-wrapper {
-        max-width: 68ch;
         width: 100%;
         margin-inline: auto;
       }

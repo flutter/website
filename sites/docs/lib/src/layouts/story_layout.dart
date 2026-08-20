@@ -22,6 +22,13 @@ class StoryLayout extends DocLayout {
   List<String> get defaultBodyClasses => const ['layout-story'];
 
   @override
+  Component? buildLeadingContent(Page page) {
+    return const div(classes: 'story-reading-progress', [
+      div(classes: 'story-reading-progress-bar', []),
+    ]);
+  }
+
+  @override
   Component buildBody(Page page, Component child) {
     final pageData = page.data.page;
     final showToc = pageData['showToc'] as bool? ?? false;
@@ -31,15 +38,11 @@ class StoryLayout extends DocLayout {
         data: {
           'page': {
             'showToc': showToc,
+            'showPageHeader': false,
           },
         },
       ),
-      .fragment([
-        const div(classes: 'story-reading-progress', [
-          div(classes: 'story-reading-progress-bar', []),
-        ]),
-        div(classes: 'story-canvas', [child]),
-      ]),
+      child,
     );
   }
 }

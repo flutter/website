@@ -20,9 +20,22 @@ final class StoryStructureExtension implements PageExtension {
     var currentChapterNodes = <Node>[];
     var chapterIndex = 0;
     Node? currentH2Node;
+    ElementNode? headerNode;
+
+    bool isMeaningfulNode(Node node) {
+      if (node is TextNode) {
+        final text = node.text.trim();
+        return text.isNotEmpty && !text.startsWith('<!--');
+      }
+      return true;
+    }
 
     void flushCurrentChapter() {
       if (currentChapterNodes.isEmpty && currentH2Node == null) return;
+      if (currentH2Node == null && !currentChapterNodes.any(isMeaningfulNode)) {
+        currentChapterNodes = <Node>[];
+        return;
+      }
 
       final isPrologue = currentH2Node == null;
       final numStr = isPrologue
@@ -91,6 +104,11 @@ final class StoryStructureExtension implements PageExtension {
         flushCurrentChapter();
         chapterIndex++;
         currentH2Node = node;
+      } else if (currentH2Node == null &&
+          headerNode == null &&
+          node is ElementNode &&
+          node.tag.toLowerCase() == 'header') {
+        headerNode = node;
       } else {
         currentChapterNodes.add(node);
       }
@@ -98,7 +116,14 @@ final class StoryStructureExtension implements PageExtension {
 
     flushCurrentChapter();
 
-    return chapters;
+    return [
+      ?headerNode,
+      ElementNode(
+        'div',
+        const {'class': 'story-canvas'},
+        chapters,
+      ),
+    ];
   }
 
   static bool _isH2(Node node) {
