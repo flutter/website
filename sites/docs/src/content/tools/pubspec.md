@@ -180,8 +180,8 @@ Subfields of `assets`:
 * `path`: The path to an asset file or directory.
 * `flavors`: A list of flutter flavors to use with assets
   at a specific path. To learn more about
-  flavors, visit [Set up flavors for iOS and macOS] and
-  [Set up flavors for Android].
+  flavors, visit [Set up flavors for iOS and macOS][] and
+  [Set up flavors for Android][].
 * `platforms`: A list of platforms to use with assets at a
   specific path. Valid values are `android`, `ios`, `web`, `linux`,
   `macos`, and `windows`.
