@@ -1,0 +1,221 @@
+// The markup comes from the `FiltersSidebar` and `FilterSearchGroup`
+// components in `filterable_index.dart`, so everything here is keyed off
+// classes. Each page styles its own results list separately, keyed off the
+// id of that list.
+
+$mobile-breakpoint: 839px;
+$sidebar-width: 220px;
+
+.filterable-index {
+  display: flex;
+  flex-direction: row;
+
+  .left-col {
+    margin-right: 1rem;
+    flex: 2;
+  }
+
+  .right-col {
+    width: $sidebar-width;
+  }
+}
+
+// The sidebar follows the page as it scrolls on wide screens, and becomes an
+// off-canvas drawer on narrow ones. Everything within it, including any
+// page-specific footer, slides in and out as a single unit.
+.filter-sidebar {
+  position: sticky;
+  top: calc(var(--site-header-height) + 1rem);
+}
+
+.filter-group-wrapper {
+  border: 1px solid var(--site-inset-borderColor);
+  background-color: var(--site-inset-bgColor);
+  border-radius: var(--site-radius);
+  overflow: hidden;
+}
+
+// Only shown while the sidebar is a drawer, to close it again.
+.filter-header {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1rem;
+  z-index: 10;
+}
+
+.close-icon {
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  color: var(--site-base-fgColor-alt);
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 1rem;
+  top: 75%;
+  transform: translateY(-50%);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--site-primary-color);
+  }
+
+  .material-symbols {
+    font-size: 20px;
+  }
+}
+
+.filter-group {
+  .table-title {
+    text-align: center;
+    color: var(--site-base-fgColor-alt);
+    background-color: var(--site-raised-bgColor);
+    font-family: var(--site-ui-fontFamily);
+    font-weight: 600;
+    font-size: .925rem;
+    padding: .5rem;
+    border-bottom: 1px solid var(--site-inset-borderColor);
+  }
+
+  .table-content {
+    padding: 1rem;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-bottom: .5rem;
+
+    li {
+      list-style: none;
+      padding-left: 0;
+      padding-bottom: .25rem;
+      display: flex;
+      align-items: center;
+
+      label {
+        padding-left: .35rem;
+        font-size: .9rem;
+      }
+    }
+  }
+
+  h4 {
+    margin: 0 0 .5rem;
+    padding: 0;
+  }
+
+  button {
+    color: var(--site-primary-color);
+    margin: 0 0 2rem;
+    padding: .5rem 0 1rem 1rem;
+
+    &:hover {
+      color: var(--site-onPrimary-color);
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+.filter-search-group {
+  display: flex;
+  flex-direction: column;
+
+  button.show-filters-button {
+    @media (min-width: $mobile-breakpoint + 1) {
+      display: none;
+    }
+  }
+
+  .label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: .925rem;
+
+    label {
+      font-family: var(--site-ui-fontFamily);
+      color: var(--site-base-fgColor-lighter);
+
+      padding: .25rem 1rem 0 0;
+      margin: 0;
+      text-align: end;
+    }
+
+    button {
+      padding: .25rem;
+      color: var(--site-primary-color);
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: var(--site-onPrimary-color-light);
+      }
+
+      &:disabled,
+      &[disabled] {
+        color: var(--site-inset-bgColor-translucent);
+        cursor: default;
+      }
+    }
+  }
+}
+
+// On narrow screens the sidebar becomes a drawer that slides in from the
+// right. Opening and closing is driven entirely by the hidden
+// `#open-filter-toggle` checkbox that precedes it.
+@media (max-width: $mobile-breakpoint) {
+  .filterable-index {
+    flex-direction: column;
+  }
+
+  .left-col {
+    margin-right: 0;
+  }
+
+  // The drawer itself is fixed-positioned, so this column no longer needs to
+  // reserve width for it in the flex layout.
+  .right-col {
+    width: auto;
+  }
+
+  .filter-header {
+    display: block;
+  }
+
+  .filter-sidebar {
+    position: fixed;
+    top: var(--site-header-height);
+    bottom: 0;
+    right: -$sidebar-width;
+    width: $sidebar-width;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--site-inset-bgColor);
+    border-left: 1px solid var(--site-inset-borderColor);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  #open-filter-toggle:checked + .filter-sidebar {
+    right: 0;
+  }
+
+  // Fill the drawer rather than floating within it as a card,
+  // and scroll on its own so any footer stays in view.
+  .filter-group-wrapper {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    border: none;
+    border-radius: 0;
+  }
+
+  .filter-group .table-title {
+    background-color: var(--site-raised-bgColor-translucent);
+  }
+}
