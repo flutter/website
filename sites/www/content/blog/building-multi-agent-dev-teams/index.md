@@ -140,7 +140,7 @@ though, provided the most valuable engineering lessons.
 Midway through the porting process,
 I had to pause and update my skill files (`SKILL.md`) to resolve three issues:
 
-- **Accidental Deletion of Test Utilities**:
+- **Accidental deletion of test utilities**:
 Once the Coder implemented the real library classes in `lib/src/`,
 the Coordinator had to clean up the temporary compilation stubs left in the test
 files. It kept getting the stubs and the real thing confused,
