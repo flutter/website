@@ -24,10 +24,6 @@ final List<NavItem> headerNavItems = [
     ],
   ),
   NavItem(
-    label: 'Why Flutter',
-    href: '/why-flutter',
-  ),
-  NavItem(
     label: 'Ecosystem',
     href: '/ecosystem',
     items: [
@@ -37,6 +33,10 @@ final List<NavItem> headerNavItems = [
       NavLink(label: 'Events', href: '/events'),
       NavLink(label: 'Consultants', href: '/consultants'),
     ],
+  ),
+  NavItem(
+    label: 'Why Flutter',
+    href: '/why-flutter',
   ),
   NavItem(
     label: 'Showcase',
