@@ -82,8 +82,7 @@ body.layout-story {
   // Chapter Sections
   .story-chapter {
     position: relative;
-    padding-block: clamp(6rem, 12vh, 12rem);
-    min-height: clamp(500px, 70vh, 850px);
+    padding-block: 3rem;
     scroll-snap-align: start;
     scroll-margin-top: calc(var(--site-header-height, 4rem) + 1.5rem);
     transition: background-color 0.4s ease, border-color 0.4s ease;

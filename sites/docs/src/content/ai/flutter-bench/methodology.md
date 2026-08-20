@@ -15,7 +15,7 @@ description: >
   </p>
 </header>
 
-## Methodology overview
+## Overview
 
 FlutterBench is our evaluation framework designed to measure how AI coding
 agents perform within the Dart and Flutter ecosystem. The evaluation system consists of four core components:
