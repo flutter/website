@@ -137,7 +137,7 @@ class StateMachine<T extends StateModel> {
 Using agents definitely made the process of porting the library faster,
 but it comes with its own challenges. The moments when the workflow broke down,
 though, provided the most valuable engineering lessons.
-Mid-way through the porting process,
+Midway through the porting process,
 I had to pause and update my skill files (`SKILL.md`) to resolve three issues:
 
 - **Accidental Deletion of Test Utilities**:
