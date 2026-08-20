@@ -5,6 +5,10 @@
 # If you have some other news or posts you think should be added,
 # please first open an issue with relevant information.
 
+- title: "What's new in Flutter 3.47"
+  url: "https://flutter.dev/blog/whats-new-in-flutter-3-47"
+  image: "/news/images/featured/Flutter-347.gif"
+
 - title: "What's new in Flutter 3.44 and Dart 3.12"
   url: "https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527"
   image: "/news/images/featured/Flutter-344.gif"

@@ -5,7 +5,7 @@ description: >-
 publishDate: 2022-05-10
 author: verygoodopensource
 image: images/1yuiVVfFOuPnrsHcUx7xf_Q.webp
-category: story
+category: case-study
 layout: blog
 ---
 

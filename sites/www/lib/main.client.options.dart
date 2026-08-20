@@ -130,6 +130,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
         items: (p['items'] as List<Object?>)
             .map((i) => _component_ref.ComponentRef.fromId(i as String))
             .toList(),
+        past: p['past'] as bool,
       ),
       loader: _events_grid.loadLibrary,
     ),

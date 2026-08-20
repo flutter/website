@@ -1,16 +1,6 @@
 @use '../core/breakpoints';
 
 body.showcase {
-  #header {
-    .container > .mantle > .media {
-      padding: 92px 0 92px;
-    }
-  }
-
-  #notification.module {
-    background-color: var(--grey-1);
-  }
-
   #flutter-apps {
     padding: 56px 0;
 

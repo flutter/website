@@ -5,7 +5,7 @@ description: >-
   Travis CI and catch regressions automatically.
 publishDate: 2017-05-24
 author: yegorj
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

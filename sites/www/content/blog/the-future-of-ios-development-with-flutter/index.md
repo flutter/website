@@ -6,7 +6,7 @@ description: >-
 publishDate: 2023-05-18
 author: leighajarett
 image: images/1OGs9_siPcMAYd1yDAp-AOA.webp
-category: announcement
+category: news
 layout: blog
 ---
 

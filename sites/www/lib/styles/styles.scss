@@ -23,8 +23,6 @@
 @use 'components/hero';
 @use 'components/icon';
 @use 'components/insert';
-@use 'components/logos';
-@use 'components/map';
 @use 'components/newsletter';
 @use 'components/notification';
 @use 'components/stories';
@@ -36,14 +34,12 @@
 @use 'pages/buildWithAI';
 @use 'pages/community';
 @use 'pages/culture';
-@use 'pages/developers';
 @use 'pages/ecosystem';
 @use 'pages/events';
+@use 'pages/flip';
 @use 'pages/games';
 @use 'pages/home';
 @use 'pages/integrations';
-@use 'pages/learn';
-@use 'pages/majorEvents';
 @use 'pages/monetization';
 @use 'pages/development';
 @use 'pages/news';

@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-11-30
 author: chinmaygarde
 image: images/1K1lyX_AOOILKyv3stAtlQg.jpeg
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

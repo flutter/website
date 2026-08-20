@@ -105,12 +105,14 @@ which are not supported on Wasm):
 
 ```dart
 import 'fallback.dart'
-  if (dart.library.js_interop) 'wasm_web_interop.dart'
-  if (dart.library.js) 'legacy_web_interop.dart';
+  if (dart.library.js) 'legacy_web_interop.dart'
+  if (dart.library.js_interop) 'wasm_web_interop.dart';
 ```
 
 For more details, see the [documentation for conditional imports][]
-on [dart.dev]({{site.dart-site}}).
+on [dart.dev]({{site.dart-site}}). For help dealing with Wasm compilation
+failures due to unsupported imports, check out
+[Diagnosing Wasm compilation errors](/platform-integration/web/wasm#diagnosing-wasm-compilation-errors).
 
 ### Does Flutter web support concurrency?
 

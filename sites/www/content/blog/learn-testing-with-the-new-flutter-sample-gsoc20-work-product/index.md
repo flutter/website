@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-08-29
 author: abd99
 image: images/15PoXySK4-tAKWAY1zCzfHg.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

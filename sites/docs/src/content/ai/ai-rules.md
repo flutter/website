@@ -1,6 +1,5 @@
 ---
-title: AI rules for Flutter and Dart
-sidenav: ai
+title: AI rules
 shortTitle: AI rules
 description: >-
   Learn how to add AI rules to tools that accelerate your
@@ -43,7 +42,7 @@ different tool limits:
   <span>Download the Flutter and Dart rules template</span>
 </a>
 
-## Device & editor specific limits
+## Device and editor specific limits
 
 Different AI coding assistants and tools have varying limits for their "rules"
 or "custom instructions" files. *Last updated: 2026-01-05.*
