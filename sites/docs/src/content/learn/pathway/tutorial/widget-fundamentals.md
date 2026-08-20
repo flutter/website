@@ -46,8 +46,8 @@ Before you move on, you need to add this logic to your app.
 
 The `legalGuesses` and `legalWords` lists in `lib/game.dart` only contain a
 small sample of five-letter words (such as `aback`, `abase`, and `abate`) for
-brevity. When you test your app later in this tutorial, make sure to guess words
-defined in `lib/game.dart`.
+brevity. When testing your app later in this tutorial, only words defined in
+`lib/game.dart` are accepted as valid guesses.
 :::
 
 ### Anatomy of a stateless widget
