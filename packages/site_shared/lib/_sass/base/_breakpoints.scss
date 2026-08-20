@@ -10,7 +10,11 @@ $breakpoints: (
   '3xl': 1920px,
 );
 
-@mixin screen($name) {
+/// Emits a minimum-width media query for the specified named breakpoint.
+///
+/// @param {string} $name - A key in `$breakpoints`.
+/// @content Styles to emit at or above the breakpoint width.
+@mixin screen($breakpoint-name) {
   $value: map.get($breakpoints, $name);
   @if $value == null {
     @error 'Unknown breakpoint: #{$name}';
@@ -20,7 +24,12 @@ $breakpoints: (
   }
 }
 
-@mixin screen-below($name) {
+/// Emits a max-width media query that ends just below
+/// the specified named breakpoint.
+///
+/// @param {string} $name - A key in `$breakpoints`.
+/// @content Styles to emit below the breakpoint width.
+@mixin screen-below($breakpoint-name) {
   $value: map.get($breakpoints, $name);
   @if $value == null {
     @error 'Unknown breakpoint: #{$name}';
