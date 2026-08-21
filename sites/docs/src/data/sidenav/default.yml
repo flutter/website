@@ -472,6 +472,8 @@
       permalink: /packages-and-plugins/dependency-management
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
+    - title: Package skills
+      permalink: /ai/package-skills
     - title: Swift Package Manager
       permalink: /packages-and-plugins/swift-package-manager
       children:
@@ -639,35 +641,16 @@
 - divider
 - header: AI
 
-- title: Overview
-  permalink: /ai/create-with-ai
-  icon: psychology
-
 - title: Develop with AI
   permalink: /ai/get-started
   icon: smart_toy
   children:
     - title: Get started
       permalink: /ai/get-started
-    - title: AI coding assistants
-      permalink: /ai/coding-assistants
-      children:
-        - title: Overview
-          permalink: /ai/coding-assistants
-        - title: Antigravity
-          permalink: /ai/antigravity
-        - title: Antigravity CLI
-          permalink: /ai/antigravity-cli
-    - title: Agent skills
-      permalink: /ai/agent-skills
-    - title: Dart and Flutter MCP server
-      permalink: /ai/mcp-server
-    - title: AI rules
-      permalink: /ai/ai-rules
-    - title: Developer experience
-      permalink: /ai/best-practices/developer-experience
-    - title: "AI evaluations (experimental)"
-      permalink: /ai/evals
+    - title: How AI tools work
+      permalink: /ai/tools
+    - title: Package skills
+      permalink: /ai/package-skills
 
 - title: Build AI-powered apps
   permalink: /ai/genui
