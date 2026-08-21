@@ -184,6 +184,24 @@ To use the plugin:
    flutter build macos --config-only
    ```
 
+## How to remove CocoaPods after migrating to Swift Package Manager
+
+Once all your dependencies have migrated to Swift Package Manager and your project builds using SwiftPM, you can clean up CocoaPods from your project:
+
+1. Deintegrate CocoaPods from your project by running the following command from the `ios` or `macos` directory:
+
+   ```sh
+   pod deintegrate
+   ```
+
+2. Remove the `Podfile` and `Podfile.lock` files from your `ios` or `macos` directory.
+
+3. Clean and rebuild your project:
+
+   ```sh
+   flutter clean
+   ```
+
 ## How to turn off Swift Package Manager
 
 In general, don't do this. Remember that
