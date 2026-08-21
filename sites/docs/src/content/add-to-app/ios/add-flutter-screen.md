@@ -478,7 +478,7 @@ struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
-  var body: some Scene {
+  var body: some View {
     NavigationStack {
       NavigationLink("My Flutter Feature") {
         FlutterViewControllerRepresentable()
