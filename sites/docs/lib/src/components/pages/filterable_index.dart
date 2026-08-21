@@ -139,14 +139,13 @@ class _DrawerToggleButton extends StatelessComponent {
       },
       button(
         classes: 'icon-button show-filters-button',
+        attributes: const {'aria-label': 'Show filters'},
         onClick: () {
           if (_toggle case final toggle?) {
             toggle.checked = !toggle.checked;
           }
         },
-        [
-          const MaterialIcon('filter_list'),
-        ],
+        const [MaterialIcon('filter_list')],
       ),
     );
   }
