@@ -75,4 +75,4 @@ project.
 [shaders]: https://en.wikipedia.org/wiki/Shader
 [FragmentShader API]: /ui/design/graphics/fragment-shaders
 [drawPath()]: {{site.api}}/flutter/dart-ui/Canvas/drawPath.html
-[`simple_sdf`]: {{site.github}}/flutter/samples/tree/main/simple_sdf
+[`simple_sdf`]: https://github.com/flutter/samples/tree/main/simple_sdf
