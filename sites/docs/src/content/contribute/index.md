@@ -159,7 +159,7 @@ and account for any [necessary migrations][].
 
 [switch-channels]: /install/upgrade#change-channels
 [beta-channel]: /install/upgrade#the-beta-channel
-[report-bugs]: {{site.github}}/flutter/flutter/issues/new/choose
+[report-bugs]: {{site.repo.flutter}}/issues/new/choose
 [necessary migrations]: /release/breaking-changes
 
 ## Contribute code
@@ -233,24 +233,24 @@ you might want to contribute to:
 
 - The pub.dev site
   - **Live site:** [`pub.dev`]({{site.pub}})
-  - **Repository:** [`dart-lang/pub-dev`]({{site.github}}/dart-lang/pub-dev)
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/pub-dev/blob/master/CONTRIBUTING.md)
+  - **Repository:** [`dart-lang/pub-dev`](https://github.com/dart-lang/pub-dev)
+  - **Contribution guide:** [`CONTRIBUTING.md`](https://github.com/dart-lang/pub-dev/blob/master/CONTRIBUTING.md)
 - The Flutter documentation site
   - **Live site:** [`docs.flutter.dev`]({{site.url}})
   - **Repository:** [`flutter/website`]({{site.repo.this}})
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/flutter/website/blob/main/CONTRIBUTING.md)
+  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.repo.this}}/blob/main/CONTRIBUTING.md)
 - The Dart documentation site
   - **Live site:** [`dart.dev`]({{site.dart-site}})
-  - **Repository:** [`dart-lang/site-www`]({{site.github}}/dart-lang/site-www)
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/site-www/blob/main/CONTRIBUTING.md)
+  - **Repository:** [`dart-lang/site-www`](https://github.com/dart-lang/site-www)
+  - **Contribution guide:** [`CONTRIBUTING.md`](https://github.com/dart-lang/site-www/blob/main/CONTRIBUTING.md)
 - DartPad
   - **Live site:** [`dartpad.dev`]({{site.dartpad}})
-  - **Repository:** [`dart-lang/dart-pad`]({{site.github}}/dart-lang/dart-pad)
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/dart-pad/blob/main/CONTRIBUTING.md)
+  - **Repository:** [`dart-lang/dart-pad`](https://github.com/dart-lang/dart-pad)
+  - **Contribution guide:** [`CONTRIBUTING.md`](https://github.com/dart-lang/dart-pad/blob/main/CONTRIBUTING.md)
 - The `dartdoc` tool
   - **Live site:** [`api.flutter.dev`]({{site.api}})
-  - **Repository:** [`dart-lang/dartdoc`]({{site.github}}/dart-lang/dartdoc)
-  - **Contribution guide:** [`CONTRIBUTING.md`]({{site.github}}/dart-lang/dartdoc/blob/main/CONTRIBUTING.md)
+  - **Repository:** [`dart-lang/dartdoc`](https://github.com/dart-lang/dartdoc)
+  - **Contribution guide:** [`CONTRIBUTING.md`](https://github.com/dart-lang/dartdoc/blob/main/CONTRIBUTING.md)
 
 ### Dart SDK
 
@@ -262,8 +262,8 @@ Dart's contribution workflow is slightly different,
 so if you're interested, make sure to check out its
 [contribution][dart-contribute] and [building][dart-build] guides.
 
-[dart-contribute]: {{site.github}}/dart-lang/sdk/blob/main/CONTRIBUTING.md
-[dart-build]: {{site.github}}/dart-lang/sdk/blob/main/docs/Building.md
+[dart-contribute]: {{site.repo.dart-sdk}}/blob/main/CONTRIBUTING.md
+[dart-build]: {{site.repo.dart-sdk}}/blob/main/docs/Building.md
 
 ### Code samples
 
@@ -324,7 +324,7 @@ check out the [`dart-lang/site-www` contribution docs][dart-dev-contribute].
 
 [website-contribute]: {{site.repo.this}}/blob/main/CONTRIBUTING.md
 [Dart website]: {{site.dart-site}}
-[dart-dev-contribute]: {{site.github}}/dart-lang/site-www/tree/main?tab=readme-ov-file#getting-started
+[dart-dev-contribute]: https://github.com/dart-lang/site-www/tree/main?tab=readme-ov-file#getting-started
 
 ## Triage issues
 

@@ -347,7 +347,7 @@ Flutter.
 
 [announcement]: {{site.flutter-blog}}/introducing-background-isolate-channels-7a299609cad8
 [Actor model]: https://en.wikipedia.org/wiki/Actor_model
-[isolate_agents]: {{site.medium}}/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
+[isolate_agents]: https://medium.com/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
 [marshaling data]: https://en.wikipedia.org/wiki/Marshalling_(computer_science)
 [`compute()`]: {{site.api}}/flutter/foundation/compute.html
 [`Isolate.spawn()`]: {{site.dart.api}}/dart-isolate/Isolate/spawn.html

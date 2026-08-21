@@ -24,17 +24,28 @@ class BannerContentMapper extends ClassMapperBase<BannerContent> {
 
   static String _$text(BannerContent v) => v.text;
   static const Field<BannerContent, String> _f$text = Field('text', _$text);
+  static String? _$mobileText(BannerContent v) => v.mobileText;
+  static const Field<BannerContent, String> _f$mobileText = Field(
+    'mobileText',
+    _$mobileText,
+    opt: true,
+  );
   static String _$link(BannerContent v) => v.link;
   static const Field<BannerContent, String> _f$link = Field('link', _$link);
 
   @override
   final MappableFields<BannerContent> fields = const {
     #text: _f$text,
+    #mobileText: _f$mobileText,
     #link: _f$link,
   };
 
   static BannerContent _instantiate(DecodingData data) {
-    return BannerContent(text: data.dec(_f$text), link: data.dec(_f$link));
+    return BannerContent(
+      text: data.dec(_f$text),
+      mobileText: data.dec(_f$mobileText),
+      link: data.dec(_f$link),
+    );
   }
 
   @override
@@ -99,7 +110,7 @@ extension BannerContentValueCopy<$R, $Out>
 
 abstract class BannerContentCopyWith<$R, $In extends BannerContent, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? text, String? link});
+  $R call({String? text, String? mobileText, String? link});
   BannerContentCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -112,15 +123,17 @@ class _BannerContentCopyWithImpl<$R, $Out>
   late final ClassMapperBase<BannerContent> $mapper =
       BannerContentMapper.ensureInitialized();
   @override
-  $R call({String? text, String? link}) => $apply(
+  $R call({String? text, Object? mobileText = $none, String? link}) => $apply(
     FieldCopyWithData({
       if (text != null) #text: text,
+      if (mobileText != $none) #mobileText: mobileText,
       if (link != null) #link: link,
     }),
   );
   @override
   BannerContent $make(CopyWithData data) => BannerContent(
     text: data.get(#text, or: $value.text),
+    mobileText: data.get(#mobileText, or: $value.mobileText),
     link: data.get(#link, or: $value.link),
   );
 

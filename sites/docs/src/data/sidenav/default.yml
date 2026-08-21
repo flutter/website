@@ -450,8 +450,6 @@
           permalink: /platform-integration/web/embedding-flutter-web
         - title: Web content in Flutter
           permalink: /platform-integration/web/web-content-in-flutter
-        - title: Web renderers
-          permalink: /platform-integration/web/renderers
         - title: Display images on the web
           permalink: /platform-integration/web/web-images
         - title: Web FAQ
@@ -639,6 +637,85 @@
       permalink: /add-to-app/performance
 
 - divider
+- header: AI
+
+- title: Overview
+  permalink: /ai/create-with-ai
+  icon: psychology
+
+- title: Develop with AI
+  permalink: /ai/get-started
+  icon: smart_toy
+  children:
+    - title: Get started
+      permalink: /ai/get-started
+    - title: AI coding assistants
+      permalink: /ai/coding-assistants
+      children:
+        - title: Overview
+          permalink: /ai/coding-assistants
+        - title: Antigravity
+          permalink: /ai/antigravity
+        - title: Antigravity CLI
+          permalink: /ai/antigravity-cli
+    - title: Agent skills
+      permalink: /ai/agent-skills
+    - title: Dart and Flutter MCP server
+      permalink: /ai/mcp-server
+    - title: AI rules
+      permalink: /ai/ai-rules
+    - title: Developer experience
+      permalink: /ai/best-practices/developer-experience
+    - title: "AI evaluations (experimental)"
+      permalink: /ai/evals
+
+- title: Build AI-powered apps
+  permalink: /ai/genui
+  icon: auto_awesome
+  children:
+    - title: Firebase AI Logic
+      permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
+    - title: Genkit Dart
+      permalink: https://genkit.dev/docs/dart/get-started
+    - title: GenUI SDK for Flutter
+      permalink: /ai/genui
+      children:
+        - title: Overview
+          permalink: /ai/genui
+        - title: Main components and concepts
+          permalink: /ai/genui/components
+        - title: Get started
+          permalink: /ai/genui/get-started
+        - title: Input and events
+          permalink: /ai/genui/input-events
+    - title: Flutter AI Toolkit
+      permalink: /ai/ai-toolkit
+      children:
+        - title: Overview
+          permalink: /ai/ai-toolkit
+        - title: User experience
+          permalink: /ai/ai-toolkit/user-experience
+        - title: Feature integration
+          permalink: /ai/ai-toolkit/feature-integration
+        - title: Custom LLM providers
+          permalink: /ai/ai-toolkit/custom-llm-providers
+        - title: Chat client sample
+          permalink: /ai/ai-toolkit/chat-client-sample
+    - title: AI best practices
+      permalink: /ai/best-practices
+      children:
+        - title: Overview
+          permalink: /ai/best-practices
+        - title: Prompting
+          permalink: /ai/best-practices/prompting
+        - title: Structure and output
+          permalink: /ai/best-practices/structure-output
+        - title: Tool calls (aka function calls)
+          permalink: /ai/best-practices/tool-calls
+        - title: Mode of interaction
+          permalink: /ai/best-practices/mode-of-interaction
+
+- divider
 
 - header: Resources
 
@@ -663,8 +740,6 @@
           permalink: /tools/devtools/cli
         - title: Flutter inspector
           permalink: /tools/devtools/inspector
-        - title: Legacy Flutter inspector
-          permalink: /tools/devtools/legacy-inspector
         - title: Performance view
           permalink: /tools/devtools/performance
         - title: CPU Profiler view

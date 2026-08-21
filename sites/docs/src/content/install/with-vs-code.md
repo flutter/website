@@ -73,6 +73,18 @@ first install the following tools.
 
 {: .steps .chromeos-only}
 
+<div class="macos-only">
+
+:::warning
+**Note for Intel Macs:**
+Flutter is deprecating support for Intel-based Macs (x64).
+Future Flutter releases will require Apple Silicon.
+For details, check out the
+[macOS Intel deprecation strategy](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+:::
+
+</div>
+
  1. <h3>Install the Xcode command-line tools</h3>
 
     Download the Xcode command-line tools to get access to

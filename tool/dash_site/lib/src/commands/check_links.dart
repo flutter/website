@@ -68,10 +68,7 @@ Future<int> _checkLinks({
     'Using firebase-tools $firebaseToolsVersion to start the '
     'Firebase hosting emulator asynchronously...',
   );
-  final firebaseConfigDirectory = path.join(
-    repositoryRoot,
-    site.firebaseConfigDirectory,
-  );
+  final firebaseConfigDirectory = path.join(repositoryRoot, site.directory);
   final firebaseConfigFileName = path.basename(site.firebaseConfigPath);
   final emulatorProcess = await Process.start(
     firebaseCliExecutable,
@@ -80,7 +77,7 @@ Future<int> _checkLinks({
       '--only',
       'hosting',
       '--project',
-      'default',
+      site.defaultFirebaseProjectId,
       '--config',
       firebaseConfigFileName,
       '--log-verbosity',

@@ -54,7 +54,7 @@ However, in some scenarios, you might have a reason to
 customize this initialization process, such as:
 
 * Setting a custom Flutter configuration for your app.
-* Changing the settings for the Flutter service worker.
+* Integrating a custom service worker for offline support or caching.
 * Writing custom JavaScript code to
   run at different stages of the startup process.
 
@@ -73,7 +73,7 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
-| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Common warning" info below). |
+| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version for custom service worker configurations (Flutter no longer generates a service worker by default; see the [Web FAQ](/platform-integration/web/faq#how-do-i-configure-a-service-worker)). |
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
 
 {:.table}
@@ -122,15 +122,19 @@ The `config` argument is an object that can have the following optional fields:
 |`canvasKitVariant`| The CanvasKit variant to download. Your options cover:<br><br>1. `auto`: Downloads the optimal variant for the browser. The option defaults to this value.<br>2. `full`: Downloads the full variant of CanvasKit that works in all browsers.<br>3. `chromium`: Downloads a smaller variant of CanvasKit that uses Chromium compatible APIs. **_Warning_**: Don't use the `chromium` option unless you plan on only using Chromium-based browsers. |`String`|
 |`canvasKitForceCpuOnly`| When `true`, forces CPU-only rendering in CanvasKit (the engine won't use WebGL). |`bool`|
 |`canvasKitMaximumSurfaces`| The maximum number of overlay surfaces that the CanvasKit renderer can use. |`double`|
-|`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
-|`entrypointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/".  |`String`|
-|`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
-|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"skwasm"`. |`String`|
-|`forceSingleThreadedSkwasm`| Forces the Skia WASM renderer to run in single-threaded mode for compatibility. |`bool`|
+|`debugShowSemanticsNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging). |`bool`|
+|`entrypointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/". |`String`|
+|`fontFallbackBaseUrl`| Base URL for downloading fallback fonts when bundled fonts lack required glyphs. Defaults to `"https://fonts.gstatic.com/s/"`. |`String`|
+|`forceSingleThreadedSkwasm`| Forces single-threaded SkWasm mode for compatibility (only impacts apps compiled with `--wasm` when [WebAssembly][wasm-support] is selected at runtime). |`bool`|
+|`hostElement`| HTML Element into which Flutter renders the app (see [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
+|`multiViewEnabled`| Enables multi-view mode for [embedding Flutter views][embedding-flutter-web] into host DOM elements dynamically. |`bool`|
+|`nonce`| A [Content Security Policy (CSP) nonce][nonce-mdn] string applied to inline scripts and styles created by the engine. |`String`|
 
 {:.table}
 
-[web-renderers]: /platform-integration/web/renderers
+[embedding-flutter-web]: /platform-integration/web/embedding-flutter-web
+[nonce-mdn]: https://developer.mozilla.org/docs/Web/HTML/Global_attributes/nonce
+[wasm-support]: /platform-integration/web/wasm
 
 ## forceSingleThreadedSkwasm
 
@@ -138,7 +142,7 @@ A boolean flag to force the Skia WebAssembly (skwasm) renderer
 to run in **single-threaded mode**. This is useful if:
 
 * Your environment doesn't support multi-threaded WASM. For example,
- `SharedArrayBuffer` is not available or required security
+  `SharedArrayBuffer` is not available or required security
   headers are missing.  
 * You want maximum browser compatibility.
 * Use `false` (default) to allow multi-threaded rendering when
@@ -149,7 +153,6 @@ to run in **single-threaded mode**. This is useful if:
 ```js
 _flutter.loader.load({
   config: {
-    renderer: 'skwasm',
     forceSingleThreadedSkwasm: true,
   },
 });
@@ -157,25 +160,23 @@ _flutter.loader.load({
 
 ## Example: Customizing Flutter configuration based on URL query parameters
 
-The following example shows a custom `flutter_bootstrap.js` that allows
-the user to select a renderer by providing a `renderer` query parameter,
-such as `?renderer=skwasm`, in the URL of their website:
+The following example shows a custom `flutter_bootstrap.js` that enables
+single-threaded mode when a `force_st` query parameter is present in the URL:
 
 ```js
 {% raw %}{{flutter_js}}{% endraw %}
 {% raw %}{{flutter_build_config}}{% endraw %}
 
 const searchParams = new URLSearchParams(window.location.search);
-const renderer = searchParams.get('renderer');
-const userConfig = renderer ? {'renderer': renderer} : {};
+const forceSt = searchParams.has('force_st');
+const userConfig = forceSt ? { forceSingleThreadedSkwasm: true } : {};
 _flutter.loader.load({
   config: userConfig,
 });
 ```
 
 This script evaluates the `URLSearchParams` of the page to determine whether
-the user passed a `renderer` query parameter and then
-changes the user configuration of the Flutter app.
+the user passed a `force_st` query parameter and configures the app accordingly.
 
 ## The onEntrypointLoaded callback
 
@@ -185,8 +186,7 @@ The initialization process is split into the following stages:
 
 **Loading the entrypoint script**
 : The `load` function calls the `onEntrypointLoaded` callback once the
-  Service Worker is initialized, and the `main.dart.js` entrypoint has
-  been downloaded and run by the browser.
+  main entrypoint script has been downloaded and run by the browser.
   Flutter also calls `onEntrypointLoaded` on
   every hot restart during development.
 
@@ -208,7 +208,7 @@ The initialization process is split into the following stages:
   methods can be used to manage app views from the host app.
   To learn more, check out [Embedded mode][embedded-mode].
 
-[embedded-mode]: {{site.docs}}/platform-integration/web/embedding-flutter-web/#embedded-mode
+[embedded-mode]: /platform-integration/web/embedding-flutter-web#embedded-mode
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 :::warning

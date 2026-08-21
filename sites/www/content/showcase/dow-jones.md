@@ -1,6 +1,6 @@
 ---
 title: Dow Jones
-description: As the publisher of The Wall Street Journal, Barron’s, and MarketWatch, Dow Jones’ mission is to provide the world’s most  trusted journalism , data, and analysis to help businesses and professionals make decisions for a better future.
+description: As the publisher of The Wall Street Journal, Barron’s, and MarketWatch, Dow Jones’ mission is to provide the world’s most trusted journalism, data, and analysis to help businesses and professionals make decisions for a better future.
 headline: MarketWatch Stock Market Game
 summary: MarketWatch launches Virtual Stock Exchange app in 3 months with Flutter
 appName: MarketWatch Stock Market Game
@@ -40,7 +40,7 @@ VGV needed to deliver a user-friendly design and robust features by an ambitious
 
 **Their solution**
 
-As the app was being developed, VGV leaned on Flutter’s Hot Reload feature to make rapid updates in response to feedback from the MarketWatch team. In just three months, the team was able to launch a feature-packed app, including stylish, interactive charts and graphs that allow users to quickly see how their virtual portfolio is performing, easy-to-follow quote information, and real-time, simulated trading including transaction details. The app also offers users insight to where they stack up against competing investors through an expansive leaderboard. It deep-links to informative news articles within the MarketWatch app, which allows users to do research on stocks that they are interested in to ensure they make well-informed investment decisions. Animations, which the team created directly in Flutter using CustomPaint, create beautiful and effective branding moments.
+As the app was being developed, VGV leaned on Flutter’s Hot Reload feature to make rapid updates in response to feedback from the MarketWatch team. In just three months, the team was able to launch a feature-packed app, including stylish, interactive charts and graphs that allow users to quickly see how their virtual portfolio is performing, easy-to-follow quote information, and real-time, simulated trading including transaction details. The app also offers users insight into where they stack up against competing investors through an expansive leaderboard. It deep-links to informative news articles within the MarketWatch app, which allows users to do research on stocks that they are interested in to ensure they make well-informed investment decisions. Animations, which the team created directly in Flutter using CustomPaint, create beautiful and effective branding moments.
 
 *“Thanks to Flutter and VGV, we delivered on our goal of building a fun, engaging, and performant app for all screens and mobile devices in significantly less time and cost than if we built it natively. The team and thousands of players are very happy with the results.”*
 

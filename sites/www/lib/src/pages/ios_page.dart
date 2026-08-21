@@ -101,8 +101,7 @@ class IosPage extends StatelessComponent {
               [
                 path(
                   attributes: {
-                    'd':
-                        'M929 353.252L929 64.7477C929 30.0931 896.276 2 855.908 2L75.0916 1.99997C34.7242 1.99997 2 30.093 2 64.7476L1.99998 353.252C1.99998 387.907 34.7242 416 75.0916 416L855.908 416C896.276 416 929 387.907 929 353.252Z',
+                    'd': 'M929 353.252L929 64.7477C929 30.0931 896.276 2 855.908 2L75.0916 1.99997C34.7242 1.99997 2 30.093 2 64.7476L1.99998 353.252C1.99998 387.907 34.7242 416 75.0916 416L855.908 416C896.276 416 929 387.907 929 353.252Z',
                     'stroke': '#0081FC',
                     'stroke-width': '3',
                     'stroke-linecap': 'round',
@@ -115,14 +114,12 @@ class IosPage extends StatelessComponent {
             ),
             _buildStat(
               number: '28%',
-              description:
-                  '28% of new free apps on the iOS\napp store are built with Flutter',
+              description: '28% of new free apps on the iOS\napp store are built with Flutter',
               source: '(Apptopia 2024)',
             ),
             _buildStat(
               number: '#1',
-              description:
-                  '#1 multi-platform framework\non JetBrains and StackOverflow surveys',
+              description: '#1 multi-platform framework\non JetBrains and Stack Overflow surveys',
               source: '(JetBrains and StackOverflow, 2024)',
             ),
             _buildStat(
@@ -363,14 +360,14 @@ class IosPage extends StatelessComponent {
             div(classes: 'github-stats', [
               span(classes: 'stat', [
                 img(
-                  alt: 'Github Stars',
+                  alt: 'GitHub Stars',
                   src: context.asset('images/github-stars.svg'),
                 ),
                 const .text(' > 170K GitHub Stars'),
               ]),
               span(classes: 'stat', [
                 img(
-                  alt: 'Github Contributors',
+                  alt: 'GitHub Contributors',
                   src: context.asset('images/github-contributors.svg'),
                 ),
                 const .text(' > 1.5K GitHub Contributors'),
@@ -419,13 +416,11 @@ class IosPage extends StatelessComponent {
           [
             div(classes: 'embed-container', [
               iframe(
-                src:
-                    'https://www.youtube.com/embed/ceMsPBbcEGg?si=p06i4r5dP723J3nO',
+                src: 'https://www.youtube.com/embed/ceMsPBbcEGg?si=p06i4r5dP723J3nO',
                 attributes: {
                   'title': '#FlutterInProduction',
                   'frameborder': '0',
-                  'allow':
-                      'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+                  'allow': 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
                   'allowfullscreen': '',
                 },
                 [],
@@ -441,8 +436,8 @@ class IosPage extends StatelessComponent {
     return section(id: 'cta', classes: 'module', [
       div(classes: 'insert cta-insert try-flutter-insert container', [
         const div(classes: 'text', [
-          h2([.text('Next Steps')]),
-          p([.text('Start your journey with flutter')]),
+          h2([.text('Next steps')]),
+          p([.text('Start your journey with Flutter')]),
           div([
             a(
               href: 'https://docs.flutter.dev/get-started/install',

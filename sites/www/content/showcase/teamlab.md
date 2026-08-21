@@ -13,7 +13,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - Media and Entertainment
 publishDate: 2025-05-21
 ---
 

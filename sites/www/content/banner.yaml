@@ -1,4 +1,14 @@
+# Marketing site-wide banner content.
+#
+# Fields:
+# - text: Required, non-empty text displayed in wide layouts.
+# - mobileText: Optional, non-empty concise text displayed in narrow layouts.
+#   If omitted, normal `text` field is displayed in every layout.
+# - link: Required, absolute https URL that the whole banner links to.
+
 text: >-
-  Flutter 3.44 is here! Everywhere, everyday, built by everyone, for everyone.
+  Flutter 3.47 is here! Standalone design packages are now opt-in.
   Learn more
-link: https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527
+mobileText: >-
+  Flutter 3.47 is here! Learn more
+link: https://flutter.dev/blog/whats-new-in-flutter-3-47

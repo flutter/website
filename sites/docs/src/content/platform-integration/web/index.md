@@ -87,8 +87,6 @@ The following resources can help you get started:
   visit [Building a web application with Flutter][].
 * To configure web development server settings in a centralized file,
   check out [Set up a web development configuration file][].
-* To learn about Flutter's different web renderers (CanvasKit and Skwasm),
-  check out [Web renderers][].
 * To learn how to create a responsive Flutter
   app, check out [Creating responsive apps][].
 * To view commonly asked questions and answers,
@@ -112,4 +110,3 @@ The following resources can help you get started:
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
 [web FAQ]: /platform-integration/web/faq
 [web samples for Flutter]: https://github.com/flutter/samples/#?platform=web
-[Web renderers]: /platform-integration/web/renderers

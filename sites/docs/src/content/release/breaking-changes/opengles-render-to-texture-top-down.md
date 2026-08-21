@@ -28,17 +28,17 @@ render-target textures are stored top-down on every backend.
 
 This change is invisible to the framework and to Flutter's 2D rendering.
 Application code can only observe the old orientation through the
-`FragmentShader` API and through Flutter GPU, the experimental
-`flutter_gpu` package, where a shader samples a render-target texture
-directly.
+`FragmentShader` API and through Flutter GPU,
+the experimental `flutter_gpu` package,
+where a shader samples a render-target texture directly.
 
 ## Migration guide
 
-Shaders written for OpenGL ES often flipped the Y coordinate inside an
-`IMPELLER_TARGET_OPENGLES` block to make render-target textures match the
-other backends.
-Render-target textures are now top-down on every backend, so that flip is
-no longer needed.
+Shaders written for OpenGL ES often flipped the
+Y coordinate inside an `IMPELLER_TARGET_OPENGLES` block to make
+render-target textures match the other backends.
+Render-target textures are now top-down on every backend,
+so that flip is no longer needed.
 
 Code before migration:
 
@@ -52,8 +52,8 @@ void main() {
 }
 ```
 
-If the shader only needs to run on a Flutter release that includes this
-change, remove the flip.
+If the shader only needs to run on a Flutter release that
+includes this change, remove the flip.
 
 Code after migration:
 
@@ -81,8 +81,8 @@ void main() {
 
 ## Timeline
 
-Landed in version: not yet released<br>
-In stable release: the next stable release after 3.44.0
+Landed in version: 3.46.0-0.1.pre<br>
+In stable release: 3.47
 
 ## References
 

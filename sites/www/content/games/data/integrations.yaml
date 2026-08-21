@@ -22,7 +22,7 @@
   image: images/integration/leaderboards.png
 
 - title: User authentication
-  description: Securely save user data and personalize user experiencing with Firebase Auth
+  description: Securely save user data and personalize the user experience with Firebase Auth
   url: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
   image: images/integration/auth.png
 

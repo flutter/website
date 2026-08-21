@@ -29,7 +29,9 @@ class AiPage extends StatelessComponent {
       HeroSection(
         title: 'Build with AI',
         subtitle:
-            'Build and deploy AI-powered features that reach users on any platform with Flutter and Google\'s AI capabilities',
+            'Build and deploy AI-powered features that '
+            'reach users on any platform with '
+            'Flutter and Google\'s AI capabilities.',
         media: img(
           src: context.asset('images/build-with-ai/build-with-ai-hero.png'),
           alt: 'Build with AI',
@@ -39,7 +41,7 @@ class AiPage extends StatelessComponent {
         div(classes: 'notification container', [
           div(classes: 'notification-message', [
             img(
-              src: context.asset('/home/images/banner-megaphone.png'),
+              src: context.asset('/home/images/banner-megaphone.webp'),
               alt: 'Notification',
             ),
             const a(
@@ -62,7 +64,8 @@ class AiPage extends StatelessComponent {
           FeatureColumn(
             title: 'Expand your app\'s functionality',
             description:
-                'Add AI-based features like text generation, chat, and more to your Dart or Flutter apps with minimal setup',
+                'Add AI-based features like text generation, chat, '
+                'and more to your Dart or Flutter apps with minimal setup',
             image: context.asset(
               'images/build-with-ai/expand-functionality.png',
             ),
@@ -70,7 +73,9 @@ class AiPage extends StatelessComponent {
           FeatureColumn(
             title: 'Fast AI app development',
             description:
-                'Focus on your app logic and user experience, let Google SDKs handle the intricacies of interacting with AI models',
+                'Focus on your app logic and user experience, '
+                'and let Google SDKs handle the '
+                'intricacies of interacting with AI models',
             image: context.asset(
               'images/build-with-ai/fast-ai-development.png',
             ),
@@ -78,7 +83,9 @@ class AiPage extends StatelessComponent {
           FeatureColumn(
             title: 'The best of Google',
             description:
-                'Tap into models built on Google\'s extensive research and development, or explore popular alternatives',
+                'Tap into models built on '
+                'Google\'s extensive research and development, '
+                'or explore popular alternatives',
             image: context.asset('images/build-with-ai/the-best-of-google.png'),
           ),
         ]),
@@ -98,13 +105,15 @@ class AiPage extends StatelessComponent {
                 h3([.text('Firebase AI Logic')]),
                 p([
                   .text(
-                    'Easily integrate generative AI into your apps - either directly via client-side access without setting up a backend, or through Genkit for robust server-side implementations.',
+                    'Easily integrate generative AI into your apps—either '
+                    'directly through client-side access without '
+                    'setting up a backend or '
+                    'through Genkit for robust server-side implementations.',
                   ),
                 ]),
                 a(
                   classes: 'btn',
-                  href:
-                      'https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter',
+                  href: 'https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter',
                   target: Target.blank,
                   [.text('Get started')],
                 ),
@@ -123,7 +132,11 @@ class AiPage extends StatelessComponent {
                 h3([.text('Genkit')]),
                 p([
                   .text(
-                    'Genkit Dart is Google\'s open source AI framework that helps you easily build AI features into your app. It provides a single API to access your preferred model provider and features a Dev UI for debugging and rapid iterations.',
+                    'Genkit Dart is Google\'s open source AI framework that '
+                    'helps you easily build AI features into your app. '
+                    'It provides a single API to '
+                    'access your preferred model provider and '
+                    'features a Dev UI for debugging and rapid iteration.',
                   ),
                 ]),
                 a(
@@ -142,8 +155,7 @@ class AiPage extends StatelessComponent {
               reverse: true,
               eyebrow: 'Supercharge your Flutter app with AI',
               title: 'The Flutter AI Toolkit',
-              description:
-                  'Quickly add intelligent chat experiences using the new Flutter AI Toolkit. Easily integrate with Google Gemini AI or Firebase Vertex AI to power multi-turn conversations, streaming responses, speech-to-text input, and more.',
+              description: 'Quickly add intelligent chat experiences using the new Flutter AI Toolkit. Easily integrate with Google Gemini AI or Firebase Vertex AI to power multi-turn conversations, streaming responses, speech-to-text input, and more.',
               actions: const [
                 FeatureAction(
                   label: 'Get started',
@@ -166,10 +178,8 @@ class AiPage extends StatelessComponent {
             title: 'Learn how to...',
             items: [
               FeatureGridItem(
-                title:
-                    'Get started with Flutter, Dart, and Google AI in documentation',
-                description:
-                    'Documentation and tutorials for getting started with Flutter and Google AI.',
+                title: 'Get started with Flutter, Dart, and Google AI in documentation',
+                description: 'Documentation and tutorials for getting started with Flutter and Google AI.',
                 url: 'https://docs.flutter.dev/ai/create-with-ai',
                 icon: context.asset(
                   '/development/images/icons/get-started-in-docs.svg',
@@ -177,41 +187,38 @@ class AiPage extends StatelessComponent {
               ),
               FeatureGridItem(
                 title: 'Use the Gemini API for Dart and Flutter apps',
-                description:
-                    'Follow along in this Solutions Pathway to learn how to use the Google AI Dart SDK to make your first generative AI call using Gemini, build an app using Dart and Flutter, and explore cross-platform sample applications.',
-                url:
-                    'https://developers.google.com/learn/pathways/solution-ai-gemini-getting-started-dart-flutter',
+                description: 'Follow along in this Solutions Pathway to learn how to use the Google AI Dart SDK to make your first generative AI call using Gemini, build an app using Dart and Flutter, and explore cross-platform sample applications.',
+                url: 'https://developers.google.com/learn/pathways/solution-ai-gemini-getting-started-dart-flutter',
                 icon: context.asset(
                   '/development/images/icons/see-the-samples.svg',
                 ),
               ),
               FeatureGridItem(
-                title:
-                    'How to build agentic apps with Flutter and Firebase AI Logic',
+                title: 'Build agentic apps with Flutter and Firebase AI Logic',
                 description:
-                    'Multimodal AI is transforming how users interact with applications. '
-                    'Join us for an exploration of how to build secure, scalable, and intelligent multiplatform and multimodal AI apps using Flutter, Firebase, and Gemini.',
+                    'Multimodal AI is transforming how '
+                    'users interact with applications. '
+                    'Join us for an exploration of how to '
+                    'build secure, scalable, and intelligent multiplatform and '
+                    'multimodal AI apps using Flutter, Firebase, and Gemini.',
                 url: 'https://youtu.be/xo271p-Fl_4?si=VmGUTTFJvsSY9-vZ',
                 icon: context.asset(
                   '/development/images/icons/watch-the-video.svg',
                 ),
               ),
               FeatureGridItem(
-                title:
-                    'Build generative AI agents with Vertex AI Agent Builder and Flutter',
+                title: 'Build generative AI agents with Vertex AI Agent Builder and Flutter',
                 description:
                     'Supercharge your generative AI development workflow with Vertex AI and Flutter. '
                     'Seamlessly integrate with your existing tools and leverage our pre-built components and architectures to accelerate prototyping and deploy production-grade gen AI agents in your apps.',
-                url:
-                    'https://io.google/2024/explore/6f1a4481-7b82-45c9-83eb-caa6e2391152/',
+                url: 'https://io.google/2024/explore/6f1a4481-7b82-45c9-83eb-caa6e2391152/',
                 icon: context.asset(
                   '/development/images/icons/follow-the-roadmap.svg',
                 ),
               ),
               FeatureGridItem(
                 title: 'Build AI-powered apps with Genkit Dart',
-                description:
-                    'Learn how to build AI-powered applications in Dart and Flutter using the Genkit framework.',
+                description: 'Learn how to build AI-powered applications in Dart and Flutter using the Genkit framework.',
                 url: 'https://genkit.dev/docs/dart/overview',
                 icon: context.asset(
                   '/development/images/icons/get-started-in-docs.svg',

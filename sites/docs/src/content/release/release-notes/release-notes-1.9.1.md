@@ -19,7 +19,7 @@ And to be clear, when I say "we," I mean the Flutter community as a whole. The F
 
 ## Regressions
 
-In this release, we fixed one regression ([37955](https://github.com/flutter/flutter/pull/37955) Update shader warm-up for recent Skia changes) and caused another ([38167](https://github.com/dart-lang/sdk/issues/38167) Incremental compiler re-issuing of errors from constant evaluator). The new regression is fixed after the 1.9.1 stable release ([00d14e7](https://github.com/dart-lang/sdk/commit/00d14e7) [CFE] Always start constant evaluation error where we are asked to evaluate), so if you're seeing it, you can choose a more recent build to bring it into your Flutter apps.
+In this release, we fixed one regression ([37955](https://github.com/flutter/flutter/pull/37955) Update shader warm-up for recent Skia changes) and caused another ([38167]({{site.repo.dart-sdk}}/issues/38167) Incremental compiler re-issuing of errors from constant evaluator). The new regression is fixed after the 1.9.1 stable release ([00d14e7]({{site.repo.dart-sdk}}/commit/00d14e7) [CFE] Always start constant evaluation error where we are asked to evaluate), so if you're seeing it, you can choose a more recent build to bring it into your Flutter apps.
 
 
 ## Breaking API Changes
@@ -113,7 +113,7 @@ With the release of macOS Catalina just around the corner, we've made sure that 
 
 [38325](https://github.com/flutter/flutter/pull/38325) refactor flutter upgrade to be 2 part, with the second part re-entrant
 
-[cd70b](https://github.com/dart-lang/sdk/commit/ec2d06d4b9f4f0accad2b4aa841499e8e93cd70b) Use MAP_JIT when doing an mmap for executable pages (needed for macOS Catalina).
+[cd70b]({{site.repo.dart-sdk}}/commit/ec2d06d4b9f4f0accad2b4aa841499e8e93cd70b) Use MAP_JIT when doing an mmap for executable pages (needed for macOS Catalina).
 
 [38662](https://github.com/flutter/flutter/pull/38662) Change from using defaults to plutil for Plist parsing
 
@@ -516,7 +516,7 @@ The core framework for Flutter saw several important features in this release, i
 
 [35143](https://github.com/flutter/flutter/pull/35143) More HttpClientResponse Uint8List fixes
 
-[35149](https://github.com/flutter/flutter/pull/35149) More HttpClientResponse implements Stream<Uint8List> fixes
+[35149](https://github.com/flutter/flutter/pull/35149) More `HttpClientResponse implements Stream<Uint8List>` fixes
 
 [35232](https://github.com/flutter/flutter/pull/35232) New benchmark: Gesture semantics
 

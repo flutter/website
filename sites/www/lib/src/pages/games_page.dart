@@ -126,8 +126,7 @@ class GamesPage extends StatelessComponent {
                       div(classes: 'a-wrapper', [
                         a(
                           classes: 'btn white-btn',
-                          href:
-                              'https://github.com/flutter/games/tree/main/templates/endless_runner',
+                          href: 'https://github.com/flutter/games/tree/main/templates/endless_runner',
                           [.text('Get started')],
                         ),
                       ]),
@@ -157,8 +156,7 @@ class GamesPage extends StatelessComponent {
                       div(classes: 'a-wrapper', [
                         a(
                           classes: 'btn white-btn',
-                          href:
-                              'https://github.com/flutter/games/tree/main/templates/basic',
+                          href: 'https://github.com/flutter/games/tree/main/templates/basic',
                           [.text('Get started')],
                         ),
                       ]),
@@ -186,8 +184,7 @@ class GamesPage extends StatelessComponent {
                       div(classes: 'a-wrapper', [
                         a(
                           classes: 'btn white-btn',
-                          href:
-                              'https://github.com/flutter/games/tree/main/templates/card',
+                          href: 'https://github.com/flutter/games/tree/main/templates/card',
                           [.text('Get started')],
                         ),
                       ]),
@@ -254,7 +251,7 @@ class GamesPage extends StatelessComponent {
                 ),
                 p(classes: 'body', [
                   .text(
-                    'Flame is a community built open source game engine built in Flutter that extends Flutter’s game development capabilities for games that require a game loop, collision, and maps. '
+                    'Flame is a community-built open source game engine built in Flutter that extends Flutter’s game development capabilities for games that require a game loop, collision, and maps. '
                     'It takes advantage of the powerful infrastructure provided by Flutter, but simplifies the code you need to build your game.',
                   ),
                 ]),
@@ -295,8 +292,7 @@ class GamesPage extends StatelessComponent {
               ),
               FeatureGridItem(
                 title: 'Join the community',
-                description:
-                    'Meet other game developers building in Flutter in the Flame Community Discord Server',
+                description: 'Meet other game developers building in Flutter in the Flame Community Discord Server',
                 icon: context.asset('images/join-community.png'),
                 url: 'https://discord.com/invite/pxrBmy4',
               ),
@@ -312,8 +308,7 @@ class GamesPage extends StatelessComponent {
             ]),
             a(
               classes: 'btn white-btn',
-              href:
-                  'https://www.youtube.com/playlist?list=PLjxrf2q8roU20X0-JrLJ_zODME0sjnelZ',
+              href: 'https://www.youtube.com/playlist?list=PLjxrf2q8roU20X0-JrLJ_zODME0sjnelZ',
               [.text('View all')],
             ),
           ]),
@@ -382,11 +377,10 @@ class GamesPage extends StatelessComponent {
                   p(classes: 'subtitle', [
                     .text('Terms and conditions apply. '),
                     a(
-                      href:
-                          'https://www.google.com/intl/en/ads/coupons/terms/flutter/',
-                      [.text('Click here')],
+                      href: 'https://www.google.com/intl/en/ads/coupons/terms/flutter/',
+                      [.text('Check the terms')],
                     ),
-                    .text(''' to check your region's elibility.
+                    .text(''' to check your region's eligibility.
                 '''),
                   ]),
                   a(
@@ -419,8 +413,7 @@ class GamesPage extends StatelessComponent {
                   ]),
                   a(
                     classes: 'btn white',
-                    href:
-                        'https://cloud.google.com/free?utm_source=flutter&utm_medium=display&utm_campaign=FY22-Q2-flutter-games_get-started&utm_content=-&utm_term=-',
+                    href: 'https://cloud.google.com/free?utm_source=flutter&utm_medium=display&utm_campaign=FY22-Q2-flutter-games_get-started&utm_content=-&utm_term=-',
                     target: Target.blank,
                     [.text('Get started')],
                   ),
@@ -433,7 +426,7 @@ class GamesPage extends StatelessComponent {
           div(classes: 'insert cta-insert container', [
             const div(classes: 'text', [
               h3([.text('Start building')]),
-              p([.text('Get started with your first Flutter Game')]),
+              p([.text('Get started with your first Flutter game')]),
               div([
                 a(
                   classes: 'btn',

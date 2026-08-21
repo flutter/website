@@ -138,18 +138,18 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
             // If clicking outside the filters or toggle, close the filters.
             if (target?.closest('#resource-filter-group-wrapper') == null &&
                 target?.closest('.show-filters-button') == null) {
-              final toggle =
-                  web.document.getElementById('open-filter-toggle')
-                      as web.HTMLInputElement?;
+              final toggle = web.document.getElementById(
+                'open-filter-toggle',
+              ) as web.HTMLInputElement?;
               toggle?.checked = false;
             }
           },
           button(
             classes: 'icon-button show-filters-button',
             onClick: () {
-              final toggle =
-                  web.document.getElementById('open-filter-toggle')
-                      as web.HTMLInputElement?;
+              final toggle = web.document.getElementById(
+                'open-filter-toggle',
+              ) as web.HTMLInputElement?;
               toggle?.checked = !toggle.checked;
             },
             [

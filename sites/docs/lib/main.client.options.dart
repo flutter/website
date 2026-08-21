@@ -147,6 +147,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
     'site_shared:page_header_options': ClientLoader(
       (p) => _page_header_options.PageHeaderOptions(
         title: p['title'] as String,
+        markdownUrl: p['markdownUrl'] as String?,
         sourceUrl: p['sourceUrl'] as String?,
         issueUrl: p['issueUrl'] as String?,
       ),

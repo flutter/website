@@ -230,7 +230,7 @@ This package lets you add whatever widgets you want to the
 This makes it easy to adapt the title bar as you navigate
 to different sections of the app.
 
-[`bits_dojo`]: {{site.github}}/bitsdojo/bitsdojo_window
+[`bits_dojo`]: https://github.com/bitsdojo/bitsdojo_window
 
 ### Context menus and tooltips
 

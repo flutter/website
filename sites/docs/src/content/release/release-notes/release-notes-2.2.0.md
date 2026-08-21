@@ -704,7 +704,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [77497](https://github.com/flutter/flutter/pull/77497) Update ClampingScrollSimulation to better match Android (cla: yes, framework, waiting for tree to go green)
 
 
-[77606](https://github.com/flutter/flutter/pull/77606) [Docs] RouteObserver<PageRoute> cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
+[77606](https://github.com/flutter/flutter/pull/77606) [Docs] `RouteObserver<PageRoute>` cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
 
 
 [77608](https://github.com/flutter/flutter/pull/77608) Provide caret rect to text input plugin (cla: yes, framework, waiting for tree to go green)
@@ -4653,7 +4653,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [77327](https://github.com/flutter/flutter/pull/77327) Fix typo (cla: yes, d: examples, team)
 
 
-[77606](https://github.com/flutter/flutter/pull/77606) [Docs] RouteObserver<PageRoute> cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
+[77606](https://github.com/flutter/flutter/pull/77606) [Docs] `RouteObserver<PageRoute>` cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
 
 
 [77868](https://github.com/flutter/flutter/pull/77868) Update samples to use repo analysis options, Fix sample templates and a ton of analyzer issues (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
@@ -4871,7 +4871,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [77107](https://github.com/flutter/flutter/pull/77107) Improve error messaging and documentation for Scrollbar.isAlwaysShown (a: error message, cla: yes, d: api docs, d: examples, documentation, f: scrolling, framework, waiting for tree to go green)
 
 
-[77606](https://github.com/flutter/flutter/pull/77606) [Docs] RouteObserver<PageRoute> cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
+[77606](https://github.com/flutter/flutter/pull/77606) [Docs] `RouteObserver<PageRoute>` cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
 
 
 [77793](https://github.com/flutter/flutter/pull/77793) [FloatingActionButtonLocation] Add spacing between placement entries in documentation (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
@@ -4950,7 +4950,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [77107](https://github.com/flutter/flutter/pull/77107) Improve error messaging and documentation for Scrollbar.isAlwaysShown (a: error message, cla: yes, d: api docs, d: examples, documentation, f: scrolling, framework, waiting for tree to go green)
 
 
-[77606](https://github.com/flutter/flutter/pull/77606) [Docs] RouteObserver<PageRoute> cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
+[77606](https://github.com/flutter/flutter/pull/77606) [Docs] `RouteObserver<PageRoute>` cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
 
 
 [77793](https://github.com/flutter/flutter/pull/77793) [FloatingActionButtonLocation] Add spacing between placement entries in documentation (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
@@ -15621,7 +15621,7 @@ There were 1197 pull requests.
 
 [77566](https://github.com/flutter/flutter/pull/77566) Increase timeouts to fix build integration timeout flakes (cla: yes, tool)
 
-[77606](https://github.com/flutter/flutter/pull/77606) [Docs] RouteObserver<PageRoute> cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
+[77606](https://github.com/flutter/flutter/pull/77606) [Docs] `RouteObserver<PageRoute>` cannot subscribe ModalRoute (cla: yes, d: api docs, d: examples, documentation, framework, waiting for tree to go green)
 
 [77608](https://github.com/flutter/flutter/pull/77608) Provide caret rect to text input plugin (cla: yes, framework, waiting for tree to go green)
 

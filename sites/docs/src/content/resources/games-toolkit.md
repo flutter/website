@@ -144,7 +144,7 @@ and Very Good Ventures created new games.
 
 * VGV created the [I/O Pinball game][pinball-game] using the Flame engine.
   To learn about this game,
-  check out [I/O Pinball Powered by Flutter and Firebase][] on Medium
+  read [I/O Pinball Powered by Flutter and Firebase][] on the Flutter blog
   and [play the game][pinball-game] in your browser.
 
 * The Flutter team created [I/O Flip][flip-game], a virtual [CCG].
@@ -169,8 +169,7 @@ investigate other resources that our community recommended.
 
 <Icon id="book_5" title="Cookbook recipe"></Icon> [Special effects][]<br>
 <Icon id="handyman" title="Desktop tool"></Icon> [Spriter Pro][]<br>
-<Icon id="package_2" title="Flutter package"></Icon> [rive][]<br>
-<Icon id="package_2" title="Flutter package"></Icon> [spritewidget][]
+<Icon id="package_2" title="Flutter package"></Icon> [rive][]
 
 </td>
 </tr>
@@ -330,7 +329,7 @@ investigate other resources that our community recommended.
 [Cloud, Firebase]: https://cloud.google.com/free
 [Flame game engine]: https://flame-engine.org/
 [Games]: {{site.main-url}}/games
-[I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
+[I/O Pinball Powered by Flutter and Firebase]: https://flutter.dev/blog/i-o-pinball-powered-by-flutter-and-firebase
 [install Flutter]: /install
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
 [basic-template-readme]: {{site.repo.games}}/blob/main/templates/basic/README.md
@@ -373,11 +372,10 @@ investigate other resources that our community recommended.
 [game-svc-pkg]: {{site.pub-pkg}}/games_services
 [rive]: {{site.pub-pkg}}/rive
 [shared_preferences]: {{site.pub-pkg}}/shared_preferences
-[spritewidget]: {{site.pub-pkg}}/spritewidget
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
 [read how the game was created in 6 weeks]: {{site.flutter-blog}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
-[view the open source code repo]: {{site.github}}/flutter/super_dash
+[view the open source code repo]: https://github.com/flutter/super_dash
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
 [flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
@@ -393,5 +391,5 @@ Check out the following videos:
   from Google I/O 2024.
 
 [Game Developer Conference (GDC)]: https://gdconf.com/
-[forge2d-video]: {{site.youtube-site}}/watch?v=nsnQJrYHHNQ
-[gdc-talk]: {{site.youtube-site}}/watch?v=7mG_sW40tsw
+[forge2d-video]: {{site.yt.watch}}?v=nsnQJrYHHNQ
+[gdc-talk]: {{site.yt.watch}}?v=7mG_sW40tsw

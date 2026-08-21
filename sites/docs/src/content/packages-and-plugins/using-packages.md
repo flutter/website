@@ -53,7 +53,7 @@ see [Adding assets and images][].
 [Adding assets and images]: /ui/assets/assets-and-images
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: /packages-and-plugins/developing-packages
-[FlutterFire]: {{site.github}}/firebase/flutterfire
+[FlutterFire]: {{site.repo.flutterfire}}
 
 [`go_router`]: {{site.pub-pkg}}/go_router
 [`http`]: /cookbook/networking/fetch-data
@@ -90,7 +90,7 @@ or any combination thereof.
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
 [Flutter Favorites program]: /packages-and-plugins/favorites
 [Flutter landing page]: {{site.pub}}/flutter
-[Linux]: {{site.pub-pkgs}}?q=sdk%3Aflutter+platform%3Alinux
+[Linux]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Alinux
 [iOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aios
 [macOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Amacos
 [web]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aweb

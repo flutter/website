@@ -1,7 +1,7 @@
 ---
 title: DevTools 2.21.1 release notes
 shortTitle: 2.21.1 release notes
-breadcrumb: 2.22.1
+breadcrumb: 2.21.1
 description: Release notes for Dart and Flutter DevTools version 2.21.1.
 showToc: false
 ---

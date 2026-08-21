@@ -12,11 +12,6 @@
     }
   }
 
-  @keyframes slidedown {
-    0%   { opacity: 0; }
-    100% { opacity: 1; top: 0; }
-  }
-
   form {
     overflow: hidden;
     padding: 0.25rem;
@@ -43,15 +38,10 @@
       top: -150px;
 
       &.active {
-        animation-duration: 400ms;
-        animation-delay: 0ms;
-        animation-name: slidedown;
-        animation-iteration-count: 1;
-        animation-timing-function: var(--ui-anim-func);
-        animation-fill-mode: forwards;
+        animation: marketing-slide-up 400ms var(--ui-anim-func) forwards;
       }
     }
-    
+
     .optin {
       font-size: var(--font-size-default);
     }

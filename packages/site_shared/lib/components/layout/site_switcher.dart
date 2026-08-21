@@ -46,11 +46,7 @@ final class SiteSwitcher extends StatelessComponent {
                 subtype: 'Blog',
                 href: 'https://blog.flutter.dev',
               ),
-              const Component.element(
-                tag: 'li',
-                classes: 'dropdown-divider',
-                attributes: {'aria-hidden': 'true', 'role': 'separator'},
-              ),
+              const DropdownDivider(),
             ],
             _SiteWordMarkListEntry(
               name: 'Dart',

@@ -44,7 +44,7 @@ an iOS physical device or on the iOS Simulator.
     ```
 
     If you downloaded Xcode elsewhere or need to use a different version,
-    replace `/Applications/Xcode.app` with the path to there instead.
+    replace `/Applications/Xcode.app` with the path to your Xcode installation.
 
  1. <h3>Agree to the Xcode licenses</h3>
 
@@ -133,10 +133,18 @@ Set up each iOS device on which you want to test.
 
        ![Trust Mac](/assets/images/docs/setup/trust-computer.png)
 
- 1. <h3>Configure your physical iOS device</h3>
+ 1. <h3>Enable Developer Mode</h3>
 
     Apple requires enabling **[Developer Mode][]**
     on the device to protect against malicious software.
+
+    :::note
+    If the **Developer Mode** option is not visible
+    under **Settings > Privacy & Security**, connect the device
+    to your Mac, unlock it, and trust the computer.
+    Open Xcode (or run `flutter run`) to initiate device configuration,
+    which makes the option appear.
+    :::
 
     1. Tap on **Settings** <span aria-label="and then">></span>
        **Privacy & Security** <span aria-label="and then">></span>
@@ -168,7 +176,7 @@ Set up each iOS device on which you want to test.
 
     :::note Apple Developer program
     When you want to _deploy_ your app to the App Store,
-    you'll need to upgrade your personal Apple Developer account to
+    you must upgrade your personal Apple Developer account to
     a professional account.
     :::
 

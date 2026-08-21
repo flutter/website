@@ -16,7 +16,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - E-commerce & Retail
 successMetrics:
   - perc: 50
     desc: reduction in time required to launch new features

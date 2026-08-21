@@ -3,6 +3,7 @@
 // can be found in the LICENSE file.
 
 import 'dart:io';
+
 import 'package:image/image.dart';
 
 void main(List<String> args) {
