@@ -1243,3 +1243,14 @@
     - "Small-to-medium Business"
     - "Enterprise"
   options_GCP_partner: false
+- title: "Aubergine Solutions Pvt. Ltd."
+  summary: "Aubergine Solutions is an award-winning UI/UX design and digital product development company delivering end-to-end web, mobile, and enterprise applications."
+  card: "images/third_party/partners/Aubergine_logo.png"
+  external_url: "https://www.aubergine.co/solution/technology-transformation/flutter-development"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
