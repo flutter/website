@@ -200,7 +200,8 @@ However, manual migration is required
 if you have custom native code in your `AppDelegate` or use plugins
 that still rely on the legacy application lifecycle.
 In those cases,
-you must migrate manually by following the UIScene/Delegate Adoption Guide.
+you must migrate manually
+by following the [UIScene/Delegate Adoption Guide][uiscene-guide].
 
 ### Phasing out Intel Macs
 
@@ -231,7 +232,8 @@ and read our [previous blog post][spm-blog-post] for more details.
 This release also features optimized build times,
 thanks to community contributor [@lukemmtt](https://github.com/lukemmtt),
 who improved build pipelines by filtering out unnecessary SwiftPM package
-schemes early in the build process.
+schemes early in the build process
+([#186006](https://github.com/flutter/flutter/pull/186006)).
 
 ________________
 
@@ -281,7 +283,7 @@ them dynamically at runtime.
 This eliminates the brief stutter, called shader compilation jank,
 the first time an animation plays,
 delivering consistently smooth transitions from the very first frame.
-Learn more in the Impeller rendering engine documentation.
+Learn more in the [Impeller rendering engine documentation][impeller-doc].
 
 If you need to temporarily opt out of Impeller, follow these steps:
 
@@ -303,7 +305,9 @@ In partnership with Canonical,
 and thanks to maintainers [@robert-ancell](https://github.com/robert-ancell)
 and [@mattkae](https://github.com/mattkae),
 we are expanding our experimental desktop windowing APIs.
-Linux and Windows now support popup windows,
+Linux and Windows now support popup windows
+([#185866](https://github.com/flutter/flutter/pull/185866),
+[#184516](https://github.com/flutter/flutter/pull/184516)),
 allowing you to build native context menus and utility palettes.
 
 <DashImage figure src="images/popup_windows.png" alt="Popup windows on Win32" caption="Popup windows on Win32" />
@@ -320,17 +324,19 @@ such as this dockable panes demo contributed by
 We also resolved several window focus and realization bugs.
 On Windows, activating a window no longer pulls background windows forward
 or steals focus back on app resume,
-courtesy of contributor [@9AZX](https://github.com/9AZX):
+courtesy of contributor [@9AZX](https://github.com/9AZX)
+([#188016](https://github.com/flutter/flutter/pull/188016)):
 
 <DashImage figure src="images/focus_realization_fix.gif" alt="Window focus and realization fix on Windows" caption="Window focus and realization fix" />
 
 On Linux,
 multi-window creation now explicitly realizes windows before they receive their
-first frame from the compositor, fixing early rendering warnings
-and compositor assertions.
+first frame from the compositor,
+fixing early rendering warnings and compositor assertions.
 
-We also added a new sized-to-content API that lets you create regular
-and dialog windows that are automatically sized to fit their content.
+We also added a new sized-to-content API
+that lets you create regular and dialog windows that are automatically
+sized to fit their content.
 
 ### Flavors for desktop
 
@@ -356,10 +362,9 @@ Use the `--flavor` option to specify your flavor. For example:
 * `flutter build linux --flavor flavor_a`
 
 Thanks to [@AngeloAvv](https://github.com/AngeloAvv)
-for the wonderful contributions!
-
-* https://github.com/flutter/flutter/pull/187034
-* https://github.com/flutter/flutter/pull/187029
+for the wonderful contributions
+([#187034](https://github.com/flutter/flutter/pull/187034),
+[#187029](https://github.com/flutter/flutter/pull/187029))!
 
 ### Sharper desktop text
 
@@ -442,29 +447,35 @@ with the following default values:
 
 For iOS developers, code signing is now more transparent.
 Thanks to community member [@alex-medinsh](https://github.com/alex-medinsh),
-the CLI displays both the Team ID and Team Name when selecting a certificate.
+the CLI displays both the Team ID and Team Name when selecting a certificate
+([#184665](https://github.com/flutter/flutter/pull/184665)).
 
 Additionally, community member
 [@mozammal-hossain](https://github.com/mozammal-hossain)
 improved troubleshooting by providing clearer provisioning profile
-error messages when signing fails.
+error messages when signing fails
+([#184051](https://github.com/flutter/flutter/pull/184051)).
 
 ### Desktop
 
 Desktop platforms also received targeted refinements.
 Caret positioning for Korean text composition is resolved on Windows
-(thanks to [@CHOIgoung](https://github.com/CHOIgoung)),
+(thanks to [@CHOIgoung](https://github.com/CHOIgoung),
+[#186353](https://github.com/flutter/flutter/pull/186353)),
 and Windows plugins can now move expensive tasks off the platform thread
 using `FlutterEngine::PostPlatformThreadTask`.
 On Linux, [@CodeDoctorDE](https://github.com/CodeDoctorDE)
-added stylus rotation and pressure reporting.
+added stylus rotation and pressure reporting
+([#186831](https://github.com/flutter/flutter/pull/186831)).
 
 ### Graphics and engine
 
 In the engine, fragment shaders targeting OpenGLES no longer need
 conditional coordinate flipping when reading textures.
 This is now handled in the vertex shader.
-See the OpenGLES render-to-texture breaking change page for more details.
+Consult the
+[OpenGLES render-to-texture breaking change page][opengles-breaking-change]
+for more details.
 
 ### Framework polish
 
@@ -474,7 +485,8 @@ with improvements split across key components:
 **Accessibility and semantics:** Android high-contrast and color inversion
 settings are now detected automatically,
 thanks to [@xxxOVALxxx](https://github.com/xxxOVALxxx)
-(`MediaQueryData.highContrast` and `MediaQueryData.invertColors`).
+(`MediaQueryData.highContrast` and `MediaQueryData.invertColors`,
+[#182263](https://github.com/flutter/flutter/pull/182263)).
 Nested text spans inside `Text.rich` now match their layout sequence
 in the semantics tree,
 and keyboard focus blocking is added for `BlockSemantics`.
@@ -486,7 +498,8 @@ during minor scrolling,
 and keyboard shortcuts can now dismiss open selection menus.
 On Android, selection handles no longer obscure the context menu
 when positioned near the top of the screen,
-thanks to [@JhonaCodes](https://github.com/JhonaCodes).
+thanks to [@JhonaCodes](https://github.com/JhonaCodes)
+([#182663](https://github.com/flutter/flutter/pull/182663)).
 
 | BEFORE | AFTER |
 | :---: | :---: |
@@ -495,7 +508,8 @@ thanks to [@JhonaCodes](https://github.com/JhonaCodes).
 We also fixed a crash in `SelectableRegion` when selection began
 in an empty scrollable container,
 and resolved visual highlight artifacts on faded selectable text,
-thanks to [@ikramhasan](https://github.com/ikramhasan).
+thanks to [@ikramhasan](https://github.com/ikramhasan)
+([#183628](https://github.com/flutter/flutter/pull/183628)).
 
 | BEFORE | AFTER |
 | :---: | :---: |
@@ -509,9 +523,11 @@ active scroll view, preventing auto-scrolling on locked lists.
 <DashImage figure src="images/edge_scroller_demo.gif" alt="EdgeDraggingAutoScroller demo" caption="EdgeDraggingAutoScroller demo" />
 
 **Core Widget enhancements:** Preserve original colors inside `ImageIcon`
-with `useOriginalColors: true`, specify clipping behavior
-in `AnimatedCrossFade`, and track image stream errors directly
-with `ImageStreamListener`.
+with `useOriginalColors: true`
+([#180491](https://github.com/flutter/flutter/pull/180491)),
+specify clipping behavior in `AnimatedCrossFade`
+([#184545](https://github.com/flutter/flutter/pull/184545)),
+and track image stream errors directly with `ImageStreamListener`.
 
 ________________
 
@@ -540,3 +556,6 @@ with this new and improved version of Flutter!
 [breaking-changes-page]: https://docs.flutter.dev/release/breaking-changes
 [migration-guide]: https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors
 [spm-blog-post]: /blog/saying-goodbye-to-cocoapods-swift-package-manager-is-soon-the-default-in-flutter
+[uiscene-guide]: https://docs.flutter.dev/release/breaking-changes/uiscene-lifecycle-ios
+[impeller-doc]: https://docs.flutter.dev/perf/impeller
+[opengles-breaking-change]: https://docs.flutter.dev/release/breaking-changes/opengles-render-to-texture

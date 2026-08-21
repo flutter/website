@@ -45,7 +45,7 @@ final class StagePreviewCommand extends Command<int> {
       )
       ..addOption(
         _expiresOption,
-        defaultsTo: '7d',
+        defaultsTo: '5d',
         help: 'How long the Firebase Hosting preview channel should live.',
         valueHelp: 'duration',
       )

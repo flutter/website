@@ -44,18 +44,11 @@ Before you move on, you need to add this logic to your app.
 
 :::note Game logic note
 
-You might notice the
-`legalGuesses` and `legalWords` lists only contain a few words.
-The full lists combined have over 10,000 words and were omitted for brevity.
-You don't need the full lists to continue the tutorial.
-When you're testing your app, make sure to use the words from those lists.
-
-Alternatively, you can find the full lists in
-[this GitHub repository][full-words], as well as
-instructions to import it into your project.
+The `legalGuesses` and `legalWords` lists in `lib/game.dart` only contain a
+small sample of five-letter words (such as `aback`, `abase`, and `abate`) for
+brevity. When testing your app later in this tutorial, only words defined in
+`lib/game.dart` are accepted as valid guesses.
 :::
-
-[full-words]: https://github.com/ericwindmill/legal_wordle_words
 
 ### Anatomy of a stateless widget
 
