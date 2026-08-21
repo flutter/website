@@ -27,3 +27,5 @@ Evals measure both deterministic code correctness
 (compilation, lints, automated tests) and qualitative performance
 (reasoning, safety, and conciseness) using automated model judges
 and expert human grading.
+
+{% render "docs/ai/flutter_bench_task_explorer.md" %}
