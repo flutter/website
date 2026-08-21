@@ -208,7 +208,7 @@ Future<String?> _deploySiteToStaging(
     '--expires',
     expires,
     '--json',
-  ], workingDirectory: path.join(repositoryRoot, site.firebaseConfigDirectory));
+  ], workingDirectory: path.join(repositoryRoot, site.directory));
 
   if (result.exitCode != 0) {
     stderr.writeln(result.stderr);
