@@ -94,9 +94,16 @@ class FilterSearchGroup extends StatelessComponent {
   /// The id of the search field, so the page can label it.
   final String searchId;
 
+  /// The placeholder text displayed in the search field.
   final String placeholder;
+
+  /// The accessibility label for the search field.
   final String label;
+
+  /// The current value of the search field.
   final String value;
+
+  /// Callback triggered when the search field input changes.
   final void Function(String) onInput;
 
   /// Content rendered below the search field.
@@ -131,9 +138,12 @@ class _DrawerToggleButton extends StatelessComponent {
   Component build(BuildContext context) {
     return GlobalEventListener(
       onClick: (event) {
-        final target = event.target as web.Element?;
-        if (target?.closest(_sidebarSelector) == null &&
-            target?.closest('.show-filters-button') == null) {
+        final target = event.target;
+        if (target == null || !target.isA<web.Element>()) return;
+
+        final element = target as web.Element;
+        if (element.closest(_sidebarSelector) == null &&
+            element.closest('.show-filters-button') == null) {
           _toggle?.checked = false;
         }
       },
