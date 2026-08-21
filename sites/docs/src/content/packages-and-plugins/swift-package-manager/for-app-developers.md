@@ -39,8 +39,67 @@ yet support Swift Package Manager.
 If you previously disabled SwiftPM, you might need to enable it with
 `flutter config --enable-swift-package-manager`.
 
-If automatic migration works for you, that's it!
-You are done with this page.
+If automatic migration works for you and all of your dependencies
+support Swift Package Manager,
+you can [remove CocoaPods integration][removeCocoaPods].
+
+## How to remove CocoaPods integration
+
+When all Flutter plugins in your project support Swift Package Manager,
+you can remove CocoaPods integration completely from your project.
+
+:::note
+Flutter falls back to CocoaPods if any of your project dependencies
+do not support Swift Package Manager.
+Ensure that all plugins in your project support Swift Package Manager
+before removing CocoaPods.
+:::
+
+To remove CocoaPods from your project:
+
+1. De-integrate CocoaPods from your Xcode projects:
+
+   * For iOS projects, run:
+
+     ```sh
+     cd ios
+     pod deintegrate
+     cd ..
+     ```
+
+   * For macOS projects, run:
+
+     ```sh
+     cd macos
+     pod deintegrate
+     cd ..
+     ```
+
+1. Delete CocoaPods-related files and directories:
+
+   * For iOS, delete `ios/Podfile`, `ios/Podfile.lock`,
+     the `ios/Pods/` directory, and
+     the `ios/.symlinks/` directory (if present).
+
+   * For macOS, delete `macos/Podfile`, `macos/Podfile.lock`,
+     the `macos/Pods/` directory, and
+     the `macos/.symlinks/` directory (if present).
+
+1. Check your configuration files:
+
+   In `ios/Flutter/Debug.xcconfig`, `ios/Flutter/Profile.xcconfig`,
+   and `ios/Flutter/Release.xcconfig`
+   (and macOS equivalents under `macos/Flutter/`),
+   remove any `#include` lines referencing `Pods/Target Support Files`
+   or CocoaPods `.xcconfig` files if they are still present.
+
+1. Clean and build your project to verify the migration:
+
+   ```sh
+   flutter clean
+   flutter pub get
+   flutter run
+   ```
 
 ## How to add Swift Package Manager integration manually
 
@@ -223,4 +282,5 @@ This turns off Swift Package Manager for the current user.
 If a project is incompatible with Swift Package Manager,
 all contributors need to run this command.
 
+[removeCocoaPods]: #how-to-remove-cocoapods-integration
 [removeSPM]: #how-to-remove-swift-package-manager-integration
