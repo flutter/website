@@ -9,6 +9,7 @@ import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/util.dart';
 
 import '../../models/learning_resource_model.dart';
+import 'filterable_index.dart';
 import 'learning_resource_filters.dart';
 
 @client
@@ -23,89 +24,74 @@ class LearningResourceFiltersSidebar extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return div(classes: 'right-col', [
-      const input(
-        type: InputType.checkbox,
-        id: 'open-filter-toggle',
-        attributes: {'hidden': 'true'},
-      ),
-      div(id: 'resource-filter-group-wrapper', [
-        div(id: 'resource-filter-group', [
-          const div(classes: 'filter-header', [
-            label(
-              attributes: {'for': 'open-filter-toggle', 'aria-hidden': 'true'},
-              classes: 'close-icon',
-              [MaterialIcon('close')],
-            ),
-          ]),
-          const div(classes: 'table-title', [.text('Filter by')]),
-          ListenableBuilder(
-            listenable: filters,
-            builder: (context) {
-              return div(classes: 'table-content', [
-                const h4([.text('Subject')]),
-                ul(classes: filters.tagsExpanded ? '' : 'collapsed', [
-                  for (final (index, tag) in LearningResourceTag.values.indexed)
-                    li(
-                      classes: [
-                        if (!filters.tagsExpanded && index > 3) 'hidden',
-                      ].toClasses,
-                      [
-                        input(
-                          type: InputType.checkbox,
-                          attributes: {
-                            'role': 'checkbox',
-                            'name': 'filter-${tag.name}',
-                          },
-                          id: 'filter-${tag.name}',
-                          checked: filters.selectedTags.contains(tag),
-                          onChange: (checked) {
-                            filters.setTag(tag, checked as bool);
-                          },
-                        ),
-                        label(
-                          attributes: {'for': 'filter-${tag.name}'},
-                          [.text(tag.label)],
-                        ),
-                      ],
-                    ),
-                ]),
-                button(onClick: filters.toggleTagsExpanded, [
-                  span(classes: 'label', [
-                    .text(filters.tagsExpanded ? 'Less' : 'More'),
-                  ]),
-                  MaterialIcon(
-                    filters.tagsExpanded ? 'expand_less' : 'expand_more',
-                  ),
-                ]),
-                const h4([.text('Type')]),
-                ul([
-                  for (final type in LearningResourceType.values)
-                    li([
+    return FiltersSidebar(
+      children: [
+        ListenableBuilder(
+          listenable: filters,
+          builder: (context) {
+            return div(classes: 'table-content', [
+              const h4([.text('Subject')]),
+              ul(classes: filters.tagsExpanded ? '' : 'collapsed', [
+                for (final (index, tag) in LearningResourceTag.values.indexed)
+                  li(
+                    classes: [
+                      if (!filters.tagsExpanded && index > 3) 'hidden',
+                    ].toClasses,
+                    [
                       input(
                         type: InputType.checkbox,
                         attributes: {
                           'role': 'checkbox',
-                          'name': 'filter-${type.name}',
+                          'name': 'resource-filter-${tag.name}',
                         },
-                        id: 'filter-${type.name}',
-                        checked: filters.selectedTypes.contains(type),
+                        id: 'resource-filter-${tag.name}',
+                        checked: filters.selectedTags.contains(tag),
                         onChange: (checked) {
-                          filters.setType(type, checked as bool);
+                          filters.setTag(tag, checked as bool);
                         },
                       ),
                       label(
-                        attributes: {'for': 'filter-${type.name}'},
-                        [.text(type.label)],
+                        attributes: {'for': 'resource-filter-${tag.name}'},
+                        [.text(tag.label)],
                       ),
-                    ]),
+                    ],
+                  ),
+              ]),
+              button(onClick: filters.toggleTagsExpanded, [
+                span(classes: 'label', [
+                  .text(filters.tagsExpanded ? 'Less' : 'More'),
                 ]),
-              ]);
-            },
-          ),
-        ]),
-      ]),
-    ]);
+                MaterialIcon(
+                  filters.tagsExpanded ? 'expand_less' : 'expand_more',
+                ),
+              ]),
+              const h4([.text('Type')]),
+              ul([
+                for (final type in LearningResourceType.values)
+                  li([
+                    input(
+                      type: InputType.checkbox,
+                      attributes: {
+                        'role': 'checkbox',
+                        'name': 'resource-filter-${type.name}',
+                      },
+                      id: 'resource-filter-${type.name}',
+                      checked: filters.selectedTypes.contains(type),
+                      onChange: (checked) {
+                        filters.setType(type, checked as bool);
+                      },
+                    ),
+                    label(
+                      attributes: {'for': 'resource-filter-${type.name}'},
+                      [.text(type.label)],
+                    ),
+                  ]),
+              ]),
+            ]);
+          },
+        ),
+      ],
+    );
   }
 }
 
