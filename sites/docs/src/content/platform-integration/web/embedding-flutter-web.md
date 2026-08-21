@@ -249,11 +249,11 @@ class _MultiViewAppState extends State<MultiViewApp> with WidgetsBindingObserver
 }
 ```
 
-For more information, check out [`WidgetsBinding` mixin][] in the API docs, or
-the [Multi View Playground repo][] that was used during development.
+For more information, check out the
+[`WidgetsBinding` mixin]({{site.api}}/flutter/widgets/WidgetsBinding-mixin.html)
+in the API docs.
 
 [`didChangeMetrics` method]: {{site.api}}/flutter/widgets/WidgetsBindingObserver/didChangeMetrics.html
-[Multi View Playground repo]: https://github.com/goderbauer/mvp
 [type `FlutterView`]: {{site.api}}/flutter/dart-ui/FlutterView-class.html
 [`View` widget]: {{site.api}}/flutter/widgets/View-class.html
 [`ViewCollection` widget]: {{site.api}}/flutter/widgets/ViewCollection-class.html
