@@ -6,7 +6,7 @@ description: >-
   mobile apps for the hit Broadway show.
 publishDate: 2018-03-26
 author: aguinis
-category: story
+category: case-study
 layout: blog
 ---
 

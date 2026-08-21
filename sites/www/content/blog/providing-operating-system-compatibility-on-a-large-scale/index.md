@@ -5,7 +5,7 @@ description: >-
 publishDate: 2021-01-14
 author: kf6gpe
 image: images/0XGMajBOXRRgyu3Pa.jpg
-category: engineering
+category: deep-dive
 layout: blog
 ---
 

@@ -5,7 +5,7 @@ description: >-
 publishDate: 2023-11-15
 author: kenzieschmoll
 image: images/1JsdgKjxlVmm5EAFfXvQ2yA.webp
-category: announcement
+category: news
 layout: blog
 ---
 

@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-11-04
 author: andremobilelabonte
 image: images/1kcT41A5GvXp8XrjHjiuc4A.webp
-category: announcement
+category: news
 layout: blog
 ---
 

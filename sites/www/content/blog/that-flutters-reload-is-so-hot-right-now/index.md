@@ -5,7 +5,7 @@ description: >-
 publishDate: 2018-03-13
 author: swavkulinski
 image: images/17BKoEbJbiH08LxyMIpQdew.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

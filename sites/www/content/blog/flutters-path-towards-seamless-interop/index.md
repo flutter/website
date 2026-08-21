@@ -5,7 +5,7 @@ description: >-
   direct native interoperability with FFIgen and JNIgen.
 publishDate: 2025-05-20
 author: mariam_hasnany
-category: engineering
+category: deep-dive
 layout: blog
 ---
 

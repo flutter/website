@@ -5,7 +5,7 @@ description: >-
 publishDate: 2024-02-15
 author: anderdobo
 image: images/1-KkJmzvv3jNhh88TWxIBJg.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

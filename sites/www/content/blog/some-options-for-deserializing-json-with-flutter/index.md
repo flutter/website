@@ -5,7 +5,7 @@ description: >-
   other approaches to deserializing JSON in Flutter apps.
 publishDate: 2018-08-02
 author: redbrogdon
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-03-20
 author: zoeyfan
 image: images/0zVBJt_90TX8KEYoD.webp
-category: event
+category: news
 layout: blog
 ---
 

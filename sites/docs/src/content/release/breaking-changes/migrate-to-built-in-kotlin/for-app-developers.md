@@ -11,6 +11,23 @@ an AGP version created before 9.0.0 to an AGP version 9.0.0+.
 You should also use the minimum compatible dependency versions
 listed in the [Android Gradle Plugin docs][AGP block].
 
+:::warning
+This guide only applies to apps that already use the
+Kotlin Gradle Plugin (KGP).
+
+To verify whether your app applies KGP,
+find the `kotlin-android` plugin
+(or the `org.jetbrains.kotlin.android` plugin).
+It is likely located in the
+`<app-src>/android/app/build.gradle` or
+`<app-src>/android/app/build.gradle.kts` file.
+To view the KGP application code,
+see [Update the Gradle file](#update-the-gradle-file).
+
+If your app doesn't currently apply KGP,
+don't migrate to built-in Kotlin.
+:::
+
 :::note
 To update Flutter plugins to use built-in Kotlin,
 follow the [migration guide for plugin authors][].
@@ -299,6 +316,8 @@ kotlin {
 Before enabling built-in Kotlin,
 confirm that you have migrated your application
 and any Flutter plugins it uses.
+Also, confirm that you updated your app
+to AGP 9+, because built-in Kotlin requires AGP 9+.
 
 To enable built-in Kotlin,
 set the `android.builtInKotlin` property to `true`
@@ -310,7 +329,10 @@ in your `gradle.properties` file:
 ```
 
 :::version-note
-Enabling built-in Kotlin requires Flutter 3.47 or later.
+Flutter 3.44 added support for AGP 9 with built-in Kotlin disabled
+(`android.builtInKotlin=false`),
+while enabling built-in Kotlin (`android.builtInKotlin=true`)
+requires Flutter 3.47 or later.
 :::
 
 After enabling built-in Kotlin,

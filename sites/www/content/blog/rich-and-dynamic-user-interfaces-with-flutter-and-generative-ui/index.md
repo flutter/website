@@ -6,7 +6,7 @@ description: >-
 publishDate: 2025-11-18
 author: abdallahshaban557
 image: images/12R8k2Qbswy4G7h3yYIyk1A.webp
-category: announcement
+category: news
 layout: blog
 ---
 

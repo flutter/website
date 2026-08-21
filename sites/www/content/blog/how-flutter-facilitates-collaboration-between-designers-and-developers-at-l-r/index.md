@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-02-19
 author: ivan
 image: images/0dv6mhmjDb4HP59LA.webp
-category: story
+category: case-study
 layout: blog
 ---
 

@@ -36,6 +36,8 @@ they use [Jaspr Content](https://docs.jaspr.site/content).
       for the sidenav, glossary, and various indices.
     - `sites/docs/src/_includes/`:
       Liquid partial files written in Markdown.
+    - `sites/docs/firebase.json`:
+      Firebase Hosting configuration for docs.flutter.dev.
   - `sites/www/`:
     The implementation of flutter.dev,
     written in Dart using Jaspr and Jaspr Content.
