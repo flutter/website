@@ -10,6 +10,8 @@
 /// and are styled by `_filterable-index.scss`.
 library;
 
+import 'dart:js_interop';
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/common/material_icon.dart';
