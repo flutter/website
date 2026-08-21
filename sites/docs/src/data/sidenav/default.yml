@@ -542,6 +542,8 @@
       permalink: /perf
     - title: Impeller
       permalink: /perf/impeller
+    - title: Impeller anti-aliasing
+      permalink: /perf/antialiasing
     - title: Performance best practices
       permalink: /perf/best-practices
     - title: App size
