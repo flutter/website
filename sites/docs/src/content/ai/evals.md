@@ -27,3 +27,42 @@ Evals measure both deterministic code correctness
 (compilation, lints, automated tests) and qualitative performance
 (reasoning, safety, and conciseness) using automated model judges
 and expert human grading.
+
+```mermaid
+flowchart TB
+    c1:::myStyle-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+    one --> two
+    three --> two
+    two --> c2
+```
+
+More test
+
+```mermaid
+flowchart LR
+  subgraph tasks
+    direction TB
+    t1(Do first thing) --> t2(do second thing)
+  end 
+  User["`As an **App developer**`"] -->|i want to| Goal[fix overflow errors]
+  Goal-->tasks
+```
+
+
+```mermaid
+graph TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Ship it]
+    B -->|No| D[Debug]
+    D --> B
+    C --> E[Celebrate]
+```

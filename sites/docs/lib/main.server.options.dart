@@ -30,6 +30,8 @@ import 'package:site_shared/components/common/client/download_button.dart'
     as _download_button;
 import 'package:site_shared/components/common/client/feedback.dart'
     as _feedback;
+import 'package:site_shared/components/common/client/mermaid_diagram.dart'
+    as _mermaid_diagram;
 import 'package:site_shared/components/common/client/on_this_page_button.dart'
     as _on_this_page_button;
 import 'package:site_shared/components/common/client/page_header_options.dart'
@@ -114,6 +116,11 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'site_shared:feedback',
       params: __feedbackFeedbackComponent,
     ),
+    _mermaid_diagram.MermaidViewer:
+        ClientTarget<_mermaid_diagram.MermaidViewer>(
+          'site_shared:mermaid_diagram',
+          params: __mermaid_diagramMermaidViewer,
+        ),
     _on_this_page_button.OnThisPageButton:
         ClientTarget<_on_this_page_button.OnThisPageButton>(
           'site_shared:on_this_page_button',
@@ -180,6 +187,9 @@ Map<String, Object?> __download_buttonDownloadButton(
 Map<String, Object?> __feedbackFeedbackComponent(
   _feedback.FeedbackComponent c,
 ) => {'issueUrl': c.issueUrl};
+Map<String, Object?> __mermaid_diagramMermaidViewer(
+  _mermaid_diagram.MermaidViewer c,
+) => {'diagram': c.diagram};
 Map<String, Object?> __page_header_optionsPageHeaderOptions(
   _page_header_options.PageHeaderOptions c,
 ) => {
