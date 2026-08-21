@@ -41,6 +41,7 @@ import 'src/pages/news_page.dart';
 import 'src/pages/not_found_page.dart';
 import 'src/pages/showcase_page.dart';
 import 'src/pages/web_page.dart';
+import 'src/pages/why_flutter_page.dart';
 import 'src/utils/asset_utils.dart';
 
 void main() async {
@@ -119,6 +120,7 @@ void main() async {
           defineComponent('BrandPage', const BrandPage()),
           defineComponent('FlipPage', const FlipPage()),
           defineComponent('NewsPage', const NewsPage()),
+          defineComponent('WhyFlutterPage', const WhyFlutterPage()),
           defineComponentWithAttrs('Image', Image.fromAttrs),
 
           CustomComponent(

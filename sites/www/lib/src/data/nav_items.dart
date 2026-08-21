@@ -24,6 +24,10 @@ final List<NavItem> headerNavItems = [
     ],
   ),
   NavItem(
+    label: 'Why Flutter',
+    href: '/why-flutter',
+  ),
+  NavItem(
     label: 'Ecosystem',
     href: '/ecosystem',
     items: [

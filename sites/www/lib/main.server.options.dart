@@ -21,6 +21,14 @@ import 'package:flutter_website/src/components/pages/games_adaptive_media.dart'
     as _games_adaptive_media;
 import 'package:flutter_website/src/components/pages/showcase_grid.dart'
     as _showcase_grid;
+import 'package:flutter_website/src/components/sections/why_flutter_ai_era_section.dart'
+    as _why_flutter_ai_era_section;
+import 'package:flutter_website/src/components/sections/why_flutter_cases_section.dart'
+    as _why_flutter_cases_section;
+import 'package:flutter_website/src/components/sections/why_flutter_code_shared_section.dart'
+    as _why_flutter_code_shared_section;
+import 'package:flutter_website/src/components/sections/why_flutter_hero_section.dart'
+    as _why_flutter_hero_section;
 import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
 import 'package:site_shared/components/blog/client/blog_categories.dart'
     as _blog_categories;
@@ -85,6 +93,28 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'showcase_grid',
       params: __showcase_gridShowcaseGrid,
     ),
+    _why_flutter_ai_era_section.WhyFlutterAiEraSection:
+        ClientTarget<_why_flutter_ai_era_section.WhyFlutterAiEraSection>(
+          'why_flutter_ai_era_section',
+          params: __why_flutter_ai_era_sectionWhyFlutterAiEraSection,
+        ),
+    _why_flutter_cases_section.WhyFlutterCasesSection:
+        ClientTarget<_why_flutter_cases_section.WhyFlutterCasesSection>(
+          'why_flutter_cases_section',
+          params: __why_flutter_cases_sectionWhyFlutterCasesSection,
+        ),
+    _why_flutter_code_shared_section.WhyFlutterCodeSharedSection:
+        ClientTarget<
+          _why_flutter_code_shared_section.WhyFlutterCodeSharedSection
+        >(
+          'why_flutter_code_shared_section',
+          params: __why_flutter_code_shared_sectionWhyFlutterCodeSharedSection,
+        ),
+    _why_flutter_hero_section.WhyFlutterHeroSection:
+        ClientTarget<_why_flutter_hero_section.WhyFlutterHeroSection>(
+          'why_flutter_hero_section',
+          params: __why_flutter_hero_sectionWhyFlutterHeroSection,
+        ),
     _blog_categories.BlogCategories:
         ClientTarget<_blog_categories.BlogCategories>(
           'site_shared:blog_categories',
@@ -143,6 +173,24 @@ Map<String, Object?> __games_adaptive_mediaGamesAdaptiveMedia(
 Map<String, Object?> __showcase_gridShowcaseGrid(
   _showcase_grid.ShowcaseGrid c,
 ) => {'data': c.data, 'items': c.items.map((i) => i.toId()).toList()};
+Map<String, Object?> __why_flutter_ai_era_sectionWhyFlutterAiEraSection(
+  _why_flutter_ai_era_section.WhyFlutterAiEraSection c,
+) => {'geminiSprite': c.geminiSprite};
+Map<String, Object?> __why_flutter_cases_sectionWhyFlutterCasesSection(
+  _why_flutter_cases_section.WhyFlutterCasesSection c,
+) => {'media': c.media};
+Map<String, Object?>
+__why_flutter_code_shared_sectionWhyFlutterCodeSharedSection(
+  _why_flutter_code_shared_section.WhyFlutterCodeSharedSection c,
+) => {'laptopSprite': c.laptopSprite};
+Map<String, Object?> __why_flutter_hero_sectionWhyFlutterHeroSection(
+  _why_flutter_hero_section.WhyFlutterHeroSection c,
+) => {
+  'typingSprite': c.typingSprite,
+  'screens': c.screens,
+  'whitepaperUrl': c.whitepaperUrl,
+  'flutterLogo': c.flutterLogo,
+};
 Map<String, Object?> __blog_categoriesBlogCategories(
   _blog_categories.BlogCategories c,
 ) => {'categories': c.categories.map((i) => i.toMap()).toList()};
