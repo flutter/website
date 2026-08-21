@@ -10,13 +10,12 @@
 /// and are styled by `_filterable-index.scss`.
 library;
 
-import 'dart:js_interop';
-
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/common/search.dart';
 import 'package:site_shared/components/utils/global_event_listener.dart';
+import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 /// The id of the hidden checkbox that opens and closes the filter sidebar
@@ -141,7 +140,7 @@ class _DrawerToggleButton extends StatelessComponent {
     return GlobalEventListener(
       onClick: (event) {
         final target = event.target;
-        if (target == null || !target.isA<web.Element>()) return;
+        if (target == null || target.isA<web.Element>()) return;
 
         final element = target as web.Element;
         if (element.closest(_sidebarSelector) == null &&
