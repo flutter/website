@@ -125,7 +125,6 @@ To run your Flutter app on the iOS Simulator, follow these steps:
 
  1. <h3>Verify simulator settings</h3>
 
-    Check that your simulator uses a 64-bit device (iPhone 5s or later).
     You can check and change the device type in the Simulator menu under
     **File** <span aria-label="and then">></span> **Open Simulator**.
 
@@ -279,12 +278,12 @@ Set up each iOS device on which you want to test.
 
     1. Under the **Developer App** section, tap your certificate name.
 
-    1. Tap **Trust "certificate"**.
+    1. Tap **Trust \<apple ID or certificate name\>**.
 
     1. When the confirmation dialog displays, tap **Trust**.
 
     1. If the Mac displays a **codesign wants to access key...** dialog,
-       enter your macOS password and tap **Always Allow**.
+       enter your macOS password and click **Always Allow**.
 
     1. Open your Flutter app on your device or re-run `flutter run`.
 
