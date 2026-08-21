@@ -53,7 +53,7 @@ an iOS physical device or on the iOS Simulator.
 
     1. Open your preferred terminal.
 
-    1. Run the following command to review and sign the Xcode licenses.
+    1. Run the following command to review and sign the Xcode licenses:
 
        ```console
        $ sudo xcodebuild -license
@@ -68,13 +68,18 @@ an iOS physical device or on the iOS Simulator.
 
     To download iOS platform support and
     the latest iOS Simulator runtimes,
-    run the following command in your preferred terminal.
+    run the following command in your preferred terminal:
 
     ```console
     $ xcodebuild -downloadPlatform iOS
     ```
 
- 1. <h3>Install CocoaPods</h3>
+ 1. <h3>Install CocoaPods (maybe)</h3>
+
+    **As of Flutter 3.44, Swift Package Manager is the default
+    package manager for iOS and macOS.
+    If your project or its dependencies don't use CocoaPods,
+    you don't need to install it.**
 
     To support [Flutter plugins][] that use native iOS or macOS code,
     install the latest version of [CocoaPods][].
@@ -95,25 +100,53 @@ an iOS physical device or on the iOS Simulator.
 
 ## Set up an iOS device {: #set-up-devices}
 
-We recommend starting with the iOS Simulator as
-it's easier to get set up than a physical iOS device.
-However, you should also test your app on an actual
+Start with the iOS Simulator because
+it is easier to set up than a physical iOS device.
+However, also test your app on an actual
 physical device.
 
 <Tabs key="ios-simulator-or-physical-device">
 <Tab name="Simulator">
 
-Start the iOS Simulator with the following command:
+To run your Flutter app on the iOS Simulator, follow these steps:
 
-```console
-$ open -a Simulator
-```
+ 1. <h3>Start the iOS Simulator</h3>
 
-If you need to install a simulator for a different OS version,
-check out [Downloading and installing additional Xcode components][]
-on the Apple Developer site.
+    To start the Simulator,
+    run the following command in your preferred terminal:
+
+    ```console
+    $ open -a Simulator
+    ```
+
+    If you need to install a simulator for a different iOS version,
+    check out [Downloading and installing additional Xcode components][]
+    on the Apple Developer site.
+
+ 1. <h3>Verify simulator settings</h3>
+
+    Check that your simulator uses a 64-bit device (iPhone 5s or later).
+    You can check and change the device type in the Simulator menu under
+    **File** <span aria-label="and then">></span> **Open Simulator**.
+
+ 1. <h3>Run your app on the Simulator</h3>
+
+    To start your Flutter app on the running simulator,
+    navigate to your Flutter project directory and run:
+
+    ```console
+    $ flutter run
+    ```
+
+    Alternatively, select your iOS Simulator from the device selector in
+    [VS Code][] or [Android Studio][],
+    and launch your app with debugging enabled.
+
+{: .steps}
 
 [Downloading and installing additional Xcode components]: {{site.apple-dev}}/documentation/xcode/downloading-and-installing-additional-xcode-components
+[VS Code]: /tools/vs-code#running-and-debugging
+[Android Studio]: /tools/android-studio#running-and-debugging
 
 </Tab>
 <Tab name="Physical device">
@@ -129,14 +162,14 @@ Set up each iOS device on which you want to test.
     1. On first connecting an iOS device to your Mac,
        your device displays the **Trust this computer?** dialog.
 
-    1. Click **Trust**.
+    1. Tap **Trust** and enter the device passcode if prompted.
 
        ![Trust Mac](/assets/images/docs/setup/trust-computer.png)
 
  1. <h3>Enable Developer Mode</h3>
 
     Apple requires enabling **[Developer Mode][]**
-    on the device to protect against malicious software.
+    on iOS 16 or later to protect against malicious software.
 
     :::note
     If the **Developer Mode** option is not visible
@@ -146,81 +179,194 @@ Set up each iOS device on which you want to test.
     which makes the option appear.
     :::
 
-    1. Tap on **Settings** <span aria-label="and then">></span>
-       **Privacy & Security** <span aria-label="and then">></span>
+    1. Open **Settings** on your iOS device.
+
+    1. Tap **Privacy & Security** <span aria-label="and then">></span>
        **Developer Mode**.
 
     1. Tap to toggle **Developer Mode** to **On**.
 
-    1. Restart the device.
+    1. Tap **Restart**.
 
     1. When the **Turn on Developer Mode?** dialog appears,
-       tap **Turn On**.
+       tap **Turn On** and enter your passcode.
 
- 1. <h3>Create a developer code signing certificate</h3>
+ 1. <h3>Configure code signing in Xcode</h3>
 
-    To send your app to a physical iOS device,
-    _even_ for testing, you must establish trust
-    between your Mac and the device.
-    In addition to trusting the device when that
-    popup appears, you must upload a signed
-    developer certificate to your device.
+    To deploy and test an app on a physical iOS device,
+    establish trust between your Mac and the device by
+    signing your app with an Apple development certificate.
 
-    To create a signed development certificate,
-    you need an Apple ID.
-    If you don't have one, [create one][apple-account-new].
-    You must also enroll in the [Apple Developer program][]
-    and create an [Apple Developer account][].
-    If you're just _testing_ your app on an iOS device,
-    a personal Apple Developer account is free and works.
+    You can use a free personal Apple ID or an Apple Developer account.
+
+    1. Open Xcode.
+
+    1. Sign in to Xcode with your Apple Account:
+
+       1. Open Xcode settings (**Xcode** <span aria-label="and then">></span>
+          **Settings...** or press <kbd>Cmd</kbd> + <kbd>,</kbd>).
+
+       1. Select the **Accounts** tab.
+
+       1. Click the **+** button, select **Apple ID**, and click **Continue**.
+
+       1. Enter your Apple ID and password to sign in.
+
+       1. Close the settings dialog.
+
+       {: type="a"}
+
+    1. Open the default Xcode workspace for your Flutter app:
+
+       ```console
+       $ open ios/Runner.xcworkspace
+       ```
+
+    1. In the left project navigator, select the top-level **Runner** project.
+
+    1. In the **Runner** target settings pane,
+       select the **Signing & Capabilities** tab.
+
+    1. Check **Automatically manage signing**.
+
+    1. Select your development team from the **Team** dropdown menu
+       (such as **Your Name (Personal Team)**).
+
+       Xcode creates and downloads your development certificate
+       and provisioning profile.
+
+       ![Xcode account settings](/assets/images/docs/setup/xcode-account.png)
+
+    1. If automatic signing fails, verify that your project has a unique
+       **Bundle Identifier** in the **General** tab
+       (for example, `com.example.yourname.appname`).
+
+       ![Check the app's Bundle ID](/assets/images/docs/setup/xcode-unique-bundle-id.png)
 
     :::note Apple Developer program
-    When you want to _deploy_ your app to the App Store,
+    When you want to deploy your app to the App Store,
     you must upgrade your personal Apple Developer account to
-    a professional account.
+    a paid [Apple Developer Program][] account.
     :::
 
- 1. <h3>Prepare the device</h3>
+ 1. <h3>Run your app on your device</h3>
 
-    1. Find the **VPN & Device Management** menu under **Settings**.
+    1. Unlock your connected iOS device.
 
-       Toggle your certificate to **Enable**.
+    1. In your preferred terminal,
+       navigate to your Flutter project directory and run:
 
-       :::note
-       If you can't find the **VPN & Device Management** menu,
-       run your app on your iOS device once, then try again.
-       :::
+       ```console
+       $ flutter run
+       ```
 
-    1. Under the **Developer App** heading,
-       you should find your certificate.
+       If multiple devices are connected, select your iOS device from the prompt
+       or pass its ID with `flutter run -d <device-id>`.
 
-    1. Tap the certificate.
+       You can also select your device in [VS Code][] or [Android Studio][],
+       or open the project in Xcode and click the **Run** button
+       (<kbd>Cmd</kbd> + <kbd>R</kbd>).
 
-    1. Tap **Trust "&lt;certificate&gt;"**.
+ 1. <h3>Trust the developer certificate on the device</h3>
 
-    1. When the dialog displays, tap **Trust**.
+    The first time you deploy to a physical device,
+    trust the developer certificate on iOS:
 
-       If the **codesign wants to access key...** dialog appears:
+    1. On your iOS device, open **Settings**.
 
-       1. Enter your macOS password.
+    1. Tap **General** <span aria-label="and then">></span>
+       **VPN & Device Management**.
 
-       1. Tap **Always Allow**.
+    1. Under the **Developer App** section, tap your certificate name.
+
+    1. Tap **Trust "certificate"**.
+
+    1. When the confirmation dialog displays, tap **Trust**.
+
+    1. If the Mac displays a **codesign wants to access key...** dialog,
+       enter your macOS password and tap **Always Allow**.
+
+    1. Open your Flutter app on your device or re-run `flutter run`.
+
+ 1. <h3>(Optional) Set up wireless debugging</h3>
+
+    To deploy and debug your app over Wi-Fi without a USB cable:
+
+    1. Connect your iOS device to the same Wi-Fi network as your Mac.
+
+    1. Set a passcode on your iOS device if you have not done so already.
+
+    1. In Xcode, select **Window** <span aria-label="and then">></span>
+       **Devices and Simulators**
+       (or press <kbd>Shift</kbd> + <kbd>Cmd</kbd> + <kbd>2</kbd>).
+
+    1. Select your iOS device in the left sidebar.
+
+    1. Check **Connect via Network**.
+
+    1. Once the network icon appears next to the device name,
+       unplug your iOS device from your Mac.
 
 {: .steps}
 
-[apple-account-new]: https://support.apple.com/en-us/108647
 [Developer Mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
-[Apple Developer program]: {{site.apple-dev}}/programs/
-[Apple Developer account]: {{site.apple-dev}}/account
+[Apple Developer Program]: {{site.apple-dev}}/programs/
 
 </Tab>
 </Tabs>
 
----
+## Validate your setup {: #validate-setup}
+
+ 1. <h3>Check for toolchain issues</h3>
+
+    To check for any issues with your iOS development setup,
+    run the `flutter doctor` command in your preferred terminal:
+
+    ```console
+    $ flutter doctor -v
+    ```
+
+    If you see any errors or tasks to complete
+    under the **Xcode** or **CocoaPods** (if relevant) sections,
+    complete and resolve them, then
+    run `flutter doctor -v` again to verify your changes.
+
+ 1. <h3>Check for iOS devices</h3>
+
+    To ensure Flutter can discover your iOS Simulator or connected iOS device,
+    run `flutter devices` in your preferred terminal:
+
+    ```console
+    $ flutter devices
+    ```
+
+    You can also list available simulators with `flutter emulators`:
+
+    ```console
+    $ flutter emulators
+    ```
+
+    If you set up everything correctly,
+    at least one entry should appear with the platform marked as **ios**.
+
+ 1. <h3>Troubleshoot setup issues</h3>
+
+    If you need help resolving any setup issues,
+    check out [Install and setup troubleshooting][troubleshoot].
+    You can also review [iOS debugging][] in Flutter.
+
+    If you still have issues or questions,
+    reach out on one of the Flutter [community][] channels.
+
+{: .steps}
+
+[troubleshoot]: /install/troubleshoot
+[iOS debugging]: /platform-integration/ios/ios-debugging
+[community]: {{site.main-url}}/community
 
 ## Start developing for iOS {: #start-developing}
 
-**Congratulations.**
+Congratulations!
 Now that you've set up iOS development for Flutter,
 you can continue your Flutter learning journey while testing on iOS
 or begin improving integration with iOS.
