@@ -104,9 +104,8 @@ Container(
   child: Text(
     'Text with a background color',
     // ···
-    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-      color: Theme.of(context).colorScheme.onPrimary,
-    ),
+    style: Theme.of(context).textTheme.bodyMedium!
+        .copyWith(color: Theme.of(context).colorScheme.onPrimary),
   ),
 ),
 ```
@@ -146,9 +145,8 @@ To extend a theme, use the [`copyWith()`][] method.
 Theme(
   // Find and extend the parent theme using `copyWith`.
   // To learn more, check out the section on `Theme.of`.
-  data: Theme.of(
-    context,
-  ).copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
+  data: Theme.of(context)
+      .copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
   child: const FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
 );
 ```
@@ -226,9 +224,8 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(
-            color: Theme.of(context).colorScheme.onSecondary,
-          ),
+          style: Theme.of(context).textTheme.titleLarge!
+              .copyWith(color: Theme.of(context).colorScheme.onSecondary),
         ),
         backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
@@ -241,9 +238,8 @@ class MyHomePage extends StatelessWidget {
             // TRY THIS: Change the Text value
             //           or change the Theme.of(context).textTheme
             //           to "displayLarge" or "displaySmall".
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
+            style: Theme.of(context).textTheme.bodyMedium!
+                .copyWith(color: Theme.of(context).colorScheme.onPrimary),
           ),
         ),
       ),
