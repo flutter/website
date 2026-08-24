@@ -42,7 +42,7 @@ multi-window support was the
 in Flutter, further showcasing the importance of this feature.
 
 While all this was happening, we at Canonical were busy integrating
-Flutter across mission critical parts of our stack,
+Flutter across mission-critical parts of our stack,
 including the Ubuntu Desktop Installer. We had already assumed
 responsibility as the primary maintainer of the Flutter Linux Embedder
 by this time, and were growing increasingly interested in seeing a
