@@ -6,7 +6,7 @@ description: >-
 publishDate: 2026-08-24
 author: mattkae
 image: images/banner.gif
-category: case-study
+category: deep-dive
 layout: blog
 ---
 
