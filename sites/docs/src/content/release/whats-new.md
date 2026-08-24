@@ -17,10 +17,61 @@ join the [flutter-announce][] Google group.
 For Dart, you can join the [Dart Announce][] Google group,
 and review the [Dart changelog][].
 
-[Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
-[Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart Announce]: {{site.groups.dart-announce}}
+[Dart changelog]: {{site.repo.dart-sdk}}/blob/main/CHANGELOG.md
+[flutter-announce]: {{site.groups.flutter-announce}}
 [release notes]: /release/release-notes
+
+## 12 August 2026: Release 3.47
+
+Flutter 3.47 is live! For details,
+check out the [Flutter 3.47 blog post][3.47-blog-post].
+
+**Docs updated or added since the 3.44 release**
+
+* The Flutter [Widget Previews][widget-previewer] tool has graduated to stable,
+  introducing local build caching for faster startup times
+  and real-time preview search and filtering.
+
+* The AI documentation has been reorganized to improve navigation
+  and help you get started quickly with agent-plugins
+  (formerly known as skills) using the [Antigravity CLI][antigravity-cli],
+  IDE integrations, and other coding assistants.
+  An experimental [AI Evaluations][ai-evals] topic page has also been added.
+
+* A new guide on [Dependency management][dependency-mgmt] explains
+  how to configure, manage, and upgrade package dependencies.
+
+* The [Swift Package Manager][swiftpm] guides for iOS and macOS have expanded,
+  and the [Add-to-app][add-to-app] documentation now includes
+  SwiftPM integration instructions.
+
+* The web documentation now includes troubleshooting guidance for
+  [Wasm compilation errors][wasm] and instructions for using the
+  `--source-maps` flag during web builds.
+
+* The assets guide now explains how to bundle
+  [platform-specific assets][platform-assets] in `pubspec.yaml`.
+
+* A new migration guide helps you migrate plugins and apps to
+  [built-in Kotlin][kotlin-migration] Gradle plugins.
+
+As always, check out the [breaking changes][bc-3-47] page for this release,
+which includes links to migration guides and other vital information.
+
+[3.47-blog-post]: /blog/whats-new-in-flutter-3-47
+[widget-previewer]: /tools/widget-previewer
+[antigravity-cli]: /ai/antigravity-cli
+[ai-evals]: /ai/evals
+[dependency-mgmt]: /packages-and-plugins/dependency-management
+[swiftpm]: /packages-and-plugins/swift-package-manager
+[add-to-app]: /add-to-app
+[wasm]: /platform-integration/web/wasm
+[platform-assets]: /ui/assets/assets-and-images
+[kotlin-migration]: /release/breaking-changes/migrate-to-built-in-kotlin
+[bc-3-47]: /release/breaking-changes#released-in-flutter-3-47
+
+---
 
 ## 18 May 2026: Google I/O Release 3.44
 
@@ -73,7 +124,7 @@ significant changes:
 [Flutter API docs]: {{site.api}}
 [few]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
 [learning pathway]: /learn
-[navaronbracke]: {{site.github}}/navaronbracke
+[navaronbracke]: https://github.com/navaronbracke
 [official glossary]: /resources/glossary
 [onReorder]: /release/breaking-changes/separated-builder-find-child-index-callback
 
@@ -149,7 +200,7 @@ Other relevant resources:
 [3.38 release notes and changelog]: /release/release-notes/release-notes-3.38.0
 [accessibility docs]: /ui/accessibility
 [bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
-[Dart 3.10 release]: https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088
+[Dart 3.10 release]: {{site.dart-blog}}/announcing-dart-3-10
 [Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
 [DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
 [Flutter on latest iOS]: /platform-integration/ios/ios-latest
@@ -158,51 +209,6 @@ Other relevant resources:
 [Widget Previewer tool page]: /tools/widget-previewer
 [web-config-file]: /platform-integration/web/web-dev-config-file
 
---- 
-
-## 13 August 2025: Release 3.35
-
-Flutter 3.35 is live! For more information,
-check out the [Flutter 3.35 technical blog post][3.35-tech].
-You might also check out the [Dart 3.9 release][] blog post.
-
-[3.35-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-35-c58ef72e3766
-[Dart 3.9 release]: https://dart.dev/blog/announcing-dart-3-9
-
-**Docs updated or added since the 3.32 release**
-
-* Hot reload is now available on the web and no longer
-  requires an experimental flag. For more information,
-  check out [hot reload][].
-
-* There is a new [Create with AI][] guide which covers
-  how you can leverage AI tools like Gemini Code Assist,
-  GeminiCLI, and the Dart and Flutter MCP Server to build
-  AI-powered features for your Flutter apps.
-
-* You can now use the [Flutter Widget Previewer][] guide
-  to help you view a preview of your Flutter widgets in
-  Chrome.
-
-* Each stable release affects which versions of
-  deployed platforms that Flutter supports.
-  For more information, visit the updated
-  [supported platforms][] page.
-
-* On Android, you can now protect sensitive content,
-  such as customer information, when you share your screen.
-  Learn more by visiting [Protect your app's sensitive content][].
-
-* Also, don't forget to check out the [breaking changes][bc-3.35]
-  page for this release. That's also where you'll find useful
-  migration info.
-
-[Flutter Widget Previewer]: /tools/widget-previewer
-[Create with AI]: /ai/create-with-ai
-[bc-3.35]: /release/breaking-changes#released-in-flutter-3-35
-[hot reload]: /tools/hot-reload
-[Protect your app's sensitive content]: /platform-integration/android/sensitive-content
-[supported platforms]: /reference/supported-platforms
 
 ---
 

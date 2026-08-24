@@ -4,16 +4,9 @@
 # - `link` with `text`, `url`, and optional `newTab: true`.
 # - `newLine: true` for inserting a line break.
 
-- text: "Flutter 3.44 is here!"
-- newLine: true
-- text: "Watch "
-- link:
-    text: "What's new in Flutter"
-    url: https://www.youtube.com/watch?v=I1uIbGh1dGE
-    newTab: true
-- text: " and read the "
+- text: "Flutter 3.47 is here! Read the "
 - link:
     text: "blog post"
-    url: https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527
+    url: https://flutter.dev/blog/whats-new-in-flutter-3-47
     newTab: true
 - text: "."

@@ -6,7 +6,7 @@ description: >-
 publishDate: 2026-06-15
 author: sfshaza
 image: images/1BVNfy8-YPsP5jHKuD3P-Cg.gif
-category: announcement
+category: news
 layout: blog
 ---
 

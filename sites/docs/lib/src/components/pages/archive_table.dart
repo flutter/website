@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:collection/collection.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:meta/meta.dart';
@@ -55,12 +56,18 @@ class _ArchiveTableState extends State<ArchiveTable> {
       final releasesData = await FlutterRelease.fetchFlutterReleases(
         component.os,
       );
-      final filteredReleases = releasesData
+      final releasesByVersion = releasesData
           .where((release) => release.channel == channel)
-          .toList();
+          .groupListsBy((release) => release.version);
+
+      // Sort releases within a version by architecture so arm64 is first.
+      final orderedReleases = [
+        for (final releases in releasesByVersion.values)
+          ...releases.sortedBy((r) => r.architecture),
+      ];
 
       setState(() {
-        releases = filteredReleases;
+        releases = orderedReleases;
         isLoading = false;
       });
     } catch (e) {

@@ -1,6 +1,5 @@
 ---
 title: GenUI SDK main components and concepts
-sidenav: ai
 breadcrumb: Main components & concepts
 description: >-
   Familiarize yourself with the main components and concepts of the

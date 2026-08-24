@@ -6,7 +6,7 @@ description: >-
 publishDate: 2025-10-08
 author: johnpryan
 image: images/1CXyt0NsoasPW5__Ev4AGNg.webp
-category: announcement
+category: news
 layout: blog
 ---
 

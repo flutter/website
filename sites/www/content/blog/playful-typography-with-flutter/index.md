@@ -5,7 +5,7 @@ description: >-
 publishDate: 2023-01-20
 author: hellobrianjames
 image: images/0x9XqN84kLr7s86vK.webp
-category: story
+category: case-study
 layout: blog
 ---
 

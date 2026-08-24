@@ -81,7 +81,7 @@ This document is a work in progress.
 - `eleventy.config.ts`
 
   The entrypoint for the site's [11ty][] static-site generation setup.
-- `firebase.json`
+- `sites/docs/firebase.json`
 
   Configuration for [Firebase Hosting][] that is used for
   the staged and deployed sites.

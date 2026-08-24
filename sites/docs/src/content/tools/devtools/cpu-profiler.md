@@ -225,4 +225,4 @@ check out a guided [CPU Profiler View tutorial][profiler-tutorial].
 Also, learn how to analyze CPU usage when the app
 uses isolates for parallel computing.
 
-[profiler-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-cpu-profiler-view-part-6-of-8-31e24eae6bf8
+[profiler-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-cpu-profiler-view-part-6-of-8-31e24eae6bf8

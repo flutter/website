@@ -41,6 +41,7 @@ class DefaultLayout extends PageLayout {
     }
 
     final pageImage = pageData['image'] as String?;
+    final socialImage = pageData['socialImage'] as String? ?? pageImage;
     final titleBase =
         (pageData['titleBase'] ?? siteData['titleBase']) as String?;
     final documentTitle = titleBase == null ? title : '$title | $titleBase';
@@ -55,7 +56,7 @@ class DefaultLayout extends PageLayout {
       builder: (context) async {
         final socialImageUrl = _absoluteUrl(
           siteBaseUrl,
-          pageImage ?? context.asset('/images/flutter-logo-sharing.png'),
+          socialImage ?? context.asset('/images/flutter-logo-sharing.png'),
         );
         final banner = context.decodeJsonObject(
           'banner',
@@ -75,12 +76,12 @@ class DefaultLayout extends PageLayout {
             link(rel: 'canonical', href: canonicalUrl),
             meta(
               name: 'twitter:card',
-              content: pageImage != null ? 'summary_large_image' : 'summary',
+              content: socialImage != null ? 'summary_large_image' : 'summary',
             ),
             const meta(name: 'twitter:site', content: '@flutterdev'),
             meta(name: 'twitter:title', content: title),
             meta(name: 'twitter:description', content: description),
-            if (pageImage != null)
+            if (socialImage != null)
               meta(name: 'twitter:image', content: socialImageUrl),
 
             meta(attributes: const {'property': 'og:title'}, content: title),
@@ -134,8 +135,7 @@ class DefaultLayout extends PageLayout {
 
             // Set up site fonts and icons.
             const link(
-              href:
-                  'https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..120,400..700&family=Google+Sans+Code:ital,wght@0,400..700;1,400..700&display=swap',
+              href: 'https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..120,400..700&family=Google+Sans+Code:ital,wght@0,400..700;1,400..700&display=swap',
               rel: 'stylesheet',
             ),
             const link(
@@ -147,8 +147,7 @@ class DefaultLayout extends PageLayout {
                   '&display=swap',
             ),
             const link(
-              href:
-                  'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block',
+              href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block',
               rel: 'stylesheet',
             ),
 
@@ -161,8 +160,7 @@ class DefaultLayout extends PageLayout {
             ),
 
             const script(
-              src:
-                  'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.8.2/lite-youtube.js',
+              src: 'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.8.2/lite-youtube.js',
               attributes: {
                 'type': 'module',
                 'integrity':
@@ -174,8 +172,7 @@ class DefaultLayout extends PageLayout {
 
             // Set up standard cookie notification bar.
             const link(
-              href:
-                  'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css',
+              href: 'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css',
               rel: 'stylesheet',
             ),
 
@@ -205,8 +202,7 @@ class DefaultLayout extends PageLayout {
             child,
             const Footer(),
             const script(
-              src:
-                  'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js',
+              src: 'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js',
               attributes: {
                 'data-glue-cookie-notification-bar-category': '2A',
                 'data-glue-cookie-notification-bar-site-id': 'flutter.dev',

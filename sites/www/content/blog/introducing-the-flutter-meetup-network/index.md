@@ -5,7 +5,7 @@ description: >-
 publishDate: 2021-10-01
 author: sfshaza
 image: images/14eNp-BypLrDgEwkyWbm2zw.webp
-category: announcement
+category: news
 layout: blog
 ---
 

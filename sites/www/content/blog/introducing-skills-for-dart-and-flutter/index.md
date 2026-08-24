@@ -5,7 +5,7 @@ description: >-
 publishDate: 2026-05-06
 author: mariam_hasnany
 image: images/1-cp6K90CIG7efKBLyiZ_jw.webp
-category: announcement
+category: news
 layout: blog
 ---
 

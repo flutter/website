@@ -305,27 +305,27 @@ and [CupertinoDatePicker]({{site.api}}/flutter/cupertino/CupertinoDatePicker-cla
 
 [13857]({{site.repo.engine}}/pull/13857) Guard against orphaned semantic objects from referencing dead accessibility bridge on iOS
 
-[1370]({{site.github}}/flutter/plugins/pull/1370) [camera] Pause/resume video recording for Android & iOS
+[1370](https://github.com/flutter/plugins/pull/1370) [camera] Pause/resume video recording for Android & iOS
 
-[1999]({{site.github}}/flutter/plugins/pull/1999) [Connectivity] add a method to request location on iOS (for iOS 13)
+[1999](https://github.com/flutter/plugins/pull/1999) [Connectivity] add a method to request location on iOS (for iOS 13)
 
-[2052]({{site.github}}/flutter/plugins/pull/2052) [instrumentation_adapter] Add stub iOS implementation and example app
+[2052](https://github.com/flutter/plugins/pull/2052) [instrumentation_adapter] Add stub iOS implementation and example app
 
-[2068]({{site.github}}/flutter/plugins/pull/2068) [google_maps_flutter] Fix iOS MyLocationButton on iOS
+[2068](https://github.com/flutter/plugins/pull/2068) [google_maps_flutter] Fix iOS MyLocationButton on iOS
 
-[2083]({{site.github}}/flutter/plugins/pull/2083) [image_picker] Fix a crash when picking video on iOS 13 and above.
+[2083](https://github.com/flutter/plugins/pull/2083) [image_picker] Fix a crash when picking video on iOS 13 and above.
 
-[2131]({{site.github}}/flutter/plugins/pull/2131) [share]fix iOS crash when setting the subject to null
+[2131](https://github.com/flutter/plugins/pull/2131) [share]fix iOS crash when setting the subject to null
 
-[2139]({{site.github}}/flutter/plugins/pull/2139) [google_maps_flutter] Add NonNull macro to reduce warnings in iOS
+[2139](https://github.com/flutter/plugins/pull/2139) [google_maps_flutter] Add NonNull macro to reduce warnings in iOS
 
-[2191]({{site.github}}/flutter/plugins/pull/2191) [image_picker] Fix iOS build and analyzer warnings
+[2191](https://github.com/flutter/plugins/pull/2191) [image_picker] Fix iOS build and analyzer warnings
 
-[2192]({{site.github}}/flutter/plugins/pull/2192) [in_app_purchase] Fix iOS build warning
+[2192](https://github.com/flutter/plugins/pull/2192) [in_app_purchase] Fix iOS build warning
 
-[2275]({{site.github}}/flutter/plugins/pull/2275) Update cirrus to create IOS simulator on 13.2 an xCode 11
+[2275](https://github.com/flutter/plugins/pull/2275) Update cirrus to create IOS simulator on 13.2 an xCode 11
 
-[2281]({{site.github}}/flutter/plugins/pull/2281) [connectivity] Fix reachability stream for iOS
+[2281](https://github.com/flutter/plugins/pull/2281) [connectivity] Fix reachability stream for iOS
 
 
 ## Android
@@ -384,17 +384,17 @@ In this release, we've merged a list of changes to support Android 10, including
 
 [13262]({{site.repo.engine}}/pull/13262) Added Semantic header support on Android.
 
-[2003]({{site.github}}/flutter/plugins/pull/2003) [video_player] Added formatHint to to override video format on Android
+[2003](https://github.com/flutter/plugins/pull/2003) [video_player] Added formatHint to to override video format on Android
 
-[2029]({{site.github}}/flutter/plugins/pull/2029) fix android crash when pausing or resuming video on APIs lower than 24.
+[2029](https://github.com/flutter/plugins/pull/2029) fix android crash when pausing or resuming video on APIs lower than 24.
 
-[2049]({{site.github}}/flutter/plugins/pull/2049) [path_provider] Android: Support multiple external storage options
+[2049](https://github.com/flutter/plugins/pull/2049) [path_provider] Android: Support multiple external storage options
 
-[2208]({{site.github}}/flutter/plugins/pull/2208) delete all example/android/app/gradle.properties files
+[2208](https://github.com/flutter/plugins/pull/2208) delete all example/android/app/gradle.properties files
 
-[2216]({{site.github}}/flutter/plugins/pull/2216) [battery]Use android.arch.lifecycle instead of androidx.lifecycle:lifecycle in
+[2216](https://github.com/flutter/plugins/pull/2216) [battery]Use android.arch.lifecycle instead of androidx.lifecycle:lifecycle in
 
-[2239]({{site.github}}/flutter/plugins/pull/2239) [camera] Android: Improve image streaming by creating a request suita…
+[2239](https://github.com/flutter/plugins/pull/2239) [camera] Android: Improve image streaming by creating a request suita…
 
 
 ## Add to App feature
@@ -451,9 +451,9 @@ We've made a significant upgrade to Add-to-App, the feature that allows you to i
 
 [13432]({{site.repo.engine}}/pull/13432) Release shim bindings when detaching
 
-[2232]({{site.github}}/flutter/plugins/pull/2232) [multiple] V2 embedding plugins use compileOnly
+[2232](https://github.com/flutter/plugins/pull/2232) [multiple] V2 embedding plugins use compileOnly
 
-[1323]({{site.github}}/FirebaseExtended/flutterfire/pull/1323) [firebase_core][firebase_analytics] Fix bug with transitive lifecycle dependencies
+[1323]({{site.repo.flutterfire}}/pull/1323) [firebase_core][firebase_analytics] Fix bug with transitive lifecycle dependencies
 
 [13445]({{site.repo.engine}}/pull/13445) Fizzle onConfigurationChanged if no FlutterView
 
@@ -465,7 +465,7 @@ We've made a significant upgrade to Add-to-App, the feature that allows you to i
 
 [43959]({{site.repo.flutter}}/pull/43959) Respond to TextInputClient.reattach messages.
 
-[509]({{site.github}}/flutter/cocoon/pull/509) Force the phone's screen on before running a test.
+[509](https://github.com/flutter/cocoon/pull/509) Force the phone's screen on before running a test.
 
 [11792]({{site.repo.engine}}/pull/11792) Started logging warnings if we drop platform messages.
 
@@ -587,69 +587,69 @@ We've made a significant upgrade to Add-to-App, the feature that allows you to i
 
 [9304]({{site.repo.engine}}/pull/9304) Decorate UIApplicationDelegate wrappers with matching UIKit deprecation
 
-[266]({{site.github}}/FirebaseExtended/flutterfire/pull/266) [firebase_performance] support v2 android embedding
+[266]({{site.repo.flutterfire}}/pull/266) [firebase_performance] support v2 android embedding
 
-[274]({{site.github}}/FirebaseExtended/flutterfire/pull/274) [firebase_core] v2 embedding API
+[274]({{site.repo.flutterfire}}/pull/274) [firebase_core] v2 embedding API
 
-[275]({{site.github}}/FirebaseExtended/flutterfire/pull/275) [firebase_ml_vision] v2 embedding API
+[275]({{site.repo.flutterfire}}/pull/275) [firebase_ml_vision] v2 embedding API
 
-[282]({{site.github}}/FirebaseExtended/flutterfire/pull/282) [firebase_remote_config] Support v2 android embedder.
+[282]({{site.repo.flutterfire}}/pull/282) [firebase_remote_config] Support v2 android embedder.
 
-[287]({{site.github}}/FirebaseExtended/flutterfire/pull/287) [firebase_database] Support v2 android embedder.
+[287]({{site.repo.flutterfire}}/pull/287) [firebase_database] Support v2 android embedder.
 
-[1266]({{site.github}}/FirebaseExtended/flutterfire/pull/1266) [firebase_analytics] Support Android v2 embedding
+[1266]({{site.repo.flutterfire}}/pull/1266) [firebase_analytics] Support Android v2 embedding
 
-[1295]({{site.github}}/FirebaseExtended/flutterfire/pull/1295) [firebase_storage] Support Android v2 embedding
+[1295]({{site.repo.flutterfire}}/pull/1295) [firebase_storage] Support Android v2 embedding
 
-[1369]({{site.github}}/FirebaseExtended/flutterfire/pull/1369) Upgrade in-app-messaging to plugin api v2
+[1369]({{site.repo.flutterfire}}/pull/1369) Upgrade in-app-messaging to plugin api v2
 
-[1370]({{site.github}}/FirebaseExtended/flutterfire/pull/1370) Upgrade crashlytics to v2 plugin API
+[1370]({{site.repo.flutterfire}}/pull/1370) Upgrade crashlytics to v2 plugin API
 
-[1372]({{site.github}}/FirebaseExtended/flutterfire/pull/1372) [firebase_dynamic_links] support v2 embedding
+[1372]({{site.repo.flutterfire}}/pull/1372) [firebase_dynamic_links] support v2 embedding
 
-[2142]({{site.github}}/flutter/plugins/pull/2142) [Connectivity] migrate to the new android embedding
+[2142](https://github.com/flutter/plugins/pull/2142) [Connectivity] migrate to the new android embedding
 
-[2152]({{site.github}}/flutter/plugins/pull/2152) [battery] Support the v2 Android embedder
+[2152](https://github.com/flutter/plugins/pull/2152) [battery] Support the v2 Android embedder
 
-[2155]({{site.github}}/flutter/plugins/pull/2155) [in_app_purchase] migrate to the v2 android embedding
+[2155](https://github.com/flutter/plugins/pull/2155) [in_app_purchase] migrate to the v2 android embedding
 
-[2156]({{site.github}}/flutter/plugins/pull/2156) [Share] Support v2 android embedder.
+[2156](https://github.com/flutter/plugins/pull/2156) [Share] Support v2 android embedder.
 
-[2157]({{site.github}}/flutter/plugins/pull/2157) [url_launcher] Migrate to the new embedding
+[2157](https://github.com/flutter/plugins/pull/2157) [url_launcher] Migrate to the new embedding
 
-[2160]({{site.github}}/flutter/plugins/pull/2160) [package_info] Support the v2 Android embedder (with e2e tests)
+[2160](https://github.com/flutter/plugins/pull/2160) [package_info] Support the v2 Android embedder (with e2e tests)
 
-[2162]({{site.github}}/flutter/plugins/pull/2162) [shared_preferences] Support v2 android embedder.
+[2162](https://github.com/flutter/plugins/pull/2162) [shared_preferences] Support v2 android embedder.
 
-[2163]({{site.github}}/flutter/plugins/pull/2163) [device_info] Support v2 android embedder.
+[2163](https://github.com/flutter/plugins/pull/2163) [device_info] Support v2 android embedder.
 
-[2164]({{site.github}}/flutter/plugins/pull/2164) [sensor] Support v2 android embedder.
+[2164](https://github.com/flutter/plugins/pull/2164) [sensor] Support v2 android embedder.
 
-[2165]({{site.github}}/flutter/plugins/pull/2165) [camera] Migrate to the new embedding
+[2165](https://github.com/flutter/plugins/pull/2165) [camera] Migrate to the new embedding
 
-[2167]({{site.github}}/flutter/plugins/pull/2167) [quick_actions] Support v2 android embedder.
+[2167](https://github.com/flutter/plugins/pull/2167) [quick_actions] Support v2 android embedder.
 
-[2169]({{site.github}}/flutter/plugins/pull/2169) [flutter_webview] Migrate to the new embedding
+[2169](https://github.com/flutter/plugins/pull/2169) [flutter_webview] Migrate to the new embedding
 
-[2193]({{site.github}}/flutter/plugins/pull/2193) [android_alarm_manager] migrate to the V2 Android embedding
+[2193](https://github.com/flutter/plugins/pull/2193) [android_alarm_manager] migrate to the V2 Android embedding
 
-[2195]({{site.github}}/flutter/plugins/pull/2195) [android_intent] Cleanup the V2 migration
+[2195](https://github.com/flutter/plugins/pull/2195) [android_intent] Cleanup the V2 migration
 
-[2196]({{site.github}}/flutter/plugins/pull/2196) [webview_flutter] (Trivial) Add V2 warnings
+[2196](https://github.com/flutter/plugins/pull/2196) [webview_flutter] (Trivial) Add V2 warnings
 
-[2200]({{site.github}}/flutter/plugins/pull/2200) [flutter_webview] Revert v2 embedder support
+[2200](https://github.com/flutter/plugins/pull/2200) [flutter_webview] Revert v2 embedder support
 
-[2204]({{site.github}}/flutter/plugins/pull/2204) [url_launcher] Re-land v2 embedding support
+[2204](https://github.com/flutter/plugins/pull/2204) [url_launcher] Re-land v2 embedding support
 
-[2209]({{site.github}}/flutter/plugins/pull/2209) [webview_flutter] Re-land support v2 embedding support
+[2209](https://github.com/flutter/plugins/pull/2209) [webview_flutter] Re-land support v2 embedding support
 
-[2226]({{site.github}}/flutter/plugins/pull/2226) [video_player] Add v2 embedding support
+[2226](https://github.com/flutter/plugins/pull/2226) [video_player] Add v2 embedding support
 
-[2241]({{site.github}}/flutter/plugins/pull/2241) [Shared_preferences]suppress warnings
+[2241](https://github.com/flutter/plugins/pull/2241) [Shared_preferences]suppress warnings
 
-[2284]({{site.github}}/flutter/plugins/pull/2284) [path_provider] Add v2 embedding support for
+[2284](https://github.com/flutter/plugins/pull/2284) [path_provider] Add v2 embedding support for
 
-[2327]({{site.github}}/flutter/plugins/pull/2327) [android_alarm_manager] Update minimum Flutter version to 1.12.0
+[2327](https://github.com/flutter/plugins/pull/2327) [android_alarm_manager] Update minimum Flutter version to 1.12.0
 
 [43461]({{site.repo.flutter}}/pull/43461) Fixed usage of optional types in swift integration test.
 
@@ -845,105 +845,105 @@ We've made a significant upgrade to Add-to-App, the feature that allows you to i
 
 [13932]({{site.repo.engine}}/pull/13932) Removed GET_ACTIVITIES flag from all manifest meta-data lookups. (#38891)
 
-[2087]({{site.github}}/flutter/plugins/pull/2087) [android_alarm_manager] Update and migrate iOS example project
+[2087](https://github.com/flutter/plugins/pull/2087) [android_alarm_manager] Update and migrate iOS example project
 
-[2088]({{site.github}}/flutter/plugins/pull/2088) [android_intent] Update and migrate iOS example project
+[2088](https://github.com/flutter/plugins/pull/2088) [android_intent] Update and migrate iOS example project
 
-[2089]({{site.github}}/flutter/plugins/pull/2089) [battery] Update and migrate iOS example project
+[2089](https://github.com/flutter/plugins/pull/2089) [battery] Update and migrate iOS example project
 
-[2090]({{site.github}}/flutter/plugins/pull/2090) [camera] Update and migrate iOS example project
+[2090](https://github.com/flutter/plugins/pull/2090) [camera] Update and migrate iOS example project
 
-[2091]({{site.github}}/flutter/plugins/pull/2091) [connectivity] Update and migrate iOS example project
+[2091](https://github.com/flutter/plugins/pull/2091) [connectivity] Update and migrate iOS example project
 
-[2092]({{site.github}}/flutter/plugins/pull/2092) [device_info] Update and migrate iOS example project
+[2092](https://github.com/flutter/plugins/pull/2092) [device_info] Update and migrate iOS example project
 
-[2093]({{site.github}}/flutter/plugins/pull/2093) [google_maps_flutter] Update and migrate iOS example project
+[2093](https://github.com/flutter/plugins/pull/2093) [google_maps_flutter] Update and migrate iOS example project
 
-[2094]({{site.github}}/flutter/plugins/pull/2094) [google_sign_in] Update and migrate iOS example project
+[2094](https://github.com/flutter/plugins/pull/2094) [google_sign_in] Update and migrate iOS example project
 
-[2095]({{site.github}}/flutter/plugins/pull/2095) [image_picker] Update and migrate iOS example project
+[2095](https://github.com/flutter/plugins/pull/2095) [image_picker] Update and migrate iOS example project
 
-[2096]({{site.github}}/flutter/plugins/pull/2096) [in_app_purchase] Update and migrate iOS example project
+[2096](https://github.com/flutter/plugins/pull/2096) [in_app_purchase] Update and migrate iOS example project
 
-[2097]({{site.github}}/flutter/plugins/pull/2097) [local_auth] Update and migrate iOS example project
+[2097](https://github.com/flutter/plugins/pull/2097) [local_auth] Update and migrate iOS example project
 
-[2098]({{site.github}}/flutter/plugins/pull/2098) [package_info] Update and migrate iOS example project
+[2098](https://github.com/flutter/plugins/pull/2098) [package_info] Update and migrate iOS example project
 
-[2099]({{site.github}}/flutter/plugins/pull/2099) [path_provider] Update and migrate iOS example project
+[2099](https://github.com/flutter/plugins/pull/2099) [path_provider] Update and migrate iOS example project
 
-[2100]({{site.github}}/flutter/plugins/pull/2100) [quick_actions] Update and migrate iOS example project
+[2100](https://github.com/flutter/plugins/pull/2100) [quick_actions] Update and migrate iOS example project
 
-[2101]({{site.github}}/flutter/plugins/pull/2101) [sensors] Update and migrate iOS example project
+[2101](https://github.com/flutter/plugins/pull/2101) [sensors] Update and migrate iOS example project
 
-[2102]({{site.github}}/flutter/plugins/pull/2102) [share] Update and migrate iOS example project
+[2102](https://github.com/flutter/plugins/pull/2102) [share] Update and migrate iOS example project
 
-[2103]({{site.github}}/flutter/plugins/pull/2103) [shared_preferences] Update and migrate iOS example project
+[2103](https://github.com/flutter/plugins/pull/2103) [shared_preferences] Update and migrate iOS example project
 
-[2109]({{site.github}}/flutter/plugins/pull/2109) [url_launcher] Update and migrate iOS example project
+[2109](https://github.com/flutter/plugins/pull/2109) [url_launcher] Update and migrate iOS example project
 
-[2110]({{site.github}}/flutter/plugins/pull/2110) [video_player] Update and migrate iOS example project
+[2110](https://github.com/flutter/plugins/pull/2110) [video_player] Update and migrate iOS example project
 
-[2115]({{site.github}}/flutter/plugins/pull/2115) [camera] Define clang modules in for iOS
+[2115](https://github.com/flutter/plugins/pull/2115) [camera] Define clang modules in for iOS
 
-[2125]({{site.github}}/flutter/plugins/pull/2125) [in_app_purchase] Define clang module for iOS
+[2125](https://github.com/flutter/plugins/pull/2125) [in_app_purchase] Define clang module for iOS
 
-[2128]({{site.github}}/flutter/plugins/pull/2128) [image_picker] Define clang module for iOS
+[2128](https://github.com/flutter/plugins/pull/2128) [image_picker] Define clang module for iOS
 
-[2135]({{site.github}}/flutter/plugins/pull/2135) [android_alarm_manager] Define clang module for iOS
+[2135](https://github.com/flutter/plugins/pull/2135) [android_alarm_manager] Define clang module for iOS
 
-[2137]({{site.github}}/flutter/plugins/pull/2137) [connectivity] Define clang module for iOS
+[2137](https://github.com/flutter/plugins/pull/2137) [connectivity] Define clang module for iOS
 
-[2138]({{site.github}}/flutter/plugins/pull/2138) [device_info] Define clang module for iOS
+[2138](https://github.com/flutter/plugins/pull/2138) [device_info] Define clang module for iOS
 
-[2144]({{site.github}}/flutter/plugins/pull/2144) [android_intent] Define clang module for iOS
+[2144](https://github.com/flutter/plugins/pull/2144) [android_intent] Define clang module for iOS
 
-[2145]({{site.github}}/flutter/plugins/pull/2145) [instrumentation_adapter] Define clang module for iOS
+[2145](https://github.com/flutter/plugins/pull/2145) [instrumentation_adapter] Define clang module for iOS
 
-[2146]({{site.github}}/flutter/plugins/pull/2146) [local_auth] Define clang module for iOS
+[2146](https://github.com/flutter/plugins/pull/2146) [local_auth] Define clang module for iOS
 
-[2147]({{site.github}}/flutter/plugins/pull/2147) [path_provider] Define clang module for iOS
+[2147](https://github.com/flutter/plugins/pull/2147) [path_provider] Define clang module for iOS
 
-[2148]({{site.github}}/flutter/plugins/pull/2148) [package_info] Define clang module for iOS
+[2148](https://github.com/flutter/plugins/pull/2148) [package_info] Define clang module for iOS
 
-[2149]({{site.github}}/flutter/plugins/pull/2149) [quick_actions] Define clang module for iOS
+[2149](https://github.com/flutter/plugins/pull/2149) [quick_actions] Define clang module for iOS
 
-[2175]({{site.github}}/flutter/plugins/pull/2175) [sensors] Define clang module for iOS
+[2175](https://github.com/flutter/plugins/pull/2175) [sensors] Define clang module for iOS
 
-[2176]({{site.github}}/flutter/plugins/pull/2176) [shared_preferences] Define clang module for iOS
+[2176](https://github.com/flutter/plugins/pull/2176) [shared_preferences] Define clang module for iOS
 
-[2177]({{site.github}}/flutter/plugins/pull/2177) [url_launcher] Define clang module for iOS
+[2177](https://github.com/flutter/plugins/pull/2177) [url_launcher] Define clang module for iOS
 
-[2179]({{site.github}}/flutter/plugins/pull/2179) [battery] Define clang module for iOS
+[2179](https://github.com/flutter/plugins/pull/2179) [battery] Define clang module for iOS
 
-[2180]({{site.github}}/flutter/plugins/pull/2180) [share] Define clang module for iOS
+[2180](https://github.com/flutter/plugins/pull/2180) [share] Define clang module for iOS
 
-[2182]({{site.github}}/flutter/plugins/pull/2182) [google_maps_flutter] Define clang module for iOS, fix analyzer warnings
+[2182](https://github.com/flutter/plugins/pull/2182) [google_maps_flutter] Define clang module for iOS, fix analyzer warnings
 
-[2183]({{site.github}}/flutter/plugins/pull/2183) [video_player] Define clang module for iOS
+[2183](https://github.com/flutter/plugins/pull/2183) [video_player] Define clang module for iOS
 
-[2184]({{site.github}}/flutter/plugins/pull/2184) [google_sign_in] Define clang module for iOS
+[2184](https://github.com/flutter/plugins/pull/2184) [google_sign_in] Define clang module for iOS
 
-[2185]({{site.github}}/flutter/plugins/pull/2185) [webview_flutter] Define clang module for iOS
+[2185](https://github.com/flutter/plugins/pull/2185) [webview_flutter] Define clang module for iOS
 
-[2186]({{site.github}}/flutter/plugins/pull/2186) Run clang analyzer on iOS and macOS code in CI test when packages change
+[2186](https://github.com/flutter/plugins/pull/2186) Run clang analyzer on iOS and macOS code in CI test when packages change
 
 [40302]({{site.repo.flutter}}/pull/40302) Set DEFINES_MODULE for FlutterPluginRegistrant to generate modulemap
 
-[2206]({{site.github}}/flutter/plugins/pull/2206) [flutter_plugin_android_lifecycle] Update README with new plugin name
+[2206](https://github.com/flutter/plugins/pull/2206) [flutter_plugin_android_lifecycle] Update README with new plugin name
 
-[2207]({{site.github}}/flutter/plugins/pull/2207) [flutter_plugin_android_lifecycle] bump e2e depenency to 0.2.1
+[2207](https://github.com/flutter/plugins/pull/2207) [flutter_plugin_android_lifecycle] bump e2e depenency to 0.2.1
 
-[2223]({{site.github}}/flutter/plugins/pull/2223) [flutter_plugin_android_lifecycle] register the e2e plugin in the example app
+[2223](https://github.com/flutter/plugins/pull/2223) [flutter_plugin_android_lifecycle] register the e2e plugin in the example app
 
-[2243]({{site.github}}/flutter/plugins/pull/2243) [flutter_plugin_android_lifecycle] Adapt the FlutterLifecycleAdapter to the new embedding API
+[2243](https://github.com/flutter/plugins/pull/2243) [flutter_plugin_android_lifecycle] Adapt the FlutterLifecycleAdapter to the new embedding API
 
 [44043]({{site.repo.flutter}}/pull/44043) Add Android embedding version analytics
 
-[2120]({{site.github}}/flutter/plugins/pull/2120) [image_picker] fix crash when aar from 'flutter build aar'
+[2120](https://github.com/flutter/plugins/pull/2120) [image_picker] fix crash when aar from 'flutter build aar'
 
-[2168]({{site.github}}/flutter/plugins/pull/2168) Add plugin for Android lifecycle in embedding
+[2168](https://github.com/flutter/plugins/pull/2168) Add plugin for Android lifecycle in embedding
 
-[2174]({{site.github}}/flutter/plugins/pull/2174) [url_launcher] Enable androidx and jetifier in android gradle properties
+[2174](https://github.com/flutter/plugins/pull/2174) [url_launcher] Enable androidx and jetifier in android gradle properties
 
 [11239]({{site.repo.engine}}/pull/11239) Remove dart entrypoint Intent parameter from FlutterActivity. (#38713)
 
@@ -1354,7 +1354,7 @@ We increased our support for web, moving it from the dev channel to the beta cha
 
 [13981]({{site.repo.engine}}/pull/13981) [web] use Element.nodes instead of Element.children in text layout
 
-[2119]({{site.github}}/flutter/plugins/pull/2119) Add web url launcher
+[2119](https://github.com/flutter/plugins/pull/2119) Add web url launcher
 
 
 ## Desktop
@@ -2347,50 +2347,50 @@ and upgrade your plugins accordingly.
 
 [Migrating your plugin to the new APIs]: /release/breaking-changes/plugin-api-migration
 
-[1984]({{site.github}}/flutter/plugins/pull/1984) Remove Flutterfire plugins (moved to FirebaseExtended)
+[1984](https://github.com/flutter/plugins/pull/1984) Remove Flutterfire plugins (moved to FirebaseExtended)
 
-[2004]({{site.github}}/flutter/plugins/pull/2004) [cirrus] Use flutter create for all_plugins test
+[2004](https://github.com/flutter/plugins/pull/2004) [cirrus] Use flutter create for all_plugins test
 
-[2009]({{site.github}}/flutter/plugins/pull/2009) Fix unit test for sensors
+[2009](https://github.com/flutter/plugins/pull/2009) Fix unit test for sensors
 
-[2036]({{site.github}}/flutter/plugins/pull/2036) video player version fix
+[2036](https://github.com/flutter/plugins/pull/2036) video player version fix
 
-[2055]({{site.github}}/flutter/plugins/pull/2055) Point opensource site at new location
+[2055](https://github.com/flutter/plugins/pull/2055) Point opensource site at new location
 
-[2084]({{site.github}}/flutter/plugins/pull/2084) [update] local_auth - intl version
+[2084](https://github.com/flutter/plugins/pull/2084) [update] local_auth - intl version
 
-[2112]({{site.github}}/flutter/plugins/pull/2112) Run flutter_plugin_tools format
+[2112](https://github.com/flutter/plugins/pull/2112) Run flutter_plugin_tools format
 
-[2141]({{site.github}}/flutter/plugins/pull/2141) BugFix: formatHint was meant for network streams.
+[2141](https://github.com/flutter/plugins/pull/2141) BugFix: formatHint was meant for network streams.
 
-[2154]({{site.github}}/flutter/plugins/pull/2154) Use stable Flutter image as base
+[2154](https://github.com/flutter/plugins/pull/2154) Use stable Flutter image as base
 
-[2161]({{site.github}}/flutter/plugins/pull/2161) Rename instrumentation_adapter plugin to e2e plugin
+[2161](https://github.com/flutter/plugins/pull/2161) Rename instrumentation_adapter plugin to e2e plugin
 
-[2205]({{site.github}}/flutter/plugins/pull/2205) s/flutter_android_lifecycle/flutter_plugin_android_lifecycle/
+[2205](https://github.com/flutter/plugins/pull/2205) s/flutter_android_lifecycle/flutter_plugin_android_lifecycle/
 
-[2230]({{site.github}}/flutter/plugins/pull/2230) Forbid ... implements UrlLauncherPlatform
+[2230](https://github.com/flutter/plugins/pull/2230) Forbid ... implements UrlLauncherPlatform
 
-[2231]({{site.github}}/flutter/plugins/pull/2231) [cleanup] Remove AndroidX warning
+[2231](https://github.com/flutter/plugins/pull/2231) [cleanup] Remove AndroidX warning
 
-[2236]({{site.github}}/flutter/plugins/pull/2236) Use package import to import files inside lib/ directory.
+[2236](https://github.com/flutter/plugins/pull/2236) Use package import to import files inside lib/ directory.
 
-[2250]({{site.github}}/flutter/plugins/pull/2250) Run the publish with the pub version from flutter stable
+[2250](https://github.com/flutter/plugins/pull/2250) Run the publish with the pub version from flutter stable
 
-[2260]({{site.github}}/flutter/plugins/pull/2260) Make setMockInitialValues handle non-prefixed keys
+[2260](https://github.com/flutter/plugins/pull/2260) Make setMockInitialValues handle non-prefixed keys
 
-[2267]({{site.github}}/flutter/plugins/pull/2267) Bump google_maps_flutter pubspec version to match CHANGELOG
+[2267](https://github.com/flutter/plugins/pull/2267) Bump google_maps_flutter pubspec version to match CHANGELOG
 
-[2271]({{site.github}}/flutter/plugins/pull/2271) [infra] Ignore analyzer issues in CI
+[2271](https://github.com/flutter/plugins/pull/2271) [infra] Ignore analyzer issues in CI
 
-[2280]({{site.github}}/flutter/plugins/pull/2280) Add google_sign_in_web plugin.
+[2280](https://github.com/flutter/plugins/pull/2280) Add google_sign_in_web plugin.
 
 
 #### Plugin: Android Alarm Manager
 
 We added the ability to get id in the callback in the Android Alarm Manager plugin.
 
-[1985]({{site.github}}/flutter/plugins/pull/1985) [android_alarm_manager] Added ability to get id in the callback
+[1985](https://github.com/flutter/plugins/pull/1985) [android_alarm_manager] Added ability to get id in the callback
 
 
 #### Plugin: Android Intent
@@ -2402,26 +2402,26 @@ and upgrading it to the [new plugin API][].
 
 [new plugin API]: /release/breaking-changes/plugin-api-migration
 
-[2000]({{site.github}}/flutter/plugins/pull/2000) [android_intent] add flags option
+[2000](https://github.com/flutter/plugins/pull/2000) [android_intent] add flags option
 
-[2045]({{site.github}}/flutter/plugins/pull/2045) [android_intent] Add action_application_details_settings
+[2045](https://github.com/flutter/plugins/pull/2045) [android_intent] Add action_application_details_settings
 
-[2143]({{site.github}}/flutter/plugins/pull/2143) [android_intent] Migrate to the new embedding
+[2143](https://github.com/flutter/plugins/pull/2143) [android_intent] Migrate to the new embedding
 
-[2188]({{site.github}}/flutter/plugins/pull/2188) [android_intent] Bump the Flutter SDK min version
+[2188](https://github.com/flutter/plugins/pull/2188) [android_intent] Bump the Flutter SDK min version
 
-[2202]({{site.github}}/flutter/plugins/pull/2202) [android_intent] componentName must be provided before resolveActivity is called
+[2202](https://github.com/flutter/plugins/pull/2202) [android_intent] componentName must be provided before resolveActivity is called
 
-[2221]({{site.github}}/flutter/plugins/pull/2221) [android_intent]remove AndroidX constraint
+[2221](https://github.com/flutter/plugins/pull/2221) [android_intent]remove AndroidX constraint
 
-[2268]({{site.github}}/flutter/plugins/pull/2268) [android_intent] Add missing DartDocs
+[2268](https://github.com/flutter/plugins/pull/2268) [android_intent] Add missing DartDocs
 
 
 #### Plugin: Battery
 
 General bug fix in the Battery plugin.
 
-[2189]({{site.github}}/flutter/plugins/pull/2189) [battery] relax the example app minimal required Flutter version
+[2189](https://github.com/flutter/plugins/pull/2189) [battery] relax the example app minimal required Flutter version
 
 
 #### Plugin: Camera
@@ -2429,66 +2429,66 @@ General bug fix in the Battery plugin.
 We upgraded the Camera plugin to the
 [new plugin API][], and made some bug fixes.
 
-[2057]({{site.github}}/flutter/plugins/pull/2057) [Camera] Fixes NullPointerException
+[2057](https://github.com/flutter/plugins/pull/2057) [Camera] Fixes NullPointerException
 
-[2123]({{site.github}}/flutter/plugins/pull/2123) [camera] Fix event type check
+[2123](https://github.com/flutter/plugins/pull/2123) [camera] Fix event type check
 
-[2219]({{site.github}}/flutter/plugins/pull/2219) [camera]remove androidx constraint
+[2219](https://github.com/flutter/plugins/pull/2219) [camera]remove androidx constraint
 
 
 #### Plugin: Connectivity
 
 General bug fixes in the Connectivity plugin.
 
-[2212]({{site.github}}/flutter/plugins/pull/2212) [connectivity]remove AndroidX constraint
+[2212](https://github.com/flutter/plugins/pull/2212) [connectivity]remove AndroidX constraint
 
-[2262]({{site.github}}/flutter/plugins/pull/2262) [connectivity] add more documentations, delete example/README
+[2262](https://github.com/flutter/plugins/pull/2262) [connectivity] add more documentations, delete example/README
 
 
 #### Plugin: e2e
 
 General bug fixes in the e2e plugin.
 
-[2022]({{site.github}}/flutter/plugins/pull/2022) [instrumentation_adapter] Update README instructions
+[2022](https://github.com/flutter/plugins/pull/2022) [instrumentation_adapter] Update README instructions
 
-[2023]({{site.github}}/flutter/plugins/pull/2023) [instrumentation_adapter] update boilerplate to use @Rule instead of FlutterTest
+[2023](https://github.com/flutter/plugins/pull/2023) [instrumentation_adapter] update boilerplate to use @Rule instead of FlutterTest
 
-[2024]({{site.github}}/flutter/plugins/pull/2024) [instrumentation_adapter] update CODEOWNERS
+[2024](https://github.com/flutter/plugins/pull/2024) [instrumentation_adapter] update CODEOWNERS
 
-[2051]({{site.github}}/flutter/plugins/pull/2051) [instrumentation_adapter] update for release
+[2051](https://github.com/flutter/plugins/pull/2051) [instrumentation_adapter] update for release
 
-[2075]({{site.github}}/flutter/plugins/pull/2075) [instrumentation_adapter] Migrate example to AndroidX
+[2075](https://github.com/flutter/plugins/pull/2075) [instrumentation_adapter] Migrate example to AndroidX
 
-[2178]({{site.github}}/flutter/plugins/pull/2178) [e2e] update README
+[2178](https://github.com/flutter/plugins/pull/2178) [e2e] update README
 
-[2190]({{site.github}}/flutter/plugins/pull/2190) [e2e] Update to support new embedder
+[2190](https://github.com/flutter/plugins/pull/2190) [e2e] Update to support new embedder
 
-[2233]({{site.github}}/flutter/plugins/pull/2233) [e2e] update README
+[2233](https://github.com/flutter/plugins/pull/2233) [e2e] update README
 
 
 #### Plugin: Google Maps Flutter
 
 We have made several improvements in the Google Maps plugin including adding support for displaying the traffic layer.
 
-[1702]({{site.github}}/flutter/plugins/pull/1702) [google_maps_flutter]Marker drag event
+[1702](https://github.com/flutter/plugins/pull/1702) [google_maps_flutter]Marker drag event
 
-[1767]({{site.github}}/flutter/plugins/pull/1767) [google_maps_flutter] Adds support for displaying the traffic layer
+[1767](https://github.com/flutter/plugins/pull/1767) [google_maps_flutter] Adds support for displaying the traffic layer
 
-[1784]({{site.github}}/flutter/plugins/pull/1784) [google_maps_flutter] Allow (de-)serialization of CameraPosition
+[1784](https://github.com/flutter/plugins/pull/1784) [google_maps_flutter] Allow (de-)serialization of CameraPosition
 
-[1933]({{site.github}}/flutter/plugins/pull/1933) [google_maps_flutter] Avoid unnecessary redraws
+[1933](https://github.com/flutter/plugins/pull/1933) [google_maps_flutter] Avoid unnecessary redraws
 
-[2053]({{site.github}}/flutter/plugins/pull/2053) [google_maps_flutter] Fix analyzer failures relating to prefer_const_constructors
+[2053](https://github.com/flutter/plugins/pull/2053) [google_maps_flutter] Fix analyzer failures relating to prefer_const_constructors
 
-[2065]({{site.github}}/flutter/plugins/pull/2065) [google_maps_flutter] Prefer const constructors.
+[2065](https://github.com/flutter/plugins/pull/2065) [google_maps_flutter] Prefer const constructors.
 
-[2076]({{site.github}}/flutter/plugins/pull/2076) [google_maps_flutter] Clone cached elements in GoogleMap
+[2076](https://github.com/flutter/plugins/pull/2076) [google_maps_flutter] Clone cached elements in GoogleMap
 
-[2108]({{site.github}}/flutter/plugins/pull/2108) [google_maps_flutter] Add Projection methods to google_maps
+[2108](https://github.com/flutter/plugins/pull/2108) [google_maps_flutter] Add Projection methods to google_maps
 
-[2113]({{site.github}}/flutter/plugins/pull/2113) [google_maps_flutter] Avoid AbstractMethod crash
+[2113](https://github.com/flutter/plugins/pull/2113) [google_maps_flutter] Avoid AbstractMethod crash
 
-[2242]({{site.github}}/flutter/plugins/pull/2242) [google_maps_flutter] Cast error.code to unsigned long to avoid using NSInteger as %ld format warnings.
+[2242](https://github.com/flutter/plugins/pull/2242) [google_maps_flutter] Cast error.code to unsigned long to avoid using NSInteger as %ld format warnings.
 
 
 #### Plugin: Google Sign In
@@ -2500,80 +2500,80 @@ For more information, refer to [Federated plugins][].
 
 [Federated plugins]: /packages-and-plugins/developing-packages#federated-plugins
 
-[2059]({{site.github}}/flutter/plugins/pull/2059) [google_sign_in] Fix chained async methods in error handling zones
+[2059](https://github.com/flutter/plugins/pull/2059) [google_sign_in] Fix chained async methods in error handling zones
 
-[2127]({{site.github}}/flutter/plugins/pull/2127) [google_sign_in] Fix deprecated API usage issue by upgrading CocoaPod to 5.0
+[2127](https://github.com/flutter/plugins/pull/2127) [google_sign_in] Fix deprecated API usage issue by upgrading CocoaPod to 5.0
 
-[2244]({{site.github}}/flutter/plugins/pull/2244) [google_sign_in] Move plugin to its subdir to allow for federated implementations
+[2244](https://github.com/flutter/plugins/pull/2244) [google_sign_in] Move plugin to its subdir to allow for federated implementations
 
-[2252]({{site.github}}/flutter/plugins/pull/2252) [google_sign_in] Handle new style URLs in GoogleUserCircleAvatar
+[2252](https://github.com/flutter/plugins/pull/2252) [google_sign_in] Handle new style URLs in GoogleUserCircleAvatar
 
-[2266]({{site.github}}/flutter/plugins/pull/2266) [google_sign_in] Port plugin to use the federated Platform Interface
+[2266](https://github.com/flutter/plugins/pull/2266) [google_sign_in] Port plugin to use the federated Platform Interface
 
 
 #### Plugin: Image Picker
 
 General bug fixes in the Image Picker plugin.
 
-[2070]({{site.github}}/flutter/plugins/pull/2070) [image_picker] swap width and height when source image orientation is left or right
+[2070](https://github.com/flutter/plugins/pull/2070) [image_picker] swap width and height when source image orientation is left or right
 
-[2293]({{site.github}}/flutter/plugins/pull/2293) [image_picker]fix a crash when a non-image file is picked.
+[2293](https://github.com/flutter/plugins/pull/2293) [image_picker]fix a crash when a non-image file is picked.
 
 
 #### Plugin: In App Purchase
 
 General bug fixes in the In App Purchase plugin.
 
-[2014]({{site.github}}/flutter/plugins/pull/2014) [In_App_Purchase] Avoids possible NullPointerException with background registrations.
+[2014](https://github.com/flutter/plugins/pull/2014) [In_App_Purchase] Avoids possible NullPointerException with background registrations.
 
-[2016]({{site.github}}/flutter/plugins/pull/2016) [In_App_Purchase] Improve testability
+[2016](https://github.com/flutter/plugins/pull/2016) [In_App_Purchase] Improve testability
 
-[2027]({{site.github}}/flutter/plugins/pull/2027) [in_app_purchase] Remove skipped driver test
+[2027](https://github.com/flutter/plugins/pull/2027) [in_app_purchase] Remove skipped driver test
 
-[2215]({{site.github}}/flutter/plugins/pull/2215) [in_app_purchase] remove AndroidX constraint
+[2215](https://github.com/flutter/plugins/pull/2215) [in_app_purchase] remove AndroidX constraint
 
 
 #### Plugin: Local Auth
 
 General bug fixes in the Local Auth plugin.
 
-[2047]({{site.github}}/flutter/plugins/pull/2047) [local_auth] Avoid user confirmation on face unlock
+[2047](https://github.com/flutter/plugins/pull/2047) [local_auth] Avoid user confirmation on face unlock
 
-[2111]({{site.github}}/flutter/plugins/pull/2111) [local_auth] Api to stop authentication
+[2111](https://github.com/flutter/plugins/pull/2111) [local_auth] Api to stop authentication
 
 
 #### Plugin: Package Info
 
 General bug fixes in the Package Info plugin.
 
-[2218]({{site.github}}/flutter/plugins/pull/2218) [package_info]remove AndroidX constraint
+[2218](https://github.com/flutter/plugins/pull/2218) [package_info]remove AndroidX constraint
 
 
 #### Plugin: Path Provider
 
 In the Path Provider plugin, we added getApplicationLibraryDirectory, which is contributed by a community member!
 
-[1953]({{site.github}}/flutter/plugins/pull/1953) [path_provider] add getApplicationLibraryDirectory
+[1953](https://github.com/flutter/plugins/pull/1953) [path_provider] add getApplicationLibraryDirectory
 
-[1993]({{site.github}}/flutter/plugins/pull/1993) [pathprovider] Fix fall through bug
+[1993](https://github.com/flutter/plugins/pull/1993) [pathprovider] Fix fall through bug
 
-[2288]({{site.github}}/flutter/plugins/pull/2288) [path_provider] Add missing DartDocs
+[2288](https://github.com/flutter/plugins/pull/2288) [path_provider] Add missing DartDocs
 
 
 #### Plugin: Share
 
 Documentation update in the Share plugin.
 
-[2297]({{site.github}}/flutter/plugins/pull/2297) [share] README update
+[2297](https://github.com/flutter/plugins/pull/2297) [share] README update
 
 
 #### Plugin: Shared Preferences
 
 General bug fixes in the Shared Preferences plugin.
 
-[2241]({{site.github}}/flutter/plugins/pull/2241) [Shared_preferences]suppress warnings
+[2241](https://github.com/flutter/plugins/pull/2241) [Shared_preferences]suppress warnings
 
-[2296]({{site.github}}/flutter/plugins/pull/2296) [shared_preferences] Add missing DartDoc
+[2296](https://github.com/flutter/plugins/pull/2296) [shared_preferences] Add missing DartDoc
 
 
 #### Plugin: Url launcher
@@ -2584,19 +2584,19 @@ we have converted the Url launcher into a federated plugin
 to help it scale more efficiently to multiple platforms.
 For more information, refer to [Federated plugins][].
 
-[2038]({{site.github}}/flutter/plugins/pull/2038) [url_launcher] Removed reference to rootViewController during initialization
+[2038](https://github.com/flutter/plugins/pull/2038) [url_launcher] Removed reference to rootViewController during initialization
 
-[2136]({{site.github}}/flutter/plugins/pull/2136) [url_launcher_web] Fix [README.md](http://readme.md/) pubspec example
+[2136](https://github.com/flutter/plugins/pull/2136) [url_launcher_web] Fix [README.md](http://readme.md/) pubspec example
 
-[2217]({{site.github}}/plugins/pull/2217) [url_launcher] Add url_launcher_platform_interface package
+[2217](https://github.com/flutter/plugins/pull/2217) [url_launcher] Add url_launcher_platform_interface package
 
-[2220]({{site.github}}/flutter/plugins/pull/2220) [url_launcher]remove AndroidX constraint
+[2220](https://github.com/flutter/plugins/pull/2220) [url_launcher]remove AndroidX constraint
 
-[2228]({{site.github}}/flutter/plugins/pull/2228) [url_launcher] Use url_launcher_platform_interface to handle calls
+[2228](https://github.com/flutter/plugins/pull/2228) [url_launcher] Use url_launcher_platform_interface to handle calls
 
-[2237]({{site.github}}/flutter/plugins/pull/2237) [url_launcher] Migrate url_launcher_web to the platform interface
+[2237](https://github.com/flutter/plugins/pull/2237) [url_launcher] Migrate url_launcher_web to the platform interface
 
-[2274]({{site.github}}/flutter/plugins/pull/2274) [url_launcher] DartDoc and test improvements
+[2274](https://github.com/flutter/plugins/pull/2274) [url_launcher] DartDoc and test improvements
 
 
 #### Plugin: Video Player
@@ -2607,17 +2607,17 @@ we have converted it into a federated plugin to help it
 scale more efficiently to multiple platforms.
 For more information, refer to [Federated plugins][].
 
-[1813]({{site.github}}/flutter/plugins/pull/1813) [video-player] add support for content uris as urls
+[1813](https://github.com/flutter/plugins/pull/1813) [video-player] add support for content uris as urls
 
-[1998]({{site.github}}/flutter/plugins/pull/1998) [video_player] Fix deprecated member use
+[1998](https://github.com/flutter/plugins/pull/1998) [video_player] Fix deprecated member use
 
-[2124]({{site.github}}/flutter/plugins/pull/2124) [video_player] Move [player dispose] to onUnregistered
+[2124](https://github.com/flutter/plugins/pull/2124) [video_player] Move [player dispose] to onUnregistered
 
-[2158]({{site.github}}/flutter/plugins/pull/2158) [video_player] Basic test for VideoPlayerController initialization
+[2158](https://github.com/flutter/plugins/pull/2158) [video_player] Basic test for VideoPlayerController initialization
 
-[2273]({{site.github}}/flutter/plugins/pull/2273) [video_player] Add platform interface
+[2273](https://github.com/flutter/plugins/pull/2273) [video_player] Add platform interface
 
-[2286]({{site.github}}/flutter/plugins/pull/2286) [video_player] Improve DartDocs and test coverage
+[2286](https://github.com/flutter/plugins/pull/2286) [video_player] Improve DartDocs and test coverage
 
 
 #### Plugin: Webview Flutter
@@ -2625,9 +2625,9 @@ For more information, refer to [Federated plugins][].
 We upgraded the Webview Flutter plugin to the [new plugin API][],
 and made some bug fixes.
 
-[1996]({{site.github}}/flutter/plugins/pull/1996) [webview_flutter] Allow underscores anywhere for Javascript Channel name
+[1996](https://github.com/flutter/plugins/pull/1996) [webview_flutter] Allow underscores anywhere for Javascript Channel name
 
-[2257]({{site.github}}/flutter/plugins/pull/2257) [webview_flutter] Add async NavigationDelegates
+[2257](https://github.com/flutter/plugins/pull/2257) [webview_flutter] Add async NavigationDelegates
 
 
 ## Tooling

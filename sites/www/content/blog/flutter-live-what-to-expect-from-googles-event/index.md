@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-12-02
 author: csells
 image: images/0MhKKsmIlYcORAT-q.webp
-category: event
+category: news
 layout: blog
 ---
 

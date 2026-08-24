@@ -1,6 +1,5 @@
 ---
 title: Dart and Flutter MCP server
-sidenav: ai
 shortTitle: MCP server
 description: >
   Learn about the Dart and Flutter MCP server tool that
@@ -275,35 +274,33 @@ documentation for [installing MCP servers][].
 
 ### OpenCode
 
-To configure [OpenCode][] to use the Dart and Flutter MCP server,
-add the `dart-mcp-server` entry to your OpenCode configuration.
+To configure [OpenCode][] to use the Dart and Flutter MCP server
+for the current project, use the `opencode mcp add` CLI command:
 
-OpenCode configuration is typically found in `~/.opencode/config.json`
-or in your project's `opencode key` configuration.
-
-```json title="~/.opencode/config.json"
-{
-  "$schema": "https://opencode.ai/config.json",
-  "mcp": {
-    "dart-mcp-server": {
-      "type": "local",
-      "command": [
-        "dart",
-        "mcp-server"
-      ],
-      "enabled": true,
-      "environment": {}
-    }
-  }
-}
+```console
+$ opencode mcp add dart-mcp-server -- dart mcp-server
 ```
 
 [OpenCode]: https://opencode.ai/
 
 ### Claude Code
 
-To configure Claude Code to use the Dart and Flutter MCP server
-for the current project, use the `claude mcp add` CLI command:
+You can configure Claude Code to use the Dart and Flutter MCP server either
+by installing the official plugin or by configuring the server manually.
+
+#### Install via plugin (recommended)
+
+The easiest way to set up the Dart and Flutter MCP server in Claude Code is to
+install the official Flutter plugin, which bundles both the MCP server and
+official [agent skills](/ai/agent-skills).
+
+To install the plugin, follow the Claude Code instructions in
+[Install agent skills](/ai/agent-skills#install-agent-skills).
+
+#### Configure manually
+
+Alternatively, to configure Claude Code to use only the Dart and Flutter MCP
+server for the current project, use the `claude mcp add` CLI command:
 
 ```console
 $ claude mcp add --transport stdio dart -- dart mcp-server
