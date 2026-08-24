@@ -367,7 +367,7 @@ Specifically, the team is currently hard at work integrating
 the new windowing API into the Material design system.
 Our planned integrations are with:
 
-* [`showDiaglog`](https://api.flutter.dev/flutter/material/showDialog.html)
+* [\`showDialog\`](https://api.flutter.dev/flutter/material/showDialog.html)
 * [`showMenu`](https://api.flutter.dev/flutter/material/showMenu.html)
 * [`Tooltip`](https://api.flutter.dev/flutter/material/Tooltip-class.html)
 
