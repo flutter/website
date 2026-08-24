@@ -261,7 +261,7 @@ if a widget is interested in the title of the window,
 it can do something like this:
 
 ```dart
-class MyWindowDelegate with WindowControllerDelegate {
+class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = WindowScope.titleOf(context);
