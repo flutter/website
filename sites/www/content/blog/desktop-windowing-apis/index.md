@@ -17,7 +17,7 @@ major mobile platforms: Android and iOS. Since then,
 Flutter has expanded its reach far beyond mobile,
 with official support for web, macOS, Linux, and Windows,
 in addition to custom use cases including infotainment systems in cars,
-smart televisions, and embedded. From its humble beginnings as a
+smart televisions, and embedded systems. From its humble beginnings as a
 mobile app toolkit, Flutter has grown into a first-class toolkit
 for applications across a wide spectrum of devices.
 
