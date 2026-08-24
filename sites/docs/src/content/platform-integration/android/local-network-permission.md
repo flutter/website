@@ -48,12 +48,6 @@ declare it in your Android manifest.
 </manifest>
 ```
 
-:::note
-If your app performs local network discovery using multicast DNS (mDNS)
-or Wi-Fi discovery, you might also need related network permissions
-such as `CHANGE_WIFI_MULTICAST_STATE` or `NEARBY_WIFI_DEVICES`.
-:::
-
 ## Add the permission_handler package
 
 To request Android runtime permissions from Dart,
