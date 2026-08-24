@@ -45,8 +45,8 @@ While all this was happening, we at Canonical were busy integrating
 Flutter across mission-critical parts of our stack,
 including the Ubuntu Desktop Installer. We had already assumed
 responsibility as the primary maintainer of the Flutter Linux Embedder
-by this time, and were growing increasingly interested in seeing a
-windowing API be supported in Flutter. So in 2024,
+by this time, and we were increasingly interested in native support
+for a windowing API in Flutter. So in 2024,
 we decided to partner up with Google to tackle this new API,
 with Canonical leading the charge on the design and implementation,
 and Google supporting us with design and code reviews.
@@ -69,7 +69,7 @@ cross-platform behavior and purpose.
 menus and text autocomplete boxes. They are child windows
 of other windows and are typically sized to their content.
 Importantly, they can receive input focus
-(e.g. a user can navigate a dropdown menu with the arrow keys).
+(for example, a user can navigate a dropdown menu with the arrow keys).
 Our implementation also enforces that popup windows remain visible
 on screen by translating or shrinking them,
 thus ensuring that important information is never lost offscreen.
@@ -128,7 +128,7 @@ The best part is that you as a developer can feel confident
 shipping these window types across all major desktop platforms,
 knowing that the behavior will always be consistent.
 
-However, we do recognize that unique situations do arise.
+However, we recognize that unique situations do arise.
 For that reason, we always offer an "escape hatch" through
 which you can construct and modify your own native window
 for your particular platform. While not the recommended approach,
@@ -357,7 +357,7 @@ and supply it with our own view, which is our `Window`.
 
 ## Design system integration
 
-One important point to note is that – in the long term–most users
+One important point to note is that, in the long term, most users
 of the windowing API won't explicitly interact with it. Instead,
 it will be integrated under the hood by one of the existing design systems.
 By opting into the design system, you will simply get all of the
@@ -367,7 +367,7 @@ Specifically, the team is currently hard at work integrating
 the new windowing API into the Material design system.
 Our planned integrations are with:
 
-* [\`showDialog\`](https://api.flutter.dev/flutter/material/showDialog.html)
+* [`showDialog`](https://api.flutter.dev/flutter/material/showDialog.html)
 * [`showMenu`](https://api.flutter.dev/flutter/material/showMenu.html)
 * [`Tooltip`](https://api.flutter.dev/flutter/material/Tooltip-class.html)
 
