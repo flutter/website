@@ -47,9 +47,8 @@ class MyAppState extends State<MyApp> {
                 });
 
                 // Then show a snackbar.
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text('$item dismissed')));
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text('$item dismissed')));
               },
               child: ListTile(title: Text(item)),
             );

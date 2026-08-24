@@ -788,9 +788,8 @@ call your navigation routes using their names.
             // tapped, push the detailsPageRouteName route
             // to the Navigator and pass the person's instance
             // to the route.
-            Navigator.of(
-              context,
-            ).pushNamed(detailsPageRouteName, arguments: person);
+            Navigator.of(context)
+                .pushNamed(detailsPageRouteName, arguments: person);
           },
         );
       },
