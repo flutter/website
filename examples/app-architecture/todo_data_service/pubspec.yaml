@@ -12,15 +12,15 @@ dependencies:
   json_annotation: ^4.12.0
   path: ^1.9.1
   shared_preferences: ^2.5.5
-  sqflite: ^2.4.2+1
-  sqflite_common_ffi: ^2.4.0+3
+  sqflite: ^2.4.3
+  sqflite_common_ffi: ^2.4.2+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.15.1
-  freezed: ^3.2.5
-  json_serializable: ^6.14.0
+  freezed: ^4.0.0
+  json_serializable: ^6.14.1
 
 flutter:
   uses-material-design: true
