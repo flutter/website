@@ -56,8 +56,8 @@ by Google that includes the Antigravity CLI and Antigravity IDE.
 
 The Antigravity CLI runs as the `agy` command in your terminal.
 
-1. Configure the Dart and Flutter MCP server in your workspace local
-   `.agents/mcp_config.json` (or globally in
+1. Configure the Dart and Flutter MCP server in your project's
+   `.agents/mcp_config.json` file (or globally in
    `~/.gemini/config/mcp_config.json`):
 
    ```json
