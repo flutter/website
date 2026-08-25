@@ -71,10 +71,14 @@ The Antigravity CLI runs as the `agy` command in your terminal.
    }
    ```
 
-1. Install official Flutter skills into your workspace:
+1. Install official Flutter and Dart skills into your workspace:
 
    ```bash
+   # Install Flutter skills
    npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
+
+   # Install Dart skills
+   npx skills add dart-lang/skills --skill '*' --agent universal --yes
    ```
 
 1. Start an interactive session in your project root:
@@ -188,7 +192,11 @@ agentic coding, tool calling via MCP, and custom workspace instructions.
 In your Flutter project root, install official skills using the universal flag:
 
 ```bash
+# Install Flutter skills
 npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
+
+# Install Dart skills
+npx skills add dart-lang/skills --skill '*' --agent universal --yes
 ```
 
 </Tab>
