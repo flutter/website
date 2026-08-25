@@ -2,8 +2,8 @@
 title: How Flutter AI tools work
 shortTitle: How AI tools work
 description: >-
-  Learn how agent skills, the Dart and Flutter MCP server, and package skills
-  interact to assist your development workflow.
+  Learn how agent skills, the Dart and Flutter MCP server, package skills,
+  and AI rules interact to assist your development workflow.
 ---
 
 Flutter and Dart provide an integrated suite of tools designed to help AI
@@ -18,14 +18,14 @@ The Flutter AI tooling ecosystem consists of five complementary components:
    perform specific workflows (such as creating responsive layouts or writing
    tests).
 2. **Dart and Flutter MCP server**: A Model Context Protocol (MCP) server
-   exposing real-time IDE analysis, symbol resolution, and runtime
+   exposing real-time SDK diagnostics, symbol resolution, and runtime
    introspection to assistants.
-3. **Package skills**: Skills published directly inside third-party `pub.dev`
+3. **Developer Knowledge MCP server**: A cloud-hosted documentation search
+   server giving assistants direct access to official Flutter and Dart docs.
+4. **Package skills**: Skills published directly inside third-party `pub.dev`
    packages, giving assistants instant expertise on specific libraries.
-4. **AI rules**: Always-on workspace instructions providing high-level
+5. **AI rules**: Always-on workspace instructions providing high-level
    project conventions and style guidance.
-5. **Custom agents**: Specialized agent personas configured for dedicated
-   tasks like automated triage or migration.
 
 ---
 
@@ -93,6 +93,23 @@ directly during conversation.
 
 ---
 
+## Package skills
+
+In addition to core Flutter skills, library authors can bundle official skills
+directly inside their packages on [pub.dev](https://pub.dev).
+
+When you add a dependency to your project, you can discover and install its
+skills using the `skills` CLI:
+
+```bash
+dart run skills@ get
+```
+
+To learn how to install or publish package skills, check out
+[Package skills](/ai/package-skills).
+
+---
+
 ## AI rules
 
 **AI rules** provide persistent, project-wide instructions that are included
@@ -110,27 +127,6 @@ point for establishing project-wide conventions.
 
 ---
 
-## Custom agents
-
-**Custom agents** (or subagents) are specialized agent personas configured with
-targeted system prompts, dedicated roles, and constrained tool access to perform
-focused tasks.
-
-Rather than relying on a single generalist prompt, you can configure dedicated
-agents for specific workflows, such as:
-
-* **Accessibility reviewers**: Inspecting widget trees and semantics for a11y
-  compliance.
-* **API migration assistants**: Converting legacy APIs to current Flutter
-  patterns across large repositories.
-* **Automated test generators**: Authoring regression and unit test suites
-  following `package:test` best practices.
-
-To explore pre-configured agent templates and definitions, check out the
-[Flutter agent plugins repository](https://github.com/flutter/agent-plugins).
-
----
-
 ## When to use what
 
 Use the following mental model to understand how different AI mechanisms
@@ -138,10 +134,11 @@ interact:
 
 | Mechanism | Scope and behavior | Best suited for |
 | :--- | :--- | :--- |
-| **Agent skill** | Triggered on demand | Multi-step recipes |
-| **MCP tool** | Tool execution with results | Symbols, tests, diagnostics |
-| **AI rule** | Always-on workspace context | Project style, architecture |
-| **Custom agent** | Standalone persona | Bug burndown, PR reviews |
+| **Agent skill** | On demand | Multi-step recipes, patterns |
+| **Dart MCP server** | Local SDK tools | Diagnostics, tests, runtime |
+| **Developer Knowledge MCP** | Online search | Live docs, API references |
+| **Package skill** | From dependencies | Library APIs, code generation |
+| **AI rule** | Always-on context | Project style, architecture |
 
 {:.table .table-striped}
 
