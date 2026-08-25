@@ -23,7 +23,8 @@ and **CONSIDER** requires judgment.
 
 ## Match the project
 
-- Follow the project's `analysis_options.yaml` and surrounding conventions.
+- Treat the conventions in this skill as the repository defaults.
+  Follow applicable `analysis_options.yaml` files for additional requirements.
 - Before using a recent language feature,
   check the lower SDK constraint in `pubspec.yaml`.
   The installed SDK might support syntax that the package doesn't.

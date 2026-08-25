@@ -72,9 +72,6 @@ export 'src/public_api.dart';
 - **DO** format all code with `dart format`.
   Treat the formatter's output as canonical.
 - **PREFER** lines of 80 characters or fewer.
-  The formatter uses this by default.
-  A project can change it with `page_width` in
-  the `formatter` section of `analysis_options.yaml`.
 - **CONSIDER** revising code instead of accepting awkward formatter output:
   shorten a local name, move a subexpression into a named local,
   or split a long function chain.

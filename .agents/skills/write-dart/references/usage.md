@@ -105,7 +105,7 @@ Use these language features effectively inside implementations.
   You can replace a field with a getter and setter later
   without breaking callers.
 - **PREFER** a `final` field over a getter-only wrapper for read-only state.
-- **CONSIDER** `=>` for single-expression members
+- **PREFER** `=>` for single-expression members
   that fit on one or two lines, especially getters.
   If the body doesn't fit comfortably, use a block.
 - **DON'T** use `this.`
@@ -164,7 +164,7 @@ Use these language features effectively inside implementations.
   The `unawaited` function doesn't handle asynchronous errors,
   so the detached operation must handle them
   or intentionally report them through the current zone.
-- **CONSIDER** stream transformers, such as `map`, `where`, and `expand`,
+- **PREFER** stream transformers, such as `map`, `where`, and `expand`,
   over manual `listen` and `StreamController` setup.
 - **AVOID** `Completer` directly.
   The `Future` constructors and `async` functions cover almost every case.
