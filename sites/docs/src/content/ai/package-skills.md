@@ -64,7 +64,7 @@ releases to teach AI assistants how to use their libraries correctly.
 
 ### Example `SKILL.md` structure
 
-````markdown
+```markdown
 ---
 name: my_package-error-handling
 description: >-
@@ -74,20 +74,15 @@ description: >-
 # Error Handling Guidelines
 
 ## Best practices
-- Operations must always be wrapped in a try/catch block.
-- Catch `NetworkException` specifically to handle retries and diagnostics.
-- Provide fallback UI state in the event of a timeout.
+* Always wrap network operations in a try/catch block.
+* Catch `NetworkException` specifically to handle retries and diagnostics.
+* Provide fallback UI state in the event of a timeout.
 
 ## Example
-```dart
-try {
-  final response = await MyClient.fetchData();
-} on NetworkException catch (e) {
-  Logger.log(e.context);
-  return FallbackData();
-}
+1. Call `MyClient.fetchData()`.
+2. Catch `NetworkException` and log `e.context`.
+3. Return a fallback UI model.
 ```
-````
 
 ---
 
