@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  video_player: ^2.11.1
+  video_player: ^2.14.0
 
 dev_dependencies:
   flutter_test:

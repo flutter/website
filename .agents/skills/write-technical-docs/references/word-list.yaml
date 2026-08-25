@@ -1,0 +1,2604 @@
+# Strict word list for the write-technical-docs skill.
+#
+# This selectively loaded catalog defines word choice, spelling,
+# capitalization, and usage guidance for developer documentation.
+# Use it for a strict or thorough review,
+# to resolve a term not covered in `word-choice.md`,
+# or to explain the reason for a terminology change.
+# Ordinary drafting and review should use `word-choice.md` instead.
+# Adapted for Dart and Flutter from the Google developer documentation
+# style guide word list (https://developers.google.com/style/word-list),
+# licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+#
+# Sort entries alphabetically by term, ignoring leading punctuation.
+# Keep new entries in order under the matching letter comment.
+#
+# Schema:
+#
+# - term (required):
+#   The word or phrase,
+#   lowercased unless it's a proper noun or always capitalized.
+# - status (required):
+#   One of:
+#   - dont-use: Don't use the term.
+#     Rewrite around it.
+#   - caution: Avoid the term or use it with care.
+#     A better option usually exists.
+#   - ok: Acceptable.
+#     The entry clarifies meaning or scope.
+#   - style: Neutral spelling, capitalization, hyphenation, or
+#     formatting guidance with no usage judgment.
+# - prefer (optional):
+#   List of recommended replacements or related terms.
+# - guidance (optional):
+#   Condensed prose for nuance: when, why, or exceptions.
+# - see (optional):
+#   List of related `term` values to cross-reference.
+
+# --- Numbers and symbols ---
+
+- term: "& (ampersand)"
+  status: caution
+  prefer: ["and"]
+  guidance: >-
+    Don't use an ampersand in place of and in prose, headings, or navigation.
+    It's acceptable when matching a UI label, in code,
+    or in a space-constrained table or diagram label.
+
+# --- A ---
+
+- term: "A/B testing"
+  status: style
+  guidance: >-
+    Capitalize and use slash notation for A/B.
+
+- term: "abnormal"
+  status: caution
+  guidance: >-
+    Don't use to refer to a person.
+    OK for a condition of a computer system.
+
+- term: "abort"
+  status: caution
+  prefer: ["stop", "exit", "cancel", "end"]
+  guidance: >-
+    Avoid in general usage.
+    In Linux, abort is a type of signal that terminates an abnormal process,
+    so it's acceptable as a literal signal name.
+
+- term: "above"
+  status: caution
+  prefer: ["earlier", "preceding", "later"]
+  guidance: >-
+    Don't use for a range of version numbers
+    or for a position in a document or UI.
+    Use earlier or later for a version range.
+    The term is OK in a non-directional way,
+    such as when describing a hierarchy.
+  see: ["below", "earlier", "later"]
+
+- term: "access (verb)"
+  status: caution
+  prefer: ["see", "edit", "find", "use", "view"]
+  guidance: >-
+    Avoid as a verb when a friendlier, more specific word works.
+
+- term: "access token"
+  status: style
+  guidance: >-
+    Lowercase except at the start of a sentence, heading, or list item.
+
+- term: "account name"
+  status: dont-use
+  prefer: ["username"]
+  guidance: >-
+    Don't use.
+    Use username.
+
+- term: "actionable"
+  status: caution
+  guidance: >-
+    Avoid unless it's the clearest phrasing.
+    Replace with a phrase like that you can act on or useful.
+    Don't use in the legal sense without consulting a lawyer.
+
+- term: "add-to-app"
+  status: style
+  guidance: >-
+    Hyphenate when referring to the Flutter feature
+    or when using the term as a compound modifier.
+    For an action, write "add Flutter to an existing app".
+    Lowercase except at the start of a sentence, heading, or list item.
+
+- term: "ad hoc"
+  status: ok
+  guidance: >-
+    OK in database and analytics contexts to mean free-form or user-written.
+    Don't hyphenate or italicize.
+
+- term: "admin"
+  status: caution
+  prefer: ["administrator"]
+  guidance: >-
+    Write out administrator unless it's the name of a UI label or other element.
+
+- term: "agnostic"
+  status: dont-use
+  prefer: ["platform-independent"]
+  guidance: >-
+    Use a more precise term.
+
+- term: "AI"
+  status: ok
+  guidance: >-
+    You can use AI without spelling out artificial intelligence.
+    Spell it out on first use only
+    if your audience isn't familiar with the abbreviation.
+
+- term: "aka"
+  status: dont-use
+  prefer: ["also known as"]
+  guidance: >-
+    Write out also known as,
+    or present the alternative in parentheses or with the word or.
+
+- term: "allowlist"
+  status: ok
+  guidance: >-
+    OK as a noun.
+    Don't use as a verb.
+    Rewrite to improve clarity.
+  see: ["blacklist"]
+
+- term: "allows you to"
+  status: dont-use
+  prefer: ["lets you"]
+  guidance: >-
+    Use lets you, or drop it: use X to do Y.
+  see: ["enable"]
+
+- term: "alpha"
+  status: style
+  guidance: >-
+    Lowercase except when part of a product name.
+
+- term: "AM, PM"
+  status: style
+  guidance: >-
+    Use uppercase letters without periods.
+    Insert a space between the time and the marker.
+    Omit the minutes for a round hour.
+    For example, 9 AM and 10:30 PM.
+
+- term: "America, American"
+  status: caution
+  prefer: ["the US", "the United States"]
+  guidance: >-
+    Use only to refer to the Americas.
+    Don't use for the United States.
+  see: ["US"]
+
+- term: "analyzer"
+  status: style
+  guidance: >-
+    Lowercase when referring to the Dart analyzer.
+    Use code font for the `dart analyze` command.
+
+- term: "and so on"
+  status: caution
+  prefer: ["such as", "including"]
+  guidance: >-
+    Avoid.
+    Name the items or rewrite.
+  see: ["etc."]
+
+- term: "and/or"
+  status: caution
+  prefer: ["or", "and", "A, B, or both"]
+  guidance: >-
+    Avoid unless space is limited, such as in a table.
+
+- term: "Android"
+  status: style
+  guidance: >-
+    Capitalize exactly as shown.
+    Use Android as an adjective, as in Android app or Android device.
+
+- term: "anti-pattern"
+  status: caution
+  guidance: >-
+    Avoid, particularly as a standalone heading.
+    Use a more specific, broadly understood term.
+
+- term: "API"
+  status: ok
+  guidance: >-
+    Use for a web API or a language-specific API.
+    Don't use API to mean a method or a class.
+    Pluralize as APIs.
+
+- term: "app"
+  status: ok
+  guidance: >-
+    Prefer app for an end-user Dart or Flutter program.
+    Use application in official names or established terms,
+    such as application programming interface.
+
+- term: "appendix"
+  status: style
+  guidance: >-
+    Use the plural appendixes, not appendices.
+
+- term: "as"
+  status: caution
+  prefer: ["because"]
+  guidance: >-
+    If you mean because, use because.
+    As is ambiguous.
+    It can refer to the passage of time.
+  see: ["since"]
+
+- term: "as of this writing"
+  status: caution
+  guidance: >-
+    Omit.
+    It's implied and dates the content.
+    Can prematurely disclose strategy.
+  see: ["currently", "presently, at present"]
+
+- term: "authentication and authorization"
+  status: ok
+  guidance: >-
+    Authentication verifies the identity of a principal,
+    such as a person, service, or device.
+    Authorization determines whether a principal or request
+    has permission to perform an action.
+    Use the preposition against when naming the system
+    that performs authentication.
+  see: ["authN, authZ"]
+
+- term: "authN, authZ"
+  status: dont-use
+  prefer: ["authentication", "authorization"]
+
+- term: "autoupdate"
+  status: dont-use
+  prefer: ["automatically update"]
+
+- term: "-aware"
+  status: caution
+  guidance: >-
+    Avoid as a compound modifier, as in healthcare-aware.
+    OK when part of a product name.
+
+# --- B ---
+
+- term: "backend"
+  status: style
+  guidance: >-
+    One word, not back-end or back end.
+
+- term: "bar"
+  status: caution
+  guidance: >-
+    Avoid as a placeholder.
+    Use a clearer, more meaningful name.
+  see: ["foo", "baz"]
+
+- term: "base64"
+  status: style
+  guidance: >-
+    Lowercase except at the start.
+    Capitalize Base64 only if it's part of a formal name.
+    Use code font only when it's a string literal or quoted from code.
+
+- term: "baz"
+  status: caution
+  guidance: >-
+    Avoid as a placeholder.
+    Use a clearer, more meaningful name.
+  see: ["foo", "bar"]
+
+- term: "below"
+  status: caution
+  prefer: ["earlier", "later", "following"]
+  guidance: >-
+    Don't use for a range of version numbers or a position in a document or UI.
+    OK in set phrases such as below zero and in a non-directional way.
+  see: ["above"]
+
+- term: "best effort"
+  status: caution
+  guidance: >-
+    Avoid where possible.
+    Use more specific wording.
+    You can add sometimes referred to as best effort after a description.
+
+- term: "beta"
+  status: style
+  guidance: >-
+    Lowercase except when part of a product name.
+
+- term: "between versus among"
+  status: ok
+  guidance: >-
+    Use between for two or more distinct things.
+    Use among for things that aren't distinct or are part of a group.
+
+- term: "big-endian"
+  status: style
+  guidance: >-
+    Hyphenate.
+    Lowercase except at the start of a sentence, heading, or list item.
+  see: ["little-endian"]
+
+- term: "black hat, blackhat"
+  status: dont-use
+  prefer: ["illegal", "unethical", "in violation of rules"]
+  guidance: >-
+    Use a precise term for the kind of violation.
+
+- term: "black-box"
+  status: caution
+  prefer: ["synthetic monitoring", "opaque-box testing"]
+  guidance: >-
+    Avoid black-box, blackbox, or black box for monitoring and testing.
+    Use a more precise term.
+
+- term: "blackhole"
+  status: dont-use
+  prefer: ["dropped without notification"]
+
+- term: "blacklist"
+  status: dont-use
+  prefer: ["denylist", "blocklist", "allowlist"]
+  guidance: >-
+    Don't use blacklist, whitelist, or graylist.
+    Use precise terms for your domain.
+    Consider that there might not be an actual list.
+    For verb forms, rewrite with a phrase that conveys the action.
+    For example, write deny requests.
+    If code uses the literal term,
+    reference the code item in code font
+    and explain that it is an existing identifier.
+
+- term: "blacklisted, black listed, black-listed"
+  status: dont-use
+  guidance: >-
+    Don't use.
+  see: ["blacklist"]
+
+- term: "blacklisting, black listing, black-listing"
+  status: dont-use
+  guidance: >-
+    Don't use.
+  see: ["blacklist"]
+
+- term: "blast radius"
+  status: dont-use
+  prefer: ["affected area", "spatial impact"]
+
+- term: "blind"
+  status: caution
+  prefer: ["ignore", "unaware of", "disregard"]
+  guidance: >-
+    Avoid figurative uses like blind to or blind writes.
+    When referring to people,
+    use terms like person who is blind or screen reader user.
+
+- term: "boolean"
+  status: ok
+  guidance: >-
+    For a programming keyword,
+    use code font and the exact spelling and capitalization.
+    Lowercase for the abstract data type.
+    Use uppercase for Boolean logic or mathematics.
+
+- term: "BuildContext"
+  status: style
+  guidance: >-
+    Use exact capitalization and code font for the type.
+    Use context or build context in lowercase for the general concept.
+
+- term: "button"
+  status: caution
+  guidance: >-
+    A link isn't a button.
+    Don't call a link a button.
+    Click an on-screen button with a mouse,
+    tap it on a touch interface,
+    and press a mechanical button.
+
+# --- C ---
+
+- term: "can"
+  status: ok
+  guidance: >-
+    Use for ability, permission, an optional action, or a possible outcome.
+  see: ["may", "might", "could", "should, should be", "would"]
+
+- term: "canary"
+  status: caution
+  guidance: >-
+    Avoid jargon like canary and canary testing.
+    Don't use canary as a verb.
+    If you use it, define it on first use.
+
+- term: "cell phone, cellphone"
+  status: dont-use
+  prefer: ["mobile phone", "mobile device", "phone"]
+
+- term: "chapter"
+  status: caution
+  prefer: ["document", "page", "section"]
+  guidance: >-
+    Don't use chapter for documentation that isn't a book.
+
+- term: "check"
+  status: caution
+  prefer: ["select"]
+  guidance: >-
+    Don't use to mean marking a checkbox.
+    Use select.
+
+- term: "checkbox"
+  status: style
+  guidance: >-
+    One word, not check box.
+
+- term: "choose"
+  status: ok
+  prefer: ["select"]
+  guidance: >-
+    Fine in generic contexts.
+    For UI elements, use select.
+
+- term: "clear"
+  status: ok
+  guidance: >-
+    Use as the verb for removing a check mark from a checkbox,
+    not uncheck or deselect.
+
+- term: "CLI"
+  status: caution
+  guidance: >-
+    Don't use generically.
+    Refer to the specific command-line interface.
+
+- term: "click"
+  status: ok
+  guidance: >-
+    Use for mouse targets on a desktop.
+    Don't write click on.
+    Hyphenate right-click, left-click, double-click.
+    For touch UIs, use tap.
+  see: ["tap", "press"]
+
+- term: "click here"
+  status: dont-use
+  guidance: >-
+    Use descriptive link text that names the destination.
+
+- term: "client"
+  status: ok
+  guidance: >-
+    In REST and RPC API documentation,
+    client is short for client app.
+    Don't use client to mean client library.
+    Use library.
+
+- term: "codebase"
+  status: style
+  guidance: >-
+    One word, not code base.
+
+- term: "cold"
+  status: caution
+  guidance: >-
+    Avoid jargon like cold failover, cold standby, and cold spare.
+    If used, define on first use.
+  see: ["hot", "warm"]
+
+- term: "colocate"
+  status: style
+  guidance: >-
+    Not co-locate or colo.
+
+- term: "compliant, compliance"
+  status: caution
+  guidance: >-
+    Use with caution.
+    A claim that a product is compliant with a standard is a strong statement.
+
+- term: "comprise"
+  status: dont-use
+  prefer: ["consist of", "contain", "include"]
+
+- term: "confidential"
+  status: ok
+  guidance: >-
+    Confidential data is data protected to prevent unauthorized access.
+  see: ["sensitive"]
+
+- term: "config"
+  status: caution
+  prefer: ["configuration", "configuring"]
+  guidance: >-
+    Spell out the full word in a non-code sense.
+    Use the verbatim name when referring to a code item or file named config.
+
+- term: "cons"
+  status: dont-use
+  prefer: ["disadvantages"]
+  see: ["pros"]
+
+- term: "content type"
+  status: ok
+  guidance: >-
+    Be specific.
+    Use only when applicable,
+    such as for the value of the Content-Type HTTP header.
+  see: ["media type"]
+
+- term: "Control+S, Command+S"
+  status: style
+  guidance: >-
+    Use Control+CHARACTER, usually an uppercase letter.
+    Don't use Ctl-S or Cmd-S.
+    Mention both Control and Command commands for mixed audiences.
+
+- term: "copy and paste"
+  status: caution
+  guidance: >-
+    Avoid in instructions.
+    Explain what to enter into a field, not how.
+
+- term: "could"
+  status: caution
+  prefer: ["can"]
+  guidance: >-
+    Avoid.
+    Use can where possible.
+  see: ["can", "may", "might"]
+
+- term: "CPU"
+  status: style
+  guidance: >-
+    All caps.
+    No need to expand on first mention.
+    Pluralize as CPUs.
+
+- term: "crazy, insane, lunatic, mad"
+  status: dont-use
+  prefer: ["complicated", "complex", "baffling", "unexpected"]
+  guidance: >-
+    Use a precise replacement for an inanimate object or situation.
+    When referring to a person,
+    describe the relevant characteristic with inclusive language.
+
+- term: "Create a new ..."
+  status: caution
+  prefer: ["Create a ..."]
+  guidance: >-
+    Use Create a new only to distinguish from another recently created item.
+
+- term: "cripple"
+  status: dont-use
+  guidance: >-
+    Use precise language, such as slowed the server down.
+    For people, describe the specific impairment.
+
+- term: "Cupertino"
+  status: style
+  guidance: >-
+    Capitalize the Flutter design language and widget family.
+    Use code font for identifiers such as `CupertinoApp`.
+
+- term: "curl"
+  status: style
+  guidance: >-
+    Lowercase, not cURL.
+
+- term: "currently"
+  status: caution
+  guidance: >-
+    Avoid.
+    It's implied and can imply a feature might change.
+  see: ["as of this writing", "presently, at present"]
+
+# --- D ---
+
+- term: "Dart"
+  status: style
+  guidance: >-
+    Capitalize the language and platform name.
+    Don't use code font unless Dart appears as a literal code value.
+
+- term: "Dart SDK"
+  status: style
+  guidance: >-
+    Capitalize as shown.
+    On later references, SDK is acceptable when the referent is clear.
+
+- term: "Dart VM"
+  status: style
+  guidance: >-
+    Capitalize as shown.
+    Use VM on later references when the referent is clear.
+
+- term: "DartPad"
+  status: style
+  guidance: >-
+    One word with an internal capital P.
+    Don't write Dart Pad.
+
+- term: "dash"
+  status: ok
+  guidance: >-
+    A dash isn't a hyphen.
+    The characters serve different purposes.
+    Don't use dash to mean hyphen.
+
+- term: "data"
+  status: style
+  guidance: >-
+    Singular mass noun: the data is, not the data are.
+    Use less data, not fewer data.
+
+- term: "data center"
+  status: style
+  guidance: >-
+    Two words, not datacenter.
+
+- term: "data source"
+  status: style
+  guidance: >-
+    Two words, not datasource.
+
+- term: "data type"
+  status: style
+  guidance: >-
+    Two words, not datatype.
+
+- term: "datastore"
+  status: style
+  guidance: >-
+    One word, not data store.
+
+- term: "dead-letter queue"
+  status: caution
+  guidance: >-
+    Define the term on first use as a queue for messages
+    that couldn't be processed or delivered.
+
+- term: "deep linking"
+  status: style
+  prefer: ["linking"]
+  guidance: >-
+    Not deep-linking.
+    Replace with linking if possible.
+
+- term: "deficient"
+  status: caution
+  guidance: >-
+    Don't use to refer to a person.
+    OK for a condition of a computer system.
+
+- term: "deformed"
+  status: caution
+  guidance: >-
+    Don't use to refer to a person.
+    OK for a condition of a computer system or inanimate object.
+
+- term: "denigrate"
+  status: dont-use
+  prefer: ["disparage"]
+  guidance: >-
+    Don't use.
+    Use disparage.
+
+- term: "denylist"
+  status: ok
+  guidance: >-
+    OK as a noun.
+    Don't use as a verb.
+    Rewrite to improve clarity.
+  see: ["blacklist"]
+
+- term: "deprecate"
+  status: caution
+  guidance: >-
+    Means recommend against use,
+    typically as a warning that an item will become unavailable.
+    Don't use to mean removed, deleted, or shut down.
+
+- term: "deselect"
+  status: caution
+  prefer: ["clear"]
+  guidance: >-
+    Don't use for clearing a checkbox.
+    Use clear.
+    OK for canceling the selection of an item such as text or an object.
+  see: ["unselect"]
+
+- term: "desire, desired"
+  status: dont-use
+  prefer: ["want", "need"]
+
+- term: "DevTools"
+  status: style
+  guidance: >-
+    One word with an internal capital T.
+    Use DevTools when the context is clear.
+    When a qualifier is necessary, match the official product context,
+    such as Dart DevTools or Flutter and Dart DevTools.
+
+- term: "dialog"
+  status: ok
+  guidance: >-
+    Use dialog for the UI element.
+    Use dialogue only for verbal interaction between people.
+
+- term: "directory, folder"
+  status: ok
+  guidance: >-
+    Match the context you're documenting.
+    Otherwise use directory for command-line
+    and folder for a graphical interface.
+    Default to directory when in doubt.
+
+- term: "disable"
+  status: caution
+  prefer: ["turn off", "inactive", "unavailable", "deactivate"]
+  guidance: >-
+    Don't use disable or disabled to describe something broken.
+    Use a more precise term for UI state.
+  see: ["enable"]
+
+- term: "disclosure triangle, disclosure widget"
+  status: dont-use
+  prefer: ["expander arrow"]
+  guidance: >-
+    Don't use.
+    Use expander arrow.
+  see: ["expander arrow"]
+
+- term: "display (verb)"
+  status: caution
+  guidance: >-
+    Transitive.
+    It needs an object.
+    Use appears or is displayed for something that shows up,
+    not the pane displays.
+
+- term: "documentation"
+  status: ok
+  guidance: >-
+    Use this document for the text on a page,
+    not this article, this topic, or this page.
+    OK to use this tutorial, this quickstart, or this codelab for those types.
+    Spell out documentation except where space is limited.
+  see: ["page"]
+
+- term: "does not yet"
+  status: caution
+  guidance: >-
+    Avoid in timeless documentation.
+    The phrase can become outdated or disclose strategy.
+
+- term: "dojo"
+  status: dont-use
+  prefer: ["training", "workshop"]
+
+- term: "double-tap"
+  status: style
+  guidance: >-
+    Hyphenate.
+    Lowercase except at the start of a sentence, heading, or list item.
+
+- term: "drag"
+  status: ok
+  guidance: >-
+    Use drag, not click and drag or drag and drop.
+    OK to use drag-and-drop as an adjective.
+
+- term: "drop-down"
+  status: caution
+  guidance: >-
+    Usually omit from drop-down list or drop-down menu.
+    Use list or menu.
+    Don't use drop-down as a standalone noun.
+
+- term: "dumb down"
+  status: dont-use
+  prefer: ["simplify", "remove technical jargon"]
+
+- term: "dummy variable"
+  status: dont-use
+  prefer: ["placeholder", "indicator variable", "binary variable"]
+  guidance: >-
+    Don't use for placeholders or for the statistics concept.
+
+# --- E ---
+
+- term: "e.g."
+  status: dont-use
+  prefer: ["for example", "such as"]
+  guidance: >-
+    People confuse e.g. and i.e.
+  see: ["i.e."]
+
+- term: "each"
+  status: caution
+  prefer: ["all"]
+  guidance: >-
+    Each refers to items taken individually, not collectively,
+    and isn't a synonym for all.
+
+- term: "earlier"
+  status: ok
+  guidance: >-
+    Use for a range of version numbers,
+    such as version 2.2 or earlier, not lower.
+    For a document position, use earlier or preceding.
+  see: ["later", "lower"]
+
+- term: "easy, easily"
+  status: caution
+  guidance: >-
+    What's easy for you might not be for others.
+    Usually you can convey the same meaning without it.
+
+- term: "ecommerce"
+  status: style
+  guidance: >-
+    One word, not e-commerce.
+
+- term: "either"
+  status: ok
+  guidance: >-
+    Use parallel syntax.
+    Generally use either only for a choice between two things.
+
+- term: "element"
+  status: ok
+  guidance: >-
+    In HTML and XML, a tag marks the start or end of an element.
+    Don't use tag to mean an entire element.
+  see: ["tag"]
+
+- term: "email"
+  status: style
+  guidance: >-
+    Not e-mail, Email, or E-mail.
+    Don't use as a verb.
+    Use a verb like send email.
+
+- term: "emoji"
+  status: style
+  guidance: >-
+    Use emoji for both singular and plural.
+
+- term: "enable"
+  status: caution
+  prefer: ["turn on", "lets you"]
+  guidance: >-
+    OK when not referring to a person.
+    Use turn on or enable consistently.
+    For making something feasible, use lets you, not enables you to.
+  see: ["disable", "allows you to"]
+
+- term: "endpoint"
+  status: style
+  guidance: >-
+    One word, not end point.
+
+- term: "enter"
+  status: ok
+  guidance: >-
+    Use for entering text by any method.
+    If pressing Enter matters, say so explicitly.
+  see: ["type"]
+
+- term: "error-prone"
+  status: style
+  guidance: >-
+    Hyphenate.
+    Lowercase except at the start of a sentence, heading, or list item.
+
+- term: "etc."
+  status: caution
+  prefer: ["such as", "including"]
+  guidance: >-
+    Avoid "etc.", "and so forth", and "and so on".
+    Name the items or rewrite.
+    If you must use it, keep the period.
+  see: ["and so on"]
+
+- term: "eventually"
+  status: caution
+  guidance: >-
+    Avoid in timeless documentation.
+    It can become outdated or disclose strategy.
+  see: ["soon", "future, in the future"]
+
+- term: "execute"
+  status: caution
+  prefer: ["run"]
+  guidance: >-
+    Unless a precise term is needed,
+    use the simpler run when the meaning is the same.
+
+- term: "expander arrow"
+  status: ok
+  guidance: >-
+    The UI element used to expand or collapse a section.
+    Use expander arrow and expandable section, not expando or zippy.
+  see: ["zippy"]
+
+- term: "exploit"
+  status: caution
+  guidance: >-
+    Don't use to mean use.
+    Use only in the negative sense, such as exploiting a security vulnerability.
+
+- term: "extract"
+  status: ok
+  guidance: >-
+    Use instead of unarchive, uncompress, untar, or unzip.
+
+# --- F ---
+
+- term: "fail over (verb), failover (noun, adjective)"
+  status: style
+  guidance: >-
+    Two words as a verb.
+    One word as a noun or adjective.
+
+- term: "fat"
+  status: dont-use
+  prefer: ["high-capacity", "full-featured"]
+  guidance: >-
+    Use a precise modifier,
+    such as high-capacity network connection or full-featured client.
+    OK as the acronym for file allocation table (FAT).
+
+- term: "female adapter, male adapter"
+  status: dont-use
+  prefer: ["socket", "plug"]
+  guidance: >-
+    Use a genderless word.
+
+- term: "file system"
+  status: style
+  guidance: >-
+    Two words, not filesystem.
+
+- term: "filename"
+  status: style
+  guidance: >-
+    One word, not file name.
+
+- term: "fill in, fill out"
+  status: ok
+  guidance: >-
+    Use fill in for entering information in individual fields.
+    Use fill out for completing an entire form.
+
+- term: "final solution"
+  status: dont-use
+  prefer: ["solution", "definitive", "optimal"]
+  guidance: >-
+    Don't use.
+    Use solution alone, or a term like definitive, optimal, or best solution.
+
+- term: "first-class, first-class citizen"
+  status: caution
+  guidance: >-
+    First-class is acceptable for a precise programming-language concept,
+    such as first-class functions.
+    Avoid first-class citizen.
+    Describe the supported capability instead.
+
+- term: "Flutter"
+  status: style
+  guidance: >-
+    Capitalize the framework and SDK name.
+    Don't use code font unless Flutter appears as a literal code value.
+
+- term: "Flutter engine"
+  status: style
+  guidance: >-
+    Capitalize Flutter and lowercase engine.
+    On later references, engine is acceptable when the referent is clear.
+
+- term: "Flutter framework"
+  status: style
+  guidance: >-
+    Capitalize Flutter and lowercase framework.
+
+- term: "Flutter SDK"
+  status: style
+  guidance: >-
+    Capitalize as shown.
+    On later references, SDK is acceptable when the referent is clear.
+
+- term: "following"
+  status: ok
+  guidance: >-
+    A noun after following isn't required
+    unless it aids clarity and accessibility,
+    as in the following table.
+
+- term: "foo"
+  status: caution
+  guidance: >-
+    Avoid even though it's common.
+    Use a clearer, more meaningful placeholder name.
+  see: ["bar", "baz"]
+
+- term: "for example"
+  status: ok
+  guidance: >-
+    Follow with a comma.
+    Separate the example with dashes, commas, or parentheses,
+    or use a separate sentence.
+  see: ["for instance", "such as"]
+
+- term: "for instance"
+  status: caution
+  prefer: ["for example", "like", "such as"]
+  guidance: >-
+    Avoid to prevent confusion with the noun instance.
+
+- term: "frontend"
+  status: style
+  guidance: >-
+    One word, not front-end or front end.
+
+- term: "functionality"
+  status: caution
+  prefer: ["capabilities", "features"]
+  guidance: >-
+    Often overused.
+    Use a more precise term when you mean capabilities or features.
+
+- term: "future, in the future"
+  status: caution
+  guidance: >-
+    Avoid in timeless documentation.
+    It can become outdated.
+  see: ["eventually", "soon"]
+
+# --- G ---
+
+- term: "gender-neutral he, him, his"
+  status: dont-use
+  prefer: ["they", "their"]
+  guidance: >-
+    Use the singular they.
+    Don't use he/she or (s)he.
+  see: ["they (singular)"]
+
+- term: "generative AI"
+  status: style
+  guidance: >-
+    Spell out generative.
+    Use sentence case.
+    Don't use gen AI.
+    Don't hyphenate as an adjective unless needed for clarity.
+  see: ["AI"]
+
+- term: "ghetto"
+  status: dont-use
+  prefer: ["clumsy", "workaround", "inelegant"]
+  guidance: >-
+    Don't use.
+    Use a precise term like clumsy, workaround, or inelegant.
+
+- term: "gimp, gimpy"
+  status: dont-use
+  guidance: >-
+    Use precise, non-figurative language for a deficiency.
+    OK in names that use the term.
+
+- term: "grandfather clause"
+  status: dont-use
+  prefer: ["legacy", "exempt"]
+  see: ["grandfathered"]
+
+- term: "grandfathered"
+  status: dont-use
+  prefer: ["legacy", "exempt", "made an exception"]
+
+- term: "gray-box, grey-box"
+  status: caution
+  prefer: ["translucent-box testing"]
+  guidance: >-
+    Avoid for testing.
+    Describe what it does, or use a more precise term.
+
+- term: "grayed-out, greyed-out, gray out, grey out"
+  status: dont-use
+  prefer: ["unavailable"]
+  guidance: >-
+    Don't use.
+    Use unavailable.
+
+- term: "grayhat, greyhat, gray hat, grey hat"
+  status: dont-use
+  guidance: >-
+    Don't use.
+    Follow the guidance for black hat for someone violating rules or laws.
+  see: ["black hat, blackhat"]
+
+- term: "graylist, greylist, gray list, grey list"
+  status: dont-use
+  prefer: ["provisional list"]
+  guidance: >-
+    Don't use.
+    For the noun, use a replacement such as provisional list.
+  see: ["blacklist"]
+
+- term: "graylisted, greylisted, gray listed, grey listed"
+  status: dont-use
+  guidance: >-
+    Don't use.
+  see: ["blacklist"]
+
+- term: "graylisting, greylisting, gray listing, grey listing"
+  status: dont-use
+  guidance: >-
+    Don't use.
+  see: ["blacklist"]
+
+- term: "guru"
+  status: caution
+  prefer: ["expert", "teacher"]
+
+- term: "guys, you guys"
+  status: caution
+  prefer: ["everyone", "folks"]
+  guidance: >-
+    Use non-gendered language for a group of people.
+
+- term: "gypsy"
+  status: dont-use
+  prefer: ["Romani", "Roma", "Traveller"]
+
+# --- H ---
+
+- term: "hamburger, hamburger menu"
+  status: dont-use
+  guidance: >-
+    Don't use.
+    Use the aria-label for the icon, such as Menu.
+
+- term: "hang, hung"
+  status: dont-use
+  prefer: ["stop responding", "not responding"]
+
+- term: "hardcode (verb), hardcoded (adjective)"
+  status: style
+  guidance: >-
+    Don't hyphenate.
+
+- term: "he, him, his"
+  status: caution
+  prefer: ["they", "their"]
+  guidance: >-
+    Don't use a gendered pronoun
+    except for a specific individual of known gender.
+
+- term: "health check"
+  status: caution
+  guidance: >-
+    Use with caution.
+    Use it only if it's the term in the interface.
+    Remove ambiguity with the medical sense.
+    Prefer responsive over healthy for a node.
+  see: ["healthy"]
+
+- term: "healthcare"
+  status: style
+  guidance: >-
+    One word, not health care or health-care.
+
+- term: "healthy"
+  status: caution
+  prefer: ["responsive"]
+  guidance: >-
+    Don't use to describe a system as functioning.
+  see: ["health check"]
+
+- term: "high availability (noun), high-availability (adjective)"
+  status: style
+  guidance: >-
+    Two words as a noun.
+    Hyphenate as an adjective.
+    Lowercase except in a product name.
+    OK to abbreviate HA after first use.
+
+- term: "higher"
+  status: caution
+  prefer: ["later", "earlier", "preceding"]
+  guidance: >-
+    Don't use for version ranges or document or UI position.
+    The highest version number isn't always the latest version.
+  see: ["later", "earlier"]
+
+- term: "hit"
+  status: dont-use
+  prefer: ["click", "press", "type"]
+
+- term: "hold the pointer over"
+  status: ok
+  prefer: ["point to"]
+  guidance: >-
+    Use when the user waits for the UI to react, such as for a tooltip.
+    Don't use hover.
+    The phrase point to is more common.
+  see: ["hover", "point to"]
+
+- term: "hostname"
+  status: style
+  guidance: >-
+    One word, not host name.
+
+- term: "hot"
+  status: caution
+  guidance: >-
+    Avoid jargon like hot failover, hot standby, and hot spare.
+    If used, define on first use.
+    See hotspot for the database term.
+  see: ["cold", "warm"]
+
+- term: "hot reload"
+  status: style
+  guidance: >-
+    Two lowercase words.
+    Use as a noun or an attributive phrase,
+    as in perform a hot reload and hot reload behavior.
+
+- term: "hot restart"
+  status: style
+  guidance: >-
+    Two lowercase words.
+    Use as a noun or an attributive phrase.
+
+- term: "housekeeping"
+  status: dont-use
+  prefer: ["maintenance", "cleanup"]
+
+- term: "hover"
+  status: dont-use
+  prefer: ["hold the pointer over"]
+  see: ["hold the pointer over"]
+
+- term: "HTTPS"
+  status: style
+  guidance: >-
+    All caps, not HTTPs.
+
+# --- I ---
+
+- term: "i.e."
+  status: dont-use
+  prefer: ["that is"]
+  guidance: >-
+    People confuse e.g. and i.e.
+  see: ["e.g."]
+
+- term: "ID"
+  status: style
+  guidance: >-
+    In prose, use ID, not Id or id.
+    In code identifiers,
+    follow the language's capitalization convention,
+    such as userId in Dart.
+    Sometimes spell out as identifier.
+
+- term: "if"
+  status: ok
+  guidance: >-
+    Include helper words like then in if-then statements.
+    For if versus whether, see whether.
+  see: ["whether"]
+
+- term: "image"
+  status: caution
+  guidance: >-
+    By itself it doesn't localize well.
+    Add context, such as disk image or container image.
+
+- term: "impact"
+  status: caution
+  prefer: ["affect"]
+  guidance: >-
+    Use only as a noun.
+    Instead of has an impact, use affect.
+
+- term: "in order to"
+  status: caution
+  prefer: ["to"]
+  guidance: >-
+    Use to.
+    Keep in order to only when it clarifies meaning or reads more easily.
+
+- term: "index"
+  status: style
+  guidance: >-
+    Use the plural indexes unless a domain-specific reason calls for indices.
+
+- term: "ingest"
+  status: caution
+  prefer: ["import", "load", "copy"]
+  guidance: >-
+    Use ingest only for data movement that also involves significant processing.
+
+- term: "inline"
+  status: style
+  guidance: >-
+    One word as an adjective, not in line or in-line.
+
+- term: "interface"
+  status: ok
+  prefer: ["interact", "communicate"]
+  guidance: >-
+    OK as a noun.
+    Don't use as a verb.
+
+- term: "internet"
+  status: style
+  guidance: >-
+    Lowercase except at the start of a sentence, heading, or list item.
+
+- term: "iOS"
+  status: style
+  guidance: >-
+    Use a lowercase i followed by uppercase OS.
+    Don't write IOS or iOs.
+
+# --- J ---
+
+- term: "jank, janky"
+  status: caution
+  guidance: >-
+    Jank is acceptable in Flutter performance documentation
+    for visible stutter caused by missed frames.
+    Define it for an audience that might not know the term,
+    and don't use it as a general pejorative.
+
+- term: "just"
+  status: caution
+  prefer: ["only", "instead", "previously"]
+  guidance: >-
+    Usually a filler word you can delete.
+    If meaning is unclear without it, use a more specific term.
+  see: ["simple, simply"]
+
+# --- K ---
+
+- term: "key"
+  status: caution
+  guidance: >-
+    Don't use as an adjective meaning crucial or important.
+    As a noun, specify which kind of key on first mention.
+
+- term: "key pair"
+  status: ok
+  guidance: >-
+    A pair of keys, such as a public key and a private key.
+    Contrast with key-value pair.
+
+- term: "key-value pair"
+  status: style
+  guidance: >-
+    Use instead of key/value pair or key value pair.
+
+- term: "kill"
+  status: caution
+  prefer: ["stop", "exit", "cancel", "end"]
+  guidance: >-
+    Avoid except in command-line syntax where it's literal.
+
+# --- L ---
+
+- term: "lame"
+  status: dont-use
+  guidance: >-
+    Use precise, non-figurative language for a deficiency.
+
+- term: "later"
+  status: ok
+  guidance: >-
+    Use for a range of version numbers,
+    such as version 2.2 or later, not higher.
+    For a document position, use later or following.
+  see: ["earlier", "higher"]
+
+- term: "latest"
+  status: caution
+  guidance: >-
+    Avoid in timeless documentation.
+    If you must use it,
+    give a reference point such as a version number or release date.
+
+- term: "learnings"
+  status: dont-use
+  prefer: ["knowledge", "things that you learned"]
+
+- term: "left-nav, right-nav"
+  status: dont-use
+  prefer: ["navigation menu", "content navigation menu"]
+  guidance: >-
+    Don't use directional language.
+
+- term: "legacy"
+  status: caution
+  guidance: >-
+    Prefer a more precise term.
+    If used, define it and avoid a pejorative connotation.
+
+- term: "let's"
+  status: caution
+  guidance: >-
+    Avoid the contraction of let us, as in let's click the button.
+
+- term: "leverage"
+  status: caution
+  prefer: ["use", "build on", "take advantage of"]
+  guidance: >-
+    Avoid when you mean use.
+
+- term: "lifecycle"
+  status: style
+  guidance: >-
+    One word, not life cycle or life-cycle.
+
+- term: "like"
+  status: ok
+  guidance: >-
+    OK for comparisons where it means similar to
+    and for introducing examples where it means such as.
+  see: ["such as"]
+
+- term: "lint"
+  status: style
+  guidance: >-
+    Lowercase for both the tool name and the command.
+    Use code font except where inappropriate.
+
+- term: "little-endian"
+  status: style
+  guidance: >-
+    Hyphenate.
+    Lowercase except at the start of a sentence, heading, or list item.
+  see: ["big-endian"]
+
+- term: "livestream"
+  status: style
+  guidance: >-
+    One word, not live stream.
+
+- term: "login (noun or adjective), log in (verb)"
+  status: ok
+  prefer: ["sign in"]
+  guidance: >-
+    For the verb, sign in is generally better.
+    Match the tool if it uses log in.
+  see: ["sign-in (noun or adjective), sign in (verb)"]
+
+- term: "lower"
+  status: caution
+  prefer: ["earlier", "later", "following"]
+  guidance: >-
+    Don't use for version ranges or document or UI position.
+
+# --- M ---
+
+- term: "macOS"
+  status: style
+  guidance: >-
+    Use a lowercase m, lowercase ac, and uppercase OS.
+    Don't write MacOS or OSX.
+
+- term: "man hours, manmade, manned, manpower"
+  status: caution
+  prefer: ["person hours", "artificial", "staffed", "workforce"]
+  guidance: >-
+    Avoid gendered terms.
+    Use a neutral equivalent.
+
+- term: "man-in-the-middle (MITM)"
+  status: caution
+  prefer: ["on-path attacker", "person-in-the-middle (PITM)"]
+  guidance: >-
+    Avoid gendered terms.
+
+- term: "Markdown"
+  status: style
+  guidance: >-
+    Always capitalized, even for a nonstandard version.
+
+- term: "master"
+  status: caution
+  prefer: ["primary", "main", "original", "controller", "leader"]
+  guidance: >-
+    Use with caution and never with slave.
+    Replace with a specific accurate term.
+    If code uses the literal word, reference the code item in code font,
+    clarify, and use the new term thereafter.
+  see: ["slave"]
+
+- term: "Material"
+  status: style
+  guidance: >-
+    Capitalize Material for the design system and Flutter widget family.
+    Write Material Design when using the full name.
+    Use code font for identifiers such as `MaterialApp`.
+
+- term: "matrix"
+  status: style
+  guidance: >-
+    Use the plural matrixes unless a domain-specific reason calls for matrices.
+
+- term: "may"
+  status: caution
+  prefer: ["can", "might"]
+  guidance: >-
+    Reserve for official policy or legal use.
+    For ability or permission, use can.
+    For possibility, use can or might.
+  see: ["can", "might"]
+
+- term: "media type"
+  status: ok
+  guidance: >-
+    Generally use media type.
+    Use content type only when referring to a content type
+    such as the Content-Type header.
+    Don't use MIME type.
+  see: ["MIME type", "content type"]
+
+- term: "method"
+  status: caution
+  guidance: >-
+    In programming contexts where method means a class member,
+    avoid using it generically to mean approach or manner.
+
+- term: "might"
+  status: ok
+  guidance: >-
+    Use to convey possibility or an uncertain outcome.
+  see: ["may", "can"]
+
+- term: "MIME type"
+  status: caution
+  prefer: ["media type"]
+  guidance: >-
+    Don't use MIME when you mean media type.
+    If MIME would help a familiar audience, write media (MIME) type.
+  see: ["media type"]
+
+- term: "mobile"
+  status: caution
+  prefer: ["mobile phone", "mobile device"]
+  guidance: >-
+    Don't use as a standalone noun.
+
+- term: "monkey, monkey test"
+  status: dont-use
+  guidance: >-
+    Don't use for people.
+    For tests, name the specific function, such as automated, random tests.
+
+- term: "must"
+  status: ok
+  guidance: >-
+    Use to describe a required action or state.
+    You can also write you need to convey a requirement.
+  see: ["can", "should, should be"]
+
+# --- N ---
+
+- term: "N/A"
+  status: style
+  guidance: >-
+    Not NA.
+    Spell out as not available or not applicable on first reference.
+
+- term: "namespace"
+  status: style
+  guidance: >-
+    One word, not name space.
+
+- term: "native"
+  status: caution
+  prefer: ["built-in"]
+  guidance: >-
+    Avoid for people.
+    In Flutter documentation,
+    native is acceptable for established platform contrasts,
+    such as native platform APIs or native code.
+    Otherwise, use a more precise term such as built-in.
+
+- term: "navigation bar"
+  status: ok
+  guidance: >-
+    Use for a UI element that provides navigation.
+    Use code font and exact capitalization for Flutter's `NavigationBar` class.
+
+- term: "neither"
+  status: style
+  guidance: >-
+    Write neither A nor B, not neither A or B.
+
+- term: "new, newer"
+  status: caution
+  prefer: ["later"]
+  guidance: >-
+    Avoid in timeless documentation.
+    If you must use new, give a reference point.
+    Don't use newer for a specific version.
+    Use later with a version number or date.
+
+- term: "ninja"
+  status: caution
+  prefer: ["expert"]
+  guidance: >-
+    Don't use for a person.
+    OK in names of companies, tools, or packages that use the term.
+
+- term: "nonce"
+  status: caution
+  guidance: >-
+    Use with caution.
+    It has a slang meaning that can confuse global readers.
+    Define on first use,
+    and limit the term to technical contexts
+    such as authentication and blockchain.
+
+- term: "NoSQL"
+  status: style
+  guidance: >-
+    Not No-SQL or No SQL.
+
+- term: "now"
+  status: caution
+  guidance: >-
+    Avoid when describing features.
+    It's implied.
+    OK for an explicit past-versus-present comparison.
+
+- term: "nuke"
+  status: dont-use
+  prefer: ["remove", "attack"]
+
+# --- O ---
+
+- term: "OAuth 2.0"
+  status: style
+  guidance: >-
+    Not OAuth 2, OAuth2, or Oauth.
+
+- term: "off-the-shelf, commercial off-the-shelf (COTS)"
+  status: caution
+  prefer: ["ready-made", "prebuilt", "standard", "default"]
+  guidance: >-
+    Use more widely understood terms.
+
+- term: "old, older"
+  status: caution
+  prefer: ["earlier"]
+  guidance: >-
+    Don't use for a previous version.
+    Use earlier with a version number.
+
+- term: "once"
+  status: caution
+  prefer: ["after"]
+  guidance: >-
+    If you mean after, use after.
+
+- term: "OS"
+  status: ok
+  guidance: >-
+    OK as a shortening of operating system.
+
+- term: "outside the box, out of the box, out-of-the-box"
+  status: caution
+  guidance: >-
+    Avoid figuratively.
+    OK to use literally.
+
+# --- P ---
+
+- term: "package"
+  status: ok
+  guidance: >-
+    In Dart, a package is a directory containing
+    libraries, resources, and a pubspec.
+    Don't use package and library interchangeably.
+
+- term: "page"
+  status: ok
+  guidance: >-
+    Use for a whole web page or a sub-page of a console.
+  see: ["documentation"]
+
+- term: "parameter"
+  status: ok
+  guidance: >-
+    In API documentation,
+    often short for query parameter:
+    a NAME=VALUE pair appended to a URL.
+    The term can have other meanings in some contexts.
+
+- term: "parent-child, parent/child"
+  status: style
+  guidance: >-
+    Use a hyphen or slash, not an em dash.
+
+- term: "path"
+  status: caution
+  guidance: >-
+    Avoid filepath, file path, pathname, or path name if possible.
+
+- term: "per"
+  status: ok
+  guidance: >-
+    Unless space is limited,
+    use per instead of a slash to express a rate,
+    as in requests per day.
+    Avoid per outside rate units.
+    Don't write as per.
+
+- term: "performant"
+  status: caution
+  guidance: >-
+    Avoid.
+    Use a more precise term such as accurate or fast.
+
+- term: "persist"
+  status: caution
+  guidance: >-
+    Don't use as a transitive verb.
+    Best to avoid as a verb.
+    Prefer persistent, as in make the token persistent.
+
+- term: "plain text, plaintext"
+  status: ok
+  guidance: >-
+    Use plain text in most contexts.
+    Use plaintext in a cryptography context.
+
+- term: "platform channel"
+  status: style
+  guidance: >-
+    Two lowercase words for the Flutter communication mechanism.
+    Use code font for API identifiers such as `MethodChannel`.
+
+- term: "please"
+  status: caution
+  guidance: >-
+    Don't use when explaining how to use a product.
+    Don't use please note.
+    Use please only when asking for permission or forgiveness.
+
+- term: "plugin"
+  status: style
+  guidance: >-
+    One word for a Flutter plugin package,
+    including before another noun.
+    Use plug in only as a verb.
+
+- term: "point to"
+  status: ok
+  guidance: >-
+    Use for moving focus with the pointer without implying a wait.
+    To imply a wait for the UI, use hold the pointer over.
+  see: ["hold the pointer over"]
+
+- term: "pop-up, popup"
+  status: dont-use
+  prefer: ["dialog", "menu"]
+  guidance: >-
+    Use dialog for a window that asks for or presents information.
+    Use menu for a menu that rises from the interface.
+
+- term: "populate"
+  status: ok
+  prefer: ["fill in"]
+  guidance: >-
+    OK for a process populating a table.
+    For a person, use fill in.
+
+- term: "possible"
+  status: caution
+  guidance: >-
+    Don't use possible or impossible to mean you can or you can't.
+
+- term: "pre-existing"
+  status: style
+  guidance: >-
+    Hyphenate, not preexisting.
+
+- term: "prebuilt"
+  status: style
+  guidance: >-
+    One word, not pre-built.
+
+- term: "preferred pronouns"
+  status: dont-use
+  prefer: ["pronouns"]
+  guidance: >-
+    Don't use.
+    Use pronouns.
+
+- term: "presently, at present"
+  status: caution
+  guidance: >-
+    Avoid.
+    It's implied and can imply a feature might change.
+  see: ["currently", "as of this writing"]
+
+- term: "press"
+  status: ok
+  guidance: >-
+    Use for pressing a key or key combination, and for mechanical buttons.
+    For on-screen and capacitive buttons, use tap.
+  see: ["tap", "click"]
+
+- term: "primitive"
+  status: caution
+  guidance: >-
+    Use with caution.
+    Don't use in a disparaging sense.
+
+- term: "pros"
+  status: dont-use
+  prefer: ["advantages"]
+  see: ["cons"]
+
+- term: "pub"
+  status: style
+  guidance: >-
+    Lowercase the name of the Dart package manager.
+    Use code font for the `pub` subcommand
+    and commands such as `dart pub` and `flutter pub`.
+    Capitalize only at the start of a sentence
+    or when matching a UI label or literal path.
+
+- term: "pub.dev"
+  status: style
+  guidance: >-
+    Lowercase.
+    Use pub.dev as link text for the site.
+    Use code font only when showing the literal hostname.
+
+- term: "pubspec, pubspec.yaml"
+  status: style
+  guidance: >-
+    Lowercase pubspec.
+    Use code font for the `pubspec.yaml` filename.
+
+# --- Q ---
+
+- term: "quick, quickly"
+  status: caution
+  guidance: >-
+    What's quick for you might not be for others.
+    Usually you can convey the same meaning without it.
+
+# --- R ---
+
+- term: "read-only"
+  status: style
+  guidance: >-
+    Always hyphenate, not read only.
+
+- term: "redline"
+  status: caution
+  guidance: >-
+    Don't use as a verb.
+    Use precise terms,
+    such as tracking changes when editing
+    or prioritizing work when planning.
+
+- term: "regex"
+  status: dont-use
+  prefer: ["regular expression"]
+
+- term: "RenderObject"
+  status: style
+  guidance: >-
+    Use exact capitalization and code font for the class.
+    Use "render object" in lowercase as two words for the general concept.
+
+- term: "repo"
+  status: dont-use
+  prefer: ["repository"]
+
+- term: "Representational State Transfer"
+  status: dont-use
+  prefer: ["REST"]
+  guidance: >-
+    Don't use.
+    Refer to REST and don't expand the acronym.
+
+- term: "retarded"
+  status: dont-use
+  prefer: ["slowed"]
+
+- term: "retriable, retryable"
+  status: caution
+  guidance: >-
+    Avoid.
+    Write around the term unless a code item uses that spelling.
+    The same guidance applies to triable and tryable.
+
+- term: "review"
+  status: ok
+  prefer: ["read"]
+  guidance: >-
+    If you mean read for the first time, use read.
+    Use review for reading critically, as in code review.
+
+- term: "RFC"
+  status: style
+  guidance: >-
+    Use a space between RFC and the number, as in RFC 2318.
+
+- term: "roll out"
+  status: caution
+  prefer: ["gradual", "in stages", "progressive"]
+  guidance: >-
+    Don't use to mean a sudden launch.
+    If used, define what you mean.
+
+- term: "RTFM"
+  status: dont-use
+  guidance: >-
+    Don't use.
+    Use a precise phrase such as For more information, see the API reference.
+
+- term: "runtime, run time"
+  status: ok
+  guidance: >-
+    Use the noun runtime for the environment in which software runs.
+    Use run time for the time during program execution,
+    as contrasted with compile time.
+
+# --- S ---
+
+- term: "sane"
+  status: dont-use
+  prefer: ["valid", "sensible"]
+
+- term: "sanity check"
+  status: dont-use
+  prefer: ["quick check", "confidence check", "coherence check"]
+
+- term: "scale"
+  status: caution
+  guidance: >-
+    Don't use alone to say something is large or increasing.
+    Add words for magnitude or direction,
+    as in scales up and scales out.
+
+- term: "screenshot (noun)"
+  status: style
+  guidance: >-
+    One word, not screen shot.
+    Don't use as a verb.
+    Use take a screenshot.
+
+- term: "scroll"
+  status: ok
+  guidance: >-
+    OK as a verb,
+    but prefer an implementation-neutral term like go to the section.
+    If used, avoid directional language like scroll up.
+
+- term: "SDK"
+  status: style
+  guidance: >-
+    Uppercase.
+    Pluralize as SDKs without an apostrophe.
+
+- term: "see"
+  status: ok
+  guidance: >-
+    OK as a general term and for links and cross-references.
+
+- term: "select"
+  status: ok
+  guidance: >-
+    Use for choosing from options, selecting text, or marking a checkbox.
+  see: ["check", "clear"]
+
+- term: "sensitive"
+  status: ok
+  guidance: >-
+    Sensitive data is data for which release might be harmful.
+  see: ["confidential"]
+
+- term: "setup (noun or adjective), set up (verb)"
+  status: style
+  guidance: >-
+    One word as a noun or adjective.
+    Two words as a verb.
+
+- term: "sexy"
+  status: dont-use
+  prefer: ["fast", "powerful", "elegant"]
+
+- term: "shall"
+  status: caution
+  guidance: >-
+    Avoid except under advice from a lawyer.
+  see: ["should, should be"]
+
+- term: "sherpa"
+  status: dont-use
+  prefer: ["guide"]
+
+- term: "shift left"
+  status: caution
+  prefer: ["shift earlier", "move to an earlier phase"]
+  guidance: >-
+    Avoid for moving something earlier in time.
+    Use a less figurative phrase.
+    OK in the context of binary multiplication and division.
+
+- term: "should, should be"
+  status: caution
+  guidance: >-
+    Generally avoid.
+    It's ambiguous.
+    See word choice for recommendations and requirements.
+  see: ["must", "can"]
+
+- term: "sign-in (noun or adjective), sign in (verb)"
+  status: style
+  prefer: ["sign in"]
+  guidance: >-
+    Not log in or signin.
+    Use sign in to, not sign into.
+  see: ["login (noun or adjective), log in (verb)"]
+
+- term: "simple, simply"
+  status: caution
+  guidance: >-
+    What's simple for you might not be for others.
+    Usually you can convey the same meaning without it.
+  see: ["just"]
+
+- term: "since"
+  status: caution
+  prefer: ["because"]
+  guidance: >-
+    If you mean because, use because.
+    Since is ambiguous.
+    It can refer to the passage of time.
+  see: ["as"]
+
+- term: "single most"
+  status: style
+  guidance: >-
+    Two words, not singlemost.
+
+- term: "slave"
+  status: dont-use
+  prefer: ["worker", "replica", "secondary", "follower"]
+  guidance: >-
+    Use alternative terms for your domain.
+    If replacing along with master,
+    choose a matching pair such as primary and replica.
+    If code uses the literal word, reference the code item in code font,
+    clarify, and use the new term thereafter.
+  see: ["master"]
+
+- term: "slice and dice"
+  status: dont-use
+  guidance: >-
+    Don't use.
+    Use specific terms, such as segment data for analysis.
+
+- term: "smartphone, smart phone"
+  status: dont-use
+  prefer: ["mobile phone", "phone", "mobile device"]
+
+- term: "soon"
+  status: caution
+  guidance: >-
+    Avoid in timeless documentation.
+    It can become outdated or disclose strategy.
+  see: ["eventually", "future, in the future"]
+
+- term: "ssh and SSH"
+  status: ok
+  guidance: >-
+    Don't use as a verb.
+    SSH is the protocol.
+    The ssh command is the utility.
+    Use code font for the utility and command.
+
+- term: "startup (noun or adjective), start up (verb)"
+  status: style
+  guidance: >-
+    One word as a noun or adjective.
+    Two words as a verb.
+
+- term: "stateful widget, stateless widget"
+  status: style
+  guidance: >-
+    Lowercase when referring to the concepts.
+    Use code font and exact capitalization for
+    `StatefulWidget` and `StatelessWidget`.
+
+- term: "style sheet, stylesheet"
+  status: ok
+  guidance: >-
+    Both spellings are acceptable.
+    Be consistent within a document.
+
+- term: "such as"
+  status: ok
+  guidance: >-
+    Introduces non-exhaustive lists, so don't combine with etc. or and more.
+  see: ["like", "etc."]
+
+- term: "surface"
+  status: caution
+  prefer: ["make available", "expose"]
+  guidance: >-
+    Avoid as a transitive verb.
+    Use a more specific term.
+
+# --- T ---
+
+- term: "tab"
+  status: ok
+  guidance: >-
+    Use tab when the interface exposes a tab.
+    Use code font and exact capitalization for Flutter's `Tab` class.
+    Don't use tab generically for any page or navigation destination.
+
+- term: "tag"
+  status: ok
+  see: ["element"]
+  guidance: >-
+    In HTML and XML, a tag marks the start or end of an element.
+    Don't use it to mean an entire element.
+
+- term: "tap"
+  status: ok
+  guidance: >-
+    Use for on-screen and capacitive buttons and for touch devices,
+    instead of click or touch.
+    For mechanical buttons, use press.
+  see: ["click", "press"]
+
+- term: "tarball"
+  status: dont-use
+  prefer: ["tar file"]
+
+- term: "target"
+  status: caution
+  prefer: ["intended for", "focused on"]
+  guidance: >-
+    Avoid as a verb, especially for people.
+    OK as an adjective in target audience,
+    but consider rephrasing.
+
+- term: "terminate"
+  status: caution
+  prefer: ["stop", "exit", "cancel", "end"]
+  guidance: >-
+    Avoid as a synonym for stop,
+    except where it has a specific technical meaning,
+    as in telephony or networking.
+
+- term: "text box, textbox"
+  status: dont-use
+  prefer: ["box", "field"]
+
+- term: "then"
+  status: ok
+  guidance: >-
+    Include helper words like then
+    in if-then statements in technical documentation.
+
+- term: "they (singular)"
+  status: ok
+  guidance: >-
+    Preferred gender-neutral pronoun.
+    Always takes the plural verb, whether singular or plural.
+  see: ["gender-neutral he, him, his"]
+
+- term: "third party (noun), third-party (adjective)"
+  status: style
+  guidance: >-
+    Two words as a noun.
+    Hyphenate as an adjective.
+    Avoid 3rd party.
+
+- term: "this, that"
+  status: caution
+  guidance: >-
+    Where possible, put a noun after this or that for clarity.
+    If you aren't sure what noun it refers to, rephrase.
+
+- term: "timeframe"
+  status: caution
+  prefer: ["period", "schedule", "deadline"]
+  guidance: >-
+    Avoid where possible.
+    If used, write as one word, not time frame.
+
+- term: "timeout (noun), time out (verb)"
+  status: style
+  guidance: >-
+    One word as a noun.
+    Two words as a verb.
+
+- term: "timestamp"
+  status: style
+  guidance: >-
+    One word, not time stamp.
+
+- term: "tl;dr"
+  status: dont-use
+  prefer: ["to summarize"]
+
+- term: "toolkit"
+  status: style
+  guidance: >-
+    One word, not tool-kit or tool kit.
+
+- term: "touchscreen"
+  status: style
+  guidance: >-
+    One word, not touch screen.
+
+- term: "traditional"
+  status: caution
+  prefer: ["conventionally"]
+  guidance: >-
+    Prefer a more precise term.
+
+- term: "transpile"
+  status: style
+  guidance: >-
+    Not transcompile.
+
+- term: "tribal knowledge"
+  status: dont-use
+  guidance: >-
+    Use a less figurative term for knowledge held by a group of people.
+
+- term: "turn on"
+  status: ok
+  prefer: ["enable"]
+  guidance: >-
+    Use turn on or enable consistently for activating an option or feature.
+  see: ["enable"]
+
+- term: "type"
+  status: caution
+  prefer: ["enter"]
+  guidance: >-
+    Generally use enter,
+    because there's often more than one way to enter text,
+    such as pasting or speaking.
+  see: ["enter"]
+
+- term: "typically"
+  status: ok
+  guidance: >-
+    Use for what's usual under normal circumstances.
+    Don't use as the first word in a sentence.
+
+# --- U ---
+
+- term: "UI"
+  status: caution
+  prefer: ["page", "console", "web interface"]
+  guidance: >-
+    Don't use generically for a page or dashboard.
+    Use a more specific term.
+
+- term: "uncheck"
+  status: dont-use
+  prefer: ["clear"]
+
+- term: "under"
+  status: caution
+  prefer: ["earlier"]
+  guidance: >-
+    Don't use for a range of version numbers or a position in the UI.
+
+- term: "Unicode"
+  status: style
+  guidance: >-
+    Not UNICODE.
+
+- term: "Unix-like"
+  status: style
+  guidance: >-
+    Not Unixlike or Unix like.
+
+- term: "unselect"
+  status: dont-use
+  prefer: ["clear", "deselect"]
+  guidance: >-
+    Use clear for checkboxes and deselect for other UI elements.
+  see: ["deselect"]
+
+- term: "unsighted"
+  status: dont-use
+  guidance: >-
+    Don't use.
+    See blind.
+  see: ["blind"]
+
+- term: "US"
+  status: style
+  guidance: >-
+    OK as an abbreviation for United States.
+    Don't use U.S. or U.S.A.
+  see: ["America, American"]
+
+- term: "user"
+  status: caution
+  prefer: ["you"]
+  guidance: >-
+    Use user only for the user of the software your reader is developing.
+    Otherwise address the reader as you.
+
+- term: "user base"
+  status: style
+  guidance: >-
+    Two words, not userbase.
+
+- term: "using"
+  status: ok
+  prefer: ["by using"]
+  guidance: >-
+    Where using could be ambiguous, use by using to clarify the logic.
+
+- term: "UTF"
+  status: style
+  guidance: >-
+    Include the hyphen in encoding names, such as UTF-8, UTF-16, and UTF-32.
+
+- term: "utilize, utilization"
+  status: caution
+  prefer: ["use"]
+  guidance: >-
+    Don't use utilize when you mean use.
+    OK when referring to the quantity of a resource being used,
+    as in CPU utilization.
+
+# --- V ---
+
+- term: "v (abbreviating version)"
+  status: style
+  guidance: >-
+    Use lowercase.
+
+- term: "via"
+  status: dont-use
+  prefer: ["through", "with", "by using"]
+
+- term: "vice versa"
+  status: dont-use
+  prefer: ["the other way around", "conversely"]
+  guidance: >-
+    Vice versa can be unclear about which two things are swapped.
+    Make the swap explicit.
+
+- term: "virtual machine (VM) instance"
+  status: ok
+  guidance: >-
+    Spell out when first introducing virtual machines on a page.
+    Afterward, use VM instance or VM.
+
+- term: "visually challenged"
+  status: dont-use
+  guidance: >-
+    Don't use.
+    See blind.
+  see: ["blind"]
+
+- term: "voila"
+  status: dont-use
+  guidance: >-
+    Don't use.
+
+- term: "voodoo"
+  status: dont-use
+  prefer: ["mysterious", "complicated", "nondeterministic"]
+
+- term: "vs."
+  status: dont-use
+  prefer: ["versus"]
+
+# --- W ---
+
+- term: "walkthrough"
+  status: style
+  guidance: >-
+    One word, not walk-through.
+
+- term: "warm"
+  status: caution
+  guidance: >-
+    Avoid jargon like warm failover, warm standby, and warm spare.
+    If used, define on first use.
+  see: ["cold", "hot"]
+
+- term: "we"
+  status: caution
+  prefer: ["you"]
+  guidance: >-
+    Don't use first-person plural to address the reader.
+    OK to use we for the authoring organization when the antecedent is clear.
+
+- term: "web"
+  status: style
+  guidance: >-
+    Lowercase.
+  see: ["World Wide Web"]
+
+- term: "web server"
+  status: style
+  guidance: >-
+    Two words, not webserver.
+
+- term: "WebAssembly, Wasm"
+  status: style
+  guidance: >-
+    Use the capitalization established in the WebAssembly specification.
+
+- term: "webmaster, web master"
+  status: dont-use
+  prefer: ["website owner", "website administrator", "web content manager"]
+
+- term: "whether"
+  status: ok
+  guidance: >-
+    Use whether instead of if for a choice between alternatives.
+    Add or not only when you mean regardless of whether.
+  see: ["if"]
+
+- term: "while"
+  status: caution
+  prefer: ["although"]
+  guidance: >-
+    Don't use to indicate a contrast.
+    Use although.
+    OK for a period of time.
+
+- term: "white glove, white-glove"
+  status: caution
+  prefer: ["high-touch", "premium", "platinum-level"]
+
+- term: "white label, white-label"
+  status: dont-use
+  prefer: ["unbranded", "unlabeled", "blank label"]
+
+- term: "white-box"
+  status: caution
+  prefer: ["introspective monitoring", "clear-box testing"]
+  guidance: >-
+    Avoid white-box, whitebox, or white box for monitoring and testing.
+    Use a more precise term.
+
+- term: "whitehat, white hat, white-hat"
+  status: dont-use
+  prefer: ["legal", "ethical", "following the rules"]
+  guidance: >-
+    Don't use.
+    Use a precise term for the kind of compliance.
+  see: ["black hat, blackhat"]
+
+- term: "whitelist, white list, white-list"
+  status: dont-use
+  prefer: ["allowlist", "trustlist", "safelist"]
+  guidance: >-
+    Don't use.
+    For the noun, use a replacement such as allowlist, trustlist, or safelist.
+  see: ["blacklist"]
+
+- term: "whitelisted, white listed, white-listed"
+  status: dont-use
+  guidance: >-
+    Don't use.
+  see: ["blacklist"]
+
+- term: "whitelisting, white listing, white-listing"
+  status: dont-use
+  guidance: >-
+    Don't use.
+  see: ["blacklist"]
+
+- term: "whitepaper"
+  status: style
+  guidance: >-
+    One word, not white paper.
+    Prefer a more precise term.
+    If used, add descriptive context.
+
+- term: "whitespace"
+  status: style
+  guidance: >-
+    One word, not white space.
+
+- term: "widget"
+  status: style
+  guidance: >-
+    Lowercase when referring to the Flutter concept.
+    Use code font and exact capitalization for the `Widget` class
+    or another widget identifier.
+
+- term: "wildcard"
+  status: style
+  guidance: >-
+    One word, not wild card.
+
+- term: "will"
+  status: caution
+  guidance: >-
+    Avoid.
+    Prefer present tense.
+    Applies equally to its past tense, would.
+  see: ["would"]
+
+- term: "wish"
+  status: dont-use
+  prefer: ["want", "need"]
+
+- term: "with"
+  status: caution
+  prefer: ["has", "by using"]
+  guidance: >-
+    Don't use with to express ownership.
+    For example, write "a handset that has 2 GB of RAM".
+    Don't use with to express use.
+    For example, write "use the tool to debug".
+
+- term: "World Wide Web"
+  status: dont-use
+  prefer: ["web"]
+
+- term: "would"
+  status: caution
+  prefer: ["can"]
+  guidance: >-
+    Avoid.
+    Use can where possible and prefer present tense.
+  see: ["can", "will"]
+
+# --- Y ---
+
+- term: "ymmv"
+  status: dont-use
+  prefer: ["Your results might vary"]
+
+- term: "you"
+  status: ok
+  guidance: >-
+    Use you, not user, to address the reader of your document.
+  see: ["user"]
+
+# --- Z ---
+
+- term: "zippy"
+  status: dont-use
+  prefer: ["expander arrow"]
+  guidance: >-
+    Don't use for expander arrows.
+  see: ["expander arrow"]
