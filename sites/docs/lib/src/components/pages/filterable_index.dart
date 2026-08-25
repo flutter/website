@@ -140,7 +140,7 @@ class _DrawerToggleButton extends StatelessComponent {
     return GlobalEventListener(
       onClick: (event) {
         final target = event.target;
-        if (target == null || target.isA<web.Element>()) return;
+        if (target == null || !target.isA<web.Element>()) return;
 
         final element = target as web.Element;
         if (element.closest(_sidebarSelector) == null &&

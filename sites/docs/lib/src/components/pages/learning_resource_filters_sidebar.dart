@@ -98,7 +98,8 @@ class LearningResourceFiltersSidebar extends StatelessComponent {
 /// Notifier to manage the state of the filters.
 class FiltersNotifier extends ChangeNotifier {
   Set<LearningResourceTag> selectedTags = {};
-  Set<LearningResourceType> selectedTypes = {};
+final Set<LearningResourceTag> selectedTags = {};
+final Set<LearningResourceType> selectedTypes = {};
 
   bool tagsExpanded = false;
 
