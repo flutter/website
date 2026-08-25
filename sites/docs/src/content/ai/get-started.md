@@ -93,10 +93,8 @@ Equip the Antigravity IDE with official Dart and Flutter tools:
 1. In the **Build with Google Plugins** section, click **Customize**.
 1. Click **Download** next to the **Dart and Flutter** integration.
 
-**Verify installation**
-
-Open the **Agent** panel (<kbd class="special-key">Cmd/Ctrl</kbd> +
-<kbd>L</kbd>) and enter the following prompt:
+To verify the installation, open the **Agent** panel
+(<kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>) and ask the agent:
 
 ```text
 Summarize the Dart and Flutter tools and skills available in this project.
