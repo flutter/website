@@ -107,34 +107,31 @@ Summarize the Dart and Flutter tools and skills available in this project.
 <Tab name="Claude Code">
 
 [Claude Code](https://code.claude.com/) is an agentic coding assistant from
-Anthropic that runs directly in your terminal.
+Anthropic that runs in your terminal.
 
 **Install the official plugin**
 
-To equip Claude Code with official Flutter skills and MCP server support:
+Equip Claude Code with official Flutter and Dart skills and MCP configuration:
 
-1. Add the Dart and Flutter MCP server to your Claude Code configuration:
+1. Add the marketplace for Claude Code plugins:
 
    ```bash
-   claude mcp add dart-mcp-server -- dart mcp-server
+   claude plugin marketplace add flutter/agent-plugins
    ```
 
-1. Install the official Flutter skills into your workspace:
+1. Install the Flutter and Dart plugin:
 
    ```bash
-   npx skills add flutter/agent-plugins --skill '*' --yes
+   claude plugin install dart-flutter@dart-flutter
    ```
 
 **Verify installation**
 
-Start Claude Code in your project directory:
+Verify that the plugin is active in Claude Code:
 
 ```bash
-claude
+claude plugin marketplace list
 ```
-
-Run `/mcp` or `/skills` inside Claude Code to verify that `dart-mcp-server` and
-Flutter skills are loaded.
 
 </Tab>
 
