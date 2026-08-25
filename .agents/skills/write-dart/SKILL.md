@@ -56,8 +56,8 @@ Apply these high-frequency rules while writing.
 
 ### Null safety and immutability
 
-- When possible,
-  make fields and top-level variables `final`.
+- Prefer `final` over `var` for variables that aren't reassigned,
+  including locals, fields, and top-level variables.
 - When a constructor supports it,
   make the constructor `const`.
 - Use `late` when initialization genuinely happens after construction

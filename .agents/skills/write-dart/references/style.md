@@ -67,8 +67,6 @@ export 'src/public_api.dart';
 1.  Relative imports after.
 1.  All `export` directives in a separate, final section.
 
-The `directives_ordering` lint enforces this.
-
 ## Formatting
 
 - **DO** format all code with `dart format`.

@@ -92,9 +92,8 @@ Use these language features effectively inside implementations.
 
 ## Variables
 
-- **DO** follow one rule for `var` versus `final` locals.
-  The `prefer_final_locals` lint means `final` wherever it applies.
-  Otherwise, match surrounding code.
+- **PREFER** `final` over `var` for locals that aren't reassigned.
+  Use `var` when a local needs reassignment.
 - **AVOID** storing what you can calculate.
   Caching can introduce invalidation bugs.
   Compute derived values in a getter until profiling shows a need to cache them.
