@@ -191,14 +191,6 @@ In your Flutter project root, install official skills using the universal flag:
 npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
 ```
 
-**Configure workspace rules**
-
-To provide Copilot with persistent project conventions, add instructions to
-`.github/copilot-instructions.md`. You can download the recommended
-[Flutter SDK rules template](
-https://github.com/flutter/flutter/blob/main/docs/rules/rules.md)
-as a starting point.
-
 </Tab>
 
 <Tab name="Codex">
