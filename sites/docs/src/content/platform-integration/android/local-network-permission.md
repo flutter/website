@@ -83,8 +83,8 @@ Future<void> connectToLocalDevice({
 
     if (status.isPermanentlyDenied) {
       // The user opted not to grant permission and checked "Don't ask again".
-      // Direct the user to app settings to grant the permission manually.
-      await openAppSettings();
+      // In a real app, show an explanation dialog before calling openAppSettings().
+      debugPrint('Permission permanently denied. Please enable it in settings.');
       return;
     }
 
