@@ -65,14 +65,14 @@ sessions, by sundown on the day the videos were released,
 we had a Gemini-produced triage document with early signal on every session.
 For example, our system recognized that we could largely ignore a SwiftData
 session because Flutter handles persistence differently.
-Separately, it flagged a "Modernize your UIKit app" talk as critical \[1\]
+Separately, it flagged a "Modernize your UIKit app" talk as critical [1]
 for the Flutter Engine team because it described mandatory changes
-to the `UIScene` \[2\] lifecycle API.
+to the `UIScene` [2] lifecycle API.
 
-> \[1\] To see everything important for Flutter,
+> [1] To see everything important for Flutter,
 we do physically pop some popcorn and watch each session that Gemini flags
 in this way.  
-> \[2\] More on the `UIScene` API later!
+> [2] More on the `UIScene` API later!
 
 By sun-up the next morning,
 Flutter's iOS team was officially in its crunch period.
