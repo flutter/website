@@ -49,8 +49,6 @@ you can [remove CocoaPods integration][removeCocoaPods].
 do not support Swift Package Manager.**
 Ensure that all plugins in your project support Swift Package Manager
 before removing CocoaPods.
-When all Flutter plugins in your project support Swift Package Manager,
-you can remove CocoaPods integration completely from your project.
 
 :::note
 If you have manually edited your `Podfile` to add CocoaPod
