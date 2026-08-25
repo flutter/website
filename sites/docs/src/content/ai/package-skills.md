@@ -64,7 +64,7 @@ releases to teach AI assistants how to use their libraries correctly.
 
 ### Example `SKILL.md` structure
 
-```markdown
+````markdown
 ---
 name: my_package-error-handling
 description: >-
@@ -87,7 +87,7 @@ try {
   return FallbackData();
 }
 ```
-```
+````
 
 ---
 
