@@ -49,32 +49,39 @@ and configure tools for Flutter development.
 
 <Tab name="Antigravity">
 
-[Antigravity](https://antigravity.google/) is a suite of agentic development
-tools built by Google that includes the Antigravity CLI and Antigravity IDE.
+[Antigravity](https://antigravity.google/) is an agentic development platform
+by Google that includes the Antigravity CLI and Antigravity IDE.
 
 **Antigravity CLI**
 
-Equip Antigravity CLI with official Dart and Flutter tools:
+The Antigravity CLI runs as the `agy` command in your terminal.
 
-1. In your Flutter project directory, add the Flutter plugin:
+1. Configure the Dart and Flutter MCP server in your Antigravity MCP
+   configuration file (such as `~/.antigravity/mcp_config.json` or
+   `.antigravity/mcp.json`):
 
-   ```bash
-   antigravity plugins add flutter
+   ```json
+   {
+     "mcpServers": {
+       "dart": {
+         "command": "dart",
+         "args": ["mcp-server"]
+       }
+     }
+   }
    ```
 
-1. Ensure the Dart SDK is available on your `PATH` so Antigravity can
-   automatically start the Dart and Flutter MCP server (`dart mcp-server`).
+1. Install official Flutter skills into your workspace:
 
-**Verify installation**
+   ```bash
+   npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
+   ```
 
-Start an interactive session:
+1. Start an interactive session in your project root:
 
-```bash
-antigravity
-```
-
-Inside the prompt, enter `/tools` or ask the assistant to list its available
-MCP tools and skills.
+   ```bash
+   agy
+   ```
 
 **Antigravity IDE**
 
