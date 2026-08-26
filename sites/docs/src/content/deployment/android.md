@@ -37,7 +37,7 @@ substitute `[project]` with your app's directory.
 ## Add a launcher icon
 
 When a new Flutter app is created, it has a default launcher icon.
-To learn about customizing this icon, see the
+To learn about customizing this icon, check out the
 [flutter_launcher_icons][] package.
 
 Alternatively, you can do it manually using the following steps:
@@ -340,7 +340,7 @@ You might need to run `flutter clean` after changing the Gradle file.
 This prevents cached builds from affecting the signing process.
 :::
 
-To learn about signing your app, see
+To learn about signing your app, check out
 [Sign your app][] on the Android developer docs.
 
 [Sign your app]: {{site.android-dev}}/studio/publish/app-signing.html#generate-key
@@ -365,7 +365,7 @@ attacks that make use of quantum computing.
   Note that you must create a new classical key;
   you cannot reuse the older one.
 
-For details, see the
+For details, consult the
 [Android documentation on PQC APK signing][android-doc].
 
 [android-doc]: {{site.android-dev}}/about/versions/17/features#pqc-apk-signing
@@ -383,7 +383,7 @@ the compile time of an Android application.
 
 The `--[no-]shrink` flag has no effect.
 Code shrinking is always enabled in release builds.
-For details, see [Shrink, obfuscate, and optimize your app][].
+For details, visit [Shrink, obfuscate, and optimize your app][].
 :::
 
 [R8]: {{site.android-dev}}/studio/build/shrink-code
@@ -575,7 +575,7 @@ publishing to the Play Store.
 
 :::note
 The Google Play Store prefers the app bundle format.
-To learn about Android App Bundles, see
+To learn about Android App Bundles, visit
 [About Android App Bundles][bundle].
 :::
 
@@ -689,7 +689,7 @@ From the command line:
 ## Publish to the Google Play Store
 
 To learn about publishing your app to the Google Play Store,
-see the [Google Play launch][play] documentation.
+consult the [Google Play launch][play] documentation.
 
 ## Update the app's version number
 
@@ -711,7 +711,7 @@ Flutter's build by specifying `--build-name` and `--build-number`, respectively.
 
 In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For details,
-see [Version your app][] in the Android documentation.
+refer to [Version your app][] in the Android documentation.
 
 When you rebuild the app for Android, any updates in
 the version number from the pubspec file will
@@ -809,7 +809,7 @@ Run `apkanalyzer manifest print <SOME-APK>` and look for a `<meta-data>`
 tag with `android:name="flutterEmbedding"`.
 The value can be `1` or `2`.
 
-The following command,
+This command,
 `apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2`,
 returns the following output:
 ```
