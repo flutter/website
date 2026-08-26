@@ -8,9 +8,9 @@ structural edits, and full reviews in `sites/www/content/blog/`.
 Each post uses this structure:
 
 ```text
-sites/www/content/blog/<stable-kebab-case-slug>/
-|-- index.md
-`-- images/
+- sites/www/content/blog/<stable-kebab-case-slug>/
+  - index.md
+  - images/
 ```
 
 The directory name becomes the public URL path, like `/blog/<slug>`.
