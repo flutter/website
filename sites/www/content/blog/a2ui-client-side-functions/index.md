@@ -246,4 +246,3 @@ Ready to try GenUI and client-side functions in your own apps?
   to inspect the complete source code for Commis and other Dart GenUI samples.
 
 Happy building!
-)
