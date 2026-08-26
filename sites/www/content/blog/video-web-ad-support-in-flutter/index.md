@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-12-17
 author: zoeyfan
 image: images/0xsAbaMexfbR30wgK.webp
-category: announcement
+category: news
 layout: blog
 ---
 

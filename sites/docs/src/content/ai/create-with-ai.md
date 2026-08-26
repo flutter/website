@@ -1,6 +1,5 @@
 ---
 title: Create with AI
-sidenav: ai
 description: >
   Learn how to use AI to build Flutter apps, and how to build AI experiences
   into your apps.

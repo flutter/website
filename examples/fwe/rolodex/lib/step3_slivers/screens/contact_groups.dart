@@ -71,9 +71,8 @@ class _ContactGroupsView extends StatelessWidget {
 
   // #docregion build_trailing
   Widget _buildTrailing(List<Contact> contacts, BuildContext context) {
-    final TextStyle style = CupertinoTheme.of(
-      context,
-    ).textTheme.textStyle.copyWith(color: CupertinoColors.systemGrey);
+    final TextStyle style = CupertinoTheme.of(context).textTheme.textStyle
+        .copyWith(color: CupertinoColors.systemGrey);
 
     return Row(
       mainAxisSize: MainAxisSize.min,

@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-07-17
 author: kf6gpe
 image: images/0E-lTv57-czvPhZre.webp
-category: engineering
+category: case-study
 layout: blog
 ---
 

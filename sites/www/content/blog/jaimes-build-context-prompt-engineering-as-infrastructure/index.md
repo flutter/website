@@ -6,7 +6,7 @@ description: >-
 publishDate: 2026-01-23
 author: jwren
 image: images/1HNqQFQ2hdhAgjew1pIMqXA.webp
-category: engineering
+category: deep-dive
 layout: blog
 ---
 
