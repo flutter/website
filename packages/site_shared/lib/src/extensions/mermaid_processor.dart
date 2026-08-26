@@ -4,7 +4,7 @@
 
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../../components/common/client/mermaid_diagram.dart';
+import '../../components/common/mermaid_diagram.dart';
 
 final class MermaidProcessor implements PageExtension {
   const MermaidProcessor();
@@ -24,7 +24,7 @@ final class MermaidProcessor implements PageExtension {
             ...,
           ],
         ))
-          ComponentNode(MermaidViewer(diagram: diagram))
+          ComponentNode(MermaidDiagram(diagram: diagram))
         else if (node is ElementNode)
           ElementNode(
             node.tag,

@@ -30,8 +30,6 @@ import 'package:site_shared/components/common/client/download_button.dart'
     deferred as _download_button;
 import 'package:site_shared/components/common/client/feedback.dart'
     deferred as _feedback;
-import 'package:site_shared/components/common/client/mermaid_diagram.dart'
-    deferred as _mermaid_diagram;
 import 'package:site_shared/components/common/client/on_this_page_button.dart'
     deferred as _on_this_page_button;
 import 'package:site_shared/components/common/client/page_header_options.dart'
@@ -141,10 +139,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
     'site_shared:feedback': ClientLoader(
       (p) => _feedback.FeedbackComponent(issueUrl: p['issueUrl'] as String),
       loader: _feedback.loadLibrary,
-    ),
-    'site_shared:mermaid_diagram': ClientLoader(
-      (p) => _mermaid_diagram.MermaidViewer(diagram: p['diagram'] as String),
-      loader: _mermaid_diagram.loadLibrary,
     ),
     'site_shared:on_this_page_button': ClientLoader(
       (p) => _on_this_page_button.OnThisPageButton(),

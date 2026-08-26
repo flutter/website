@@ -12,13 +12,29 @@
   border: 1px solid var(--site-outline-variant);
   border-radius: var(--site-radius);
 
-  // Fallback while loading or during SSR
+  // Fallback shown only if server rendering the diagram failed
   pre.mermaid {
     margin: 0;
     padding: 0;
     background: transparent;
     border: none;
     font-family: var(--site-code-fontFamily);
+  }
+
+  // Both theme variants are rendered on the server; show only the one
+  // matching the site's current theme.
+  .mermaid-theme-dark {
+    display: none;
+  }
+
+  @at-root body.dark-mode & {
+    .mermaid-theme-light {
+      display: none;
+    }
+
+    .mermaid-theme-dark {
+      display: block;
+    }
   }
 
   // Rendered SVG styling

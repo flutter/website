@@ -66,8 +66,10 @@ flowchart LR
 
 ### Style Mermaid diagrams
 
-Mermaid diagrams automatically adapt to the site's light and dark themes
-and inherit the default `Google Sans Flex` typography.
+Mermaid diagrams are rendered to SVG on the server, once for each theme.
+Both variants ship in the page and CSS shows the one matching the site's
+current light or dark theme. Diagrams inherit the default
+`Google Sans Flex` typography.
 
 #### In-diagram styling (Recommended)
 
@@ -90,9 +92,9 @@ edit [`_mermaid.scss`][]:
 .mermaid-container {
   // Container styling (padding, margins, background, border)
 
-  // Fallback while loading or during SSR
+  // Fallback shown only if server rendering the diagram failed
   pre.mermaid {
-    // Pre-loading styles
+    // Fallback styles
   }
 
   svg {

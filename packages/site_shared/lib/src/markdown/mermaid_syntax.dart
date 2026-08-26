@@ -17,8 +17,8 @@ import 'package:markdown/markdown.dart' as md;
 /// ````
 ///
 /// This renders as a `<div class="mermaid-container">` containing
-/// a `<pre class="mermaid">` element that hydrates on the client
-/// via [MermaidViewer].
+/// a `<pre class="mermaid">` element with the diagram source, which
+/// `MermaidProcessor` replaces with a server-rendered `MermaidDiagram`.
 final class MermaidBlockSyntax extends md.BlockSyntax {
   const MermaidBlockSyntax();
 
