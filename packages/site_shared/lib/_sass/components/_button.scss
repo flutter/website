@@ -41,6 +41,11 @@ button {
     cursor: pointer;
   }
 
+  &.compact-button {
+    gap: 0.2rem;
+    padding: 0.25rem 0.65rem;
+  }
+
   &.filled-button {
     background-color: var(--site-filledButton-bgColor);
     color: var(--site-filledButton-fgColor);

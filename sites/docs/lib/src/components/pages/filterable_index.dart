@@ -2,8 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-/// The shell components shared by the filterable index pages:
-/// the learning resources index and the critical user journey index.
+/// Reusable shell components for filterable index pages.
 ///
 /// The pages provide their own filter controls and results list,
 /// but the surrounding layout, search field, and sidebar are the same,
@@ -12,13 +11,14 @@ library;
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/common/button.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/common/search.dart';
 import 'package:site_shared/components/utils/global_event_listener.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
-/// The right hand column of a filterable index page.
+/// The right-hand column of a filterable index page.
 ///
 /// Renders [children] within a card titled 'Filter by', with [footer] pinned
 /// below it. On narrow screens the card and footer become a drawer that slides
@@ -31,7 +31,7 @@ class FiltersSidebar extends StatelessComponent {
     super.key,
   });
 
-  /// The id of the checkbox that toggles the drawer on narrow screens.
+  /// The ID of the checkbox that toggles the drawer on narrow screens.
   final String drawerToggleId;
 
   /// The filter controls, rendered within the filter card.
@@ -85,14 +85,14 @@ class FilterSearchGroup extends StatelessComponent {
     required this.label,
     required this.value,
     required this.onInput,
-    required this.children,
+    this.children = const [],
     super.key,
   });
 
-  /// The id of the checkbox that toggles the [FiltersSidebar] drawer.
+  /// The ID of the checkbox that toggles the [FiltersSidebar] drawer.
   final String drawerToggleId;
 
-  /// The id of the search field, so the page can label it.
+  /// The ID of the search field, so the page can label it.
   final String searchId;
 
   /// The placeholder text displayed in the search field.
@@ -132,9 +132,10 @@ class FilterSearchGroup extends StatelessComponent {
 class _DrawerToggleButton extends StatelessComponent {
   const _DrawerToggleButton(this._drawerToggleId);
 
-  /// The id of the checkbox that this button toggles.
+  /// The ID of the checkbox that this button toggles.
   final String _drawerToggleId;
 
+  /// The checkbox that controls the drawer, if present.
   web.HTMLInputElement? get _toggle =>
       web.document.getElementById(_drawerToggleId) as web.HTMLInputElement?;
 
@@ -142,6 +143,9 @@ class _DrawerToggleButton extends StatelessComponent {
   Component build(BuildContext context) {
     return GlobalEventListener(
       onClick: (event) {
+        final toggle = _toggle;
+        if (toggle == null || !toggle.checked) return;
+
         final target = event.target;
         if (target == null || !target.isA<web.Element>()) return;
 
@@ -150,18 +154,18 @@ class _DrawerToggleButton extends StatelessComponent {
         // including in the sidebar footer.
         if (element.closest('.filter-sidebar') == null &&
             element.closest('.show-filters-button') == null) {
-          _toggle?.checked = false;
+          toggle.checked = false;
         }
       },
-      button(
-        classes: 'icon-button show-filters-button',
+      Button(
+        icon: 'filter_list',
+        classes: const ['show-filters-button'],
         attributes: const {'aria-label': 'Show filters'},
         onClick: () {
           if (_toggle case final toggle?) {
             toggle.checked = !toggle.checked;
           }
         },
-        const [MaterialIcon('filter_list')],
       ),
     );
   }
