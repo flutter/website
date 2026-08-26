@@ -37,8 +37,10 @@ They're sorted by release and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Added enabled property and made onChanged optional for DropdownButton][]
+* [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
 
 [Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
+[Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 
 <a id="released-in-flutter-347" aria-hidden="true"></a>
 ### Released in Flutter 3.47
