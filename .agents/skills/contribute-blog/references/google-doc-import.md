@@ -96,4 +96,4 @@ that prevents the post from being ready.
 
 Finish with the format and accessibility checks in
 [Flutter blog post format](post-format.md)
-and the validation workflow in the parent skill.
+and the validation workflow in the [parent skill](../SKILL.md).

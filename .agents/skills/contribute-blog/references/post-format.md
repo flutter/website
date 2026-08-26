@@ -51,11 +51,11 @@ layout: blog
   Preserve it when editing an existing post unless a date change is requested.
 
 `author` (required)
-: An author ID from `authors.yaml`,
-  or an ordered list of IDs for multiple authors.
+: One or more author IDs from `sites/www/content/blog/authors.yaml`.
+  To set up authors, follow [Manage blog authors](authors.md).
 
 `category` (required)
-: A valid category slug from `data.yaml`.
+: A valid category slug from `sites/www/content/blog/data.yaml`.
   Current categories include `release`, `news`, `deep-dive`, and `case-study`.
 
 `layout` (required)
