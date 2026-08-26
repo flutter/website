@@ -12,12 +12,12 @@ import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.d
     deferred as _os_selector;
 import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     deferred as _pagenav;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj/cuj_filters.dart'
+    deferred as _cuj_filters;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj/cuj_filters_sidebar.dart'
+    deferred as _cuj_filters_sidebar;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     deferred as _archive_table;
-import 'package:docs_flutter_dev_site/src/components/pages/cuj_filters.dart'
-    deferred as _cuj_filters;
-import 'package:docs_flutter_dev_site/src/components/pages/cuj_filters_sidebar.dart'
-    deferred as _cuj_filters_sidebar;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
     deferred as _glossary_search_section;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'

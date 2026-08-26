@@ -7,9 +7,9 @@ import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/common/button.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../../models/cuj_model.dart';
+import '../../../models/cuj_model.dart';
 import 'cuj_filters_sidebar.dart';
-import 'filterable_index.dart';
+import '../filterable_index.dart';
 
 /// The id of the search field, so its result count can label it.
 const _searchId = 'cuj-search';

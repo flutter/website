@@ -8,7 +8,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/button.dart';
 import 'package:site_shared/components/common/card.dart';
 
-import '../../models/cuj_model.dart';
+import '../../../models/cuj_model.dart';
 import 'cuj_filters.dart';
 import 'cuj_filters_sidebar.dart';
 

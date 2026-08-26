@@ -6,9 +6,9 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/common/button.dart';
 
-import '../../models/cuj_model.dart';
+import '../../../models/cuj_model.dart';
 import 'cuj_filters.dart';
-import 'filterable_index.dart';
+import '../filterable_index.dart';
 
 // TODO(ewindmill): Replace with the real feedback destination once it exists.
 const _feedbackUrl = 'https://github.com/flutter/evals/issues';
