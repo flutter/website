@@ -55,7 +55,7 @@ releases to teach AI assistants how to use their libraries correctly.
 
 1. Create a `skills/` directory in the root of your package repository.
 2. Inside `skills/`, create a subdirectory prefixed with your package name (for
-   example, `skills/my_package_network/`).
+   example, `skills/my-package-network/`).
 3. Add a `SKILL.md` file containing YAML frontmatter (`name`, `description`)
    and step-by-step markdown instructions.
 4. Verify that the `skills/` directory is not excluded in your `.pubignore`
