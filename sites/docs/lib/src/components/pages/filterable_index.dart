@@ -18,18 +18,6 @@ import 'package:site_shared/components/utils/global_event_listener.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
-/// The id of the hidden checkbox that opens and closes the filter sidebar
-/// while it is a drawer on narrow screens.
-///
-/// The drawer is CSS-only: `_filterable-index.scss` keys off the checkbox's
-/// `:checked` state, and the close button within the sidebar is a `<label>`
-/// pointing back at it.
-const _drawerToggleId = 'open-filter-toggle';
-
-/// Selects the whole sidebar, so that clicks anywhere within the open drawer,
-/// including in its [FiltersSidebar.footer], don't close it.
-const _sidebarSelector = '.filter-sidebar';
-
 /// The right hand column of a filterable index page.
 ///
 /// Renders [children] within a card titled 'Filter by', with [footer] pinned
@@ -37,10 +25,14 @@ const _sidebarSelector = '.filter-sidebar';
 /// in from the right, toggled by the [FilterSearchGroup] search field.
 class FiltersSidebar extends StatelessComponent {
   const FiltersSidebar({
+    required this.drawerToggleId,
     required this.children,
     this.footer = const [],
     super.key,
   });
+
+  /// The id of the checkbox that toggles the drawer on narrow screens.
+  final String drawerToggleId;
 
   /// The filter controls, rendered within the filter card.
   final List<Component> children;
@@ -51,19 +43,23 @@ class FiltersSidebar extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return div(classes: 'right-col', [
-      const input(
+      input(
         type: InputType.checkbox,
-        id: _drawerToggleId,
-        attributes: {'hidden': 'true'},
+        id: drawerToggleId,
+        classes: 'filter-drawer-toggle',
+        attributes: const {'hidden': 'true'},
       ),
       div(classes: 'filter-sidebar', [
         div(classes: 'filter-group-wrapper', [
           div(classes: 'filter-group', [
-            const div(classes: 'filter-header', [
+            div(classes: 'filter-header', [
               label(
-                attributes: {'for': _drawerToggleId, 'aria-hidden': 'true'},
+                attributes: {
+                  'for': drawerToggleId,
+                  'aria-hidden': 'true',
+                },
                 classes: 'close-icon',
-                [MaterialIcon('close')],
+                const [MaterialIcon('close')],
               ),
             ]),
             const div(classes: 'table-title', [.text('Filter by')]),
@@ -83,6 +79,7 @@ class FiltersSidebar extends StatelessComponent {
 /// that opens the [FiltersSidebar] drawer.
 class FilterSearchGroup extends StatelessComponent {
   const FilterSearchGroup({
+    required this.drawerToggleId,
     required this.searchId,
     required this.placeholder,
     required this.label,
@@ -91,6 +88,9 @@ class FilterSearchGroup extends StatelessComponent {
     required this.children,
     super.key,
   });
+
+  /// The id of the checkbox that toggles the [FiltersSidebar] drawer.
+  final String drawerToggleId;
 
   /// The id of the search field, so the page can label it.
   final String searchId;
@@ -119,7 +119,7 @@ class FilterSearchGroup extends StatelessComponent {
         value: value,
         id: searchId,
         onInput: onInput,
-        trailing: const _DrawerToggleButton(),
+        trailing: _DrawerToggleButton(drawerToggleId),
       ),
       ...children,
     ]);
@@ -130,9 +130,12 @@ class FilterSearchGroup extends StatelessComponent {
 ///
 /// Also closes the drawer again when anything outside of it is clicked.
 class _DrawerToggleButton extends StatelessComponent {
-  const _DrawerToggleButton();
+  const _DrawerToggleButton(this._drawerToggleId);
 
-  static web.HTMLInputElement? get _toggle =>
+  /// The id of the checkbox that this button toggles.
+  final String _drawerToggleId;
+
+  web.HTMLInputElement? get _toggle =>
       web.document.getElementById(_drawerToggleId) as web.HTMLInputElement?;
 
   @override
@@ -143,7 +146,9 @@ class _DrawerToggleButton extends StatelessComponent {
         if (target == null || !target.isA<web.Element>()) return;
 
         final element = target as web.Element;
-        if (element.closest(_sidebarSelector) == null &&
+        // Keep the drawer open for clicks anywhere within it,
+        // including in the sidebar footer.
+        if (element.closest('.filter-sidebar') == null &&
             element.closest('.show-filters-button') == null) {
           _toggle?.checked = false;
         }

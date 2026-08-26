@@ -19,6 +19,9 @@ import 'learning_resource_filters_sidebar.dart';
 class LearningResourceFilters extends StatefulComponent {
   const LearningResourceFilters({super.key});
 
+  /// The id of the checkbox that toggles the filter drawer on narrow screens.
+  static const drawerToggleId = 'learning-resource-filter-toggle';
+
   @override
   State<LearningResourceFilters> createState() =>
       _LearningResourceFiltersState();
@@ -121,6 +124,7 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
   @override
   Component build(BuildContext context) {
     return FilterSearchGroup(
+      drawerToggleId: LearningResourceFilters.drawerToggleId,
       searchId: 'resource-search',
       placeholder: 'Try "button" or "networking"...',
       label: 'Search learning resources by name and category',
