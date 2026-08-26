@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "_site",
+    "public": "build/jaspr",
     "cleanUrls": true,
     "trailingSlash": false,
     "ignore": [
@@ -361,6 +361,7 @@
       { "source": "/go/build-dashboard-v2", "destination": "https://docs.google.com/document/d/1kwh48xYuoVtadYFb2I2t6BJMGEW07K7T5WYcieAZZiY", "type": 301 },
       { "source": "/go/build-flows", "destination": "https://docs.google.com/document/d/1imsVxbeAsttTi90EFpbnbVzov9z0xXd7tLCAr_QAJ38", "type": 301 },
       { "source": "/go/buildtextspan-buildcontext", "destination": "https://docs.google.com/document/d/1nr-g45gXcWTYoW9UmChZV7Ije3lKP4pEvDQCdz6NFdI/edit?usp=sharing", "type": 301 },
+      { "source": "/go/bump-dart-3-13", "destination": "https://docs.google.com/document/d/1N_oeyMHmapsoXuBxVNURtiDTWDwZAN6S0XbsWLobhEs/edit?usp=sharing", "type": 301 },
       { "source": "/go/cacheless-shared-preferences", "destination": "https://docs.google.com/document/d/1DNhUYIJaDA10g2cOqipKyPuPkgL_FYPfgkF9Coqcc6k/edit?usp=sharing", "type": 301 },
       { "source": "/go/calculating-flutter-frame-rate", "destination": "https://docs.google.com/document/d/1YGLELXWdC6YIN03QzEzcIRJc56gCnabPBW8BHCAFR58/edit", "type": 301 },
       { "source": "/go/camera-privacy", "destination": "https://docs.google.com/document/d/1t_5FYzOTlBWC6arHc4_8VuG0BUOtIyP9xWvbDER5Y9I/edit", "type": 301 },
@@ -689,6 +690,7 @@
       { "source": "/go/pull-request-revert-api", "destination": "https://docs.google.com/document/d/1mVVetlCjv9PM5gtg57nipDFd5TvWsd24rXPWS0FzVvE/edit?usp=sharing&resourcekey=0-McwG6wn0s6YQ7qxHffkcdw", "type": 301 },
       { "source": "/go/pull-request-revert-api-v2", "destination": "https://docs.google.com/document/d/1lfPVtrq_6YB-I6bEHEXRPeJCE32EvKxx-nSYmLpJIYI/edit?usp=sharing&resourcekey=0-BZghqoHCZBXuoQ2alTyRiw", "type": 301 },
       { "source": "/go/rasterizer-pipeline-improvements", "destination": "https://docs.google.com/document/d/1Hg5Wfx8JTgYmLboxFRr5DDd9EfdrdEuMbNGGMvDjd6E/edit?usp=sharing", "type": 301 },
+      { "source": "/go/redesign-renderparagraph-semantics", "destination": "https://docs.google.com/document/d/1n3SyjCbKkigO_WEungwZBYcIHk58udGfwyWpR1S_5uo/edit?usp=sharing", "type": 301 },
       { "source": "/go/reduce-ci-tests", "destination": "https://docs.google.com/document/d/1-HRz-dXoIKjEgbCs9CF2-TO_3wSFK-V4ispXg-IoarY/edit?usp=sharing", "type": 301 },
       { "source": "/go/reference-plugin", "destination": "https://docs.google.com/document/d/1NJFbRMVxVL9YS_FcWi7W08DsBr_eRAJtQI9FQkk9MXk/edit", "type": 301 },
       { "source": "/go/registered-actions", "destination": "https://docs.google.com/document/d/1RrAWQ-rq-XcrjJx4Jegn8NdJKNHfLem6MkAJrI8Q_1w/edit?usp=sharing", "type": 301 },
@@ -905,7 +907,7 @@
       { "source": "/to/review-gradle-config", "destination": "/deployment/android#review-the-gradle-build-configuration", "type": 301 },
       { "source": "/to/roadmap", "destination": "https://github.com/flutter/flutter/blob/main/docs/roadmap/Roadmap.md", "type": 301 },
       { "source": "/to/save-layer-perf", "destination": "/perf/best-practices#use-savelayer-thoughtfully", "type": 301 },
-      { "source": "/to/site-redirects", "destination": "https://github.com/flutter/website/blob/main/firebase.json", "type": 301 },
+      { "source": "/to/site-redirects", "destination": "https://github.com/flutter/website/blob/main/sites/docs/firebase.json", "type": 301 },
       { "source": "/to/spm", "destination": "/packages-and-plugins/swift-package-manager", "type": 301 },
       { "source": "/to/state-management-sample", "destination": "/data-and-backend/state-mgmt/simple", "type": 301 },
       { "source": "/to/switch-flutter-version", "destination": "/install/upgrade#switch-to-a-specific-flutter-version", "type": 301 },

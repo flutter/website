@@ -2,8 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-/// The shell components shared by the filterable index pages:
-/// the learning resources index and the critical user journey index.
+/// Reusable shell components for filterable index pages.
 ///
 /// The pages provide their own filter controls and results list,
 /// but the surrounding layout, search field, and sidebar are the same,
@@ -12,34 +11,28 @@ library;
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/common/button.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/common/search.dart';
 import 'package:site_shared/components/utils/global_event_listener.dart';
+import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
-/// The id of the hidden checkbox that opens and closes the filter sidebar
-/// while it is a drawer on narrow screens.
-///
-/// The drawer is CSS-only: `_filterable-index.scss` keys off the checkbox's
-/// `:checked` state, and the close button within the sidebar is a `<label>`
-/// pointing back at it.
-const _drawerToggleId = 'open-filter-toggle';
-
-/// Selects the whole sidebar, so that clicks anywhere within the open drawer,
-/// including in its [FiltersSidebar.footer], don't close it.
-const _sidebarSelector = '.filter-sidebar';
-
-/// The right hand column of a filterable index page.
+/// The right-hand column of a filterable index page.
 ///
 /// Renders [children] within a card titled 'Filter by', with [footer] pinned
 /// below it. On narrow screens the card and footer become a drawer that slides
 /// in from the right, toggled by the [FilterSearchGroup] search field.
 class FiltersSidebar extends StatelessComponent {
   const FiltersSidebar({
+    required this.drawerToggleId,
     required this.children,
     this.footer = const [],
     super.key,
   });
+
+  /// The ID of the checkbox that toggles the drawer on narrow screens.
+  final String drawerToggleId;
 
   /// The filter controls, rendered within the filter card.
   final List<Component> children;
@@ -50,22 +43,26 @@ class FiltersSidebar extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return div(classes: 'right-col', [
-      const input(
+      input(
         type: InputType.checkbox,
-        id: _drawerToggleId,
-        attributes: {'hidden': 'true'},
+        id: drawerToggleId,
+        classes: 'filter-drawer-toggle',
+        attributes: const {'hidden': 'true'},
       ),
       div(classes: 'filter-sidebar', [
         div(classes: 'filter-group-wrapper', [
           div(classes: 'filter-group', [
-            const div(classes: 'filter-header', [
+            div(classes: 'filter-header', [
+              const div(classes: 'table-title', [.text('Filter by')]),
               label(
-                attributes: {'for': _drawerToggleId, 'aria-hidden': 'true'},
+                attributes: {
+                  'for': drawerToggleId,
+                  'aria-hidden': 'true',
+                },
                 classes: 'close-icon',
-                [MaterialIcon('close')],
+                const [MaterialIcon('close')],
               ),
             ]),
-            const div(classes: 'table-title', [.text('Filter by')]),
             ...children,
           ]),
         ]),
@@ -82,21 +79,32 @@ class FiltersSidebar extends StatelessComponent {
 /// that opens the [FiltersSidebar] drawer.
 class FilterSearchGroup extends StatelessComponent {
   const FilterSearchGroup({
+    required this.drawerToggleId,
     required this.searchId,
     required this.placeholder,
     required this.label,
     required this.value,
     required this.onInput,
-    required this.children,
+    this.children = const [],
     super.key,
   });
 
-  /// The id of the search field, so the page can label it.
+  /// The ID of the checkbox that toggles the [FiltersSidebar] drawer.
+  final String drawerToggleId;
+
+  /// The ID of the search field, so the page can label it.
   final String searchId;
 
+  /// The placeholder text displayed in the search field.
   final String placeholder;
+
+  /// The accessibility label for the search field.
   final String label;
+
+  /// The current value of the search field.
   final String value;
+
+  /// Callback triggered when the search field input changes.
   final void Function(String) onInput;
 
   /// Content rendered below the search field.
@@ -111,7 +119,7 @@ class FilterSearchGroup extends StatelessComponent {
         value: value,
         id: searchId,
         onInput: onInput,
-        trailing: const _DrawerToggleButton(),
+        trailing: _DrawerToggleButton(drawerToggleId),
       ),
       ...children,
     ]);
@@ -122,31 +130,42 @@ class FilterSearchGroup extends StatelessComponent {
 ///
 /// Also closes the drawer again when anything outside of it is clicked.
 class _DrawerToggleButton extends StatelessComponent {
-  const _DrawerToggleButton();
+  const _DrawerToggleButton(this._drawerToggleId);
 
-  static web.HTMLInputElement? get _toggle =>
+  /// The ID of the checkbox that this button toggles.
+  final String _drawerToggleId;
+
+  /// The checkbox that controls the drawer, if present.
+  web.HTMLInputElement? get _toggle =>
       web.document.getElementById(_drawerToggleId) as web.HTMLInputElement?;
 
   @override
   Component build(BuildContext context) {
     return GlobalEventListener(
       onClick: (event) {
-        final target = event.target as web.Element?;
-        if (target?.closest(_sidebarSelector) == null &&
-            target?.closest('.show-filters-button') == null) {
-          _toggle?.checked = false;
+        final toggle = _toggle;
+        if (toggle == null || !toggle.checked) return;
+
+        final target = event.target;
+        if (target == null || !target.isA<web.Element>()) return;
+
+        final element = target as web.Element;
+        // Keep the drawer open for clicks anywhere within it,
+        // including in the sidebar footer.
+        if (element.closest('.filter-sidebar') == null &&
+            element.closest('.show-filters-button') == null) {
+          toggle.checked = false;
         }
       },
-      button(
-        classes: 'icon-button show-filters-button',
+      Button(
+        icon: 'filter_list',
+        classes: const ['show-filters-button'],
+        attributes: const {'aria-label': 'Show filters'},
         onClick: () {
           if (_toggle case final toggle?) {
             toggle.checked = !toggle.checked;
           }
         },
-        [
-          const MaterialIcon('filter_list'),
-        ],
       ),
     );
   }

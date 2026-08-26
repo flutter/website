@@ -85,9 +85,8 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       // Reset the error state
       widget.viewModel.error = false;
       // Show an error message
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Failed to subscribe')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Failed to subscribe')));
     }
   }
   // #enddocregion listener2

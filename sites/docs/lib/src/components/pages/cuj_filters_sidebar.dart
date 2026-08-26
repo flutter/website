@@ -26,6 +26,7 @@ class CujFiltersSidebar extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return FiltersSidebar(
+      drawerToggleId: CujFilters.drawerToggleId,
       footer: const [
         div(classes: 'cuj-feedback', [
           Button(

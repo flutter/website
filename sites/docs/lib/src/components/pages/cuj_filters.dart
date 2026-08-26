@@ -4,7 +4,7 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/components/common/button.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../models/cuj_model.dart';
@@ -17,6 +17,9 @@ const _searchId = 'cuj-search';
 @client
 class CujFilters extends StatefulComponent {
   const CujFilters({super.key});
+
+  /// The ID of the checkbox that toggles the filter drawer on narrow screens.
+  static const String drawerToggleId = 'cuj-filter-toggle';
 
   @override
   State<CujFilters> createState() => _CujFiltersState();
@@ -89,6 +92,7 @@ class _CujFiltersState extends State<CujFilters> {
   @override
   Component build(BuildContext context) {
     return FilterSearchGroup(
+      drawerToggleId: CujFilters.drawerToggleId,
       searchId: _searchId,
       placeholder: 'Try "testing" or "architecture"...',
       label: 'Search critical user journeys by goal, persona, and task',
@@ -109,20 +113,16 @@ class _CujFiltersState extends State<CujFilters> {
               span([.text('${cujs.length}')]),
             ],
           ),
-          button(
-            attributes: {
-              if (searchQuery.isEmpty && filters.selectedPersonas.isEmpty)
-                'disabled': 'true',
-            },
+          Button(
+            icon: 'close_small',
+            content: 'Clear filters',
+            size: ButtonSize.compact,
+            disabled: searchQuery.isEmpty && filters.selectedPersonas.isEmpty,
             onClick: () {
               // No setState needed, since resetting filters will trigger it.
               searchQuery = '';
               filters.reset();
             },
-            [
-              const MaterialIcon('close_small'),
-              const span([.text('Clear filters')]),
-            ],
           ),
         ]),
       ],
