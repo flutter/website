@@ -19,7 +19,7 @@ vulnerabilities, Flutter Android release builds now ignore `Intent` extras
 and read engine configuration strictly from the compiled `AndroidManifest.xml`.
 Because prebuilt binaries cannot have their manifests dynamically modified
 after compilation, the Flutter CLI now produces a fatal error if you pass
-configuration flags to a prebuilt release binary (preventing flags from being
+engine configuration flags to a prebuilt release binary (preventing flags from being
 silently ignored).
 
 Standard release builds (where the CLI compiles the app and injects flags into
@@ -39,7 +39,7 @@ To harden production applications, Flutter Android release builds now read
 configuration strictly from a cryptographically signed `AndroidManifest.xml`
 and ignore runtime `Intent` flags.
 
-For standard release builds, the Flutter CLI automatically injects
+For release builds of standard Gradle-based projects, the Flutter CLI automatically injects
 command-line flags into `AndroidManifest.xml` during compilation.
 When you use a prebuilt release binary with `--use-application-binary`,
 the CLI cannot modify the compiled manifest, and the binary ignores
@@ -71,7 +71,7 @@ You are **not affected** and do not need to take action if:
 - You build and run standard release apps (`flutter run --release`,
   `flutter build apk --release`, `flutter build appbundle`).
 - You run tests and benchmarks in **debug** or **profile** mode.
-- You use `--use-application-binary` without passing custom engine flags.
+- You use `--use-application-binary` without passing engine configuration flags.
 :::
 
 If your CI/CD pipelines, automated scripts, or build systems pass flags to
@@ -99,7 +99,7 @@ If you must run tests against a release binary:
 ### Configure non-Gradle or hermetic build systems
 
 If you build Flutter Android applications using hermetic build systems
-(such as Blaze or Bazel) that separate compilation from execution:
+(such as Bazel) that separate compilation from execution:
 
 1. Statically declare any necessary engine flags in
    `AndroidManifest.xml` before compiling the release APK.
@@ -126,13 +126,7 @@ your `android/app/src/main/AndroidManifest.xml` file:
             android:name="io.flutter.embedding.android.EnableDartProfiling"
             android:value="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:launchMode="singleTop"
-            android:theme="@style/LaunchTheme"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-            android:hardwareAccelerated="true"
-            android:windowSoftInputMode="adjustResize">
+            ...
         </activity>
     </application>
 </manifest>
