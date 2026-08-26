@@ -150,13 +150,20 @@ cadence:
 Maxint's roadmap includes expanding Orca's SDK capabilities across web and
 desktop platforms for unified paywalls and revenue analytics. For the core
 platform, Maxint is building upon its current on-device receipt parsing, powered
-by Google’s ML Kit, by doubling down on privacy-first AI intelligence. The team
-is integrating small-footprint local LLMs (including custom 135M-parameter
-transformer models) to execute highly advanced document parsing, cashflow
-forecasting, and transaction categorization entirely on the user's hardware. The
-team is also expanding their tax engine to support multi-jurisdiction
-calculations, local currency reconciliation, and native electronic tax filing
-with the IRS.
+by Google’s ML Kit, by doubling down on privacy-first AI intelligence.
+
+<Image
+  src="images/third_party/case_studies/maxint/maxint_body_4.webp"
+  format="fullwidth"
+  alt="Unified cross-platform monetization architecture powered by Orca"
+/>
+
+The team is integrating small-footprint local LLMs (including custom
+135M-parameter transformer models) to execute highly advanced document parsing,
+cashflow forecasting, and transaction categorization entirely on the user's
+hardware. The team is also expanding their tax engine to support
+multi-jurisdiction calculations, local currency reconciliation, and native
+electronic tax filing with the IRS.
 
 <br />
 <br />
