@@ -7,7 +7,7 @@ description: >-
 publishDate: 2026-08-06
 author: twerske
 image: images/q2-survey-header.webp
-category: announcement
+category: news
 layout: blog
 ---
 

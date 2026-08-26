@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-04-09
 author: ezra-sandzer-bell
 image: images/0-y8UdKzHXj8SEouz.jpg
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

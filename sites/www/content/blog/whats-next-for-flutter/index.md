@@ -5,7 +5,7 @@ description: >-
 publishDate: 2023-01-25
 author: timsneath
 image: images/01m_CqCW7oMEoqPrl.webp
-category: announcement
+category: news
 layout: blog
 ---
 

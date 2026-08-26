@@ -175,13 +175,16 @@ The Flutter framework provides the `appFlavor` constant, which retrieves the nam
 ### Access the current flavor
 
 1.  **Import the services library:**
-    To access the `appFlavor` constant, add the following import to your Dart file:
+    To access the `appFlavor` constant,
+    add the following import to your Dart file:
+
     ```dart
     import 'package:flutter/services.dart';
     ```
 
 1.  **Check the flavor value:**
-    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+    Use the `appFlavor` constant in your application logic
+    (often in `main()`) to handle flavor-specific configurations:
 
     ```dart
     void main() {
@@ -379,7 +382,7 @@ you need to add the `default-flavor` field to your project's
 pubspec. To learn more, see the [`default-flavor` field][]
 in [Flutter pubspec options][].
 
-[`default-flavor` field]: /tools/pubspec#default-flavor-field
+[`default-flavor` field]: /tools/pubspec#default-flavor
 
 ### Add unique build settings
 

@@ -3,9 +3,9 @@ title: "Pitching Flutter to your company or client"
 description: >-
   The business case for Flutter
 publishDate: 2018-11-01
-author: wmleler1
+author: wmleler
 image: images/1OOmIZ2plXASJUl49v6TlDA.gif
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-05-19
 author: perclasson
 image: images/0Z8CmvWbWVXUb9Wy4.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

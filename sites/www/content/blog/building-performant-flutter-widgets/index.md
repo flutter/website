@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-07-23
 author: guidez
 image: images/0GWFHSeCrjUgPdkJ-.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Google Antigravity
 shortTitle: Antigravity
-sidenav: ai
 description: Learn about Google Antigravity agentic coding tools.
 ---
 
