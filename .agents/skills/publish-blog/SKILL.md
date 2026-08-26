@@ -55,7 +55,7 @@ and placing it in the correct directory.
 - [ ] Ask the user to provide the author's GitHub handle.
       Search in `sites/www/content/blog/authors.yaml` for the handle.
 - [ ] If the author is not found, add a new author entry.
-      Add the image to `sites/www/content/blog/authors_images/`
+      Add the image to `sites/www/content/blog/author_images/`
       and any other metadata you can find from the user's GitHub profile.
 - [ ] Update the frontmatter for the blog post with the author's handle.
 

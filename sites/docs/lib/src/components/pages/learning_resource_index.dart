@@ -30,8 +30,8 @@ final class LearningResourceIndex extends StatelessComponent {
       }
     }
 
-    return div(id: 'resource-index-content', [
-      div(classes: 'left-col', id: 'resource-index-main-content', [
+    return div(classes: 'filterable-index', [
+      div(classes: 'left-col', [
         const LearningResourceFilters(),
         section(classes: 'card-grid', id: 'all-resources-grid', [
           for (final item in learningResources) _ResourceCard(item),
