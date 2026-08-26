@@ -74,6 +74,9 @@
 
   .filter-group {
     .table-title {
+      position: sticky;
+      top: 0;
+      z-index: 1;
       text-align: center;
       color: var(--site-base-fgColor-alt);
       background-color: var(--site-raised-bgColor);
@@ -193,10 +196,6 @@
       overflow-y: auto;
       border: none;
       border-radius: 0;
-    }
-
-    .filter-group .table-title {
-      background-color: var(--site-raised-bgColor-translucent);
     }
   }
 }
