@@ -4,6 +4,7 @@
 
 import 'dart:convert';
 
+import 'package:site_shared/components/common/tags.dart';
 import 'package:universal_web/web.dart' as web;
 
 /// Prefix used for the DOM ID of each journey's card element.
@@ -108,21 +109,25 @@ final class CujTask {
 ///
 /// [dataValue] must match the `persona` values used in `src/data/cujs.yaml`.
 enum CujPersona {
-  appDeveloper('App developer', 'The App Developer', 'flutter-blue'),
-  techLead('Tech lead / architect', 'The Tech Lead / Architect', 'purple'),
-  pluginDeveloper('Plugin developer', 'The Plugin Developer', 'teal'),
+  appDeveloper('App developer', 'The App Developer', TagColor.blue),
+  techLead(
+    'Tech lead / architect',
+    'The Tech Lead / Architect',
+    TagColor.purple,
+  ),
+  pluginDeveloper('Plugin developer', 'The Plugin Developer', TagColor.teal),
   fullStackDeveloper(
     'Full-stack developer',
     'The Full Stack Developer',
-    'magenta',
+    TagColor.magenta,
   ),
   hybridDeveloper(
     'Hybrid (native + Flutter) developer',
     'The Hybrid (Native + Flutter) Developer',
-    'amber',
+    TagColor.amber,
   );
 
-  const CujPersona(this.label, this.dataValue, this.pillClass);
+  const CujPersona(this.label, this.dataValue, this.tagColor);
 
   /// Returns the persona whose [dataValue] matches the YAML data.
   ///
@@ -142,6 +147,6 @@ enum CujPersona {
   /// The persona value used in `cujs.yaml`.
   final String dataValue;
 
-  /// The `.pill-sm` color modifier used for this persona's badge.
-  final String pillClass;
+  /// The color used for this persona's [Tag] badge.
+  final TagColor tagColor;
 }

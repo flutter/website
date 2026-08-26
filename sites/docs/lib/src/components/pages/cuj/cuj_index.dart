@@ -9,6 +9,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/button.dart';
 import 'package:site_shared/components/common/card.dart';
+import 'package:site_shared/components/common/tags.dart';
 
 import '../../../models/cuj_model.dart';
 import 'cuj_filters.dart';
@@ -64,9 +65,11 @@ final class _CujCard extends StatelessComponent {
       },
       header: [
         div(classes: 'cuj-card-heading', [
-          span(classes: 'pill-sm ${cuj.persona.pillClass}', [
-            .text(cuj.persona.label),
-          ]),
+          Tag(
+            cuj.persona.label,
+            color: cuj.persona.tagColor,
+            size: TagSize.small,
+          ),
           h2(classes: 'card-title', [.text(cuj.goal)]),
         ]),
         div(classes: 'card-header-buttons', [
