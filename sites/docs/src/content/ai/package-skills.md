@@ -71,7 +71,7 @@ description: >-
   Use when making network requests with my_package to ensure safe patterns.
 ---
 
-# Error Handling Guidelines
+# Error handling guidelines
 
 ## Best practices
 * Always wrap network operations in a try/catch block.
