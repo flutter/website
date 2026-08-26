@@ -11,7 +11,7 @@ writing code, fixing errors, and building complete features.
 
 By default, general-purpose AI assistants might not have the latest context on
 Flutter patterns, project diagnostics, or third-party packages. Installing the
-official Flutter agent plugins equips your assistant with dedicated tools and
+official Flutter agent plugin equips your assistant with dedicated tools and
 recipes tailored for Flutter and Dart development.
 
 ## How Flutter AI plugins work
