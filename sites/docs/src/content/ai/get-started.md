@@ -34,8 +34,8 @@ live project state and static analysis, while using agent skills to guide its
 coding strategies and best practices.
 
 In addition to core Flutter plugins, you can also equip your assistant with
-[package skills](/ai/package-skills) shipped directly by third-party `pub.dev`
-libraries.
+skills that are shipped directly by third-party `pub.dev`
+packages using the [skills](/ai/package-skills) package.
 
 To learn more about the underlying architecture and capabilities of each tool,
 check out [How Flutter AI tools work](/ai/tools).
