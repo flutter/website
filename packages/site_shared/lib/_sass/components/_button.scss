@@ -39,6 +39,16 @@ button {
     padding: 0.4rem 0.9rem;
     text-decoration: none;
     cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+  }
+
+  &.compact-button {
+    gap: 0.2rem;
+    padding: 0.25rem 0.65rem;
   }
 
   &.filled-button {
@@ -52,11 +62,11 @@ button {
       font-size: 20px;
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       @include mixins.interaction-style(8%);
     }
 
-    &:active {
+    &:not(:disabled):active {
       @include mixins.interaction-style(16%);
     }
   }
@@ -64,11 +74,11 @@ button {
   &.text-button {
     color: var(--site-primary-color);
 
-    &:hover {
+    &:not(:disabled):hover {
       @include mixins.interaction-style(4%);
     }
 
-    &:active {
+    &:not(:disabled):active {
       @include mixins.interaction-style(8%);
     }
   }
@@ -77,11 +87,11 @@ button {
     color: var(--site-primary-color);
     border: 1px solid var(--site-primary-color);
 
-    &:hover {
+    &:not(:disabled):hover {
       @include mixins.interaction-style(4%);
     }
 
-    &:active {
+    &:not(:disabled):active {
       @include mixins.interaction-style(8%);
     }
   }
@@ -103,7 +113,7 @@ button {
       font-size: 1.75rem;
     }
 
-    &:hover {
+    &:not(:disabled):hover {
       color: var(--site-base-fgColor);
     }
   }
