@@ -35,8 +35,7 @@
   background: var(--site-inset-borderColor);
   color: var(--site-base-fgColor-lighter);
 
-  // TODO(parlough): Consider if these colors can be shared and if
-  // compatible with dark mode.
+  // TODO(parlough): Consider whether these colors need dark mode variants.
 
   &.flutter-blue {
     color: color.scale(#E7F8FF, $lightness: 10%);
@@ -51,5 +50,15 @@
   &.purple {
     color: color.scale(#C6BAFA, $lightness: 10%);
     background: #6200EE;
+  }
+
+  &.magenta {
+    color: color.scale(#FBD9EF, $lightness: 10%);
+    background: #9A2E6E;
+  }
+
+  &.amber {
+    color: color.scale(#FCEBC8, $lightness: 10%);
+    background: #92400E;
   }
 }

@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:convert' show jsonEncode;
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
@@ -12,16 +14,16 @@ import '../../../models/cuj_model.dart';
 import 'cuj_filters.dart';
 import 'cuj_filters_sidebar.dart';
 
+/// Renders the filterable critical user journey catalog.
 final class CujIndex extends StatelessComponent {
   const CujIndex({super.key});
 
   @override
   Component build(BuildContext context) {
-    final cujData = context.page.data['cujs'] as List<Object?>?;
+    final cujData = context.page.data['cujs'] as List<Object?>;
 
     final cujs = <Cuj>[
-      for (final cuj in cujData ?? const [])
-        Cuj.fromMap(cuj as Map<String, Object?>),
+      for (final cuj in cujData) Cuj.fromMap(cuj as Map<String, Object?>),
     ];
 
     return div(classes: 'filterable-index', [
@@ -36,9 +38,11 @@ final class CujIndex extends StatelessComponent {
   }
 }
 
+/// An expandable card that summarizes a critical user journey and its tasks.
 final class _CujCard extends StatelessComponent {
   const _CujCard(this.cuj);
 
+  /// The critical user journey displayed by this card.
   final Cuj cuj;
 
   @override
@@ -54,16 +58,15 @@ final class _CujCard extends StatelessComponent {
       additionalClasses: 'cuj-card',
       initiallyExpanded: false,
       attributes: {
-        'data-persona': cuj.persona?.name ?? '',
+        'data-persona': cuj.persona.name,
         'data-goal': cuj.goal,
-        'data-tasks': cuj.taskData,
+        'data-tasks': jsonEncode(cuj.tasks),
       },
       header: [
         div(classes: 'cuj-card-heading', [
-          if (cuj.persona case final persona?)
-            span(classes: 'pill-sm ${persona.pillClass}', [
-              .text(persona.label),
-            ]),
+          span(classes: 'pill-sm ${cuj.persona.pillClass}', [
+            .text(cuj.persona.label),
+          ]),
           h2(classes: 'card-title', [.text(cuj.goal)]),
         ]),
         div(classes: 'card-header-buttons', [

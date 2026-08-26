@@ -112,7 +112,7 @@ class _CujFiltersState extends State<CujFilters> {
       children: [
         div(classes: 'label-row', [
           label(
-            attributes: {'for': _searchId},
+            attributes: {'for': _searchId, 'aria-live': 'polite'},
             [
               const .text('Showing '),
               span([.text('$_filteredCujCount')]),
@@ -124,7 +124,7 @@ class _CujFiltersState extends State<CujFilters> {
             icon: 'close_small',
             content: 'Clear filters',
             size: ButtonSize.compact,
-            disabled: _searchQuery.isEmpty && _filters.selectedPersonas.isEmpty,
+            disabled: _searchQuery.isEmpty && !_filters.hasSelectedPersonas,
             onClick: () {
               // No setState needed, since resetting filters will trigger it.
               _searchQuery = '';

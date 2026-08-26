@@ -55,7 +55,7 @@ class CujFiltersSidebar extends StatelessComponent {
                       type: InputType.checkbox,
                       attributes: {'name': 'cuj-filter-${persona.name}'},
                       id: 'cuj-filter-${persona.name}',
-                      checked: filters.selectedPersonas.contains(persona),
+                      checked: filters.isPersonaSelected(persona),
                       onChange: (checked) {
                         filters.setPersona(
                           persona,
@@ -81,21 +81,28 @@ class CujFiltersSidebar extends StatelessComponent {
 /// notifies listeners when they change.
 final class CujFiltersNotifier extends ChangeNotifier {
   /// The currently selected personas.
-  final Set<CujPersona> selectedPersonas = {};
+  final Set<CujPersona> _selectedPersonas = {};
+
+  /// Whether any persona filters are selected.
+  bool get hasSelectedPersonas => _selectedPersonas.isNotEmpty;
+
+  /// Whether [persona] is selected.
+  bool isPersonaSelected(CujPersona persona) =>
+      _selectedPersonas.contains(persona);
 
   /// Updates whether [persona] is selected and notifies listeners.
   void setPersona(CujPersona persona, {required bool isSelected}) {
     if (isSelected) {
-      selectedPersonas.add(persona);
+      _selectedPersonas.add(persona);
     } else {
-      selectedPersonas.remove(persona);
+      _selectedPersonas.remove(persona);
     }
     notifyListeners();
   }
 
   /// Clears all selected personas.
   void reset() {
-    selectedPersonas.clear();
+    _selectedPersonas.clear();
     notifyListeners();
   }
 
@@ -103,7 +110,7 @@ final class CujFiltersNotifier extends ChangeNotifier {
   Set<Cuj> filterCujs(List<Cuj> cujs, String searchQuery) {
     searchQuery = searchQuery.trim().toLowerCase();
 
-    if (searchQuery.isEmpty && selectedPersonas.isEmpty) {
+    if (searchQuery.isEmpty && _selectedPersonas.isEmpty) {
       // No filters applied, return all journeys.
       return cujs.toSet();
     }
@@ -112,7 +119,7 @@ final class CujFiltersNotifier extends ChangeNotifier {
 
     for (final cuj in cujs) {
       final matchesPersona =
-          selectedPersonas.isEmpty || selectedPersonas.contains(cuj.persona);
+          _selectedPersonas.isEmpty || isPersonaSelected(cuj.persona);
       if (!matchesPersona) {
         continue;
       }
@@ -120,8 +127,10 @@ final class CujFiltersNotifier extends ChangeNotifier {
       final matchesSearchQuery =
           searchQuery.isEmpty ||
           cuj.goal.toLowerCase().contains(searchQuery) ||
-          (cuj.persona?.label.toLowerCase().contains(searchQuery) ?? false) ||
-          cuj.tasks.any((t) => t.task.toLowerCase().contains(searchQuery));
+          cuj.persona.label.toLowerCase().contains(searchQuery) ||
+          cuj.tasks.any(
+            (task) => task.task.toLowerCase().contains(searchQuery),
+          );
       if (!matchesSearchQuery) {
         continue;
       }
