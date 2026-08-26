@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/util.dart';
+import 'package:site_shared/components/common/tags.dart';
 
 import '../../models/learning_resource_model.dart';
 import 'learning_resource_filters.dart';
@@ -65,21 +65,15 @@ final class _ResourceCard extends StatelessComponent {
             img(src: imageUrl, alt: ''),
           ]),
         div(classes: 'card-leading', [
-          span(
-            classes: [
-              'pill-sm',
-              switch (resource.type) {
-                'codelab' || 'workshop' => 'flutter-blue',
-                'quickstart' || 'demo' => 'purple',
-                _ => 'teal',
-              },
-            ].toClasses,
-            [
-              .text(
-                resource.type.substring(0, 1).toUpperCase() +
-                    resource.type.substring(1),
-              ),
-            ],
+          Tag(
+            resource.type.substring(0, 1).toUpperCase() +
+                resource.type.substring(1),
+            color: switch (resource.type) {
+              'codelab' || 'workshop' => TagColor.blue,
+              'quickstart' || 'demo' => TagColor.purple,
+              _ => TagColor.teal,
+            },
+            size: TagSize.small,
           ),
           _iconForLabel(resource.link?.label ?? ''),
         ]),
