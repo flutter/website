@@ -54,7 +54,7 @@ check out the dedicated documentation on [Code blocks][].
 To render flowcharts, sequence diagrams, and other charts within a Markdown file,
 use a fenced code block with the `mermaid` language identifier:
 
-```markdown
+````markdown
 ```mermaid
 flowchart LR
     A[Start] --> B(Process)
@@ -62,9 +62,9 @@ flowchart LR
     C -->|Yes| D[Done]
     C -->|No| B
 ```
-```
+````
 
-### Styling Mermaid diagrams
+### Style Mermaid diagrams
 
 Mermaid diagrams automatically adapt to the site's light and dark themes
 and inherit the default `Google Sans Flex` typography.

@@ -1,3 +1,7 @@
+// Copyright 2026 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:mermaid_core/mermaid_core.dart';
@@ -75,8 +79,7 @@ final class _MermaidViewerState extends State<MermaidViewer> {
 
   String? _renderDiagram({required bool isDark}) {
     try {
-      final theme =
-          isDark ? MermaidTheme.darkTheme : MermaidTheme.defaultTheme;
+      final theme = isDark ? MermaidTheme.darkTheme : MermaidTheme.defaultTheme;
       final mermaid = Mermaid(
         measurer: const ApproximateTextMeasurer(),
         theme: theme,

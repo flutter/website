@@ -19,7 +19,7 @@ dependencies:
   mermaid_core:
     git:
       url: https://github.com/orestesgaolin/mermaid.git
-      ref: round3-fixes-and-packaging
+      ref: 03759ce31539f87a1487e84d132d3ad1e8efa3cd
       path: packages/mermaid_core
   meta: ^1.18.2
   nanoid2: ^2.0.1
