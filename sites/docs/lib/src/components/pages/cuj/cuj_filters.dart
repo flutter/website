@@ -8,12 +8,13 @@ import 'package:site_shared/components/common/button.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../../models/cuj_model.dart';
-import 'cuj_filters_sidebar.dart';
 import '../filterable_index.dart';
+import 'cuj_filters_sidebar.dart';
 
 /// The id of the search field, so its result count can label it.
 const _searchId = 'cuj-search';
 
+/// The search controls and result summary for the critical user journey index.
 @client
 class CujFilters extends StatefulComponent {
   const CujFilters({super.key});
@@ -26,47 +27,53 @@ class CujFilters extends StatefulComponent {
 }
 
 class _CujFiltersState extends State<CujFilters> {
-  String searchQuery = '';
+  /// The filters selected in the critical user journey sidebar.
+  static CujFiltersNotifier get _filters => CujFiltersSidebar.filters;
 
-  CujFiltersNotifier get filters => CujFiltersSidebar.filters;
+  /// The journeys reconstructed from the rendered journey cards.
+  final List<Cuj> _cujs = [];
 
-  final List<Cuj> cujs = [];
-  int filteredCujCount = 0;
+  /// The current search query.
+  String _searchQuery = '';
+
+  /// The number of journeys matching the active search and filters.
+  int _filteredCujCount = 0;
 
   @override
   void initState() {
     super.initState();
 
     if (kIsWeb) {
-      filters.addListener(setFilters);
+      _filters.addListener(_setFilters);
 
       final cujList = web.document.getElementById('all-cujs-list');
       if (cujList == null) {
         return;
       }
 
-      recreateCujs(cujList.querySelectorAll('.card'));
+      _recreateCujs(cujList.querySelectorAll('.card'));
     }
   }
 
-  void recreateCujs(web.NodeList cujCards) {
+  /// Populates [_cujs] from [cujCards].
+  void _recreateCujs(web.NodeList cujCards) {
     for (var i = 0; i < cujCards.length; i++) {
       final element = cujCards.item(i) as web.Element;
-      cujs.add(Cuj.fromElement(element));
+      _cujs.add(Cuj.fromElement(element));
     }
-    filteredCujCount = cujs.length;
+    _filteredCujCount = _cujs.length;
   }
 
-  /// Update the filter state and re-evaluate which journeys to show.
+  /// Updates the filter state and re-evaluates which journeys to show.
   ///
   /// Use like the `setState` method by passing a callback that updates
   /// the relevant state variables.
-  void setFilters([void Function()? callback]) {
+  void _setFilters([void Function()? callback]) {
     setState(callback ?? () {});
 
-    final cujsToShow = filters.filterCujs(cujs, searchQuery);
-    filteredCujCount = cujsToShow.length;
-    for (final cuj in cujs) {
+    final cujsToShow = _filters.filterCujs(_cujs, _searchQuery);
+    _filteredCujCount = cujsToShow.length;
+    for (final cuj in _cujs) {
       final element =
           web.document.getElementById(cuj.elementId) as web.HTMLElement?;
       if (element == null) {
@@ -84,7 +91,7 @@ class _CujFiltersState extends State<CujFilters> {
   @override
   void dispose() {
     if (kIsWeb) {
-      filters.removeListener(setFilters);
+      _filters.removeListener(_setFilters);
     }
     super.dispose();
   }
@@ -96,10 +103,10 @@ class _CujFiltersState extends State<CujFilters> {
       searchId: _searchId,
       placeholder: 'Try "testing" or "architecture"...',
       label: 'Search critical user journeys by goal, persona, and task',
-      value: searchQuery,
+      value: _searchQuery,
       onInput: (value) {
-        setFilters(() {
-          searchQuery = value;
+        _setFilters(() {
+          _searchQuery = value;
         });
       },
       children: [
@@ -108,20 +115,20 @@ class _CujFiltersState extends State<CujFilters> {
             attributes: {'for': _searchId},
             [
               const .text('Showing '),
-              span([.text('$filteredCujCount')]),
+              span([.text('$_filteredCujCount')]),
               const .text(' / '),
-              span([.text('${cujs.length}')]),
+              span([.text('${_cujs.length}')]),
             ],
           ),
           Button(
             icon: 'close_small',
             content: 'Clear filters',
             size: ButtonSize.compact,
-            disabled: searchQuery.isEmpty && filters.selectedPersonas.isEmpty,
+            disabled: _searchQuery.isEmpty && _filters.selectedPersonas.isEmpty,
             onClick: () {
               // No setState needed, since resetting filters will trigger it.
-              searchQuery = '';
-              filters.reset();
+              _searchQuery = '';
+              _filters.reset();
             },
           ),
         ]),

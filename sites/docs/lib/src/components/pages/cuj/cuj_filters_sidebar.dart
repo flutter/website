@@ -7,12 +7,13 @@ import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/common/button.dart';
 
 import '../../../models/cuj_model.dart';
-import 'cuj_filters.dart';
 import '../filterable_index.dart';
+import 'cuj_filters.dart';
 
 // TODO(ewindmill): Replace with the real feedback destination once it exists.
 const _feedbackUrl = 'https://github.com/flutter/evals/issues';
 
+/// The persona filters for the critical user journey index.
 @client
 class CujFiltersSidebar extends StatelessComponent {
   const CujFiltersSidebar({super.key});
@@ -21,7 +22,7 @@ class CujFiltersSidebar extends StatelessComponent {
   ///
   /// This is static so that [CujFilters] can access it,
   /// since both client components don't share a common ancestor.
-  static CujFiltersNotifier filters = CujFiltersNotifier();
+  static final CujFiltersNotifier filters = CujFiltersNotifier();
 
   @override
   Component build(BuildContext context) {
@@ -52,14 +53,14 @@ class CujFiltersSidebar extends StatelessComponent {
                   li([
                     input(
                       type: InputType.checkbox,
-                      attributes: {
-                        'role': 'checkbox',
-                        'name': 'cuj-filter-${persona.name}',
-                      },
+                      attributes: {'name': 'cuj-filter-${persona.name}'},
                       id: 'cuj-filter-${persona.name}',
                       checked: filters.selectedPersonas.contains(persona),
                       onChange: (checked) {
-                        filters.setPersona(persona, checked as bool);
+                        filters.setPersona(
+                          persona,
+                          isSelected: checked as bool,
+                        );
                       },
                     ),
                     label(
@@ -76,11 +77,14 @@ class CujFiltersSidebar extends StatelessComponent {
   }
 }
 
-/// Notifier to manage the state of the critical user journey filters.
-class CujFiltersNotifier extends ChangeNotifier {
-  Set<CujPersona> selectedPersonas = {};
+/// Stores the selected critical user journey filters and
+/// notifies listeners when they change.
+final class CujFiltersNotifier extends ChangeNotifier {
+  /// The currently selected personas.
+  final Set<CujPersona> selectedPersonas = {};
 
-  void setPersona(CujPersona persona, bool isSelected) {
+  /// Updates whether [persona] is selected and notifies listeners.
+  void setPersona(CujPersona persona, {required bool isSelected}) {
     if (isSelected) {
       selectedPersonas.add(persona);
     } else {
@@ -89,11 +93,13 @@ class CujFiltersNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Clears all selected personas.
   void reset() {
     selectedPersonas.clear();
     notifyListeners();
   }
 
+  /// Returns the journeys matching [searchQuery] and the selected filters.
   Set<Cuj> filterCujs(List<Cuj> cujs, String searchQuery) {
     searchQuery = searchQuery.trim().toLowerCase();
 
