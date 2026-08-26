@@ -106,7 +106,7 @@ class CalculateCostFunction extends SynchronousClientFunction {
 
   // 3. The expected return type for the binding.
   @override
-  ClientFunctionReturnType get returnType => .string;
+  ClientFunctionReturnType get returnType => ClientFunctionReturnType.string;
 
   // 4. JSON Schema defining required input arguments.
   @override
@@ -146,8 +146,8 @@ Let's break down the key parts of this class:
 1. `argumentSchema`: Built using
    [`json_schema_builder`](https://pub.dev/packages/json_schema_builder),
    this schema informs the LLM exactly which parameters are required
-   (`ingredient_id` and `quantity).
-1. `executeSyn`c: The core Dart method executed on the user's device
+   (`ingredient_id` and `quantity`).
+1. `executeSync`: The core Dart method executed on the user's device
    when the UI renders. It parses the incoming arguments,
    calls my local `CostService`, and returns the formatted dollar string.
 
@@ -186,7 +186,7 @@ final commisCatalog = Catalog(
 ```
 
 When initializing the conversation session,
-[`genui`'s `PromptBuilder`]() inspects the catalog and automatically
+`genui`'s `PromptBuilder` inspects the catalog and automatically
 extracts all client function declarations, incorporating their names,
 descriptions, and schemas into the system prompt provided to Gemini.
 
@@ -242,7 +242,7 @@ Ready to try GenUI and client-side functions in your own apps?
 * Explore the [`genui` package on pub.dev](https://pub.dev/packages/genui)
   for API details and catalog definitions.
 * Browse the
-  [**flutter/demos** repository on GitHub](https://github.com/flutter/demos
+  [**flutter/demos** repository on GitHub](https://github.com/flutter/demos)
   to inspect the complete source code for Commis and other Dart GenUI samples.
 
 Happy building!
