@@ -53,6 +53,7 @@ class FiltersSidebar extends StatelessComponent {
         div(classes: 'filter-group-wrapper', [
           div(classes: 'filter-group', [
             div(classes: 'filter-header', [
+              const div(classes: 'table-title', [.text('Filter by')]),
               label(
                 attributes: {
                   'for': drawerToggleId,
@@ -62,7 +63,6 @@ class FiltersSidebar extends StatelessComponent {
                 const [MaterialIcon('close')],
               ),
             ]),
-            const div(classes: 'table-title', [.text('Filter by')]),
             ...children,
           ]),
         ]),

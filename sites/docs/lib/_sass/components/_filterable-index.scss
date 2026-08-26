@@ -39,54 +39,53 @@
     overflow-y: auto;
   }
 
-  // Only shown while the sidebar is a drawer, to close it again.
+  // Keep the title visible while the filters scroll. The close control is only
+  // shown while the sidebar is a drawer.
   .filter-header {
-    display: none;
-    position: absolute;
+    position: sticky;
     top: 0;
-    right: 0;
-    padding: 0.75rem 1rem;
-    z-index: var(--site-z-floating);
-  }
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 2.25rem 1fr 2.25rem;
+    align-items: center;
+    background-color: var(--site-raised-bgColor);
+    border-bottom: 1px solid var(--site-inset-borderColor);
 
-  .close-icon {
-    cursor: pointer;
-    padding: 0.25rem;
-    border-radius: 4px;
-    background: none;
-    border: none;
-    color: var(--site-base-fgColor-alt);
-    transition: background-color 0.2s ease, color 0.2s ease;
-    position: absolute;
-    right: 1rem;
-    top: 75%;
-    transform: translateY(-50%);
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-      color: var(--site-primary-color);
+    .table-title {
+      grid-column: 2;
+      padding: .5rem 0;
+      text-align: center;
+      color: var(--site-base-fgColor-alt);
+      font-family: var(--site-ui-fontFamily);
+      font-weight: 600;
+      font-size: .925rem;
     }
 
-    .material-symbols {
-      font-size: 20px;
+    .close-icon {
+      display: none;
+      grid-column: 3;
+      align-items: center;
+      justify-self: center;
+      cursor: pointer;
+      padding: 0.25rem;
+      border-radius: 4px;
+      background: none;
+      border: none;
+      color: var(--site-base-fgColor-alt);
+      transition: background-color 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: var(--site-primary-color);
+      }
+
+      .material-symbols {
+        font-size: 20px;
+      }
     }
   }
 
   .filter-group {
-    .table-title {
-      position: sticky;
-      top: 0;
-      z-index: 1;
-      text-align: center;
-      color: var(--site-base-fgColor-alt);
-      background-color: var(--site-raised-bgColor);
-      font-family: var(--site-ui-fontFamily);
-      font-weight: 600;
-      font-size: .925rem;
-      padding: .5rem;
-      border-bottom: 1px solid var(--site-inset-borderColor);
-    }
-
     .table-content {
       padding: 1rem;
     }
@@ -166,7 +165,9 @@
     }
 
     .filter-header {
-      display: block;
+      .close-icon {
+        display: flex;
+      }
     }
 
     .filter-sidebar {
