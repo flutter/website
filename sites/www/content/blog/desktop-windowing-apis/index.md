@@ -63,6 +63,14 @@ Our design centers around five window types: regular, dialog,
 tooltip, popup, and satellite. Each window type has a specific,
 cross-platform behavior and purpose.
 
+**Regular windows** are just that–an average window on a desktop.
+They have a toolbar and are resizable, maximizable, minimizable,
+and fullscreenable. They typically contain the main content of
+an application. Application developers often have at least one
+per application, but it is not uncommon to have more than one.
+For example, a web browser application can open multiple regular
+windows for the user to browse independently between them.
+
 <DashImage figure src="images/regular.gif" />
 
 **Popup** windows provide functionality such as dropdown
