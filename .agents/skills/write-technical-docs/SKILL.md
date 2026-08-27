@@ -81,11 +81,17 @@ Apply these rules to most developer-facing prose.
   only when it's part of the quoted content.
   For ordinary prose quotations,
   place commas and periods inside the closing quotation mark.
-  For examples, see [Punctuation](references/punctuation.md).
+  For examples, consult [Punctuation](references/punctuation.md).
 - Use the **serial comma**, also called the **Oxford comma**:
   "buttons, links, and menus".
 - Use **descriptive link text** that names the destination.
   Never link bare "click here", "here", "this", or "read more".
+- Avoid using "see", "see the", or "for more information, see" to introduce
+  links or cross-references.
+  Prefer action-oriented or descriptive phrasing such as
+  "refer to", "consult", or "visit"
+  (for example, "To learn about X, visit Y" or
+  "For details, consult the X documentation").
 - Write _and_, not `&`, except in code, a space-constrained label,
   or when matching a UI label.
 - Write **unambiguous dates**:
@@ -107,7 +113,7 @@ Apply these rules to most developer-facing prose.
 
 - **Don't pre-announce** unreleased features, dates, or plans.
   Document only released behavior.
-  For additional guidance, see [Voice and tone](references/voice-and-tone.md).
+  For additional guidance, consult [Voice and tone](references/voice-and-tone.md).
 - Write for a **global audience**: avoid idioms, cultural references,
   humor that doesn't translate, and directional words that assume a layout.
 - Use **inclusive language**:
@@ -116,7 +122,7 @@ Apply these rules to most developer-facing prose.
   _placeholder_ over _dummy_,
   and people-first or community-preferred phrasing.
   For additional guidance,
-  see [Inclusive and global writing](references/inclusive-and-global.md)
+  consult [Inclusive and global writing](references/inclusive-and-global.md)
   and [Word choice](references/word-choice.md).
 
 ## References

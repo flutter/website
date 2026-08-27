@@ -2008,9 +2008,12 @@
     Pluralize as SDKs without an apostrophe.
 
 - term: "see"
-  status: ok
+  status: caution
+  prefer: ["refer to", "consult", "visit"]
   guidance: >-
-    OK as a general term and for links and cross-references.
+    Avoid using to introduce links and cross-references.
+    Prefer action-oriented or descriptive phrasing such as
+    refer to, consult, or visit (for example, "To learn about X, visit Y").
 
 - term: "select"
   status: ok
