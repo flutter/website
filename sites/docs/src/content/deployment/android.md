@@ -37,7 +37,7 @@ substitute `[project]` with your app's directory.
 ## Add a launcher icon
 
 When a new Flutter app is created, it has a default launcher icon.
-To customize this icon, you might want to check out the
+To learn about customizing this icon, check out the
 [flutter_launcher_icons][] package.
 
 Alternatively, you can do it manually using the following steps:
@@ -191,8 +191,8 @@ If not, create one using one of the following methods:
 
 Create a file named `[project]/android/key.properties`
 that contains a reference to your keystore.
-Don't include the angle brackets (`< >`).
-They indicate that the text serves as a placeholder for your values.
+Don't include the angle brackets (`< >`),
+which indicate that the text serves as a placeholder for your values:
 
 ```properties
 storePassword=<password-from-previous-step>
@@ -222,7 +222,7 @@ To configure Gradle, edit the `<project>/android/app/build.gradle.kts` file.
 1. Define and load the keystore properties file before the `android`
    property block.
 
-1. Set the `keystoreProperties` object to load the `key.properties` file.
+1. Set the `keystoreProperties` object to load the `key.properties` file:
 
 <Tabs key="android-keystore-properties">
 <Tab name="Kotlin">
@@ -272,7 +272,7 @@ To configure Gradle, edit the `<project>/android/app/build.gradle.kts` file.
 </Tabs>
 
 1. Add the signing configuration before the `buildTypes` property block
-   inside the `android` property block.
+   inside the `android` property block:
 
 <Tabs key="android-signing-config">
 <Tab name="Kotlin">
@@ -283,10 +283,10 @@ To configure Gradle, edit the `<project>/android/app/build.gradle.kts` file.
 
 +     signingConfigs {
 +         create("release") {
-+             keyAlias = keystoreProperties["keyAlias"] as String
-+             keyPassword = keystoreProperties["keyPassword"] as String
-+             storeFile = keystoreProperties["storeFile"]?.let { file(it) }
-+             storePassword = keystoreProperties["storePassword"] as String
++             keyAlias = keystoreProperties.getProperty("keyAlias")
++             keyPassword = keystoreProperties.getProperty("keyPassword")
++             storeFile = keystoreProperties.getProperty("storeFile")?.let { file(it) }
++             storePassword = keystoreProperties.getProperty("storePassword")
 +         }
 +     }
       buildTypes {
@@ -340,7 +340,7 @@ You might need to run `flutter clean` after changing the Gradle file.
 This prevents cached builds from affecting the signing process.
 :::
 
-To learn more about signing your app, check out
+To learn about signing your app, check out
 [Sign your app][] on the Android developer docs.
 
 [Sign your app]: {{site.android-dev}}/studio/publish/app-signing.html#generate-key
@@ -365,8 +365,8 @@ attacks that make use of quantum computing.
   Note that you must create a new classical key;
   you cannot reuse the older one.
 
-For more information, check out the
-[Android documentation on PQC APK signing][android-doc]
+For details, consult the
+[Android documentation on PQC APK signing][android-doc].
 
 [android-doc]: {{site.android-dev}}/about/versions/17/features#pqc-apk-signing
 
@@ -383,7 +383,7 @@ the compile time of an Android application.
 
 The `--[no-]shrink` flag has no effect.
 Code shrinking is always enabled in release builds.
-To learn more, check out [Shrink, obfuscate, and optimize your app][].
+For details, visit [Shrink, obfuscate, and optimize your app][].
 :::
 
 [R8]: {{site.android-dev}}/studio/build/shrink-code
@@ -423,7 +423,7 @@ The Flutter tool enables multidex support and retries the build:
 <img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png'
   width="100%" alt='The output of a successful build after adding multidex.'>
 
-:::note
+:::version-note
 Multidex support is natively included when targeting
 Android SDK 21 or later.
 :::
@@ -438,15 +438,15 @@ io/flutter/util/PathUtils.class
 ```
 
 Also, include any other classes used in app startup.
-For more detailed guidance on adding multidex support manually,
-check out the official [Android documentation][multidex-docs].
+To learn about adding multidex support manually,
+consult the official [Android documentation][multidex-docs].
 
 [multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
 
 ## Review the app manifest
 
-Review the default [App Manifest][manifest] file.
+Review the default [App Manifest][manifest] file:
 
 ```xml title="[project]/android/app/src/main/AndroidManifest.xml"
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -476,8 +476,8 @@ Verify the following values:
 
 To verify the Android build configuration,
 review the `android` block in the default
-[Gradle build script][gradlebuild].
-The default Gradle build script is found at `[project]/android/app/build.gradle.kts`.
+[Gradle build script][gradlebuild]
+found at `[project]/android/app/build.gradle.kts`:
 
 ```kotlin title="[project]/android/app/build.gradle.kts"
 android {
@@ -494,7 +494,7 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.[project]"
         // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        // For details, see https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -541,9 +541,12 @@ For example:
 
 The Flutter tooling sets default values for the Android SDK versions:
 
-* **`compileSdk`**: The version of the Android SDK used to compile the app.
-* **`minSdk`**: The minimum Android version that the app supports.
-* **`targetSdk`**: The Android version the app is designed and tested to run on.
+* **`compileSdk`**: The version of the Android SDK used to
+  compile the app.
+* **`minSdk`**: The minimum Android version that the
+  app supports.
+* **`targetSdk`**: The Android version the app is designed and
+  tested to run on.
 
 These default values (`flutter.compileSdkVersion`, etc.) are managed by Flutter
 to ensure compatibility with the framework and plugins.
@@ -572,7 +575,8 @@ publishing to the Play Store.
 
 :::note
 The Google Play Store prefers the app bundle format.
-To learn more, check out [About Android App Bundles][bundle].
+To learn about Android App Bundles, visit
+[About Android App Bundles][bundle].
 :::
 
 [bundle]: {{site.android-dev}}/guide/app-bundle
@@ -684,8 +688,8 @@ From the command line:
 
 ## Publish to the Google Play Store
 
-For detailed instructions on publishing your app to the Google Play Store,
-check out the [Google Play launch][play] documentation.
+To learn about publishing your app to the Google Play Store,
+consult the [Google Play launch][play] documentation.
 
 ## Update the app's version number
 
@@ -706,8 +710,8 @@ Both the version and the build number can be overridden in
 Flutter's build by specifying `--build-name` and `--build-number`, respectively.
 
 In Android, `build-name` is used as `versionName` while
-`build-number` used as `versionCode`. For more information,
-check out [Version your app][] in the Android documentation.
+`build-number` used as `versionCode`. For details,
+refer to [Version your app][] in the Android documentation.
 
 When you rebuild the app for Android, any updates in
 the version number from the pubspec file will
@@ -805,9 +809,9 @@ Run `apkanalyzer manifest print <SOME-APK>` and look for a `<meta-data>`
 tag with `android:name="flutterEmbedding"`.
 The value can be `1` or `2`.
 
-Example:
-`apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2`
-returns the following style string.
+This command,
+`apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2`,
+returns the following output:
 ```
 <meta-data
    android:name="flutterEmbedding"

@@ -3,7 +3,7 @@
 Use this reference for common terms and naming rules in developer documentation.
 
 For UI verbs such as _click_, _tap_, and _select_,
-see [UI elements and interaction](code-and-ui.md#ui-elements-and-interaction).
+consult [UI elements and interaction](code-and-ui.md#ui-elements-and-interaction).
 
 For a strict terminology review or guidance about a term not covered here,
 consult the [strict-review word list](word-list.yaml).
@@ -39,6 +39,10 @@ An explicit project convention takes precedence.
 - Instead of _above_ and _below_,
   refer to the named element or use _earlier_, _preceding_,
   _later_, or _following_ as appropriate.
+- Avoid using _see_ or _see the_ to introduce links or references.
+  Prefer _refer to_, _consult_, or _visit_
+  (for example, "To learn about X, visit Y" or
+  "For details, consult the X documentation").
 - Replace _via_ with _through_, _with_, or _by using_.
 - Replace the verbs _leverage_ and _utilize_ with _use_.
 - Use _sign in_, not _log in_, unless the UI uses _log in_.

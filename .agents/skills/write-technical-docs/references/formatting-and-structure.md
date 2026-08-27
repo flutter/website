@@ -227,10 +227,15 @@ Use these rules to structure and format documentation.
   or "read more" as the link text.
 - Don't use a bare URL as link text in prose.
   Link a meaningful phrase.
-- Introduce links naturally:
+- Introduce links naturally without using "see":
   "For more information about quotas,
-  see [Quotas and limits][]".
+  consult [Quotas and limits][]",
+  or "To learn about quotas, visit [Quotas and limits][]".
   Use "about", not "on".
+- Avoid using "see", "see the", or "for more information, see"
+  when directing readers to links or cross-references.
+  Prefer action-oriented or descriptive phrasing such as
+  "refer to", "consult", or "visit".
 - Don't say "the link below".
   Link the actual thing.
 - Write headings that produce stable, readable anchor links:
