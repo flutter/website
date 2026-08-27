@@ -1,5 +1,5 @@
 ---
-title: Restrict command-line flags on prebuilt Android release binaries
+title: Restrict command-line flags for prebuilt Android release binaries
 description: >-
   Passing configuration flags to prebuilt Android release binaries with
   `--use-application-binary` is no longer supported.
