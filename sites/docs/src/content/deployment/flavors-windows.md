@@ -1,81 +1,74 @@
 ---
-title: Set up Flutter flavors for Windows and Linux
-shortTitle: Flavors (Windows and Linux)
-description: >
-  How to create Flutter flavors for Windows and Linux desktop apps.
+title: Set up Flutter flavors for Windows
+shortTitle: Flavors (Windows)
+description: >-
+  How to create Flutter flavors for Windows desktop apps.
 ---
 
 This guide shows you how to create Flutter flavors for
-Windows and Linux desktop apps.
+Windows desktop apps.
 
 :::note
-To create flavors for Android apps,
-see [Set up Flutter flavors for Android][].
-To create flavors for iOS and macOS apps,
-see [Set up Flutter flavors for iOS and macOS][].
+To create app flavors for other platforms,
+visit the pages on setting up flavors for:
+
+* [Android][]
+* [iOS and macOS][]
+* [Linux][]
 :::
 
 ## Overview {: #overview }
 
 A Flutter flavor represents a collection of settings that define
 how a specific version of your app builds and runs.
-For example, a flavor can determine which window title, binary name,
+For example, a flavor can determine which window title,
 application ID, API endpoint, asset set, and logging configuration
 applies to a build.
 
-On Windows and Linux, Flutter uses [CMake][] to configure and build
+On Windows, Flutter uses [CMake][] to configure and build
 the native desktop runner.
 When you run `flutter run` or `flutter build` with the `--flavor` flag,
-Flutter provides the flavor name to CMake as the `FLUTTER_APP_FLAVOR`
-variable and isolates the build outputs in a flavor-specific directory.
+Flutter writes the flavor name into
+`<platform>/flutter/ephemeral/generatd_config.cmake` as the
+`FLUTTER_APP_FLAVOR` variable, and isolates the build outputs
+in a flavor-specific directory.
+
+:::important
+The `generated_config.cmake` file is included from
+`<platform>/flutter/CMakeLists.txt`, so `FLUTTER_APP_FLAVOR`
+only becomes visible in your top-level `CMakeLists.txt` **after**
+the `add_subdirectory(${FLUTTER_MANAGED_DIR})` line.
+Any `if(DEFINED FLUTTER_APP_FLAVOR)` block placed before that line
+is silently skipped.
+:::
 
 The following table illustrates the build directories that Flutter creates
 when a project defines two flavors (`staging`, `production`)
-and two build modes (`debug`, `release`):
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Platform</th>
-      <th>Flavor</th>
-      <th>Build mode</th>
-      <th>Output directory</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="2">Windows</td>
-      <td>staging</td>
-      <td>release</td>
-      <td><code>build/windows/&lt;arch&gt;/staging/runner/Release/</code></td>
-    </tr>
-    <tr>
-      <td>production</td>
-      <td>release</td>
-      <td><code>build/windows/&lt;arch&gt;/production/runner/Release/</code></td>
-    </tr>
-    <tr>
-      <td rowspan="2">Linux</td>
-      <td>staging</td>
-      <td>release</td>
-      <td><code>build/linux/&lt;arch&gt;/staging/release/bundle/</code></td>
-    </tr>
-    <tr>
-      <td>production</td>
-      <td>release</td>
-      <td><code>build/linux/&lt;arch&gt;/production/release/bundle/</code></td>
-    </tr>
-  </tbody>
-</table>
+| Flavor     | Build mode  | Output directory                                        |
+|------------|-------------|---------------------------------------------------------|
+| staging    | debug       | `build/windows/&lt;arch&gt;/staging/runner/Debug/`      |
+| production | debug       | `build/windows/&lt;arch&gt;/production/runner/Debug/`   |
+| staging    | release     | `build/windows/&lt;arch&gt;/staging/runner/Release/`    |
+| production | release     | `build/windows/&lt;arch&gt;/production/runner/Release/` |
+{:.table .table-striped}
 
 [CMake]: https://cmake.org/
-[Set up Flutter flavors for Android]: /deployment/flavors
-[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+[Android]: /deployment/flavors
+[iOS and macOS]: /deployment/flavors-ios
+[Linux]: /deployment/flavors-linux
 
-## Configure CMake for flavors {: #configure-cmake }
+## Configure CMake for flavors [OPTIONAL] {: #configure-cmake }
 
-Complete the following steps to configure two flavors called
-`staging` and `production` for a new or existing Flutter project.
+Passing `--flavor` works on Windows without any project configuration.
+Flutter isolates the build directory, populates `appFlavor`,
+and filters flavor-specific assets automatically.
+
+Complete the following optional steps only if you want to
+differentiate the **native** runner per flavor—for example,
+its window title, application ID, or app icon.
+
+This example configures two flavors called `staging` and `production`.
 
 1.  Create a new Flutter project called `flavors_example`:
 
@@ -86,79 +79,35 @@ Complete the following steps to configure two flavors called
 
 1. Configure the CMake build files for your target platform:
 
-<Tabs key="flavors-os" wrapped="true">
-<Tab name="Windows">
+    Open `windows/CMakeLists.txt` and locate the `set(BINARY_NAME ...)` line.
+    Update the configuration to append the flavor name to the binary name
+    when a flavor is specified:
 
-Open `windows/CMakeLists.txt` and locate the `set(BINARY_NAME ...)` line.
-Update the configuration to append the flavor name to the binary name
-when a flavor is specified:
+    ```cmake title="windows/CMakeLists.txt"
+    # The name of the executable created for the application.
+    set(BINARY_NAME "flavors_example")
+    if(DEFINED FLUTTER_APP_FLAVOR AND NOT FLUTTER_APP_FLAVOR STREQUAL "")
+      set(BINARY_NAME "${BINARY_NAME}_${FLUTTER_APP_FLAVOR}")
+    endif()
+    ```
 
-```cmake title="windows/CMakeLists.txt"
-# The name of the executable created for the application.
-set(BINARY_NAME "flavors_example")
-if(DEFINED FLUTTER_APP_FLAVOR AND NOT FLUTTER_APP_FLAVOR STREQUAL "")
-  set(BINARY_NAME "${BINARY_NAME}_${FLUTTER_APP_FLAVOR}")
-endif()
-```
-</Tab>
-<Tab name="Linux">
+3. Verify that your flavors run correctly:
 
-Open `linux/CMakeLists.txt` and locate the `set(BINARY_NAME ...)` and
-`set(APPLICATION_ID ...)` lines.
-Update the configuration to append the flavor name to the binary name
-and application ID when a flavor is specified:
+    Run the `staging` flavor:
 
-```cmake title="linux/CMakeLists.txt"
-# The name of the executable created for the application.
-set(BINARY_NAME "flavors_example")
-# The unique GTK application identifier for this application.
-set(APPLICATION_ID "com.example.flavors_example")
+    ```console title="console"
+    $ flutter run -d windows --flavor staging
+    ```
 
-if(DEFINED FLUTTER_APP_FLAVOR AND NOT FLUTTER_APP_FLAVOR STREQUAL "")
-  set(BINARY_NAME "${BINARY_NAME}_${FLUTTER_APP_FLAVOR}")
-  set(APPLICATION_ID "${APPLICATION_ID}.${FLUTTER_APP_FLAVOR}")
-endif()
-```
+    Run the `production` flavor:
 
-</Tab>
-</Tabs>
-
-1. Verify that your flavors run correctly:
-
-<Tabs key="flavors-os" wrapped="true">
-<Tab name="Windows">
-
-Run the `staging` flavor:
-
-```console title="console"
-$ flutter run -d windows --flavor staging
-```
-
-Run the `production` flavor:
-
-```console title="console"
-$ flutter run -d windows --flavor production
-```
-</Tab>
-<Tab name="Linux">
-
-Run the `staging` flavor:
-
-```console title="console"
-$ flutter run -d linux --flavor staging
-```
-
-Run the `production` flavor:
-
-```console title="console"
-$ flutter run -d linux --flavor production
-```
-</Tab>
-</Tabs>
+    ```console title="console"
+    $ flutter run -d windows --flavor production
+    ```
 
 ## Launch a flavor {: #launch-a-flavor }
 
-After you configure flavors for your Windows or Linux app,
+After you configure flavors for your app,
 launch or build a specific flavor using the `--flavor` flag
 with the Flutter CLI.
 
@@ -167,32 +116,14 @@ with the Flutter CLI.
 To run a specific flavor during development,
 pass the `--flavor` option to `flutter run`:
 
-<Tabs key="flavors-os" wrapped="true">
-<Tab name="Windows">
-
 ```console title="console"
 $ flutter run -d windows --flavor <flavor_name>
 ```
-</Tab>
-<Tab name="Linux">
-
-```console title="console"
-$ flutter run -d linux --flavor <flavor_name>
-```
-
-Replace `<flavor_name>` with the name of your flavor
-(for example, `staging` or `production`).
-
-</Tab>
-</Tabs>
 
 ### Build a release binary {: #build-a-flavor }
 
 To build a release executable for a specific flavor,
 pass the `--flavor` option to `flutter build`:
-
-<Tabs key="flavors-os" wrapped="true">
-<Tab name="Windows">
 
 ```console title="console"
 $ flutter build windows --flavor <flavor_name>
@@ -200,19 +131,6 @@ $ flutter build windows --flavor <flavor_name>
 
 Flutter outputs the compiled executable to
 `build/windows/<arch>/<flavor_name>/runner/Release/`.
-
-</Tab>
-<Tab name="Linux">
-
-```console title="console"
-$ flutter build linux --flavor <flavor_name>
-```
-
-Flutter outputs the compiled bundle to
-`build/linux/<arch>/<flavor_name>/release/bundle/`.
-
-</Tab>
-</Tabs>
 
 ## Use flavors in Flutter code {: #use-flavors-in-code }
 
@@ -252,7 +170,8 @@ during `flutter run` or `flutter build`.
     :::note
     The value of `appFlavor` matches the string passed to the `--flavor` flag.
     If you run or build without specifying a flavor,
-    `appFlavor` returns `null`.
+    `appFlavor` returns `null` and the build uses the
+    [default flavor](#set-default-flavor).
     :::
 
 ## Customize configurations {: #customize-configurations }
@@ -265,76 +184,34 @@ you can customize native settings and assets for each configuration.
 To help distinguish between different flavors at runtime,
 you can customize the native window title for each flavor.
 
-<Tabs key="flavors-os" wrapped="true">
-<Tab name="Windows">
-
 1. Open `windows/runner/CMakeLists.txt` and pass `FLUTTER_APP_FLAVOR`
    as a preprocessor definition:
 
-```cmake title="windows/runner/CMakeLists.txt"
-if(DEFINED FLUTTER_APP_FLAVOR AND NOT FLUTTER_APP_FLAVOR STREQUAL "")
-  target_compile_definitions(${BINARY_NAME} PRIVATE "FLUTTER_APP_FLAVOR=\"${FLUTTER_APP_FLAVOR}\"")
-endif()
-```
+    ```cmake title="windows/runner/CMakeLists.txt"
+    if(DEFINED FLUTTER_APP_FLAVOR AND NOT FLUTTER_APP_FLAVOR STREQUAL "")
+      target_compile_definitions(${BINARY_NAME} PRIVATE "FLUTTER_APP_FLAVOR=\"${FLUTTER_APP_FLAVOR}\"")
+    endif()
+    ```
 
-1. Open `windows/runner/main.cpp` and update the window title
+2. Open `windows/runner/main.cpp` and update the window title
    to include the flavor name when defined:
 
-```cpp title="windows/runner/main.cpp"
-#if defined(FLUTTER_APP_FLAVOR)
-  std::wstring title = L"flavors_example (" + std::wstring(L"" FLUTTER_APP_FLAVOR) + L")";
-  if (!window.Create(title.c_str(), origin, size)) {
-    return EXIT_FAILURE;
-  }
-  #else
-    if (!window.Create(L"flavors_example", origin, size)) {
-      return EXIT_FAILURE;
-    }
-  #endif
-```
-
-</Tab>
-<Tab name="Linux">
-
-1. Open `linux/runner/CMakeLists.txt` and pass `FLUTTER_APP_FLAVOR`
-   as a preprocessor definition:
-
-```cmake title="linux/runner/CMakeLists.txt"
-if(DEFINED FLUTTER_APP_FLAVOR AND NOT FLUTTER_APP_FLAVOR STREQUAL "")
-  target_compile_definitions(${BINARY_NAME} PRIVATE "FLUTTER_APP_FLAVOR=\"${FLUTTER_APP_FLAVOR}\"")
-endif()
-```
-
-1. Open `linux/runner/my_application.cc` and update the window title
-   in the `my_application_activate` function:
-
-```c title="linux/runner/my_application.cc"
-#if defined(FLUTTER_APP_FLAVOR)
-  const char* title = "flavors_example (" FLUTTER_APP_FLAVOR ")";
-#else
-  const char* title = "flavors_example";
-#endif
-
-if (use_header_bar) {
-  GtkHeaderBar* header_bar = GTK_HEADER_BAR(gtk_header_bar_new());
-  gtk_widget_show(GTK_WIDGET(header_bar));
-  gtk_header_bar_set_title(header_bar, title);
-  gtk_header_bar_set_show_close_button(header_bar, TRUE);
-  gtk_window_set_titlebar(window, GTK_WIDGET(header_bar));
-} else {
-  gtk_window_set_title(window, title);
-}
-```
-
-</Tab>
-</Tabs>
+    ```cpp title="windows/runner/main.cpp"
+    #if defined(FLUTTER_APP_FLAVOR)
+      std::wstring title = L"flavors_example (" + std::wstring(L"" FLUTTER_APP_FLAVOR) + L")";
+      if (!window.Create(title.c_str(), origin, size)) {
+        return EXIT_FAILURE;
+      }
+      #else
+        if (!window.Create(L"flavors_example", origin, size)) {
+          return EXIT_FAILURE;
+        }
+      #endif
+    ```
 
 ### Create distinct app icons {: #create-distinct-app-icons }
 
 You can provide unique icons for each flavor.
-
-<Tabs key="flavors-os" wrapped="true">
-<Tab name="Windows">
 
 1. Prepare your icon files in `.ico` format
    (for example, `app_icon_staging.ico` and `app_icon_production.ico`)
@@ -343,35 +220,18 @@ You can provide unique icons for each flavor.
 1. In `windows/CMakeLists.txt`, select the appropriate icon file
    based on `FLUTTER_APP_FLAVOR`:
 
-```cmake title="windows/CMakeLists.txt"
-if(FLUTTER_APP_FLAVOR STREQUAL "staging")
-  set(APP_ICON_NAME "app_icon_staging.ico")
-elseif(FLUTTER_APP_FLAVOR STREQUAL "production")
-  set(APP_ICON_NAME "app_icon_production.ico")
-else()
-  set(APP_ICON_NAME "app_icon.ico")
-endif()
-```
+    ```cmake title="windows/CMakeLists.txt"
+    if(FLUTTER_APP_FLAVOR STREQUAL "staging")
+      set(APP_ICON_NAME "app_icon_staging.ico")
+    elseif(FLUTTER_APP_FLAVOR STREQUAL "production")
+      set(APP_ICON_NAME "app_icon_production.ico")
+    else()
+      set(APP_ICON_NAME "app_icon.ico")
+    endif()
+    ```
 
-1. Configure `windows/runner/Runner.rc` or your CMake target
+3. Configure `windows/runner/Runner.rc` or your CMake target
    to use `APP_ICON_NAME` for the application icon resource.
-
-</Tab>
-<Tab name="Linux">
-
-1. Prepare PNG icons for each flavor
-   (for example, `app_icon_staging.png` and `app_icon_production.png`).
-
-1. Create corresponding `.desktop` files for each flavor
-   (for example, `flavors_example_staging.desktop` and
-   `flavors_example_production.desktop`)
-   that reference the respective icon and executable binary name.
-
-1. Update `linux/CMakeLists.txt` to install the correct `.desktop` file
-   and icon based on `FLUTTER_APP_FLAVOR`.
-
-</Tab>
-</Tabs>
 
 ### Bundle assets by flavor {: #bundle-assets }
 
@@ -420,10 +280,9 @@ To learn more, see the [`default-flavor` field][] in
 For more information on flavors and desktop deployment,
 consult the following resources:
 
-* [Set up Flutter flavors for Android][]
-* [Set up Flutter flavors for iOS and macOS][]
+* [Set up Flutter flavors for Android][Android]
+* [Set up Flutter flavors for iOS and macOS][iOS and macOS]
+* [Set up Flutter flavors for Linux][Linux]
 * [Build and release a Windows desktop app][]
-* [Build and release a Linux app to the Snap Store][]
 
 [Build and release a Windows desktop app]: /deployment/windows
-[Build and release a Linux app to the Snap Store]: /deployment/linux
