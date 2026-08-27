@@ -44,28 +44,5 @@
   svg {
     max-width: 100%;
     height: auto;
-
-    // Use Google Sans Flex for diagram labels
-    text,
-    .label,
-    .nodeLabel,
-    .edgeLabel {
-      font-family: var(--site-ui-fontFamily), sans-serif !important;
-    }
-
-    // Sharper node outlines matching site borders
-    .node rect,
-    .node circle,
-    .node ellipse,
-    .node polygon,
-    .node path {
-      stroke-width: 1.5px;
-      fill:  var(--site-secondaryContainer-bgColor) !important;
-    }
-
-    // Edge lines & arrows
-    .edgePath .path {
-      stroke-width: 1.5px;
-    }
   }
 }

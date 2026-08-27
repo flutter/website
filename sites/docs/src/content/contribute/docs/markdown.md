@@ -96,12 +96,15 @@ edit [`_mermaid.scss`][]:
   pre.mermaid {
     // Fallback styles
   }
+  
+  .mermaid-theme {}
+
+  .mermaid-theme-light {}
+
+  .mermaid-theme-dark {}
 
   svg {
     // Custom SVG element overrides (requires !important)
-    .highlightNode rect {
-      fill: var(--site-primary-color) !important;
-    }
   }
 }
 ```
