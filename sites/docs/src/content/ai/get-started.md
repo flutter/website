@@ -50,7 +50,26 @@ and configure tools for Flutter development.
 <Tab name="Antigravity">
 
 [Antigravity](https://antigravity.google/) is an agentic development platform
-by Google that includes the Antigravity CLI and Antigravity IDE.
+by Google that includes the Antigravity IDE, IDE extensions (for VS Code and
+other editors), and the Antigravity CLI.
+
+**Antigravity IDE and extensions**
+
+Equip the Antigravity IDE or Antigravity extension (such as in VS Code)
+with official Dart and Flutter tools:
+
+1. Open **Settings** in Antigravity by clicking the gear icon or pressing
+   <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>,</kbd>.
+1. Click the **Customizations** tab.
+1. In the **Build with Google Plugins** section, click **Customize**.
+1. Click **Download** next to the **Dart and Flutter** integration.
+
+To verify the installation, open the **Agent** panel
+(<kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>) and ask the agent:
+
+```text
+Summarize the Dart and Flutter tools and skills available in this project.
+```
 
 **Antigravity CLI**
 
@@ -86,23 +105,6 @@ The Antigravity CLI runs as the `agy` command in your terminal.
    ```bash
    agy
    ```
-
-**Antigravity IDE**
-
-Equip the Antigravity IDE with official Dart and Flutter tools:
-
-1. Open **Settings** in Antigravity by clicking the gear icon or pressing
-   <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>,</kbd>.
-1. Click the **Customizations** tab.
-1. In the **Build with Google Plugins** section, click **Customize**.
-1. Click **Download** next to the **Dart and Flutter** integration.
-
-To verify the installation, open the **Agent** panel
-(<kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>) and ask the agent:
-
-```text
-Summarize the Dart and Flutter tools and skills available in this project.
-```
 
 </Tab>
 
