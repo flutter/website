@@ -6,34 +6,26 @@
 // ============================================================================
 
 // Spacing
-$ide-spacing-xs: 0.25rem;
-$ide-spacing-sm: 0.3rem;
-$ide-spacing-md: 0.4rem;
-$ide-spacing-lg: 0.5rem;
-$ide-spacing-xl: 0.6rem;
-$ide-spacing-2xl: 0.75rem;
-$ide-spacing-3xl: 0.85rem;
-$ide-spacing-4xl: 1rem;
-$ide-spacing-5xl: 1.25rem;
-$ide-spacing-6xl: 1.5rem;
+$ide-spacing-xs: 0.3rem;
+$ide-spacing-sm: 0.6rem;
+$ide-spacing-md: 0.85rem;
+$ide-spacing-lg: 1rem;
+$ide-spacing-xl: 1.25rem;
 
 // Icon sizes
 $ide-icon-xs: 0.55rem;
 $ide-icon-sm: 0.9rem;
-$ide-icon-md: 1.1rem;
+$ide-icon-md: 1rem;
 $ide-icon-lg: 1.5rem;
 
 // Font sizes
-$ide-font-xs: 0.6875rem;
-$ide-font-sm: 0.75rem;
-$ide-font-md: 0.8125rem;
-$ide-font-lg: 0.9rem;
-$ide-font-xl: 0.9375rem;
-$ide-font-2xl: 1.25rem;
+$ide-font-xs: 0.7rem;
+$ide-font-sm: 0.85rem;
+$ide-font-md: 1rem;
+$ide-font-lg: 1.25rem;
 
 // Border radius
-$ide-radius-sm: 0.2rem;
-$ide-radius-md: 0.3rem;
+$ide-radius-sm: 0.3rem;
 $ide-radius-lg: 1rem;
 
 // Other sizes
@@ -141,10 +133,10 @@ $badge-colors: (
 .ide-root-tab {
   @include ide-button-base;
   flex: 1;
-  padding: $ide-spacing-sm 0;
+  padding: $ide-spacing-xs 0;
   border-radius: $ide-radius-sm;
   color: var(--site-base-fgColor-alt);
-  font-size: $ide-font-sm;
+  font-size: $ide-font-xs;
   font-weight: 500;
 
   &.active {
@@ -188,7 +180,7 @@ $badge-colors: (
   }
 
   ul > li.ide-node:last-child {
-    margin-bottom: $ide-spacing-lg;
+    margin-bottom: $ide-spacing-sm;
   }
 
   li.ide-node {
@@ -254,11 +246,11 @@ $badge-colors: (
     @include ide-button-base;
     flex: 1;
     min-width: 0;
-    padding: $ide-spacing-xs $ide-spacing-xl;
+    padding: $ide-spacing-xs $ide-spacing-sm;
     border-radius: $ide-radius-sm;
     color: inherit;
     font-family: var(--site-code-fontFamily);
-    font-size: $ide-font-md;
+    font-size: $ide-font-sm;
     text-align: left;
     outline-offset: -2px;
 
@@ -272,7 +264,7 @@ $badge-colors: (
       @include no-shrink;
       width: $ide-icon-sm;
       height: $ide-icon-sm;
-      margin-inline-end: $ide-spacing-md;
+      margin-inline-end: $ide-spacing-xs;
     }
   }
 
@@ -296,16 +288,16 @@ $badge-colors: (
 
 .ide-badge-dot {
   @include no-shrink;
-  width: $ide-spacing-md;
-  height: $ide-spacing-md;
-  margin-inline-start: $ide-spacing-md;
+  width: $ide-spacing-xs;
+  height: $ide-spacing-xs;
+  margin-inline-start: $ide-spacing-xs;
   border-radius: 50%;
   background-color: var(--site-base-fgColor-alt);
 }
 
 .ide-badge {
   @include no-shrink;
-  padding: 0.1rem $ide-spacing-lg;
+  padding: 0.1rem $ide-spacing-sm;
   border-radius: $ide-radius-lg;
   background-color: var(--site-raised-bgColor);
   color: var(--site-base-fgColor-alt);
@@ -345,11 +337,11 @@ $badge-colors: (
 .ide-detail {
   flex: 1;
   min-width: 0;
-  padding: $ide-spacing-5xl $ide-spacing-6xl;
+  padding: $ide-spacing-xl;
   overflow-y: auto;
 
   @include breakpoints.screen-below('md') {
-    padding: $ide-spacing-4xl;
+    padding: $ide-spacing-lg;
   }
 }
 
@@ -366,23 +358,23 @@ $badge-colors: (
 }
 
 .ide-path {
-  margin-block-end: $ide-spacing-lg;
+  margin-block-end: $ide-spacing-sm;
   color: var(--site-base-fgColor-alt);
   font-family: var(--site-code-fontFamily);
-  font-size: $ide-font-sm;
+  font-size: $ide-font-xs;
 }
 
 .ide-path-sep {
-  margin-inline: $ide-spacing-sm;
+  margin-inline: $ide-spacing-xs;
   color: var(--site-outline);
 }
 
 .ide-detail-header {
   display: flex;
   align-items: flex-start;
-  gap: $ide-spacing-xl;
-  margin-block-end: $ide-spacing-4xl;
-  padding-bottom: $ide-spacing-4xl;
+  gap: $ide-spacing-sm;
+  margin-block-end: $ide-spacing-lg;
+  padding-bottom: $ide-spacing-lg;
   border-bottom: 0.5px solid;
 
   svg {
@@ -406,23 +398,23 @@ $badge-colors: (
 
 .ide-detail-title {
   font-family: var(--site-code-fontFamily);
-  font-size: $ide-font-2xl;
+  font-size: $ide-font-lg;
   font-weight: 600;
 }
 
 .ide-detail-subtitle {
   margin-block-start: 0.15rem;
   color: var(--site-base-fgColor-alt);
-  font-size: $ide-font-xl;
+  font-size: $ide-font-md;
 }
 
 .ide-note {
-  padding: $ide-spacing-xl $ide-spacing-2xl;
-  margin-block-end: $ide-spacing-4xl;
-  border-radius: $ide-radius-md;
+  padding: $ide-spacing-sm $ide-spacing-md;
+  margin-block-end: $ide-spacing-lg;
+  border-radius: $ide-radius-sm;
   background-color: var(--site-inset-bgColor);
   color: var(--site-inset-fgColor);
-  font-size: $ide-font-lg;
+  font-size: $ide-font-sm;
 
   p {
     margin: 0;
@@ -436,14 +428,14 @@ $badge-colors: (
 }
 
 .ide-description {
-  margin-block-end: $ide-spacing-4xl;
+  margin-block-end: $ide-spacing-lg;
 }
 
 .ide-tips {
-  padding: $ide-spacing-xl $ide-spacing-3xl;
-  margin-block-end: $ide-spacing-4xl;
+  padding: $ide-spacing-sm $ide-spacing-md;
+  margin-block-end: $ide-spacing-lg;
   border: 1px solid var(--site-outline-variant);
-  border-radius: $ide-radius-md;
+  border-radius: $ide-radius-sm;
 
   ul {
     @include reset-list;
@@ -461,29 +453,29 @@ $badge-colors: (
 
 .ide-tips-title {
   @include uppercase-label;
-  margin-block-end: $ide-spacing-md;
+  margin-block-end: $ide-spacing-xs;
   color: var(--site-primary-color);
 }
 
 .ide-example {
-  margin-block-end: $ide-spacing-4xl;
+  margin-block-end: $ide-spacing-lg;
 }
 
 .ide-docs-link {
   @include flex-center;
   display: inline-flex;
-  gap: $ide-spacing-sm;
-  padding: $ide-spacing-sm $ide-spacing-2xl;
-  margin-block-end: $ide-spacing-4xl;
+  gap: $ide-spacing-xs;
+  padding: $ide-spacing-xs $ide-spacing-md;
+  margin-block-end: $ide-spacing-lg;
   border-radius: $ide-radius-lg;
   background-color: var(--site-primary-color-highlight);
   color: var(--site-primary-color);
-  font-size: $ide-font-md;
+  font-size: $ide-font-sm;
   font-weight: 600;
   text-decoration: none;
 
   .material-symbols {
-    font-size: $ide-spacing-4xl;
+    font-size: $ide-icon-md;
   }
 
   &:hover {
@@ -493,7 +485,7 @@ $badge-colors: (
 
 .ide-contents-title {
   @include uppercase-label;
-  margin-block-end: $ide-spacing-lg;
+  margin-block-end: $ide-spacing-sm;
   color: var(--site-base-fgColor-alt);
 }
 
@@ -506,13 +498,13 @@ $badge-colors: (
 .ide-content-link {
   @include flex-center;
   @include ide-button-base;
-  gap: $ide-spacing-lg;
-  padding: $ide-spacing-md $ide-spacing-xl;
-  border-radius: $ide-radius-md;
+  gap: $ide-spacing-sm;
+  padding: $ide-spacing-xs $ide-spacing-sm;
+  border-radius: $ide-radius-sm;
   background-color: var(--site-raised-bgColor-translucent);
   color: inherit;
   font-family: var(--site-code-fontFamily);
-  font-size: $ide-font-md;
+  font-size: $ide-font-sm;
   text-align: left;
 
   svg {
@@ -525,7 +517,7 @@ $badge-colors: (
     overflow: hidden;
     color: var(--site-base-fgColor-alt);
     font-family: var(--site-ui-fontFamily);
-    font-size: $ide-font-sm;
+    font-size: $ide-font-xs;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
