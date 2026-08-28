@@ -51,7 +51,7 @@ class _CujFiltersState extends State<CujFilters> {
         return;
       }
 
-      _recreateCujs(cujList.querySelectorAll('.card'));
+      _recreateCujs(cujList.querySelectorAll('.cuj-card'));
     }
   }
 

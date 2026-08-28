@@ -59,7 +59,7 @@ class CujFiltersSidebar extends StatelessComponent {
                       onChange: (checked) {
                         filters.setPersona(
                           persona,
-                          isSelected: checked as bool,
+                          isSelected: checked as bool? ?? false,
                         );
                       },
                     ),
