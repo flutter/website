@@ -2,8 +2,8 @@
 title: How Flutter AI tools work
 shortTitle: How AI tools work
 description: >-
-  Learn how agent skills, the Dart and Flutter MCP server, package skills,
-  and AI rules interact to assist your development workflow.
+  Learn how agent skills, the Dart and Flutter MCP server, and package skills
+  interact to assist your development workflow.
 ---
 
 Flutter and Dart provide an integrated suite of tools designed to help AI
@@ -12,7 +12,7 @@ development tasks accurately.
 
 ## Tooling ecosystem overview
 
-The Flutter AI tooling ecosystem consists of five complementary components:
+The Flutter AI tooling ecosystem consists of four complementary components:
 
 1. **Agent skills**: Task-oriented blueprints that teach assistants how to
    perform specific workflows (such as creating responsive layouts or writing
@@ -24,8 +24,6 @@ The Flutter AI tooling ecosystem consists of five complementary components:
    server giving assistants direct access to official Flutter and Dart docs.
 4. **Package skills**: Skills published directly inside third-party `pub.dev`
    packages, giving assistants instant expertise on specific libraries.
-5. **AI rules**: Always-on workspace instructions providing high-level
-   project conventions and style guidance.
 
 ---
 
@@ -110,23 +108,6 @@ To learn how to install or publish package skills, check out
 
 ---
 
-## AI rules
-
-**AI rules** provide persistent, project-wide instructions that are included
-in every prompt. Unlike on-demand skills, rules define baseline standards for
-your codebase, such as architectural conventions, code styling, and package
-preferences.
-
-Depending on your coding assistant, rules are stored in standard workspace
-files such as `.github/copilot-instructions.md`, `.cursorrules`, `CLAUDE.md`,
-or `GEMINI.md`.
-
-You can use the official [Flutter SDK rules template](
-https://github.com/flutter/flutter/blob/main/docs/rules/rules.md) as a starting
-point for establishing project-wide conventions.
-
----
-
 ## When to use what
 
 Use the following mental model to understand how different AI mechanisms
@@ -138,7 +119,6 @@ interact:
 | **Dart MCP server** | Local SDK tools | Diagnostics, tests, runtime |
 | **Developer Knowledge MCP** | Online search | Live docs, API references |
 | **Package skill** | From dependencies | Library APIs, code generation |
-| **AI rule** | Always-on context | Project style, architecture |
 
 {:.table .table-striped}
 
