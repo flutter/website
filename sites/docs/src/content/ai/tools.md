@@ -12,7 +12,7 @@ development tasks accurately.
 
 ## Tooling ecosystem overview
 
-The Flutter AI tooling ecosystem consists of four complementary components:
+The Flutter AI tooling ecosystem consists of five complementary components:
 
 1. **Agent skills**: Task-oriented blueprints that teach assistants how to
    perform specific workflows (such as creating responsive layouts or writing
@@ -20,9 +20,11 @@ The Flutter AI tooling ecosystem consists of four complementary components:
 2. **Dart and Flutter MCP server**: A Model Context Protocol (MCP) server
    exposing real-time SDK diagnostics, symbol resolution, and runtime
    introspection to assistants.
-3. **Package skills**: Skills published directly inside third-party `pub.dev`
+3. **Developer Knowledge MCP server**: A cloud-hosted documentation search
+   server giving assistants direct access to official Flutter and Dart docs.
+4. **Package skills**: Skills published directly inside third-party `pub.dev`
    packages, giving assistants instant expertise on specific libraries.
-4. **AI rules**: Always-on workspace instructions providing high-level
+5. **AI rules**: Always-on workspace instructions providing high-level
    project conventions and style guidance.
 
 ---
@@ -75,6 +77,22 @@ Key capabilities provided by the MCP server include:
 
 ---
 
+## Developer Knowledge MCP server
+
+While the local Dart and Flutter MCP server focuses on local codebase analysis
+and runtime debugging, you can also equip your assistant with search access to
+official online documentation.
+
+The [Developer Knowledge MCP server](
+https://developers.google.com/knowledge/mcp)
+connects AI assistants to Google's developer documentation corpus, including
+[docs.flutter.dev](https://docs.flutter.dev),
+[dart.dev](https://dart.dev), and official API references. This allows
+assistants to retrieve up-to-date guides, migration notes, and API references
+directly during conversation.
+
+---
+
 ## Package skills
 
 In addition to core Flutter skills, library authors can bundle official skills
@@ -118,6 +136,7 @@ interact:
 | :--- | :--- | :--- |
 | **Agent skill** | On demand | Multi-step recipes, patterns |
 | **Dart MCP server** | Local SDK tools | Diagnostics, tests, runtime |
+| **Developer Knowledge MCP** | Online search | Live docs, API references |
 | **Package skill** | From dependencies | Library APIs, code generation |
 | **AI rule** | Always-on context | Project style, architecture |
 

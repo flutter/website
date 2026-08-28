@@ -286,5 +286,8 @@ npx skills add dart-lang/skills --skill '*' --agent universal --yes
   [How Flutter AI tools work](/ai/tools).
 * To publish or consume skills from dependencies, refer to
   [Package skills](/ai/package-skills).
+* To give your assistant search access to official Flutter and Dart
+  documentation, connect to the [Developer Knowledge MCP server](
+  https://developers.google.com/knowledge/mcp).
 * To explore the official plugins, check out the
   [flutter/agent-plugins](https://github.com/flutter/agent-plugins) repository.
