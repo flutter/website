@@ -1243,3 +1243,14 @@
     - "Small-to-medium Business"
     - "Enterprise"
   options_GCP_partner: false
+- title: "Aubergine Solutions Pvt. Ltd."
+  summary: "An award-winning UI/UX and product development company building AI-enabled web, mobile, and enterprise apps. As a Claude Network Partner and Flutter specialist, they unite design, engineering, and AI to deliver scalable, intelligent products."
+  card: "images/third_party/partners/Aubergine_logo.png"
+  external_url: "https://www.aubergine.co/solution/technology-transformation/flutter-development"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false

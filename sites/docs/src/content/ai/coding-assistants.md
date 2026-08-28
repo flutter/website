@@ -1,6 +1,5 @@
 ---
 title: AI coding assistants
-sidenav: ai
 description: >
   Learn how to use AI-powered coding assistants like Antigravity
   to accelerate your Flutter development.
