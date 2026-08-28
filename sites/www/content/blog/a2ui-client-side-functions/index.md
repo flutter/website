@@ -5,13 +5,13 @@ description: >-
   directly to Dart code running on a user's device.
 publishDate: 2026-08-25
 author: redbrogdon
-image: images/A2UI.gif
+# image: images/A2UI.gif
 socialImage: images/A2UI_Still.png
 category: deep-dive
 layout: blog
 ---
 
-<DashImage figure src="images/A2UI.gif" alt="Learn how to use client-side functions" caption="Learn how to use client-side functions" />
+<!-- <DashImage figure src="images/A2UI.gif" alt="Learn how to use client-side functions" caption="Learn how to use client-side functions" /> -->
 
 
 Generative UI (GenUI) is transforming how I approach UI
