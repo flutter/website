@@ -3,7 +3,7 @@ title: "Quick, reliable calculations with A2UI's Client-Side Functions"
 description: >-
   Learn how client-side functions allow an agent to delegate local operations
   directly to Dart code running on a user's device.
-publishDate: 2026-08-25
+publishDate: 2026-08-28
 author: redbrogdon
 image: images/A2UI.gif
 socialImage: images/A2UI_Still.png
