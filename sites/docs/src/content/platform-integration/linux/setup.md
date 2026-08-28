@@ -128,7 +128,7 @@ or begin expanding integration with Linux.
           <a class="text-button" href="/deployment/linux">Release a Linux app</a>
         </li>
         <li>
-          <a class="text-button" href="/deployment/flavors-windows-linux">Set up app flavors</a>
+          <a class="text-button" href="/deployment/flavors-linux">Set up app flavors</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/platform-channels">Write Linux-specific code</a>

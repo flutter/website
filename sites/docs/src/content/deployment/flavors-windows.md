@@ -22,20 +22,20 @@ visit the pages on setting up flavors for:
 A Flutter flavor represents a collection of settings that define
 how a specific version of your app builds and runs.
 For example, a flavor can determine which window title,
-application ID, API endpoint, asset set, and logging configuration
+application icon, API endpoint, asset set, and logging configuration
 applies to a build.
 
 On Windows, Flutter uses [CMake][] to configure and build
 the native desktop runner.
 When you run `flutter run` or `flutter build` with the `--flavor` flag,
 Flutter writes the flavor name into
-`<platform>/flutter/ephemeral/generatd_config.cmake` as the
+`windows/flutter/ephemeral/generated_config.cmake` as the
 `FLUTTER_APP_FLAVOR` variable, and isolates the build outputs
 in a flavor-specific directory.
 
 :::important
 The `generated_config.cmake` file is included from
-`<platform>/flutter/CMakeLists.txt`, so `FLUTTER_APP_FLAVOR`
+`windows/flutter/CMakeLists.txt`, so `FLUTTER_APP_FLAVOR`
 only becomes visible in your top-level `CMakeLists.txt` **after**
 the `add_subdirectory(${FLUTTER_MANAGED_DIR})` line.
 Any `if(DEFINED FLUTTER_APP_FLAVOR)` block placed before that line
@@ -44,13 +44,14 @@ is silently skipped.
 
 The following table illustrates the build directories that Flutter creates
 when a project defines two flavors (`staging`, `production`)
+and two build modes (`debug`, `release`):
 
-| Flavor     | Build mode  | Output directory                                        |
-|------------|-------------|---------------------------------------------------------|
-| staging    | debug       | `build/windows/&lt;arch&gt;/staging/runner/Debug/`      |
-| production | debug       | `build/windows/&lt;arch&gt;/production/runner/Debug/`   |
-| staging    | release     | `build/windows/&lt;arch&gt;/staging/runner/Release/`    |
-| production | release     | `build/windows/&lt;arch&gt;/production/runner/Release/` |
+| Flavor     | Build mode | Output directory                                        |
+|------------|------------|---------------------------------------------------------|
+| staging    | debug      | `build/windows/<arch>/staging/runner/Debug/`            |
+| production | debug      | `build/windows/<arch>/production/runner/Debug/`         |
+| staging    | release    | `build/windows/<arch>/staging/runner/Release/`          |
+| production | release    | `build/windows/<arch>/production/runner/Release/`       |
 {:.table .table-striped}
 
 [CMake]: https://cmake.org/
@@ -58,17 +59,16 @@ when a project defines two flavors (`staging`, `production`)
 [iOS and macOS]: /deployment/flavors-ios
 [Linux]: /deployment/flavors-linux
 
-## Configure CMake for flavors [OPTIONAL] {: #configure-cmake }
+## Create and run flavors {: #create-and-run-flavors }
 
-Passing `--flavor` works on Windows without any project configuration.
-Flutter isolates the build directory, populates `appFlavor`,
-and filters flavor-specific assets automatically.
+Passing `--flavor` works on Windows without any CMake configuration.
+Existing Flutter projects support flavors with no template updates
+or configuration changes required.
+When you pass `--flavor`, Flutter isolates the build directory,
+populates `appFlavor`, and filters flavor-specific assets automatically.
 
-Complete the following optional steps only if you want to
-differentiate the **native** runner per flavor—for example,
-its window title, application ID, or app icon.
-
-This example configures two flavors called `staging` and `production`.
+To try flavors with a sample project,
+complete the following steps:
 
 1.  Create a new Flutter project called `flavors_example`:
 
@@ -77,21 +77,7 @@ This example configures two flavors called `staging` and `production`.
     $ cd flavors_example
     ```
 
-1. Configure the CMake build files for your target platform:
-
-    Open `windows/CMakeLists.txt` and locate the `set(BINARY_NAME ...)` line.
-    Update the configuration to append the flavor name to the binary name
-    when a flavor is specified:
-
-    ```cmake title="windows/CMakeLists.txt"
-    # The name of the executable created for the application.
-    set(BINARY_NAME "flavors_example")
-    if(DEFINED FLUTTER_APP_FLAVOR AND NOT FLUTTER_APP_FLAVOR STREQUAL "")
-      set(BINARY_NAME "${BINARY_NAME}_${FLUTTER_APP_FLAVOR}")
-    endif()
-    ```
-
-3. Verify that your flavors run correctly:
+1.  Verify that your flavors run correctly:
 
     Run the `staging` flavor:
 
@@ -105,10 +91,14 @@ This example configures two flavors called `staging` and `production`.
     $ flutter run -d windows --flavor production
     ```
 
+To customize native runner settings for each flavor—such as
+the window title or application icon—refer to
+[Customize configurations](#customize-configurations).
+
 ## Launch a flavor {: #launch-a-flavor }
 
-After you configure flavors for your app,
-launch or build a specific flavor using the `--flavor` flag
+After you define flavors for your app,
+run, build, or test a specific flavor using the `--flavor` flag
 with the Flutter CLI.
 
 ### Run a flavor in debug mode {: #run-a-flavor }
@@ -119,6 +109,9 @@ pass the `--flavor` option to `flutter run`:
 ```console title="console"
 $ flutter run -d windows --flavor <flavor_name>
 ```
+
+Replace `<flavor_name>` with the name of your flavor
+(for example, `staging` or `production`).
 
 ### Build a release binary {: #build-a-flavor }
 
@@ -132,9 +125,19 @@ $ flutter build windows --flavor <flavor_name>
 Flutter outputs the compiled executable to
 `build/windows/<arch>/<flavor_name>/runner/Release/`.
 
+### Run tests with a flavor {: #test-a-flavor }
+
+The `--flavor` option also works with `flutter test` and `flutter drive`,
+allowing you to run unit, widget, or integration tests
+against a specific flavor configuration:
+
+```console title="console"
+$ flutter test --flavor <flavor_name>
+```
+
 ## Use flavors in Flutter code {: #use-flavors-in-code }
 
-After you configure your flavors,
+After adding flavors,
 you can adjust app behavior—such as selecting API endpoints,
 toggling features, or setting analytics keys—based on the active flavor.
 
@@ -176,62 +179,106 @@ during `flutter run` or `flutter build`.
 
 ## Customize configurations {: #customize-configurations }
 
-After adding flavors,
-you can customize native settings and assets for each configuration.
+To differentiate the native Windows runner per flavor—such as
+giving each flavor a unique window title or application icon—configure
+CMake to generate the runner source and resource files
+using `configure_file`.
+
+### Configure CMake for native settings {: #configure-cmake-native }
+
+CMake evaluates `windows/runner/CMakeLists.txt` after `FLUTTER_APP_FLAVOR`
+is defined.
+You can inspect this variable to configure flavor-specific values,
+then use `configure_file` to substitute them into template files
+for the C++ runner (`main.cpp`) and the Windows resource script (`Runner.rc`).
+
+In `windows/runner/CMakeLists.txt`, add the following block
+before the `add_executable(${BINARY_NAME} ...)` line:
+
+```cmake title="windows/runner/CMakeLists.txt"
+# Configure flavor-specific settings.
+if(DEFINED FLUTTER_APP_FLAVOR)
+  if(FLUTTER_APP_FLAVOR STREQUAL "staging")
+    set(RUNNER_APP_ICON "staging.ico")
+    set(WINDOW_TITLE "Staging App")
+  elseif(FLUTTER_APP_FLAVOR STREQUAL "production")
+    set(RUNNER_APP_ICON "production.ico")
+    set(WINDOW_TITLE "Production App")
+  endif()
+else()
+  set(RUNNER_APP_ICON "app_icon.ico")
+  set(WINDOW_TITLE "${BINARY_NAME}")
+endif()
+
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp"
+  @ONLY
+)
+
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/Runner.rc.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Runner.rc"
+  @ONLY
+)
+```
+
+:::note
+Because `configure_file` generates `main.cpp` and `Runner.rc`
+in the source directory at build time,
+add both generated files to your project's `.gitignore`:
+
+```gitignore title=".gitignore"
+windows/runner/main.cpp
+windows/runner/Runner.rc
+```
+
+Commit the `.in` template files to version control instead.
+:::
 
 ### Create distinct window titles {: #create-distinct-window-titles }
 
-To help distinguish between different flavors at runtime,
-you can customize the native window title for each flavor.
+To display a flavor-specific window title when the app launches:
 
-1. Open `windows/runner/CMakeLists.txt` and pass `FLUTTER_APP_FLAVOR`
-   as a preprocessor definition:
+1.  Rename `windows/runner/main.cpp` to `windows/runner/main.cpp.in`.
 
-    ```cmake title="windows/runner/CMakeLists.txt"
-    if(DEFINED FLUTTER_APP_FLAVOR AND NOT FLUTTER_APP_FLAVOR STREQUAL "")
-      target_compile_definitions(${BINARY_NAME} PRIVATE "FLUTTER_APP_FLAVOR=\"${FLUTTER_APP_FLAVOR}\"")
-    endif()
-    ```
+1.  In `windows/runner/main.cpp.in`, find where `window.Create` is called
+    and replace the hardcoded title with `@WINDOW_TITLE@`:
 
-2. Open `windows/runner/main.cpp` and update the window title
-   to include the flavor name when defined:
-
-    ```cpp title="windows/runner/main.cpp"
-    #if defined(FLUTTER_APP_FLAVOR)
-      std::wstring title = L"flavors_example (" + std::wstring(L"" FLUTTER_APP_FLAVOR) + L")";
-      if (!window.Create(title.c_str(), origin, size)) {
+    ```cpp title="windows/runner/main.cpp.in"
+      if (!window.Create(L"@WINDOW_TITLE@", origin, size)) {
         return EXIT_FAILURE;
       }
-      #else
-        if (!window.Create(L"flavors_example", origin, size)) {
-          return EXIT_FAILURE;
-        }
-      #endif
     ```
+
+    At configure time, CMake substitutes `@WINDOW_TITLE@`
+    with the title configured for the active flavor.
 
 ### Create distinct app icons {: #create-distinct-app-icons }
 
-You can provide unique icons for each flavor.
+To provide unique desktop icons for each flavor:
 
-1. Prepare your icon files in `.ico` format
-   (for example, `app_icon_staging.ico` and `app_icon_production.ico`)
-   and place them in `windows/runner/resources/`.
+1.  Prepare your icon files in `.ico` format
+    (for example, `staging.ico` and `production.ico`)
+    and place them in `windows/runner/resources/`
+    alongside the default `app_icon.ico`.
 
-1. In `windows/CMakeLists.txt`, select the appropriate icon file
-   based on `FLUTTER_APP_FLAVOR`:
+1.  Rename `windows/runner/Runner.rc` to `windows/runner/Runner.rc.in`.
 
-    ```cmake title="windows/CMakeLists.txt"
-    if(FLUTTER_APP_FLAVOR STREQUAL "staging")
-      set(APP_ICON_NAME "app_icon_staging.ico")
-    elseif(FLUTTER_APP_FLAVOR STREQUAL "production")
-      set(APP_ICON_NAME "app_icon_production.ico")
-    else()
-      set(APP_ICON_NAME "app_icon.ico")
-    endif()
+1.  In `windows/runner/Runner.rc.in`, locate the `IDI_APP_ICON` line
+    and update the icon path to use `@RUNNER_APP_ICON@`:
+
+    ```rc title="windows/runner/Runner.rc.in"
+    IDI_APP_ICON            ICON                    "resources\\@RUNNER_APP_ICON@"
     ```
 
-3. Configure `windows/runner/Runner.rc` or your CMake target
-   to use `APP_ICON_NAME` for the application icon resource.
+    You can also update the metadata strings, such as `FileDescription`
+    and `ProductName`, to use `@WINDOW_TITLE@`:
+
+    ```rc title="windows/runner/Runner.rc.in"
+    VALUE "FileDescription", "@WINDOW_TITLE@" "\0"
+    VALUE "ProductName",     "@WINDOW_TITLE@" "\0"
+    ```
 
 ### Bundle assets by flavor {: #bundle-assets }
 
@@ -254,7 +301,7 @@ flutter:
         - production
 ```
 
-To learn more, see the [`assets` field][] in [Flutter pubspec options][].
+To learn more, consult the [`assets` field][] in [Flutter pubspec options][].
 
 [`assets` field]: /tools/pubspec#assets
 [Flutter pubspec options]: /tools/pubspec
@@ -270,7 +317,7 @@ flutter:
   default-flavor: staging
 ```
 
-To learn more, see the [`default-flavor` field][] in
+To learn more, consult the [`default-flavor` field][] in
 [Flutter pubspec options][].
 
 [`default-flavor` field]: /tools/pubspec#default-flavor-field
