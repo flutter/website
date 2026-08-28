@@ -109,9 +109,10 @@ $transition-normal: 0.2s ease;
     }
 
     .expand-button {
-      &:hover,
-      &:focus-within {
-        transition: transform $transition-normal;
+      transition: transform $transition-normal;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
       }
     }
 
@@ -124,7 +125,7 @@ $transition-normal: 0.2s ease;
         margin-block-end: $spacing-sm;
         font-size: $font-size-sm;
         line-height: 1.45;
-        color: var(--site-base-fgColor-alt);
+        color: var(--site-base-fgColor-lighter);
 
         &:last-child {
           margin-block-end: 0;

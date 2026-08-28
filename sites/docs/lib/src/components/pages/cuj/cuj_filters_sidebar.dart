@@ -32,9 +32,9 @@ class CujFiltersSidebar extends StatelessComponent {
         div(classes: 'cuj-feedback', [
           Button(
             href: _feedbackUrl,
-            content: 'Feedback',
+            content: 'Provide feedback',
             style: ButtonStyle.outlined,
-            title: 'Leave feedback or suggest new CUJs',
+            title: 'Leave feedback or suggest new CUJs.',
             attributes: {
               'target': '_blank',
               'rel': 'noopener',
