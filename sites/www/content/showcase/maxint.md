@@ -13,8 +13,6 @@ locations:
   - North America
 platforms:
   - Mobile
-  - iOS
-  - Android
   - Desktop
   - Web
 industries:
