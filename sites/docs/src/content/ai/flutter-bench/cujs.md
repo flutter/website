@@ -1,9 +1,9 @@
 ---
 title: Flutter critical user journeys
 shortTitle: Flutter CUJs
-description: >
-  Browse the catalog of canonical Flutter and Dart critical user journeys 
-  (CUJs). FlutterBench evals measures these CUJs.
+description: >-
+  Browse the catalog of canonical Flutter and Dart critical user journeys that
+  the FlutterBench evaluations test.
 bodyClass: wide-site-content
 showToc: false
 ---
