@@ -496,6 +496,11 @@ void _setUpIdeExplorer(web.Element explorer) {
       final target = selectTargets.item(i) as web.Element;
       final isMatch = target.getAttribute('data-ide-select') == domId;
       target.classList.toggle('active', isMatch);
+      if (isMatch) {
+        target.setAttribute('aria-current', 'true');
+      } else {
+        target.removeAttribute('aria-current');
+      }
       if (isMatch && target.closest('.ide-tree') != null) {
         sidebarTarget = target;
       }
@@ -504,10 +509,9 @@ void _setUpIdeExplorer(web.Element explorer) {
     final panels = explorer.querySelectorAll('[data-ide-panel]');
     for (var i = 0; i < panels.length; i++) {
       final panel = panels.item(i) as web.Element;
-      panel.classList.toggle(
-        'active',
-        panel.getAttribute('data-ide-panel') == domId,
-      );
+      final isMatch = panel.getAttribute('data-ide-panel') == domId;
+      panel.classList.toggle('active', isMatch);
+      panel.setAttribute('aria-hidden', '${!isMatch}');
     }
 
     // Expand every ancestor folder so the selected item stays visible.
@@ -527,10 +531,9 @@ void _setUpIdeExplorer(web.Element explorer) {
     final tabs = explorer.querySelectorAll('.ide-root-tab');
     for (var i = 0; i < tabs.length; i++) {
       final tab = tabs.item(i) as web.Element;
-      tab.classList.toggle(
-        'active',
-        tab.getAttribute('data-ide-root') == rootId,
-      );
+      final isMatch = tab.getAttribute('data-ide-root') == rootId;
+      tab.classList.toggle('active', isMatch);
+      tab.setAttribute('aria-selected', '$isMatch');
     }
 
     final trees = explorer.querySelectorAll('.ide-tree');
@@ -539,6 +542,7 @@ void _setUpIdeExplorer(web.Element explorer) {
       final tree = trees.item(i) as web.Element;
       final isMatch = tree.getAttribute('data-ide-root') == rootId;
       tree.classList.toggle('active', isMatch);
+      tree.setAttribute('aria-hidden', '${!isMatch}');
       if (isMatch) activeTree = tree;
     }
 

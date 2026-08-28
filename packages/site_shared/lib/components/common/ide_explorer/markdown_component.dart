@@ -3,6 +3,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../../util.dart';
 import 'ide_explorer.dart';
+import 'models.dart';
 
 /// A custom markdown component that parses `<IdeExplorer>` and its
 /// `<IdeProjectRoot>`, `<IdeFolder>`, and `<IdePage>` children. Defers
@@ -59,7 +60,7 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
       roots.add(
         IdeExplorerProjectRoot(
           id: rootId,
-          label: rootEl.attributes[_attrLabel] ?? '',
+          label: rootEl.attributes[_attrLabel],
           children: _parseTreeNodes(
             rootEl.children,
             builder,
@@ -140,11 +141,6 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
       _attrIsDefaultPage,
       defaultValue: false,
     );
-    final startsClosed = _getBoolAttribute(
-      attributes,
-      _attrStartsClosed,
-      defaultValue: true,
-    );
 
     // Parse badge attributes
     final badge = attributes[_attrBadge];
@@ -154,14 +150,6 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
 
     final subtitle = attributes[_attrSubtitle];
 
-    // Recursively parse children
-    final nestedTreeNodes = _parseTreeNodes(
-      element.children,
-      builder,
-      customContents,
-      id,
-    );
-
     // Extract and store custom body content if present
     _storeCustomContentIfPresent(
       element.children,
@@ -170,15 +158,40 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
       customContents,
     );
 
-    return IdeTreeNode(
+    if (element.tag == _tagIdeFolder) {
+      final startsClosed = _getBoolAttribute(
+        attributes,
+        _attrStartsClosed,
+        defaultValue: true,
+      );
+
+      // Recursively parse children
+      final nestedTreeNodes = _parseTreeNodes(
+        element.children,
+        builder,
+        customContents,
+        id,
+      );
+
+      return IdeFolderNode(
+        id: id,
+        label: label,
+        isDefaultPage: isDefaultPage,
+        startsClosed: startsClosed,
+        badge: badge,
+        badgeColor: badgeColor,
+        subtitle: subtitle,
+        children: nestedTreeNodes,
+      );
+    }
+
+    return IdeFileNode(
       id: id,
       label: label,
       isDefaultPage: isDefaultPage,
-      startsClosed: startsClosed,
       badge: badge,
       badgeColor: badgeColor,
       subtitle: subtitle,
-      children: nestedTreeNodes,
     );
   }
 
@@ -224,18 +237,18 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
     NodesBuilder builder,
     Map<String, Component> customContents,
   ) {
-    if (!_hasCustomBodyContent(children)) {
+    if (children == null || !_hasCustomBodyContent(children)) {
       return;
     }
 
-    final contentNodes = _extractContentNodes(children!);
+    final contentNodes = _extractContentNodes(children);
     if (contentNodes.isNotEmpty) {
       customContents[nodeId] = builder.build(contentNodes);
     }
   }
 
-  /// Checks if a node has custom body content.
-  bool _hasCustomBodyContent(List<Node>? children) {
-    return children?.any(_isBodyContent) ?? false;
+  /// Checks if a list of nodes has custom body content.
+  bool _hasCustomBodyContent(List<Node> children) {
+    return children.any(_isBodyContent);
   }
 }
