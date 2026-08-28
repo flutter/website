@@ -22,12 +22,14 @@ to understand and modify your Flutter codebase.
 When you install an official Flutter agent plugin, it connects your assistant
 to two core capabilities:
 
-* **Agent skills**: On-demand procedural guides from the official Flutter and
-  Dart repositories that teach the assistant how to perform specific tasks,
-  such as creating responsive layouts, managing state, or writing widget tests.
-* **Dart and Flutter MCP server**: A Model Context Protocol (MCP) server that
-  connects the assistant to the Dart SDK, giving it real-time access to analyzer
-  diagnostics, symbol definitions, test runners, and runtime inspection.
+* **[Agent skills](/ai/tools#agent-skills)**: On-demand procedural guides from
+  the official Flutter and Dart repositories that teach the assistant how to
+  perform specific tasks, such as creating responsive layouts, managing state,
+  or writing widget tests.
+* **[Dart and Flutter MCP server](/ai/tools#dart-and-flutter-mcp-server)**:
+  A Model Context Protocol (MCP) server that connects the assistant to the
+  Dart SDK, giving it real-time access to analyzer diagnostics, symbol
+  resolution, test runners, and runtime inspection.
 
 These tools work together automatically: the assistant uses MCP tools to query
 live project state and static analysis, while using agent skills to guide its
@@ -49,9 +51,10 @@ and configure tools for Flutter development.
 
 <Tab name="Antigravity">
 
-[Antigravity](https://antigravity.google/) is an agentic development platform
-by Google that includes the Antigravity IDE, IDE extensions (for VS Code and
-other editors), and the Antigravity CLI.
+[Antigravity](
+https://antigravity.google/docs/build-with-google/#dart-and-flutter)
+is an agentic development platform by Google that includes the Antigravity
+IDE, IDE extensions (for VS Code and other editors), and the Antigravity CLI.
 
 **Antigravity IDE and extensions**
 
@@ -167,6 +170,37 @@ plugins directory:
 
 </Tab>
 
+<Tab name="Codex">
+
+[Codex](https://chatgpt.com/codex) is an agentic coding assistant designed for
+terminal and IDE workflows.
+
+**Install the official plugin**
+
+Equip Codex with official Flutter and Dart skills and MCP configuration:
+
+1. Add the Dart and Flutter marketplace for Codex plugins:
+
+   ```bash
+   codex plugin marketplace add flutter/agent-plugins
+   ```
+
+1. Install the Dart and Flutter plugin:
+
+   ```bash
+   codex plugin add dart-flutter@dart-flutter
+   ```
+
+**Verify installation**
+
+Verify that the plugin is active in Codex:
+
+```bash
+codex plugin list
+```
+
+</Tab>
+
 <Tab name="GitHub Copilot">
 
 [GitHub Copilot](https://github.com/features/copilot) in VS Code supports
@@ -199,37 +233,6 @@ npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
 
 # Install Dart skills
 npx skills add dart-lang/skills --skill '*' --agent universal --yes
-```
-
-</Tab>
-
-<Tab name="Codex">
-
-[Codex](https://chatgpt.com/codex) is an agentic coding assistant designed for
-terminal and IDE workflows.
-
-**Install the official plugin**
-
-Equip Codex with official Flutter and Dart skills and MCP configuration:
-
-1. Add the Dart and Flutter marketplace for Codex plugins:
-
-   ```bash
-   codex plugin marketplace add flutter/agent-plugins
-   ```
-
-1. Install the Dart and Flutter plugin:
-
-   ```bash
-   codex plugin add dart-flutter@dart-flutter
-   ```
-
-**Verify installation**
-
-Verify that the plugin is active in Codex:
-
-```bash
-codex plugin list
 ```
 
 </Tab>
@@ -283,8 +286,5 @@ npx skills add dart-lang/skills --skill '*' --agent universal --yes
   [How Flutter AI tools work](/ai/tools).
 * To publish or consume skills from dependencies, refer to
   [Package skills](/ai/package-skills).
-* To give your assistant search access to official Flutter and Dart
-  documentation, connect to the [Developer Knowledge MCP server](
-  https://developers.google.com/knowledge/mcp).
-* To explore or contribute to the official plugins, check out the
+* To explore the official plugins, check out the
   [flutter/agent-plugins](https://github.com/flutter/agent-plugins) repository.
