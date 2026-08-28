@@ -6,7 +6,7 @@ description: >-
 publishDate: 2026-08-25
 author: redbrogdon
 # image: images/A2UI.gif
-socialImage: images/A2UI_Still.png
+# socialImage: images/A2UI_Still.png
 category: deep-dive
 layout: blog
 ---
