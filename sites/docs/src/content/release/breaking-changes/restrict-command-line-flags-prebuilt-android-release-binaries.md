@@ -123,7 +123,7 @@ To configure engine flags statically in release builds,
 add `<meta-data>` elements under the `<application>` tag in
 your `android/app/src/main/AndroidManifest.xml` file:
 
-```xml title="AndroidManifest.xml" highlightLines=6-13
+```xml title="AndroidManifest.xml" highlightLines=6-12
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
         android:label="my_app"
@@ -149,10 +149,6 @@ Landed in version: TBD<br>
 In stable release: TBD
 
 ## References
-
-Design document:
-
-* [go/flutter-android-secure-intents](http://goto.google.com/flutter-android-secure-intents)
 
 Relevant issues:
 
