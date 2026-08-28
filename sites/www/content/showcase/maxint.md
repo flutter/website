@@ -62,11 +62,12 @@ constraints after evaluating options like React Native, Ionic, Xamarin, and
 native platforms, they chose Flutter to build a fully functional proof of
 concept for Maxint in less than 24 hours.
 
-The 24-hour sprint validated Flutter's developer velocity, responsive charting,
-and local state management across devices. Following the hackathon success, a
-lean team spent three months architecting the production-ready financial OS,
-deploying native applications across all six target platforms simultaneously—a
-timeline that likely would have required over a year using siloed native teams.
+The success of this hackathon validated Flutter's developer velocity, responsive
+charting, and local state management across devices. Following the hackathon
+success, a lean team spent three months architecting the production-ready
+financial OS, deploying native applications across all six target platforms
+simultaneously. This was a timeline that likely would have required over a year
+using siloed native teams.
 
 **Why Flutter? Single codebase portability and rendering performance**
 
