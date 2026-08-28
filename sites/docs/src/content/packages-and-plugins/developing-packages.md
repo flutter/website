@@ -1064,4 +1064,21 @@ file, like any other Dart package.
 [test your plugin]: #testing-your-plugin
 [unit tests]: /testing/overview#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
+## Bundle AI package skills
+
+You can help AI coding assistants use your package effectively by bundling
+custom instructions and recipes directly inside your repository.
+
+To distribute skills with your package:
+
+1. Create a `skills/` directory in the root of your package repo.
+2. Inside `skills/`, create a subdirectory named after your package (for
+   example, `skills/<package_name>/`).
+3. Add a `SKILL.md` file with guidelines and idiomatic code examples.
+4. Publish your package to `pub.dev`.
+
+When developers add your package as a dependency, their assistants can
+automatically discover your instructions. To learn more about authoring
+guidelines and best practices, check out [Package skills](/ai/package-skills).
+
 [Writing a good plugin]: {{site.flutter-blog}}/writing-a-good-flutter-plugin-1a561b986c9c
