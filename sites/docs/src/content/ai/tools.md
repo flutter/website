@@ -132,7 +132,7 @@ Key capabilities of the accessibility agent include:
 * **Semantic label inspection**: identifies interactive widgets (such as
   `IconButton` or `InkWell`) that lack descriptive semantic labels.
 * **Touch target validation**: flags interactive elements with hit test
-  areas smaller than the recommended 48x48 dp standard.
+  areas smaller than the recommended 48x48 logical pixels.
 * **Contrast and visual checks**: highlights potential contrast ratio issues
   and missing focus indicators.
 * **Automated code remediation**: generates idiomatic Flutter fixes (such as
@@ -165,7 +165,7 @@ interact:
 | **Dart MCP server** | Local SDK tools | Diagnostics, tests, runtime |
 | **Developer Knowledge MCP** | Online search | Live docs, API references |
 | **Package skill** | From dependencies | Library APIs, code generation |
-| **Custom agent** | Isolated subagent | Dedicated tasks (such as a11y audits) |
+| **Custom agent** | Isolated subagent | Dedicated accessibility audits |
 
 {:.table .table-striped}
 
