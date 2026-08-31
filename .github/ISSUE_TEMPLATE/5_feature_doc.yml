@@ -24,19 +24,18 @@ body:
       placeholder: Describe what changed, what developers can now do, and any key concepts...
     validations:
       required: true
-  - type: dropdown
+  - type: checkboxes
     id: doc-type
     attributes:
       label: Type of documentation needed
-      description: Select the types of documentation this change requires.
-      multiple: true
+      description: Select all types of documentation this change requires.
       options:
-        - New conceptual page or guide
-        - Update to an existing guide on docs.flutter.dev
-        - Cookbook recipe or practical code sample
-        - CLI or tooling documentation
-        - Platform support or integration guide
-        - Breaking change migration guide
+        - label: New conceptual page or guide
+        - label: Update to an existing guide on docs.flutter.dev
+        - label: Cookbook recipe or practical code sample
+        - label: CLI or tooling documentation
+        - label: Platform support or integration guide
+        - label: Breaking change migration guide
     validations:
       required: true
   - type: textarea
