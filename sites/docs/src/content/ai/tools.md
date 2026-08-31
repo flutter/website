@@ -12,18 +12,21 @@ development tasks accurately.
 
 ## Tooling ecosystem overview
 
-The Flutter AI tooling ecosystem consists of four complementary components:
+The Flutter AI tooling ecosystem consists of five complementary components:
 
-1. **Agent skills**: Task-oriented blueprints that teach assistants how to
+1. **Agent skills**: task-oriented blueprints that teach assistants how to
    perform specific workflows (such as creating responsive layouts or writing
    tests).
-2. **Dart and Flutter MCP server**: A Model Context Protocol (MCP) server
+2. **Dart and Flutter MCP server**: a Model Context Protocol (MCP) server
    exposing real-time SDK diagnostics, symbol resolution, and runtime
    introspection to assistants.
-3. **Developer Knowledge MCP server**: A cloud-hosted documentation search
+3. **Developer Knowledge MCP server**: a cloud-hosted documentation search
    server giving assistants direct access to official Flutter and Dart docs.
-4. **Package skills**: Skills published directly inside third-party `pub.dev`
+4. **Package skills**: skills published directly inside third-party `pub.dev`
    packages, giving assistants instant expertise on specific libraries.
+5. **Custom agents**: specialized agent personas equipped with focused tools
+   and system instructions for isolated workflows, such as accessibility
+   auditing.
 
 ---
 
@@ -108,6 +111,49 @@ To learn how to install or publish package skills, check out
 
 ---
 
+## Custom agents
+
+**Custom agents** are specialized AI assistants configured with dedicated
+system prompts, curated tool sets, and focused skill subsets.
+
+While agent skills guide general-purpose assistants during active coding,
+custom agents run in isolated contexts to perform deep, single-purpose
+workflows without cluttering your primary conversation history.
+
+### Flutter Accessibility agent
+
+The **Flutter Accessibility (`a11y`) agent** is an official custom agent
+designed to audit Flutter widget trees and recommend accessibility
+improvements. The accessibility agent is currently available in
+[Google Antigravity](https://antigravity.google).
+
+Key capabilities of the accessibility agent include:
+
+* **Semantic label inspection**: identifies interactive widgets (such as
+  `IconButton` or `InkWell`) that lack descriptive semantic labels.
+* **Touch target validation**: flags interactive elements with hit test
+  areas smaller than the recommended 48x48 dp standard.
+* **Contrast and visual checks**: highlights potential contrast ratio issues
+  and missing focus indicators.
+* **Automated code remediation**: generates idiomatic Flutter fixes (such as
+  wrapping widgets in `Semantics` or adjusting tap bounds) that you can review
+  and accept.
+
+### Using the accessibility agent in Antigravity
+
+After installing the official [Dart and Flutter plugin](
+https://antigravity.google/docs/build-with-google/#dart-and-flutter)
+in Antigravity, you can invoke the accessibility agent directly when chatting
+with Antigravity by selecting the **Flutter Accessibility Agent** from the
+agent picker, mentioning `@flutter_a11y_agent`, or asking your assistant to
+review your code for accessibility:
+
+```text
+@flutter_a11y_agent Audit this screen for accessibility issues.
+```
+
+---
+
 ## When to use what
 
 Use the following mental model to understand how different AI mechanisms
@@ -119,6 +165,7 @@ interact:
 | **Dart MCP server** | Local SDK tools | Diagnostics, tests, runtime |
 | **Developer Knowledge MCP** | Online search | Live docs, API references |
 | **Package skill** | From dependencies | Library APIs, code generation |
+| **Custom agent** | Isolated subagent | Dedicated tasks (such as a11y audits) |
 
 {:.table .table-striped}
 

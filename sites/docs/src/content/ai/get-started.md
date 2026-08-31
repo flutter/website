@@ -20,16 +20,19 @@ An **agent plugin** bundles the tools and knowledge that an AI assistant needs
 to understand and modify your Flutter codebase.
 
 When you install an official Flutter agent plugin, it connects your assistant
-to two core capabilities:
+to three core capabilities:
 
-* **[Agent skills](/ai/tools#agent-skills)**: On-demand procedural guides from
+* **[Agent skills](/ai/tools#agent-skills)**: on-demand procedural guides from
   the official Flutter and Dart repositories that teach the assistant how to
   perform specific tasks, such as creating responsive layouts, managing state,
   or writing widget tests.
 * **[Dart and Flutter MCP server](/ai/tools#dart-and-flutter-mcp-server)**:
-  A Model Context Protocol (MCP) server that connects the assistant to the
+  a Model Context Protocol (MCP) server that connects the assistant to the
   Dart SDK, giving it real-time access to analyzer diagnostics, symbol
   resolution, test runners, and runtime inspection.
+* **[Custom agents](/ai/tools#custom-agents)**: specialized assistant personas
+  tailored for dedicated workflows, such as the Flutter Accessibility (`a11y`)
+  agent for automated accessibility audits and code remediations.
 
 These tools work together automatically: the assistant uses MCP tools to query
 live project state and static analysis, while using agent skills to guide its
