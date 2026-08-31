@@ -1,0 +1,64 @@
+name: Document a new Flutter feature
+description: Request or coordinate documentation on docs.flutter.dev for a new or updated Flutter feature.
+labels: [co.request, from.user]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing to Flutter! Use this form to request or coordinate documentation on [docs.flutter.dev](https://docs.flutter.dev) for new features or capabilities.
+  - type: input
+    id: pr-link
+    attributes:
+      label: Related code pull request
+      description: Link to the pull request in `flutter/flutter`, `flutter/engine`, or `flutter/packages`.
+      placeholder: "https://github.com/flutter/flutter/pull/12345"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature summary
+      description: Provide a concise description of the new feature and the problem it solves for developers.
+      placeholder: Describe what changed, what developers can now do, and any key concepts...
+    validations:
+      required: true
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Type of documentation needed
+      description: Select the primary type of documentation this change requires.
+      multiple: true
+      options:
+        - New conceptual page or guide
+        - Update to an existing guide on docs.flutter.dev
+        - Cookbook recipe or practical code sample
+        - CLI or tooling documentation
+        - Platform support or integration guide
+        - Breaking change migration guide
+    validations:
+      required: true
+  - type: textarea
+    id: code-sample
+    attributes:
+      label: Code snippet or usage example
+      description: Provide a minimal code snippet showing how developers will use this feature.
+      render: dart
+      placeholder: |
+        // Minimal code snippet showing feature usage
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context or resources
+      description: Link to design docs, screenshots, or any notes that will assist technical writers.
+    validations:
+      required: false
+  - type: checkboxes
+    id: volunteer
+    attributes:
+      label: I would like to help write this documentation.
+      description: Let us know if you want to author or draft the documentation PR yourself.
+      options:
+        - label: I will draft the documentation PR on docs.flutter.dev.
+          required: false
