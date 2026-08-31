@@ -1260,7 +1260,6 @@
   external_url: "https://polluxcoop.com/en/apps-moviles"
   options_location:
     - "South America"
-    - "North America"
   options_customer_size:
     - "Small-to-medium Business"
   options_GCP_partner: false
