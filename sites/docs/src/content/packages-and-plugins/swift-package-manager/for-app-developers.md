@@ -51,7 +51,7 @@ Ensure that all plugins in your project support Swift Package Manager
 before removing CocoaPods.
 
 :::note
-If you have manually edited your `Podfile` to add CocoaPod
+If you have manually edited your `Podfile` to add CocoaPods
 dependencies or logic other than Flutter plugins,
 you must manually remove those changes.
 :::
@@ -78,7 +78,7 @@ To remove CocoaPods from your project, use the following steps.
 3. Check your configuration files:
 
     In `ios/Flutter/Debug.xcconfig`
-    and `ios/Flutter/Release.xcconfig`
+    and `ios/Flutter/Release.xcconfig`,
     remove any `#include` lines referencing `Pods/Target Support Files`
     or CocoaPods `.xcconfig` files if they are still present.
 
