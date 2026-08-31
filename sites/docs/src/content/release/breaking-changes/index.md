@@ -38,9 +38,11 @@ They're sorted by release and listed in alphabetical order:
 
 * [Added enabled property and made onChanged optional for DropdownButton][]
 * [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
+* [Restrict command-line flags for prebuilt Android release binaries][]
 
 [Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
+[Restrict command-line flags for prebuilt Android release binaries]: /release/breaking-changes/restrict-command-line-flags-prebuilt-android-release-binaries
 
 <a id="released-in-flutter-347" aria-hidden="true"></a>
 ### Released in Flutter 3.47
