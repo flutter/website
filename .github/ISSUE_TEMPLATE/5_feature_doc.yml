@@ -9,11 +9,11 @@ body:
   - type: input
     id: pr-link
     attributes:
-      label: Related code pull request
-      description: Link to the pull request in `flutter/flutter`, `flutter/engine`, or `flutter/packages`.
+      label: Related code pull request or issue
+      description: Link to the pull request or issue in `flutter/flutter`, `flutter/engine`, or `flutter/packages`.
       placeholder: "https://github.com/flutter/flutter/pull/12345"
     validations:
-      required: true
+      required: false
   - type: textarea
     id: summary
     attributes:
@@ -26,7 +26,7 @@ body:
     id: doc-type
     attributes:
       label: Type of documentation needed
-      description: Select the primary type of documentation this change requires.
+      description: Select the types of documentation this change requires.
       multiple: true
       options:
         - New conceptual page or guide
@@ -57,8 +57,8 @@ body:
   - type: checkboxes
     id: volunteer
     attributes:
-      label: I would like to help write this documentation.
-      description: Let us know if you want to author or draft the documentation PR yourself.
+      label: Volunteer to help write this documentation
+      description: Let us know if you want to author or draft the documentation PR.
       options:
-        - label: I will draft the documentation PR on docs.flutter.dev.
+        - label: Draft the documentation PR on docs.flutter.dev.
           required: false
