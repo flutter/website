@@ -141,8 +141,8 @@ Key capabilities of the accessibility agent include:
 
 ### Using the accessibility agent in Antigravity
 
-After installing the official [Dart and Flutter plugin](
-https://antigravity.google/docs/build-with-google/#dart-and-flutter)
+After installing the official
+[Dart and Flutter plugin](https://antigravity.google/docs/build-with-google/#dart-and-flutter)
 in Antigravity, you can invoke the accessibility agent directly when chatting
 with Antigravity by selecting the **Flutter Accessibility Agent** from the
 agent picker, mentioning `@flutter_a11y_agent`, or asking your assistant to
