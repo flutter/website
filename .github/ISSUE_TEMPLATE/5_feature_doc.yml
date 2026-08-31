@@ -12,7 +12,7 @@ body:
     id: pr-link
     attributes:
       label: Related code pull request or issue
-      description: Link to the pull request or issue in `flutter/flutter` or `flutter/packages`.
+      description: Link to the pull request or issue in a Flutter repository (such as `flutter/flutter` or `flutter/packages`).
       placeholder: "https://github.com/flutter/flutter/pull/12345"
     validations:
       required: false
