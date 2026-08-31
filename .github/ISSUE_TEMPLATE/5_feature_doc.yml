@@ -1,5 +1,7 @@
 name: Document a new Flutter feature
-description: Request or coordinate documentation on docs.flutter.dev for a new or updated Flutter feature.
+description: >-
+  Request or coordinate documentation on docs.flutter.dev for a new or
+  updated Flutter feature.
 labels: [co.request, from.user]
 body:
   - type: markdown
