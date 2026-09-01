@@ -1,127 +1,152 @@
-// Copyright 2025 The Flutter Authors. All rights reserved.
+// Copyright 2026 The Flutter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:convert';
+
+import 'package:site_shared/components/common/tags.dart';
 import 'package:universal_web/web.dart' as web;
 
-/// Separator used to join task descriptions into a single `data-tasks`
-/// attribute, so they can be recovered on the client.
-const _taskSeparator = '|';
-
-/// Prefix used for the DOM id of each journey's card element.
+/// Prefix used for the DOM ID of each journey's card element.
 const _elementIdPrefix = 'cuj-';
 
+/// A critical user journey and its associated tasks.
 final class Cuj {
-  Cuj({
+  const Cuj._({
     required this.id,
     required this.goal,
     required this.persona,
     required this.tasks,
   });
 
-  /// Creates a [Cuj] from a Map, used on the server
-  /// when parsing the yaml data files.
+  /// Creates a journey from YAML-backed page data.
   factory Cuj.fromMap(Map<String, Object?> map) {
-    return Cuj(
-      id: '${map['id']}',
+    return Cuj._(
+      id: map['id'] as int,
       goal: map['goal'] as String,
-      persona: CujPersona.fromDataValue(map['persona'] as String?),
+      persona: CujPersona.fromDataValue(map['persona'] as String),
       tasks: [
-        for (final task in (map['tasks'] as List<Object?>?) ?? const [])
+        for (final task in map['tasks'] as List<Object?>)
           CujTask.fromMap(task as Map<String, Object?>),
       ],
     );
   }
 
-  /// Creates a [Cuj] from a DOM Element, used on the client
-  /// for recreating and filtering existing journeys.
+  /// Creates a journey from data attributes on [element].
   factory Cuj.fromElement(web.Element element) {
-    final dataPersona = element.getAttribute('data-persona') ?? '';
-    final dataGoal = element.getAttribute('data-goal') ?? '';
-    final dataTasks = element.getAttribute('data-tasks') ?? '';
+    final dataPersona =
+        element.getAttribute('data-persona') ??
+        (throw StateError('CUJ card ${element.id} has no persona.'));
+    final dataGoal =
+        element.getAttribute('data-goal') ??
+        (throw StateError('CUJ card ${element.id} has no goal.'));
+    final dataTasks =
+        element.getAttribute('data-tasks') ??
+        (throw StateError('CUJ card ${element.id} has no tasks.'));
 
-    return Cuj(
-      id: element.id.replaceFirst(_elementIdPrefix, ''),
+    return Cuj._(
+      id: int.parse(element.id.replaceFirst(_elementIdPrefix, '')),
       goal: dataGoal,
-      persona: CujPersona.fromName(dataPersona),
+      persona: CujPersona.values.byName(dataPersona),
       tasks: [
-        for (final task in dataTasks.split(_taskSeparator))
-          if (task.trim().isNotEmpty) CujTask(id: '', name: '', task: task),
+        for (final task in jsonDecode(dataTasks) as List<Object?>)
+          CujTask.fromMap(task as Map<String, Object?>),
       ],
     );
   }
 
-  final String id;
+  /// The stable numeric identifier for this journey.
+  final int id;
+
+  /// The developer goal that this journey represents.
   final String goal;
-  final CujPersona? persona;
+
+  /// The developer persona associated with this journey.
+  final CujPersona persona;
+
+  /// The tasks that contribute to [goal].
   final List<CujTask> tasks;
 
   /// The identifier of the card element that renders this journey.
   String get elementId => '$_elementIdPrefix$id';
-
-  /// The task descriptions, joined for storage in a `data-tasks` attribute.
-  String get taskData => tasks.map((task) => task.task).join(_taskSeparator);
 }
 
+/// A concrete task within a critical user journey.
 final class CujTask {
-  CujTask({required this.id, required this.name, required this.task});
+  const CujTask({
+    required this.id,
+    required this.name,
+    required this.task,
+  });
 
+  /// Creates a task from YAML-backed page data or decoded JSON.
   factory CujTask.fromMap(Map<String, Object?> map) {
     return CujTask(
-      id: '${map['id']}',
-      name: map['name'] as String? ?? '',
-      task: map['task'] as String? ?? '',
+      id: map['id'] as int,
+      name: map['name'] as String,
+      task: map['task'] as String,
     );
   }
 
-  final String id;
+  /// The stable numeric identifier for this task.
+  final int id;
+
+  /// The stable machine-readable name of this task.
   final String name;
+
+  /// The reader-facing task description.
   final String task;
+
+  /// A JSON-compatible representation of this task.
+  Map<String, Object> toJson() => {
+    'id': id,
+    'name': name,
+    'task': task,
+  };
 }
 
 /// The developer personas a critical user journey can belong to.
 ///
 /// [dataValue] must match the `persona` values used in `src/data/cujs.yaml`.
 enum CujPersona {
-  appDeveloper('App developer', 'The App Developer', 'flutter-blue'),
-  techLead('Tech lead / architect', 'The Tech Lead / Architect', 'purple'),
-  pluginDeveloper('Plugin developer', 'The Plugin Developer', 'teal'),
+  appDeveloper('App developer', 'The App Developer', TagColor.blue),
+  techLead(
+    'Tech lead / architect',
+    'The Tech Lead / Architect',
+    TagColor.purple,
+  ),
+  pluginDeveloper('Plugin developer', 'The Plugin Developer', TagColor.teal),
   fullStackDeveloper(
     'Full-stack developer',
     'The Full Stack Developer',
-    'magenta',
+    TagColor.magenta,
   ),
   hybridDeveloper(
-    'Hybrid (native + Flutter) developer',
+    'Hybrid developer',
     'The Hybrid (Native + Flutter) Developer',
-    'amber',
+    TagColor.amber,
   );
 
-  const CujPersona(this.label, this.dataValue, this.pillClass);
+  const CujPersona(this.label, this.dataValue, this.tagColor);
 
-  /// Looks up a persona by the value used in the yaml data file.
-  static CujPersona? fromDataValue(String? dataValue) {
+  /// Returns the persona whose [dataValue] matches the YAML data.
+  ///
+  /// Throws an [ArgumentError] if the value is unknown.
+  static CujPersona fromDataValue(String dataValue) {
     for (final persona in values) {
       if (persona.dataValue == dataValue) {
         return persona;
       }
     }
-    return null;
+    throw ArgumentError.value(dataValue, 'dataValue', 'Unknown CUJ persona');
   }
 
-  /// Looks up a persona by its enum name, as stored in the DOM.
-  static CujPersona? fromName(String name) {
-    for (final persona in values) {
-      if (persona.name == name) {
-        return persona;
-      }
-    }
-    return null;
-  }
-
+  /// The reader-facing name of this persona.
   final String label;
+
+  /// The persona value used in `cujs.yaml`.
   final String dataValue;
 
-  /// The `.pill-sm` color modifier used for this persona's badge.
-  final String pillClass;
+  /// The color used for this persona's [Tag] badge.
+  final TagColor tagColor;
 }

@@ -1,6 +1,7 @@
 ---
-title: FlutterBench
-description: >
+title: FlutterBench agent evaluations
+shortTitle: FlutterBench
+description: >-
   Learn about Dart and Flutter's evaluation frameworks for
   measuring AI tooling reliability.
 ---
@@ -11,5 +12,3 @@ Evals measure both deterministic code correctness
 (compilation, lints, automated tests) and qualitative performance
 (reasoning, safety, and conciseness) using automated model judges and
 expert human grading.
-
-TODO: put TOC or something, for now

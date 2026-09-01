@@ -174,9 +174,8 @@ Add this `_buildTrailing` helper method to your
 <?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contact_groups.dart (build_trailing)"?>
 ```dart
 Widget _buildTrailing(List<Contact> contacts, BuildContext context) {
-  final TextStyle style = CupertinoTheme.of(
-    context,
-  ).textTheme.textStyle.copyWith(color: CupertinoColors.systemGrey);
+  final TextStyle style = CupertinoTheme.of(context).textTheme.textStyle
+      .copyWith(color: CupertinoColors.systemGrey);
 
   return Row(
     mainAxisSize: MainAxisSize.min,

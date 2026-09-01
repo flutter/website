@@ -18,10 +18,12 @@ import 'alert_syntax.dart';
 import 'attribute_syntax.dart';
 import 'fenced_code_block_syntax.dart';
 import 'header_syntax.dart';
+import 'mermaid_syntax.dart';
 
 /// The `package:markdown` block syntaxes to apply when parsing Markdown.
 const List<md.BlockSyntax> _blockSyntaxes = [
   JasprHtmlBlockSyntax(),
+  MermaidBlockSyntax(),
   CustomFencedCodeBlockSyntax(),
   HeaderWithAttributesSyntax(),
   AttributeBlockSyntax(),

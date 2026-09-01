@@ -558,4 +558,4 @@ with this new and improved version of Flutter!
 [spm-blog-post]: /blog/saying-goodbye-to-cocoapods-swift-package-manager-is-soon-the-default-in-flutter
 [uiscene-guide]: https://docs.flutter.dev/release/breaking-changes/uiscene-lifecycle-ios
 [impeller-doc]: https://docs.flutter.dev/perf/impeller
-[opengles-breaking-change]: https://docs.flutter.dev/release/breaking-changes/opengles-render-to-texture
+[opengles-breaking-change]: https://docs.flutter.dev/release/breaking-changes/opengles-render-to-texture-top-down

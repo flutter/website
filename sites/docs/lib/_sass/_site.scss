@@ -11,6 +11,7 @@
 @use 'base/utils';
 
 // Styles for individual components or content types, alphabetically ordered.
+@use 'components/architecture-recommendations';
 @use 'components/content';
 @use 'components/expansion-list';
 @use 'components/filter-search';
@@ -23,7 +24,6 @@
 @use 'components/os-selector';
 @use 'components/pagenav';
 @use 'components/platform-cards';
-@use 'components/pill';
 @use 'components/sidebar';
 @use 'components/side-menu';
 @use 'components/trailing';
@@ -40,12 +40,14 @@
 @use 'package:site_shared/_sass/components/dropdown';
 @use 'package:site_shared/_sass/components/ide-explorer';
 @use 'package:site_shared/_sass/components/menu-toggle';
+@use 'package:site_shared/_sass/components/mermaid';
 @use 'package:site_shared/_sass/components/progress-ring';
 @use 'package:site_shared/_sass/components/quiz';
 @use 'package:site_shared/_sass/components/site-switcher';
 @use 'package:site_shared/_sass/components/stepper';
 @use 'package:site_shared/_sass/components/summary-card';
 @use 'package:site_shared/_sass/components/tabs';
+@use 'package:site_shared/_sass/components/tags';
 @use 'package:site_shared/_sass/components/theming';
 @use 'package:site_shared/_sass/components/tooltip';
 

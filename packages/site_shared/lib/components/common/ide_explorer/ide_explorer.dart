@@ -3,90 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:collection/collection.dart';
-import 'package:jaspr/dom.dart';
+import 'package:jaspr/dom.dart' hide label;
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/components/file_icon.dart';
 
 import '../../../util.dart';
 import '../material_icon.dart';
-
-/// A single top-level file tree shown by an [IdeExplorer], which may
-/// have multiple roots to represent multiple packages
-/// (e.g. "Project" and "Shared").
-///
-/// When multiple roots are provided, they are rendered as tabs that can be
-/// switched between.
-class IdeExplorerProjectRoot {
-  const IdeExplorerProjectRoot({
-    required this.id,
-    this.label = '',
-    this.children = const [],
-  });
-
-  final String id;
-  final String label;
-  final List<IdeTreeNode> children;
-}
-
-/// A single file or folder entry in an [IdeExplorer] tree.
-class IdeTreeNode {
-  const IdeTreeNode({
-    required this.id,
-    required this.label,
-    this.isDefaultPage = false,
-    this.startsClosed = true,
-    this.badge,
-    this.badgeColor,
-    this.subtitle,
-    this.title,
-    this.children = const [],
-  });
-
-  final String id;
-  final String label;
-  final bool isDefaultPage;
-  final bool startsClosed;
-  final String? badge;
-  final IdeBadgeColor? badgeColor;
-  final String? title;
-  final String? subtitle;
-  final List<IdeTreeNode> children;
-
-  bool get isFolder => children.isNotEmpty || label.endsWith('/');
-}
-
-/// Corresponds to colors used for badges on an [IdeTreeNode].
-enum IdeBadgeColor {
-  neutral,
-  info,
-  tip,
-  important,
-  warning,
-  error;
-
-  static IdeBadgeColor fromString(String? data) {
-    if (data == null) return IdeBadgeColor.neutral;
-    return switch (data.toLowerCase()) {
-      'info' => IdeBadgeColor.info,
-      'tip' => IdeBadgeColor.tip,
-      'important' => IdeBadgeColor.important,
-      'warning' => IdeBadgeColor.warning,
-      'error' => IdeBadgeColor.error,
-      _ => IdeBadgeColor.neutral,
-    };
-  }
-}
-
-/// A flattened [IdeTreeNode] paired with the path of ancestor labels
-/// leading to it, used to render the breadcrumb in its detail pane.
-typedef _BreadcrumbNode = ({
-  IdeTreeNode node,
-  String domId,
-  List<String> path,
-});
-
-/// Generates a unique DOM id for an IDE tree node.
-String _ideDomId(String instanceId, String nodeId) => 'ide-$instanceId-$nodeId';
+import 'models.dart';
 
 // ---------------------------------------------------------------------------
 // Main Explorer Component
@@ -160,7 +83,7 @@ class IdeExplorer extends StatelessComponent {
         root.id: _flatten(
           root.children,
           instanceId: effectiveInstanceId,
-          path: root.label.isEmpty ? [] : [root.label],
+          path: root.label == null ? [] : [root.label!],
         ),
     };
   }
@@ -215,13 +138,15 @@ class IdeExplorer extends StatelessComponent {
         domId: _ideDomId(instanceId, node.id),
         path: path,
       ));
-      result.addAll(
-        _flatten(
-          node.children,
-          instanceId: instanceId,
-          path: nodePath,
-        ),
-      );
+      if (node is IdeFolderNode) {
+        result.addAll(
+          _flatten(
+            node.children,
+            instanceId: instanceId,
+            path: nodePath,
+          ),
+        );
+      }
     }
     return result;
   }
@@ -240,9 +165,16 @@ class _IdeSidebar extends StatelessComponent {
     required this.selectedNodeDomId,
   });
 
+  /// The root projects or packages available in the explorer.
   final List<IdeExplorerProjectRoot> roots;
+
+  /// The ID of the currently active project root.
   final String activeRootId;
+
+  /// The unique instance ID for this IDE explorer.
   final String effectiveInstanceId;
+
+  /// The DOM ID of the initially selected node, if any.
   final String? selectedNodeDomId;
 
   @override
@@ -272,7 +204,10 @@ class _IdeRootTabs extends StatelessComponent {
     required this.activeRootId,
   });
 
+  /// The root projects or packages displayed as tabs.
   final List<IdeExplorerProjectRoot> roots;
+
+  /// The ID of the currently active root tab.
   final String activeRootId;
 
   @override
@@ -292,7 +227,7 @@ class _IdeRootTabs extends StatelessComponent {
               'role': 'tab',
               'aria-selected': '${root.id == activeRootId}',
             },
-            [.text(root.label.isEmpty ? root.id : root.label)],
+            [.text(root.label ?? root.id)],
           ),
         const _IdeToggleAllButton(),
       ],
@@ -330,9 +265,16 @@ class _IdeTree extends StatelessComponent {
     required this.selectedNodeDomId,
   });
 
+  /// The project root containing this directory tree.
   final IdeExplorerProjectRoot root;
+
+  /// Whether this tree is currently visible and active.
   final bool isActive;
+
+  /// The unique instance ID for this IDE explorer.
   final String effectiveInstanceId;
+
+  /// The DOM ID of the currently selected tree node.
   final String? selectedNodeDomId;
 
   @override
@@ -342,7 +284,10 @@ class _IdeTree extends StatelessComponent {
         'ide-tree',
         if (isActive) 'active',
       ].toClasses,
-      attributes: {'data-ide-root': root.id},
+      attributes: {
+        'data-ide-root': root.id,
+        'aria-hidden': '${!isActive}',
+      },
       [
         ul([
           for (final node in root.children)
@@ -365,15 +310,20 @@ class _IdeTreeNode extends StatelessComponent {
     required this.selectedDomId,
   });
 
+  /// The tree node model (either a file or folder).
   final IdeTreeNode node;
+
+  /// The unique instance ID for this IDE explorer.
   final String instanceId;
+
+  /// The DOM ID of the selected node.
   final String? selectedDomId;
 
-  bool _hasSelectedChild(IdeTreeNode parent) {
+  bool _hasSelectedChild(IdeFolderNode parent) {
     if (selectedDomId == null) return false;
     for (final child in parent.children) {
       if (_ideDomId(instanceId, child.id) == selectedDomId) return true;
-      if (_hasSelectedChild(child)) return true;
+      if (child is IdeFolderNode && _hasSelectedChild(child)) return true;
     }
     return false;
   }
@@ -384,38 +334,39 @@ class _IdeTreeNode extends StatelessComponent {
     final isSelected = domId == selectedDomId;
     final row = _IdeNodeRow(node: node, domId: domId, isSelected: isSelected);
 
-    if (!node.isFolder) {
-      return li(classes: 'ide-node ide-node-file', [row]);
-    }
-
-    final isOpen = !node.startsClosed || _hasSelectedChild(node);
-
-    return li(classes: 'ide-node ide-node-folder', [
-      details(
-        open: isOpen,
-        [
-          summary(
-            classes: 'ide-folder-summary',
+    return switch (node) {
+      IdeFileNode() => li(classes: 'ide-node ide-node-file', [row]),
+      final IdeFolderNode folderNode => () {
+        final isOpen =
+            !folderNode.startsClosed || _hasSelectedChild(folderNode);
+        return li(classes: 'ide-node ide-node-folder', [
+          details(
+            open: isOpen,
             [
-              const span(
-                classes: 'ide-folder-arrow',
-                attributes: {'aria-hidden': 'true'},
-                [],
+              summary(
+                classes: 'ide-folder-summary',
+                [
+                  const span(
+                    classes: 'ide-folder-arrow',
+                    attributes: {'aria-hidden': 'true'},
+                    [],
+                  ),
+                  row,
+                ],
               ),
-              row,
+              ul([
+                for (final child in folderNode.children)
+                  _IdeTreeNode(
+                    node: child,
+                    instanceId: instanceId,
+                    selectedDomId: selectedDomId,
+                  ),
+              ]),
             ],
           ),
-          ul([
-            for (final child in node.children)
-              _IdeTreeNode(
-                node: child,
-                instanceId: instanceId,
-                selectedDomId: selectedDomId,
-              ),
-          ]),
-        ],
-      ),
-    ]);
+        ]);
+      }(),
+    };
   }
 }
 
@@ -427,15 +378,18 @@ class _IdeNodeRow extends StatelessComponent {
     required this.isSelected,
   });
 
+  /// The tree node represented by this row.
   final IdeTreeNode node;
+
+  /// The DOM ID associated with this node.
   final String domId;
+
+  /// Whether this node is currently selected.
   final bool isSelected;
 
   @override
   Component build(BuildContext context) {
-    final icon = node.isFolder
-        ? FileIcon.folderIcon
-        : FileIcon.forFile(node.label);
+    final icon = _getFileTreeIcon(node);
     final classesList = ['ide-node-row', if (isSelected) 'active'].toClasses;
     final attributesMap = {
       'data-ide-select': domId,
@@ -444,13 +398,14 @@ class _IdeNodeRow extends StatelessComponent {
     final childrenList = [
       icon,
       span(classes: 'ide-node-label', [.text(node.label)]),
-      _IdeBadgeDot(
-        badge: node.badge,
-        color: node.badgeColor ?? IdeBadgeColor.neutral,
-      ),
+      if (node.badge case final badge?)
+        _IdeBadgeDot(
+          badge: badge,
+          color: node.badgeColor ?? IdeBadgeColor.neutral,
+        ),
     ];
 
-    if (node.isFolder) {
+    if (node is IdeFolderNode) {
       return span(
         classes: classesList,
         attributes: attributesMap,
@@ -474,13 +429,14 @@ class _IdeBadgeDot extends StatelessComponent {
     this.color = IdeBadgeColor.neutral,
   });
 
-  final String? badge;
+  /// The tooltip and accessibility label for the badge dot.
+  final String badge;
+
+  /// The color theme for the badge dot.
   final IdeBadgeColor color;
 
   @override
   Component build(BuildContext context) {
-    if (badge == null) return const Component.empty();
-
     return span(
       classes: [
         'ide-badge-dot',
@@ -488,13 +444,21 @@ class _IdeBadgeDot extends StatelessComponent {
       ].toClasses,
       attributes: {
         'role': 'img',
-        'aria-label': badge!,
-        'title': badge!,
+        'aria-label': badge,
+        'title': badge,
       },
       [],
     );
   }
 }
+
+/// A flattened [IdeTreeNode] paired with the path of ancestor labels
+/// leading to it, used to render the breadcrumb in its detail pane.
+typedef _BreadcrumbNode = ({
+  IdeTreeNode node,
+  String domId,
+  List<String> path,
+});
 
 // ---------------------------------------------------------------------------
 // Detail Pane Components
@@ -509,9 +473,16 @@ class _IdeDetailPane extends StatelessComponent {
     required this.selectedNodeDomId,
   });
 
+  /// All flattened tree nodes with their breadcrumb path information.
   final List<_BreadcrumbNode> allFlatNodes;
+
+  /// Map of node IDs to custom rendered markdown content components.
   final Map<String, Component> customContents;
+
+  /// The unique instance ID for this IDE explorer.
   final String effectiveInstanceId;
+
+  /// The DOM ID of the currently selected node.
   final String? selectedNodeDomId;
 
   @override
@@ -519,7 +490,7 @@ class _IdeDetailPane extends StatelessComponent {
     return div(classes: 'ide-detail', [
       for (final flat in allFlatNodes)
         _IdeDetailPanel(
-          flat: flat,
+          breadcrumbNode: flat,
           customBody: customContents[flat.node.id],
           instanceId: effectiveInstanceId,
           isActive: flat.domId == selectedNodeDomId,
@@ -548,29 +519,40 @@ class _IdeDetailPane extends StatelessComponent {
 /// ```
 class _IdeDetailPanel extends StatelessComponent {
   const _IdeDetailPanel({
-    required this.flat,
+    required this.breadcrumbNode,
     required this.customBody,
     required this.instanceId,
     required this.isActive,
   });
 
-  final _BreadcrumbNode flat;
+  /// The node model along with its DOM ID and ancestor breadcrumb path.
+  final _BreadcrumbNode breadcrumbNode;
+
+  /// Optional custom component containing markdown body content.
   final Component? customBody;
+
+  /// The unique instance ID for this IDE explorer.
   final String instanceId;
+
+  /// Whether this detail panel is currently visible and active.
   final bool isActive;
 
   @override
   Component build(BuildContext context) {
-    final node = flat.node;
+    final node = breadcrumbNode.node;
 
     return div(
       classes: ['ide-detail-panel', if (isActive) 'active'].toClasses,
-      attributes: {'data-ide-panel': flat.domId},
+      attributes: {
+        'data-ide-panel': breadcrumbNode.domId,
+        'aria-hidden': '${!isActive}',
+      },
       [
-        if (flat.path.isNotEmpty) _IdeBreadcrumb(path: flat.path),
+        if (breadcrumbNode.path.isNotEmpty)
+          _IdeBreadcrumb(path: breadcrumbNode.path),
         _IdePageHeader(node: node),
         if (customBody != null) _IdePageBody(child: customBody!),
-        if (node.isFolder && node.children.isNotEmpty)
+        if (node is IdeFolderNode && node.children.isNotEmpty)
           _IdeFolderContentsSection(
             children: node.children,
             instanceId: instanceId,
@@ -584,6 +566,7 @@ class _IdeDetailPanel extends StatelessComponent {
 class _IdeBreadcrumb extends StatelessComponent {
   const _IdeBreadcrumb({required this.path});
 
+  /// The list of ancestor directory/root labels leading to this node.
   final List<String> path;
 
   @override
@@ -605,13 +588,12 @@ class _IdeBreadcrumb extends StatelessComponent {
 class _IdePageHeader extends StatelessComponent {
   const _IdePageHeader({required this.node});
 
+  /// The node represented by this detail header.
   final IdeTreeNode node;
 
   @override
   Component build(BuildContext context) {
-    final icon = node.isFolder
-        ? FileIcon.folderIcon
-        : FileIcon.forFile(node.label);
+    final icon = _getFileTreeIcon(node);
 
     return div(classes: 'ide-detail-header', [
       icon,
@@ -640,6 +622,7 @@ class _IdePageHeader extends StatelessComponent {
 class _IdePageBody extends StatelessComponent {
   const _IdePageBody({required this.child});
 
+  /// The custom markdown body component to display.
   final Component child;
 
   @override
@@ -656,7 +639,10 @@ class _IdeFolderContentsSection extends StatelessComponent {
     required this.instanceId,
   });
 
+  /// The child nodes contained within this directory.
   final List<IdeTreeNode> children;
+
+  /// The unique instance ID for this IDE explorer.
   final String instanceId;
 
   @override
@@ -678,14 +664,15 @@ class _IdeContentLink extends StatelessComponent {
     required this.instanceId,
   });
 
+  /// The child node linked by this item.
   final IdeTreeNode child;
+
+  /// The unique instance ID for this IDE explorer.
   final String instanceId;
 
   @override
   Component build(BuildContext context) {
-    final icon = child.isFolder
-        ? FileIcon.folderIcon
-        : FileIcon.forFile(child.label);
+    final icon = _getFileTreeIcon(child);
 
     return button(
       classes: 'ide-content-link',
@@ -705,3 +692,11 @@ class _IdeContentLink extends StatelessComponent {
     );
   }
 }
+
+Component _getFileTreeIcon(IdeTreeNode node) => switch (node) {
+  IdeFolderNode() => FileIcon.folderIcon,
+  IdeFileNode() => FileIcon.forFile(node.label),
+};
+
+/// Generates a unique DOM id for an IDE tree node.
+String _ideDomId(String instanceId, String nodeId) => 'ide-$instanceId-$nodeId';

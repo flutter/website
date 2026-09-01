@@ -1,5 +1,12 @@
-@use 'sass:color';
-@use 'flutter-bench' as *;
+@use '../components/filterable-index';
+
+$font-size-sm: 0.875rem;
+$font-size-xl: 1.5rem;
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$transition-normal: 0.2s ease;
 
 // The critical user journey index reuses the two column layout, search field,
 // and filter sidebar of the learning resources index, which are styled in
@@ -19,10 +26,10 @@
     justify-content: center;
   }
 
-  @media (max-width: 839px) {
+  @media (max-width: filterable-index.$mobile-breakpoint) {
     margin-block-start: 0;
     padding: 0.75rem;
-    border-top: 1px solid var(--site-inset-borderColor);
+    border-block-start: 1px solid var(--site-inset-borderColor);
   }
 }
 
@@ -30,7 +37,6 @@
   margin-block-start: $spacing-md;
 
   .cuj-card {
-    height: auto;
     padding: 0.75rem $spacing-md;
     gap: $spacing-xs;
 
@@ -87,7 +93,7 @@
     // Journeys need a plain block so the task list stacks below the divider.
     .card-content {
       display: block;
-      border-top: 0.05rem solid var(--site-inset-borderColor);
+      border-block-start: 0.05rem solid var(--site-inset-borderColor);
       margin-block-start: $spacing-sm;
       padding-block-start: $spacing-sm;
     }
@@ -103,40 +109,28 @@
     }
 
     .expand-button {
-      &:hover,
-      &:focus-within {
-        transition: transform $transition-normal;
+      transition: transform $transition-normal;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
       }
     }
 
     .cuj-task-list {
       margin: 0;
-      padding-left: 1.15rem;
+      padding-inline-start: 1.15rem;
 
       li {
-        padding-left: 0;
+        padding-inline-start: 0;
         margin-block-end: $spacing-sm;
         font-size: $font-size-sm;
         line-height: 1.45;
-        color: var(--site-base-fgColor-alt);
+        color: var(--site-base-fgColor-lighter);
 
         &:last-child {
           margin-block-end: 0;
         }
       }
-    }
-
-    // Two additional persona colors, following the `.pill-sm` modifiers.
-    // TODO(parlough): Consider if these colors can be shared and if
-    // compatible with dark mode.
-    .pill-sm.magenta {
-      color: color.scale(#FBD9EF, $lightness: 10%);
-      background: #9A2E6E;
-    }
-
-    .pill-sm.amber {
-      color: color.scale(#FCEBC8, $lightness: 10%);
-      background: $color-dx;
     }
   }
 }
