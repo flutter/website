@@ -72,14 +72,16 @@ class _WhyFlutterHeroSectionState extends State<WhyFlutterHeroSection> {
       const div(classes: 'why-flutter-hero-glow', []),
       div(classes: 'why-flutter-hero-stage', [
         _HeroCopy(whitepaperUrl: component.whitepaperUrl),
-        _ScreenCarousel(screens: component.screens),
-        div(
-          classes: 'why-flutter-hero-dash',
-          styles: Styles(
-            raw: {'--why-flutter-sprite': 'url(${component.typingSprite})'},
+        div(classes: 'why-flutter-hero-visual', [
+          _ScreenCarousel(screens: component.screens),
+          div(
+            classes: 'why-flutter-hero-dash',
+            styles: Styles(
+              raw: {'--why-flutter-sprite': 'url(${component.typingSprite})'},
+            ),
+            const [],
           ),
-          const [],
-        ),
+        ]),
         _ProductivityChart(
           isBarGrown: _isBarGrown,
           multiple: _multiple,
@@ -188,7 +190,6 @@ class _ProductivityChart extends StatelessComponent {
         span(classes: 'accent', [.text('desktop')]),
         .text('.'),
       ]),
-      const p(classes: 'why-flutter-chart-label', [.text('Productivity')]),
       div(id: 'why-flutter-chart', classes: 'why-flutter-chart', [
         div(classes: 'why-flutter-chart-plot', [
           div(classes: 'why-flutter-chart-grid', [

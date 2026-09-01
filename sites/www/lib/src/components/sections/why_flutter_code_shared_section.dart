@@ -82,7 +82,8 @@ class _WhyFlutterCodeSharedSectionState
           h2([.text('One codebase, one team')]),
           p(classes: 'why-flutter-body', [
             .text(
-              'Eliminate the cost and overhead of maintaining seperate apps, codebases, and development teams.',
+              'Eliminate the cost and overhead of maintaining separate apps, '
+              'codebases, and development teams.',
             ),
           ]),
           a(

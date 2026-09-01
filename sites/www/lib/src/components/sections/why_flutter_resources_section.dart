@@ -26,18 +26,18 @@ class WhyFlutterResourcesSection extends StatelessComponent {
 
   static const List<_Resource> _resources = [
     (
-      href: 'https://leancode.co/insights/flutter-cto-report',
-      logo: 'leancode.svg',
-      logoAlt: 'LeanCode',
-      title: 'Flutter CTO Report by LeanCode',
-      summary: 'What 300+ CTOs say about Flutter in production.',
-    ),
-    (
       href: 'https://verygood.ventures/whitepapers/business-value-of-flutter/',
       logo: 'vgvlogo.svg',
       logoAlt: 'Very Good Ventures',
-      title: "VGV's Flutter Whitepaper by Very Good Ventures",
+      title: "VGV's Flutter Whitepaper",
       summary: 'The ROI case, from the team behind top Flutter apps.',
+    ),
+    (
+      href: 'https://leancode.co/insights/flutter-cto-report',
+      logo: 'leancode.svg',
+      logoAlt: 'LeanCode',
+      title: 'LeanCode Flutter CTO Report',
+      summary: 'What 300+ CTOs say about Flutter in production.',
     ),
   ];
 

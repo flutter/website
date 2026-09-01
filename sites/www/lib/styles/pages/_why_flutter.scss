@@ -100,21 +100,23 @@
 
   .why-flutter-hero-copy {
     box-sizing: border-box;
-    padding: var(--gutter-md) var(--gutter-sm) var(--gutter-sm);
+    padding: var(--gutter-md) var(--gutter-sm) var(--spacer);
+    text-align: center;
 
     h1 {
       font-size: var(--font-size-heading-1);
       font-weight: var(--font-weight-bold);
       letter-spacing: -0.35px;
       line-height: 1.15;
-      margin: 0 0 var(--spacer-md);
+      margin: 0 auto var(--spacer-md);
+      max-width: 600px;
     }
 
     p {
       font-size: var(--font-size-heading-4);
       line-height: 1.4;
-      margin: 0 0 var(--spacer);
-      max-width: 446px;
+      margin: 0 auto var(--spacer);
+      max-width: 480px;
     }
   }
 
@@ -123,10 +125,45 @@
     border: 1px solid transparent;
     color: var(--blue-6);
     gap: var(--spacer-sm);
+    margin-inline: auto;
 
     &:hover {
       background-color: var(--grey-1);
       color: var(--blue-6);
+    }
+  }
+
+  .why-flutter-hero-visual {
+    height: 380px;
+    margin-inline: auto;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 78%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 12%,
+      black 78%,
+      transparent 100%
+    );
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    @media (max-width: 380px) {
+      height: 340px;
+
+      .why-flutter-screens {
+        transform: translateX(-50%) scale(0.48);
+      }
+
+      .why-flutter-hero-dash {
+        transform: translateX(-50%) scale(0.6);
+      }
     }
   }
 }
@@ -134,8 +171,12 @@
 // Three columns of app screenshots looping vertically, forever.
 .why-flutter-screens {
   height: 604px;
-  margin-inline: auto;
+  left: 50%;
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%) scale(0.56);
+  transform-origin: top center;
   width: 672px;
 
   .why-flutter-screens-track {
@@ -185,9 +226,14 @@
 .why-flutter-hero-dash {
   animation: why-flutter-dash-typing 2.125s linear infinite;
   background-size: 2600% 200%;
+  bottom: -15px;
   height: 355px;
-  margin-inline: auto;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%) scale(0.68);
+  transform-origin: bottom center;
   width: 437px;
+  z-index: 2;
 }
 
 @keyframes why-flutter-dash-typing {
@@ -201,28 +247,36 @@
   padding: var(--gutter-md) var(--gutter-sm);
   text-align: center;
 
-  .why-flutter-sub {
-    color: white;
-    margin-inline: auto;
-    max-width: 830px;
-
-    .accent { color: var(--green-2); }
+  h2 {
+    font-size: var(--font-size-heading-2);
+    line-height: 1.2;
+    margin-bottom: var(--spacer-sm);
   }
 
-  .why-flutter-chart-label {
-    color: var(--green-2);
-    font-weight: var(--font-weight-bold);
-    margin-top: var(--spacer-md);
+  .why-flutter-sub {
+    color: white;
+    font-size: var(--font-size-heading-4);
+    line-height: 1.4;
+    margin-inline: auto;
+    max-width: 580px;
+
+    .accent { color: var(--green-2); }
   }
 }
 
 .why-flutter-chart {
-  height: 419px;
-  margin-inline: auto;
+  height: 200px;
+  left: 50%;
+  margin-top: var(--spacer-md);
   position: relative;
-  transform: scale(0.49);
+  transform: translateX(-50%) scale(0.44);
   transform-origin: top center;
   width: 799px;
+
+  @media (max-width: 380px) {
+    height: 180px;
+    transform: translateX(-50%) scale(0.39);
+  }
 
   .why-flutter-chart-plot {
     height: 342px;
@@ -366,9 +420,15 @@
 .why-flutter-shared-media {
   flex-shrink: 0;
   height: 458px;
+  margin-inline: auto;
   position: relative;
   transform: scale(0.78);
   width: 471px;
+
+  @media (max-width: 380px) {
+    height: 380px;
+    transform: scale(0.68);
+  }
 
   .why-flutter-shared-stat {
     align-items: center;
@@ -417,15 +477,27 @@
 
 .why-flutter-shared-copy,
 .why-flutter-ai-copy {
+  align-items: center;
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: var(--spacer-md);
   min-width: 0;
+  text-align: center;
+
+  h2 {
+    font-size: var(--font-size-heading-2);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .why-flutter-body {
+    max-width: 580px;
+  }
 }
 
 .why-flutter-outline-btn {
-  align-self: flex-start;
+  align-self: center;
   box-shadow: inset 0 0 0 1px var(--primary);
   color: var(--primary);
 
@@ -815,9 +887,48 @@
   margin-top: var(--spacer-sm);
 }
 
+// ═══ Small and up ══════════════════════════════════════════════════════════
+
+@include breakpoints.screen(sm) {
+  .why-flutter-hero {
+    .why-flutter-hero-visual {
+      height: 460px;
+
+      .why-flutter-screens {
+        transform: translateX(-50%) scale(0.72);
+      }
+
+      .why-flutter-hero-dash {
+        bottom: -10px;
+        transform: translateX(-50%) scale(0.78);
+      }
+    }
+  }
+
+  .why-flutter-chart {
+    height: 300px;
+    transform: translateX(-50%) scale(0.7);
+  }
+}
+
 // ═══ Medium and up ═════════════════════════════════════════════════════════
 
 @include breakpoints.screen(md) {
+  .why-flutter-hero {
+    .why-flutter-hero-visual {
+      height: 520px;
+
+      .why-flutter-screens {
+        transform: translateX(-50%) scale(0.85);
+      }
+
+      .why-flutter-hero-dash {
+        bottom: 0;
+        transform: translateX(-50%) scale(0.86);
+      }
+    }
+  }
+
   .why-flutter-row {
     align-items: center;
     display: flex;
@@ -831,9 +942,38 @@
 
   .why-flutter-shared-media { transform: none; }
 
-  .why-flutter-productivity .why-flutter-chart-label { display: none; }
+  .why-flutter-productivity {
+    h2 {
+      font-size: var(--font-size-heading-1);
+    }
+
+    .why-flutter-sub {
+      font-size: var(--font-size-heading-2);
+      line-height: 1.2;
+      max-width: 830px;
+    }
+  }
+
+  .why-flutter-shared-copy,
+  .why-flutter-ai-copy {
+    align-items: flex-start;
+    text-align: left;
+
+    h2 {
+      font-size: var(--font-size-heading-1);
+    }
+  }
+
+  .why-flutter-outline-btn {
+    align-self: flex-start;
+  }
 
   .why-flutter-chart {
+    height: 419px;
+    left: auto;
+    margin-inline: auto;
+    margin-top: 0;
+    position: relative;
     transform: none;
 
     .why-flutter-chart-axis-label { display: block; }
@@ -963,24 +1103,56 @@
       left: 159px;
       padding: 0;
       position: absolute;
+      text-align: left;
       top: 234px;
       width: 446px;
+
+      h1 {
+        margin: 0 0 var(--spacer-md);
+        max-width: 446px;
+      }
+
+      p {
+        margin: 0 0 var(--spacer);
+        max-width: 446px;
+      }
+
+      .why-flutter-hero-btn {
+        margin-inline: 0;
+      }
     }
-  }
 
-  .why-flutter-screens {
-    height: 1265px;
-    left: 748px;
-    position: absolute;
-    top: -550px;
+    .why-flutter-hero-visual {
+      height: 1265px;
+      left: 748px;
+      margin: 0;
+      mask-image: none;
+      -webkit-mask-image: none;
+      overflow: visible;
+      position: absolute;
+      top: -550px;
+      width: 672px;
 
-    .why-flutter-screens-track { padding-top: 116px; }
-  }
+      .why-flutter-screens {
+        height: 1265px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: none;
+        width: 672px;
 
-  .why-flutter-hero-dash {
-    left: 866px;
-    position: absolute;
-    top: 440px;
+        .why-flutter-screens-track { padding-top: 116px; }
+      }
+
+      .why-flutter-hero-dash {
+        bottom: auto;
+        left: 118px;
+        position: absolute;
+        top: 990px;
+        transform: none;
+        z-index: 2;
+      }
+    }
   }
 
   .why-flutter-productivity {
