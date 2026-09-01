@@ -8,7 +8,7 @@
 #  - id: The CUJs ID defined in the FlutterBench repository.
 #  - goal: The main CUJ text.
 #  - persona: The type of developer the CUJ speaks for from a list of ["The Tech Lead / Architect", "The App Developer",  "The Plugin Developer", "Full-stack developer", "Hybrid (native + Flutter) developer"]
-#  - tasks: A list of tasks that a developer does to reach the CUJ goal
+#  - tasks: A list of tasks that a developer does to reach the CUJ goal.
 - id: 0
   goal: Evaluate and select the technical stack, folder structure, state management,
     and routing architecture for a project

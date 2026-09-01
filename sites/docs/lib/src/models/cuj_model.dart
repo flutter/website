@@ -122,7 +122,7 @@ enum CujPersona {
     TagColor.magenta,
   ),
   hybridDeveloper(
-    'Hybrid (native + Flutter) developer',
+    'Hybrid developer',
     'The Hybrid (Native + Flutter) Developer',
     TagColor.amber,
   );

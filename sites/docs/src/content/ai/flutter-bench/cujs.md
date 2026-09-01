@@ -6,6 +6,10 @@ description: >-
   the FlutterBench evaluations test.
 bodyClass: wide-site-content
 showToc: false
+sitemap: false
+noindex: true
+dateModifiedSources:
+  - src/data/cujs.yaml
 ---
 
 A _critical user journey_ (CUJ) is a goal that
