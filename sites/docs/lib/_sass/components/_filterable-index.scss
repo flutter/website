@@ -3,8 +3,9 @@
 // classes. Each page styles its own results list separately, keyed off the
 // id of that list.
 
+$mobile-breakpoint: 839px;
+
 .filterable-index {
-  $mobile-breakpoint: 839px;
   $sidebar-width: 220px;
 
   display: flex;
