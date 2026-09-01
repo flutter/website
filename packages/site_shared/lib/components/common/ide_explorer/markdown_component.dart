@@ -5,19 +5,19 @@ import '../../../util.dart';
 import 'ide_explorer.dart';
 import 'models.dart';
 
-/// A custom markdown component that parses `<IdeExplorer>` and its
-/// `<IdeProjectRoot>`, `<IdeFolder>`, and `<IdePage>` children. Defers
-/// building the IDE html to the [IdeExplorer] component.
+/// A custom markdown component that parses `<IdeExplorer>` and
+/// its `<IdeProjectRoot>`, `<IdeFolder>`, and `<IdePage>` children.
+/// Defers building the IDE html to the [IdeExplorer] component.
 class IdeExplorerMarkdownComponent extends CustomComponent {
   const IdeExplorerMarkdownComponent() : super.base();
 
-  // Tag name constants
+  // Tag name constants:
   static const String _tagIdeExplorer = 'IdeExplorer';
   static const String _tagIdeProjectRoot = 'IdeProjectRoot';
   static const String _tagIdeFolder = 'IdeFolder';
   static const String _tagIdePage = 'IdePage';
 
-  // Attribute name constants
+  // Attribute name constants:
   static const String _attrId = 'id';
   static const String _attrLabel = 'label';
   static const String _attrIsDefaultPage = 'is-default-page';
@@ -26,7 +26,7 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
   static const String _attrBadgeColor = 'badge-color';
   static const String _attrSubtitle = 'subtitle';
 
-  // Default values
+  // Default values:
   static const String _defaultRootPrefix = 'root';
   static const String _defaultNodePrefix = 'node';
 
@@ -84,8 +84,8 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
     int index, [
     String? parentId,
   ]) {
-    if (attributes[_attrId] != null) {
-      return attributes[_attrId]!;
+    if (attributes[_attrId] case final String idAttribute) {
+      return idAttribute;
     }
     final label = attributes[_attrLabel];
     final localId = (label != null && label.isNotEmpty)
@@ -150,7 +150,6 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
 
     final subtitle = attributes[_attrSubtitle];
 
-    // Extract and store custom body content if present
     _storeCustomContentIfPresent(
       element.children,
       id,
@@ -196,7 +195,7 @@ class IdeExplorerMarkdownComponent extends CustomComponent {
   }
 
   /// Parses a boolean attribute value, returning [defaultValue] if not present.
-  bool _getBoolAttribute(
+  bool _parseBoolAttribute(
     Map<String, String> attributes,
     String key, {
     required bool defaultValue,
