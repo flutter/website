@@ -7,7 +7,7 @@ publishDate: 2026-08-25
 author:
   - craiglabenz
   - louisehsu
-image: images/banner
+image: images/banner.jpg
 category: deep-dive
 layout: blog
 ---
