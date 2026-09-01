@@ -296,7 +296,7 @@
     width: 706px;
 
     div {
-      background: rgba(4, 43, 89, 0.35);
+      background: rgba(255, 255, 255, 0.15);
       height: 1px;
     }
   }
@@ -308,7 +308,9 @@
   }
 
   .why-flutter-bar-baseline {
-    background: linear-gradient(270deg, #212121 0%, var(--blue-9) 80%);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.12) 80%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-sizing: border-box;
     height: 92.8px;
     left: 118.5px;
   }
@@ -345,7 +347,7 @@
   }
 
   .why-flutter-chart-axis {
-    background: var(--blue-8);
+    background: rgba(255, 255, 255, 0.45);
     height: 2.4px;
     left: 60px;
     position: absolute;
@@ -365,24 +367,26 @@
 
   .why-flutter-bar-label {
     color: white;
-    font-size: var(--font-size-default);
-    line-height: 1.3;
+    font-size: 26px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
     position: absolute;
     text-align: center;
-    top: 302px;
-    width: 102px;
+    top: 298px;
+    width: 150px;
 
-    &.label-baseline { left: 118px; }
-    &.label-flutter { left: 280px; }
+    &.label-baseline { left: 94px; }
+    &.label-flutter { left: 255px; }
   }
 
   .why-flutter-chart-axis-label {
     color: white;
-    display: none;
-    font-size: var(--font-size-default);
-    left: -38px;
+    display: block;
+    font-size: 26px;
+    font-weight: var(--font-weight-bold);
+    left: -24px;
     position: absolute;
-    top: 140px;
+    top: 130px;
     transform: rotate(-90deg);
   }
 
@@ -908,6 +912,20 @@
   .why-flutter-chart {
     height: 300px;
     transform: translateX(-50%) scale(0.7);
+
+    .why-flutter-bar-label {
+      font-size: 18px;
+      width: 130px;
+
+      &.label-baseline { left: 104px; }
+      &.label-flutter { left: 265px; }
+    }
+
+    .why-flutter-chart-axis-label {
+      font-size: 18px;
+      left: -32px;
+      top: 135px;
+    }
   }
 }
 
@@ -976,7 +994,23 @@
     position: relative;
     transform: none;
 
-    .why-flutter-chart-axis-label { display: block; }
+    .why-flutter-chart-axis-label {
+      display: block;
+      font-size: var(--font-size-default);
+      font-weight: var(--font-weight-normal);
+      left: -38px;
+      top: 140px;
+    }
+
+    .why-flutter-bar-label {
+      font-size: var(--font-size-default);
+      font-weight: var(--font-weight-normal);
+      top: 302px;
+      width: 102px;
+
+      &.label-baseline { left: 118px; }
+      &.label-flutter { left: 280px; }
+    }
   }
 
   .why-flutter-feature-grid {
