@@ -654,6 +654,16 @@
     - title: Package skills
       permalink: /ai/package-skills
 
+- title: Flutter Bench
+  permalink: /ai/flutter-bench
+  children:
+    - title: Overview
+      permalink: /ai/flutter-bench
+    - title: Methodology
+      permalink: /ai/flutter-bench/methodology
+    - title: User journeys
+      permalink: /ai/flutter-bench/cujs
+
 - title: Build AI-powered apps
   permalink: /ai/genui
   icon: auto_awesome
@@ -945,4 +955,3 @@
           permalink: /reference/flutter-cli
         - title: API docs
           permalink: https://api.flutter.dev
-
