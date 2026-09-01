@@ -6,10 +6,12 @@ import 'package:jaspr/server.dart';
 import 'package:jaspr_content/components/file_tree.dart';
 import 'package:jaspr_content/jaspr_content.dart' hide BlogLayout;
 import 'package:jaspr_content/theme.dart';
+import 'package:markdown/markdown.dart' as md;
 import 'package:site_shared/blog.dart';
 import 'package:site_shared/components/blog/blog_index.dart';
 import 'package:site_shared/components/common/youtube_embed.dart';
 import 'package:site_shared/components/utils/define_component.dart';
+import 'package:site_shared/markdown.dart';
 import 'package:site_shared/page_extensions.dart';
 
 import 'main.server.options.dart';
@@ -88,10 +90,13 @@ void main() async {
           const BlogPostDataProcessor(),
           assetManager.dataLoader,
         ],
-        parsers: [const MarkdownParser()],
+        parsers: [
+          const MarkdownParser(documentBuilder: _buildMarkdownDocument),
+        ],
         extensions: [
           ShowcaseStoryExtension(),
           const TableWrapperExtension(),
+          const MermaidProcessor(),
           const CodeBlockProcessor(defaultTitle: 'Runnable Flutter example'),
           assetManager.pageExtension,
         ],
@@ -141,3 +146,14 @@ void main() async {
     ),
   );
 }
+
+/// Builds the `package:markdown` document used to parse this site's content,
+/// adding [MermaidBlockSyntax] on top of the parser's default block syntaxes
+/// so `MermaidProcessor` has diagrams to transform.
+md.Document _buildMarkdownDocument(Page page) => md.Document(
+  blockSyntaxes: [
+    ...MarkdownParser.defaultBlockSyntaxes,
+    const MermaidBlockSyntax(),
+  ],
+  extensionSet: md.ExtensionSet.gitHubWeb,
+);
