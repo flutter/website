@@ -7,11 +7,12 @@ publishDate: 2026-08-25
 author:
   - craiglabenz
   - louisehsu
+image: images/banner
 category: deep-dive
 layout: blog
 ---
 
-<DashImage figure src="images/banner.jpg" />
+<DashImage figure src="images/banner.jpg" alt="Dash watching WWDC 2026" caption="Dash watching WWDC 2026"/>
 
 As a Flutter developer, your relationship with each of Flutter's six primary
 supported platforms can vary (to say nothing of the extended universe platforms,
