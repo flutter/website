@@ -141,7 +141,7 @@ $badge-colors: (
 
   &.active {
     background-color: var(--site-base-bgColor);
-    color: var(--site-primary-color);
+    color: var(--site-link-fgColor);
   }
 }
 
@@ -406,119 +406,4 @@ $badge-colors: (
   margin-block-start: 0.15rem;
   color: var(--site-base-fgColor-alt);
   font-size: $ide-font-md;
-}
-
-.ide-note {
-  padding: $ide-spacing-sm $ide-spacing-md;
-  margin-block-end: $ide-spacing-lg;
-  border-radius: $ide-radius-sm;
-  background-color: var(--site-inset-bgColor);
-  color: var(--site-inset-fgColor);
-  font-size: $ide-font-sm;
-
-  p {
-    margin: 0;
-  }
-}
-
-.ide-note-title {
-  @include uppercase-label;
-  margin-block-end: 0.2rem;
-  color: var(--site-base-fgColor-alt);
-}
-
-.ide-description {
-  margin-block-end: $ide-spacing-lg;
-}
-
-.ide-tips {
-  padding: $ide-spacing-sm $ide-spacing-md;
-  margin-block-end: $ide-spacing-lg;
-  border: 1px solid var(--site-outline-variant);
-  border-radius: $ide-radius-sm;
-
-  ul {
-    @include reset-list;
-    padding-inline-start: 1.1rem;
-  }
-
-  li {
-    margin-block-end: $ide-spacing-xs;
-
-    &:last-child {
-      margin-block-end: 0;
-    }
-  }
-}
-
-.ide-tips-title {
-  @include uppercase-label;
-  margin-block-end: $ide-spacing-xs;
-  color: var(--site-primary-color);
-}
-
-.ide-example {
-  margin-block-end: $ide-spacing-lg;
-}
-
-.ide-docs-link {
-  @include flex-center;
-  display: inline-flex;
-  gap: $ide-spacing-xs;
-  padding: $ide-spacing-xs $ide-spacing-md;
-  margin-block-end: $ide-spacing-lg;
-  border-radius: $ide-radius-lg;
-  background-color: var(--site-primary-color-highlight);
-  color: var(--site-primary-color);
-  font-size: $ide-font-sm;
-  font-weight: 600;
-  text-decoration: none;
-
-  .material-symbols {
-    font-size: $ide-icon-md;
-  }
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.ide-contents-title {
-  @include uppercase-label;
-  margin-block-end: $ide-spacing-sm;
-  color: var(--site-base-fgColor-alt);
-}
-
-.ide-contents-list {
-  display: flex;
-  flex-direction: column;
-  gap: $ide-spacing-xs;
-}
-
-.ide-content-link {
-  @include flex-center;
-  @include ide-button-base;
-  gap: $ide-spacing-sm;
-  padding: $ide-spacing-xs $ide-spacing-sm;
-  border-radius: $ide-radius-sm;
-  background-color: var(--site-raised-bgColor-translucent);
-  color: inherit;
-  font-family: var(--site-code-fontFamily);
-  font-size: $ide-font-sm;
-  text-align: left;
-
-  svg {
-    @include no-shrink;
-    width: $ide-icon-sm;
-    height: $ide-icon-sm;
-  }
-
-  .ide-content-one-liner {
-    overflow: hidden;
-    color: var(--site-base-fgColor-alt);
-    font-family: var(--site-ui-fontFamily);
-    font-size: $ide-font-xs;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
 }
