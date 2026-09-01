@@ -49,7 +49,7 @@ leveraged organic search discovery across multiple platform ecosystems to drive
 consistent user growth without spending a dollar on paid marketing.
 
 <Image
-  src="images/third_party/case_studies/maxint/maxint_body_1.webp"
+  src="images/third_party/case_studies/maxint/flutter-showcase-1-6000x2834.webp"
   format="fullwidth"
   alt="Maxint running across desktop, tablet, and mobile platforms"
 />
@@ -86,7 +86,7 @@ feature accelerated iteration, allowing the team to refine dense ledger layouts
 and state logic without restarting the app.
 
 <Image
-  src="images/third_party/case_studies/maxint/maxint_body_2.webp"
+  src="images/third_party/case_studies/maxint/flutter-showcase-2-6000x2834.webp"
   format="fullwidth"
   alt="Maxint enterprise accounting interface rendering at 120fps"
 />
@@ -108,7 +108,7 @@ pulses in synchronization with audio callbacks, maintaining a unified
 interactive state across mobile, desktop, and web platforms.
 
 <Image
-  src="images/third_party/case_studies/maxint/maxint_body_3.webp"
+  src="images/third_party/case_studies/maxint/flutter-showcase-3-6000x2834.webp"
   format="fullwidth"
   alt="Maxint complex market analysis powered by local LLMs"
 />
@@ -152,7 +152,7 @@ platform, Maxint is building upon its current on-device receipt parsing, powered
 by Google’s ML Kit, by doubling down on privacy-first AI intelligence.
 
 <Image
-  src="images/third_party/case_studies/maxint/maxint_body_4.webp"
+  src="images/third_party/case_studies/maxint/flutter-showcase-4-6000x2834.webp"
   format="fullwidth"
   alt="Unified cross-platform monetization architecture powered by Orca"
 />

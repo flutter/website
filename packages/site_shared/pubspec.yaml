@@ -16,6 +16,7 @@ dependencies:
   jaspr_content: ^0.5.3
   markdown: ^7.3.1
   markdown_description_list: ^0.2.0
+  mermaid_core: ^0.1.2
   meta: ^1.18.2
   nanoid2: ^2.0.1
   opal: ^0.2.4
