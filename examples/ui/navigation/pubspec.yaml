@@ -4,13 +4,13 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0-0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  go_router: ^17.2.3
+  go_router: ^17.5.0
 
 flutter:
   uses-material-design: true

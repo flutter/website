@@ -165,6 +165,7 @@ Map<String, Object?> __consultants_gridConsultantsGrid(
 Map<String, Object?> __events_gridEventsGrid(_events_grid.EventsGrid c) => {
   'data': c.data,
   'items': c.items.map((i) => i.toId()).toList(),
+  'past': c.past,
 };
 Map<String, Object?> __games_adaptive_mediaGamesAdaptiveMedia(
   _games_adaptive_media.GamesAdaptiveMedia c,

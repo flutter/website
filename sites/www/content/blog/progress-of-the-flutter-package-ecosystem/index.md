@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-01-22
 author: anderdobo
 image: images/0tkq_040X0xa_Noms.webp
-category: announcement
+category: news
 layout: blog
 ---
 

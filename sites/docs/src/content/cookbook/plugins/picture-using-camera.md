@@ -59,16 +59,15 @@ $ flutter pub add camera path_provider path
 ```
 
 :::tip
-- For android, You must update `minSdkVersion` to 21 (or higher).
-- On iOS, the following lines must be added inside
-  `ios/Runner/Info.plist` to the access the camera and microphone.
+On iOS, the following lines must be added inside
+`ios/Runner/Info.plist` to access the camera and microphone:
 
-  ```xml
-  <key>NSCameraUsageDescription</key>
-  <string>Explanation on why the camera access is needed.</string>
-  <key>NSMicrophoneUsageDescription</key>
-  <string>Explanation on why the microphone access is needed.</string>
-  ```
+```xml
+<key>NSCameraUsageDescription</key>
+<string>Explanation on why the camera access is needed.</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>Explanation on why the microphone access is needed.</string>
+```
 :::
 
 ## 2. Get a list of the available cameras

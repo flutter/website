@@ -17,8 +17,8 @@ use the `headingLevel` property with a value greater than `0`.
 
 Historically, Flutter used the boolean `header` semantics property
 to denote headings on platform implementations:
-* On Android, a `header` value of `true` mapped to
-  `View.setHeading(true)`.
+
+* On Android, a `header` value of `true` mapped to `View.setHeading(true)`.
 * On iOS, a `header` value of `true` mapped to the
   `UIAccessibilityTraitHeader` accessibility trait.
 
@@ -31,14 +31,15 @@ creating confusion and mismatch
 between platform APIs and Flutter properties.
 
 With this change:
-* The `header` semantics property behaves as a no-op
-  on iOS and Android. It remains available in the API and can
-  still be used in the future if similar APIs are provided.
+
+* The `header` semantics property behaves as a no-op on iOS and Android.
+  It remains available in the API and can still be
+  used in the future if similar APIs are provided.
 * The `headingLevel` property is updated so that setting it
   to a value greater than `0` maps directly to
   `View.setHeading(true)` on Android
   and `UIAccessibilityTraitHeader` on iOS.
-  On iOS 13+, it also maps to `accessibilityHeadingLevel`.
+  On iOS 13 or later, it also maps to `accessibilityHeadingLevel`.
 
 ## Migration guide
 
@@ -49,13 +50,13 @@ migrate your code to use `headingLevel: 1`
 
 Note that while setting `headingLevel` to any value greater than `0`
 declares a heading on Android and iOS, other platforms (such as the web)
-treat the specific heading level number differently. For example,
-on the web, values `1` through `6` map to the corresponding
-`<h1>` through `<h6>` HTML elements.
+treat the specific heading level number differently.
+For example, on the web, values `1` through `6` map to the
+corresponding `<h1>` through `<h6>` HTML elements.
 
 Code before migration:
 
-```dart
+```dart highlightLines=2
 Semantics(
   header: true,
   child: Text('Section Title'),
@@ -64,7 +65,7 @@ Semantics(
 
 Code after migration:
 
-```dart
+```dart highlightLines=2
 Semantics(
   headingLevel: 1,
   child: Text('Section Title'),
@@ -75,7 +76,7 @@ Similarly, if you used `SemanticsProperties`:
 
 Code before migration:
 
-```dart
+```dart highlightLines=2
 SemanticsProperties(
   header: true,
 )
@@ -83,7 +84,7 @@ SemanticsProperties(
 
 Code after migration:
 
-```dart
+```dart highlightLines=2
 SemanticsProperties(
   headingLevel: 1,
 )
@@ -92,7 +93,7 @@ SemanticsProperties(
 ## Timeline
 
 Landed in version: 3.45.0-0.1.pre<br>
-In stable release: TBD
+In stable release: 3.47
 
 ## References
 

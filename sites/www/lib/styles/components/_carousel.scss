@@ -12,8 +12,7 @@
 .carousel {
   .carousel-slider {
     margin-left: calc(-1 * var(--gutter));
-    padding: 20px 0 30px;
-    padding-left: var(--gutter);
+    padding: 20px 0 30px var(--gutter);
     align-items: stretch;
     display: flex;
     overflow-x: auto;
@@ -87,26 +86,19 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      border-top-left-radius: var(--ui-border-radius-sm);
-      border-top-right-radius: var(--ui-border-radius-sm);
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
+      border-radius: var(--ui-border-radius-sm) var(--ui-border-radius-sm) 0 0;
       height: 250px;
     }
 
     .text {
       padding: var(--spacer);
       display: flex;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: var(--ui-border-radius-sm);
-      border-bottom-left-radius: var(--ui-border-radius-sm);
+      border-radius: 0 0 var(--ui-border-radius-sm) var(--ui-border-radius-sm);
       flex-direction: column;
       text-align: center;
       align-items: center;
       justify-content: center;
       background-color: var(--primary);
-      /* default, cms editable */
       height: 500px;
 
       h4 {
@@ -140,7 +132,6 @@
       }
 
       &.dark {
-
         h4,
         p {
           color: var(--grey-3);
@@ -161,18 +152,12 @@
 
       .media {
         width: var(--ui-card-width);
-        border-top-left-radius: var(--ui-border-radius-sm);
-        border-bottom-left-radius: var(--ui-border-radius-sm);
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: var(--ui-border-radius-sm) 0 0 var(--ui-border-radius-sm);
       }
 
       .text {
         padding: var(--gutter-md);
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-        border-top-right-radius: var(--ui-border-radius-sm);
-        border-bottom-right-radius: var(--ui-border-radius-sm);
+        border-radius: 0 var(--ui-border-radius-sm) var(--ui-border-radius-sm) 0;
 
         h3 {
           font-size: 54px;
@@ -301,7 +286,6 @@
       height: 100%;
       position: relative;
       width: 0;
-      /* dynamic */
     }
 
     .carousel-nav {

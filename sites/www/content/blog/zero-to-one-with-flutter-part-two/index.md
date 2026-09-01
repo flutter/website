@@ -6,7 +6,7 @@ description: >-
 publishDate: 2017-03-31
 author: mravn
 image: images/1OSc2sFHg8KH4ZQR2ymytKg.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

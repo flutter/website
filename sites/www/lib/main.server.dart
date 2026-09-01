@@ -50,7 +50,7 @@ void main() async {
   final assetManager = AssetManager(
     directory: 'content',
     outputPrefix: 'assets',
-    dataProperties: const {'page.image'},
+    dataProperties: const {'page.image', 'page.socialImage'},
     assetTransformers: [
       TrackingAssetTransformer(),
       ResizingAssetTransformer(),
@@ -92,6 +92,7 @@ void main() async {
         parsers: [const MarkdownParser()],
         extensions: [
           ShowcaseStoryExtension(),
+          const TableWrapperExtension(),
           const CodeBlockProcessor(defaultTitle: 'Runnable Flutter example'),
           assetManager.pageExtension,
         ],
