@@ -1233,7 +1233,7 @@
     - "Small-to-medium Business"
   options_GCP_partner: false
 - title: "Mallow Technologies Private Limited"
-  summary: "Mallow Technologies is an Asia-based, AI-driven custom software development company with 14+ years of experience building scalable web, mobile, and cloud solutions, specializing in Flutter."
+  summary: "An Asian-based custom software development company with 16+ years of experience helping businesses worldwide build scalable web, mobile, and cloud solutions, with a strong focus on Flutter. Recognized among Clutch's Top 1000 global service providers."
   card: "images/third_party/partners/MalowT_logo.png"
   external_url: "https://mallow-tech.com/technologies/flutter-app-development/"
   options_location:
@@ -1253,4 +1253,13 @@
     - "Startup"
     - "Small-to-medium Business"
     - "Enterprise"
+  options_GCP_partner: false
+- title: "Pollux LTDA"
+  summary: "An Argentinian based software development co-op with more than 5 years of experience programming with Flutter, for both mobile and web apps."
+  card: "images/third_party/partners/Pollux_logo.png"
+  external_url: "https://polluxcoop.com/en/apps-moviles"
+  options_location:
+    - "South America"
+  options_customer_size:
+    - "Small-to-medium Business"
   options_GCP_partner: false

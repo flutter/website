@@ -501,3 +501,17 @@ To use this plugin:
    before adding the plugin). Click **Show Flutter homepage**.
    You should see the default browser open on the device,
    displaying the homepage for flutter.dev.
+## Install AI skills from packages
+
+Many `pub.dev` packages bundle official **package skills** that teach AI coding
+assistants how to use their APIs and follow recommended patterns.
+
+If your project dependencies include skills, you can discover and install them
+into your local workspace with a single command:
+
+```bash
+dart run skills@ get
+```
+
+To learn more about how skills help coding assistants understand your
+dependencies, check out [Package skills](/ai/package-skills).
