@@ -51,6 +51,7 @@
 @use 'package:site_shared/_sass/components/tooltip';
 
 // Styles for specific pages, alphabetically ordered.
+@use 'pages/cuj-index';
 @use 'pages/glossary';
 @use 'pages/learning-resources-index';
 @use 'pages/not-found';
