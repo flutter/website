@@ -20,6 +20,7 @@ void setUpSite() {
   _setUpPlatformKeys();
   _setUpToc();
   _setUpSteppers();
+  _setUpIdeExplorers();
 }
 
 void _setUpSearchKeybindings() {
@@ -476,4 +477,126 @@ void _scrollTo(web.Element element, {required bool smooth}) {
       behavior: smooth ? 'smooth' : 'auto',
     ),
   );
+}
+
+/// Set up interactivity of the file/detail explorer created with
+/// the `<IdeExplorer>` custom component.
+void _setUpIdeExplorers() {
+  final explorers = web.document.querySelectorAll('.ide-explorer');
+  for (var i = 0; i < explorers.length; i++) {
+    _setUpIdeExplorer(explorers.item(i) as web.Element);
+  }
+}
+
+void _setUpIdeExplorer(web.Element explorer) {
+  void selectIdeNode(String domId) {
+    final selectTargets = explorer.querySelectorAll('[data-ide-select]');
+    web.Element? sidebarTarget;
+    for (var i = 0; i < selectTargets.length; i++) {
+      final target = selectTargets.item(i) as web.Element;
+      final isMatch = target.getAttribute('data-ide-select') == domId;
+      target.classList.toggle('active', isMatch);
+      if (isMatch) {
+        target.setAttribute('aria-current', 'true');
+      } else {
+        target.removeAttribute('aria-current');
+      }
+      if (isMatch && target.closest('.ide-tree') != null) {
+        sidebarTarget = target;
+      }
+    }
+
+    final panels = explorer.querySelectorAll('[data-ide-panel]');
+    for (var i = 0; i < panels.length; i++) {
+      final panel = panels.item(i) as web.Element;
+      final isMatch = panel.getAttribute('data-ide-panel') == domId;
+      panel.classList.toggle('active', isMatch);
+      panel.setAttribute('aria-hidden', '${!isMatch}');
+    }
+
+    // Expand every ancestor folder so the selected item stays visible.
+    final ownDetails = sidebarTarget?.closest('details');
+    final isFolderSelf =
+        sidebarTarget?.parentElement?.tagName.toLowerCase() == 'summary';
+    var current = isFolderSelf ? ownDetails?.parentElement : ownDetails;
+    while (current != null) {
+      final ancestorDetails = current.closest('details');
+      if (ancestorDetails == null) break;
+      (ancestorDetails as web.HTMLDetailsElement).open = true;
+      current = ancestorDetails.parentElement;
+    }
+  }
+
+  void switchIdeRoot(String rootId) {
+    final tabs = explorer.querySelectorAll('.ide-root-tab');
+    for (var i = 0; i < tabs.length; i++) {
+      final tab = tabs.item(i) as web.Element;
+      final isMatch = tab.getAttribute('data-ide-root') == rootId;
+      tab.classList.toggle('active', isMatch);
+      tab.setAttribute('aria-selected', '$isMatch');
+    }
+
+    final trees = explorer.querySelectorAll('.ide-tree');
+    web.Element? activeTree;
+    for (var i = 0; i < trees.length; i++) {
+      final tree = trees.item(i) as web.Element;
+      final isMatch = tree.getAttribute('data-ide-root') == rootId;
+      tree.classList.toggle('active', isMatch);
+      tree.setAttribute('aria-hidden', '${!isMatch}');
+      if (isMatch) activeTree = tree;
+    }
+
+    final firstDomId = activeTree
+        ?.querySelector('[data-ide-select]')
+        ?.getAttribute('data-ide-select');
+    if (firstDomId != null) {
+      selectIdeNode(firstDomId);
+    }
+  }
+
+  void toggleAllIdeFolders() {
+    final activeTree =
+        explorer.querySelector('.ide-tree.active') ??
+        explorer.querySelector('.ide-tree');
+    if (activeTree == null) return;
+
+    final allDetails = activeTree.querySelectorAll('details');
+    var anyClosed = false;
+    for (var i = 0; i < allDetails.length; i++) {
+      if (!(allDetails.item(i) as web.HTMLDetailsElement).open) {
+        anyClosed = true;
+        break;
+      }
+    }
+
+    for (var i = 0; i < allDetails.length; i++) {
+      (allDetails.item(i) as web.HTMLDetailsElement).open = anyClosed;
+    }
+  }
+
+  void handleClick(web.Event event) {
+    final target = event.target as web.Element?;
+    if (target == null) return;
+
+    final selectTarget = target.closest('[data-ide-select]');
+    if (selectTarget != null) {
+      final domId = selectTarget.getAttribute('data-ide-select');
+      if (domId != null) selectIdeNode(domId);
+      event.preventDefault();
+      return;
+    }
+
+    final rootTab = target.closest('.ide-root-tab');
+    if (rootTab != null) {
+      final rootId = rootTab.getAttribute('data-ide-root');
+      if (rootId != null) switchIdeRoot(rootId);
+      return;
+    }
+
+    if (target.closest('[data-ide-toggle-all]') != null) {
+      toggleAllIdeFolders();
+    }
+  }
+
+  explorer.addEventListener('click', handleClick.toJS);
 }
