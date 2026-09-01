@@ -2,12 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-/// A single top-level file tree shown by an [IdeExplorer], which may
-/// have multiple roots to represent multiple packages
-/// (for example, "Project" and "Shared").
+/// @docImport 'ide_explorer.dart';
+library;
+
+/// A single top-level file tree shown by an [IdeExplorer],
+/// which might have multiple roots to represent multiple packages,
+/// such as "Project" and "Shared".
 ///
-/// When multiple roots are provided, they are rendered as tabs that can be
-/// switched between.
+/// When multiple roots are provided, they are
+/// rendered as tabs that can be switched between.
 class const IdeExplorerProjectRoot({
   required final String id,
   final String? label,
