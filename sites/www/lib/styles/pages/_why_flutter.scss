@@ -423,15 +423,22 @@
 
 .why-flutter-shared-media {
   flex-shrink: 0;
-  height: 458px;
+  height: 370px;
+  left: 50%;
   margin-inline: auto;
   position: relative;
-  transform: scale(0.78);
+  transform: translateX(-50%) scale(0.78);
+  transform-origin: top center;
   width: 471px;
 
-  @media (max-width: 380px) {
-    height: 380px;
-    transform: scale(0.68);
+  @media (max-width: 420px) {
+    height: 335px;
+    transform: translateX(-50%) scale(0.7);
+  }
+
+  @media (max-width: 360px) {
+    height: 300px;
+    transform: translateX(-50%) scale(0.62);
   }
 
   .why-flutter-shared-stat {
@@ -958,7 +965,11 @@
   // Media first in the DOM already yields media-left at this width.
   .why-flutter-row-reverse { flex-direction: row; }
 
-  .why-flutter-shared-media { transform: none; }
+  .why-flutter-shared-media {
+    height: 458px;
+    left: auto;
+    transform: none;
+  }
 
   .why-flutter-productivity {
     h2 {
