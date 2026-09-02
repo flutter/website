@@ -285,21 +285,21 @@ class TodoRepository {
     if (!_database.isOpen()) {
       await _database.open();
     }
-    return _database.getAll();
+    return await _database.getAll();
   }
 
   Future<Result<Todo>> createTodo(String task) async {
     if (!_database.isOpen()) {
       await _database.open();
     }
-    return _database.insert(task);
+    return await _database.insert(task);
   }
 
   Future<Result<void>> deleteTodo(int id) async {
     if (!_database.isOpen()) {
       await _database.open();
     }
-    return _database.delete(id);
+    return await _database.delete(id);
   }
 }
 ```
@@ -437,15 +437,15 @@ which is itself passed into the `MainApp` as a constructor argument dependency.
 <?code-excerpt "lib/main.dart (MainTodo)"?>
 ```dart
 void main() {
-  late DatabaseService databaseService;
+  final DatabaseService databaseService;
   if (kIsWeb) {
     throw UnsupportedError('Platform not supported');
   } else if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
-    // Initialize FFI SQLite
+    // Initialize the FFI-based SQLite.
     sqfliteFfiInit();
     databaseService = DatabaseService(databaseFactory: databaseFactoryFfi);
   } else {
-    // Use default native SQLite
+    // Use the default native SQLite.
     databaseService = DatabaseService(databaseFactory: databaseFactory);
   }
 

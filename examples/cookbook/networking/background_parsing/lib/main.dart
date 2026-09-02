@@ -12,7 +12,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   );
 
   // Use the compute function to run parsePhotos in a separate isolate.
-  return compute(parsePhotos, response.body);
+  return await compute(parsePhotos, response.body);
 }
 // #enddocregion fetchPhotos
 
@@ -39,7 +39,7 @@ class Photo {
     required this.thumbnailUrl,
   });
 
-  factory Photo.fromJson(Map<String, dynamic> json) {
+  factory Photo.fromJson(Map<String, Object?> json) {
     return Photo(
       albumId: json['albumId'] as int,
       id: json['id'] as int,

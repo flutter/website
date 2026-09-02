@@ -47,7 +47,9 @@ using the [`http.get()`][] method.
 <?code-excerpt "lib/main_step2.dart (fetchPhotos)"?>
 ```dart
 Future<http.Response> fetchPhotos(http.Client client) async {
-  return client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+  return await client.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/photos'),
+  );
 }
 ```
 
@@ -86,7 +88,7 @@ class Photo {
     required this.thumbnailUrl,
   });
 
-  factory Photo.fromJson(Map<String, dynamic> json) {
+  factory Photo.fromJson(Map<String, Object?> json) {
     return Photo(
       albumId: json['albumId'] as int,
       id: json['id'] as int,
@@ -148,7 +150,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   );
 
   // Use the compute function to run parsePhotos in a separate isolate.
-  return compute(parsePhotos, response.body);
+  return await compute(parsePhotos, response.body);
 }
 ```
 
@@ -184,7 +186,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   );
 
   // Use the compute function to run parsePhotos in a separate isolate.
-  return compute(parsePhotos, response.body);
+  return await compute(parsePhotos, response.body);
 }
 
 // A function that converts a response body into a List<Photo>.
@@ -210,7 +212,7 @@ class Photo {
     required this.thumbnailUrl,
   });
 
-  factory Photo.fromJson(Map<String, dynamic> json) {
+  factory Photo.fromJson(Map<String, Object?> json) {
     return Photo(
       albumId: json['albumId'] as int,
       id: json['id'] as int,
