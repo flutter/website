@@ -28,7 +28,7 @@ final class TestDartCommand extends Command<int> {
   String get name => 'test-dart';
 
   @override
-  Future<int> run() async =>
+  Future<int> run() =>
       _testDart(verboseLogging: argResults.get<bool>(_verboseFlag, false));
 }
 

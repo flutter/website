@@ -56,6 +56,9 @@ String extractContent(Element element) {
 }
 
 class RawNode extends Component {
+  // Identity is important to these components and a
+  // web node can't be retrieved at compile time anyway.
+  // ignore: prefer_const_constructors_in_immutables
   RawNode(this.node, {super.key});
 
   final web.Node node;

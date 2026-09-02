@@ -447,7 +447,7 @@ class _IdeBadgeDot extends StatelessComponent {
         'aria-label': badge,
         'title': badge,
       },
-      [],
+      const [],
     );
   }
 }

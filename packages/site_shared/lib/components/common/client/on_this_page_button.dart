@@ -26,9 +26,9 @@ final class OnThisPageButton extends StatelessComponent {
         }
       },
     },
-    [
-      const MaterialIcon('list'),
-      const span([.text('On this page')]),
+    const [
+      MaterialIcon('list'),
+      span([.text('On this page')]),
     ],
   );
 }

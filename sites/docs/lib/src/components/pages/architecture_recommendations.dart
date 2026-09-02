@@ -54,11 +54,11 @@ class ArchitectureRecommendations extends CustomComponentBase {
           [
             thead([
               tr([
-                th(styles: Styles(width: 30.percent), [
-                  const .text('Recommendation'),
+                th(styles: Styles(width: 30.percent), const [
+                  .text('Recommendation'),
                 ]),
-                th(styles: Styles(width: 70.percent), [
-                  const .text('Description'),
+                th(styles: Styles(width: 70.percent), const [
+                  .text('Description'),
                 ]),
               ]),
             ]),

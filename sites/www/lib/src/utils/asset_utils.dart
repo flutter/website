@@ -16,9 +16,7 @@ extension AssetExtension on BuildContext {
 }
 
 class TrackingAssetTransformer implements AssetTransformer {
-  TrackingAssetTransformer();
-
-  final _trackingFile = File(
+  final IOSink _trackingFile = File(
     p.join('tool', 'used_assets.txt'),
   ).openWrite(mode: FileMode.write);
 
@@ -30,6 +28,8 @@ class TrackingAssetTransformer implements AssetTransformer {
 }
 
 class ResizingAssetTransformer implements AssetTransformer {
+  const ResizingAssetTransformer();
+
   @override
   Asset transform(Asset asset, [Object? aspect]) {
     final width = aspect is int ? aspect : null;
