@@ -26,7 +26,8 @@ is finally coming to fruition.
 
 Starting months ago and landing in August 2026, this effort froze
 contributions to the Material and Cupertino libraries within the
-Flutter framework and released exact replicas on `pub.dev` as the 1.0.0 <sup>1</sup>
+Flutter framework and released exact replicas on `pub.dev` as the
+1.0.0<sup><a href="#footnote">1</a></sup>
 versions of  [`pkg:material_ui`](https://pub.dev/packages/material_ui)
 and [`pkg:cupertino_ui`](https://pub.dev/packages/cupertion_ui).
 (Those external libraries are not frozen and are ready for contributions!)
@@ -114,7 +115,7 @@ To get started, if your apps use `flutter/material.dart` or
 standalone libraries to your `pubspec.yaml` file at version 1.0.0
 and replace your imports to use the new packages. Our expectation
 is that this will be a drop-in maneuver, but
-please, [file an issue](https://github.com/flutter/flutter/issues/new)
+please [file an issue](https://github.com/flutter/flutter/issues/new)
 if you encounter any trouble.
 
 If you're a UI developer with expertise in Material or Cupertino,
@@ -124,7 +125,7 @@ filing a feature request for work you would like to complete.
 
 Until next time, Happy Fluttering!
 
-l: To streamline your migration, we intentionally chose version `1.0.0`
-to mark the standalone version which perfectly matches each library's
-in-framework state. Moving forward,
-the libraries will evolve using semantic versioning.
+<a id="footnote">1</a>: To streamline your migration, we intentionally chose
+version `1.0.0` to mark the standalone version which perfectly matches
+each library's in-framework state. Moving forward, the libraries will
+evolve using semantic versioning.
