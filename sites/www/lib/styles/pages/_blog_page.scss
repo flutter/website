@@ -1,3 +1,5 @@
+@use 'package:site_shared/_sass/base/mixins';
+
 .blog main {
   display: flex;
   flex-direction: row;
@@ -34,6 +36,50 @@
     @media (min-width: 576px) {
       > .content {
         padding: 2rem;
+      }
+    }
+
+    // Styles extracted from _button.scss until the www site can import it.
+    .code-block-wrapper .code-block-body .copy-button {
+      --site-interaction-base-values: 0 0 0;
+
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      white-space: nowrap;
+      outline-offset: 1px;
+      border-radius: 24px;
+      gap: 0.3rem;
+      padding: 0.4rem 0.9rem;
+
+      font-family: var(--site-ui-fontFamily);
+      font-weight: 500;
+      color: var(--site-primary-color);
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+
+      &:not(:disabled):hover {
+        @include mixins.interaction-style(4%);
+      }
+
+      &:not(:disabled):active {
+        @include mixins.interaction-style(8%);
+      }
+
+      &.icon-button {
+        border-radius: 0.25rem;
+        padding: 0.25rem;
+        color: var(--site-base-fgColor-alt);
+        user-select: none;
+
+        >span {
+          font-size: 1.75rem;
+        }
+
+        &:not(:disabled):hover {
+          color: var(--site-base-fgColor);
+        }
       }
     }
   }
