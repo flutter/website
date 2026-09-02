@@ -106,7 +106,7 @@ class ApiClientService {
 
 class DatabaseService {
   Future<Result<UserProfile>> createTemporaryUser() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future<void>.delayed(const Duration(seconds: 2));
     return Result.ok(UserProfile('John Doe', 'john@example.com'));
   }
 }

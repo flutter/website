@@ -7,7 +7,7 @@ class DatabaseService {
   Future<UserProfile?> fetchUserProfile() async {
     // #enddocregion DatabaseService
     // Simulate a database select query
-    await Future.delayed(const Duration(milliseconds: 100));
+    await Future<void>.delayed(const Duration(milliseconds: 100));
     // Return a dummy user profile
     return const UserProfile(
       name: 'John Doe (from Database)',
@@ -20,7 +20,7 @@ class DatabaseService {
   Future<void> updateUserProfile(UserProfile userProfile) async {
     // #enddocregion DatabaseService
     // Simulate a database update query
-    await Future.delayed(const Duration(milliseconds: 100));
+    await Future<void>.delayed(const Duration(milliseconds: 100));
     // #docregion DatabaseService
   }
 }

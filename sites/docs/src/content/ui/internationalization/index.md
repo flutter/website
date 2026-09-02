@@ -1108,7 +1108,7 @@ class _NnMaterialLocalizationsDelegate
   bool isSupported(Locale locale) => locale.languageCode == 'nn';
 
   @override
-  Future<MaterialLocalizations> load(Locale locale) async {
+  Future<MaterialLocalizations> load(Locale locale) {
     final String localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
     // The locale (in this case `nn`) needs to be initialized into the custom
