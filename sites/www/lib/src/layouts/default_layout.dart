@@ -5,12 +5,12 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/server_util.dart';
 
 import '../components/layout/footer.dart';
 import '../components/layout/header.dart';
 import '../components/pages/consultants_cookie_snack.dart';
 import '../models/content/banner_content.dart';
-import '../style_hash.dart';
 import '../utils/asset_utils.dart';
 import '../utils/data_utils.dart';
 
@@ -176,9 +176,9 @@ class DefaultLayout extends PageLayout {
               rel: 'stylesheet',
             ),
 
-            // Project Styles
-            const link(
-              href: '/main.css?hash=$generatedStylesHash',
+            // Set site styles.
+            link(
+              href: cacheBustedBuildAssetUrl('/main.css'),
               rel: 'stylesheet',
             ),
           ],

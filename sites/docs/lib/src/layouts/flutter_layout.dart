@@ -15,7 +15,6 @@ import '../components/layout/header.dart';
 import '../components/layout/sidenav.dart';
 import '../models/sidenav_model.dart';
 import '../pages/markdown.dart';
-import '../style_hash.dart';
 
 /// The base Jaspr Content layout for wrapping site content.
 abstract class FlutterDocsLayout extends DashLayout {
@@ -41,9 +40,6 @@ abstract class FlutterDocsLayout extends DashLayout {
   String get tagManagerId => 'GTM-ND4LWWZ';
   @override
   String get analyticsId => 'UA-67589403-1';
-
-  @override
-  String get stylesHash => generatedStylesHash;
 
   String get defaultSidenav => 'default';
 
