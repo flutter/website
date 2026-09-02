@@ -97,7 +97,7 @@ Future<File> writeCounter(int counter) async {
   final file = await _localFile;
 
   // Write the counter as a string to the file.
-  return await file.writeAsString('$counter');
+  return file.writeAsString('$counter');
 }
 ```
 
@@ -172,7 +172,7 @@ class CounterStorage {
     final file = await _localFile;
 
     // Write the counter as a string to the file.
-    return await file.writeAsString('$counter');
+    return file.writeAsString('$counter');
   }
 }
 

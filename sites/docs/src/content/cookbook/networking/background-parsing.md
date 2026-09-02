@@ -47,9 +47,7 @@ using the [`http.get()`][] method.
 <?code-excerpt "lib/main_step2.dart (fetchPhotos)"?>
 ```dart
 Future<http.Response> fetchPhotos(http.Client client) async {
-  return await client.get(
-    Uri.parse('https://jsonplaceholder.typicode.com/photos'),
-  );
+  return client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 }
 ```
 
@@ -150,7 +148,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   );
 
   // Use the compute function to run parsePhotos in a separate isolate.
-  return await compute(parsePhotos, response.body);
+  return compute(parsePhotos, response.body);
 }
 ```
 
@@ -186,7 +184,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   );
 
   // Use the compute function to run parsePhotos in a separate isolate.
-  return await compute(parsePhotos, response.body);
+  return compute(parsePhotos, response.body);
 }
 
 // A function that converts a response body into a List<Photo>.

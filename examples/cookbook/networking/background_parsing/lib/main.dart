@@ -12,7 +12,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   );
 
   // Use the compute function to run parsePhotos in a separate isolate.
-  return await compute(parsePhotos, response.body);
+  return compute(parsePhotos, response.body);
 }
 // #enddocregion fetchPhotos
 

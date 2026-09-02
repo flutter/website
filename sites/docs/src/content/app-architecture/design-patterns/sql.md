@@ -285,21 +285,21 @@ class TodoRepository {
     if (!_database.isOpen()) {
       await _database.open();
     }
-    return await _database.getAll();
+    return _database.getAll();
   }
 
   Future<Result<Todo>> createTodo(String task) async {
     if (!_database.isOpen()) {
       await _database.open();
     }
-    return await _database.insert(task);
+    return _database.insert(task);
   }
 
   Future<Result<void>> deleteTodo(int id) async {
     if (!_database.isOpen()) {
       await _database.open();
     }
-    return await _database.delete(id);
+    return _database.delete(id);
   }
 }
 ```
