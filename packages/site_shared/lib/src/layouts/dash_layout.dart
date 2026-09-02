@@ -53,7 +53,7 @@ abstract class DashLayout implements PageLayout {
     'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0',
   ];
 
-  /// The stylesheet URL for the primary site styles.
+  /// The stylesheet URL for the site's built styles.
   String get stylesUrl => '/assets/css/main.css';
 
   Iterable<Component> buildExtraHead(Page page) => const [];
