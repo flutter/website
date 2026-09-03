@@ -475,7 +475,7 @@
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
     - title: Package skills
-      permalink: /ai/package-skills
+      permalink: https://dart.dev/tools/pub/package-skills
     - title: Swift Package Manager
       permalink: /packages-and-plugins/swift-package-manager
       children:
