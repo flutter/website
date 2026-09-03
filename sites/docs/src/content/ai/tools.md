@@ -24,7 +24,7 @@ The Flutter AI tooling ecosystem consists of five complementary components:
    server giving assistants direct access to official Flutter and Dart docs.
 4. **Package skills**: skills published directly inside third-party `pub.dev`
    packages, giving assistants instant expertise on specific libraries.
-5. **Custom agents**: specialized agent personas equipped with focused tools
+5. **Specialized agents**: dedicated agent personas equipped with focused tools
    and system instructions for isolated workflows, such as accessibility
    auditing.
 
@@ -111,13 +111,14 @@ To learn how to install or publish package skills, check out
 
 ---
 
-## Custom agents
+## Specialized agents
 
-**Custom agents** are specialized AI assistants configured with dedicated
-system prompts, curated tool sets, and focused skill subsets.
+**Specialized agents** (referred to as custom agents in platforms like
+Antigravity) are AI assistants configured with dedicated system prompts,
+curated tool sets, and focused skill subsets.
 
 While agent skills guide general-purpose assistants during active coding,
-custom agents run in isolated contexts to perform deep, single-purpose
+specialized agents run in isolated contexts to perform deep, single-purpose
 workflows without cluttering your primary conversation history.
 
 ### Flutter Accessibility agent
@@ -135,14 +136,14 @@ Key capabilities of the accessibility agent include:
   areas smaller than the recommended 48x48 logical pixels.
 * **Contrast and visual checks**: highlights potential contrast ratio issues
   and missing focus indicators.
-* **Automated code remediation**: generates idiomatic Flutter fixes (such as
+* **Automated code fixes**: generates idiomatic Flutter fixes (such as
   wrapping widgets in `Semantics` or adjusting tap bounds) that you can review
   and accept.
 
 ### Using the accessibility agent in Antigravity
 
-After installing the official
-[Dart and Flutter plugin](https://antigravity.google/docs/build-with-google/#dart-and-flutter)
+After installing the official [Dart and Flutter plugin](
+https://antigravity.google/docs/build-with-google/#dart-and-flutter)
 in Antigravity, you can invoke the accessibility agent directly when chatting
 with Antigravity by selecting the **Flutter Accessibility Agent** from the
 agent picker, mentioning `@flutter_a11y_agent`, or asking your assistant to
@@ -165,7 +166,7 @@ interact:
 | **Dart MCP server** | Local SDK tools | Diagnostics, tests, runtime |
 | **Developer Knowledge MCP** | Online search | Live docs, API references |
 | **Package skill** | From dependencies | Library APIs, code generation |
-| **Custom agent** | Isolated subagent | Dedicated accessibility audits |
+| **Specialized agent** | Isolated subagent | Accessibility audits |
 
 {:.table .table-striped}
 

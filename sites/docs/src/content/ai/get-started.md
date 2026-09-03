@@ -30,9 +30,9 @@ to three core capabilities:
   a Model Context Protocol (MCP) server that connects the assistant to the
   Dart SDK, giving it real-time access to analyzer diagnostics, symbol
   resolution, test runners, and runtime inspection.
-* **[Custom agents](/ai/tools#custom-agents)**: specialized assistant personas
-  tailored for dedicated workflows, such as the Flutter Accessibility (`a11y`)
-  agent for automated accessibility audits and code remediations.
+* **[Specialized agents](/ai/tools#specialized-agents)**: focused assistant
+  personas tailored for dedicated workflows, such as the Flutter Accessibility
+  (`a11y`) agent for automated accessibility audits and code fixes.
 
 These tools work together automatically: the assistant uses MCP tools to query
 live project state and static analysis, while using agent skills to guide its
