@@ -18,5 +18,5 @@ void main() {
   example
       ._getIPAddress()
       .then((ip) => print(ip))
-      .catchError((error) => print(error));
+      .onError<Exception>((error, _) => print(error));
 }

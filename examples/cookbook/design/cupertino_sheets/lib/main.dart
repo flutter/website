@@ -29,7 +29,7 @@ class CupertinoSheetPage extends StatelessWidget {
         child: CupertinoButton.filled(
           onPressed: () {
             // #docregion ShowCupertinoSheet
-            showCupertinoSheet(
+            showCupertinoSheet<void>(
               context: context,
               scrollableBuilder: (context, scrollController) {
                 return SingleChildScrollView(

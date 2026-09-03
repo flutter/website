@@ -365,7 +365,7 @@ class _TextEditingExampleState extends State<TextEditingExample> {
         ElevatedButton(
           child: const Text('Submit'),
           onPressed: () {
-            showDialog(
+            showDialog<void>(
               context: context,
               builder: (context) {
                 return AlertDialog(
@@ -399,7 +399,7 @@ class _FormExampleState extends State<FormExample> {
     final form = formKey.currentState;
     if (form != null && form.validate()) {
       form.save();
-      showDialog(
+      showDialog<void>(
         context: context,
         builder: (context) {
           return AlertDialog(
