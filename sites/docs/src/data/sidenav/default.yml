@@ -652,7 +652,7 @@
     - title: How AI tools work
       permalink: /ai/tools
     - title: Package skills
-      permalink: /ai/package-skills
+      permalink: https://dart.dev/ai/package-skills
 
 - title: Build AI-powered apps
   permalink: /ai/genui

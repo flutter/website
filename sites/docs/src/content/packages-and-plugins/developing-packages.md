@@ -1079,6 +1079,7 @@ To distribute skills with your package:
 
 When developers add your package as a dependency, their assistants can
 automatically discover your instructions. To learn more about authoring
-guidelines and best practices, check out [Package skills](/ai/package-skills).
+guidelines and best practices, check out
+[Ship skills with packages](https://dart.dev/tools/pub/package-skills).
 
 [Writing a good plugin]: {{site.flutter-blog}}/writing-a-good-flutter-plugin-1a561b986c9c

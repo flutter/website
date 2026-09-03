@@ -107,7 +107,7 @@ dart run skills@ get
 ```
 
 To learn how to install or publish package skills, check out
-[Package skills](/ai/package-skills).
+[Package skills](https://dart.dev/ai/package-skills).
 
 ---
 
@@ -174,4 +174,5 @@ interact:
 
 * Follow the [Get started with AI](/ai/get-started) guide to install official
   plugins in your editor.
-* Learn how to consume and publish [Package skills](/ai/package-skills).
+* Learn how to consume and publish
+  [Package skills](https://dart.dev/ai/package-skills).
