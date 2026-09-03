@@ -35,6 +35,10 @@ final List<NavItem> headerNavItems = [
     ],
   ),
   NavItem(
+    label: 'Why Flutter',
+    href: '/why-flutter',
+  ),
+  NavItem(
     label: 'Showcase',
     href: '/showcase',
   ),
