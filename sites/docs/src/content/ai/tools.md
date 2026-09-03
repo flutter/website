@@ -106,8 +106,10 @@ skills using the `skills` CLI:
 dart run skills@ get
 ```
 
-To learn how to install or publish package skills, check out
+To learn how to discover and install package skills, check out
 [Package skills](https://dart.dev/ai/package-skills).
+To bundle skills with your own package, check out
+[Ship skills with packages](https://dart.dev/tools/pub/package-skills).
 
 ---
 
@@ -174,5 +176,7 @@ interact:
 
 * Follow the [Get started with AI](/ai/get-started) guide to install official
   plugins in your editor.
-* Learn how to consume and publish
+* Learn how to install skills with
   [Package skills](https://dart.dev/ai/package-skills).
+* Learn how to distribute skills with
+  [Ship skills with packages](https://dart.dev/tools/pub/package-skills).
