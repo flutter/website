@@ -123,7 +123,7 @@ workflows without cluttering your primary conversation history.
 
 ### Flutter Accessibility agent
 
-The **Flutter Accessibility (`a11y`) agent** is an official custom agent
+The **Flutter Accessibility (`a11y`) agent** is an official specialized agent
 designed to audit Flutter widget trees and recommend accessibility
 improvements. The accessibility agent is currently available in
 [Google Antigravity](https://antigravity.google).
