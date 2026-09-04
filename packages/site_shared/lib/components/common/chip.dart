@@ -25,7 +25,7 @@ class ChipSet extends StatelessComponent {
         id: 'reset-filters',
         classes: 'text-button',
         events: {'click': (_) => onReset()},
-        [const .text('Clear filters')],
+        const [.text('Clear filters')],
       ),
   ]);
 }
@@ -124,8 +124,8 @@ class FilterChip extends StatelessComponent {
               'viewBox': iconViewBox,
               'aria-hidden': 'true',
             },
-            [
-              const Component.element(
+            const [
+              Component.element(
                 tag: 'path',
                 attributes: {
                   'd':
@@ -244,7 +244,7 @@ class _SelectChipState<T> extends State<SelectChip<T>> {
                 width: 24.px,
                 height: 24.px,
                 viewBox: '0 0 24 24',
-                attributes: {'aria-hidden': 'true'},
+                attributes: const {'aria-hidden': 'true'},
                 [
                   Component.element(
                     tag: 'path',
@@ -322,7 +322,7 @@ class SelectMenuItem<T> {
               width: iconSize.px,
               height: iconSize.px,
               viewBox: iconViewBox,
-              attributes: {'aria-hidden': 'true'},
+              attributes: const {'aria-hidden': 'true'},
               [
                 Component.element(
                   tag: 'path',

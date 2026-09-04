@@ -147,7 +147,7 @@ class _EmbeddedDartPadState extends State<EmbeddedDartPad> {
       src: component._iframeUrl,
       loading: MediaLoading.lazy,
       allow: 'clipboard-write',
-      [],
+      const [],
     );
   }
 }

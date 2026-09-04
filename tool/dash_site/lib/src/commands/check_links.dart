@@ -32,7 +32,7 @@ final class CheckLinksCommand extends Command<int> {
   String get name => 'check-links';
 
   @override
-  Future<int> run() async => _checkLinks(
+  Future<int> run() => _checkLinks(
     site: selectedSite,
     checkExternal: argResults.get<bool>(_externalFlag, false),
   );

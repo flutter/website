@@ -42,7 +42,7 @@ final class RefreshExcerptsCommand extends Command<int> {
   String get name => 'refresh-excerpts';
 
   @override
-  Future<int> run() async => _refreshExcerpts(
+  Future<int> run() => _refreshExcerpts(
     site: selectedSite,
     verboseLogging: argResults.get<bool>(_verboseFlag, false),
     dryRun: argResults.get<bool>(_dryRunFlag, false),
