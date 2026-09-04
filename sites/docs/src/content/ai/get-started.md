@@ -40,7 +40,7 @@ coding strategies and best practices.
 
 In addition to core Flutter plugins, you can also equip your assistant with
 skills that are shipped directly by third-party `pub.dev`
-packages using the [skills](https://dart.dev/ai/package-skills) package.
+packages using [package skills](https://dart.dev/ai/package-skills).
 
 To learn more about the underlying architecture and capabilities of each tool,
 check out [How Flutter AI tools work](/ai/tools).
