@@ -291,7 +291,16 @@ This warning occurs when an older `web/index.html` file uses
 The CLI message references the `FlutterLoader` interface,
 which JavaScript code accesses through `_flutter.loader`.
 
-To resolve this warning, update your bootstrap code in `web/index.html`
+If your app uses the default initialization and doesn't require
+custom bootstrapping, replace the legacy script block in `web/index.html`
+with the standard script tag:
+
+```html title="web/index.html"
+<script src="flutter_bootstrap.js" async></script>
+```
+
+If you customized your initialization logic,
+update your bootstrap code in `web/index.html`
 (or a custom `web/flutter_bootstrap.js` file)
 to call `_flutter.loader.load()` instead:
 
