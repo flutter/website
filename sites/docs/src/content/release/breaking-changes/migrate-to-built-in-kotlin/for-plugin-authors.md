@@ -14,9 +14,7 @@ which requires Kotlin Gradle Plugin (KGP) 2.0.0 or higher.
 Flutter enforces a minimum KGP version of 2.0.0 starting in Flutter 3.44.
 Plugin authors must update their plugin's minimum Flutter version
 to at least 3.44 in `pubspec.yaml` when migrating.
-:::
 
-:::warning
 This guide only applies to plugins that already use the
 Kotlin Gradle Plugin (KGP).
 
