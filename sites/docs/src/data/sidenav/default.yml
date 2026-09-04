@@ -474,8 +474,8 @@
       permalink: /packages-and-plugins/dependency-management
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
-    - title: Package skills
-      permalink: /ai/package-skills
+    - title: Ship skills with packages
+      permalink: https://dart.dev/tools/pub/package-skills
     - title: Swift Package Manager
       permalink: /packages-and-plugins/swift-package-manager
       children:
@@ -652,7 +652,7 @@
     - title: How AI tools work
       permalink: /ai/tools
     - title: Package skills
-      permalink: /ai/package-skills
+      permalink: https://dart.dev/ai/package-skills
 
 - title: Build AI-powered apps
   permalink: /ai/genui

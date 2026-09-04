@@ -40,7 +40,7 @@ coding strategies and best practices.
 
 In addition to core Flutter plugins, you can also equip your assistant with
 skills that are shipped directly by third-party `pub.dev`
-packages using the [skills](/ai/package-skills) package.
+packages using [package skills](https://dart.dev/ai/package-skills).
 
 To learn more about the underlying architecture and capabilities of each tool,
 check out [How Flutter AI tools work](/ai/tools).
@@ -287,8 +287,10 @@ npx skills add dart-lang/skills --skill '*' --agent universal --yes
 
 * To learn more about how skills and tools interact, check out
   [How Flutter AI tools work](/ai/tools).
-* To publish or consume skills from dependencies, refer to
-  [Package skills](/ai/package-skills).
+* To discover and install skills from dependencies, refer to
+  [Package skills](https://dart.dev/ai/package-skills).
+* To publish skills with your own packages, refer to
+  [Ship skills with packages](https://dart.dev/tools/pub/package-skills).
 * To give your assistant search access to official Flutter and Dart
   documentation, connect to the [Developer Knowledge MCP server](
   https://developers.google.com/knowledge/mcp).
