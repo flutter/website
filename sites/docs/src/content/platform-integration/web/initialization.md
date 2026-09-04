@@ -260,7 +260,9 @@ _flutter.loader.load({
 });
 ```
 
-## Common warning
+## Common warnings {:#common-warnings}
+
+### Service worker version deprecation
 
 If you experience a warning similar to the following:
 
@@ -269,8 +271,49 @@ Warning: In index.html:37: Local variable for "serviceWorkerVersion" is deprecat
 Use "{{flutter_service_worker_version}}" template token instead.
 ```
 
-You can fix this by deleting the following line from the `web/index.html` file:
+Delete the following line from the `web/index.html` file:
 
 ```html title="web/index.html"
 var serviceWorkerVersion = null;
 ```
+
+### FlutterLoader.loadEntrypoint deprecation
+
+If you experience a warning similar to the following:
+
+```text
+Warning: In index.html:40: "FlutterLoader.loadEntrypoint" is deprecated.
+Use "FlutterLoader.load" instead.
+```
+
+This warning occurs when an older `web/index.html` file uses
+`_flutter.loader.loadEntrypoint()` instead of `_flutter.loader.load()`.
+The CLI message references the `FlutterLoader` interface,
+which JavaScript code accesses through `_flutter.loader`.
+
+If your app uses the default initialization and doesn't require
+custom bootstrapping, replace the legacy script block in `web/index.html`
+with the standard script tag:
+
+```html title="web/index.html"
+<script src="flutter_bootstrap.js" async></script>
+```
+
+If you customized your initialization logic,
+update your bootstrap code in `web/index.html`
+(or a custom `web/flutter_bootstrap.js` file)
+to call `_flutter.loader.load()` instead:
+
+```js
+_flutter.loader.load({
+  onEntrypointLoaded: async function(engineInitializer) {
+    const appRunner = await engineInitializer.initializeEngine();
+    await appRunner.runApp();
+  }
+});
+```
+
+To review an example that updates DOM elements during startup,
+consult the [progress indicator example][].
+
+[progress indicator example]: #example-display-a-progress-indicator
