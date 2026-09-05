@@ -236,7 +236,7 @@ refer to the [UISceneDelegate adoption guide][].
 :::
 
 For app registration,
-modify the App's `AppDelegate.swift`:
+implement the `didInitializeImplicitFlutterEngine:` method in the App's `AppDelegate.swift`:
 
 ```swift
 import Flutter
@@ -370,12 +370,15 @@ refer to the [UISceneDelegate adoption guide][].
 :::
 
 For app registration,
-modify the App's `AppDelegate.m`:
+implement the `didInitializeImplicitFlutterEngine:` method in the App's `AppDelegate.m`:
 
 ```objc
 #import "AppDelegate.h"
 #import "FLNativeView.h"
 #import "GeneratedPluginRegistrant.h"
+
+@interface AppDelegate () <FlutterImplicitEngineDelegate>
+@end
 
 @implementation AppDelegate
 
