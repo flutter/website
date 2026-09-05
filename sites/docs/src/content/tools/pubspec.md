@@ -180,8 +180,8 @@ Subfields of `assets`:
 * `path`: The path to an asset file or directory.
 * `flavors`: A list of flutter flavors to use with assets
   at a specific path. To learn more about
-  flavors, visit [Set up flavors for iOS and macOS][] and
-  [Set up flavors for Android][].
+  flavors, visit set up flavors for [Android], [iOS and macOS][],
+  [Windows][], and [Linux][].
 * `platforms`: A list of platforms to use with assets at a
   specific path. Valid values are `android`, `ios`, `web`, `linux`,
   `macos`, and `windows`.
@@ -248,8 +248,10 @@ flutter:
           args: ['--tessellate']
 ```
 
-[Set up flavors for iOS and macOS]: /deployment/flavors-ios
-[Set up flavors for Android]: /deployment/flavors
+[Android]: /deployment/flavors
+[iOS and macOS]: /deployment/flavors-ios
+[Linux]: /deployment/flavors-linux
+[Windows]: /deployment/flavors-windows
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [Assets and images]: /ui/assets/assets-and-images
 [asset images in package dependencies]: /ui/assets/assets-and-images#from-packages
@@ -331,11 +333,13 @@ $ flutter run --flavor staging
 ```
 
 To learn how to create Flutter flavors,
-visit [Set up Flutter flavors for Android][] and
-[Set up Flutter flavors for iOS and macOS][].
+visit Set up Flutter flavors for [Android][],
+[iOS and macOS][], [Linux][], and [Windows][].
 
-[Set up Flutter flavors for Android]: /deployment/flavors
-[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+[Android]: /deployment/flavors
+[iOS and macOS]: /deployment/flavors-ios
+[Windows]: /deployment/flavors-windows
+[Linux]: /deployment/flavors-linux
 
 ### deferred-components field {: #deferred-components }
 
@@ -774,8 +778,10 @@ and pubspec files, visit the following:
 * [Integration testing][]
 * [Package dependency management][]
 * [Package dependencies][] on dart.dev
-* [Set up Flutter flavors for Android][]
-* [Set up Flutter flavors for iOS and macOS][]
+* [Set up Flutter flavors for Android][Android]
+* [Set up Flutter flavors for iOS and macOS][iOS and macOS]
+* [Set up Flutter flavors for Linux][Linux]
+* [Set up Flutter flavors for Windows][Windows]
 * [Transforming assets at build time][]
 * [Using packages][]
 * [What not to commit][] on dart.dev
