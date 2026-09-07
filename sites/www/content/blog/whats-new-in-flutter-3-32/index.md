@@ -88,7 +88,7 @@ Refactors like these add better support for core widgets to be used in the imple
 
 We’re pleased to introduce a significant new addition to Flutter’s shape capabilities: the rounded superellipse.
 
-<DashImage figure src="images/0NIsvxkNdRcbgtLdk.gif" />
+<DashImage figure src="images/0NIsvxkNdRcbgtLdk.webp" />
 
 Often referred to as the “Apple squircle”, this shape is a cornerstone of the iOS design language, known for its smoother and more continuous curves compared to traditional rounded rectangles. Support for this shape was a frequent request from the Flutter community. Its inclusion represents another step in our efforts to provide high-fidelity UI with native look and feel on Apple platforms.
 
@@ -311,7 +311,7 @@ Gemini in Android Studio now offers first-class support for Dart and Flutter dev
 
 [Read this blog post](https://flutter.dev/blog/gemini-in-android-studio-now-speaks-fluent-flutter) to learn more.
 
-<DashImage figure src="images/151UZbL3Qb7BGDEuujTTg6A.gif" />
+<DashImage figure src="images/151UZbL3Qb7BGDEuujTTg6A.webp" />
 
 ### Dart and Flutter support for the Model Context Protocol ([MCP](https://modelcontextprotocol.io/introduction)) is on the way
 

@@ -5,7 +5,7 @@ description: >-
   improve perceived performance in your Flutter apps.
 publishDate: 2020-05-26
 author: perclasson
-image: images/1Pp2MNotBJdSHDcW3Fhz19A.gif
+image: images/1Pp2MNotBJdSHDcW3Fhz19A.webp
 category: deep-dive
 layout: blog
 ---
@@ -20,7 +20,7 @@ When a user is waiting for images to load, and then they eventually show up, the
 
 See the following GIF for an example of how it can look without using any placeholders:
 
-<DashImage figure src="images/1Pp2MNotBJdSHDcW3Fhz19A.gif" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_jumping_around/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_jumping_around/lib&theme=dark)" />
+<DashImage figure src="images/1Pp2MNotBJdSHDcW3Fhz19A.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_jumping_around/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_jumping_around/lib&theme=dark)" />
 
 If you already have a placeholder image cached and loaded in your application you can use the [`FadeInImage`](https://api.flutter.dev/flutter/widgets/FadeInImage-class.html) widget to show placeholders. If you want to use a widget instead of an image as a placeholder, you can achieve this with the [`Image.frameBuiler`](https://api.flutter.dev/flutter/widgets/Image/frameBuilder.html) property.
 

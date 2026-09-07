@@ -5,7 +5,7 @@ description: >-
   PT on December 17, 2024.
 publishDate: 2024-12-03
 author: kkboateng
-image: images/1SSIgDyW3jMaOF5nxH5D9lw.gif
+image: images/1SSIgDyW3jMaOF5nxH5D9lw.webp
 category: news
 layout: blog
 ---
@@ -14,7 +14,7 @@ layout: blog
 
 Mark your calendars and be sure to tune into **#FlutterInProduction** on **December 17, 2024** at 11:00am PT / 2:00pm ET / 20:00 CET.
 
-<DashImage figure src="images/1SSIgDyW3jMaOF5nxH5D9lw.gif" />
+<DashImage figure src="images/1SSIgDyW3jMaOF5nxH5D9lw.webp" />
 
 This virtual event, hosted on the [Flutter YouTube channel](https://www.youtube.com/@flutterdev), is a little different than our previous events. We’re not just diving into the latest releases (though we’ll definitely be doing that!): #FlutterInProduction is about celebrating the incredible journey we’ve taken together as a community to make Flutter the powerful production-ready framework it is today.
 

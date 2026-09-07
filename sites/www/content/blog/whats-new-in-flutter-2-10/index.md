@@ -73,7 +73,7 @@ We continue to add more suggestions to common error messages, and would love to 
 
 This release contains some improvements on the web as well. For example, in previous releases, when scrolling to the edge of a multiline `TextField` on the web, it wouldn’t scroll properly. This release introduces **[edge scrolling for text selection](https://github.com/flutter/flutter/pull/93170):** when the selection moves outside of the text field, the field scrolls to view the scroll extent. This new behavior is available for both web and desktop apps.
 
-<DashImage figure src="images/1VpOHaGxbrVr262jc6bMUmg.gif" />
+<DashImage figure src="images/1VpOHaGxbrVr262jc6bMUmg.webp" />
 
 In addition, this release of Flutter includes another notable improvement in the web. We’re always looking to reduce the overhead of our mapping of Flutter to the web. In previous versions, every time we wanted to bring a native HTML widget into your Flutter app, we needed an overlay as part of our platform view support for the web. Each one of these overlays enables custom painting but represents a certain amount of overhead. If you have a large number of native HTML widgets in your app, such as links, that adds up to a lot of overhead. With this release, **we’ve created a new “non-painting platform view” for the web that essentially removes that overhead**. And we’ve [taken advantage of this optimization](https://github.com/flutter/plugins/pull/4578) in [the `Link` widget](https://pub.dev/documentation/url_launcher/latest/link/Link-class.html), which means if you have many links in your Flutter web app, they no longer represent any significant overhead at all. We’ll be applying this optimization to other widgets over time.
 

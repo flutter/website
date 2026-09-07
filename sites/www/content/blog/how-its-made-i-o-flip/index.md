@@ -64,7 +64,7 @@ To learn more about how the Generative AI aspects of the game were created, chec
 
 ### Shaders add foil effect to special cards
 
-<DashImage figure src="images/1oMUDkIUdJaEb6tX1jdQjKg.gif" alt="I/O FLIP uses a fragment shader to render the holo effect on a card" caption="I/O FLIP uses a fragment shader to render the holo effect on a card" />
+<DashImage figure src="images/1oMUDkIUdJaEb6tX1jdQjKg.webp" alt="I/O FLIP uses a fragment shader to render the holo effect on a card" caption="I/O FLIP uses a fragment shader to render the holo effect on a card" />
 
 Flutter supports [fragment shaders](https://docs.flutter.dev/ui/advanced/shaders). To generate these per-pixel visual effects, Flutter runs the OpenGL Shading Language (GLSL) on the device’s GPU. Trading card collectors might remember the feeling of opening a pack to find a special edition card with a shiny, holographic foil. I/O FLIP includes special foil cards, too. They are valued at 100 points. Regular cards have a point values ranging from 10 to 99. We used custom shaders to render the foil effect.
 

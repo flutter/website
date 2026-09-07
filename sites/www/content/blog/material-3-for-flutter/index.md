@@ -64,13 +64,13 @@ The [`BottomNavigationBar`](https://api.flutter.dev/flutter/material/BottomNavig
 
 Segmented buttons give your user a toggleable choice from several options *in a single widget*. By default, you can only select one item, unless you specify the `multiSelectionEnabled` parameter.
 
-<DashImage figure src="images/0gjBdIy6V7lT5XGk2.gif" alt="Segmented buttons — single selection and multi selection" caption="Segmented buttons — single selection and multi selection" />
+<DashImage figure src="images/0gjBdIy6V7lT5XGk2.webp" alt="Segmented buttons — single selection and multi selection" caption="Segmented buttons — single selection and multi selection" />
 
 ### Filled buttons
 
 We’ve increased our selection of `Button`s to include the new [`FilledButton`](https://m3.material.io/components/buttons/guidelines#07a1577b-aaf5-4824-a698-03526421058b). This button creates a colored, non-elevated button. The `FilledButton.tonal` method sets current background as a secondary color.
 
-<DashImage figure src="images/1Rh5tEKBvA8ivNBGgDB7X9w.gif" alt="Elevated, Filled, and Outlined buttons" caption="Elevated, Filled, and Outlined buttons" />
+<DashImage figure src="images/1Rh5tEKBvA8ivNBGgDB7X9w.webp" alt="Elevated, Filled, and Outlined buttons" caption="Elevated, Filled, and Outlined buttons" />
 
 ### Badges
 

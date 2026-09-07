@@ -95,7 +95,7 @@ Some bug fixes examples:
 
 Flutter’s `SelectionArea` now supports Shift + Click gesture to move the extent of the selection to the clicked position on Linux, macOS, and Windows.
 
-<DashImage figure src="images/0QwWCiz-DAHklZZAi.gif" />
+<DashImage figure src="images/0QwWCiz-DAHklZZAi.webp" />
 
 You can also now clear the selection under a SelectionArea and `SelectableRegion` through the method [`clearSelection`](https://main-api.flutter.dev/flutter/widgets/SelectableRegionState/clearSelection.html) on [`SelectableRegionState`](https://api.flutter.dev/flutter/widgets/SelectableRegionState-class.html). [`SelectableRegionState`](https://api.flutter.dev/flutter/widgets/SelectableRegionState-class.html) is also now accessible through `SelectionArea` by providing it a `GlobalKey` and accessing its [`SelectionAreaState.selectableRegion`](https://main-api.flutter.dev/flutter/material/SelectionAreaState/selectableRegion.html).
 
@@ -178,7 +178,7 @@ If you have feedback on Flutter’s support for Swift Package Manager, please [f
 
 By default on devices running Android 15+, your app will use edge-to-edge mode and run in full screen! For details on the change and how you can opt out of this behavior, see [the guide](https://docs.flutter.dev/release/breaking-changes/default-systemuimode-edge-to-edge).
 
-<DashImage figure src="images/0CNcQF3yqFwc0IGNc.gif" />
+<DashImage figure src="images/0CNcQF3yqFwc0IGNc.webp" />
 
 ### Support for Freeform
 

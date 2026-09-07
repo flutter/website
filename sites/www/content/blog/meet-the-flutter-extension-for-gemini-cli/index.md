@@ -48,7 +48,7 @@ You can create a new application using the `/create-app` command. This command b
 /create-app
 ```
 
-<DashImage figure src="images/1xmF3JHqzQi-d9W79JcscZw.gif" alt="Create app app with the /create-app command" caption="Create app app with the /create-app command" />
+<DashImage figure src="images/1xmF3JHqzQi-d9W79JcscZw.webp" alt="Create app app with the /create-app command" caption="Create app app with the /create-app command" />
 
 The `DESIGN.md` file is a design document for the app; it specifies the problems that the app solves and provides technical details about how it will work. You can edit this file before you continue with the implementation steps, allowing you to guide Gemini to build the exact app that you’re looking for.
 
@@ -60,7 +60,7 @@ After you’ve set up your project, you’re ready to implement the features in 
 
 Before moving to the next phase, the extension will ask for your approval. You can enter the prompt “looks good” to start generating code:
 
-<DashImage figure src="images/1fK1Ra4g1hYe0nGwRFj4nCQ.gif" alt="The guided implementation plan keeps Gemini CLI on track" caption="The guided implementation plan keeps Gemini CLI on track" />
+<DashImage figure src="images/1fK1Ra4g1hYe0nGwRFj4nCQ.webp" alt="The guided implementation plan keeps Gemini CLI on track" caption="The guided implementation plan keeps Gemini CLI on track" />
 
 ### Modify
 
@@ -70,19 +70,19 @@ To make changes to existing code, the `/modify` command initiates a guided devel
 /modify
 ```
 
-<DashImage figure src="images/18hlXVoJUQVz3piOiCsg-gQ.gif" alt="Use the /modify command to create a detailed modification plan for Gemini to follow" caption="Use the /modify command to create a detailed modification plan for Gemini to follow" />
+<DashImage figure src="images/18hlXVoJUQVz3piOiCsg-gQ.webp" alt="Use the /modify command to create a detailed modification plan for Gemini to follow" caption="Use the /modify command to create a detailed modification plan for Gemini to follow" />
 
 ### Clean up and commit
 
 The final step is to commit the changes using `/commit`. This command prepares your changes before committing them with Git. It automatically runs `dart fix` and `dart format`, runs the analyzer and tests, and then generates a descriptive commit message based on the changes for you to approve.
 
-<DashImage figure src="images/1CawKl49B-kWc1XoPGHVTaw.gif" alt="Use the /commit command to clean up and prepare the code for commit" caption="Use the /commit command to clean up and prepare the code for commit" />
+<DashImage figure src="images/1CawKl49B-kWc1XoPGHVTaw.webp" alt="Use the /commit command to clean up and prepare the code for commit" caption="Use the /commit command to clean up and prepare the code for commit" />
 
 ## Fully loaded with best-practices
 
 Every interactive chat session includes rules containing best-practices for Flutter and Dart development. These rules ensure that Gemini writes high-quality Dart and Flutter code, interacts with MCP server tools correctly, and follows best practices such as creating unit tests, writing documentation, ensuring accessibility, and more.
 
-<DashImage figure src="images/1tOfRiFIWVkDO3IXLRFcnEw.gif" alt="The extension includes rules and best-practices" caption="The extension includes rules and best-practices" />
+<DashImage figure src="images/1tOfRiFIWVkDO3IXLRFcnEw.webp" alt="The extension includes rules and best-practices" caption="The extension includes rules and best-practices" />
 
 ## Access to development tools with the Flutter and Dart MCP server
 
@@ -100,7 +100,7 @@ The Dart and Flutter MCP server is automatically configured when you install the
 
 * …and more!
 
-<DashImage figure src="images/1iiDlKE9ikBNvUMHvr6YWSw.gif" alt="The MCP server provides Gemini CLI access to Dart and Flutter DevTools" caption="The MCP server provides Gemini CLI access to Dart and Flutter DevTools" />
+<DashImage figure src="images/1iiDlKE9ikBNvUMHvr6YWSw.webp" alt="The MCP server provides Gemini CLI access to Dart and Flutter DevTools" caption="The MCP server provides Gemini CLI access to Dart and Flutter DevTools" />
 
 ## Try it out
 

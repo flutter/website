@@ -4,12 +4,12 @@ description: >-
   Empowering developers at Google I/O 2026
 publishDate: 2026-05-20
 author: khanhnwin
-image: images/1vZ-dmpSHSo3nF0ChZDb02A.gif
+image: images/1vZ-dmpSHSo3nF0ChZDb02A.webp
 category: release
 layout: blog
 ---
 
-<DashImage figure src="images/1vZ-dmpSHSo3nF0ChZDb02A.gif" alt="Flutter 3.44: Scaling to more users on more devices!" caption="Flutter 3.44: Scaling to more users on more devices!" />
+<DashImage figure src="images/1vZ-dmpSHSo3nF0ChZDb02A.webp" alt="Flutter 3.44: Scaling to more users on more devices!" caption="Flutter 3.44: Scaling to more users on more devices!" />
 
 ## What’s new in Flutter 3.44
 
@@ -71,7 +71,7 @@ In a big leap forward for AI-assisted development, we are launching Agentic Hot 
 
 Check out Agentic Hot Reload in action:
 
-<DashImage figure src="images/16n-KEHq1VjiglHNYTPV-yQ.gif" alt="Agentic Hot Reload: You can prompt your agent to make a change, and it now automatically connects to and hot reloads your running app" caption="Agentic Hot Reload: You can prompt your agent to make a change, and it now automatically connects to and hot reloads your running app" />
+<DashImage figure src="images/16n-KEHq1VjiglHNYTPV-yQ.webp" alt="Agentic Hot Reload: You can prompt your agent to make a change, and it now automatically connects to and hot reloads your running app" caption="Agentic Hot Reload: You can prompt your agent to make a change, and it now automatically connects to and hot reloads your running app" />
 
 We also recently launched **Agent Skills for Dart and Flutter**, equipping your coding agents with task-oriented, production-grade domain expertise. These skills level up your coding agent and help you save tokens when completing tasks such as adding integration tests or setting up localization, while adhering to recommended best practices.
 
@@ -159,7 +159,7 @@ When it comes to AI-driven user experiences, we can all agree that we’re exhau
 
 Generative UI, or GenUI, is a UX paradigm where AI constructs and responds with real-time UI, rather than just text, as seen here in the Hatcha Demo app.
 
-<DashImage figure src="images/1ZEXlGLmZ6hccimLUin4Jow.gif" alt="Hatcha is a social event planning app powered by GenUI for Flutter. Hosts plan through a conversational interview while GenUI generates themed invites, tailored components, and planning modules, all shaped by your event and its audience." caption="Hatcha is a social event planning app powered by GenUI for Flutter. Hosts plan through a conversational interview while GenUI generates themed invites, tailored components, and planning modules, all shaped by your event and its audience." />
+<DashImage figure src="images/1ZEXlGLmZ6hccimLUin4Jow.webp" alt="Hatcha is a social event planning app powered by GenUI for Flutter. Hosts plan through a conversational interview while GenUI generates themed invites, tailored components, and planning modules, all shaped by your event and its audience." caption="Hatcha is a social event planning app powered by GenUI for Flutter. Hosts plan through a conversational interview while GenUI generates themed invites, tailored components, and planning modules, all shaped by your event and its audience." />
 
 Over the last year, our GenUI team has been pushing this forward as a project partner defining the emerging [A2UI protocol](https://a2ui.org/). A2UI is an open-source protocol from Google that defines how an agent and a client collaborate on the composition and state of a user interface.
 

@@ -48,7 +48,7 @@ A piano built for both iOS and Android. You can change the octave (by sliding to
 
 ### Overall Execution Winner: TimeFlow by Fabian Stein
 
-<DashImage figure src="images/0lMe2G_2Al68HniQ6.gif" />
+<DashImage figure src="images/0lMe2G_2Al68HniQ6.webp" />
 
 [TimeFlow](https://github.com/Fabian-Stein/timeflow) is a timer that displays a sphere that shatters into pieces and slowly reassembles in one, two, or three minutes, as selected (reassembly not shown in the video). This gentle approach to a timer addresses the complaint that numeric timers can stress the meditator.
 

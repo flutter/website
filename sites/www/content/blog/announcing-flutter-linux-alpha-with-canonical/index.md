@@ -189,7 +189,7 @@ For a more comprehensive app that exercises much more of the surface area of Flu
 
 One more desktop app that shows off the fun side of Flutter is a multi-player game built by Thorsten Lorenz called [batufo](https://thlorenz.com/batufo/). Set against a beautiful backdrop, the game lets players from all over the world compete against each other in real time.
 
-<DashImage figure src="images/1ghwj9i6N9nvBvNmKdP8oZw.gif" alt="Play in real time across multiple Flutter platforms" caption="Play in real time across multiple Flutter platforms" />
+<DashImage figure src="images/1ghwj9i6N9nvBvNmKdP8oZw.webp" alt="Play in real time across multiple Flutter platforms" caption="Play in real time across multiple Flutter platforms" />
 
 Thorsten has been building this game to support multiple Flutter platforms including Linux, macOS, Android, and iOS. If you’d like to see how he did it and follow along with future updates, he makes his coding sessions available as [videos](https://thlorenz.com/batufo/#watch) and [the code available on GitHub](https://github.com/thlorenz/batufo). To install the game from Linux, you can pull it down from the [Snap Store](https://snapcraft.io/batufo).
 

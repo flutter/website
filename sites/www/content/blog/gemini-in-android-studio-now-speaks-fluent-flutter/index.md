@@ -5,7 +5,7 @@ description: >-
   how it helps developers build, troubleshoot, and learn.
 publishDate: 2025-05-20
 author: anderdobo
-image: images/151UZbL3Qb7BGDEuujTTg6A.gif
+image: images/151UZbL3Qb7BGDEuujTTg6A.webp
 category: news
 layout: blog
 ---
@@ -31,7 +31,7 @@ This isn’t just generic AI assistance. Gemini in Android Studio recognizes Dar
 
 * **Generating Unit and Widget tests:** Speed up testing with AI-generated tests.
 
-<DashImage figure src="images/151UZbL3Qb7BGDEuujTTg6A.gif" />
+<DashImage figure src="images/151UZbL3Qb7BGDEuujTTg6A.webp" />
 
 *Explaining Code with Gemini in Android Studio*
 

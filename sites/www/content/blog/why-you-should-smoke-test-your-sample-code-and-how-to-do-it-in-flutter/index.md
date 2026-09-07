@@ -219,7 +219,7 @@ script:
 
 Nice! You can commit the `.travis.yml` file to your repository, push it to github, head over to [travis-ci.org](https://travis-ci.org/), and voilà:
 
-<DashImage figure src="images/1PF95FgsvYP71V5_5c0DMpA.gif" alt="Notice the two jobs, one of which is “Allowed Failure”." caption="Notice the two jobs, one of which is “Allowed Failure”." />
+<DashImage figure src="images/1PF95FgsvYP71V5_5c0DMpA.webp" alt="Notice the two jobs, one of which is “Allowed Failure”." caption="Notice the two jobs, one of which is “Allowed Failure”." />
 
 The build runs for about 2 minutes, most of which is installation (the test itself takes a few seconds at most).
 

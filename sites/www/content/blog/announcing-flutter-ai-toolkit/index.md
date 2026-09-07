@@ -11,7 +11,7 @@ layout: blog
 
 Flutter AI developers, rejoice! Adding an AI-powered chat experience to your app just got a whole lot easier. Introducing [Flutter AI Toolkit](https://pub.dev/packages/flutter_ai_toolkit), a collection of ready-to-use AI chat widgets designed to seamlessly integrate into your Flutter projects. No more building complex chat interfaces from scratch — Flutter AI Toolkit provides everything you need to quickly and easily add a sophisticated AI chat window to your app. Ready to boost customer engagement and satisfaction across multiple platforms? You’ve got this!
 
-<DashImage figure src="images/08PFN57i3DaWcEBvk.gif" alt="[Try Flutter AI Toolkit in Project IDX!](https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fflutter%2Fai)" caption="[Try Flutter AI Toolkit in Project IDX!](https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fflutter%2Fai)" />
+<DashImage figure src="images/08PFN57i3DaWcEBvk.webp" alt="[Try Flutter AI Toolkit in Project IDX!](https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fflutter%2Fai)" caption="[Try Flutter AI Toolkit in Project IDX!](https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fflutter%2Fai)" />
 
 ## Multi-turn chat
 

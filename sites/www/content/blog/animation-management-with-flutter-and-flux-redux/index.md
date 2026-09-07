@@ -96,7 +96,7 @@ So far we have maintained a clear separation of UI logic (mapping an application
 
 The 2048 game is not the same without animations, and we want to add them:
 
-<DashImage figure src="images/1yvV7vhMImTkHfS-g-638IA.gif" />
+<DashImage figure src="images/1yvV7vhMImTkHfS-g-638IA.webp" />
 
 It is not always clear where to keep animation logic within a Redux architecture. So far, our sample game has a clear separation of business logic and UI logic, but where to put the animation code?
 

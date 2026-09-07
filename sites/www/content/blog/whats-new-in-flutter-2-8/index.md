@@ -411,7 +411,7 @@ class FirestoreTableStory extends StatelessWidget {
 
 Which works like this:
 
-<DashImage figure src="images/05K_qZZ3Sb4n8tXiW.gif" />
+<DashImage figure src="images/05K_qZZ3Sb4n8tXiW.webp" />
 
 For details about authentication, list views, and data tables, [check out the `flutterfire_ui` docs](https://firebase.flutter.dev/docs/ui/overview/). As this is a preview release, additional features are planned. If you have a question or a feature request, please [head over to the repo on GitHub to log issues or ask questions in the discussion section](https://github.com/FirebaseExtended/flutterfire/discussions/6978).
 

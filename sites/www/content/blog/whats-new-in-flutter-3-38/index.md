@@ -252,7 +252,7 @@ Flutter 3.35 introduced Widget Previews, an experimental feature ready for early
 
 When used within an IDE, the widget preview environment is configured by default to filter the displayed previews based on the currently selected source file:
 
-<DashImage figure src="images/1cvsiQjlzqc54_6D4HCsZCQ.gif" />
+<DashImage figure src="images/1cvsiQjlzqc54_6D4HCsZCQ.webp" />
 
 * **Widget preview environment theming and control improvements**: The widget preview environment now supports light and dark modes, as well as custom IDE color schemes to match your development environment. Controls within the widget preview environment have also been adjusted to use less space, leaving more room available for rendering previews.
 

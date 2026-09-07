@@ -60,7 +60,7 @@ Flutter’s `SelectionArea` is updated to support native gestures associated wit
 
 * Double click + drag: Extends the selection in word blocks.
 
-<DashImage figure src="images/04RDi6tkvHa3R2uqa.gif" />
+<DashImage figure src="images/04RDi6tkvHa3R2uqa.webp" />
 
 * Long press + drag: Extends the selection in word blocks.
 
@@ -193,7 +193,7 @@ In this release, the `Paint.enableDithering` property is set to true, and is dep
 
 Over the past few years, we’ve seen a growing community around casual game development. Tens of thousands of games have been published using Flutter, from simple but fun puzzles to more complex arcade games. Some of our favorites include Etermax’s [Trivia Crack](https://triviacrack.com/), Lotum’s [4 Pics 1 Word](https://flutter.dev/showcase/lotum) (word guess game), Dong Digital’s [Brick Mania](https://play.google.com/store/apps/details?id=net.countrymania.brick&hl=en) (arcade game), Onrizon’s [StopotS](https://play.google.com/store/apps/details?id=com.gartic.StopotS&hl=en) (categories game), the [retro pinball game](https://pinball.flutter.dev/) we built in Flutter for I/O, and [PUBG](https://flutter.dev/showcase/pubg-mobile) mobile who uses Flutter in their social and menu screens.
 
-<DashImage figure src="images/1yWHI-1YwQAFUIVFvr5jGHQ.gif" />
+<DashImage figure src="images/1yWHI-1YwQAFUIVFvr5jGHQ.webp" />
 
 To help game developers become more productive, today Flutter is launching a major update to its [Casual Games Toolkit.](https://flutter.dev) It is a collection of new resources to help you move from concept to launch with more genre-specific templates such as a card game, an endless runner game, and service integrations like Play Games Services, in-app purchase, ads, achievements, crashlytics and multiplayer support. To learn more, check out the [games toolkit launch post](https://flutter.dev/blog/building-your-next-casual-game-with-flutter) by [Zoey Fan](https://medium.com/@zoeyfan_43394).
 

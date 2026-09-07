@@ -5,7 +5,7 @@ description: >-
   productivity experiments, and more
 publishDate: 2024-05-14
 author: mit-mit
-image: images/1Mq-Uj8c8l7rrpPxYQ6Gemw.gif
+image: images/1Mq-Uj8c8l7rrpPxYQ6Gemw.webp
 category: release
 layout: blog
 ---
@@ -14,7 +14,7 @@ It’s been a particularly busy last few months in Dart & Flutter air traffic co
 
 We remain committed to providing a strong language and framework pairing, enabling you to build beautiful, rich, and fast apps from a single, shared code base — so you can deliver apps to users on mobile, web, and desktop — without having to fragment your product roadmap.
 
-<DashImage figure src="images/1Mq-Uj8c8l7rrpPxYQ6Gemw.gif" />
+<DashImage figure src="images/1Mq-Uj8c8l7rrpPxYQ6Gemw.webp" />
 
 Flutter 3.22 and Dart 3.4 offer performance improvements and platform-specific refinements that bring us closer to that vision. We’re particularly excited to share more about our journey with Wasm, but you’ll find so much more, including an improved Impeller rendering engine, smoother visuals and reduced CPU usage on iOS, enhanced platform navigation with Android’s predictive back gesture, expanded monetization options with the Google Mobile Ads SDK, and a new powerful deep link validator in DevTools. Dart developers will enjoy streamlined API migration with `dart fix` directly in the IDE and new DevTools capabilities for advanced profiling. Plus, you can now preview the Vertex AI for Firebase Dart SDK, integrating AI-powered features with robust security measures.
 

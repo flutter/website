@@ -319,7 +319,7 @@ This enables advanced native feature access like dockable panes on Windows,
 such as this dockable panes demo contributed by
 [@orestesgaolin](https://github.com/orestesgaolin):
 
-<DashImage figure src="images/dockable_panes.gif" alt="Dockable Panes demo" caption="Dockable Panes demo" />
+<DashImage figure src="images/dockable_panes.webp" alt="Dockable Panes demo" caption="Dockable Panes demo" />
 
 We also resolved several window focus and realization bugs.
 On Windows, activating a window no longer pulls background windows forward
@@ -327,7 +327,7 @@ or steals focus back on app resume,
 courtesy of contributor [@9AZX](https://github.com/9AZX)
 ([#188016](https://github.com/flutter/flutter/pull/188016)):
 
-<DashImage figure src="images/focus_realization_fix.gif" alt="Window focus and realization fix on Windows" caption="Window focus and realization fix" />
+<DashImage figure src="images/focus_realization_fix.webp" alt="Window focus and realization fix on Windows" caption="Window focus and realization fix" />
 
 On Linux,
 multi-window creation now explicitly realizes windows before they receive their
@@ -491,7 +491,7 @@ Nested text spans inside `Text.rich` now match their layout sequence
 in the semantics tree,
 and keyboard focus blocking is added for `BlockSemantics`.
 
-<DashImage figure src="images/android_accessibility.gif" alt="Android accessibility settings" caption="Android accessibility settings" />
+<DashImage figure src="images/android_accessibility.webp" alt="Android accessibility settings" caption="Android accessibility settings" />
 
 **Text and selection:** Text selection handles on mobile now remain stable
 during minor scrolling,
@@ -503,7 +503,7 @@ thanks to [@JhonaCodes](https://github.com/JhonaCodes)
 
 | BEFORE | AFTER |
 | :---: | :---: |
-| <DashImage src="images/selection_handle_before.gif" alt="Selection handles overlapping menu" /> | <DashImage src="images/selection_handle_after.gif" alt="Selection handles correctly placed" /> |
+| <DashImage src="images/selection_handle_before.webp" alt="Selection handles overlapping menu" /> | <DashImage src="images/selection_handle_after.webp" alt="Selection handles correctly placed" /> |
 
 We also fixed a crash in `SelectableRegion` when selection began
 in an empty scrollable container,
@@ -520,7 +520,7 @@ for native iOS views embedded via platform views.
 `EdgeDraggingAutoScroller` now respects the `ScrollPhysics` of the
 active scroll view, preventing auto-scrolling on locked lists.
 
-<DashImage figure src="images/edge_scroller_demo.gif" alt="EdgeDraggingAutoScroller demo" caption="EdgeDraggingAutoScroller demo" />
+<DashImage figure src="images/edge_scroller_demo.webp" alt="EdgeDraggingAutoScroller demo" caption="EdgeDraggingAutoScroller demo" />
 
 **Core Widget enhancements:** Preserve original colors inside `ImageIcon`
 with `useOriginalColors: true`

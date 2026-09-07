@@ -24,7 +24,7 @@ This blog shows the work I did for my GSoC project. [Check out a summary of the 
 
 Out of my two submitted proposals, the [Testing sample app](https://github.com/dart-lang/sdk/wiki/Dart-GSoC-2020-Project-Ideas#idea-flutter-testing-sample-app) was accepted. Testing is the most common thing skipped by students when learning any new technology. This project focuses on helping developers learn testing in Flutter in an easy, quick way. It also aims to help students see the best practices of testing in Flutter. [Check out the testing_app sample on GitHub](https://github.com/flutter/samples/tree/master/testing_app).
 
-<DashImage figure src="images/0d_ULBZHcg78XQFJb.gif" alt="A screen-capture of the app in action" caption="A screen-capture of the app in action" />
+<DashImage figure src="images/0d_ULBZHcg78XQFJb.webp" alt="A screen-capture of the app in action" caption="A screen-capture of the app in action" />
 
 We built an app that contains a list of items. The user can add items to, and remove items from, a favorites list. Then we used a tool named Flutter Driver to perform several types of testing. (Flutter Driver lets you create instrumented apps and drive those apps from a test suite.) We demonstrated the following types of testing:
 

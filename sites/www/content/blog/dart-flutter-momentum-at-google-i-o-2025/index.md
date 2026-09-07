@@ -98,7 +98,7 @@ We take the Dart and Flutter developer experience very seriously and have severa
 
 One of the trickiest parts of any framework is learning what all the available APIs are. This can be overwhelming at first. Great developer tooling can really help here — today we’re announcing a new property editor feature, available today in Flutter 3.32.
 
-<DashImage figure src="images/0XzkfOCEYvTEHsSyh.gif" alt="Property editor in VS Code" caption="Property editor in VS Code" />
+<DashImage figure src="images/0XzkfOCEYvTEHsSyh.webp" alt="Property editor in VS Code" caption="Property editor in VS Code" />
 
 When you select a widget in your IDE, it shows the primary layout properties without having to read docs or go to declaration. You can then easily change them directly in the property editor, and have those changes propagate to the source code.
 

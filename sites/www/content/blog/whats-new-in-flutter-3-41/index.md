@@ -4,7 +4,7 @@ description: >-
   Empowering the community
 publishDate: 2026-02-11
 author: itsjustkevin
-image: images/1jmKuW7ItWRJAHNABfTEhHA.gif
+image: images/1jmKuW7ItWRJAHNABfTEhHA.webp
 category: release
 layout: blog
 ---
@@ -21,7 +21,7 @@ We are introducing public release windows to make it easier for you to know when
 
 There is so much to explore, so let’s dig right in…
 
-<DashImage figure src="images/1jmKuW7ItWRJAHNABfTEhHA.gif" />
+<DashImage figure src="images/1jmKuW7ItWRJAHNABfTEhHA.webp" />
 
 ## Structural transparency and modularity
 

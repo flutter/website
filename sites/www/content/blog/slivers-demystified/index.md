@@ -4,16 +4,16 @@ description: >-
   Or, how to do fancy scrolling techniques in your mobile app with Flutter
 publishDate: 2018-10-18
 author: efortuna
-image: images/1acfGrRUFKsC4z_0wHHt_Lg.gif
+image: images/1acfGrRUFKsC4z_0wHHt_Lg.webp
 category: deep-dive
 layout: blog
 ---
 
 Hello, fearless Flutter fans! Today we’re going to delve into a highly specialized topic — something most app developers can blissfully ignore and create great looking apps without needing to know or understand. Usually if you need to scroll through something, [**ListView**](https://docs.flutter.io/flutter/widgets/ListView-class.html) and [**GridView**](https://docs.flutter.io/flutter/widgets/GridView-class.html) will do the job. Done and done. But, if you seek deeper knowledge and want to spice up your scrolling abilities:
 
-<DashImage figure src="images/1acfGrRUFKsC4z_0wHHt_Lg.gif" />
+<DashImage figure src="images/1acfGrRUFKsC4z_0wHHt_Lg.webp" />
 
-<DashImage figure src="images/1MWOkQGMfHiH4qXuX1FXWCA.gif" alt="Two scenarios where you might want to use Slivers." caption="Two scenarios where you might want to use Slivers." />
+<DashImage figure src="images/1MWOkQGMfHiH4qXuX1FXWCA.webp" alt="Two scenarios where you might want to use Slivers." caption="Two scenarios where you might want to use Slivers." />
 
 Read on…
 
@@ -37,7 +37,7 @@ You might want this additional control in scrolling behavior if you:
 
 * Do something weird like a collapsing list with headers (see gif on the right at the top of this page).
 
-<DashImage figure src="images/1D0lutEyy9ouTE7TVgG4IXw.gif" alt="Scenario where you might want to use slivers: scrolling a list of items and a grid of items all together as one unit." caption="Scenario where you might want to use slivers: scrolling a list of items and a grid of items all together as one unit." />
+<DashImage figure src="images/1D0lutEyy9ouTE7TVgG4IXw.webp" alt="Scenario where you might want to use slivers: scrolling a list of items and a grid of items all together as one unit." caption="Scenario where you might want to use slivers: scrolling a list of items and a grid of items all together as one unit." />
 
 ## How do I use it?
 
@@ -110,7 +110,7 @@ SliverGrid(
 
 Okay, okay, enough exposition. Here’s what I know you all have been waiting for. How do I make those gorgeous expanding and contracting app-bars? The secret is to set both the flexibleSpace parameter and the expandedHeight parameter. You can set both for a different height and appearance for your app bar when it is expanded to its full size vs the “compressed” version.
 
-<DashImage figure src="images/1Oz9-FVqgyjDr_wnrbSQEGQ.gif" />
+<DashImage figure src="images/1Oz9-FVqgyjDr_wnrbSQEGQ.webp" />
 
 Here’s the code for the above example:
 
@@ -144,17 +144,17 @@ CustomScrollView(
 
 There’s some additional customization you can add on SliverAppBar. You can set the floating parameter to true to make the app bar reappear when you scroll down, even if you haven’t reached the top of the list.
 
-<DashImage figure src="images/1s9aYJJApIUVblNZxOWs8DQ.gif" />
+<DashImage figure src="images/1s9aYJJApIUVblNZxOWs8DQ.webp" />
 
 If you add both the snap parameter with the floating parameter, you can make the app bar fully snap back into view when you scroll down.
 
-<DashImage figure src="images/1vkO1sczH3DPBGPlr3epW_Q.gif" />
+<DashImage figure src="images/1vkO1sczH3DPBGPlr3epW_Q.webp" />
 
 ### Putting it all together: a collapsible scrolling list with SliverPersistentHeader
 
 I tried to imagine the most unusual scrolling behavior I could think of that still might be useful. I came up with this scrolling collapsible list:
 
-<DashImage figure src="images/1g5kTqAzL6FTJKnFictwJ5w.gif" />
+<DashImage figure src="images/1g5kTqAzL6FTJKnFictwJ5w.webp" />
 
 ```dart
 import 'package:flutter/material.dart';

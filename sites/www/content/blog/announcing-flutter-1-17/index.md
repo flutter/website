@@ -52,7 +52,7 @@ In addition to the new widget, this release includes updates to the Material [`D
 
 This `DatePicker` release includes new visuals to match the [updated Material guidelines](https://material.io/components/pickers/#mobile-pickers) as well as a new text input mode. You can read about the details in the [Material Date Picker Redesign](https://flutter.dev/go/material-date-picker-redesign) specification.
 
-<DashImage figure src="images/0RMNYoiBJv-U3OC5C.gif" alt="Updated text selection overflow on Android" caption="Updated text selection overflow on Android" />
+<DashImage figure src="images/0RMNYoiBJv-U3OC5C.webp" alt="Updated text selection overflow on Android" caption="Updated text selection overflow on Android" />
 
 <DashImage figure src="images/0vaELGcqyjmgMMF7W.webp" alt="Updated text selection overflow on iOS" caption="Updated text selection overflow on iOS" />
 
@@ -78,7 +78,7 @@ Notice that the `TextStyles` called `body1` and `body2` in the Material Design s
 
 Text and fonts go hand in hand, so if you’re excited about the new Material Text Scale implementation, then you’re probably also going to be excited about [the new Google Fonts for Flutter v1.0 release](https://flutter.dev/blog/introducing-google-fonts-for-flutter-v-1-0-0).
 
-<DashImage figure src="images/0_Vc08nu8x7JFksB0.gif" alt="Google Fonts are easy to use in your Flutter apps" caption="Google Fonts are easy to use in your Flutter apps" />
+<DashImage figure src="images/0_Vc08nu8x7JFksB0.webp" alt="Google Fonts are easy to use in your Flutter apps" caption="Google Fonts are easy to use in your Flutter apps" />
 
 Google Fonts allows developers to easily experiment with and use any of the fonts from fonts.google.com in their app. When the app is ready to publish, the developer then decides whether the user receives the font by downloading it from the API, or it’s pre-bundled with the app package.
 

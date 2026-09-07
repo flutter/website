@@ -30,7 +30,7 @@ Features added since beta:
 
 * Optionally disable fetching fonts at runtime (useful when debugging or pre-bundling)
 
-<DashImage figure src="images/06ZIbMT1ySdIZoHK4.gif" />
+<DashImage figure src="images/06ZIbMT1ySdIZoHK4.webp" />
 
 Google Fonts allows developers to easily experiment with and use any of the fonts from fonts.google.com in their app. When the app is ready to publish, the developer then decides whether the user receives the font by downloading it from the API, or it’s pre-bundled with the app package.
 

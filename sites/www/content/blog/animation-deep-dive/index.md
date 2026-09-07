@@ -34,7 +34,7 @@ In fact, animations in Flutter are just a way to rebuild parts of your widget tr
 
 Let’s look at one of the building blocks of Flutter animations: `AnimatedBuilder`. This widget is an `AnimatedWidget`, which is backed by `_AnimatedState`. In the State’s `initState()` method, we are listening on the `Animation` (or `Listenable`, as it is called here), and when it changes its value, we … call `setState()`.
 
-<DashImage figure src="images/1-T1fn-7fK2OU-z711XG_8A.gif" alt="This confusing screencast is just showing that I am telling the truth in the previous paragraph. Animated Builder really does call `setState()` on every frame." caption="This confusing screencast is just showing that I am telling the truth in the previous paragraph. Animated Builder really does call `setState()` on every frame." />
+<DashImage figure src="images/1-T1fn-7fK2OU-z711XG_8A.webp" alt="This confusing screencast is just showing that I am telling the truth in the previous paragraph. Animated Builder really does call `setState()` on every frame." caption="This confusing screencast is just showing that I am telling the truth in the previous paragraph. Animated Builder really does call `setState()` on every frame." />
 
 There you go. Animations in Flutter are just a quick succession of changing the state of some widget, 60 to 120 times per second.
 

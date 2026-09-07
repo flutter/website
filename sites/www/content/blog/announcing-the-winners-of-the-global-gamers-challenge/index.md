@@ -25,25 +25,25 @@ For 103 days, these project teams have ideated, built, sought feedback on, and r
 
 A variety of environmental themes, colorful visuals and music, and ideas to partner with organizations to promote positive action.
 
-<DashImage figure src="images/1tC1QJGzd_UQhSNuapBbFlA.gif" />
+<DashImage figure src="images/1tC1QJGzd_UQhSNuapBbFlA.webp" />
 
 ### [Craftown](https://devpost.com/software/craftown)
 
 A unique blend of classic real-time strategy and resource management gameplay, with a focus on sustainability themes.
 
-<DashImage figure src="images/05-BTF74D9iY2W-eg.gif" />
+<DashImage figure src="images/05-BTF74D9iY2W-eg.webp" />
 
 ### [EcoShift Chronicles](https://devpost.com/software/ecoshift-chronicles)
 
 Encourages positive action with charming visuals and sound design, presenting players with relatable choices and their environmental consequences.
 
-<DashImage figure src="images/02tKU55OoZoT6H8Df.gif" />
+<DashImage figure src="images/02tKU55OoZoT6H8Df.webp" />
 
 ### [Gomiland](https://devpost.com/software/gomiland)
 
 Visually appealing, educational, waste management game, inspired by Japanese culture.
 
-<DashImage figure src="images/09PUEQpgttn8Oib0e.gif" />
+<DashImage figure src="images/09PUEQpgttn8Oib0e.webp" />
 
 ### [Last Bottle](https://devpost.com/software/last-bottle)
 
@@ -55,19 +55,19 @@ Charming design and collectible elements that effectively communicate its core m
 
 Ambitious simulation game that offers an engaging take on complex waste management systems, reminiscent of classic city-building titles.
 
-<DashImage figure src="images/0jof-AXtEcUz1_WFL.gif" />
+<DashImage figure src="images/0jof-AXtEcUz1_WFL.webp" />
 
 ### [Ocean Rangers](https://devpost.com/software/projectocean)
 
 A compelling narrative, engaging characters, and strategic gameplay elements offer a unique take on a familiar genre with an environmental twist.
 
-<DashImage figure src="images/0P1nBcfMDFwveciQu.gif" />
+<DashImage figure src="images/0P1nBcfMDFwveciQu.webp" />
 
 ### [PlasticPunk](https://devpost.com/software/plasticpunk)
 
 City-builder style game presenting a complex environmental challenge through engaging gameplay and appealing visuals.
 
-<DashImage figure src="images/09lzHmRWHxSyGI8pl.gif" />
+<DashImage figure src="images/09lzHmRWHxSyGI8pl.webp" />
 
 ### [Waste Wise](https://devpost.com/software/waste-wise)
 

@@ -31,7 +31,7 @@ Let’s take a quick tour of the Flutter editor on CodePen. You can create a new
 
 Let’s start with the [“GooeyEdge” template](https://codepen.io/zoeyfan/pen/ExVaXGK). As you can see, the Flutter code is on the left side, and Flutter’s web output is on the right side. You can play with this interactive design by dragging the edge of the visual using your mouse.
 
-<DashImage figure src="images/111R_BtjzdSuPel44qDByKA.gif" alt="*[“Gooey edge” animation](https://codepen.io/zoeyfan/pen/ExVaXGK) by [Grant Skinner](https://github.com/gskinnerTeam)*" caption="*[“Gooey edge” animation](https://codepen.io/zoeyfan/pen/ExVaXGK) by [Grant Skinner](https://github.com/gskinnerTeam)*" />
+<DashImage figure src="images/111R_BtjzdSuPel44qDByKA.webp" alt="*[“Gooey edge” animation](https://codepen.io/zoeyfan/pen/ExVaXGK) by [Grant Skinner](https://github.com/gskinnerTeam)*" caption="*[“Gooey edge” animation](https://codepen.io/zoeyfan/pen/ExVaXGK) by [Grant Skinner](https://github.com/gskinnerTeam)*" />
 
 You can also make changes to the Flutter code, and see them take effect accordingly. For example, if we change the color of the page control indicator from “white” to “blue” (line 326), you can see the color gets updated within a few seconds! CodePen automatically recompiles your code each time you make a change. Just update a line, wait a few seconds, and the new output appears.
 

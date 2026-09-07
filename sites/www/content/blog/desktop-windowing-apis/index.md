@@ -5,12 +5,12 @@ description: >-
   and write your first multi-window Flutter application.
 publishDate: 2026-08-24
 author: mattkae
-image: images/banner.gif
+image: images/banner.webp
 category: deep-dive
 layout: blog
 ---
 
-<DashImage figure src="images/banner.gif" />
+<DashImage figure src="images/banner.webp" />
 
 Flutter was originally released in 2018 with support for the two
 major mobile platforms: Android and iOS. Since then,
@@ -71,7 +71,7 @@ per application, but it is not uncommon to have more than one.
 For example, a web browser application can open multiple regular
 windows for the user to browse independently between them.
 
-<DashImage figure src="images/regular.gif" />
+<DashImage figure src="images/regular.webp" />
 
 **Popup** windows provide functionality such as dropdown
 menus and text autocomplete boxes. They are child windows
@@ -82,7 +82,7 @@ Our implementation also enforces that popup windows remain visible
 on screen by translating or shrinking them,
 thus ensuring that important information is never lost offscreen.
 
-<DashImage figure src="images/popup.gif" />
+<DashImage figure src="images/popup.webp" />
 
 **Tooltip** windows are like popup windows except that they
 can't have input focus. These are typically used for small,
@@ -93,7 +93,7 @@ this icon opens a tooltip explaining where this information can be
 found on your card. Small informational windows like this are best
 implemented in a tooltip.
 
-<DashImage figure src="images/tooltip.gif" />
+<DashImage figure src="images/tooltip.webp" />
 
 **Dialog** windows are child windows that typically prompt
 the user to take an action. Dialog windows come in two varieties:
@@ -102,7 +102,7 @@ that window cannot receive focus until the dialog window is closed.
  A common example of a dialog window is a modal prompt asking the
 user to confirm or cancel the deletion of an application resource.
 
-<DashImage figure src="images/dialog.gif" />
+<DashImage figure src="images/dialog.webp" />
 
 **Satellite** windows are ancillary windows that are used for things
 like toolboxes and other helpers. They are unique in that they
@@ -116,7 +116,7 @@ inside of the main application content. An example of a satellite window
 is a toolbox containing color selection, tool selection,
 and more in image editing software, like GIMP.
 
-<DashImage figure src="images/satellite.gif" />
+<DashImage figure src="images/satellite.webp" />
 
 These window types exist in a window hierarchy. For example,
 an application can feature a main, regular window at its root

@@ -5,7 +5,7 @@ description: >-
   how to add polished motion to your apps.
 publishDate: 2019-12-04
 author: theaflowers
-image: images/08lW_z0nxESDIBO9R.gif
+image: images/08lW_z0nxESDIBO9R.webp
 category: deep-dive
 layout: blog
 ---
@@ -22,7 +22,7 @@ Flutter includes a series of widgets that are animated versions of existing widg
 
 These widgets automatically animate changes to their properties. When you rebuild the widget with new property values, such as with a [StatefulWidget](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html)’s `setState`, the widget handles driving the animation from the previous value to the new value.
 
-<DashImage figure src="images/08lW_z0nxESDIBO9R.gif" alt="A screen recording where the code for an app is modified and the application animates the size of a star widget." caption="A screen recording where the code for an app is modified and the application animates the size of a star widget." />
+<DashImage figure src="images/08lW_z0nxESDIBO9R.webp" alt="A screen recording where the code for an app is modified and the application animates the size of a star widget." caption="A screen recording where the code for an app is modified and the application animates the size of a star widget." />
 
 These widgets are called [Implicitly Animated Widgets](https://api.flutter.dev/flutter/widgets/ImplicitlyAnimatedWidget-class.html). They are typically the first thing you reach for when you need to add animations to your app. They provide a way to add animations without adding additional complexity.
 
@@ -32,7 +32,7 @@ Let’s look a little closer at how you can use one of these implicitly animated
 
 In this app, there is a container and a button. When the button is pressed, `setState` is called, and the container is rebuilt with a new value for `width`. Notice that the container changes its width immediately, without any animation.
 
-<DashImage figure src="images/0TRpN2WHDqNJtk7vI.gif" alt="The star gets bigger instantly, with no animation between its states." caption="The star gets bigger instantly, with no animation between its states." />
+<DashImage figure src="images/0TRpN2WHDqNJtk7vI.webp" alt="The star gets bigger instantly, with no animation between its states." caption="The star gets bigger instantly, with no animation between its states." />
 
 ```dart
 @override

@@ -49,7 +49,7 @@ This puzzle’s extra-polished visuals caught the judges’ attention right away
 
 [**Slide Party**](https://slideparty.vercel.app/#/) by Duong Bui Dai
 
-<DashImage figure src="images/0Cv4DedVkWjqpQI6k.gif" alt="A Flutter Puzzle Hack Winner" caption="A Flutter Puzzle Hack Winner" />
+<DashImage figure src="images/0Cv4DedVkWjqpQI6k.webp" alt="A Flutter Puzzle Hack Winner" caption="A Flutter Puzzle Hack Winner" />
 
 Ever wanted to compete with your friends to see who can solve a slide puzzle the fastest? This puzzle lets you do just that! Not only that, but the players don’t even need to be on the same device or operating system, thanks to the flexibility of Flutter.
 

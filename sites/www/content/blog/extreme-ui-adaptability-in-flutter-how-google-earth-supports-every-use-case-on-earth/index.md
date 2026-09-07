@@ -242,7 +242,7 @@ Widget build(BuildContext context) {
 
 The following gif shows Google Earth’s desktop UI (running in Chrome), nimbly adjusting to the user alternating between touchscreen and mouse actions.
 
-<DashImage figure src="images/17hP0qPviv5Hrh7U82WWhQg.gif" alt="Google Earth’s UI swapping between typical desktop and mobile affordances as the end-user interacts with different peripherals" caption="Google Earth’s UI swapping between typical desktop and mobile affordances as the end-user interacts with different peripherals" />
+<DashImage figure src="images/17hP0qPviv5Hrh7U82WWhQg.webp" alt="Google Earth’s UI swapping between typical desktop and mobile affordances as the end-user interacts with different peripherals" caption="Google Earth’s UI swapping between typical desktop and mobile affordances as the end-user interacts with different peripherals" />
 
 ## Conclusion
 

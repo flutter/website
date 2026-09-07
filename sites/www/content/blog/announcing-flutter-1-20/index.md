@@ -35,7 +35,7 @@ And finally, as we optimize for desktop form-factors, we continue to refine our 
 
 With this better, faster, stronger mouse hit testing, we’ve added support for mouse cursors — one of the most upvoted features for desktop. Several commonly used widgets will display the cursors you expect by default, or you can specify another from the list of supported cursors.
 
-<DashImage figure src="images/01zBQM3EBFDm7gLXC.gif" alt="new mouse cursors over existing widgets on Android" caption="new mouse cursors over existing widgets on Android" />
+<DashImage figure src="images/01zBQM3EBFDm7gLXC.webp" alt="new mouse cursors over existing widgets on Android" caption="new mouse cursors over existing widgets on Android" />
 
 This release of Flutter is built on the 2.9 release of Dart. This features a new state-based, two-pass UTF-8 decoder with decoding primitives optimized in the Dart VM, partially taking advantage of SIMD instructions. UTF-8 is by far the most widely used character encoding method on the internet, and being able to decode it quickly is critical when receiving large network responses. In our UTF-8 decoding benchmarks we have seen improvements across the board from nearly 200% for English texts to 400% for Chinese texts on low-end ARM devices.
 

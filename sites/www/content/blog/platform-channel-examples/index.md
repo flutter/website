@@ -45,7 +45,7 @@ The MethodChannel demo demonstrates how to implement a [`MethodChannel`](https:/
 
 Related PR: [#453](https://github.com/flutter/samples/pull/453)
 
-<DashImage figure src="images/1raON7YDig_i1Lt88IsfjFA.gif" alt="MethodChannel demo in action" caption="MethodChannel demo in action" />
+<DashImage figure src="images/1raON7YDig_i1Lt88IsfjFA.webp" alt="MethodChannel demo in action" caption="MethodChannel demo in action" />
 
 ### EventChannel demo
 

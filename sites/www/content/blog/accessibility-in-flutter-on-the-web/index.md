@@ -142,7 +142,7 @@ Compare Flutter’s accessibility tree to that of the [scrollable listbox exampl
 
 Flutter has an `<flt-text-editing-host>` element that has either an `<input>` or a `<textarea>` as its child that it places pixel-perfectly onto the corresponding canvas area. This means browser conveniences like autofill work as expected. This feature is always enabled, independent of whether accessibility is enabled or not. In the semantics tree, the text field is represented by an `<input>` element, potentially with an ARIA label describing it. The following [text field](https://flutter-gallery-archive.web.app/#/demo/text-field) example is from the Flutter Gallery. See how the `<input>` field is dynamically repositioned whenever the user presses the tab key.
 
-<DashImage figure src="images/0MeogiafDXLMMaxtX.gif" />
+<DashImage figure src="images/0MeogiafDXLMMaxtX.webp" />
 
 While for sighted users the label texts displayed in the text inputs are visible, for screen reader users the text fields are announced as “edit, blank” with [NVDA](https://www.nvaccess.org/about-nvda/) on Windows or “edit text, blank” with [VoiceOver](https://www.apple.com/voiceover/info/guide/_1121.html) on macOS, since Flutter at the moment doesn’t create `<label>` elements yet. You can see VoiceOver’s screen reader output at the bottom of the images. This is something Flutter will fix in the future.
 
@@ -150,7 +150,7 @@ While for sighted users the label texts displayed in the text inputs are visible
 
 When text fields are properly labeled, the screen reader announces the intended meaning, as depicted in the following pure HTML example.
 
-<DashImage figure src="images/0X8hvqa_bbwsEtV-P.gif" />
+<DashImage figure src="images/0X8hvqa_bbwsEtV-P.webp" />
 
 ## Conclusions
 

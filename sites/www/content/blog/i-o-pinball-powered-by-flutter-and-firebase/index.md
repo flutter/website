@@ -220,7 +220,7 @@ The codebase also contains comprehensive unit, widget, and golden tests. At time
 
 This project relies heavily on Flame components to bring the pinball experience to life. The codebase comes with a component sandbox, which is similar to a [UI component gallery](https://gallery.flutter.dev/#/). This is a helpful tool when developing games because it allows you to develop the game components in isolation and ensure that they look and behave as expected before integrating them into the game.
 
-<DashImage figure src="images/1zAjKICKgCTiEiiMTou9MJQ.gif" />
+<DashImage figure src="images/1zAjKICKgCTiEiiMTou9MJQ.webp" />
 
 ## What’s next
 

@@ -5,7 +5,7 @@ description: >-
   so thank you for choosing AnimatedBuilder and AnimatedWidget.
 publishDate: 2020-01-19
 author: efortuna
-image: images/1BdRzZMnfFtwe0Wn1dxWp4g.gif
+image: images/1BdRzZMnfFtwe0Wn1dxWp4g.webp
 category: deep-dive
 layout: blog
 ---
@@ -24,7 +24,7 @@ So, if you’ve determined that you need an explicit animation, there are a whol
 
 To make this more concrete, let’s walk through a specific scenario: I want to write an app with an alien spaceship and have a spaceship beam animation.
 
-<DashImage figure src="images/1BdRzZMnfFtwe0Wn1dxWp4g.gif" alt="Maybe something exactly like this." caption="Maybe something exactly like this." />
+<DashImage figure src="images/1BdRzZMnfFtwe0Wn1dxWp4g.webp" alt="Maybe something exactly like this." caption="Maybe something exactly like this." />
 
 I drew a spaceship beam with a gradient that fades from yellow to transparent, beginning the fade at the very center of the gradient. Then, I created the “beam” shape from that gradient with a path clipper.
 

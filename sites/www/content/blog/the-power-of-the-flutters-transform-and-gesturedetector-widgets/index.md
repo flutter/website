@@ -38,7 +38,7 @@ If we tie some user gestures into updating the transformation matrix using a Ges
 
 <DashImage figure src="images/0Ut-Uqv6H9ypaumF2.webp" />
 
-<DashImage figure src="images/0-BQ6W3Ke-W_JQiX4.gif" />
+<DashImage figure src="images/0-BQ6W3Ke-W_JQiX4.webp" />
 
 GestureDetector provides lots of different callbacks for various gestures and their start, update, and end states. However, if you’re implementing something like the pictured demo that combines several, the scale callbacks are all you’ll need. The onScaleUpdate callback provides a focalPoint, both horizontal and vertical scales, and rotation, all in one. This allows you to respond to multiple gestures at the same time, such as if the user is rotating and scaling in one gesture. See the [ScaleUpdateDetails](https://api.flutter.dev/flutter/gestures/ScaleUpdateDetails-class.html) for everything provided in the onScaleUpdate callback.
 

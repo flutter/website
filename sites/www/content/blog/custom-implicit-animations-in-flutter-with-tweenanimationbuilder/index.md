@@ -6,7 +6,7 @@ description: >-
   How do you choose the right animation widget?
 publishDate: 2019-12-15
 author: efortuna
-image: images/1ZiMTAgg11y3BHH24bTt6Mg.gif
+image: images/1ZiMTAgg11y3BHH24bTt6Mg.webp
 category: deep-dive
 layout: blog
 ---
@@ -171,7 +171,7 @@ class _OngoingAnimationState extends State<OngoingAnimationByModifyingEndTweenVa
 
 I changed the code to also include a `Slider` widget. Then I declared a local variable called `_newColor` that takes the slider value and converts it to a color. `_newColor` is also used as the end value in my `Tween`. Now the animation updates every time I drag the slider.
 
-<DashImage figure src="images/1ZiMTAgg11y3BHH24bTt6Mg.gif" />
+<DashImage figure src="images/1ZiMTAgg11y3BHH24bTt6Mg.webp" />
 
 One thing to keep in mind is that `TweenAnimationBuilder` always moves from the current value to the new end value. That means as I drag the slider, I see the color change relative to its previous color, rather than always animating from white at the very beginning. Just by setting a new end value to my `Tween`, I can reverse my animation or move to any point in between. `TweenAnimationBuilder` always smoothly animates between its current value and the new end point. As you can perhaps infer, this means dynamically changing the *start* of your `Tween` has no effect.
 

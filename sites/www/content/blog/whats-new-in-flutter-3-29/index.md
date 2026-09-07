@@ -157,7 +157,7 @@ The new DevTools inspector is enabled by default for all users. The new inspecto
 
 After enabling widget selection mode from the DevTools inspector, any selections on the device are considered widget selections until you exit widget selection mode. Previously, after the initial widget selection you needed to click the on-device **Select widget** button to then select another widget. Instead, there is now an on-device button that can be used to quickly exit widget selection mode.
 
-<DashImage figure src="images/0BcgxalxFMTEB_RFP.gif" />
+<DashImage figure src="images/0BcgxalxFMTEB_RFP.webp" />
 
 ### Logging tool improvements
 

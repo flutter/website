@@ -4,14 +4,14 @@ description: >-
   The business case for Flutter
 publishDate: 2018-11-01
 author: wmleler
-image: images/1OOmIZ2plXASJUl49v6TlDA.gif
+image: images/1OOmIZ2plXASJUl49v6TlDA.webp
 category: deep-dive
 layout: blog
 ---
 
 It has been over a year since [What’s Revolutionary about Flutter](https://hackernoon.com/whats-revolutionary-about-flutter-946915b09514) was published (it is still a good introduction). When I wrote that article, few mobile developers had heard about Flutter, but things have come a long way since then. Now I can’t keep up with all the articles and videos being created about Flutter by an active, vibrant, even *exploding* community. [Developers have discovered Flutter](https://twitter.com/timsneath/status/1024684022574669824), and [they *love it*](https://medium.com/flutter-io/what-weve-learned-from-the-july-2018-flutter-user-survey-cbbf1e04370c). Here’s an animated GIF of just one of the [wonderful apps created using Flutter](https://itsallwidgets.com/), by [Reflectly](https://medium.com/reflectly-engineering/reflectly-from-react-native-to-flutter-2e3dffced2ea):
 
-<DashImage figure src="images/1OOmIZ2plXASJUl49v6TlDA.gif" alt="Reflectly intelligent journaling Flutter app" caption="Reflectly intelligent journaling Flutter app" />
+<DashImage figure src="images/1OOmIZ2plXASJUl49v6TlDA.webp" alt="Reflectly intelligent journaling Flutter app" caption="Reflectly intelligent journaling Flutter app" />
 
 Developers often tell me that one of their biggest challenges now is convincing their company management — or if they are an agency or freelancer, convincing their clients — to try Flutter. These decision-makers are not as eager to adopt the latest technology, just for technology’s sake. They are typically tech savvy, but that is not their only concern. They want to know if using something new will help their company succeed; for example, by bringing in new customers or reducing risks.
 
@@ -64,7 +64,7 @@ How can you ensure the mobile app you are creating will succeed when it is compe
 
 <DashImage figure src="images/1vFj6DgGFh43jJS6sX2ZxWw.jpeg" alt="Alibaba (left) and Topline (right)" caption="Alibaba (left) and Topline (right)" />
 
-<DashImage figure src="images/1HyTUK7HxEJfJZofdMGcSJA.gif" alt="2Dimensions" caption="2Dimensions" />
+<DashImage figure src="images/1HyTUK7HxEJfJZofdMGcSJA.webp" alt="2Dimensions" caption="2Dimensions" />
 
 Studies have shown that having an [appealing design can be very important](https://medium.com/coffee-and-junk/design-psychology-aesthetic-usability-effect-494ed0f22571). If you look at the most popular mobile apps from the last few years, they each have their own design aesthetic. In addition, beautiful apps win awards, which provides valuable publicity.
 
@@ -127,7 +127,7 @@ In summary, Flutter not only provides the advantages of native apps, it provides
 
 Last, but certainly not least, Flutter lets you develop *better* apps *faster*. The most popular (and even hyped) feature of Flutter is its *stateful hot reload*. Not only is it amazingly fast (usually sub-second), it is stateful, which means if you change some code deep down in your app, after you recompile you don’t have to navigate back into the same place or manually recreate your state in order to see the effect of the change.
 
-<DashImage figure src="images/1DDzx3KU38jeAs2gWYc1KVQ.gif" alt="Stateful hot reload!" caption="Stateful hot reload!" />
+<DashImage figure src="images/1DDzx3KU38jeAs2gWYc1KVQ.webp" alt="Stateful hot reload!" caption="Stateful hot reload!" />
 
 Flutter’s stateful hot reload is made possible by advanced compiler technology (developed by some of the same people who built the [V8 compiler](https://en.wikipedia.org/wiki/Chrome_V8) for JavaScript and [Strongtalk](https://en.wikipedia.org/wiki/Strongtalk) for Smalltalk) and the fact that Flutter is native and based on reactive views.
 

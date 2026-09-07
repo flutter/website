@@ -89,7 +89,7 @@ Triple click
 
 * Triple click: Selects the paragraph block at the clicked position.
 
-<DashImage figure src="images/0_GmbsIKfnwEAW6G8.gif" />
+<DashImage figure src="images/0_GmbsIKfnwEAW6G8.webp" />
 
 Double tap
 
@@ -97,7 +97,7 @@ Double tap
 
 * Double tap: selects the word at the tapped position (supported on native Android/Fuchsia/iOS, and Android/Fuchsia web).
 
-<DashImage figure src="images/0DwZgIybQr3FDFxXd.gif" />
+<DashImage figure src="images/0DwZgIybQr3FDFxXd.webp" />
 
 ## Engine
 

@@ -68,7 +68,7 @@ You can then keep or undo the code changes.
 
 Imagine you need to add a chart to your app. Which package should you use? How do you add it and write the boilerplate? The Dart and Flutter MCP Server streamlines this entire process.
 
-<DashImage figure src="images/1DGTEKfS3-ZANFr66VG8MRw.gif" />
+<DashImage figure src="images/1DGTEKfS3-ZANFr66VG8MRw.webp" />
 
 **Prompt:** *“Find a suitable package to add a line chart that maps the number of button presses over time.” (Note: For brevity, parts of this recording have been sped up.)*
 

@@ -5,7 +5,7 @@ description: >-
   but their use is less common.
 publishDate: 2019-03-29
 author: efortuna
-image: images/1sHDIVXBu9RpJYN9Zdn8iBw.gif
+image: images/1sHDIVXBu9RpJYN9Zdn8iBw.webp
 category: deep-dive
 layout: blog
 ---
@@ -25,7 +25,7 @@ Most of the time… you don’t need keys! Generally, there’s no harm adding t
 
 To illustrate why you need keys when modifying a collection of widgets, I wrote an extremely simple app with two randomly colored widgets that swap places when you tap a button:
 
-<DashImage figure src="images/1edgczyvaQRgGRy8yhht0QQ.gif" />
+<DashImage figure src="images/1edgczyvaQRgGRy8yhht0QQ.webp" />
 
 In the stateless version of the app, I have two stateless Tiles, each with a randomly generated color, in a `Row` and a `StatefulWidget` called `PositionedTiles` to store the position of these tiles. When I tap the `FloatingActionButton` down at the bottom it properly swaps their position in the list:
 
@@ -71,7 +71,7 @@ class StatelessColorfulTile extends StatelessWidget {
 
 But if we make those `ColorfulTiles` *stateful* instead of stateless and store the color in the state, when I press the button it looks like nothing is happening.
 
-<DashImage figure src="images/1T7TBQx9DhaQ16gbX68XxVw.gif" />
+<DashImage figure src="images/1T7TBQx9DhaQ16gbX68XxVw.webp" />
 
 ```dart
 List<Widget> tiles = [
@@ -108,7 +108,7 @@ class ColorfulTileState extends State<ColorfulTile> {
 
 Just a reminder, the code shown above is *buggy*, in that it does not show the colors swapping when the user presses the “swap” button. The fix for this is to add a key parameter to the stateful widgets, and then the widgets swap places like we want:
 
-<DashImage figure src="images/13XbdhaQ9_lPfILdViiipeQ.gif" />
+<DashImage figure src="images/13XbdhaQ9_lPfILdViiipeQ.webp" />
 
 ```dart
 List<Widget> tiles = [
@@ -157,21 +157,21 @@ As you may know, under the covers, for every widget, Flutter builds a correspond
 
 The `Row` widget in the example above essentially holds a set of ordered slots for each of its children. When we swap the order of the Tile widgets in the `Row`, Flutter walks the `ElementTree` to see if the skeletal structure is the same.
 
-<DashImage figure src="images/1sHDIVXBu9RpJYN9Zdn8iBw.gif" />
+<DashImage figure src="images/1sHDIVXBu9RpJYN9Zdn8iBw.webp" />
 
 It starts with the `RowElement`, and then moves to its children. The `ElementTree` checks that the new widget is the same *type* and *key* as the old one, and if so, it updates its reference to the new widget. In the stateless version, the widgets don’t have keys, so Flutter just checks the type. (If this seems like a lot of information at once, watch the animated diagram above.)
 
 The underlying `Element` tree structure for *stateful* widgets looks a little different. There are widgets and elements like before, but also there are a pair of state objects with them, and the color information is being stored there, not in the widgets themselves.
 
-<DashImage figure src="images/1noTkKudlGuaAkiGaubEcNA.gif" />
+<DashImage figure src="images/1noTkKudlGuaAkiGaubEcNA.webp" />
 
 In the stateful `Tile` case without keys, when I swap the order of the two widgets, Flutter walks the `ElementTree`, checks the type of the `RowWidget`, and updates the reference. Then `TileElement` checks that the corresponding widget is the same *type* (`TileWidget`) and it is, so it updates the reference. The same thing happens for the second child. Because Flutter uses the `ElementTree` and its corresponding *state* to determine what to actually display on your device, from our perspective, it looks like your widgets didn’t properly swap!
 
-<DashImage figure src="images/17n-u4yexzRZDEtNvbrsG1g.gif" />
+<DashImage figure src="images/17n-u4yexzRZDEtNvbrsG1g.webp" />
 
 In the fixed version with the stateful `Tiles`, I added key properties to the widgets. Now if we swap the widgets The `Row` widgets match like before, but the key of the Tile Element doesn’t match the key of the corresponding Tile Widget. This causes Flutter to deactivate those elements and remove the references to the Tile Elements in the Element Tree, starting with the first one that doesn’t match.
 
-<DashImage figure src="images/1AcBxC8IF_irZpFARt-Nqyw.gif" />
+<DashImage figure src="images/1AcBxC8IF_irZpFARt-Nqyw.webp" />
 
 Then Flutter looks through to non-matched children of the `Row` for an element with the correct corresponding key. It finds a match, and updates its reference to the corresponding widget. Flutter then does the same thing for the second child. Now Flutter will display what we expect, with the widgets swapping places and updating their color when I press the button.
 
@@ -253,7 +253,7 @@ class ColorfulTileState extends State<ColorfulTile> {
 
 Now when I click the button the Tiles change to completely different random colors!
 
-<DashImage figure src="images/1uC-SRZpRkOZCEr_rGisF9g.gif" />
+<DashImage figure src="images/1uC-SRZpRkOZCEr_rGisF9g.webp" />
 
 Here’s what the WidgetTree and ElementTree look like with the padding widgets added:
 
@@ -261,13 +261,13 @@ Here’s what the WidgetTree and ElementTree look like with the padding widgets 
 
 When we swap the positions of the children, Flutter’s element-to-widget-matching algorithm looks at one level in the tree at a time. The diagram greys out the children’s children in the diagram so we can focus on one level at a time. At that first level of children with the Padding elements, everything matches up correctly.
 
-<DashImage figure src="images/1vD86ZINBC-1Ctx9kudEGaw.gif" />
+<DashImage figure src="images/1vD86ZINBC-1Ctx9kudEGaw.webp" />
 
 At the second level, Flutter notices that the key of the Tile Element doesn’t match the key of the widget, so it deactivates that Tile Element, dropping those connections. The keys we’re using in this example are `LocalKeys`. That means that when matching up widget to elements, Flutter only looks for key matches within a particular level in the tree.
 
 Since it can’t find a tile element at that level with that key value, it creates a new one, and initializes a new state, in this case, making the widget orange!
 
-<DashImage figure src="images/1JI1Ex87QRMTCJwBWmbNI5A.gif" />
+<DashImage figure src="images/1JI1Ex87QRMTCJwBWmbNI5A.webp" />
 
 If we add keys at the level of the padding widgets:
 
@@ -342,7 +342,7 @@ class ColorfulTileState extends State<ColorfulTile> {
 
 Flutter notices the problem and updates the connections correctly, just like it did in our previous example. Order is restored in the universe.
 
-<DashImage figure src="images/1FkCvw_LCfQ2x02wj7cmrpA.gif" />
+<DashImage figure src="images/1FkCvw_LCfQ2x02wj7cmrpA.webp" />
 
 ## What kind of Key should I use?
 
@@ -350,7 +350,7 @@ The fine purveyors of Flutter APIs have given us a variety of Key classes to cho
 
 Consider the following To-do list app¹, where you can reorder the items in your TODO list based on priority and then remove them when you’re done.
 
-<DashImage figure src="images/1wHJZnNPhMkePFEw1ihrbEA.gif" />
+<DashImage figure src="images/1wHJZnNPhMkePFEw1ihrbEA.webp" />
 
 In this scenario, you might expect the text of a To-do item to be constant and unique. If that is the case, it is probably a good candidate for a **`ValueKey`**, where the text is the “value”.
 
@@ -372,11 +372,11 @@ Similarly, one thing you definitely *don’t* want to use is a random number for
 
 **`PageStorageKey`**s are specialized keys that store a user’s scroll location so that the app can preserve it for later.
 
-<DashImage figure src="images/1KgQeq1LDIPVuE2dwNzZbRQ.gif" />
+<DashImage figure src="images/1KgQeq1LDIPVuE2dwNzZbRQ.webp" />
 
 **`GlobalKeys`** have two uses: they allow widgets to change parents anywhere in your app without losing state, or they can be used to access information about another widget in a completely different part of the widget tree. An example of the first scenario might if you wanted to show the same widget on two different screens, but holding all the same state, you’d want to use a `GlobalKey`. In the second scenario, maybe you want to validate a password, but don’t want to share that state information with other widgets in the tree. `GlobalKeys` can also be useful for testing, by using a key to access a particular widget and query information about its state.
 
-<DashImage figure src="images/1JIPjn-gM6OIG_TfPJvtuVA.gif" />
+<DashImage figure src="images/1JIPjn-gM6OIG_TfPJvtuVA.webp" />
 
 Often (but not always!), `GlobalKeys` are a little like global variables. There is usually a better way to look up that state, using `InheritedWidgets`, or something like Redux or the BLoC pattern.
 

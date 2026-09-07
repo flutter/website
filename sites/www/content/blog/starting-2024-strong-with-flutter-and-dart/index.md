@@ -5,14 +5,14 @@ description: >-
   Gemini era
 publishDate: 2024-02-15
 author: brandonbadger
-image: images/0gO0yYMh4FUkpue3w.gif
+image: images/0gO0yYMh4FUkpue3w.webp
 category: news
 layout: blog
 ---
 
 *We’re excited to announce the first of this year’s quarterly SDK releases for Flutter and Dart — Flutter 3.19 and Dart 3.3, along with some exciting announcements involving AI.*
 
-<DashImage figure src="images/0gO0yYMh4FUkpue3w.gif" />
+<DashImage figure src="images/0gO0yYMh4FUkpue3w.webp" />
 
 **Flutter and Dart’s value and future**
 

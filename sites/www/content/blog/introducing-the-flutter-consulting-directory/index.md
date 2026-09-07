@@ -37,7 +37,7 @@ As part of this launch, we’re highlighting resources to help prospective consu
 
 *Learn how consultancies can deliver high quality client projects faster with FlutterFlow. [Read the blog post](https://medium.com/flutterflow-enterprise/how-flutterflow-helps-consultants-solve-clients-last-mile-of-digital-transformation-b6d8e7d3b49e).*
 
-<DashImage figure src="images/0H35eVj4imixLHgDv.gif" />
+<DashImage figure src="images/0H35eVj4imixLHgDv.webp" />
 
 ### [**How IBM Created their Flutter Center of Excellence**](https://flutter.dev/blog/how-ibm-is-creating-a-flutter-center-of-excellence)
 

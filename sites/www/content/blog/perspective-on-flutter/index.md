@@ -260,4 +260,4 @@ If you think of other ideas, let me know in the comments.
 
 UPDATE: A shout out to the article “[Make 3D flip animation in Flutter](https://medium.com/flutter-community/make-3d-flip-animation-in-flutter-16c006bb3798)”, which references this article to add perspective to a flip animation, like this:
 
-<DashImage figure src="images/1cWO2jnAleFiGh8J-vvpNrQ.gif" />
+<DashImage figure src="images/1cWO2jnAleFiGh8J-vvpNrQ.webp" />

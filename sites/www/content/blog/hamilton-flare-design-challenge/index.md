@@ -22,7 +22,7 @@ Flare is a new design and animation tool that allows users to build real, intera
 
 ## #HAMAPPFLARE
 
-<DashImage figure src="images/1N2BgtvNZQuZtG1ZpzNoxcA.gif" />
+<DashImage figure src="images/1N2BgtvNZQuZtG1ZpzNoxcA.webp" />
 
 **The #HamAppFlare Challenge is a unique opportunity to win prizes and be featured in the Hamilton app (built with Flutter) while learning to use Flare.**
 

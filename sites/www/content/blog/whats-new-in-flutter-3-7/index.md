@@ -151,7 +151,7 @@ Notably, MacOS apps will now experience higher fidelity with the addition of [ne
 
 New [`AnimatedGrid`](https://github.com/flutter/flutter/pull/112982) and `SliverAnimatedGrid` widgets animate items added to (or removed from) a list.
 
-<DashImage figure src="images/0SY_JFBrqhg_Gs64Z.gif" />
+<DashImage figure src="images/0SY_JFBrqhg_Gs64Z.webp" />
 
 Lastly, we [fixed a regression](https://github.com/flutter/flutter/pull/108706) in the builder constructor of several scrolling widgets, like `ListView`. During the NNBD migration of the Flutter framework, the `itemBuilder`, which allows users to provide widgets on demand, was migrated to an `IndexedWidgetBuilder`. This meant that the `itemBuilder` could no longer return `null`, which (in the past) could be used to indicate that the end of the list had been reached. This functionality was restored with `NullableIndexedWidgetBuilder`. Thanks to @rrousselGit for noticing this — years after the migration — and sending a fix!
 

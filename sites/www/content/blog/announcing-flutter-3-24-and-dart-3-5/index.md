@@ -4,14 +4,14 @@ description: >-
   An early look at Flutter GPU, web enhancements, and more!
 publishDate: 2024-08-06
 author: mit-mit
-image: images/1jzRGig761LnPlvokq2FaVA.gif
+image: images/1jzRGig761LnPlvokq2FaVA.webp
 category: release
 layout: blog
 ---
 
 Today, we’re unveiling [Flutter 3.24](https://flutter.dev/blog/whats-new-in-flutter-3-24) and [Dart 3.5](https://dart.dev/blog/announcing-dart-3-5-and-an-update-on-the-dart-roadmap) alongside the last stop [in the I/O 2024 Connect series,](https://ioconnectchina.googlecnapps.cn/) happening in just a few hours in China — one of Flutter’s most prolific communities in the world, making this moment very special.
 
-<DashImage figure src="images/1jzRGig761LnPlvokq2FaVA.gif" />
+<DashImage figure src="images/1jzRGig761LnPlvokq2FaVA.webp" />
 
 We kicked off [Google I/O](https://io.google/2024/) in May with an [exciting slew of updates](https://flutter.dev/blog/landing-flutter-3-22-and-dart-3-4-at-google-i-o-2024), including the graduation of support for WebAssembly compilation to the stable channel, improvements to Impeller, and an early look at the future of Dart macros.
 

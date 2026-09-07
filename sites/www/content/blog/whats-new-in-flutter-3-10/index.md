@@ -60,13 +60,13 @@ M3 allows you to create a second tier of tabbed content. To distinguish this sec
 
 The M3 `DatePicker` updates the colors, layout, and shape for both the calendar and textfield versions of the widget. This doesn’t change the API, but adds a new `DatePickerTheme`.
 
-<DashImage figure src="images/16cpF7kqYEBCHqv-YswfLhg.gif" />
+<DashImage figure src="images/16cpF7kqYEBCHqv-YswfLhg.webp" />
 
 #### TimePicker updated for [M3](https://m3.material.io/components/time-pickers/overview)
 
 The M3 `TimePicker`, like the `DatePicker`, updates the colors, layout, and shapes for both the regular and compact versions of the widget.
 
-<DashImage figure src="images/1jYLsooI9kMMCqibaOgwwFA.gif" />
+<DashImage figure src="images/1jYLsooI9kMMCqibaOgwwFA.webp" />
 
 #### BottomSheet updated for [M3](https://m3.material.io/components/bottom-sheets/overview)
 
@@ -78,7 +78,7 @@ Beyond M3 color and shape updates, the bottom sheet now adds an optional drag ha
 
 The M3 `ListTile` updates positioning and spacing of this widget. This includes content padding, leading and trailing widget alignment, minimum leading width, and vertical spacing. The API remains unchanged.
 
-<DashImage figure src="images/154RCRghfN9g3tTXzl0U9ew.gif" />
+<DashImage figure src="images/154RCRghfN9g3tTXzl0U9ew.webp" />
 
 #### Drawer updated for M3
 
@@ -94,7 +94,7 @@ M3 updates all `TextField` widgets to support native gestures. Double clicking o
 
 * **Double tap + drag:** Extends the selection in word blocks.
 
-<DashImage figure src="images/1QFzoK7Gj3Q6uFopP7dOJhw.gif" />
+<DashImage figure src="images/1QFzoK7Gj3Q6uFopP7dOJhw.webp" />
 
 #### `TextField` triple click/tap gestures
 
@@ -118,7 +118,7 @@ M3 updates all `TextField` widgets to support native gestures. Double clicking o
 
 * Extends the selection in line blocks (Linux).
 
-<DashImage figure src="images/1sqmvK_z8gkQw-eFNur6PIQ.gif" />
+<DashImage figure src="images/1sqmvK_z8gkQw-eFNur6PIQ.webp" />
 
 ## Flutter supports SLSA level 1
 

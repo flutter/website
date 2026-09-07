@@ -5,7 +5,7 @@ description: >-
   look beautiful on all devices
 publishDate: 2023-01-25
 author: leighajarett
-image: images/1RA_cBWkp9GOQsK_H0-Dg8w.gif
+image: images/1RA_cBWkp9GOQsK_H0-Dg8w.webp
 category: case-study
 layout: blog
 ---
@@ -44,7 +44,7 @@ As the screen becomes larger, you’ll need to consider how your app’s UI comp
 
 You might also consider keeping the content center weighted, or pinning certain assets to the device bounds:
 
-<DashImage figure src="images/1RA_cBWkp9GOQsK_H0-Dg8w.gif" />
+<DashImage figure src="images/1RA_cBWkp9GOQsK_H0-Dg8w.webp" />
 
 **Adaptive design with Flutter**
 

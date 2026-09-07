@@ -73,11 +73,11 @@ Trailing comments can show which closing bracket belongs to which widget.
 
 Smart refactoring helps you modify the tree in a few strokes, such as wrapping a part of it with a new parent …
 
-<DashImage figure src="images/1sVn-oXHO2jW9sWpxG82njg.gif" alt="Wrapping an IconButton with a SizedBox." caption="Wrapping an IconButton with a SizedBox." />
+<DashImage figure src="images/1sVn-oXHO2jW9sWpxG82njg.webp" alt="Wrapping an IconButton with a SizedBox." caption="Wrapping an IconButton with a SizedBox." />
 
 … and moving widgets around.
 
-<DashImage figure src="images/1umZpq9lqGCrOyBJiTPKHsw.gif" />
+<DashImage figure src="images/1umZpq9lqGCrOyBJiTPKHsw.webp" />
 
 ## DevTools
 

@@ -88,7 +88,7 @@ Creating a Flutter project that runs on macOS is now just like creating any othe
 
 In addition to the tooling support, we’ve also been working on the density that’s appropriate for desktop-sized apps. Mobile apps need relatively large controls to accommodate touch interactions whereas on desktop-sized devices, a user is more likely to be using a mouse. In bringing Flutter to the desktop, we’ve worked on allowing you to choose the density of your widgets to better accommodate the needs of your desktop users:
 
-<DashImage figure src="images/0lz9RcWYLigKtCaFp.gif" alt="[Sample](https://github.com/gspencergoog/density_sample) demonstrating Flutter’s implementation of [the Material Density guidelines](https://material.io/design/layout/applying-density.html)" caption="[Sample](https://github.com/gspencergoog/density_sample) demonstrating Flutter’s implementation of [the Material Density guidelines](https://material.io/design/layout/applying-density.html)" />
+<DashImage figure src="images/0lz9RcWYLigKtCaFp.webp" alt="[Sample](https://github.com/gspencergoog/density_sample) demonstrating Flutter’s implementation of [the Material Density guidelines](https://material.io/design/layout/applying-density.html)" caption="[Sample](https://github.com/gspencergoog/density_sample) demonstrating Flutter’s implementation of [the Material Density guidelines](https://material.io/design/layout/applying-density.html)" />
 
 And finally, to improve the experience of Flutter desktop apps, we’ve done a lot of work on keyboard navigation and keyboard access, including:
 
@@ -144,7 +144,7 @@ We call this feature “Hot UI” and, like Hot Reload, as you make the changes 
 
 Whether you write the code by hand or let Hot UI write it for you, you’ve still got code and sometimes code has issues. Helping you track down and fix your issues is exactly why Dart DevTools was invented. In this new version of DevTools, we’ve added a feature called the “Layout Explorer” to augment the Inspector with a visual representation of your layout.
 
-<DashImage figure src="images/0qQ342c4cR9qRce74.gif" />
+<DashImage figure src="images/0qQ342c4cR9qRce74.webp" />
 
 Not only does the Layout Explorer help you to visualize the layout of the widgets in your running app, but if you’d like to experiment with changing the layout options, it allows you to do so interactively. We’re hoping the preview of this feature helps make it easier to understand and fix your layout issues. To enable this feature, see [the Layout Explorer docs](https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer).
 
