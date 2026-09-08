@@ -72,7 +72,8 @@ class _ResourceRow extends StatelessComponent {
     return a(
       href: resource.href,
       target: Target.blank,
-      attributes: const {'rel': 'noopener'},
+      attributes: const {'rel': 'noopener noreferrer'},
+      classes: 'why-flutter-resource',
       classes: 'why-flutter-resource',
       [
         img(
