@@ -112,14 +112,14 @@ class _HeroCopy extends StatelessComponent {
       a(
         href: whitepaperUrl,
         classes: 'btn why-flutter-hero-btn',
-        attributes: const {'download': ''},
-        events: events(
-          onClick: () {
+        attributes: const {'download': 'flutter-whitepaper-2026.pdf'},
+        events: {
+          'click': (event) {
             analytics.sendEvent('whitepaper_download', {
               'file': 'flutter-whitepaper-2026.pdf',
             });
           },
-        ),
+        },
         const [Icon(symbol: 'download'), .text('Download 2026 Whitepaper')],
       ),
     ]);
