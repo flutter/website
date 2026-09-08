@@ -521,15 +521,52 @@
 // ── Every pixel, on brand ──────────────────────────────────────────────────
 
 .why-flutter-feature-grid {
+  -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
+  cursor: grab;
   display: flex;
   gap: 16px;
   overflow-x: auto;
+  padding-bottom: var(--spacer);
   padding-inline: var(--gutter-sm);
+  scroll-padding-inline: var(--gutter-sm);
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  scrollbar-color: var(--blue-4) #e5f0fc;
+  scrollbar-width: thin;
+  user-select: none;
+  -webkit-user-select: none;
 
-  &::-webkit-scrollbar { display: none; }
+  &.is-dragging {
+    cursor: grabbing !important;
+    scroll-behavior: auto !important;
+    scroll-snap-type: none !important;
+
+    * {
+      pointer-events: none !important;
+      user-select: none !important;
+      -webkit-user-select: none !important;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: block;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #e5f0fc;
+    border-radius: 999px;
+    margin-inline: var(--gutter-sm);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--blue-4);
+    border-radius: 999px;
+
+    &:hover {
+      background: var(--blue-6);
+    }
+  }
 }
 
 .why-flutter-feature-card {
@@ -545,8 +582,8 @@
   overflow: hidden;
   padding: var(--spacer-md);
   position: relative;
-  scroll-snap-align: center;
-  width: 320px;
+  scroll-snap-align: start;
+  width: min(80vw, 300px);
 
   h3 {
     color: var(--blue-9);
@@ -1025,13 +1062,17 @@
   }
 
   .why-flutter-feature-grid {
+    cursor: auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 557px));
     justify-content: center;
     margin-inline: auto;
     max-width: 1130px;
     overflow: visible;
+    padding-bottom: 0;
     padding-inline: 0;
+    user-select: auto;
+    -webkit-user-select: auto;
   }
 
   .why-flutter-feature-card { height: 400px; width: auto; }

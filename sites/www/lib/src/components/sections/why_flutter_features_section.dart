@@ -4,6 +4,7 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:universal_web/web.dart' as web;
 
 import '../common/icon.dart';
 
@@ -13,9 +14,9 @@ typedef _Feature = ({String symbol, String tint, String title, String body});
 /// The "Every pixel, on brand" section.
 ///
 /// A 2x2 grid on wide viewports that becomes a horizontal snap-scroll carousel
-/// on small ones. The decorative blobs animate purely in CSS on hover, so this
-/// section needs no client-side code.
-class WhyFlutterFeaturesSection extends StatelessComponent {
+/// on small ones. Supports mouse click-and-drag scrolling on the mobile carousel.
+@client
+class WhyFlutterFeaturesSection extends StatefulComponent {
   const WhyFlutterFeaturesSection({super.key});
 
   static const List<_Feature> _features = [
@@ -54,6 +55,66 @@ class WhyFlutterFeaturesSection extends StatelessComponent {
   ];
 
   @override
+  State<WhyFlutterFeaturesSection> createState() =>
+      _WhyFlutterFeaturesSectionState();
+}
+
+class _WhyFlutterFeaturesSectionState extends State<WhyFlutterFeaturesSection> {
+  final GlobalNodeKey<web.HTMLElement> _gridKey = GlobalNodeKey();
+
+  bool _isDragging = false;
+  double _startX = 0;
+  double _scrollLeft = 0;
+
+  void _onPointerDown(web.Event event) {
+    if (!kIsWeb) return;
+    final e = event as web.PointerEvent;
+    if (e.pointerType != 'mouse' || e.button != 0) return;
+
+    final grid =
+        (event.currentTarget ?? _gridKey.currentNode) as web.HTMLElement?;
+    if (grid == null) return;
+    if (grid.scrollWidth <= grid.clientWidth) return;
+
+    _isDragging = true;
+    _startX = e.clientX.toDouble();
+    _scrollLeft = grid.scrollLeft.toDouble();
+
+    try {
+      grid.setPointerCapture(e.pointerId);
+    } catch (_) {}
+    grid.classList.add('is-dragging');
+    e.preventDefault();
+  }
+
+  void _onPointerMove(web.Event event) {
+    if (!_isDragging) return;
+    final e = event as web.PointerEvent;
+    final grid =
+        (event.currentTarget ?? _gridKey.currentNode) as web.HTMLElement?;
+    if (grid == null) return;
+
+    e.preventDefault();
+    final dx = e.clientX.toDouble() - _startX;
+    grid.scrollLeft = (_scrollLeft - dx).round();
+  }
+
+  void _onPointerUp(web.Event event) {
+    if (!_isDragging) return;
+    final e = event as web.PointerEvent;
+    final grid =
+        (event.currentTarget ?? _gridKey.currentNode) as web.HTMLElement?;
+    _isDragging = false;
+
+    if (grid != null) {
+      try {
+        grid.releasePointerCapture(e.pointerId);
+      } catch (_) {}
+      grid.classList.remove('is-dragging');
+    }
+  }
+
+  @override
   Component build(BuildContext context) {
     return section(
       id: 'design-fidelity',
@@ -69,9 +130,21 @@ class WhyFlutterFeaturesSection extends StatelessComponent {
             ),
           ]),
         ]),
-        div(classes: 'why-flutter-feature-grid', [
-          for (final feature in _features) _FeatureCard(feature: feature),
-        ]),
+        div(
+          key: _gridKey,
+          classes: 'why-flutter-feature-grid',
+          events: {
+            'pointerdown': _onPointerDown,
+            'pointermove': _onPointerMove,
+            'pointerup': _onPointerUp,
+            'pointercancel': _onPointerUp,
+            'lostpointercapture': _onPointerUp,
+          },
+          [
+            for (final feature in WhyFlutterFeaturesSection._features)
+              _FeatureCard(feature: feature),
+          ],
+        ),
       ],
     );
   }

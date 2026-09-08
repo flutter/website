@@ -27,6 +27,8 @@ import 'package:flutter_website/src/components/sections/why_flutter_cases_sectio
     as _why_flutter_cases_section;
 import 'package:flutter_website/src/components/sections/why_flutter_code_shared_section.dart'
     as _why_flutter_code_shared_section;
+import 'package:flutter_website/src/components/sections/why_flutter_features_section.dart'
+    as _why_flutter_features_section;
 import 'package:flutter_website/src/components/sections/why_flutter_hero_section.dart'
     as _why_flutter_hero_section;
 import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
@@ -109,6 +111,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
         >(
           'why_flutter_code_shared_section',
           params: __why_flutter_code_shared_sectionWhyFlutterCodeSharedSection,
+        ),
+    _why_flutter_features_section.WhyFlutterFeaturesSection:
+        ClientTarget<_why_flutter_features_section.WhyFlutterFeaturesSection>(
+          'why_flutter_features_section',
         ),
     _why_flutter_hero_section.WhyFlutterHeroSection:
         ClientTarget<_why_flutter_hero_section.WhyFlutterHeroSection>(

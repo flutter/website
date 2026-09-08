@@ -30,6 +30,8 @@ import 'package:flutter_website/src/components/sections/why_flutter_cases_sectio
     deferred as _why_flutter_cases_section;
 import 'package:flutter_website/src/components/sections/why_flutter_code_shared_section.dart'
     deferred as _why_flutter_code_shared_section;
+import 'package:flutter_website/src/components/sections/why_flutter_features_section.dart'
+    deferred as _why_flutter_features_section;
 import 'package:flutter_website/src/components/sections/why_flutter_hero_section.dart'
     deferred as _why_flutter_hero_section;
 import 'package:flutter_website/src/models/content/banner_content.dart'
@@ -171,6 +173,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
         laptopSprite: p['laptopSprite'] as String,
       ),
       loader: _why_flutter_code_shared_section.loadLibrary,
+    ),
+    'why_flutter_features_section': ClientLoader(
+      (p) => _why_flutter_features_section.WhyFlutterFeaturesSection(),
+      loader: _why_flutter_features_section.loadLibrary,
     ),
     'why_flutter_hero_section': ClientLoader(
       (p) => _why_flutter_hero_section.WhyFlutterHeroSection(
