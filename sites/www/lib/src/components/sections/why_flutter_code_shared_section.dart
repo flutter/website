@@ -6,6 +6,7 @@ import 'dart:async';
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+
 import '../../utils/visibility_observer.dart';
 
 /// On scrolling into view the Dash-at-laptop sprite plays through once, and
@@ -28,19 +29,25 @@ class _WhyFlutterCodeSharedSectionState
 
   bool _isSpriteRunning = false;
   int _percentage = 0;
+  void Function()? _cancelObserver;
+  void Function()? _cancelAnimation;
+  Timer? _delayTimer;
 
   @override
   void initState() {
     super.initState();
     if (!kIsWeb) return;
 
-    observeOnce('#why-flutter-code-shared', () {
+    _cancelObserver = observeOnce('#why-flutter-code-shared', () {
+      if (!mounted) return;
       setState(() => _isSpriteRunning = true);
 
-      Timer(const Duration(milliseconds: 1500), () {
-        animateValue(
+      _delayTimer = Timer(const Duration(milliseconds: 1500), () {
+        if (!mounted) return;
+        _cancelAnimation = animateValue(
           duration: const Duration(milliseconds: 1600),
           onTick: (fraction) {
+            if (!mounted) return;
             setState(() {
               _percentage = (_sharedPercentage * fraction).round();
             });
@@ -48,6 +55,14 @@ class _WhyFlutterCodeSharedSectionState
         );
       });
     });
+  }
+
+  @override
+  void dispose() {
+    _cancelObserver?.call();
+    _cancelAnimation?.call();
+    _delayTimer?.cancel();
+    super.dispose();
   }
 
   @override

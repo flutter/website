@@ -74,7 +74,6 @@ class _ResourceRow extends StatelessComponent {
       target: Target.blank,
       attributes: const {'rel': 'noopener noreferrer'},
       classes: 'why-flutter-resource',
-      classes: 'why-flutter-resource',
       [
         img(
           src: context.asset('/why-flutter/images/${resource.logo}'),

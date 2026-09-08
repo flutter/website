@@ -46,24 +46,35 @@ class _WhyFlutterHeroSectionState extends State<WhyFlutterHeroSection> {
 
   bool _isBarGrown = false;
   int _multiple = 0;
+  void Function()? _cancelObserver;
+  void Function()? _cancelAnimation;
 
   @override
   void initState() {
     super.initState();
     if (!kIsWeb) return;
 
-    observeOnce('#why-flutter-chart', threshold: 0.35, () {
+    _cancelObserver = observeOnce('#why-flutter-chart', threshold: 0.35, () {
+      if (!mounted) return;
       setState(() => _isBarGrown = true);
 
-      animateValue(
+      _cancelAnimation = animateValue(
         duration: const Duration(milliseconds: 1600),
         onTick: (fraction) {
+          if (!mounted) return;
           setState(() {
             _multiple = (_productivityMultiple * fraction).round();
           });
         },
       );
     });
+  }
+
+  @override
+  void dispose() {
+    _cancelObserver?.call();
+    _cancelAnimation?.call();
+    super.dispose();
   }
 
   @override

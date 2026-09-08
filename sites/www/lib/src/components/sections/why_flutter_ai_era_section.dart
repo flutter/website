@@ -30,15 +30,23 @@ class _WhyFlutterAiEraSectionState extends State<WhyFlutterAiEraSection> {
   static const _capabilities = ['MCP Server', 'Skills', 'GenUI'];
 
   bool _isSpriteRunning = false;
+  void Function()? _cancelObserver;
 
   @override
   void initState() {
     super.initState();
     if (!kIsWeb) return;
 
-    observeOnce('#why-flutter-gemini', () {
+    _cancelObserver = observeOnce('#why-flutter-gemini', () {
+      if (!mounted) return;
       setState(() => _isSpriteRunning = true);
     });
+  }
+
+  @override
+  void dispose() {
+    _cancelObserver?.call();
+    super.dispose();
   }
 
   @override

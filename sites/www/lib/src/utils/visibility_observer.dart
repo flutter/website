@@ -12,14 +12,22 @@ import 'package:universal_web/web.dart' as web;
 /// Used to start the scroll-triggered animations on the "Why us" page. Listens
 /// through [web.EventStreamProviders] rather than `addEventListener` so the
 /// file stays compilable for the server during pre-rendering.
-void observeOnce(
+void Function() observeOnce(
   String selector,
   void Function() onVisible, {
   double threshold = 0.5,
 }) {
   StreamSubscription<web.Event>? scrollSubscription;
   StreamSubscription<web.Event>? resizeSubscription;
+  Timer? initialCheckTimer;
   var hasFired = false;
+
+  void cancel() {
+    hasFired = true;
+    unawaited(scrollSubscription?.cancel() ?? Future<void>.value());
+    unawaited(resizeSubscription?.cancel() ?? Future<void>.value());
+    initialCheckTimer?.cancel();
+  }
 
   void check() {
     if (hasFired) return;
@@ -36,9 +44,7 @@ void observeOnce(
     final visibleBottom = rect.bottom.clamp(0, viewportHeight);
 
     if ((visibleBottom - visibleTop) / height >= threshold) {
-      hasFired = true;
-      unawaited(scrollSubscription?.cancel() ?? Future<void>.value());
-      unawaited(resizeSubscription?.cancel() ?? Future<void>.value());
+      cancel();
       onVisible();
     }
   }
@@ -51,27 +57,35 @@ void observeOnce(
       .listen((_) => check());
 
   // Catch elements that are already on screen when the page loads.
-  Timer(Duration.zero, check);
+  initialCheckTimer = Timer(Duration.zero, check);
+
+  return cancel;
 }
 
 /// Drives an ease-out-cubic tween over [duration], invoking [onTick] with the
 /// eased fraction between 0 and 1 until it completes.
-void animateValue({
+void Function() animateValue({
   required Duration duration,
   required void Function(double easedFraction) onTick,
 }) {
   const frameInterval = Duration(milliseconds: 16);
   final elapsed = Stopwatch()..start();
+  late Timer timer;
 
-  Timer.periodic(frameInterval, (timer) {
+  timer = Timer.periodic(frameInterval, (t) {
     final fraction = (elapsed.elapsedMilliseconds / duration.inMilliseconds)
         .clamp(0.0, 1.0);
     final remaining = 1 - fraction;
     onTick(1 - (remaining * remaining * remaining));
 
     if (fraction >= 1) {
-      timer.cancel();
+      t.cancel();
       elapsed.stop();
     }
   });
+
+  return () {
+    timer.cancel();
+    elapsed.stop();
+  };
 }
