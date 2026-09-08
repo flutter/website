@@ -262,6 +262,9 @@ _flutter.loader.load({
 
 ## Common warnings {:#common-warnings}
 
+This section describes common web build and initialization warnings
+and how to resolve them.
+
 ### Service worker version deprecation
 
 If you experience a warning similar to the following:
