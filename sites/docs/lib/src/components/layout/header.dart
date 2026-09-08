@@ -63,7 +63,7 @@ class DashHeader extends StatelessComponent {
             isActive: activeEntry == ActiveNavEntry.learn,
           ),
           _NavItem(
-            href: '/ai/create-with-ai',
+            href: '/ai/get-started',
             label: 'AI',
             isActive: activeEntry == ActiveNavEntry.ai,
           ),
