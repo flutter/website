@@ -20,12 +20,15 @@ An **agent plugin** bundles the tools and knowledge that an AI assistant needs
 to understand and modify your Flutter codebase.
 
 When you install an official Flutter agent plugin, it connects your assistant
-to three core capabilities:
+to four core capabilities:
 
 * **[Agent skills](/ai/tools#agent-skills)**: on-demand procedural guides from
   the official Flutter and Dart repositories that teach the assistant how to
   perform specific tasks, such as creating responsive layouts, managing state,
   or writing widget tests.
+* **[Agent rules](/ai/tools#agent-rules)**: persistent instructions that guide
+  an assistant's responses, such as proactively triggering stateful hot reload
+  when editing Flutter widgets.
 * **[Dart and Flutter MCP server](/ai/tools#dart-and-flutter-mcp-server)**:
   a Model Context Protocol (MCP) server that connects the assistant to the
   Dart SDK, giving it real-time access to analyzer diagnostics, symbol
@@ -135,6 +138,15 @@ Equip Claude Code with official Flutter and Dart skills and MCP configuration:
    claude plugin install dart-flutter@dart-flutter
    ```
 
+**Configure agent rules**
+
+Claude Code plugins discover skills and MCP servers,
+but don't automatically load plugin rules.
+To equip Claude Code with official Flutter rules,
+add the rules you want from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+to your project's `CLAUDE.md` file.
+
 **Verify installation**
 
 Verify that the plugin is active in Claude Code:
@@ -171,6 +183,15 @@ plugins directory:
 1. Restart Cursor. The editor automatically discovers the bundled skills and
    configures the Dart and Flutter MCP server.
 
+**Configure agent rules**
+
+Cursor supports file-scoped rules in the `.cursor/rules/` directory
+using `.mdc` files.
+To equip Cursor with official Flutter rules,
+download the `.mdc` files from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+into your project's `.cursor/rules/` directory.
+
 </Tab>
 
 <Tab name="Codex">
@@ -193,6 +214,16 @@ Equip Codex with official Flutter and Dart skills and MCP configuration:
    ```bash
    codex plugin add dart-flutter@dart-flutter
    ```
+
+**Configure agent rules**
+
+Codex plugins install skills and MCP servers,
+but don't automatically bundle rules.
+To equip Codex with official Flutter rules,
+download the `.md` rule files from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+into your project's `.agent/rules/` directory,
+or append the rule instructions to `CODEX.md`.
 
 **Verify installation**
 
@@ -238,6 +269,15 @@ npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
 npx skills add dart-lang/skills --skill '*' --agent universal --yes
 ```
 
+**Configure agent rules**
+
+GitHub Copilot supports custom workspace instructions in
+`.github/copilot-instructions.md`.
+To equip Copilot with official Flutter rules,
+add the rules you want from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+to your project's `.github/copilot-instructions.md` file.
+
 </Tab>
 
 <Tab name="Other">
@@ -278,6 +318,14 @@ npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
 # Install Dart skills
 npx skills add dart-lang/skills --skill '*' --agent universal --yes
 ```
+
+**Configure agent rules**
+
+If your coding assistant supports project instructions or rules
+(such as Windsurf `.windsurfrules` or Cline `.clinerules`),
+copy or download rules from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+into your assistant's configuration file.
 
 </Tab>
 
