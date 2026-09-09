@@ -5,8 +5,8 @@ description: >-
   fixes and development of new features
 publishDate: 2026-09-02
 author: craiglabenz
-image: images/xxx
-socialImage: images/xxx
+image: images/Flutter_CupertinoMaterial_Jenga_Low.gif
+socialImage: images/FlutterJenga_Still_OptA.png
 category: news
 layout: blog
 ---
