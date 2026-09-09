@@ -11,6 +11,8 @@ category: news
 layout: blog
 ---
 
+<DashImage figure src="images/Flutter_CupertinoMaterial_Jenga_Low.gif" alt="Animated version of Dash extracting Material and Cupertino from a block tower." />
+
 Flutter has always been a "batteries included" framework with great tooling,
 design systems, animations, and more. But, batteries don't last forever,
 so it's very important to be able to replace them when needed.
