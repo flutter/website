@@ -44,7 +44,7 @@ final class BlogTableOfContents extends StatelessComponent {
               tag: 'summary',
               children: [
                 MaterialIcon('chevron_right'),
-                text('On this page'),
+                Component.text('On this page'),
               ],
             ),
             div(classes: 'toc-list', [toc.build()]),
