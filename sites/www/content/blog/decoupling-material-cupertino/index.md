@@ -3,7 +3,7 @@ title: "Material and Cupertino decoupling are here"
 description: >-
   Why moving Material and Cupertino out of core Flutter accelerates
   fixes and development of new features
-publishDate: 2026-09-02
+publishDate: 2026-09-09
 author: craiglabenz
 image: images/Flutter_CupertinoMaterial_Jenga_Low.gif
 socialImage: images/FlutterJenga_Still_OptA.png
