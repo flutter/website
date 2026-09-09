@@ -1271,6 +1271,7 @@
     - "Europe"
   options_customer_size:
     - "Small-to-medium Business"
+  options_GCP_partner: false
 - title: "Here2Build Apps GmbH"
   summary: "A German agency that delivers end-to-end mobile solutions for companies of all sizes. They cover the entire product lifecycle—from concept and UX/UI design to Flutter development, backend architecture, App Store deployment, and long-term maintenance."
   card: "images/third_party/partners/Here2Build_logo.png"
@@ -1281,3 +1282,4 @@
     - "Startup"
     - "Small-to-medium Business"
     - "Enterprise"
+  options_GCP_partner: false
