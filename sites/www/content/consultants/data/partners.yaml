@@ -1263,3 +1263,21 @@
   options_customer_size:
     - "Small-to-medium Business"
   options_GCP_partner: false
+- title: "Tapped GmbH"
+  summary: "A Munich-based digital product studio that builds apps for medium and enterprise companies. Over the years they have pushed what Flutter can do with background processing, location tracking and map visualizations."
+  card: "images/third_party/partners/tapped_logo.png"
+  external_url: "https://tapped.dev/services/flutter-app-development/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+- title: "Here2Build Apps GmbH"
+  summary: "A German agency that delivers end-to-end mobile solutions for companies of all sizes. They cover the entire product lifecycle—from concept and UX/UI design to Flutter development, backend architecture, App Store deployment, and long-term maintenance."
+  card: "images/third_party/partners/Here2Build_logo.png"
+  external_url: "https://www.here2buildapps.de/flutter-agentur"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
