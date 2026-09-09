@@ -44,7 +44,7 @@ final class DashSideNav extends StatelessComponent {
           active: activeEntry == ActiveNavEntry.learn,
         ),
         _TopNavItem(
-          href: '/ai/create-with-ai',
+          href: '/ai/get-started',
           label: 'AI',
           iconId: 'auto_awesome',
           active: activeEntry == ActiveNavEntry.ai,
