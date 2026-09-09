@@ -188,10 +188,7 @@ class _ProductivityChart extends StatelessComponent {
     return div(classes: 'why-flutter-productivity', [
       const h2([.text('Faster time-to-market')]),
       const p(classes: 'why-flutter-sub', [
-        .text(
-          'Consolidation is the answer. Build once and launch seamlessly '
-          'across ',
-        ),
+        .text('Consolidation is the answer. Build once and launch across '),
         span(classes: 'accent', [.text('iOS')]),
         .text(', '),
         span(classes: 'accent', [.text('Android')]),
