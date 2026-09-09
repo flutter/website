@@ -29,7 +29,7 @@ contributions to the Material and Cupertino libraries within the
 Flutter framework and released exact replicas on `pub.dev` as the
 1.0.0<sup><a href="#footnote">1</a></sup>
 versions of  [`pkg:material_ui`](https://pub.dev/packages/material_ui)
-and [`pkg:cupertino_ui`](https://pub.dev/packages/cupertion_ui).
+and [`pkg:cupertino_ui`](https://pub.dev/packages/cupertino_ui).
 (Those external libraries are not frozen and are ready for contributions!)
 Then, at a future date, this effort will complete with deprecation
 and eventual removal of the Material and Cupertino libraries from the
