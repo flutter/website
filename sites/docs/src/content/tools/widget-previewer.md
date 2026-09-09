@@ -264,7 +264,7 @@ final class const PreviewMaterialThemeData({final Brightness? _brightness})
 }
 ```
 
-![Runtime transformations to Preview annotation in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/transformative-preview.gif "Runtime transformations in Preview annotation")
+![Runtime transformations to Preview annotation in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/transformative-preview.webp "Runtime transformations in Preview annotation")
 
 ## Creating multiple preview configurations
 
