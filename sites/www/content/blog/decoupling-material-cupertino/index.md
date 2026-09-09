@@ -27,7 +27,7 @@ is finally coming to fruition.
 Starting months ago and landing in August 2026, this effort froze
 contributions to the Material and Cupertino libraries within the
 Flutter framework and released exact replicas on `pub.dev` as the
-1.0.0<sup><a href="#footnote">1</a></sup>
+1.0.0[^1]
 versions of  [`pkg:material_ui`](https://pub.dev/packages/material_ui)
 and [`pkg:cupertino_ui`](https://pub.dev/packages/cupertino_ui).
 (Those external libraries are not frozen and are ready for contributions!)
@@ -125,7 +125,7 @@ filing a feature request for work you would like to complete.
 
 Until next time, Happy Fluttering!
 
-<a id="footnote">1</a>: To streamline your migration, we intentionally chose
-version `1.0.0` to mark the standalone version which perfectly matches
-each library's in-framework state. Moving forward, the libraries will
-evolve using semantic versioning.
+[^1]: To streamline your migration, we intentionally chose
+    version `1.0.0` to mark the standalone version which perfectly matches
+    each library's in-framework state. Moving forward, the libraries will
+    evolve using semantic versioning.
