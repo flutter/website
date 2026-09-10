@@ -80,11 +80,11 @@ class _SubscribeButtonState extends State<SubscribeButton> {
   // #docregion listener2
   /// Listen to ViewModel changes.
   void _onViewModelChange() {
-    // If the subscription action has failed
+    // If the subscription action has failed.
     if (widget.viewModel.error) {
-      // Reset the error state
+      // Reset the error state.
       widget.viewModel.error = false;
-      // Show an error message
+      // Show an error message.
       ScaffoldMessenger.of(context)
           .showSnackBar(const SnackBar(content: Text('Failed to subscribe')));
     }
@@ -105,7 +105,7 @@ class SubscribeButtonStyle {
 // #enddocregion style
 
 // #docregion ViewModelFull
-/// Subscribe button View Model.
+/// Subscribe button view model.
 /// Handles the subscribe action and exposes the state to the subscription.
 // #docregion ViewModelStart
 class SubscribeButtonViewModel extends ChangeNotifier {
@@ -115,17 +115,17 @@ class SubscribeButtonViewModel extends ChangeNotifier {
   // #enddocregion ViewModelStart
 
   // #docregion States
-  // Whether the user is subscribed
+  /// Whether the user is subscribed.
   bool subscribed = false;
 
-  // Whether the subscription action has failed
+  /// Whether the subscription action has failed.
   bool error = false;
   // #enddocregion States
 
   // #docregion subscribe
   // Subscription action
   Future<void> subscribe() async {
-    // Ignore taps when subscribed
+    // Ignore taps when subscribed.
     if (subscribed) {
       return;
     }
@@ -133,16 +133,16 @@ class SubscribeButtonViewModel extends ChangeNotifier {
     // Optimistic state.
     // It will be reverted if the subscription fails.
     subscribed = true;
-    // Notify listeners to update the UI
+    // Notify listeners to update the UI.
     notifyListeners();
 
     try {
       await subscriptionRepository.subscribe();
     } catch (e) {
       print('Failed to subscribe: $e');
-      // Revert to the previous state
+      // Revert to the previous state.
       subscribed = false;
-      // Set the error state
+      // Set the error state.
       error = true;
     } finally {
       notifyListeners();
@@ -157,9 +157,9 @@ class SubscribeButtonViewModel extends ChangeNotifier {
 class SubscriptionRepository {
   /// Simulates a network request and then fails.
   Future<void> subscribe() async {
-    // Simulate a network request
-    await Future.delayed(const Duration(seconds: 1));
-    // Fail after one second
+    // Simulate a network request.
+    await Future<void>.delayed(const Duration(seconds: 1));
+    // Fail after one second.
     throw Exception('Failed to subscribe');
   }
 }

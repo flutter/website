@@ -514,4 +514,5 @@ dart run skills@ get
 ```
 
 To learn more about how skills help coding assistants understand your
-dependencies, check out [Package skills](/ai/package-skills).
+dependencies, check out
+[Package skills](https://dart.dev/ai/package-skills).

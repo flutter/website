@@ -98,7 +98,7 @@ class CalculateCostFunction extends SynchronousClientFunction {
   @override
   String get name => 'calculateCost';
 
-// 2. Clear description provided to the LLM so it knows when
+  // 2. Clear description provided to the LLM so it knows when
   // and why to use the function.
   @override
   String get description =>
