@@ -320,7 +320,7 @@ flutter:
 To learn more, consult the [`default-flavor` field][] in
 [Flutter pubspec options][].
 
-[`default-flavor` field]: /tools/pubspec#default-flavor-field
+[`default-flavor` field]: /tools/pubspec#default-flavor
 
 ## More information {: #more-information }
 
