@@ -1099,8 +1099,8 @@ When you're ready to re-enable `UIScene` support, remove the underscore.
 Landed in version: 3.38.0-0.1.pre<br>
 In stable release: 3.38
 
-Beginning with Xcode 27 (iOS 27 SDK),
-Apple mandates the `UIScene` lifecycle for UIKit apps.
+Flutter apps that haven't adopted the `UIScene` lifecycle
+will crash on startup when built with Xcode 27 (iOS 27 SDK).
 
 ## References
 
