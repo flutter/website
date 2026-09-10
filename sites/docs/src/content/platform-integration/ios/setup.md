@@ -103,11 +103,19 @@ physical device.
 <Tabs key="ios-simulator-or-physical-device">
 <Tab name="Simulator">
 
-Start the iOS Simulator with the following command:
+Depending on your Xcode version, run one of the following commands:
 
-```console
-$ open -a Simulator
-```
+* If you're using Xcode 27 or later, start the iOS DeviceHub:
+
+  ```console
+  $ open -a DeviceHub
+  ```
+
+* If you're using Xcode 26, start the iOS Simulator:
+
+  ```console
+  $ open -a Simulator
+  ```
 
 If you need to install a simulator for a different OS version,
 check out [Downloading and installing additional Xcode components][]
@@ -117,8 +125,6 @@ on the Apple Developer site.
 
 </Tab>
 <Tab name="Physical device">
-
-[Flutter on latest iOS]: /platform-integration/ios/ios-latest
 
 Set up each iOS device on which you want to test.
 

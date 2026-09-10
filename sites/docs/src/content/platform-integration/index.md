@@ -220,14 +220,6 @@ Learn how to add custom integrations with iOS to your Flutter app.
       <p>Learn how to add an iOS app extension to your app.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="/platform-integration/ios/ios-latest">
-    <div class="card-header">
-      <span class="card-title">Support new iOS features</span>
-    </div>
-    <div class="card-content">
-      <p>Learn about Flutter's support for new or upcoming iOS features.</p>
-    </div>
-  </a>
 </div>
 
 ### Integrate with the web {:#web}

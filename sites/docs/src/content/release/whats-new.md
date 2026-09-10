@@ -178,7 +178,7 @@ Let us know what you think!
 * The Flutter 3.38 release fully supports the platform releases
   for iOS 26, Xcode 26, and macOS 26, all of which were released in September. 
   For the most recent info on Flutter's support for iOS,
-  visit [Flutter on latest iOS][].
+  visit [Flutter on iOS][].
 
 * Flutter 3.38 supports the new Apple-mandated [UIScene lifecycle][].
   To support this, code migration is required.
@@ -203,7 +203,7 @@ Other relevant resources:
 [Dart 3.10 release]: {{site.dart-blog}}/announcing-dart-3-10
 [Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
 [DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
-[Flutter on latest iOS]: /platform-integration/ios/ios-latest
+[Flutter on iOS]: /platform-integration/ios
 [UIScene lifecycle]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
 [UIScene migration guide]: /release/breaking-changes/uiscenedelegate
 [Widget Previewer tool page]: /tools/widget-previewer
