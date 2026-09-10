@@ -105,7 +105,7 @@ physical device.
 
 To start the simulator, run the command for your Xcode version.
 
-If you're using Xcode 27 or later, start the DeviceHub app:
+If you're using Xcode 27 or later, start the Device Hub app:
 
 ```console
 $ open -a DeviceHub
