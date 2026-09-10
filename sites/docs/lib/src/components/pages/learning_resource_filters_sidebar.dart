@@ -5,12 +5,14 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/analytics.dart';
-import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/components/common/button.dart';
 import 'package:site_shared/util.dart';
 
 import '../../models/learning_resource_model.dart';
+import 'filterable_index.dart';
 import 'learning_resource_filters.dart';
 
+/// The subject and type filters for the learning resources index.
 @client
 class LearningResourceFiltersSidebar extends StatelessComponent {
   const LearningResourceFiltersSidebar({super.key});
@@ -19,103 +21,91 @@ class LearningResourceFiltersSidebar extends StatelessComponent {
   ///
   /// This is static so that [LearningResourceFilters] can access it,
   /// since both client components don't share a common ancestor.
-  static FiltersNotifier filters = FiltersNotifier();
+  static final LearningResourceFiltersNotifier filters =
+      LearningResourceFiltersNotifier();
 
   @override
   Component build(BuildContext context) {
-    return div(classes: 'right-col', [
-      const input(
-        type: InputType.checkbox,
-        id: 'open-filter-toggle',
-        attributes: {'hidden': 'true'},
-      ),
-      div(id: 'resource-filter-group-wrapper', [
-        div(id: 'resource-filter-group', [
-          const div(classes: 'filter-header', [
-            label(
-              attributes: {'for': 'open-filter-toggle', 'aria-hidden': 'true'},
-              classes: 'close-icon',
-              [MaterialIcon('close')],
-            ),
-          ]),
-          const div(classes: 'table-title', [.text('Filter by')]),
-          ListenableBuilder(
-            listenable: filters,
-            builder: (context) {
-              return div(classes: 'table-content', [
-                const h4([.text('Subject')]),
-                ul(classes: filters.tagsExpanded ? '' : 'collapsed', [
-                  for (final (index, tag) in LearningResourceTag.values.indexed)
-                    li(
-                      classes: [
-                        if (!filters.tagsExpanded && index > 3) 'hidden',
-                      ].toClasses,
-                      [
-                        input(
-                          type: InputType.checkbox,
-                          attributes: {
-                            'role': 'checkbox',
-                            'name': 'filter-${tag.name}',
-                          },
-                          id: 'filter-${tag.name}',
-                          checked: filters.selectedTags.contains(tag),
-                          onChange: (checked) {
-                            filters.setTag(tag, checked as bool);
-                          },
-                        ),
-                        label(
-                          attributes: {'for': 'filter-${tag.name}'},
-                          [.text(tag.label)],
-                        ),
-                      ],
-                    ),
-                ]),
-                button(onClick: filters.toggleTagsExpanded, [
-                  span(classes: 'label', [
-                    .text(filters.tagsExpanded ? 'Less' : 'More'),
-                  ]),
-                  MaterialIcon(
-                    filters.tagsExpanded ? 'expand_less' : 'expand_more',
-                  ),
-                ]),
-                const h4([.text('Type')]),
-                ul([
-                  for (final type in LearningResourceType.values)
-                    li([
+    return FiltersSidebar(
+      drawerToggleId: LearningResourceFilters.drawerToggleId,
+      children: [
+        ListenableBuilder(
+          listenable: filters,
+          builder: (context) {
+            return div(classes: 'table-content', [
+              const h4([.text('Subject')]),
+              ul([
+                for (final (index, tag) in LearningResourceTag.values.indexed)
+                  li(
+                    classes: [
+                      if (!filters.tagsExpanded && index > 3) 'hidden',
+                    ].toClasses,
+                    [
                       input(
                         type: InputType.checkbox,
-                        attributes: {
-                          'role': 'checkbox',
-                          'name': 'filter-${type.name}',
-                        },
-                        id: 'filter-${type.name}',
-                        checked: filters.selectedTypes.contains(type),
+                        attributes: {'name': 'resource-filter-${tag.name}'},
+                        id: 'resource-filter-${tag.name}',
+                        checked: filters.selectedTags.contains(tag),
                         onChange: (checked) {
-                          filters.setType(type, checked as bool);
+                          filters.setTag(tag, checked as bool);
                         },
                       ),
                       label(
-                        attributes: {'for': 'filter-${type.name}'},
-                        [.text(type.label)],
+                        attributes: {'for': 'resource-filter-${tag.name}'},
+                        [.text(tag.label)],
                       ),
-                    ]),
-                ]),
-              ]);
-            },
-          ),
-        ]),
-      ]),
-    ]);
+                    ],
+                  ),
+              ]),
+              Button(
+                content: filters.tagsExpanded ? 'Less' : 'More',
+                classes: const ['filter-expansion-button'],
+                size: ButtonSize.compact,
+                trailingIcon: filters.tagsExpanded
+                    ? 'expand_less'
+                    : 'expand_more',
+                onClick: filters.toggleTagsExpanded,
+              ),
+              const h4([.text('Type')]),
+              ul([
+                for (final type in LearningResourceType.values)
+                  li([
+                    input(
+                      type: InputType.checkbox,
+                      attributes: {'name': 'resource-filter-${type.name}'},
+                      id: 'resource-filter-${type.name}',
+                      checked: filters.selectedTypes.contains(type),
+                      onChange: (checked) {
+                        filters.setType(type, isSelected: checked as bool);
+                      },
+                    ),
+                    label(
+                      attributes: {'for': 'resource-filter-${type.name}'},
+                      [.text(type.label)],
+                    ),
+                  ]),
+              ]),
+            ]);
+          },
+        ),
+      ],
+    );
   }
 }
 
-/// Notifier to manage the state of the filters.
-class FiltersNotifier extends ChangeNotifier {
-  Set<LearningResourceTag> selectedTags = {};
-  Set<LearningResourceType> selectedTypes = {};
+/// Stores the selected learning resource filters and
+/// notifies listeners when they change.
+final class LearningResourceFiltersNotifier extends ChangeNotifier {
+  /// The currently selected subject tags.
+  final Set<LearningResourceTag> selectedTags = {};
 
+  /// The currently selected resource types.
+  final Set<LearningResourceType> selectedTypes = {};
+
+  /// Whether all subject tags are visible.
   bool tagsExpanded = false;
 
+  /// Updates whether [tag] is selected and notifies listeners.
   void setTag(LearningResourceTag tag, bool isSelected) {
     if (isSelected) {
       selectedTags.add(tag);
@@ -133,7 +123,8 @@ class FiltersNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setType(LearningResourceType type, bool isSelected) {
+  /// Updates whether [type] is selected and notifies listeners.
+  void setType(LearningResourceType type, {required bool isSelected}) {
     if (isSelected) {
       selectedTypes.add(type);
 
@@ -150,17 +141,20 @@ class FiltersNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Toggles whether all subject tags are visible.
   void toggleTagsExpanded() {
     tagsExpanded = !tagsExpanded;
     notifyListeners();
   }
 
+  /// Clears all selected tags and resource types.
   void reset() {
     selectedTags.clear();
     selectedTypes.clear();
     notifyListeners();
   }
 
+  /// Returns the resources matching [searchQuery] and the selected filters.
   Set<LearningResource> filterResources(
     List<LearningResource> resources,
     String searchQuery,

@@ -19,6 +19,7 @@ dependencies:
   intl: ^0.20.2
   jaspr: ^0.23.2
   jaspr_content: ^0.5.3
+  markdown: ^7.3.1
   path: ^1.9.1
   site_shared:
     path: ../../packages/site_shared

@@ -241,10 +241,8 @@ class CustomerCart extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       '${customer.items.length} item${customer.items.length != 1 ? 's' : ''}',
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: textColor,
-                        fontSize: 12,
-                      ),
+                      style: Theme.of(context).textTheme.titleMedium!
+                          .copyWith(color: textColor, fontSize: 12),
                     ),
                   ],
                 ),
@@ -304,17 +302,14 @@ class MenuListItem extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.titleMedium?.copyWith(fontSize: 18),
+                    style: Theme.of(context).textTheme.titleMedium
+                        ?.copyWith(fontSize: 18),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     price,
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium
+                        ?.copyWith(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                 ],
               ),

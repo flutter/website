@@ -390,6 +390,7 @@ Notice the following features of this code:
     <?code-excerpt "lib/play_session/play_session_screen.dart (imports)"?>
     ```dart
     import 'package:cloud_firestore/cloud_firestore.dart';
+    
     import '../multiplayer/firestore_controller.dart';
     ```
 

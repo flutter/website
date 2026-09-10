@@ -190,9 +190,8 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
       }
     }
 
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(message)));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   static const _errorMessageMap = {

@@ -5,7 +5,6 @@
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
-import 'package:io/io.dart' as io;
 import 'package:path/path.dart' as path;
 
 import '../sites.dart';
@@ -51,9 +50,8 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
       'run',
       'jaspr_cli:jaspr',
       'build',
-      // Use build_web_compiler options specified in build.yaml instead of
-      // those specified by jaspr_cli.
-      '--no-managed-build-options',
+      '-O4',
+      '--extra-js-compiler-option=--no-source-maps',
       '--sitemap-domain=${site.baseUrl}',
       // Exclude secondary Markdown output files from sitemap.
       r'--sitemap-exclude=\.md$',
@@ -68,34 +66,19 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
     return processExitCode;
   }
 
-  final originalOutputDirectoryPath = path.join(
+  final buildOutputDirectoryPath = path.join(
     repositoryRoot,
-    site.jasprBuildOutputDirectory,
+    site.buildOutputDirectory,
   );
-  if (!Directory(originalOutputDirectoryPath).existsSync()) {
+  if (!Directory(buildOutputDirectoryPath).existsSync()) {
     stderr.writeln(
       'Error: Jaspr output directory not found at: '
-      '$originalOutputDirectoryPath',
+      '$buildOutputDirectoryPath',
     );
     return 1;
   }
 
-  final siteOutputDirectoryPath = path.join(
-    repositoryRoot,
-    site.buildOutputDirectory,
-  );
-  if (path.normalize(originalOutputDirectoryPath) !=
-      path.normalize(siteOutputDirectoryPath)) {
-    final outputDirectory = Directory(siteOutputDirectoryPath);
-    if (outputDirectory.existsSync()) {
-      outputDirectory.deleteSync(recursive: true);
-    }
-
-    // Copy the entire site output to the configured output directory.
-    io.copyPathSync(originalOutputDirectoryPath, siteOutputDirectoryPath);
-  }
-
-  _move404File(siteOutputDirectoryPath);
+  _move404File(buildOutputDirectoryPath);
 
   return 0;
 }

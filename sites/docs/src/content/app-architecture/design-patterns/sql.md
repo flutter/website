@@ -437,15 +437,15 @@ which is itself passed into the `MainApp` as a constructor argument dependency.
 <?code-excerpt "lib/main.dart (MainTodo)"?>
 ```dart
 void main() {
-  late DatabaseService databaseService;
+  final DatabaseService databaseService;
   if (kIsWeb) {
     throw UnsupportedError('Platform not supported');
   } else if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
-    // Initialize FFI SQLite
+    // Initialize the FFI-based SQLite.
     sqfliteFfiInit();
     databaseService = DatabaseService(databaseFactory: databaseFactoryFfi);
   } else {
-    // Use default native SQLite
+    // Use the default native SQLite.
     databaseService = DatabaseService(databaseFactory: databaseFactory);
   }
 

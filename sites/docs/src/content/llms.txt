@@ -98,8 +98,8 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### AI-assisted development
 
-- [Create with AI](https://docs.flutter.dev/ai/create-with-ai): An overview of how to use AI to supercharge your Flutter development.
-- [The Dart and Flutter MCP Server](https://docs.flutter.dev/ai/mcp-server): Technical details on the server that enables AI features in the IDE.
+- [Get started with AI](https://docs.flutter.dev/ai/get-started): How to set up and use AI agent plugins for Flutter and Dart.
+- [How Flutter AI tools work](https://docs.flutter.dev/ai/tools): Technical details on the skills, MCP server, and tools for AI coding assistants.
 - [Supercharge your Dart & Flutter development experience with the Dart and Flutter MCP server](https://blog.flutter.dev/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49): A blog post explaining the benefits of the MCP server.
 - [Gemini in Android Studio now speaks fluent Flutter](https://blog.flutter.dev/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274): A blog post about Gemini's Flutter capabilities in Android Studio.
 

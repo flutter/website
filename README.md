@@ -2,17 +2,21 @@
 
 [Flutter logo]: https://github.com/dart-lang/site-shared/blob/main/src/_assets/image/flutter/icon/64.png?raw=1
 
-# [Flutter][] documentation website
+# [Flutter][] documentation and marketing websites
 
-The [documentation site][Flutter] for the [Flutter framework][],
+The [documentation site][] (`docs.flutter.dev`) and
+[marketing website][] (`flutter.dev`, including the blog)
+for the [Flutter framework][],
 built with [Jaspr][] and hosted on [Firebase][].
 
+[documentation site]: https://docs.flutter.dev
+[marketing website]: https://flutter.dev
 [Flutter framework]: https://flutter.dev
 [Jaspr]: https://jaspr.site
 [Firebase]: https://firebase.google.com/
 
 [Build Status]: https://github.com/flutter/website/workflows/build/badge.svg
-[Flutter]: https://docs.flutter.dev/
+[Flutter]: https://flutter.dev
 [Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amain
 
 ## Issues, bugs, and requests
@@ -141,8 +145,16 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
 
 4. From the root directory, serve the site locally.
 
+   To serve the documentation site (`docs.flutter.dev`):
+
    ```terminal
    dart run dash_site serve
+   ```
+
+   To serve the marketing site and blog (`flutter.dev`):
+
+   ```terminal
+   dart run dash_site --site=www serve
    ```
 
    This command generates and serves the site on a
@@ -164,8 +176,10 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    consider [validating your changes](#validate-your-changes).
 
 > [!TIP]
-> To find additional commands that you can run,
+> To learn about other available commands,
 > run `dart run dash_site --help` from the repository's root directory.
+> Pass `--site=www` to any command to target `flutter.dev`
+> instead of `docs.flutter.dev`.
 
 ## Validate your changes
 
@@ -197,8 +211,16 @@ build the site locally and run the following commands.
 
 1.  Build the site locally.
 
+    To build the documentation site (`docs.flutter.dev`):
+
     ```bash
     dart run dash_site build
+    ```
+
+    To build the marketing site and blog (`flutter.dev`):
+
+    ```bash
+    dart run dash_site --site=www build
     ```
 
 1.  Verify all Markdown link references are resolved.
@@ -209,10 +231,9 @@ build the site locally and run the following commands.
 
 1.  Verify that all internal links are valid.
 
-    > [!NOTE]
-    > This command relies on the `firebase` CLI tool being on your PATH.
-    > If you haven't installed it or updated it in a while,
-    > follow [Set up or update the Firebase CLI][firebase-install].
+    This command relies on the `firebase` CLI tool being on your PATH.
+    If you haven't installed it or updated it in a while,
+    follow [Set up or update the Firebase CLI][firebase-install].
 
     ```bash
     dart run dash_site check-links

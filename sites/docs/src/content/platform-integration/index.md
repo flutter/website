@@ -165,6 +165,14 @@ Learn how to add custom integrations with Android to your Flutter app.
       <p>Learn how to launch a Jetpack Compose activity from your app.</p>
     </div>
   </a>
+  <a class="card outlined-card" href="/platform-integration/android/local-network-permission">
+    <div class="card-header">
+      <span class="card-title">Request local network permissions</span>
+    </div>
+    <div class="card-content">
+      <p>Learn how to handle Android local network permissions in Flutter.</p>
+    </div>
+  </a>
 </div>
 
 ### Integrate with iOS {:#ios}

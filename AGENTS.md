@@ -36,6 +36,8 @@ they use [Jaspr Content](https://docs.jaspr.site/content).
       for the sidenav, glossary, and various indices.
     - `sites/docs/src/_includes/`:
       Liquid partial files written in Markdown.
+    - `sites/docs/firebase.json`:
+      Firebase Hosting configuration for docs.flutter.dev.
   - `sites/www/`:
     The implementation of flutter.dev,
     written in Dart using Jaspr and Jaspr Content.
@@ -86,6 +88,12 @@ Writing should be consistent across the site and follow the
 
 In Markdown files, use [semantic line breaks](https://sembr.org/) and
 try to keep each line under 80 characters long.
+
+#### Cross-references and links
+
+Avoid using "see", "see the", or "for more information, see" to introduce
+links or references. Prefer action-oriented or descriptive phrasings such as
+"refer to", "consult", or "visit" (for example, "To learn about X, visit Y").
 
 ## Coding guidelines
 

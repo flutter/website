@@ -5,6 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/components/common/tags.dart';
 import 'package:site_shared/markdown.dart';
 
 class ArchitectureRecommendations extends CustomComponentBase {
@@ -67,15 +68,21 @@ class ArchitectureRecommendations extends CustomComponentBase {
                   td([
                     DashMarkdown(inline: true, content: rec.recommendation),
                     switch (rec.confidence) {
-                      'strong' => const div(classes: 'rrec-pill success', [
-                        .text('Strongly recommend'),
-                      ]),
-                      'recommend' => const div(classes: 'rrec-pill info', [
-                        .text('Recommend'),
-                      ]),
-                      _ => const div(classes: 'rrec-pill', [
-                        .text('Conditional'),
-                      ]),
+                      'strong' => const Tag(
+                        'Strongly recommend',
+                        color: TagColor.green,
+                        classes: ['recommendation-status'],
+                      ),
+                      'recommend' => const Tag(
+                        'Recommend',
+                        color: TagColor.blue,
+                        classes: ['recommendation-status'],
+                      ),
+                      _ => const Tag(
+                        'Conditional',
+                        color: TagColor.grey,
+                        classes: ['recommendation-status'],
+                      ),
                     },
                   ]),
                   td([

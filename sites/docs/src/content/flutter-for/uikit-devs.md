@@ -851,6 +851,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 <?code-excerpt "lib/list_item_tapped.dart"?>
 ```dart
 import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -1402,6 +1403,7 @@ And then access it from code using an [`AssetBundle`][]:
 <?code-excerpt "lib/asset_bundle.dart"?>
 ```dart
 import 'dart:async' show Future;
+
 import 'package:flutter/services.dart' show rootBundle;
 
 Future<String> loadAsset() async {
@@ -1501,7 +1503,7 @@ class _MyFormState extends State<MyForm> {
         // When the user presses the button, show an alert dialog with the
         // text the user has typed into our text field.
         onPressed: () {
-          showDialog(
+          showDialog<void>(
             context: context,
             builder: (context) {
               return AlertDialog(

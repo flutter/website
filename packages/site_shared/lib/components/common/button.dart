@@ -18,6 +18,7 @@ class Button extends StatelessComponent {
     this.href,
     this.content,
     this.style = ButtonStyle.text,
+    this.size = ButtonSize.regular,
     this.id,
     this.attributes = const {},
     this.classes,
@@ -30,6 +31,7 @@ class Button extends StatelessComponent {
   final String? content;
   final String? title;
   final ButtonStyle style;
+  final ButtonSize size;
   final String? icon;
   final String? trailingIcon;
   final String? id;
@@ -50,6 +52,7 @@ class Button extends StatelessComponent {
 
     final mergedClasses = [
       style.cssClass,
+      if (size == ButtonSize.compact) 'compact-button',
       if ((icon != null || trailingIcon != null) && content == null)
         'icon-button',
       ...?classes,
@@ -82,6 +85,9 @@ class Button extends StatelessComponent {
     }
   }
 }
+
+/// The amount of space used within a [Button].
+enum ButtonSize { regular, compact }
 
 enum ButtonStyle {
   filled,

@@ -16,6 +16,7 @@ const List<PageExtension> allNodeProcessingExtensions = [
   HeaderExtractorExtension(),
   HeaderWrapperExtension(),
   TableWrapperExtension(),
+  MermaidProcessor(),
   CodeBlockProcessor(defaultTitle: 'Runnable Flutter example'),
   GlossaryLinkProcessor(),
   TutorialNavigationExtension(),
