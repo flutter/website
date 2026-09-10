@@ -146,6 +146,8 @@ class _NewsletterFormState extends State<NewsletterForm> {
       final streamedResponse = await request.send();
       final response = await http.Response.fromStream(streamedResponse);
 
+      if (!mounted) return;
+
       if (response.statusCode == 200) {
         final jsonData = jsonDecode(response.body) as Object?;
 
@@ -162,6 +164,8 @@ class _NewsletterFormState extends State<NewsletterForm> {
         });
       }
     } catch (e) {
+      if (!mounted) return;
+
       setState(() {
         _errors['unknown'] = '__unknown__';
       });
