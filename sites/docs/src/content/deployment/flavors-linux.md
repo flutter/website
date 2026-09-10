@@ -71,7 +71,7 @@ This example configures two flavors called `staging` and `production`.
 
 1.  Create a new Flutter project called `flavors_example`:
 
-    ```console title="console"
+    ```console
     $ flutter create flavors_example
     $ cd flavors_example
     ```
@@ -112,13 +112,13 @@ This example configures two flavors called `staging` and `production`.
 
     Run the `staging` flavor:
 
-    ```console title="console"
+    ```console
     $ flutter run -d linux --flavor staging
     ```
 
     Run the `production` flavor:
 
-    ```console title="console"
+    ```console
     $ flutter run -d linux --flavor production
     ```
 
@@ -133,7 +133,7 @@ with the Flutter CLI.
 To run a specific flavor during development,
 pass the `--flavor` option to `flutter run`:
 
-```console title="console"
+```console
 $ flutter run -d linux --flavor <flavor_name>
 ```
 
@@ -145,7 +145,7 @@ Replace `<flavor_name>` with the name of your flavor
 To build a release executable for a specific flavor,
 pass the `--flavor` option to `flutter build`:
 
-```console title="console"
+```console
 $ flutter build linux --flavor <flavor_name>
 ```
 
@@ -158,7 +158,7 @@ The `--flavor` option also works with `flutter test` and `flutter drive`,
 allowing you to run unit, widget, or integration tests
 against a specific flavor configuration:
 
-```console title="console"
+```console
 $ flutter test --flavor <flavor_name>
 ```
 
@@ -247,7 +247,7 @@ customize the native window title for each flavor.
 
     ```c title="linux/runner/my_application.cc"
         gtk_header_bar_set_title(header_bar, window_title);
-        ...
+        // ...
         gtk_window_set_title(window, window_title);
     ```
 

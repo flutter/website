@@ -69,7 +69,7 @@ complete the following steps:
 
 1.  Create a new Flutter project called `flavors_example`:
 
-    ```console title="console"
+    ```console
     $ flutter create flavors_example
     $ cd flavors_example
     ```
@@ -78,13 +78,13 @@ complete the following steps:
 
     Run the `staging` flavor:
 
-    ```console title="console"
+    ```console
     $ flutter run -d windows --flavor staging
     ```
 
     Run the `production` flavor:
 
-    ```console title="console"
+    ```console
     $ flutter run -d windows --flavor production
     ```
 
@@ -103,7 +103,7 @@ with the Flutter CLI.
 To run a specific flavor during development,
 pass the `--flavor` option to `flutter run`:
 
-```console title="console"
+```console
 $ flutter run -d windows --flavor <flavor_name>
 ```
 
@@ -115,7 +115,7 @@ Replace `<flavor_name>` with the name of your flavor
 To build a release executable for a specific flavor,
 pass the `--flavor` option to `flutter build`:
 
-```console title="console"
+```console
 $ flutter build windows --flavor <flavor_name>
 ```
 
@@ -128,7 +128,7 @@ The `--flavor` option also works with `flutter test` and `flutter drive`,
 allowing you to run unit, widget, or integration tests
 against a specific flavor configuration:
 
-```console title="console"
+```console
 $ flutter test --flavor <flavor_name>
 ```
 
