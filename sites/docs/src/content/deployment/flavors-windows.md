@@ -141,9 +141,9 @@ After adding flavors,
 you can adjust app behavior—such as selecting API endpoints,
 toggling features, or setting analytics keys—based on the active flavor.
 
-The Flutter framework provides the `appFlavor` constant in the `services`
-library, which retrieves the flavor name passed to the `--flavor` flag
-during `flutter run` or `flutter build`.
+The Flutter framework provides the
+`appFlavor` constant in the `services` library,
+which identifies the flavor used to run or build your app.
 
 1.  **Import the services library:**
 
@@ -172,9 +172,10 @@ during `flutter run` or `flutter build`.
 
     :::note
     The value of `appFlavor` matches the string passed to the `--flavor` flag.
-    If you run or build without specifying a flavor,
-    `appFlavor` returns `null` and the build uses the
-    [default flavor](#set-default-flavor).
+    If you omit `--flavor`,
+    `appFlavor` matches the [default flavor](#set-default-flavor)
+    configured in `pubspec.yaml`.
+    If neither is specified, `appFlavor` is `null`.
     :::
 
 ## Customize configurations {: #customize-configurations }
