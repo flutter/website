@@ -21,9 +21,9 @@ visit the pages on setting up flavors for:
 
 A Flutter flavor represents a collection of settings that define
 how a specific version of your app builds and runs.
-For example, a flavor can determine which window title,
+For example, a flavor can determine the window title,
 application icon, API endpoint, asset set, and logging configuration
-applies to a build.
+for a build.
 
 On Windows, Flutter uses [CMake][] to configure and build
 the native desktop runner.
@@ -249,8 +249,8 @@ To display a flavor-specific window title when the app launches:
       }
     ```
 
-    At configure time, CMake substitutes `@WINDOW_TITLE@`
-    with the title configured for the active flavor.
+    When CMake configures the build,
+    it replaces `@WINDOW_TITLE@` with the window title for the selected flavor.
 
 ### Create distinct app icons
 

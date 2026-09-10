@@ -21,9 +21,9 @@ visit the pages on setting up flavors for:
 
 A Flutter flavor represents a collection of settings that define
 how a specific version of your app builds and runs.
-For example, a flavor can determine which window title,
+For example, a flavor can determine the window title,
 application ID, API endpoint, asset set, and logging configuration
-applies to a build.
+for a build.
 
 On Linux, Flutter uses [CMake][] to configure and build
 the native desktop runner.
