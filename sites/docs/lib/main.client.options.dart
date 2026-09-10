@@ -12,6 +12,10 @@ import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.d
     deferred as _os_selector;
 import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     deferred as _pagenav;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj/cuj_filters.dart'
+    deferred as _cuj_filters;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj/cuj_filters_sidebar.dart'
+    deferred as _cuj_filters_sidebar;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     deferred as _archive_table;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
@@ -95,6 +99,14 @@ ClientOptions get defaultClientOptions => ClientOptions(
         channel: p['channel'] as String,
       ),
       loader: _archive_table.loadLibrary,
+    ),
+    'cuj_filters': ClientLoader(
+      (p) => _cuj_filters.CujFilters(),
+      loader: _cuj_filters.loadLibrary,
+    ),
+    'cuj_filters_sidebar': ClientLoader(
+      (p) => _cuj_filters_sidebar.CujFiltersSidebar(),
+      loader: _cuj_filters_sidebar.loadLibrary,
     ),
     'glossary_search_section': ClientLoader(
       (p) => _glossary_search_section.GlossarySearchSection(),

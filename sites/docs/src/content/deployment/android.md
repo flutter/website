@@ -42,8 +42,8 @@ To learn about customizing this icon, check out the
 
 Alternatively, you can do it manually using the following steps:
 
-1. Review the
-   [Material Design product icons][launchericons] guidelines for icon design.
+1. Review the Android [adaptive icon guidelines][adaptive-icons]
+   for icon design and sizing specifications.
 
 1. In the `[project]/android/app/src/main/res/` directory,
    place your icon files in folders named using
@@ -61,7 +61,8 @@ Alternatively, you can do it manually using the following steps:
    run your app and inspect the app icon in the Launcher.
 
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
-[launchericons]: {{site.material}}/styles/icons
+[adaptive-icons]:
+  {{site.android-dev}}/develop/ui/views/launch/icon_design_adaptive
 [config-qual]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 
