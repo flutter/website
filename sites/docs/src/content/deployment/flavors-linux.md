@@ -51,7 +51,7 @@ and two build modes (`debug`, `release`):
 | staging    | debug      | `build/linux/<arch>/staging/debug/bundle/`           |
 | production | debug      | `build/linux/<arch>/production/debug/bundle/`        |
 | staging    | release    | `build/linux/<arch>/staging/release/bundle/`         |
-| production | release    | `build/linux/<arch>/production/release/bundle/`       |
+| production | release    | `build/linux/<arch>/production/release/bundle/`      |
 {:.table .table-striped}
 
 [CMake]: https://cmake.org/
