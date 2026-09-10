@@ -39,12 +39,7 @@ Flutter is phasing out support for Intel (x64) hardware.
 For details on the timeline and impact,
 refer to the [macOS Intel deprecation strategy][].
 
-If you can't migrate to an [Apple Silicon Mac][],
-you can continue using older Flutter releases from the [SDK archive][].
-
 [macOS Intel deprecation strategy]: {{site.main-url}}/go/macos-intel-deprecation
-[Apple Silicon Mac]: https://support.apple.com/en-us/116943
-[SDK archive]: /install/archive
 :::
 
 To distribute your macOS application, you can either
