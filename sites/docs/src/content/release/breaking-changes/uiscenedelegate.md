@@ -15,12 +15,13 @@ eligible apps are migrated automatically.
 
 :::version-note
 Beginning with Xcode 27 (iOS 27 SDK), Apple mandates the `UIScene`
-lifecycle for UIKit apps. Flutter apps built with Xcode 27 that
-do not adopt `UIScene` fail to launch on startup.
+lifecycle for UIKit apps. Flutter apps built with Xcode 27 without
+adopting `UIScene` fail to launch on startup.
 
-Unmodified projects on Flutter 3.41 and later migrate automatically.
-If your project uses a custom `AppDelegate` or an older Flutter version,
-complete the manual migration steps below.
+On Flutter 3.41 and later, if your project uses an unmodified `AppDelegate`,
+Flutter migrates it automatically. If your project uses a custom `AppDelegate`
+or a Flutter version older than 3.41, complete the following manual
+migration steps.
 :::
 
 ## Summary
@@ -1098,9 +1099,8 @@ When you're ready to re-enable `UIScene` support, remove the underscore.
 Landed in version: 3.38.0-0.1.pre<br>
 In stable release: 3.38
 
-Beginning with Xcode 27 (iOS 27 SDK), Apple enforces the `UIScene`
-requirement for UIKit apps. Flutter apps built with Xcode 27 that
-haven't adopted the `UIScene` lifecycle crash on startup.
+Beginning with Xcode 27 (iOS 27 SDK),
+Apple mandates the `UIScene` lifecycle for UIKit apps.
 
 ## References
 

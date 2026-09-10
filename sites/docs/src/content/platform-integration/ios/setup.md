@@ -95,15 +95,15 @@ an iOS physical device or on the iOS Simulator.
 
 ## Set up an iOS device {: #set-up-devices}
 
-We recommend starting with a simulator as
-it's easier to get set up than a physical iOS device.
+We recommend starting with the iOS simulator as it's easier
+to get set up than a physical iOS device.
 However, you should also test your app on an actual
 physical device.
 
 <Tabs key="ios-simulator-or-physical-device">
 <Tab name="Simulator">
 
-To start the simulator, run the following command depending
+To start the simulator, run one of the following commands depending
 on your Xcode version.
 
 If you're using Xcode 27 or later, start the Device Hub app:
