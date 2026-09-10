@@ -7,6 +7,12 @@ description: >-
 
 {% render "docs/breaking-changes.md" %}
 
+:::important
+As of the Flutter 3.41 release,
+`UIScene` support is the default for iOS apps, and
+eligible apps are migrated automatically.
+:::
+
 :::version-note
 Beginning with Xcode 27 (iOS 27 SDK), Apple mandates the `UIScene`
 lifecycle for UIKit apps. Flutter apps built with Xcode 27 that
