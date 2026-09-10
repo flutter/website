@@ -460,7 +460,7 @@ class HomePage extends StatelessComponent {
               ]),
               div([
                 img(
-                  src: context.asset('images/third_party/logos/holafly.png'),
+                  src: context.asset('images/third_party/logos/holafly.webp'),
                   alt: 'Holafly',
                 ),
               ]),

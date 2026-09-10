@@ -9,8 +9,8 @@ summary:
   distributed global engineering team."
 appName: "Holafly"
 companyName: "Holafly"
-logo: images/third_party/case_studies/holafly/holafly_logo.png
-card: images/third_party/case_studies/holafly/holafly_logo.png
+logo: images/third_party/case_studies/holafly/holafly_logo.webp
+card: images/third_party/case_studies/holafly/holafly_logo.webp
 videoEmbedUrl: "https://www.youtube.com/embed/Y2D6mFHfohI"
 locations:
   - Europe
@@ -61,7 +61,7 @@ retired their legacy native codebases and released the Flutter app directly to
 production.
 
 <Image
-  src="images/third_party/case_studies/holafly/holafly_body_1.png"
+  src="images/third_party/case_studies/holafly/holafly_body_1.webp"
   format="fullwidth"
   alt="Holafly mobile application interface showing home and eSIM data plan screens"
 />
@@ -88,7 +88,7 @@ channel code, Pigeon enables developers to call clean, single-method
 platform channel boilerplate.
 
 <Image
-  src="images/third_party/case_studies/holafly/holafly_body_2.png"
+  src="images/third_party/case_studies/holafly/holafly_body_2.webp"
   format="fullwidth"
   alt="Holafly mobile app interface showing plan management and the homagepage"
 />
