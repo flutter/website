@@ -42,7 +42,8 @@ class GamesPage extends StatelessComponent {
             ),
           },
           desktopAssets: {
-            'Games Header Gif': context.asset('images/games-header.gif'),
+            'Animation showing games built with Flutter on various screens.':
+                context.asset('images/games-header.webp'),
           },
         ),
       ),
@@ -111,7 +112,7 @@ class GamesPage extends StatelessComponent {
                     div(classes: 'media', [
                       img(
                         src: context.asset(
-                          'images/template-endless-runner.gif',
+                          'images/template-endless-runner.webp',
                         ),
                         alt: 'Endless Runner',
                       ),
@@ -140,7 +141,7 @@ class GamesPage extends StatelessComponent {
                   .fragment([
                     div(classes: 'media', [
                       img(
-                        src: context.asset('images/template-basic.gif'),
+                        src: context.asset('images/template-basic.webp'),
                         alt: 'Basic Template',
                       ),
                     ]),
@@ -170,7 +171,7 @@ class GamesPage extends StatelessComponent {
                   .fragment([
                     div(classes: 'media', [
                       img(
-                        src: context.asset('images/template-card-game.gif'),
+                        src: context.asset('images/template-card-game.webp'),
                         alt: 'Card Game',
                       ),
                     ]),
@@ -231,7 +232,7 @@ class GamesPage extends StatelessComponent {
               ]),
               div(classes: 'media', [
                 img(
-                  src: context.asset('images/super-dash-demo.gif'),
+                  src: context.asset('images/super-dash-demo.webp'),
                   alt: 'Dash Demo Game',
                 ),
               ]),
@@ -336,7 +337,7 @@ class GamesPage extends StatelessComponent {
             ]),
             div(classes: 'media', [
               img(
-                src: context.asset('images/developer-story.gif'),
+                src: context.asset('images/developer-story.webp'),
                 alt: 'Google Play',
               ),
             ]),
