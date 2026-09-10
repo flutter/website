@@ -94,7 +94,7 @@ class GlossaryTooltipContent extends StatelessComponent {
                 'Learn more about \'${entry.term}\' and '
                 'find related resources.',
           },
-          [const .text('Learn more')],
+          const [.text('Learn more')],
         ),
       ]),
     ]);

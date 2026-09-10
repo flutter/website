@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:async';
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
@@ -24,15 +26,16 @@ class Tooltip extends StatefulComponent {
 }
 
 class _TooltipState extends State<Tooltip> {
-  static final isTouchscreen =
+  static final bool _isTouchscreen =
       kIsWeb && web.window.matchMedia('(pointer: coarse)').matches;
 
-  final wrapperKey = GlobalNodeKey<web.HTMLElement>();
-  final targetKey = GlobalNodeKey<web.HTMLElement>();
-  final tooltipKey = GlobalNodeKey<web.HTMLElement>();
+  final GlobalNodeKey<web.HTMLElement> _wrapperKey = GlobalNodeKey();
+  final GlobalNodeKey<web.HTMLElement> _targetKey = GlobalNodeKey();
+  final GlobalNodeKey<web.HTMLElement> _tooltipKey = GlobalNodeKey();
 
-  bool isVisible = false;
-  double tooltipOffset = 0.0;
+  bool _isVisible = false;
+  double _tooltipOffset = 0;
+  StreamSubscription<web.Event>? _resizeSubscription;
 
   @override
   void initState() {
@@ -43,41 +46,49 @@ class _TooltipState extends State<Tooltip> {
     }
   }
 
+  @override
+  void dispose() {
+    unawaited(_resizeSubscription?.cancel());
+    super.dispose();
+  }
+
   void setupTooltip() {
     context.binding.addPostFrameCallback(ensureVisible);
 
     // Reposition tooltips on window resize.
-    web.EventStreamProviders.resizeEvent.forTarget(web.window).listen((_) {
-      ensureVisible();
-    });
+    _resizeSubscription = web.EventStreamProviders.resizeEvent
+        .forTarget(web.window)
+        .listen((_) {
+          ensureVisible();
+        });
   }
 
   /// Adjust the tooltip position to ensure it is fully inside the
   /// ancestor .content element.
   void ensureVisible() {
-    final target = targetKey.currentNode;
-    final tooltip = tooltipKey.currentNode;
+    final target = _targetKey.currentNode;
+    final tooltip = _tooltipKey.currentNode;
     if (tooltip == null || target == null) return;
 
     setState(() {
-      tooltipOffset = calculateTooltipOffset(target, tooltip);
+      _tooltipOffset = calculateTooltipOffset(target, tooltip);
     });
   }
 
   @override
   Component build(BuildContext context) {
     return span(
-      key: wrapperKey,
+      key: _wrapperKey,
       classes: 'tooltip-wrapper',
       [
         span(
-          key: targetKey,
+          key: _targetKey,
           classes: 'tooltip-target',
           events: {
-            if (isTouchscreen)
+            if (_isTouchscreen)
               'click': (e) {
-                if (!isVisible) {
-                  setState(() => isVisible = true);
+                if (!_isVisible) {
+                  setState(() => _isVisible = true);
                   e.preventDefault();
                 }
               },
@@ -87,33 +98,33 @@ class _TooltipState extends State<Tooltip> {
         if (component.content case final content?)
           GlobalEventListener(
             // Close tooltip when clicking outside of this wrapper.
-            onClick: isTouchscreen
+            onClick: _isTouchscreen
                 ? (e) {
-                    if (wrapperKey.currentNode?.contains(
+                    if (_wrapperKey.currentNode?.contains(
                           e.target as web.Node?,
                         ) ==
                         true) {
                       return;
                     }
-                    setState(() => isVisible = false);
+                    setState(() => _isVisible = false);
                   }
                 : null,
             // On touchscreen devices, close tooltips when scrolling.
-            onScroll: isTouchscreen
+            onScroll: _isTouchscreen
                 ? (_) {
-                    setState(() => isVisible = false);
+                    setState(() => _isVisible = false);
                   }
                 : null,
             span(
-              key: tooltipKey,
-              classes: ['tooltip', if (isVisible) 'visible'].toClasses,
+              key: _tooltipKey,
+              classes: ['tooltip', if (_isVisible) 'visible'].toClasses,
               styles: Styles(
                 raw: {
-                  'left': tooltipOffset == 0
+                  'left': _tooltipOffset == 0
                       ? '50%'
-                      : tooltipOffset > 0
-                      ? 'calc(50% + ${tooltipOffset}px)'
-                      : 'calc(50% - ${tooltipOffset.abs()}px)',
+                      : _tooltipOffset > 0
+                      ? 'calc(50% + ${_tooltipOffset}px)'
+                      : 'calc(50% - ${_tooltipOffset.abs()}px)',
                 },
               ),
               [

@@ -75,6 +75,6 @@ final class DeployCommand extends Command<int> {
       workingDirectory: path.join(repositoryRoot, selectedSite.directory),
       mode: ProcessStartMode.inheritStdio,
     );
-    return deploy.exitCode;
+    return await deploy.exitCode;
   }
 }
