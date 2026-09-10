@@ -103,8 +103,7 @@ physical device.
 <Tabs key="ios-simulator-or-physical-device">
 <Tab name="Simulator">
 
-To start the simulator, run one of the following commands depending
-on your Xcode version.
+To start the simulator, run the command for your Xcode version.
 
 If you're using Xcode 27 or later, start the Device Hub app:
 
