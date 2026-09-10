@@ -17,7 +17,7 @@ visit the pages on setting up flavors for:
 * [Windows][]
 :::
 
-## Overview {: #overview }
+## Overview
 
 A Flutter flavor represents a collection of settings that define
 how a specific version of your app builds and runs.
@@ -122,7 +122,7 @@ This example configures two flavors called `staging` and `production`.
     $ flutter run -d linux --flavor production
     ```
 
-## Launch a flavor {: #launch-a-flavor }
+## Launch a flavor
 
 After you configure flavors for your app,
 run, build, or test a specific flavor using the `--flavor` flag
@@ -205,12 +205,12 @@ which identifies the flavor used to run or build your app.
     If neither is specified, `appFlavor` is `null`.
     :::
 
-## Customize configurations {: #customize-configurations }
+## Customize configurations
 
 After adding flavors,
 you can customize native settings and assets for each configuration.
 
-### Create distinct window titles {: #create-distinct-window-titles }
+### Create distinct window titles
 
 To help distinguish between different flavors at runtime,
 customize the native window title for each flavor.
@@ -251,7 +251,7 @@ customize the native window title for each flavor.
         gtk_window_set_title(window, window_title);
     ```
 
-### Configure app icons {: #configure-app-icons }
+### Configure app icons
 
 On Linux, application icons are not embedded directly in the compiled
 executable binary.
@@ -306,7 +306,7 @@ To learn more, consult the [`default-flavor` field][] in
 
 [`default-flavor` field]: /tools/pubspec#default-flavor
 
-## More information {: #more-information }
+## More information
 
 For more information on flavors and desktop deployment,
 consult the following resources:

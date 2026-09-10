@@ -17,7 +17,7 @@ visit the pages on setting up flavors for:
 * [Linux][]
 :::
 
-## Overview {: #overview }
+## Overview
 
 A Flutter flavor represents a collection of settings that define
 how a specific version of your app builds and runs.
@@ -56,7 +56,7 @@ and two build modes (`debug`, `release`):
 
 [CMake]: https://cmake.org/
 
-## Create and run flavors {: #create-and-run-flavors }
+## Create and run flavors
 
 Passing `--flavor` works on Windows without any CMake configuration.
 Existing Flutter projects support flavors with no template updates
@@ -92,7 +92,7 @@ To customize native runner settings for each flavor—such as
 the window title or application icon—refer to
 [Customize configurations](#customize-configurations).
 
-## Launch a flavor {: #launch-a-flavor }
+## Launch a flavor
 
 After you define flavors for your app,
 run, build, or test a specific flavor using the `--flavor` flag
@@ -175,7 +175,7 @@ which identifies the flavor used to run or build your app.
     If neither is specified, `appFlavor` is `null`.
     :::
 
-## Customize configurations {: #customize-configurations }
+## Customize configurations
 
 To differentiate the native Windows runner per flavor—such as
 giving each flavor a unique window title or application icon—configure
@@ -234,7 +234,7 @@ windows/runner/Runner.rc
 Commit the `.in` template files to version control instead.
 :::
 
-### Create distinct window titles {: #create-distinct-window-titles }
+### Create distinct window titles
 
 To display a flavor-specific window title when the app launches:
 
@@ -252,7 +252,7 @@ To display a flavor-specific window title when the app launches:
     At configure time, CMake substitutes `@WINDOW_TITLE@`
     with the title configured for the active flavor.
 
-### Create distinct app icons {: #create-distinct-app-icons }
+### Create distinct app icons
 
 To provide unique desktop icons for each flavor:
 
@@ -320,7 +320,7 @@ To learn more, consult the [`default-flavor` field][] in
 
 [`default-flavor` field]: /tools/pubspec#default-flavor
 
-## More information {: #more-information }
+## More information
 
 For more information on flavors and desktop deployment,
 consult the following resources:
