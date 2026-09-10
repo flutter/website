@@ -50,7 +50,7 @@ class ShowcasePage extends StatelessComponent {
             'Businesses of all sizes around the world are '
             'building with Flutter',
         media: img(
-          src: context.asset('images/apps-in-production.gif'),
+          src: context.asset('images/apps-in-production.webp'),
           alt: 'Flutter in production',
         ),
       ),

@@ -64,7 +64,7 @@ How can you ensure the mobile app you are creating will succeed when it is compe
 
 <DashImage figure src="images/1vFj6DgGFh43jJS6sX2ZxWw.jpeg" alt="Alibaba (left) and Topline (right)" caption="Alibaba (left) and Topline (right)" />
 
-<DashImage figure src="images/1HyTUK7HxEJfJZofdMGcSJA.gif" alt="2Dimensions" caption="2Dimensions" />
+<DashImage figure src="images/1HyTUK7HxEJfJZofdMGcSJA.webp" alt="2Dimensions" caption="2Dimensions" />
 
 Studies have shown that having an [appealing design can be very important](https://medium.com/coffee-and-junk/design-psychology-aesthetic-usability-effect-494ed0f22571). If you look at the most popular mobile apps from the last few years, they each have their own design aesthetic. In addition, beautiful apps win awards, which provides valuable publicity.
 
