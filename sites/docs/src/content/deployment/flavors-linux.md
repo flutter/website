@@ -320,6 +320,3 @@ consult the following resources:
 [iOS and macOS]: /deployment/flavors-ios
 [Windows]: /deployment/flavors-windows
 [Build and release a Linux desktop app]: /deployment/linux
-[Set up Flutter flavors for Android]: /deployment/flavors
-[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
-[Set up Flutter flavors for Windows]: /deployment/flavors-windows
