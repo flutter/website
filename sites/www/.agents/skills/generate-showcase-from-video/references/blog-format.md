@@ -98,6 +98,7 @@ industries:
   - Productivity
   - Education
   - Social
+  - Telecom
 successMetrics:
   - perc: 95
     desc: code reuse

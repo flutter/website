@@ -21,7 +21,7 @@ platforms:
   - Mobile
   - Web
 industries:
-  - Travel & Lifestyle
+  - Telecom
 successMetrics:
   - text: "2M+"
     desc: monthly active users
