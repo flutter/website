@@ -141,7 +141,7 @@ class WidgetCatalogCard extends StatelessComponent {
         ? {'style': '--bg-color: ${subcategory?.color}'}
         : <String, String>{};
 
-    final placeholder = const img(
+    const placeholderImage = img(
       alt:
           'Placeholder Flutter logo in place of '
           'missing widget image or visualization.',
@@ -158,7 +158,7 @@ class WidgetCatalogCard extends StatelessComponent {
           if (widget.imageSrc case final imageSrc? when imageSrc.isNotEmpty)
             img(alt: imageAlt, src: imageSrc)
           else
-            placeholder,
+            placeholderImage,
           if (widget.hoverBackgroundSrc case final hoverBackgroundSrc?
               when hoverBackgroundSrc.isNotEmpty)
             div(classes: 'card-image-material-3-hover', [
@@ -178,7 +178,7 @@ class WidgetCatalogCard extends StatelessComponent {
               when imageSrc.isNotEmpty)
             img(alt: imageAlt, src: imageSrc)
           else
-            placeholder,
+            placeholderImage,
         ],
       ],
     );

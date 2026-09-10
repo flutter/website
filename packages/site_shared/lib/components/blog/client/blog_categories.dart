@@ -152,7 +152,7 @@ class _BlogCategoriesState extends State<BlogCategories> {
         [
           button(
             onClick: () => _selectCategory(null),
-            [const .text('All')],
+            const [.text('All')],
           ),
         ],
       ),
