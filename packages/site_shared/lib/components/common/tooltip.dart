@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:async';
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
@@ -33,6 +35,7 @@ class _TooltipState extends State<Tooltip> {
 
   bool _isVisible = false;
   double _tooltipOffset = 0;
+  StreamSubscription<web.Event>? _resizeSubscription;
 
   @override
   void initState() {
@@ -43,13 +46,21 @@ class _TooltipState extends State<Tooltip> {
     }
   }
 
+  @override
+  void dispose() {
+    unawaited(_resizeSubscription?.cancel());
+    super.dispose();
+  }
+
   void setupTooltip() {
     context.binding.addPostFrameCallback(ensureVisible);
 
     // Reposition tooltips on window resize.
-    web.EventStreamProviders.resizeEvent.forTarget(web.window).listen((_) {
-      ensureVisible();
-    });
+    _resizeSubscription = web.EventStreamProviders.resizeEvent
+        .forTarget(web.window)
+        .listen((_) {
+          ensureVisible();
+        });
   }
 
   /// Adjust the tooltip position to ensure it is fully inside the

@@ -16,13 +16,15 @@ extension AssetExtension on BuildContext {
 }
 
 class TrackingAssetTransformer implements AssetTransformer {
-  final IOSink _trackingFile = File(
-    p.join('tool', 'used_assets.txt'),
-  ).openWrite(mode: FileMode.write);
+  TrackingAssetTransformer() {
+    _trackingFile.writeAsStringSync('');
+  }
+
+  final File _trackingFile = File(p.join('tool', 'used_assets.txt'));
 
   @override
-  Asset transform(Asset asset, [Object? aspect]) {
-    _trackingFile.writeln(asset.path);
+  Asset transform(Asset asset, [Object? _]) {
+    _trackingFile.writeAsStringSync('${asset.path}\n', mode: .append);
     return asset;
   }
 }
