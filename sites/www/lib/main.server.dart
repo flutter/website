@@ -17,6 +17,7 @@ import 'package:site_shared/page_extensions.dart';
 import 'main.server.options.dart';
 import 'src/components/common/dash_image.dart';
 import 'src/components/common/image.dart';
+import 'src/extensions/same_page_link_extension.dart';
 import 'src/layouts/blog_layout.dart';
 import 'src/layouts/consultants_tos_layout.dart';
 import 'src/layouts/default_layout.dart';
@@ -100,6 +101,7 @@ void main() async {
           const MermaidProcessor(),
           const CodeBlockProcessor(defaultTitle: 'Runnable Flutter example'),
           assetManager.pageExtension,
+          const SamePageLinkExtension(),
         ],
         components: [
           defineComponent('HomePage', const HomePage()),
