@@ -73,7 +73,7 @@ you can continue using older Flutter releases from the [SDK archive][].
     icon="laptop_mac"
     arch="x64, Arm64"
     supported="Monterey (12) to Golden Gate (27)"
-    ci-tested="Tahoe (26)"
+    ci-tested="Sequoia (15)"
     unsupported="Big Sur (11) and earlier"
     deploy-to-link="/deployment/macos"
   />
