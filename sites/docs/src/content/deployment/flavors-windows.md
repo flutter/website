@@ -55,9 +55,6 @@ and two build modes (`debug`, `release`):
 {:.table .table-striped}
 
 [CMake]: https://cmake.org/
-[Android]: /deployment/flavors
-[iOS and macOS]: /deployment/flavors-ios
-[Linux]: /deployment/flavors-linux
 
 ## Create and run flavors {: #create-and-run-flavors }
 
@@ -333,4 +330,7 @@ consult the following resources:
 * [Set up Flutter flavors for Linux][Linux]
 * [Build and release a Windows desktop app][]
 
+[Android]: /deployment/flavors
+[iOS and macOS]: /deployment/flavors-ios
+[Linux]: /deployment/flavors-linux
 [Build and release a Windows desktop app]: /deployment/windows
