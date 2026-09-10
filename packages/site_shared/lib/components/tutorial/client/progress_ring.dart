@@ -66,7 +66,7 @@ class InteractiveProgressRing extends StatelessComponent {
               'stroke-dasharray': '$inactiveLength ${full - inactiveLength}',
               'stroke-dashoffset': '${quarter - activeLength - gap * 1.5}',
             },
-            [],
+            const [],
           ),
 
         // Active portion, drawn from 0° to (progress)°
@@ -80,7 +80,7 @@ class InteractiveProgressRing extends StatelessComponent {
             'stroke-dasharray': '$activeLength ${full - activeLength}',
             'stroke-dashoffset': '${quarter - gap / 2}',
           },
-          [],
+          const [],
         ),
       ],
     );

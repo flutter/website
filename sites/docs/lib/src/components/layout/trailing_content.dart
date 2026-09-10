@@ -48,8 +48,8 @@ class TrailingContent extends StatelessComponent {
           if (pageSource != null) ...[
             a(
               href: pageSource,
-              attributes: {'target': '_blank', 'rel': 'noopener'},
-              [const .text('View source')],
+              attributes: const {'target': '_blank', 'rel': 'noopener'},
+              const [.text('View source')],
             ),
             const span([.text(' or ')]),
           ],

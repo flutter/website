@@ -94,8 +94,8 @@ final class _ResourceCard extends StatelessComponent {
       classes: 'monochrome-icon',
       width: 24.px,
       height: 24.px,
-      [
-        const Component.element(
+      const [
+        Component.element(
           tag: 'use',
           attributes: {'href': '/assets/images/social/github.svg#github'},
         ),
@@ -106,8 +106,8 @@ final class _ResourceCard extends StatelessComponent {
       width: 24,
       alt: 'Dart logo',
     ),
-    'Google Codelab' => svg(width: 24.px, height: 24.px, [
-      const Component.element(
+    'Google Codelab' => svg(width: 24.px, height: 24.px, const [
+      Component.element(
         tag: 'use',
         attributes: {
           'href':
@@ -119,8 +119,8 @@ final class _ResourceCard extends StatelessComponent {
       attributes: {'style': 'color: red'},
       width: 24.px,
       height: 24.px,
-      [
-        const Component.element(
+      const [
+        Component.element(
           tag: 'use',
           attributes: {'href': '/assets/images/social/youtube.svg#youtube'},
         ),

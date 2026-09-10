@@ -179,7 +179,7 @@ final class StagePreviewCommand extends Command<int> {
       return 0;
     }
 
-    return _commentStagingUrlOnGitHub(
+    return await _commentStagingUrlOnGitHub(
       site: selectedSite,
       stagingUrl: stagingUrl,
       context: prContext,
