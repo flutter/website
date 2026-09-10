@@ -12,7 +12,7 @@ development tasks accurately.
 
 ## Tooling ecosystem overview
 
-The Flutter AI tooling ecosystem consists of five complementary components:
+The Flutter AI tooling ecosystem consists of six complementary components:
 
 1. **Agent skills**: task-oriented blueprints that teach assistants how to
    perform specific workflows (such as creating responsive layouts or writing
@@ -27,6 +27,8 @@ The Flutter AI tooling ecosystem consists of five complementary components:
 5. **Specialized agents**: dedicated agent personas equipped with focused tools
    and system instructions for isolated workflows, such as accessibility
    auditing.
+6. **Agent rules**: persistent rules added to the context window every time
+   you start a new session with your assistant.
 
 ---
 
@@ -157,6 +159,19 @@ review your code for accessibility:
 
 ---
 
+## Agent rules
+
+**Agent rules** are persistent rules added to the context window
+every time you start a new session with your assistant.
+Rules establish project conventions and common constraints
+across your codebase.
+
+To explore official Flutter rules, visit the
+[rules directory](https://github.com/flutter/agent-plugins/tree/main/rules)
+in the flutter/agent-plugins repository.
+
+---
+
 ## When to use what
 
 Use the following mental model to understand how different AI mechanisms
@@ -169,6 +184,7 @@ interact:
 | **Developer Knowledge MCP** | Online search | Live docs, API references |
 | **Package skill** | From dependencies | Library APIs, code generation |
 | **Specialized agent** | Isolated subagent | Accessibility audits |
+| **Agent rule** | Persistent context | Project conventions, constraints |
 
 {:.table .table-striped}
 
