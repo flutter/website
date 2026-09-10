@@ -114,4 +114,28 @@
     color: var(--site-link-fgColor);
     fill: var(--site-link-fgColor);
   }
+
+  // Google Programmable Search AI Preview (SGE) styles.
+  .gsc-sge-container-header {
+    color: var(--site-link-fgColor);
+  }
+
+  .gsc-sge-icon,
+  .gsc-sge-paragraph-citation-link {
+    fill: var(--site-link-fgColor);
+  }
+
+  .gsc-sge-response,
+  .gsc-sge-citation-title {
+    color: var(--site-base-fgColor);
+  }
+
+  .gsc-sge-citation-snippet,
+  .gsc-sge-footer {
+    color: var(--site-base-fgColor-lighter);
+  }
+
+  .gsc-sge-feedback-icon {
+    fill: var(--site-base-fgColor-lighter);
+  }
 }
