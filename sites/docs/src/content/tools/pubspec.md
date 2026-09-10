@@ -178,10 +178,9 @@ Subfields of `assets`:
 * `transformer_path_field`: A path field and its transformer
   subfields.
 * `path`: The path to an asset file or directory.
-* `flavors`: A list of flutter flavors to use with assets
-  at a specific path. To learn more about
-  flavors, visit set up flavors for [Android], [iOS and macOS][],
-  [Windows][], and [Linux][].
+* `flavors`: A list of flutter flavors to use with assets at a specific path.
+  To learn more about flavors, consult the guides on setting up flavors for
+  [Android][], [iOS and macOS][], [Linux][], and [Windows][].
 * `platforms`: A list of platforms to use with assets at a
   specific path. Valid values are `android`, `ios`, `web`, `linux`,
   `macos`, and `windows`.
@@ -333,13 +332,8 @@ $ flutter run --flavor staging
 ```
 
 To learn how to create Flutter flavors,
-visit Set up Flutter flavors for [Android][],
-[iOS and macOS][], [Linux][], and [Windows][].
-
-[Android]: /deployment/flavors
-[iOS and macOS]: /deployment/flavors-ios
-[Windows]: /deployment/flavors-windows
-[Linux]: /deployment/flavors-linux
+consult the guides on setting up flavors for
+[Android][], [iOS and macOS][], [Linux][], and [Windows][].
 
 ### deferred-components field {: #deferred-components }
 
