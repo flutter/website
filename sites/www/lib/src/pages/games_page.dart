@@ -42,7 +42,8 @@ class GamesPage extends StatelessComponent {
             ),
           },
           desktopAssets: {
-            'Games Header Gif': context.asset('images/games-header.webp'),
+            'Animation showing games built with Flutter on various screens.':
+                context.asset('images/games-header.webp'),
           },
         ),
       ),
