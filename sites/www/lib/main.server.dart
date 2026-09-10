@@ -17,6 +17,7 @@ import 'package:site_shared/page_extensions.dart';
 import 'main.server.options.dart';
 import 'src/components/common/dash_image.dart';
 import 'src/components/common/image.dart';
+import 'src/extensions/same_page_link_extension.dart';
 import 'src/layouts/blog_layout.dart';
 import 'src/layouts/consultants_tos_layout.dart';
 import 'src/layouts/default_layout.dart';
@@ -43,6 +44,7 @@ import 'src/pages/news_page.dart';
 import 'src/pages/not_found_page.dart';
 import 'src/pages/showcase_page.dart';
 import 'src/pages/web_page.dart';
+import 'src/pages/why_flutter_page.dart';
 import 'src/utils/asset_utils.dart';
 
 void main() {
@@ -99,6 +101,7 @@ void main() {
           const MermaidProcessor(),
           const CodeBlockProcessor(defaultTitle: 'Runnable Flutter example'),
           assetManager.pageExtension,
+          const SamePageLinkExtension(),
         ],
         components: [
           defineComponent('HomePage', const HomePage()),
@@ -124,6 +127,7 @@ void main() {
           defineComponent('BrandPage', const BrandPage()),
           defineComponent('FlipPage', const FlipPage()),
           defineComponent('NewsPage', const NewsPage()),
+          defineComponent('WhyFlutterPage', const WhyFlutterPage()),
           defineComponentWithAttrs('Image', Image.fromAttrs),
 
           CustomComponent(

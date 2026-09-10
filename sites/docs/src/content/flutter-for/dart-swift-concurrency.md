@@ -175,7 +175,7 @@ returns a `Future<Weather>` object:
 class HomePageViewModel {
   const HomePageViewModel();
   Future<Weather> load() async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future<void>.delayed(const Duration(seconds: 1));
     return Weather.sunny;
   }
 }

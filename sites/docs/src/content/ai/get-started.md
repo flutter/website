@@ -20,16 +20,22 @@ An **agent plugin** bundles the tools and knowledge that an AI assistant needs
 to understand and modify your Flutter codebase.
 
 When you install an official Flutter agent plugin, it connects your assistant
-to two core capabilities:
+to four core capabilities:
 
-* **[Agent skills](/ai/tools#agent-skills)**: On-demand procedural guides from
+* **[Agent skills](/ai/tools#agent-skills)**: on-demand procedural guides from
   the official Flutter and Dart repositories that teach the assistant how to
   perform specific tasks, such as creating responsive layouts, managing state,
   or writing widget tests.
+* **[Agent rules](/ai/tools#agent-rules)**: persistent instructions that guide
+  an assistant's responses, such as proactively triggering stateful hot reload
+  when editing Flutter widgets.
 * **[Dart and Flutter MCP server](/ai/tools#dart-and-flutter-mcp-server)**:
-  A Model Context Protocol (MCP) server that connects the assistant to the
+  a Model Context Protocol (MCP) server that connects the assistant to the
   Dart SDK, giving it real-time access to analyzer diagnostics, symbol
   resolution, test runners, and runtime inspection.
+* **[Specialized agents](/ai/tools#specialized-agents)**: focused assistant
+  personas tailored for dedicated workflows, such as the Flutter Accessibility
+  (`a11y`) agent for automated accessibility audits and code fixes.
 
 These tools work together automatically: the assistant uses MCP tools to query
 live project state and static analysis, while using agent skills to guide its
@@ -37,7 +43,7 @@ coding strategies and best practices.
 
 In addition to core Flutter plugins, you can also equip your assistant with
 skills that are shipped directly by third-party `pub.dev`
-packages using the [skills](/ai/package-skills) package.
+packages using [package skills](https://dart.dev/ai/package-skills).
 
 To learn more about the underlying architecture and capabilities of each tool,
 check out [How Flutter AI tools work](/ai/tools).
@@ -132,6 +138,15 @@ Equip Claude Code with official Flutter and Dart skills and MCP configuration:
    claude plugin install dart-flutter@dart-flutter
    ```
 
+**Configure agent rules**
+
+Claude Code plugins discover skills and MCP servers,
+but don't automatically load plugin rules.
+To equip Claude Code with official Flutter rules,
+add the rules you want from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+to your project's `CLAUDE.md` file.
+
 **Verify installation**
 
 Verify that the plugin is active in Claude Code:
@@ -168,6 +183,15 @@ plugins directory:
 1. Restart Cursor. The editor automatically discovers the bundled skills and
    configures the Dart and Flutter MCP server.
 
+**Configure agent rules**
+
+Cursor supports file-scoped rules in the `.cursor/rules/` directory
+using `.mdc` files.
+To equip Cursor with official Flutter rules,
+download the `.mdc` files from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+into your project's `.cursor/rules/` directory.
+
 </Tab>
 
 <Tab name="Codex">
@@ -190,6 +214,16 @@ Equip Codex with official Flutter and Dart skills and MCP configuration:
    ```bash
    codex plugin add dart-flutter@dart-flutter
    ```
+
+**Configure agent rules**
+
+Codex plugins install skills and MCP servers,
+but don't automatically bundle rules.
+To equip Codex with official Flutter rules,
+download the `.md` rule files from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+into your project's `.agent/rules/` directory,
+or append the rule instructions to `CODEX.md`.
 
 **Verify installation**
 
@@ -235,6 +269,15 @@ npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
 npx skills add dart-lang/skills --skill '*' --agent universal --yes
 ```
 
+**Configure agent rules**
+
+GitHub Copilot supports custom workspace instructions in
+`.github/copilot-instructions.md`.
+To equip Copilot with official Flutter rules,
+add the rules you want from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+to your project's `.github/copilot-instructions.md` file.
+
 </Tab>
 
 <Tab name="Other">
@@ -276,6 +319,14 @@ npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
 npx skills add dart-lang/skills --skill '*' --agent universal --yes
 ```
 
+**Configure agent rules**
+
+If your coding assistant supports project instructions or rules
+(such as Windsurf `.windsurfrules` or Cline `.clinerules`),
+copy or download rules from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+into your assistant's configuration file.
+
 </Tab>
 
 </Tabs>
@@ -284,8 +335,10 @@ npx skills add dart-lang/skills --skill '*' --agent universal --yes
 
 * To learn more about how skills and tools interact, check out
   [How Flutter AI tools work](/ai/tools).
-* To publish or consume skills from dependencies, refer to
-  [Package skills](/ai/package-skills).
+* To discover and install skills from dependencies, refer to
+  [Package skills](https://dart.dev/ai/package-skills).
+* To publish skills with your own packages, refer to
+  [Ship skills with packages](https://dart.dev/tools/pub/package-skills).
 * To give your assistant search access to official Flutter and Dart
   documentation, connect to the [Developer Knowledge MCP server](
   https://developers.google.com/knowledge/mcp).

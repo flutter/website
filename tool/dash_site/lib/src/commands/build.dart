@@ -50,9 +50,8 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
       'run',
       'jaspr_cli:jaspr',
       'build',
-      // Use build_web_compiler options specified in build.yaml instead of
-      // those specified by jaspr_cli.
-      '--no-managed-build-options',
+      '-O4',
+      '--extra-js-compiler-option=--no-source-maps',
       '--sitemap-domain=${site.baseUrl}',
       // Exclude secondary Markdown output files from sitemap.
       r'--sitemap-exclude=\.md$',

@@ -1,3 +1,8 @@
+html {
+  // Keep fragment targets below the fixed navigation and event banner.
+  scroll-padding-top: calc(var(--ui-header-height) + 1.25rem);
+}
+
 body {
   background-color: white;
   color: var(--grey-6);
