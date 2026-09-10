@@ -170,16 +170,31 @@ class DefaultLayout extends PageLayout {
               },
             ),
 
-            // Set up standard cookie notification bar.
+            // Load the managed cookie banner styles before our theme overrides.
             const link(
-              href: 'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css',
               rel: 'stylesheet',
+              href:
+                  'https://www.gstatic.com/glue/cookienotificationbar/'
+                  'cookienotificationbar.min.css',
             ),
 
             // Set site styles.
             link(
               href: cacheBustedBuildAssetUrl('/main.css'),
               rel: 'stylesheet',
+            ),
+
+            // The managed cookie script handles
+            // regional visibility and dismissal.
+            const script(
+              src:
+                  'https://www.gstatic.com/glue/cookienotificationbar/'
+                  'cookienotificationbar.min.js',
+              attributes: {
+                'data-glue-cookie-notification-bar-category': '2A',
+                'data-glue-cookie-notification-bar-site-id': 'flutter.dev',
+              },
+              defer: true,
             ),
           ],
           lang: 'en',
@@ -201,13 +216,6 @@ class DefaultLayout extends PageLayout {
             ),
             child,
             const Footer(),
-            const script(
-              src: 'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js',
-              attributes: {
-                'data-glue-cookie-notification-bar-category': '2A',
-                'data-glue-cookie-notification-bar-site-id': 'flutter.dev',
-              },
-            ),
             if (page.url.contains('consultants'))
               const ConsultantsCookieSnack(),
           ]),

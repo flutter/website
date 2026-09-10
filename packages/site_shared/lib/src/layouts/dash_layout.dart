@@ -8,7 +8,6 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../../components/common/client/cookie_notice.dart';
 import '../../components/layout/banner.dart';
 import '../../util.dart';
 import '../utils/cache_busted_build_asset_url.dart';
@@ -24,7 +23,6 @@ abstract class DashLayout implements PageLayout {
 
   String? get titleBase => null;
   String get siteHost;
-  bool get cookieNoticeDarkMode => false;
 
   String get iconUrl;
   String get iconUrlApple;
@@ -148,10 +146,29 @@ abstract class DashLayout implements PageLayout {
       ),
       for (final font in fontUrls) link(rel: 'stylesheet', href: font),
 
-      // Set site styles.
+      // Load the managed cookie banner styles before our theme overrides.
+      const link(
+        rel: 'stylesheet',
+        href:
+            'https://www.gstatic.com/glue/cookienotificationbar/'
+            'cookienotificationbar.min.css',
+      ),
+
       link(
         rel: 'stylesheet',
         href: cacheBustedBuildAssetUrl(stylesUrl),
+      ),
+
+      // The managed cookie script handles regional visibility and dismissal.
+      script(
+        src:
+            'https://www.gstatic.com/glue/cookienotificationbar/'
+            'cookienotificationbar.min.js',
+        attributes: {
+          'data-glue-cookie-notification-bar-category': '2B',
+          'data-glue-cookie-notification-bar-site-id': siteHost,
+        },
+        defer: true,
       ),
 
       // Set site scripts.
@@ -264,7 +281,6 @@ try {
               attributes: {'tabindex': '1'},
               [.text('Skip to main content')],
             ),
-            CookieNotice(host: siteHost, alwaysDarkMode: cookieNoticeDarkMode),
             buildBody(page, child),
           ],
         ),
