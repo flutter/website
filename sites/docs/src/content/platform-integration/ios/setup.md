@@ -101,7 +101,7 @@ but be sure to also test your app on a physical device.
 <Tabs key="ios-simulator-or-physical-device">
 <Tab name="Simulator">
 
-On Xcode 27 or later, start the Device Hub app:
+Start the simulator (renamed to Device Hub on Xcode 27):
 
 ```console
 $ open -a DeviceHub
