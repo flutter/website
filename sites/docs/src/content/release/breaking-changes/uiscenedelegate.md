@@ -7,20 +7,14 @@ description: >-
 
 {% render "docs/breaking-changes.md" %}
 
-:::important
-As of the Flutter 3.41 release,
-`UIScene` support is the default for iOS apps, and
-eligible apps are migrated automatically.
-:::
-
 :::version-note
 Beginning with Xcode 27 (iOS 27 SDK), Apple mandates the `UIScene`
-lifecycle for UIKit apps. Flutter apps built with Xcode 27 without
-adopting `UIScene` fail to launch on startup.
+lifecycle for UIKit apps. Flutter apps built with Xcode 27 that
+do not adopt `UIScene` fail to launch on startup.
 
-On Flutter 3.41 and later, if your project uses an unmodified `AppDelegate`,
+In Flutter 3.41 and later, if your project uses an unmodified `AppDelegate`,
 Flutter migrates it automatically. If your project uses a custom `AppDelegate`
-or a Flutter version older than 3.41, complete the following manual
+or a Flutter version earlier than 3.41, complete the following manual
 migration steps.
 :::
 
