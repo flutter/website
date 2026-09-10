@@ -25,6 +25,10 @@ For example, a flavor can determine the window title,
 application ID, API endpoint, asset set, and logging configuration
 for a build.
 
+:::version-note
+Built-in support for flavors on Linux requires Flutter 3.47 or later.
+:::
+
 On Linux, Flutter uses [CMake][] to configure and build
 the native desktop runner.
 When you run `flutter run` or `flutter build` with the `--flavor` flag,
