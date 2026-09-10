@@ -14,15 +14,28 @@ From the provided transcript, generate a case study blog post that follows this 
 *   Add quick intro on the company or product and the business challenge they were trying to solve.
 
 
-**Why Flutter?**
+**Section 1 (Why Flutter): Contextual & Descriptive Subtitle**
+*   **Format**: Use **Bold Text** with a descriptive theme, NOT just generic `**Why Flutter?**`.
+*   **Pattern**: `**Why Flutter? <Descriptive Subtitle/Theme>**`
+    *   ✅ `**Why Flutter? Accelerating Time-to-Market**`
+    *   ✅ `**Why Flutter? Unifying Fragmented Desktop Toolchains**`
+    *   ✅ `**Why Flutter? High Performance for Complex Canvas Rendering**`
+    *   ❌ `**Why Flutter?**` (too generic)
 *   Explain the key reasons they chose Flutter over other technologies.
 *   Focus on factors that matter to decision-makers, such as cross-platform capabilities, performance, and developer experience.
 
-**Their solution: Building with Flutter**
+**Section 2 (Solution): Contextual & Descriptive Subtitle**
+*   **Format**: Use **Bold Text** with a descriptive technical achievement, NOT just generic `**Their solution: Building with Flutter**`.
+*   **Pattern**: `**Building with Flutter: <Key Technical Achievement / Solution>**` or `**Their solution: <Descriptive Implementation>**`
+    *   ✅ `**Building with Flutter: Delightful UX meets AI**`
+    *   ✅ `**Building with Flutter: Real-Time Telemetry and Hardware Multiplexing**`
+    *   ✅ `**Building with Flutter: Engineering a Custom Infinite Canvas**`
+    *   ❌ `**Their solution: Building with Flutter**` (too generic)
 *   Describe how the team used Flutter to build their application.
-*   Mention any specific Flutter features, packages, or architectural patterns that were critical to their success.
+*   Mention any specific Flutter features, packages (e.g., flutter_bloc, Rive), or architectural patterns that were critical to their success. Highlight integrations with Google Cloud, Firebase, Gemini AI, etc.
 
-**Key results and business impact**
+**Section 3: Key results and business impact**
+*   **Format**: Use **Bold Text**: `**Key results and business impact**` (or optionally `**Key results: <Key Metric Highlight>**`).
 *   This is the most important section. Use a bulleted list or a direct paragraph to present quantifiable achievements. If there are specific numbers, make sure to mention them!
 *   Focus on metrics like:
     *   **Developer velocity:** e.g., "Reduced time-to-market by 40%."
@@ -33,7 +46,8 @@ From the provided transcript, generate a case study blog post that follows this 
 
 **Tone and formatting rules:**
 *   **PROHIBITION**: **DO NOT** use standard Markdown headers (e.g., `# Header`, `## Header`, `### Header`) in the body of the blog post.
-*   **REQUIRED**: Use **Bold Text** (e.g., `**Why Flutter?**`) for section titles, exactly as shown in the structure above. Do **NOT** add an `**Introduction**` or `**Goal**` header to the first section.
+*   **REQUIRED**: Use **Bold Text** for section titles. Do **NOT** add an `**Introduction**` or `**Goal**` header to the first section.
+*   **DESCRIPTIVE SECTION HEADERS**: Section titles must never be generic placeholders (`**Why Flutter?**`, `**Their solution: Building with Flutter**`). They MUST include story-specific subtitles as detailed above.
 *   **Tone**: Professional, friendly, approachable, confident, and data-driven. Avoid overly technical jargon unless it's essential. The focus should be on the *results* and *impact* of using Flutter.
 *   **Authenticity**: Make sure the content sounds like it was written by a human and do not exaggerate claims.
 
