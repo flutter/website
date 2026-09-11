@@ -1022,7 +1022,7 @@ The following example sets a dependency for
 let package = Package(
   // lines skipped
   dependencies: [
-    .package(name: "url_launcher", path: "../url_launcher"),
+    .package(path: "../url_launcher"),
   ],
   targets: [
     .target(
