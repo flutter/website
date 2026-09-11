@@ -1,0 +1,7 @@
+Exception: AgentTimeoutError
+Agent exceeded maximum timeout of 300.0 seconds during execution.
+
+Traceback (most recent call last):
+  File "harbor/trial/trial.py", line 1455, in _execute_agent
+    raise TimeoutError("Agent exceeded timeout of 300.0s")
+TimeoutError: Agent exceeded timeout of 300.0s

@@ -1,0 +1,66 @@
+{
+  "id": "11111111-2222-4333-8444-00000000002b",
+  "task_name": "google/flutter-offline-sync-sqlite",
+  "trial_name": "flutter-offline-sync-sqlite__t43-gemini-35-flash",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-offline-sync-sqlite__t43-gemini-35-flash",
+  "task_id": {
+    "path": "dataset/flutter-offline-sync-sqlite"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-offline-sync-sqlite"
+    },
+    "trial_name": "flutter-offline-sync-sqlite__t43-gemini-35-flash",
+    "eval_key": "antigravity-sdk__gemini-3.5-flash__adhoc",
+    "agent": {
+      "name": "antigravity-sdk",
+      "model_name": "google/gemini-3.5-flash",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    }
+  },
+  "agent_info": {
+    "name": "antigravity-sdk",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "gemini-3.5-flash",
+      "provider": "google"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 83545,
+    "n_cache_tokens": 65913,
+    "n_output_tokens": 3053,
+    "cost_usd": 0.0072
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.8
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T20:00:55.000000Z",
+  "finished_at": "2026-09-09T20:03:41.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T20:00:55.000000Z",
+    "finished_at": "2026-09-09T20:01:05.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T20:01:05.000000Z",
+    "finished_at": "2026-09-09T20:01:15.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T20:01:15.000000Z",
+    "finished_at": "2026-09-09T20:03:18.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T20:03:18.000000Z",
+    "finished_at": "2026-09-09T20:03:41.000000Z"
+  }
+}

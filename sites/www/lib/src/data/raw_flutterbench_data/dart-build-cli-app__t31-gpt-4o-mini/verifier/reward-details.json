@@ -1,0 +1,103 @@
+{
+  "reward": {
+    "score": 0.48,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "outcome",
+        "value": 0.48,
+        "raw": true,
+        "weight": 0.6,
+        "description": "Functional correctness and test completion (48%)."
+      },
+      {
+        "name": "quality",
+        "value": 0.42,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Static analysis, clean architecture, and idioms (42%)."
+      },
+      {
+        "name": "dx",
+        "value": 0.63,
+        "raw": true,
+        "weight": 0.1,
+        "description": "Tool adherence and trajectory velocity (63%)."
+      }
+    ]
+  },
+  "outcome": {
+    "score": 0.48,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "dart_compile:exe",
+        "value": 0.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Executable compiled with dart compile exe."
+      },
+      {
+        "name": "cli_flag_tests",
+        "value": 0.48,
+        "raw": true,
+        "weight": 0.7,
+        "description": "Flag parsing tests for --help, --version, --verbose, and --format=json."
+      }
+    ]
+  },
+  "quality": {
+    "score": 0.42,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "StaticAnalysisGrader",
+        "value": 0.42,
+        "raw": true,
+        "weight": 0.5,
+        "description": "6 linter warnings detected."
+      },
+      {
+        "name": "structural_validation",
+        "value": 0.6,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Clean separation of concerns and architectural layers."
+      },
+      {
+        "name": "idiomatic_review",
+        "value": 0.42,
+        "raw": true,
+        "weight": 0.2,
+        "description": "Dart 3 idioms (pattern matching, records, sealed classes) adherence."
+      }
+    ]
+  },
+  "dx": {
+    "score": 0.63,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "tool_usage",
+        "value": 0.44099999999999995,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Standard command-line execution without language server telemetry."
+      },
+      {
+        "name": "trajectory",
+        "value": 0.63,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Multiple retry cycles before settling on solution."
+      },
+      {
+        "name": "error_recovery",
+        "value": 0.63,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Fast turnaround from initial compile warnings to clean build."
+      }
+    ]
+  }
+}

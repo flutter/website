@@ -1,0 +1,26 @@
+[
+  {
+    "source": "lib/widgets/adaptive_scaffold.dart",
+    "destination": "artifacts/workspace/lib/widgets/adaptive_scaffold.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/widgets/adaptive_nav.dart",
+    "destination": "artifacts/workspace/lib/widgets/adaptive_nav.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/main.dart",
+    "destination": "artifacts/workspace/lib/main.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "test/adaptive_scaffold_test.dart",
+    "destination": "artifacts/workspace/test/adaptive_scaffold_test.dart",
+    "type": "file",
+    "status": "ok"
+  }
+]

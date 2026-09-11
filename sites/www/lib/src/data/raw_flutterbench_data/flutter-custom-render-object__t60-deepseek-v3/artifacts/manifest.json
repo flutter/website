@@ -1,0 +1,20 @@
+[
+  {
+    "source": "lib/rendering/radar_chart_render_box.dart",
+    "destination": "artifacts/workspace/lib/rendering/radar_chart_render_box.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/widgets/radar_chart.dart",
+    "destination": "artifacts/workspace/lib/widgets/radar_chart.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "test/render_box_test.dart",
+    "destination": "artifacts/workspace/test/render_box_test.dart",
+    "type": "file",
+    "status": "ok"
+  }
+]
