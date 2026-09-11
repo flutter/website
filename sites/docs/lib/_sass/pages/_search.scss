@@ -125,6 +125,24 @@
     fill: var(--site-link-fgColor);
   }
 
+  .gsc-sge-citation-card {
+    background-color: var(--site-base-bgColor);
+
+    &.gsc-sge-citation-pulse {
+      animation-name: search-citation-pulse;
+    }
+  }
+
+  @keyframes search-citation-pulse {
+    from {
+      background-color: var(--site-raised-bgColor);
+    }
+
+    to {
+      background-color: var(--site-base-bgColor);
+    }
+  }
+
   .gsc-sge-response,
   .gsc-sge-citation-title {
     color: var(--site-base-fgColor);
