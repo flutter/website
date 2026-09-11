@@ -1,4 +1,228 @@
 {
+  "overview": {
+    "lead_text": "FlutterBench is our evaluation framework designed to measure how AI coding agents perform within the Dart and Flutter ecosystem. The evaluation system consists of four core components:",
+    "rows": [
+      {
+        "label": "Dataset",
+        "description": "Real-world development tasks derived from critical user journeys (CUJs).",
+        "anchor": "dataset-tasks"
+      },
+      {
+        "label": "Test matrix",
+        "description": "Multidimensional testing framework across models, agents, tooling configurations, and SDK versions.",
+        "anchor": "evaluation-test-matrix"
+      },
+      {
+        "label": "Scoring system",
+        "description": "Unified grading approach evaluating functional outcomes, code quality, and developer experience, paired with diagnostic telemetry.",
+        "anchor": "scoring-architecture"
+      },
+      {
+        "label": "Harness",
+        "description": "Containerized automation infrastructure that executes evaluations at scale.",
+        "anchor": "evaluation-harness"
+      }
+    ]
+  },
+  "task_anatomy": {
+    "intro_text": "Each task contains an instruction, a target codebase and environment, verification criteria, and metadata. Using the CUJ example above, a corresponding Harbor task looks like this:",
+    "root_id": "task",
+    "root_label": "Task",
+    "tree": [
+      {
+        "type": "folder",
+        "id": "environment",
+        "label": "environment/",
+        "subtitle": "Containerized Flutter workspace pre-seeded for the agent",
+        "starts_closed": false,
+        "body": "The target codebase is an isolated, containerized Flutter workspace.\n\nWhen a benchmark run starts, the evaluation harness boots an ephemeral Docker container pre-seeded with this project. The agent is given access to tools (such as reading files, editing code, and running terminal commands) to investigate and resolve the issue.\n\nThe agent only sees the files inside this directory. Grading scripts and reference solutions remain strictly isolated outside the container until the agent completes its run.",
+        "children": [
+          {
+            "type": "folder",
+            "id": "lib",
+            "label": "lib/",
+            "subtitle": "Application source code",
+            "body": "Contains the Flutter application source code.\n\nIn this evaluation task, the agent inspects `lib/main.dart` to locate the source of the `RenderFlex` layout errors and applies appropriate widget modifications.",
+            "children": [
+              {
+                "type": "file",
+                "id": "main-dart",
+                "label": "main.dart",
+                "subtitle": "Flutter app containing horizontal and vertical overflow bugs",
+                "body": "The starter code for the Flutter application. Alternatively, the docker file may point to a remote codebase."
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "id": "test",
+            "label": "test/",
+            "subtitle": "Target directory for agent-authored widget tests",
+            "body": "The test directory for the target project.\n\nInitially, this directory is empty. The task instruction directs the agent to create `test/main_test.dart` to verify its bug fix with automated widget tests.",
+            "children": [
+              {
+                "type": "file",
+                "id": "main-test-dart",
+                "label": "main_test.dart",
+                "subtitle": "Widget tests the agent must write to verify its fix",
+                "body": "The widget test file that the agent is expected to author."
+              }
+            ]
+          },
+          {
+            "type": "file",
+            "id": "pubspec",
+            "label": "pubspec.yaml",
+            "subtitle": "Project manifest declaring Flutter and lint dependencies",
+            "body": "Declares dependencies and environment constraints for the Flutter project."
+          },
+          {
+            "type": "file",
+            "id": "analysis-options",
+            "label": "analysis_options.yaml",
+            "subtitle": "Linter configuration enforcing const and style rules",
+            "body": "Defines the static analysis rules enforced across the project.\n\nDuring grading, `StaticAnalysisGrader` runs `flutter analyze` against the modified codebase. Solutions that introduce analyzer errors, warnings, or lint violations (such as missing `const` constructors) lose quality points.",
+            "code": {
+              "lang": "yaml",
+              "text": "include: package:flutter_lints/flutter.yaml\n\nlinter:\n  rules:\n  # Strict lints for this task"
+            }
+          },
+          {
+            "type": "file",
+            "id": "dockerfile",
+            "label": "Dockerfile",
+            "subtitle": "Container setup, SDK caching, and baseline commit",
+            "body": "Defines the container image for the task environment.\n\nWorkflow:\n1. Inherits from the pre-warmed `flutter-linux:latest` base image, which contains the Flutter and Dart SDKs.\n2. Copies project manifests and initial source files into `/workspace`.\n3. Runs `flutter pub get` so dependencies are pre-fetched.\n4. Executes `init-baseline` to snapshot the clean repository state. This allows the evaluation harness to measure the agent's work as a precise Git diff against the starting baseline."
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "tests",
+        "label": "tests/",
+        "subtitle": "Multi-dimensional evaluation harness hidden from the agent",
+        "badge": "hidden from agent",
+        "badge_color": "warning",
+        "body": "The automated verification harness used to grade the agent's performance.\n\nThis entire directory is hidden from the agent during task execution. It is mounted into the evaluation container only when the grading phase starts.\n\nThe harness evaluates the agent's output across three weighted dimensions:\n\nOutcome: Functional correctness, test pass rates, and layout fixes.\nQuality: Static analysis, formatting, and code craftsmanship.\nDX: Developer experience and tool interaction efficiency.",
+        "children": [
+          {
+            "type": "file",
+            "id": "graders-dart",
+            "label": "graders.dart",
+            "subtitle": "Outcome, quality, and craftsmanship scoring rules via eval_scoring",
+            "body": "Defines the multi-dimensional scoring pipeline using a separate scoring package.",
+            "code": {
+              "lang": "dart",
+              "text": "// Heavily edited\nAggregateGrader grader(context) =>\n    AggregateGrader.result(\n      outcome: _outcomeGraders,\n      quality: _qualityGraders,\n      dx: _dxGraders,\n    );"
+            }
+          },
+          {
+            "type": "file",
+            "id": "test-sh",
+            "label": "test.sh",
+            "subtitle": "Verification entry point running the eval_scoring suite",
+            "body": "The test harness entrypoint script executed inside the grading container.",
+            "code": {
+              "lang": "bash",
+              "text": "#!/bin/bash\neval_scoring run [tasks]"
+            }
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "solution",
+        "label": "solution/",
+        "subtitle": "Oracle reference solution used to validate the eval task",
+        "body": "Contains the ground truth reference implementation maintained by the benchmark authors.\n\nBefore a task is added to the benchmark suite, the reference solution is executed through the grading harness to confirm that it achieves a full `1.0` reward. This ensures the task is solvable, unambiguous, and calibrated correctly.",
+        "children": [
+          {
+            "type": "file",
+            "id": "solve-sh",
+            "label": "solve.sh",
+            "subtitle": "Reference script fixing layout bugs and adding layout tests",
+            "body": "The reference shell script that applies the canonical fix and generates comprehensive tests. Not safe to share publicly."
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "id": "instruction",
+        "label": "instruction.md",
+        "subtitle": "The prompt the agent receives",
+        "badge": "input",
+        "badge_color": "tip",
+        "is_default_page": true,
+        "body": "The instruction is the task prompt provided to the agent. It mimics real-world workflows from developers, and is written in a way that real developers interact with agents.\n\nDesign principles:\n\nPrompts state symptoms and expected outcomes without naming exact remedy widgets.\nPrompts require the agent to write regression tests, measuring both implementation skills and testing rigor.",
+        "code": {
+          "lang": "markdown",
+          "text": "We currently keep receiving `RenderFlex overflowed` errors both horizontally and vertically. Implement the correct widgets to resolve these layout issues.\n\nWrite widget tests in\n`test/main_test.dart` that verifies the changes."
+        }
+      },
+      {
+        "type": "file",
+        "id": "task-toml",
+        "label": "task.toml",
+        "subtitle": "Task definition, difficulty notes, and timeouts",
+        "body": "The task configuration file specifies execution bounds, metadata, and target artifacts evaluated during grading.\n\nKey sections:\n\n`artifacts`: Lists files that must be present in the workspace after the run.\n`task` definition: Task-related data, like name, author and tags.\ninfra and agent configurations, such as timeout limits and retries."
+      }
+    ]
+  },
+  "grader_tiers": {
+    "rows": [
+      {
+        "label": "Code-based",
+        "detail": "Compilers, test runners, `dart analyze`, DCM, structural checkers",
+        "description": "Deterministic, unambiguous source of truth for syntax, compilation, and functional test assertions."
+      },
+      {
+        "label": "LLM judge (BINEVAL)",
+        "detail": "Frontier model rubric evaluation",
+        "description": "Evaluates qualitative dimensions (visual UI, idiomatic review, trajectory, recovery) using binary yes/no questions."
+      },
+      {
+        "label": "Human audit",
+        "detail": "Flutter engineer manual review",
+        "description": "Ground truth calibration, failure root-cause analysis, and conflict resolution."
+      }
+    ]
+  },
+  "diagnostic_telemetry": {
+    "rows": [
+      {
+        "label": "Token usage",
+        "description": "Tracks total input, cache, and output tokens consumed to measure efficiency deltas and verify token reductions from skill optimizations."
+      },
+      {
+        "label": "Expected tool calls",
+        "description": "Compares actual tool invocations against expected tools. If an agent succeeds without using an expected tool, it is not penalized; this telemetry helps evaluate whether the tool is necessary for that user journey."
+      }
+    ]
+  },
+  "root_cause_audits": {
+    "items": [
+      {
+        "label": "Reasoning trace review",
+        "detail": "Inspect the agent's internal thoughts to identify where misunderstandings of Dart/Flutter APIs occurred."
+      },
+      {
+        "label": "Plan adherence audit",
+        "detail": "Check whether the agent derailed due to ambiguous task prompts or missing context."
+      },
+      {
+        "label": "Harness diagnostics",
+        "detail": "Audit error messages returned to the agent during failed compile/test steps to see why recovery failed."
+      }
+    ]
+  },
+  "transparency": {
+    "harbor_example": {
+      "task": "dataset/flutter/manage-state-with-bloc",
+      "agent": "antigravity-sdk",
+      "model": "google/gemini-3.5-flash",
+      "mcp": "dart"
+    }
+  },
   "cuj_example": [
     {
       "label": "User",

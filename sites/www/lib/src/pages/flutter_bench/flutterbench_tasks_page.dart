@@ -5,9 +5,9 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../components/flutterbench/task_model_heatmap.dart';
-import '../models/content/flutterbench_content.dart';
-import '../utils/data_utils.dart';
+import '../../components/flutterbench/task_model_heatmap.dart';
+import '../../models/content/flutterbench_content.dart';
+import '../../utils/data_utils.dart';
 
 /// FlutterBench Tasks & CUJ Matrix explorer page.
 ///
@@ -56,6 +56,9 @@ class FlutterBenchTasksPage extends StatelessComponent {
             ),
             a(href: '/ai/flutterbench/methodology', classes: 'bench-nav-link', [
               .text('Methodology'),
+            ]),
+            a(href: '/ai/flutterbench/cujs', classes: 'bench-nav-link', [
+              .text('CUJs'),
             ]),
           ]),
         ]),

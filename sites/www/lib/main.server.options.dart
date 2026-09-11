@@ -10,6 +10,8 @@ import 'package:flutter_website/src/components/common/carousel.dart'
 import 'package:flutter_website/src/components/common/newsletter_form.dart'
     as _newsletter_form;
 import 'package:flutter_website/src/components/common/tabs.dart' as _tabs;
+import 'package:flutter_website/src/components/flutterbench/cuj_catalog.dart'
+    as _cuj_catalog;
 import 'package:flutter_website/src/components/flutterbench/grader_matrix.dart'
     as _grader_matrix;
 import 'package:flutter_website/src/components/flutterbench/interactive_detail_card.dart'
@@ -77,6 +79,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
     _newsletter_form.NewsletterForm:
         ClientTarget<_newsletter_form.NewsletterForm>('newsletter_form'),
     _tabs.Tabs: ClientTarget<_tabs.Tabs>('tabs', params: __tabsTabs),
+    _cuj_catalog.CujCatalog: ClientTarget<_cuj_catalog.CujCatalog>(
+      'cuj_catalog',
+      params: __cuj_catalogCujCatalog,
+    ),
     _grader_matrix.GraderMatrix: ClientTarget<_grader_matrix.GraderMatrix>(
       'grader_matrix',
       params: __grader_matrixGraderMatrix,
@@ -185,6 +191,9 @@ Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
   'header': c.header?.toId(),
   'tabs': c.tabs.map((i) => i.toMap()).toList(),
   'noSpy': c.noSpy,
+};
+Map<String, Object?> __cuj_catalogCujCatalog(_cuj_catalog.CujCatalog c) => {
+  'cujs': c.cujs,
 };
 Map<String, Object?> __grader_matrixGraderMatrix(
   _grader_matrix.GraderMatrix c,

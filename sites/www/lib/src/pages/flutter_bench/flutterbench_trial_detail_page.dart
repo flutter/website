@@ -5,9 +5,9 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../components/flutterbench/trial_detail_view.dart';
-import '../models/content/flutterbench_content.dart';
-import '../utils/data_utils.dart';
+import '../../components/flutterbench/trial_detail_view.dart';
+import '../../models/content/flutterbench_content.dart';
+import '../../utils/data_utils.dart';
 
 /// Single trial detail page showing verifier scoring, trajectory, artifacts, and logs.
 ///

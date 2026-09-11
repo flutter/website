@@ -5,9 +5,10 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../components/flutterbench/error_state_badge.dart';
-import '../models/content/flutterbench_content.dart';
-import '../utils/data_utils.dart';
+import '../../components/flutterbench/error_state_badge.dart';
+import '../../components/flutterbench/model_name_formatter.dart';
+import '../../models/content/flutterbench_content.dart';
+import '../../utils/data_utils.dart';
 
 /// Single task / CUJ detail page showing cross-model results.
 ///
@@ -86,7 +87,7 @@ class FlutterBenchTaskDetailPage extends StatelessComponent {
                     td([
                       div(classes: 'trial-model-cell', [
                         span(classes: 'model-name-bold', [
-                          .text(trial.modelShortName),
+                          .text(formatModelName(trial.modelShortName)),
                         ]),
                         span(classes: 'agent-sub', [.text(trial.agentName)]),
                       ]),

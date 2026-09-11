@@ -499,14 +499,10 @@ body.flutterbench {
   // ---------------------------------------------------------------------------
   .bench-filter-bar {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    justify-content: end;
     gap: 1.25rem;
-    padding: 1rem 1.25rem;
-    background-color: var(--site-inset-bgColor);
-    border: 1px solid var(--site-inset-borderColor);
-    border-radius: var(--ui-border-radius-sm);
-    margin-bottom: 1.25rem;
+    margin: 1.25rem 0;
 
     .dropdown {
       .filters-dropdown__button {
@@ -634,7 +630,6 @@ body.flutterbench {
     }
 
     .search-input-group {
-      margin-left: auto;
 
       .bench-search-input {
         padding: 0.4rem 0.85rem;
@@ -670,15 +665,14 @@ body.flutterbench {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
 
       thead {
         background-color: var(--site-inset-bgColor);
         border-bottom: 1px solid var(--site-inset-borderColor);
 
         tr th {
-          padding: 0.85rem 1rem;
-          font-size: 0.8rem;
+          padding: 0.2rem;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.05em;
@@ -694,7 +688,7 @@ body.flutterbench {
           }
 
           .sort-indicator {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             margin-left: 0.25rem;
             &.active {
               color: var(--blue-6);
@@ -757,7 +751,7 @@ body.flutterbench {
   .score-pill {
     display: inline-block;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.7rem;
     font-variant-numeric: tabular-nums;
   }
 
@@ -815,7 +809,7 @@ body.flutterbench {
 
     .reward-main-score {
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 0.7rem;
     }
 
     .reward-range {
@@ -1815,6 +1809,122 @@ body.flutterbench {
           color: var(--site-base-fgColor-alt);
         }
       }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // CUJ Catalog (CUJs page)
+  // ---------------------------------------------------------------------------
+  .cujs-content {
+    .cuj-result-count {
+      font-size: 0.8rem;
+      color: var(--site-base-fgColor-alt);
+      white-space: nowrap;
+    }
+  }
+
+  .empty-table-message {
+    display: block;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .persona-tag {
+    display: inline-block;
+    font-size: $font-size-xs;
+    font-weight: 600;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: var(--site-radius, $spacing-xs);
+    white-space: nowrap;
+
+    &.color-blue {
+      background: rgba($color-functional, 0.12);
+      color: $color-functional;
+    }
+
+    &.color-purple {
+      background: rgba($color-llm, 0.12);
+      color: $color-llm;
+    }
+
+    &.color-teal {
+      background: rgba(#0d9488, 0.12);
+      color: #0d9488;
+    }
+
+    &.color-magenta {
+      background: rgba(#db2777, 0.12);
+      color: #db2777;
+    }
+
+    &.color-amber {
+      background: rgba($color-dx, 0.12);
+      color: $color-dx;
+    }
+
+    &.color-grey {
+      background: rgba($color-grey, 0.12);
+      color: $color-grey;
+    }
+  }
+
+  .cuj-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cuj-card {
+    background-color: var(--site-base-bgColor);
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    overflow: hidden;
+
+    .cuj-card-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+
+      &:hover {
+        background-color: var(--site-inset-bgColor);
+      }
+
+      .cuj-goal {
+        flex: 1;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .cuj-task-count {
+        font-size: 0.8rem;
+        color: var(--site-base-fgColor-alt);
+        white-space: nowrap;
+      }
+    }
+
+    .cuj-task-list {
+      margin: 0;
+      padding: 0 1.25rem 1.25rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: var(--site-base-fgColor-alt);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    &.expanded .cuj-card-header {
+      border-bottom: 1px solid var(--site-inset-borderColor);
     }
   }
 

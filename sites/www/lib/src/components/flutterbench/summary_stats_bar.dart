@@ -7,6 +7,7 @@ import 'package:jaspr/jaspr.dart';
 
 import '../../models/content/flutterbench_content.dart';
 import 'error_state_badge.dart';
+import 'model_name_formatter.dart';
 
 /// Row of summary metric cards displayed above the fold on the leaderboard.
 class SummaryStatsBar extends StatelessComponent {
@@ -31,7 +32,7 @@ class SummaryStatsBar extends StatelessComponent {
             span(classes: 'stat-badge badge-blue', [.text('Leader')]),
           ]),
           div(classes: 'stat-value', [
-            .text(job.topModelName),
+            .text(formatModelName(job.topModelName)),
           ]),
           div(classes: 'stat-meta', [
             span(classes: 'meta-highlight', [

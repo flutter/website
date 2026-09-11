@@ -12,6 +12,8 @@ import 'package:flutter_website/src/components/common/newsletter_form.dart'
     deferred as _newsletter_form;
 import 'package:flutter_website/src/components/common/tabs.dart'
     deferred as _tabs;
+import 'package:flutter_website/src/components/flutterbench/cuj_catalog.dart'
+    deferred as _cuj_catalog;
 import 'package:flutter_website/src/components/flutterbench/grader_matrix.dart'
     deferred as _grader_matrix;
 import 'package:flutter_website/src/components/flutterbench/interactive_detail_card.dart'
@@ -105,6 +107,14 @@ ClientOptions get defaultClientOptions => ClientOptions(
         noSpy: p['noSpy'] as bool,
       ),
       loader: _tabs.loadLibrary,
+    ),
+    'cuj_catalog': ClientLoader(
+      (p) => _cuj_catalog.CujCatalog(
+        cujs: (p['cujs'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+      ),
+      loader: _cuj_catalog.loadLibrary,
     ),
     'grader_matrix': ClientLoader(
       (p) => _grader_matrix.GraderMatrix(

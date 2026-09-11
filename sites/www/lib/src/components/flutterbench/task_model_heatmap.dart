@@ -7,6 +7,7 @@ import 'package:jaspr/jaspr.dart';
 
 import '../../models/content/flutterbench_content.dart';
 import 'error_state_badge.dart';
+import 'model_name_formatter.dart';
 
 /// Heatmap matrix component mapping Tasks (rows) vs Models/Configurations (columns).
 ///
@@ -37,7 +38,7 @@ class TaskModelHeatmap extends StatelessComponent {
                 th(classes: 'col-model-header', [
                   div(classes: 'model-header-content', [
                     span(classes: 'model-name-title', [
-                      .text(eval.modelShortName),
+                      .text(formatModelName(eval.modelShortName)),
                     ]),
                     span(classes: 'agent-tag', [.text(eval.agentName)]),
                     if (eval.hasDartTooling)
@@ -77,7 +78,10 @@ class TaskModelHeatmap extends StatelessComponent {
           for (final eval in evals)
             div(classes: 'model-summary-card', [
               div(classes: 'card-header', [
-                h4(classes: 'model-title', [.text(eval.modelShortName)]),
+                h4(
+                  classes: 'model-title',
+                  [.text(formatModelName(eval.modelShortName))],
+                ),
                 span(classes: 'agent-subtitle', [.text(eval.agentName)]),
               ]),
               div(classes: 'card-body', [
@@ -182,7 +186,7 @@ class TaskModelHeatmap extends StatelessComponent {
       classes: 'heatmap-cell cell-scored $colorClass',
       attributes: {
         'title':
-            'Reward: ${score.toStringAsFixed(2)} for ${task.displayName} (${eval.modelShortName})',
+            'Reward: ${score.toStringAsFixed(2)} for ${task.displayName} (${formatModelName(eval.modelShortName)})',
       },
       [
         a(

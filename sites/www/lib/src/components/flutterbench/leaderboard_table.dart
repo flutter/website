@@ -9,6 +9,7 @@ import 'package:universal_web/web.dart' as web;
 
 import '../common/filters.dart';
 import 'error_state_badge.dart';
+import 'model_name_formatter.dart';
 
 enum LeaderboardSortColumn {
   model,
@@ -370,10 +371,11 @@ class _LeaderboardTableState extends State<LeaderboardTable> {
           div(classes: 'model-info-cell', [
             div(classes: 'model-title-row', [
               span(classes: 'rank-pill', [.text('#$rank')]),
-              span(classes: 'model-name-text', [.text(modelShort)]),
-              span(classes: 'provider-tag', [.text(provider)]),
+              span(
+                classes: 'model-name-text',
+                [.text(formatModelName(modelShort))],
+              ),
             ]),
-            div(classes: 'agent-subtext', [.text('Agent: $agentName')]),
           ]),
         ]),
         td(classes: 'col-outcome', [

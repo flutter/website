@@ -7,6 +7,7 @@ import 'package:jaspr/jaspr.dart';
 
 import '../../models/content/flutterbench_content.dart';
 import 'error_state_badge.dart';
+import 'model_name_formatter.dart';
 
 /// Comprehensive detail view for a single FlutterBench trial.
 class TrialDetailView extends StatelessComponent {
@@ -107,7 +108,10 @@ class TrialDetailView extends StatelessComponent {
       div(classes: 'trial-meta-grid', [
         div(classes: 'meta-col', [
           const span(classes: 'meta-label', [.text('Model')]),
-          span(classes: 'meta-val bold', [.text(trial.modelShortName)]),
+          span(
+            classes: 'meta-val bold',
+            [.text(formatModelName(trial.modelShortName))],
+          ),
           span(classes: 'meta-sub', [.text(trial.provider)]),
         ]),
         div(classes: 'meta-col', [

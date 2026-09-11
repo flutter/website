@@ -76,4 +76,65 @@ void main() {
       expect(passedTrial.durations, isNotEmpty);
     });
   });
+
+  group('FlutterBenchMethodologyData.fromJson', () {
+    test('decodes production methodology.json file successfully', () {
+      final file = File('content/data/flutterbench/methodology.json');
+      expect(file.existsSync(), isTrue);
+
+      final json = jsonDecode(file.readAsStringSync()) as Map<String, Object?>;
+      final data = FlutterBenchMethodologyData.fromJson(json);
+
+      expect(data.overview.leadText, isNotEmpty);
+      expect(data.overview.rows, isNotEmpty);
+      expect(data.overview.rows.first.anchor, isNotEmpty);
+
+      expect(data.taskAnatomy.introText, isNotEmpty);
+      expect(data.taskAnatomy.rootId, isNotEmpty);
+      expect(data.taskAnatomy.tree, isNotEmpty);
+
+      final envNode = data.taskAnatomy.tree.firstWhere(
+        (n) => n.id == 'environment',
+      );
+      expect(envNode.type, 'folder');
+      expect(envNode.children, isNotEmpty);
+
+      final analysisOptionsNode = envNode.children.firstWhere(
+        (n) => n.id == 'analysis-options',
+      );
+      expect(analysisOptionsNode.code, isNotNull);
+      expect(analysisOptionsNode.code!.lang, 'yaml');
+
+      expect(data.graderTiers.rows, isNotEmpty);
+      expect(data.diagnosticTelemetry.rows, isNotEmpty);
+      expect(data.rootCauseAudits.items, isNotEmpty);
+
+      expect(data.transparency.harborExample.task, isNotEmpty);
+      expect(data.transparency.harborExample.agent, isNotEmpty);
+      expect(data.transparency.harborExample.model, isNotEmpty);
+      expect(data.transparency.harborExample.mcp, isNotEmpty);
+
+      expect(data.cujExample, isNotEmpty);
+      expect(data.taskSpecifications, isNotEmpty);
+      expect(data.dimensions, isNotEmpty);
+    });
+  });
+
+  group('FlutterBenchCujsData.fromJson', () {
+    test('decodes production cujs.json file successfully', () {
+      final file = File('content/data/flutterbench/cujs.json');
+      expect(file.existsSync(), isTrue);
+
+      final json = jsonDecode(file.readAsStringSync()) as Map<String, Object?>;
+      final data = FlutterBenchCujsData.fromJson(json);
+
+      expect(data.cujs, isNotEmpty);
+
+      final first = data.cujs.first;
+      expect(first.goal, isNotEmpty);
+      expect(first.persona, isNotEmpty);
+      expect(first.tasks, isNotEmpty);
+      expect(first.tasks.first.task, isNotEmpty);
+    });
+  });
 }
