@@ -36,6 +36,7 @@ class Drawer extends StatefulComponent {
     required this.onClose,
     required this.title,
     this.subtitle,
+    this.titleVisible = true,
     this.side = DrawerSide.end,
     this.classes,
     super.key,
@@ -65,6 +66,12 @@ class Drawer extends StatefulComponent {
 
   /// Optional supporting text shown beneath the [title].
   final String? subtitle;
+
+  /// Whether to render [title] and [subtitle] in the header.
+  ///
+  /// Set this to `false` when [children] already provide a heading. The
+  /// [title] still names the dialog for screen readers.
+  final bool titleVisible;
 
   /// The viewport edge the drawer slides in from.
   final DrawerSide side;
@@ -216,32 +223,42 @@ class _DrawerState extends State<Drawer> {
           attributes: {
             'role': 'dialog',
             'aria-modal': 'true',
-            'aria-labelledby': _titleId,
+            if (component.titleVisible)
+              'aria-labelledby': _titleId
+            else
+              'aria-label': component.title,
             'tabindex': '-1',
             // Keeps the offscreen drawer out of the tab order
             // and hidden from assistive technology.
             if (!isOpen) 'inert': '',
           },
           [
-            div(classes: 'drawer__header', [
-              div(classes: 'drawer__heading-group', [
-                h2(id: _titleId, classes: 'drawer__title', [
-                  .text(component.title),
-                ]),
-                if (component.subtitle case final subtitle?)
-                  p(classes: 'drawer__subtitle', [.text(subtitle)]),
-              ]),
-              button(
-                id: _closeButtonId,
-                classes: 'drawer__close',
-                attributes: const {
-                  'type': 'button',
-                  'aria-label': 'Close panel',
-                },
-                onClick: component.onClose,
-                const [Icon(symbol: 'close')],
-              ),
-            ]),
+            div(
+              classes: [
+                'drawer__header',
+                if (!component.titleVisible) 'drawer__header--bare',
+              ].join(' '),
+              [
+                if (component.titleVisible)
+                  div(classes: 'drawer__heading-group', [
+                    h2(id: _titleId, classes: 'drawer__title', [
+                      .text(component.title),
+                    ]),
+                    if (component.subtitle case final subtitle?)
+                      p(classes: 'drawer__subtitle', [.text(subtitle)]),
+                  ]),
+                button(
+                  id: _closeButtonId,
+                  classes: 'drawer__close',
+                  attributes: const {
+                    'type': 'button',
+                    'aria-label': 'Close panel',
+                  },
+                  onClick: component.onClose,
+                  const [Icon(symbol: 'close')],
+                ),
+              ],
+            ),
             div(classes: 'drawer__body', component.children),
           ],
         ),

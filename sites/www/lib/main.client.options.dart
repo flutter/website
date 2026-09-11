@@ -20,6 +20,8 @@ import 'package:flutter_website/src/components/flutterbench/interactive_detail_c
     deferred as _interactive_detail_card;
 import 'package:flutter_website/src/components/flutterbench/leaderboard_table.dart'
     deferred as _leaderboard_table;
+import 'package:flutter_website/src/components/flutterbench/models_explorer.dart'
+    deferred as _models_explorer;
 import 'package:flutter_website/src/components/flutterbench/task_specifications.dart'
     deferred as _task_specifications;
 import 'package:flutter_website/src/components/layout/header.dart'
@@ -145,8 +147,22 @@ ClientOptions get defaultClientOptions => ClientOptions(
         evals: (p['evals'] as List<Object?>)
             .map((i) => (i as Map<String, Object?>))
             .toList(),
+        benchmarks: (p['benchmarks'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
       ),
       loader: _leaderboard_table.loadLibrary,
+    ),
+    'models_explorer': ClientLoader(
+      (p) => _models_explorer.ModelsExplorer(
+        evals: (p['evals'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+        benchmarks: (p['benchmarks'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+      ),
+      loader: _models_explorer.loadLibrary,
     ),
     'task_specifications': ClientLoader(
       (p) => _task_specifications.TaskSpecifications(

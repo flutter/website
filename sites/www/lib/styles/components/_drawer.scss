@@ -5,7 +5,7 @@
 // both the enter and exit transitions can run.
 
 .drawer {
-  --drawer-width: 34rem;
+  --drawer-width: 46rem;
   --drawer-transition-duration: 250ms;
 
   position: fixed;
@@ -69,6 +69,14 @@
   flex: 0 0 auto;
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--site-inset-borderColor);
+
+  // When the body supplies its own heading, the header collapses to just the
+  // close button and hands its bottom edge over to the content.
+  &.drawer__header--bare {
+    justify-content: flex-end;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 }
 
 .drawer__title {

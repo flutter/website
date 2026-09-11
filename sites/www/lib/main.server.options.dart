@@ -18,6 +18,8 @@ import 'package:flutter_website/src/components/flutterbench/interactive_detail_c
     as _interactive_detail_card;
 import 'package:flutter_website/src/components/flutterbench/leaderboard_table.dart'
     as _leaderboard_table;
+import 'package:flutter_website/src/components/flutterbench/models_explorer.dart'
+    as _models_explorer;
 import 'package:flutter_website/src/components/flutterbench/task_specifications.dart'
     as _task_specifications;
 import 'package:flutter_website/src/components/layout/header.dart' as _header;
@@ -96,6 +98,11 @@ ServerOptions get defaultServerOptions => ServerOptions(
         ClientTarget<_leaderboard_table.LeaderboardTable>(
           'leaderboard_table',
           params: __leaderboard_tableLeaderboardTable,
+        ),
+    _models_explorer.ModelsExplorer:
+        ClientTarget<_models_explorer.ModelsExplorer>(
+          'models_explorer',
+          params: __models_explorerModelsExplorer,
         ),
     _task_specifications.TaskSpecifications:
         ClientTarget<_task_specifications.TaskSpecifications>(
@@ -213,7 +220,10 @@ Map<String, Object?> __interactive_detail_cardInteractiveDetailCard(
 };
 Map<String, Object?> __leaderboard_tableLeaderboardTable(
   _leaderboard_table.LeaderboardTable c,
-) => {'evals': c.evals};
+) => {'evals': c.evals, 'benchmarks': c.benchmarks};
+Map<String, Object?> __models_explorerModelsExplorer(
+  _models_explorer.ModelsExplorer c,
+) => {'evals': c.evals, 'benchmarks': c.benchmarks};
 Map<String, Object?> __task_specificationsTaskSpecifications(
   _task_specifications.TaskSpecifications c,
 ) => {'specs': c.specs};

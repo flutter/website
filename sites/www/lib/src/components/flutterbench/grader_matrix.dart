@@ -75,16 +75,22 @@ class _GraderMatrixState extends State<GraderMatrix> {
               [
                 div(classes: 'grader-header', [
                   span(
-                    classes: 'grader-cat ${grader['category'] as String? ?? ''}',
+                    classes:
+                        'grader-cat ${grader['category'] as String? ?? ''}',
                     [.text(grader['category_label'] as String? ?? '')],
                   ),
                   span(
-                    classes: 'badge grader-badge badge-${grader['type'] as String? ?? ''}',
+                    classes:
+                        'badge grader-badge badge-${grader['type'] as String? ?? ''}',
                     [.text(grader['type_label'] as String? ?? '')],
                   ),
                 ]),
                 h4([.text(grader['name'] as String? ?? '')]),
-                p([renderDescriptionWithCode(grader['description'] as String? ?? '')]),
+                p([
+                  renderDescriptionWithCode(
+                    grader['description'] as String? ?? '',
+                  ),
+                ]),
               ],
             ),
         ]),

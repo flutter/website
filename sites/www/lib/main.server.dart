@@ -37,6 +37,7 @@ import 'src/pages/flip_page.dart';
 import 'src/pages/flutter_bench/flutterbench_cujs_page.dart';
 import 'src/pages/flutter_bench/flutterbench_leaderboard_page.dart';
 import 'src/pages/flutter_bench/flutterbench_methodology_page.dart';
+import 'src/pages/flutter_bench/flutterbench_models_page.dart';
 import 'src/pages/flutter_bench/flutterbench_task_detail_page.dart';
 import 'src/pages/flutter_bench/flutterbench_tasks_page.dart';
 import 'src/pages/flutter_bench/flutterbench_trial_detail_page.dart';
@@ -137,6 +138,10 @@ void main() {
           defineComponent(
             'FlutterBenchLeaderboardPage',
             const FlutterBenchLeaderboardPage(),
+          ),
+          defineComponent(
+            'FlutterBenchModelsPage',
+            const FlutterBenchModelsPage(),
           ),
           defineComponent(
             'FlutterBenchTasksPage',

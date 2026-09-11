@@ -100,7 +100,9 @@ class ReliabilityCards extends StatelessComponent {
                 ],
                 .text(card['tag'] as String? ?? ''),
               ]),
-              span(classes: 'math-pill', [.text(card['math_pill'] as String? ?? '')]),
+              span(classes: 'math-pill', [
+                .text(card['math_pill'] as String? ?? ''),
+              ]),
             ]),
             h4([.text(card['title'] as String? ?? '')]),
             if (card['description_parts'] case final List<Object?> parts)
@@ -137,7 +139,8 @@ class CujDiagram extends StatelessComponent {
         div(classes: 'cuj-diagram-section', [
           div(classes: 'section-sidebar', [
             div(
-              classes: 'section-icon variant-${section['variant'] as String? ?? 'blue'}',
+              classes:
+                  'section-icon variant-${section['variant'] as String? ?? 'blue'}',
               [MaterialIcon(section['icon'] as String? ?? 'info')],
             ),
             span(
@@ -148,7 +151,8 @@ class CujDiagram extends StatelessComponent {
           div(classes: 'section-items', [
             for (final item in (section['items'] as List<Object?>? ?? const []))
               div(
-                classes: 'cuj-pill pill-${section['variant'] as String? ?? 'blue'}',
+                classes:
+                    'cuj-pill pill-${section['variant'] as String? ?? 'blue'}',
                 [.text(item.toString())],
               ),
           ]),

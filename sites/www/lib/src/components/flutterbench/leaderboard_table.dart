@@ -9,7 +9,10 @@ import 'package:universal_web/web.dart' as web;
 
 import '../common/drawer.dart';
 import '../common/filters.dart';
+import 'bench_formatters.dart';
+import 'benchmark_scores.dart';
 import 'error_state_badge.dart';
+import 'model_detail_view.dart';
 import 'model_name_formatter.dart';
 
 enum LeaderboardSortColumn {
@@ -27,9 +30,16 @@ enum LeaderboardSortColumn {
 /// Hydrated on the client via Jaspr's `@client` boundary.
 @client
 class LeaderboardTable extends StatefulComponent {
-  const LeaderboardTable({required this.evals, super.key});
+  const LeaderboardTable({
+    required this.evals,
+    this.benchmarks = const [],
+    super.key,
+  });
 
   final List<Map<String, Object?>> evals;
+
+  /// Per-task results for every eval, shown in the details drawer.
+  final List<Map<String, Object?>> benchmarks;
 
   @override
   State<LeaderboardTable> createState() => _LeaderboardTableState();
@@ -47,6 +57,10 @@ class _LeaderboardTableState extends State<LeaderboardTable> {
   /// rendering its contents while it slides closed.
   Map<String, Object?>? _drawerEval;
   bool _isDrawerOpen = false;
+
+  late final List<BenchmarkRow> _benchmarks = benchmarkRowsFromMaps(
+    component.benchmarks,
+  );
 
   static const String _providerFilterId = 'providers';
   static const String _toolingFilterId = 'toolings';
@@ -349,15 +363,18 @@ class _LeaderboardTableState extends State<LeaderboardTable> {
       isOpen: _isDrawerOpen,
       onClose: _closeDrawer,
       classes: 'bench-details-drawer',
+      titleVisible: false,
       title: item == null
           ? 'Model details'
-          : formatModelName(item['model_short_name'] as String),
-      subtitle: item == null
-          ? null
-          : '${item['agent_name']} · '
-                '${item['provider'] as String? ?? 'Community'}',
+          : '${formatModelName(item['model_short_name'] as String)} details',
       [
-        if (item != null) ..._buildDrawerContent(item),
+        if (item != null)
+          ModelDetailView(
+            eval: item,
+            evals: component.evals,
+            benchmarks: _benchmarks,
+            modelsPageLink: '/ai/flutterbench/models?model=${item['eval_key']}',
+          ),
       ],
     );
   }
@@ -437,7 +454,7 @@ class _LeaderboardTableState extends State<LeaderboardTable> {
           _buildScoreBadge(dxScore, isErrored),
         ]),
         td(classes: 'col-tokens', [
-          .text(_formatTokens(totalTok)),
+          .text(formatTokens(totalTok)),
         ]),
         td(classes: 'col-cost', [
           .text(cost > 0 ? '\$${cost.toStringAsFixed(3)}' : '—'),
@@ -484,156 +501,5 @@ class _LeaderboardTableState extends State<LeaderboardTable> {
       classes: 'score-pill $scoreClass',
       [.text(score.toStringAsFixed(2))],
     );
-  }
-
-  List<Component> _buildDrawerContent(Map<String, Object?> item) {
-    final bestCujs =
-        (item['best_cujs'] as List<Object?>?)
-            ?.whereType<Map<String, Object?>>()
-            .toList() ??
-        [];
-    final worstCujs =
-        (item['worst_cujs'] as List<Object?>?)
-            ?.whereType<Map<String, Object?>>()
-            .toList() ??
-        [];
-    final evalKey = item['eval_key'] as String;
-
-    final nErrors = (item['n_errors'] as num?)?.toInt() ?? 0;
-    final nTrials = (item['n_trials'] as num?)?.toInt() ?? 0;
-    final isErrored = nErrors > 0 && nTrials == 0;
-
-    final cost = (item['cost_usd'] as num?)?.toDouble() ?? 0.0;
-    final totalTok =
-        ((item['input_tokens'] as num?)?.toInt() ?? 0) +
-        ((item['output_tokens'] as num?)?.toInt() ?? 0);
-
-    return [
-      div(classes: 'drawer-metrics-grid', [
-        _buildDrawerMetric(
-          'Outcome',
-          _buildScoreBadge(
-            (item['outcome_score'] as num?)?.toDouble(),
-            isErrored,
-          ),
-        ),
-        _buildDrawerMetric(
-          'Quality',
-          _buildScoreBadge(
-            (item['quality_score'] as num?)?.toDouble(),
-            isErrored,
-          ),
-        ),
-        _buildDrawerMetric(
-          'DX',
-          _buildScoreBadge((item['dx_score'] as num?)?.toDouble(), isErrored),
-        ),
-        _buildDrawerMetric(
-          'Overall',
-          _buildScoreBadge(
-            (item['mean_reward'] as num?)?.toDouble(),
-            isErrored,
-          ),
-        ),
-        _buildDrawerMetric('Tokens', .text(_formatTokens(totalTok))),
-        _buildDrawerMetric(
-          'Cost',
-          .text(cost > 0 ? '\$${cost.toStringAsFixed(3)}' : '—'),
-        ),
-      ]),
-      div(classes: 'cuj-summary-columns', [
-        div(classes: 'cuj-column best-cujs', [
-          const h3(classes: 'cuj-col-heading text-success', [
-            .text('Top Performing CUJs'),
-          ]),
-          if (bestCujs.isEmpty)
-            const p(classes: 'text-muted', [
-              .text('No high-scoring tasks recorded yet.'),
-            ])
-          else
-            ul(classes: 'cuj-list', [
-              for (final cuj in bestCujs)
-                li([
-                  a(
-                    href: '/ai/flutterbench/tasks/${cuj['task_slug']}',
-                    classes: 'cuj-link',
-                    [
-                      .text(
-                        cuj['task_name'] as String? ??
-                            cuj['task_slug'] as String,
-                      ),
-                    ],
-                  ),
-                  span(classes: 'score-pill score-high', [
-                    .text(
-                      ((cuj['reward'] as num?)?.toDouble() ?? 0.0)
-                          .toStringAsFixed(2),
-                    ),
-                  ]),
-                ]),
-            ]),
-        ]),
-        div(classes: 'cuj-column worst-cujs', [
-          const h3(classes: 'cuj-col-heading text-danger', [
-            .text('Challenging CUJs'),
-          ]),
-          if (worstCujs.isEmpty)
-            const p(classes: 'text-muted', [
-              .text('No failure tasks recorded.'),
-            ])
-          else
-            ul(classes: 'cuj-list', [
-              for (final cuj in worstCujs)
-                li([
-                  a(
-                    href: '/ai/flutterbench/tasks/${cuj['task_slug']}',
-                    classes: 'cuj-link',
-                    [
-                      .text(
-                        cuj['task_name'] as String? ??
-                            cuj['task_slug'] as String,
-                      ),
-                    ],
-                  ),
-                  if (cuj['status'] == 'error')
-                    const ErrorStateBadge(
-                      exceptionType: 'Errored',
-                      compact: true,
-                    )
-                  else
-                    span(classes: 'score-pill score-low', [
-                      .text(
-                        ((cuj['reward'] as num?)?.toDouble() ?? 0.0)
-                            .toStringAsFixed(2),
-                      ),
-                    ]),
-                ]),
-            ]),
-        ]),
-      ]),
-      div(classes: 'drawer-footer', [
-        a(
-          href: '/ai/flutterbench/tasks?agent=$evalKey',
-          classes: 'btn quiet',
-          const [
-            .text('Explore full task matrix for this configuration →'),
-          ],
-        ),
-      ]),
-    ];
-  }
-
-  Component _buildDrawerMetric(String label, Component value) {
-    return div(classes: 'drawer-metric', [
-      span(classes: 'drawer-metric-label', [.text(label)]),
-      span(classes: 'drawer-metric-value', [value]),
-    ]);
-  }
-
-  String _formatTokens(int count) {
-    if (count <= 0) return '—';
-    if (count >= 1000000) return '${(count / 1000000).toStringAsFixed(1)}M';
-    if (count >= 1000) return '${(count / 1000).toStringAsFixed(0)}k';
-    return count.toString();
   }
 }

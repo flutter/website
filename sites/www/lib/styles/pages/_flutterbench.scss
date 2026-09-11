@@ -597,55 +597,55 @@ body.flutterbench {
       }
     }
 
-    .bench-segmented-control {
-      display: inline-flex;
-      border: 1px solid var(--site-inset-borderColor);
-      border-radius: 6px;
-      overflow: hidden;
-      background-color: var(--site-base-bgColor);
+  }
 
-      .segment-btn {
-        background: none;
-        border: none;
-        padding: 0.35rem 0.75rem;
-        font-size: 0.85rem;
-        font-weight: 500;
-        color: var(--site-base-fgColor);
-        cursor: pointer;
-        transition: background-color 0.15s ease;
+  // Reused by the leaderboard filter bar and the model detail view's
+  // accuracy/cost/latency switcher, so it isn't scoped to either one.
+  .bench-segmented-control {
+    display: inline-flex;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: var(--site-base-bgColor);
 
-        &:not(:last-child) {
-          border-right: 1px solid var(--site-inset-borderColor);
-        }
+    .segment-btn {
+      background: none;
+      border: none;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--site-base-fgColor);
+      cursor: pointer;
+      transition: background-color 0.15s ease;
 
-        &:hover {
-          background-color: var(--site-inset-bgColor);
-        }
+      &:not(:last-child) {
+        border-right: 1px solid var(--site-inset-borderColor);
+      }
 
-        &.active {
-          background-color: var(--blue-6);
-          color: #ffffff;
-        }
+      &:hover {
+        background-color: var(--site-inset-bgColor);
+      }
+
+      &.active {
+        background-color: var(--blue-6);
+        color: #ffffff;
       }
     }
+  }
 
-    .search-input-group {
+  .bench-search-input {
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background-color: var(--site-base-bgColor);
+    color: var(--site-base-fgColor);
+    outline: none;
+    width: 180px;
 
-      .bench-search-input {
-        padding: 0.4rem 0.85rem;
-        border: 1px solid var(--site-inset-borderColor);
-        border-radius: 6px;
-        font-size: 0.85rem;
-        background-color: var(--site-base-bgColor);
-        color: var(--site-base-fgColor);
-        outline: none;
-        width: 180px;
-
-        &:focus {
-          border-color: var(--blue-5);
-          box-shadow: 0 0 0 2px rgba(4, 104, 215, 0.2);
-        }
-      }
+    &:focus {
+      border-color: var(--blue-5);
+      box-shadow: 0 0 0 2px rgba(4, 104, 215, 0.2);
     }
   }
 
@@ -754,111 +754,514 @@ body.flutterbench {
   }
 
   // ---------------------------------------------------------------------------
-  // Leaderboard details drawer
+  // Model detail profile
   //
-  // The drawer shell itself lives in `styles/components/_drawer.scss`.
+  // Shared by the leaderboard's details drawer and the models explorer, so
+  // these are scoped to the profile itself rather than to either host.
+  // The drawer shell lives in `styles/components/_drawer.scss`.
   // ---------------------------------------------------------------------------
-  .bench-details-drawer {
-    .drawer-metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: $spacing-sm;
-      margin-bottom: $spacing-lg;
+  .model-detail {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  .model-detail__actions {
+    display: flex;
+  }
+
+  .model-detail__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-bottom: $spacing-md;
+    border-bottom: 1px solid var(--site-inset-borderColor);
+  }
+
+  .model-detail__eyebrow {
+    margin: 0;
+    font-size: $font-size-xs;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .model-detail__title {
+    margin: 0;
+    font-size: var(--font-size-heading-4);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .model-detail__release {
+    margin: 0;
+    font-size: $font-size-xs;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--site-base-fgColor-alt);
+    // Eval keys are long and unbroken, so let them wrap inside the drawer.
+    overflow-wrap: anywhere;
+  }
+
+  // Specifications
+  .model-spec-block {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .model-spec-grid {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    margin: 0;
+  }
+
+  .model-spec-grid__label,
+  .model-spec-grid__value {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--site-inset-borderColor);
+  }
+
+  .model-spec-grid__label {
+    font-size: $font-size-xs;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .model-spec-grid__value {
+    // Indents from the label rather than using a column gap, so the row's
+    // bottom rule stays unbroken.
+    padding-left: $spacing-lg;
+    margin: 0;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+
+  // The last pair closes the list, so it doesn't need a separator.
+  .model-spec-grid__label:nth-last-child(2),
+  .model-spec-grid__value:last-child {
+    border-bottom: none;
+  }
+
+  // Headline statistics
+  .model-stat-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: $spacing-sm;
+  }
+
+  .model-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: $spacing-md;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    background-color: var(--site-inset-bgColor);
+    box-shadow: inset 0 3px 0 var(--model-stat-accent);
+
+    &--accuracy {
+      --model-stat-accent: var(--blue-6);
     }
 
-    .drawer-metric {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-      padding: $spacing-sm;
-      border: 1px solid var(--site-inset-borderColor);
-      border-radius: var(--ui-border-radius-sm);
+    &--cost {
+      --model-stat-accent: var(--bench-warning-fg);
+    }
+
+    &--latency {
+      --model-stat-accent: var(--bench-diagnostic-fg);
+    }
+
+    // Keeps the distribution strips aligned when the cards differ in height.
+    .distribution {
+      margin-top: auto;
+      padding-top: $spacing-sm;
+    }
+  }
+
+  .model-stat-card__label {
+    font-size: $font-size-xs;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .model-stat-card__value {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+
+    // Override the compact sizing the pills use inside the leaderboard table.
+    .score-pill,
+    .bench-error-badge {
+      font-size: inherit;
+    }
+  }
+
+  .model-stat-card__detail {
+    font-size: $font-size-xs;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  // A strip of ticks, one per scored configuration, with this one marked.
+  .distribution {
+    width: 100%;
+    min-width: 6rem;
+  }
+
+  .distribution__track {
+    position: relative;
+    height: 1.1rem;
+    overflow: hidden;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: 999px;
+    background-color: var(--site-base-bgColor);
+  }
+
+  .distribution__tick,
+  .distribution__marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1px;
+  }
+
+  .distribution__tick {
+    width: 2px;
+    height: 0.5rem;
+    background-color: var(--site-base-fgColor-alt);
+    opacity: 0.3;
+  }
+
+  .distribution__marker {
+    width: 3px;
+    height: 100%;
+    background-color: var(--model-stat-accent, var(--blue-6));
+  }
+
+  // Hyperparameters
+  .model-hyperparams {
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    background-color: var(--site-base-bgColor);
+  }
+
+  .model-hyperparams__summary {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--blue-5);
+      outline-offset: -2px;
+    }
+
+    .material-symbols-rounded {
+      transition: transform $transition-normal;
+    }
+  }
+
+  .model-hyperparams[open] .model-hyperparams__summary
+    .material-symbols-rounded {
+    transform: rotate(90deg);
+  }
+
+  .model-hyperparams__body {
+    padding: 0 $spacing-md $spacing-md;
+  }
+
+  // Per-benchmark breakdown
+  .model-benchmarks {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    align-items: flex-start;
+
+    // The table still needs the full width; only the switcher shrinks to fit.
+    .bench-table-wrapper,
+    .bench-coming-soon {
+      align-self: stretch;
+    }
+  }
+
+  .model-benchmarks__hint {
+    margin: 0;
+    font-size: $font-size-xs;
+    line-height: 1.5;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .model-benchmarks__table {
+    th.col-distribution,
+    td.col-distribution {
+      width: 40%;
+      min-width: 7rem;
+    }
+
+    th.col-value,
+    td.col-value {
+      white-space: nowrap;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+
+    th.col-ranking,
+    td.col-ranking {
+      white-space: nowrap;
+      text-align: right;
+    }
+  }
+
+  .benchmark-row__link {
+    font-weight: 600;
+    color: var(--site-link-fgColor);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .benchmark-row__rank {
+    font-size: $font-size-xs;
+    font-variant-numeric: tabular-nums;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .benchmark-row__rank-value {
+    font-size: $font-size-md;
+    font-weight: 700;
+    color: var(--site-base-fgColor);
+  }
+
+  .score-bar {
+    height: 0.5rem;
+    min-width: 5rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background-color: var(--site-inset-bgColor);
+  }
+
+  .score-bar__fill {
+    height: 100%;
+    border-radius: inherit;
+    background-color: var(--blue-6);
+
+    &.score-high {
+      background-color: var(--bench-success-fg);
+    }
+
+    &.score-mid {
+      background-color: var(--bench-warning-fg);
+    }
+
+    &.score-low {
+      background-color: var(--bench-danger-fg);
+    }
+  }
+
+  // Placeholder for data FlutterBench doesn't collect yet.
+  .bench-coming-soon {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: $spacing-md;
+    border: 1px dashed var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    background-color: var(--site-inset-bgColor);
+  }
+
+  .bench-coming-soon__label {
+    font-size: $font-size-xs;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .bench-coming-soon__note {
+    font-size: $font-size-sm;
+    line-height: 1.5;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Models explorer
+  // ---------------------------------------------------------------------------
+  .models-explorer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: $spacing-xl;
+    align-items: start;
+
+    @include breakpoints.screen(lg) {
+      grid-template-columns: minmax(15rem, 20rem) minmax(0, 1fr);
+    }
+  }
+
+  .models-explorer__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    min-width: 0;
+
+    // Keeps the list reachable while the much taller detail pane scrolls.
+    @include breakpoints.screen(lg) {
+      position: sticky;
+      top: $spacing-lg;
+      max-height: calc(100vh - #{$spacing-lg} * 2);
+    }
+  }
+
+  .models-explorer__controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+
+  .models-explorer__field {
+    display: flex;
+    flex: 1 1 8rem;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .bench-search-input {
+      width: 100%;
+    }
+  }
+
+  .models-explorer__field-label {
+    font-size: $font-size-xs;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .models-explorer__select {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background-color: var(--site-base-bgColor);
+    color: var(--site-base-fgColor);
+
+    &:focus-visible {
+      outline: 2px solid var(--blue-5);
+      outline-offset: 1px;
+    }
+  }
+
+  .models-explorer__list-header {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-xs $spacing-sm 0;
+    font-size: $font-size-xs;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .models-explorer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+
+    @include custom-scrollbar;
+  }
+
+  .models-explorer__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    width: 100%;
+    padding: $spacing-sm;
+    border: 1px solid transparent;
+    border-radius: var(--ui-border-radius-sm);
+    background: none;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    &:hover {
       background-color: var(--site-inset-bgColor);
     }
 
-    .drawer-metric-label {
-      font-size: $font-size-xs;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--site-base-fgColor-alt);
+    &:focus-visible {
+      outline: 2px solid var(--blue-5);
+      outline-offset: -2px;
     }
 
-    .drawer-metric-value {
-      font-size: $font-size-md;
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-
-      // Override the compact sizing the pills use inside the table.
-      .score-pill,
-      .bench-error-badge {
-        font-size: inherit;
-      }
+    &.selected {
+      border-color: var(--blue-6);
+      background-color: rgba(4, 104, 215, 0.08);
     }
+  }
 
-    .cuj-summary-columns {
-      display: flex;
-      flex-direction: column;
-      gap: $spacing-lg;
-    }
+  .models-explorer__item-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+  }
 
-    .cuj-col-heading {
-      margin: 0 0 $spacing-sm;
-      font-size: $font-size-sm;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
+  .models-explorer__item-name {
+    font-size: $font-size-sm;
+    font-weight: 600;
+  }
 
-    .cuj-list {
-      display: flex;
-      flex-direction: column;
-      gap: $spacing-xs;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+  .models-explorer__item-meta {
+    font-size: $font-size-xs;
+    color: var(--site-base-fgColor-alt);
+  }
 
-      li {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: $spacing-md;
-        padding: $spacing-sm;
-        border-radius: var(--ui-border-radius-sm);
-        background-color: var(--site-inset-bgColor);
-      }
-    }
+  .models-explorer__item-score {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
 
-    .cuj-link {
-      font-size: $font-size-sm;
-      font-weight: 500;
-      color: var(--site-link-fgColor);
-      text-decoration: none;
+  .models-explorer__empty {
+    padding: $spacing-md $spacing-sm;
+  }
 
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  .models-explorer__detail {
+    min-width: 0;
+  }
 
-    .drawer-footer {
-      margin-top: $spacing-xl;
-      padding-top: $spacing-md;
-      border-top: 1px solid var(--site-inset-borderColor);
-    }
+  .text-success {
+    color: var(--bench-success-fg);
+  }
 
-    .text-success {
-      color: var(--bench-success-fg);
-    }
+  .text-danger {
+    color: var(--bench-danger-fg);
+  }
 
-    .text-danger {
-      color: var(--bench-danger-fg);
-    }
-
-    .text-muted {
-      margin: 0;
-      font-size: $font-size-sm;
-      color: var(--site-base-fgColor-alt);
-    }
+  .text-muted {
+    margin: 0;
+    font-size: $font-size-sm;
+    color: var(--site-base-fgColor-alt);
   }
 
   .score-pill {

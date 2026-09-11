@@ -8,6 +8,7 @@ import 'package:jaspr/jaspr.dart';
 import '../../components/flutterbench/cuj_catalog.dart';
 import '../../models/content/flutterbench_content.dart';
 import '../../utils/data_utils.dart';
+import 'flutterbench_nav.dart';
 
 /// FlutterBench critical user journey (CUJ) catalog page.
 ///
@@ -44,25 +45,7 @@ class FlutterBenchCujsPage extends StatelessComponent {
             ),
           ]),
 
-          // Sub-nav tabs
-          const nav(classes: 'bench-tab-nav', [
-            a(href: '/ai/flutterbench', classes: 'bench-nav-link', [
-              .text('Leaderboard'),
-            ]),
-            a(href: '/ai/flutterbench/tasks', classes: 'bench-nav-link', [
-              .text('Tasks & CUJs'),
-            ]),
-            a(
-              href: '/ai/flutterbench/methodology',
-              classes: 'bench-nav-link',
-              [.text('Methodology')],
-            ),
-            a(
-              href: '/ai/flutterbench/cujs',
-              classes: 'bench-nav-link active',
-              [.text('CUJs')],
-            ),
-          ]),
+          const FlutterBenchNav(current: FlutterBenchNavItem.cujs),
         ]),
       ]),
 

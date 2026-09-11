@@ -80,7 +80,8 @@ class _InteractiveDetailCardState extends State<InteractiveDetailCard> {
                 h4([.text(tab['heading'] as String? ?? '')]),
                 if (tab['badge'] case final String badge)
                   span(
-                    classes: 'panel-badge badge-${tab['variant'] as String? ?? 'blue'}',
+                    classes:
+                        'panel-badge badge-${tab['variant'] as String? ?? 'blue'}',
                     [.text(badge)],
                   ),
               ]),
@@ -94,10 +95,15 @@ class _InteractiveDetailCardState extends State<InteractiveDetailCard> {
                     if (tab['items_label'] case final String label)
                       div(classes: 'items-label actions-label', [.text(label)]),
                     ul([
-                      for (final item in itemsList.whereType<Map<String, Object?>>())
+                      for (final item
+                          in itemsList.whereType<Map<String, Object?>>())
                         li([
-                          strong([.text('${item['label'] as String? ?? ''}: ')]),
-                          renderDescriptionWithCode(item['detail'] as String? ?? ''),
+                          strong([
+                            .text('${item['label'] as String? ?? ''}: '),
+                          ]),
+                          renderDescriptionWithCode(
+                            item['detail'] as String? ?? '',
+                          ),
                         ]),
                     ]),
                   ]),

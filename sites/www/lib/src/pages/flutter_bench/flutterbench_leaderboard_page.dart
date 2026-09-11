@@ -5,9 +5,11 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
+import '../../components/flutterbench/benchmark_scores.dart';
 import '../../components/flutterbench/leaderboard_table.dart';
 import '../../models/content/flutterbench_content.dart';
 import '../../utils/data_utils.dart';
+import 'flutterbench_nav.dart';
 
 /// FlutterBench Overview & Leaderboard page component.
 ///
@@ -20,6 +22,19 @@ class FlutterBenchLeaderboardPage extends StatelessComponent {
     final job = context.decodeJsonObject(
       'data.flutterbench.job',
       FlutterBenchJobData.fromJson,
+    );
+    final tasksData = context.decodeJsonObject(
+      'data.flutterbench.tasks',
+      FlutterBenchTasksData.fromJson,
+    );
+    final trialsData = context.decodeJsonObject(
+      'data.flutterbench.trials',
+      FlutterBenchTrialsData.fromJson,
+    );
+
+    final benchmarks = buildBenchmarkRows(
+      tasks: tasksData,
+      trials: trialsData,
     );
 
     // Convert evals to serializable maps for the client-hydrated LeaderboardTable
@@ -45,21 +60,7 @@ class FlutterBenchLeaderboardPage extends StatelessComponent {
             ),
           ]),
 
-          // Sub-nav tabs
-          const nav(classes: 'bench-tab-nav', [
-            a(href: '/ai/flutterbench', classes: 'bench-nav-link active', [
-              .text('Leaderboard'),
-            ]),
-            a(href: '/ai/flutterbench/tasks', classes: 'bench-nav-link', [
-              .text('Tasks & CUJs'),
-            ]),
-            a(href: '/ai/flutterbench/methodology', classes: 'bench-nav-link', [
-              .text('Methodology'),
-            ]),
-            a(href: '/ai/flutterbench/cujs', classes: 'bench-nav-link', [
-              .text('CUJs'),
-            ]),
-          ]),
+          const FlutterBenchNav(current: FlutterBenchNavItem.leaderboard),
         ]),
       ]),
 
@@ -74,7 +75,10 @@ class FlutterBenchLeaderboardPage extends StatelessComponent {
               ),
             ]),
           ]),
-          LeaderboardTable(evals: evalsMaps),
+          LeaderboardTable(
+            evals: evalsMaps,
+            benchmarks: benchmarkRowsToMaps(benchmarks),
+          ),
         ]),
 
         // Methodology highlight card

@@ -12,6 +12,7 @@ import '../../components/flutterbench/story_chapter.dart';
 import '../../components/flutterbench/task_anatomy.dart';
 import '../../models/content/flutterbench_content.dart';
 import '../../utils/data_utils.dart';
+import 'flutterbench_nav.dart';
 
 /// Full FlutterBench Methodology page mounted at `/ai/flutterbench/methodology`.
 class FlutterBenchMethodologyPage extends StatelessComponent {
@@ -105,25 +106,7 @@ class FlutterBenchMethodologyPage extends StatelessComponent {
             ),
           ]),
 
-          // Sub-nav tabs
-          nav(classes: 'bench-tab-nav', [
-            a(href: '/ai/flutterbench', classes: 'bench-nav-link', [
-              .text('Leaderboard'),
-            ]),
-            a(href: '/ai/flutterbench/tasks', classes: 'bench-nav-link', [
-              .text('Tasks & CUJs'),
-            ]),
-            a(
-              href: '/ai/flutterbench/methodology',
-              classes: 'bench-nav-link active',
-              [
-                .text('Methodology'),
-              ],
-            ),
-            a(href: '/ai/flutterbench/cujs', classes: 'bench-nav-link', [
-              .text('CUJs'),
-            ]),
-          ]),
+          FlutterBenchNav(current: FlutterBenchNavItem.methodology),
         ]),
       ]),
 
@@ -504,7 +487,9 @@ class FlutterBenchMethodologyPage extends StatelessComponent {
             ),
           ]),
           li([
-            .text('Sharing task prompts and Critical User Journey (CUJ) lists.'),
+            .text(
+              'Sharing task prompts and Critical User Journey (CUJ) lists.',
+            ),
           ]),
           li([
             .text('Publishing regular blog posts with analysis and insights.'),
@@ -540,7 +525,7 @@ class FlutterBenchMethodologyPage extends StatelessComponent {
             'Expect updates and refinements in future blog posts and documentation.',
           ),
         ]),
-        p([
+        const p([
           .text(
             'For questions or to contribute new CUJ evaluation tasks, visit the ',
           ),

@@ -81,7 +81,9 @@ class _TaskSpecificationsState extends State<TaskSpecifications> {
                           ),
                     ]),
                     if (spec['description'] case final String desc)
-                      p(classes: 'panel-description', [renderDescriptionWithCode(desc)]),
+                      p(classes: 'panel-description', [
+                        renderDescriptionWithCode(desc),
+                      ]),
                   ]),
                 ]),
               ],
@@ -109,10 +111,18 @@ class _TaskSpecificationsState extends State<TaskSpecifications> {
                             ]),
                           ]),
                       tbody([
-                        for (final row in (tbl['rows'] as List<Object?>? ?? const []).whereType<Map<String, Object?>>())
+                        for (final row
+                            in (tbl['rows'] as List<Object?>? ?? const [])
+                                .whereType<Map<String, Object?>>())
                           tr([
-                            td([strong([.text(row['label'] as String? ?? '')])]),
-                            td([renderDescriptionWithCode(row['description'] as String? ?? '')]),
+                            td([
+                              strong([.text(row['label'] as String? ?? '')]),
+                            ]),
+                            td([
+                              renderDescriptionWithCode(
+                                row['description'] as String? ?? '',
+                              ),
+                            ]),
                           ]),
                       ]),
                     ]),
@@ -120,7 +130,9 @@ class _TaskSpecificationsState extends State<TaskSpecifications> {
                 ],
                 if (spec['footer_text'] case final String footer)
                   if (footer.isNotEmpty)
-                    p(classes: 'footer-text', [renderDescriptionWithCode(footer)]),
+                    p(classes: 'footer-text', [
+                      renderDescriptionWithCode(footer),
+                    ]),
               ],
             ),
           ]);
