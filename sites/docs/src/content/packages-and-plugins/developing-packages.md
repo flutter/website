@@ -1016,7 +1016,35 @@ For more information on `build.gradle` files, see the
 ### iOS
 
 The following example sets a dependency for
-`url_launcher` in `hello/ios/hello.podspec`:
+`url_launcher` in `hello/ios/hello/Package.swift`:
+
+```swift
+let package = Package(
+  // lines skipped
+  dependencies: [
+    .package(name: "url_launcher", path: "../url_launcher"),
+  ],
+  targets: [
+    .target(
+      name: "hello",
+      dependencies: [
+        .product(name: "url_launcher", package: "url_launcher"),
+      ],
+    ),
+  ],
+)
+```
+
+You can now `import url_launcher` and
+access the source code at `hello/ios/hello/Sources`.
+
+For additional details on Swift package manifests,
+consult [Apple's PackageDescription documentation][].
+
+#### CocoaPods (legacy)
+
+If your plugin supports CocoaPods for backward compatibility,
+set a dependency in `hello/ios/hello.podspec`:
 
 ```ruby
 Pod::Spec.new do |s|
@@ -1028,14 +1056,15 @@ You can now `#import "UrlLauncherPlugin.h"` and
 access the `UrlLauncherPlugin` class in the source code
 at `hello/ios/Classes`.
 
-For additional details on `.podspec` files, see the
-[CocoaPods Documentation][].
+For additional details on `.podspec` files,
+consult the [CocoaPods Documentation][].
 
 ### Web
 
 All web dependencies are handled by the `pubspec.yaml`
 file, like any other Dart package.
 
+[Apple's PackageDescription documentation]: {{site.apple-dev}}/documentation/packagedescription
 [bind-native]: /platform-integration/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
