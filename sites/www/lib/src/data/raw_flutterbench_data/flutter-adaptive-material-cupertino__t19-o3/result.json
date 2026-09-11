@@ -1,0 +1,66 @@
+{
+  "id": "11111111-2222-4333-8444-000000000013",
+  "task_name": "google/flutter-adaptive-material-cupertino",
+  "trial_name": "flutter-adaptive-material-cupertino__t19-o3",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-adaptive-material-cupertino__t19-o3",
+  "task_id": {
+    "path": "dataset/flutter-adaptive-material-cupertino"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-adaptive-material-cupertino"
+    },
+    "trial_name": "flutter-adaptive-material-cupertino__t19-o3",
+    "eval_key": "codex-agent__o3__adhoc",
+    "agent": {
+      "name": "codex-agent",
+      "model_name": "openai/o3",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    }
+  },
+  "agent_info": {
+    "name": "codex-agent",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "o3",
+      "provider": "openai"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 116947,
+    "n_cache_tokens": 84269,
+    "n_output_tokens": 5847,
+    "cost_usd": 0.7017
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.85
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:26:55.000000Z",
+  "finished_at": "2026-09-09T19:28:53.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:26:55.000000Z",
+    "finished_at": "2026-09-09T19:27:05.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:27:05.000000Z",
+    "finished_at": "2026-09-09T19:27:15.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:27:15.000000Z",
+    "finished_at": "2026-09-09T19:28:21.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:28:21.000000Z",
+    "finished_at": "2026-09-09T19:28:53.000000Z"
+  }
+}

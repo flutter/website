@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-00000000001c",
+  "task_name": "google/flutter-offline-sync-sqlite",
+  "trial_name": "flutter-offline-sync-sqlite__t28-gpt-4o",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-offline-sync-sqlite__t28-gpt-4o",
+  "task_id": {
+    "path": "dataset/flutter-offline-sync-sqlite"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-offline-sync-sqlite"
+    },
+    "trial_name": "flutter-offline-sync-sqlite__t28-gpt-4o",
+    "eval_key": "codex-agent__gpt-4o__adhoc",
+    "agent": {
+      "name": "codex-agent",
+      "model_name": "openai/gpt-4o",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "codex-agent",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "gpt-4o",
+      "provider": "openai"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 79623,
+    "n_cache_tokens": 58576,
+    "n_output_tokens": 3353,
+    "cost_usd": 0.2326
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.65
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:39:40.000000Z",
+  "finished_at": "2026-09-09T19:42:08.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:39:40.000000Z",
+    "finished_at": "2026-09-09T19:39:50.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:39:50.000000Z",
+    "finished_at": "2026-09-09T19:40:00.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:40:00.000000Z",
+    "finished_at": "2026-09-09T19:41:44.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:41:44.000000Z",
+    "finished_at": "2026-09-09T19:42:08.000000Z"
+  }
+}

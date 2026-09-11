@@ -9,6 +9,8 @@ import 'package:universal_web/web.dart' as web;
 
 import 'filters_dropdown.dart';
 
+export 'filters_dropdown.dart';
+
 /// A single, independently selectable dimension items can be filtered by,
 /// such as their location or their host.
 class FilterType {

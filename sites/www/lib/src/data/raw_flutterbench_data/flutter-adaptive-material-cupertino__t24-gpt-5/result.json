@@ -1,0 +1,66 @@
+{
+  "id": "11111111-2222-4333-8444-000000000018",
+  "task_name": "google/flutter-adaptive-material-cupertino",
+  "trial_name": "flutter-adaptive-material-cupertino__t24-gpt-5",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-adaptive-material-cupertino__t24-gpt-5",
+  "task_id": {
+    "path": "dataset/flutter-adaptive-material-cupertino"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-adaptive-material-cupertino"
+    },
+    "trial_name": "flutter-adaptive-material-cupertino__t24-gpt-5",
+    "eval_key": "codex-agent__gpt-5__adhoc",
+    "agent": {
+      "name": "codex-agent",
+      "model_name": "openai/gpt-5",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    }
+  },
+  "agent_info": {
+    "name": "codex-agent",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "gpt-5",
+      "provider": "openai"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 94968,
+    "n_cache_tokens": 64976,
+    "n_output_tokens": 4425,
+    "cost_usd": 0.2817
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.84
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:34:00.000000Z",
+  "finished_at": "2026-09-09T19:36:52.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:34:00.000000Z",
+    "finished_at": "2026-09-09T19:34:10.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:34:10.000000Z",
+    "finished_at": "2026-09-09T19:34:20.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:34:20.000000Z",
+    "finished_at": "2026-09-09T19:36:19.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:36:19.000000Z",
+    "finished_at": "2026-09-09T19:36:52.000000Z"
+  }
+}

@@ -1,0 +1,133 @@
+// Slide-in drawer overlay.
+//
+// The markup is produced by `src/components/common/drawer.dart`.
+// The drawer stays in the DOM while closed so that
+// both the enter and exit transitions can run.
+
+.drawer {
+  --drawer-width: 46rem;
+  --drawer-transition-duration: 250ms;
+
+  position: fixed;
+  inset: 0;
+  z-index: var(--site-z-top, 1000);
+  visibility: hidden;
+  // Delay hiding until the panel has finished sliding out.
+  transition: visibility 0s linear var(--drawer-transition-duration);
+
+  &.drawer--open {
+    visibility: visible;
+    transition-delay: 0s;
+  }
+}
+
+.drawer__scrim {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity var(--drawer-transition-duration) var(--ui-anim-func);
+
+  .drawer--open & {
+    opacity: 1;
+  }
+}
+
+.drawer__panel {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(var(--drawer-width), 100vw);
+  background-color: var(--site-base-bgColor);
+  color: var(--site-base-fgColor);
+  box-shadow: var(--ui-drop-shadow);
+  // Nudged past the edge so the shadow doesn't peek through while closed.
+  transform: translateX(calc(100% + 2rem));
+  transition: transform var(--drawer-transition-duration) var(--ui-anim-func);
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  .drawer--start & {
+    inset-inline: 0 auto;
+    transform: translateX(calc(-100% - 2rem));
+  }
+
+  .drawer--open & {
+    transform: translateX(0);
+  }
+}
+
+.drawer__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gutter-sm);
+  flex: 0 0 auto;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--site-inset-borderColor);
+
+  // When the body supplies its own heading, the header collapses to just the
+  // close button and hands its bottom edge over to the content.
+  &.drawer__header--bare {
+    justify-content: flex-end;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.drawer__title {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-heading-4);
+  font-weight: var(--font-weight-bolder);
+  line-height: 1.3;
+}
+
+.drawer__subtitle {
+  margin: 0.25rem 0 0;
+  font-size: var(--font-size-default);
+  color: var(--site-base-fgColor-alt);
+}
+
+.drawer__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: var(--ui-btn-height);
+  width: var(--ui-btn-height);
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  background: none;
+  color: var(--site-base-fgColor-alt);
+  cursor: pointer;
+  transition: background-color 150ms var(--ui-anim-func);
+
+  &:hover {
+    background-color: var(--site-inset-bgColor);
+    color: var(--site-base-fgColor);
+  }
+}
+
+.drawer__body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer {
+    transition-delay: 0s;
+  }
+
+  .drawer__scrim,
+  .drawer__panel {
+    transition-duration: 1ms;
+  }
+}

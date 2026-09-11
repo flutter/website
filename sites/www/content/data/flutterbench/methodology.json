@@ -1,0 +1,827 @@
+{
+  "overview": {
+    "lead_text": "FlutterBench is our evaluation framework designed to measure how AI coding agents perform within the Dart and Flutter ecosystem. The evaluation system consists of four core components:",
+    "rows": [
+      {
+        "label": "Dataset",
+        "description": "Real-world development tasks derived from critical user journeys (CUJs).",
+        "anchor": "dataset-tasks"
+      },
+      {
+        "label": "Test matrix",
+        "description": "Multidimensional testing framework across models, agents, tooling configurations, and SDK versions.",
+        "anchor": "evaluation-test-matrix"
+      },
+      {
+        "label": "Scoring system",
+        "description": "Unified grading approach evaluating functional outcomes, code quality, and developer experience, paired with diagnostic telemetry.",
+        "anchor": "scoring-architecture"
+      },
+      {
+        "label": "Harness",
+        "description": "Containerized automation infrastructure that executes evaluations at scale.",
+        "anchor": "evaluation-harness"
+      }
+    ]
+  },
+  "task_anatomy": {
+    "intro_text": "Each task contains an instruction, a target codebase and environment, verification criteria, and metadata. Using the CUJ example above, a corresponding Harbor task looks like this:",
+    "root_id": "task",
+    "root_label": "Task",
+    "tree": [
+      {
+        "type": "folder",
+        "id": "environment",
+        "label": "environment/",
+        "subtitle": "Containerized Flutter workspace pre-seeded for the agent",
+        "starts_closed": false,
+        "body": "The target codebase is an isolated, containerized Flutter workspace.\n\nWhen a benchmark run starts, the evaluation harness boots an ephemeral Docker container pre-seeded with this project. The agent is given access to tools (such as reading files, editing code, and running terminal commands) to investigate and resolve the issue.\n\nThe agent only sees the files inside this directory. Grading scripts and reference solutions remain strictly isolated outside the container until the agent completes its run.",
+        "children": [
+          {
+            "type": "folder",
+            "id": "lib",
+            "label": "lib/",
+            "subtitle": "Application source code",
+            "body": "Contains the Flutter application source code.\n\nIn this evaluation task, the agent inspects `lib/main.dart` to locate the source of the `RenderFlex` layout errors and applies appropriate widget modifications.",
+            "children": [
+              {
+                "type": "file",
+                "id": "main-dart",
+                "label": "main.dart",
+                "subtitle": "Flutter app containing horizontal and vertical overflow bugs",
+                "body": "The starter code for the Flutter application. Alternatively, the docker file may point to a remote codebase."
+              }
+            ]
+          },
+          {
+            "type": "folder",
+            "id": "test",
+            "label": "test/",
+            "subtitle": "Target directory for agent-authored widget tests",
+            "body": "The test directory for the target project.\n\nInitially, this directory is empty. The task instruction directs the agent to create `test/main_test.dart` to verify its bug fix with automated widget tests.",
+            "children": [
+              {
+                "type": "file",
+                "id": "main-test-dart",
+                "label": "main_test.dart",
+                "subtitle": "Widget tests the agent must write to verify its fix",
+                "body": "The widget test file that the agent is expected to author."
+              }
+            ]
+          },
+          {
+            "type": "file",
+            "id": "pubspec",
+            "label": "pubspec.yaml",
+            "subtitle": "Project manifest declaring Flutter and lint dependencies",
+            "body": "Declares dependencies and environment constraints for the Flutter project."
+          },
+          {
+            "type": "file",
+            "id": "analysis-options",
+            "label": "analysis_options.yaml",
+            "subtitle": "Linter configuration enforcing const and style rules",
+            "body": "Defines the static analysis rules enforced across the project.\n\nDuring grading, `StaticAnalysisGrader` runs `flutter analyze` against the modified codebase. Solutions that introduce analyzer errors, warnings, or lint violations (such as missing `const` constructors) lose quality points.",
+            "code": {
+              "lang": "yaml",
+              "text": "include: package:flutter_lints/flutter.yaml\n\nlinter:\n  rules:\n  # Strict lints for this task"
+            }
+          },
+          {
+            "type": "file",
+            "id": "dockerfile",
+            "label": "Dockerfile",
+            "subtitle": "Container setup, SDK caching, and baseline commit",
+            "body": "Defines the container image for the task environment.\n\nWorkflow:\n1. Inherits from the pre-warmed `flutter-linux:latest` base image, which contains the Flutter and Dart SDKs.\n2. Copies project manifests and initial source files into `/workspace`.\n3. Runs `flutter pub get` so dependencies are pre-fetched.\n4. Executes `init-baseline` to snapshot the clean repository state. This allows the evaluation harness to measure the agent's work as a precise Git diff against the starting baseline."
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "tests",
+        "label": "tests/",
+        "subtitle": "Multi-dimensional evaluation harness hidden from the agent",
+        "badge": "hidden from agent",
+        "badge_color": "warning",
+        "body": "The automated verification harness used to grade the agent's performance.\n\nThis entire directory is hidden from the agent during task execution. It is mounted into the evaluation container only when the grading phase starts.\n\nThe harness evaluates the agent's output across three weighted dimensions:\n\nOutcome: Functional correctness, test pass rates, and layout fixes.\nQuality: Static analysis, formatting, and code craftsmanship.\nDX: Developer experience and tool interaction efficiency.",
+        "children": [
+          {
+            "type": "file",
+            "id": "graders-dart",
+            "label": "graders.dart",
+            "subtitle": "Outcome, quality, and craftsmanship scoring rules via eval_scoring",
+            "body": "Defines the multi-dimensional scoring pipeline using a separate scoring package.",
+            "code": {
+              "lang": "dart",
+              "text": "// Heavily edited\nAggregateGrader grader(context) =>\n    AggregateGrader.result(\n      outcome: _outcomeGraders,\n      quality: _qualityGraders,\n      dx: _dxGraders,\n    );"
+            }
+          },
+          {
+            "type": "file",
+            "id": "test-sh",
+            "label": "test.sh",
+            "subtitle": "Verification entry point running the eval_scoring suite",
+            "body": "The test harness entrypoint script executed inside the grading container.",
+            "code": {
+              "lang": "bash",
+              "text": "#!/bin/bash\neval_scoring run [tasks]"
+            }
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "solution",
+        "label": "solution/",
+        "subtitle": "Oracle reference solution used to validate the eval task",
+        "body": "Contains the ground truth reference implementation maintained by the benchmark authors.\n\nBefore a task is added to the benchmark suite, the reference solution is executed through the grading harness to confirm that it achieves a full `1.0` reward. This ensures the task is solvable, unambiguous, and calibrated correctly.",
+        "children": [
+          {
+            "type": "file",
+            "id": "solve-sh",
+            "label": "solve.sh",
+            "subtitle": "Reference script fixing layout bugs and adding layout tests",
+            "body": "The reference shell script that applies the canonical fix and generates comprehensive tests. Not safe to share publicly."
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "id": "instruction",
+        "label": "instruction.md",
+        "subtitle": "The prompt the agent receives",
+        "badge": "input",
+        "badge_color": "tip",
+        "is_default_page": true,
+        "body": "The instruction is the task prompt provided to the agent. It mimics real-world workflows from developers, and is written in a way that real developers interact with agents.\n\nDesign principles:\n\nPrompts state symptoms and expected outcomes without naming exact remedy widgets.\nPrompts require the agent to write regression tests, measuring both implementation skills and testing rigor.",
+        "code": {
+          "lang": "markdown",
+          "text": "We currently keep receiving `RenderFlex overflowed` errors both horizontally and vertically. Implement the correct widgets to resolve these layout issues.\n\nWrite widget tests in\n`test/main_test.dart` that verifies the changes."
+        }
+      },
+      {
+        "type": "file",
+        "id": "task-toml",
+        "label": "task.toml",
+        "subtitle": "Task definition, difficulty notes, and timeouts",
+        "body": "The task configuration file specifies execution bounds, metadata, and target artifacts evaluated during grading.\n\nKey sections:\n\n`artifacts`: Lists files that must be present in the workspace after the run.\n`task` definition: Task-related data, like name, author and tags.\ninfra and agent configurations, such as timeout limits and retries."
+      }
+    ]
+  },
+  "grader_tiers": {
+    "rows": [
+      {
+        "label": "Code-based",
+        "detail": "Compilers, test runners, `dart analyze`, DCM, structural checkers",
+        "description": "Deterministic, unambiguous source of truth for syntax, compilation, and functional test assertions."
+      },
+      {
+        "label": "LLM judge (BINEVAL)",
+        "detail": "Frontier model rubric evaluation",
+        "description": "Evaluates qualitative dimensions (visual UI, idiomatic review, trajectory, recovery) using binary yes/no questions."
+      },
+      {
+        "label": "Human audit",
+        "detail": "Flutter engineer manual review",
+        "description": "Ground truth calibration, failure root-cause analysis, and conflict resolution."
+      }
+    ]
+  },
+  "diagnostic_telemetry": {
+    "rows": [
+      {
+        "label": "Token usage",
+        "description": "Tracks total input, cache, and output tokens consumed to measure efficiency deltas and verify token reductions from skill optimizations."
+      },
+      {
+        "label": "Expected tool calls",
+        "description": "Compares actual tool invocations against expected tools. If an agent succeeds without using an expected tool, it is not penalized; this telemetry helps evaluate whether the tool is necessary for that user journey."
+      }
+    ]
+  },
+  "root_cause_audits": {
+    "items": [
+      {
+        "label": "Reasoning trace review",
+        "detail": "Inspect the agent's internal thoughts to identify where misunderstandings of Dart/Flutter APIs occurred."
+      },
+      {
+        "label": "Plan adherence audit",
+        "detail": "Check whether the agent derailed due to ambiguous task prompts or missing context."
+      },
+      {
+        "label": "Harness diagnostics",
+        "detail": "Audit error messages returned to the agent during failed compile/test steps to see why recovery failed."
+      }
+    ]
+  },
+  "transparency": {
+    "harbor_example": {
+      "task": "dataset/flutter/manage-state-with-bloc",
+      "agent": "antigravity-sdk",
+      "model": "google/gemini-3.5-flash",
+      "mcp": "dart"
+    }
+  },
+  "cuj_example": [
+    {
+      "label": "User",
+      "icon": "person",
+      "variant": "grey",
+      "items": [
+        "As an application developer"
+      ]
+    },
+    {
+      "label": "Goal",
+      "icon": "star",
+      "variant": "blue",
+      "items": [
+        "I want to resolve layout overflow errors in UI component trees"
+      ]
+    },
+    {
+      "label": "Tasks",
+      "icon": "apps",
+      "variant": "purple",
+      "items": [
+        "I use the error messaging to identify widgets causing the layout overflow in the widget tree.",
+        "I refactor the layout using flexible scrolling or bounding widgets to resolve the overflow error.",
+        "Implement widget tests to prevent regressions."
+      ]
+    }
+  ],
+  "task_specifications": [
+    {
+      "id": "structure",
+      "title": "Task Structure",
+      "icon": "schema",
+      "expanded": true,
+      "description": "Directory layout, instructions, environments, and verification criteria.",
+      "lead_text": "Each task lives in its own directory and contains four elements:",
+      "tables": [
+        {
+          "headers": [
+            "Element",
+            "Description"
+          ],
+          "rows": [
+            {
+              "label": "Instruction",
+              "description": "A realistic prompt written the way developers talk to agents (typically 1\u20132 sentences, behavior-focused rather than prescriptive)."
+            },
+            {
+              "label": "Target codebase & environment",
+              "description": "A containerized Docker environment preseeded with a Dart or Flutter codebase, testing greenfield generation or existing codebases with bugs or debt."
+            },
+            {
+              "label": "Verification criteria",
+              "description": "Verification scripts (`tests/graders.dart` and `test.sh`) executing `package:eval_scoring`."
+            },
+            {
+              "label": "Configuration & metadata",
+              "description": "The `task.toml` configuration defining associated CUJs, priority tiers, expected skills, and MCP tools."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "categories",
+      "title": "Task Categories",
+      "icon": "category",
+      "expanded": false,
+      "description": "Primary agent capabilities and workflows evaluated across benchmarks.",
+      "lead_text": "Tasks are categorized by the primary agent capability being evaluated:",
+      "tables": [
+        {
+          "headers": [
+            "Category",
+            "Description"
+          ],
+          "rows": [
+            {
+              "label": "Greenfield generation",
+              "description": "Creating new features or applications from scratch."
+            },
+            {
+              "label": "Hill climbing",
+              "description": "Iterative debugging, test repair, and multi-turn problem-solving."
+            },
+            {
+              "label": "Refactoring",
+              "description": "Restructuring existing code while maintaining functionality."
+            },
+            {
+              "label": "Migration",
+              "description": "Upgrading deprecated APIs or transitioning between architectural patterns."
+            },
+            {
+              "label": "Integration",
+              "description": "Adding platform-specific features, native plugins, or third-party packages."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiers",
+      "title": "Task Tiers & Prioritization",
+      "icon": "layers",
+      "expanded": false,
+      "description": "Execution cadences and priority levels balancing coverage and speed.",
+      "lead_text": "To balance comprehensive coverage with evaluation speed, tasks are organized into execution tiers and priorities:",
+      "tables": [
+        {
+          "title": "Execution tiers",
+          "headers": [
+            "Tier",
+            "Description"
+          ],
+          "rows": [
+            {
+              "label": "Tier 1",
+              "description": "Core benchmark tasks executed monthly across the complete evaluation matrix."
+            },
+            {
+              "label": "Tier 2",
+              "description": "Maturing tasks slated to graduate into Tier 1 once calibrated."
+            },
+            {
+              "label": "Tier 3",
+              "description": "Experimental tasks used for ad-hoc investigations and targeted questions."
+            }
+          ]
+        },
+        {
+          "title": "Task priority",
+          "headers": [
+            "Priority",
+            "Description"
+          ],
+          "rows": [
+            {
+              "label": "P0",
+              "description": "Critical production workflows and high-frequency productivity tasks"
+            },
+            {
+              "label": "P1",
+              "description": "Core functionality and API consistency verification"
+            },
+            {
+              "label": "P2",
+              "description": "Standard features and application maturity tasks"
+            },
+            {
+              "label": "P3",
+              "description": "Edge cases and cosmetic polish"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qa",
+      "title": "Quality Assurance",
+      "icon": "verified",
+      "expanded": false,
+      "description": "Engineering audits and human reviewer calibration for dataset integrity.",
+      "lead_text": "Before a task graduates into the core benchmark suite, it undergoes an engineering audit. Human reviewers inspect initial trial runs and label results as:",
+      "tables": [
+        {
+          "headers": [
+            "Audit label",
+            "Definition"
+          ],
+          "rows": [
+            {
+              "label": "True positive",
+              "description": "Agent correctly passed the task."
+            },
+            {
+              "label": "True negative",
+              "description": "Agent correctly failed the task."
+            },
+            {
+              "label": "False positive",
+              "description": "Agent passed incorrectly due to overly lenient checks."
+            },
+            {
+              "label": "False negative",
+              "description": "Agent failed incorrectly due to brittle or flaky tests."
+            }
+          ]
+        }
+      ],
+      "footer_text": "This process ensures that the dataset produces reliable, actionable signals rather than noise."
+    }
+  ],
+  "evaluation_matrix": {
+    "title": "4-Axis Evaluation Matrix",
+    "description": "Select an evaluation axis to explore its configurations, supported targets, and methodology.",
+    "axes": [
+      {
+        "id": "configurations",
+        "tab_label": "1. Configurations",
+        "tab_sublabel": "Tooling Modes",
+        "heading": "Axis 1: Tooling Configurations",
+        "badge": "3 Setups",
+        "variant": "functional",
+        "overview": "FlutterBench tests three configurations to isolate the impact of specialized Dart and Flutter AI tools (skills, MCP tools, compiler diagnostics, and sandboxes).",
+        "items_label": "Configurations Tested:",
+        "items": [
+          {
+            "label": "Baseline",
+            "detail": "No specialized Dart or Flutter tools loaded \u2014 tests raw model capability and baseline reasoning."
+          },
+          {
+            "label": "Enhanced",
+            "detail": "Full suite of Dart and Flutter skills, MCP server tools, and compiler diagnostics loaded."
+          },
+          {
+            "label": "Enhanced Minus N",
+            "detail": "Full suite with a specific tool or skill group ablated to measure its isolated delta."
+          }
+        ],
+        "footer_text": "This A/B testing approach isolates whether adding specific tools (such as widget inspection or analyzer fixes) measurably improves task success rates."
+      },
+      {
+        "id": "models",
+        "tab_label": "2. Frontier Models",
+        "tab_sublabel": "Model Families",
+        "heading": "Axis 2: Frontier Model Families",
+        "badge": "3 Families",
+        "variant": "quality",
+        "overview": "Evaluations span major frontier model families across high-capability reasoning tiers and low-latency production tiers.",
+        "items_label": "Model Families Evaluated:",
+        "items": [
+          {
+            "label": "Gemini",
+            "detail": "Evaluated across Gemini Pro (deep reasoning and complex architecture) and Gemini Flash (low-latency generation) tiers."
+          },
+          {
+            "label": "Claude",
+            "detail": "Evaluated across Claude Opus (heavy multi-file refactoring) and Claude Sonnet (daily developer workflows)."
+          },
+          {
+            "label": "ChatGPT",
+            "detail": "Evaluated across the GPT-4o series and specialized reasoning checkpoints."
+          }
+        ],
+        "footer_text": "Additional providers and local open-weights models are integrated continuously based on community feedback and developer adoption."
+      },
+      {
+        "id": "harnesses",
+        "tab_label": "3. Agent Harnesses",
+        "tab_sublabel": "CLI Runtimes",
+        "heading": "Axis 3: Agent Runtime Harnesses",
+        "badge": "2 Harnesses",
+        "variant": "dx",
+        "overview": "Different agents employ distinct system prompts, context management techniques, and tool-loading strategies. We evaluate the CLI agents Flutter developers use most.",
+        "items_label": "Agent Harnesses Tested:",
+        "items": [
+          {
+            "label": "Antigravity CLI",
+            "detail": "Google's developer agent harness featuring optimized tool discovery, compact context budgets, and deep IDE integration."
+          },
+          {
+            "label": "Claude Code",
+            "detail": "Anthropic's terminal-based agent harness with autonomous multi-turn problem-solving capabilities."
+          }
+        ],
+        "footer_text": "Testing across multiple harnesses isolates model intelligence from agent runtime orchestration, measuring how execution environments influence success."
+      },
+      {
+        "id": "sdks",
+        "tab_label": "4. SDK Branches",
+        "tab_sublabel": "Release Channels",
+        "heading": "Axis 4: SDK Release Channels",
+        "badge": "2 Channels",
+        "variant": "perfect",
+        "overview": "Evaluations run against both Flutter release channels to verify developer-ready reliability and detect framework regressions early.",
+        "items_label": "Release Channels Tracked:",
+        "items": [
+          {
+            "label": "Stable",
+            "detail": "The current production SDK release \u2014 measures developer-ready reliability on the version used by most teams."
+          },
+          {
+            "label": "Beta",
+            "detail": "Monthly beta releases \u2014 catches deprecation migrations, API evolutions, and analyzer changes before stable rollout."
+          }
+        ],
+        "footer_text": "Ensures AI tooling and skills maintain precision as the Flutter framework and Dart language evolve."
+      }
+    ]
+  },
+  "dimensions": [
+    {
+      "title": "1. Outcome",
+      "icon": "check_circle",
+      "category": "outcome",
+      "description": "Evaluates whether the generated code compiles, runs, and fulfills all functional UI and task requirements correctly.",
+      "footer_items": "Build, Tests, Visual, Heuristics",
+      "badge": "Functional"
+    },
+    {
+      "title": "2. Code Quality",
+      "icon": "code",
+      "category": "quality",
+      "description": "Measures code maintainability, static analysis lints, architectural health, and idiomatic Dart 3 standards.",
+      "footer_items": "Lints, DCM, Structure, Patterns",
+      "badge": "Maintainable"
+    },
+    {
+      "title": "3. Developer Experience",
+      "icon": "bolt",
+      "category": "dx",
+      "description": "Tracks agent execution friction, tool call accuracy, error recovery loops, and step efficiency.",
+      "footer_items": "Tooling, Trajectory, Recovery",
+      "badge": "Efficiency"
+    }
+  ],
+  "grader_matrix": {
+    "title": "Grader Matrix",
+    "description": "Explore deterministic, LLM-as-a-judge, and heuristic evaluation graders.",
+    "filters": [
+      {
+        "id": "all",
+        "label": "All Graders"
+      },
+      {
+        "id": "outcome",
+        "label": "Outcome"
+      },
+      {
+        "id": "quality",
+        "label": "Quality"
+      },
+      {
+        "id": "dx",
+        "label": "DX"
+      }
+    ],
+    "graders": [
+      {
+        "name": "Build & Run",
+        "category": "outcome",
+        "category_label": "Outcome",
+        "type": "deterministic",
+        "type_label": "Deterministic",
+        "description": "Binary pass/fail checking if code compiles and launches cleanly."
+      },
+      {
+        "name": "Unit & Widget Testing",
+        "category": "outcome",
+        "category_label": "Outcome",
+        "type": "deterministic",
+        "type_label": "Deterministic",
+        "description": "Executes test suites and scores passing test ratio across affected code."
+      },
+      {
+        "name": "Visual Validation",
+        "category": "outcome",
+        "category_label": "Outcome",
+        "type": "llm",
+        "type_label": "LLM-as-Judge",
+        "description": "Compares DevTools screenshot captures against visual UI expectations."
+      },
+      {
+        "name": "Task Heuristics",
+        "category": "outcome",
+        "category_label": "Outcome",
+        "type": "heuristic",
+        "type_label": "Heuristic",
+        "description": "Task-specific checks verifying dependency additions, required config, and files."
+      },
+      {
+        "name": "Static Analysis",
+        "category": "quality",
+        "category_label": "Quality",
+        "type": "deterministic",
+        "type_label": "Deterministic",
+        "description": "Runs `dart analyze` enforcing strict project lint rules."
+      },
+      {
+        "name": "Dart Code Metrics (DCM)",
+        "category": "quality",
+        "category_label": "Quality",
+        "type": "deterministic",
+        "type_label": "Deterministic",
+        "description": "Detects dead code, widget complexity, undisposed controllers, and memory leaks."
+      },
+      {
+        "name": "Idiomatic Dart Review",
+        "category": "quality",
+        "category_label": "Quality",
+        "type": "llm",
+        "type_label": "LLM-as-Judge",
+        "description": "Evaluates modern Dart 3 pattern compliance and adherence to Effective Dart."
+      },
+      {
+        "name": "Structural Validation",
+        "category": "quality",
+        "category_label": "Quality",
+        "type": "deterministic",
+        "type_label": "Deterministic",
+        "description": "Verifies directory structure, naming conventions, and required file placement."
+      },
+      {
+        "name": "Tool Usage Analysis",
+        "category": "dx",
+        "category_label": "DX",
+        "type": "deterministic",
+        "type_label": "Deterministic",
+        "description": "Checks whether appropriate MCP tools and CLI utilities were called effectively."
+      },
+      {
+        "name": "Step & Token Economy",
+        "category": "dx",
+        "category_label": "DX",
+        "type": "deterministic",
+        "type_label": "Deterministic",
+        "description": "Measures trajectory length, token burn, and redundant execution steps."
+      },
+      {
+        "name": "Error Recovery",
+        "category": "dx",
+        "category_label": "DX",
+        "type": "llm",
+        "type_label": "LLM-as-Judge",
+        "description": "Rates how fluidly the agent adapts to compiler, analysis, and test errors."
+      }
+    ]
+  },
+  "reliability": {
+    "cards": [
+      {
+        "tag": "Ceiling Metric",
+        "math_pill": "pass@k",
+        "title": "Capability",
+        "is_north_star": false,
+        "description_parts": [
+          {
+            "text": "The probability that an agent succeeds "
+          },
+          {
+            "em": "at least once"
+          },
+          {
+            "text": " across "
+          },
+          {
+            "strong": "k"
+          },
+          {
+            "text": " attempts. Shows what the model can achieve under ideal sample runs."
+          }
+        ]
+      },
+      {
+        "tag": "Our North Star",
+        "tag_icon": "star",
+        "math_pill": "pass^k",
+        "title": "Consistency",
+        "is_north_star": true,
+        "description_parts": [
+          {
+            "text": "The probability that an agent succeeds "
+          },
+          {
+            "em": "every single time"
+          },
+          {
+            "text": " across all "
+          },
+          {
+            "strong": "k"
+          },
+          {
+            "text": " attempts. Solves unreliability friction for real developer workflows."
+          }
+        ]
+      }
+    ]
+  },
+  "score_triage": {
+    "title": "Score Triage & Action Matrix",
+    "description": "Select a score range to view its criteria and immediate engineering triage actions.",
+    "tiers": [
+      {
+        "id": "perfect",
+        "score": "1.00",
+        "name": "Perfect Success",
+        "heading": "Score 1.00 \u2014 Perfect Success",
+        "badge": "Criteria & Triage",
+        "criteria": "Code compiles, runs, and passes all unit and widget tests. Zero analyzer or DCM warnings. Idiomatic Dart 3 and flawless DX.",
+        "actions_label": "Engineering Triage Actions:",
+        "actions": [
+          {
+            "label": "Telemetry check",
+            "detail": "Validate whether all expected tools were utilized."
+          },
+          {
+            "label": "Skip optimization",
+            "detail": "If expected tools were skipped successfully, re-evaluate if the tool is redundant."
+          },
+          {
+            "label": "Token burn review",
+            "detail": "If token consumption was high, optimize prompt context and create fast-path shortcut tools."
+          }
+        ]
+      },
+      {
+        "id": "functional",
+        "score": "0.75 \u2013 0.99",
+        "name": "Minor Flaws",
+        "heading": "Score 0.75 \u2013 0.99 \u2014 Minor Flaws",
+        "badge": "Criteria & Triage",
+        "criteria": "Code works and functional tests pass, but exhibits minor lint warnings, slightly unidiomatic patterns, or minor DX friction.",
+        "actions_label": "Engineering Triage Actions:",
+        "actions": [
+          {
+            "label": "Prompt tuning",
+            "detail": "Tune skill prompt instructions for better Dart 3 style enforcement."
+          },
+          {
+            "label": "Schema refinement",
+            "detail": "Refine tool parameter schemas and validation logic to prevent minor parameter retry hiccups."
+          },
+          {
+            "label": "Model collaboration",
+            "detail": "Collaborate with model team to polish code generation formatting."
+          }
+        ]
+      },
+      {
+        "id": "partial",
+        "score": "0.50 \u2013 0.74",
+        "name": "Partial Success",
+        "heading": "Score 0.50 \u2013 0.74 \u2014 Partial Success",
+        "badge": "Criteria & Triage",
+        "criteria": "Core requirements work but some widget or unit tests fail, lint warnings are significant, or the agent entered noticeable recovery loops.",
+        "actions_label": "Engineering Triage Actions:",
+        "actions": [
+          {
+            "label": "Assertion triage",
+            "detail": "Investigate specific test assertion failures."
+          },
+          {
+            "label": "Context gap analysis",
+            "detail": "Analyze whether the agent lacked key framework or package context."
+          },
+          {
+            "label": "Diagnostic feedback",
+            "detail": "Refine compiler diagnostic feedback to help the agent self-correct faster."
+          }
+        ]
+      },
+      {
+        "id": "poor",
+        "score": "0.25 \u2013 0.49",
+        "name": "Poor Implementation",
+        "heading": "Score 0.25 \u2013 0.49 \u2014 Poor Implementation",
+        "badge": "Criteria & Triage",
+        "criteria": "Fails to compile, ignores constraints, or encountered severe developer experience breakdown during execution.",
+        "actions_label": "Engineering Triage Actions:",
+        "actions": [
+          {
+            "label": "Tool discoverability",
+            "detail": "If expected tools were ignored, fix tool discoverability, frontmatter, and prompt instructions."
+          },
+          {
+            "label": "Tool output clarity",
+            "detail": "If tools were used but failed, improve helper tool output clarity and error messaging."
+          },
+          {
+            "label": "Loop prevention",
+            "detail": "If token burn was high due to endless fix loops, improve compiler errors for single-step healing."
+          }
+        ]
+      },
+      {
+        "id": "failure",
+        "score": "0.00",
+        "name": "Total Failure",
+        "heading": "Score 0.00 \u2014 Total Failure",
+        "badge": "Criteria & Triage",
+        "criteria": "No working code produced, severe runtime crash, or agent caught in an infinite loop.",
+        "actions_label": "Engineering Triage Actions:",
+        "actions": [
+          {
+            "label": "Human root-cause audit",
+            "detail": "Engineers inspect reasoning traces, plan adherence, and test harness logs."
+          },
+          {
+            "label": "Behavior categorization",
+            "detail": "Identify premature surrender versus infinite loop traps."
+          },
+          {
+            "label": "Constraint refinement",
+            "detail": "Update benchmark task prompt constraints and bounding parameters."
+          }
+        ]
+      }
+    ]
+  }
+}
