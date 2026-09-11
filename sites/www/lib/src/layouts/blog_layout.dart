@@ -11,6 +11,7 @@ import 'package:site_shared/blog.dart';
 import 'package:site_shared/components/blog/blog_next_posts.dart';
 import 'package:site_shared/components/blog/post_info.dart';
 import 'package:site_shared/components/common/breadcrumbs.dart';
+import 'package:site_shared/components/common/client/back_to_top_button.dart';
 import 'package:site_shared/util.dart';
 
 import '../utils/scroll_spy.dart';
@@ -97,6 +98,7 @@ class BlogLayout extends DefaultLayout {
             ],
           ),
         ]),
+        if (isPost) const BackToTopButton(),
       ]),
     );
   }
