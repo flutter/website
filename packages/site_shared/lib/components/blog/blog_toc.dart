@@ -28,8 +28,8 @@ final class BlogTableOfContents extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    final toc = context.page.data['toc'] as TableOfContents?;
-    if (toc == null || toc.entries.length < _minEntriesForToc) {
+    final toc = context.page.data['toc'];
+    if (toc is! TableOfContents || toc.entries.length < _minEntriesForToc) {
       return const Component.empty();
     }
 
