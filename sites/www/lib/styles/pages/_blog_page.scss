@@ -33,6 +33,61 @@
       color: var(--site-base-fgColor);
     }
 
+    .toc {
+      margin: 1.5rem 0;
+      background: var(--site-inset-bgColor);
+      border: 1px solid var(--site-inset-borderColor);
+      border-radius: var(--ui-border-radius-sm);
+
+      details {
+        padding: 1rem 1.25rem;
+      }
+
+      summary {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-weight: var(--site-fontWeight-bold);
+        cursor: pointer;
+        list-style: none;
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        .material-symbols {
+          transition: transform 0.15s var(--ui-anim-func);
+        }
+      }
+
+      details[open] summary .material-symbols {
+        transform: rotate(90deg);
+      }
+
+      .toc-list {
+        margin: 0.75rem 0 0;
+
+        ul {
+          margin: 0;
+          padding-left: 1rem;
+          list-style: none;
+          border-left: 1px solid var(--site-outline-variant);
+        }
+
+        li {
+          margin: 0.5rem 0;
+        }
+
+        a {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
     @media (min-width: 576px) {
       > .content {
         padding: 2rem;
