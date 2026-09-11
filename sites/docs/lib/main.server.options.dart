@@ -22,8 +22,6 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
 import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     as _collapse_button;
-import 'package:site_shared/components/common/client/cookie_notice.dart'
-    as _cookie_notice;
 import 'package:site_shared/components/common/client/copy_button.dart'
     as _copy_button;
 import 'package:site_shared/components/common/client/download_button.dart'
@@ -97,10 +95,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:collapse_button',
           params: __collapse_buttonCollapseButton,
         ),
-    _cookie_notice.CookieNotice: ClientTarget<_cookie_notice.CookieNotice>(
-      'site_shared:cookie_notice',
-      params: __cookie_noticeCookieNotice,
-    ),
     _copy_button.CopyButton: ClientTarget<_copy_button.CopyButton>(
       'site_shared:copy_button',
       params: __copy_buttonCopyButton,
@@ -165,9 +159,6 @@ Map<String, Object?> __archive_tableArchiveTable(
 Map<String, Object?> __collapse_buttonCollapseButton(
   _collapse_button.CollapseButton c,
 ) => {'classes': c.classes, 'title': c.title};
-Map<String, Object?> __cookie_noticeCookieNotice(
-  _cookie_notice.CookieNotice c,
-) => {'host': c.host, 'alwaysDarkMode': c.alwaysDarkMode};
 Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
   'buttonText': c.buttonText,
   'toCopy': c.toCopy,

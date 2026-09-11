@@ -22,8 +22,6 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
     deferred as _learning_resource_filters_sidebar;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     deferred as _collapse_button;
-import 'package:site_shared/components/common/client/cookie_notice.dart'
-    deferred as _cookie_notice;
 import 'package:site_shared/components/common/client/copy_button.dart'
     deferred as _copy_button;
 import 'package:site_shared/components/common/client/download_button.dart'
@@ -115,13 +113,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
         title: p['title'] as String?,
       ),
       loader: _collapse_button.loadLibrary,
-    ),
-    'site_shared:cookie_notice': ClientLoader(
-      (p) => _cookie_notice.CookieNotice(
-        host: p['host'] as String,
-        alwaysDarkMode: p['alwaysDarkMode'] as bool,
-      ),
-      loader: _cookie_notice.loadLibrary,
     ),
     'site_shared:copy_button': ClientLoader(
       (p) => _copy_button.CopyButton(

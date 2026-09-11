@@ -112,7 +112,7 @@ final class TutorialStructureExtension implements PageExtension {
 
   /// Checks if a node is a YouTube video embed
   bool _isVideoEmbed(Node node) {
-    if (node case ElementNode(tag: final tag)) {
+    if (node case ElementNode(:final tag)) {
       final lowerTag = tag.toLowerCase();
       return lowerTag == 'youtubeembed' || lowerTag == 'lite-youtube';
     }

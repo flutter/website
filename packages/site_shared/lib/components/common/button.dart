@@ -61,7 +61,7 @@ class Button extends StatelessComponent {
     final children = <Component>[
       if (icon case final iconId?) MaterialIcon(iconId),
       if (content case final contentText?)
-        asRaw ? RawText(contentText) : .text(contentText),
+        if (asRaw) RawText(contentText) else .text(contentText),
       if (trailingIcon case final iconId?) MaterialIcon(iconId),
     ];
 

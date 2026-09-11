@@ -53,7 +53,7 @@ import 'src/pages/web_page.dart';
 import 'src/pages/why_flutter_page.dart';
 import 'src/utils/asset_utils.dart';
 
-void main() async {
+void main() {
   Jaspr.initializeApp(options: defaultServerOptions);
 
   final assetManager = AssetManager(
@@ -62,7 +62,7 @@ void main() async {
     dataProperties: const {'page.image', 'page.socialImage'},
     assetTransformers: [
       TrackingAssetTransformer(),
-      ResizingAssetTransformer(),
+      const ResizingAssetTransformer(),
       const HashingAssetTransformer(),
     ],
   );

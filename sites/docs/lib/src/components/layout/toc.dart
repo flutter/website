@@ -82,7 +82,7 @@ final class PageNavBar extends StatelessComponent {
             const _DropdownDivider(),
             if (data.toc case final tocData?)
               nav(
-                attributes: {'role': 'menu'},
+                attributes: const {'role': 'menu'},
                 [_TocContents(tocData)],
               ),
           ] else ...[
@@ -108,7 +108,7 @@ final class PageNavBar extends StatelessComponent {
                     if (page == currentLinkedPage) 'active',
                   ].toClasses,
                   href: page.url,
-                  attributes: {'role': 'menuitem'},
+                  attributes: const {'role': 'menuitem'},
                   [
                     span(classes: 'page-number', [
                       .text('${pageEntryNumber++}'),
@@ -118,7 +118,7 @@ final class PageNavBar extends StatelessComponent {
                 ),
                 if (data.toc case final tocData? when currentLinkedPage == page)
                   nav(
-                    attributes: {'role': 'menu'},
+                    attributes: const {'role': 'menu'},
                     [_TocContents(tocData)],
                   ),
               ] else ...[
