@@ -19,11 +19,20 @@ final class BackToTopButton extends StatelessComponent {
 
   @override
   Component build(BuildContext _) => button(
+    type: ButtonType.button,
     classes: 'back-to-top',
     attributes: {'aria-label': 'Back to top'},
     events: {
       'click': (_) {
-        web.window.scrollTo(web.ScrollToOptions(behavior: 'smooth', top: 0));
+        final prefersReducedMotion = web.window
+            .matchMedia('(prefers-reduced-motion: reduce)')
+            .matches;
+        web.window.scrollTo(
+          web.ScrollToOptions(
+            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+            top: 0,
+          ),
+        );
       },
     },
     [const MaterialIcon('arrow_upward')],

@@ -132,6 +132,11 @@
   &:hover {
     color: var(--site-base-fgColor);
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    transform: none;
+    transition: none;
+  }
 }
 
 body.blog.in-content .back-to-top {
