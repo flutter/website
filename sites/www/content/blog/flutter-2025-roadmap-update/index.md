@@ -6,7 +6,7 @@ description: >-
 publishDate: 2025-04-02
 author: mit-mit
 image: images/0sO8Aqa-_eHZ9jcZz.webp
-category: announcement
+category: news
 layout: blog
 ---
 

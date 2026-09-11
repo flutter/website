@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-09-30
 author: johnpryan
 image: images/1PYHrYurwAGyQC8vsnAaWiA.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

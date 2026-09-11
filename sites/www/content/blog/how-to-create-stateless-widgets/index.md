@@ -6,7 +6,7 @@ description: >-
 publishDate: 2019-02-14
 author: aguinis
 image: images/0GoTVv7PbwxvjCh4S.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

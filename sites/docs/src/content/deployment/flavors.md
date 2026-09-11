@@ -175,13 +175,16 @@ The Flutter framework provides the `appFlavor` constant, which retrieves the nam
 ### Access the current flavor
 
 1.  **Import the services library:**
-    To access the `appFlavor` constant, add the following import to your Dart file:
+    To access the `appFlavor` constant,
+    add the following import to your Dart file:
+
     ```dart
     import 'package:flutter/services.dart';
     ```
 
 1.  **Check the flavor value:**
-    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+    Use the `appFlavor` constant in your application logic
+    (often in `main()`) to handle flavor-specific configurations:
 
     ```dart
     void main() {
@@ -379,7 +382,7 @@ you need to add the `default-flavor` field to your project's
 pubspec. To learn more, see the [`default-flavor` field][]
 in [Flutter pubspec options][].
 
-[`default-flavor` field]: /tools/pubspec#default-flavor-field
+[`default-flavor` field]: /tools/pubspec#default-flavor
 
 ### Add unique build settings
 
@@ -399,8 +402,14 @@ When setting `abiFilters` in product flavors, pass
 For more information on creating and using flavors, check out
 the following resources:
 
+* [Set up Flutter flavors for iOS and macOS][]
+* [Set up Flutter flavors for Linux][]
+* [Set up Flutter flavors for Windows][]
 * [Build flavors in Flutter (Android and iOS) with Firebase][]
 * [How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI][flutterfireCLI]
 
+[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+[Set up Flutter flavors for Linux]:   /deployment/flavors-linux
+[Set up Flutter flavors for Windows]: /deployment/flavors-windows
 [Build flavors in Flutter (Android and iOS) with Firebase]: https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
 [flutterfireCLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/

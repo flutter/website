@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-10-22
 author: mit-mit
 image: images/0FE-q5RdXwPgtRVE5.webp
-category: announcement
+category: news
 layout: blog
 ---
 

@@ -5,7 +5,7 @@ description: >-
 publishDate: 2022-08-30
 author: leighajarett
 image: images/1Tb-JXZnxo2pu232C4c2KqQ.webp
-category: story
+category: case-study
 layout: blog
 ---
 

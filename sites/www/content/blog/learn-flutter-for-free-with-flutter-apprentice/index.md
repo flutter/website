@@ -5,7 +5,7 @@ description: >-
 publishDate: 2021-10-06
 author: sfshaza
 image: images/1AvOHYfnMrCR81c4GltakzQ.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

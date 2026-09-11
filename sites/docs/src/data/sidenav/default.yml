@@ -394,6 +394,8 @@
           permalink: /platform-integration/android/chromeos
         - title: Protect your app's sensitive content
           permalink: /platform-integration/android/sensitive-content
+        - title: Request local network permissions
+          permalink: /platform-integration/android/local-network-permission
     - title: iOS
       permalink: /platform-integration/ios
       children:
@@ -472,6 +474,8 @@
       permalink: /packages-and-plugins/dependency-management
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
+    - title: Ship skills with packages
+      permalink: https://dart.dev/tools/pub/package-skills
     - title: Swift Package Manager
       permalink: /packages-and-plugins/swift-package-manager
       children:
@@ -542,6 +546,8 @@
       permalink: /perf
     - title: Impeller
       permalink: /perf/impeller
+    - title: Impeller anti-aliasing
+      permalink: /perf/antialiasing
     - title: Performance best practices
       permalink: /perf/best-practices
     - title: App size
@@ -577,6 +583,10 @@
       permalink: /deployment/flavors
     - title: Create app flavors for iOS and macOS
       permalink: /deployment/flavors-ios
+    - title: Create app flavors for Linux
+      permalink: /deployment/flavors-linux
+    - title: Create app flavors for Windows
+      permalink: /deployment/flavors-windows
     - title: Build and release an Android app
       permalink: /deployment/android
     - title: Build and release an iOS app
@@ -633,6 +643,66 @@
       permalink: /add-to-app/multiple-flutters
     - title: Loading sequence and performance
       permalink: /add-to-app/performance
+
+- divider
+- header: AI
+
+- title: Develop with AI
+  permalink: /ai/get-started
+  icon: smart_toy
+  children:
+    - title: Get started
+      permalink: /ai/get-started
+    - title: How AI tools work
+      permalink: /ai/tools
+    - title: Package skills
+      permalink: https://dart.dev/ai/package-skills
+
+- title: Build AI-powered apps
+  permalink: /ai/genui
+  icon: auto_awesome
+  children:
+    - title: Firebase AI Logic
+      permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
+    - title: Genkit Dart
+      permalink: https://genkit.dev/docs/dart/get-started
+    - title: GenUI SDK for Flutter
+      permalink: /ai/genui
+      children:
+        - title: Overview
+          permalink: /ai/genui
+        - title: Main components and concepts
+          permalink: /ai/genui/components
+        - title: Get started
+          permalink: /ai/genui/get-started
+        - title: Input and events
+          permalink: /ai/genui/input-events
+    - title: Flutter AI Toolkit
+      permalink: /ai/ai-toolkit
+      children:
+        - title: Overview
+          permalink: /ai/ai-toolkit
+        - title: User experience
+          permalink: /ai/ai-toolkit/user-experience
+        - title: Feature integration
+          permalink: /ai/ai-toolkit/feature-integration
+        - title: Custom LLM providers
+          permalink: /ai/ai-toolkit/custom-llm-providers
+        - title: Chat client sample
+          permalink: /ai/ai-toolkit/chat-client-sample
+    - title: AI best practices
+      permalink: /ai/best-practices
+      children:
+        - title: Overview
+          permalink: /ai/best-practices
+        - title: Prompting
+          permalink: /ai/best-practices/prompting
+        - title: Structure and output
+          permalink: /ai/best-practices/structure-output
+        - title: Tool calls (aka function calls)
+          permalink: /ai/best-practices/tool-calls
+        - title: Mode of interaction
+          permalink: /ai/best-practices/mode-of-interaction
 
 - divider
 

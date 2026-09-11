@@ -5,7 +5,7 @@ description: >-
   but what about your application as a whole?
 publishDate: 2020-09-29
 author: guidez
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

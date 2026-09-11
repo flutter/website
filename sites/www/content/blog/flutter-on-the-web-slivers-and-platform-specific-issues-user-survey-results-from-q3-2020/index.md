@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-10-20
 author: jayoung-lee
 image: images/0_CopRAy_n9COQGqR.webp
-category: announcement
+category: news
 layout: blog
 ---
 

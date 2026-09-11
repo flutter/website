@@ -6,7 +6,7 @@ description: >-
 publishDate: 2017-11-16
 author: xster
 image: images/1Tt9lpvpKa1700v74KcjcIw.webp
-category: engineering
+category: deep-dive
 layout: blog
 ---
 

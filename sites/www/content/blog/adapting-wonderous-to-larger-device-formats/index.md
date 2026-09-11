@@ -6,7 +6,7 @@ description: >-
 publishDate: 2023-01-25
 author: leighajarett
 image: images/1RA_cBWkp9GOQsK_H0-Dg8w.gif
-category: story
+category: case-study
 layout: blog
 ---
 

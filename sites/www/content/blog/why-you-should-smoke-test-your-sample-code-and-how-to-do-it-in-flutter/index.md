@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-06-06
 author: filiph
 image: images/1khKciHLLdyG1gIY3qmwbLw.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

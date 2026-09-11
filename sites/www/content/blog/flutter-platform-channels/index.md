@@ -5,7 +5,7 @@ description: >-
 publishDate: 2018-08-28
 author: mravn
 image: images/1ykNghfAKtx0xsZWedfgslg.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

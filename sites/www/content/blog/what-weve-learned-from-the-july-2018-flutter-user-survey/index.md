@@ -7,7 +7,7 @@ description: >-
 publishDate: 2018-08-30
 author: jayoung-lee
 image: images/1gM8BhAAqil2B79RCarJ5-A.jpeg
-category: announcement
+category: news
 layout: blog
 ---
 

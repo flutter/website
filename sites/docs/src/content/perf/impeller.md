@@ -122,9 +122,9 @@ flutter run --no-enable-impeller
 To disable Impeller on Linux when deploying your app,
 add the following setup to your project in `linux/runner/my_application.cc`:
 
-```c
-g_autoptr(FlDartProject) project = fl_dart_project_new();
-fl_dart_project_set_enable_impeller(project, FALSE);
+```c diff
+  g_autoptr(FlDartProject) project = fl_dart_project_new();
++ fl_dart_project_set_enable_impeller(project, FALSE);
 ```
 
 ### Windows
@@ -142,9 +142,9 @@ flutter run --no-enable-impeller
 To disable Impeller on Windows when deploying your app,
 add the following setup to your project in `windows\runner\main.cpp`:
 
-```cpp
-flutter::DartProject project(L"data");
-project.set_impeller_switch(flutter::ImpellerSwitch::Disabled);
+```cpp diff
+  flutter::DartProject project(L"data");
++ project.set_impeller_switch(flutter::ImpellerSwitch::Disabled);
 ```
 
 ### Bugs and issues
@@ -178,6 +178,7 @@ check out the [README.md][] file in the source tree.
 
 ## Additional information
 
+* [Impeller anti-aliasing][impeller-antialiasing]
 * [Frequently asked questions][impeller-faq]
 * [Impeller's coordinate system][impeller-coords]
 * [How to set up Xcode for GPU frame captures with metal][impeller-xcode-capture]
@@ -187,6 +188,7 @@ check out the [README.md][] file in the source tree.
 * [Guidance for writing efficient shaders][impeller-shader-optimization]
 * [How color blending works in Impeller][impeller-blending]
 
+[impeller-antialiasing]: /perf/antialiasing
 [impeller-faq]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/faq.md
 [impeller-coords]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/coordinate_system.md
 [impeller-xcode-capture]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/xcode_frame_capture.md

@@ -136,7 +136,7 @@ along with any editor that supports [editing Dart][].
 
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio/IntelliJ]: /tools/android-studio
-[Antigravity]: /ai/antigravity
+[Antigravity]: /ai/get-started
 [editing Dart]: {{site.dart-site}}/tools
 [editor configuration]: /tools/editors
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/

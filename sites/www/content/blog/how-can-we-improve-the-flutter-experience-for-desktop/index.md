@@ -6,7 +6,7 @@ description: >-
 publishDate: 2022-12-12
 author: melyndahoover
 image: images/1VbmSF-liAOyeParju2Y4kw.webp
-category: announcement
+category: news
 layout: blog
 ---
 

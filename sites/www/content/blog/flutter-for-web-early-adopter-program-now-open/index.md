@@ -5,7 +5,7 @@ description: >-
 publishDate: 2019-07-25
 author: kevmoo
 image: images/1HcggEjhP_Li6Tt7KIzB10g.webp
-category: announcement
+category: news
 layout: blog
 ---
 

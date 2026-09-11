@@ -10,9 +10,7 @@ enum Site {
   /// The Flutter documentation site.
   docs(
     host: 'docs.flutter.dev',
-    buildOutputPathSegments: ['_site'],
     contentPathSegments: ['src', 'content'],
-    firebaseConfigPathSegments: ['firebase.json'],
     firebaseEmulatorPort: 5502,
     defaultFirebaseProjectId: 'flutter-docs-prod',
     supportsCodeExcerpts: true,
@@ -21,18 +19,14 @@ enum Site {
   /// The Flutter marketing site.
   www(
     host: 'flutter.dev',
-    buildOutputPathSegments: ['sites', 'www', 'build', 'jaspr'],
     contentPathSegments: ['content'],
-    firebaseConfigPathSegments: ['sites', 'www', 'firebase.json'],
     firebaseEmulatorPort: 5503,
     defaultFirebaseProjectId: 'flutter-dev-230821',
   );
 
   const Site({
     required this.host,
-    required this.buildOutputPathSegments,
     required this.contentPathSegments,
-    required this.firebaseConfigPathSegments,
     required this.firebaseEmulatorPort,
     required this.defaultFirebaseProjectId,
     this.supportsCodeExcerpts = false,
@@ -44,16 +38,9 @@ enum Site {
   /// The canonical base URL where this site is hosted in production.
   String get baseUrl => 'https://$host';
 
-  /// The path segments for this site's production build output directory,
-  /// relative to the repository root.
-  final List<String> buildOutputPathSegments;
-
   /// The path segments for this site's content directory,
   /// relative to the site's [directory].
   final List<String> contentPathSegments;
-
-  /// The path segments for this site's Firebase config file.
-  final List<String> firebaseConfigPathSegments;
 
   /// The hosting emulator port declared in this site's Firebase config.
   ///
@@ -80,18 +67,10 @@ enum Site {
       path.joinAll([directory, ...contentPathSegments]);
 
   /// The directory where this site's production build output should end up.
-  String get buildOutputDirectory => path.joinAll(buildOutputPathSegments);
-
-  /// The directory where Jaspr writes this site's production build,
-  /// before it is copied to [buildOutputDirectory] if different.
-  String get jasprBuildOutputDirectory =>
-      path.join(directory, 'build', 'jaspr');
+  String get buildOutputDirectory => path.join(directory, 'build', 'jaspr');
 
   /// The location of this site's Firebase config file.
-  String get firebaseConfigPath => path.joinAll(firebaseConfigPathSegments);
-
-  /// The directory containing this site's Firebase config file.
-  String get firebaseConfigDirectory => path.dirname(firebaseConfigPath);
+  String get firebaseConfigPath => path.join(directory, 'firebase.json');
 
   /// The ports Jaspr uses when serving this site locally.
   ///

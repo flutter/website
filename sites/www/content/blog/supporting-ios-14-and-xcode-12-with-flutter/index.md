@@ -5,7 +5,7 @@ description: >-
   including compatibility changes and migration guidance.
 publishDate: 2020-09-16
 author: csells
-category: announcement
+category: news
 layout: blog
 ---
 

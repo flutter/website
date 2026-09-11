@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  'max': 1440px,
+  '2xl': 1536px,
+  '3xl': 1920px,
+);
+
+/// Emits a minimum-width media query for the specified named breakpoint.
+///
+/// @param {string} $breakpoint-name - A key in `$breakpoints`.
+/// @content Styles to emit at or above the breakpoint width.
+@mixin screen($breakpoint-name) {
+  $value: map.get($breakpoints, $breakpoint-name);
+  @if $value == null {
+    @error 'Unknown breakpoint: #{$breakpoint-name}';
+  }
+  @media (min-width: $value) {
+    @content;
+  }
+}
+
+/// Emits a max-width media query that ends just below
+/// the specified named breakpoint.
+///
+/// @param {string} $breakpoint-name - A key in `$breakpoints`.
+/// @content Styles to emit below the breakpoint width.
+@mixin screen-below($breakpoint-name) {
+  $value: map.get($breakpoints, $breakpoint-name);
+  @if $value == null {
+    @error 'Unknown breakpoint: #{$breakpoint-name}';
+  }
+  @media (max-width: $value - 0.02px) {
+    @content;
+  }
+}

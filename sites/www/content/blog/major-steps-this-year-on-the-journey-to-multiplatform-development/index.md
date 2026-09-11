@@ -6,7 +6,7 @@ description: >-
 publishDate: 2023-11-15
 author: mit-mit
 image: images/0iomk4DoJwIXI44jX.webp
-category: engineering
+category: news
 layout: blog
 ---
 

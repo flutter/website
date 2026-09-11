@@ -1,59 +1,62 @@
-#cookie-notice {
-  display: none;
-  justify-content: center;
-  background-color: var(--site-header-bgColor);
-  padding: 1.25rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  z-index: var(--site-z-dropdown);
+@use '../base/mixins';
 
-  @keyframes fadein {
-    0% {
-      opacity: 0;
+// Align the managed banner with the site theme, including dark mode.
+body .glue-cookie-notification-bar {
+  background-color: var(--site-inset-bgColor);
+  color: var(--site-inset-fgColor);
+  padding: .75rem 1rem;
+  z-index: var(--site-z-top);
+
+  .glue-cookie-notification-bar__text {
+    font-family: var(--site-body-fontFamily);
+    font-size: inherit;
+    color: inherit;
+  }
+
+  .glue-cookie-notification-bar__more {
+    white-space: nowrap;
+
+    &, &:visited {
+      color: var(--site-link-fgColor);
     }
 
-    100% {
-      opacity: 1;
+    &:hover, &:focus, &:active {
+      color: var(--site-link-fgColor-active);
+      background-color: var(--site-raised-bgColor);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--site-link-fgColor);
     }
   }
 
-  &.show {
-    display: flex;
-    animation: fadein 500ms ease 200ms 1 forwards;
-  }
+  .glue-cookie-notification-bar__accept,
+  .glue-cookie-notification-bar__reject {
+    height: 40px;
+    min-height: 40px;
+    font-family: var(--site-ui-fontFamily);
+    font-size: 14px;
+    white-space: nowrap;
 
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1080px;
-    min-width: 0;
-    width: auto;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-
-    @media (min-width: 576px) {
-      flex-wrap: nowrap;
-    }
-
-    .button-group {
-      display: flex;
-      flex-direction: row;
-      gap: 0.75rem;
-      align-items: center;
-
-      .text-button {
-        color: var(--site-link-fgColor);
+    // Preserve the managed banner's system colors in high contrast mode.
+    @media (forced-colors: none) {
+      &, &:visited, &:hover, &:focus, &:active {
+        background-color: var(--site-filledButton-bgColor);
+        color: var(--site-filledButton-fgColor);
       }
-    }
 
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin: 0;
+      &:hover {
+        @include mixins.interaction-style(4%);
+      }
+
+      &:active {
+        @include mixins.interaction-style(8%);
+      }
+
+      &:focus {
+        border-color: var(--site-inset-bgColor);
+        box-shadow: 0 0 0 2px var(--site-link-fgColor);
+      }
     }
   }
 }

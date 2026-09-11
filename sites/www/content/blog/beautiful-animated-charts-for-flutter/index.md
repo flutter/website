@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-03-23
 author: mit-mit
 image: images/1CB1OU6uH4SsgJUB2j962dg.webp
-category: announcement
+category: news
 layout: blog
 ---
 

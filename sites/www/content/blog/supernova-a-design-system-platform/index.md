@@ -5,7 +5,7 @@ description: >-
 publishDate: 2021-09-30
 author: mariam_hasnany
 image: images/1GOSImwOIA3oqItUMRmq5Kw.webp
-category: story
+category: case-study
 layout: blog
 ---
 

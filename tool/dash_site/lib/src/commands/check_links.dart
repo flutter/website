@@ -32,7 +32,7 @@ final class CheckLinksCommand extends Command<int> {
   String get name => 'check-links';
 
   @override
-  Future<int> run() async => _checkLinks(
+  Future<int> run() => _checkLinks(
     site: selectedSite,
     checkExternal: argResults.get<bool>(_externalFlag, false),
   );
@@ -68,10 +68,7 @@ Future<int> _checkLinks({
     'Using firebase-tools $firebaseToolsVersion to start the '
     'Firebase hosting emulator asynchronously...',
   );
-  final firebaseConfigDirectory = path.join(
-    repositoryRoot,
-    site.firebaseConfigDirectory,
-  );
+  final firebaseConfigDirectory = path.join(repositoryRoot, site.directory);
   final firebaseConfigFileName = path.basename(site.firebaseConfigPath);
   final emulatorProcess = await Process.start(
     firebaseCliExecutable,
@@ -80,7 +77,7 @@ Future<int> _checkLinks({
       '--only',
       'hosting',
       '--project',
-      'default',
+      site.defaultFirebaseProjectId,
       '--config',
       firebaseConfigFileName,
       '--log-verbosity',

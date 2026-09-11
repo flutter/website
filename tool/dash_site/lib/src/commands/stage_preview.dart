@@ -45,7 +45,7 @@ final class StagePreviewCommand extends Command<int> {
       )
       ..addOption(
         _expiresOption,
-        defaultsTo: '7d',
+        defaultsTo: '5d',
         help: 'How long the Firebase Hosting preview channel should live.',
         valueHelp: 'duration',
       )
@@ -179,7 +179,7 @@ final class StagePreviewCommand extends Command<int> {
       return 0;
     }
 
-    return _commentStagingUrlOnGitHub(
+    return await _commentStagingUrlOnGitHub(
       site: selectedSite,
       stagingUrl: stagingUrl,
       context: prContext,
@@ -208,7 +208,7 @@ Future<String?> _deploySiteToStaging(
     '--expires',
     expires,
     '--json',
-  ], workingDirectory: path.join(repositoryRoot, site.firebaseConfigDirectory));
+  ], workingDirectory: path.join(repositoryRoot, site.directory));
 
   if (result.exitCode != 0) {
     stderr.writeln(result.stderr);

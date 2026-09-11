@@ -50,7 +50,6 @@ article.content {
     position: relative;
     font-family: var(--site-ui-fontFamily);
     margin-block-end: 1.5rem;
-    scroll-margin-top: calc(var(--site-header-height) + var(--site-subheader-height) + 1.25rem);
 
     &.wrap {
       display: flex;
@@ -104,19 +103,8 @@ article.content {
   h4,
   h5,
   h6 {
-
-    // Push # link targets clear of page header.
-    &[id] {
-      scroll-margin-top: calc(var(--site-header-height) + var(--site-subheader-height) + 1.25rem);
-    }
-
     // Let the wrapper set the bottom margin.
     margin-bottom: 0;
-  }
-
-  // Push # link targets clear of page header.
-  a[id] {
-    scroll-margin-top: calc(var(--site-header-height) + var(--site-subheader-height) + 1.25rem);
   }
 
   .header-wrapper {

@@ -1,6 +1,5 @@
 ---
 title: Prompting
-sidenav: ai
 description: >
   Learn how to build and optimize generative AI prompts in Flutter using system 
   instructions, dynamic parameters, and versioning techniques.

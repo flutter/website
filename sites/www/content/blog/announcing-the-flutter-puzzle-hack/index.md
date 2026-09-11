@@ -5,7 +5,7 @@ description: >-
 publishDate: 2022-01-06
 author: kkboateng
 image: images/1RpaR1pTpRa0PUdNdfv4njA.webp
-category: event
+category: news
 layout: blog
 ---
 

@@ -6,7 +6,7 @@ description: >-
   and maintainable Flutter code samples.
 publishDate: 2021-08-23
 author: domesticmouse
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

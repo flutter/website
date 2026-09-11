@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-12-14
 author: kenzieschmoll
 image: images/14dSyF9z9lAYvHVxFPS_oiw.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

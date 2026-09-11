@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-09-21
 author: josealba
 image: images/1BzcKF4qdbLIFFB6XL8x-9A.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

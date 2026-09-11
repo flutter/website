@@ -6,7 +6,7 @@ description: >-
 publishDate: 2021-11-16
 author: zoeyfan
 image: images/0zOegrJCYTuapgWgf.webp
-category: announcement
+category: news
 layout: blog
 ---
 

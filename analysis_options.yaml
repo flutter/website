@@ -1,2 +1,6 @@
 analyzer:
-  exclude: [_site, flutter, tmp]
+  exclude:
+    - _site
+    - build/**
+    - flutter
+    - tmp

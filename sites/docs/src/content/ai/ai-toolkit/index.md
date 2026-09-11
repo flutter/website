@@ -1,6 +1,5 @@
 ---
 title: Flutter AI Toolkit
-sidenav: ai
 shortTitle: AI Toolkit
 description: >
   Learn how to add the AI Toolkit chatbot

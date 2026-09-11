@@ -6,7 +6,7 @@ description: >-
 publishDate: 2021-06-29
 author: sfshaza
 image: images/0s0fEzRKPUlPITzxE.webp
-category: story
+category: case-study
 layout: blog
 ---
 

@@ -6,7 +6,7 @@ description: >-
 publishDate: 2026-05-14
 author: redbrogdon
 image: images/1yPatUacknopOAVF_Vr86OA.webp
-category: announcement
+category: news
 layout: blog
 ---
 

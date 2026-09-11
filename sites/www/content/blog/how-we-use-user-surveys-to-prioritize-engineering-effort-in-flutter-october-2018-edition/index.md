@@ -8,7 +8,7 @@ author:
   - jayoung-lee
   - taodong
 image: images/1gKUzs2GxDWCBIS-i218_zQ.webp
-category: announcement
+category: news
 layout: blog
 ---
 

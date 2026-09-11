@@ -5,7 +5,7 @@ description: >-
   behavior in your Flutter Widget Tests.
 publishDate: 2019-05-02
 author: arbullard
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

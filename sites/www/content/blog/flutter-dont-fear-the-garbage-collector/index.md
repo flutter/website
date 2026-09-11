@@ -6,7 +6,7 @@ description: >-
 publishDate: 2019-01-04
 author: mjohnsullivan
 image: images/1oVVba1QhXL1hUBKE9sfenw.webp
-category: engineering
+category: deep-dive
 layout: blog
 ---
 

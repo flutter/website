@@ -5,7 +5,7 @@ description: >-
 publishDate: 2026-03-05
 author: lamek
 image: images/18qm-mMi6Hod2jBw1_2nNEw.webp
-category: story
+category: case-study
 layout: blog
 ---
 

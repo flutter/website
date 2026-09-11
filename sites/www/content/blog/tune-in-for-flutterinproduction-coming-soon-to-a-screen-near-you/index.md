@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-12-03
 author: kkboateng
 image: images/1SSIgDyW3jMaOF5nxH5D9lw.gif
-category: event
+category: news
 layout: blog
 ---
 

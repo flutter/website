@@ -5,7 +5,7 @@ description: >-
 publishDate: 2022-05-12
 author: taodong
 image: images/0ZrpkIfhAQ0MW1RYp.webp
-category: story
+category: case-study
 layout: blog
 ---
 

@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-06-26
 author: mjohnsullivan
 image: images/1in7MRIAKfRn-qDgJKc9XVw.jpeg
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

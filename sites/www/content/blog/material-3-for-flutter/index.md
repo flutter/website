@@ -6,7 +6,7 @@ description: >-
 publishDate: 2023-01-18
 author: esouthren
 image: images/0RuCmIqSnK0G0kHmy.webp
-category: announcement
+category: news
 layout: blog
 ---
 

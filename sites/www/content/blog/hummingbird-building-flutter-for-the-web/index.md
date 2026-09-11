@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-12-04
 author: yegorj
 image: images/0gD64Y8ECWBBuSZrx.webp
-category: engineering
+category: deep-dive
 layout: blog
 ---
 

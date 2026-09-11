@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-06-17
 author: timsneath
 image: images/0OLMhLy7-b-4BisTc.webp
-category: announcement
+category: news
 layout: blog
 ---
 

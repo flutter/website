@@ -6,7 +6,7 @@ description: >-
 publishDate: 2024-11-21
 author: tvolkert
 image: images/1rV1FMqYeyrHsOvtSUIOnOA.webp
-category: story
+category: case-study
 layout: blog
 ---
 

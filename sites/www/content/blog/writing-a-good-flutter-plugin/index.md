@@ -5,7 +5,7 @@ description: >-
   and maintaining a high-quality Flutter plugin
 publishDate: 2018-10-03
 author: mehmetf
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

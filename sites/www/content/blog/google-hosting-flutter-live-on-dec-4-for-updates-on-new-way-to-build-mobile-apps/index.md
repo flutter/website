@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-11-15
 author: aguinis
 image: images/1WCwp_dTUQuDPDQIa1PV3cA.jpeg
-category: event
+category: news
 layout: blog
 ---
 

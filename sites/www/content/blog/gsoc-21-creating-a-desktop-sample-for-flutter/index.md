@@ -6,7 +6,7 @@ description: >-
 publishDate: 2021-08-22
 author: abd99
 image: images/1aRiqWvnUYD-cSbGhxTnUsw.jpeg
-category: story
+category: case-study
 layout: blog
 ---
 

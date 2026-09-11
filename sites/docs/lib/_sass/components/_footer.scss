@@ -1,3 +1,5 @@
+@use 'package:site_shared/_sass/base/breakpoints';
+
 #site-footer {
   position: relative;
   background-color: var(--site-footer-bgColor);
@@ -22,7 +24,7 @@
     justify-content: space-between;
     text-align: left;
 
-    @media (max-width: 768px) {
+    @include breakpoints.screen-below(md) {
       flex-direction: column;
       text-align: center;
     }
@@ -41,7 +43,7 @@
       width: 70%;
       max-width: 720px;
 
-      @media (max-width: 768px) {
+      @include breakpoints.screen-below(md) {
         width: 100%;
       }
     }
@@ -70,7 +72,7 @@
       }
     }
 
-    @media (min-width: 768px) {
+    @include breakpoints.screen(md) {
       margin-top: 0;
     }
   }
@@ -96,7 +98,7 @@
   }
 
   .footer-utility-links {
-    @media (min-width: 768px) {
+    @include breakpoints.screen(md) {
       text-align: right;
     }
 
@@ -114,7 +116,7 @@
         }
       }
 
-      @media (min-width: 768px) {
+      @include breakpoints.screen(md) {
         margin-top: 0;
 
         li:first-child {

@@ -9,7 +9,7 @@ author:
   - filiph
   - efortuna
 image: images/1pI9tDcnxm87Vq1hX1Yzwpg.jpeg
-category: story
+category: case-study
 layout: blog
 ---
 

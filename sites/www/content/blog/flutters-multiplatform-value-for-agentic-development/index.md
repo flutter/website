@@ -7,7 +7,7 @@ description: >-
 publishDate: 2026-05-18
 author: mit-mit
 image: images/1aotSzcGPZg3gYqhwDy4LWQ.webp
-category: engineering
+category: deep-dive
 layout: blog
 ---
 

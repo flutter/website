@@ -6,7 +6,7 @@ description: >-
 publishDate: 2026-04-14
 author: twerske
 image: images/1UVUiBS4ceEJmWIt8w8IeTQ.webp
-category: event
+category: news
 layout: blog
 ---
 

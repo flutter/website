@@ -5,7 +5,7 @@ description: >-
 publishDate: 2018-10-18
 author: efortuna
 image: images/1acfGrRUFKsC4z_0wHHt_Lg.gif
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

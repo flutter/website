@@ -275,9 +275,8 @@ To invoke the action (if it exists), call:
 ```dart
 Object? result;
 if (selectAll != null) {
-  result = Actions.of(
-    context,
-  ).invokeAction(selectAll, const SelectAllIntent());
+  result = Actions.of(context)
+      .invokeAction(selectAll, const SelectAllIntent());
 }
 ```
 

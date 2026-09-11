@@ -5,7 +5,7 @@ description: >-
 publishDate: 2020-06-24
 author: filiph
 image: images/0VLibsxLD9Wv35Pr8.webp
-category: announcement
+category: news
 layout: blog
 ---
 

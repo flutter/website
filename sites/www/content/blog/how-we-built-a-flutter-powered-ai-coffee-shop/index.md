@@ -5,7 +5,7 @@ description: >-
 publishDate: 2026-06-22
 author: craiglabenz
 image: images/1o8sb5en4Yhr9J0R1cMMO_g.jpeg
-category: story
+category: case-study
 layout: blog
 ---
 

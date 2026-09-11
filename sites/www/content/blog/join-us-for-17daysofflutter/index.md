@@ -5,7 +5,7 @@ description: >-
 publishDate: 2023-01-05
 author: shamiramarshall
 image: images/1cKk9QrcolzFfqB2ZWyUxSQ.webp
-category: event
+category: news
 layout: blog
 ---
 

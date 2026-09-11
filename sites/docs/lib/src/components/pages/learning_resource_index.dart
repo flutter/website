@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/util.dart';
+import 'package:site_shared/components/common/tags.dart';
 
 import '../../models/learning_resource_model.dart';
 import 'learning_resource_filters.dart';
@@ -30,8 +30,8 @@ final class LearningResourceIndex extends StatelessComponent {
       }
     }
 
-    return div(id: 'resource-index-content', [
-      div(classes: 'left-col', id: 'resource-index-main-content', [
+    return div(classes: 'filterable-index', [
+      div(classes: 'left-col', [
         const LearningResourceFilters(),
         section(classes: 'card-grid', id: 'all-resources-grid', [
           for (final item in learningResources) _ResourceCard(item),
@@ -65,21 +65,15 @@ final class _ResourceCard extends StatelessComponent {
             img(src: imageUrl, alt: ''),
           ]),
         div(classes: 'card-leading', [
-          span(
-            classes: [
-              'pill-sm',
-              switch (resource.type) {
-                'codelab' || 'workshop' => 'flutter-blue',
-                'quickstart' || 'demo' => 'purple',
-                _ => 'teal',
-              },
-            ].toClasses,
-            [
-              .text(
-                resource.type.substring(0, 1).toUpperCase() +
-                    resource.type.substring(1),
-              ),
-            ],
+          Tag(
+            resource.type.substring(0, 1).toUpperCase() +
+                resource.type.substring(1),
+            color: switch (resource.type) {
+              'codelab' || 'workshop' => TagColor.blue,
+              'quickstart' || 'demo' => TagColor.purple,
+              _ => TagColor.teal,
+            },
+            size: TagSize.small,
           ),
           _iconForLabel(resource.link?.label ?? ''),
         ]),
@@ -100,8 +94,8 @@ final class _ResourceCard extends StatelessComponent {
       classes: 'monochrome-icon',
       width: 24.px,
       height: 24.px,
-      [
-        const Component.element(
+      const [
+        Component.element(
           tag: 'use',
           attributes: {'href': '/assets/images/social/github.svg#github'},
         ),
@@ -112,8 +106,8 @@ final class _ResourceCard extends StatelessComponent {
       width: 24,
       alt: 'Dart logo',
     ),
-    'Google Codelab' => svg(width: 24.px, height: 24.px, [
-      const Component.element(
+    'Google Codelab' => svg(width: 24.px, height: 24.px, const [
+      Component.element(
         tag: 'use',
         attributes: {
           'href':
@@ -125,8 +119,8 @@ final class _ResourceCard extends StatelessComponent {
       attributes: {'style': 'color: red'},
       width: 24.px,
       height: 24.px,
-      [
-        const Component.element(
+      const [
+        Component.element(
           tag: 'use',
           attributes: {'href': '/assets/images/social/youtube.svg#youtube'},
         ),

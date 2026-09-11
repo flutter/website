@@ -6,7 +6,7 @@ description: >-
 publishDate: 2018-01-19
 author: amir_h
 image: images/10gdFpYTSo_TTCqd-XVcvYw.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

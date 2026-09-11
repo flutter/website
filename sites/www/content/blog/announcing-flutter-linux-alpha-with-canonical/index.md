@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-07-08
 author: csells
 image: images/0uMT4fCQFO8VQwB0Q.webp
-category: announcement
+category: news
 layout: blog
 ---
 

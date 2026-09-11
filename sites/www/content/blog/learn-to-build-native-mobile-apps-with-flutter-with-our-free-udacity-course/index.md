@@ -5,7 +5,7 @@ description: >-
 publishDate: 2018-07-02
 author: maryx
 image: images/1v_vdCNpmwHNcOM0xiqXIOQ.webp
-category: tutorial
+category: deep-dive
 layout: blog
 ---
 

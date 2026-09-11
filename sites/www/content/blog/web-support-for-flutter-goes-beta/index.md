@@ -6,7 +6,7 @@ description: >-
 publishDate: 2019-12-11
 author: mariam_hasnany
 image: images/0M7sTluUPVsk6DcnU.webp
-category: announcement
+category: news
 layout: blog
 ---
 

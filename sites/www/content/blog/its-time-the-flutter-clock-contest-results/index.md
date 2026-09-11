@@ -6,7 +6,7 @@ description: >-
 publishDate: 2020-02-25
 author: aguinis
 image: images/10z33rzzkJfYqORqmhtjdMg.jpeg
-category: event
+category: news
 layout: blog
 ---
 

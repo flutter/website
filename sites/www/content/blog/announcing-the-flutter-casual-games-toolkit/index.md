@@ -5,7 +5,7 @@ description: >-
 publishDate: 2022-05-12
 author: zoeyfan
 image: images/1rIXhQTkBae35i5YkSN8soQ.webp
-category: announcement
+category: news
 layout: blog
 ---
 

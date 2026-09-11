@@ -12,6 +12,10 @@ import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.d
     deferred as _os_selector;
 import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     deferred as _pagenav;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj/cuj_filters.dart'
+    deferred as _cuj_filters;
+import 'package:docs_flutter_dev_site/src/components/pages/cuj/cuj_filters_sidebar.dart'
+    deferred as _cuj_filters_sidebar;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     deferred as _archive_table;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
@@ -22,8 +26,6 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
     deferred as _learning_resource_filters_sidebar;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     deferred as _collapse_button;
-import 'package:site_shared/components/common/client/cookie_notice.dart'
-    deferred as _cookie_notice;
 import 'package:site_shared/components/common/client/copy_button.dart'
     deferred as _copy_button;
 import 'package:site_shared/components/common/client/download_button.dart'
@@ -96,6 +98,14 @@ ClientOptions get defaultClientOptions => ClientOptions(
       ),
       loader: _archive_table.loadLibrary,
     ),
+    'cuj_filters': ClientLoader(
+      (p) => _cuj_filters.CujFilters(),
+      loader: _cuj_filters.loadLibrary,
+    ),
+    'cuj_filters_sidebar': ClientLoader(
+      (p) => _cuj_filters_sidebar.CujFiltersSidebar(),
+      loader: _cuj_filters_sidebar.loadLibrary,
+    ),
     'glossary_search_section': ClientLoader(
       (p) => _glossary_search_section.GlossarySearchSection(),
       loader: _glossary_search_section.loadLibrary,
@@ -115,13 +125,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
         title: p['title'] as String?,
       ),
       loader: _collapse_button.loadLibrary,
-    ),
-    'site_shared:cookie_notice': ClientLoader(
-      (p) => _cookie_notice.CookieNotice(
-        host: p['host'] as String,
-        alwaysDarkMode: p['alwaysDarkMode'] as bool,
-      ),
-      loader: _cookie_notice.loadLibrary,
     ),
     'site_shared:copy_button': ClientLoader(
       (p) => _copy_button.CopyButton(

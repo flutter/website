@@ -5,7 +5,7 @@ description: >-
 publishDate: 2024-05-14
 author: kkboateng
 image: images/0S_bBN0WiR_Q5F08J.webp
-category: event
+category: news
 layout: blog
 ---
 

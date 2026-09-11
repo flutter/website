@@ -67,9 +67,8 @@ class HomePage extends StatelessWidget {
                 // tapped, push the detailsPageRouteName route
                 // to the Navigator and pass the person's instance
                 // to the route.
-                Navigator.of(
-                  context,
-                ).pushNamed(detailsPageRouteName, arguments: person);
+                Navigator.of(context)
+                    .pushNamed(detailsPageRouteName, arguments: person);
               },
             );
           },

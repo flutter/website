@@ -6,7 +6,7 @@ description: >-
 publishDate: 2023-05-10
 author: timsneath
 image: images/1bzC0ul7jBVhOJiastVGKlw.webp
-category: event
+category: news
 layout: blog
 ---
 

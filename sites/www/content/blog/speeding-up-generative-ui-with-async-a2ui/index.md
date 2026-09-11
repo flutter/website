@@ -6,7 +6,7 @@ description: >-
 publishDate: 2026-08-13
 author: redbrogdon
 image: images/hero_image.webp
-category: engineering
+category: deep-dive
 layout: blog
 ---
 

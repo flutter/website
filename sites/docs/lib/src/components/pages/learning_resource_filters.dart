@@ -7,18 +7,21 @@ import 'dart:math';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/analytics.dart';
-import 'package:site_shared/components/common/material_icon.dart';
-import 'package:site_shared/components/common/search.dart';
-import 'package:site_shared/components/utils/global_event_listener.dart';
+import 'package:site_shared/components/common/button.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../models/learning_resource_model.dart';
+import 'filterable_index.dart';
 import 'learning_resource_filters_sidebar.dart';
 
+/// The search controls and result summary for the learning resources index.
 @client
 class LearningResourceFilters extends StatefulComponent {
   const LearningResourceFilters({super.key});
+
+  /// The ID of the checkbox that toggles the filter drawer on narrow screens.
+  static const String drawerToggleId = 'learning-resource-filter-toggle';
 
   @override
   State<LearningResourceFilters> createState() =>
@@ -26,19 +29,25 @@ class LearningResourceFilters extends StatefulComponent {
 }
 
 class _LearningResourceFiltersState extends State<LearningResourceFilters> {
-  String searchQuery = '';
+  /// The filters selected in the learning resource sidebar.
+  static LearningResourceFiltersNotifier get _filters =>
+      LearningResourceFiltersSidebar.filters;
 
-  FiltersNotifier get filters => LearningResourceFiltersSidebar.filters;
+  /// The learning resources reconstructed from the rendered resource cards.
+  final List<LearningResource> _resources = [];
 
-  final List<LearningResource> resources = [];
-  int filteredResourcesCount = 0;
+  /// The current search query.
+  String _searchQuery = '';
+
+  /// The number of resources matching the active search and filters.
+  int _filteredResourcesCount = 0;
 
   @override
   void initState() {
     super.initState();
 
     if (kIsWeb) {
-      filters.addListener(setFilters);
+      _filters.addListener(_setFilters);
 
       final resourceGrid = web.document.getElementById('all-resources-grid');
       if (resourceGrid == null) {
@@ -46,16 +55,17 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
       }
 
       final resourceCards = resourceGrid.querySelectorAll('.card');
-      recreateResources(resourceCards);
-      shuffleCards(resourceGrid);
+      _recreateResources(resourceCards);
+      _shuffleCards(resourceGrid);
     }
   }
 
-  void recreateResources(web.NodeList resourceCards) {
+  /// Populates [_resources] from [resourceCards] and registers click analytics.
+  void _recreateResources(web.NodeList resourceCards) {
     for (var i = 0; i < resourceCards.length; i++) {
       final element = resourceCards.item(i) as web.Element;
       final info = LearningResource.fromElement(element);
-      resources.add(info);
+      _resources.add(info);
 
       element.addEventListener(
         'click',
@@ -67,10 +77,11 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
         }).toJS,
       );
     }
-    filteredResourcesCount = resources.length;
+    _filteredResourcesCount = _resources.length;
   }
 
-  void shuffleCards(web.Element container) {
+  /// Randomizes the order of the resource cards in [container].
+  void _shuffleCards(web.Element container) {
     final r = Random();
     final elements = container.childNodes;
     for (var i = elements.length; i > 0; i--) {
@@ -91,12 +102,12 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
   ///   searchQuery = '...';
   /// });
   /// ```
-  void setFilters([void Function()? callback]) {
+  void _setFilters([void Function()? callback]) {
     setState(callback ?? () {});
 
-    final resourcesToShow = filters.filterResources(resources, searchQuery);
-    filteredResourcesCount = resourcesToShow.length;
-    for (final info in resources) {
+    final resourcesToShow = _filters.filterResources(_resources, _searchQuery);
+    _filteredResourcesCount = resourcesToShow.length;
+    for (final info in _resources) {
       final element =
           web.document.getElementById(info.name) as web.HTMLElement?;
       if (element == null) {
@@ -114,78 +125,51 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
   @override
   void dispose() {
     if (kIsWeb) {
-      filters.removeListener(setFilters);
+      _filters.removeListener(_setFilters);
     }
     super.dispose();
   }
 
   @override
   Component build(BuildContext context) {
-    return div(id: 'resource-search-group', classes: 'chip-filters-group', [
-      SearchBar(
-        placeholder: 'Try "button" or "networking"...',
-        label: 'Search learning resources by name and category',
-        value: searchQuery,
-        id: 'resource-search',
-        onInput: (value) {
-          setFilters(() {
-            searchQuery = value;
-          });
-        },
-        trailing: GlobalEventListener(
-          onClick: (event) {
-            final target = event.target as web.Element?;
-            // If clicking outside the filters or toggle, close the filters.
-            if (target?.closest('#resource-filter-group-wrapper') == null &&
-                target?.closest('.show-filters-button') == null) {
-              final toggle = web.document.getElementById(
-                'open-filter-toggle',
-              ) as web.HTMLInputElement?;
-              toggle?.checked = false;
-            }
-          },
-          button(
-            classes: 'icon-button show-filters-button',
-            onClick: () {
-              final toggle = web.document.getElementById(
-                'open-filter-toggle',
-              ) as web.HTMLInputElement?;
-              toggle?.checked = !toggle.checked;
-            },
+    return FilterSearchGroup(
+      drawerToggleId: LearningResourceFilters.drawerToggleId,
+      searchId: 'resource-search',
+      placeholder: 'Try "button" or "networking"...',
+      label: 'Search learning resources by name and category',
+      value: _searchQuery,
+      onInput: (value) {
+        _setFilters(() {
+          _searchQuery = value;
+        });
+      },
+      children: [
+        div(classes: 'label-row', [
+          label(
+            attributes: {'for': 'resource-search'},
             [
-              const MaterialIcon('filter_list'),
+              const .text('Showing '),
+              span([.text('$_filteredResourcesCount')]),
+              const .text(' / '),
+              span([.text('${_resources.length}')]),
             ],
           ),
-        ),
-      ),
-      div(classes: 'label-row', [
-        label(
-          attributes: {'for': 'resource-search'},
-          [
-            const .text('Showing '),
-            span([.text('$filteredResourcesCount')]),
-            const .text(' / '),
-            span([.text('${resources.length}')]),
-          ],
-        ),
-        button(
-          attributes: {
-            if (searchQuery.isEmpty &&
-                filters.selectedTags.isEmpty &&
-                filters.selectedTypes.isEmpty)
-              'disabled': 'true',
-          },
-          onClick: () {
-            // No setState needed, since resetting filters will trigger it.
-            searchQuery = '';
-            filters.reset();
-          },
-          [
-            const MaterialIcon('close_small'),
-            const span([.text('Clear filters')]),
-          ],
-        ),
-      ]),
-    ]);
+          Button(
+            icon: 'close_small',
+            content: 'Clear filters',
+            size: ButtonSize.compact,
+            disabled:
+                _searchQuery.isEmpty &&
+                _filters.selectedTags.isEmpty &&
+                _filters.selectedTypes.isEmpty,
+            onClick: () {
+              // No setState needed, since resetting filters will trigger it.
+              _searchQuery = '';
+              _filters.reset();
+            },
+          ),
+        ]),
+      ],
+    );
   }
 }
