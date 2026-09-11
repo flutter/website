@@ -36,6 +36,8 @@ import 'package:site_shared/components/blog/client/blog_categories.dart'
     as _blog_categories;
 import 'package:site_shared/components/blog/client/share_button.dart'
     as _share_button;
+import 'package:site_shared/components/common/client/back_to_top_button.dart'
+    as _back_to_top_button;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     as _collapse_button;
 import 'package:site_shared/components/common/client/copy_button.dart'
@@ -130,6 +132,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'site_shared:share_button',
       params: __share_buttonShareButton,
     ),
+    _back_to_top_button.BackToTopButton:
+        ClientTarget<_back_to_top_button.BackToTopButton>(
+          'site_shared:back_to_top_button',
+        ),
     _collapse_button.CollapseButton:
         ClientTarget<_collapse_button.CollapseButton>(
           'site_shared:collapse_button',
