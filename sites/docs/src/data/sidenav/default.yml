@@ -401,8 +401,6 @@
       children:
         - title: Set up iOS development
           permalink: /platform-integration/ios/setup
-        - title: Flutter on latest iOS
-          permalink: /platform-integration/ios/ios-latest
         - title: Leverage Apple's system libraries
           permalink: /platform-integration/ios/apple-frameworks
         - title: Add a launch screen

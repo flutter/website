@@ -35,7 +35,7 @@ Flutter supports deploying to the following platforms.
     name="iOS"
     icon="mobile"
     arch="Arm64"
-    supported="15 to 26"
+    supported="15 to 27"
     ci-tested="18 and 26"
     unsupported="14 and earlier"
     deploy-to-link="/deployment/ios"
@@ -48,14 +48,9 @@ Flutter supports deploying to the following platforms.
 As Apple phases out Intel-based Macs,
 Flutter is phasing out support for Intel (x64) hardware.
 For details on the timeline and impact,
-check out the [macOS Intel deprecation strategy][].
-
-If you can't migrate to an [Apple Silicon Mac][],
-you can continue using older Flutter releases from the [SDK archive][].
+refer to the [macOS Intel deprecation strategy][].
 
 [macOS Intel deprecation strategy]: {{site.main-url}}/go/macos-intel-deprecation
-[Apple Silicon Mac]: https://support.apple.com/en-us/116943
-[SDK archive]: /install/archive
 :::
 
 <PlatformsGrid>
@@ -72,7 +67,7 @@ you can continue using older Flutter releases from the [SDK archive][].
     name="macOS"
     icon="laptop_mac"
     arch="x64, Arm64"
-    supported="Monterey (12) to Tahoe (26)"
+    supported="Monterey (12) to Golden Gate (27)"
     ci-tested="Sequoia (15)"
     unsupported="Big Sur (11) and earlier"
     deploy-to-link="/deployment/macos"
