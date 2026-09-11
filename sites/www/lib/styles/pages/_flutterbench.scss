@@ -714,8 +714,13 @@ body.flutterbench {
           &:hover {
             background-color: var(--site-inset-bgColor);
           }
-          &.expanded {
-            background-color: rgba(4, 104, 215, 0.03);
+          &:focus-visible {
+            outline: 2px solid var(--blue-5);
+            outline-offset: -2px;
+          }
+          &.selected {
+            background-color: rgba(4, 104, 215, 0.08);
+            box-shadow: inset 3px 0 0 var(--blue-6);
           }
         }
 
@@ -745,6 +750,114 @@ body.flutterbench {
         white-space: nowrap;
         font-variant-numeric: tabular-nums;
       }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Leaderboard details drawer
+  //
+  // The drawer shell itself lives in `styles/components/_drawer.scss`.
+  // ---------------------------------------------------------------------------
+  .bench-details-drawer {
+    .drawer-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: $spacing-sm;
+      margin-bottom: $spacing-lg;
+    }
+
+    .drawer-metric {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: $spacing-sm;
+      border: 1px solid var(--site-inset-borderColor);
+      border-radius: var(--ui-border-radius-sm);
+      background-color: var(--site-inset-bgColor);
+    }
+
+    .drawer-metric-label {
+      font-size: $font-size-xs;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--site-base-fgColor-alt);
+    }
+
+    .drawer-metric-value {
+      font-size: $font-size-md;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+
+      // Override the compact sizing the pills use inside the table.
+      .score-pill,
+      .bench-error-badge {
+        font-size: inherit;
+      }
+    }
+
+    .cuj-summary-columns {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+    }
+
+    .cuj-col-heading {
+      margin: 0 0 $spacing-sm;
+      font-size: $font-size-sm;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cuj-list {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $spacing-md;
+        padding: $spacing-sm;
+        border-radius: var(--ui-border-radius-sm);
+        background-color: var(--site-inset-bgColor);
+      }
+    }
+
+    .cuj-link {
+      font-size: $font-size-sm;
+      font-weight: 500;
+      color: var(--site-link-fgColor);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .drawer-footer {
+      margin-top: $spacing-xl;
+      padding-top: $spacing-md;
+      border-top: 1px solid var(--site-inset-borderColor);
+    }
+
+    .text-success {
+      color: var(--bench-success-fg);
+    }
+
+    .text-danger {
+      color: var(--bench-danger-fg);
+    }
+
+    .text-muted {
+      margin: 0;
+      font-size: $font-size-sm;
+      color: var(--site-base-fgColor-alt);
     }
   }
 
