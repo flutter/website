@@ -269,7 +269,7 @@ without waiting for an OS or SDK update.
 Flutter's plugin architecture, [platform channels][],
 and native interop tools (such as Dart FFI, `ffigen`, and `jnigen`)
 allow you to access new OS APIs immediately.
-You do not need to wait for a Flutter SDK release to integrate new platform capabilities.
+You don't need to wait for a Flutter SDK release to integrate new platform capabilities.
 
 [platform channels]: /platform-integration/platform-channels
 
