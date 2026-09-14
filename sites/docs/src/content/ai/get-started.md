@@ -168,7 +168,7 @@ Equip Cursor with official Flutter and Dart skills and MCP configuration
 using any of the following methods:
 
 * Visit the [Dart and Flutter plugin](https://cursor.com/marketplace/flutter)
-  on the Cursor Marketplace and select **Add**.
+  on the Cursor Marketplace and select **Add to Cursor**.
 * In Cursor, open **Customize**, then search for and add **Dart and Flutter**.
 * In a Cursor chat session, run `/add-plugin dart-flutter`.
 
