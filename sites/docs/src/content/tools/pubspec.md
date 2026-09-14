@@ -129,7 +129,8 @@ The `assets` field has the following structure:
 flutter:
   assets:
     - [ path_to_file | path_to_directory ]
-      [ flavor_path_field | platform_path_field | transformer_path_field ]
+      [ flavor_path_field | environment_path_field |
+        platform_path_field | transformer_path_field ]
     [...]
 ```
 
@@ -148,6 +149,13 @@ flutter:
 - path: path/to/directory
   flavors:
     - flavor_name
+```
+
+```yaml
+# environment_path_field structure
+- path: path/to/file
+  environment:
+    variable_name: variable_value
 ```
 
 ```yaml
@@ -173,6 +181,8 @@ Subfields of `assets`:
   a directory.
 * `flavor_path_field`: A path field and its flavor
   subfields.
+* `environment_path_field`: A path field and its environment
+  subfields.
 * `platform_path_field`: A path field and its platform
   subfields.
 * `transformer_path_field`: A path field and its transformer
@@ -181,6 +191,11 @@ Subfields of `assets`:
 * `flavors`: A list of flutter flavors to use with assets at a specific path.
   To learn more about flavors, consult the guides on setting up flavors for
   [Android][], [iOS and macOS][], [Linux][], and [Windows][].
+* `environment`: A map of build process environment variable names
+  to accepted values. Every variable must match for the asset to be bundled.
+  A value can be a string for an exact match or a list of strings
+  to match any listed value. Names and values are case-sensitive,
+  and unset variables don't match.
 * `platforms`: A list of platforms to use with assets at a
   specific path. Valid values are `android`, `ios`, `web`, `linux`,
   `macos`, and `windows`.
@@ -220,6 +235,26 @@ flutter:
       flavors:
         - flavor_c
 ```
+
+You can pass in a path to a directory for specific build process
+environment variable values:
+
+```yaml title="pubspec.yaml"
+flutter:
+  assets:
+    - path: assets/internal/
+      environment:
+        AUDIENCE: internal
+    - path: assets/app_a/non_production/
+      environment:
+        APP: app_a
+        AUDIENCE:
+          - internal
+          - staging
+```
+
+The second asset directory is bundled when `APP` is `app_a`
+and `AUDIENCE` is either `internal` or `staging`.
 
 You can pass in a path to a file for specific platforms:
 
