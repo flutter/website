@@ -83,8 +83,51 @@ from at runtime.
 
 Flutter supports using a Dart package to transform asset files when building your app.
 To do this, specify the asset files and transformer package in your pubspec file.
-To learn how to do this and write your own asset-transforming packages, see
-[Transforming assets at build time][].
+To learn how to do this and write your own asset-transforming packages,
+consult [Transforming assets at build time][].
+
+### Environment-specific assets
+
+You can include assets only when environment variables have specific values.
+This lets you select assets independently from native app flavors,
+which is useful when your app has multiple build dimensions.
+
+The following configuration includes `assets/apps/alpha/`
+when `APP` is set to `alpha` in the build process environment:
+
+```yaml
+flutter:
+  assets:
+    - assets/common/
+    - path: assets/apps/alpha/
+      environment:
+        APP: alpha
+```
+
+For multiple environment variables, every variable must match.
+To match any of several values for one variable, use a list:
+
+```yaml
+flutter:
+  assets:
+    - path: assets/apps/alpha/internal/
+      environment:
+        APP: alpha
+        AUDIENCE:
+          - internal
+          - staging
+```
+
+This asset is bundled when `APP` is `alpha` and `AUDIENCE` is either
+`internal` or `staging`.
+Variable names and values are case-sensitive,
+and an unset variable doesn't match.
+Assets without an `environment` subfield are always bundled.
+
+You can combine `environment` with `flavors` and `platforms` on an asset entry.
+The asset is bundled only when all specified conditions match.
+For the complete syntax, consult the [`assets` field][]
+in the [Flutter pubspec options][] reference.
 
 ### Platform-specific assets
 
@@ -110,7 +153,7 @@ flutter:
 ```
 
 For more information about configuring platform-specific assets,
-see the [`assets` field][]
+consult the [`assets` field][]
 in the [Flutter pubspec options][] reference.
 
 ## Loading assets
@@ -543,6 +586,5 @@ For more details, see
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [Transforming assets at build time]: /ui/assets/asset-transformation
-[flavors feature]: /deployment/flavors
 [`assets` field]: /tools/pubspec#assets
 [Flutter pubspec options]: /tools/pubspec
