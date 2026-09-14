@@ -536,7 +536,7 @@ To analyze and reduce app size, see [Measuring your app's size][].
 
 ### Is Flutter ABI compatible?
 
-Flutter and Dart do not provide application binary interface (ABI)
+Flutter and Dart don't provide application binary interface (ABI)
 compatibility across different compiler releases.
 Always compile your application using matching SDK versions.
 
