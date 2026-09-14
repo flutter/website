@@ -81,7 +81,7 @@ To explore apps built with Flutter, visit the [showcase][].
 ### What makes Flutter unique?
 
 Flutter differs from most cross-platform alternatives
-because it does not rely on web browser views
+because it doesn't rely on web browser views
 or system-provided platform widgets.
 Instead, Flutter renders its UI using its own high-performance
 rendering engine ([Impeller][]).
