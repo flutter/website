@@ -184,7 +184,7 @@ and the [Flutter DevTools][] documentation.
 
 ### Does Flutter come with a dependency injection framework?
 
-Flutter does not require an opinionated dependency injection framework.
+Flutter doesn't require an opinionated dependency injection framework.
 The Flutter ecosystem offers several packages for dependency injection
 and service location, such as [Riverpod][], [get_it][],
 [Provider][], and [injectable][].
