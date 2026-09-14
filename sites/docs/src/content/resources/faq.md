@@ -323,8 +323,8 @@ _Fast memory allocation_
 
 Flutter can run any Dart code that doesn't depend on libraries
 unavailable on the target platform.
-For example, mobile and desktop apps cannot import web-specific libraries,
-and web apps cannot use `dart:io`.
+For example, mobile and desktop apps can't import web-specific libraries,
+and web apps can't use `dart:io`.
 
 ### How does Flutter compile for the web?
 
