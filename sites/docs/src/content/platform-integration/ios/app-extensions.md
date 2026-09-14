@@ -498,7 +498,7 @@ class ShareViewController: UIViewController {
 
 </Tabs>
 
-1.  [Test your app with the simulator][].
+9.  [Test your app with the simulator][].
 
 [Add an extension to your Flutter app]: #add-extension
 [Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
