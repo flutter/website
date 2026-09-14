@@ -500,7 +500,7 @@ You can use [`Isolate.run()`][] or the [`compute()`][] function
 to run heavy computations in the background.
 
 [`Isolate.run()`]: {{site.api}}/flutter/dart-isolate/Isolate/run.html
-[`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
+[`compute()`]: {{site.api}}/flutter/foundation/compute.html
 
 ### Can I run Dart code in the background of a Flutter app?
 
