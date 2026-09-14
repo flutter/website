@@ -275,7 +275,7 @@ You do not need to wait for a Flutter SDK release to integrate new platform capa
 
 ### Does Flutter support code push?
 
-Flutter does not provide built-in code push functionality.
+Flutter doesn't provide built-in code push functionality.
 Third-party solutions, such as [Shorebird][],
 provide code push support for Flutter applications.
 
