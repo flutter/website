@@ -211,7 +211,7 @@ read the [architectural overview][].
 
 The engine's C and C++ code is compiled using Android's NDK.
 The Dart code (both the framework and your application code)
-is ahead-of-time (AOT) compiled into native ARM and x86-64 machine code.
+is ahead-of-time (AOT) compiled into native machine code.
 These libraries are packaged into a runner Android project
 and built into an APK or Android App Bundle (AAB).
 When launched, the app loads the Flutter engine,
