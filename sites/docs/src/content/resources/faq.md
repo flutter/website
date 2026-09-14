@@ -321,7 +321,7 @@ _Fast memory allocation_
 
 ### Can Flutter run any Dart code?
 
-Flutter can run any Dart code that does not depend on libraries
+Flutter can run any Dart code that doesn't depend on libraries
 unavailable on the target platform.
 For example, mobile and desktop apps cannot import web-specific libraries,
 and web apps cannot use `dart:io`.
