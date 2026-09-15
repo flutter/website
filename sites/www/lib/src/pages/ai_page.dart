@@ -7,7 +7,6 @@ import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
-import '../components/common/feature.dart';
 import '../components/common/feature_grid.dart';
 import '../components/common/icon.dart';
 import '../components/sections/cta_section.dart';
