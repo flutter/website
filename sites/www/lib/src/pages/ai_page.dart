@@ -45,10 +45,10 @@ class AiPage extends StatelessComponent {
               alt: 'Notification',
             ),
             const a(
-              href: 'https://dart.dev/tools/mcp-server',
+              href: 'https://docs.flutter.dev/ai/get-started',
               target: Target.blank,
               [
-                .text('Try the new Dart and Flutter MCP server! '),
+                .text('Get startes with Dart & Flutter MCP, Skills, and AI Plugins!'),
                 RawText('&nbsp;'),
                 Icon.linkArrow(large: true),
               ],
@@ -147,29 +147,6 @@ class AiPage extends StatelessComponent {
                 ),
               ]),
             ]),
-          ]),
-        ]),
-        section(id: 'ai-toolkit', [
-          div(classes: 'features container', [
-            Feature(
-              reverse: true,
-              eyebrow: 'Supercharge your Flutter app with AI',
-              title: 'The Flutter AI Toolkit',
-              description: 'Quickly add intelligent chat experiences using the new Flutter AI Toolkit. Easily integrate with Google Gemini AI or Firebase Vertex AI to power multi-turn conversations, streaming responses, speech-to-text input, and more.',
-              actions: const [
-                FeatureAction(
-                  label: 'Get started',
-                  url: 'https://pub.dev/packages/flutter_ai_toolkit',
-                ),
-              ],
-              media: img(
-                src: context.asset(
-                  'images/build-with-ai/flutter-ai-toolkit.png',
-                ),
-                alt: 'Flutter AI Toolkit',
-              ),
-              noSpy: true,
-            ),
           ]),
         ]),
         section(id: 'feature-grid', classes: 'module', [
