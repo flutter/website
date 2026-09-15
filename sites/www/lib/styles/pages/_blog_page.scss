@@ -50,6 +50,7 @@
         font-weight: var(--site-fontWeight-bold);
         cursor: pointer;
         list-style: none;
+        user-select: none;
 
         &::-webkit-details-marker {
           display: none;
