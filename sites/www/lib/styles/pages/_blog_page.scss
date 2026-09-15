@@ -128,6 +128,7 @@
   transform: translateY(0.5rem);
   transition: opacity 0.2s var(--ui-anim-func), transform 0.2s var(--ui-anim-func);
   pointer-events: none;
+  visibility: hidden;
 
   &:hover {
     color: var(--site-base-fgColor);
@@ -143,4 +144,5 @@ body.blog.in-content .back-to-top {
   opacity: 1;
   transform: none;
   pointer-events: auto;
+  visibility: visible;
 }

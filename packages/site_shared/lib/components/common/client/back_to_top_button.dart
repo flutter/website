@@ -24,6 +24,8 @@ final class BackToTopButton extends StatelessComponent {
     attributes: {'aria-label': 'Back to top'},
     events: {
       'click': (_) {
+        (web.document.getElementById('document-title') as web.HTMLElement?)
+            ?.focus(web.FocusOptions(preventScroll: true));
         final prefersReducedMotion = web.window
             .matchMedia('(prefers-reduced-motion: reduce)')
             .matches;

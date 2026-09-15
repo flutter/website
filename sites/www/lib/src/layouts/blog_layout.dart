@@ -80,7 +80,7 @@ class BlogLayout extends DefaultLayout {
                       ),
                     ],
                   ),
-                h1(id: 'document-title', [
+                h1(id: 'document-title', attributes: const {'tabindex': '-1'}, [
                   if (pageData['underscore_breaker_titles'] == true)
                     ...splitByUnderscore(pageTitle)
                   else
