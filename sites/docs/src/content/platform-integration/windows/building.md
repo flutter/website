@@ -47,7 +47,7 @@ More generally, many other [packages support Windows],
 including common packages such as [`url_launcher`], [`shared_preferences`], [`file_selector`], and [`path_provider`].
 
 [C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
-[Bind to native code using FFI]: /platform-integration/bind-native-code
+[Bind to native code using FFI]: /platform-integration/interop/bind-native-code
 [win32 package]: {{site.pub}}/packages/win32
 [Windows registry]: {{site.pub}}/packages/win32_registry
 [gamepad support]: {{site.pub}}/packages/win32_gamepad

@@ -25,7 +25,7 @@ _FFI_ stands for [_foreign function interface._][FFI]
 Other terms for similar functionality include
 _native interface_ and _language bindings._
 
-[build hooks]: /platform-integration/bind-native-code
+[build hooks]: /platform-integration/interop/bind-native-code
 [`dart:ffi`]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 

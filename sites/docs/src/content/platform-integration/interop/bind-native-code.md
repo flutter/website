@@ -18,7 +18,7 @@ Play services runtime on Android, use the standard plugin template (`flutter cre
 --template=plugin`).
 
 :::note
-Looking for the previous FFI plugin workflow? See
+Looking for the previous FFI plugin workflow? Consult
 [Bind to native code using the legacy FFI plugin template](/platform-integration/legacy-ffi-plugin),
 which documents the `plugin_ffi` template and OS-specific build files.
 :::
