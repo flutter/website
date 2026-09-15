@@ -37,14 +37,12 @@ final class BlogTableOfContents extends StatelessComponent {
       classes: 'toc',
       attributes: {'aria-label': 'Table of contents'},
       [
-        Component.element(
-          tag: 'details',
-          children: [
-            const Component.element(
-              tag: 'summary',
-              children: [
+        details(
+          [
+            const summary(
+              [
                 MaterialIcon('chevron_right'),
-                Component.text('On this page'),
+                .text('On this page'),
               ],
             ),
             div(classes: 'toc-list', [toc.build()]),
