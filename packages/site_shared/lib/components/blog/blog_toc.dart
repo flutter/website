@@ -30,7 +30,7 @@ final class BlogTableOfContents extends StatelessComponent {
   Component build(BuildContext context) {
     final toc = context.page.data['toc'];
     if (toc is! TableOfContents || toc.entries.length < _minEntriesForToc) {
-      return const Component.empty();
+      return const .empty();
     }
 
     return nav(
