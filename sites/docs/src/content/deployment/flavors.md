@@ -242,8 +242,8 @@ names for two product flavors called `staging` and
       :::note
       If your project sets `app_name` with `resValue()` in `build.gradle.kts`,
       builds with Android Gradle Plugin (AGP) 9.0 or later fail by default
-      with an error that ends with
-      `contains custom resource values, but the feature is disabled.`
+      with an error such as
+      `Product Flavor <flavor_name> contains custom resource values, but the feature is disabled.`
       To fix this, remove those `resValue()` calls
       and define `app_name` in `strings.xml` files as shown in this step.
       :::
