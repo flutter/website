@@ -9,6 +9,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/blog.dart';
 import 'package:site_shared/components/blog/blog_next_posts.dart';
+import 'package:site_shared/components/blog/blog_toc.dart';
 import 'package:site_shared/components/blog/post_info.dart';
 import 'package:site_shared/components/common/breadcrumbs.dart';
 import 'package:site_shared/util.dart';
@@ -91,6 +92,7 @@ class BlogLayout extends DefaultLayout {
                   ]),
               ]),
               if (post != null) PostInfo(post: post, url: page.url),
+              if (post != null) const BlogTableOfContents(),
               child,
               if (isPost)
                 BlogNextPosts(currentPage: page, category: pageCategory),
