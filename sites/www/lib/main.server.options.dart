@@ -10,6 +10,18 @@ import 'package:flutter_website/src/components/common/carousel.dart'
 import 'package:flutter_website/src/components/common/newsletter_form.dart'
     as _newsletter_form;
 import 'package:flutter_website/src/components/common/tabs.dart' as _tabs;
+import 'package:flutter_website/src/components/flutterbench/cuj_catalog.dart'
+    as _cuj_catalog;
+import 'package:flutter_website/src/components/flutterbench/grader_matrix.dart'
+    as _grader_matrix;
+import 'package:flutter_website/src/components/flutterbench/interactive_detail_card.dart'
+    as _interactive_detail_card;
+import 'package:flutter_website/src/components/flutterbench/leaderboard_table.dart'
+    as _leaderboard_table;
+import 'package:flutter_website/src/components/flutterbench/models_explorer.dart'
+    as _models_explorer;
+import 'package:flutter_website/src/components/flutterbench/task_specifications.dart'
+    as _task_specifications;
 import 'package:flutter_website/src/components/layout/header.dart' as _header;
 import 'package:flutter_website/src/components/pages/consultants_cookie_snack.dart'
     as _consultants_cookie_snack;
@@ -69,6 +81,34 @@ ServerOptions get defaultServerOptions => ServerOptions(
     _newsletter_form.NewsletterForm:
         ClientTarget<_newsletter_form.NewsletterForm>('newsletter_form'),
     _tabs.Tabs: ClientTarget<_tabs.Tabs>('tabs', params: __tabsTabs),
+    _cuj_catalog.CujCatalog: ClientTarget<_cuj_catalog.CujCatalog>(
+      'cuj_catalog',
+      params: __cuj_catalogCujCatalog,
+    ),
+    _grader_matrix.GraderMatrix: ClientTarget<_grader_matrix.GraderMatrix>(
+      'grader_matrix',
+      params: __grader_matrixGraderMatrix,
+    ),
+    _interactive_detail_card.InteractiveDetailCard:
+        ClientTarget<_interactive_detail_card.InteractiveDetailCard>(
+          'interactive_detail_card',
+          params: __interactive_detail_cardInteractiveDetailCard,
+        ),
+    _leaderboard_table.LeaderboardTable:
+        ClientTarget<_leaderboard_table.LeaderboardTable>(
+          'leaderboard_table',
+          params: __leaderboard_tableLeaderboardTable,
+        ),
+    _models_explorer.ModelsExplorer:
+        ClientTarget<_models_explorer.ModelsExplorer>(
+          'models_explorer',
+          params: __models_explorerModelsExplorer,
+        ),
+    _task_specifications.TaskSpecifications:
+        ClientTarget<_task_specifications.TaskSpecifications>(
+          'task_specifications',
+          params: __task_specificationsTaskSpecifications,
+        ),
     _header.Header: ClientTarget<_header.Header>(
       'header',
       params: __headerHeader,
@@ -159,6 +199,34 @@ Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
   'tabs': c.tabs.map((i) => i.toMap()).toList(),
   'noSpy': c.noSpy,
 };
+Map<String, Object?> __cuj_catalogCujCatalog(_cuj_catalog.CujCatalog c) => {
+  'cujs': c.cujs,
+};
+Map<String, Object?> __grader_matrixGraderMatrix(
+  _grader_matrix.GraderMatrix c,
+) => {
+  'title': c.title,
+  'description': c.description,
+  'filters': c.filters,
+  'graders': c.graders,
+};
+Map<String, Object?> __interactive_detail_cardInteractiveDetailCard(
+  _interactive_detail_card.InteractiveDetailCard c,
+) => {
+  'title': c.title,
+  'description': c.description,
+  'tabs': c.tabs,
+  'classes': c.classes,
+};
+Map<String, Object?> __leaderboard_tableLeaderboardTable(
+  _leaderboard_table.LeaderboardTable c,
+) => {'evals': c.evals, 'benchmarks': c.benchmarks};
+Map<String, Object?> __models_explorerModelsExplorer(
+  _models_explorer.ModelsExplorer c,
+) => {'evals': c.evals, 'benchmarks': c.benchmarks};
+Map<String, Object?> __task_specificationsTaskSpecifications(
+  _task_specifications.TaskSpecifications c,
+) => {'specs': c.specs};
 Map<String, Object?> __headerHeader(_header.Header c) => {
   'contrastLogoSrc': c.contrastLogoSrc,
   'defaultLogoSrc': c.defaultLogoSrc,

@@ -12,6 +12,18 @@ import 'package:flutter_website/src/components/common/newsletter_form.dart'
     deferred as _newsletter_form;
 import 'package:flutter_website/src/components/common/tabs.dart'
     deferred as _tabs;
+import 'package:flutter_website/src/components/flutterbench/cuj_catalog.dart'
+    deferred as _cuj_catalog;
+import 'package:flutter_website/src/components/flutterbench/grader_matrix.dart'
+    deferred as _grader_matrix;
+import 'package:flutter_website/src/components/flutterbench/interactive_detail_card.dart'
+    deferred as _interactive_detail_card;
+import 'package:flutter_website/src/components/flutterbench/leaderboard_table.dart'
+    deferred as _leaderboard_table;
+import 'package:flutter_website/src/components/flutterbench/models_explorer.dart'
+    deferred as _models_explorer;
+import 'package:flutter_website/src/components/flutterbench/task_specifications.dart'
+    deferred as _task_specifications;
 import 'package:flutter_website/src/components/layout/header.dart'
     deferred as _header;
 import 'package:flutter_website/src/components/pages/consultants_cookie_snack.dart'
@@ -97,6 +109,68 @@ ClientOptions get defaultClientOptions => ClientOptions(
         noSpy: p['noSpy'] as bool,
       ),
       loader: _tabs.loadLibrary,
+    ),
+    'cuj_catalog': ClientLoader(
+      (p) => _cuj_catalog.CujCatalog(
+        cujs: (p['cujs'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+      ),
+      loader: _cuj_catalog.loadLibrary,
+    ),
+    'grader_matrix': ClientLoader(
+      (p) => _grader_matrix.GraderMatrix(
+        title: p['title'] as String,
+        description: p['description'] as String,
+        filters: (p['filters'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+        graders: (p['graders'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+      ),
+      loader: _grader_matrix.loadLibrary,
+    ),
+    'interactive_detail_card': ClientLoader(
+      (p) => _interactive_detail_card.InteractiveDetailCard(
+        title: p['title'] as String,
+        description: p['description'] as String,
+        tabs: (p['tabs'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+        classes: p['classes'] as String,
+      ),
+      loader: _interactive_detail_card.loadLibrary,
+    ),
+    'leaderboard_table': ClientLoader(
+      (p) => _leaderboard_table.LeaderboardTable(
+        evals: (p['evals'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+        benchmarks: (p['benchmarks'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+      ),
+      loader: _leaderboard_table.loadLibrary,
+    ),
+    'models_explorer': ClientLoader(
+      (p) => _models_explorer.ModelsExplorer(
+        evals: (p['evals'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+        benchmarks: (p['benchmarks'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+      ),
+      loader: _models_explorer.loadLibrary,
+    ),
+    'task_specifications': ClientLoader(
+      (p) => _task_specifications.TaskSpecifications(
+        specs: (p['specs'] as List<Object?>)
+            .map((i) => (i as Map<String, Object?>))
+            .toList(),
+      ),
+      loader: _task_specifications.loadLibrary,
     ),
     'header': ClientLoader(
       (p) => _header.Header(
