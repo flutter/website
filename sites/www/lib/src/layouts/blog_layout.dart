@@ -11,6 +11,7 @@ import 'package:site_shared/blog.dart';
 import 'package:site_shared/components/blog/blog_next_posts.dart';
 import 'package:site_shared/components/blog/post_info.dart';
 import 'package:site_shared/components/common/breadcrumbs.dart';
+import 'package:site_shared/components/common/client/back_to_top_button.dart';
 import 'package:site_shared/util.dart';
 
 import '../utils/scroll_spy.dart';
@@ -79,12 +80,16 @@ class BlogLayout extends DefaultLayout {
                       ),
                     ],
                   ),
-                h1(id: 'document-title', [
-                  if (pageData['underscore_breaker_titles'] == true)
-                    ...splitByUnderscore(pageTitle)
-                  else
-                    .text(pageTitle),
-                ]),
+                h1(
+                  id: 'document-title',
+                  attributes: const {'tabindex': '-1'},
+                  [
+                    if (pageData['underscore_breaker_titles'] == true)
+                      ...splitByUnderscore(pageTitle)
+                    else
+                      .text(pageTitle),
+                  ],
+                ),
                 if (pageData['description'] != null)
                   p(classes: 'blog-subtitle', [
                     .text(pageData['description'] as String),
@@ -97,6 +102,7 @@ class BlogLayout extends DefaultLayout {
             ],
           ),
         ]),
+        if (isPost) const BackToTopButton(),
       ]),
     );
   }
