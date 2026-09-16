@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'sites/www/**'
+      - 'packages/site_shared/**'
       - 'tool/dash_site/**'
       - 'tool/config/linkcheck-skip-list.txt'
       - 'pubspec.yaml'
@@ -17,6 +18,7 @@ on:
       - main
     paths:
       - 'sites/www/**'
+      - 'packages/site_shared/**'
       - 'tool/dash_site/**'
       - 'tool/config/linkcheck-skip-list.txt'
       - 'pubspec.yaml'
