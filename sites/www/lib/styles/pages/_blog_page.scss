@@ -111,7 +111,7 @@
   position: fixed;
   right: 1.5rem;
   bottom: 1.5rem;
-  z-index: 10;
+  z-index: var(--site-z-floating);
   display: flex;
   align-items: center;
   justify-content: center;
