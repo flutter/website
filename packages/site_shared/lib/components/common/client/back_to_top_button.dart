@@ -10,16 +10,16 @@ import '../material_icon.dart';
 
 /// A floating button that scrolls the page back to the top when clicked.
 ///
-/// Stays hidden until the page has been scrolled, via CSS rules that key
-/// off of the `in-content` class already toggled on `<body>` by the site's
-/// scroll-spy logic.
+/// Stays hidden until the page has been scrolled through CSS rules that
+/// key off of the `in-content` class already toggled on `<body>` by
+/// the site's scroll-spy logic.
 @client
 final class BackToTopButton extends StatelessComponent {
   const BackToTopButton({super.key});
 
   @override
   Component build(BuildContext _) => button(
-    type: ButtonType.button,
+    type: .button,
     classes: 'back-to-top',
     attributes: {'aria-label': 'Back to top'},
     events: {
@@ -37,6 +37,6 @@ final class BackToTopButton extends StatelessComponent {
         );
       },
     },
-    [const MaterialIcon('arrow_upward')],
+    const [MaterialIcon('arrow_upward')],
   );
 }

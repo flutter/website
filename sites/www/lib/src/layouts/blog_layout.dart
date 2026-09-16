@@ -80,12 +80,16 @@ class BlogLayout extends DefaultLayout {
                       ),
                     ],
                   ),
-                h1(id: 'document-title', attributes: const {'tabindex': '-1'}, [
-                  if (pageData['underscore_breaker_titles'] == true)
-                    ...splitByUnderscore(pageTitle)
-                  else
-                    .text(pageTitle),
-                ]),
+                h1(
+                  id: 'document-title',
+                  attributes: const {'tabindex': '-1'},
+                  [
+                    if (pageData['underscore_breaker_titles'] == true)
+                      ...splitByUnderscore(pageTitle)
+                    else
+                      .text(pageTitle),
+                  ],
+                ),
                 if (pageData['description'] != null)
                   p(classes: 'blog-subtitle', [
                     .text(pageData['description'] as String),
