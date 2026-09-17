@@ -250,7 +250,7 @@ basking in the glow of fully sound null-safe type-safety.
 It truly creates the illusion that computers are actually there to be your friend!
 
 I enjoyed converting GenLatte to use Dart everywhere, and in doing so,
-sliced its server-bill to a tiny fraction of what it was with Node,
+sliced its server bill to a tiny fraction of what it was with Node,
 and increased reliability *and* performance.
 The money I spent on Gemini tokens executing the change was easily recouped
 after only a few minutes of operation. Now GenLatte can keep serving
