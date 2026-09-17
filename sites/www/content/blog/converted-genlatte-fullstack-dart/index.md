@@ -97,7 +97,7 @@ Cloud Run service. (If you're a Firebase Functions user and this is news to you,
 navigate to Cloud Run in the Google Cloud console and check out how the Firebase
 sausage is made!)
 
-However, after leaning on over separate 15 Cloud Run services for
+However, after leaning on over 15 separate Cloud Run services for
 GenLatte's Node.js era, I knew that I wanted a leaner setup for multiple reasons.
 First, deployments would be significantly faster, but even more importantly,
 *it would dramatically reduce GenLatte's server bill*.
