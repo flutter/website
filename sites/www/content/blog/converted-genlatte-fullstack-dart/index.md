@@ -1,7 +1,8 @@
 ---
 title: "How I converted GenLatte to fullstack Dart"
 description: >-
-  The journey of creating a Mission Critical app for generating latte art
+  The continued journey of creating a Mission Critical app for
+  generating latte art
 publishDate: 2026-09-21
 author: craiglabenz
 image: images/xxx
