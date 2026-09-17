@@ -18,7 +18,7 @@ You also know that, by not charging anything, we failed to make a profit.
 
 Further, if you looked at
 [the code](https://github.com/flutter/demos/blob/main/genlatte),
-you mimght also have noticed that our Flutter front-end was complemented
+you might also have noticed that our Flutter front-end was complemented
 by Firebase functions written in Node.js.
 This is a somewhat surprising historical artifact,
 given that Firebase's support for Dart functions entered public preview
