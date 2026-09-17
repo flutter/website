@@ -371,6 +371,27 @@ called `Runner`, and the Flutter app is called
 
         ![Xcode configurations](/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png)
 
+1.  In Xcode, link the Flutter framework to the
+    `ShareExtension` target.
+
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
+
+    *   In the main window under **TARGETS**, select
+        **ShareExtension**.
+
+    *   Open the **General** tab.
+
+    *   Under **Frameworks and Libraries**, click **+**.
+
+    *   Add the Flutter framework:
+
+        *   If using Swift Package Manager (default), select
+            **FlutterGeneratedPluginSwiftPackage** (or
+            **FlutterFramework**).
+        *   If using CocoaPods (legacy), select
+            **Flutter.xcframework** and set **Embed** to
+            **Do Not Embed**.
 
 1.  (Optional) In Xcode, replace any storyboard files with
     an extension class, if needed.
@@ -477,7 +498,7 @@ class ShareViewController: UIViewController {
 
 </Tabs>
 
-8.  [Test your app with the simulator][].
+9.  [Test your app with the simulator][].
 
 [Add an extension to your Flutter app]: #add-extension
 [Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
