@@ -109,7 +109,7 @@ Great question. I'm glad you're paying attention.
 
 And yes, it is very important! While GenLatte was in use, various data writes and asynchronous tasks spun up all 15 of those services, and while each one would turn off while idle, that still had predictable effects on our server bill. But, to make matters worse, we set each service's minimum node count to 1 while GenLatte was in use to avoid cold starts, which of course unplugged this spin-down-to-zero functionality. The end result was that GenLatte was surprisingly expensive to turn on.
 
-#### How to shove everything in to one Firebase service
+#### How to shove everything into one Firebase service
 
 To save money, I decided to take inspiration from
 [Serverpod](https://serverpod.dev) and introduce a `BackendMessage`
