@@ -42,7 +42,7 @@ final class BlogTableOfContents extends StatelessComponent {
             const summary(
               [
                 MaterialIcon('chevron_right'),
-                .text('On this page'),
+                .text('In this article'),
               ],
             ),
             div(classes: 'toc-list', [toc.build()]),
