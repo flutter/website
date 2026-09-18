@@ -97,6 +97,7 @@ void main() {
         ],
         extensions: [
           ShowcaseStoryExtension(),
+          const TableOfContentsExtension(),
           const TableWrapperExtension(),
           const MermaidProcessor(),
           const CodeBlockProcessor(defaultTitle: 'Runnable Flutter example'),
