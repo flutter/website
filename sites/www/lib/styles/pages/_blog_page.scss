@@ -1,4 +1,4 @@
-@use 'package:site_shared/_sass/base/mixins';
+@use "package:site_shared/_sass/base/mixins";
 
 .blog main {
   display: flex;
@@ -27,7 +27,6 @@
       }
     }
 
-
     > .content {
       padding: 1.5rem;
       color: var(--site-base-fgColor);
@@ -47,6 +46,7 @@
         display: flex;
         align-items: center;
         gap: 0.25rem;
+        font-family: var(--site-ui-fontFamily);
         font-weight: var(--site-fontWeight-bold);
         cursor: pointer;
         list-style: none;
@@ -129,7 +129,7 @@
         color: var(--site-base-fgColor-alt);
         user-select: none;
 
-        >span {
+        > span {
           font-size: 1.75rem;
         }
 
@@ -182,7 +182,9 @@
   cursor: pointer;
   opacity: 0;
   transform: translateY(0.5rem);
-  transition: opacity 0.2s var(--ui-anim-func), transform 0.2s var(--ui-anim-func);
+  transition:
+    opacity 0.2s var(--ui-anim-func),
+    transform 0.2s var(--ui-anim-func);
   pointer-events: none;
   visibility: hidden;
 
