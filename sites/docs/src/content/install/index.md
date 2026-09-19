@@ -1,12 +1,7 @@
 ---
 title: Install Flutter
 shortTitle: Install
-description: >-
-  Learn how to install the Flutter SDK.
----
-
-Ready to build beautiful, multiplatform apps from a single codebase?
-Choose from the following two options to get started setting up
+ get started setting up
 your Flutter development environment.
 
 <div class="card-grid very-wide">
