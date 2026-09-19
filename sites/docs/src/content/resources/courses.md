@@ -22,6 +22,7 @@ To include your course, [submit a PR][]:
 * [Flutter & Firebase Masterclass][] by Andrea Bizzotto
 * [Flutter Animations Masterclass][] by Andrea Bizzotto
 * [Flutter Crash Course][]
+* [Flutter and Dart Full Course](https://www.youtube.com/watch?v=_FDJ1of5YPM) by Mouaz M. Alshahmeh
 * [Flutter Foundations][] by Andrea Bizzotto
 * [Flutter in Production][] by Andrea Bizzotto
 * [Sticky Grouped Headers in Flutter][] by Marco Napoli
