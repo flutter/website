@@ -1,0 +1,485 @@
+{
+  "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+  "started_at": "2026-09-09T19:00:00.000000",
+  "updated_at": "2026-09-09T22:30:00.000000",
+  "finished_at": "2026-09-09T22:30:00.000000",
+  "n_total_trials": 65,
+  "stats": {
+    "n_completed_trials": 62,
+    "n_errored_trials": 3,
+    "n_running_trials": 0,
+    "n_pending_trials": 0,
+    "n_cancelled_trials": 0,
+    "n_retries": 0,
+    "evals": {
+      "claude-code__claude-3-7-sonnet__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.89,
+            "mean": 0.89,
+            "median": 0.93,
+            "min": 0.71,
+            "max": 0.98
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.8
+        },
+        "reward_stats": {
+          "reward": {
+            "0.97": [
+              "dart-build-cli-app__t01-claude-3-7-sonnet"
+            ],
+            "0.98": [
+              "flutter-manage-state-with-bloc__t02-claude-3-7-sonnet"
+            ],
+            "0.93": [
+              "flutter-offline-sync-sqlite__t03-claude-3-7-sonnet"
+            ],
+            "0.85": [
+              "flutter-adaptive-material-cupertino__t04-claude-3-7-sonnet"
+            ],
+            "0.71": [
+              "flutter-custom-render-object__t05-claude-3-7-sonnet"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "claude-code__claude-3-5-sonnet__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.68,
+            "mean": 0.68,
+            "median": 0.71,
+            "min": 0.52,
+            "max": 0.79
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0
+        },
+        "reward_stats": {
+          "reward": {
+            "0.79": [
+              "dart-build-cli-app__t06-claude-3-5-sonnet"
+            ],
+            "0.75": [
+              "flutter-manage-state-with-bloc__t07-claude-3-5-sonnet"
+            ],
+            "0.71": [
+              "flutter-offline-sync-sqlite__t08-claude-3-5-sonnet"
+            ],
+            "0.61": [
+              "flutter-adaptive-material-cupertino__t09-claude-3-5-sonnet"
+            ],
+            "0.52": [
+              "flutter-custom-render-object__t10-claude-3-5-sonnet"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "claude-code__claude-3-5-haiku__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.48,
+            "mean": 0.48,
+            "median": 0.48,
+            "min": 0.36,
+            "max": 0.56
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0
+        },
+        "reward_stats": {
+          "reward": {
+            "0.56": [
+              "dart-build-cli-app__t11-claude-3-5-haiku"
+            ],
+            "0.55": [
+              "flutter-manage-state-with-bloc__t12-claude-3-5-haiku"
+            ],
+            "0.48": [
+              "flutter-offline-sync-sqlite__t13-claude-3-5-haiku"
+            ],
+            "0.45": [
+              "flutter-adaptive-material-cupertino__t14-claude-3-5-haiku"
+            ],
+            "0.36": [
+              "flutter-custom-render-object__t15-claude-3-5-haiku"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "codex-agent__o3__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.88,
+            "mean": 0.88,
+            "median": 0.9,
+            "min": 0.73,
+            "max": 0.97
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.8
+        },
+        "reward_stats": {
+          "reward": {
+            "0.97": [
+              "dart-build-cli-app__t16-o3",
+              "flutter-manage-state-with-bloc__t17-o3"
+            ],
+            "0.90": [
+              "flutter-offline-sync-sqlite__t18-o3"
+            ],
+            "0.85": [
+              "flutter-adaptive-material-cupertino__t19-o3"
+            ],
+            "0.73": [
+              "flutter-custom-render-object__t20-o3"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "codex-agent__gpt-5__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.87,
+            "mean": 0.87,
+            "median": 0.86,
+            "min": 0.72,
+            "max": 0.98
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.8
+        },
+        "reward_stats": {
+          "reward": {
+            "0.98": [
+              "dart-build-cli-app__t21-gpt-5"
+            ],
+            "0.97": [
+              "flutter-manage-state-with-bloc__t22-gpt-5"
+            ],
+            "0.86": [
+              "flutter-offline-sync-sqlite__t23-gpt-5"
+            ],
+            "0.84": [
+              "flutter-adaptive-material-cupertino__t24-gpt-5"
+            ],
+            "0.72": [
+              "flutter-custom-render-object__t25-gpt-5"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "codex-agent__gpt-4o__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.62,
+            "mean": 0.62,
+            "median": 0.65,
+            "min": 0.47,
+            "max": 0.71
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0
+        },
+        "reward_stats": {
+          "reward": {
+            "0.71": [
+              "dart-build-cli-app__t26-gpt-4o"
+            ],
+            "0.69": [
+              "flutter-manage-state-with-bloc__t27-gpt-4o"
+            ],
+            "0.65": [
+              "flutter-offline-sync-sqlite__t28-gpt-4o"
+            ],
+            "0.60": [
+              "flutter-adaptive-material-cupertino__t29-gpt-4o"
+            ],
+            "0.47": [
+              "flutter-custom-render-object__t30-gpt-4o"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "codex-agent__gpt-4o-mini__adhoc": {
+        "n_trials": 5,
+        "n_errors": 1,
+        "metrics": [
+          {
+            "reward": 0.43,
+            "mean": 0.43,
+            "median": 0.46,
+            "min": 0.39,
+            "max": 0.48
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0
+        },
+        "reward_stats": {
+          "reward": {
+            "0.48": [
+              "dart-build-cli-app__t31-gpt-4o-mini"
+            ],
+            "0.46": [
+              "flutter-manage-state-with-bloc__t32-gpt-4o-mini"
+            ],
+            "0.39": [
+              "flutter-offline-sync-sqlite__t33-gpt-4o-mini",
+              "flutter-adaptive-material-cupertino__t34-gpt-4o-mini"
+            ]
+          }
+        },
+        "exception_stats": {
+          "AgentTimeoutError": [
+            "flutter-custom-render-object__t35-gpt-4o-mini"
+          ]
+        }
+      },
+      "antigravity-sdk__gemini-3.5-pro__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.89,
+            "mean": 0.89,
+            "median": 0.91,
+            "min": 0.69,
+            "max": 0.99
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.8
+        },
+        "reward_stats": {
+          "reward": {
+            "0.98": [
+              "dart-build-cli-app__t36-gemini-35-pro"
+            ],
+            "0.99": [
+              "flutter-manage-state-with-bloc__t37-gemini-35-pro"
+            ],
+            "0.91": [
+              "flutter-offline-sync-sqlite__t38-gemini-35-pro"
+            ],
+            "0.87": [
+              "flutter-adaptive-material-cupertino__t39-gemini-35-pro"
+            ],
+            "0.69": [
+              "flutter-custom-render-object__t40-gemini-35-pro"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "antigravity-sdk__gemini-3.5-flash__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.81,
+            "mean": 0.81,
+            "median": 0.8,
+            "min": 0.65,
+            "max": 0.93
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.6
+        },
+        "reward_stats": {
+          "reward": {
+            "0.93": [
+              "dart-build-cli-app__t41-gemini-35-flash"
+            ],
+            "0.88": [
+              "flutter-manage-state-with-bloc__t42-gemini-35-flash"
+            ],
+            "0.80": [
+              "flutter-offline-sync-sqlite__t43-gemini-35-flash"
+            ],
+            "0.78": [
+              "flutter-adaptive-material-cupertino__t44-gemini-35-flash"
+            ],
+            "0.65": [
+              "flutter-custom-render-object__t45-gemini-35-flash"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "gemini-cli__gemini-3.1-flash-lite__adhoc": {
+        "n_trials": 5,
+        "n_errors": 2,
+        "metrics": [
+          {
+            "reward": 0.33,
+            "mean": 0.33,
+            "median": 0.33,
+            "min": 0.28,
+            "max": 0.39
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0
+        },
+        "reward_stats": {
+          "reward": {
+            "0.39": [
+              "dart-build-cli-app__t46-gemini-31-flash-lite"
+            ],
+            "0.33": [
+              "flutter-offline-sync-sqlite__t48-gemini-31-flash-lite"
+            ],
+            "0.28": [
+              "flutter-adaptive-material-cupertino__t49-gemini-31-flash-lite"
+            ]
+          }
+        },
+        "exception_stats": {
+          "AgentTimeoutError": [
+            "flutter-manage-state-with-bloc__t47-gemini-31-flash-lite",
+            "flutter-custom-render-object__t50-gemini-31-flash-lite"
+          ]
+        }
+      },
+      "deepseek-cli__deepseek-r1__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.86,
+            "mean": 0.86,
+            "median": 0.87,
+            "min": 0.72,
+            "max": 0.99
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.6
+        },
+        "reward_stats": {
+          "reward": {
+            "0.99": [
+              "dart-build-cli-app__t51-deepseek-r1"
+            ],
+            "0.94": [
+              "flutter-manage-state-with-bloc__t52-deepseek-r1"
+            ],
+            "0.87": [
+              "flutter-offline-sync-sqlite__t53-deepseek-r1"
+            ],
+            "0.78": [
+              "flutter-adaptive-material-cupertino__t54-deepseek-r1"
+            ],
+            "0.72": [
+              "flutter-custom-render-object__t55-deepseek-r1"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "deepseek-cli__deepseek-v3__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.62,
+            "mean": 0.62,
+            "median": 0.64,
+            "min": 0.49,
+            "max": 0.71
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0
+        },
+        "reward_stats": {
+          "reward": {
+            "0.71": [
+              "dart-build-cli-app__t56-deepseek-v3"
+            ],
+            "0.67": [
+              "flutter-manage-state-with-bloc__t57-deepseek-v3"
+            ],
+            "0.64": [
+              "flutter-offline-sync-sqlite__t58-deepseek-v3"
+            ],
+            "0.59": [
+              "flutter-adaptive-material-cupertino__t59-deepseek-v3"
+            ],
+            "0.49": [
+              "flutter-custom-render-object__t60-deepseek-v3"
+            ]
+          }
+        },
+        "exception_stats": {}
+      },
+      "deepseek-cli__deepseek-coder-v2__adhoc": {
+        "n_trials": 5,
+        "n_errors": 0,
+        "metrics": [
+          {
+            "reward": 0.53,
+            "mean": 0.53,
+            "median": 0.55,
+            "min": 0.42,
+            "max": 0.61
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0
+        },
+        "reward_stats": {
+          "reward": {
+            "0.61": [
+              "dart-build-cli-app__t61-deepseek-coder-v2"
+            ],
+            "0.59": [
+              "flutter-manage-state-with-bloc__t62-deepseek-coder-v2"
+            ],
+            "0.55": [
+              "flutter-offline-sync-sqlite__t63-deepseek-coder-v2"
+            ],
+            "0.50": [
+              "flutter-adaptive-material-cupertino__t64-deepseek-coder-v2"
+            ],
+            "0.42": [
+              "flutter-custom-render-object__t65-deepseek-coder-v2"
+            ]
+          }
+        },
+        "exception_stats": {}
+      }
+    },
+    "n_input_tokens": 5284692,
+    "n_cache_tokens": 3823561,
+    "n_output_tokens": 229186,
+    "cost_usd": 10.6607
+  }
+}

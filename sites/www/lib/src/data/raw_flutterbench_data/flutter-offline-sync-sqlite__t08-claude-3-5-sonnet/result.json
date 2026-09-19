@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-000000000008",
+  "task_name": "google/flutter-offline-sync-sqlite",
+  "trial_name": "flutter-offline-sync-sqlite__t08-claude-3-5-sonnet",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-offline-sync-sqlite__t08-claude-3-5-sonnet",
+  "task_id": {
+    "path": "dataset/flutter-offline-sync-sqlite"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-offline-sync-sqlite"
+    },
+    "trial_name": "flutter-offline-sync-sqlite__t08-claude-3-5-sonnet",
+    "eval_key": "claude-code__claude-3-5-sonnet__adhoc",
+    "agent": {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-3-5-sonnet",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "claude-code",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "claude-3-5-sonnet",
+      "provider": "anthropic"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 85453,
+    "n_cache_tokens": 55797,
+    "n_output_tokens": 3960,
+    "cost_usd": 0.3158
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.71
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:11:20.000000Z",
+  "finished_at": "2026-09-09T19:13:51.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:11:20.000000Z",
+    "finished_at": "2026-09-09T19:11:30.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:11:30.000000Z",
+    "finished_at": "2026-09-09T19:11:40.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:11:40.000000Z",
+    "finished_at": "2026-09-09T19:13:29.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:13:29.000000Z",
+    "finished_at": "2026-09-09T19:13:51.000000Z"
+  }
+}
