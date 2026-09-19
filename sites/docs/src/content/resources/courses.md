@@ -20,9 +20,9 @@ To include your course, [submit a PR][]:
 * [Dart & Flutter - Zero to Mastery 2023 - Keiko Corp. Food Reviews App][] by Marco Napoli
 * [Flutter & Dart - The Complete Guide, 2023 Edition][]
 * [Flutter & Firebase Masterclass][] by Andrea Bizzotto
+* [Flutter and Dart Full Course][] by Mouaz M. Alshahmeh
 * [Flutter Animations Masterclass][] by Andrea Bizzotto
 * [Flutter Crash Course][]
-* [Flutter and Dart Full Course](https://www.youtube.com/watch?v=_FDJ1of5YPM) by Mouaz M. Alshahmeh
 * [Flutter Foundations][] by Andrea Bizzotto
 * [Flutter in Production][] by Andrea Bizzotto
 * [Sticky Grouped Headers in Flutter][] by Marco Napoli
@@ -56,6 +56,7 @@ To include your course, [submit a PR][]:
 [Flutter in Production]: https://codewithandrea.com/courses/flutter-in-production/
 [Flutter Foundations]: https://codewithandrea.com/courses/flutter-foundations/
 [Flutter & Firebase Masterclass]: https://codewithandrea.com/courses/flutter-firebase-masterclass/
+[Flutter and Dart Full Course]: https://www.youtube.com/watch?v=_FDJ1of5YPM
 [Flutter Animations Masterclass]: https://codewithandrea.com/courses/flutter-animations-masterclass/
 [The Complete Dart Developer Guide]: https://codewithandrea.com/courses/complete-dart-guide/
 [Flutter & Dart - The Complete Guide, 2023 Edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
