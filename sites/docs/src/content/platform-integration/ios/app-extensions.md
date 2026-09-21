@@ -371,6 +371,27 @@ called `Runner`, and the Flutter app is called
 
         ![Xcode configurations](/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png)
 
+1.  In Xcode, link the Flutter framework to the
+    `ShareExtension` target.
+
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
+
+    *   In the main window under **TARGETS**, select
+        **ShareExtension**.
+
+    *   Open the **General** tab.
+
+    *   Under **Frameworks and Libraries**, click **+**.
+
+    *   Add the Flutter framework:
+
+        *   If using Swift Package Manager (default), select
+            **FlutterGeneratedPluginSwiftPackage** (or
+            **FlutterFramework**).
+        *   If using CocoaPods (legacy), select
+            **Flutter.xcframework** and set **Embed** to
+            **Do Not Embed**.
 
 1.  (Optional) In Xcode, replace any storyboard files with
     an extension class, if needed.
@@ -477,7 +498,7 @@ class ShareViewController: UIViewController {
 
 </Tabs>
 
-8.  [Test your app with the simulator][].
+1.  [Test your app with the simulator][].
 
 [Add an extension to your Flutter app]: #add-extension
 [Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
@@ -493,6 +514,56 @@ called `Runner`, and the Flutter app is called
 
 1.  [Add an extension to your Flutter app][] if you haven't
     already done so.
+
+1.  In Xcode, link Flutter plugins to your app extension target.
+
+    <Tabs key="link-plugins-tabs" wrapped="true">
+
+    <Tab name="Swift Package Manager (default)">
+
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
+
+    *   In the main window under **TARGETS**, select
+        **ShareExtension**.
+
+    *   Open the **General** tab.
+
+    *   Under **Frameworks, Libraries, and Embedded Content**,
+        click **+**.
+
+    *   Select `FlutterGeneratedPluginSwiftPackage` and click **Add**.
+        If it doesn't appear in the list,
+        click **Add Other... > Add Package Dependency...**,
+        click **Add Local...**, navigate to
+        `ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`,
+        and add it to your app extension target.
+
+    </Tab>
+
+    <Tab name="CocoaPods (legacy)">
+
+    If your project uses CocoaPods, open `ios/Podfile` and ensure
+    your extension target inherits the search paths from `Runner`:
+
+    ```ruby title="ios/Podfile"
+    target 'Runner' do
+      use_frameworks!
+      use_modular_headers!
+
+      flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+      target 'ShareExtension' do
+        inherit! :search_paths
+      end
+    end
+    ```
+
+    Then run `pod install` in the `ios` directory.
+
+    </Tab>
+
+    </Tabs>
 
 1.  In Xcode, add `GeneratedPluginRegistrant.m` to the
     app extension target.
@@ -570,7 +641,7 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
 
 </Tabs>
 
-5.  (Xcode) [Test your app with the simulator][].
+1.  (Xcode) [Test your app with the simulator][].
 
 [Add an extension to your Flutter app]: #add-extension
 [Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html

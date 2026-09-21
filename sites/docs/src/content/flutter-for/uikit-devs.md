@@ -527,17 +527,18 @@ Widget build(BuildContext context) {
 
 ### Managing dependencies
 
-In iOS, you add dependencies with CocoaPods by adding to your `Podfile`.
-Flutter uses Dart's build system and the Pub package manager
-to handle dependencies. The tools delegate the building of the
-native Android and iOS wrapper apps to the
-respective build systems.
+In iOS, you typically manage dependencies using Swift Package Manager
+in Xcode (or CocoaPods in older projects).
+Flutter uses Dart's build system and the `pub` package manager
+to handle dependencies.
+Flutter automatically integrates native iOS dependencies
+using [Swift Package Manager][] by default,
+while supporting CocoaPods as a fallback for backward compatibility.
 
-While there is a Podfile in the iOS folder in your
-Flutter project, only use this if you are adding native
-dependencies needed for per-platform integration.
-In general, use `pubspec.yaml` to declare external dependencies in Flutter.
-A good place to find great packages for Flutter is on [pub.dev][].
+In general, declare your external dependencies in `pubspec.yaml`.
+To find packages and plugins for Flutter, visit [pub.dev][].
+To learn how Flutter manages native Apple dependencies,
+consult [Swift Package Manager for app developers][].
 
 ## Navigation
 
@@ -2111,3 +2112,5 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [widget catalog]: /ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [Learning Dart as a Swift Developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+[Swift Package Manager for app developers]: /packages-and-plugins/swift-package-manager/for-app-developers
