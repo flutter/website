@@ -102,7 +102,7 @@ You can provide valuable feedback through many avenues, including:
   consider upvoting it to help the Flutter team understand its importance.
   You can upvote an issue by locating it in the GitHub issue tracker,
   and pressing the "thumbs up" reaction on the issue's
-  top-most comment.
+  topmost comment.
 
   Avoid otherwise empty thumbs up, +1, or similar comments.
   However, if you have additional information,
