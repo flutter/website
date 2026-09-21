@@ -148,6 +148,9 @@ or begin expanding integration with Windows.
           <a class="text-button" href="/deployment/windows">Deploy to windows</a>
         </li>
         <li>
+          <a class="text-button" href="/deployment/flavors-windows">Set up app flavors</a>
+        </li>
+        <li>
           <a class="text-button" href="/platform-integration/platform-channels">Write Windows-specific code</a>
         </li>
         <li>

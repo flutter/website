@@ -19,7 +19,7 @@
     overflow-y: hidden;
     position: relative;
     transform: translate(0);
-    z-index: 5;
+    z-index: var(--site-z-container);
 
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;

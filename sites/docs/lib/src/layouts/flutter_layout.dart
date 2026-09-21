@@ -38,8 +38,6 @@ abstract class FlutterDocsLayout extends DashLayout {
 
   @override
   String get tagManagerId => 'GTM-ND4LWWZ';
-  @override
-  String get analyticsId => 'UA-67589403-1';
 
   String get defaultSidenav => 'default';
 

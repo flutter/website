@@ -38,7 +38,7 @@
     min-width: 160px;
     box-shadow: var(--ui-drop-shadow);
     border-radius: 8px;
-    z-index: 6;
+    z-index: var(--site-z-floating);
 
     animation-duration: 300ms;
     animation-delay: 0ms;
@@ -122,7 +122,7 @@
       --title-container-height: 80px;
 
       position: fixed;
-      z-index: 10;
+      z-index: var(--site-z-dropdown);
       top: 0;
       left: 0;
       width: 100%;
