@@ -182,56 +182,80 @@ automatically.
 
 ### How do I configure my cache headers?
 
-If you are using Firebase Hosting,
-the shared cache (CDN) is invalidated when you deploy a
-new version of your app.
-However, to make sure that the browser doesn't
-cache application scripts but the shared cache does,
-you can configure your cache headers as follows,
+If you are using Firebase Hosting, the shared cache (CDN) is invalidated when you deploy a new version of your app. However, to make sure that the browser doesn't cache application scripts or missing assets (404s), you should explicitly configure the `Cache-Control` header for your app's root files and manifests.
+
+When you build your application using `--web-content-hash` (which hashes static assets and engine files for long-term browser caching), you can configure your `firebase.json` headers and rewrites as follows:
 
 ```json
 {
   "hosting": {
+    "public": "build/web",
     "headers": [
       {
-        "source":
-          "**/*.@(jpg|jpeg|gif|png|svg|webp|css|eot|otf|ttf|ttc|woff|woff2|font.css)",
+        "source": "**",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=3600,s-maxage=604800"
+            "value": "max-age=0, must-revalidate"
           }
         ]
       },
       {
-        "source":
-          "**/*.@(mjs|js|wasm|json)",
+        "regex": "^/main\\.dart\\.[0-9a-f]{8}\\.(js|wasm|mjs)$",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=0,s-maxage=604800"
+            "value": "public, max-age=31536000, immutable"
           }
         ]
+      },
+      {
+        "regex": "^/assets/.+\\.[0-9a-f]{8}\\.[A-Za-z0-9]+$",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/assets/@(AssetManifest.json|AssetManifest.bin|AssetManifest.bin.json|FontManifest.json|NOTICES|NOTICES.Z)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "404.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0, must-revalidate"
+          }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "!/@(assets|canvaskit|icons|main.dart.*)/**",
+        "destination": "/index.html"
       }
     ]
   }
 }
 ```
 
+The strict `/index.html` rewrite exclusion (`!/@(assets...)/**`) prevents missing module chunks from returning a `200 OK` status with an HTML payload, which would poison the browser cache via inherited `immutable` headers. The `404.html` rule ensures missing assets don't result in week-long cached 404 responses from the CDN.
+
 ### How do I configure a service worker?
 
-Flutter no longer generates or manages a service worker by default.
+Flutter no longer generates or manages a service worker by default (in newer versions, it writes a self-cleaning stub to remove legacy service workers).
 
-If your application requires offline support or advanced caching,
-you need to configure a service worker yourself using standard
-web tooling or third-party solutions such as [Workbox][workbox].
+If your application requires offline support or advanced caching, you need to configure a service worker yourself using standard web tooling or third-party solutions such as [Workbox][workbox].
 
-For more information on building custom service workers,
-check out [Using service workers][].
-
-If your service worker is not refreshing, configure your CDN and
-browser cache by setting the `Cache-Control` header to a small
-value such as 0 or 60 seconds.
+For more information on building custom service workers, check out [Using service workers][].
 
 [building a web app with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive
