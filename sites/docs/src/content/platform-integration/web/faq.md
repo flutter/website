@@ -239,7 +239,7 @@ When you build your application using `--web-content-hash` (which hashes static 
     ],
     "rewrites": [
       {
-        "source": "!/@(assets|canvaskit|icons|main.dart.*)/**",
+        "source": "!(/assets/**|/canvaskit/**|/icons/**|/main.dart.*)",
         "destination": "/index.html"
       }
     ]
@@ -247,7 +247,7 @@ When you build your application using `--web-content-hash` (which hashes static 
 }
 ```
 
-The strict `/index.html` rewrite exclusion (`!/@(assets...)/**`) prevents missing module chunks from returning a `200 OK` status with an HTML payload, which would poison the browser cache via inherited `immutable` headers. The `404.html` rule ensures missing assets don't result in week-long cached 404 responses from the CDN.
+The strict `/index.html` rewrite exclusion (`!(/assets/**|...)`) prevents missing module chunks from returning a `200 OK` status with an HTML payload, which would poison the browser cache via inherited `immutable` headers. The `404.html` rule ensures missing assets don't result in week-long cached 404 responses from the CDN.
 
 ### How do I configure a service worker?
 
