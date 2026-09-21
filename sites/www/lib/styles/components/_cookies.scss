@@ -10,7 +10,7 @@
   box-shadow: var(--ui-drop-shadow);
   opacity: 0;
   display: none;
-  z-index: 11;
+  z-index: var(--site-z-top);
 
   @keyframes fadein {
       0% { opacity: 0; }

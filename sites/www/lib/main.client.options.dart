@@ -40,6 +40,8 @@ import 'package:site_shared/components/blog/client/blog_categories.dart'
     deferred as _blog_categories;
 import 'package:site_shared/components/blog/client/share_button.dart'
     deferred as _share_button;
+import 'package:site_shared/components/common/client/back_to_top_button.dart'
+    deferred as _back_to_top_button;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     deferred as _collapse_button;
 import 'package:site_shared/components/common/client/copy_button.dart'
@@ -205,6 +207,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
         title: p['title'] as String,
       ),
       loader: _share_button.loadLibrary,
+    ),
+    'site_shared:back_to_top_button': ClientLoader(
+      (p) => _back_to_top_button.BackToTopButton(),
+      loader: _back_to_top_button.loadLibrary,
     ),
     'site_shared:collapse_button': ClientLoader(
       (p) => _collapse_button.CollapseButton(
