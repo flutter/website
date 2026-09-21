@@ -177,21 +177,22 @@ For example, `logo.png` might become `logo.v123.png`.
 <script src="flutter_bootstrap.v123.js" async></script>
 ```
 
-To hash static assets and engine files automatically during a release build,
-pass the `--web-content-hash` flag to `flutter build web`.
+Flutter doesn't currently support appending build IDs to resources
+automatically.
 
 ### How do I configure my cache headers?
 
 If you are using Firebase Hosting,
 the shared cache (CDN) is invalidated when you deploy a
 new version of your app.
-However, to make sure that the browser doesn't cache mutable root files,
-manifests, or missing assets (404s),
-configure the `Cache-Control` header in your `firebase.json` file.
+However, by default Firebase Hosting sets `Cache-Control: max-age=3600`
+on static files, meaning browsers can serve stale `index.html`,
+`flutter_bootstrap.js`, or manifest files for up to an hour after a deploy.
 
-When you build your application using `--web-content-hash`
-(which hashes static assets and engine files for long-term browser caching),
-you can configure your `firebase.json` headers and rewrites as follows:
+To make sure that browsers revalidate your app's files on each load
+(receiving fast `304 Not Modified` responses from the CDN edge when unchanged)
+and don't cache missing assets (`404.html`),
+configure your `firebase.json` file as follows:
 
 ```json
 {
@@ -200,34 +201,6 @@ you can configure your `firebase.json` headers and rewrites as follows:
     "headers": [
       {
         "source": "**",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=0, must-revalidate"
-          }
-        ]
-      },
-      {
-        "regex": "^/main\\.dart\\.[0-9a-f]{8}\\.(js|wasm|mjs)$",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, immutable"
-          }
-        ]
-      },
-      {
-        "regex": "^/assets/.+\\.[0-9a-f]{8}\\.[A-Za-z0-9]+$",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, immutable"
-          }
-        ]
-      },
-      {
-        "source":
-          "/assets/@(AssetManifest.json|AssetManifest.bin|AssetManifest.bin.json|FontManifest.json|NOTICES|NOTICES.Z)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -247,8 +220,7 @@ you can configure your `firebase.json` headers and rewrites as follows:
     ],
     "rewrites": [
       {
-        "source":
-          "!(/assets/**|/canvaskit/**|/icons/**|/main.dart.*)",
+        "source": "!/@(assets|canvaskit|icons)/**",
         "destination": "/index.html"
       }
     ]
@@ -256,11 +228,10 @@ you can configure your `firebase.json` headers and rewrites as follows:
 }
 ```
 
-The `/index.html` rewrite exclusion (`!(/assets/**|...)`) prevents
-missing module chunks from returning a `200 OK` status with an HTML payload,
-which would poison the browser cache via inherited `immutable` headers.
-The `404.html` rule ensures that missing assets don't result in
-week-long cached 404 responses from the CDN.
+The `/index.html` rewrite exclusion (`!/@(assets|canvaskit|icons)/**`) ensures
+that requests for missing assets return a real `404` status rather than
+`index.html` with a `200 OK` status, and the `404.html` rule prevents the CDN
+from caching 404 responses under wildcard TTLs.
 
 ### How do I configure a service worker?
 
