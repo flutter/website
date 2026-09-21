@@ -551,7 +551,8 @@ update the `PrivacyInfo.xcprivacy` file to
 describe your plugin's privacy impact.
 
 With Swift Package Manager, place `PrivacyInfo.xcprivacy` in your plugin's
-`Resources` directory (such as `hello/Sources/hello/Resources/PrivacyInfo.xcprivacy`).
+`Resources` directory
+(such as `hello/ios/hello/Sources/hello/Resources/PrivacyInfo.xcprivacy`).
 Declare the resource in your `Package.swift` file:
 
 ```swift title="Package.swift"
