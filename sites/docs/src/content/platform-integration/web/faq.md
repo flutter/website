@@ -177,14 +177,21 @@ For example, `logo.png` might become `logo.v123.png`.
 <script src="flutter_bootstrap.v123.js" async></script>
 ```
 
-Flutter doesn't currently support appending build IDs to resources
-automatically.
+To hash static assets and engine files automatically during a release build,
+pass the `--web-content-hash` flag to `flutter build web`.
 
 ### How do I configure my cache headers?
 
-If you are using Firebase Hosting, the shared cache (CDN) is invalidated when you deploy a new version of your app. However, to make sure that the browser doesn't cache application scripts or missing assets (404s), you should explicitly configure the `Cache-Control` header for your app's root files and manifests.
+If you are using Firebase Hosting,
+the shared cache (CDN) is invalidated when you deploy a
+new version of your app.
+However, to make sure that the browser doesn't cache mutable root files,
+manifests, or missing assets (404s),
+configure the `Cache-Control` header in your `firebase.json` file.
 
-When you build your application using `--web-content-hash` (which hashes static assets and engine files for long-term browser caching), you can configure your `firebase.json` headers and rewrites as follows:
+When you build your application using `--web-content-hash`
+(which hashes static assets and engine files for long-term browser caching),
+you can configure your `firebase.json` headers and rewrites as follows:
 
 ```json
 {
@@ -219,7 +226,8 @@ When you build your application using `--web-content-hash` (which hashes static 
         ]
       },
       {
-        "source": "/assets/@(AssetManifest.json|AssetManifest.bin|AssetManifest.bin.json|FontManifest.json|NOTICES|NOTICES.Z)",
+        "source":
+          "/assets/@(AssetManifest.json|AssetManifest.bin|AssetManifest.bin.json|FontManifest.json|NOTICES|NOTICES.Z)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -239,7 +247,8 @@ When you build your application using `--web-content-hash` (which hashes static 
     ],
     "rewrites": [
       {
-        "source": "!(/assets/**|/canvaskit/**|/icons/**|/main.dart.*)",
+        "source":
+          "!(/assets/**|/canvaskit/**|/icons/**|/main.dart.*)",
         "destination": "/index.html"
       }
     ]
@@ -247,15 +256,24 @@ When you build your application using `--web-content-hash` (which hashes static 
 }
 ```
 
-The strict `/index.html` rewrite exclusion (`!(/assets/**|...)`) prevents missing module chunks from returning a `200 OK` status with an HTML payload, which would poison the browser cache via inherited `immutable` headers. The `404.html` rule ensures missing assets don't result in week-long cached 404 responses from the CDN.
+The `/index.html` rewrite exclusion (`!(/assets/**|...)`) prevents
+missing module chunks from returning a `200 OK` status with an HTML payload,
+which would poison the browser cache via inherited `immutable` headers.
+The `404.html` rule ensures that missing assets don't result in
+week-long cached 404 responses from the CDN.
 
 ### How do I configure a service worker?
 
-Flutter no longer generates or manages a service worker by default (in newer versions, it writes a self-cleaning stub to remove legacy service workers).
+Flutter no longer generates or manages a caching service worker by default
+(in newer versions, it writes a self-cleaning stub to remove
+legacy service workers).
 
-If your application requires offline support or advanced caching, you need to configure a service worker yourself using standard web tooling or third-party solutions such as [Workbox][workbox].
+If your application requires offline support or advanced caching,
+you need to configure a service worker yourself using standard
+web tooling or third-party solutions such as [Workbox][workbox].
 
-For more information on building custom service workers, check out [Using service workers][].
+For more information on building custom service workers,
+check out [Using service workers][].
 
 [building a web app with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive
