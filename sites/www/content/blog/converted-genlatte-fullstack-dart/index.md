@@ -11,6 +11,8 @@ category: deep-dive
 layout: blog
 ---
 
+<DashImage figure src="images/DartFullStack_GenLatteArt.webp" alt="How I converted an app to fullstack Dart" caption="How I converted an app to fullstack Dart" />
+
 If you've followed the
 [winding saga of the Flutter team's venture into running pop-up coffee stands](/blog/how-we-built-a-flutter-powered-ai-coffee-shop),
 you know that we combined Flutter, Firebase, and Gemini to serve whimsical coffees.
