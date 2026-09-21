@@ -220,7 +220,7 @@ configure your `firebase.json` file as follows:
     ],
     "rewrites": [
       {
-        "source": "!/@(assets|canvaskit|icons)/**",
+        "source": "!(/assets/**|/canvaskit/**|/icons/**|/main.dart.*)",
         "destination": "/index.html"
       }
     ]
@@ -228,10 +228,11 @@ configure your `firebase.json` file as follows:
 }
 ```
 
-The `/index.html` rewrite exclusion (`!/@(assets|canvaskit|icons)/**`) ensures
-that requests for missing assets return a real `404` status rather than
-`index.html` with a `200 OK` status, and the `404.html` rule prevents the CDN
-from caching 404 responses under wildcard TTLs.
+The `/index.html` rewrite exclusion
+(`!(/assets/**|/canvaskit/**|/icons/**|/main.dart.*)`) ensures that requests
+for missing assets or compiled entry points return a real `404` status rather
+than `index.html` with a `200 OK` status, and the `404.html` rule prevents the
+CDN from caching 404 responses under wildcard TTLs.
 
 ### How do I configure a service worker?
 
