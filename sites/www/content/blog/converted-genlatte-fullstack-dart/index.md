@@ -5,8 +5,8 @@ description: >-
   generating latte art
 publishDate: 2026-09-21
 author: craiglabenz
-image: images/xxx
-socialImage: images/xxx
+image: images/DartFullStack_GenLatteArt.webp
+socialImage: images/DartFullStack_GenLatteArt.webp
 category: deep-dive
 layout: blog
 ---
