@@ -21,8 +21,9 @@ class TrailingContent extends StatelessComponent {
     final siteData = page.data.site;
     final pageDate = pageData['date'] as String?;
 
-    final currentFlutterVersion =
-        siteData['currentFlutterVersion'] as String? ?? '';
+    final documentedFlutterVersion = _parseDocumentedFlutterVersion(
+      siteData['documentedFlutterVersion'],
+    );
 
     final sourceInfo = page.sourceInfo;
     final issueUrl = sourceInfo.issueUrl;
@@ -38,7 +39,7 @@ class TrailingContent extends StatelessComponent {
           span([
             .text(
               'Unless stated otherwise, the documentation on '
-              'this site reflects Flutter $currentFlutterVersion. ',
+              'this site reflects Flutter $documentedFlutterVersion. ',
             ),
             if (pageDate != null)
               .text(
@@ -67,4 +68,23 @@ class TrailingContent extends StatelessComponent {
       ],
     );
   }
+
+  /// Returns the [rawVersionValue] as a version string in `major.minor` format.
+  ///
+  /// Throws a [FormatException] if [rawVersionValue]
+  /// isn't in the expected version format.
+  static String _parseDocumentedFlutterVersion(Object? rawVersionValue) {
+    if (rawVersionValue is! String ||
+        !_documentedFlutterVersionPattern.hasMatch(rawVersionValue)) {
+      throw const FormatException(
+        'documentedFlutterVersion in src/data/site.yml must be a version '
+        'in major.minor format (for example, "3.47").',
+      );
+    }
+    return rawVersionValue;
+  }
+
+  static final RegExp _documentedFlutterVersionPattern = RegExp(
+    r'^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$',
+  );
 }
