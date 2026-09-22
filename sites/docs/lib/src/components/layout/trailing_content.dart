@@ -76,9 +76,10 @@ class TrailingContent extends StatelessComponent {
   static String _parseDocumentedFlutterVersion(Object? rawVersionValue) {
     if (rawVersionValue is! String ||
         !_documentedFlutterVersionPattern.hasMatch(rawVersionValue)) {
-      throw const FormatException(
-        'documentedFlutterVersion in src/data/site.yml must be a version '
-        'in major.minor format (for example, "3.47").',
+      throw FormatException(
+        'documentedFlutterVersion in sites/docs/src/data/site.yml must be a '
+        'quoted string in "major.minor" format, such as "3.47". '
+        'Received: $rawVersionValue (${rawVersionValue.runtimeType}).',
       );
     }
     return rawVersionValue;
