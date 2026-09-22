@@ -194,12 +194,12 @@ and route each incoming `BackendMessage` accordingly.
 
 ```dart
 firebase.https.onCallWithData<MessageParameters, Object>(
-  (request, response) {
+  (request) {
     final MessageResponse response = switch (request.data) {
       SaveOrderParameters msg => saveOrder(msg),
       CompleteOrderParameters msg => completeOrder(msg),
       ...
-    }
+    };
     return response.toJson();
   },
   ...
