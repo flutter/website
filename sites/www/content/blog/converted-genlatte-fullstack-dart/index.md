@@ -1,9 +1,8 @@
 ---
 title: "How I converted GenLatte to fullstack Dart"
 description: >-
-  The continued journey of creating a Mission Critical app for
-  generating latte art
-publishDate: 2026-09-21
+  And reduced the app's server bill
+publishDate: 2026-09-22
 author: craiglabenz
 image: images/DartFullStack_GenLatteArt.webp
 socialImage: images/DartFullStack_GenLatteArt.webp
@@ -41,7 +40,7 @@ it did so with a Node.js backend.
 ## Fully leaning in to fullstack Dart
 
 Dart and JavaScript are different languages with different strengths.
-In some senses, this is a bit of a *No duh* statement,
+In some sense, this is a bit of a *No duh* statement,
 but it also has deeper implications for a server-side migration,
 so a 1-to-1 rewrite is probably not worth doing. After all,
 Dart on the server can enjoy end-to-end type safety with Dart
@@ -61,7 +60,8 @@ I set out to *dramatically* rewrite GenLatte. Amongst my many goals:
 * Persist all role-based ACL checks  
 * Finally have end-to-end tests!
 
-These goals were lofty and not exactly on my 2026 roadmap, so, naturally, I kept my plans a secret and got typing!
+These goals were lofty and not exactly on my 2026 roadmap, so, naturally,
+I kept my plans a secret and got typing!
 
 ## Executing the migration
 
@@ -109,7 +109,14 @@ so is this actually important?"
 
 Great question. I'm glad you're paying attention.
 
-And yes, it is very important! While GenLatte was in use, various data writes and asynchronous tasks spun up all 15 of those services, and while each one would turn off while idle, that still had predictable effects on our server bill. But, to make matters worse, we set each service's minimum node count to 1 while GenLatte was in use to avoid cold starts, which of course unplugged this spin-down-to-zero functionality. The end result was that GenLatte was surprisingly expensive to turn on.
+And yes, it is very important! While GenLatte was in use,
+various data writes and asynchronous tasks spun up all 15 of those services,
+and while each one would turn off while idle,
+that still had predictable effects on our server bill.
+But, to make matters worse, we set each service's minimum node count to 1
+while GenLatte was in use to avoid cold starts,
+which of course unplugged this spin-down-to-zero functionality.
+The end result was that GenLatte was surprisingly expensive to turn on.
 
 #### How to shove everything into one Firebase service
 
@@ -229,9 +236,9 @@ three more of my sub-goals:
    I also refactored my data management layers to call the singular
    backend function instead of ever calling direct Firestore functions
    like `docRef.set()`.  
-2. I similarly removed all Firestore triggers, but reinstantiated the missing
+1. I similarly removed all Firestore triggers, but reinstantiated the missing
    functionality into functions I could explicitly call from the client.  
-3. I maintained GenLatte's strict permissions model by introducing ACL checks
+1. I maintained GenLatte's strict permissions model by introducing ACL checks
    in Dart code, which, as a testable system, helped me sleep at night.
 
 ### Adding end-to-end tests
