@@ -12,7 +12,7 @@ The `useInheritedMediaQuery` property in `WidgetsApp`, `MaterialApp`, and `Cuper
 
 ## Context
 
-Historically, Flutter used `useInheritedMediaQuery` to determine whether a `WidgetsApp`, `MaterialApp` or `CupertinoApp` should inherit the MediaQuery from its parent. This became redundant when MediaQuery inheritance became the default behavior.
+Historically, Flutter used `useInheritedMediaQuery` to determine whether a `WidgetsApp`, `MaterialApp`, or `CupertinoApp` should inherit the `MediaQuery` from its parent. This became redundant when `MediaQuery` inheritance became the default behavior.
 
 ## Migration guide
 
