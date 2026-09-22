@@ -25,6 +25,7 @@ To include your course, [submit a PR][]:
 * [Flutter Crash Course][]
 * [Flutter Foundations][] by Andrea Bizzotto
 * [Flutter in Production][] by Andrea Bizzotto
+* [FlutterCraft][] by Muhammad Haris Shahzad
 * [Sticky Grouped Headers in Flutter][] by Marco Napoli
 * [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
 * [The Complete Dart Developer Guide][] by Andrea Bizzotto
@@ -71,4 +72,5 @@ To include your course, [submit a PR][]:
 [Sticky Grouped Headers in Flutter]: https://academy.droidcon.com/course/sticky-grouped-headers-in-flutter
 [Flutter University - From Zero to Mastery]: https://www.fudeo.it/?utm_source=flutter_dev
 [Tech Idara - Flutter from Basic to Advanced]: https://www.youtube.com/playlist?list=PLX97VxArfzkmXeUqUxeKW7XS8oYraH7A5
+[FlutterCraft]: https://fluttercraft.app
 [submit a PR]: {{site.repo.this}}/pulls
