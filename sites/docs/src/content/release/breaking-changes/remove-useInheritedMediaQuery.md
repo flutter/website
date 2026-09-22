@@ -16,7 +16,7 @@ Historically, Flutter used `useInheritedMediaQuery` to determine whether a `Widg
 
 ## Migration guide
 
-If your code previously used the `useInheritedMediaQuery`, you can migrate your code by deleting any usage of `useInheritedMediaQuery`.
+If your code previously used `useInheritedMediaQuery`, you can migrate it by deleting any usage of the property.
 
 ```dart diff
 - useInheritedMediaQuery: true,
