@@ -5,7 +5,9 @@ description: >-
   the package ecosystem, text editing, and mobile development.
 publishDate: 2022-02-22
 author: jayoung-lee
-image: images/0Zw_zyVq5CfP7Y09o.webp
+coverImage:
+  url: images/0Zw_zyVq5CfP7Y09o.webp
+  display: false
 category: news
 layout: blog
 ---

@@ -5,12 +5,12 @@ description: >-
   support reliable agentic development.
 publishDate: 2026-01-23
 author: jwren
-image: images/1HNqQFQ2hdhAgjew1pIMqXA.webp
+coverImage:
+  alt: ""
+  url: images/1HNqQFQ2hdhAgjew1pIMqXA.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1HNqQFQ2hdhAgjew1pIMqXA.webp" />
 
 ## Summary
 

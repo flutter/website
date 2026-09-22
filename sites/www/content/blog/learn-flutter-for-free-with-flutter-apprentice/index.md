@@ -4,12 +4,14 @@ description: >-
   A free book for learning Flutter, available for a time-limited period.
 publishDate: 2021-10-06
 author: sfshaza
-image: images/1AvOHYfnMrCR81c4GltakzQ.webp
+coverImage:
+  alt: >-
+    Cover of Flutter Apprentice, second edition: Learn to Build
+    Cross-Platform Apps.
+  url: images/1AvOHYfnMrCR81c4GltakzQ.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1AvOHYfnMrCR81c4GltakzQ.webp" />
 
 We’ve heard from many folk that they want to learn Flutter, but don’t know where to start. So we have some great news for you — we’re giving away a free book for the next three months, along with a book club to help track your progress and answer questions.
 

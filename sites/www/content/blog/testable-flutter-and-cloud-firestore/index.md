@@ -4,12 +4,12 @@ description: >-
   Using dependency injection to test apps using Flutter and Firebase
 publishDate: 2020-10-15
 author: craiglabenz
-image: images/1pQJzBr81G169df-ffo24Cg.webp
+coverImage:
+  alt: ""
+  url: images/1pQJzBr81G169df-ffo24Cg.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1pQJzBr81G169df-ffo24Cg.webp" />
 
 ## Why Cloud Firestore?
 

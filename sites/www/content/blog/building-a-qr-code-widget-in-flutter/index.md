@@ -4,7 +4,9 @@ description: >-
   Making Flutter Widgets is fun so get going!
 publishDate: 2018-03-05
 author: lukeaf
-image: images/1iuOxHUF0bBlZtiktVx6XyA.webp
+coverImage:
+  url: images/1iuOxHUF0bBlZtiktVx6XyA.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

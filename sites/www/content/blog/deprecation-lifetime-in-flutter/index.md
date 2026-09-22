@@ -4,7 +4,9 @@ description: >-
   Reliably removing deprecated code on a scheduled basis.
 publishDate: 2020-11-18
 author: piinks
-image: images/0n5eFBwWfgtkuLtDf.jpg
+coverImage:
+  url: images/0n5eFBwWfgtkuLtDf.jpg
+  display: false
 category: deep-dive
 layout: blog
 ---

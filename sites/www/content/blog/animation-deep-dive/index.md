@@ -5,7 +5,9 @@ description: >-
   techniques from the Flutter Animations series.
 publishDate: 2020-04-17
 author: filiph
-image: images/14bIqmJ8DQLSnlFtkN6bjaA.webp
+coverImage:
+  url: images/14bIqmJ8DQLSnlFtkN6bjaA.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

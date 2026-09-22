@@ -5,7 +5,9 @@ description: >-
   production-quality web apps from a shared codebase.
 publishDate: 2019-12-11
 author: mariam_hasnany
-image: images/0M7sTluUPVsk6DcnU.webp
+coverImage:
+  url: images/0M7sTluUPVsk6DcnU.webp
+  display: false
 category: news
 layout: blog
 ---

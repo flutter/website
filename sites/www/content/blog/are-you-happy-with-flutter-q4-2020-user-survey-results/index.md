@@ -5,7 +5,9 @@ description: >-
   feedback on Flutter tools and workflows.
 publishDate: 2021-02-11
 author: jayoung-lee
-image: images/0hs9oiR_zpBhkzT9u.webp
+coverImage:
+  url: images/0hs9oiR_zpBhkzT9u.webp
+  display: false
 category: news
 layout: blog
 ---

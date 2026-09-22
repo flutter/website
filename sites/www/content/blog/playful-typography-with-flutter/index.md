@@ -4,7 +4,9 @@ description: >-
   Exploring variable fonts and shaders
 publishDate: 2023-01-20
 author: hellobrianjames
-image: images/0x9XqN84kLr7s86vK.webp
+coverImage:
+  url: images/0x9XqN84kLr7s86vK.webp
+  display: false
 category: case-study
 layout: blog
 ---

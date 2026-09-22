@@ -5,7 +5,9 @@ description: >-
   into production
 publishDate: 2020-05-20
 author: csells
-image: images/0jAThFFycWDnklih_.webp
+coverImage:
+  url: images/0jAThFFycWDnklih_.webp
+  display: false
 category: news
 layout: blog
 ---

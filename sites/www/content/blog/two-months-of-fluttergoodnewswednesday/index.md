@@ -4,7 +4,9 @@ description: >-
   New apps and plugins, free training and tooling: oh my!
 publishDate: 2020-05-27
 author: timsneath
-image: images/0B33kcAC_6aXEEdVZ.webp
+coverImage:
+  url: images/0B33kcAC_6aXEEdVZ.webp
+  display: false
 category: news
 layout: blog
 ---

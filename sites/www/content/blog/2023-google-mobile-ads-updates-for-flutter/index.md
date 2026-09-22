@@ -4,12 +4,12 @@ description: >-
   We added new GMA Flutter features based on your feedback!
 publishDate: 2023-05-10
 author: timothyhoang
-image: images/1PLQQUPqp_e0LmXTbAgb_iQ.webp
+coverImage:
+  alt: ""
+  url: images/1PLQQUPqp_e0LmXTbAgb_iQ.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1PLQQUPqp_e0LmXTbAgb_iQ.webp" />
 
 As you build and grow your Flutter apps, you may want your apps to make money. You can monetize your apps in many ways. Introducing advertising would be one of the most common strategies. To introduce ads, you can use the [Google Mobile Ads](https://pub.dev/packages/google_mobile_ads) (GMA) Flutter plugin. The GMA plugin can place ads from AdMob, Google Ad Manager, or AdSense in your Flutter mobile app.
 

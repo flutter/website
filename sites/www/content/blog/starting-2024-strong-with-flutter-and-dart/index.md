@@ -5,7 +5,9 @@ description: >-
   Gemini era
 publishDate: 2024-02-15
 author: brandonbadger
-image: images/0gO0yYMh4FUkpue3w.gif
+coverImage:
+  url: images/0gO0yYMh4FUkpue3w.gif
+  display: false
 category: news
 layout: blog
 ---

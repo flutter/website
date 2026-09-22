@@ -5,7 +5,9 @@ description: >-
   building more performant Flutter widgets.
 publishDate: 2020-07-23
 author: guidez
-image: images/0GWFHSeCrjUgPdkJ-.webp
+coverImage:
+  url: images/0GWFHSeCrjUgPdkJ-.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

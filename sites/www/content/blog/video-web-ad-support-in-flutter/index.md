@@ -5,7 +5,9 @@ description: >-
   Google Mobile Ads plugins for Flutter.
 publishDate: 2024-12-17
 author: zoeyfan
-image: images/0xsAbaMexfbR30wgK.webp
+coverImage:
+  url: images/0xsAbaMexfbR30wgK.webp
+  display: false
 category: news
 layout: blog
 ---

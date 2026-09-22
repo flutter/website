@@ -4,7 +4,9 @@ description: >-
   Free & open source multi-platform 2D game development in Flutter
 publishDate: 2023-11-15
 author: zoeyfan
-image: images/03DmGJe1yD4eKdnfs.webp
+coverImage:
+  url: images/03DmGJe1yD4eKdnfs.webp
+  display: false
 category: news
 layout: blog
 ---

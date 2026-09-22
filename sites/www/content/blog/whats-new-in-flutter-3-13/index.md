@@ -4,12 +4,12 @@ description: >-
   2D scrolling, faster graphics, Material 3 updates and more
 publishDate: 2023-08-16
 author: itsjustkevin
-image: images/0H4kTD2wabl_kscFq.webp
+coverImage:
+  alt: ""
+  url: images/0H4kTD2wabl_kscFq.webp
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/0H4kTD2wabl_kscFq.webp" />
 
 ## What’s new in Flutter 3.13
 

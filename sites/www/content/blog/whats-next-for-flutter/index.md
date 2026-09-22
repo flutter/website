@@ -4,7 +4,9 @@ description: >-
   Setting out our vision at the Flutter Forward event in Nairobi
 publishDate: 2023-01-25
 author: timsneath
-image: images/01m_CqCW7oMEoqPrl.webp
+coverImage:
+  url: images/01m_CqCW7oMEoqPrl.webp
+  display: false
 category: news
 layout: blog
 ---

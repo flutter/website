@@ -5,7 +5,9 @@ description: >-
   Android deferred components, web improvements, and new tooling.
 publishDate: 2021-05-19
 author: csells
-image: images/0fS4WbRPwmo_FQgDo.webp
+coverImage:
+  url: images/0fS4WbRPwmo_FQgDo.webp
+  display: false
 category: release
 layout: blog
 ---

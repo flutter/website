@@ -6,7 +6,9 @@ description: >-
   and have started thinking about how you'd test your app
 publishDate: 2018-03-06
 author: devoncarew
-image: images/1GKGBr7v55mRKhQyOkNaFoA.webp
+coverImage:
+  url: images/1GKGBr7v55mRKhQyOkNaFoA.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

@@ -4,7 +4,9 @@ description: >-
   Where organizations can find consultants to help build their next application
 publishDate: 2023-09-13
 author: leighajarett
-image: images/1m5eYW0Qgmdse1bpkqbsPLQ.webp
+coverImage:
+  url: images/1m5eYW0Qgmdse1bpkqbsPLQ.webp
+  display: false
 category: news
 layout: blog
 ---

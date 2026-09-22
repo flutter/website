@@ -4,12 +4,12 @@ description: >-
   Write less, see more, build faster
 publishDate: 2025-11-12
 author: itsjustkevin
-image: images/1MMtTv_yj5ycI6is3vkXRow.webp
+coverImage:
+  alt: ""
+  url: images/1MMtTv_yj5ycI6is3vkXRow.webp
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/1MMtTv_yj5ycI6is3vkXRow.webp" />
 
 ## What’s new in Flutter 3.38
 

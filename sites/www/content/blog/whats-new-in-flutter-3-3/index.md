@@ -4,7 +4,9 @@ description: >-
   Exciting updates for text handling, performance improvements, and more!
 publishDate: 2022-08-30
 author: itsjustkevin
-image: images/04Mac8uQL3ynXVIuD.webp
+coverImage:
+  url: images/04Mac8uQL3ynXVIuD.webp
+  display: false
 category: release
 layout: blog
 ---

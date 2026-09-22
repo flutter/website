@@ -5,7 +5,9 @@ description: >-
   new tooling, and Dart 2.7.
 publishDate: 2019-12-11
 author: csells
-image: images/1sW6TueDcNzw806cjigLJaA.webp
+coverImage:
+  url: images/1sW6TueDcNzw806cjigLJaA.webp
+  display: false
 category: release
 layout: blog
 ---

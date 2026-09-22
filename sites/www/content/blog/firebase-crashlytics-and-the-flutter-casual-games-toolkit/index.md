@@ -5,7 +5,9 @@ description: >-
   make detecting and fixing issues in your game easier
 publishDate: 2022-08-03
 author: rich_hall
-image: images/1B5i6MSUhz554dVTR484AuA.webp
+coverImage:
+  url: images/1B5i6MSUhz554dVTR484AuA.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

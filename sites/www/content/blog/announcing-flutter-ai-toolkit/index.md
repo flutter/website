@@ -4,7 +4,9 @@ description: >-
   Want AI chat in your Flutter app? This toolkit makes it easy.
 publishDate: 2024-12-17
 author: antfitch
-image: images/1u_atZ9LOO85MJMWdLFvxow.webp
+coverImage:
+  url: images/1u_atZ9LOO85MJMWdLFvxow.webp
+  display: false
 category: news
 layout: blog
 ---

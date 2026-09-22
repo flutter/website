@@ -5,7 +5,9 @@ description: >-
   explore the product updates announced at #FlutterInProduction.
 publishDate: 2024-12-17
 author: mit-mit
-image: images/1nlSy3ZCCbdUXFRH4Q1zstg.webp
+coverImage:
+  url: images/1nlSy3ZCCbdUXFRH4Q1zstg.webp
+  display: false
 category: news
 layout: blog
 ---

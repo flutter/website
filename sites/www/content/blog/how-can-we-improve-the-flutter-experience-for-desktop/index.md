@@ -5,7 +5,9 @@ description: >-
   Hoover and Chris Bracken
 publishDate: 2022-12-12
 author: melyndahoover
-image: images/1VbmSF-liAOyeParju2Y4kw.webp
+coverImage:
+  url: images/1VbmSF-liAOyeParju2Y4kw.webp
+  display: false
 category: news
 layout: blog
 ---

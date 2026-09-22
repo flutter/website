@@ -4,7 +4,9 @@ description: >-
   There are many widgets for animations, but which one to use?
 publishDate: 2020-04-01
 author: fitzface
-image: images/0oiCAPHSQGyFgZlUd.webp
+coverImage:
+  url: images/0oiCAPHSQGyFgZlUd.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

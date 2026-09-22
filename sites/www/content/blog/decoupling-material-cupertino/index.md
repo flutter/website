@@ -5,13 +5,14 @@ description: >-
   fixes and development of new features
 publishDate: 2026-09-09
 author: craiglabenz
-image: images/Flutter_CupertinoMaterial_Jenga_Low.gif
+coverImage:
+  alt: >-
+    Dash removes blocks labeled Material UI and Cupertino UI from a tower.
+  url: images/Flutter_CupertinoMaterial_Jenga_Low.gif
 socialImage: images/FlutterJenga_Still_OptA.png
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/Flutter_CupertinoMaterial_Jenga_Low.gif" alt="Animated version of Dash extracting Material and Cupertino from a block tower." />
 
 Flutter has always been a "batteries included" framework with great tooling,
 design systems, animations, and more. But, batteries don't last forever,

@@ -4,12 +4,13 @@ description: >-
   Empowering developers at Google I/O 2026
 publishDate: 2026-05-20
 author: khanhnwin
-image: images/1vZ-dmpSHSo3nF0ChZDb02A.gif
+coverImage:
+  alt: ""
+  caption: "Flutter 3.44: Scaling to more users on more devices!"
+  url: images/1vZ-dmpSHSo3nF0ChZDb02A.gif
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/1vZ-dmpSHSo3nF0ChZDb02A.gif" alt="Flutter 3.44: Scaling to more users on more devices!" caption="Flutter 3.44: Scaling to more users on more devices!" />
 
 ## What’s new in Flutter 3.44
 

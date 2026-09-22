@@ -4,7 +4,9 @@ description: >-
   Experience of an early adopter building a Flutter web app
 publishDate: 2021-09-30
 author: mariam_hasnany
-image: images/1GOSImwOIA3oqItUMRmq5Kw.webp
+coverImage:
+  url: images/1GOSImwOIA3oqItUMRmq5Kw.webp
+  display: false
 category: case-study
 layout: blog
 ---

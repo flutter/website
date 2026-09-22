@@ -5,7 +5,9 @@ description: >-
   Flutter developers wanted most.
 publishDate: 2021-08-13
 author: jayoung-lee
-image: images/0m2ihVMc99emY4hQY.webp
+coverImage:
+  url: images/0m2ihVMc99emY4hQY.webp
+  display: false
 category: news
 layout: blog
 ---

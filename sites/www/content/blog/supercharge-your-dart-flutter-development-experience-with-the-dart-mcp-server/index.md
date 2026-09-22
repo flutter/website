@@ -5,7 +5,9 @@ description: >-
   Dart and Flutter development tools and project context.
 publishDate: 2025-07-23
 author: anderdobo
-image: images/13K1rgoDtIBWbIFZPp1VCEQ.webp
+coverImage:
+  url: images/13K1rgoDtIBWbIFZPp1VCEQ.webp
+  display: false
 category: news
 layout: blog
 ---

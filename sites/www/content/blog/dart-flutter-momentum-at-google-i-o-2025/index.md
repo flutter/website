@@ -5,7 +5,9 @@ description: >-
   including new releases, tools, and ecosystem momentum.
 publishDate: 2025-05-21
 author: mit-mit
-image: images/0XtA6olQqCpKPyrdO.webp
+coverImage:
+  url: images/0XtA6olQqCpKPyrdO.webp
+  display: false
 category: news
 layout: blog
 ---

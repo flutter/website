@@ -5,7 +5,9 @@ description: >-
   examining how the Material Backdrop widget is built.
 publishDate: 2018-06-26
 author: mjohnsullivan
-image: images/1in7MRIAKfRn-qDgJKc9XVw.jpeg
+coverImage:
+  url: images/1in7MRIAKfRn-qDgJKc9XVw.jpeg
+  display: false
 category: deep-dive
 layout: blog
 ---

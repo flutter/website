@@ -5,7 +5,9 @@ description: >-
   This is now easy to do with Flutter.
 publishDate: 2020-03-23
 author: josealba
-image: images/0u979IALi6tiDee8O.webp
+coverImage:
+  url: images/0u979IALi6tiDee8O.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

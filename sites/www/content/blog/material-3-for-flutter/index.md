@@ -5,12 +5,12 @@ description: >-
   These matches are made in heaven!
 publishDate: 2023-01-18
 author: esouthren
-image: images/0RuCmIqSnK0G0kHmy.webp
+coverImage:
+  alt: ""
+  url: images/0RuCmIqSnK0G0kHmy.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/0RuCmIqSnK0G0kHmy.webp" />
 
 ## Material 3 for Flutter
 

@@ -5,7 +5,9 @@ description: >-
   one of the first things you need to learn about is stateless widgets.
 publishDate: 2019-02-14
 author: aguinis
-image: images/0GoTVv7PbwxvjCh4S.webp
+coverImage:
+  url: images/0GoTVv7PbwxvjCh4S.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

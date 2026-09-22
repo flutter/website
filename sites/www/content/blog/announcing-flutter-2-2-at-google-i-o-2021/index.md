@@ -4,7 +4,9 @@ description: >-
   Growing momentum for the leading UI toolkit for multiplatform development
 publishDate: 2021-05-18
 author: timsneath
-image: images/0NCBwYFewFf602uvF.webp
+coverImage:
+  url: images/0NCBwYFewFf602uvF.webp
+  display: false
 category: release
 layout: blog
 ---

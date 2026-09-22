@@ -5,12 +5,13 @@ description: >-
   now available in alpha on pub.dev.
 publishDate: 2025-11-18
 author: abdallahshaban557
-image: images/12R8k2Qbswy4G7h3yYIyk1A.webp
+coverImage:
+  alt: ""
+  caption: "Introducing the GenUI SDK for Flutter"
+  url: images/12R8k2Qbswy4G7h3yYIyk1A.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/12R8k2Qbswy4G7h3yYIyk1A.webp" alt="Introducing the GenUI SDK for Flutter" caption="Introducing the GenUI SDK for Flutter" />
 
 ## Rich and dynamic user interfaces with Flutter and generative UI
 

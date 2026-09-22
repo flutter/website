@@ -5,12 +5,12 @@ description: >-
   integration
 publishDate: 2024-05-14
 author: itsjustkevin
-image: images/1hf9CEzGh0uhxnzVZi2Kk4g.webp
+coverImage:
+  alt: ""
+  url: images/1hf9CEzGh0uhxnzVZi2Kk4g.webp
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/1hf9CEzGh0uhxnzVZi2Kk4g.webp" />
 
 ## What’s new in Flutter 3.22
 

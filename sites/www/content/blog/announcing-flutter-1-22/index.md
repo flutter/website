@@ -5,7 +5,9 @@ description: >-
   Google Maps and WebView plugins ready for production, and much more!
 publishDate: 2020-10-01
 author: csells
-image: images/0luz0EiazQQqsAEC4.webp
+coverImage:
+  url: images/0luz0EiazQQqsAEC4.webp
+  display: false
 category: release
 layout: blog
 ---

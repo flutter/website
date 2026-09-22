@@ -5,7 +5,9 @@ description: >-
   Flutter application.
 publishDate: 2018-12-14
 author: kenzieschmoll
-image: images/14dSyF9z9lAYvHVxFPS_oiw.webp
+coverImage:
+  url: images/14dSyF9z9lAYvHVxFPS_oiw.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

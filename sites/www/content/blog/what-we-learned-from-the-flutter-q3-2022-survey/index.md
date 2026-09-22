@@ -4,7 +4,9 @@ description: >-
   About Firebase SDKs, quick fixes and refactorings, and target platforms
 publishDate: 2022-12-08
 author: jayoung-lee
-image: images/0XaZXV1SPtqbuZhFc.webp
+coverImage:
+  url: images/0XaZXV1SPtqbuZhFc.webp
+  display: false
 category: news
 layout: blog
 ---

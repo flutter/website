@@ -5,7 +5,9 @@ description: >-
   explore their creative clock designs.
 publishDate: 2020-02-25
 author: aguinis
-image: images/10z33rzzkJfYqORqmhtjdMg.jpeg
+coverImage:
+  url: images/10z33rzzkJfYqORqmhtjdMg.jpeg
+  display: false
 category: news
 layout: blog
 ---

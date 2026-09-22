@@ -14,6 +14,7 @@ import 'package:site_shared/components/common/breadcrumbs.dart';
 import 'package:site_shared/components/common/client/back_to_top_button.dart';
 import 'package:site_shared/util.dart';
 
+import '../components/common/content_image.dart';
 import '../utils/scroll_spy.dart';
 import 'default_layout.dart';
 
@@ -96,6 +97,14 @@ class BlogLayout extends DefaultLayout {
                   ]),
               ]),
               if (post != null) PostInfo(post: post, url: page.url),
+              if (post?.coverImage case final coverImage?
+                  when coverImage.display)
+                ContentImage(
+                  src: coverImage.url,
+                  alt: coverImage.alt ?? '',
+                  caption: coverImage.caption,
+                  isFigure: true,
+                ),
               child,
               if (isPost)
                 BlogNextPosts(currentPage: page, category: pageCategory),

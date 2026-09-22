@@ -5,7 +5,9 @@ description: >-
   performance improvements, and more!
 publishDate: 2022-05-11
 author: itsjustkevin
-image: images/1K1Ru7PVkH74N56hgjBTjjQ.webp
+coverImage:
+  url: images/1K1Ru7PVkH74N56hgjBTjjQ.webp
+  display: false
 category: release
 layout: blog
 ---

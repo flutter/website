@@ -5,7 +5,9 @@ description: >-
   frameworks, and plugins into an iOS app bundle.
 publishDate: 2018-07-20
 author: chinmaygarde
-image: images/1xfvovQJT-5OsHBDBIQa92A.webp
+coverImage:
+  url: images/1xfvovQJT-5OsHBDBIQa92A.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

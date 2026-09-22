@@ -5,7 +5,9 @@ description: >-
   view logic in deep nesting, and what you can do about it.
 publishDate: 2018-07-10
 author: mravn
-image: images/1RNOof30wEFXsbUsQ0Jof7Q.webp
+coverImage:
+  url: images/1RNOof30wEFXsbUsQ0Jof7Q.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

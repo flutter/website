@@ -5,12 +5,13 @@ description: >-
   the default dependency manager for iOS and macOS apps.
 publishDate: 2026-04-30
 author: magder
-image: images/12A_CUygcOEFYUv5ms5KAJw.webp
+coverImage:
+  alt: ""
+  caption: "Dash migration!"
+  url: images/12A_CUygcOEFYUv5ms5KAJw.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/12A_CUygcOEFYUv5ms5KAJw.webp" alt="Dash migration!" caption="Dash migration!" />
 
 ## Saying goodbye to CocoaPods: Swift Package Manager is soon the default in Flutter!
 
