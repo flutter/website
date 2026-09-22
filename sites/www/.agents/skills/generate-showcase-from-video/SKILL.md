@@ -24,9 +24,9 @@ This skill automates the creation of high-quality Flutter case studies from vide
 - Analyze the transcript to identify:
   - **Customer/Company name**: Used for the final filename.
   - **Goal**: The problem they were solving (this content should be part of the introductory paragraphs without a header).
-  - **Why Flutter**: Reasons for choosing Flutter.
-  - **Their solution**: Technical implementation details (mapped to the **Their solution** header).
-  - **Key metrics**: Quantifiable wins (Velocity, Reuse, FPS, Team size, etc. - mapped to the **Results** header).
+  - **Why Flutter**: Reasons for choosing Flutter. Must use a descriptive, story-specific section header in bold (e.g., `**Why Flutter? Accelerating Time-to-Market**`, `**Why Flutter? Unifying Fragmented Desktop Toolchains**`). Do NOT use generic `**Why Flutter?**`.
+  - **Their solution**: Technical implementation details. Must use a descriptive, technical achievement section header in bold (e.g., `**Building with Flutter: Delightful UX meets AI**`, `**Building with Flutter: Real-Time Telemetry and Hardware Multiplexing**`). Do NOT use generic `**Their solution: Building with Flutter**`.
+  - **Key metrics**: Quantifiable wins (Velocity, Reuse, FPS, Team size, etc. - mapped to the `**Key results and business impact**` header).
 - **CRITICAL**: **DO NOT** use Markdown headers (e.g. `# Header`) in the content. Use **Bold Text** for the section titles as specified in [references/blog-format.md](references/blog-format.md).
 - Use the detailed structure and tone guidelines in `references/blog-format.md`.
 
@@ -35,11 +35,7 @@ This skill automates the creation of high-quality Flutter case studies from vide
 - **MANDATORY**: Request an image (logo or app icon) from the user directly using the chat UI. The user can drag and drop or attach the image to the chat.
 - **PROHIBITION**: **DO NOT** use browser tools, search engines, or external websites to find the logo yourself. You must always wait for the user to provide the official asset.
 - **Image naming**: Image filenames (logo and card) MUST use underscores to separate words, even if the directory or slug uses hyphens (e.g., `global_citizen_logo.png`).
-- Once the image is attached, copy it to `content/showcase/images/third_party/case_studies/<customer_name>/<customer_name_underscored>_logo.png`.
-- Run the automatic padding script to generate a perfectly fitted 1450x1080 Showcase Card with a white background:
-  ```bash
-  dart run tool/generate_showcase_card.dart "content/showcase/images/third_party/case_studies/<customer_name>/<customer_name_underscored>_logo.png" "content/showcase/images/third_party/case_studies/<customer_name>/<customer_name_underscored>_card.png"
-  ```
+- Once the image is attached, copy it to `content/showcase/images/third_party/case_studies/<customer_name>/<customer_name_underscored>_logo.png` and `content/showcase/images/third_party/case_studies/<customer_name>/<customer_name_underscored>_card.png`.
 
 ### 4. Output Markdown & update YAML
 
