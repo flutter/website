@@ -8,7 +8,7 @@ description: >-
 
 ## Summary
 
-The `useInheritedMediaQuery` property in `WidgetsApp`, `MaterialApp` and `CupertinoApp` was removed because these widget never introduced their own MediaQuery, the View widget takes care of that.
+The `useInheritedMediaQuery` property in `WidgetsApp`, `MaterialApp`, and `CupertinoApp` was removed because these widgets never introduced their own `MediaQuery`; the `View` widget takes care of that.
 
 ## Context
 
