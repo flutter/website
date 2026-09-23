@@ -205,7 +205,7 @@ In closing, Li-Te challenged us to go beyond walls of text and chatbots, and ins
 
 ### Googlebook and peripheral support
 
-Flutter is already equipped to handle the new Googlebook laptop, powered by Gemini. Because Flutter targets Android’s large-screen guidelines, apps handle external hardware inputs naturally. Trackpad scrolling, mouse hover states, right-click menus, and keyboard shortcuts work by default. Because Flutter has mature desktop support across macOS, Windows, and Linux, Flutter apps will feel native and responsive on a Googlebook rather than looking like stretched mobile ports. Existing mobile apps will feel at home on a Googlebook without requiring an extensive rewrite.
+Flutter is already equipped to handle the new Googlebook laptop, built with Gemini. Because Flutter targets Android’s large-screen guidelines, apps handle external hardware inputs naturally. Trackpad scrolling, mouse hover states, right-click menus, and keyboard shortcuts work by default. Because Flutter has mature desktop support across macOS, Windows, and Linux, Flutter apps will feel native and responsive on a Googlebook rather than looking like stretched mobile ports. Existing mobile apps will feel at home on a Googlebook without requiring an extensive rewrite.
 
 **Learn more**: [Introducing Googlebook, designed for Gemini intelligence](https://blog.google/products-and-platforms/platforms/android/meet-googlebook/)
 

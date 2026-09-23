@@ -57,7 +57,8 @@ Available providers include the following:
 
 <Tab name="Firebase AI Logic">
 
-To connect to Gemini using the Vertex AI for Firebase SDK, follow these instructions:
+To connect to Gemini using the Firebase AI Logic SDK,
+follow these instructions:
 
  1. [Create a new Firebase project][] using the Firebase Console.
 
@@ -90,7 +91,7 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
     }
     ```
 
- 6. Create an instance of the Vertex AI for Firebase generative model and wrap it
+ 6. Create an instance of the Firebase AI Logic generative model and wrap it
     with your `SurfaceController` and `A2uiTransportAdapter`:
 
     ```dart
