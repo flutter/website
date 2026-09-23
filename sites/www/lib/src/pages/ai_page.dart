@@ -97,7 +97,7 @@ class AiPage extends StatelessComponent {
               div(classes: 'media', [
                 img(
                   src: context.asset('images/build-with-ai/vertex-tab.png'),
-                  alt: 'Vertex AI Logo',
+                  alt: 'Firebase AI Logic Logo',
                 ),
               ]),
               const div(classes: 'text', [
@@ -112,7 +112,7 @@ class AiPage extends StatelessComponent {
                 ]),
                 a(
                   classes: 'btn',
-                  href: 'https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter',
+                  href: 'https://firebase.google.com/docs/ai-logic/get-started?platform=flutter',
                   target: Target.blank,
                   [.text('Get started')],
                 ),
@@ -183,9 +183,9 @@ class AiPage extends StatelessComponent {
                 ),
               ),
               FeatureGridItem(
-                title: 'Build generative AI agents with Vertex AI Agent Builder and Flutter',
+                title: 'Build generative AI agents with Google Cloud and Flutter',
                 description:
-                    'Supercharge your generative AI development workflow with Vertex AI and Flutter. '
+                    'Supercharge your generative AI development workflow with Gemini Enterprise and Flutter. '
                     'Seamlessly integrate with your existing tools and leverage our pre-built components and architectures to accelerate prototyping and deploy production-grade gen AI agents in your apps.',
                 url: 'https://io.google/2024/explore/6f1a4481-7b82-45c9-83eb-caa6e2391152/',
                 icon: context.asset(
