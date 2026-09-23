@@ -65,8 +65,8 @@ dependencies:
 
 <li><b>Configuration</b>
 
-The AI Toolkit supports both the Gemini Developer API (for prototyping) and
-Firebase AI Logic production endpoints. Both require a Firebase project and the
+The AI Toolkit supports both the Gemini Developer API (for prototyping) and the
+Firebase AI Logic production endpoint. Both require a Firebase project and the
 `firebase_core` package to be initialized, as described in the [Get started with
 the Gemini API using the Firebase AI Logic SDKs][firebase_ai] docs.
 
