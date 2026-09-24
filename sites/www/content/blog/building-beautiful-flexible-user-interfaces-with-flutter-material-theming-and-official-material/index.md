@@ -4,7 +4,9 @@ description: >-
   Build flexible, branded interfaces with Flutter and Material Theming.
 publishDate: 2018-05-10
 author: mit-mit
-image: images/1cyTGpzWuHqvYFGTV7uQyXA.webp
+coverImage:
+  url: images/1cyTGpzWuHqvYFGTV7uQyXA.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

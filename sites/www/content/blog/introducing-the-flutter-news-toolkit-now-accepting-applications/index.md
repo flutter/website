@@ -5,7 +5,9 @@ description: >-
   Toolkit
 publishDate: 2022-11-10
 author: zoeyfan
-image: images/1eQsCJ1lXurwLVnD5wIDxkg.webp
+coverImage:
+  url: images/1eQsCJ1lXurwLVnD5wIDxkg.webp
+  display: false
 category: news
 layout: blog
 ---

@@ -5,12 +5,12 @@ description: >-
   showing up in style at the event.
 publishDate: 2018-05-01
 author: aguinis
-image: images/1dArkoJSnhvcjZ6p4ds63BA.webp
+coverImage:
+  alt: ""
+  url: images/1dArkoJSnhvcjZ6p4ds63BA.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1dArkoJSnhvcjZ6p4ds63BA.webp" />
 
 Google I/O 2018 is just a week away, and Flutter will be showing up in style at the event, with sessions, codelabs, office hours, an interactive sandbox space, and more. This is how to stay up to date with all-things Flutter from May 8–10th regardless of where you’ll be.
 

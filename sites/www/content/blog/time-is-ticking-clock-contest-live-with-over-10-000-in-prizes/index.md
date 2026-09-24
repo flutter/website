@@ -5,7 +5,9 @@ description: >-
   beautiful, innovative clock face for the Lenovo Smart Clock.
 publishDate: 2019-11-18
 author: aguinis
-image: images/1uDHQJzyDKsFEz4X59pi5Uw.webp
+coverImage:
+  url: images/1uDHQJzyDKsFEz4X59pi5Uw.webp
+  display: false
 category: news
 layout: blog
 ---

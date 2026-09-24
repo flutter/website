@@ -5,7 +5,9 @@ description: >-
   livestreamed talks, codelabs, and community events.
 publishDate: 2020-05-21
 author: csells
-image: images/0RDn0t0fyTKSy2x_k.webp
+coverImage:
+  url: images/0RDn0t0fyTKSy2x_k.webp
+  display: false
 category: news
 layout: blog
 ---

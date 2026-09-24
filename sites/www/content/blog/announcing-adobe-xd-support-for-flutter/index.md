@@ -4,7 +4,9 @@ description: >-
   Create in XD and export to working Flutter code
 publishDate: 2020-05-13
 author: timsneath
-image: images/0N-K68XqE0DBUV0EK.webp
+coverImage:
+  url: images/0N-K68XqE0DBUV0EK.webp
+  display: false
 category: news
 layout: blog
 ---

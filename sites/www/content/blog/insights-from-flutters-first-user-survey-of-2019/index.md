@@ -5,7 +5,9 @@ description: >-
   the priorities developers identified for the project.
 publishDate: 2019-04-12
 author: jayoung-lee
-image: images/1BvDZf83WrPTc4yqukshP-w.webp
+coverImage:
+  url: images/1BvDZf83WrPTc4yqukshP-w.webp
+  display: false
 category: news
 layout: blog
 ---

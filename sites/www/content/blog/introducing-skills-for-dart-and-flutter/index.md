@@ -4,12 +4,13 @@ description: >-
   Improving AI with domain expertise
 publishDate: 2026-05-06
 author: mariam_hasnany
-image: images/1-cp6K90CIG7efKBLyiZ_jw.webp
+coverImage:
+  alt: ""
+  caption: "Introducing prepackaged Dart and Flutter Skills!"
+  url: images/1-cp6K90CIG7efKBLyiZ_jw.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1-cp6K90CIG7efKBLyiZ_jw.webp" alt="Introducing prepackaged Dart and Flutter Skills!" caption="Introducing prepackaged Dart and Flutter Skills!" />
 
 ## Introducing Skills for Dart and Flutter
 

@@ -5,7 +5,9 @@ description: >-
   including improvements to speed, memory use, and tooling.
 publishDate: 2021-02-12
 author: liyuqian
-image: images/15WEbz38iKKh5EfCj55mGYw.webp
+coverImage:
+  url: images/15WEbz38iKKh5EfCj55mGYw.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

@@ -6,7 +6,9 @@ description: >-
   now supports the modern web!
 publishDate: 2019-05-07
 author: kevmoo
-image: images/1jQBkI-cZwOP_KAEnPhzDtg.webp
+coverImage:
+  url: images/1jQBkI-cZwOP_KAEnPhzDtg.webp
+  display: false
 category: news
 layout: blog
 ---

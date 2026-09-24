@@ -5,7 +5,9 @@ description: >-
   how to add polished motion to your apps.
 publishDate: 2019-12-04
 author: theaflowers
-image: images/08lW_z0nxESDIBO9R.gif
+coverImage:
+  url: images/08lW_z0nxESDIBO9R.gif
+  display: false
 category: deep-dive
 layout: blog
 ---

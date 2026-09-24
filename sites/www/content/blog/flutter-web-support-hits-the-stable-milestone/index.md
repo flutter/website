@@ -4,12 +4,12 @@ description: >-
   Publish to web and mobile from the same codebase
 publishDate: 2021-03-03
 author: mariam_hasnany
-image: images/1bbkcrsggiQLxNDRAgHiSBQ.webp
+coverImage:
+  alt: ""
+  url: images/1bbkcrsggiQLxNDRAgHiSBQ.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1bbkcrsggiQLxNDRAgHiSBQ.webp" />
 
 Our vision for Flutter is to be a portable UI framework for building beautiful app experiences on any platform. Today, as part of [Flutter 2](https://flutter.dev/blog/whats-new-in-flutter-2-0), we’re announcing that Flutter’s web support has hit the stable milestone.
 

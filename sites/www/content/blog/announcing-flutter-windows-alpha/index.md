@@ -5,7 +5,9 @@ description: >-
   and a desktop-ready Flutter Gallery app
 publishDate: 2020-09-23
 author: csells
-image: images/039MKtw4ICepbL_8d.webp
+coverImage:
+  url: images/039MKtw4ICepbL_8d.webp
+  display: false
 category: news
 layout: blog
 ---

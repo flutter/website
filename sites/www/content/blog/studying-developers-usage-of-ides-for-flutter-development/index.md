@@ -5,7 +5,9 @@ description: >-
   use IDEs and which editor features matter most.
 publishDate: 2022-09-12
 author: jayoung-lee
-image: images/1lHHYRiiookkYcA-Uhq9pgg.webp
+coverImage:
+  url: images/1lHHYRiiookkYcA-Uhq9pgg.webp
+  display: false
 category: news
 layout: blog
 ---

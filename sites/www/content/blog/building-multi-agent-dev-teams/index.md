@@ -5,12 +5,14 @@ description: >-
   libraries to idiomatic Dart packages using test-driven development.
 publishDate: 2026-08-20
 author: redbrogdon
-image: images/header.webp
+coverImage:
+  alt: >-
+    A team of Dashes representing AI architects, testers, and coders
+    collaborate around a Dart code editor.
+  url: images/header.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/header.webp" alt="Illustration representing an AI multi-agent software development team with architects, testers, and coders" />
 
 When I first began experimenting with AI coding assistants,
 I used a single agent for everything: architecting code, writing unit tests,

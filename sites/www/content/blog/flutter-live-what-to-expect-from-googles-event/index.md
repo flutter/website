@@ -5,7 +5,9 @@ description: >-
   is happening on December 4th.
 publishDate: 2018-12-02
 author: csells
-image: images/0MhKKsmIlYcORAT-q.webp
+coverImage:
+  url: images/0MhKKsmIlYcORAT-q.webp
+  display: false
 category: news
 layout: blog
 ---

@@ -5,7 +5,9 @@ description: >-
   our toolkit for building beautiful mobile UI for iOS and Android.
 publishDate: 2018-05-07
 author: timsneath
-image: images/0Sdp8z8g2G2spsW3j.webp
+coverImage:
+  url: images/0Sdp8z8g2G2spsW3j.webp
+  display: false
 category: release
 layout: blog
 ---

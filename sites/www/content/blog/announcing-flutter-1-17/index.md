@@ -5,7 +5,9 @@ description: >-
   new Material components, new Network tracking tooling, and more!
 publishDate: 2020-05-06
 author: csells
-image: images/14MIF2GwByNG1MJ7DNslb3Q.webp
+coverImage:
+  url: images/14MIF2GwByNG1MJ7DNslb3Q.webp
+  display: false
 category: release
 layout: blog
 ---

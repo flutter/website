@@ -5,7 +5,9 @@ description: >-
   an app that was built as a design showcase for Flutter Engage
 publishDate: 2021-09-01
 author: filiph
-image: images/116rv_KQNNU3IsAHCfI3G6A.webp
+coverImage:
+  url: images/116rv_KQNNU3IsAHCfI3G6A.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

@@ -4,7 +4,9 @@ description: >-
   Explore platform channel examples that connect Flutter with native code
 publishDate: 2020-08-29
 author: ayushbherwani1998
-image: images/15PoXySK4-tAKWAY1zCzfHg.webp
+coverImage:
+  url: images/15PoXySK4-tAKWAY1zCzfHg.webp
+  display: false
 category: case-study
 layout: blog
 ---

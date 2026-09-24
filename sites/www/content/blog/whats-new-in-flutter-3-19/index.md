@@ -5,12 +5,12 @@ description: >-
   Windows Arm64 Support
 publishDate: 2024-02-15
 author: itsjustkevin
-image: images/0ZX3bHJdGGZwwOQHt.gif
+coverImage:
+  alt: ""
+  url: images/0ZX3bHJdGGZwwOQHt.gif
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/0ZX3bHJdGGZwwOQHt.gif" />
 
 ## What’s new in Flutter 3.19
 

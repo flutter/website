@@ -5,12 +5,12 @@ description: >-
   lessons and practical tips for building apps with Antigravity.
 publishDate: 2025-12-09
 author: jwren
-image: images/1iTTaVFKTZVHVl3ykFCmjyw.jpeg
+coverImage:
+  alt: ""
+  url: images/1iTTaVFKTZVHVl3ykFCmjyw.jpeg
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1iTTaVFKTZVHVl3ykFCmjyw.jpeg" />
 
 Hi, I’m Jaime Wren, a long-time developer tooling software engineer on the Flutter team. I’ve seen many shifts in the software industry over the years, but the whole industry has just stepped into a new Wild West at breakneck speed and this is both exciting and nerve-wracking.
 

@@ -5,7 +5,9 @@ description: >-
   is happening on December 4th.
 publishDate: 2018-11-15
 author: aguinis
-image: images/1WCwp_dTUQuDPDQIa1PV3cA.jpeg
+coverImage:
+  url: images/1WCwp_dTUQuDPDQIa1PV3cA.jpeg
+  display: false
 category: news
 layout: blog
 ---

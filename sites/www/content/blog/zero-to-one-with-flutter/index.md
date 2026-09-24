@@ -6,7 +6,9 @@ description: >-
   implement animated charts
 publishDate: 2017-02-22
 author: mravn
-image: images/1n76TpChNv8Q25WrfBiuWpw.webp
+coverImage:
+  url: images/1n76TpChNv8Q25WrfBiuWpw.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

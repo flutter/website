@@ -5,7 +5,9 @@ description: >-
   built to "Improve the lives of Dart and Flutter developers."
 publishDate: 2026-02-03
 author: ericwindmill
-image: images/1rHBScksI6g6at1HsqSuPhA.webp
+coverImage:
+  url: images/1rHBScksI6g6at1HsqSuPhA.webp
+  display: false
 category: news
 layout: blog
 ---

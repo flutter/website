@@ -5,12 +5,13 @@ description: >-
   Google Cloud Next, Google I/O, and community events in 2026.
 publishDate: 2026-04-14
 author: twerske
-image: images/1UVUiBS4ceEJmWIt8w8IeTQ.webp
+coverImage:
+  alt: ""
+  caption: "Upcoming events where you can meet members of the Flutter team"
+  url: images/1UVUiBS4ceEJmWIt8w8IeTQ.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1UVUiBS4ceEJmWIt8w8IeTQ.webp" alt="Upcoming events where you can meet members of the Flutter team" caption="Upcoming events where you can meet members of the Flutter team" />
 
 ## Come meet the Flutter core team on tour in 2026
 

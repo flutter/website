@@ -5,7 +5,9 @@ description: >-
   a live widget preview in the IntelliJ plugin.
 publishDate: 2018-04-04
 author: scheglov
-image: images/0TUzb7DjU9HweZAAI.webp
+coverImage:
+  url: images/0TUzb7DjU9HweZAAI.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

@@ -6,7 +6,9 @@ description: >-
   but they also work for URLs in Flutter web apps.
 publishDate: 2020-03-30
 author: perclasson
-image: images/0Uoo0IGsUFUf8GJsT.webp
+coverImage:
+  url: images/0Uoo0IGsUFUf8GJsT.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

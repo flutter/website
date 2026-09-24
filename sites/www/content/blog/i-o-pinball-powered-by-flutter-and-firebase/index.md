@@ -4,12 +4,12 @@ description: >-
   Take Flutter game development to the next level
 publishDate: 2022-05-10
 author: verygoodopensource
-image: images/1yuiVVfFOuPnrsHcUx7xf_Q.webp
+coverImage:
+  alt: ""
+  url: images/1yuiVVfFOuPnrsHcUx7xf_Q.webp
 category: case-study
 layout: blog
 ---
-
-<DashImage figure src="images/1yuiVVfFOuPnrsHcUx7xf_Q.webp" />
 
 For Google I/O, we teamed up with the Flutter team to reimagine a classic pinball game built using Flutter and Firebase. Here’s how we brought [I/O Pinball](https://pinball.flutter.dev/) to life on the web with the help of the Flame game engine.
 

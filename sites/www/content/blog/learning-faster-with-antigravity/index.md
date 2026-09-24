@@ -4,12 +4,13 @@ description: >-
   Creating Flutter frontends for ADK
 publishDate: 2026-07-01
 author: redbrogdon
-image: images/1XhysKMaIjv--tjhGDEas6A.webp
+coverImage:
+  alt: ""
+  caption: "Dash enjoying Antigravity"
+  url: images/1XhysKMaIjv--tjhGDEas6A.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1XhysKMaIjv--tjhGDEas6A.webp" alt="Dash enjoying Antigravity" caption="Dash enjoying Antigravity" />
 
 ## Learning faster with Antigravity
 

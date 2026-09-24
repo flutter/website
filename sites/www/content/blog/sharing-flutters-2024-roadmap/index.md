@@ -5,7 +5,9 @@ description: >-
   the framework, platforms, tooling, and developer experience.
 publishDate: 2024-02-15
 author: mit-mit
-image: images/18v__Z0fIVOBm4uxFnMLAVg.webp
+coverImage:
+  url: images/18v__Z0fIVOBm4uxFnMLAVg.webp
+  display: false
 category: news
 layout: blog
 ---

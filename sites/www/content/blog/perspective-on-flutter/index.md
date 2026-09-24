@@ -4,7 +4,9 @@ description: >-
   Fun with 3D and the Transform widget
 publishDate: 2018-06-18
 author: wmleler
-image: images/1WdpLQEC_L1PYDO1KgxxfMQ.webp
+coverImage:
+  url: images/1WdpLQEC_L1PYDO1KgxxfMQ.webp
+  display: false
 category: case-study
 layout: blog
 ---

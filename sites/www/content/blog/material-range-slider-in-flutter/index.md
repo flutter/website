@@ -4,7 +4,9 @@ description: >-
   What is it? Why might you use it? How do you theme it?
 publishDate: 2019-07-11
 author: clocksmith
-image: images/0wtmSldtwjSvtRtuI.webp
+coverImage:
+  url: images/0wtmSldtwjSvtRtuI.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

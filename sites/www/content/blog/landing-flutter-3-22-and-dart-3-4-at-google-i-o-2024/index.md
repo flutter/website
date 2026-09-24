@@ -5,7 +5,9 @@ description: >-
   productivity experiments, and more
 publishDate: 2024-05-14
 author: mit-mit
-image: images/1Mq-Uj8c8l7rrpPxYQ6Gemw.gif
+coverImage:
+  url: images/1Mq-Uj8c8l7rrpPxYQ6Gemw.gif
+  display: false
 category: release
 layout: blog
 ---

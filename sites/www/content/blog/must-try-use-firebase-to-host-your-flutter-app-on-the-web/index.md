@@ -5,7 +5,9 @@ description: >-
   Look no further!
 publishDate: 2019-11-11
 author: clocksmith
-image: images/1eL-dHo08RwyLYOl17DNTog.webp
+coverImage:
+  url: images/1eL-dHo08RwyLYOl17DNTog.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

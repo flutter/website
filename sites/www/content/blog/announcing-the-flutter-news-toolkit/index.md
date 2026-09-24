@@ -4,12 +4,12 @@ description: >-
   An accelerated toolkit for building mobile apps for news and content
 publishDate: 2023-01-25
 author: zoeyfan
-image: images/0_Xb_zBUOvsH6CL9A.webp
+coverImage:
+  alt: ""
+  url: images/0_Xb_zBUOvsH6CL9A.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/0_Xb_zBUOvsH6CL9A.webp" />
 
 Google’s Flutter team has partnered closely with the [Google News Initiative (GNI)](https://newsinitiative.withgoogle.com/) in creating the [Flutter News Toolkit](https://github.com/flutter/news_toolkit) — a free, prebuilt Flutter app template — to accelerate news application development. Some early adopters have already built iOS and Android applications in as little as 6 weeks, claiming up to 80% time savings compared to traditional double-ended development on iOS and Android.
 

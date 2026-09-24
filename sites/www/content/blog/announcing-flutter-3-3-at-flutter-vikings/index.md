@@ -5,7 +5,9 @@ description: >-
   work on improving rendering performance, and a note of farewell
 publishDate: 2022-08-30
 author: timsneath
-image: images/0bDz2chibrm3B6QZE.webp
+coverImage:
+  url: images/0bDz2chibrm3B6QZE.webp
+  display: false
 category: release
 layout: blog
 ---

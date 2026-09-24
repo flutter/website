@@ -5,7 +5,9 @@ description: >-
   we are experimenting with running Flutter on the Web.
 publishDate: 2018-12-04
 author: yegorj
-image: images/0gD64Y8ECWBBuSZrx.webp
+coverImage:
+  url: images/0gD64Y8ECWBBuSZrx.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

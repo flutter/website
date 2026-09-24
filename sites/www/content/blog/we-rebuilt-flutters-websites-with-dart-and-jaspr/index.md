@@ -5,12 +5,13 @@ description: >-
   their web presence with Dart and Jaspr.
 publishDate: 2026-04-15
 author: parlough
-image: images/1y6lc2WLpxXBKsuoKJywapQ.webp
+coverImage:
+  alt: ""
+  caption: "Rebuilding three websites using Jaspr, a Dart-based, open-source web framework."
+  url: images/1y6lc2WLpxXBKsuoKJywapQ.webp
 category: case-study
 layout: blog
 ---
-
-<DashImage figure src="images/1y6lc2WLpxXBKsuoKJywapQ.webp" alt="Rebuilding three websites using Jaspr, a Dart-based, open-source web framework." caption="Rebuilding three websites using Jaspr, a Dart-based, open-source web framework." />
 
 Despite Dart starting out as a web language and being used every day to build apps across platforms, including the web, our own websites ([dart.dev](https://dart.dev), [flutter.dev](https://flutter.dev), [docs.flutter.dev](https://docs.flutter.dev)) relied on a fragmented mix of non-Dart tools. That’s finally changed. We’ve migrated all three websites to use [Jaspr](https://jaspr.site/), an open-source framework for building websites with Dart.
 

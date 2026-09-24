@@ -4,7 +4,9 @@ description: >-
   Introducing the Google AI Dart SDK
 publishDate: 2024-02-15
 author: anderdobo
-image: images/1-KkJmzvv3jNhh88TWxIBJg.webp
+coverImage:
+  url: images/1-KkJmzvv3jNhh88TWxIBJg.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

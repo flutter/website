@@ -5,7 +5,9 @@ description: >-
   tool for developing iOS apps
 publishDate: 2023-05-18
 author: leighajarett
-image: images/1OGs9_siPcMAYd1yDAp-AOA.webp
+coverImage:
+  url: images/1OGs9_siPcMAYd1yDAp-AOA.webp
+  display: false
 category: news
 layout: blog
 ---

@@ -5,12 +5,12 @@ description: >-
   much more
 publishDate: 2023-11-15
 author: itsjustkevin
-image: images/1TDndNB8cS95g5faXBKitHA.webp
+coverImage:
+  alt: ""
+  url: images/1TDndNB8cS95g5faXBKitHA.webp
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/1TDndNB8cS95g5faXBKitHA.webp" />
 
 ## What’s new in Flutter 3.16
 

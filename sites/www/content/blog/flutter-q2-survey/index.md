@@ -5,12 +5,13 @@ description: >-
   end of day on Friday, June 19th.
 publishDate: 2026-06-15
 author: sfshaza
-image: images/1BVNfy8-YPsP5jHKuD3P-Cg.gif
+coverImage:
+  alt: ""
+  caption: "Dash completes the Q2 Flutter survey!"
+  url: images/1BVNfy8-YPsP5jHKuD3P-Cg.gif
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1BVNfy8-YPsP5jHKuD3P-Cg.gif" alt="Dash completes the Q2 Flutter survey!" caption="Dash completes the Q2 Flutter survey!" />
 
 ## Flutter Q2 survey
 

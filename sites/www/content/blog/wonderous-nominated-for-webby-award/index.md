@@ -5,7 +5,9 @@ description: >-
   category.
 publishDate: 2023-04-06
 author: leighajarett
-image: images/1XksvK4Wq0YbZoIG8udUShw.webp
+coverImage:
+  url: images/1XksvK4Wq0YbZoIG8udUShw.webp
+  display: false
 category: case-study
 layout: blog
 ---

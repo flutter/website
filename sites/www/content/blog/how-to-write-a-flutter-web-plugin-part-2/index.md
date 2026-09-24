@@ -4,7 +4,9 @@ description: >-
   A guide for writing modern Flutter Web plugins
 publishDate: 2020-02-13
 author: harryterkelsen
-image: images/1jLlh4b9zQ3u0aUA-hHAgKg.webp
+coverImage:
+  url: images/1jLlh4b9zQ3u0aUA-hHAgKg.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

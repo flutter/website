@@ -5,7 +5,9 @@ description: >-
   adapt its interface across phones, tablets, foldables, and the web.
 publishDate: 2024-02-07
 author: craiglabenz
-image: images/1RXf-GaJ4uz5_ZKU8QgIVkw.webp
+coverImage:
+  url: images/1RXf-GaJ4uz5_ZKU8QgIVkw.webp
+  display: false
 category: case-study
 layout: blog
 ---
