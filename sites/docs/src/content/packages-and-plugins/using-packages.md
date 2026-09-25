@@ -259,9 +259,11 @@ specify a version range using one of the following formats.
 
   This syntax means the same as the one noted in the first bullet.
 
-To learn more, check out the [package versioning guide][].
+To learn more, check out [package dependency management][] and
+the [package versioning guide][].
 
 [caret syntax]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
+[package dependency management]: /packages-and-plugins/dependency-management
 [package versioning guide]: {{site.dart-site}}/tools/pub/versioning
 [`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
 
