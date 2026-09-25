@@ -45,7 +45,7 @@ by creating your own `Localizations` widget.
 Code before migration:
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() => runApp(Foo());
 
@@ -68,7 +68,7 @@ class Foo extends StatelessWidget {
 Code after migration (Providing localizations using the `MaterialApp`):
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() => runApp(Foo());
 
@@ -87,7 +87,7 @@ class Foo extends StatelessWidget {
 Code after migration (Providing localizations via the `Localizations` widget):
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() => runApp(Foo());
 
@@ -134,10 +134,10 @@ Relevant PR:
 
 * [PR 58831: Assert debugCheckHasMaterialLocalizations on TextField][]
 
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
-[`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
-[`DefaultMaterialLocalizations`]: {{site.api}}/flutter/material/DefaultMaterialLocalizations-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`MaterialLocalizations`]: {{site.material_ui}}/MaterialLocalizations-class.html
+[`DefaultMaterialLocalizations`]: {{site.material_ui}}/DefaultMaterialLocalizations-class.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html
 [Internationalizing Flutter apps]: /ui/internationalization
 [PR 58831: Assert debugCheckHasMaterialLocalizations on TextField]: {{site.repo.flutter}}/pull/58831

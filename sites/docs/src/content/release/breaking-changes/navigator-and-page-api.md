@@ -39,7 +39,7 @@ These function similar to how you use the `PopScope` widget.
 Code before migration:
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 final MaterialPage<void> page1 = MaterialPage<void>(child: Placeholder());
 final MaterialPage<void> page2 = MaterialPage<void>(child: Placeholder());
@@ -70,7 +70,7 @@ void main() {
 Code after migration:
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 final MaterialPage<void> page1 = MaterialPage<void>(child: Placeholder());
 final MaterialPage<void> page2 = MaterialPage<void>(canPop: false, child: Placeholder());

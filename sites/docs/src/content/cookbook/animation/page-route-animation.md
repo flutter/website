@@ -41,7 +41,7 @@ a second route titled "Page 2".
 
 <?code-excerpt "lib/starter.dart (Starter)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const MaterialApp(home: Page1()));

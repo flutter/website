@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 import '../global/device_type.dart';
 import '../global/targeted_actions.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class ImageAssetExample extends StatelessWidget {
   const ImageAssetExample({super.key});

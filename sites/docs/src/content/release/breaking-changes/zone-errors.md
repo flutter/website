@@ -94,7 +94,7 @@ update that object with the value once the value is available.
 
 ```dart
 import 'dart:async';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class Mutable<T> {
   Mutable(this.value);

@@ -68,9 +68,9 @@ Relevant PRs:
 * [Deprecate invalid InputDecoration.collapsed parameters][]
 * [Cleanup InputDecoration.collapsed constructor][]
 
-[`InputDecoration.collapsed`]: {{site.api}}/flutter/material/InputDecoration/InputDecoration.collapsed.html
-[`InputDecoration.floatingLabelAlignment`]: {{site.api}}/flutter/material/InputDecoration/floatingLabelAlignment.html
-[`InputDecoration.floatingLabelBehavior`]: {{site.api}}/flutter/material/InputDecoration/floatingLabelBehavior.html
+[`InputDecoration.collapsed`]: {{site.material_ui}}/InputDecoration/InputDecoration.collapsed.html
+[`InputDecoration.floatingLabelAlignment`]: {{site.material_ui}}/InputDecoration/floatingLabelAlignment.html
+[`InputDecoration.floatingLabelBehavior`]: {{site.material_ui}}/InputDecoration/floatingLabelBehavior.html
 
 [Add prefixIcon and suffixIcon parameters to InputDecoration.collapsed]: {{site.repo.flutter}}/issues/61331
 [Deprecate invalid InputDecoration.collapsed parameters]: {{site.repo.flutter}}/pull/152486

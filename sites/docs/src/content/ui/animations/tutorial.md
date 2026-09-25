@@ -51,7 +51,7 @@ Consider the following app that draws the Flutter logo without animation:
 
 <?code-excerpt "animate0/lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() => runApp(const LogoApp());
 

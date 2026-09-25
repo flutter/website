@@ -328,11 +328,11 @@ class MyApp extends StatelessWidget {
 
 </Tabs>
 
-[`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
+[`CupertinoSliverNavigationBar`]: {{site.cupertino_ui}}/CupertinoSliverNavigationBar-class.html
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
-[`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
+[`SliverAppBar`]: {{site.material_ui}}/SliverAppBar-class.html
 [`SliverChildBuilderDelegate`]: {{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html
 [`SliverChildDelegate`]: {{site.api}}/flutter/widgets/SliverChildDelegate-class.html
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
 [`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
-[various properties you can pass to the `SliverAppBar` widget]: {{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html
+[various properties you can pass to the `SliverAppBar` widget]: {{site.material_ui}}/SliverAppBar/SliverAppBar.html

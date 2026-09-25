@@ -6,7 +6,7 @@ import 'my_app.dart';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   FlutterError.onError = (details) {

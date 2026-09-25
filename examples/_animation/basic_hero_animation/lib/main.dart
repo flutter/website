@@ -4,7 +4,7 @@
 
 // Demonstrates a basic shared element (Hero) animation.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class BasicHeroAnimation extends StatelessWidget {
   const BasicHeroAnimation({super.key});

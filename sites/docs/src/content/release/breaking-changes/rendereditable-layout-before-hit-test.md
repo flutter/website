@@ -44,7 +44,7 @@ Code before migration:
 ```dart
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   test('attach and detach correctly handle gesture', () {
@@ -80,7 +80,7 @@ Code after migration:
 ```dart
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   test('attach and detach correctly handle gesture', () {

@@ -46,7 +46,7 @@ group your future orientation tests:
 
     <?code-excerpt "cookbook/testing/widget/orientation_tests/test/widget_test.dart (scaffolding)"?>
     ```dart title="widget_test.dart"
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material.dart';
     import 'package:flutter_test/flutter_test.dart';
     import 'package:orientation_tests/main.dart';
     
@@ -147,7 +147,7 @@ flutter test test/widget_test.dart
 
 <?code-excerpt "cookbook/testing/widget/orientation_tests/test/widget_test.dart"?>
 ```dart title="widget_test.dart"
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:orientation_tests/main.dart';
 
@@ -212,7 +212,7 @@ void main() {
 
 <?code-excerpt "cookbook/testing/widget/orientation_tests/lib/main.dart"?>
 ```dart title="main.dart"
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const MyApp());

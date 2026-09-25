@@ -9,55 +9,27 @@ Flutter supports using shared packages contributed by other developers
 to the Flutter and Dart ecosystems. This allows quickly building
 an app without having to develop everything from scratch.
 
-:::note Difference between packages and plugins
-A plugin is a _type_ of package&mdash;the
-full designation is _plugin package_,
-which is generally shortened to _plugin_.
-
-**Packages**
-: At a minimum, a Dart package is a directory
-  containing a `pubspec.yaml` file. Additionally,
-  a package can contain dependencies
-  (listed in the pubspec), Dart libraries, apps,
-  resources, tests, images, fonts, and examples.
-  The [pub.dev][] site lists many packages—developed by Google engineers
-  and generous members of the Flutter and Dart community—
-  that you can use in your app.
-
-**Plugins**
-: A plugin package is a special kind of package that makes
-  platform functionality available to the app.
-  Plugin packages can be written for Android (using Kotlin or Java),
-  iOS (using Swift or Objective-C), web, macOS, Windows, Linux,
-  or any combination thereof.
-  For example, a plugin might provide Flutter apps
-  with the ability to use a device's camera.
-
-<YouTubeEmbed id="Y9WifT8aN6o"
-  title="Packages versus plugins | Decoding Flutter"></YouTubeEmbed>
-:::
-
-Existing packages enable many use cases—for example,
-making network requests ([`http`][]),
-navigation/route handling ([`go_router`][]),
-integration with device APIs
-([`url_launcher`][] and [`battery_plus`][]),
-and using third-party platform SDKs like Firebase
-([FlutterFire][]).
-
+This page discusses using both [packages][] and [plugins][].
 To write a new package, see [developing packages][].
-To add assets, images, or fonts,
-whether stored in files or packages,
-see [Adding assets and images][].
 
-[Adding assets and images]: /ui/assets/assets-and-images
+[packages]: /resources/glossary#package
+[plugins]: /resources/glossary#plugin
+
+When you write an app, existing packages enable many use cases.
+For example, as of Flutter 3.47, [the stylized widget libraries
+have been moved out of core Flutter to packages that you can import][ui-page].
+Other existing packages enable your app to make
+network requests ([`http`][]), handle navigation ([`go_router`][]),
+integrate with device APIs ([`url_launcher`][] and [`battery_plus`][]),
+and use third-party platform SDKs like Firebase ([FlutterFire][]).
+
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: /packages-and-plugins/developing-packages
 [FlutterFire]: {{site.repo.flutterfire}}
-
-[`go_router`]: {{site.pub-pkg}}/go_router
 [`http`]: /cookbook/networking/fetch-data
+[`go_router`]: {{site.pub-pkg}}/go_router
 [pub.dev]: {{site.pub}}
+[ui-page]: /ui
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 
 ## Using packages
@@ -175,7 +147,7 @@ specifying dependencies.
 ```yaml
 dependencies:
   url_launcher: ^5.4.0    # Good, any version >= 5.4.0 but < 6.0.0
-  image_picker: '5.4.3'   # Not so good, only version 5.4.3 works.
+  image_picker: '5.4.3'   # Not as good, only version 5.4.3 works.
 ```
 
 If `some_package` declares the dependencies above
@@ -398,7 +370,7 @@ To use this package:
     <?code-excerpt "lib/english_words.dart (english-words)"?>
     ```dart
     import 'package:english_words/english_words.dart';
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material.dart';
     
     void main() {
       runApp(const MyApp());
@@ -460,7 +432,7 @@ To use this plugin:
 
     <?code-excerpt "lib/url_launcher.dart (url-launcher)"?>
     ```dart
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material.dart';
     import 'package:url_launcher/url_launcher.dart';
     
     void main() {

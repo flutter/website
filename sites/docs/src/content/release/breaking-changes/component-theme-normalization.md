@@ -76,10 +76,10 @@ Relevant PRs:
 * [Normalize ThemeData.dialogTheme][]
 * [Normalize ThemeData.tabBarTheme][]
 
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`CardTheme`]: {{site.api}}/flutter/material/CardTheme-class.html
-[`DialogTheme`]: {{site.api}}/flutter/material/DialogTheme-class.html
-[`TabBarTheme`]: {{site.api}}/flutter/material/TabBarTheme-class.html
+[`ThemeData`]: {{site.material_ui}}/ThemeData-class.html
+[`CardTheme`]: {{site.material_ui}}/CardTheme-class.html
+[`DialogTheme`]: {{site.material_ui}}/DialogTheme-class.html
+[`TabBarTheme`]: {{site.material_ui}}/TabBarTheme-class.html
 [Normalize ThemeData.cardTheme]: {{site.repo.flutter}}/pull/153254
 [Normalize ThemeData.dialogTheme]: {{site.repo.flutter}}/pull/155129
 [Normalize ThemeData.tabBarTheme]: {{site.repo.flutter}}/pull/156253

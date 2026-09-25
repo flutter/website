@@ -52,7 +52,7 @@ provided to your `CupertinoTabBar`.
 Code before migration:
 
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 void main() => runApp(Foo());
 
@@ -82,7 +82,7 @@ class Foo extends StatelessWidget {
 Code after migration (Providing localizations via the `CupertinoApp`):
 
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 void main() => runApp(Foo());
 
@@ -112,7 +112,7 @@ Code after migration (Providing localizations by using
 the `Localizations` widget):
 
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 void main() => runApp(Foo());
 
@@ -168,11 +168,11 @@ Relevant PR:
 * [PR 55336: Adding tabSemanticsLabel to CupertinoLocalizations][]
 * [PR 56582: Update Tab semantics in Cupertino to be the same as Material][]
 
-[`CupertinoTabBar`]: {{site.api}}/flutter/cupertino/CupertinoTabBar-class.html
+[`CupertinoTabBar`]: {{site.cupertino_ui}}/CupertinoTabBar-class.html
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
-[`DefaultCupertinoLocalizations`]: {{site.api}}/flutter/cupertino/DefaultCupertinoLocalizations-class.html
+[`DefaultCupertinoLocalizations`]: {{site.cupertino_ui}}/DefaultCupertinoLocalizations-class.html
 [`Semantics`]: {{site.api}}/flutter/widgets/Semantics-class.html
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`CupertinoApp`]: {{site.cupertino_ui}}/CupertinoApp-class.html
 [Internationalizing Flutter Apps]: /ui/internationalization
 [PR 55336: Adding tabSemanticsLabel to CupertinoLocalizations]: {{site.repo.flutter}}/pull/55336
 [PR 56582: Update Tab semantics in Cupertino to be the same as Material]: {{site.repo.flutter}}/pull/56582#issuecomment-625497951

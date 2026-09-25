@@ -37,7 +37,7 @@ Before you move on, you need to add this logic to your app.
     add an import to it from your `lib/main.dart` file:
 
     ```dart title="main.dart" highlightLines=3
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material.dart';
 
     import 'game.dart';
     ```

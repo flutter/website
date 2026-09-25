@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 /// A simple blue 30x30 box.
 class DeferredBox extends StatelessWidget {

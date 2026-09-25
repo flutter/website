@@ -86,7 +86,7 @@ use the `Semantics` widget to define the role:
 Here's an example of how you might explicitly define a list and its items:
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:flutter/semantics.dart';
 
 

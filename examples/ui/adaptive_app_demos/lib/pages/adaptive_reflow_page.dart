@@ -7,7 +7,7 @@
 library;
 
 import 'package:flextras/flextras.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 import '../global/device_type.dart';
 import '../widgets/scroll_view_with_scrollbars.dart';

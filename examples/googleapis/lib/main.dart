@@ -9,7 +9,7 @@ import 'dart:convert';
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 // #enddocregion auth-import
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 // #docregion google-import
 /// Provides the `GoogleSignIn` class.

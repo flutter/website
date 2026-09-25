@@ -1,5 +1,5 @@
 // #docregion show-overlay
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

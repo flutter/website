@@ -162,7 +162,7 @@ use the following instructions:
    ```dart
    import 'package:flutter/foundation.dart';
    import 'package:flutter/gestures.dart';
-   import 'package:flutter/material.dart';
+   import 'package:material_ui/material.dart';
    import 'package:flutter/rendering.dart';
    import 'package:flutter/services.dart';
    ```
@@ -224,7 +224,7 @@ use the following instructions:
 
    <?code-excerpt "lib/native_view_example_2.dart (import)"?>
    ```dart
-   import 'package:flutter/material.dart';
+   import 'package:material_ui/material.dart';
    import 'package:flutter/services.dart';
    ```
 

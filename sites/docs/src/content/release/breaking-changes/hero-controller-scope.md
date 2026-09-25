@@ -31,7 +31,7 @@ their route changes. This change only surfaced this problem.
 An example application that starts to throw exceptions.
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(
@@ -73,7 +73,7 @@ void main() {
 You can fix this application by introducing your own hero controller scopes.
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(

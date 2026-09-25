@@ -76,7 +76,7 @@ Here is a basic example of how to use the
 
 ```dart
 import 'package:flutter/widget_previews.dart';
-import 'package:flutter/material.dart'; // For Material widgets
+import 'package:material_ui/material.dart'; // For Material widgets
 
 @Preview(name: 'My Sample Text')
 Widget mySampleText() {

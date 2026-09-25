@@ -377,7 +377,7 @@ For example, consider the following code:
 
 <?code-excerpt "lib/hot-reload/before.dart (build)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(MyApp());

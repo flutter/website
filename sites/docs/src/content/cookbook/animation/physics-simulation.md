@@ -26,7 +26,7 @@ Start with a stateful widget called `DraggableCard`:
 
 <?code-excerpt "lib/starter.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const MaterialApp(home: PhysicsCardDragDemo()));

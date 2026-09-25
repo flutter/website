@@ -113,7 +113,7 @@ Relevant PRs:
 
 * [Add warning when there is a widget with color between `Material` and `ListTile`][pr-181402]
 
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
-[`Material`]: {{site.api}}/flutter/material/Material-class.html
+[`ListTile`]: {{site.material_ui}}/ListTile-class.html
+[`Material`]: {{site.material_ui}}/Material-class.html
 [issue-174366]: {{site.repo.flutter}}/issues/174366
 [pr-181402]: {{site.repo.flutter}}/pull/181402

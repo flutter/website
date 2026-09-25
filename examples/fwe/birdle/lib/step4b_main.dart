@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 // #docregion GuessInput
 class GuessInput extends StatelessWidget {

@@ -92,8 +92,8 @@ or you can use a [`CupertinoApp`][] widget, which supports an iOS-style app,
 or you can use the lower level [`WidgetsApp`][],
 which you can customize in any way you want.
 
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`CupertinoApp`]: {{site.cupertino_ui}}/CupertinoApp-class.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 
 The following code defines the home page, a stateful widget.
@@ -295,7 +295,7 @@ as shown in the following example:
 
 <?code-excerpt "lib/views_stateful.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -481,7 +481,7 @@ the widget into a logo when you press the `FloatingActionButton`:
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const FadeAppTest());
@@ -567,7 +567,7 @@ see Collin's answer on [Custom Paint][].
 
 <?code-excerpt "lib/draw.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const MaterialApp(home: DemoApp()));
@@ -814,7 +814,7 @@ and displays it in a `ListView`:
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
@@ -984,7 +984,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
@@ -1145,7 +1145,7 @@ Otherwise, render the `ListView` with the data returned from a network call.
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
@@ -1783,7 +1783,7 @@ and Flutter takes care of making sure that scrolling is fast and smooth.
 
 <?code-excerpt "lib/listview.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1834,7 +1834,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1910,7 +1910,7 @@ as shown in the next example.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1981,7 +1981,7 @@ which automatically recycles list elements for you:
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2134,7 +2134,7 @@ to retrieve user input:
 
 <?code-excerpt "lib/form.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class MyForm extends StatefulWidget {
   const MyForm({super.key});
@@ -2222,7 +2222,7 @@ update the state, and pass a new `InputDecoration` object.
 
 <?code-excerpt "lib/validation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const SampleApp());

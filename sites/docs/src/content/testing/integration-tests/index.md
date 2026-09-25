@@ -61,7 +61,7 @@ the `lib/main.dart` file should resemble the following code.
 
 <?code-excerpt "lib/main.dart"?>
 ```dart title="lib/main.dart"
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() => runApp(const MyApp());
 
@@ -203,7 +203,7 @@ and your app's Dart file.
 
     <?code-excerpt "integration_test/counter_test.dart (initial)" replace="/introduction/counter_app/g"?>
     ```dart title="integration_test/counter_test.dart"
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material.dart';
     import 'package:flutter_test/flutter_test.dart';
     import 'package:how_to/main.dart';
     import 'package:integration_test/integration_test.dart';

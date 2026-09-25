@@ -72,7 +72,7 @@ Code before migration (note the missing `setState` inside the `onPressed`
 callback):
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(MyApp());
@@ -169,7 +169,7 @@ class _ResizingBoxState extends State<_ResizingBox>
 Code after migration (`setState` added to `onPressed`):
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(MyApp());

@@ -84,8 +84,8 @@ Relevant PRs:
 * Deprecated in [#20649][]
 * Removed in [#73604][]
 
-[`CupertinoAlertDialog`]: {{site.api}}/flutter/cupertino/CupertinoAlertDialog-class.html
-[`CupertinoPopupSurface`]: {{site.api}}/flutter/cupertino/CupertinoPopupSurface-class.html
+[`CupertinoAlertDialog`]: {{site.cupertino_ui}}/CupertinoAlertDialog-class.html
+[`CupertinoPopupSurface`]: {{site.cupertino_ui}}/CupertinoPopupSurface-class.html
 [Deprecate CupertinoDialog class]: {{site.repo.flutter}}/issues/20397
 [#20649]: {{site.repo.flutter}}/pull/20649
 [#73604]: {{site.repo.flutter}}/pull/73604
@@ -148,10 +148,10 @@ Relevant PRs:
 * Deprecated in [#23759][]
 * Removed in [#73745][]
 
-[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
-[`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
-[`CupertinoTheme`]: {{site.api}}/flutter/cupertino/CupertinoTheme-class.html
-[`CupertinoThemeData`]: {{site.api}}/flutter/cupertino/CupertinoThemeData-class.html
+[`CupertinoNavigationBar`]: {{site.cupertino_ui}}/CupertinoNavigationBar-class.html
+[`CupertinoSliverNavigationBar`]: {{site.cupertino_ui}}/CupertinoSliverNavigationBar-class.html
+[`CupertinoTheme`]: {{site.cupertino_ui}}/CupertinoTheme-class.html
+[`CupertinoThemeData`]: {{site.cupertino_ui}}/CupertinoThemeData-class.html
 [Create a CupertinoApp and a CupertinoTheme]: {{site.repo.flutter}}/issues/18037
 [#23759]: {{site.repo.flutter}}/pull/23759
 [#73745]: {{site.repo.flutter}}/pull/73745
@@ -198,7 +198,7 @@ Relevant PRs:
 * Deprecated in [#41859][]
 * Removed in [#72017][]
 
-[`CupertinoTextThemeData`]: {{site.api}}/flutter/cupertino/CupertinoTextThemeData-class.html
+[`CupertinoTextThemeData`]: {{site.cupertino_ui}}/CupertinoTextThemeData-class.html
 [Revise CupertinoColors and CupertinoTheme for dynamic colors]: {{site.repo.flutter}}/issues/35541
 [#41859]: {{site.repo.flutter}}/pull/41859
 [#72017]: {{site.repo.flutter}}/pull/72017
@@ -289,7 +289,7 @@ Relevant PRs:
 * Deprecated in [#15303][]
 * Removed in [#72532][]
 
-[`showDialog`]: {{site.api}}/flutter/material/showDialog.html
+[`showDialog`]: {{site.material_ui}}/showDialog.html
 [showDialog should take a builder rather than a child]: {{site.repo.flutter}}/issues/14341
 [#15303]: {{site.repo.flutter}}/pull/15303
 [#72532]: {{site.repo.flutter}}/pull/72532
@@ -336,7 +336,7 @@ Relevant PRs:
 * Deprecated in [#26259][]
 * Removed in [#72890][]
 
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
 [Show warning when nesting Scaffolds]: {{site.repo.flutter}}/issues/23106
 [SafeArea with keyboard]: {{site.repo.flutter}}/issues/25758
 [Double stacked material scaffolds shouldn't double resizeToAvoidBottomPadding]: {{site.repo.flutter}}/issues/12084
@@ -420,15 +420,15 @@ Relevant PRs:
 * Deprecated in [#37544][]
 * Removed in [#73746][]
 
-[`ButtonTheme`]: {{site.api}}/flutter/material/ButtonTheme-class.html
-[`ButtonBarTheme`]: {{site.api}}/flutter/material/ButtonBarTheme-class.html
-[`ButtonBar`]: {{site.api}}/flutter/material/ButtonBar-class.html
-[`TextButtonTheme`]: {{site.api}}/flutter/material/TextButtonTheme-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`ElevatedButtonTheme`]: {{site.api}}/flutter/material/ElevatedButtonTheme-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`OutlinedButtonTheme`]: {{site.api}}/flutter/material/OutlinedButtonTheme-class.html
-[`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
+[`ButtonTheme`]: {{site.material_ui}}/ButtonTheme-class.html
+[`ButtonBarTheme`]: {{site.material_ui}}/ButtonBarTheme-class.html
+[`ButtonBar`]: {{site.material_ui}}/ButtonBar-class.html
+[`TextButtonTheme`]: {{site.material_ui}}/TextButtonTheme-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
+[`ElevatedButtonTheme`]: {{site.material_ui}}/ElevatedButtonTheme-class.html
+[`ElevatedButton`]: {{site.material_ui}}/ElevatedButton-class.html
+[`OutlinedButtonTheme`]: {{site.material_ui}}/OutlinedButtonTheme-class.html
+[`OutlinedButton`]: {{site.material_ui}}/OutlinedButton-class.html
 [ButtonTheme.bar uses accent color when it should be using primary color]: {{site.repo.flutter}}/issues/31333
 [ThemeData.accentColor has insufficient contrast for text]: {{site.repo.flutter}}/issues/19946
 [Increased height as a result of changes to materialTapTargetSize affecting AlertDialog/ButtonBar heights]: {{site.repo.flutter}}/issues/20585

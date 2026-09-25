@@ -540,8 +540,8 @@ For more details, see
 [`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [`video_player` plugin]: {{site.pub}}/packages/video_player
 [MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
-[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
-[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[MaterialApp]: {{site.material_ui}}/MaterialApp-class.html
+[CupertinoApp]: {{site.cupertino_ui}}/CupertinoApp-class.html
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [flavors feature]: /deployment/flavors
 [`assets` field]: /tools/pubspec#assets

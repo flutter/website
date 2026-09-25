@@ -72,7 +72,7 @@ visual layout. For more information, see
 
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
-[`Icon`]: {{site.api}}/flutter/material/Icons-class.html
+[`Icon`]: {{site.material_ui}}/Icons-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 
@@ -118,7 +118,7 @@ some text:
 Text('Hello World')
 ```
 
-[icons]: {{site.api}}/flutter/material/Icons-class.html
+[icons]: {{site.material_ui}}/Icons-class.html
 [images]: {{site.api}}/flutter/widgets/Image-class.html
 [text]: {{site.api}}/flutter/widgets/Text-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
@@ -297,15 +297,15 @@ or you can build your own set of custom widgets.
 
 </Tabs>
 
-[`CupertinoColors`]: {{site.api}}/flutter/cupertino/CupertinoColors-class.html
-[`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
-[`CupertinoThemeData`]: {{site.api}}/flutter/cupertino/CupertinoThemeData-class.html
-[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
-[Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
+[`CupertinoColors`]: {{site.cupertino_ui}}/CupertinoColors-class.html
+[`CupertinoPageScaffold`]: {{site.cupertino_ui}}/CupertinoPageScaffold-class.html
+[`CupertinoThemeData`]: {{site.cupertino_ui}}/CupertinoThemeData-class.html
+[`CupertinoNavigationBar`]: {{site.cupertino_ui}}/CupertinoNavigationBar-class.html
+[Cupertino library]: {{site.cupertino_ui}}/cupertino-library.html
 [Apple's Human Interface Guidelines for iOS]: {{site.apple-dev}}/design/human-interface-guidelines/designing-for-ios
 [`build()`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
-[Material library]: {{site.api}}/flutter/material/material-library.html
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[Material library]: {{site.material_ui}}/material-library.html
+[`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
 [widgets library]: {{site.api}}/flutter/widgets/widgets-library.html
 
 ### 5. Run your app
@@ -380,7 +380,7 @@ For more information, see [Common layout widgets][].
 
 [Common layout widgets]: #common-layout-widgets
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListTile`]: {{site.material_ui}}/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 
@@ -827,18 +827,18 @@ only Material apps can use the Material Components library.
 
 </Tabs>
 
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
-[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
+[`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
+[`AppBar`]: {{site.material_ui}}/AppBar-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
-[`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
-[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
-[`CupertinoSegmentedControl`]: {{site.api}}/flutter/cupertino/CupertinoSegmentedControl-class.html
-[`CupertinoTabBar`]: {{site.api}}/flutter/cupertino/CupertinoTabBar-class.html
-[`CupertinoTabScaffold`]: {{site.api}}/flutter/cupertino/CupertinoTabScaffold-class.html
+[`CupertinoPageScaffold`]: {{site.cupertino_ui}}/CupertinoPageScaffold-class.html
+[`CupertinoNavigationBar`]: {{site.cupertino_ui}}/CupertinoNavigationBar-class.html
+[`CupertinoSegmentedControl`]: {{site.cupertino_ui}}/CupertinoSegmentedControl-class.html
+[`CupertinoTabBar`]: {{site.cupertino_ui}}/CupertinoTabBar-class.html
+[`CupertinoTabScaffold`]: {{site.cupertino_ui}}/CupertinoTabScaffold-class.html
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListTile`]: {{site.material_ui}}/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[Material library]: {{site.api}}/flutter/material/material-library.html
+[Material library]: {{site.material_ui}}/material-library.html
 [widgets library]: {{site.api}}/flutter/widgets/widgets-library.html
 
 ### Container
@@ -957,7 +957,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
 [`Table`][] or [`DataTable`][].
 :::
 
-[`DataTable`]: {{site.api}}/flutter/material/DataTable-class.html
+[`DataTable`]: {{site.material_ui}}/DataTable-class.html
 [`Table`]: {{site.api}}/flutter/widgets/Table-class.html
 
 #### Examples (GridView)
@@ -1003,7 +1003,7 @@ List<Widget> _buildGridTileList(int count) =>
 
 <hr>
 
-[`GridTile`]: {{site.api}}/flutter/material/GridTile-class.html
+[`GridTile`]: {{site.material_ui}}/GridTile-class.html
 
 ### ListView
 
@@ -1085,7 +1085,7 @@ ListTile _tile(String title, String subtitle, IconData icon) {
 
 <hr>
 
-[`Colors`]: {{site.api}}/flutter/material/Colors-class.html
+[`Colors`]: {{site.material_ui}}/Colors-class.html
 [Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
 
 ### Stack
@@ -1177,12 +1177,12 @@ For a list of supported elevation values, see [Elevation][] in the
 [Material guidelines][Material Design].
 Specifying an unsupported value disables the drop shadow entirely.
 
-[`Card`]: {{site.api}}/flutter/material/Card-class.html
+[`Card`]: {{site.material_ui}}/Card-class.html
 [Elevation]: {{site.material}}/styles/elevation
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListTile`]: {{site.material_ui}}/ListTile-class.html
 [Material Design]: {{site.material}}/styles
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
-[Material library]: {{site.api}}/flutter/material/material-library.html
+[Material library]: {{site.material_ui}}/material-library.html
 
 #### Summary (Card)
 
@@ -1195,7 +1195,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 * From the [Material library][]
 
 [Material card]: {{site.material}}/components/cards
-[Material library]: {{site.api}}/flutter/material/material-library.html
+[Material library]: {{site.pub}}/packages/material-library.html
 
 #### Examples (Card)
 
@@ -1264,10 +1264,10 @@ containing up to 3 lines of text and optional leading
 and trailing icons. `ListTile` is most commonly used in
 [`Card`][] or [`ListView`][], but can be used elsewhere.
 
-[`Card`]: {{site.api}}/flutter/material/Card-class.html
-[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`Card`]: {{site.material_ui}}/Card-class.html
+[`ListTile`]: {{site.material_ui}}/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[Material library]: {{site.api}}/flutter/material/material-library.html
+[Material library]: {{site.material_ui}}/material-library.html
 
 #### Summary (ListTile)
 
@@ -1276,7 +1276,7 @@ and trailing icons. `ListTile` is most commonly used in
 * Less configurable than `Row`, but easier to use
 * From the [Material library][]
 
-[Material library]: {{site.api}}/flutter/material/material-library.html
+[Material library]: {{site.material_ui}}/material-library.html
 
 #### Examples (ListTile)
 

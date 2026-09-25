@@ -1,5 +1,5 @@
 // #docregion contact_groups_view
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 import '../data/contact_group.dart';
 import '../main.dart';

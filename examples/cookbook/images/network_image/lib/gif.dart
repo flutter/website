@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class MyGif extends StatelessWidget {
   const MyGif({super.key});

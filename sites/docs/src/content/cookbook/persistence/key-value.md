@@ -117,7 +117,7 @@ SharedPreferences.setMockInitialValues(<String, Object>{'counter': 2});
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(const MyApp());

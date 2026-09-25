@@ -38,7 +38,7 @@ inside the widget tests.
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(MyApp(items: List<String>.generate(10000, (i) => 'Item $i')));
@@ -108,7 +108,7 @@ file called `test/widget_test.dart`.
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:scrolling/main.dart';

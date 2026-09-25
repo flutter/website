@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 import 'game.dart';
 import 'step2_main.dart' show Tile;

@@ -53,6 +53,8 @@ dependencies:
   [!flutter_localizations:!] # Required to enable localization
     [!sdk: flutter!]         # Required to enable localization
 
+  [!material_ui]     # Required for projects that use the Material components pkg
+  [!cupertino_ui]    # Required for projects that use the Cupertino components pkg
   [!cupertino_icons: ^1.0.8!] # Only required if you use Cupertino (iOS style) icons
 
 dev_dependencies:

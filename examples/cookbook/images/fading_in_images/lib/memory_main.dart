@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 // #enddocregion TransparentImage
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 // #docregion TransparentImage
 final Uint8List transparentImage = base64Decode(

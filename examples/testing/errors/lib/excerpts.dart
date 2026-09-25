@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 // #docregion catch-error
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   MyBackend myBackend = MyBackend();

@@ -143,7 +143,7 @@ call the [`debugDumpApp()`][] function.
 
 <?code-excerpt "lib/dump_app.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const MaterialApp(home: AppHome()));
@@ -223,7 +223,7 @@ To dump the render tree:
 
 <?code-excerpt "lib/dump_render_tree.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const MaterialApp(home: AppHome()));
@@ -324,7 +324,7 @@ To debug a compositing issue, use [`debugDumpLayerTree()`][].
 
 <?code-excerpt "lib/dump_layer_tree.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const MaterialApp(home: AppHome()));
@@ -415,7 +415,7 @@ extensive logging when the focus changes.
 
 <?code-excerpt "lib/dump_focus_tree.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const MaterialApp(home: AppHome()));
@@ -463,7 +463,7 @@ To obtain a dump of the Semantics tree:
 <?code-excerpt "lib/dump_semantic_tree.dart"?>
 ```dart
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
@@ -706,7 +706,7 @@ constructor:
 
 <?code-excerpt "lib/performance_overlay.dart (show-overlay)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -742,10 +742,10 @@ help verify alignments, add the `debugShowMaterialGrid` argument in the
 
 To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 
-[`_InkFeatures`]: {{site.api}}/flutter/material/InkFeature-class.html
+[`_InkFeatures`]: {{site.material_ui}}/InkFeature-class.html
 [`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`CupertinoApp`]: {{site.cupertino_ui}}/CupertinoApp-class.html
 [`debugDumpApp()`]: {{site.api}}/flutter/widgets/debugDumpApp.html
 [`debugDumpFocusTree()`]: {{site.api}}/flutter/widgets/debugDumpFocusTree.html
 [`debugDumpLayerTree()`]: {{site.api}}/flutter/rendering/debugDumpLayerTree.html
@@ -767,16 +767,16 @@ To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 [`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
 [`GridPaper`]: {{site.api}}/flutter/widgets/GridPaper-class.html
 [`log()`]: {{site.api}}/flutter/dart-developer/log.html
-[`Material`]: {{site.api}}/flutter/material/Material-class.html
-[`MaterialApp` constructor]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
+[`Material`]: {{site.material_ui}}/Material-class.html
+[`MaterialApp` constructor]: {{site.material_ui}}/MaterialApp/MaterialApp.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp/MaterialApp.html
 [`PerformanceOverlay.allEnabled()`]: {{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html
 [`print()`]: {{site.api}}/flutter/dart-core/print.html
 [`RenderParagraph`]: {{site.api}}/flutter/rendering/RenderParagraph-class.html
 [`RenderPositionedBox`]: {{site.api}}/flutter/rendering/RenderPositionedBox-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
 [`stderr.method_to_invoke()`]: {{site.api}}/flutter/dart-io/stderr.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
 [`timeDilation`]: {{site.api}}/flutter/scheduler/timeDilation.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [debug mode]: /testing/build-modes#debug

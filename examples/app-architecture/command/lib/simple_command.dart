@@ -1,6 +1,6 @@
 // ignore_for_file: unused_field, prefer_final_fields
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class User {}
 

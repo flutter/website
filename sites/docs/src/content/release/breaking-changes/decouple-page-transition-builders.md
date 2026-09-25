@@ -10,7 +10,8 @@ description: >-
 ## Summary
 
 `CupertinoPageTransitionsBuilder` has been relocated from
-`package:flutter/material.dart` to `package:flutter/cupertino.dart`.
+`package:material_ui/material.dart` to the Cupertino package,
+which is now in `package:cupertino_ui/cupertino.dart`.
 
 ## Background
 
@@ -43,13 +44,13 @@ use this builder without depending on the Material library.
 ## Migration guide
 
 If you use `CupertinoPageTransitionsBuilder` and
-only import `package:flutter/material.dart`,
-add an import for `package:flutter/cupertino.dart`.
+only import `package:material_ui/material.dart`,
+add an import for `package:cupertino_ui/cupertino.dart`.
 
 Code before migration:
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 final pageTransitionsTheme = PageTransitionsTheme(
   builders: {
@@ -62,8 +63,8 @@ final pageTransitionsTheme = PageTransitionsTheme(
 Code after migration:
 
 ```dart
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino.dart';
+import 'package:material_ui/material.dart';
 
 final pageTransitionsTheme = PageTransitionsTheme(
   builders: {

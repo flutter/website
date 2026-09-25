@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 @immutable
 class ExampleExpandableFab extends StatelessWidget {

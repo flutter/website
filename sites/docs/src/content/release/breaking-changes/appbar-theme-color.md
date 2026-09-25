@@ -112,8 +112,8 @@ In stable release: 3.35.4
 
 API documentation:
 
-- [`AppBarTheme`](https://main-api.flutter.dev/flutter/material/AppBarTheme-class.html)
-- [`AppBarThemeData`](https://main-api.flutter.dev/flutter/material/AppBarThemeData-class.html)
+- [`AppBarTheme`]({{site.material_ui}}/AppBarTheme-class.html)
+- [`AppBarThemeData`]({{site.material_ui}}/AppBarThemeData-class.html)
 
 Relevant PRs:
 

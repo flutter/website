@@ -8,7 +8,7 @@
 // device's back-to-the-previous-screen gesture.
 // You can slow the transition using the timeDilation property.
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class PhotoHero extends StatelessWidget {

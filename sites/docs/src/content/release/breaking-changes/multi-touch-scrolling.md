@@ -177,8 +177,8 @@ Relevant PRs:
 
 [`ScrollConfiguration`]: {{site.api}}/flutter/widgets/ScrollConfiguration-class.html
 [`ScrollBehavior`]: {{site.api}}/flutter/widgets/ScrollBehavior-class.html
-[`MaterialScrollBehavior`]: {{site.api}}/flutter/material/MaterialScrollBehavior-class.html
-[`CupertinoScrollBehavior`]: {{site.api}}/flutter/cupertino/CupertinoScrollBehavior-class.html
+[`MaterialScrollBehavior`]: {{site.material_ui}}/MaterialScrollBehavior-class.html
+[`CupertinoScrollBehavior`]: {{site.cupertino_ui}}/CupertinoScrollBehavior-class.html
 [`MultitouchDragStrategy`]: {{site.api}}/flutter/gestures/MultitouchDragStrategy.html
 [`DragGestureRecognizer`]: {{site.api}}/flutter/gestures/DragGestureRecognizer-class.html
 [Issue #11884]: {{site.repo.flutter}}/issues/11884
