@@ -14,6 +14,7 @@
 @use 'components/carousel';
 @use 'components/cookies';
 @use 'components/content';
+@use 'components/drawer';
 @use 'components/embeds';
 @use 'components/features';
 @use 'components/filters-dropdown';
@@ -47,10 +48,13 @@
 @use 'pages/partner';
 @use 'pages/showcase';
 @use 'pages/why_flutter';
+@use 'pages/flutterbench';
+@use 'pages/flutterbench-story';
 
 @use 'package:site_shared/_sass/components/breadcrumbs';
 @use 'package:site_shared/_sass/components/blog';
 @use 'package:site_shared/_sass/components/code';
 @use 'package:site_shared/_sass/components/cookie-notice';
 @use 'package:site_shared/_sass/components/dropdown';
+@use 'package:site_shared/_sass/components/ide-explorer';
 @use 'package:site_shared/_sass/components/mermaid';

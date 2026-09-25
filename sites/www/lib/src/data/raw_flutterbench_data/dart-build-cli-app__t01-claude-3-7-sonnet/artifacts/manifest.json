@@ -1,0 +1,26 @@
+[
+  {
+    "source": "bin/main.dart",
+    "destination": "artifacts/workspace/bin/main.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/cli_runner.dart",
+    "destination": "artifacts/workspace/lib/cli_runner.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/command_options.dart",
+    "destination": "artifacts/workspace/lib/command_options.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "pubspec.yaml",
+    "destination": "artifacts/workspace/pubspec.yaml",
+    "type": "file",
+    "status": "ok"
+  }
+]

@@ -1,0 +1,1099 @@
+{
+  "tasks": [
+    {
+      "slug": "flutter-custom-render-object",
+      "task_name": "google/flutter-custom-render-object",
+      "display_name": "Custom RenderObject & Canvas",
+      "category": "Advanced Rendering",
+      "description": "Implement a custom RenderBox with layout constraints, custom painting, intrinsic dimensions, and pointer hit-testing.",
+      "trials": [
+        {
+          "trial_name": "flutter-custom-render-object__t15-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.36,
+          "model_name": "anthropic/claude-3-5-haiku",
+          "model_short_name": "claude-3-5-haiku",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t35-gpt-4o-mini",
+          "status": "error",
+          "reward": null,
+          "model_name": "openai/gpt-4o-mini",
+          "model_short_name": "gpt-4o-mini",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": "AgentTimeoutError"
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t40-gemini-35-pro",
+          "status": "partial",
+          "reward": 0.69,
+          "model_name": "google/gemini-3.5-pro",
+          "model_short_name": "gemini-3.5-pro",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t50-gemini-31-flash-lite",
+          "status": "error",
+          "reward": null,
+          "model_name": "google/gemini-3.1-flash-lite",
+          "model_short_name": "gemini-3.1-flash-lite",
+          "agent_name": "gemini-cli",
+          "has_dart_tooling": false,
+          "exception_type": "AgentTimeoutError"
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t25-gpt-5",
+          "status": "partial",
+          "reward": 0.72,
+          "model_name": "openai/gpt-5",
+          "model_short_name": "gpt-5",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t10-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.52,
+          "model_name": "anthropic/claude-3-5-sonnet",
+          "model_short_name": "claude-3-5-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t65-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.42,
+          "model_name": "deepseek/deepseek-coder-v2",
+          "model_short_name": "deepseek-coder-v2",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t60-deepseek-v3",
+          "status": "partial",
+          "reward": 0.49,
+          "model_name": "deepseek/deepseek-v3",
+          "model_short_name": "deepseek-v3",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t55-deepseek-r1",
+          "status": "partial",
+          "reward": 0.72,
+          "model_name": "deepseek/deepseek-r1",
+          "model_short_name": "deepseek-r1",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t05-claude-3-7-sonnet",
+          "status": "partial",
+          "reward": 0.71,
+          "model_name": "anthropic/claude-3-7-sonnet",
+          "model_short_name": "claude-3-7-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t20-o3",
+          "status": "partial",
+          "reward": 0.73,
+          "model_name": "openai/o3",
+          "model_short_name": "o3",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t30-gpt-4o",
+          "status": "partial",
+          "reward": 0.47,
+          "model_name": "openai/gpt-4o",
+          "model_short_name": "gpt-4o",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-custom-render-object__t45-gemini-35-flash",
+          "status": "partial",
+          "reward": 0.65,
+          "model_name": "google/gemini-3.5-flash",
+          "model_short_name": "gemini-3.5-flash",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        }
+      ],
+      "scores_by_eval": {
+        "claude-code__claude-3-5-haiku__adhoc": {
+          "trial_name": "flutter-custom-render-object__t15-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.36,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o-mini__adhoc": {
+          "trial_name": "flutter-custom-render-object__t35-gpt-4o-mini",
+          "status": "error",
+          "reward": null,
+          "exception_type": "AgentTimeoutError"
+        },
+        "antigravity-sdk__gemini-3.5-pro__adhoc": {
+          "trial_name": "flutter-custom-render-object__t40-gemini-35-pro",
+          "status": "partial",
+          "reward": 0.69,
+          "exception_type": null
+        },
+        "gemini-cli__gemini-3.1-flash-lite__adhoc": {
+          "trial_name": "flutter-custom-render-object__t50-gemini-31-flash-lite",
+          "status": "error",
+          "reward": null,
+          "exception_type": "AgentTimeoutError"
+        },
+        "codex-agent__gpt-5__adhoc": {
+          "trial_name": "flutter-custom-render-object__t25-gpt-5",
+          "status": "partial",
+          "reward": 0.72,
+          "exception_type": null
+        },
+        "claude-code__claude-3-5-sonnet__adhoc": {
+          "trial_name": "flutter-custom-render-object__t10-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.52,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-coder-v2__adhoc": {
+          "trial_name": "flutter-custom-render-object__t65-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.42,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-v3__adhoc": {
+          "trial_name": "flutter-custom-render-object__t60-deepseek-v3",
+          "status": "partial",
+          "reward": 0.49,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-r1__adhoc": {
+          "trial_name": "flutter-custom-render-object__t55-deepseek-r1",
+          "status": "partial",
+          "reward": 0.72,
+          "exception_type": null
+        },
+        "claude-code__claude-3-7-sonnet__adhoc": {
+          "trial_name": "flutter-custom-render-object__t05-claude-3-7-sonnet",
+          "status": "partial",
+          "reward": 0.71,
+          "exception_type": null
+        },
+        "codex-agent__o3__adhoc": {
+          "trial_name": "flutter-custom-render-object__t20-o3",
+          "status": "partial",
+          "reward": 0.73,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o__adhoc": {
+          "trial_name": "flutter-custom-render-object__t30-gpt-4o",
+          "status": "partial",
+          "reward": 0.47,
+          "exception_type": null
+        },
+        "antigravity-sdk__gemini-3.5-flash__adhoc": {
+          "trial_name": "flutter-custom-render-object__t45-gemini-35-flash",
+          "status": "partial",
+          "reward": 0.65,
+          "exception_type": null
+        }
+      }
+    },
+    {
+      "slug": "dart-build-cli-app",
+      "task_name": "google/dart-build-cli-app",
+      "display_name": "Build Command-Line CLI App",
+      "category": "Dart Utilities",
+      "description": "Create a robust Dart command-line interface application with argument parsing, formatted output, and exit code handling.",
+      "trials": [
+        {
+          "trial_name": "dart-build-cli-app__t01-claude-3-7-sonnet",
+          "status": "pass",
+          "reward": 0.97,
+          "model_name": "anthropic/claude-3-7-sonnet",
+          "model_short_name": "claude-3-7-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t21-gpt-5",
+          "status": "pass",
+          "reward": 0.98,
+          "model_name": "openai/gpt-5",
+          "model_short_name": "gpt-5",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t16-o3",
+          "status": "pass",
+          "reward": 0.97,
+          "model_name": "openai/o3",
+          "model_short_name": "o3",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t11-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.56,
+          "model_name": "anthropic/claude-3-5-haiku",
+          "model_short_name": "claude-3-5-haiku",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t46-gemini-31-flash-lite",
+          "status": "partial",
+          "reward": 0.39,
+          "model_name": "google/gemini-3.1-flash-lite",
+          "model_short_name": "gemini-3.1-flash-lite",
+          "agent_name": "gemini-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t06-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.79,
+          "model_name": "anthropic/claude-3-5-sonnet",
+          "model_short_name": "claude-3-5-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t26-gpt-4o",
+          "status": "partial",
+          "reward": 0.71,
+          "model_name": "openai/gpt-4o",
+          "model_short_name": "gpt-4o",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t56-deepseek-v3",
+          "status": "partial",
+          "reward": 0.71,
+          "model_name": "deepseek/deepseek-v3",
+          "model_short_name": "deepseek-v3",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t36-gemini-35-pro",
+          "status": "pass",
+          "reward": 0.98,
+          "model_name": "google/gemini-3.5-pro",
+          "model_short_name": "gemini-3.5-pro",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t51-deepseek-r1",
+          "status": "pass",
+          "reward": 0.99,
+          "model_name": "deepseek/deepseek-r1",
+          "model_short_name": "deepseek-r1",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t41-gemini-35-flash",
+          "status": "pass",
+          "reward": 0.93,
+          "model_name": "google/gemini-3.5-flash",
+          "model_short_name": "gemini-3.5-flash",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t31-gpt-4o-mini",
+          "status": "partial",
+          "reward": 0.48,
+          "model_name": "openai/gpt-4o-mini",
+          "model_short_name": "gpt-4o-mini",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "dart-build-cli-app__t61-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.61,
+          "model_name": "deepseek/deepseek-coder-v2",
+          "model_short_name": "deepseek-coder-v2",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        }
+      ],
+      "scores_by_eval": {
+        "claude-code__claude-3-7-sonnet__adhoc": {
+          "trial_name": "dart-build-cli-app__t01-claude-3-7-sonnet",
+          "status": "pass",
+          "reward": 0.97,
+          "exception_type": null
+        },
+        "codex-agent__gpt-5__adhoc": {
+          "trial_name": "dart-build-cli-app__t21-gpt-5",
+          "status": "pass",
+          "reward": 0.98,
+          "exception_type": null
+        },
+        "codex-agent__o3__adhoc": {
+          "trial_name": "dart-build-cli-app__t16-o3",
+          "status": "pass",
+          "reward": 0.97,
+          "exception_type": null
+        },
+        "claude-code__claude-3-5-haiku__adhoc": {
+          "trial_name": "dart-build-cli-app__t11-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.56,
+          "exception_type": null
+        },
+        "gemini-cli__gemini-3.1-flash-lite__adhoc": {
+          "trial_name": "dart-build-cli-app__t46-gemini-31-flash-lite",
+          "status": "partial",
+          "reward": 0.39,
+          "exception_type": null
+        },
+        "claude-code__claude-3-5-sonnet__adhoc": {
+          "trial_name": "dart-build-cli-app__t06-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.79,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o__adhoc": {
+          "trial_name": "dart-build-cli-app__t26-gpt-4o",
+          "status": "partial",
+          "reward": 0.71,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-v3__adhoc": {
+          "trial_name": "dart-build-cli-app__t56-deepseek-v3",
+          "status": "partial",
+          "reward": 0.71,
+          "exception_type": null
+        },
+        "antigravity-sdk__gemini-3.5-pro__adhoc": {
+          "trial_name": "dart-build-cli-app__t36-gemini-35-pro",
+          "status": "pass",
+          "reward": 0.98,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-r1__adhoc": {
+          "trial_name": "dart-build-cli-app__t51-deepseek-r1",
+          "status": "pass",
+          "reward": 0.99,
+          "exception_type": null
+        },
+        "antigravity-sdk__gemini-3.5-flash__adhoc": {
+          "trial_name": "dart-build-cli-app__t41-gemini-35-flash",
+          "status": "pass",
+          "reward": 0.93,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o-mini__adhoc": {
+          "trial_name": "dart-build-cli-app__t31-gpt-4o-mini",
+          "status": "partial",
+          "reward": 0.48,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-coder-v2__adhoc": {
+          "trial_name": "dart-build-cli-app__t61-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.61,
+          "exception_type": null
+        }
+      }
+    },
+    {
+      "slug": "flutter-offline-sync-sqlite",
+      "task_name": "google/flutter-offline-sync-sqlite",
+      "display_name": "Offline SQLite Sync Repository",
+      "category": "Data & Storage",
+      "description": "Build an offline-first repository using SQLite with background synchronization, retry queues, and conflict resolution.",
+      "trials": [
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t13-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.48,
+          "model_name": "anthropic/claude-3-5-haiku",
+          "model_short_name": "claude-3-5-haiku",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t38-gemini-35-pro",
+          "status": "pass",
+          "reward": 0.91,
+          "model_name": "google/gemini-3.5-pro",
+          "model_short_name": "gemini-3.5-pro",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t33-gpt-4o-mini",
+          "status": "partial",
+          "reward": 0.39,
+          "model_name": "openai/gpt-4o-mini",
+          "model_short_name": "gpt-4o-mini",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t03-claude-3-7-sonnet",
+          "status": "pass",
+          "reward": 0.93,
+          "model_name": "anthropic/claude-3-7-sonnet",
+          "model_short_name": "claude-3-7-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t53-deepseek-r1",
+          "status": "pass",
+          "reward": 0.87,
+          "model_name": "deepseek/deepseek-r1",
+          "model_short_name": "deepseek-r1",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t48-gemini-31-flash-lite",
+          "status": "partial",
+          "reward": 0.33,
+          "model_name": "google/gemini-3.1-flash-lite",
+          "model_short_name": "gemini-3.1-flash-lite",
+          "agent_name": "gemini-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t28-gpt-4o",
+          "status": "partial",
+          "reward": 0.65,
+          "model_name": "openai/gpt-4o",
+          "model_short_name": "gpt-4o",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t58-deepseek-v3",
+          "status": "partial",
+          "reward": 0.64,
+          "model_name": "deepseek/deepseek-v3",
+          "model_short_name": "deepseek-v3",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t43-gemini-35-flash",
+          "status": "pass",
+          "reward": 0.8,
+          "model_name": "google/gemini-3.5-flash",
+          "model_short_name": "gemini-3.5-flash",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t08-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.71,
+          "model_name": "anthropic/claude-3-5-sonnet",
+          "model_short_name": "claude-3-5-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t23-gpt-5",
+          "status": "pass",
+          "reward": 0.86,
+          "model_name": "openai/gpt-5",
+          "model_short_name": "gpt-5",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t63-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.55,
+          "model_name": "deepseek/deepseek-coder-v2",
+          "model_short_name": "deepseek-coder-v2",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-offline-sync-sqlite__t18-o3",
+          "status": "pass",
+          "reward": 0.9,
+          "model_name": "openai/o3",
+          "model_short_name": "o3",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        }
+      ],
+      "scores_by_eval": {
+        "claude-code__claude-3-5-haiku__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t13-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.48,
+          "exception_type": null
+        },
+        "antigravity-sdk__gemini-3.5-pro__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t38-gemini-35-pro",
+          "status": "pass",
+          "reward": 0.91,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o-mini__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t33-gpt-4o-mini",
+          "status": "partial",
+          "reward": 0.39,
+          "exception_type": null
+        },
+        "claude-code__claude-3-7-sonnet__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t03-claude-3-7-sonnet",
+          "status": "pass",
+          "reward": 0.93,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-r1__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t53-deepseek-r1",
+          "status": "pass",
+          "reward": 0.87,
+          "exception_type": null
+        },
+        "gemini-cli__gemini-3.1-flash-lite__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t48-gemini-31-flash-lite",
+          "status": "partial",
+          "reward": 0.33,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t28-gpt-4o",
+          "status": "partial",
+          "reward": 0.65,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-v3__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t58-deepseek-v3",
+          "status": "partial",
+          "reward": 0.64,
+          "exception_type": null
+        },
+        "antigravity-sdk__gemini-3.5-flash__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t43-gemini-35-flash",
+          "status": "pass",
+          "reward": 0.8,
+          "exception_type": null
+        },
+        "claude-code__claude-3-5-sonnet__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t08-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.71,
+          "exception_type": null
+        },
+        "codex-agent__gpt-5__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t23-gpt-5",
+          "status": "pass",
+          "reward": 0.86,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-coder-v2__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t63-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.55,
+          "exception_type": null
+        },
+        "codex-agent__o3__adhoc": {
+          "trial_name": "flutter-offline-sync-sqlite__t18-o3",
+          "status": "pass",
+          "reward": 0.9,
+          "exception_type": null
+        }
+      }
+    },
+    {
+      "slug": "flutter-manage-state-with-bloc",
+      "task_name": "google/flutter-manage-state-with-bloc",
+      "display_name": "Manage State with BLoC",
+      "category": "State Management",
+      "description": "Implement an immutable state management layer using package:flutter_bloc, connecting UI events to business logic with unit tests.",
+      "trials": [
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t62-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.59,
+          "model_name": "deepseek/deepseek-coder-v2",
+          "model_short_name": "deepseek-coder-v2",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t52-deepseek-r1",
+          "status": "pass",
+          "reward": 0.94,
+          "model_name": "deepseek/deepseek-r1",
+          "model_short_name": "deepseek-r1",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t32-gpt-4o-mini",
+          "status": "partial",
+          "reward": 0.46,
+          "model_name": "openai/gpt-4o-mini",
+          "model_short_name": "gpt-4o-mini",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t17-o3",
+          "status": "pass",
+          "reward": 0.97,
+          "model_name": "openai/o3",
+          "model_short_name": "o3",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t37-gemini-35-pro",
+          "status": "pass",
+          "reward": 0.99,
+          "model_name": "google/gemini-3.5-pro",
+          "model_short_name": "gemini-3.5-pro",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t27-gpt-4o",
+          "status": "partial",
+          "reward": 0.69,
+          "model_name": "openai/gpt-4o",
+          "model_short_name": "gpt-4o",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t12-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.55,
+          "model_name": "anthropic/claude-3-5-haiku",
+          "model_short_name": "claude-3-5-haiku",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t07-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.75,
+          "model_name": "anthropic/claude-3-5-sonnet",
+          "model_short_name": "claude-3-5-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t22-gpt-5",
+          "status": "pass",
+          "reward": 0.97,
+          "model_name": "openai/gpt-5",
+          "model_short_name": "gpt-5",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t42-gemini-35-flash",
+          "status": "pass",
+          "reward": 0.88,
+          "model_name": "google/gemini-3.5-flash",
+          "model_short_name": "gemini-3.5-flash",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t02-claude-3-7-sonnet",
+          "status": "pass",
+          "reward": 0.98,
+          "model_name": "anthropic/claude-3-7-sonnet",
+          "model_short_name": "claude-3-7-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t47-gemini-31-flash-lite",
+          "status": "error",
+          "reward": null,
+          "model_name": "google/gemini-3.1-flash-lite",
+          "model_short_name": "gemini-3.1-flash-lite",
+          "agent_name": "gemini-cli",
+          "has_dart_tooling": false,
+          "exception_type": "AgentTimeoutError"
+        },
+        {
+          "trial_name": "flutter-manage-state-with-bloc__t57-deepseek-v3",
+          "status": "partial",
+          "reward": 0.67,
+          "model_name": "deepseek/deepseek-v3",
+          "model_short_name": "deepseek-v3",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        }
+      ],
+      "scores_by_eval": {
+        "deepseek-cli__deepseek-coder-v2__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t62-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.59,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-r1__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t52-deepseek-r1",
+          "status": "pass",
+          "reward": 0.94,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o-mini__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t32-gpt-4o-mini",
+          "status": "partial",
+          "reward": 0.46,
+          "exception_type": null
+        },
+        "codex-agent__o3__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t17-o3",
+          "status": "pass",
+          "reward": 0.97,
+          "exception_type": null
+        },
+        "antigravity-sdk__gemini-3.5-pro__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t37-gemini-35-pro",
+          "status": "pass",
+          "reward": 0.99,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t27-gpt-4o",
+          "status": "partial",
+          "reward": 0.69,
+          "exception_type": null
+        },
+        "claude-code__claude-3-5-haiku__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t12-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.55,
+          "exception_type": null
+        },
+        "claude-code__claude-3-5-sonnet__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t07-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.75,
+          "exception_type": null
+        },
+        "codex-agent__gpt-5__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t22-gpt-5",
+          "status": "pass",
+          "reward": 0.97,
+          "exception_type": null
+        },
+        "antigravity-sdk__gemini-3.5-flash__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t42-gemini-35-flash",
+          "status": "pass",
+          "reward": 0.88,
+          "exception_type": null
+        },
+        "claude-code__claude-3-7-sonnet__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t02-claude-3-7-sonnet",
+          "status": "pass",
+          "reward": 0.98,
+          "exception_type": null
+        },
+        "gemini-cli__gemini-3.1-flash-lite__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t47-gemini-31-flash-lite",
+          "status": "error",
+          "reward": null,
+          "exception_type": "AgentTimeoutError"
+        },
+        "deepseek-cli__deepseek-v3__adhoc": {
+          "trial_name": "flutter-manage-state-with-bloc__t57-deepseek-v3",
+          "status": "partial",
+          "reward": 0.67,
+          "exception_type": null
+        }
+      }
+    },
+    {
+      "slug": "flutter-adaptive-material-cupertino",
+      "task_name": "google/flutter-adaptive-material-cupertino",
+      "display_name": "Adaptive Material & Cupertino UI",
+      "category": "Multi-Platform UI",
+      "description": "Build adaptive Flutter widgets that render Material 3 on Android/Web and native Cupertino patterns on iOS/macOS.",
+      "trials": [
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t09-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.61,
+          "model_name": "anthropic/claude-3-5-sonnet",
+          "model_short_name": "claude-3-5-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t64-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.5,
+          "model_name": "deepseek/deepseek-coder-v2",
+          "model_short_name": "deepseek-coder-v2",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t29-gpt-4o",
+          "status": "partial",
+          "reward": 0.6,
+          "model_name": "openai/gpt-4o",
+          "model_short_name": "gpt-4o",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t44-gemini-35-flash",
+          "status": "partial",
+          "reward": 0.78,
+          "model_name": "google/gemini-3.5-flash",
+          "model_short_name": "gemini-3.5-flash",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t14-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.45,
+          "model_name": "anthropic/claude-3-5-haiku",
+          "model_short_name": "claude-3-5-haiku",
+          "agent_name": "claude-code",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t49-gemini-31-flash-lite",
+          "status": "partial",
+          "reward": 0.28,
+          "model_name": "google/gemini-3.1-flash-lite",
+          "model_short_name": "gemini-3.1-flash-lite",
+          "agent_name": "gemini-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t34-gpt-4o-mini",
+          "status": "partial",
+          "reward": 0.39,
+          "model_name": "openai/gpt-4o-mini",
+          "model_short_name": "gpt-4o-mini",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t59-deepseek-v3",
+          "status": "partial",
+          "reward": 0.59,
+          "model_name": "deepseek/deepseek-v3",
+          "model_short_name": "deepseek-v3",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": false,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t19-o3",
+          "status": "pass",
+          "reward": 0.85,
+          "model_name": "openai/o3",
+          "model_short_name": "o3",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t39-gemini-35-pro",
+          "status": "pass",
+          "reward": 0.87,
+          "model_name": "google/gemini-3.5-pro",
+          "model_short_name": "gemini-3.5-pro",
+          "agent_name": "antigravity-sdk",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t54-deepseek-r1",
+          "status": "partial",
+          "reward": 0.78,
+          "model_name": "deepseek/deepseek-r1",
+          "model_short_name": "deepseek-r1",
+          "agent_name": "deepseek-cli",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t24-gpt-5",
+          "status": "pass",
+          "reward": 0.84,
+          "model_name": "openai/gpt-5",
+          "model_short_name": "gpt-5",
+          "agent_name": "codex-agent",
+          "has_dart_tooling": true,
+          "exception_type": null
+        },
+        {
+          "trial_name": "flutter-adaptive-material-cupertino__t04-claude-3-7-sonnet",
+          "status": "pass",
+          "reward": 0.85,
+          "model_name": "anthropic/claude-3-7-sonnet",
+          "model_short_name": "claude-3-7-sonnet",
+          "agent_name": "claude-code",
+          "has_dart_tooling": true,
+          "exception_type": null
+        }
+      ],
+      "scores_by_eval": {
+        "claude-code__claude-3-5-sonnet__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t09-claude-3-5-sonnet",
+          "status": "partial",
+          "reward": 0.61,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-coder-v2__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t64-deepseek-coder-v2",
+          "status": "partial",
+          "reward": 0.5,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t29-gpt-4o",
+          "status": "partial",
+          "reward": 0.6,
+          "exception_type": null
+        },
+        "antigravity-sdk__gemini-3.5-flash__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t44-gemini-35-flash",
+          "status": "partial",
+          "reward": 0.78,
+          "exception_type": null
+        },
+        "claude-code__claude-3-5-haiku__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t14-claude-3-5-haiku",
+          "status": "partial",
+          "reward": 0.45,
+          "exception_type": null
+        },
+        "gemini-cli__gemini-3.1-flash-lite__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t49-gemini-31-flash-lite",
+          "status": "partial",
+          "reward": 0.28,
+          "exception_type": null
+        },
+        "codex-agent__gpt-4o-mini__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t34-gpt-4o-mini",
+          "status": "partial",
+          "reward": 0.39,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-v3__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t59-deepseek-v3",
+          "status": "partial",
+          "reward": 0.59,
+          "exception_type": null
+        },
+        "codex-agent__o3__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t19-o3",
+          "status": "pass",
+          "reward": 0.85,
+          "exception_type": null
+        },
+        "antigravity-sdk__gemini-3.5-pro__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t39-gemini-35-pro",
+          "status": "pass",
+          "reward": 0.87,
+          "exception_type": null
+        },
+        "deepseek-cli__deepseek-r1__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t54-deepseek-r1",
+          "status": "partial",
+          "reward": 0.78,
+          "exception_type": null
+        },
+        "codex-agent__gpt-5__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t24-gpt-5",
+          "status": "pass",
+          "reward": 0.84,
+          "exception_type": null
+        },
+        "claude-code__claude-3-7-sonnet__adhoc": {
+          "trial_name": "flutter-adaptive-material-cupertino__t04-claude-3-7-sonnet",
+          "status": "pass",
+          "reward": 0.85,
+          "exception_type": null
+        }
+      }
+    }
+  ]
+}

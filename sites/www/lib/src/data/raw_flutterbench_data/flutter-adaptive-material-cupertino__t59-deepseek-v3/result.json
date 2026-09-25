@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-00000000003b",
+  "task_name": "google/flutter-adaptive-material-cupertino",
+  "trial_name": "flutter-adaptive-material-cupertino__t59-deepseek-v3",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-adaptive-material-cupertino__t59-deepseek-v3",
+  "task_id": {
+    "path": "dataset/flutter-adaptive-material-cupertino"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-adaptive-material-cupertino"
+    },
+    "trial_name": "flutter-adaptive-material-cupertino__t59-deepseek-v3",
+    "eval_key": "deepseek-cli__deepseek-v3__adhoc",
+    "agent": {
+      "name": "deepseek-cli",
+      "model_name": "deepseek/deepseek-v3",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "deepseek-cli",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "deepseek-v3",
+      "provider": "deepseek"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 75026,
+    "n_cache_tokens": 56404,
+    "n_output_tokens": 3174,
+    "cost_usd": 0.0114
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.59
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T20:23:35.000000Z",
+  "finished_at": "2026-09-09T20:26:30.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T20:23:35.000000Z",
+    "finished_at": "2026-09-09T20:23:45.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T20:23:45.000000Z",
+    "finished_at": "2026-09-09T20:23:55.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T20:23:55.000000Z",
+    "finished_at": "2026-09-09T20:25:58.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T20:25:58.000000Z",
+    "finished_at": "2026-09-09T20:26:30.000000Z"
+  }
+}

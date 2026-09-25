@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-00000000000b",
+  "task_name": "google/dart-build-cli-app",
+  "trial_name": "dart-build-cli-app__t11-claude-3-5-haiku",
+  "trial_uri": "file:///workspace/jobs/mock/dart-build-cli-app__t11-claude-3-5-haiku",
+  "task_id": {
+    "path": "dataset/dart-build-cli-app"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/dart-build-cli-app"
+    },
+    "trial_name": "dart-build-cli-app__t11-claude-3-5-haiku",
+    "eval_key": "claude-code__claude-3-5-haiku__adhoc",
+    "agent": {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-3-5-haiku",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "claude-code",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "claude-3-5-haiku",
+      "provider": "anthropic"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 61382,
+    "n_cache_tokens": 46705,
+    "n_output_tokens": 2347,
+    "cost_usd": 0.0585
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.56
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:15:35.000000Z",
+  "finished_at": "2026-09-09T19:18:20.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:15:35.000000Z",
+    "finished_at": "2026-09-09T19:15:45.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:15:45.000000Z",
+    "finished_at": "2026-09-09T19:15:55.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:15:55.000000Z",
+    "finished_at": "2026-09-09T19:17:55.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:17:55.000000Z",
+    "finished_at": "2026-09-09T19:18:20.000000Z"
+  }
+}
