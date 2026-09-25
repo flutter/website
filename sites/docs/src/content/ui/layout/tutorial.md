@@ -127,7 +127,7 @@ In this section, shell out the basic Flutter app code to start your app.
 
    <?code-excerpt "lib/main.dart (all)"?>
    ```dart
-   import 'package:flutter/material.dart';
+   import 'package:material_ui/material.dart';
    
    void main() => runApp(const MyApp());
    

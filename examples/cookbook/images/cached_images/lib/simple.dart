@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class SimpleImage extends StatelessWidget {
   const SimpleImage({super.key});

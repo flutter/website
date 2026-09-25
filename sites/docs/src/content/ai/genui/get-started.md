@@ -78,7 +78,7 @@ follow these instructions:
     bindings are initialized and then initialize Firebase:
 
     ```dart
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material.dart';
     import 'package:firebase_core/firebase_core.dart';
     import 'firebase_options.dart';
 
@@ -184,7 +184,7 @@ Follow these instructions:
     to the agent-generated content.
 
     ```dart
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material.dart';
     import 'package:genui/genui.dart';
     import 'package:genui_a2a/genui_a2a.dart';
     import 'package:logging/logging.dart';
@@ -621,7 +621,7 @@ To add your own widgets, use the following instructions.
 
     ```dart
     import 'package:json_schema_builder/json_schema_builder.dart';
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material.dart';
     import 'package:genui/genui.dart';
 
     final _schema = S.object(

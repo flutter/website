@@ -55,22 +55,8 @@ independent libraries that each depend on the underlying layer. No layer has
 privileged access to the layer below, and every part of the framework level is
 designed to be optional and replaceable.
 
-{% comment %}
-The PNG diagrams in this document were created using draw.io. The draw.io
-metadata is embedded in the PNG file itself, so you can open the PNG directly
-from draw.io to edit the individual components.
-
-The following settings were used:
-
- - Select all (to avoid exporting the canvas itself)
- - Export as PNG, zoom 300% (for a reasonable sized output)
- - Enable _Transparent Background_
- - Enable _Selection Only_, _Crop_
- - Enable _Include a copy of my diagram_
-{% endcomment %}
-
 ![Architectural
-diagram](/assets/images/docs/arch-overview/archdiagram.png){:width="100%"}
+diagram](/assets/images/docs/arch-overview/archdiagram.webp){:width="100%"}
 
 To the underlying operating system, Flutter applications are packaged in the
 same way as any other native application. A platform-specific embedder provides
@@ -127,16 +113,16 @@ a series of layers. Working from the bottom to the top, we have:
   With this layer, you can build a tree of renderable objects.
   You can manipulate these objects dynamically, with the
   tree automatically updating the layout to reflect your changes.
-* The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
-  a composition abstraction. Each render object in the rendering layer has a
+* The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)**,
+  part of the core Flutter SDK is a composition abstraction.
+  Each render object in the rendering layer has a
   corresponding class in the widgets layer. In addition, the widgets layer
   allows you to define combinations of classes that you can reuse. This is the
   layer at which the reactive programming model is introduced.
 * The
-  **[Material]({{site.api}}/flutter/material/material-library.html)**
-  and
-  **[Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html)**
-  libraries offer comprehensive sets of controls that use the widget layer's
+  **[Material]({site.pub}/package/material_ui)** and
+  **[Cupertino]({{site.pub}}/packages/cupertino_ui)** packages
+  offer comprehensive sets of controls that use the widget layer's
   composition primitives to implement the Material or iOS design languages.
 
 The Flutter framework is relatively small; many higher-level features that
@@ -146,11 +132,17 @@ like [camera]({{site.pub}}/packages/camera) and
 features like [characters]({{site.pub}}/packages/characters),
 [http]({{site.pub}}/packages/http), and
 [animations]({{site.pub}}/packages/animations) that build upon the core Dart and
-Flutter libraries. Some of these packages come from the broader ecosystem,
+Flutter libraries. Additionally, the Material and Cupertino UI packages
+are found on pub.dev, allowing you to either import them or build your
+own design system on top of the core `widgets` library without bloating your app.
+Other packages come from the broader ecosystem,
 covering services like [in-app
 payments]({{site.pub}}/packages/square_in_app_payments), [Apple
 authentication]({{site.pub}}/packages/sign_in_with_apple), and
 [animations]({{site.pub}}/packages/lottie).
+
+For more information about Flutter's approach to UI design, visit
+[Buiding user interfaces with Flutter](/ui).
 
 The rest of this overview broadly navigates down the layers, starting with the
 reactive paradigm of UI development. Then, we describe how widgets are composed
@@ -178,7 +170,7 @@ pieces of a Flutter app.
 
 **Framework** ([source code]({{site.repo.flutter}}/tree/main/packages/flutter/lib))
 * Provides higher-level API to build high-quality apps
-  (for example, widgets, hit-testing, gesture detection,
+  (for example, style-neutral widgets, hit-testing, gesture detection,
   accessibility, text input).
 * Composites the app's widget tree into a scene.
 
@@ -276,7 +268,7 @@ way up to the root widget (the container that hosts the Flutter app, typically
 
 <?code-excerpt "lib/main.dart (main)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
@@ -322,10 +314,10 @@ efficiently updates the user interface.
 
 Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
-implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html)
+implementation]({{site.cupertino_ui}}/CupertinoSwitch-class.html)
 of both the [iOS Toggle
 control]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
-and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
+and the [one for]({{site.material_ui}}/Switch-class.html) the
 [Android equivalent]({{site.material}}/components/switch).
 
 This approach provides several benefits:
@@ -371,7 +363,7 @@ widgets do not have a visual representation of their own. Instead, their sole
 purpose is to control some aspect of another widget's layout. Flutter also
 includes utility widgets that take advantage of this compositional approach.
 
-For example, [`Container`]({{site.api}}/flutter/widgets/Container-class.html), a
+For example, [`Container`]({{site.api}}/flutter/widgetsContainer-class.html), a
 commonly used widget, is made up of several widgets responsible for layout,
 painting, positioning, and sizing. Specifically, `Container` is made up of the
 [`LimitedBox`]({{site.api}}/flutter/widgets/LimitedBox-class.html),
@@ -396,8 +388,8 @@ interface in more concrete terms. For example, a toolbar widget might have a
 build function that returns a [horizontal
 layout]({{site.api}}/flutter/widgets/Row-class.html) of some
 [text]({{site.api}}/flutter/widgets/Text-class.html) and
-[various]({{site.api}}/flutter/material/IconButton-class.html)
-[buttons]({{site.api}}/flutter/material/PopupMenuButton-class.html). As needed,
+[various]({{site.material_ui}}/IconButton-class.html)
+[buttons]({{site.material_ui}}/PopupMenuButton-class.html). As needed,
 the framework recursively asks each widget to build until the tree is entirely
 described by [concrete renderable
 objects]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html). The
@@ -528,7 +520,7 @@ Container(
 );
 ```
 
-[properties like color and type styles]: {{site.api}}/flutter/material/ThemeData-class.html
+[properties like color and type styles]: {{site.material_ui}}/ThemeData-class.html
 
 As applications grow, more advanced state management approaches that reduce the
 ceremony of creating and using stateful widgets become more attractive. Many
@@ -1060,11 +1052,7 @@ On the web, Flutter compiles your application code into either JavaScript
 or [WebAssembly][Dart WebAssembly support] (when building with `--wasm`),
 rendering graphics using a WebAssembly build of the Skia engine.
 
-{% comment %}
-The draw.io source for the following image is in /diagrams/resources
-{% endcomment %}
-
-![Flutter web architecture](/assets/images/docs/arch-overview/web-framework-diagram.png){:width="80%" .diagram-wrap}
+![Flutter web architecture](/assets/images/docs/resources/diagram-layercake.webp){:width="80%" .diagram-wrap}
 
 Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need

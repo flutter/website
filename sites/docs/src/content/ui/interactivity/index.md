@@ -378,7 +378,7 @@ The `_TapboxAState` class:
 
 <?code-excerpt "lib/self_managed.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 // TapboxA manages its own state.
 
@@ -472,7 +472,7 @@ The TapboxB class:
 
 <?code-excerpt "lib/parent_managed.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 // ParentWidget manages the state for TapboxB.
 
@@ -576,7 +576,7 @@ The `_TapboxCState` object:
 
 <?code-excerpt "lib/mixed.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 //---------------------------- ParentWidget ----------------------------
 
@@ -744,13 +744,13 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
   stateless widgets.  Presented by Google engineer, Ian Hickson.
 
 [Android emulator]: /platform-integration/android/setup#set-up-devices
-[`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
-[`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
+[`Checkbox`]: {{site.material_ui}}/Checkbox-class.html
+[`Cupertino`]: {{site.pub}}/packages/cupertino_ui/cupertino-library.html
 [Dart language documentation]: {{site.dart-site}}/language
 [Debugging Flutter apps]: /testing/debugging
-[`DropdownButton`]: {{site.api}}/flutter/material/DropdownButton-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
+[`DropdownButton`]: {{site.material_ui}}/DropdownButton-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
+[`FloatingActionButton`]: {{site.material_ui}}/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
@@ -760,9 +760,9 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [Gestures in Flutter]: /ui/interactivity/gestures
 [Handling gestures]: /ui#handling-gestures
 [new-flutter-app]: /reference/create-new-app
-[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
+[`IconButton`]: {{site.material_ui}}/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`InkWell`]: {{site.material_ui}}/InkWell-class.html
 [iOS simulator]: /platform-integration/ios/setup#set-up-devices
 [building layouts tutorial]: /ui/layout/tutorial
 [community]: {{site.main-url}}/community
@@ -774,17 +774,17 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [Managing state]: #managing-state
 [Material Design guidelines]: {{site.material}}/styles
 [`pubspec.yaml`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/pubspec.yaml
-[`Radio`]: {{site.api}}/flutter/material/Radio-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
+[`Radio`]: {{site.material_ui}}/Radio-class.html
+[`ElevatedButton`]: {{site.material_ui}}/ElevatedButton-class.html
 [wonderous-app]: {{site.wonderous}}/web
 [wonderous-repo]: {{site.repo.wonderous}}
 [set up]: /install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
-[`Slider`]: {{site.api}}/flutter/material/Slider-class.html
+[`Slider`]: {{site.material_ui}}/Slider-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
-[`Switch`]: {{site.api}}/flutter/material/Switch-class.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`Switch`]: {{site.material_ui}}/Switch-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`widget`]: {{site.api}}/flutter/widgets/State/widget.html

@@ -155,11 +155,11 @@ iOS continues to be a big investment area for Flutter.
 With this release, we've made a visual refresh to our
 Cupertino library to match the iOS 13 look. We now support
 dark mode in the Cupertino widgets, added two new widgets called
-[CupertinoContextMenu]({{site.api}}/flutter/cupertino/CupertinoContextMenu-class.html)
-and [CupertinoSlidingSegmentedControl]({{site.api}}/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html),
+[CupertinoContextMenu]({{site.cupertino_ui}}/CupertinoContextMenu-class.html)
+and [CupertinoSlidingSegmentedControl]({{site.cupertino_ui}}/CupertinoSlidingSegmentedControl-class.html),
 and made improvements to segmented control widgets,
-[CupertinoAlertDialog]({{site.api}}/flutter/cupertino/CupertinoAlertDialog-class.html),
-and [CupertinoDatePicker]({{site.api}}/flutter/cupertino/CupertinoDatePicker-class.html)
+[CupertinoAlertDialog]({{site.cupertino_ui}}/CupertinoAlertDialog-class.html),
+and [CupertinoDatePicker]({{site.cupertino_ui}}/CupertinoDatePicker-class.html)
 
 [36871]({{site.repo.flutter}}/pull/36871) Audit use of defaultTargetPlatform
 

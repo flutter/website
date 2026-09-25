@@ -223,7 +223,7 @@ create `box.dart` with the following contents:
 
 <?code-excerpt "lib/box.dart"?>
 ```dart title="box.dart"
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 /// A simple blue 30x30 box.
 class DeferredBox extends StatelessWidget {
@@ -254,7 +254,7 @@ it has successfully loaded.
 
 <?code-excerpt "lib/use_deferred_box.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 import 'box.dart' deferred as box;
 

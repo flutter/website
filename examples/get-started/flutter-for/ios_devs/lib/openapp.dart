@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {

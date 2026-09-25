@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 void main() {
   runApp(const MyApp());

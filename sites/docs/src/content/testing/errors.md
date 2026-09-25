@@ -58,7 +58,7 @@ following handler:
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   FlutterError.onError = (details) {
@@ -133,7 +133,7 @@ To catch such an error, use [`PlatformDispatcher.instance.onError`][].
 ```dart
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   MyBackend myBackend = MyBackend();
@@ -155,7 +155,7 @@ your errors handling on next code snippet:
 ```dart
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 Future<void> main() async {
   await myErrorsHandler.initialize();
@@ -194,7 +194,7 @@ class MyApp extends StatelessWidget {
 [`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
 [`FlutterError.presentError`]: {{site.api}}/flutter/foundation/FlutterError/presentError.html
 [`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
-[`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
+[`MaterialApp.builder`]: {{site.material_ui}}/MaterialApp/builder.html
 [reporting errors to a service]: /cookbook/maintenance/error-reporting
 [`PlatformDispatcher.instance.onError`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/onError.html
 [`PlatformDispatcher`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher-class.html

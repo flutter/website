@@ -205,11 +205,11 @@ Relevant PRs:
 
 * [Predictive back route transitions by default][]
 
-[`FadeForwardsPageTransitionsBuilder`]: {{site.api}}/flutter/material/FadeForwardsPageTransitionsBuilder-class.html
+[`FadeForwardsPageTransitionsBuilder`]: {{site.material_ui}}/FadeForwardsPageTransitionsBuilder-class.html
 [`PopScope`]: {{site.api}}/flutter/widgets/PopScope-class.html
-[`PredictiveBackPageTransitionsBuilder`]: {{site.api}}/flutter/material/PredictiveBackPageTransitionsBuilder-class.html
+[`PredictiveBackPageTransitionsBuilder`]: {{site.material_ui}}/PredictiveBackPageTransitionsBuilder-class.html
 [`TransitionDurationObserver`]: {{site.api}}/flutter/flutter_test/TransitionDurationObserver-class.html
-[`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
+[`ZoomPageTransitionsBuilder`]: {{site.material_ui}}/ZoomPageTransitionsBuilder-class.html
 
 [Android predictive back route transitions]: {{site.repo.flutter}}/issues/131961
 [Predictive back route transitions by default]: {{site.repo.flutter}}/pull/165832

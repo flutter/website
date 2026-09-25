@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 import 'data/repositories/user_profile_repository.dart';
 import 'data/services/api_client_service.dart';

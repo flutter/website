@@ -197,7 +197,7 @@ testWidgets('Add and remove a todo', (tester) async {
 
 <?code-excerpt "test/main_test.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -292,5 +292,5 @@ class _TodoListState extends State<TodoList> {
 [`pump()`]: {{site.api}}/flutter/flutter_test/WidgetTester/pump.html
 [`pumpAndSettle()`]: {{site.api}}/flutter/flutter_test/WidgetTester/pumpAndSettle.html
 [`tap()`]: {{site.api}}/flutter/flutter_test/WidgetController/tap.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
 [`WidgetTester`]: {{site.api}}/flutter/flutter_test/WidgetTester-class.html

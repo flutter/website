@@ -125,7 +125,7 @@ Relevant PRs:
 
 * [`Checkbox.fillColor` should be applied to checkbox's background color when it is unchecked.][]
 
-[`Checkbox.fillColor`]: {{site.api}}/flutter/material/Checkbox/fillColor.html
+[`Checkbox.fillColor`]: {{site.material_ui}}/Checkbox/fillColor.html
 
 [Add `backgroundColor` to `Checkbox` and `CheckboxThemeData`]: {{site.repo.flutter}}/issues/123386
 [`Checkbox.fillColor` should be applied to checkbox's background color when it is unchecked.]: {{site.repo.flutter}}/pull/125643

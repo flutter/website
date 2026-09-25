@@ -1,6 +1,6 @@
 import 'dart:async' show Future;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 // #docregion root-bundle-load
 import 'package:flutter/services.dart' show rootBundle;
 

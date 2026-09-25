@@ -71,7 +71,7 @@ Users can skip this step if you programmatically auto-enable
 accessibility for your app using this API:
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:flutter/semantics.dart';
 
 void main() {
@@ -144,44 +144,13 @@ while iOS offers Switch Control, Voice Control, and AssistiveTouch.
 Understanding these tools helps in creating
 apps that are usable by people with diverse physical abilities.
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>OS</th>
-      <th>Features </th>
-      <th>Functions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Android</td>
-      <td><strong>Switch Access</strong> </td>
-      <td>As an alternate input method, you can use Switch Access and Camera Switches</td>
-    </tr>
-    <tr>
-      <td>Android</td>
-      <td><strong>Voice Access</strong> </td>
-      <td>Control your device with your voice</td>
-    </tr>
-    <tr>
-      <td>Android</td>
-      <td><strong>Accessibility Menu</strong> </td>
-      <td>A floating, on-screen menu that provides simplified buttons to control essential phone functions.</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><strong>Switch Control</strong> </td>
-      <td>Use switches as an alternate input methods</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><strong>Voice Control</strong> </td>
-      <td>Control your device with your voice</td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><strong>AssistiveTouch</strong> </td>
-      <td>Use AssistiveTouch to replace multi-finger gestures or hardware button actions</td>
-    </tr>
-  </tbody>
-</table>
+| OS | Features | Functions |
+| --- | --- | --- |
+| Android | **Switch Access** | As an alternate input method, you can use Switch Access and Camera Switches |
+| Android | **Voice Access** | Control your device with your voice |
+| Android | **Accessibility Menu** | A floating, on-screen menu that provides simplified buttons to control essential phone functions |
+| iOS | **Switch Control** | Use switches as an alternate input methods |
+| iOS | **Voice Control** | Control your device with your voice |
+| iOS | **AssistiveTouch** | Use AssistiveTouch to replace multi-finger gestures or hardware button actions|
+
+{:.table .table-striped}

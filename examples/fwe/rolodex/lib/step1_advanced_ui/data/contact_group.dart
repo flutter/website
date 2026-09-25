@@ -1,7 +1,7 @@
 // #docregion contact_group_class
 import 'dart:collection';
 
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_dart/cupertino.dart';
 
 import 'contact.dart';
 

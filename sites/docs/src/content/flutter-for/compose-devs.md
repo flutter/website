@@ -24,8 +24,6 @@ check out [Add Flutter to existing app][].
 This document can be used as a reference by jumping around
 and finding questions that are most relevant to your needs.
 This guide embeds sample code.
-By using the "Open in DartPad" button that appears on hover or focus,
-you can open and run some of the examples on DartPad.
 
 ## Overview
 
@@ -862,5 +860,5 @@ To review a complete example, check out the [`Image`][] docs.
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [go_router]: {{site.pub-pkg}}/go_router
 [Google Fonts]: https://fonts.google.com/
-[google_fonts]: https://pub.dev/packages/google_fonts
-[`MaterialApp`]: https://api.flutter.dev/flutter/material/MaterialApp-class.html
+[google_fonts]: {{site.pub-pkg}}/google_fonts
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html

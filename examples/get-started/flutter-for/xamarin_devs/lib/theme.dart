@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 // #docregion theme
 class SampleApp extends StatelessWidget {

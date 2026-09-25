@@ -5,7 +5,7 @@ import 'error_handler.dart';
 // #docregion all-errors
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 Future<void> main() async {
   await myErrorsHandler.initialize();

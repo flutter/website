@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(MyApp(items: List<String>.generate(10000, (i) => 'Item $i')));

@@ -187,9 +187,8 @@ it doesn't automatically adopt the associated themes. Instead, that's set by the
 `style` property of the `LlmChatView` as described in the [Custom styling][]
 documentation.
 
-[Cupertino app]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`CupertinoTextField`]:
-    {{site.api}}/flutter/cupertino/CupertinoTextField-class.html
+[Cupertino app]: {{site.cupertino_ui}}/CupertinoApp-class.html
+[`CupertinoTextField`]: {{site.cupertino_ui}}/CupertinoTextField-class.html
 [Custom styling]: /ai/ai-toolkit/feature-integration#custom-styling
-[Material app]: {{site.api}}/flutter/material/MaterialApp-class.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[Material app]: {{site.material_ui}}/MaterialApp-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html

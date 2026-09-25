@@ -46,7 +46,7 @@ Start by creating the basic stateful structure:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4a_main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 class ArticleView extends StatefulWidget {
   const ArticleView({super.key});

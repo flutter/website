@@ -11,7 +11,14 @@ you can also see all the widgets in the [widget index][].
 
 ## Design systems
 
-Flutter ships with two design systems as part of the SDK.
+The style-neutral [`widgets`][] library ships with the Flutter SDK.
+Two UI design packages ([`material_ui`][] and [`cupertino_ui`][]) are
+built on top of `widgets` and are available on [pub.dev]({{site.pub}}),
+the package repository for Dart and Flutter.
+
+[`cupertino_ui`]: {{site.pub}}/packages/cupertino_ui
+[`material_ui`]: {{site.pub}}/packages/material_ui
+[`widgets`]: {{site.api}}/flutter/widgets/
 
 <div class="card-grid">
   <Card title="Cupertino" link="/ui/widgets/cupertino" outlined="true" filled="false">
@@ -24,8 +31,7 @@ Flutter ships with two design systems as part of the SDK.
   </Card>
 </div>
 
-You can find many more design systems created by the Flutter community
-on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
+You can find more design systems created by the Flutter community on pub.dev.
 For example, the Windows-inspired [fluent_ui][],
 macOS-inspired [macos_ui][],
 and the Ubuntu-inspired [yaru][] widgets.

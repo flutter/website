@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino.dart';
+import 'package:material_ui/material.dart';
 
 void main() {
   runApp(const App());

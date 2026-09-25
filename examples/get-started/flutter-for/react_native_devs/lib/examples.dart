@@ -6,7 +6,7 @@ import 'dart:io';
 // #enddocregion import-dart-io
 
 // #docregion package-import
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 // #enddocregion package-import
 // #docregion shared-prefs
 import 'package:shared_preferences/shared_preferences.dart';

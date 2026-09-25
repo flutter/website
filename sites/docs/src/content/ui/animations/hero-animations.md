@@ -619,10 +619,10 @@ Key information:
 [`debugPaintSizeEnabled`]: /tools/devtools/inspector#debugging-layout-issues-visually
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [hero_animation]: {{site.repo.this}}/tree/main/examples/_animation/hero_animation/
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`InkWell`]: {{site.material_ui}}/InkWell-class.html
 [Material Design motion spec]: {{site.material2}}/design/motion/understanding-motion.html#principles
-[`MaterialRectArcTween`]: {{site.api}}/flutter/material/MaterialRectArcTween-class.html
-[`MaterialRectCenterArcTween`]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
+[`MaterialRectArcTween`]: {{site.material_ui}}/MaterialRectArcTween-class.html
+[`MaterialRectCenterArcTween`]: {{site.material_ui}}/MaterialRectCenterArcTween-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [Radial hero animation code]: #radial-hero-animation-code
 [radial_hero_animation]: {{site.repo.this}}/tree/main/examples/_animation/radial_hero_animation

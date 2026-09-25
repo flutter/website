@@ -37,7 +37,7 @@ the shape property of your `Dialog` to specify the original 2 pixel radius.
 Setting the Dialog shape to the original radius:
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 void main() => runApp(Foo());
 
@@ -90,9 +90,9 @@ Relevant PR:
 
 * [PR 58829: Matching Material Spec for Dialog shape][]
 
-[`Dialog`]: {{site.api}}/flutter/material/Dialog-class.html
-[`SimpleDialog`]: {{site.api}}/flutter/material/SimpleDialog-class.html
-[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
-[`showTimePicker`]: {{site.api}}/flutter/material/showTimePicker.html
-[`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
+[`Dialog`]: {{site.material_ui}}/Dialog-class.html
+[`SimpleDialog`]: {{site.material_ui}}/SimpleDialog-class.html
+[`AlertDialog`]: {{site.material_ui}}/AlertDialog-class.html
+[`showTimePicker`]: {{site.material_ui}}/showTimePicker.html
+[`showDatePicker`]: {{site.material_ui}}/showDatePicker.html
 [PR 58829: Matching Material Spec for Dialog shape]: {{site.repo.flutter}}/pull/58829

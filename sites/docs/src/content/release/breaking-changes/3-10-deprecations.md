@@ -63,7 +63,7 @@ Relevant PRs:
 * Deprecated in [#87281][]
 * Removed in [#125893][]
 
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`ThemeData`]: {{site.material_ui}}/ThemeData-class.html
 
 [#87281]: {{site.repo.flutter}}/pull/87281
 [#125893]: {{site.repo.flutter}}/pull/125893
@@ -180,7 +180,7 @@ Relevant PRs:
 
 [ColorScheme for Material 3]: /go/colorscheme-m3
 
-[`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
+[`ColorScheme`]: {{site.material_ui}}/ColorScheme-class.html
 
 [#93427]: {{site.repo.flutter}}/pull/93427
 [#127124]: {{site.repo.flutter}}/pull/127124
@@ -238,8 +238,8 @@ Relevant PRs:
 
 [Material Theme System Updates]: /go/material-theme-system-updates
 
-[`Theme`]: {{site.api}}/flutter/material/Theme-class.html
-[`ThemeData`]: {{site.api}}/flutter/material/Theme-class.html
+[`Theme`]: {{site.material_ui}}/Theme-class.html
+[`ThemeData`]: {{site.material_ui}}/Theme-class.html
 [`Brightness`]: {{site.api}}/flutter/dart-ui/Brightness.html
 
 [#93396]: {{site.repo.flutter}}/pull/93396
@@ -329,11 +329,11 @@ Relevant PRs:
 
 
 [`RawScrollbar`]: {{site.api}}/flutter/widgets/RawScrollbar-class.html
-[`Scrollbar`]: {{site.api}}/flutter/material/Scrollbar-class.html
-[`CupertinoScrollbar`]: {{site.api}}/flutter/cupertino/CupertinoScrollbar-class.html
-[`ScrollbarThemeData`]: {{site.api}}/flutter/material/ScrollbarThemeData-class.html
-[`MaterialStateProperty`]: {{site.api}}/flutter/material/MaterialStateProperty-class.html
-[`MaterialState`]: {{site.api}}/flutter/material/MaterialState.html
+[`Scrollbar`]: {{site.material_ui}}/Scrollbar-class.html
+[`CupertinoScrollbar`]: {{site.cupertino_ui}}/CupertinoScrollbar-class.html
+[`ScrollbarThemeData`]: {{site.material_ui}}/ScrollbarThemeData-class.html
+[`MaterialStateProperty`]: {{site.material_ui}}/MaterialStateProperty-class.html
+[`MaterialState`]: {{site.material_ui}}/MaterialState.html
 
 [#96957]: {{site.repo.flutter}}/pull/96957
 [#97173]: {{site.repo.flutter}}/pull/97173

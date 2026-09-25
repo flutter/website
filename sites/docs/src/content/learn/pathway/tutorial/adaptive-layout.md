@@ -44,7 +44,7 @@ the following basic structure:
 
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/contact_groups.dart"?>
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 class ContactGroupsPage extends StatelessWidget {
   const ContactGroupsPage({super.key});
@@ -66,7 +66,7 @@ display individual contacts:
 
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/contacts.dart"?>
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 class ContactListsPage extends StatelessWidget {
   const ContactListsPage({super.key, required this.listId});
@@ -94,7 +94,7 @@ and start with the following basic structure:
 
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v1.dart"?>
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 import 'contact_groups.dart';
 
@@ -120,7 +120,7 @@ Next, add the screen size detection logic to `lib/screens/adaptive_layout.dart`:
 
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v2.dart"?>
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 import 'contact_groups.dart';
 
@@ -168,7 +168,7 @@ so you can see your changes:
 
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/main.dart"?>
 ```dart
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 import 'data/contact_group.dart';
 import 'screens/adaptive_layout.dart';
@@ -209,7 +209,7 @@ Update the state object in `lib/screens/adaptive_layout.dart` with the following
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v3.dart"?>
 ```dart
 
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 import 'contact_groups.dart';
 
@@ -260,7 +260,7 @@ contains the proper layout.
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v4.dart"?>
 ```dart
 
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino.dart';
 
 import 'contact_groups.dart';
 

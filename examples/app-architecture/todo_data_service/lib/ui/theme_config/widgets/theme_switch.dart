@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 
 import '../viewmodel/theme_switch_viewmodel.dart';
 

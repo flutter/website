@@ -94,6 +94,6 @@ Relevant PRs:
 
 * [SnackBar with action no longer auto-dismisses][]
 
-[`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
+[`SnackBar`]: {{site.material_ui}}/SnackBar-class.html
 
 [SnackBar with action no longer auto-dismisses]: {{site.repo.flutter}}/pull/173084

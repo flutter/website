@@ -17,7 +17,7 @@
   subcategories:
     - 'Containment'
     - 'Dialogs, alerts, and panels'
-  link: https://api.flutter.dev/flutter/material/AlertDialog-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/AlertDialog-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-dialog.png
   hoverBackground:
@@ -175,7 +175,7 @@
   subcategories:
     - 'Navigation'
     - 'App structure and navigation'
-  link: https://api.flutter.dev/flutter/material/AppBar-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/AppBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-top-app-bar.png
   hoverBackground:
@@ -215,7 +215,7 @@
   categories:
     - 'Input'
   subcategories: []
-  link: https://api.flutter.dev/flutter/material/Autocomplete-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Autocomplete-class.html
 - name: BackdropFilter
   description: >-
     A widget that applies a filter to the existing painted content and then
@@ -232,7 +232,7 @@
   categories: []
   subcategories:
     - 'Communication'
-  link: https://api.flutter.dev/flutter/material/Badge-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Badge-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-badge.png
   hoverBackground:
@@ -263,7 +263,7 @@
   categories: []
   subcategories:
     - 'Navigation'
-  link: https://api.flutter.dev/flutter/material/BottomAppBar-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/BottomAppBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-bottom-app-bar.png
   hoverBackground:
@@ -273,7 +273,7 @@
   categories: []
   subcategories:
     - 'Containment'
-  link: https://api.flutter.dev/flutter/material/BottomSheet-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/BottomSheet-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-bottom-sheet.png
   hoverBackground:
@@ -285,7 +285,7 @@
   categories: []
   subcategories:
     - 'App structure and navigation'
-  link: https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/BottomNavigationBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-bottom-navigation-bar.png
 - name: Card
@@ -296,7 +296,7 @@
   subcategories:
     - 'Containment'
     - 'Information displays'
-  link: https://api.flutter.dev/flutter/material/Card-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Card-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-card.png
   hoverBackground:
@@ -330,7 +330,7 @@
   subcategories:
     - 'Selection'
     - 'Input and selections'
-  link: https://api.flutter.dev/flutter/material/Checkbox-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Checkbox-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-checkbox.png
   hoverBackground:
@@ -343,7 +343,7 @@
   subcategories:
     - 'Selection'
     - 'Information displays'
-  link: https://api.flutter.dev/flutter/material/Chip-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Chip-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-chip.png
   hoverBackground:
@@ -353,7 +353,7 @@
   categories: []
   subcategories:
     - 'Information displays'
-  link: https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/CircularProgressIndicator-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-circular-progress-indicator.png
 - name: ClipOval
@@ -411,7 +411,7 @@
   categories: []
   subcategories:
     - 'Actions'
-  link: https://api.flutter.dev/flutter/material/ButtonStyle-class.html#material-3-button-types
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/ButtonStyle-class.html#material-3-button-types
   image:
     src: /assets/images/docs/widget-catalog/material-3-buttons.png
   hoverBackground:
@@ -493,7 +493,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoActionSheet-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-action-sheet.png
 - name: CupertinoActionSheetAction
@@ -502,7 +502,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoActionSheetAction-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoActionSheetAction-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-action-sheet.png
 - name: CupertinoActivityIndicator
@@ -511,7 +511,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoActivityIndicator-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoActivityIndicator-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-activity-indicator.png
 - name: CupertinoAdaptiveTextSelectionToolbar
@@ -521,7 +521,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoAdaptiveTextSelectionToolbar-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoAdaptiveTextSelectionToolbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoAdaptiveTextSelectionToolbar.png
 - name: CupertinoAlertDialog
@@ -530,7 +530,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoAlertDialog-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-alert-dialog.png
 - name: CupertinoApp
@@ -539,7 +539,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoApp-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoApp-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoApp.png
 - name: CupertinoButton
@@ -548,7 +548,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoButton-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-button.png
 - name: CupertinoCheckBox
@@ -557,7 +557,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoCheckbox-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoCheckbox-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoCheckbox.png
 - name: CupertinoColors
@@ -567,7 +567,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoColors-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoColors-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoColors.png
 - name: CupertinoContextMenu
@@ -577,7 +577,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoContextMenu-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-context-menu.png
 - name: CupertinoContextMenuAction
@@ -586,7 +586,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoContextMenuAction-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoContextMenuAction-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoContextMenuAction.png
 - name: CupertinoDatePicker
@@ -595,7 +595,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoDatePicker-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoDatePicker-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoDatePicker.png
 - name: CupertinoDesktopTextSelectionControls
@@ -603,14 +603,14 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionControls-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoDesktopTextSelectionControls-class.html
 - name: CupertinoDesktopTextSelectionToolbar
   description: >-
     A macOS-style text selection toolbar.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionToolbar-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoDesktopTextSelectionToolbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoDesktopTextSelectionToolbar.png
 - name: CupertinoDesktopTextSelectionToolbarButton
@@ -619,7 +619,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionToolbarButton-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoDesktopTextSelectionToolbarButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoDesktopTextSelectionToolbarButton.png
 - name: CupertinoDialogAction
@@ -628,7 +628,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoDialogAction-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoDialogAction-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-dialog-action.png
 - name: CupertinoDialogRoute
@@ -637,7 +637,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoDialogRoute-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoDialogRoute-class.html
 - name: CupertinoDynamicColor
   description: >-
     A Color subclass that represents a family of colors, and the correct
@@ -645,14 +645,14 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoDynamicColor-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoDynamicColor-class.html
 - name: CupertinoFormRow
   description: >-
     An iOS-style form row.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoFormRow-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoFormRow-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoFormRow.png
 - name: CupertinoFormSection
@@ -661,7 +661,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoFormSection-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoFormSection-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoFormSection.png
 - name: CupertinoFullscreenDialogTransition
@@ -670,7 +670,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoFullscreenDialogTransition-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-fullscreen-dialog-transition.png
 - name: CupertinoThemeData
@@ -678,13 +678,13 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoThemeData-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoThemeData-class.html
 - name: CupertinoListSection
   description: Container that uses the iOS style to display a scrollable view.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoListSection-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoListSection-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-list-section.png
 - name: CupertinoListTile
@@ -693,7 +693,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoListTile-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoListTile-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-list-tile.png
 - name: CupertinoListTileChevron
@@ -703,7 +703,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoListTileChevron-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoListTileChevron-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoListTileChevron.png
 - name: CupertinoLocalizations
@@ -711,7 +711,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoLocalizations-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoLocalizations-class.html
 - name: CupertinoMagnifier
   description: >-
     A RawMagnifier used for magnifying text in cases where a user's finger may
@@ -719,7 +719,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoMagnifier-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoMagnifier-class.html
 - name: CupertinoModalPopupRoute
   description: >-
     A route that shows a modal iOS-style popup that
@@ -728,7 +728,7 @@
     - 'Cupertino'
   subcategories: []
   link: >-
-    https://api.flutter.dev/flutter/cupertino/CupertinoModalPopupRoute-class.html
+    https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoModalPopupRoute-class.html
 - name: CupertinoNavigationBar
   description: >-
     Container at the top of a screen that uses the iOS style.
@@ -736,7 +736,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBar-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoNavigationBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-nav-bar.png
 - name: CupertinoNavigationBarBackButton
@@ -745,7 +745,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBarBackButton-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoNavigationBarBackButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoNavigationBarBackButton.png
 - name: CupertinoPage
@@ -754,14 +754,14 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoPage-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoPage-class.html
 - name: CupertinoPageRoute
   description: >-
     A modal route that replaces the entire screen with an iOS transition.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoPageRoute-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoPageRoute-class.html
 - name: CupertinoPageScaffold
   description: >-
     Basic iOS style page layout structure.
@@ -769,13 +769,13 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoPageScaffold-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoPageScaffold-class.html
 - name: CupertinoPageTransition
   description: Provides an iOS-style page transition animation.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoPageTransition-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoPageTransition-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-page-transition.png
 - name: CupertinoPicker
@@ -784,7 +784,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoPicker-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoPicker-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoPicker.png
 - name: CupertinoPickerDefaultSelectionOverlay
@@ -793,7 +793,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoPickerDefaultSelectionOverlay-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoPickerDefaultSelectionOverlay-class.html
 - name: CupertinoPopupSurface
   description: >-
     Rounded rectangle surface that looks like an iOS popup surface, such as an
@@ -801,14 +801,14 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoPopupSurface-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoPopupSurface-class.html
 - name: CupertinoRadio
   description: >-
     A macOS-style radio button.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoRadio-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoRadio-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoRadio.png
 - name: CupertinoScrollbar
@@ -818,7 +818,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoScrollbar-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoScrollbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-scrollbar.png
 - name: CupertinoScrollBehavior
@@ -826,14 +826,14 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoScrollBehavior-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoScrollBehavior-class.html
 - name: CupertinoSearchTextField
   description: >-
     An iOS-style search field.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoSearchTextField-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoSearchTextField-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-search-field.png
 - name: CupertinoSlider
@@ -841,7 +841,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoSlider-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoSlider-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-slider.png
 - name: CupertinoSlidingSegmentedControl
@@ -851,7 +851,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoSlidingSegmentedControl-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-sliding-segmented-control.png
 - name: CupertinoSliverNavigationBar
@@ -861,7 +861,7 @@
     - 'Cupertino'
   subcategories:
     - 'Sliver widgets'
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoSliverNavigationBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-sliver-navigation-bar.png
 - name: CupertinoSliverRefreshControl
@@ -871,13 +871,13 @@
     - 'Cupertino'
   subcategories:
     - 'Sliver widgets'
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoSliverRefreshControl-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoSliverRefreshControl-class.html
 - name: CupertinoSpellCheckSuggestionsToolbar
   description: The default spell check suggestions toolbar for iOS.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoSpellCheckSuggestionsToolbar-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoSpellCheckSuggestionsToolbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoSpellCheckSuggestionsToolbar.png
 - name: CupertinoSwitch
@@ -886,7 +886,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoSwitch-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoSwitch-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-switch.png
 - name: CupertinoTabBar
@@ -895,7 +895,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTabBar-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTabBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-tab-bar.png
 - name: CupertinoTabController
@@ -905,13 +905,13 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTabController-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTabController-class.html
 - name: CupertinoTabScaffold
   description: Tabbed iOS app structure. Positions a tab bar on top of tabs of content.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTabScaffold-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTabScaffold-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-tab-scaffold.png
 - name: CupertinoTabView
@@ -921,7 +921,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTabView-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTabView-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-tab-view.png
 - name: CupertinoTextField
@@ -930,7 +930,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTextField-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-textfield.png
 - name: CupertinoTextFormFieldRow
@@ -940,7 +940,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTextFormFieldRow-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTextFormFieldRow-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTextFormFieldRow.png
 - name: CupertinoTextMagnifier
@@ -950,7 +950,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTextMagnifier-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTextMagnifier-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTextMagnifier.png
 - name: CupertinoTextSelectionControls
@@ -958,14 +958,14 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionControls-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTextSelectionControls-class.html
 - name: CupertinoTextSelectionToolbar
   description: >-
     An iOS-style text selection toolbar.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionToolbar-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTextSelectionToolbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTextSelectionToolbar.png
 - name: CupertinoTextSelectionToolbarButton
@@ -974,7 +974,7 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionToolbarButton-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTextSelectionToolbarButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTextSelectionToolbarButton.png
 - name: CupertinoTextThemeData
@@ -982,27 +982,27 @@
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTextThemeData-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTextThemeData-class.html
 - name: CupertinoTheme
   description: >-
     Applies a visual styling theme to descendant Cupertino widgets.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTheme-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTheme-class.html
 - name: CupertinoThumbPainter
   description: Paints an iOS-style slider thumb or switch thumb.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoThumbPainter-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoThumbPainter-class.html
 - name: CupertinoTimerPicker
   description: >-
     An iOS-style countdown timer picker.
   categories:
     - 'Cupertino'
   subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoTimerPicker-class.html
+  link: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui/CupertinoTimerPicker-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTimerPicker.png
 - name: CustomMultiChildLayout
@@ -1035,7 +1035,7 @@
     - 'Scrolling'
   subcategories:
     - 'Multi-child layout widgets'
-  link: https://main-api.flutter.dev/flutter/material/CarouselView-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/CarouselView-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-carousel.png
 - name: CustomScrollView
@@ -1060,7 +1060,7 @@
   categories: []
   subcategories:
     - 'Information displays'
-  link: https://api.flutter.dev/flutter/material/DataTable-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/DataTable-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-data-table.png
 - name: DatePicker
@@ -1069,7 +1069,7 @@
   subcategories:
     - 'Selection'
     - 'Input and selections'
-  link: https://api.flutter.dev/flutter/material/showDatePicker.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/showDatePicker.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-date-picker.png
   hoverBackground:
@@ -1130,7 +1130,7 @@
   subcategories:
     - 'Containment'
     - 'Layout'
-  link: https://api.flutter.dev/flutter/material/Divider-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Divider-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-divider.png
   hoverBackground:
@@ -1174,7 +1174,7 @@
   categories: []
   subcategories:
     - 'App structure and navigation'
-  link: https://api.flutter.dev/flutter/material/Drawer-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Drawer-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-drawer.png
 - name: DropdownButton
@@ -1184,7 +1184,7 @@
   categories: []
   subcategories:
     - 'Buttons'
-  link: https://api.flutter.dev/flutter/material/DropdownButton-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/DropdownButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-2-dropdown-menu.png
 - name: ElevatedButton
@@ -1195,7 +1195,7 @@
     - 'Basics'
   subcategories:
     - 'Buttons'
-  link: https://api.flutter.dev/flutter/material/ElevatedButton-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/ElevatedButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-elevated-button.png
 - name: ExcludeSemantics
@@ -1222,7 +1222,7 @@
   categories: []
   subcategories:
     - 'Dialogs, alerts, and panels'
-  link: https://api.flutter.dev/flutter/material/ExpansionPanel-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/ExpansionPanel-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-2-expansion-panel.png
 - name: FadeTransition
@@ -1244,7 +1244,7 @@
   subcategories:
     - 'Actions'
     - 'Buttons'
-  link: https://api.flutter.dev/flutter/material/FloatingActionButton-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/FloatingActionButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-floating-action-button.png
   hoverBackground:
@@ -1257,7 +1257,7 @@
   subcategories:
     - 'Actions'
     - 'Buttons'
-  link: https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.extended.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/FloatingActionButton/FloatingActionButton.extended.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-extended-fab.png
   hoverBackground:
@@ -1365,7 +1365,7 @@
   subcategories:
     - 'Actions'
     - 'Buttons'
-  link: https://api.flutter.dev/flutter/material/IconButton-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/IconButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-icon-button.png
   hoverBackground:
@@ -1444,7 +1444,7 @@
   subcategories:
     - 'Communication'
     - 'Information displays'
-  link: https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/LinearProgressIndicator-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-progress-indicator.png
   hoverBackground:
@@ -1457,7 +1457,7 @@
   subcategories:
     - 'Containment'
     - 'Layout'
-  link: https://api.flutter.dev/flutter/material/ListTile-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/ListTile-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-list.png
   hoverBackground:
@@ -1496,7 +1496,7 @@
   categories: []
   subcategories:
     - 'App structure and navigation'
-  link: https://api.flutter.dev/flutter/material/MaterialApp-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/MaterialApp-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-2-material-app.png
 - name: MatrixTransition
@@ -1517,7 +1517,7 @@
   categories: []
   subcategories:
     - 'Selection'
-  link: https://api.flutter.dev/flutter/material/MenuAnchor-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/MenuAnchor-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-menu.png
   hoverBackground:
@@ -1536,7 +1536,7 @@
   categories: []
   subcategories:
     - 'Navigation'
-  link: https://api.flutter.dev/flutter/material/NavigationBar-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/NavigationBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-navigation-bar.png
   hoverBackground:
@@ -1548,7 +1548,7 @@
   categories: []
   subcategories:
     - 'Navigation'
-  link: https://api.flutter.dev/flutter/material/NavigationDrawer-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/NavigationDrawer-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-navigation-drawer.png
   hoverBackground:
@@ -1560,7 +1560,7 @@
   categories: []
   subcategories:
     - 'Navigation'
-  link: https://api.flutter.dev/flutter/material/NavigationRail-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/NavigationRail-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-navigation-rail.png
   hoverBackground:
@@ -1621,7 +1621,7 @@
   categories: []
   subcategories:
     - 'Buttons'
-  link: https://api.flutter.dev/flutter/material/OutlinedButton-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/OutlinedButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-outlined-button.png
 - name: OverflowBar
@@ -1687,7 +1687,7 @@
   categories: []
   subcategories:
     - 'Buttons'
-  link: https://api.flutter.dev/flutter/material/PopupMenuButton-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/PopupMenuButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-popup-menu-button.png
 - name: PositionedTransition
@@ -1707,7 +1707,7 @@
   subcategories:
     - 'Selection'
     - 'Input and selections'
-  link: https://api.flutter.dev/flutter/material/Radio-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Radio-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-radio-button.png
   hoverBackground:
@@ -1733,7 +1733,7 @@
   categories:
     - 'Scrolling'
   subcategories: []
-  link: https://api.flutter.dev/flutter/material/RefreshIndicator-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/RefreshIndicator-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-2-refresh-indicator.png
 - name: RelativePositionedTransition
@@ -1749,7 +1749,7 @@
   categories:
     - 'Scrolling'
   subcategories: []
-  link: https://api.flutter.dev/flutter/material/ReorderableListView-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/ReorderableListView-class.html
 - name: RepeatingAnimationBuilder
   description: >-
     A widget that animates an Animatable value and repeats indefinitely.
@@ -1811,7 +1811,7 @@
     - 'Basics'
   subcategories:
     - 'App structure and navigation'
-  link: https://api.flutter.dev/flutter/material/Scaffold-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Scaffold-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-2-scaffold.png
 - name: ScaleTransition
@@ -1844,7 +1844,7 @@
   categories:
     - 'Scrolling'
   subcategories: []
-  link: https://api.flutter.dev/flutter/material/Scrollbar-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Scrollbar-class.html
 - name: SegmentedButton
   description: >-
     Single or multiple selected clickable blocks to help people select options,
@@ -1852,7 +1852,7 @@
   categories: []
   subcategories:
     - 'Actions'
-  link: https://api.flutter.dev/flutter/material/SegmentedButton-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/SegmentedButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-segmented-button.png
   hoverBackground:
@@ -1874,7 +1874,7 @@
   categories: []
   subcategories:
     - 'Dialogs, alerts, and panels'
-  link: https://api.flutter.dev/flutter/material/SimpleDialog-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/SimpleDialog-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-2-simple-dialog.png
 - name: SingleChildScrollView
@@ -1937,7 +1937,7 @@
   subcategories:
     - 'Selection'
     - 'Input and selections'
-  link: https://api.flutter.dev/flutter/material/Slider-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Slider-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-slider.png
   hoverBackground:
@@ -1949,7 +1949,7 @@
   subcategories:
     - 'App structure and navigation'
     - 'Sliver widgets'
-  link: https://api.flutter.dev/flutter/material/SliverAppBar-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/SliverAppBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-app-bar.png
 - name: SliverChildBuilderDelegate
@@ -2033,7 +2033,7 @@
   subcategories:
     - 'Communication'
     - 'Dialogs, alerts, and panels'
-  link: https://api.flutter.dev/flutter/material/SnackBar-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/SnackBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-snackbar.png
   hoverBackground:
@@ -2062,7 +2062,7 @@
   categories: []
   subcategories:
     - 'Layout'
-  link: https://api.flutter.dev/flutter/material/Stepper-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Stepper-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-2-stepper.png
 - name: StreamBuilder
@@ -2079,7 +2079,7 @@
   subcategories:
     - 'Selection'
     - 'Input and selections'
-  link: https://api.flutter.dev/flutter/material/Switch-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Switch-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-switch.png
   hoverBackground:
@@ -2092,7 +2092,7 @@
   subcategories:
     - 'Navigation'
     - 'App structure and navigation'
-  link: https://api.flutter.dev/flutter/material/TabBar-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/TabBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-tab-bar.png
   hoverBackground:
@@ -2104,7 +2104,7 @@
   categories: []
   subcategories:
     - 'App structure and navigation'
-  link: https://api.flutter.dev/flutter/material/TabBarView-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/TabBarView-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-tab-bar.png
 - name: TabController
@@ -2112,7 +2112,7 @@
   categories: []
   subcategories:
     - 'App structure and navigation'
-  link: https://api.flutter.dev/flutter/material/TabController-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/TabController-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-tab-bar.png
 - name: TabPageSelector
@@ -2122,7 +2122,7 @@
   categories: []
   subcategories:
     - 'App structure and navigation'
-  link: https://api.flutter.dev/flutter/material/TabPageSelector-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/TabPageSelector-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-tab-bar.png
 - name: Table
@@ -2151,7 +2151,7 @@
   categories: []
   subcategories:
     - 'Buttons'
-  link: https://api.flutter.dev/flutter/material/TextButton-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/TextButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-2-text-button.png
 - name: TextField
@@ -2161,7 +2161,7 @@
   subcategories:
     - 'Text inputs'
     - 'Input and selections'
-  link: https://api.flutter.dev/flutter/material/TextField-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/TextField-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-text-field.png
   hoverBackground:
@@ -2173,13 +2173,13 @@
   categories:
     - 'Styling'
   subcategories: []
-  link: https://api.flutter.dev/flutter/material/Theme-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Theme-class.html
 - name: TimePicker
   description: Clock interface used to select and set a specific time.
   categories: []
   subcategories:
     - 'Selection'
-  link: https://api.flutter.dev/flutter/material/showTimePicker.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/showTimePicker.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-time-picker.png
   hoverBackground:
@@ -2193,7 +2193,7 @@
   categories: []
   subcategories:
     - 'Information displays'
-  link: https://api.flutter.dev/flutter/material/Tooltip-class.html
+  link: https://pub.dev/documentation/material_ui/latest/material_ui/Tooltip-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-tooltip.png
 - name: Transform

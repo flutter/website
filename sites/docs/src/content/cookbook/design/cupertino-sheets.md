@@ -140,4 +140,4 @@ class CupertinoSheetPage extends StatelessWidget {
 }
 ```
 
-[`showCupertinoSheet`]: {{site.api}}/flutter/cupertino/showCupertinoSheet.html
+[`showCupertinoSheet`]: {{site.cupertino_ui}}/showCupertinoSheet.html

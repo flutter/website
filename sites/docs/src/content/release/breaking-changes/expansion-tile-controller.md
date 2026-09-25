@@ -83,9 +83,9 @@ Relevant PRs:
 * [Introduce Expansible, a base widget for ExpansionTile][]
 * [Deprecate ExpansionTileController][]
 
-[`ExpansionTileController`]: {{site.api}}/flutter/material/ExpansionTileController-class.html
+[`ExpansionTileController`]: {{site.material_ui}}/ExpansionTileController-class.html
 [`ExpansibleController`]: {{site.api}}/flutter/widgets/ExpansibleController-class.html
-[`ExpansionTile.controller`]: {{site.api}}/flutter/material/ExpansionTile/controller.html
+[`ExpansionTile.controller`]: {{site.material_ui}}/ExpansionTile/controller.html
 [`Expansible.controller`]: {{site.api}}/flutter/widgets/Expansible/controller.html
 
 [Codeshare between ExpansionTile and its Cupertino variant]: {{site.repo.flutter}}/issues/163552

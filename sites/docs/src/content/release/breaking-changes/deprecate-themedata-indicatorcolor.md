@@ -74,10 +74,10 @@ Relevant PRs:
 
 - [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
 
-[`ThemeData.indicatorColor`]: {{site.api}}/flutter/material/ThemeData/indicatorColor.html
-[`ThemeData.useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
-[`TabBarThemeData.indicatorColor`]: {{site.api}}/flutter/material/TabBarThemeData/indicatorColor.html
-[`TabBarThemeData`]: {{site.api}}/flutter/material/TabBarThemeData-class.html
-[`TabBar`]: {{site.api}}/flutter/material/TabBar-class.html
+[`ThemeData.indicatorColor`]: {{site.material_ui}}/ThemeData/indicatorColor.html
+[`ThemeData.useMaterial3`]: {{site.material_ui}}/ThemeData/useMaterial3.html
+[`TabBarThemeData.indicatorColor`]: {{site.material_ui}}/TabBarThemeData/indicatorColor.html
+[`TabBarThemeData`]: {{site.material_ui}}/TabBarThemeData-class.html
+[`TabBar`]: {{site.material_ui}}/TabBar-class.html
 [Issue #91772]: {{site.repo.flutter}}/issues/91772
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: {{site.repo.flutter}}/pull/160024

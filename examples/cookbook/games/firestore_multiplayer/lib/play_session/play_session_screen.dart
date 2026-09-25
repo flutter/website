@@ -1,6 +1,6 @@
 // ignore_for_file: directives_ordering
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material.dart';
 import 'package:logging/logging.dart' hide Level;
 import 'package:provider/provider.dart';
 
