@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-00000000001e",
+  "task_name": "google/flutter-custom-render-object",
+  "trial_name": "flutter-custom-render-object__t30-gpt-4o",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-custom-render-object__t30-gpt-4o",
+  "task_id": {
+    "path": "dataset/flutter-custom-render-object"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-custom-render-object"
+    },
+    "trial_name": "flutter-custom-render-object__t30-gpt-4o",
+    "eval_key": "codex-agent__gpt-4o__adhoc",
+    "agent": {
+      "name": "codex-agent",
+      "model_name": "openai/gpt-4o",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "codex-agent",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "gpt-4o",
+      "provider": "openai"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 78669,
+    "n_cache_tokens": 54055,
+    "n_output_tokens": 3312,
+    "cost_usd": 0.2298
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.47
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:42:30.000000Z",
+  "finished_at": "2026-09-09T19:44:37.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:42:30.000000Z",
+    "finished_at": "2026-09-09T19:42:40.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:42:40.000000Z",
+    "finished_at": "2026-09-09T19:42:50.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:42:50.000000Z",
+    "finished_at": "2026-09-09T19:44:07.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:44:07.000000Z",
+    "finished_at": "2026-09-09T19:44:37.000000Z"
+  }
+}

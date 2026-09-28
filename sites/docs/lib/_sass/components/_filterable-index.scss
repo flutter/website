@@ -129,7 +129,7 @@ $mobile-breakpoint: 839px;
     flex-direction: column;
 
     button.show-filters-button {
-      @media (min-width: $mobile-breakpoint + 1) {
+      @media (min-width: calc($mobile-breakpoint + 1px)) {
         display: none;
       }
     }

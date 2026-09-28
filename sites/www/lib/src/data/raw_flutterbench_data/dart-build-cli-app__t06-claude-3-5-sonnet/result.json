@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-000000000006",
+  "task_name": "google/dart-build-cli-app",
+  "trial_name": "dart-build-cli-app__t06-claude-3-5-sonnet",
+  "trial_uri": "file:///workspace/jobs/mock/dart-build-cli-app__t06-claude-3-5-sonnet",
+  "task_id": {
+    "path": "dataset/dart-build-cli-app"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/dart-build-cli-app"
+    },
+    "trial_name": "dart-build-cli-app__t06-claude-3-5-sonnet",
+    "eval_key": "claude-code__claude-3-5-sonnet__adhoc",
+    "agent": {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-3-5-sonnet",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "claude-code",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "claude-3-5-sonnet",
+      "provider": "anthropic"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 76557,
+    "n_cache_tokens": 57509,
+    "n_output_tokens": 3548,
+    "cost_usd": 0.2829
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.79
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:08:30.000000Z",
+  "finished_at": "2026-09-09T19:10:40.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:08:30.000000Z",
+    "finished_at": "2026-09-09T19:08:40.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:08:40.000000Z",
+    "finished_at": "2026-09-09T19:08:50.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:08:50.000000Z",
+    "finished_at": "2026-09-09T19:10:16.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:10:16.000000Z",
+    "finished_at": "2026-09-09T19:10:40.000000Z"
+  }
+}

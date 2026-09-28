@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-000000000031",
+  "task_name": "google/flutter-adaptive-material-cupertino",
+  "trial_name": "flutter-adaptive-material-cupertino__t49-gemini-31-flash-lite",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-adaptive-material-cupertino__t49-gemini-31-flash-lite",
+  "task_id": {
+    "path": "dataset/flutter-adaptive-material-cupertino"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-adaptive-material-cupertino"
+    },
+    "trial_name": "flutter-adaptive-material-cupertino__t49-gemini-31-flash-lite",
+    "eval_key": "gemini-cli__gemini-3.1-flash-lite__adhoc",
+    "agent": {
+      "name": "gemini-cli",
+      "model_name": "google/gemini-3.1-flash-lite",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "gemini-cli",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "gemini-3.1-flash-lite",
+      "provider": "google"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 52949,
+    "n_cache_tokens": 41880,
+    "n_output_tokens": 1833,
+    "cost_usd": 0.0015
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.28
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T20:09:25.000000Z",
+  "finished_at": "2026-09-09T20:12:14.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T20:09:25.000000Z",
+    "finished_at": "2026-09-09T20:09:35.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T20:09:35.000000Z",
+    "finished_at": "2026-09-09T20:09:45.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T20:09:45.000000Z",
+    "finished_at": "2026-09-09T20:11:49.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T20:11:49.000000Z",
+    "finished_at": "2026-09-09T20:12:14.000000Z"
+  }
+}

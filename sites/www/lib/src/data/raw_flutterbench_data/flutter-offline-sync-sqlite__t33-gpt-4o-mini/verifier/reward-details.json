@@ -1,0 +1,110 @@
+{
+  "reward": {
+    "score": 0.39,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "outcome",
+        "value": 0.38,
+        "raw": true,
+        "weight": 0.6,
+        "description": "Functional correctness and test completion (38%)."
+      },
+      {
+        "name": "quality",
+        "value": 0.33,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Static analysis, clean architecture, and idioms (33%)."
+      },
+      {
+        "name": "dx",
+        "value": 0.63,
+        "raw": true,
+        "weight": 0.1,
+        "description": "Tool adherence and trajectory velocity (63%)."
+      }
+    ]
+  },
+  "outcome": {
+    "score": 0.38,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "sqlite_migrations",
+        "value": 0.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Schema migration and SQLite table initialization."
+      },
+      {
+        "name": "sync_queue_tests",
+        "value": 0.38,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Background sync queue and mutation synchronization."
+      },
+      {
+        "name": "conflict_resolution",
+        "value": 0.38,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Conflict resolution strategy using timestamp heuristics."
+      }
+    ]
+  },
+  "quality": {
+    "score": 0.33,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "StaticAnalysisGrader",
+        "value": 0.33,
+        "raw": true,
+        "weight": 0.5,
+        "description": "7 linter warnings detected."
+      },
+      {
+        "name": "structural_validation",
+        "value": 0.6,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Clean separation of concerns and architectural layers."
+      },
+      {
+        "name": "idiomatic_review",
+        "value": 0.33,
+        "raw": true,
+        "weight": 0.2,
+        "description": "Dart 3 idioms (pattern matching, records, sealed classes) adherence."
+      }
+    ]
+  },
+  "dx": {
+    "score": 0.63,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "tool_usage",
+        "value": 0.44099999999999995,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Standard command-line execution without language server telemetry."
+      },
+      {
+        "name": "trajectory",
+        "value": 0.63,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Multiple retry cycles before settling on solution."
+      },
+      {
+        "name": "error_recovery",
+        "value": 0.63,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Fast turnaround from initial compile warnings to clean build."
+      }
+    ]
+  }
+}

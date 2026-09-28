@@ -34,6 +34,13 @@ import 'src/pages/ecosystem_page.dart';
 import 'src/pages/embedded_page.dart';
 import 'src/pages/events_page.dart';
 import 'src/pages/flip_page.dart';
+import 'src/pages/flutter_bench/flutterbench_cujs_page.dart';
+import 'src/pages/flutter_bench/flutterbench_leaderboard_page.dart';
+import 'src/pages/flutter_bench/flutterbench_methodology_page.dart';
+import 'src/pages/flutter_bench/flutterbench_models_page.dart';
+import 'src/pages/flutter_bench/flutterbench_task_detail_page.dart';
+import 'src/pages/flutter_bench/flutterbench_tasks_page.dart';
+import 'src/pages/flutter_bench/flutterbench_trial_detail_page.dart';
 import 'src/pages/games_page.dart';
 import 'src/pages/google_integrations_page.dart';
 import 'src/pages/home_page.dart';
@@ -128,6 +135,34 @@ void main() {
           defineComponent('FlipPage', const FlipPage()),
           defineComponent('NewsPage', const NewsPage()),
           defineComponent('WhyFlutterPage', const WhyFlutterPage()),
+          defineComponent(
+            'FlutterBenchLeaderboardPage',
+            const FlutterBenchLeaderboardPage(),
+          ),
+          defineComponent(
+            'FlutterBenchModelsPage',
+            const FlutterBenchModelsPage(),
+          ),
+          defineComponent(
+            'FlutterBenchTasksPage',
+            const FlutterBenchTasksPage(),
+          ),
+          defineComponent(
+            'FlutterBenchMethodologyPage',
+            const FlutterBenchMethodologyPage(),
+          ),
+          defineComponent(
+            'FlutterBenchCujsPage',
+            const FlutterBenchCujsPage(),
+          ),
+          defineComponentWithAttrs(
+            'FlutterBenchTaskDetailPage',
+            FlutterBenchTaskDetailPage.fromAttrs,
+          ),
+          defineComponentWithAttrs(
+            'FlutterBenchTrialDetailPage',
+            FlutterBenchTrialDetailPage.fromAttrs,
+          ),
           defineComponentWithAttrs('Image', Image.fromAttrs),
 
           CustomComponent(

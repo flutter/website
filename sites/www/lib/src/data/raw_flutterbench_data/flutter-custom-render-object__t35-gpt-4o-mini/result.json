@@ -1,0 +1,53 @@
+{
+  "id": "11111111-2222-4333-8444-000000000023",
+  "task_name": "google/flutter-custom-render-object",
+  "trial_name": "flutter-custom-render-object__t35-gpt-4o-mini",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-custom-render-object__t35-gpt-4o-mini",
+  "task_id": {
+    "path": "dataset/flutter-custom-render-object"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-custom-render-object"
+    },
+    "trial_name": "flutter-custom-render-object__t35-gpt-4o-mini",
+    "eval_key": "codex-agent__gpt-4o-mini__adhoc",
+    "agent": {
+      "name": "codex-agent",
+      "model_name": "openai/gpt-4o-mini",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "codex-agent",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "gpt-4o-mini",
+      "provider": "openai"
+    }
+  },
+  "agent_result": null,
+  "verifier_result": null,
+  "exception_info": {
+    "exception_type": "AgentTimeoutError",
+    "exception_message": "Agent exceeded maximum timeout of 300.0 seconds during execution.",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"harbor/trial/trial.py\", line 1455, in _execute_agent\n    raise TimeoutError(\"Agent exceeded timeout of 300.0s\")\nTimeoutError: Agent exceeded timeout of 300.0s\n",
+    "occurred_at": "2026-09-09T19:55:00.000000Z"
+  },
+  "started_at": "2026-09-09T19:49:35.000000Z",
+  "finished_at": "2026-09-09T19:55:21.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:49:35.000000Z",
+    "finished_at": "2026-09-09T19:49:45.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:49:45.000000Z",
+    "finished_at": "2026-09-09T19:49:55.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:49:55.000000Z",
+    "finished_at": "2026-09-09T19:55:00.000000Z"
+  },
+  "verifier": null
+}

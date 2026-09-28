@@ -1,0 +1,66 @@
+{
+  "id": "11111111-2222-4333-8444-000000000010",
+  "task_name": "google/dart-build-cli-app",
+  "trial_name": "dart-build-cli-app__t16-o3",
+  "trial_uri": "file:///workspace/jobs/mock/dart-build-cli-app__t16-o3",
+  "task_id": {
+    "path": "dataset/dart-build-cli-app"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/dart-build-cli-app"
+    },
+    "trial_name": "dart-build-cli-app__t16-o3",
+    "eval_key": "codex-agent__o3__adhoc",
+    "agent": {
+      "name": "codex-agent",
+      "model_name": "openai/o3",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    }
+  },
+  "agent_info": {
+    "name": "codex-agent",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "o3",
+      "provider": "openai"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 121468,
+    "n_cache_tokens": 82862,
+    "n_output_tokens": 6073,
+    "cost_usd": 0.7288
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.97
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:22:40.000000Z",
+  "finished_at": "2026-09-09T19:25:03.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:22:40.000000Z",
+    "finished_at": "2026-09-09T19:22:50.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:22:50.000000Z",
+    "finished_at": "2026-09-09T19:23:00.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:23:00.000000Z",
+    "finished_at": "2026-09-09T19:24:31.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:24:31.000000Z",
+    "finished_at": "2026-09-09T19:25:03.000000Z"
+  }
+}

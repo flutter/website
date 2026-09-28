@@ -1,0 +1,26 @@
+[
+  {
+    "source": "lib/data/local_database.dart",
+    "destination": "artifacts/workspace/lib/data/local_database.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/repositories/sync_repository.dart",
+    "destination": "artifacts/workspace/lib/repositories/sync_repository.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/models/sync_item.dart",
+    "destination": "artifacts/workspace/lib/models/sync_item.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "test/sync_repository_test.dart",
+    "destination": "artifacts/workspace/test/sync_repository_test.dart",
+    "type": "file",
+    "status": "ok"
+  }
+]

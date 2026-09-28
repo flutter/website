@@ -1,0 +1,32 @@
+[
+  {
+    "source": "lib/bloc/counter_bloc.dart",
+    "destination": "artifacts/workspace/lib/bloc/counter_bloc.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/bloc/counter_event.dart",
+    "destination": "artifacts/workspace/lib/bloc/counter_event.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/bloc/counter_state.dart",
+    "destination": "artifacts/workspace/lib/bloc/counter_state.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "lib/main.dart",
+    "destination": "artifacts/workspace/lib/main.dart",
+    "type": "file",
+    "status": "ok"
+  },
+  {
+    "source": "test/counter_bloc_test.dart",
+    "destination": "artifacts/workspace/test/counter_bloc_test.dart",
+    "type": "file",
+    "status": "ok"
+  }
+]

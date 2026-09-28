@@ -18,6 +18,7 @@ final List<NavItem> headerNavItems = [
     ],
     secondColumn: [
       NavLink(label: 'AI', href: '/ai'),
+      NavLink(label: 'FlutterBench', href: '/ai/flutterbench'),
       NavLink(label: 'Google integrations', href: '/google-integrations'),
       NavLink(label: 'Game development', href: '/games'),
       NavLink(label: 'Monetization', href: '/monetization'),

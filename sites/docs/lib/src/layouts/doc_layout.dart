@@ -42,6 +42,10 @@ class DocLayout extends FlutterDocsLayout {
     );
   }
 
+  /// Builds an optional component to render at the top of the
+  /// `.after-leading-content` container, before the side menu and article.
+  Component? buildLeadingContent(Page page) => null;
+
   @override
   Component buildBody(Page page, Component child) {
     final pageData = page.data.page;
@@ -49,6 +53,9 @@ class DocLayout extends FlutterDocsLayout {
     final pageTitle = pageData['title'] as String;
     final pageDescription = (pageData['description'] as String?)?.trim();
     final navigationData = page.navigationData;
+    
+    // Always show page header unless explicitly hidden.
+    final showPageHeading = (pageData['showPageHeader'] as bool?) ?? true;
 
     return super.buildBody(
       page,
@@ -67,6 +74,7 @@ class DocLayout extends FlutterDocsLayout {
                 PageNavBar(navigationData),
               ],
             ),
+          ?buildLeadingContent(page),
           ?buildBanner(page),
           div(classes: 'after-leading-content', [
             if (navigationData case PageNavigationData(
@@ -77,11 +85,12 @@ class DocLayout extends FlutterDocsLayout {
                 DashTableOfContents(toc),
               ]),
             article([
-              PageHeader(
-                title: pageTitle,
-                description: pageDescription,
-                showBreadcrumbs: showBreadcrumbsFor(page),
-              ),
+              if (showPageHeading)
+                PageHeader(
+                  title: pageTitle,
+                  description: pageDescription,
+                  showBreadcrumbs: showBreadcrumbsFor(page),
+                ),
 
               child,
               PrevNext(

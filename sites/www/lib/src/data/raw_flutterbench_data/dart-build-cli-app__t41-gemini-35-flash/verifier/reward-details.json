@@ -1,0 +1,103 @@
+{
+  "reward": {
+    "score": 0.93,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "outcome",
+        "value": 0.94,
+        "raw": true,
+        "weight": 0.6,
+        "description": "Functional correctness and test completion (94%)."
+      },
+      {
+        "name": "quality",
+        "value": 0.92,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Static analysis, clean architecture, and idioms (92%)."
+      },
+      {
+        "name": "dx",
+        "value": 0.9,
+        "raw": true,
+        "weight": 0.1,
+        "description": "Tool adherence and trajectory velocity (90%)."
+      }
+    ]
+  },
+  "outcome": {
+    "score": 0.94,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "dart_compile:exe",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Executable compiled with dart compile exe."
+      },
+      {
+        "name": "cli_flag_tests",
+        "value": 0.94,
+        "raw": true,
+        "weight": 0.7,
+        "description": "Flag parsing tests for --help, --version, --verbose, and --format=json."
+      }
+    ]
+  },
+  "quality": {
+    "score": 0.92,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "StaticAnalysisGrader",
+        "value": 0.92,
+        "raw": true,
+        "weight": 0.5,
+        "description": "Zero static analysis issues found."
+      },
+      {
+        "name": "structural_validation",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Clean separation of concerns and architectural layers."
+      },
+      {
+        "name": "idiomatic_review",
+        "value": 0.92,
+        "raw": true,
+        "weight": 0.2,
+        "description": "Dart 3 idioms (pattern matching, records, sealed classes) adherence."
+      }
+    ]
+  },
+  "dx": {
+    "score": 0.9,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "tool_usage",
+        "value": 0.9,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Dart MCP tools (analyze_files, dtd, hot_reload) utilized efficiently."
+      },
+      {
+        "name": "trajectory",
+        "value": 0.9,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Linear problem-solving without excessive tool backtracking."
+      },
+      {
+        "name": "error_recovery",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Fast turnaround from initial compile warnings to clean build."
+      }
+    ]
+  }
+}

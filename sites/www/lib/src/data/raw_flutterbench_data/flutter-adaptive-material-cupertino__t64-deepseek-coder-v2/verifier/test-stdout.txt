@@ -1,0 +1,7 @@
+00:00 +0: loading tests/graders.dart
+00:01 +1: Environment setup verification passed.
+00:02 +2: Task codebase compilation check.
+00:03 +3: 3/5 Adaptive Material & Cupertino UI tests passed.
+00:04 +3 -1: 2 edge-case assertions failed.
+00:05 +4: Static analysis completed with minor hints.
+Overall result: PARTIAL (Score: 0.5)

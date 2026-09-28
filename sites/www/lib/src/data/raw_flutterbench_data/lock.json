@@ -1,0 +1,661 @@
+{
+  "schema_version": 3,
+  "created_at": "2026-09-09T19:00:00.000000Z",
+  "harbor": {
+    "version": "0.22.0",
+    "is_editable": false
+  },
+  "n_concurrent_trials": 4,
+  "trials": [
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task1"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task2"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task3"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task4"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task5"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task6"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task7"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task8"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task9"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task10"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task11"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task12"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task13"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task14"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task15"
+      },
+      "agent": {
+        "name": "claude-code"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task16"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task17"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task18"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task19"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task20"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task21"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task22"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task23"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task24"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task25"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task26"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task27"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task28"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task29"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task30"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task31"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task32"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task33"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task34"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task35"
+      },
+      "agent": {
+        "name": "codex-agent"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task36"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task37"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task38"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task39"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task40"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task41"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task42"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task43"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task44"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task45"
+      },
+      "agent": {
+        "name": "antigravity-sdk"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task46"
+      },
+      "agent": {
+        "name": "gemini-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task47"
+      },
+      "agent": {
+        "name": "gemini-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task48"
+      },
+      "agent": {
+        "name": "gemini-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task49"
+      },
+      "agent": {
+        "name": "gemini-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task50"
+      },
+      "agent": {
+        "name": "gemini-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task51"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task52"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task53"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task54"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task55"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task56"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task57"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task58"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task59"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task60"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "dart-build-cli-app",
+        "digest": "sha256:task61"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-manage-state-with-bloc",
+        "digest": "sha256:task62"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-offline-sync-sqlite",
+        "digest": "sha256:task63"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-adaptive-material-cupertino",
+        "digest": "sha256:task64"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    },
+    {
+      "schema_version": 2,
+      "task": {
+        "name": "flutter-custom-render-object",
+        "digest": "sha256:task65"
+      },
+      "agent": {
+        "name": "deepseek-cli"
+      }
+    }
+  ]
+}

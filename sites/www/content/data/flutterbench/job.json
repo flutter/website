@@ -1,0 +1,610 @@
+{
+  "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+  "started_at": "2026-09-09T19:00:00.000000",
+  "finished_at": "2026-09-09T22:30:00.000000",
+  "n_total_trials": 65,
+  "n_completed_trials": 62,
+  "n_errored_trials": 3,
+  "cost_usd": 10.6607,
+  "n_input_tokens": 5284692,
+  "n_cache_tokens": 3823561,
+  "n_output_tokens": 229186,
+  "top_model_name": "claude-3-7-sonnet",
+  "top_model_reward": 0.89,
+  "overall_average_reward": 0.6999999999999998,
+  "evals": [
+    {
+      "eval_key": "claude-code__claude-3-7-sonnet__adhoc",
+      "agent_name": "claude-code",
+      "model_name": "claude-3-7-sonnet",
+      "model_short_name": "claude-3-7-sonnet",
+      "provider": "Anthropic",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.89,
+      "outcome_score": 0.89,
+      "quality_score": 0.88,
+      "dx_score": 0.92,
+      "min_reward": 0.71,
+      "max_reward": 0.98,
+      "median_reward": 0.93,
+      "pass_at_1": 0.8,
+      "cost_usd": 1.7532999999999999,
+      "input_tokens": 469581,
+      "output_tokens": 22969,
+      "has_dart_tooling": true,
+      "best_cujs": [
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.98,
+          "status": "pass"
+        },
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.97,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.93,
+          "status": "pass"
+        }
+      ],
+      "worst_cujs": []
+    },
+    {
+      "eval_key": "antigravity-sdk__gemini-3.5-pro__adhoc",
+      "agent_name": "antigravity-sdk",
+      "model_name": "gemini-3.5-pro",
+      "model_short_name": "gemini-3.5-pro",
+      "provider": "Google",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.89,
+      "outcome_score": 0.89,
+      "quality_score": 0.87,
+      "dx_score": 0.95,
+      "min_reward": 0.69,
+      "max_reward": 0.99,
+      "median_reward": 0.91,
+      "pass_at_1": 0.8,
+      "cost_usd": 0.6865999999999999,
+      "input_tokens": 466788,
+      "output_tokens": 20636,
+      "has_dart_tooling": true,
+      "best_cujs": [
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.99,
+          "status": "pass"
+        },
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.98,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.91,
+          "status": "pass"
+        }
+      ],
+      "worst_cujs": []
+    },
+    {
+      "eval_key": "codex-agent__o3__adhoc",
+      "agent_name": "codex-agent",
+      "model_name": "o3",
+      "model_short_name": "o3",
+      "provider": "OpenAI",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.88,
+      "outcome_score": 0.88,
+      "quality_score": 0.88,
+      "dx_score": 0.95,
+      "min_reward": 0.73,
+      "max_reward": 0.97,
+      "median_reward": 0.9,
+      "pass_at_1": 0.8,
+      "cost_usd": 3.4046000000000003,
+      "input_tokens": 567432,
+      "output_tokens": 28371,
+      "has_dart_tooling": true,
+      "best_cujs": [
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.97,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.97,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.9,
+          "status": "pass"
+        }
+      ],
+      "worst_cujs": []
+    },
+    {
+      "eval_key": "codex-agent__gpt-5__adhoc",
+      "agent_name": "codex-agent",
+      "model_name": "gpt-5",
+      "model_short_name": "gpt-5",
+      "provider": "OpenAI",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.87,
+      "outcome_score": 0.87,
+      "quality_score": 0.86,
+      "dx_score": 0.96,
+      "min_reward": 0.72,
+      "max_reward": 0.98,
+      "median_reward": 0.86,
+      "pass_at_1": 0.8,
+      "cost_usd": 1.3166,
+      "input_tokens": 443902,
+      "output_tokens": 20682,
+      "has_dart_tooling": true,
+      "best_cujs": [
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.98,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.97,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.86,
+          "status": "pass"
+        }
+      ],
+      "worst_cujs": []
+    },
+    {
+      "eval_key": "deepseek-cli__deepseek-r1__adhoc",
+      "agent_name": "deepseek-cli",
+      "model_name": "deepseek-r1",
+      "model_short_name": "deepseek-r1",
+      "provider": "DeepSeek",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.86,
+      "outcome_score": 0.85,
+      "quality_score": 0.84,
+      "dx_score": 0.96,
+      "min_reward": 0.72,
+      "max_reward": 0.99,
+      "median_reward": 0.87,
+      "pass_at_1": 0.6,
+      "cost_usd": 0.3379,
+      "input_tokens": 519066,
+      "output_tokens": 23956,
+      "has_dart_tooling": true,
+      "best_cujs": [
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.99,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.94,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.87,
+          "status": "pass"
+        }
+      ],
+      "worst_cujs": []
+    },
+    {
+      "eval_key": "antigravity-sdk__gemini-3.5-flash__adhoc",
+      "agent_name": "antigravity-sdk",
+      "model_name": "gemini-3.5-flash",
+      "model_short_name": "gemini-3.5-flash",
+      "provider": "Google",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.81,
+      "outcome_score": 0.8,
+      "quality_score": 0.78,
+      "dx_score": 0.94,
+      "min_reward": 0.65,
+      "max_reward": 0.93,
+      "median_reward": 0.8,
+      "pass_at_1": 0.6,
+      "cost_usd": 0.0335,
+      "input_tokens": 389376,
+      "output_tokens": 14228,
+      "has_dart_tooling": true,
+      "best_cujs": [
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.93,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.88,
+          "status": "pass"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.8,
+          "status": "pass"
+        }
+      ],
+      "worst_cujs": []
+    },
+    {
+      "eval_key": "claude-code__claude-3-5-sonnet__adhoc",
+      "agent_name": "claude-code",
+      "model_name": "claude-3-5-sonnet",
+      "model_short_name": "claude-3-5-sonnet",
+      "provider": "Anthropic",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.68,
+      "outcome_score": 0.72,
+      "quality_score": 0.62,
+      "dx_score": 0.6,
+      "min_reward": 0.52,
+      "max_reward": 0.79,
+      "median_reward": 0.71,
+      "pass_at_1": 0.0,
+      "cost_usd": 1.4893999999999998,
+      "input_tokens": 403047,
+      "output_tokens": 18679,
+      "has_dart_tooling": false,
+      "best_cujs": [
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.79,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.75,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.71,
+          "status": "partial"
+        }
+      ],
+      "worst_cujs": []
+    },
+    {
+      "eval_key": "codex-agent__gpt-4o__adhoc",
+      "agent_name": "codex-agent",
+      "model_name": "gpt-4o",
+      "model_short_name": "gpt-4o",
+      "provider": "OpenAI",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.62,
+      "outcome_score": 0.66,
+      "quality_score": 0.56,
+      "dx_score": 0.6,
+      "min_reward": 0.47,
+      "max_reward": 0.71,
+      "median_reward": 0.65,
+      "pass_at_1": 0.0,
+      "cost_usd": 1.1506,
+      "input_tokens": 393890,
+      "output_tokens": 16585,
+      "has_dart_tooling": false,
+      "best_cujs": [
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.71,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.69,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.65,
+          "status": "partial"
+        }
+      ],
+      "worst_cujs": [
+        {
+          "task_slug": "flutter-custom-render-object",
+          "task_name": "Custom RenderObject & Canvas",
+          "reward": 0.47,
+          "status": "partial"
+        }
+      ]
+    },
+    {
+      "eval_key": "deepseek-cli__deepseek-v3__adhoc",
+      "agent_name": "deepseek-cli",
+      "model_name": "deepseek-v3",
+      "model_short_name": "deepseek-v3",
+      "provider": "DeepSeek",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.62,
+      "outcome_score": 0.64,
+      "quality_score": 0.57,
+      "dx_score": 0.59,
+      "min_reward": 0.49,
+      "max_reward": 0.71,
+      "median_reward": 0.64,
+      "pass_at_1": 0.0,
+      "cost_usd": 0.0568,
+      "input_tokens": 374478,
+      "output_tokens": 15843,
+      "has_dart_tooling": false,
+      "best_cujs": [
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.71,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.67,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.64,
+          "status": "partial"
+        }
+      ],
+      "worst_cujs": [
+        {
+          "task_slug": "flutter-custom-render-object",
+          "task_name": "Custom RenderObject & Canvas",
+          "reward": 0.49,
+          "status": "partial"
+        }
+      ]
+    },
+    {
+      "eval_key": "deepseek-cli__deepseek-coder-v2__adhoc",
+      "agent_name": "deepseek-cli",
+      "model_name": "deepseek-coder-v2",
+      "model_short_name": "deepseek-coder-v2",
+      "provider": "DeepSeek",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.53,
+      "outcome_score": 0.55,
+      "quality_score": 0.47,
+      "dx_score": 0.61,
+      "min_reward": 0.42,
+      "max_reward": 0.61,
+      "median_reward": 0.55,
+      "pass_at_1": 0.0,
+      "cost_usd": 0.0548,
+      "input_tokens": 361781,
+      "output_tokens": 14778,
+      "has_dart_tooling": false,
+      "best_cujs": [
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.61,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.59,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.55,
+          "status": "partial"
+        }
+      ],
+      "worst_cujs": [
+        {
+          "task_slug": "flutter-custom-render-object",
+          "task_name": "Custom RenderObject & Canvas",
+          "reward": 0.42,
+          "status": "partial"
+        }
+      ]
+    },
+    {
+      "eval_key": "claude-code__claude-3-5-haiku__adhoc",
+      "agent_name": "claude-code",
+      "model_name": "claude-3-5-haiku",
+      "model_short_name": "claude-3-5-haiku",
+      "provider": "Anthropic",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 0,
+      "mean_reward": 0.48,
+      "outcome_score": 0.49,
+      "quality_score": 0.42,
+      "dx_score": 0.62,
+      "min_reward": 0.36,
+      "max_reward": 0.56,
+      "median_reward": 0.48,
+      "pass_at_1": 0.0,
+      "cost_usd": 0.3188,
+      "input_tokens": 334612,
+      "output_tokens": 12794,
+      "has_dart_tooling": false,
+      "best_cujs": [
+        {
+          "task_slug": "dart-build-cli-app",
+          "task_name": "Build Command-Line CLI App",
+          "reward": 0.56,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": 0.55,
+          "status": "partial"
+        }
+      ],
+      "worst_cujs": [
+        {
+          "task_slug": "flutter-custom-render-object",
+          "task_name": "Custom RenderObject & Canvas",
+          "reward": 0.36,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-adaptive-material-cupertino",
+          "task_name": "Adaptive Material & Cupertino UI",
+          "reward": 0.45,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.48,
+          "status": "partial"
+        }
+      ]
+    },
+    {
+      "eval_key": "codex-agent__gpt-4o-mini__adhoc",
+      "agent_name": "codex-agent",
+      "model_name": "gpt-4o-mini",
+      "model_short_name": "gpt-4o-mini",
+      "provider": "OpenAI",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 1,
+      "mean_reward": 0.43,
+      "outcome_score": 0.43,
+      "quality_score": 0.38,
+      "dx_score": 0.61,
+      "min_reward": 0.39,
+      "max_reward": 0.48,
+      "median_reward": 0.46,
+      "pass_at_1": 0.0,
+      "cost_usd": 0.039900000000000005,
+      "input_tokens": 233248,
+      "output_tokens": 8276,
+      "has_dart_tooling": false,
+      "best_cujs": [],
+      "worst_cujs": [
+        {
+          "task_slug": "flutter-custom-render-object",
+          "task_name": "Custom RenderObject & Canvas",
+          "reward": null,
+          "status": "error"
+        },
+        {
+          "task_slug": "flutter-adaptive-material-cupertino",
+          "task_name": "Adaptive Material & Cupertino UI",
+          "reward": 0.39,
+          "status": "partial"
+        },
+        {
+          "task_slug": "flutter-offline-sync-sqlite",
+          "task_name": "Offline SQLite Sync Repository",
+          "reward": 0.39,
+          "status": "partial"
+        }
+      ]
+    },
+    {
+      "eval_key": "gemini-cli__gemini-3.1-flash-lite__adhoc",
+      "agent_name": "gemini-cli",
+      "model_name": "gemini-3.1-flash-lite",
+      "model_short_name": "gemini-3.1-flash-lite",
+      "provider": "Google",
+      "variant": "adhoc",
+      "n_trials": 5,
+      "n_errors": 2,
+      "mean_reward": 0.33,
+      "outcome_score": 0.32,
+      "quality_score": 0.28,
+      "dx_score": 0.57,
+      "min_reward": 0.28,
+      "max_reward": 0.39,
+      "median_reward": 0.33,
+      "pass_at_1": 0.0,
+      "cost_usd": 0.0045000000000000005,
+      "input_tokens": 160224,
+      "output_tokens": 5547,
+      "has_dart_tooling": false,
+      "best_cujs": [],
+      "worst_cujs": [
+        {
+          "task_slug": "flutter-manage-state-with-bloc",
+          "task_name": "Manage State with BLoC",
+          "reward": null,
+          "status": "error"
+        },
+        {
+          "task_slug": "flutter-custom-render-object",
+          "task_name": "Custom RenderObject & Canvas",
+          "reward": null,
+          "status": "error"
+        },
+        {
+          "task_slug": "flutter-adaptive-material-cupertino",
+          "task_name": "Adaptive Material & Cupertino UI",
+          "reward": 0.28,
+          "status": "partial"
+        }
+      ]
+    }
+  ]
+}

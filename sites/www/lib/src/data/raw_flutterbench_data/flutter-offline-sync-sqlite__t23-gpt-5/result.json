@@ -1,0 +1,66 @@
+{
+  "id": "11111111-2222-4333-8444-000000000017",
+  "task_name": "google/flutter-offline-sync-sqlite",
+  "trial_name": "flutter-offline-sync-sqlite__t23-gpt-5",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-offline-sync-sqlite__t23-gpt-5",
+  "task_id": {
+    "path": "dataset/flutter-offline-sync-sqlite"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-offline-sync-sqlite"
+    },
+    "trial_name": "flutter-offline-sync-sqlite__t23-gpt-5",
+    "eval_key": "codex-agent__gpt-5__adhoc",
+    "agent": {
+      "name": "codex-agent",
+      "model_name": "openai/gpt-5",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    }
+  },
+  "agent_info": {
+    "name": "codex-agent",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "gpt-5",
+      "provider": "openai"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 88953,
+    "n_cache_tokens": 62264,
+    "n_output_tokens": 4144,
+    "cost_usd": 0.2638
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.86
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:32:35.000000Z",
+  "finished_at": "2026-09-09T19:34:26.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:32:35.000000Z",
+    "finished_at": "2026-09-09T19:32:45.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:32:45.000000Z",
+    "finished_at": "2026-09-09T19:32:55.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:32:55.000000Z",
+    "finished_at": "2026-09-09T19:34:06.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:34:06.000000Z",
+    "finished_at": "2026-09-09T19:34:26.000000Z"
+  }
+}
