@@ -44,7 +44,7 @@ compile and debug native Swift and Objective-C code.
     ```
 
     If you downloaded Xcode elsewhere or need to use a different version,
-    replace `/Applications/Xcode.app` with the path to there instead.
+    replace `/Applications/Xcode.app` with the path to your Xcode directory.
 
  1. <h3>Agree to the Xcode licenses</h3>
 

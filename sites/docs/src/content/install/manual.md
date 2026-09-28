@@ -171,25 +171,52 @@ then extract the SDK to where you want it stored.
     Extract the SDK bundle you downloaded into
     the directory you want to store the Flutter SDK in.
 
-    1. Copy the following command.
-    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
-    1. Replace `<destination_directory_path>` with the path to the
-       folder you want the extracted SDK to be in.
-    1. Run the edited command in your preferred terminal.
+    <Tabs key="windows-terminal">
+    <Tab name="PowerShell">
 
-    ```console
-    $ Expand-Archive –Path <sdk_zip_path> -Destination <destination_directory_path>
+    1.  Copy the following command.
+    1.  Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
+    1.  Replace `<destination_directory_path>` with the path to the
+        folder you want the extracted SDK to be in.
+    1.  Run the edited command in PowerShell:
+
+        ```powershell
+        Expand-Archive -Path <sdk_zip_path> -DestinationPath <destination_directory_path>
+        ```
+
+    For example, if you downloaded the bundle for Flutter 3.47.3 into
+    the `$env:USERPROFILE\Downloads` directory and want to
+    store the extracted SDK in the `$env:USERPROFILE\develop` directory:
+
+    ```powershell
+    Expand-Archive `
+      -Path "$env:USERPROFILE\Downloads\flutter_windows_3.47.3-stable.zip" `
+      -DestinationPath "$env:USERPROFILE\develop"
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
+    </Tab>
+    <Tab name="Command prompt">
+
+    1.  Copy the following command.
+    1.  Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
+    1.  Replace `<destination_directory_path>` with the path to the
+        folder you want the extracted SDK to be in.
+    1.  Run the edited command in Command prompt:
+
+        ```bat
+        tar -xf <sdk_zip_path> -C <destination_directory_path>
+        ```
+
+    For example, if you downloaded the bundle for Flutter 3.47.3 into
     the `%USERPROFILE%\Downloads` directory and want to
     store the extracted SDK in the `%USERPROFILE%\develop` directory:
 
-    ```console
-    $ Expand-Archive `
-      -Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
-      -Destination $env:USERPROFILE\develop\
+    ```bat
+    tar -xf "%USERPROFILE%\Downloads\flutter_windows_3.47.3-stable.zip" -C "%USERPROFILE%\develop"
     ```
+
+    </Tab>
+    </Tabs>
 
     :::note
     If the `flutter.bat` file is missing from the `bin` directory
@@ -200,15 +227,32 @@ then extract the SDK to where you want it stored.
 
 {: .steps .windows-only}
 
+<div class="macos-only">
+
+:::warning
+**Note for Intel Macs:**
+Flutter is deprecating support for Intel-based Macs (x64).
+Future Flutter releases will require Apple Silicon.
+For details, check out the
+[macOS Intel deprecation strategy](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+:::
+
+</div>
+
  1. <h3>Download the Flutter SDK bundle</h3>
+
+    To choose the correct bundle,
+    you need to know your Mac's processor type.
+    *(To check, go to **Apple menu () > About This Mac**
+    and look at the **Processor** or **Chip** section.)*
 
     Depending on your macOS device's cpu architecture,
     download one of the following installation bundles to get the
     latest stable release of the Flutter SDK.
 
-    | Apple Silicon (ARM64)                            | Intel                                          |
-    |--------------------------------------------------|------------------------------------------------|
-    | <DownloadLatestButton os="macos" arch="arm64" /> | <DownloadLatestButton os="macos" arch="x64" /> |
+    | Apple Silicon (ARM64)                                                 | Intel                                                               |
+    |-----------------------------------------------------------------------|---------------------------------------------------------------------|
+    | <DownloadLatestButton os="macos" arch="arm64"></DownloadLatestButton> | <DownloadLatestButton os="macos" arch="x64"></DownloadLatestButton> |
 
  1. <h3>Create a folder to store the SDK</h3>
 
@@ -230,12 +274,12 @@ then extract the SDK to where you want it stored.
     $ unzip <sdk_zip_path> -d <destination_directory_path>
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.3 into
     the `~/Downloads` directory and want to
     store the extracted SDK in the `~/develop` directory:
 
     ```console
-    $ unzip ~/Downloads/flutter_macos_3.29.3-stable.zip -d ~/develop/
+    $ unzip ~/Downloads/flutter_macos_3.47.3-stable.zip -d ~/develop/
     ```
 
 {: .steps .macos-only}
@@ -267,12 +311,12 @@ then extract the SDK to where you want it stored.
     $ tar -xf <sdk_zip_path> -C <destination_directory_path>
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.3 into
     the `~/Downloads` directory and want to
     store the extracted SDK in the `~/develop` directory:
 
     ```console
-    $ tar -xf ~/Downloads/flutter_linux_3.29.3-stable.tar.xz -C ~/develop/
+    $ tar -xf ~/Downloads/flutter_linux_3.47.3-stable.tar.xz -C ~/develop/
     ```
 
 {: .steps .linux-only .chromeos-only}

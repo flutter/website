@@ -78,9 +78,8 @@ This tool has two options:
   $ dart fix --apply
   ```
 
-For more information on Flutter deprecations, see
-[Deprecation lifetime in Flutter][], a free article
-on Flutter's Medium publication.
+For more information on Flutter deprecations,
+read [Deprecation lifetime in Flutter][] on the Flutter blog.
 
 
 [Deprecation lifetime in Flutter]: {{site.flutter-blog}}/deprecation-lifetime-in-flutter-e4d76ee738ad

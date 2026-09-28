@@ -115,10 +115,12 @@ class WebPage extends StatelessComponent {
             div(classes: 'use-cases-note', [
               p([
                 .text(
-                  'Building content-centric or SEO-heavy sites? Consider ',
+                  'Building content-centric or SEO-heavy sites? '
+                  'Want to share Dart business logic, but still use a '
+                  'traditional HTML+CSS based web framework? Consider ',
                 ),
                 a(href: 'https://jaspr.site/', [.text('Jaspr')]),
-                .text(' (which powers '),
+                .text(' (A Dart-based web framework, which powers '),
                 a(href: 'https://dart.dev', [.text('dart.dev')]),
                 .text(', '),
                 a(href: 'https://flutter.dev', [.text('flutter.dev')]),
@@ -193,8 +195,7 @@ class WebPage extends StatelessComponent {
                 div(classes: 'cta-pathway', [
                   h4([.text('New to Flutter (Web Developer)')]),
                   a(
-                    href:
-                        'https://docs.flutter.dev/get-started/flutter-for/web-devs',
+                    href: 'https://docs.flutter.dev/get-started/flutter-for/web-devs',
                     classes: 'btn quiet',
                     [
                       .text('Get started'),

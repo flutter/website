@@ -3,3 +3,4 @@
 // found in the LICENSE file.
 
 export 'src/markdown/markdown_parser.dart';
+export 'src/markdown/mermaid_syntax.dart';

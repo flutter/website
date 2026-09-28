@@ -1,4 +1,6 @@
-// ignore_for_file: avoid_print, unused_local_variable, prefer_typing_uninitialized_variables
+// ignore_for_file: avoid_print, unused_local_variable
+// ignore_for_file: inference_failure_on_uninitialized_variable
+// ignore_for_file: prefer_typing_uninitialized_variables
 
 // #docregion main
 /// Dart

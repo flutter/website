@@ -13,11 +13,22 @@ part 'banner_content.mapper.dart';
 ///
 /// Expected data format:
 /// - `text`: non-empty banner text.
+/// - `mobileText`: optional non-empty, concise text for narrow layouts.
 /// - `link`: absolute HTTP(S) URL or root-relative path the banner points to.
 @MappableClass()
 class BannerContent with BannerContentMappable {
-  BannerContent({required this.text, required this.link}) {
+  BannerContent({
+    required this.text,
+    this.mobileText,
+    required this.link,
+  }) {
     checkFormat(isNotBlank(text), 'text must be a non-empty string.');
+    if (mobileText case final mobileText?) {
+      checkFormat(
+        isNotBlank(mobileText),
+        'mobileText must be a non-empty string.',
+      );
+    }
     checkFormat(isNotBlank(link), 'link must be a non-empty string.');
     checkFormat(
       isAbsoluteHttpUrlOrBaseHrefRelativePath(link),
@@ -27,6 +38,9 @@ class BannerContent with BannerContentMappable {
 
   /// Banner copy displayed in the site header.
   final String text;
+
+  /// Concise banner copy displayed in narrow layouts.
+  final String? mobileText;
 
   /// Destination URL/path opened from the banner.
   final String link;

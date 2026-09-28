@@ -6,7 +6,7 @@ class ApiClientService {
   Future<UserProfile> getUserProfile() async {
     // #enddocregion ApiClientService
     // Simulate a network GET request
-    await Future.delayed(const Duration(seconds: 2));
+    await Future<void>.delayed(const Duration(seconds: 2));
     // Return a dummy user profile
     return const UserProfile(
       name: 'John Doe (from API)',
@@ -19,7 +19,7 @@ class ApiClientService {
   Future<void> putUserProfile(UserProfile userProfile) async {
     // #enddocregion ApiClientService
     // Simulate a network PUT request
-    await Future.delayed(const Duration(seconds: 2));
+    await Future<void>.delayed(const Duration(seconds: 2));
     // #docregion ApiClientService
   }
 }

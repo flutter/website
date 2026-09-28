@@ -13,7 +13,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - E-commerce & Retail
 successMetrics:
   - perc: 98.3
     desc: shared code

@@ -22,7 +22,7 @@ For more information on implementing fancy scrolling effects
 in Flutter, see the following resources:
 
 **[Slivers, Demystified][]**
-: A free article on Medium that
+: A Flutter blog post that
   explains how to implement custom scrolling
   using the sliver classes.
 

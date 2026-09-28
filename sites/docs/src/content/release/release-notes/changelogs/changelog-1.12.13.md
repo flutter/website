@@ -146,7 +146,7 @@ From Sun Aug 19 17:37:00 2019 -0700 to Mon Nov 25 12:05:00 2019 -0800
 
 [38932](https://github.com/flutter/flutter/pull/38932) Add build warning for non-debug desktop builds (cla: yes, tool)
 
-[38936](https://github.com/flutter/flutter/pull/38936) Fix KeySet<T> (and LogicalKeySet) hashCode calculation (cla: yes, framework)
+[38936](https://github.com/flutter/flutter/pull/38936) Fix `KeySet<T>` (and LogicalKeySet) hashCode calculation (cla: yes, framework)
 
 [38979](https://github.com/flutter/flutter/pull/38979) Adding onEnd callback to implicit animated widgets (a: animation, cla: yes, framework, waiting for tree to go green)
 
@@ -2299,7 +2299,7 @@ From Sun Aug 19 17:37:00 2019 -0700 to Mon Nov 25 12:05:00 2019 -0800
 
 [11576](https://github.com/flutter/engine/pull/11576) Minor tweaks to the Doxygen theme. (cla: yes)
 
-[11622](https://github.com/flutter/engine/pull/11622) Include <string> from font_asset_provider (cla: yes)
+[11622](https://github.com/flutter/engine/pull/11622) Include `<string>` from font_asset_provider (cla: yes)
 
 [11635](https://github.com/flutter/engine/pull/11635) [flutter_runner] Port Expose ViewBound Wireframe Functionality (cla: yes)
 

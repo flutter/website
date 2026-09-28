@@ -35,8 +35,16 @@ final List<NavItem> headerNavItems = [
     ],
   ),
   NavItem(
+    label: 'Why Flutter',
+    href: '/why-flutter',
+  ),
+  NavItem(
     label: 'Showcase',
     href: '/showcase',
+  ),
+  NavItem(
+    label: 'Blog',
+    href: '/blog',
   ),
   NavItem(
     label: 'Docs',
@@ -77,9 +85,5 @@ final List<NavItem> headerNavItems = [
         href: 'https://docs.flutter.dev/tools/devtools',
       ),
     ],
-  ),
-  NavItem(
-    label: 'Blog',
-    href: 'https://blog.flutter.dev',
   ),
 ];

@@ -53,7 +53,7 @@ see [Adding assets and images][].
 [Adding assets and images]: /ui/assets/assets-and-images
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: /packages-and-plugins/developing-packages
-[FlutterFire]: {{site.github}}/firebase/flutterfire
+[FlutterFire]: {{site.repo.flutterfire}}
 
 [`go_router`]: {{site.pub-pkg}}/go_router
 [`http`]: /cookbook/networking/fetch-data
@@ -501,3 +501,18 @@ To use this plugin:
    before adding the plugin). Click **Show Flutter homepage**.
    You should see the default browser open on the device,
    displaying the homepage for flutter.dev.
+## Install AI skills from packages
+
+Many `pub.dev` packages bundle official **package skills** that teach AI coding
+assistants how to use their APIs and follow recommended patterns.
+
+If your project dependencies include skills, you can discover and install them
+into your local workspace with a single command:
+
+```bash
+dart run skills@ get
+```
+
+To learn more about how skills help coding assistants understand your
+dependencies, check out
+[Package skills](https://dart.dev/ai/package-skills).

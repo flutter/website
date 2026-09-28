@@ -460,8 +460,8 @@
   options_customer_size:
     - "Startup"
   options_GCP_partner: false
-- title: "SolGuruz LLP"
-  summary: "Is a full-stack development agency for web and mobile applications, dedicated to delivering top-tier, customized software solutions that align with their clients' unique goals.  SolGuruz is driven by a true passion for craft and aims to surpass expectations across every project."
+- title: "SolGuruz"
+  summary: "SolGuruz is an AI-assisted Flutter development company building cross-platform products for startups and enterprises. They use Spec-Driven Development and 30+ AI tools across every phase."
   card: "images/third_party/partners/SolGoruz.png"
   external_url: "https://solguruz.com/services/flutter-app-development/"
   options_location:
@@ -1206,6 +1206,78 @@
     - "Europe"
     - "Oceania"
     - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "HotShots Labs"
+  summary: "A boutique Flutter-focused mobile app development agency delivering end-to-end iOS and Android solutions with a strong focus on business results. They specialize in cross-platform mobile apps, scalable backend systems, and high-performing digital products."
+  card: "images/third_party/partners/HeadShots_logo.png"
+  external_url: "https://hotshotslabs.com"
+  options_location:
+    - "Europe"
+    - "Oceania"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "muun"
+  summary: "A Hamburg-based studio that builds scalable online shops and Flutter apps for commerce. They combine strategy, UX/UI design, and development to create high-performance cross-platform applications."
+  card: "images/third_party/partners/muun_logo.png"
+  external_url: "https://muun.studio/en/flutter-agentur"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Mallow Technologies Private Limited"
+  summary: "An Asian-based custom software development company with 16+ years of experience helping businesses worldwide build scalable web, mobile, and cloud solutions, with a strong focus on Flutter. Recognized among Clutch's Top 1000 global service providers."
+  card: "images/third_party/partners/MalowT_logo.png"
+  external_url: "https://mallow-tech.com/technologies/flutter-app-development/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Aubergine Solutions Pvt. Ltd."
+  summary: "An award-winning UI/UX and product development company building AI-enabled web, mobile, and enterprise apps. As a Claude Network Partner and Flutter specialist, they unite design, engineering, and AI to deliver scalable, intelligent products."
+  card: "images/third_party/partners/Aubergine_logo.png"
+  external_url: "https://www.aubergine.co/solution/technology-transformation/flutter-development"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Pollux LTDA"
+  summary: "An Argentinian based software development co-op with more than 5 years of experience programming with Flutter, for both mobile and web apps."
+  card: "images/third_party/partners/Pollux_logo.png"
+  external_url: "https://polluxcoop.com/en/apps-moviles"
+  options_location:
+    - "South America"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Tapped GmbH"
+  summary: "A Munich-based digital product studio that builds apps for medium and enterprise companies. Over the years they have pushed what Flutter can do with background processing, location tracking and map visualizations."
+  card: "images/third_party/partners/tapped_logo.png"
+  external_url: "https://tapped.dev/services/flutter-app-development/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Here2Build Apps GmbH"
+  summary: "A German agency that delivers end-to-end mobile solutions for companies of all sizes. They cover the entire product lifecycle—from concept and UX/UI design to Flutter development, backend architecture, App Store deployment, and long-term maintenance."
+  card: "images/third_party/partners/Here2Build_logo.png"
+  external_url: "https://www.here2buildapps.de/flutter-agentur"
+  options_location:
+    - "Europe"
   options_customer_size:
     - "Startup"
     - "Small-to-medium Business"

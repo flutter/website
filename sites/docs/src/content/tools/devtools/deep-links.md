@@ -12,7 +12,7 @@ check out the Google I/O 2024 video,
 [No more broken links: Deep linking success in Flutter][].
 :::
 
-[No more broken links: Deep linking success in Flutter]: {{site.youtube-site}}/watch?v=d7sZL6h1Elw
+[No more broken links: Deep linking success in Flutter]: {{site.yt.watch}}?v=d7sZL6h1Elw
 
 The deep link view validates any deep links
 that are defined in your app.

@@ -482,7 +482,7 @@ account, check out the step-by-step
 [appstoreconnect_guide]: {{site.apple-dev}}/support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
 [appstoreconnect_login]: https://appstoreconnect.apple.com/
-[codemagic_cli_tools]: {{site.github}}/codemagic-ci-cd/cli-tools
+[codemagic_cli_tools]: https://github.com/codemagic-ci-cd/cli-tools
 [codesigning_guide]: {{site.apple-dev}}/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: {{site.apple-dev}}/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 [devportal_appids]: {{site.apple-dev}}/account/resources/identifiers/list

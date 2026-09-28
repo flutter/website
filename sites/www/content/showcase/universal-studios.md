@@ -14,7 +14,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - Media and Entertainment
 successMetrics:
   - perc: 45
     desc: decrease in codebase size

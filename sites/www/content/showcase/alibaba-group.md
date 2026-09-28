@@ -12,7 +12,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - E-commerce & Retail
   - Productivity
 tags:
   - mobile

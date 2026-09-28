@@ -17,7 +17,7 @@ and offers ways to work around them.
 
 :::note
 For information on how to optimize web loading speed,
-check out the (free) article on Medium,
+read the Flutter blog post
 [Best practices for optimizing Flutter web loading speed][article].
 
 [article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
@@ -64,23 +64,15 @@ This prevents scripts on another site from acting on
 behalf of the user and from gaining access to another
 site's resources without permission.
 
-On the web, Flutter renders apps using the CanvasKit
-or skwasm (when using Wasm) renderers. These both rely
-on WebGL. WebGL requires access to the raw image data
-(bytes) in order to be able to render the image.
-Therefore, images must only come from servers that
-have a CORS policy configured to work with the domain
-that serves your application.
-
-:::note
-For more information about web renderers, see
-[Web renderers][].
-:::
+On the web, Flutter renders graphics using WebGL or WebGPU.
+WebGL requires access to raw image bytes to draw images onto a canvas,
+which requires servers to be configured with CORS headers.
+If CORS is not enabled on the image server, Flutter automatically
+falls back to rendering cross-origin images using HTML `<img>` elements.
 
 [CORS]: https://developer.mozilla.org/docs/Web/HTTP/CORS
 [XHR]: https://developer.mozilla.org/docs/Web/API/XMLHttpRequest
 [`fetch`]: https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch
-[Web renderers]: /platform-integration/web/renderers
 
 ## Solutions
 
@@ -130,15 +122,4 @@ Examples:
 * Using [Firebase Functions][].
 
 [CloudFlare Workers]: https://developers.cloudflare.com/workers/examples/cors-header-proxy
-[Firebase Functions]: {{site.github}}/7kfpun/cors-proxy
-
-<a id="use-a-html-platform-view" aria-hidden="true"></a>
-
-### Use an HTML platform view
-
-If none of the other solutions work for your app, Flutter
-supports embedding raw HTML inside the app using
-[`HtmlElementView`][].  Use it to create an `<img>`
-element to render the image from another domain.
-
-[`HtmlElementView`]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
+[Firebase Functions]: https://github.com/7kfpun/cors-proxy

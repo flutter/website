@@ -379,6 +379,6 @@ The Flutter Casual Games Toolkit includes the following templates:
   where the player endlessly runs, avoiding pitfalls
   and gaining rewards
 
-[basic]: {{site.github}}/flutter/games/tree/main/templates/basic#readme
-[card]: {{site.github}}/flutter/games/tree/main/templates/card#readme
-[endless runner]: {{site.github}}/flutter/games/tree/main/templates/endless_runner#readme
+[basic]: {{site.repo.games}}/tree/main/templates/basic#readme
+[card]: {{site.repo.games}}/tree/main/templates/card#readme
+[endless runner]: {{site.repo.games}}/tree/main/templates/endless_runner#readme

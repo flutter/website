@@ -8,6 +8,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
 import 'package:site_shared/components/common/card.dart';
+import 'package:site_shared/components/common/ide_explorer/markdown_component.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/common/tabs.dart';
 import 'package:site_shared/components/common/youtube_embed.dart';
@@ -27,6 +28,7 @@ import 'src/components/common/code_preview.dart';
 import 'src/components/common/dash_image.dart';
 import 'src/components/pages/architecture_recommendations.dart';
 import 'src/components/pages/archive_table.dart';
+import 'src/components/pages/cuj/cuj_index.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
@@ -99,6 +101,7 @@ List<CustomComponent> get _embeddableComponents => [
   const CodePreview(),
   const YoutubeEmbed(),
   const FileTree(),
+  const IdeExplorerMarkdownComponent(),
   const Quiz(),
   const ProgressRing(),
   const SummaryCard(),
@@ -116,6 +119,7 @@ List<CustomComponent> get _embeddableComponents => [
   defineComponent('OSSelector', const OsSelector()),
   defineComponentWithChild('Card', Card.fromAttributes),
   defineComponent('LearningResourceIndex', const LearningResourceIndex()),
+  defineComponent('CujIndex', const CujIndex()),
   defineComponentWithAttrs('ArchiveTable', ArchiveTable.fromAttributes),
   defineComponentWithAttrs(
     'DownloadLatestButton',

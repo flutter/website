@@ -394,6 +394,37 @@ You can also press
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd>
 or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd> on macOS.
 
+### Customize closing labels {: #closing-labels}
+
+The Dart extension displays labels after
+the closing delimiters of multi-line constructs, such as
+constructor invocations, method calls, and list literals.
+Closing labels are editor annotations and don't change your source code,
+even though the default ` // ` prefix makes them look similar to comments.
+
+To change the prefix:
+
+1.  Open the [Command Palette][].
+1.  Select **Preferences: Open Settings (UI)**.
+1.  Search for `dart.closingLabels`.
+1.  In **Dart: Closing Labels Prefix**, enter your preferred prefix.
+
+For example, to remove the comment marker while
+keeping space between the code and label,
+set the prefix to a single space (` `):
+
+```json
+{
+  "dart.closingLabelsPrefix": " "
+}
+```
+
+To hide closing labels, turn off **Dart: Closing Labels**.
+For the complete list of closing label options,
+see the [extension's settings reference][closing-label-options].
+
+[closing-label-options]: https://dartcode.org/docs/settings/#dartclosinglabels
+
 ## Flutter Property Editor {: #property-editor}
 
 The Flutter Property Editor is a powerful tool provided by the [Flutter
@@ -436,6 +467,6 @@ When filing new issues, include [flutter doctor][] output.
 [Flutter's build modes]: /testing/build-modes
 [Hot reload]: /tools/hot-reload
 [let us know]: {{site.repo.this}}/issues/new
-[issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
+[issue tracker]: https://github.com/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /tools/devtools/vscode
 [VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png

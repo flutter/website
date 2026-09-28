@@ -111,4 +111,4 @@ causes poor app performance.
 [ok_http]: {{site.pub-pkg}}/ok_http
 [Chrome DevTools]: https://developer.chrome.com/docs/devtools/network
 [timeline]: /tools/devtools/performance#timeline-events-tab
-[network-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-network-view-part-4-of-8-afce2463687c
+[network-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-network-view-part-4-of-8-afce2463687c

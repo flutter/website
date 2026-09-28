@@ -46,4 +46,4 @@ and how to effectively use DevTools to
 analyze and debug Flutter apps faster,
 check out a guided [Logging View tutorial][logging-tutorial].
 
-[logging-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-logging-view-part-5-of-8-b634f3a3af26
+[logging-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-logging-view-part-5-of-8-b634f3a3af26

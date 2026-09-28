@@ -16,20 +16,22 @@ extension AssetExtension on BuildContext {
 }
 
 class TrackingAssetTransformer implements AssetTransformer {
-  TrackingAssetTransformer();
+  TrackingAssetTransformer() {
+    _trackingFile.writeAsStringSync('');
+  }
 
-  final _trackingFile = File(
-    p.join('tool', 'used_assets.txt'),
-  ).openWrite(mode: FileMode.write);
+  final File _trackingFile = File(p.join('tool', 'used_assets.txt'));
 
   @override
-  Asset transform(Asset asset, [Object? aspect]) {
-    _trackingFile.writeln(asset.path);
+  Asset transform(Asset asset, [Object? _]) {
+    _trackingFile.writeAsStringSync('${asset.path}\n', mode: .append);
     return asset;
   }
 }
 
 class ResizingAssetTransformer implements AssetTransformer {
+  const ResizingAssetTransformer();
+
   @override
   Asset transform(Asset asset, [Object? aspect]) {
     final width = aspect is int ? aspect : null;

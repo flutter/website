@@ -344,11 +344,11 @@ class _StaggerDemoState extends State<StaggerDemo>
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
 [Animations in Flutter tutorial]: /ui/animations/tutorial
-[basic_staggered_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation
+[basic_staggered_animation]: {{site.repo.this}}/tree/main/examples/_animation/basic_staggered_animation
 [Building Layouts in Flutter]: /ui/layout
-[staggered_pic_selection]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/staggered_pic_selection
+[staggered_pic_selection]: {{site.repo.this}}/tree/main/examples/_animation/staggered_pic_selection
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
-[Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/lib/main.dart
+[Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/main/examples/_animation/basic_staggered_animation/lib/main.dart
 [`Interval`]: {{site.api}}/flutter/animation/Interval-class.html
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

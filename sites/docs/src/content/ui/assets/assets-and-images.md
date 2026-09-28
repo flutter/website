@@ -86,6 +86,33 @@ To do this, specify the asset files and transformer package in your pubspec file
 To learn how to do this and write your own asset-transforming packages, see
 [Transforming assets at build time][].
 
+### Platform-specific assets
+
+:::version-note
+This feature is available starting from Flutter 3.41.0.
+:::
+
+You can specify assets that should only be bundled for specific platforms.
+This is useful when you have large assets
+that are only needed on a subset of platforms,
+such as high-resolution textures
+or platform-specific configuration files.
+
+The following configuration only includes an asset on macOS and Windows:
+
+```yaml
+flutter:
+  assets:
+    - path: assets/desktop_config.json
+      platforms:
+        - macos
+        - windows
+```
+
+For more information about configuring platform-specific assets,
+see the [`assets` field][]
+in the [Flutter pubspec options][] reference.
+
 ## Loading assets
 
 Your app can access its assets through an
@@ -517,3 +544,5 @@ For more details, see
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [flavors feature]: /deployment/flavors
+[`assets` field]: /tools/pubspec#assets
+[Flutter pubspec options]: /tools/pubspec

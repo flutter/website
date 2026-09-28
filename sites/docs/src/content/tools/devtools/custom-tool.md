@@ -206,8 +206,8 @@ For each key, fill in the appropriate value for your package.
 For the most up-to-date documentation on the `config.yaml` spec,
 visit [extension_config_spec.md][].
 
-[extension_config_spec.md]: {{site.github}}/flutter/devtools/blob/master/packages/devtools_extensions/extension_config_spec.md
-[`material/icons.dart`]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/material/icons.dart
+[extension_config_spec.md]: https://github.com/flutter/devtools/blob/master/packages/devtools_extensions/extension_config_spec.md
+[`material/icons.dart`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/material/icons.dart
 
 ## Build your extension
 
@@ -244,7 +244,7 @@ flutter pub add devtools_app_shared
 ```
 
 [`package:devtools_app_shared`]: {{site.pub-pkg}}/devtools_app_shared
-[`devtools_app_shared/example`]: {{site.github}}/flutter/devtools/tree/master/packages/devtools_app_shared/example
+[`devtools_app_shared/example`]: https://github.com/flutter/devtools/tree/master/packages/devtools_app_shared/example
 
 ### Add the `DevToolsExtension` widget
 
@@ -425,8 +425,8 @@ available from the action buttons in the upper right corner of the screen.
 
 ![DevTools Extensions menu](/assets/images/docs/tools/devtools/devtools-extensions-menu.png)
 
-[CONTRIBUTING.md]: {{site.github}}/flutter/devtools/tree/master/packages/devtools_extensions
-[instructions]: {{site.github}}/flutter/devtools/blob/master/CONTRIBUTING.md#development-devtools-server--devtools-flutter-web-app
+[CONTRIBUTING.md]: https://github.com/flutter/devtools/tree/master/packages/devtools_extensions
+[instructions]: https://github.com/flutter/devtools/blob/master/CONTRIBUTING.md#development-devtools-server--devtools-flutter-web-app
 
 ## Publish your package with a DevTools extension
 
@@ -493,7 +493,7 @@ You might find the following links useful:
   check out the [#devtools-extension-authors][extensions-discord] Discord channel
   (you will first need to join the [Flutter Discord server][]).
 
-[DevTools Extensions README]: {{site.github}}/flutter/devtools/blob/master/packages/devtools_extensions/README.md
+[DevTools Extensions README]: https://github.com/flutter/devtools/blob/master/packages/devtools_extensions/README.md
 [extensions-discord]: https://discord.com/channels/608014603317936148/1159561514072690739
-[file an issue]: {{site.github}}/flutter/devtools/issues
-[Flutter Discord server]: {{site.github}}/flutter/flutter/wiki/Chat
+[file an issue]: https://github.com/flutter/devtools/issues
+[Flutter Discord server]: {{site.repo.flutter}}/wiki/Chat

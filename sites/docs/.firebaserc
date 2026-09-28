@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "flutter-docs-prod",
+    "devtools-staging": "flutter-website-dt-staging"
+  }
+}

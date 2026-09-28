@@ -40,9 +40,9 @@ on debugging this sort of error:
 * [Understanding and addressing the grey screen in Flutter][] by Christopher Nwosu-Madueke
 * [Flutter stuck on white screen][] by Kesar Bhimani
 
-[Flutter errors demystified]: {{site.medium}}/@hpatilabhi10/flutter-errors-demystified-red-screen-errors-vs-debug-console-errors-acb3b8ed2625
+[Flutter errors demystified]: https://medium.com/@hpatilabhi10/flutter-errors-demystified-red-screen-errors-vs-debug-console-errors-acb3b8ed2625
 [Flutter stuck on white screen]: https://www.dhiwise.com/post/flutter-stuck-on-white-screen-understanding-and-fixing
-[Understanding and addressing the grey screen in Flutter]: {{site.medium}}/@LordChris/understanding-and-addressing-the-grey-screen-in-flutter-5e72c31f408f
+[Understanding and addressing the grey screen in Flutter]: https://medium.com/@LordChris/understanding-and-addressing-the-grey-screen-in-flutter-5e72c31f408f
 
 ## 'A RenderFlex overflowed…'
 
@@ -425,7 +425,7 @@ The following snippet seems to be a common culprit of this error:
 ```dart
 Widget build(BuildContext context) {
   // Don't do this.
-  showDialog(
+  showDialog<void>(
     context: context,
     builder: (context) {
       return const AlertDialog(title: Text('Alert Dialog'));
@@ -473,7 +473,7 @@ class FirstScreen extends StatelessWidget {
             // Immediately show a dialog upon loading the second screen.
             Navigator.push(
               context,
-              PageRouteBuilder(
+              PageRouteBuilder<void>(
                 barrierDismissible: true,
                 opaque: false,
                 pageBuilder: (_, anim1, anim2) => const MyDialog(),

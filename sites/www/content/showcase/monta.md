@@ -14,7 +14,7 @@ platforms:
   - Mobile
   - Web
 industries:
-  - Travel & Lifestyle
+  - Automotive
 tags:
   - web
 publishDate: 2024-08-05

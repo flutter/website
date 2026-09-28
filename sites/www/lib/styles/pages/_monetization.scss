@@ -1,21 +1,16 @@
 @use '../core/breakpoints';
 
 body.monetization {
-
   section.hero {
-    background-image: linear-gradient(35deg, #F3FCFF 10%, #93FAEE 80%);
-  }
-
-  #resources {
-    background-image: linear-gradient(145deg, #0654B2 20%, #28F5DE 80%);
+    background-image: var(--grad-blue-green-35);
   }
 
   #resources-1 {
-    background-image: linear-gradient(145deg, #0654B2 20%, #28F5DE 80%);
+    background-image: linear-gradient(145deg, #0654b2 20%, #28f5de 80%);
   }
 
   #resources-2 {
-    background-image: linear-gradient(145deg, #0654B2 30%, #A57DF7 90%);
+    background-image: linear-gradient(145deg, #0654b2 30%, #a57df7 90%);
   }
 
   #tabs {
@@ -89,7 +84,7 @@ body.monetization {
               }
 
               background-color: var(--blue-6);
-              color: #ffffff;
+              color: white;
             }
           }
 
@@ -147,12 +142,12 @@ body.monetization {
             }
 
             .quiet {
-              color: #ffffff;
+              color: white;
             }
 
             .white-btn {
               border: 1px solid white;
-              color: #ffffff;
+              color: white;
             }
           }
 

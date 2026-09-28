@@ -96,7 +96,6 @@ Relevant issues:
 Relevant PRs:
 
 * [PR 56365: FormField should autovalidate only if its
-  content was changed]({{site.github}}/flutter/pull/56365)
+  content was changed]({{site.repo.flutter}}/pull/56365)
 * [PR 59766: FormField should autovalidate only if its
-  content was changed
-  (fixed)]({{site.repo.flutter}}/pull/59766)
+  content was changed (fixed)]({{site.repo.flutter}}/pull/59766)

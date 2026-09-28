@@ -72,12 +72,9 @@ final class DeployCommand extends Command<int> {
     final deploy = await Process.start(
       firebaseCliExecutable,
       ['deploy', '--project=$project', '--only=$only'],
-      workingDirectory: path.join(
-        repositoryRoot,
-        selectedSite.firebaseConfigDirectory,
-      ),
+      workingDirectory: path.join(repositoryRoot, selectedSite.directory),
       mode: ProcessStartMode.inheritStdio,
     );
-    return deploy.exitCode;
+    return await deploy.exitCode;
   }
 }

@@ -184,10 +184,12 @@ final class CodeBlockProcessor implements PageExtension {
   ) {
     return [
       for (final line in lines)
-        if (line case [
-          final span,
-          ...final rest,
-        ] when span.content.startsWith('\$ '))
+        if (line
+            case [
+              final span,
+              ...final rest,
+            ]
+            when span.content.startsWith('\$ '))
           [
             highlighter.ThemedSpan(
               content: '\$ ',

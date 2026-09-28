@@ -5,12 +5,12 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/server_util.dart';
 
 import '../components/layout/footer.dart';
 import '../components/layout/header.dart';
 import '../components/pages/consultants_cookie_snack.dart';
 import '../models/content/banner_content.dart';
-import '../style_hash.dart';
 import '../utils/asset_utils.dart';
 import '../utils/data_utils.dart';
 
@@ -22,29 +22,49 @@ class DefaultLayout extends PageLayout {
 
   @override
   Component buildLayout(Page page, Component child) {
-    final title = (page.data.page['title'] as String).trim();
-    final description = (page.data.page['description'] as String).trim();
+    final pageData = page.data.page;
+    final siteData = page.data.site;
+    final siteUrl = siteData['url'];
+    if (siteUrl is! String) {
+      throw Exception('Site URL not configured in site data.');
+    }
+    final siteBaseUrl = Uri.parse(siteUrl);
+
+    final title = (pageData['title'] as String).trim();
+    final description = (pageData['description'] as String).trim();
+
     if (title.isEmpty) {
       throw Exception('Page at ${page.path} can\'t have an empty title.');
     }
-
     if (description.isEmpty) {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
 
+    final pageImage = pageData['image'] as String?;
+    final socialImage = pageData['socialImage'] as String? ?? pageImage;
+    final titleBase =
+        (pageData['titleBase'] ?? siteData['titleBase']) as String?;
+    final documentTitle = titleBase == null ? title : '$title | $titleBase';
+
     final canonicalUrl = switch (page.data.page['canonical']) {
       final String url when url.trim().isNotEmpty => url.trim(),
-      _ => Uri.https('flutter.dev').resolve(page.url).toString(),
+      _ => siteBaseUrl.resolve(page.url).toString(),
     };
+    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
 
     return AsyncBuilder(
       builder: (context) async {
+        final socialImageUrl = _absoluteUrl(
+          siteBaseUrl,
+          socialImage ?? context.asset('/images/flutter-logo-sharing.png'),
+        );
         final banner = context.decodeJsonObject(
           'banner',
           BannerContent.fromJson,
         );
+
         return Document(
-          title: title,
+          title: documentTitle,
           head: [
             link(rel: 'icon', href: context.asset('/images/favicon.png')),
             link(
@@ -54,48 +74,35 @@ class DefaultLayout extends PageLayout {
 
             meta(name: 'description', content: description),
             link(rel: 'canonical', href: canonicalUrl),
-            const meta(name: 'twitter:card', content: 'summary_large_image'),
-            const meta(name: 'twitter:site', content: '@flutterdev'),
-            meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
-              attributes: const {'property': 'og:url'},
-              content: canonicalUrl,
+              name: 'twitter:card',
+              content: socialImage != null ? 'summary_large_image' : 'summary',
             ),
+            const meta(name: 'twitter:site', content: '@flutterdev'),
+            meta(name: 'twitter:title', content: title),
+            meta(name: 'twitter:description', content: description),
+            if (socialImage != null)
+              meta(name: 'twitter:image', content: socialImageUrl),
+
+            meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
               attributes: const {'property': 'og:description'},
               content: description,
             ),
             meta(
+              attributes: const {'property': 'og:url'},
+              content: socialPageUrl,
+            ),
+            meta(
               attributes: const {'property': 'og:image'},
-              content: context.asset('/images/flutter-logo-sharing.png'),
+              content: socialImageUrl,
             ),
 
-            // Google Analytics
-            if (kGenerateMode) ...[
+            if (kGenerateMode)
               const meta(
                 name: 'google-site-verification',
                 content: 'HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4',
               ),
-              const script(
-                content: '''
-                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                  })(window,document,'script','dataLayer','GTM-ND4LWWZ');
-                ''',
-              ),
-              const script(
-                content: '''
-                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-                  ga('create', 'UA-67589403-1', 'auto');
-                  ga('send', 'pageview');
-                ''',
-              ),
-            ],
 
             // Preload font and other script sources.
             const link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
@@ -107,27 +114,87 @@ class DefaultLayout extends PageLayout {
 
             // Set up site fonts and icons.
             const link(
-              href:
-                  'https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..120,400..700&family=Google+Sans+Code:ital,wght@0,400..700;1,400..700&display=swap',
+              href: 'https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..120,400..700&family=Google+Sans+Code:ital,wght@0,400..700;1,400..700&display=swap',
               rel: 'stylesheet',
             ),
             const link(
+              rel: 'stylesheet',
               href:
-                  'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block',
+                  'https://fonts.googleapis.com/css2?'
+                  'family=Roboto+Serif:ital,opsz,wght@'
+                  '0,8..72,400..700;1,8..72,400..700'
+                  '&display=swap',
+            ),
+            const link(
+              href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block',
               rel: 'stylesheet',
             ),
 
-            // Set up standard cookie notification bar.
             const link(
+              rel: 'stylesheet',
               href:
-                  'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css',
+                  'https://fonts.googleapis.com/css2?'
+                  'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
+                  '24,400,0..1,0',
+            ),
+
+            const script(
+              src: 'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.8.2/lite-youtube.js',
+              attributes: {
+                'type': 'module',
+                'integrity':
+                    'sha256-Jy0j0fUMJ2T3WxSEs2WjHLrS+3DlO7S9DItQtP55FII=',
+                'crossorigin': 'anonymous',
+                'referrerpolicy': 'no-referrer',
+              },
+            ),
+
+            // Load the managed cookie banner styles before our theme overrides.
+            const link(
+              rel: 'stylesheet',
+              href:
+                  'https://www.gstatic.com/glue/cookienotificationbar/'
+                  'cookienotificationbar.min.css',
+            ),
+
+            // Set site styles.
+            link(
+              href: cacheBustedBuildAssetUrl('/main.css'),
               rel: 'stylesheet',
             ),
 
-            // Project Styles
-            const link(
-              href: '/main.css?hash=$generatedStylesHash',
-              rel: 'stylesheet',
+            // Initialize GTM after the cookie banner indicates.
+            // If changing or removing the cookie banner setup,
+            // ensure this setup is updated as well.
+            if (kGenerateMode)
+              const script(
+                content: '''
+                  window.dataLayer = window.dataLayer || [];
+                  function glueCookieNotificationBarLoaded() {
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','GTM-ND4LWWZ');
+                  }
+                ''',
+              ),
+
+            // The managed cookie script handles
+            // regional visibility and dismissal.
+            // If you change or remove this script,
+            // revisit GTM initialization above.
+            // Google could also update this script independently
+            // requiring changes to our GTM setup.
+            const script(
+              src:
+                  'https://www.gstatic.com/glue/cookienotificationbar/'
+                  'cookienotificationbar.min.js',
+              attributes: {
+                'data-glue-cookie-notification-bar-category': '2A',
+                'data-glue-cookie-notification-bar-site-id': 'flutter.dev',
+              },
+              defer: true,
             ),
           ],
           lang: 'en',
@@ -149,14 +216,6 @@ class DefaultLayout extends PageLayout {
             ),
             child,
             const Footer(),
-            const script(
-              src:
-                  'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js',
-              attributes: {
-                'data-glue-cookie-notification-bar-category': '2A',
-                'data-glue-cookie-notification-bar-site-id': 'flutter.dev',
-              },
-            ),
             if (page.url.contains('consultants'))
               const ConsultantsCookieSnack(),
           ]),
@@ -165,3 +224,9 @@ class DefaultLayout extends PageLayout {
     );
   }
 }
+
+/// Resolves [url] against [siteBaseUrl] to produce an absolute URL.
+///
+/// If [url] already has a scheme, it's returned unchanged.
+String _absoluteUrl(Uri siteBaseUrl, String url) =>
+    Uri.parse(url).hasScheme ? url : siteBaseUrl.resolve(url).toString();

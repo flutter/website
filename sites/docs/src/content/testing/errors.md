@@ -131,8 +131,9 @@ To catch such an error, use [`PlatformDispatcher.instance.onError`][].
 
 <?code-excerpt "lib/excerpts.dart (catch-error)"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'dart:ui';
+
+import 'package:flutter/material.dart';
 
 void main() {
   MyBackend myBackend = MyBackend();
@@ -152,8 +153,9 @@ your errors handling on next code snippet:
 
 <?code-excerpt "lib/main.dart (all-errors)"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'dart:ui';
+
+import 'package:flutter/material.dart';
 
 Future<void> main() async {
   await myErrorsHandler.initialize();

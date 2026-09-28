@@ -34,23 +34,7 @@
   }
 
   .platform-card-tags {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    gap: 0.5rem;
-
     margin-top: 0.5rem;
-
-    span {
-      font-size: 0.875rem;
-      line-height: 1;
-
-      background-color: var(--site-raised-bgColor-translucent);
-      border-radius: var(--site-radius);
-      border: 1px solid var(--site-inset-borderColor);
-
-      padding: 0.2rem 0.4rem;
-    }
   }
 
   .platform-card-details {

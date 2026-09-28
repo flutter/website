@@ -33,20 +33,17 @@ class EcosystemPage extends StatelessComponent {
         FeatureColumnsSection([
           FeatureColumn(
             title: 'Community',
-            description:
-                'Join developers around the world who are building with Flutter.',
+            description: 'Join developers around the world who are building with Flutter.',
             image: context.asset('images/community.jpg'),
           ),
           FeatureColumn(
             title: 'Events',
-            description:
-                'Learn about the latest Flutter developments at our global events.',
+            description: 'Learn about the latest Flutter developments at our global events.',
             image: context.asset('images/events.jpg'),
           ),
           FeatureColumn(
             title: 'Packages',
-            description:
-                'Find open source packages to help you build powerful Flutter apps.',
+            description: 'Find open source packages to help you build powerful Flutter apps.',
             image: context.asset('images/packages.png'),
           ),
         ]),
@@ -55,14 +52,12 @@ class EcosystemPage extends StatelessComponent {
             Feature(
               eyebrow: 'Community',
               title: 'Get involved',
-              description:
-                  'Connect with Flutter developers around the world, find answers, and contribute to the framework in our welcoming community spaces.',
+              description: 'Connect with Flutter developers around the world, find answers, and contribute to the framework in our welcoming community spaces.',
               actions: const [
                 FeatureAction(label: 'Join the community', url: '/community'),
                 FeatureAction.link(
                   label: 'More about Flutter culture',
-                  url:
-                      'https://blog.flutter.dev/flutter-culture-and-how-to-preserve-it-436b4ed1031d',
+                  url: 'https://blog.flutter.dev/flutter-culture-and-how-to-preserve-it-436b4ed1031d',
                   collapsed: false,
                 ),
               ],

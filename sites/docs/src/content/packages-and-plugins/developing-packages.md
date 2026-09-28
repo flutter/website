@@ -19,7 +19,7 @@ A minimal package consists of the following:
 
 :::note
 For a list of dos and don'ts when writing an effective plugin,
-see the Medium article by Mehmet Fidanboylu,
+see the Flutter blog post by Mehmet Fidanboylu,
 [Writing a good plugin][].
 :::
 
@@ -48,7 +48,7 @@ Packages can contain more than one kind of content:
   A concrete example is the [`url_launcher`][] plugin package.
   To see how to use the `url_launcher` package, and how it
   was extended to implement support for web,
-  see the Medium article by Harry Terkelsen,
+  see the Flutter blog post by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
 
 **FFI packages**
@@ -227,7 +227,7 @@ endorsed plugin implementation of `foobar`.
 
 For more information on federated plugins,
 why they are useful, and how they are
-implemented, see the Medium article by Harry Terkelsen,
+implemented, see the Flutter blog post by Harry Terkelsen,
 [How To Write a Flutter Web Plugin, Part 2][].
 
 ### Specifying a plugin's supported platforms {:#plugin-platforms}
@@ -1016,7 +1016,35 @@ For more information on `build.gradle` files, see the
 ### iOS
 
 The following example sets a dependency for
-`url_launcher` in `hello/ios/hello.podspec`:
+`url_launcher` in `hello/ios/hello/Package.swift`:
+
+```swift
+let package = Package(
+  // lines skipped
+  dependencies: [
+    .package(path: "../url_launcher"),
+  ],
+  targets: [
+    .target(
+      name: "hello",
+      dependencies: [
+        .product(name: "url_launcher", package: "url_launcher"),
+      ],
+    ),
+  ],
+)
+```
+
+You can now `import url_launcher` and
+access the source code at `hello/ios/hello/Sources`.
+
+For additional details on Swift package manifests,
+consult [Apple's PackageDescription documentation][].
+
+#### CocoaPods (legacy)
+
+If your plugin supports CocoaPods for backward compatibility,
+set a dependency in `hello/ios/hello.podspec`:
 
 ```ruby
 Pod::Spec.new do |s|
@@ -1028,14 +1056,15 @@ You can now `#import "UrlLauncherPlugin.h"` and
 access the `UrlLauncherPlugin` class in the source code
 at `hello/ios/Classes`.
 
-For additional details on `.podspec` files, see the
-[CocoaPods Documentation][].
+For additional details on `.podspec` files,
+consult the [CocoaPods Documentation][].
 
 ### Web
 
 All web dependencies are handled by the `pubspec.yaml`
 file, like any other Dart package.
 
+[Apple's PackageDescription documentation]: {{site.apple-dev}}/documentation/packagedescription
 [bind-native]: /platform-integration/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
@@ -1064,4 +1093,22 @@ file, like any other Dart package.
 [test your plugin]: #testing-your-plugin
 [unit tests]: /testing/overview#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
+## Bundle AI package skills
+
+You can help AI coding assistants use your package effectively by bundling
+custom instructions and recipes directly inside your repository.
+
+To distribute skills with your package:
+
+1. Create a `skills/` directory in the root of your package repo.
+2. Inside `skills/`, create a subdirectory named after your package (for
+   example, `skills/<package_name>/`).
+3. Add a `SKILL.md` file with guidelines and idiomatic code examples.
+4. Publish your package to `pub.dev`.
+
+When developers add your package as a dependency, their assistants can
+automatically discover your instructions. To learn more about authoring
+guidelines and best practices, check out
+[Ship skills with packages](https://dart.dev/tools/pub/package-skills).
+
 [Writing a good plugin]: {{site.flutter-blog}}/writing-a-good-flutter-plugin-1a561b986c9c

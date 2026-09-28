@@ -22,7 +22,7 @@ final class SiteSwitcher extends StatelessComponent {
       toggle: const Button(icon: 'apps', title: 'Visit related sites.'),
       content: nav(
         classes: 'dropdown-menu',
-        attributes: {'role': 'menu'},
+        attributes: const {'role': 'menu'},
         [
           ul([
             if (isFlutter) ...[
@@ -124,7 +124,7 @@ class _SiteWordMarkListEntry extends StatelessComponent {
               ),
             span(
               classes: 'name',
-              attributes: {
+              attributes: const {
                 'translate': 'no',
               },
               [.text(name)],

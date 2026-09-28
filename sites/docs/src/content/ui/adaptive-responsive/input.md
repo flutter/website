@@ -347,7 +347,7 @@ The app modifies the [`FocusNode.hasFocus`][]
 property to check whether the button has focus
 and, if so, adds an outline.
 
-[button code for the Wonderous app]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/common/controls/buttons.dart#L143
+[button code for the Wonderous app]: {{site.repo.wonderous}}/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/common/controls/buttons.dart#L143
 [`FocusNode.hasFocus`]: {{site.api}}/flutter/widgets/FocusNode/hasFocus.html
 
 ## Visual density

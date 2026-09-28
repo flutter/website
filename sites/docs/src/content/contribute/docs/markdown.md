@@ -47,3 +47,67 @@ To learn more about customizing code blocks,
 check out the dedicated documentation on [Code blocks][].
 
 [Code blocks]: /contribute/docs/code-blocks
+
+
+## Mermaid diagrams
+
+To render flowcharts, sequence diagrams, and other charts within a Markdown file,
+use a fenced code block with the `mermaid` language identifier:
+
+````markdown
+```mermaid
+flowchart LR
+    A[Start] --> B(Process)
+    B --> C{Decision}
+    C -->|Yes| D[Done]
+    C -->|No| B
+```
+````
+
+### Style Mermaid diagrams
+
+Mermaid diagrams are rendered to SVG on the server, once for each theme.
+Both variants ship in the page and CSS shows the one matching the site's
+current light or dark theme. Diagrams inherit the default
+`Google Sans Flex` typography.
+
+#### In-diagram styling (Recommended)
+
+When you need custom colors for specific nodes,
+define them directly in the diagram using Mermaid's built-in
+[`classDef` and `:::styleName` syntax][]:
+
+```mermaid
+flowchart LR
+    A:::highlightNode --> B
+    classDef highlightNode fill:#f96,stroke:#333,stroke-width:2px;
+```
+
+#### SCSS styling
+
+To adjust the global diagram layout, border, or background across the site,
+edit [`_mermaid.scss`][]:
+
+```scss
+.mermaid-container {
+  // Container styling (padding, margins, background, border)
+
+  // Fallback shown only if server rendering the diagram failed
+  pre.mermaid {
+    // Fallback styles
+  }
+  
+  .mermaid-theme {}
+
+  .mermaid-theme-light {}
+
+  .mermaid-theme-dark {}
+
+  svg {
+    // Custom SVG element overrides (requires !important)
+  }
+}
+```
+
+[`classDef` and `:::styleName` syntax]: https://mermaid.js.org/syntax/flowchart.html#styling-and-classes
+[`_mermaid.scss`]: https://github.com/flutter/website/blob/main/packages/site_shared/lib/_sass/components/_mermaid.scss

@@ -1,0 +1,29 @@
+categories:
+  - slug: release
+    label: Releases
+    description: >-
+      Flutter and Dart SDK releases and summaries of the changes they include.
+    showFeatured: true
+  - slug: news
+    label: News & events
+    description: >-
+      Time-sensitive news about Flutter and Dart products,
+      events, programs, roadmaps, and project milestones.
+    showFeatured: true
+  - slug: deep-dive
+    label: Deep dives
+    description: >-
+      Explanations of Flutter and Dart architecture, implementation,
+      technical decisions, and project processes as well as
+      practical guides and how-tos.
+    showFeatured: false
+  - slug: case-study
+    label: Case studies & stories
+    description: >-
+      Case studies and community, customer, partner, and project showcases.
+    showFeatured: false
+nextPostsTitle: "More from Flutter"
+atom:
+  # The title used for links pointing readers at the blog Atom feed.
+  subscribeTitle: "Subscribe to the Flutter Blog Atom feed"
+  feedAuthor: "Flutter Team"

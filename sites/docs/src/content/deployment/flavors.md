@@ -79,18 +79,20 @@ to make sure that the flavors work as expected.
     * In the `flavors_example` project, navigate to the
       `android/app/` directory and open `build.gradle.kts`.
 
-    * Add the `flavorsDimension` property and the
-      `productFlavors` properties inside of the
-      `android {} block`. Make sure that the `android {}`
-      block also contains the default
-      `debug` and `release` build types:
+    * Add the `flavorDimensions` property and the
+      `productFlavors` properties inside the
+      `android {}` block. The default template explicitly defines
+      the `release` build type, while the `debug` build type is implicit:
 
       ```kotlin title="build.gradle.kts"
       android {
           ...
           buildTypes {
-            getByName("debug") {...}
-            getByName("release") {...}
+              release {
+                  // TODO: Add your own signing config for the release build.
+                  // Signing with the debug keys for now, so `flutter run --release` works.
+                  signingConfig = signingConfigs.getByName("debug")
+              }
           }
           ...
           flavorDimensions += "default"
@@ -173,13 +175,16 @@ The Flutter framework provides the `appFlavor` constant, which retrieves the nam
 ### Access the current flavor
 
 1.  **Import the services library:**
-    To access the `appFlavor` constant, add the following import to your Dart file:
+    To access the `appFlavor` constant,
+    add the following import to your Dart file:
+
     ```dart
     import 'package:flutter/services.dart';
     ```
 
 1.  **Check the flavor value:**
-    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+    Use the `appFlavor` constant in your application logic
+    (often in `main()`) to handle flavor-specific configurations:
 
     ```dart
     void main() {
@@ -217,38 +222,34 @@ The following steps show how to add distinct app display
 names for two product flavors called `staging` and
 `production` in a project called `flavors_example`.
 
-1.  Update `build.gradle.kts` in your IDE:
+1.  Create flavor-specific resource directories:
 
-    * In the `flavors_example` project, navigate to the
-      `android/app/` directory and open `build.gradle.kts`.
+    * Navigate to the `android/app/src` directory.
 
-    * In the `flavorsDimension` block, add a `resValue()`
-      property called `app_name` to the `staging` and
-      `production` flavors:
+    * Create a directory called `staging/res/values`.
 
-      ```kotlin title="build.gradle.kts"
-      android {
-          ...
-          flavorDimensions += "default"
-          productFlavors {
-              create("staging") {
-                  dimension = "default"
-                  resValue(
-                      type = "string",
-                      name = "app_name",
-                      value = "Flavors staging")
-                  applicationIdSuffix = ".staging"
-              }
-              create("production") {
-                  dimension = "default"
-                  resValue(
-                      type = "string",
-                      name = "app_name",
-                      value = "Flavors production")
-                  applicationIdSuffix = ".production"
-              }
-          }
+    * Navigate to the `staging/res/values` directory.
+
+    * Create the following `strings.xml` file:
+
+      ```xml title="strings.xml"
+      <?xml version="1.0" encoding="utf-8"?>
+      <resources>
+          <string name="app_name">Flavors staging</string>
+      </resources>
       ```
+
+      :::note
+      If your project sets `app_name` with `resValue()` in `build.gradle.kts`,
+      builds with Android Gradle Plugin (AGP) 9.0 or later fail by default
+      with an error such as
+      `Product Flavor <flavor_name> contains custom resource values, but the feature is disabled.`
+      To fix this, remove those `resValue()` calls
+      and define `app_name` in `strings.xml` files as shown in this step.
+      :::
+    
+    * Repeat the previous steps for the `production` flavor,
+      and set the value of `app_name` to `Flavors production`.
 
 1.  Update `AndroidManifest.xml` in your IDE:
 
@@ -377,7 +378,7 @@ you need to add the `default-flavor` field to your project's
 pubspec. To learn more, see the [`default-flavor` field][]
 in [Flutter pubspec options][].
 
-[`default-flavor` field]: /tools/pubspec#default-flavor-field
+[`default-flavor` field]: /tools/pubspec#default-flavor
 
 ### Add unique build settings
 
@@ -397,8 +398,14 @@ When setting `abiFilters` in product flavors, pass
 For more information on creating and using flavors, check out
 the following resources:
 
+* [Set up Flutter flavors for iOS and macOS][]
+* [Set up Flutter flavors for Linux][]
+* [Set up Flutter flavors for Windows][]
 * [Build flavors in Flutter (Android and iOS) with Firebase][]
 * [How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI][flutterfireCLI]
 
-[Build flavors in Flutter (Android and iOS) with Firebase]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
+[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+[Set up Flutter flavors for Linux]:   /deployment/flavors-linux
+[Set up Flutter flavors for Windows]: /deployment/flavors-windows
+[Build flavors in Flutter (Android and iOS) with Firebase]: https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
 [flutterfireCLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/

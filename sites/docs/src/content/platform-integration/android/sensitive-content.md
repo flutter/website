@@ -35,7 +35,7 @@ The `autoSensitive` value isn't supported as of Flutter 3.35 and behaves
 the same as `notSensitive`. See [Issue #160879][] for more information.
 :::
 
-[Issue #160879]: {{site.github}}/flutter/flutter/issues/160879
+[Issue #160879]: {{site.repo.flutter}}/issues/160879
 
 ## Using the `SensitiveContent` widget
 

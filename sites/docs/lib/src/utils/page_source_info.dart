@@ -26,7 +26,6 @@ extension PageSourceInfoExtension on Page {
     final pageUrl = url;
     final pageData = data.page;
     final siteData = data.site;
-    final branch = siteData['branch'] as String? ?? 'main';
     final repoLinks = siteData['repo'] as Map<String, Object?>? ?? {};
     final repoUrl =
         repoLinks['this'] as String? ?? 'https://github.com/flutter/website';
@@ -38,7 +37,7 @@ extension PageSourceInfoExtension on Page {
     final String issueUrl;
 
     if (inputPath != null) {
-      pageSourceUrl = '$repoUrl/blob/$branch/${inputPath.replaceAll('./', '')}';
+      pageSourceUrl = '$repoUrl/blob/main/${inputPath.replaceAll('./', '')}';
       issueUrl =
           '$repoUrl/issues/new?template=1_page_issue.yml&'
           'page-url=$fullPageUrl&'

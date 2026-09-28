@@ -3,20 +3,20 @@ description: Example of a Flutter app using the intl library services.
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0-0
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: any # Use the pinned version from flutter_localizations
+  intl: any # Use the pinned version from flutter_localizations.
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   # TODO(parlough): Add back when analyzer constraints allow.
-  # intl_translation: ^0.20.1
+  # intl_translation: ^0.22.0
 
 flutter:
   uses-material-design: true

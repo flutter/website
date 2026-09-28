@@ -15,6 +15,6 @@ abstract class Analytics {
 
   /// Reports whether the user found the current page [helpful].
   void sendFeedback(bool helpful) {
-    sendEvent('feedback', {'feedback_type': helpful ? 'up' : 'down'});
+    sendEvent('inline_feedback', {'feedback_type': helpful ? 'up' : 'down'});
   }
 }

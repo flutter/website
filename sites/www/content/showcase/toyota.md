@@ -13,7 +13,7 @@ locations:
 platforms:
   - Embedded
 industries:
-  - Travel & Lifestyle
+  - Automotive
 tags:
   - embedded
 publishDate: 2026-05-20

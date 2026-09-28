@@ -137,7 +137,7 @@ The release contains a new Dart SDK which provides support for a new set literal
 
 [#37](https://github.com/dart-lang/language/issues/37) Set Literal
 
-[#33274](https://github.com/dart-lang/sdk/issues/33274) Add support for "naked" instructions: global object pool, pc-relative static calls, faster indirect calls, potential code sharing
+[#33274]({{site.repo.dart-sdk}}/issues/33274) Add support for "naked" instructions: global object pool, pc-relative static calls, faster indirect calls, potential code sharing
 
 
 ## Tool

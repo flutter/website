@@ -13,7 +13,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - E-commerce & Retail
 successMetrics:
   - text: 4x
     desc: Increase in release cadence

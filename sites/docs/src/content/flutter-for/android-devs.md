@@ -919,12 +919,10 @@ Future<void> loadData() async {
   // The 'echo' isolate sends its SendPort as the first message.
   SendPort sendPort = await receivePort.first as SendPort;
 
-  final msg =
-      await sendReceive(
-            sendPort,
-            'https://jsonplaceholder.typicode.com/posts',
-          )
-          as List<Object?>;
+  final msg = await sendReceive(
+    sendPort,
+    'https://jsonplaceholder.typicode.com/posts',
+  ) as List<Object?>;
   final posts = msg.cast<Map<String, Object?>>();
 
   setState(() {
@@ -1053,12 +1051,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
     // The 'echo' isolate sends its SendPort as the first message.
     SendPort sendPort = await receivePort.first as SendPort;
 
-    final msg =
-        await sendReceive(
-              sendPort,
-              'https://jsonplaceholder.typicode.com/posts',
-            )
-            as List<Object?>;
+    final msg = await sendReceive(
+      sendPort,
+      'https://jsonplaceholder.typicode.com/posts',
+    ) as List<Object?>;
     final posts = msg.cast<Map<String, Object?>>();
 
     setState(() {
@@ -1112,6 +1108,7 @@ To make a network call, call `await` on the `async` function `http.get()`:
 <?code-excerpt "lib/network.dart"?>
 ```dart
 import 'dart:developer' as developer;
+
 import 'package:http/http.dart' as http;
 
 Future<void> loadData() async {
@@ -2306,6 +2303,7 @@ Shared Preferences and NSUserDefaults (the iOS equivalent).
 <?code-excerpt "lib/shared_prefs.dart"?>
 ```dart
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -2387,7 +2385,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
 [`firebase_ui_auth`]: {{site.pub-pkg}}/firebase_ui_auth
-[Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
+[Firebase Messaging]: {{site.repo.flutterfire}}/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
 [Flutter for Android Developers: How to design Activity UI in Flutter]: https://burhanrashid52.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter/

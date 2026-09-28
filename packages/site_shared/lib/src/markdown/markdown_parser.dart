@@ -18,10 +18,12 @@ import 'alert_syntax.dart';
 import 'attribute_syntax.dart';
 import 'fenced_code_block_syntax.dart';
 import 'header_syntax.dart';
+import 'mermaid_syntax.dart';
 
 /// The `package:markdown` block syntaxes to apply when parsing Markdown.
 const List<md.BlockSyntax> _blockSyntaxes = [
   JasprHtmlBlockSyntax(),
+  MermaidBlockSyntax(),
   CustomFencedCodeBlockSyntax(),
   HeaderWithAttributesSyntax(),
   AttributeBlockSyntax(),
@@ -173,8 +175,13 @@ class DashMarkdownParser implements PageParser {
           }
         }
       } else if (node is md.Text) {
+        final fragment = html.HtmlParser(
+          node.text,
+          strict: true,
+          generateSpans: true,
+        ).parseFragment();
         currentNodes.addAll(
-          HtmlParser.buildNodes(html.parseFragment(node.text).nodes),
+          HtmlParser.buildNodes(fragment.nodes),
         );
       } else if (node is md.Element) {
         final nodeChildren = node.children;

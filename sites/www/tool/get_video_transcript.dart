@@ -3,6 +3,7 @@
 // can be found in the LICENSE file.
 
 import 'dart:io';
+
 import 'package:youtube_transcript_api/youtube_transcript_api.dart';
 
 void main(List<String> args) async {
@@ -86,13 +87,13 @@ String? _youtubeVideoIdFromUrl(String url) {
 String _formatTimestamp(int seconds) {
   final hours = seconds ~/ 3600;
   final minutes = (seconds % 3600) ~/ 60;
-  final secs = (seconds % 60).toInt();
+  final secondsInMinute = seconds % 60;
 
   String pad(int n) => n.toString().padLeft(2, '0');
 
   if (hours > 0) {
-    return '[${pad(hours)}:${pad(minutes)}:${pad(secs)}]';
+    return '[${pad(hours)}:${pad(minutes)}:${pad(secondsInMinute)}]';
   } else {
-    return '[${pad(minutes)}:${pad(secs)}]';
+    return '[${pad(minutes)}:${pad(secondsInMinute)}]';
   }
 }

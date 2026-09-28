@@ -692,7 +692,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [82327](https://github.com/flutter/flutter/pull/82327) update the DragStartBehavior documetations (framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
 
 
-[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of throwsA(isA<Xxx>()) (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
+[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of `throwsA(isA<Xxx>())` (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
 
 
 [82337](https://github.com/flutter/flutter/pull/82337) Revert "Init licenses for test bindings (#81961)" (a: tests, team, tool, framework, cla: yes, waiting for tree to go green)
@@ -3543,7 +3543,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [82309](https://github.com/flutter/flutter/pull/82309) [flutter_tool] Suggest fix for transform input (tool, cla: yes, waiting for tree to go green)
 
 
-[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of throwsA(isA<Xxx>()) (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
+[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of `throwsA(isA<Xxx>())` (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
 
 
 [82337](https://github.com/flutter/flutter/pull/82337) Revert "Init licenses for test bindings (#81961)" (a: tests, team, tool, framework, cla: yes, waiting for tree to go green)
@@ -4616,7 +4616,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [82327](https://github.com/flutter/flutter/pull/82327) update the DragStartBehavior documetations (framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
 
 
-[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of throwsA(isA<Xxx>()) (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
+[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of `throwsA(isA<Xxx>())` (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
 
 
 [82340](https://github.com/flutter/flutter/pull/82340) change the elevation of dropdown from int to double (framework, f: material design, cla: yes)
@@ -5155,7 +5155,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [82308](https://github.com/flutter/flutter/pull/82308) Force LANG=en_US.UTF-8 in test runner (a: tests, team, cla: yes, waiting for tree to go green)
 
 
-[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of throwsA(isA<Xxx>()) (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
+[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of `throwsA(isA<Xxx>())` (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
 
 
 [82337](https://github.com/flutter/flutter/pull/82337) Revert "Init licenses for test bindings (#81961)" (a: tests, team, tool, framework, cla: yes, waiting for tree to go green)
@@ -5466,7 +5466,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [82327](https://github.com/flutter/flutter/pull/82327) update the DragStartBehavior documetations (framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
 
 
-[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of throwsA(isA<Xxx>()) (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
+[82328](https://github.com/flutter/flutter/pull/82328) use throwsXxx instead of `throwsA(isA<Xxx>())` (a: tests, tool, framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
 
 
 [82387](https://github.com/flutter/flutter/pull/82387) first part of applying sort_child_properties_last (framework, f: material design, cla: yes, f: cupertino, waiting for tree to go green)
@@ -11743,7 +11743,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [27382](https://github.com/flutter/engine/pull/27382) Revert "Make FlutterFragment usable without requiring it to be attached to an Android Activity." (platform-android, cla: yes)
 
 
-[27392](https://github.com/flutter/engine/pull/27392) Add embedder unit test that reproduces https://github.com/dart-lang/sdk/issues/46275 (cla: yes, embedder)
+[27392](https://github.com/flutter/engine/pull/27392) Add embedder unit test that reproduces {{site.repo.dart-sdk}}/issues/46275 (cla: yes, embedder)
 
 
 [27397](https://github.com/flutter/engine/pull/27397) Make FlutterFragment usable without requiring it to be attached to an Android Activity. (Attempt 2) (platform-android, cla: yes, waiting for tree to go green)
@@ -18307,7 +18307,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [27048](https://github.com/flutter/engine/pull/27048) Temporarily opt out of reduced shaders variants till roll issues are resolved. (cla: yes, waiting for tree to go green, needs tests, embedder)
 
 
-[27392](https://github.com/flutter/engine/pull/27392) Add embedder unit test that reproduces https://github.com/dart-lang/sdk/issues/46275 (cla: yes, embedder)
+[27392](https://github.com/flutter/engine/pull/27392) Add embedder unit test that reproduces {{site.repo.dart-sdk}}/issues/46275 (cla: yes, embedder)
 
 
 [27506](https://github.com/flutter/engine/pull/27506) MacOS: Fix external texture not working in OpenGL mode (cla: yes, waiting for tree to go green, needs tests, embedder)

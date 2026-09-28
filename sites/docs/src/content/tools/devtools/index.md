@@ -106,6 +106,6 @@ Dart command-line apps, see the
 [Android Studio/IntelliJ]: /tools/devtools/android-studio
 [VS Code]: /tools/devtools/vscode
 [command line]: /tools/devtools/cli
-[DevTools issue tracker]: {{site.github}}/flutter/devtools/issues
+[DevTools issue tracker]: https://github.com/flutter/devtools/issues
 [Debugging]: /testing/debugging
 [Other resources]: /testing/debugging#other-resources

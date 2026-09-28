@@ -33,7 +33,7 @@ visiting the [Affected widgets][] page.
 
 [Affected widgets]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html#affected-widgets
 [deprecation policy]: /release/compatibility-policy#deprecation-policy
-[demo]: {{site.github}}/flutter/samples/blob/main/material_3_demo/
+[demo]: {{site.repo.samples}}/blob/main/material_3_demo/
 [`NavigationBar`]: {{site.api}}/flutter/material/NavigationBar-class.html
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
@@ -52,4 +52,4 @@ check out:
 
 [Material.io developer documentation]: {{site.material}}/develop/flutter
 [Migrating a Flutter app to Material 3]: https://blog.codemagic.io/migrating-a-flutter-app-to-material-3/
-[Umbrella issue on GitHub]: {{site.github}}/flutter/flutter/issues/91605
+[Umbrella issue on GitHub]: {{site.repo.flutter}}/issues/91605

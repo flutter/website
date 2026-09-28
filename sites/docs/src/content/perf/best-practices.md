@@ -269,7 +269,7 @@ For more information and examples, check out:
   a community article by AbdulRahman AlHamali
 * [`ListView.builder`][] API
 
-[Creating a `ListView` that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
+[Creating a `ListView` that loads one page at a time]: https://medium.com/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [Working with long lists]: /cookbook/lists/long-lists
 

@@ -77,7 +77,7 @@ final disabledDropdown = DropdownButton<String>(
   items: const [
     DropdownMenuItem(value: 'Option 1', child: Text('Option 1')),
   ],
-  onChanged: null, // This was the only way to disable it
+  onChanged: null, // This was the only way to disable it.
 );
 ```
 
@@ -89,7 +89,7 @@ Code after migration:
     items: const [
       DropdownMenuItem(value: 'Option 1', child: Text('Option 1')),
     ],
--   onChanged: null, // This was the only way to disable it
+-   onChanged: null, // This was the only way to disable it.
 +   enabled: false,
   );
 ```
@@ -127,7 +127,7 @@ Code after migration:
 
 ## Timeline
 
-Landed in version: 3.44.0-1.0.pre-629<br>
+Landed in version: Not yet<br>
 In stable release: Not yet
 
 ## References

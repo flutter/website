@@ -13079,7 +13079,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [29304](https://github.com/flutter/engine/pull/29304) Roll Skia from 05ac1b86adbb to 8dd1f50a65fd (26 revisions) (cla: yes, waiting for tree to go green)
 
 
-[29305](https://github.com/flutter/engine/pull/29305) [fuchsia] fidl::InterfaceHandle<T> -> THandle. (cla: yes, platform-fuchsia)
+[29305](https://github.com/flutter/engine/pull/29305) [fuchsia] `fidl::InterfaceHandle<T>` -> THandle. (cla: yes, platform-fuchsia)
 
 
 [29306](https://github.com/flutter/engine/pull/29306) Roll Skia from 8dd1f50a65fd to d8e8681c98c6 (1 revision) (cla: yes, waiting for tree to go green)
@@ -16661,7 +16661,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 [29290](https://github.com/flutter/engine/pull/29290) [fuchsia] Add missing protocols to V2 runner. (cla: yes, waiting for tree to go green, platform-fuchsia)
 
 
-[29305](https://github.com/flutter/engine/pull/29305) [fuchsia] fidl::InterfaceHandle<T> -> THandle. (cla: yes, platform-fuchsia)
+[29305](https://github.com/flutter/engine/pull/29305) [fuchsia] `fidl::InterfaceHandle<T>` -> THandle. (cla: yes, platform-fuchsia)
 
 
 [29313](https://github.com/flutter/engine/pull/29313) Bump ICU to ece15d049f2d360721716089372e3749fb89e0f4 (cla: yes, platform-fuchsia)

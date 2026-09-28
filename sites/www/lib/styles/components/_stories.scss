@@ -5,6 +5,10 @@ section#stories {
   padding-bottom: var(--gutter-lg);
 }
 
+.story-grid + .story-grid {
+  margin-top: var(--gutter-lg);
+}
+
 .story-grid {
   .story-grid-header {
     h3 {
@@ -19,6 +23,15 @@ section#stories {
     grid-template-columns: 1fr;
     column-gap: var(--gutter-sm);
     row-gap: var(--gutter);
+  }
+
+  .filters-empty-results {
+    padding: var(--gutter-md) 0;
+    text-align: center;
+
+    p {
+      margin-bottom: var(--gutter-sm);
+    }
   }
 
   @include breakpoints.screen(md) {

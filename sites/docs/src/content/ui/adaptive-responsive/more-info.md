@@ -15,8 +15,8 @@ check out the source code for the following apps:
 * [Wonderous][]
 * [Flutter adaptive demo][]
 
-[Flutter adaptive demo]: {{site.github}}/gskinnerTeam/flutter-adaptive-demo
-[Wonderous]: {{site.github}}/gskinnerTeam/flutter-wonderous-app
+[Flutter adaptive demo]: https://github.com/gskinnerTeam/flutter-adaptive-demo
+[Wonderous]: {{site.repo.wonderous}}
 
 ## Learn more about basic usability principles
 
@@ -48,7 +48,7 @@ Here are some resources that you might find useful:
 
 [Android large screen guidelines]: {{site.android-dev}}/docs/quality-guidelines/large-screen-app-quality
 [Build high quality apps (Android)]: {{site.android-dev}}/quality
-[How to build Adaptive UI with Flutter]: {{site.youtube-site}}/watch?v=LeKLGzpsz9I
+[How to build Adaptive UI with Flutter]: {{site.yt.watch}}?v=LeKLGzpsz9I
 [Material guidelines on applying layout]: {{site.material}}/foundations/layout/applying-layout/window-size-classes
 [Material guidelines on canonical layouts]: {{site.material}}/foundations/layout/canonical-layouts/overview
 [Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/

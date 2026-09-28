@@ -62,7 +62,7 @@ class YoutubeEmbed with CustomComponentBase {
           classes: 'lite-youtube-fallback',
           href: 'https://www.youtube.com/watch/$videoId',
           target: Target.blank,
-          attributes: {'rel': 'noopener'},
+          attributes: const {'rel': 'noopener'},
           [
             .text('Watch on YouTube in a new tab: "$videoTitle"'),
           ],

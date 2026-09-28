@@ -468,18 +468,32 @@ void main() {
   group('BannerContent.fromJson', () {
     final valid = <String, Object?>{
       'text': 'Flutter 3.41 is here',
+      'mobileText': 'Flutter 3.41 is here',
       'link': 'https://blog.flutter.dev',
     };
 
     test('decodes valid data', () {
       final decoded = BannerContent.fromJson(valid);
       expect(decoded.text, 'Flutter 3.41 is here');
+      expect(decoded.mobileText, 'Flutter 3.41 is here');
       expect(decoded.toMap()['text'], 'Flutter 3.41 is here');
+      expect(decoded.toMap()['mobileText'], 'Flutter 3.41 is here');
+    });
+
+    test('decodes without optional mobileText', () {
+      final minimal = {...valid}..remove('mobileText');
+      final decoded = BannerContent.fromJson(minimal);
+      expect(decoded.mobileText, isNull);
     });
 
     test('throws when required field is missing', () {
       final invalid = {...valid}..remove('link');
       expect(() => BannerContent.fromJson(invalid), _throwsMapperException);
+    });
+
+    test('throws when mobileText is blank', () {
+      final invalid = {...valid}..['mobileText'] = ' ';
+      expect(() => BannerContent.fromJson(invalid), _throwsValidationError);
     });
 
     test('throws when link is not a URL or root-relative path', () {

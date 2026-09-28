@@ -897,7 +897,7 @@ class CardListItem extends StatelessWidget {
 
 
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
-[cloning the example code]: {{site.github}}/flutter/codelabs
+[cloning the example code]: https://github.com/flutter/codelabs
 [issue 44152]: {{site.repo.flutter}}/issues/44152
 [`LinearGradient`]: {{site.api}}/flutter/painting/LinearGradient-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html

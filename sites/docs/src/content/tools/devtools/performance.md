@@ -260,7 +260,7 @@ detect jank using DevTools, check out a guided
 [Flutter performance profiling]: /perf/ui-performance
 [Reduce shader compilation jank on mobile]: /perf/rendering-performance
 [Import and export]: #import-and-export
-[performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
+[performance-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
 [track-widgets]: {{site.yt.watch}}/_EYk-E29edo?t=623
 [track-layouts]: {{site.yt.watch}}/_EYk-E29edo?t=676
 [track-paints]: {{site.yt.watch}}/_EYk-E29edo?t=748

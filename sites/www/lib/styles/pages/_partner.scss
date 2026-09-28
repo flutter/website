@@ -3,10 +3,6 @@
 body.partner {
   font-family: var(--font-body);
 
-  #notification.module {
-    background-color: var(--grey-1);
-  }
-
   section.hero {
     background: linear-gradient(224deg, var(--blue-1) 0%, var(--blue-2) 100%);
   }
@@ -90,12 +86,12 @@ body.partner {
 
     .carousel .carousel-slider {
       padding-left: var(--gutter);
-    
+
       .carousel-featured-card .text {
-        
+
         h3, p, .btn.quiet {
           color: white;
-  
+
           &:hover {
             color: white !important;
           }
@@ -103,7 +99,7 @@ body.partner {
       }
     }
   }
-  
+
   #stories {
     .story-grid-header {
       width: 100%;
@@ -123,7 +119,7 @@ body.partner {
 
   @include breakpoints.screen(md) {
     .hero-content {
-      width: 80%;  
+      width: 80%;
     }
 
     .text-container {
@@ -143,7 +139,7 @@ body.partner {
   @include breakpoints.screen(lg) {
     .hero-content {
       width: 70%;
-      
+
       h2 {
         font-size: 3.625rem !important;
       }
@@ -155,7 +151,7 @@ body.partner {
 
     .carousel-section {
       padding: 0 80px 70px 80px;
-      
+
       h1 {
         margin-left: 50px;
         margin-bottom: 44px;

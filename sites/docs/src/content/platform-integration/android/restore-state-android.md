@@ -95,7 +95,7 @@ Other considerations:
 [`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
 [`RestorationScope`]: {{site.api}}/flutter/widgets/RestorationScope-class.html
 [`restoreState`]: {{site.api}}/flutter/widgets/RestorationMixin/restoreState.html
-[VeggieSeasons]: https://github.com/flutter/demos/tree/main/veggieseasons
+[VeggieSeasons]: {{site.repo.demos}}/tree/main/veggieseasons
 
 ## Restoring navigation state
 

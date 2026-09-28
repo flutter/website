@@ -1,0 +1,338 @@
+---
+title: Get started developing with AI
+shortTitle: Get started
+description: >-
+  Learn how to set up and use AI agent plugins for Flutter and Dart
+  using your preferred coding assistant.
+---
+
+AI coding assistants can accelerate your Flutter development workflow by
+writing code, fixing errors, and building complete features.
+
+By default, general-purpose AI assistants might not have the latest context on
+Flutter patterns, project diagnostics, or third-party packages. Installing the
+official Flutter agent plugin equips your assistant with dedicated tools and
+recipes tailored for Flutter and Dart development.
+
+## How Flutter AI plugins work
+
+An **agent plugin** bundles the tools and knowledge that an AI assistant needs
+to understand and modify your Flutter codebase.
+
+When you install an official Flutter agent plugin, it connects your assistant
+to four core capabilities:
+
+* **[Agent skills](/ai/tools#agent-skills)**: on-demand procedural guides from
+  the official Flutter and Dart repositories that teach the assistant how to
+  perform specific tasks, such as creating responsive layouts, managing state,
+  or writing widget tests.
+* **[Agent rules](/ai/tools#agent-rules)**: persistent instructions that guide
+  an assistant's responses, such as proactively triggering stateful hot reload
+  when editing Flutter widgets.
+* **[Dart and Flutter MCP server](/ai/tools#dart-and-flutter-mcp-server)**:
+  a Model Context Protocol (MCP) server that connects the assistant to the
+  Dart SDK, giving it real-time access to analyzer diagnostics, symbol
+  resolution, test runners, and runtime inspection.
+* **[Specialized agents](/ai/tools#specialized-agents)**: focused assistant
+  personas tailored for dedicated workflows, such as the Flutter Accessibility
+  (`a11y`) agent for automated accessibility audits and code fixes.
+
+These tools work together automatically: the assistant uses MCP tools to query
+live project state and static analysis, while using agent skills to guide its
+coding strategies and best practices.
+
+In addition to core Flutter plugins, you can also equip your assistant with
+skills that are shipped directly by third-party `pub.dev`
+packages using [package skills](https://dart.dev/ai/package-skills).
+
+To learn more about the underlying architecture and capabilities of each tool,
+check out [How Flutter AI tools work](/ai/tools).
+
+## Choose your AI coding agent
+
+Select your agent below for instructions on how to install official plugins
+and configure tools for Flutter development.
+
+<Tabs key="ai-agent-tabs" wrapped="true">
+
+<Tab name="Antigravity">
+
+[Antigravity](
+https://antigravity.google/docs/build-with-google/#dart-and-flutter)
+is an agentic development platform by Google that includes the Antigravity
+IDE, IDE extensions (for VS Code and other editors), and the Antigravity CLI.
+
+**Antigravity IDE and extensions**
+
+Equip the Antigravity IDE or Antigravity extension (such as in VS Code)
+with official Dart and Flutter tools:
+
+1. Open **Settings** in Antigravity by clicking the gear icon or pressing
+   <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>,</kbd>.
+1. Click the **Customizations** tab.
+1. In the **Build with Google Plugins** section, click **Customize**.
+1. Click **Download** next to the **Dart and Flutter** integration.
+
+To verify the installation, open the **Agent** panel
+(<kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>) and ask the agent:
+
+```text
+Summarize the Dart and Flutter tools and skills available in this project.
+```
+
+**Antigravity CLI**
+
+The Antigravity CLI runs as the `agy` command in your terminal.
+
+1. Configure the Dart and Flutter MCP server in your project's
+   `.agents/mcp_config.json` file (or globally in
+   `~/.gemini/config/mcp_config.json`):
+
+   ```json
+   {
+     "mcpServers": {
+       "dart": {
+         "command": "dart",
+         "args": ["mcp-server"]
+       }
+     }
+   }
+   ```
+
+1. Install official Flutter and Dart skills into your workspace:
+
+   ```bash
+   # Install Flutter skills
+   npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
+
+   # Install Dart skills
+   npx skills add dart-lang/skills --skill '*' --agent universal --yes
+   ```
+
+1. Start an interactive session in your project root:
+
+   ```bash
+   agy
+   ```
+
+</Tab>
+
+<Tab name="Claude Code">
+
+[Claude Code](https://code.claude.com/) is an agentic coding assistant from
+Anthropic that runs in your terminal.
+
+**Install the official plugin**
+
+Equip Claude Code with official Flutter and Dart skills and MCP configuration:
+
+1. Add the marketplace for Claude Code plugins:
+
+   ```bash
+   claude plugin marketplace add flutter/agent-plugins
+   ```
+
+1. Install the Flutter and Dart plugin:
+
+   ```bash
+   claude plugin install dart-flutter@dart-flutter
+   ```
+
+**Configure agent rules**
+
+Claude Code plugins discover skills and MCP servers,
+but don't automatically load plugin rules.
+To equip Claude Code with official Flutter rules,
+add the rules you want from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+to your project's `CLAUDE.md` file.
+
+**Verify installation**
+
+Verify that the plugin is active in Claude Code:
+
+```bash
+claude plugin marketplace list
+```
+
+</Tab>
+
+<Tab name="Cursor">
+
+[Cursor](https://cursor.com/) is an AI-powered code editor built on top of
+VS Code.
+
+**Install the official plugin**
+
+Equip Cursor with official Flutter and Dart skills and MCP configuration
+using any of the following methods:
+
+* Visit the [Dart and Flutter plugin](https://cursor.com/marketplace/flutter)
+  on the Cursor Marketplace and select **Add to Cursor**.
+* In Cursor, open **Customize**, then search for and add **Dart and Flutter**.
+* In a Cursor chat session, run `/add-plugin dart-flutter`.
+
+Cursor automatically discovers the bundled skills and configures the
+Dart and Flutter MCP server.
+
+**Configure agent rules**
+
+Cursor supports file-scoped rules in the `.cursor/rules/` directory
+using `.mdc` files.
+To equip Cursor with official Flutter rules,
+download the `.mdc` files from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+into your project's `.cursor/rules/` directory.
+
+</Tab>
+
+<Tab name="Codex">
+
+[Codex](https://chatgpt.com/codex) is an agentic coding assistant designed for
+terminal and IDE workflows.
+
+**Install the official plugin**
+
+Equip Codex with official Flutter and Dart skills and MCP configuration:
+
+1. Add the Dart and Flutter marketplace for Codex plugins:
+
+   ```bash
+   codex plugin marketplace add flutter/agent-plugins
+   ```
+
+1. Install the Dart and Flutter plugin:
+
+   ```bash
+   codex plugin add dart-flutter@dart-flutter
+   ```
+
+**Configure agent rules**
+
+Codex plugins install skills and MCP servers,
+but don't automatically bundle rules.
+To equip Codex with official Flutter rules,
+download the `.md` rule files from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+into your project's `.agent/rules/` directory,
+or append the rule instructions to `CODEX.md`.
+
+**Verify installation**
+
+Verify that the plugin is active in Codex:
+
+```bash
+codex plugin list
+```
+
+</Tab>
+
+<Tab name="GitHub Copilot">
+
+[GitHub Copilot](https://github.com/features/copilot) in VS Code supports
+agentic coding, tool calling via MCP, and custom workspace instructions.
+
+**Configure the MCP server**
+
+1. Ensure the **Model Context Protocol (MCP)** extension is enabled in VS Code.
+1. Create or open `.vscode/mcp.json` in your workspace and add the Dart MCP
+   server:
+
+   ```json
+   {
+     "servers": {
+       "dart": {
+         "command": "dart",
+         "args": ["mcp-server"]
+       }
+     }
+   }
+   ```
+
+**Install agent skills**
+
+In your Flutter project root, install official skills using the universal flag:
+
+```bash
+# Install Flutter skills
+npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
+
+# Install Dart skills
+npx skills add dart-lang/skills --skill '*' --agent universal --yes
+```
+
+**Configure agent rules**
+
+GitHub Copilot supports custom workspace instructions in
+`.github/copilot-instructions.md`.
+To equip Copilot with official Flutter rules,
+add the rules you want from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+to your project's `.github/copilot-instructions.md` file.
+
+</Tab>
+
+<Tab name="Other">
+
+If you're using another coding assistant (such as Windsurf, Zed, or Cline)
+that supports the Model Context Protocol (MCP) or Agent Skills specification,
+configure the tools manually.
+
+**Configure the MCP server**
+
+Most MCP-compatible clients use a standard JSON configuration format. Add the
+following entry to your client's MCP configuration file:
+
+```json
+{
+  "mcpServers": {
+    "dart": {
+      "command": "dart",
+      "args": ["mcp-server"]
+    }
+  }
+}
+```
+
+For client-specific setup guides, command-line arguments, and troubleshooting,
+check out the [Dart and Flutter MCP server repository](
+https://github.com/dart-lang/ai/tree/main/pkgs/dart_mcp_server).
+
+**Install agent skills**
+
+Use the `skills` CLI to download skills into your workspace's standard
+`.agents/skills` directory:
+
+```bash
+# Install Flutter skills
+npx skills add flutter/agent-plugins --skill '*' --agent universal --yes
+
+# Install Dart skills
+npx skills add dart-lang/skills --skill '*' --agent universal --yes
+```
+
+**Configure agent rules**
+
+If your coding assistant supports project instructions or rules
+(such as Windsurf `.windsurfrules` or Cline `.clinerules`),
+copy or download rules from the
+[official rules repository](https://github.com/flutter/agent-plugins/tree/main/rules)
+into your assistant's configuration file.
+
+</Tab>
+
+</Tabs>
+
+## Next steps
+
+* To learn more about how skills and tools interact, check out
+  [How Flutter AI tools work](/ai/tools).
+* To discover and install skills from dependencies, refer to
+  [Package skills](https://dart.dev/ai/package-skills).
+* To publish skills with your own packages, refer to
+  [Ship skills with packages](https://dart.dev/tools/pub/package-skills).
+* To give your assistant search access to official Flutter and Dart
+  documentation, connect to the [Developer Knowledge MCP server](
+  https://developers.google.com/knowledge/mcp).
+* To explore the official plugins, check out the
+  [flutter/agent-plugins](https://github.com/flutter/agent-plugins) repository.

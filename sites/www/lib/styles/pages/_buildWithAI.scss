@@ -49,11 +49,11 @@ body.buildWithAI {
         background-color: transparent !important;
         display: flex !important;
         gap: 1rem;
-        
+
         li {
           background-color: var(--grey-1);
           border-radius: var(--ui-border-radius);
-          
+
           &.active {
             background-color: var(--blue-6);
           }
@@ -75,63 +75,63 @@ body.buildWithAI {
       align-items: center;
       justify-content: space-between;
       margin-bottom: 2rem;
-      
+
       &:last-child {
         margin-bottom: 0;
       }
-      
+
       &.reversed {
         flex-direction: row-reverse;
       }
-      
+
       .media {
         flex: 1;
         display: flex;
         justify-content: center;
-        
+
         img {
           max-width: 100%;
           height: auto;
         }
-        
+
         img.genkit-logo {
           max-width: 220px !important;
           border-radius: 50%;
           transform: translate(-50px, -10px);
         }
       }
-      
+
       .text {
         flex: 1;
         padding: 6rem;
-        
+
         h3 {
           font-size: var(--font-size-heading-2);
           margin-bottom: var(--gutter-sm);
           color: black;
         }
-        
+
         p {
           font-size: var(--font-size-heading-4);
           margin-bottom: var(--spacer);
         }
       }
-      
+
       @media (max-width: 1023px) {
         flex-direction: column !important;
         text-align: center;
-        
+
         &.reversed {
           flex-direction: column !important;
         }
-        
+
         .text {
           padding: 1rem 0;
         }
-        
+
         .media {
           margin-bottom: 2rem;
-          
+
           img.genkit-logo {
             max-width: 200px !important;
           }

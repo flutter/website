@@ -1,6 +1,5 @@
 ---
 title: Mode of interaction
-sidenav: ai
 description: >
   Learn to balance LLM capabilities with traditional code and implement 
   guardrails to manage nondeterministic AI behavior.

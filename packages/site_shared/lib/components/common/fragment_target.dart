@@ -17,7 +17,7 @@ final class FragmentTarget extends StatelessComponent {
   Component build(BuildContext context) => a(
     href: '',
     id: id,
-    attributes: {'aria-hidden': 'true'},
-    [],
+    attributes: const {'aria-hidden': 'true'},
+    const [],
   );
 }

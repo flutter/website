@@ -1833,6 +1833,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 <?code-excerpt "lib/listview_item_clicked.dart"?>
 ```dart
 import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -1908,6 +1909,7 @@ as shown in the next example.
 <?code-excerpt "lib/dynamic_listview.dart"?>
 ```dart
 import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -1978,6 +1980,7 @@ which automatically recycles list elements for you:
 <?code-excerpt "lib/listview_builder.dart"?>
 ```dart
 import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2164,7 +2167,7 @@ class _MyFormState extends State<MyForm> {
         // When the user presses the button, show an alert dialog with the
         // text that the user has typed into our text field.
         onPressed: () {
-          showDialog(
+          showDialog<void>(
             context: context,
             builder: (context) {
               return AlertDialog(
@@ -2474,7 +2477,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Animations overview]: /ui/animations
 [Animations tutorial]: /ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
-[arb]: {{site.github}}/google/app-resource-bundle
+[arb]: https://github.com/google/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /resources/architectural-overview#composition

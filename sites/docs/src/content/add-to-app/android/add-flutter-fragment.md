@@ -278,8 +278,40 @@ The simplest integration path uses a new `FlutterEngine`,
 which comes with a non-trivial initialization time,
 leading to a blank UI until Flutter is
 initialized and rendered the first time.
-Most of this time overhead can be avoided by using
-a cached, pre-warmed `FlutterEngine`, which is discussed next.
+Most of this time overhead can be avoided by using a cached, pre-warmed
+`FlutterEngine`, which is discussed in
+[Using a pre-warmed `FlutterEngine`](#using-a-pre-warmed-flutterengine).
+
+### Automatic back button and predictive back handling
+
+When embedding a `FlutterFragment` into a native Android app on Android 13 or
+higher (API level 33+), you can configure the fragment to automatically handle
+system back button presses and predictive back gestures without manually
+forwarding `onBackPressed()`.
+
+Instead of overriding `onBackPressed` as shown above, set
+`shouldAutomaticallyHandleOnBackPressed(true)` when building your fragment:
+
+<Tabs key="android-language">
+<Tab name="Kotlin">
+
+```kotlin
+val flutterFragment = FlutterFragment.withNewEngine()
+    .shouldAutomaticallyHandleOnBackPressed(true)
+    .build()
+```
+
+</Tab>
+<Tab name="Java">
+
+```java
+FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
+    .shouldAutomaticallyHandleOnBackPressed(true)
+    .build();
+```
+
+</Tab>
+</Tabs>
 
 ## Using a pre-warmed `FlutterEngine`
 

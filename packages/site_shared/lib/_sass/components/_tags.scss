@@ -1,0 +1,88 @@
+.tag-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  border-radius: var(--site-radius);
+  background-color: var(--tag-bgColor);
+  color: var(--tag-fgColor);
+  font-family: var(--site-ui-fontFamily);
+  line-height: 1;
+  text-align: center;
+  text-wrap: nowrap;
+  user-select: none;
+
+  &.tag-blue {
+    --tag-bgColor: var(--site-tag-blue-bgColor);
+    --tag-fgColor: var(--site-tag-blue-fgColor);
+  }
+
+  &.tag-green {
+    --tag-bgColor: var(--site-tag-green-bgColor);
+    --tag-fgColor: var(--site-tag-green-fgColor);
+  }
+
+  &.tag-teal {
+    --tag-bgColor: var(--site-tag-teal-bgColor);
+    --tag-fgColor: var(--site-tag-teal-fgColor);
+  }
+
+  &.tag-purple {
+    --tag-bgColor: var(--site-tag-purple-bgColor);
+    --tag-fgColor: var(--site-tag-purple-fgColor);
+  }
+
+  &.tag-magenta {
+    --tag-bgColor: var(--site-tag-magenta-bgColor);
+    --tag-fgColor: var(--site-tag-magenta-fgColor);
+  }
+
+  &.tag-red {
+    --tag-bgColor: var(--site-tag-red-bgColor);
+    --tag-fgColor: var(--site-tag-red-fgColor);
+  }
+
+  &.tag-orange {
+    --tag-bgColor: var(--site-tag-orange-bgColor);
+    --tag-fgColor: var(--site-tag-orange-fgColor);
+  }
+
+  &.tag-amber {
+    --tag-bgColor: var(--site-tag-amber-bgColor);
+    --tag-fgColor: var(--site-tag-amber-fgColor);
+  }
+
+  &.tag-grey {
+    --tag-bgColor: var(--site-tag-grey-bgColor);
+    --tag-fgColor: var(--site-tag-grey-fgColor);
+  }
+
+  &.tag-subtle-grey {
+    --tag-bgColor: var(--site-tag-subtleGrey-bgColor);
+    --tag-fgColor: var(--site-tag-subtleGrey-fgColor);
+
+    box-shadow: inset 0 0 0 1px var(--site-tag-subtleGrey-borderColor);
+  }
+
+  &.tag-small {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  &.tag-regular {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  .material-symbols {
+    font-size: 1.25em;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 0.5rem;
+}

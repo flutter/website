@@ -63,8 +63,7 @@ class CommunityPage extends StatelessComponent {
             div(classes: 'features container', [
               Feature(
                 title: 'Meetups',
-                description:
-                    'Find a meetup group near you and connect with other Flutter developers.',
+                description: 'Find a meetup group near you and connect with other Flutter developers.',
                 actions: const [
                   FeatureAction(
                     label: 'Attend a meetup',
@@ -86,14 +85,12 @@ class CommunityPage extends StatelessComponent {
             div(classes: 'features container', [
               Feature(
                 title: 'Flutter GDEs',
-                description:
-                    'Become a leader, support the Flutter ecosystem, and get access to exclusive resources.',
+                description: 'Become a leader, support the Flutter ecosystem, and get access to exclusive resources.',
                 actions: const [
                   FeatureAction(
                     label: 'Learn more',
                     solid: true,
-                    url:
-                        'https://developers.google.com/community/experts/directory',
+                    url: 'https://developers.google.com/community/experts/directory',
                   ),
                 ],
                 media: img(
@@ -110,8 +107,7 @@ class CommunityPage extends StatelessComponent {
             div(classes: 'features container', [
               Feature(
                 title: 'Flutteristas',
-                description:
-                    'Join individuals who identify as women or non-binary and have an interest in Flutter.',
+                description: 'Join individuals who identify as women or non-binary and have an interest in Flutter.',
                 actions: const [
                   FeatureAction(
                     label: 'Join the Flutteristas',
@@ -133,8 +129,7 @@ class CommunityPage extends StatelessComponent {
             div(classes: 'features container', [
               Feature(
                 title: 'Community events',
-                description:
-                    'Attend events hosted by the global Flutter community and continue to learn more about Flutter.',
+                description: 'Attend events hosted by the global Flutter community and continue to learn more about Flutter.',
                 actions: const [
                   FeatureAction(
                     label: 'View events',
@@ -205,8 +200,7 @@ class CommunityPage extends StatelessComponent {
                     actions: [
                       FeatureAction.link(
                         label: 'Read more',
-                        url:
-                            'https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md',
+                        url: 'https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md',
                       ),
                     ],
                   ),

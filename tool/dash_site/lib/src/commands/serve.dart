@@ -46,9 +46,6 @@ final class ServeSiteCommand extends Command<int> {
         '--port=${jasprPorts.serve}',
         '--web-port=${jasprPorts.webDev}',
         '--proxy-port=${jasprPorts.proxy}',
-        // Use build_web_compiler options specified in build.yaml instead of
-        // those specified by jaspr_cli.
-        '--no-managed-build-options',
         '--dart-define=PRODUCTION=false',
         if (release) '--release',
       ],

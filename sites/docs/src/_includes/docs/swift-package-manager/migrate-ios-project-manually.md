@@ -57,4 +57,4 @@ Migrating to SwiftPM requires updating the
 1. Ensure that the app runs on the command line with `flutter run`.
 
 [turn on Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-on-swift-package-manager
-[file an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
+[file an issue]: {{site.repo.flutter}}/issues/new?template=2_bug.yml

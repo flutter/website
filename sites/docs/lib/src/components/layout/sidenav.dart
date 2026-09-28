@@ -44,7 +44,7 @@ final class DashSideNav extends StatelessComponent {
           active: activeEntry == ActiveNavEntry.learn,
         ),
         _TopNavItem(
-          href: '/ai/create-with-ai',
+          href: '/ai/get-started',
           label: 'AI',
           iconId: 'auto_awesome',
           active: activeEntry == ActiveNavEntry.ai,
@@ -361,9 +361,11 @@ final class _ActiveNavigationPath {
       final entry = entries[entryIndex];
       final newPath = [...currentPath, entryIndex];
 
-      if (entry case NavLink(
-        :final permalink,
-      ) when !_isExternalLink(permalink)) {
+      if (entry
+          case NavLink(
+            :final permalink,
+          )
+          when !_isExternalLink(permalink)) {
         final normalizedPermalink = _normalizePermalink(permalink);
         results[normalizedPermalink] = newPath;
       } else if (entry case NavSection(:final children)) {

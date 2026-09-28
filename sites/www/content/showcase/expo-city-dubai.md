@@ -9,9 +9,12 @@ appName: Expo City Dubai
 companyName: Expo City Dubai
 card: images/case_studies/expo-city-dubai/case_study_card.png
 videoEmbedUrl: "https://www.youtube.com/embed/Busrmb6Kh5c"
-options_location: Asia
-options_platform: Mobile
-options_social: Travel & Lifestyle
+locations:
+  - Asia
+platforms:
+  - Mobile
+industries:
+  - Travel & Lifestyle
 successMetrics: []
 date: 2026-03-24
 feature_color: "#F0B800"

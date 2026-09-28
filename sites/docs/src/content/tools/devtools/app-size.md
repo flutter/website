@@ -273,4 +273,4 @@ to reduce an app's size are also discussed.
 [Diff tab]: #diff-tab
 [launch instructions]: /tools/devtools#start
 [App Size Documentation]: /perf/app-size#breaking-down-the-size
-[app-size-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-app-size-tool-part-3-of-8-9be6e9ec42a2
+[app-size-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-app-size-tool-part-3-of-8-9be6e9ec42a2

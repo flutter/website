@@ -24,8 +24,30 @@ import 'package:flutter_website/src/components/pages/games_adaptive_media.dart'
     deferred as _games_adaptive_media;
 import 'package:flutter_website/src/components/pages/showcase_grid.dart'
     deferred as _showcase_grid;
+import 'package:flutter_website/src/components/sections/why_flutter_ai_era_section.dart'
+    deferred as _why_flutter_ai_era_section;
+import 'package:flutter_website/src/components/sections/why_flutter_cases_section.dart'
+    deferred as _why_flutter_cases_section;
+import 'package:flutter_website/src/components/sections/why_flutter_code_shared_section.dart'
+    deferred as _why_flutter_code_shared_section;
+import 'package:flutter_website/src/components/sections/why_flutter_features_section.dart'
+    deferred as _why_flutter_features_section;
+import 'package:flutter_website/src/components/sections/why_flutter_hero_section.dart'
+    deferred as _why_flutter_hero_section;
 import 'package:flutter_website/src/models/content/banner_content.dart'
     as _banner_content;
+import 'package:site_shared/components/blog/client/blog_categories.dart'
+    deferred as _blog_categories;
+import 'package:site_shared/components/blog/client/share_button.dart'
+    deferred as _share_button;
+import 'package:site_shared/components/common/client/back_to_top_button.dart'
+    deferred as _back_to_top_button;
+import 'package:site_shared/components/common/client/collapse_button.dart'
+    deferred as _collapse_button;
+import 'package:site_shared/components/common/client/copy_button.dart'
+    deferred as _copy_button;
+import 'package:site_shared/components/dartpad/dartpad_injector.dart'
+    deferred as _dartpad_injector;
 import 'package:site_shared/components/utils/component_ref.dart'
     as _component_ref;
 
@@ -112,6 +134,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
         items: (p['items'] as List<Object?>)
             .map((i) => _component_ref.ComponentRef.fromId(i as String))
             .toList(),
+        past: p['past'] as bool,
       ),
       loader: _events_grid.loadLibrary,
     ),
@@ -134,6 +157,85 @@ ClientOptions get defaultClientOptions => ClientOptions(
             .toList(),
       ),
       loader: _showcase_grid.loadLibrary,
+    ),
+    'why_flutter_ai_era_section': ClientLoader(
+      (p) => _why_flutter_ai_era_section.WhyFlutterAiEraSection(
+        geminiSprite: p['geminiSprite'] as String,
+      ),
+      loader: _why_flutter_ai_era_section.loadLibrary,
+    ),
+    'why_flutter_cases_section': ClientLoader(
+      (p) => _why_flutter_cases_section.WhyFlutterCasesSection(
+        media: (p['media'] as Map<String, Object?>).cast<String, String>(),
+      ),
+      loader: _why_flutter_cases_section.loadLibrary,
+    ),
+    'why_flutter_code_shared_section': ClientLoader(
+      (p) => _why_flutter_code_shared_section.WhyFlutterCodeSharedSection(
+        laptopSprite: p['laptopSprite'] as String,
+      ),
+      loader: _why_flutter_code_shared_section.loadLibrary,
+    ),
+    'why_flutter_features_section': ClientLoader(
+      (p) => _why_flutter_features_section.WhyFlutterFeaturesSection(),
+      loader: _why_flutter_features_section.loadLibrary,
+    ),
+    'why_flutter_hero_section': ClientLoader(
+      (p) => _why_flutter_hero_section.WhyFlutterHeroSection(
+        typingSprite: p['typingSprite'] as String,
+        screens: (p['screens'] as List<Object?>).cast<String>(),
+        whitepaperUrl: p['whitepaperUrl'] as String,
+        flutterLogo: p['flutterLogo'] as String,
+      ),
+      loader: _why_flutter_hero_section.loadLibrary,
+    ),
+    'site_shared:blog_categories': ClientLoader(
+      (p) => _blog_categories.BlogCategories(
+        categories: (p['categories'] as List<Object?>)
+            .map(
+              (i) => _blog_categories.BlogCategory.fromMap(
+                i as Map<String, Object?>,
+              ),
+            )
+            .toList(),
+      ),
+      loader: _blog_categories.loadLibrary,
+    ),
+    'site_shared:share_button': ClientLoader(
+      (p) => _share_button.ShareButton(
+        url: p['url'] as String,
+        title: p['title'] as String,
+      ),
+      loader: _share_button.loadLibrary,
+    ),
+    'site_shared:back_to_top_button': ClientLoader(
+      (p) => _back_to_top_button.BackToTopButton(),
+      loader: _back_to_top_button.loadLibrary,
+    ),
+    'site_shared:collapse_button': ClientLoader(
+      (p) => _collapse_button.CollapseButton(
+        classes: (p['classes'] as List<Object?>).cast<String>(),
+        title: p['title'] as String?,
+      ),
+      loader: _collapse_button.loadLibrary,
+    ),
+    'site_shared:copy_button': ClientLoader(
+      (p) => _copy_button.CopyButton(
+        buttonText: p['buttonText'] as String?,
+        toCopy: p['toCopy'] as String?,
+        classes: (p['classes'] as List<Object?>).cast<String>(),
+        title: p['title'] as String?,
+      ),
+      loader: _copy_button.loadLibrary,
+    ),
+    'site_shared:dartpad_injector': ClientLoader(
+      (p) => _dartpad_injector.DartPadInjector(
+        title: p['title'] as String,
+        theme: p['theme'] as String?,
+        height: p['height'] as String?,
+        runAutomatically: p['runAutomatically'] as bool,
+      ),
+      loader: _dartpad_injector.loadLibrary,
     ),
   },
 );

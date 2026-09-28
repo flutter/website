@@ -1,6 +1,5 @@
 ---
 title: Flutter AI Toolkit
-sidenav: ai
 shortTitle: AI Toolkit
 description: >
   Learn how to add the AI Toolkit chatbot
@@ -47,7 +46,7 @@ Here's what the demo example looks like hosting the AI Toolkit:
 
 The [source code for this demo][src-code] is available in the repo on GitHub.
 
-[src-code]: {{site.github}}/flutter/ai/blob/main/example/lib/demo/demo.dart
+[src-code]: https://github.com/flutter/ai/blob/main/example/lib/demo/demo.dart
 
 ## Get started
 
@@ -66,8 +65,8 @@ dependencies:
 
 <li><b>Configuration</b>
 
-The AI Toolkit supports both the Gemini endpoint (for prototyping) and the
-Vertex endpoint (for production). Both require a Firebase project and the
+The AI Toolkit supports both the Gemini Developer API (for prototyping) and the
+Firebase AI Logic production endpoint. Both require a Firebase project and the
 `firebase_core` package to be initialized, as described in the [Get started with
 the Gemini API using the Firebase AI Logic SDKs][firebase_ai] docs.
 
@@ -135,7 +134,8 @@ The `FirebaseProvider` class exposes the Firebase AI Logic SDK to the
 options][options] from which to choose), but you do not provide an API key. All
 of that is handled as part of the Firebase project.
 
-For production workloads, it's easy to swap in the Firebase Logic AI endpoint:
+For production workloads, it's easy to swap in the Firebase AI Logic production
+endpoint:
 
 ```dart
 class ChatPage extends StatelessWidget {
@@ -146,7 +146,7 @@ class ChatPage extends StatelessWidget {
         appBar: AppBar(title: const Text(App.title)),
         body: LlmChatView(
           provider: FirebaseProvider(
-            // Use the Vertex AI endpoint
+            // Use the production endpoint
             model: FirebaseAI.vertexAI().generativeModel(
               model: 'gemini-2.5-flash',
             ),
@@ -161,11 +161,11 @@ For a complete example, check out the [gemini.dart] and [vertex.dart][]
 examples.
 
 [options]:
-    https://firebase.google.com/docs/vertex-ai/gemini-models#available-model-names
+    https://firebase.google.com/docs/ai-logic/models
 [gemini.dart]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/gemini/gemini.dart
+    https://github.com/flutter/ai/blob/main/example/lib/gemini/gemini.dart
 [vertex.dart]:
-    {{site.github}}/flutter/ai/blob/main/example/lib/vertex/vertex.dart
+    https://github.com/flutter/ai/blob/main/example/lib/vertex/vertex.dart
 </li>
 
 <li><b>Set up device permissions</b>
@@ -216,17 +216,19 @@ attachments, ensure that your app has the necessary permissions:
 
 **firebase_options.dart**
 
-To use the [Vertex AI example app][vertex-ex], place your Firebase configuration
-details into the `example/lib/firebase_options.dart` file. You can do this with
-the `flutterfire CLI` tool as described in the [Add Firebase to your Flutter
-app][add-fb] docs **from within the `example` directory**.
+To use the [Firebase AI Logic example app][vertex-ex],
+place your Firebase configuration details into the
+`example/lib/firebase_options.dart` file.
+You can do this with the `flutterfire CLI` tool as described in the
+[Add Firebase to your Flutter app][add-fb] docs
+**from within the `example` directory**.
 
 :::note Security considerations for `firebase_options.dart`
 
-If your Flutter app calls Gemini or Vertex AI directly from the client, do not
-commit `firebase_options.dart` to a public repository. Anyone could reuse your
-app configuration to send requests to your AI endpoint, consuming quota and
-potentially causing billing costs.
+If your Flutter app calls Gemini APIs directly from the client,
+do not commit `firebase_options.dart` to a public repository.
+Anyone could reuse your app configuration to send requests to your AI endpoint,
+consuming quota and potentially causing billing costs.
 
 While this guide shows direct client-side calls for simplicity, for production
 apps, you should route AI requests through a backend service (for example [Cloud
@@ -247,7 +249,7 @@ the AI Toolkit is just as robust and useful as it can be for your real-world
 apps.
 
 [add-fb]: https://firebase.google.com/docs/flutter/setup
-[example apps]: {{site.github}}/flutter/ai/tree/main/example/lib
-[file-issues]: {{site.github}}/flutter/ai/issues
-[submit]: {{site.github}}/flutter/ai/pulls
-[vertex-ex]: {{site.github}}/flutter/ai/blob/main/example/lib/vertex/vertex.dart
+[example apps]: https://github.com/flutter/ai/tree/main/example/lib
+[file-issues]: https://github.com/flutter/ai/issues
+[submit]: https://github.com/flutter/ai/pulls
+[vertex-ex]: https://github.com/flutter/ai/blob/main/example/lib/vertex/vertex.dart
