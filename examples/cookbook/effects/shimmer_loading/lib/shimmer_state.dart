@@ -1,4 +1,4 @@
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 class Shimmer extends StatefulWidget {
   static ShimmerState? of(BuildContext context) {

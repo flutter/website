@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 // #docregion localPath
 import 'package:path_provider/path_provider.dart';
 

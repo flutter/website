@@ -37,7 +37,7 @@ the shape property of your `Dialog` to specify the original 2 pixel radius.
 Setting the Dialog shape to the original radius:
 
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(Foo());
 

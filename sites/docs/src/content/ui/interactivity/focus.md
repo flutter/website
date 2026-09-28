@@ -179,7 +179,7 @@ focus.
 
 <?code-excerpt "ui/focus/lib/custom_control_example.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MyApp());
 

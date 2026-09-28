@@ -288,7 +288,7 @@ class _MyHomePageState extends State<MyHomePage> {
 [list recipes]: /cookbook/lists
 [`ListTile`]: {{site.material_ui}}/ListTile-class.html
 [`ListView`]: {{site.material_ui}}/ListView-class.html
-[material library]: {{site.pub}}/packages/material-library.html
+[material library]: {{site.material_ui}}
 [`Navigator`]: {{site.material_ui}}/Navigator-class.html
 [`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
 [Navigation]: /cookbook/navigation

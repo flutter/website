@@ -376,9 +376,9 @@ Or, you can write your own widget library and import that.
 
 <?code-excerpt "lib/imports.dart (imports)"?>
 ```dart
-import 'package:cupertino_ui/cupertino.dart';
-import 'package:material_ui/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter/widgets.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:my_widgets/my_widgets.dart';
 ```
 
@@ -425,7 +425,7 @@ the `Text` widget.
 <?code-excerpt "lib/hello_world.dart"?>
 ```dart
 // Flutter
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(
@@ -470,7 +470,7 @@ Material library. In this example, the widget tree is nested inside the
 <?code-excerpt "lib/widget_tree.dart"?>
 ```dart
 // Flutter
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MyApp());
 
@@ -737,7 +737,7 @@ $ flutter pub add google_sign_in
 
 <?code-excerpt "lib/examples.dart (package-import)"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 ```
 
 For more information, see [Using Packages][] and
@@ -1179,7 +1179,7 @@ of stateless widgets that subclass [`StatelessWidget`][].
 
 <?code-excerpt "lib/stateless.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(
   const MyStatelessWidget(
@@ -2362,7 +2362,7 @@ widget is used inside the `FadeTransition` widget.
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const Center(child: LogoFade()));

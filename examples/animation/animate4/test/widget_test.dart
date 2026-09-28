@@ -2,8 +2,8 @@
 // Learn more at https://docs.flutter.dev/testing/overview#widget-tests.
 
 import 'package:animation4/main.dart';
-import 'package:material_ui/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   testWidgets('Codelab smoke test', (tester) async {

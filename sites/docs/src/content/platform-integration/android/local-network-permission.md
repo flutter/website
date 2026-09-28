@@ -70,7 +70,7 @@ and open a socket connection:
 
 ```dart
 import 'dart:io';
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 Future<void> connectToLocalDevice({

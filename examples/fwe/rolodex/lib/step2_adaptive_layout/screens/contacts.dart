@@ -1,4 +1,4 @@
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 class ContactListsPage extends StatelessWidget {
   const ContactListsPage({super.key, required this.listId});

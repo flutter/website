@@ -1,4 +1,4 @@
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 const routeHome = '/';
 const routeSettings = '/settings';

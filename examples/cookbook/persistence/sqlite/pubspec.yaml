@@ -8,6 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.5.0
   sqflite: ^2.4.3
   path: ^1.9.1
 

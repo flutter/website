@@ -52,7 +52,7 @@ provided to your `CupertinoTabBar`.
 Code before migration:
 
 ```dart
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 void main() => runApp(Foo());
 
@@ -82,7 +82,7 @@ class Foo extends StatelessWidget {
 Code after migration (Providing localizations via the `CupertinoApp`):
 
 ```dart
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 void main() => runApp(Foo());
 
@@ -112,7 +112,7 @@ Code after migration (Providing localizations by using
 the `Localizations` widget):
 
 ```dart
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 void main() => runApp(Foo());
 

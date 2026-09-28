@@ -1,5 +1,5 @@
-import 'package:material_ui/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(

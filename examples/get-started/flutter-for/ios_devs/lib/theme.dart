@@ -1,5 +1,5 @@
 // #docregion theme
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SampleApp extends StatelessWidget {
   const SampleApp({super.key});

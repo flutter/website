@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../data/repositories/theme_repository.dart';
 import '../../../utils/command.dart';

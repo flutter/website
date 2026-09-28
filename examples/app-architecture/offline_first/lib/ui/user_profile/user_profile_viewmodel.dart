@@ -1,4 +1,4 @@
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../data/repositories/user_profile_repository.dart';
 import '../../domain/model/user_profile.dart';

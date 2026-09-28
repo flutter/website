@@ -268,8 +268,8 @@ way up to the root widget (the container that hosts the Flutter app, typically
 
 <?code-excerpt "lib/main.dart (main)"?>
 ```dart
-import 'package:material_ui/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MyApp());
 
@@ -363,7 +363,7 @@ widgets do not have a visual representation of their own. Instead, their sole
 purpose is to control some aspect of another widget's layout. Flutter also
 includes utility widgets that take advantage of this compositional approach.
 
-For example, [`Container`]({{site.api}}/flutter/widgetsContainer-class.html), a
+For example, [`Container`]({{site.api}}/flutter/widgets/Container-class.html), a
 commonly used widget, is made up of several widgets responsible for layout,
 painting, positioning, and sizing. Specifically, `Container` is made up of the
 [`LimitedBox`]({{site.api}}/flutter/widgets/LimitedBox-class.html),

@@ -1,5 +1,5 @@
-import 'package:material_ui/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   debugPaintSizeEnabled = false; // Set to true for visual layout

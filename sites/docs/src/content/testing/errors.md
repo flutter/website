@@ -58,7 +58,7 @@ following handler:
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   FlutterError.onError = (details) {
@@ -133,7 +133,7 @@ To catch such an error, use [`PlatformDispatcher.instance.onError`][].
 ```dart
 import 'dart:ui';
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   MyBackend myBackend = MyBackend();
@@ -155,7 +155,7 @@ your errors handling on next code snippet:
 ```dart
 import 'dart:ui';
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 Future<void> main() async {
   await myErrorsHandler.initialize();

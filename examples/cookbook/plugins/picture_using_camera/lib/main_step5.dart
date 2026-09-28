@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:camera/camera.dart';
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // ignore_for_file: unused_local_variable
 

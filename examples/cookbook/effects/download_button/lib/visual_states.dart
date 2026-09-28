@@ -1,4 +1,4 @@
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 // #docregion VisualStates
 enum DownloadStatus { notDownloaded, fetchingDownload, downloading, downloaded }

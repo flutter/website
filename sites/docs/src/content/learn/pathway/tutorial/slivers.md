@@ -67,7 +67,7 @@ adding `_ContactGroupsView` to the bottom of the file.
 
 <?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contact_groups_v1.dart (contact_groups_view)"?>
 ```dart
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import '../data/contact_group.dart';
 import '../main.dart';
@@ -246,7 +246,7 @@ update `lib/screens/adaptive_layout.dart` to display the contacts list page:
 <?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/adaptive_layout.dart"?>
 ```dart
 
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import 'contacts.dart';
 

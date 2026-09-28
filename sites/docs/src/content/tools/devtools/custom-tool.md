@@ -252,7 +252,7 @@ In `lib/main.dart`, add the following imports:
 
 ```dart
 import 'package:devtools_extensions/devtools_extensions.dart';
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const FooDevToolsExtension());

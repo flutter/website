@@ -1,7 +1,7 @@
-import 'package:material_ui/material.dart';
 // #docregion debug-paint-size-enabled
 // Add import to the Flutter rendering library.
 import 'package:flutter/rendering.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   debugPaintSizeEnabled = true;

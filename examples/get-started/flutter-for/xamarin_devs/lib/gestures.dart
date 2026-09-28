@@ -1,6 +1,6 @@
 import 'dart:developer' as developer;
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});

@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // #docregion components
 /// Flutter

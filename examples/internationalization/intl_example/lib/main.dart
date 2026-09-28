@@ -25,9 +25,10 @@
 
 import 'dart:async';
 
-import 'package:material_ui/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    hide GlobalMaterialLocalizations;
 import 'package:intl/intl.dart';
+import 'package:material_ui/material_ui.dart';
 
 // This file was generated in two steps, using the Dart intl tools. With the
 // app's root directory (the one that contains pubspec.yaml) as the current

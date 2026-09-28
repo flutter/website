@@ -1,6 +1,6 @@
 // ignore_for_file: unused_import, unused_local_variable
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'summary.dart';
 

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../global/device_type.dart';
 import '../global/targeted_actions.dart';

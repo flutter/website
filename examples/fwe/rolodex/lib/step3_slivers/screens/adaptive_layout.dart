@@ -1,6 +1,6 @@
 // ignore_for_file: unused_element
 
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import 'contacts.dart';
 

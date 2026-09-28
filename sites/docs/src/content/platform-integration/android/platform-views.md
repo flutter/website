@@ -162,9 +162,9 @@ use the following instructions:
    ```dart
    import 'package:flutter/foundation.dart';
    import 'package:flutter/gestures.dart';
-   import 'package:material_ui/material.dart';
    import 'package:flutter/rendering.dart';
    import 'package:flutter/services.dart';
+   import 'package:material_ui/material_ui.dart';
    ```
 
 2. Implement a `build` method:
@@ -224,8 +224,8 @@ use the following instructions:
 
    <?code-excerpt "lib/native_view_example_2.dart (import)"?>
    ```dart
-   import 'package:material_ui/material.dart';
    import 'package:flutter/services.dart';
+   import 'package:material_ui/material_ui.dart';
    ```
 
 2. Implement a `build` method:

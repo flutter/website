@@ -157,6 +157,7 @@ For example:
 <?code-excerpt "main.dart (root-bundle-load)"?>
 ```dart
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:material_ui/material_ui.dart';
 
 Future<String> loadAsset() async {
   return await rootBundle.loadString('assets/config.json');

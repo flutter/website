@@ -10,8 +10,8 @@ defined by photoBlockFrames.
 
 import 'dart:async';
 
-import 'package:material_ui/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
+import 'package:material_ui/material_ui.dart';
 
 class Photo {
   const Photo(this.asset, this.id);

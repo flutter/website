@@ -3,7 +3,7 @@
 // and the default text color is black. This app changes its background
 // to white and its text color to dark grey to mimic a material app.
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MyApp());
 

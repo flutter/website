@@ -143,7 +143,7 @@ call the [`debugDumpApp()`][] function.
 
 <?code-excerpt "lib/dump_app.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: AppHome()));
@@ -223,7 +223,7 @@ To dump the render tree:
 
 <?code-excerpt "lib/dump_render_tree.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: AppHome()));
@@ -324,7 +324,7 @@ To debug a compositing issue, use [`debugDumpLayerTree()`][].
 
 <?code-excerpt "lib/dump_layer_tree.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: AppHome()));
@@ -415,7 +415,7 @@ extensive logging when the focus changes.
 
 <?code-excerpt "lib/dump_focus_tree.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: AppHome()));
@@ -463,8 +463,8 @@ To obtain a dump of the Semantics tree:
 <?code-excerpt "lib/dump_semantic_tree.dart"?>
 ```dart
 import 'package:flutter/foundation.dart';
-import 'package:material_ui/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: AppHome()));
@@ -540,6 +540,7 @@ See an example in the following code:
 ```dart
 // Add import to the Flutter rendering library.
 import 'package:flutter/rendering.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   debugPaintSizeEnabled = true;
@@ -706,7 +707,7 @@ constructor:
 
 <?code-excerpt "lib/performance_overlay.dart (show-overlay)"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

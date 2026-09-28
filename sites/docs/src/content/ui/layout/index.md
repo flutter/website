@@ -301,10 +301,10 @@ or you can build your own set of custom widgets.
 [`CupertinoPageScaffold`]: {{site.cupertino_ui}}/CupertinoPageScaffold-class.html
 [`CupertinoThemeData`]: {{site.cupertino_ui}}/CupertinoThemeData-class.html
 [`CupertinoNavigationBar`]: {{site.cupertino_ui}}/CupertinoNavigationBar-class.html
-[Cupertino library]: {{site.cupertino_ui}}/cupertino-library.html
+[Cupertino library]: {{site.cupertino_ui}}
 [Apple's Human Interface Guidelines for iOS]: {{site.apple-dev}}/design/human-interface-guidelines/designing-for-ios
 [`build()`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
-[Material library]: {{site.material_ui}}/material-library.html
+[Material library]: {{site.material_ui}}
 [`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
 [widgets library]: {{site.api}}/flutter/widgets/widgets-library.html
 
@@ -838,7 +838,7 @@ only Material apps can use the Material Components library.
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
 [`ListTile`]: {{site.material_ui}}/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[Material library]: {{site.material_ui}}/material-library.html
+[Material library]: {{site.material_ui}}
 [widgets library]: {{site.api}}/flutter/widgets/widgets-library.html
 
 ### Container
@@ -1182,7 +1182,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 [`ListTile`]: {{site.material_ui}}/ListTile-class.html
 [Material Design]: {{site.material}}/styles
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
-[Material library]: {{site.material_ui}}/material-library.html
+[Material library]: {{site.material_ui}}
 
 #### Summary (Card)
 
@@ -1195,7 +1195,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 * From the [Material library][]
 
 [Material card]: {{site.material}}/components/cards
-[Material library]: {{site.pub}}/packages/material-library.html
+[Material library]: {{site.material_ui}}
 
 #### Examples (Card)
 
@@ -1267,7 +1267,7 @@ and trailing icons. `ListTile` is most commonly used in
 [`Card`]: {{site.material_ui}}/Card-class.html
 [`ListTile`]: {{site.material_ui}}/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[Material library]: {{site.material_ui}}/material-library.html
+[Material library]: {{site.material_ui}}
 
 #### Summary (ListTile)
 
@@ -1276,7 +1276,7 @@ and trailing icons. `ListTile` is most commonly used in
 * Less configurable than `Row`, but easier to use
 * From the [Material library][]
 
-[Material library]: {{site.material_ui}}/material-library.html
+[Material library]: {{site.material_ui}}
 
 #### Examples (ListTile)
 

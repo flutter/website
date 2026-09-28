@@ -45,7 +45,7 @@ by creating your own `Localizations` widget.
 Code before migration:
 
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(Foo());
 
@@ -68,7 +68,7 @@ class Foo extends StatelessWidget {
 Code after migration (Providing localizations using the `MaterialApp`):
 
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(Foo());
 
@@ -87,7 +87,7 @@ class Foo extends StatelessWidget {
 Code after migration (Providing localizations via the `Localizations` widget):
 
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(Foo());
 

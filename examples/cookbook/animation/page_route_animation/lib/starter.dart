@@ -1,6 +1,6 @@
 // ignore_for_file: unused_local_variable
 // #docregion Starter
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MaterialApp(home: Page1()));

@@ -1,5 +1,5 @@
 // #docregion imports
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import 'contact_groups.dart';
 import 'contacts.dart';

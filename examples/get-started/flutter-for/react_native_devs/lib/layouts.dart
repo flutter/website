@@ -1,4 +1,4 @@
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class ColumnExample extends StatelessWidget {
   const ColumnExample({super.key});

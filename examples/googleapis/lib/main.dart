@@ -9,8 +9,6 @@ import 'dart:convert';
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 // #enddocregion auth-import
 
-import 'package:material_ui/material.dart';
-
 // #docregion google-import
 /// Provides the `GoogleSignIn` class.
 import 'package:google_sign_in/google_sign_in.dart';
@@ -19,8 +17,9 @@ import 'package:google_sign_in/google_sign_in.dart';
 // #docregion youtube-import
 // Provides the `YouTubeApi` class.
 import 'package:googleapis/youtube/v3.dart';
-
 // #enddocregion youtube-import
+
+import 'package:material_ui/material_ui.dart';
 
 const _title = 'My YouTube Favorites';
 

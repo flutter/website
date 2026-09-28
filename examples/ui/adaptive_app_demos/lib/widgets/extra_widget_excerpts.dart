@@ -1,8 +1,8 @@
 import 'dart:io' show Platform;
 
 import 'package:flutter/gestures.dart';
-import 'package:material_ui/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 Widget layoutBuilderWidget() {
   // #docregion layout-builder

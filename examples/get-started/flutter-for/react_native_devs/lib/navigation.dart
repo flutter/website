@@ -1,4 +1,4 @@
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // #docregion navigator
 class NavigationApp extends StatelessWidget {

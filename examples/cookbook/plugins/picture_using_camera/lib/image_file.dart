@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MyImage extends StatelessWidget {
   const MyImage({super.key});

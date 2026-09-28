@@ -137,7 +137,7 @@ class TabBarDemo extends StatelessWidget {
 
 [`AppBar`]: {{site.material_ui}}/AppBar-class.html
 [`DefaultTabController`]: {{site.material_ui}}/DefaultTabController-class.html
-[material library]: {{site.pub}}/packages/material-library.html
+[material library]: {{site.material_ui}}
 [`Tab`]: {{site.material_ui}}/Tab-class.html
 [`TabBar`]: {{site.material_ui}}/TabBar-class.html
 [`TabBarView`]: {{site.material_ui}}/TabBarView-class.html

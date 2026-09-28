@@ -1,5 +1,5 @@
-import 'package:material_ui/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 class AbsorbKeysExample extends StatelessWidget {
   const AbsorbKeysExample({super.key, required this.child});

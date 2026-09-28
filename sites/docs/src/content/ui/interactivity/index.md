@@ -378,7 +378,7 @@ The `_TapboxAState` class:
 
 <?code-excerpt "lib/self_managed.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // TapboxA manages its own state.
 
@@ -472,7 +472,7 @@ The TapboxB class:
 
 <?code-excerpt "lib/parent_managed.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // ParentWidget manages the state for TapboxB.
 
@@ -576,7 +576,7 @@ The `_TapboxCState` object:
 
 <?code-excerpt "lib/mixed.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 //---------------------------- ParentWidget ----------------------------
 
@@ -745,7 +745,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 
 [Android emulator]: /platform-integration/android/setup#set-up-devices
 [`Checkbox`]: {{site.material_ui}}/Checkbox-class.html
-[`Cupertino`]: {{site.pub}}/packages/cupertino_ui/cupertino-library.html
+[`Cupertino`]: {{site.cupertino_ui}}
 [Dart language documentation]: {{site.dart-site}}/language
 [Debugging Flutter apps]: /testing/debugging
 [`DropdownButton`]: {{site.material_ui}}/DropdownButton-class.html

@@ -295,7 +295,7 @@ as shown in the following example:
 
 <?code-excerpt "lib/views_stateful.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -481,7 +481,7 @@ the widget into a logo when you press the `FloatingActionButton`:
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const FadeAppTest());
@@ -567,7 +567,7 @@ see Collin's answer on [Custom Paint][].
 
 <?code-excerpt "lib/draw.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: DemoApp()));
@@ -814,8 +814,8 @@ and displays it in a `ListView`:
 ```dart
 import 'dart:convert';
 
-import 'package:material_ui/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -984,8 +984,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:material_ui/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1145,8 +1145,8 @@ Otherwise, render the `ListView` with the data returned from a network call.
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:material_ui/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1342,7 +1342,9 @@ specify the `localizationsDelegates` and
 
 <?code-excerpt "lib/strings.dart (localization)"?>
 ```dart
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    hide GlobalMaterialLocalizations;
+import 'package:material_ui/material_ui.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -1783,7 +1785,7 @@ and Flutter takes care of making sure that scrolling is fast and smooth.
 
 <?code-excerpt "lib/listview.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1834,7 +1836,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1910,7 +1912,7 @@ as shown in the next example.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1981,7 +1983,7 @@ which automatically recycles list elements for you:
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2134,7 +2136,7 @@ to retrieve user input:
 
 <?code-excerpt "lib/form.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MyForm extends StatefulWidget {
   const MyForm({super.key});
@@ -2222,7 +2224,7 @@ update the state, and pass a new `InputDecoration` object.
 
 <?code-excerpt "lib/validation.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());

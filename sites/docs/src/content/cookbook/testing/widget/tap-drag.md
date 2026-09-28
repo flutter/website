@@ -197,8 +197,8 @@ testWidgets('Add and remove a todo', (tester) async {
 
 <?code-excerpt "test/main_test.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   testWidgets('Add and remove a todo', (tester) async {

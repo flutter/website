@@ -1,7 +1,6 @@
-import 'package:material_ui/material.dart';
-
 // #docregion toggle
 import 'package:flutter/rendering.dart';
+import 'package:material_ui/material_ui.dart';
 
 void highlightRepaints() {
   debugRepaintRainbowEnabled = true;

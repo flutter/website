@@ -71,7 +71,7 @@ Users can skip this step if you programmatically auto-enable
 accessibility for your app using this API:
 
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/semantics.dart';
 
 void main() {

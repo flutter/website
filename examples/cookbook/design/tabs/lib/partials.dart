@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 class TabBarDemo1 extends StatelessWidget {
   const TabBarDemo1({super.key});

@@ -1,4 +1,4 @@
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 class SetupFlow extends StatefulWidget {
   const SetupFlow({super.key, required this.setupPageRoute});

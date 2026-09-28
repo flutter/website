@@ -1,4 +1,4 @@
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 // #docregion step1
 class Menu extends StatefulWidget {

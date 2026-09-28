@@ -362,7 +362,7 @@ Download the Raleway and RobotoMono font files from [Google Fonts][].
 
    <?code-excerpt "lib/main.dart"?>
    ```dart
-   import 'package:material_ui/material.dart';
+   import 'package:material_ui/material_ui.dart';
    
    void main() => runApp(const MyApp());
    

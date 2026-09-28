@@ -99,7 +99,7 @@ contents with the following starter code:
 
 <?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/main_starter.dart"?>
 ```dart
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 void main() {
   runApp(const RolodexApp());
@@ -356,7 +356,7 @@ add the `ContactGroup` class:
 ```dart
 import 'dart:collection';
 
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import 'contact.dart';
 
@@ -507,7 +507,7 @@ import the new data file:
 
 <?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/main.dart"?>
 ```dart
-import 'package:cupertino_ui/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import 'data/contact_group.dart';
 

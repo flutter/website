@@ -42,7 +42,7 @@ As it is resource expensive, you wouldn't want to generate a new
 
 <?code-excerpt "lib/form.dart"?>
 ```dart
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 // Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {

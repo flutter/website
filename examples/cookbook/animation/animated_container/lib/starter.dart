@@ -1,5 +1,5 @@
 // ignore_for_file: unused_field, prefer_final_fields
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 // #docregion Starter
 class AnimatedContainerApp extends StatefulWidget {

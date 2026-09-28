@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:animations/animations.dart';
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class BottomNavigationDemo extends StatefulWidget {
   const BottomNavigationDemo({

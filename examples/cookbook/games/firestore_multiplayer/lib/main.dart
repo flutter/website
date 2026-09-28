@@ -1,6 +1,6 @@
 // ignore_for_file: directives_ordering, prefer_const_constructors
 
-import 'package:material_ui/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:provider/provider.dart';
 
 // #docregion imports

@@ -372,7 +372,7 @@ To use this package:
     <?code-excerpt "lib/english_words.dart (english-words)"?>
     ```dart
     import 'package:english_words/english_words.dart';
-    import 'package:material_ui/material.dart';
+    import 'package:material_ui/material_ui.dart';
     
     void main() {
       runApp(const MyApp());
@@ -434,7 +434,7 @@ To use this plugin:
 
     <?code-excerpt "lib/url_launcher.dart (url-launcher)"?>
     ```dart
-    import 'package:material_ui/material.dart';
+    import 'package:material_ui/material_ui.dart';
     import 'package:url_launcher/url_launcher.dart';
     
     void main() {

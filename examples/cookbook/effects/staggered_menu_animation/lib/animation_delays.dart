@@ -1,6 +1,6 @@
 // ignore_for_file: unused_field
 
-import 'package:material_ui/material.dart';
+import 'package:flutter/material.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
