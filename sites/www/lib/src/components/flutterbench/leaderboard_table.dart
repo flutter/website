@@ -433,15 +433,12 @@ class _LeaderboardTableState extends State<LeaderboardTable> {
       },
       [
         td(classes: 'col-model', [
-          div(classes: 'model-info-cell', [
-            div(classes: 'model-title-row', [
-              span(classes: 'rank-pill', [.text('#$rank')]),
-              span(
-                classes: 'model-name-text',
-                [.text(formatModelName(modelShort))],
-              ),
-            ]),
-            span(classes: 'agent-subtext', [.text('$agentName · $provider')]),
+          div(classes: 'model-title-row', [
+            span(classes: 'rank-cell', [.text('$rank')]),
+            span(
+              classes: 'model-name-text',
+              [.text(formatModelName(modelShort))],
+            ),
           ]),
         ]),
         td(classes: 'col-outcome', [

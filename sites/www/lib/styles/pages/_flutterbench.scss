@@ -8,15 +8,15 @@
 // -----------------------------------------------------------------------------
 // Category Colors for Methodology
 // -----------------------------------------------------------------------------
-$color-outcome: #059669;     // Green - successful outcomes
-$color-quality: #6366f1;     // Indigo - code quality metrics
-$color-dx: #d97706;          // Amber - developer experience
-$color-functional: #0284c7;  // Sky blue - functional correctness
-$color-llm: #7c3aed;         // Violet - LLM grading
-$color-heuristic: #2563eb;   // Blue - heuristic grading
-$color-poor: #ea580c;        // Orange - poor performance
-$color-failure: #e11d48;     // Rose - failures
-$color-grey: #64748b;        // Slate - neutral/baseline
+$color-outcome: #059669; // Green - successful outcomes
+$color-quality: #6366f1; // Indigo - code quality metrics
+$color-dx: #d97706; // Amber - developer experience
+$color-functional: #0284c7; // Sky blue - functional correctness
+$color-llm: #7c3aed; // Violet - LLM grading
+$color-heuristic: #2563eb; // Blue - heuristic grading
+$color-poor: #ea580c; // Orange - poor performance
+$color-failure: #e11d48; // Rose - failures
+$color-grey: #64748b; // Slate - neutral/baseline
 $color-white: #ffffff;
 $color-gold: #fbbf24;
 
@@ -62,9 +62,11 @@ $transition-normal: 0.2s ease;
   -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
-    @if $orientation == 'horizontal' {
+    @if $orientation =='horizontal' {
       height: 6px;
-    } @else {
+    }
+
+    @else {
       width: 6px;
     }
   }
@@ -85,6 +87,7 @@ $transition-normal: 0.2s ease;
   &.outcome {
     background: rgba($color-outcome, 0.12);
     color: $color-outcome;
+
     @if $with-border {
       border: 1px solid rgba($color-outcome, 0.25);
     }
@@ -94,6 +97,7 @@ $transition-normal: 0.2s ease;
   &.quality {
     background: rgba($color-quality, 0.12);
     color: $color-quality;
+
     @if $with-border {
       border: 1px solid rgba($color-quality, 0.25);
     }
@@ -103,6 +107,7 @@ $transition-normal: 0.2s ease;
   &.dx {
     background: rgba($color-dx, 0.12);
     color: $color-dx;
+
     @if $with-border {
       border: 1px solid rgba($color-dx, 0.25);
     }
@@ -112,6 +117,7 @@ $transition-normal: 0.2s ease;
   &.badge-blue {
     background: rgba($color-functional, 0.12);
     color: $color-functional;
+
     @if $with-border {
       border: 1px solid rgba($color-functional, 0.25);
     }
@@ -120,6 +126,7 @@ $transition-normal: 0.2s ease;
   &.badge-llm {
     background: rgba($color-llm, 0.12);
     color: $color-llm;
+
     @if $with-border {
       border: 1px solid rgba($color-llm, 0.25);
     }
@@ -128,6 +135,7 @@ $transition-normal: 0.2s ease;
   &.badge-heuristic {
     background: rgba($color-heuristic, 0.12);
     color: $color-heuristic;
+
     @if $with-border {
       border: 1px solid rgba($color-heuristic, 0.25);
     }
@@ -136,6 +144,7 @@ $transition-normal: 0.2s ease;
   &.badge-poor {
     background: rgba($color-poor, 0.12);
     color: $color-poor;
+
     @if $with-border {
       border: 1px solid rgba($color-poor, 0.25);
     }
@@ -144,6 +153,7 @@ $transition-normal: 0.2s ease;
   &.badge-failure {
     background: rgba($color-failure, 0.12);
     color: $color-failure;
+
     @if $with-border {
       border: 1px solid rgba($color-failure, 0.25);
     }
@@ -152,6 +162,7 @@ $transition-normal: 0.2s ease;
   &.badge-grey {
     background: rgba($color-grey, 0.12);
     color: $color-grey;
+
     @if $with-border {
       border: 1px solid rgba($color-grey, 0.25);
     }
@@ -162,6 +173,7 @@ $transition-normal: 0.2s ease;
   &.badge-green {
     background: rgba($color-outcome, 0.12);
     color: $color-outcome;
+
     @if $with-border {
       border: 1px solid rgba($color-outcome, 0.25);
     }
@@ -170,6 +182,7 @@ $transition-normal: 0.2s ease;
   &.badge-purple {
     background: rgba($color-quality, 0.12);
     color: $color-quality;
+
     @if $with-border {
       border: 1px solid rgba($color-quality, 0.25);
     }
@@ -178,6 +191,7 @@ $transition-normal: 0.2s ease;
   &.badge-amber {
     background: rgba($color-dx, 0.12);
     color: $color-dx;
+
     @if $with-border {
       border: 1px solid rgba($color-dx, 0.25);
     }
@@ -380,6 +394,7 @@ body.flutterbench {
     a {
       color: var(--site-link-fgColor);
       text-decoration: none;
+
       &:hover {
         text-decoration: underline;
       }
@@ -458,10 +473,12 @@ body.flutterbench {
             background-color: var(--blue-1);
             color: var(--blue-7);
           }
+
           &.badge-neutral {
             background-color: var(--grey-2);
             color: var(--grey-6);
           }
+
           &.badge-green {
             background-color: var(--bench-success-bg);
             color: var(--bench-success-fg);
@@ -530,7 +547,7 @@ body.flutterbench {
         .filters-dropdown__filters-container {
           grid-template-columns: 16rem 1px 16rem;
 
-          > .separator {
+          >.separator {
             background-color: var(--site-inset-borderColor);
 
             &:last-child {
@@ -542,7 +559,7 @@ body.flutterbench {
             color: var(--site-base-fgColor);
           }
 
-          .filters-dropdown__checkbox-container > label {
+          .filters-dropdown__checkbox-container>label {
             color: var(--site-base-fgColor);
           }
         }
@@ -554,7 +571,7 @@ body.flutterbench {
         }
 
         .filters-dropdown__buttons-container {
-          > button:nth-child(1) {
+          >button:nth-child(1) {
             color: var(--site-base-fgColor) !important;
             border-color: var(--site-inset-borderColor) !important;
           }
@@ -682,6 +699,7 @@ body.flutterbench {
           &.sortable {
             cursor: pointer;
             user-select: none;
+
             &:hover {
               color: var(--blue-6);
             }
@@ -690,10 +708,12 @@ body.flutterbench {
           .sort-indicator {
             font-size: 0.7rem;
             margin-left: 0.25rem;
+
             &.active {
               color: var(--blue-6);
               font-weight: 700;
             }
+
             &.inactive {
               color: var(--site-inset-borderColor);
             }
@@ -711,13 +731,16 @@ body.flutterbench {
 
         &.bench-row {
           cursor: pointer;
+
           &:hover {
             background-color: var(--site-inset-bgColor);
           }
+
           &:focus-visible {
             outline: 2px solid var(--blue-5);
             outline-offset: -2px;
           }
+
           &.selected {
             background-color: rgba(4, 104, 215, 0.08);
             box-shadow: inset 3px 0 0 var(--blue-6);
@@ -725,8 +748,7 @@ body.flutterbench {
         }
 
         td {
-          padding: 0.85rem 1rem;
-          vertical-align: middle;
+          padding: .25rem .25rem;
         }
       }
 
@@ -976,8 +998,7 @@ body.flutterbench {
     }
   }
 
-  .model-hyperparams[open] .model-hyperparams__summary
-    .material-symbols-rounded {
+  .model-hyperparams[open] .model-hyperparams__summary .material-symbols-rounded {
     transform: rotate(90deg);
   }
 
@@ -1007,6 +1028,7 @@ body.flutterbench {
   }
 
   .model-benchmarks__table {
+
     th.col-distribution,
     td.col-distribution {
       width: 40%;
@@ -1272,49 +1294,22 @@ body.flutterbench {
   }
 
   // Model info cell
-  .model-info-cell {
-    .model-title-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.2rem;
+  .model-title-row {
+    display: flex;
+    align-items: center;
 
-      .model-name-text {
-        font-weight: 700;
-        color: var(--site-base-fgColor);
-      }
-
-      .provider-tag {
-        font-size: 0.7rem;
-        font-weight: 600;
-        padding: 0.1rem 0.4rem;
-        background-color: var(--grey-2);
-        color: var(--grey-6);
-        border-radius: 4px;
-      }
-
-      .tooling-badge {
-        font-size: 0.7rem;
-        font-weight: 600;
-        padding: 0.1rem 0.45rem;
-        background-color: var(--bench-success-bg);
-        color: var(--bench-success-fg);
-        border: 1px solid var(--bench-success-border);
-        border-radius: 4px;
-      }
-    }
-
-    .agent-subtext {
-      font-size: 0.78rem;
-      color: var(--site-base-fgColor-alt);
+    .model-name-text {
+      color: var(--site-base-fgColor);
     }
   }
 
   // Rank Pill
-  .rank-pill {
-    font-weight: 700;
+  .rank-cell {
     font-size: 0.85rem;
+    width: 20px;
     color: var(--site-base-fgColor-alt);
+    border-right: .5px var(--site-base-fgColor-alt) solid;
+    margin-right: 1rem;
   }
 
   // Reward Main Score
@@ -1338,12 +1333,15 @@ body.flutterbench {
   .score-high {
     color: var(--bench-success-fg) !important;
   }
+
   .score-mid {
     color: var(--bench-warning-fg) !important;
   }
+
   .score-low {
     color: var(--bench-danger-fg) !important;
   }
+
   .score-error {
     color: var(--bench-error-fg) !important;
   }
@@ -1365,13 +1363,11 @@ body.flutterbench {
     line-height: 1.2;
 
     // Distinct hatched background for error status
-    background-image: repeating-linear-gradient(
-      -45deg,
-      rgba(217, 48, 37, 0.05),
-      rgba(217, 48, 37, 0.05) 6px,
-      transparent 6px,
-      transparent 12px
-    );
+    background-image: repeating-linear-gradient(-45deg,
+        rgba(217, 48, 37, 0.05),
+        rgba(217, 48, 37, 0.05) 6px,
+        transparent 6px,
+        transparent 12px);
 
     .bench-error-icon {
       font-size: 0.85rem;
@@ -1446,18 +1442,23 @@ body.flutterbench {
       &.cell-scored {
         &.score-high {
           background-color: var(--bench-success-bg);
+
           .cell-score-value {
             color: var(--bench-success-fg);
           }
         }
+
         &.score-mid {
           background-color: var(--bench-warning-bg);
+
           .cell-score-value {
             color: var(--bench-warning-fg);
           }
         }
+
         &.score-low {
           background-color: var(--bench-danger-bg);
+
           .cell-score-value {
             color: var(--bench-danger-fg);
           }
@@ -1466,13 +1467,11 @@ body.flutterbench {
 
       &.cell-error {
         background-color: var(--bench-error-bg);
-        background-image: repeating-linear-gradient(
-          -45deg,
-          rgba(217, 48, 37, 0.08),
-          rgba(217, 48, 37, 0.08) 8px,
-          transparent 8px,
-          transparent 16px
-        );
+        background-image: repeating-linear-gradient(-45deg,
+            rgba(217, 48, 37, 0.08),
+            rgba(217, 48, 37, 0.08) 8px,
+            transparent 8px,
+            transparent 16px);
         border: 1px dashed var(--bench-error-border);
 
         .cell-link {
@@ -1518,6 +1517,7 @@ body.flutterbench {
           font-weight: 700;
           margin-bottom: 0.2rem;
         }
+
         .agent-subtitle {
           font-size: 0.8rem;
           color: var(--site-base-fgColor-alt);
@@ -1544,9 +1544,11 @@ body.flutterbench {
           li {
             font-size: 0.85rem;
             margin-bottom: 0.25rem;
+
             a {
               color: var(--site-link-fgColor);
               text-decoration: none;
+
               &:hover {
                 text-decoration: underline;
               }
@@ -1616,6 +1618,7 @@ body.flutterbench {
           color: var(--site-link-fgColor);
           font-weight: 600;
           text-decoration: none;
+
           &:hover {
             text-decoration: underline;
           }
@@ -1640,11 +1643,13 @@ body.flutterbench {
             color: var(--bench-success-fg);
             border: 1px solid var(--bench-success-border);
           }
+
           &.status-partial {
             background-color: var(--bench-warning-bg);
             color: var(--bench-warning-fg);
             border: 1px solid var(--bench-warning-border);
           }
+
           &.status-fail {
             background-color: var(--bench-danger-bg);
             color: var(--bench-danger-fg);
@@ -1663,11 +1668,13 @@ body.flutterbench {
             color: var(--site-base-fgColor);
             line-height: 1;
           }
+
           .score-pct {
             font-size: 1.15rem;
             font-weight: 700;
             color: var(--site-base-fgColor-alt);
           }
+
           .score-caption {
             font-size: 0.75rem;
             color: var(--site-base-fgColor-alt);
@@ -1770,6 +1777,7 @@ body.flutterbench {
             font-size: 0.8rem;
             color: var(--site-base-fgColor);
           }
+
           .phase-time {
             font-size: 0.85rem;
             font-weight: 700;
@@ -1961,6 +1969,7 @@ body.flutterbench {
             color: var(--bench-diagnostic-fg);
             margin-bottom: 0.25rem;
           }
+
           p {
             font-size: 0.85rem;
             color: var(--site-base-fgColor-alt);
@@ -1999,6 +2008,7 @@ body.flutterbench {
               letter-spacing: 0.04em;
               color: var(--site-base-fgColor);
             }
+
             .diag-score {
               font-weight: 700;
               font-size: 0.9rem;
@@ -2248,6 +2258,7 @@ body.flutterbench {
     font-weight: 600;
     color: var(--site-link-fgColor);
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
@@ -2298,6 +2309,7 @@ body.flutterbench {
           a {
             color: var(--site-base-fgColor);
             text-decoration: none;
+
             &:hover {
               color: var(--blue-6);
             }
@@ -2332,10 +2344,25 @@ body.flutterbench {
   // CUJ Catalog (CUJs page)
   // ---------------------------------------------------------------------------
   .cujs-content {
+    .bench-filter-bar {
+      flex-wrap: wrap;
+    }
+
     .cuj-result-count {
       font-size: 0.8rem;
       color: var(--site-base-fgColor-alt);
       white-space: nowrap;
+    }
+
+    .cuj-feedback-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+
+      .material-symbols {
+        font-size: 1.1rem;
+      }
     }
   }
 
@@ -2395,52 +2422,96 @@ body.flutterbench {
     background-color: var(--site-base-bgColor);
     border: 1px solid var(--site-inset-borderColor);
     border-radius: var(--ui-border-radius-sm);
-    overflow: hidden;
+    padding: 0.75rem 1rem;
 
     .cuj-card-header {
-      width: 100%;
       display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .cuj-card-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+      // Let long goals wrap instead of widening the flex item.
+      min-width: 0;
+    }
+
+    .cuj-goal {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      text-wrap: pretty;
+    }
+
+    .cuj-task-count {
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--site-base-fgColor-alt);
+    }
+
+    .cuj-expand-button {
+      display: inline-flex;
       align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.25rem;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 2.25rem;
+      height: 2.25rem;
+      padding: 0;
       background: none;
-      border: none;
+      border: 1px solid var(--site-link-fgColor);
+      border-radius: 50%;
+      color: var(--site-link-fgColor);
       cursor: pointer;
-      text-align: left;
-      font: inherit;
-      color: inherit;
+      transition:
+        transform 0.2s ease,
+        background-color 0.15s ease;
 
       &:hover {
         background-color: var(--site-inset-bgColor);
       }
 
-      .cuj-goal {
-        flex: 1;
-        margin: 0;
-        font-size: 1rem;
-        font-weight: 600;
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+
+    .cuj-card-content {
+      border-top: 1px solid var(--site-inset-borderColor);
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+    }
+
+    &:not(.expanded) {
+      .cuj-card-content {
+        display: none;
       }
 
-      .cuj-task-count {
-        font-size: 0.8rem;
-        color: var(--site-base-fgColor-alt);
-        white-space: nowrap;
+      .cuj-expand-button {
+        transform: rotate(180deg);
       }
     }
 
     .cuj-task-list {
       margin: 0;
-      padding: 0 1.25rem 1.25rem 3rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      color: var(--site-base-fgColor-alt);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
+      padding-inline-start: 1.15rem;
+      list-style: disc;
 
-    &.expanded .cuj-card-header {
-      border-bottom: 1px solid var(--site-inset-borderColor);
+      li {
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.45;
+        color: var(--site-base-fgColor-alt);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
@@ -2467,6 +2538,7 @@ body.flutterbench {
           font-weight: 700;
           margin-bottom: 0.35rem;
         }
+
         p {
           font-size: 0.9rem;
           color: var(--site-base-fgColor-alt);
@@ -3218,6 +3290,7 @@ body.flutterbench {
         // Color variants for tabs
         &.variant-perfect,
         &.tier-perfect {
+
           .tab-primary-label,
           .tier-score {
             color: $color-outcome;
@@ -3233,6 +3306,7 @@ body.flutterbench {
         &.variant-functional,
         &.variant-blue,
         &.tier-functional {
+
           .tab-primary-label,
           .tier-score {
             color: $color-functional;
@@ -3247,6 +3321,7 @@ body.flutterbench {
 
         &.variant-quality,
         &.variant-purple {
+
           .tab-primary-label,
           .tier-score {
             color: $color-quality;
@@ -3263,6 +3338,7 @@ body.flutterbench {
         &.variant-dx,
         &.variant-amber,
         &.tier-partial {
+
           .tab-primary-label,
           .tier-score {
             color: $color-dx;
@@ -3277,6 +3353,7 @@ body.flutterbench {
 
         &.variant-poor,
         &.tier-poor {
+
           .tab-primary-label,
           .tier-score {
             color: $color-poor;
@@ -3291,6 +3368,7 @@ body.flutterbench {
 
         &.variant-failure,
         &.tier-failure {
+
           .tab-primary-label,
           .tier-score {
             color: $color-failure;
@@ -3546,7 +3624,7 @@ body.flutterbench {
         border-bottom: none;
       }
 
-      > a.collapsible {
+      >a.collapsible {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -3667,6 +3745,7 @@ body.flutterbench {
         }
 
         .table-wrapper {
+
           table.spec-table,
           table {
             width: 100%;
@@ -3770,6 +3849,7 @@ body.flutterbench {
     }
 
     .grader-matrix {
+
       .grader-cards-track .grader-card.cat-llm,
       .grader-cards-grid .grader-card.cat-llm {
         background-color: rgba($color-llm, 0.08);
@@ -3825,6 +3905,7 @@ body.flutterbench {
     }
 
     .grader-matrix {
+
       .grader-cards-track .grader-card.cat-llm,
       .grader-cards-grid .grader-card.cat-llm {
         background-color: rgba($color-llm, 0.08);

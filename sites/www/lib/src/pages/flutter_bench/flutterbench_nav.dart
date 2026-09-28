@@ -8,8 +8,8 @@ import 'package:jaspr/jaspr.dart';
 /// A top-level FlutterBench section.
 enum FlutterBenchNavItem {
   leaderboard(label: 'Leaderboard', href: '/ai/flutterbench'),
-  models(label: 'Models', href: '/ai/flutterbench/models'),
-  tasks(label: 'Tasks & CUJs', href: '/ai/flutterbench/tasks'),
+  models(label: 'Model details', href: '/ai/flutterbench/models'),
+  tasks(label: 'Tasks', href: '/ai/flutterbench/tasks'),
   methodology(label: 'Methodology', href: '/ai/flutterbench/methodology'),
   cujs(label: 'CUJs', href: '/ai/flutterbench/cujs');
 

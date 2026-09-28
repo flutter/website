@@ -9,6 +9,10 @@ import 'package:site_shared/util.dart';
 
 import '../common/filters.dart';
 
+/// Where readers can report gaps in the catalog or suggest new journeys.
+// TODO(ewindmill): Replace with the real feedback destination once it exists.
+const String _feedbackUrl = 'https://github.com/flutter/evals/issues';
+
 /// The five FlutterBench CUJ personas, in catalog display order.
 const List<String> cujPersonas = [
   'The App Developer',
@@ -135,6 +139,19 @@ class _CujCatalogState extends State<CujCatalog> {
         span(classes: 'cuj-result-count', [
           .text('${filtered.length} / ${component.cujs.length} journeys'),
         ]),
+        const a(
+          classes: 'bench-btn-outline cuj-feedback-button',
+          href: _feedbackUrl,
+          target: Target.blank,
+          attributes: {
+            'rel': 'noopener',
+            'title': 'Leave feedback or suggest new journeys.',
+          },
+          [
+            MaterialIcon('rate_review'),
+            .text('Provide feedback'),
+          ],
+        ),
       ]),
       if (filtered.isEmpty)
         const div(classes: 'empty-table-message', [
@@ -160,12 +177,8 @@ class _CujCatalogState extends State<CujCatalog> {
       classes: ['cuj-card', if (isExpanded) 'expanded'].toClasses,
       id: 'cuj-$id',
       [
-        button(
-          classes: 'cuj-card-header',
-          type: ButtonType.button,
-          attributes: {'aria-expanded': '$isExpanded'},
-          events: {'click': (_) => _toggleExpanded(id)},
-          [
+        div(classes: 'cuj-card-header', [
+          div(classes: 'cuj-card-heading', [
             span(
               classes: [
                 'persona-tag',
@@ -174,20 +187,31 @@ class _CujCatalogState extends State<CujCatalog> {
               [.text(personaLabel(persona))],
             ),
             h3(classes: 'cuj-goal', [.text(goal)]),
-            span(classes: 'cuj-task-count', [
+            p(classes: 'cuj-task-count', [
               .text(tasks.length == 1 ? '1 task' : '${tasks.length} tasks'),
             ]),
-            MaterialIcon(
-              isExpanded ? 'expand_less' : 'expand_more',
-              label: 'Expand or collapse tasks',
-            ),
-          ],
-        ),
-        if (isExpanded)
+          ]),
+          button(
+            classes: 'cuj-expand-button',
+            type: ButtonType.button,
+            attributes: {
+              'aria-expanded': '$isExpanded',
+              'aria-controls': 'cuj-$id-tasks',
+              'aria-label': 'Expand or collapse the tasks for "$goal"',
+              'title': 'Expand or collapse tasks',
+            },
+            events: {'click': (_) => _toggleExpanded(id)},
+            const [MaterialIcon('keyboard_arrow_up')],
+          ),
+        ]),
+        // The tasks always render so that in-page search can find them.
+        // The collapsed state is handled with CSS.
+        div(classes: 'cuj-card-content', id: 'cuj-$id-tasks', [
           ul(classes: 'cuj-task-list', [
             for (final task in tasks)
               li([.text(task['task'] as String? ?? '')]),
           ]),
+        ]),
       ],
     );
   }
