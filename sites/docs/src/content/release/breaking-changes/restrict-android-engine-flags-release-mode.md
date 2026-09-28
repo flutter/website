@@ -203,7 +203,7 @@ and previously passed engine flags through `Intent` extras:
     If you host a `FlutterFragment`, pass flags using the builder:
 
     ```kotlin
-    val fragment = FlutterFragment.NewEngineFragmentBuilder()
+    val fragment = FlutterFragment.withNewEngine()
         .flutterEngineFlags(listOf("--trace-startup"))
         .build<FlutterFragment>()
     ```
