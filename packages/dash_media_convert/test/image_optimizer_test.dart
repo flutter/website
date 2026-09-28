@@ -131,6 +131,43 @@ void main() {
     );
   }
 
+  group(
+    'directory symlinks',
+    // Creating symlinks on Windows requires additional privileges.
+    testOn: '!windows',
+    () {
+      late String images;
+      late String alias;
+
+      setUp(() {
+        images = p.join(directory.path, 'images');
+        Directory(images).createSync();
+        alias = p.join(directory.path, 'alias');
+        Link(alias).createSync(images);
+      });
+
+      test('rejects output collisions through a symlink', () {
+        expect(
+          validateImagePaths([
+            p.join(images, 'image.png'),
+            p.join(alias, 'image.jpg'),
+          ]),
+          contains('Multiple inputs would write to'),
+        );
+      });
+
+      test('accepts distinct output paths through a symlink', () {
+        expect(
+          validateImagePaths([
+            p.join(images, 'screenshot.png'),
+            p.join(alias, 'photo.jpg'),
+          ]),
+          isNull,
+        );
+      });
+    },
+  );
+
   test('fails on images that are not valid', () async {
     final invalid = write('invalid.png', [1, 2, 3]);
 
@@ -140,16 +177,18 @@ void main() {
     expect(File(invalid).existsSync(), isTrue);
   });
 
-  test('reports an I/O failure without losing other results', () async {
-    final missing = p.join(directory.path, 'missing.png');
-    final valid = write('valid.png', pngBytes());
+  for (final missingPath in ['missing.png', p.join('missing', 'image.png')]) {
+    test('reports $missingPath without losing other results', () async {
+      final missing = p.join(directory.path, missingPath);
+      final valid = write('valid.png', pngBytes());
 
-    final results = await optimizer.optimizeFiles([missing, valid]);
+      final results = await optimizer.optimizeFiles([missing, valid]);
 
-    expect(results.map((r) => r.imagePath), [missing, valid]);
-    expect(results.first.result, isA<WebpFailed>());
-    expect(results.last.result, isA<WebpConverted>());
-    expect(File(valid).existsSync(), isFalse);
-    expect(File(p.setExtension(valid, '.webp')).existsSync(), isTrue);
-  });
+      expect(results.map((r) => r.imagePath), [missing, valid]);
+      expect(results.first.result, isA<WebpFailed>());
+      expect(results.last.result, isA<WebpConverted>());
+      expect(File(valid).existsSync(), isFalse);
+      expect(File(p.setExtension(valid, '.webp')).existsSync(), isTrue);
+    });
+  }
 }

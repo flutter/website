@@ -73,15 +73,12 @@ final class OptimizeImagesCommand extends Command<int> {
         usageException('$image doesn\'t exist.');
       }
       try {
-        // Resolve symbolic links so that neither the image nor
-        // the WebP image written next to it is outside the repository.
+        // Resolve symbolic links so that
+        // the image isn't outside the repository.
+        // As the image isn't a symbolic link itself,
+        // the WebP image written next to it is in the same directory.
         final source = File(imagePath).resolveSymbolicLinksSync();
-        final output = path.join(
-          Directory(path.dirname(imagePath)).resolveSymbolicLinksSync(),
-          path.basename(path.setExtension(imagePath, '.webp')),
-        );
-        if (!path.isWithin(resolvedRoot, source) ||
-            !path.isWithin(resolvedRoot, output)) {
+        if (!path.isWithin(resolvedRoot, source)) {
           usageException('$image is outside the repository.');
         }
       } on FileSystemException catch (e) {

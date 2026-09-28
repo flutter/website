@@ -20,7 +20,9 @@ const Set<String> _optimizableImageExtensions = {'.png', '.jpg', '.jpeg'};
 /// an input that isn't a PNG or JPEG or multiple inputs with
 /// the same canonical output path, or `null` if there are none.
 ///
-/// Output paths are compared without case on every platform to
+/// Output paths are compared after resolving symbolic links in
+/// their parent directories, when those directories exist.
+/// They're also compared without case on every platform to
 /// reject batches that would collide on case-insensitive file systems.
 String? validateImagePaths(List<String> imagePaths) {
   final outputPaths = <String>{};
@@ -30,7 +32,7 @@ String? validateImagePaths(List<String> imagePaths) {
     )) {
       return '$imagePath isn\'t a PNG or JPEG image.';
     }
-    final outputPath = p.canonicalize(_webpPath(imagePath));
+    final outputPath = _canonicalOutputPath(imagePath);
     if (!outputPaths.add(outputPath.toLowerCase())) {
       return 'Multiple inputs would write to $outputPath.';
     }
@@ -39,6 +41,21 @@ String? validateImagePaths(List<String> imagePaths) {
 }
 
 String _webpPath(String imagePath) => p.setExtension(imagePath, '.webp');
+
+String _canonicalOutputPath(String imagePath) {
+  final outputPath = _webpPath(imagePath);
+  try {
+    // The output doesn't exist yet, so resolve only its parent directory.
+    return p.join(
+      Directory(p.dirname(outputPath)).resolveSymbolicLinksSync(),
+      p.basename(outputPath),
+    );
+  } on FileSystemException {
+    // Let conversion report missing or inaccessible directories per image,
+    // so other images in the batch can still be optimized.
+    return p.canonicalize(outputPath);
+  }
+}
 
 /// The result of optimizing the image at `imagePath`.
 ///
