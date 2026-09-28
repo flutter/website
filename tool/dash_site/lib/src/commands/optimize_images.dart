@@ -62,6 +62,13 @@ final class OptimizeImagesCommand extends Command<int> {
     for (final image in images) {
       // Absolute paths are kept as is by `path.join`.
       final imagePath = path.normalize(path.join(repositoryRoot, image));
+      // Deleting a file symlink leaves the original image behind,
+      // while converting its resolved target would leave a dangling symlink.
+      if (Link(imagePath).existsSync()) {
+        usageException(
+          '$image is a symbolic link. Specify the target image instead.',
+        );
+      }
       if (!File(imagePath).existsSync()) {
         usageException('$image doesn\'t exist.');
       }
