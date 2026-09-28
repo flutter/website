@@ -7,7 +7,6 @@ import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
-import '../components/common/feature.dart';
 import '../components/common/feature_grid.dart';
 import '../components/common/icon.dart';
 import '../components/sections/cta_section.dart';
@@ -45,10 +44,10 @@ class AiPage extends StatelessComponent {
               alt: 'Notification',
             ),
             const a(
-              href: 'https://dart.dev/tools/mcp-server',
+              href: 'https://docs.flutter.dev/ai/get-started',
               target: Target.blank,
               [
-                .text('Try the new Dart and Flutter MCP server! '),
+                .text('Get started with Dart & Flutter MCP, Skills, and AI Plugins!'),
                 RawText('&nbsp;'),
                 Icon.linkArrow(large: true),
               ],
@@ -98,7 +97,7 @@ class AiPage extends StatelessComponent {
               div(classes: 'media', [
                 img(
                   src: context.asset('images/build-with-ai/vertex-tab.png'),
-                  alt: 'Vertex AI Logo',
+                  alt: 'Firebase AI Logic Logo',
                 ),
               ]),
               const div(classes: 'text', [
@@ -113,7 +112,7 @@ class AiPage extends StatelessComponent {
                 ]),
                 a(
                   classes: 'btn',
-                  href: 'https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter',
+                  href: 'https://firebase.google.com/docs/ai-logic/get-started?platform=flutter',
                   target: Target.blank,
                   [.text('Get started')],
                 ),
@@ -147,29 +146,6 @@ class AiPage extends StatelessComponent {
                 ),
               ]),
             ]),
-          ]),
-        ]),
-        section(id: 'ai-toolkit', [
-          div(classes: 'features container', [
-            Feature(
-              reverse: true,
-              eyebrow: 'Supercharge your Flutter app with AI',
-              title: 'The Flutter AI Toolkit',
-              description: 'Quickly add intelligent chat experiences using the new Flutter AI Toolkit. Easily integrate with Google Gemini AI or Firebase Vertex AI to power multi-turn conversations, streaming responses, speech-to-text input, and more.',
-              actions: const [
-                FeatureAction(
-                  label: 'Get started',
-                  url: 'https://pub.dev/packages/flutter_ai_toolkit',
-                ),
-              ],
-              media: img(
-                src: context.asset(
-                  'images/build-with-ai/flutter-ai-toolkit.png',
-                ),
-                alt: 'Flutter AI Toolkit',
-              ),
-              noSpy: true,
-            ),
           ]),
         ]),
         section(id: 'feature-grid', classes: 'module', [
@@ -207,9 +183,9 @@ class AiPage extends StatelessComponent {
                 ),
               ),
               FeatureGridItem(
-                title: 'Build generative AI agents with Vertex AI Agent Builder and Flutter',
+                title: 'Build generative AI agents with Google Cloud and Flutter',
                 description:
-                    'Supercharge your generative AI development workflow with Vertex AI and Flutter. '
+                    'Supercharge your generative AI development workflow with Gemini Enterprise and Flutter. '
                     'Seamlessly integrate with your existing tools and leverage our pre-built components and architectures to accelerate prototyping and deploy production-grade gen AI agents in your apps.',
                 url: 'https://io.google/2024/explore/6f1a4481-7b82-45c9-83eb-caa6e2391152/',
                 icon: context.asset(

@@ -10,6 +10,7 @@ import 'package:github/github.dart' as github;
 import 'package:path/path.dart' as path;
 
 import '../firebase.dart';
+import '../preview_changes.dart';
 import '../sites.dart';
 import '../utils.dart';
 import 'build.dart';
@@ -17,6 +18,8 @@ import 'build.dart';
 /// Builds the selected or default site,
 /// deploys it to a Firebase Hosting preview channel,
 /// and posts or updates a comment on the source GitHub PR when requested.
+///
+/// Skips staging when the pull request has no changes affecting the site.
 final class StagePreviewCommand extends Command<int> {
   static const String _projectOption = 'project';
   static const String _channelOption = 'channel';
@@ -78,7 +81,8 @@ final class StagePreviewCommand extends Command<int> {
   @override
   String get description =>
       'Build the site, deploy it to a Firebase staging channel, '
-      'and comment the preview URL on GitHub.';
+      'and comment the preview URL on GitHub. '
+      'Skip pull requests with no changes affecting the selected site.';
 
   @override
   String get name => 'stage-preview';
@@ -143,6 +147,21 @@ final class StagePreviewCommand extends Command<int> {
         );
       }
       prContext = null;
+    }
+
+    if (prContext != null &&
+        !await pullRequestAffectsSite(
+          githubToken: prContext.githubToken,
+          repoFullName: prContext.repoFullName,
+          prNumber: prContext.prNumber,
+          commitSha: prContext.commitSha,
+          site: selectedSite,
+        )) {
+      print(
+        'No changes affecting ${selectedSite.host} in '
+        'PR #${prContext.prNumber}; skipping preview staging.',
+      );
+      return 0;
     }
 
     final firebaseToolsVersion = await validateFirebaseCli();

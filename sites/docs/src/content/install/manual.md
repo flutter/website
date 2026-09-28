@@ -171,25 +171,52 @@ then extract the SDK to where you want it stored.
     Extract the SDK bundle you downloaded into
     the directory you want to store the Flutter SDK in.
 
-    1. Copy the following command.
-    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
-    1. Replace `<destination_directory_path>` with the path to the
-       folder you want the extracted SDK to be in.
-    1. Run the edited command in your preferred terminal.
+    <Tabs key="windows-terminal">
+    <Tab name="PowerShell">
 
-    ```console
-    $ Expand-Archive –Path <sdk_zip_path> -Destination <destination_directory_path>
+    1.  Copy the following command.
+    1.  Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
+    1.  Replace `<destination_directory_path>` with the path to the
+        folder you want the extracted SDK to be in.
+    1.  Run the edited command in PowerShell:
+
+        ```powershell
+        Expand-Archive -Path <sdk_zip_path> -DestinationPath <destination_directory_path>
+        ```
+
+    For example, if you downloaded the bundle for Flutter 3.47.3 into
+    the `$env:USERPROFILE\Downloads` directory and want to
+    store the extracted SDK in the `$env:USERPROFILE\develop` directory:
+
+    ```powershell
+    Expand-Archive `
+      -Path "$env:USERPROFILE\Downloads\flutter_windows_3.47.3-stable.zip" `
+      -DestinationPath "$env:USERPROFILE\develop"
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
+    </Tab>
+    <Tab name="Command prompt">
+
+    1.  Copy the following command.
+    1.  Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
+    1.  Replace `<destination_directory_path>` with the path to the
+        folder you want the extracted SDK to be in.
+    1.  Run the edited command in Command prompt:
+
+        ```bat
+        tar -xf <sdk_zip_path> -C <destination_directory_path>
+        ```
+
+    For example, if you downloaded the bundle for Flutter 3.47.3 into
     the `%USERPROFILE%\Downloads` directory and want to
     store the extracted SDK in the `%USERPROFILE%\develop` directory:
 
-    ```console
-    $ Expand-Archive `
-      -Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
-      -Destination $env:USERPROFILE\develop\
+    ```bat
+    tar -xf "%USERPROFILE%\Downloads\flutter_windows_3.47.3-stable.zip" -C "%USERPROFILE%\develop"
     ```
+
+    </Tab>
+    </Tabs>
 
     :::note
     If the `flutter.bat` file is missing from the `bin` directory
@@ -247,12 +274,12 @@ For details, check out the
     $ unzip <sdk_zip_path> -d <destination_directory_path>
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.3 into
     the `~/Downloads` directory and want to
     store the extracted SDK in the `~/develop` directory:
 
     ```console
-    $ unzip ~/Downloads/flutter_macos_3.29.3-stable.zip -d ~/develop/
+    $ unzip ~/Downloads/flutter_macos_3.47.3-stable.zip -d ~/develop/
     ```
 
 {: .steps .macos-only}
@@ -284,12 +311,12 @@ For details, check out the
     $ tar -xf <sdk_zip_path> -C <destination_directory_path>
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.3 into
     the `~/Downloads` directory and want to
     store the extracted SDK in the `~/develop` directory:
 
     ```console
-    $ tar -xf ~/Downloads/flutter_linux_3.29.3-stable.tar.xz -C ~/develop/
+    $ tar -xf ~/Downloads/flutter_linux_3.47.3-stable.tar.xz -C ~/develop/
     ```
 
 {: .steps .linux-only .chromeos-only}

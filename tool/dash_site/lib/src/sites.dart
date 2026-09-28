@@ -72,6 +72,25 @@ enum Site {
   /// The location of this site's Firebase config file.
   String get firebaseConfigPath => path.join(directory, 'firebase.json');
 
+  /// Repository path patterns for files that can affect this site's preview.
+  ///
+  /// Includes staging configuration as well as site build inputs.
+  /// GitHub workflow filters are maintained separately for their checks.
+  /// Use literals, `*`, and `**`, supported by both GitHub and `package:glob`.
+  /// Code excerpts are checked into site content, so changes to `examples/`
+  /// alone don't affect the preview build.
+  List<String> get previewPathPatterns => [
+    'sites/$name/**',
+    'sites/*/pubspec_overrides.yaml',
+    'packages/site_shared/**',
+    'tool/dash_site/**',
+    'cloud_build/**',
+    'pubspec.yaml',
+    'pubspec_overrides.yaml',
+    'pubspec.lock',
+    'analysis_options.yaml',
+  ];
+
   /// The ports Jaspr uses when serving this site locally.
   ///
   /// Each port is derived from this site's declaration order in [Site] so

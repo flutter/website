@@ -56,7 +56,8 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-currentFlutterVersion: '3.47.2'
+# The Flutter version reflected by the docs, as a quoted 'major.minor' string.
+documentedFlutterVersion: '3.47'
 
 # Settings for Jaspr.
 

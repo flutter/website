@@ -162,26 +162,18 @@ claude plugin marketplace list
 [Cursor](https://cursor.com/) is an AI-powered code editor built on top of
 VS Code.
 
-**Install the local plugin**
+**Install the official plugin**
 
-You can install the official plugin bundle locally by copying it to your Cursor
-plugins directory:
+Equip Cursor with official Flutter and Dart skills and MCP configuration
+using any of the following methods:
 
-1. Clone the repository:
+* Visit the [Dart and Flutter plugin](https://cursor.com/marketplace/flutter)
+  on the Cursor Marketplace and select **Add to Cursor**.
+* In Cursor, open **Customize**, then search for and add **Dart and Flutter**.
+* In a Cursor chat session, run `/add-plugin dart-flutter`.
 
-   ```bash
-   git clone https://github.com/flutter/agent-plugins.git
-   ```
-
-1. Copy the repository to your local Cursor plugins folder:
-
-   ```bash
-   mkdir -p ~/.cursor/plugins/local
-   cp -r agent-plugins ~/.cursor/plugins/local/dart-flutter
-   ```
-
-1. Restart Cursor. The editor automatically discovers the bundled skills and
-   configures the Dart and Flutter MCP server.
+Cursor automatically discovers the bundled skills and configures the
+Dart and Flutter MCP server.
 
 **Configure agent rules**
 

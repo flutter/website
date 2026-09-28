@@ -28,7 +28,8 @@ The Flutter AI tooling ecosystem consists of six complementary components:
    and system instructions for isolated workflows, such as accessibility
    auditing.
 6. **Agent rules**: persistent rules added to the context window every time
-   you start a new session with your assistant.
+   you start a new session with your assistant (such as instructing the
+   assistant to proactively trigger hot reload when modifying Flutter widgets).
 
 ---
 

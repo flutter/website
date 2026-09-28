@@ -83,7 +83,7 @@ class ContactListsPage extends StatelessWidget {
 }
 ```
 
-The `ContaactsListPage` widget and `ContactGroupsPage` widget are
+The `ContactListsPage` widget and `ContactGroupsPage` widget are
 placeholder pages that are needed to implement the adaptive layout
 widget, which you'll do next.
 

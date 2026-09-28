@@ -1,4 +1,4 @@
-FROM dart:3.13.3@sha256:17b10d5b632200b3d36c460a3acee9600561f90ee5ee171fec9c31723b074a00
+FROM dart:3.13.4@sha256:2d74fb22d7f8dba07862754953f5ebc50f3ac35a7b7ce18b6dd5629056c80f05
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl gpg ca-certificates \
     # Install the GitHub CLI. \
