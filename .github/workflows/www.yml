@@ -51,7 +51,17 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Install firebase-tools
-        run: curl -sL https://firebase.tools | bash
+        # Pinned because the hosting emulator fails to
+        # start with firebase-tools 15.31.0.
+        # Once https://github.com/firebase/firebase-tools/issues/11168 is fixed,
+        # unpin or consider an automatic rolling process.
+        env:
+          FIREBASE_TOOLS_VERSION: 15.30.2
+        run: |
+          sudo curl -sSfLo /usr/local/bin/firebase \
+            "https://firebase.tools/bin/linux/v${FIREBASE_TOOLS_VERSION}"
+          sudo chmod +rx /usr/local/bin/firebase
+          firebase --version
       - name: Build site
         run: dart run dash_site --site=www build
       - name: Check for broken Markdown link references
