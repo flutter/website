@@ -14,6 +14,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.9
+  cupertino_ui: ^1.1.1
   http: ^1.6.0
 
 dev_dependencies:

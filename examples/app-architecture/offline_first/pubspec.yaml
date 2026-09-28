@@ -9,6 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
   freezed_annotation: ^3.1.0
+  material_ui: ^1.5.0
 
 dev_dependencies:
   flutter_test:
