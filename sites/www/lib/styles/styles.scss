@@ -48,7 +48,12 @@
 @use 'pages/partner';
 @use 'pages/showcase';
 @use 'pages/why_flutter';
-@use 'pages/flutterbench';
+@use 'pages/flutter_bench/core' as flutterbench-core;
+@use 'pages/flutter_bench/leaderboard';
+@use 'pages/flutter_bench/models';
+@use 'pages/flutter_bench/tasks';
+@use 'pages/flutter_bench/methodology';
+@use 'pages/flutter_bench/cujs';
 @use 'pages/flutterbench-story';
 
 @use 'package:site_shared/_sass/components/breadcrumbs';

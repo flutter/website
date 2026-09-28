@@ -1,0 +1,504 @@
+// Copyright 2026, the Flutter authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+
+@use '../../core/breakpoints';
+@use 'core' as *;
+
+body.flutterbench {
+  // ---------------------------------------------------------------------------
+  // Model detail profile
+  //
+  // Shared by the leaderboard's details drawer and the models explorer, so
+  // these are scoped to the profile itself rather than to either host.
+  // The drawer shell lives in `styles/components/_drawer.scss`.
+  // ---------------------------------------------------------------------------
+  .model-detail {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  .model-detail__actions {
+    display: flex;
+  }
+
+  .model-detail__header {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    padding-bottom: $spacing-md;
+    border-bottom: 1px solid var(--site-inset-borderColor);
+  }
+
+  .model-detail__eyebrow {
+    margin: 0;
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bolder);
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-caps;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .model-detail__title {
+    margin: 0;
+    font-size: var(--font-size-heading-4);
+    font-weight: var(--font-weight-bolder);
+    line-height: $line-height-tight;
+  }
+
+  .model-detail__release {
+    margin: 0;
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-normal);
+    letter-spacing: $letter-spacing-caps;
+    color: var(--site-base-fgColor-alt);
+    // Eval keys are long and unbroken, so let them wrap inside the drawer.
+    overflow-wrap: anywhere;
+  }
+
+  // Specifications
+  .model-spec-block {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .model-spec-grid {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    margin: 0;
+  }
+
+  .model-spec-grid__label,
+  .model-spec-grid__value {
+    padding: var(--spacer-sm) 0;
+    border-bottom: 1px solid var(--site-inset-borderColor);
+  }
+
+  .model-spec-grid__label {
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: $letter-spacing-caps;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .model-spec-grid__value {
+    // Indents from the label rather than using a column gap, so the row's
+    // bottom rule stays unbroken.
+    padding-left: $spacing-lg;
+    margin: 0;
+    font-size: var(--font-size-default);
+    font-weight: var(--font-weight-normal);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+
+  // The last pair closes the list, so it doesn't need a separator.
+  .model-spec-grid__label:nth-last-child(2),
+  .model-spec-grid__value:last-child {
+    border-bottom: none;
+  }
+
+  // Headline statistics
+  .model-stat-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: var(--spacer-sm);
+  }
+
+  .model-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    padding: $spacing-md;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    background-color: var(--site-inset-bgColor);
+    box-shadow: inset 0 $border-width 0 var(--model-stat-accent);
+
+    &--accuracy {
+      --model-stat-accent: var(--blue-6);
+    }
+
+    &--cost {
+      --model-stat-accent: var(--bench-warning-fg);
+    }
+
+    &--latency {
+      --model-stat-accent: var(--bench-diagnostic-fg);
+    }
+
+    // Keeps the distribution strips aligned when the cards differ in height.
+    .distribution {
+      margin-top: auto;
+      padding-top: var(--spacer-sm);
+    }
+  }
+
+  .model-stat-card__label {
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bolder);
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-caps;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .model-stat-card__value {
+    font-size: var(--font-size-heading-3);
+    font-weight: var(--font-weight-bolder);
+    line-height: $line-height-tight;
+    font-variant-numeric: tabular-nums;
+
+    // Override the compact sizing the pills use inside the leaderboard table.
+    .score-pill,
+    .bench-error-badge {
+      font-size: inherit;
+    }
+  }
+
+  .model-stat-card__detail {
+    font-size: $font-size-xs;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  // A strip of ticks, one per scored configuration, with this one marked.
+  .distribution {
+    width: 100%;
+    min-width: 6rem;
+  }
+
+  .distribution__track {
+    position: relative;
+    height: 1.1rem;
+    overflow: hidden;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: $radius-pill;
+    background-color: var(--site-base-bgColor);
+  }
+
+  .distribution__tick,
+  .distribution__marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--ui-border-radius-sm);
+  }
+
+  .distribution__tick {
+    width: 2px;
+    height: 0.5rem;
+    background-color: var(--site-base-fgColor-alt);
+    opacity: 0.3;
+  }
+
+  .distribution__marker {
+    width: 3px;
+    height: 100%;
+    background-color: var(--model-stat-accent, var(--blue-6));
+  }
+
+  // Hyperparameters
+  .model-hyperparams {
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    background-color: var(--site-base-bgColor);
+  }
+
+  .model-hyperparams__summary {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    padding: var(--spacer-sm) $spacing-md;
+    font-size: var(--font-size-default);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: $border-width solid var(--blue-5);
+      outline-offset: -2px;
+    }
+
+    .material-symbols-rounded {
+      transition: transform $transition-normal;
+    }
+  }
+
+  .model-hyperparams[open] .model-hyperparams__summary .material-symbols-rounded {
+    transform: rotate(90deg);
+  }
+
+  .model-hyperparams__body {
+    padding: 0 $spacing-md $spacing-md;
+  }
+
+  // Per-benchmark breakdown
+  .model-benchmarks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-sm);
+    align-items: flex-start;
+
+    // The table still needs the full width; only the switcher shrinks to fit.
+    .bench-table-wrapper,
+    .bench-coming-soon {
+      align-self: stretch;
+    }
+  }
+
+  .model-benchmarks__hint {
+    margin: 0;
+    font-size: $font-size-xs;
+    line-height: $line-height-body;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .model-benchmarks__table {
+    th.col-distribution,
+    td.col-distribution {
+      width: 40%;
+      min-width: 7rem;
+    }
+
+    th.col-value,
+    td.col-value {
+      white-space: nowrap;
+      font-weight: var(--font-weight-bold);
+      font-variant-numeric: tabular-nums;
+    }
+
+    th.col-ranking,
+    td.col-ranking {
+      white-space: nowrap;
+      text-align: right;
+    }
+  }
+
+  .benchmark-row__link {
+    font-weight: var(--font-weight-bold);
+    color: var(--site-link-fgColor);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .benchmark-row__rank {
+    font-size: $font-size-xs;
+    font-variant-numeric: tabular-nums;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .benchmark-row__rank-value {
+    font-size: var(--font-size-heading-5);
+    font-weight: var(--font-weight-bolder);
+    color: var(--site-base-fgColor);
+  }
+
+  .score-bar {
+    height: 0.5rem;
+    min-width: 5rem;
+    overflow: hidden;
+    border-radius: $radius-pill;
+    background-color: var(--site-inset-bgColor);
+  }
+
+  .score-bar__fill {
+    height: 100%;
+    border-radius: inherit;
+    background-color: var(--blue-6);
+
+    &.score-high {
+      background-color: var(--bench-success-fg);
+    }
+
+    &.score-mid {
+      background-color: var(--bench-warning-fg);
+    }
+
+    &.score-low {
+      background-color: var(--bench-danger-fg);
+    }
+  }
+
+  // Placeholder for data FlutterBench doesn't collect yet.
+  .bench-coming-soon {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    padding: $spacing-md;
+    border: 1px dashed var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    background-color: var(--site-inset-bgColor);
+  }
+
+  .bench-coming-soon__label {
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bolder);
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-caps;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .bench-coming-soon__note {
+    font-size: var(--font-size-default);
+    line-height: $line-height-body;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Models explorer
+  // ---------------------------------------------------------------------------
+  .models-explorer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacer-md);
+    align-items: start;
+
+    @include breakpoints.screen(lg) {
+      grid-template-columns: minmax(15rem, 20rem) minmax(0, 1fr);
+    }
+  }
+
+  .models-explorer__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-sm);
+    min-width: 0;
+
+    // Keeps the list reachable while the much taller detail pane scrolls.
+    @include breakpoints.screen(lg) {
+      position: sticky;
+      top: $spacing-lg;
+      max-height: calc(100vh - #{$spacing-lg} * 2);
+    }
+  }
+
+  .models-explorer__controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacer-sm);
+  }
+
+  .models-explorer__field {
+    display: flex;
+    flex: 1 1 8rem;
+    flex-direction: column;
+    gap: $spacing-xs;
+
+    .bench-search-input {
+      width: 100%;
+    }
+  }
+
+  .models-explorer__field-label {
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bolder);
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-caps;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .models-explorer__select {
+    padding: var(--spacer-sm) var(--spacer-sm);
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    font-size: var(--font-size-default);
+    background-color: var(--site-base-bgColor);
+    color: var(--site-base-fgColor);
+
+    &:focus-visible {
+      outline: $border-width solid var(--blue-5);
+      outline-offset: 1px;
+    }
+  }
+
+  .models-explorer__list-header {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-xs var(--spacer-sm) 0;
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bolder);
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-caps;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .models-explorer__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+
+    @include custom-scrollbar;
+  }
+
+  .models-explorer__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacer-sm);
+    width: 100%;
+    padding: var(--spacer-sm);
+    border: 1px solid transparent;
+    border-radius: var(--ui-border-radius-sm);
+    background: none;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color $transition-normal;
+
+    &:hover {
+      background-color: var(--site-inset-bgColor);
+    }
+
+    &:focus-visible {
+      outline: $border-width solid var(--blue-5);
+      outline-offset: -2px;
+    }
+
+    &.selected {
+      border-color: var(--blue-6);
+      background-color: var(--blue-1);
+    }
+  }
+
+  .models-explorer__item-main {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    min-width: 0;
+  }
+
+  .models-explorer__item-name {
+    font-size: var(--font-size-default);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .models-explorer__item-meta {
+    font-size: $font-size-xs;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .models-explorer__item-score {
+    font-weight: var(--font-weight-bolder);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .models-explorer__empty {
+    padding: $spacing-md var(--spacer-sm);
+  }
+
+  .models-explorer__detail {
+    min-width: 0;
+  }
+}

@@ -1,0 +1,210 @@
+// Copyright 2026, the Flutter authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+
+@use '../../core/breakpoints';
+@use 'core' as *;
+
+body.flutterbench {
+  // ---------------------------------------------------------------------------
+  // Summary Stats Bar
+  // ---------------------------------------------------------------------------
+  .bench-stats-bar-container {
+    margin-bottom: var(--spacer);
+
+    .bench-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+
+      @include breakpoints.screen(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include breakpoints.screen(lg) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .bench-stat-card {
+      background-color: var(--site-base-bgColor);
+      border: 1px solid var(--site-inset-borderColor);
+      border-radius: var(--ui-border-radius-sm);
+      padding: $spacing-lg;
+      box-shadow: $shadow-sm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &.card-primary {
+        border-left: $border-width solid var(--blue-5);
+      }
+
+      &.card-warning {
+        border-left: $border-width solid var(--coral);
+      }
+
+      .stat-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: var(--spacer-sm);
+
+        .stat-label {
+          font-size: $font-size-xs;
+          font-weight: var(--font-weight-bold);
+          text-transform: uppercase;
+          letter-spacing: $letter-spacing-caps;
+          color: var(--site-base-fgColor-alt);
+        }
+
+        .stat-badge {
+          font-size: $font-size-xs;
+          font-weight: var(--font-weight-bolder);
+          padding: $spacing-xs var(--spacer-sm);
+          border-radius: var(--ui-border-radius-sm);
+
+          &.badge-blue {
+            background-color: var(--blue-1);
+            color: var(--blue-7);
+          }
+
+          &.badge-neutral {
+            background-color: var(--grey-2);
+            color: var(--grey-6);
+          }
+
+          &.badge-green {
+            background-color: var(--bench-success-bg);
+            color: var(--bench-success-fg);
+          }
+        }
+      }
+
+      .stat-value {
+        font-size: var(--font-size-heading-3);
+        font-weight: var(--font-weight-bolder);
+        color: var(--site-base-fgColor);
+        line-height: $line-height-tight;
+        margin-bottom: var(--spacer-sm);
+
+        &.error-value {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .stat-meta {
+        font-size: $font-size-xs;
+        color: var(--site-base-fgColor-alt);
+
+        .meta-highlight {
+          font-weight: var(--font-weight-bolder);
+          color: var(--bench-success-fg);
+        }
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Leaderboard Table Columns & Cells
+  // ---------------------------------------------------------------------------
+  .bench-table-wrapper table.bench-table {
+    th.col-model,
+    td.col-model {
+      min-width: 220px;
+    }
+
+    th.col-outcome,
+    td.col-outcome,
+    th.col-quality,
+    td.col-quality,
+    th.col-dx,
+    td.col-dx,
+    th.col-tokens,
+    td.col-tokens,
+    th.col-cost,
+    td.col-cost,
+    th.col-overall,
+    td.col-overall {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  // Model info cell
+  .model-title-row {
+    display: flex;
+    align-items: center;
+
+    .model-name-text {
+      color: var(--site-base-fgColor);
+    }
+  }
+
+  // Rank Pill
+  .rank-cell {
+    font-size: var(--font-size-default);
+    width: 20px;
+    color: var(--site-base-fgColor-alt);
+    border-right: 1px var(--site-base-fgColor-alt) solid;
+    margin-right: $spacing-md;
+  }
+
+  // Reward Main Score
+  .reward-cell {
+    display: flex;
+    align-items: baseline;
+    gap: $spacing-xs;
+
+    .reward-main-score {
+      font-weight: var(--font-weight-bolder);
+      font-size: $font-size-xs;
+    }
+
+    .reward-range {
+      font-size: $font-size-xs;
+      color: var(--site-base-fgColor-alt);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Methodology Callout
+  // ---------------------------------------------------------------------------
+  .methodology-callout {
+    .callout-card {
+      background-color: var(--site-inset-bgColor);
+      border: 1px solid var(--site-inset-borderColor);
+      border-radius: var(--ui-border-radius-sm);
+      padding: $spacing-lg var(--spacer-md);
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
+
+      @include breakpoints.screen(md) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .callout-text {
+        h3 {
+          font-size: var(--font-size-heading-4);
+          font-weight: var(--font-weight-bolder);
+          margin-bottom: $spacing-xs;
+        }
+
+        p {
+          font-size: var(--font-size-default);
+          color: var(--site-base-fgColor-alt);
+          margin: 0;
+          line-height: $line-height-body;
+        }
+      }
+
+      .callout-action {
+        flex-shrink: 0;
+      }
+    }
+  }
+}

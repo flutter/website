@@ -6,8 +6,9 @@
 // ported from the original docs.flutter.dev version of this page
 // (sites/docs/lib/_sass/pages/_story-layout.scss).
 
+@use 'sass:color';
 @use 'sass:list';
-@use 'sass:map';
+@use 'flutter_bench/core' as *;
 
 @function _pad-chapter-number($i) {
   @if $i < 10 {
@@ -17,27 +18,21 @@
   @return "#{$i}";
 }
 
+// Returns a color's channels as "r, g, b" so it can be used in
+// `rgba(var(--chapter-accent-rgb), $alpha)`.
+@function _rgb-channels($c) {
+  $r: color.channel($c, 'red', $space: rgb);
+  $g: color.channel($c, 'green', $space: rgb);
+  $b: color.channel($c, 'blue', $space: rgb);
+  @return '#{$r}, #{$g}, #{$b}';
+}
+
 // -----------------------------------------------------------------------------
 // Chapter accent colors
 // -----------------------------------------------------------------------------
-// NOTE: These colors intentionally match the category colors defined in
-// _flutterbench.scss ($color-functional, $color-outcome, $color-llm,
-// $color-quality, $color-dx, $color-grey) for visual consistency.
-$story-progress-gradient: linear-gradient(90deg, #0284c7 0%, #6366f1 50%, #059669 100%);
-
-$chapter-colors: (
-  (rgb: "2, 132, 199", hex: #0284c7),
-  // Sky blue (functional)
-  (rgb: "5, 150, 105", hex: #059669),
-  // Green (outcome)
-  (rgb: "124, 58, 237", hex: #7c3aed),
-  // Violet (llm)
-  (rgb: "99, 102, 241", hex: #6366f1),
-  // Indigo (quality)
-  (rgb: "217, 119, 6", hex: #d97706),
-  // Amber (dx)
-  (rgb: "100, 116, 139", hex: #64748b) // Slate (grey)
-);
+// Chapters cycle through the FlutterBench category colors.
+$chapter-colors: ($color-functional, $color-outcome, $color-llm, $color-quality, $color-dx, $color-grey);
+$story-progress-gradient: linear-gradient(90deg, $color-functional, $color-quality, $color-outcome);
 
 // -----------------------------------------------------------------------------
 // Scroll-driven reading progress line
@@ -48,7 +43,7 @@ $chapter-colors: (
   width: 100%;
   height: 3px;
   z-index: var(--site-z-top, 1000);
-  background: rgb(216, 216, 216);
+  background: var(--grey-4);
   pointer-events: none;
 
   .story-reading-progress-bar {
@@ -57,7 +52,7 @@ $chapter-colors: (
     transform-origin: 0% 50%;
     transform: scaleX(0);
     background: $story-progress-gradient;
-    box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);
+    box-shadow: $shadow-sm;
 
     @supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
       animation: story-reading-progress-grow linear both;
@@ -90,15 +85,15 @@ $chapter-colors: (
 
   .story-chapter {
     position: relative;
-    padding-block: 3rem;
+    padding-block: var(--gutter);
     scroll-snap-align: start;
     scroll-margin-top: calc(var(--site-header-height, 4rem) + 1.5rem);
-    transition: background-color 0.4s ease, border-color 0.4s ease;
+    transition: background-color $transition-normal, border-color $transition-normal;
 
     // Default fallback accent color
-    --chapter-accent: #0284c7;
-    --chapter-accent-rgb: 2, 132, 199;
-    --chapter-next-rgb: 5, 150, 105;
+    --chapter-accent: #{list.nth($chapter-colors, 1)};
+    --chapter-accent-rgb: #{_rgb-channels(list.nth($chapter-colors, 1))};
+    --chapter-next-rgb: #{_rgb-channels(list.nth($chapter-colors, 2))};
 
     // Generate chapter accent colors from palette
     @for $i from 0 through 20 {
@@ -110,9 +105,9 @@ $chapter-colors: (
       $next: list.nth($chapter-colors, $next-idx);
 
       &[data-chapter="#{$formatted}"] {
-        --chapter-accent: #{map.get($curr, hex)};
-        --chapter-accent-rgb: #{map.get($curr, rgb)};
-        --chapter-next-rgb: #{map.get($next, rgb)};
+        --chapter-accent: #{$curr};
+        --chapter-accent-rgb: #{_rgb-channels($curr)};
+        --chapter-next-rgb: #{_rgb-channels($next)};
       }
     }
 
@@ -121,12 +116,12 @@ $chapter-colors: (
       content: '';
       position: absolute;
       top: 0;
-      left: -2rem;
-      right: -2rem;
+      left: calc(-1 * var(--spacer-md));
+      right: calc(-1 * var(--spacer-md));
       height: 100%;
       background:
-        radial-gradient(650px circle at 50% 0%, rgba(var(--chapter-accent-rgb), 0.08), transparent 90%),
-        radial-gradient(650px circle at 50% 100%, rgba(var(--chapter-next-rgb), 0.08), transparent 90%);
+        radial-gradient(650px circle at 50% 0%, rgba(var(--chapter-accent-rgb), $tint-bg), transparent 90%),
+        radial-gradient(650px circle at 50% 100%, rgba(var(--chapter-next-rgb), $tint-bg), transparent 90%);
       pointer-events: none;
       z-index: 0;
     }
@@ -145,8 +140,8 @@ $chapter-colors: (
       position: sticky;
       top: calc(var(--site-header-height, 4rem) + 3px);
       z-index: var(--site-z-floating, 10);
-      padding-block: 0.85rem 0.5rem;
-      margin-bottom: 2rem;
+      padding-block: $spacing-md var(--spacer-sm);
+      margin-bottom: var(--spacer-md);
       border-bottom: 1px solid var(--site-outline-variant);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -161,25 +156,25 @@ $chapter-colors: (
       .chapter-kicker {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.35rem;
+        gap: $spacing-md;
+        margin-bottom: $spacing-xs;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
-        font-size: 0.75rem;
-        font-weight: 700;
+        letter-spacing: $letter-spacing-caps;
+        font-size: $font-size-xs;
+        font-weight: var(--font-weight-bolder);
         color: var(--chapter-accent);
 
         .chapter-number {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 0.15rem 0.55rem;
-          border-radius: 9999px;
-          background: rgba(var(--chapter-accent-rgb), 0.08);
-          border: 1px solid rgba(var(--chapter-accent-rgb), 0.25);
-          font-family: var(--site-code-fontFamily);
-          font-size: 0.8rem;
-          line-height: 1.2;
+          padding: $spacing-xs var(--spacer-sm);
+          border-radius: $radius-pill;
+          background: rgba(var(--chapter-accent-rgb), $tint-bg);
+          border: 1px solid rgba(var(--chapter-accent-rgb), $tint-border);
+          font-family: var(--font-code);
+          font-size: $font-size-xs;
+          line-height: $line-height-tight;
           color: var(--chapter-accent);
         }
 
@@ -196,7 +191,7 @@ $chapter-colors: (
         margin: 0;
 
         h2 {
-          font-weight: 700;
+          font-weight: var(--font-weight-bolder);
         }
       }
     }
@@ -207,7 +202,7 @@ $chapter-colors: (
       z-index: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: var(--spacer-sm);
       width: 100%;
 
       > p,
@@ -220,9 +215,9 @@ $chapter-colors: (
       > .callout {
         width: 100%;
         max-width: 700px;
-        line-height: 1.75;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
+        line-height: $line-height-body;
+        margin-left: var(--spacer-sm);
+        margin-right: var(--spacer-sm);
       }
 
       // Sub-headings inside a chapter, centered to match prose
@@ -230,17 +225,17 @@ $chapter-colors: (
         width: 100%;
 
         h3 {
-          font-size: clamp(1.3rem, 1.8vw, 1.55rem);
-          font-weight: 600;
-          margin-top: 2rem;
-          margin-bottom: 0.5rem;
+          font-size: var(--font-size-heading-4);
+          font-weight: var(--font-weight-bold);
+          margin-top: var(--spacer-md);
+          margin-bottom: var(--spacer-sm);
         }
 
         h4 {
-          font-size: 1.15rem;
-          font-weight: 600;
-          margin-top: 1.5rem;
-          margin-bottom: 0.5rem;
+          font-size: var(--font-size-heading-4);
+          font-weight: var(--font-weight-bold);
+          margin-top: $spacing-lg;
+          margin-bottom: var(--spacer-sm);
         }
       }
     }
@@ -251,8 +246,8 @@ $chapter-colors: (
   // wrapped in article.content.
   .header-wrapper {
     display: flex;
-    margin-block-start: 1.5rem;
-    margin-block-end: 0.75rem;
+    margin-block-start: $spacing-lg;
+    margin-block-end: $spacing-md;
     align-items: center;
 
     > h2,
@@ -262,11 +257,11 @@ $chapter-colors: (
     }
 
     .heading-link {
-      border-radius: 0.125rem;
-      margin-left: 0.4rem;
-      font-size: 1.3rem;
+      border-radius: var(--ui-border-radius-sm);
+      margin-left: var(--spacer-sm);
+      font-size: var(--font-size-heading-4);
       line-height: 1;
-      transition: all 0.1s ease-in-out;
+      transition: all $transition-normal;
       overflow: hidden;
       color: var(--site-base-fgColor-alt);
       opacity: 0;
@@ -295,15 +290,15 @@ $chapter-colors: (
   // Dark mode adjustments
   body.dark-mode & {
     .story-reading-progress {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba($color-white, $tint-overlay);
     }
 
     .story-chapter {
-      border-bottom-color: rgba(255, 255, 255, 0.08);
+      border-bottom-color: rgba($color-white, $tint-overlay);
 
       .chapter-header-group {
         background: var(--site-base-bgColor);
-        border-bottom-color: rgba(255, 255, 255, 0.08);
+        border-bottom-color: rgba($color-white, $tint-overlay);
       }
 
       &::before {
@@ -311,8 +306,8 @@ $chapter-colors: (
       }
 
       .chapter-kicker .chapter-number {
-        background: rgba(var(--chapter-accent-rgb), 0.15);
-        border-color: rgba(var(--chapter-accent-rgb), 0.35);
+        background: rgba(var(--chapter-accent-rgb), $tint-bg);
+        border-color: rgba(var(--chapter-accent-rgb), $tint-border);
       }
     }
   }
