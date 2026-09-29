@@ -419,4 +419,4 @@ For more information about density principles in general,
 see the [Material Design guide][].
 
 [Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
-[`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
+[`VisualDensity`]: {{site.material_ui}}/VisualDensity-class.html
