@@ -27,7 +27,7 @@ to import for your app or package.
 
 The `widgets`library (`package:flutter/widgets.dart`)
 provides the foundational, style-neutral building blocks
-of the Flutter framework. It includes layout primitives (`Row,` C`olumn,` S`tack)`,
+of the Flutter framework. It includes layout primitives (`Row,` `Column,` `Stack)`,
 interaction models (`GestureDetector`), animation controllers,
 and base presentation widgets (`CustomPaint`, `Image`, `RichText`).
 
@@ -35,7 +35,7 @@ and base presentation widgets (`CustomPaint`, `Image`, `RichText`).
 
 * **Building a custom design system:**
   If your application uses a bespoke visual language that doesn't
-  follow Material Design or Apple Human Interface Guidelines,
+  strictkly follow Material Design or Apple Human Interface Guidelines,
   build on top of widgets rather than overriding opinionated design system defaults.
 * **Creating design-agnostic packages:**
   If you publish a reusable component or utility package on pub.dev,

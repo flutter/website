@@ -101,8 +101,8 @@ List<MemoryPage> get widgetCatalogPages {
 
 const _additionalCatalogContent = {
   'Material components': '''
-Flutter provides a variety of visual, behavioral, and motion-rich widgets
-that implement the [Material 3][] design specification.
+Flutter's `material_ui` provides a variety of visual, behavioral,
+and motion-rich widgets that implement the [Material 3][] design specification.
 Material enables you to design and build beautiful, usable apps
 that can adapt to any platform.
 

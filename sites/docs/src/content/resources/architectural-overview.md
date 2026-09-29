@@ -114,7 +114,7 @@ a series of layers. Working from the bottom to the top, we have:
   You can manipulate these objects dynamically, with the
   tree automatically updating the layout to reflect your changes.
 * The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)**,
-  part of the core Flutter SDK is a composition abstraction.
+  part of the core Flutter SDK, is a composition abstraction.
   Each render object in the rendering layer has a
   corresponding class in the widgets layer. In addition, the widgets layer
   allows you to define combinations of classes that you can reuse. This is the
