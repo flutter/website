@@ -5,8 +5,8 @@ description:
   tools into a single Flutter app and shipped it in just six months.
 headline: Dartmouth Ocean Technologies
 summary:
-  Dartmouth Ocean Technologies unifies oceanographic sensor tools and
-  accelerates feature delivery with Flutter
+  Dartmouth Ocean Technologies unifies their oceanographic sensor tools and
+  accelerated feature delivery with Flutter
 appName: Dartmouth Ocean Technologies
 companyName: Dartmouth Ocean Technologies Inc.
 logo: images/third_party/case_studies/dartmouth-ocean-technologies/dartmouth_ocean_technologies_logo.webp
