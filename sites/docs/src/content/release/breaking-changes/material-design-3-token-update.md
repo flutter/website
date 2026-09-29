@@ -99,9 +99,9 @@ Relevant PRs:
 * [Update tokens to v5.0.0][]
 * [Update tokens to v6.1.0][]
 
-[`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`ColorScheme`]: {{site.material_ui}}/ColorScheme-class.html
+[`ThemeData`]: {{site.material_ui}}/ThemeData-class.html
+[`Chip`]: {{site.material_ui}}/Chip-class.html
 [Update tokens to v5.0.0]: {{site.repo.flutter}}/pull/153385
 [Update tokens to v6.1.0]: {{site.repo.flutter}}/pull/153722
 [non-breaking]: {{site.repo.flutter}}/flutter/blob/master/docs/contributing/Tree-hygiene.md#1-determine-if-your-change-is-a-breaking-change

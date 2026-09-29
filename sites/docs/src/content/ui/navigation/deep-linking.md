@@ -90,8 +90,8 @@ introduction to the Router system.
 
 [io-dl]: {{site.yt.watch}}?v=6RxuDcs6jVw&t=3s
 [Learning Flutter's new navigation and routing system]: {{site.flutter-blog}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
-[routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
-[onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
+[routes]: {{site.material_ui}}/MaterialApp/routes.html
+[onGenerateRoute]: {{site.material_ui}}/MaterialApp/onGenerateRoute.html
 [Router]: {{site.api}}/flutter/widgets/Router-class.html
 [plugin-linking]: https://medium.com/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 [Flutter Deep Linking: The Ultimate Guide]: https://codewithandrea.com/articles/flutter-deep-links/
