@@ -102,7 +102,7 @@ by search, 22 business categories, and district-level filtering.
 
 Beyond business listings, the app carries a community layer: residents share
 reviews with photos, business owners reply directly, and a shared feed carries
-local news, events, and neighbourhood groups. Firebase Cloud Messaging keeps
+local news, events, and neighborhood groups. Firebase Cloud Messaging keeps
 the community informed when weather or civic alerts affect the region.
 
 The app also features a dedicated history archive, offering historical
