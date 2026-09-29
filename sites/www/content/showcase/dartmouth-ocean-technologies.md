@@ -9,8 +9,8 @@ summary:
   accelerates feature delivery with Flutter
 appName: Dartmouth Ocean Technologies
 companyName: Dartmouth Ocean Technologies Inc.
-logo: images/third_party/case_studies/dartmouth-ocean-technologies/dartmouth_ocean_technologies_logo.webp
-card: images/third_party/case_studies/dartmouth-ocean-technologies/dartmouth_ocean_technologies_logo.webp
+logo: /images/third_party/case_studies/dartmouth-ocean-technologies/dartmouth_ocean_technologies_logo.webp
+card: /images/third_party/case_studies/dartmouth-ocean-technologies/dartmouth_ocean_technologies_logo.webp
 locations:
   - North America
 platforms:
