@@ -120,7 +120,7 @@ a series of layers. Working from the bottom to the top, we have:
   allows you to define combinations of classes that you can reuse. This is the
   layer at which the reactive programming model is introduced.
 * The
-  **[Material]({site.pub}/packages/material_ui)** and
+  **[Material]({site.pub}}/packages/material_ui)** and
   **[Cupertino]({{site.pub}}/packages/cupertino_ui)** packages
   offer comprehensive sets of controls that use the widget layer's
   composition primitives to implement the Material or iOS design languages.

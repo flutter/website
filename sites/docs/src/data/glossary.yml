@@ -370,7 +370,7 @@
       link: "/packages-and-plugins/dependency-management"
       type: "doc"
     - text: "Package versioning guide"
-      link: "{{site.dart-site}}/tools/pub/versioning"
+      link: "https://dart.dev/tools/pub/versioning"
       type: "doc"
     - text: "pub.dev"
       link: "https://pub.dev"
