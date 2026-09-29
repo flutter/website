@@ -95,7 +95,7 @@ community data accurate as businesses move and reopen.
   alt="Hatay'ı Yaşat merchant self-service registration flow"
 />
 
-The app also catalogues the region's temporary container markets, listing the
+The app also catalogs the region's temporary container markets, listing the
 businesses inside each one with directions and one-tap calling, so residents
 can find a specific trader among dozens of relocated units. Discovery is backed
 by search, 22 business categories, and district-level filtering.
