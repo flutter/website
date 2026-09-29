@@ -60,6 +60,9 @@
     - text: "Material and Cupertino decoupling guide"
       link: "/release/breaking-changes/material-ui-and-cupertino-ui"
       type: "doc"
+    - text: "pub.dev"
+      link: "https://pub.dev"
+      type: "external"
   labels:
     - "design"
     - "ui"
@@ -315,6 +318,9 @@
     - text: "Material and Cupertino decoupling guide"
       link: "/release/breaking-changes/material-ui-and-cupertino-ui"
       type: "doc"
+    - text: "pub.dev"
+      link: "https://pub.dev"
+      type: "external"
   labels:
     - "design"
     - "ui"
@@ -353,7 +359,7 @@
   long_description: |-
     Additionally, a package can contain dependencies (listed in the pubspec),
     Dart libraries, apps, resources, tests, images, fonts, and examples.
-    The [pub.dev][] site lists many packages—developed by Google engineers
+    The pub.dev site lists many packages—developed by Google engineers
     and generous members of the Flutter and Dart community—that you can use
     in your app.
   related_links:
@@ -366,6 +372,9 @@
     - text: "Package versioning guide"
       link: "{{site.dart-site}}/tools/pub/versioning"
       type: "doc"
+    - text: "pub.dev"
+      link: "https://pub.dev"
+      type: "external"
   labels:
     - "packages"
     - "plugins"
@@ -413,9 +422,8 @@
     Pub is the tool used for managing Dart packages.
     It allows you to install, upgrade, and manage dependencies for your Dart app.
     Dependencies are defined in the [`pubspec.yaml`][] file.
-    Packages are hosted on [pub.dev][], the official package repository.
+    Packages are hosted on pub.dev, the official package repository.
     
-    [pub.dev]: https://pub.dev
     [`pubspec.yaml`]: https://dart.dev/tools/pub/pubspec
   related_links:
     - text: "pub.dev"
