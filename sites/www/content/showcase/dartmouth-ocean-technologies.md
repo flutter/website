@@ -39,7 +39,7 @@ such as phosphate, nitrate, and total alkalinity in real time, DOT provides
 marine scientists and researchers with eyes and ears underwater.
 
 <Image
-  src="images/third_party/case_studies/dartmouth-ocean-technologies/dartmouth_ocean_technologies_body_1.webp"
+  src="/showcase/images/third_party/case_studies/dartmouth-ocean-technologies/dartmouth_ocean_technologies_body_1.webp"
   format="fullwidth"
   alt="DOT Nitrate-Phosphate Sensor app plotting deployment data over time"
 />
