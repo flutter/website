@@ -51,7 +51,7 @@ and base presentation widgets (`CustomPaint`, `Image`, `RichText`).
 The `material_ui` package (`package:material_ui/material_ui.dart`)
 implements Google's Material 3 design system. It layers visual styling,
 dynamic color, elevation, typography, and interaction feedback
-(such as ink ripples) on top of the base widgets.
+(such as ripples) on top of the base widgets.
 
 ### When to use `material_ui`
 
