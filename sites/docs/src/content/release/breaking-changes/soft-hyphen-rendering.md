@@ -32,10 +32,17 @@ This change affects apps in two ways.
 
 **Rendering.** Text that contains a soft hyphen now shows a hyphen
 wherever a line breaks at it.
-The hyphen counts toward the line's width,
-so it can change `Paragraph.longestLine`, the size of text laid out with
-[`TextWidthBasis.longestLine`][], and hit testing for that text.
+Lines still break in the same places,
+but the hyphen makes its line wider,
+so it can change `Paragraph.longestLine` and the size of text
+laid out with [`TextWidthBasis.longestLine`][].
 Golden image tests that contain such text might need updating.
+
+This applies to all platforms except the web,
+where soft hyphens aren't rendered yet.
+Editable text, such as `TextField`, and `SelectableText`
+also render the hyphen but don't have a `hyphens` parameter yet,
+so there's no way to opt out for them.
 
 **API.** `TextStyle.getParagraphStyle` gained an optional `hyphens` parameter.
 Because Dart requires an override to accept every parameter
@@ -53,13 +60,13 @@ To keep soft hyphens invisible, pass `Hyphens.hidden`.
 Code before migration:
 
 ```dart
-Text('inter­national')
+Text('inter\u00ADnational')
 ```
 
 Code after migration:
 
 ```dart
-Text('inter­national', hyphens: Hyphens.hidden)
+Text('inter\u00ADnational', hyphens: Hyphens.hidden)
 ```
 
 ### Update overrides of `getParagraphStyle` {: #update-overrides }
