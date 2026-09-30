@@ -226,6 +226,11 @@
       { "source": "/release/release-notes/changelogs/changelog-1.17.0", "destination": "/release/release-notes/release-notes-1.17.0", "type": 301 },
       { "source": "/release/release-notes/supported-platforms", "destination": "/reference/supported-platforms", "type": 301 },
       { "source": "/release/breaking-changes/can-request-focus", "destination": "https://github.com/flutter/flutter/issues/149067", "type": 301 },
+      {
+        "source": "/release/breaking-changes/restrict-command-line-flags-prebuilt-android-release-binaries",
+        "destination": "/release/breaking-changes/restrict-android-engine-flags-release-mode",
+        "type": 301
+      },
       { "source": "/release/breaking-changes/scrollable_alert_dialog", "destination": "/release/breaking-changes/scrollable-alert-dialog", "type": 301 },
       { "source": "/release/breaking-changes/uiscene-lifecycle-ios", "destination": "/release/breaking-changes/uiscenedelegate", "type": 301 },
       { "source": "/release/breaking-changes/win_lifecycle_process_function", "destination": "/release/breaking-changes/win-lifecycle-process-function", "type": 301 },
