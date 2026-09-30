@@ -30,11 +30,11 @@ As shown in the video, the following
 decision tree helps you decide what approach
 to use when implementing a Flutter animation:
 
-<img src='/assets/images/docs/ui/animations/animation-decision-tree.png' alt="The animation decision tree">
+![The animation decision tree](/assets/images/docs/ui/animations/animation-decision-tree.png)
 
 ## Animation deep dive
 
-For a deeper understanding of just how animations work in Flutter, watch
+For a deeper understanding of how animations work in Flutter, watch
 [Animation deep dive][].
 (Also published as a [_companion article_][article6].)
 
@@ -62,9 +62,9 @@ To create a custom implicit animation, watch
 ### Built-in explicit animations
 
 To create an explicit animation (where you control the animation,
-rather than letting the framework control it), perhaps
-you can use one of the built-in explicit animations classes.
-For more information, watch
+rather than letting the framework control it), consider
+using one of the built-in explicit animation classes.
+To learn more, watch
 [Making your first directional animations with
 built-in explicit animations][].
 (Also published as a [_companion article_][article4].)
@@ -94,9 +94,9 @@ that defines the timing and speed of the transition.
 The framework calculates how to transition from the beginning point
 to the end point.
 
-* See the [Animations tutorial][], which uses tweens in the examples.
+* Refer to the [Animations tutorial][], which uses tweens in the examples.
 
-* Also see the API documentation for [`Tween`][], [`CurveTween`][], and
+* Consult the API documentation for [`Tween`][], [`CurveTween`][], and
   [`TweenSequence`][].
 
 ### Physics-based animation
@@ -110,7 +110,7 @@ Similarly, dropping a ball attached to a spring falls
 * [Animate a widget using a physics simulation][]<br>
   A recipe in the animations section of the Flutter cookbook.
 
-* Also see the API documentation for
+* Consult the API documentation for
   [`AnimationController.animateWith`][] and
   [`SpringSimulation`][].
 
@@ -136,18 +136,18 @@ elements from a list or grid.
 
 In this pattern, the user selects an element&mdash;often an
 image&mdash;from the page, and the UI animates the selected element
-to a new page with more detail. In Flutter, you can easily implement
+to a new page with more detail. In Flutter, you can implement
 shared element transitions between routes (pages)
 using the `Hero` widget.
 
-* [Hero animations][]
+* [Hero animations][]<br>
   How to create two styles of Hero animations:
   * The hero flies from one page to another while changing position
     and size.
   * The hero's boundary changes shape, from a circle to a square,
-    as its flies from one page to another.
+    as it flies from one page to another.
 
-* Also see the API documentation for the
+* Consult the API documentation for the
   [`Hero`][], [`Navigator`][], and [`PageRoute`][] classes.
 
 ### Staggered animation
@@ -175,9 +175,9 @@ other widgets.
 
 ### Animation<wbr>\<double>
 
-In Flutter, an `Animation` object knows nothing about what
-is onscreen. An `Animation` is an abstract class that
-understands its current value and its state (completed or dismissed).
+In Flutter, an `Animation` object is independent of what
+is rendered onscreen. An `Animation` is an abstract class that
+tracks its current value and its state (completed or dismissed).
 One of the more commonly used animation types is `Animation<double>`.
 
 An `Animation` object sequentially generates
@@ -192,9 +192,9 @@ Animations can also interpolate types other than double, such as
 `Animation<Color>` or `Animation<Size>`.
 
 An `Animation` object has state. Its current value is
-always available in the `.value` member.
+always available in the `.value` getter.
 
-An `Animation` object knows nothing about rendering or
+An `Animation` object doesn't handle rendering or
 `build()` functions.
 
 ### CurvedAnimation
@@ -250,33 +250,23 @@ controller = AnimationController(
 wherever an `Animation` object is needed. However, the `AnimationController`
 has additional methods to control the animation. For example, you start
 an animation with the `.forward()` method. The generation of numbers is
-tied to the screen refresh, so typically 60 numbers are generated per
-second. After each number is generated, each `Animation` object calls the
+tied to the screen refresh rate (typically 60 to 120 frames per second).
+After each number is generated, each `Animation` object calls the
 attached `Listener` objects. To create a custom display list for each
-child, see [`RepaintBoundary`][].
+child, refer to [`RepaintBoundary`][].
 
 When creating an `AnimationController`, you pass it a `vsync` argument.
 The presence of `vsync` prevents offscreen animations from consuming
 unnecessary resources.
 You can use your stateful object as the vsync by adding
 `SingleTickerProviderStateMixin` to the class definition.
-You can see an example of this in [animate1][] on GitHub.
-
-{% comment %}
-The `vsync` object ties the ticking of the animation controller to
-the visibility of the widget, so that when the animating widget goes
-off-screen, the ticking stops, and when the widget is restored, it
-starts again (without stopping the clock, so it's as if it had
-been ticking the whole time, but without using the CPU.)
-To use your custom State object as the `vsync`, include the
-`TickerProviderStateMixin` when defining the custom State class.
-{% endcomment %}
+You can find an example of this in [animate1][] on GitHub.
 
 :::note
 In some cases, a position might exceed the `AnimationController`'s
 0.0-1.0 range. For example, the `fling()` function
 allows you to provide velocity, force, and position
-(using the Force object). The position can be anything and
+(using the `Force` object). The position can be anything and
 so can be outside of the 0.0 to 1.0 range.
 
 A `CurvedAnimation` can also exceed the 0.0 to 1.0 range,
@@ -284,7 +274,7 @@ even if the `AnimationController` doesn't.
 Depending on the curve selected, the output of
 the `CurvedAnimation` can have a wider range than the input.
 For example, elastic curves such as `Curves.elasticIn`
-significantly overshoots or undershoots the default range.
+significantly overshoot or undershoot the default range.
 :::
 
 ### Tween
@@ -319,9 +309,9 @@ A `Tween` object doesn't store any state. Instead, it provides the
 `transform` function to map the current value of the animation
 (between 0.0 and 1.0), to the actual animation value.
 
-The current value of the `Animation` object can be found in the
-`.value` method. The evaluate function also performs some housekeeping,
-such as ensuring that begin and end are returned when the
+The current value of the `Animation` object is available from the
+`.value` getter. The `evaluate()` function also performs some housekeeping,
+such as ensuring that `begin` and `end` are returned when the
 animation values are 0.0 and 1.0, respectively.
 
 #### Tween.animate
@@ -333,11 +323,14 @@ integer values from 0 to 255 over the course of 500 ms.
 
 <?code-excerpt "animation/animate5/lib/main.dart (IntTween)"?>
 ```dart
-AnimationController controller = AnimationController(
+final AnimationController controller = AnimationController(
   duration: const Duration(milliseconds: 500),
   vsync: this,
 );
-Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
+final Animation<int> alpha = IntTween(
+  begin: 0,
+  end: 255,
+).animate(controller);
 ```
 
 :::note
@@ -349,7 +342,7 @@ The following example shows a controller, a curve, and a `Tween`:
 
 <?code-excerpt "animation/animate5/lib/main.dart (IntTween-curve)"?>
 ```dart
-AnimationController controller = AnimationController(
+final AnimationController controller = AnimationController(
   duration: const Duration(milliseconds: 500),
   vsync: this,
 );
@@ -357,7 +350,7 @@ final Animation<double> curve = CurvedAnimation(
   parent: controller,
   curve: Curves.easeOut,
 );
-Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
+final Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
 ```
 
 ### Animation notifications
@@ -438,19 +431,19 @@ Learn more about Flutter animations at the following links:
 [Animations tutorial]: /ui/animations/tutorial
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimationController.animateWith`]: {{site.api}}/flutter/animation/AnimationController/animateWith.html
-[article1]: {{site.flutter-blog}}/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
-[article2]: {{site.flutter-blog}}/flutter-animation-basics-with-implicit-animations-95db481c5916
-[article3]: {{site.flutter-blog}}/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
-[article4]: {{site.flutter-blog}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
-[article5]: {{site.flutter-blog}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
-[article6]: {{site.flutter-blog}}/animation-deep-dive-39d3ffea111f
+[article1]: https://flutter.dev/blog/how-to-choose-which-flutter-animation-widget-is-right-for-you
+[article2]: https://flutter.dev/blog/flutter-animation-basics-with-implicit-animations
+[article3]: https://flutter.dev/blog/custom-implicit-animations-in-flutter-with-tweenanimationbuilder
+[article4]: https://flutter.dev/blog/directional-animations-with-built-in-explicit-animations
+[article5]: https://flutter.dev/blog/when-should-i-useanimatedbuilder-or-animatedwidget
+[article6]: https://flutter.dev/blog/animation-deep-dive
 [Casual games toolkit]: /resources/games-toolkit/
 [Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.yt.watch}}?v=6KiPEqzJIKQ&feature=youtu.be
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.yt.watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`CurveTween`]: {{site.api}}/flutter/animation/CurveTween-class.html
-[`evaluate(Animation<double> animation)`]: {{site.api}}/flutter/animation/Animation/value.html
+[`evaluate(Animation<double> animation)`]: {{site.api}}/flutter/animation/Animatable/evaluate.html
 [Flutter API documentation]: {{site.api}}
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [Hero animations]: /ui/animations/hero-animations

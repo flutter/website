@@ -4,7 +4,7 @@ import 'dart:math';
 
 // #enddocregion ShakeCurve
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const LogoApp());
 
@@ -106,17 +106,20 @@ class UsedInTutorialTextOnly extends _LogoAppState {
 
   void usedInTutorialOnly1() {
     // #docregion IntTween
-    AnimationController controller = AnimationController(
+    final AnimationController controller = AnimationController(
       duration: const Duration(milliseconds: 500),
       vsync: this,
     );
-    Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
+    final Animation<int> alpha = IntTween(
+      begin: 0,
+      end: 255,
+    ).animate(controller);
     // #enddocregion IntTween
   }
 
   void usedInTutorialOnly2() {
     // #docregion IntTween-curve
-    AnimationController controller = AnimationController(
+    final AnimationController controller = AnimationController(
       duration: const Duration(milliseconds: 500),
       vsync: this,
     );
@@ -124,7 +127,7 @@ class UsedInTutorialTextOnly extends _LogoAppState {
       parent: controller,
       curve: Curves.easeOut,
     );
-    Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
+    final Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
     // #enddocregion IntTween-curve
   }
 }

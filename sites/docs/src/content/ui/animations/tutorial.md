@@ -25,7 +25,7 @@ triggered by setting a beginning and ending point.
 They are simpler to implement
 than custom explicit animations, which are described here.
 
-The following sections walks you through several animation examples.
+The following sections walk you through several animation examples.
 Each section provides a link to the source code for that example.
 
 ## Rendering animations
@@ -33,25 +33,24 @@ Each section provides a link to the source code for that example.
 :::secondary What's the point?
 * How to add basic animation to a widget using `addListener()` and
   `setState()`.
-* Every time the Animation generates a new number, the `addListener()`
+* Every time the `Animation` generates a new number, the `addListener()`
   function calls `setState()`.
 * How to define an `AnimationController` with the required
   `vsync` parameter.
-* Understanding the "`..`" syntax in "`..addListener`",
+* How to use the `..` syntax in `..addListener`,
   also known as Dart's _cascade notation_.
-* To make a class private, start its name with an underscore (`_`).
 :::
 
-So far you've learned how to generate a sequence of numbers over time.
-Nothing has been rendered to the screen. To render with an
-`Animation` object, store the `Animation` object as a
+An `Animation` object generates a sequence of numbers over time,
+but doesn't render anything to the screen.
+To render with an `Animation` object, store the `Animation` object as a
 member of your widget, then use its value to decide how to draw.
 
 Consider the following app that draws the Flutter logo without animation:
 
 <?code-excerpt "animate0/lib/main.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const LogoApp());
 
@@ -96,8 +95,10 @@ The changes from the non-animated example are highlighted:
 +   @override
 +   void initState() {
 +     super.initState();
-+     controller =
-+         AnimationController(duration: const Duration(seconds: 2), vsync: this);
++     controller = AnimationController(
++       duration: const Duration(seconds: 2),
++       vsync: this,
++     );
 +     animation = Tween<double>(begin: 0, end: 300).animate(controller)
 +       ..addListener(() {
 +         setState(() {
@@ -141,7 +142,7 @@ Dispose of the controller when the `State` object is
 discarded to prevent memory leaks.
 
 With these few changes,
-you've created your first animation in Flutter!
+you've created your first animation in Flutter.
 
 :::tip Dart language trick
 You might not be familiar with Dart's cascade notation&mdash;the two
@@ -230,7 +231,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 
 + class AnimatedLogo extends AnimatedWidget {
 +   const AnimatedLogo({super.key, required Animation<double> animation})
-+       : super(listenable: animation);
++     : super(listenable: animation);
 +
 +   @override
 +   Widget build(BuildContext context) {
@@ -252,8 +253,10 @@ and it passes the `Animation` object to `AnimatedLogo`:
     @override
     void initState() {
       super.initState();
-      controller =
-          AnimationController(duration: const Duration(seconds: 2), vsync: this);
+      controller = AnimationController(
+        duration: const Duration(seconds: 2),
+        vsync: this,
+      );
 -     animation = Tween<double>(begin: 0, end: 300).animate(controller)
 -       ..addListener(() {
 -         setState(() {
@@ -292,7 +295,8 @@ and it passes the `Animation` object to `AnimatedLogo`:
   to the animation's state, such as starting, stopping,
   or reversing direction.
 * Run an animation in an infinite loop by reversing direction when
-  the animation has either completed or returned to its starting state.
+  the animation has either completed or returned to its starting state,
+  or by calling `controller.repeat(reverse: true)`.
 :::
 
 It's often helpful to know when an animation changes state,
@@ -316,7 +320,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
       vsync: this,
     );
     animation = Tween<double>(begin: 0, end: 300).animate(controller)
-      ..addStatusListener((status) => print('$status'));
+      ..addStatusListener((status) => debugPrint('$status'));
     controller.forward();
   }
   // ...
@@ -336,8 +340,10 @@ at the beginning or the end. This creates a "breathing" effect:
 ```dart diff
   void initState() {
     super.initState();
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
 -   animation = Tween<double>(begin: 0, end: 300).animate(controller);
 +   animation = Tween<double>(begin: 0, end: 300).animate(controller)
 +     ..addStatusListener((status) {
@@ -347,31 +353,39 @@ at the beginning or the end. This creates a "breathing" effect:
 +         controller.forward();
 +       }
 +     })
-+     ..addStatusListener((status) => print('$status'));
++     ..addStatusListener((status) => debugPrint('$status'));
     controller.forward();
   }
 ```
 
 **App source:** [animate3][]
 
+:::tip Repeating an animation
+While `addStatusListener()` is useful for reacting to status changes,
+if your only goal is to loop an animation continuously in one or both
+directions, you can call [`controller.repeat(reverse: true)`][repeat]
+instead of manually toggling `forward()` and `reverse()` in a status listener.
+:::
+
 ## Refactoring with AnimatedBuilder
 
 :::secondary What's the point?
-* An [`AnimatedBuilder`][] understands how to render the transition.
-* An `AnimatedBuilder` doesn't know how to render the widget,
+* An [`AnimatedBuilder`][] separates the transition from the widget being
+  animated.
+* An `AnimatedBuilder` doesn't render the widget itself,
   nor does it manage the `Animation` object.
 * Use `AnimatedBuilder` to describe an animation as
-  part of a build method for another widget.
-  If you simply want to define a widget with a reusable
+  part of a `build()` method for another widget.
+  To define a widget with a reusable
   animation, use an `AnimatedWidget`, as shown in
   the [Simplifying with AnimatedWidget][] section.
-* Examples of `AnimatedBuilders` in the Flutter API: `BottomSheet`,
+* Examples of `AnimatedBuilder`s in the Flutter API: `BottomSheet`,
   `ExpansionTile`, `PopupMenu`, `ProgressIndicator`,
   `RefreshIndicator`, `Scaffold`, `SnackBar`, `TabBar`,
   `TextField`.
 :::
 
-One problem with the code in the [animate3][] example,
+One problem with the code in the [animate3][] example
 is that changing the animation required changing the widget
 that renders the logo. A better solution
 is to separate responsibilities into different classes:
@@ -381,7 +395,8 @@ is to separate responsibilities into different classes:
 * Render the transition
 
 You can accomplish this separation with the help of the
-`AnimatedBuilder` class. An `AnimatedBuilder` is a
+`AnimatedBuilder` class (or its general-purpose counterpart,
+[`ListenableBuilder`][]). An `AnimatedBuilder` is a
 separate class in the render tree. Like `AnimatedWidget`,
 `AnimatedBuilder` automatically listens to notifications
 from the `Animation` object, and marks the widget tree
@@ -415,20 +430,21 @@ The middle three blocks in the diagram are all created in the
 `build()` method in `GrowTransition`, shown below.
 The `GrowTransition` widget itself is stateless and holds
 the set of final variables necessary to define the transition animation.
-The build() function creates and returns the `AnimatedBuilder`,
-which takes the (`Anonymous` builder) method and the
+The `build()` method creates and returns the `AnimatedBuilder`,
+which takes the anonymous `builder` callback and the
 `LogoWidget` object as parameters. The work of rendering the
-transition actually happens in the (`Anonymous` builder)
-method, which creates a `Container` of the appropriate size
-to force the `LogoWidget` to shrink to fit.
+transition actually happens in the anonymous `builder`
+callback, which creates a `SizedBox` (labeled `Container` in the diagram)
+of the appropriate size to force the `LogoWidget` to shrink to fit.
 
 One tricky point in the code below is that the child looks
 like it's specified twice. What's happening is that the
-outer reference of child is passed to `AnimatedBuilder`,
+outer reference to `child` is passed to `AnimatedBuilder`,
 which passes it to the anonymous closure, which then uses
 that object as its child. The net result is that the
 `AnimatedBuilder` is inserted in between the two widgets
-in the render tree.
+in the render tree, and the static `child` subtree is built only once
+rather than on every animation frame.
 
 <?code-excerpt "animate4/lib/main.dart (grow-transition)"?>
 ```dart
@@ -464,8 +480,8 @@ class GrowTransition extends StatelessWidget {
 Finally, the code to initialize the animation looks very
 similar to the [animate2][] example. The `initState()`
 method creates an `AnimationController` and a `Tween`,
-then binds them with `animate()`. The magic happens in
-the `build()` method, which returns a `GrowTransition`
+then binds them with `animate()`. Next,
+the `build()` method returns a `GrowTransition`
 object with a `LogoWidget` as a child, and an animation object to
 drive the transition. These are the three elements listed
 in the bullet points above.
@@ -520,10 +536,7 @@ in the bullet points above.
     @override
 -   Widget build(BuildContext context) => AnimatedLogo(animation: animation);
 +   Widget build(BuildContext context) {
-+     return GrowTransition(
-+       animation: animation,
-+       child: const LogoWidget(),
-+     );
++     return GrowTransition(animation: animation, child: const LogoWidget());
 +   }
 
     // ...
@@ -541,7 +554,7 @@ in the bullet points above.
 :::
 
 In this section, you'll build on the example from
-[monitoring the progress of the animation][]
+[Monitoring the progress of the animation][]
 ([animate3][]), which used `AnimatedWidget`
 to animate in and out continuously. Consider the case
 where you want to animate in and out while the
@@ -552,8 +565,9 @@ This example shows how to use multiple tweens on the same animation
 controller, where each tween manages a different effect in
 the animation. It is for illustrative purposes only.
 If you were tweening opacity and size in production code,
-you'd probably use [`FadeTransition`][] and [`SizeTransition`][]
-instead.
+prefer [`FadeTransition`][] and [`SizeTransition`][]
+(avoid animating the `Opacity` widget directly, which can force
+a costly offscreen `saveLayer` pass on each frame).
 :::
 
 Each tween manages an aspect of the animation. For example:
@@ -647,23 +661,23 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 }
 ```
 
-**App source:** [animate5][] object knows the current state of an animation
-  (for example, whether it's started, stopped,
-  or moving forward or in reverse),
-  but doesn't know anything about what appears onscreen.
-* An [`AnimationController`][] manages the `Animation`.
-* A [`CurvedAnimation`][] defines progression as a non-linear curve.
-* A [`Tween`][] interpolates between a beginning and ending value
-  for a property being animated.
+**App source:** [animate5][]
 
 ## Next steps
 
-This tutorial gives you a foundation for creating animations in
-Flutter using `Tweens`, but there are many other classes to explore.
-You might investigate the specialized `Tween` classes,
-animations specific to your design system type, `ReverseAnimation`,
-shared element transitions (also known as Hero animations),
-physics simulations and `fling()` methods.
+This tutorial gives you a foundation for creating explicit animations in
+Flutter using `Tween`s, but there are many other animation APIs to explore:
+
+* [Implicit animations][] and [`TweenAnimationBuilder`][] for simpler
+  animations that don't require managing an `AnimationController`.
+* Specialized [`Tween`][] subclasses, such as [`ColorTween`][],
+  [`RectTween`][], and [`IntTween`][].
+* [Staggered animations][] for coordinating sequential or overlapping motions.
+* [Hero animations][] for shared element transitions between routes.
+* [Physics simulations][] and [`fling()`][] methods for motion modeled on
+  real-world physics.
+* [`ReverseAnimation`][] and the [Animations overview][] for a deeper look
+  at Flutter's animation architecture.
 
 [animate0]: {{site.repo.this}}/tree/main/examples/animation/animate0
 [animate1]: {{site.repo.this}}/tree/main/examples/animation/animate1
@@ -673,17 +687,30 @@ physics simulations and `fling()` methods.
 [animate5]: {{site.repo.this}}/tree/main/examples/animation/animate5
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
+[Animations overview]: /ui/animations/overview
 [Introduction to animations]: /ui/animations
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
-[`AnimationController` section]: /ui/animations/index#animationcontroller
+[`AnimationController` section]: /ui/animations#animationcontroller
+[`ColorTween`]: {{site.api}}/flutter/animation/ColorTween-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [Cascade notation]: {{site.dart-site}}/language/operators#cascade-notation
 [Dart language documentation]: {{site.dart-site}}/language
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
+[`fling()`]: {{site.api}}/flutter/animation/AnimationController/fling.html
+[Hero animations]: /ui/animations/hero-animations
+[Implicit animations]: /ui/animations/implicit-animations
+[`IntTween`]: {{site.api}}/flutter/animation/IntTween-class.html
+[`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [Monitoring the progress of the animation]: #monitoring
+[Physics simulations]: /cookbook/animation/physics-simulation
+[`RectTween`]: {{site.api}}/flutter/animation/RectTween-class.html
 [Refactoring with AnimatedBuilder]: #refactoring-with-animatedbuilder
+[repeat]: {{site.api}}/flutter/animation/AnimationController/repeat.html
+[`ReverseAnimation`]: {{site.api}}/flutter/animation/ReverseAnimation-class.html
 [`SlideTransition`]: {{site.api}}/flutter/widgets/SlideTransition-class.html
 [Simplifying with AnimatedWidget]: #simplifying-with-animatedwidget
 [`SizeTransition`]: {{site.api}}/flutter/widgets/SizeTransition-class.html
+[Staggered animations]: /ui/animations/staggered-animations
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
+[`TweenAnimationBuilder`]: {{site.api}}/flutter/widgets/TweenAnimationBuilder-class.html
