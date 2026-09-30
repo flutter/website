@@ -35,8 +35,8 @@ This includes high-level widgets like
 as well as lower-level widgets like [`Column`][] or [`Row`][] that
 lay out widgets vertically or horizontally.
 
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
-[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
+[`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
+[`AppBar`]: {{site.material_ui}}/AppBar-class.html
 [`Column`]:  {{site.api}}/flutter/widgets/Column-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 

@@ -294,9 +294,9 @@ Removed in:
 * [#120575][]
 
 
-[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
-[`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
-[`AppBarTheme`]: {{site.api}}/flutter/material/AppBarTheme-class.html
+[`AppBar`]: {{site.material_ui}}/AppBar-class.html
+[`SliverAppBar`]: {{site.material_ui}}/SliverAppBar-class.html
+[`AppBarTheme`]: {{site.material_ui}}/AppBarTheme-class.html
 [#86127]: {{site.repo.flutter}}/pull/86127
 [#70645]: {{site.repo.flutter}}/pull/70645
 [#67921]: {{site.repo.flutter}}/pull/67921

@@ -118,10 +118,10 @@ Relevant PRs:
 * [Normalize InputDecorationTheme][]
 * [Apply normalization to TimePickerThemeData.inputDecorationTheme][]
 
-[`AppBarTheme`]: {{site.api}}/flutter/material/AppBarTheme-class.html
+[`AppBarTheme`]: {{site.material_ui}}/AppBarTheme-class.html
 [Normalize ThemeData.appBarTheme]: {{site.repo.flutter}}/pull/169130
-[`BottomAppBarTheme`]: {{site.api}}/flutter/material/BottomAppBarTheme-class.html
+[`BottomAppBarTheme`]: {{site.material_ui}}/BottomAppBarTheme-class.html
 [Normalize ThemeData.bottomAppBarTheme]: {{site.repo.flutter}}/pull/168586
-[`InputDecorationTheme`]: {{site.api}}/flutter/material/InputDecorationTheme-class.html
+[`InputDecorationTheme`]: {{site.material_ui}}/InputDecorationTheme-class.html
 [Normalize InputDecorationTheme]: {{site.repo.flutter}}/pull/168981
 [Apply normalization to TimePickerThemeData.inputDecorationTheme]: {{site.repo.flutter}}/pull/171584

@@ -104,9 +104,9 @@ Relevant PRs:
 * [Introduce `TabBar.tabAlignment`][]
 * [Fix Material 3 Scrollable `TabBar`][]
 
-[`TabBar`]: {{site.api}}/flutter/material/TabBar-class.html
-[`TabBar.tabAlignment`]: {{site.api}}/flutter/material/TabBar/tabAlignment.html
-[`TabAlignment`]: {{site.api}}/flutter/material/TabAlignment.html
+[`TabBar`]: {{site.material_ui}}/TabBar-class.html
+[`TabBar.tabAlignment`]: {{site.material_ui}}/TabBar/tabAlignment.html
+[`TabAlignment`]: {{site.material_ui}}/TabAlignment.html
 
 [Introduce `TabBar.tabAlignment`]: {{site.repo.flutter}}/pull/125036
 [Fix Material 3 Scrollable `TabBar`]: {{site.repo.flutter}}/pull/131409

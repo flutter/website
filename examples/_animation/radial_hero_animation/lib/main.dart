@@ -12,8 +12,8 @@
 
 import 'dart:math' as math;
 
-import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
+import 'package:material_ui/material_ui.dart';
 
 class Photo extends StatelessWidget {
   const Photo({super.key, required this.photo, this.onTap});
