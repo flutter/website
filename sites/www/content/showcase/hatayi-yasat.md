@@ -43,15 +43,15 @@ and essential services became a daily challenge.
 
 To address this need, a small volunteer team created
 [Hatay'ı Yaşat][hatayi-yasat-repo], an open-source mobile application. The
-project aimed to help residents locate relocated businesses, navigate new
+project aimed to reconnect residents with relocated businesses, navigate new
 container markets, and preserve the visual and cultural memory of the city.
 With no dedicated infrastructure budget, the team needed to build and deploy a
 reliable, cross-platform solution as quickly as possible.
 
 **Optimizing for speed and reliability**
 
-Given the urgency on the ground, maintaining two separate native codebases was
-not practical for a volunteer group. The team chose Flutter to achieve rapid
+Given the urgency on the ground, maintaining two native codebases was not
+practical for a volunteer group. The team chose Flutter to achieve rapid
 cross-platform reach from a single codebase without sacrificing performance or
 UI quality.
 
@@ -69,13 +69,14 @@ three months.
   alt="Hatay'ı Yaşat business listings, business details, and category filters"
 />
 
-**Shipping fast and scalably with Flutter**
+**Shipping fast and scaling with Flutter**
 
-The application is open source on GitHub, built with a feature-first
-architecture that helped contributors onboard smoothly throughout three years
-of continuous development. The team leveraged [Riverpod](https://riverpod.dev/)
-with code generation for predictable state management, `go_router` for
-declarative navigation, and
+The open-source application is hosted on GitHub and built with a
+feature-first architecture, which has helped contributors onboard smoothly
+throughout three years of continuous development. The team leveraged
+[Riverpod](https://riverpod.dev/) with code generation for predictable state
+management, [`go_router`](https://pub.dev/packages/go_router) for declarative
+navigation, and
 [`google_maps_flutter`](https://pub.dev/packages/google_maps_flutter) for
 interactive place discovery.
 
@@ -100,10 +101,10 @@ businesses inside each one with directions and one-tap calling, so residents
 can find a specific trader among dozens of relocated units. Discovery is backed
 by search, 22 business categories, and district-level filtering.
 
-Beyond business listings, the app carries a community layer: residents share
-reviews with photos, business owners reply directly, and a shared feed carries
-local news, events, and neighborhood groups. Firebase Cloud Messaging keeps
-the community informed when weather or civic alerts affect the region.
+To foster local connection, the app integrates a community layer: residents
+share reviews with photos, business owners reply directly, and a shared feed
+carries local news, events, and neighborhood groups. Firebase Cloud Messaging
+keeps the community informed when weather or civic alerts affect the region.
 
 The app also features a dedicated history archive, offering historical
 photographs and information to preserve the cultural identity of Hatay during
