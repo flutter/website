@@ -166,7 +166,7 @@ or if you build Flutter Android apps with non-Gradle or hermetic build systems
     statically declare those flags in your `AndroidManifest.xml`
     before compiling the release binary.
     For details, refer to
-    [Declare engine flags in `AndroidManifest.xml`](#declare-engine-flags-in-androidmanifestxml).
+    [Declare engine flags in `AndroidManifest.xml`](#declare-engine-flags-in-manifest).
 
 ### Build release binaries with flags directly using the Flutter CLI
 
@@ -218,7 +218,7 @@ and previously passed engine flags through `Intent` extras:
     FlutterEngineCache.getInstance().put("my_engine_id", flutterEngine)
     ```
 
-### Declare engine flags in `AndroidManifest.xml`
+### Declare engine flags in manifest
 
 To configure engine flags statically in release builds,
 add `<meta-data>` elements under the `<application>` tag in
