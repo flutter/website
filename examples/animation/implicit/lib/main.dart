@@ -1,4 +1,4 @@
-// #docregion FadeBoxDemo
+// #docregion fade-box-demo
 import 'package:material_ui/material_ui.dart';
 
 class FadeBoxDemo extends StatefulWidget {
@@ -31,7 +31,7 @@ class _FadeBoxDemoState extends State<FadeBoxDemo> {
     );
   }
 }
-// #enddocregion FadeBoxDemo
+// #enddocregion fade-box-demo
 
 void main() {
   runApp(

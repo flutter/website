@@ -1,4 +1,4 @@
-// #docregion PhotoHero
+// #docregion photo-hero
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:material_ui/material_ui.dart';
 
@@ -31,9 +31,9 @@ class PhotoHero extends StatelessWidget {
     );
   }
 }
-// #enddocregion PhotoHero
+// #enddocregion photo-hero
 
-// #docregion HeroAnimation
+// #docregion hero-animation
 class HeroAnimation extends StatelessWidget {
   const HeroAnimation({super.key});
 
@@ -80,4 +80,4 @@ class HeroAnimation extends StatelessWidget {
 void main() {
   runApp(const MaterialApp(home: HeroAnimation()));
 }
-// #enddocregion HeroAnimation
+// #enddocregion hero-animation

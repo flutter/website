@@ -20,7 +20,7 @@ to an `AnimatedFoo` widget, and whenever a target property changes in
 `setState()`, the widget automatically interpolates from the old value
 to the new value:
 
-<?code-excerpt "implicit/lib/main.dart (FadeBoxDemo)"?>
+<?code-excerpt "implicit/lib/main.dart (fade-box-demo)"?>
 ```dart
 import 'package:material_ui/material_ui.dart';
 

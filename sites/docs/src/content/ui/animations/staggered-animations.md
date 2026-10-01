@@ -118,7 +118,7 @@ The following code builds the tween for the `borderRadius` property
 (which controls the roundness of the square's corners),
 using `BorderRadius.circular()`.
 
-<?code-excerpt "staggered_animation/lib/main.dart (borderRadius)"?>
+<?code-excerpt "staggered_animation/lib/main.dart (border-radius)"?>
 ```dart
 borderRadius =
     BorderRadiusTween(
@@ -165,7 +165,7 @@ animated properties in a single builder. When animating opacity on its own,
 prefer [`FadeTransition`][] to avoid rebuilding the child widget on each frame.
 :::
 
-<?code-excerpt "staggered_animation/lib/main.dart (StaggerAnimation)" replace="/(class StaggerAnimation extends StatelessWidget|opacity = Tween[^\(]*|final Animation.*|Widget _buildAnimation.*|Widget build\(BuildContext context\)|AnimatedBuilder|builder: _buildAnimation)/[!$&!]/g"?>
+<?code-excerpt "staggered_animation/lib/main.dart (stagger-animation)" replace="/(class StaggerAnimation extends StatelessWidget|opacity = Tween[^\(]*|final Animation.*|Widget _buildAnimation.*|Widget build\(BuildContext context\)|AnimatedBuilder|builder: _buildAnimation)/[!$&!]/g"?>
 ```dart
 import 'dart:async';
 
@@ -274,7 +274,7 @@ and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected on the screen.
 The animation runs forward, then backward.
 
-<?code-excerpt "staggered_animation/lib/main.dart (StaggerDemo)" replace="/(class StaggerDemo extends StatefulWidget|Future.* _playAnimation\(\) async|await _controller\.(forward|reverse)\(\)\.orCancel;|Widget build\(BuildContext context\))/[!$&!]/g"?>
+<?code-excerpt "staggered_animation/lib/main.dart (stagger-demo)" replace="/(class StaggerDemo extends StatefulWidget|Future.* _playAnimation\(\) async|await _controller\.(forward|reverse)\(\)\.orCancel;|Widget build\(BuildContext context\))/[!$&!]/g"?>
 ```dart
 [!class StaggerDemo extends StatefulWidget!] {
   const StaggerDemo({super.key});

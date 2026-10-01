@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:material_ui/material_ui.dart';
 
-// #docregion Photo
+// #docregion photo
 class Photo extends StatelessWidget {
   const Photo({super.key, required this.photo, this.color, this.onTap});
 
@@ -23,9 +23,9 @@ class Photo extends StatelessWidget {
     );
   }
 }
-// #enddocregion Photo
+// #enddocregion photo
 
-// #docregion RadialExpansion
+// #docregion radial-expansion
 class RadialExpansion extends StatelessWidget {
   const RadialExpansion({super.key, required this.maxRadius, this.child})
     : clipRectSize = 2 * (maxRadius / math.sqrt2);
@@ -49,7 +49,7 @@ class RadialExpansion extends StatelessWidget {
     );
   }
 }
-// #enddocregion RadialExpansion
+// #enddocregion radial-expansion
 
 class RadialExpansionDemo extends StatelessWidget {
   const RadialExpansionDemo({super.key});
@@ -62,11 +62,11 @@ class RadialExpansionDemo extends StatelessWidget {
     curve: Curves.fastOutSlowIn,
   );
 
-  // #docregion createRectTween
+  // #docregion create-rect-tween
   static RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
-  // #enddocregion createRectTween
+  // #enddocregion create-rect-tween
 
   static Widget _buildPage(
     BuildContext context,

@@ -1,4 +1,4 @@
-// #docregion StaggerAnimation
+// #docregion stagger-animation
 import 'dart:async';
 
 import 'package:flutter/scheduler.dart' show timeDilation;
@@ -44,7 +44,7 @@ class StaggerAnimation extends StatelessWidget {
             ),
           ),
 
-      // #docregion borderRadius
+      // #docregion border-radius
       borderRadius =
           BorderRadiusTween(
             begin: BorderRadius.circular(4),
@@ -55,7 +55,7 @@ class StaggerAnimation extends StatelessWidget {
               curve: const Interval(0.375, 0.500, curve: Curves.ease),
             ),
           ),
-      // #enddocregion borderRadius
+      // #enddocregion border-radius
 
       color = ColorTween(begin: Colors.indigo[100], end: Colors.orange[400])
           .animate(
@@ -100,9 +100,9 @@ class StaggerAnimation extends StatelessWidget {
     return AnimatedBuilder(builder: _buildAnimation, animation: controller);
   }
 }
-// #enddocregion StaggerAnimation
+// #enddocregion stagger-animation
 
-// #docregion StaggerDemo
+// #docregion stagger-demo
 class StaggerDemo extends StatefulWidget {
   const StaggerDemo({super.key});
 
@@ -168,4 +168,4 @@ class _StaggerDemoState extends State<StaggerDemo>
 void main() {
   runApp(const MaterialApp(home: StaggerDemo()));
 }
-// #enddocregion StaggerDemo
+// #enddocregion stagger-demo
