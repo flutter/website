@@ -211,11 +211,10 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 are both of type `Animation<double>`, so you can pass them interchangeably.
 The `CurvedAnimation` wraps the object it's modifying&mdash;you
 don't subclass `AnimationController` to implement a curve.
-Create a `CurvedAnimation` once, such as in `initState()`,
-and dispose it in `dispose()`.
 
-You can use [`Curves`][] with `CurvedAnimation`. The `Curves` class defines
-many commonly used curves, or you can create your own. For example:
+You can use [`Curves`][] with `CurvedAnimation`.
+The `Curves` class defines many commonly used curves,
+or you can create your own. For example:
 
 <?code-excerpt "animation/animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
 ```dart

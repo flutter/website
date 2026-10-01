@@ -42,7 +42,7 @@ class LogoApp extends StatefulWidget {
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  late CurvedAnimation animation;
+  late Animation<double> animation;
   late AnimationController controller;
 
   @override
@@ -70,7 +70,6 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   @override
   void dispose() {
-    animation.dispose();
     controller.dispose();
     super.dispose();
   }
