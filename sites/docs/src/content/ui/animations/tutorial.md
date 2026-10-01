@@ -590,26 +590,26 @@ on the parent's animation object to calculate
 the required size and opacity values.
 The following code shows the changes with highlights:
 
-<?code-excerpt "animation/animate5/lib/main.dart (diff)" replace="/(static final|child: Opacity|opacity:|_sizeTween\.|CurvedAnimation).*/[!$&!]/g"?>
-```dart
+<?code-excerpt "animation/animate5/lib/main.dart (diff)"?>
+```dart highlightLines=6-7,13-14,17-18,34,44
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
     : super(listenable: animation);
 
   // Make the tweens static because they don't change.
-  [!static final _opacityTween = Tween<double>(begin: 0.1, end: 1);!]
-  [!static final _sizeTween = Tween<double>(begin: 0, end: 300);!]
+  static final Tween<double> _opacityTween = Tween(begin: 0.1, end: 1);
+  static final Tween<double> _sizeTween = Tween(begin: 0, end: 300);
 
   @override
   Widget build(BuildContext context) {
     final animation = listenable as Animation<double>;
     return Center(
-      [!child: Opacity(!]
-        [!opacity: _opacityTween.evaluate(animation),!]
+      child: Opacity(
+        opacity: _opacityTween.evaluate(animation),
         child: Container(
           margin: const EdgeInsets.symmetric(vertical: 10),
-          height: [!_sizeTween.evaluate(animation),!]
-          width: [!_sizeTween.evaluate(animation),!]
+          height: _sizeTween.evaluate(animation),
+          width: _sizeTween.evaluate(animation),
           child: const FlutterLogo(),
         ),
       ),
@@ -625,7 +625,7 @@ class LogoApp extends StatefulWidget {
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  late [!CurvedAnimation animation;!]
+  late CurvedAnimation animation;
   late AnimationController controller;
 
   @override
@@ -635,7 +635,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
       duration: const Duration(seconds: 2),
       vsync: this,
     );
-    animation = [!CurvedAnimation(parent: controller, curve: Curves.easeIn)!]
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           controller.reverse();

@@ -161,20 +161,20 @@ animated properties in a single builder. When animating opacity on its own,
 prefer [`FadeTransition`][] to avoid rebuilding the child widget on each frame.
 :::
 
-<?code-excerpt "animation/staggered_animation/lib/main.dart (stagger-animation)" replace="/(class StaggerAnimation extends StatelessWidget|opacity = Tween[^\(]*|final Animation.*|Widget _buildAnimation.*|Widget build\(BuildContext context\)|AnimatedBuilder|builder: _buildAnimation)/[!$&!]/g"?>
-```dart
+<?code-excerpt "animation/staggered_animation/lib/main.dart (stagger-animation)"?>
+```dart highlightLines=6,12,63-69,74,94-95
 import 'dart:async';
 
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:material_ui/material_ui.dart';
 
-[!class StaggerAnimation extends StatelessWidget!] {
+class StaggerAnimation extends StatelessWidget {
   StaggerAnimation({super.key, required this.controller})
     : // Each animation defined here transforms its value during the subset
       // of the controller's duration defined by the animation's interval.
       // For example, the opacity animation transforms its value during
       // the first 10% of the controller's duration.
-      [!opacity = Tween<double>!](begin: 0, end: 1).animate(
+      opacity = Tween<double>(begin: 0, end: 1).animate(
         CurvedAnimation(
           parent: controller,
           curve: const Interval(0, 0.100, curve: Curves.ease),
@@ -225,18 +225,18 @@ import 'package:material_ui/material_ui.dart';
             ),
           );
 
-  [!final Animation<double> controller;!]
-  [!final Animation<double> opacity;!]
-  [!final Animation<double> width;!]
-  [!final Animation<double> height;!]
-  [!final Animation<EdgeInsets> padding;!]
-  [!final Animation<BorderRadius?> borderRadius;!]
-  [!final Animation<Color?> color;!]
+  final Animation<double> controller;
+  final Animation<double> opacity;
+  final Animation<double> width;
+  final Animation<double> height;
+  final Animation<EdgeInsets> padding;
+  final Animation<BorderRadius?> borderRadius;
+  final Animation<Color?> color;
 
   // This function is called each time the controller "ticks" a new frame.
   // When it runs, all of the animation's values will have been
   // updated to reflect the controller's current value.
-  [!Widget _buildAnimation(BuildContext context, Widget? child) {!]
+  Widget _buildAnimation(BuildContext context, Widget? child) {
     return Container(
       padding: padding.value,
       alignment: Alignment.bottomCenter,
@@ -256,8 +256,8 @@ import 'package:material_ui/material_ui.dart';
   }
 
   @override
-  [!Widget build(BuildContext context)!] {
-    return [!AnimatedBuilder!]([!builder: _buildAnimation!], animation: controller);
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(builder: _buildAnimation, animation: controller);
   }
 }
 ```
@@ -271,9 +271,9 @@ The animation begins when a tap is detected on the screen.
 The animation runs forward, then backward.
 Taps during playback are ignored so the sequence can finish.
 
-<?code-excerpt "animation/staggered_animation/lib/main.dart (stagger-demo)" replace="/(class StaggerDemo extends StatefulWidget|Future.* _playAnimation\(\) async|await _controller\.(forward|reverse)\(\)\.orCancel;|Widget build\(BuildContext context\))/[!$&!]/g"?>
-```dart
-[!class StaggerDemo extends StatefulWidget!] {
+<?code-excerpt "animation/staggered_animation/lib/main.dart (stagger-demo)"?>
+```dart highlightLines=1,28,32-33,40
+class StaggerDemo extends StatefulWidget {
   const StaggerDemo({super.key});
 
   @override
@@ -300,19 +300,19 @@ class _StaggerDemoState extends State<StaggerDemo>
     super.dispose();
   }
 
-  [!Future<void> _playAnimation() async!] {
+  Future<void> _playAnimation() async {
     if (_controller.isAnimating) return;
 
     try {
-      [!await _controller.forward().orCancel;!]
-      [!await _controller.reverse().orCancel;!]
+      await _controller.forward().orCancel;
+      await _controller.reverse().orCancel;
     } on TickerCanceled {
       // The animation got canceled, probably because it was disposed of.
     }
   }
 
   @override
-  [!Widget build(BuildContext context)!] {
+  Widget build(BuildContext context) {
     timeDilation = 10; // 1 is normal animation speed.
 
     return Scaffold(

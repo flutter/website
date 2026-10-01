@@ -14,8 +14,8 @@ class AnimatedLogo extends AnimatedWidget {
     : super(listenable: animation);
 
   // Make the tweens static because they don't change.
-  static final _opacityTween = Tween<double>(begin: 0.1, end: 1);
-  static final _sizeTween = Tween<double>(begin: 0, end: 300);
+  static final Tween<double> _opacityTween = Tween(begin: 0.1, end: 1);
+  static final Tween<double> _sizeTween = Tween(begin: 0, end: 300);
 
   @override
   Widget build(BuildContext context) {

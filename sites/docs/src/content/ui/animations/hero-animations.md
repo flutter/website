@@ -336,25 +336,25 @@ The `HeroAnimation` class creates the source and destination
 
 Here's the code:
 
-<?code-excerpt "animation/hero_animation/lib/main.dart (hero-animation)" replace="/(timeDilation.*|child: PhotoHero\(|onTap: \(\)|Navigator\.of\(context\)\.(push\(|pop\(\);)|MaterialPageRoute.*\(|builder: \(context\))/[!$&!]/g"?>
-```dart
+<?code-excerpt "animation/hero_animation/lib/main.dart (hero-animation)"?>
+```dart highlightLines=6,11,14-17,25,28-29
 class HeroAnimation extends StatelessWidget {
   const HeroAnimation({super.key});
 
   @override
   Widget build(BuildContext context) {
-    [!timeDilation = 5; // 1 means normal animation speed.!]
+    timeDilation = 5; // 1 means normal animation speed.
 
     return Scaffold(
       appBar: AppBar(title: const Text('Basic Hero Animation')),
       body: Center(
-        [!child: PhotoHero(!]
+        child: PhotoHero(
           photo: 'images/flippers.png',
           width: 300,
-          [!onTap: ()!] {
-            [!Navigator.of(context).push(!]
-              [!MaterialPageRoute<void>(!]
-                [!builder: (context)!] {
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (context) {
                   return Scaffold(
                     appBar: AppBar(title: const Text('Flippers Page')),
                     body: Container(
@@ -362,11 +362,11 @@ class HeroAnimation extends StatelessWidget {
                       color: Colors.lightBlueAccent,
                       padding: const EdgeInsets.all(16),
                       alignment: Alignment.topLeft,
-                      [!child: PhotoHero(!]
+                      child: PhotoHero(
                         photo: 'images/flippers.png',
                         width: 100,
-                        [!onTap: ()!] {
-                          [!Navigator.of(context).pop();!]
+                        onTap: () {
+                          Navigator.of(context).pop();
                         },
                       ),
                     ),
@@ -470,8 +470,8 @@ then try the following:
 
 The `Photo` class builds the widget tree that holds the image:
 
-<?code-excerpt "animation/radial_hero_animation/lib/main.dart (photo)" replace="/(Material\(|color: Theme.*|InkWell\(|onTap,|Image\.asset\()/[!$&!]/g"?>
-```dart
+<?code-excerpt "animation/radial_hero_animation/lib/main.dart (photo)"?>
+```dart highlightLines=9,11-14
 class Photo extends StatelessWidget {
   const Photo({super.key, required this.photo, this.onTap});
 
@@ -480,12 +480,12 @@ class Photo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return [!Material(!]
+    return Material(
       // Slightly opaque color appears where the image has transparency.
-      [!color: Theme.of(context).primaryColor.withValues(alpha: 0.25),!]
-      child: [!InkWell(!]
-        onTap: [!onTap,!]
-        child: [!Image.asset(!]photo, fit: BoxFit.contain),
+      color: Theme.of(context).primaryColor.withValues(alpha: 0.25),
+      child: InkWell(
+        onTap: onTap,
+        child: Image.asset(photo, fit: BoxFit.contain),
       ),
     );
   }
@@ -521,11 +521,11 @@ To do this, it builds the following widget tree:
 
 Here's the code:
 
-<?code-excerpt "animation/radial_hero_animation/lib/main.dart (radial-expansion)" replace="/(clipRectSize = .*|ClipOval\(|Center\(|SizedBox\(|ClipRect\(|child,)/[!$&!]/g"?>
-```dart
+<?code-excerpt "animation/radial_hero_animation/lib/main.dart (radial-expansion)"?>
+```dart highlightLines=3,11-13,16-17
 class RadialExpansion extends StatelessWidget {
   const RadialExpansion({super.key, required this.maxRadius, this.child})
-    : [!clipRectSize = 2 * (maxRadius / math.sqrt2);!]
+    : clipRectSize = 2 * (maxRadius / math.sqrt2);
 
   final double maxRadius;
   final double clipRectSize;
@@ -533,13 +533,13 @@ class RadialExpansion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return [!ClipOval(!]
-      child: [!Center(!]
-        child: [!SizedBox(!]
+    return ClipOval(
+      child: Center(
+        child: SizedBox(
           width: clipRectSize,
           height: clipRectSize,
-          child: [!ClipRect(!]
-            child: [!child,!] // Photo
+          child: ClipRect(
+            child: child, // Photo
           ),
         ),
       ),
