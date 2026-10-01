@@ -36,6 +36,9 @@ This guide walks through examples of each hero animation style:
 
 * [Standard hero animations](#standard-hero-animations)
 * [Radial hero animations](#radial-hero-animations)
+
+If you want to run the examples yourself,
+follow the steps in [Run the examples](#run-the-examples).
 :::
 
 :::secondary New to Flutter?
@@ -254,16 +257,17 @@ using Flutter's `Hero` widget. When using `MaterialPageRoute`
 to specify the new route, the image flies along a curved path,
 as described by the [Material Design motion spec][].
 
-To run the example, [create a new Flutter app][Create a new Flutter app],
-add an image asset (such as `images/flippers-alpha.png`), and include the
-`PhotoHero` and `HeroAnimation` classes shown below:
+The complete code and images for this section are in the
+[standard hero animation example][].
+To explore the animation yourself,
+[set up and run the example](#run-the-examples),
+then try the following:
 
 * Tap on the home route's photo to fly the image to a new route
   showing the same photo at a different location and scale.
 * Return to the previous route by tapping the image, or by using the
   device's back-to-the-previous-route gesture.
-* You can slow the transition further using the `timeDilation`
-  property from `package:flutter/scheduler.dart`.
+* Slow the transition further by increasing the [`timeDilation`][] value.
 
 ### PhotoHero class
 
@@ -346,7 +350,7 @@ class HeroAnimation extends StatelessWidget {
       appBar: AppBar(title: const Text('Basic Hero Animation')),
       body: Center(
         [!child: PhotoHero(!]
-          photo: 'images/flippers-alpha.png',
+          photo: 'images/flippers.png',
           width: 300.0,
           [!onTap: ()!] {
             [!Navigator.of(context).push(!]
@@ -360,7 +364,7 @@ class HeroAnimation extends StatelessWidget {
                       padding: const EdgeInsets.all(16),
                       alignment: Alignment.topLeft,
                       [!child: PhotoHero(!]
-                        photo: 'images/flippers-alpha.png',
+                        photo: 'images/flippers.png',
                         width: 100.0,
                         [!onTap: ()!] {
                           [!Navigator.of(context).pop();!]
@@ -449,15 +453,19 @@ rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
-To run the example:
+The complete code and images for this section,
+including the route setup that isn't shown on this page,
+are in the [radial hero animation example][].
+To explore the animation yourself,
+[set up and run the example](#run-the-examples),
+then try the following:
 
 * Tap on one of the three circular thumbnails to animate the image
   to a larger square positioned in the middle of a new route that
   obscures the original route.
 * Return to the previous route by tapping the image, or by using the
   device's back-to-the-previous-route gesture.
-* You can slow the transition further using the `timeDilation`
-  property.
+* Slow the transition further by increasing the [`timeDilation`][] value.
 
 ### Photo class
 
@@ -570,25 +578,62 @@ Key information:
   The hero's flight path still follows an arc,
   but the image's aspect ratio remains constant.
 
+---
+
+## Run the examples
+
+Each example in this guide is a complete app:
+the [standard hero animation example][] and
+the [radial hero animation example][].
+To run the examples yourself:
+
+1.  [Create a new Flutter app][].
+1.  Add the [`material_ui`][] package as a dependency
+    by running `flutter pub add material_ui`.
+1.  Replace `lib/main.dart` with the example's `lib/main.dart` file.
+1.  Download the following images into an `images` directory
+    at the root of your project:
+    [`beachball.png`][], [`binoculars.png`][],
+    [`chair.png`][], and [`flippers.png`][].
+1.  Declare the images as [assets][asset declarations] by
+    adding an `assets` entry to the existing `flutter` section
+    of the project's `pubspec.yaml` file:
+
+    ```yaml title="pubspec.yaml" highlightLines=3-4
+    flutter:
+      uses-material-design: true
+      assets:
+        - images/
+    ```
+
 [Animations in Flutter tutorial]: /ui/animations/tutorial
+[asset declarations]: /ui/assets/assets-and-images#specifying-assets
+[`beachball.png`]: https://raw.githubusercontent.com/flutter/website/main/examples/animation/radial_hero_animation/images/beachball.png
+[`binoculars.png`]: https://raw.githubusercontent.com/flutter/website/main/examples/animation/radial_hero_animation/images/binoculars.png
 [Building Layouts in Flutter]: /ui/layout
+[`chair.png`]: https://raw.githubusercontent.com/flutter/website/main/examples/animation/radial_hero_animation/images/chair.png
 [`ClipOval`]: {{site.api}}/flutter/widgets/ClipOval-class.html
 [`ClipRect`]: {{site.api}}/flutter/widgets/ClipRect-class.html
 [Create a new Flutter app]: /reference/create-new-app
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
 [`CupertinoPageRoute`]: {{site.cupertino_ui}}/CupertinoPageRoute-class.html
 [`debugPaintSizeEnabled`]: /tools/devtools/inspector#debugging-layout-issues-visually
+[`flippers.png`]: https://raw.githubusercontent.com/flutter/website/main/examples/animation/hero_animation/images/flippers.png
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [`InkWell`]: {{site.material_ui}}/InkWell-class.html
 [Material Design motion spec]: {{site.material2}}/design/motion/understanding-motion.html#principles
+[`material_ui`]: {{site.pub-pkg}}/material_ui
 [`MaterialPageRoute`]: {{site.material_ui}}/MaterialPageRoute-class.html
 [`MaterialRectArcTween`]: {{site.material_ui}}/MaterialRectArcTween-class.html
 [`MaterialRectCenterArcTween`]: {{site.material_ui}}/MaterialRectCenterArcTween-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`PageRouteBuilder`]: {{site.api}}/flutter/widgets/PageRouteBuilder-class.html
 [Radial hero animations]: #radial-hero-animations
+[radial hero animation example]: {{site.repo.this}}/tree/main/examples/animation/radial_hero_animation
 [Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
 [`RectTween`]: {{site.api}}/flutter/animation/RectTween-class.html
 [_Route_]: /cookbook/navigation/navigation-basics
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
+[standard hero animation example]: {{site.repo.this}}/tree/main/examples/animation/hero_animation
+[`timeDilation`]: {{site.api}}/flutter/scheduler/timeDilation.html
 [`Tween<Rect>`]: {{site.api}}/flutter/animation/Tween-class.html

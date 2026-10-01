@@ -45,7 +45,7 @@ class HeroAnimation extends StatelessWidget {
       appBar: AppBar(title: const Text('Basic Hero Animation')),
       body: Center(
         child: PhotoHero(
-          photo: 'images/flippers-alpha.png',
+          photo: 'images/flippers.png',
           width: 300.0,
           onTap: () {
             Navigator.of(context).push(
@@ -59,7 +59,7 @@ class HeroAnimation extends StatelessWidget {
                       padding: const EdgeInsets.all(16),
                       alignment: Alignment.topLeft,
                       child: PhotoHero(
-                        photo: 'images/flippers-alpha.png',
+                        photo: 'images/flippers.png',
                         width: 100.0,
                         onTap: () {
                           Navigator.of(context).pop();
