@@ -87,7 +87,14 @@ class _HeaderState extends State<Header> {
 
     body.classList.toggle('theme-dark', darkMode);
     body.classList.toggle('theme-light', !darkMode);
-    web.window.localStorage.setItem('flutter-site-theme', darkMode ? 'dark' : 'light');
+    try {
+      web.window.localStorage.setItem(
+        'flutter-site-theme',
+        darkMode ? 'dark' : 'light',
+      );
+    } catch (_) {
+      return;
+    }
   }
 
   void _handleMobileClick(String key, web.Event e) {
@@ -133,7 +140,12 @@ class _HeaderState extends State<Header> {
   void initState() {
     super.initState();
     if (kIsWeb) {
-      final savedTheme = web.window.localStorage.getItem('flutter-site-theme');
+      String? savedTheme;
+      try {
+        savedTheme = web.window.localStorage.getItem('flutter-site-theme');
+      } catch (_) {
+        savedTheme = null;
+      }
       _isDarkMode = switch (savedTheme) {
         'dark' => true,
         'light' => false,
@@ -260,7 +272,6 @@ class _HeaderState extends State<Header> {
               [
                 Icon(
                   symbol: _isDarkMode ? 'light_mode' : 'dark_mode',
-                  label: _isDarkMode ? 'Switch to light mode' : 'Switch to dark mode',
                   size: .md,
                 ),
               ],
