@@ -3,8 +3,6 @@ title: Implicit animations
 description: Where to find more information on using implicit animations in Flutter.
 ---
 
-<?code-excerpt path-base="animation"?>
-
 With Flutter's [animation library][],
 you can add motion and create visual effects
 for the widgets in your UI.
@@ -20,7 +18,7 @@ to an `AnimatedFoo` widget, and whenever a target property changes in
 `setState()`, the widget automatically interpolates from the old value
 to the new value:
 
-<?code-excerpt "implicit/lib/main.dart (fade-box-demo)"?>
+<?code-excerpt "animation/implicit/lib/main.dart (fade-box-demo)"?>
 ```dart
 import 'package:material_ui/material_ui.dart';
 

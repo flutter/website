@@ -4,8 +4,6 @@ shortTitle: Tutorial
 description: A tutorial showing how to build explicit animations in Flutter.
 ---
 
-<?code-excerpt path-base="animation"?>
-
 :::secondary What you'll learn
 * How to use the fundamental classes from the
   animation library to add animation to a widget.
@@ -48,7 +46,7 @@ member of your widget, then use its value to decide how to draw.
 
 Consider the following app that draws the Flutter logo without animation:
 
-<?code-excerpt "animate0/lib/main.dart"?>
+<?code-excerpt "animation/animate0/lib/main.dart"?>
 ```dart
 import 'package:material_ui/material_ui.dart';
 
@@ -150,7 +148,7 @@ dots in `..addListener()`. This syntax means that the `addListener()`
 method is called with the return value from `animate()`.
 Consider the following example:
 
-<?code-excerpt "animate1/lib/main.dart (add-listener)"?>
+<?code-excerpt "animation/animate1/lib/main.dart (add-listener)"?>
 ```dart highlightLines=2
 animation = Tween<double>(begin: 0, end: 300).animate(controller)
   ..addListener(() {
@@ -160,7 +158,7 @@ animation = Tween<double>(begin: 0, end: 300).animate(controller)
 
 This code is equivalent to:
 
-<?code-excerpt "animate1/lib/main.dart (add-listener)" replace="/animation.*/$&;/g; /  \./animation/g;"?>
+<?code-excerpt "animation/animate1/lib/main.dart (add-listener)" replace="/animation.*/$&;/g; /  \./animation/g;"?>
 ```dart highlightLines=2
 animation = Tween<double>(begin: 0, end: 300).animate(controller);
 animation.addListener(() {
@@ -197,8 +195,7 @@ the core widget code from the animation code.
 `AnimatedWidget` doesn't need to maintain a `State`
 object to hold the animation. Add the following `AnimatedLogo` class:
 
-<?code-excerpt path-base="animation/animate2"?>
-<?code-excerpt "lib/main.dart (AnimatedLogo)"?>
+<?code-excerpt "animation/animate2/lib/main.dart (AnimatedLogo)"?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
@@ -218,7 +215,6 @@ class AnimatedLogo extends AnimatedWidget {
   }
 }
 ```
-<?code-excerpt path-base="animation"?>
 
 `AnimatedLogo` uses the current value of the `animation`
 when drawing itself.
@@ -306,7 +302,7 @@ The following code modifies the previous example so that
 it listens for a state change and prints an update.
 The highlighted line shows the change:
 
-<?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\n  }/$&\n  \/\/ .../g"?>
+<?code-excerpt "animation/animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\n  }/$&\n  \/\/ .../g"?>
 ```dart highlightLines=13
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
@@ -410,7 +406,7 @@ example looks like this:
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
 
-<?code-excerpt "animate4/lib/main.dart (logo-widget)"?>
+<?code-excerpt "animation/animate4/lib/main.dart (logo-widget)"?>
 ```dart
 class LogoWidget extends StatelessWidget {
   const LogoWidget({super.key});
@@ -446,7 +442,7 @@ that object as its child. The net result is that the
 in the render tree, and the static `child` subtree is built only once
 rather than on every animation frame.
 
-<?code-excerpt "animate4/lib/main.dart (grow-transition)"?>
+<?code-excerpt "animation/animate4/lib/main.dart (grow-transition)"?>
 ```dart
 class GrowTransition extends StatelessWidget {
   const GrowTransition({
@@ -572,7 +568,7 @@ a costly offscreen `saveLayer` pass on each frame).
 
 Each tween manages an aspect of the animation. For example:
 
-<?code-excerpt "animate5/lib/main.dart (tweens)" plaster="none"?>
+<?code-excerpt "animation/animate5/lib/main.dart (tweens)" plaster="none"?>
 ```dart
 controller = AnimationController(
   duration: const Duration(seconds: 2),
@@ -594,7 +590,7 @@ on the parent's animation object to calculate
 the required size and opacity values.
 The following code shows the changes with highlights:
 
-<?code-excerpt "animate5/lib/main.dart (diff)" replace="/(static final|child: Opacity|opacity:|_sizeTween\.|CurvedAnimation).*/[!$&!]/g"?>
+<?code-excerpt "animation/animate5/lib/main.dart (diff)" replace="/(static final|child: Opacity|opacity:|_sizeTween\.|CurvedAnimation).*/[!$&!]/g"?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})

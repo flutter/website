@@ -4,8 +4,6 @@ description: How to write a staggered animation in Flutter.
 shortTitle: Staggered
 ---
 
-<?code-excerpt path-base="animation"?>
-
 :::secondary What you'll learn
 * A staggered animation consists of sequential or overlapping
     animations.
@@ -102,7 +100,7 @@ The following code creates a tween for the `width` property.
 It builds a [`CurvedAnimation`][], specifying an eased curve.
 For other available predefined animation curves, consult [`Curves`][].
 
-<?code-excerpt "staggered_animation/lib/main.dart (width)"?>
+<?code-excerpt "animation/staggered_animation/lib/main.dart (width)"?>
 ```dart
 width = Tween<double>(begin: 50, end: 150).animate(
   CurvedAnimation(
@@ -117,7 +115,7 @@ The following code builds the tween for the `borderRadius` property
 (which controls the roundness of the square's corners),
 using `BorderRadius.circular()`.
 
-<?code-excerpt "staggered_animation/lib/main.dart (border-radius)"?>
+<?code-excerpt "animation/staggered_animation/lib/main.dart (border-radius)"?>
 ```dart
 borderRadius =
     BorderRadiusTween(
@@ -164,7 +162,7 @@ animated properties in a single builder. When animating opacity on its own,
 prefer [`FadeTransition`][] to avoid rebuilding the child widget on each frame.
 :::
 
-<?code-excerpt "staggered_animation/lib/main.dart (stagger-animation)" replace="/(class StaggerAnimation extends StatelessWidget|opacity = Tween[^\(]*|final Animation.*|Widget _buildAnimation.*|Widget build\(BuildContext context\)|AnimatedBuilder|builder: _buildAnimation)/[!$&!]/g"?>
+<?code-excerpt "animation/staggered_animation/lib/main.dart (stagger-animation)" replace="/(class StaggerAnimation extends StatelessWidget|opacity = Tween[^\(]*|final Animation.*|Widget _buildAnimation.*|Widget build\(BuildContext context\)|AnimatedBuilder|builder: _buildAnimation)/[!$&!]/g"?>
 ```dart
 import 'dart:async';
 
@@ -274,7 +272,7 @@ The animation begins when a tap is detected on the screen.
 The animation runs forward, then backward.
 Taps during playback are ignored so the sequence can finish.
 
-<?code-excerpt "staggered_animation/lib/main.dart (stagger-demo)" replace="/(class StaggerDemo extends StatefulWidget|Future.* _playAnimation\(\) async|await _controller\.(forward|reverse)\(\)\.orCancel;|Widget build\(BuildContext context\))/[!$&!]/g"?>
+<?code-excerpt "animation/staggered_animation/lib/main.dart (stagger-demo)" replace="/(class StaggerDemo extends StatefulWidget|Future.* _playAnimation\(\) async|await _controller\.(forward|reverse)\(\)\.orCancel;|Widget build\(BuildContext context\))/[!$&!]/g"?>
 ```dart
 [!class StaggerDemo extends StatefulWidget!] {
   const StaggerDemo({super.key});

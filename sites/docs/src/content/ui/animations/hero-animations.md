@@ -4,8 +4,6 @@ description: How to animate a widget to fly between two screens.
 shortTitle: Hero
 ---
 
-<?code-excerpt path-base="animation"?>
-
 :::secondary What you'll learn
 * The _hero_ refers to the widget that flies between screens.
 * Create a hero animation using Flutter's `Hero` widget.
@@ -279,7 +277,7 @@ The `PhotoHero` builds the following widget tree:
 
 Here's the code:
 
-<?code-excerpt "hero_animation/lib/main.dart (photo-hero)"?>
+<?code-excerpt "animation/hero_animation/lib/main.dart (photo-hero)"?>
 ```dart
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:material_ui/material_ui.dart';
@@ -337,7 +335,7 @@ The `HeroAnimation` class creates the source and destination
 
 Here's the code:
 
-<?code-excerpt "hero_animation/lib/main.dart (hero-animation)" replace="/(timeDilation.*|child: PhotoHero\(|onTap: \(\)|Navigator\.of\(context\)\.(push\(|pop\(\);)|MaterialPageRoute.*\(|builder: \(context\))/[!$&!]/g"?>
+<?code-excerpt "animation/hero_animation/lib/main.dart (hero-animation)" replace="/(timeDilation.*|child: PhotoHero\(|onTap: \(\)|Navigator\.of\(context\)\.(push\(|pop\(\);)|MaterialPageRoute.*\(|builder: \(context\))/[!$&!]/g"?>
 ```dart
 class HeroAnimation extends StatelessWidget {
   const HeroAnimation({super.key});
@@ -471,7 +469,7 @@ then try the following:
 
 The `Photo` class builds the widget tree that holds the image:
 
-<?code-excerpt "radial_hero_animation/lib/main.dart (photo)" replace="/(Material\(|color: Theme.*|InkWell\(|onTap,|Image\.asset\()/[!$&!]/g"?>
+<?code-excerpt "animation/radial_hero_animation/lib/main.dart (photo)" replace="/(Material\(|color: Theme.*|InkWell\(|onTap,|Image\.asset\()/[!$&!]/g"?>
 ```dart
 class Photo extends StatelessWidget {
   const Photo({super.key, required this.photo, this.onTap});
@@ -522,7 +520,7 @@ To do this, it builds the following widget tree:
 
 Here's the code:
 
-<?code-excerpt "radial_hero_animation/lib/main.dart (radial-expansion)" replace="/(clipRectSize = .*|ClipOval\(|Center\(|SizedBox\(|ClipRect\(|child,)/[!$&!]/g"?>
+<?code-excerpt "animation/radial_hero_animation/lib/main.dart (radial-expansion)" replace="/(clipRectSize = .*|ClipOval\(|Center\(|SizedBox\(|ClipRect\(|child,)/[!$&!]/g"?>
 ```dart
 class RadialExpansion extends StatelessWidget {
   const RadialExpansion({super.key, required this.maxRadius, this.child})
@@ -567,7 +565,7 @@ Key information:
 
   Here's the code:
 
-  <?code-excerpt "radial_hero_animation/lib/main.dart (create-rect-tween)"?>
+  <?code-excerpt "animation/radial_hero_animation/lib/main.dart (create-rect-tween)"?>
   ```dart
   static RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
