@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // #docregion stateful-widget
 class MyStatefulWidget extends StatefulWidget {

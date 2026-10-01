@@ -145,7 +145,7 @@ Relevant PRs:
 
 * [Update DropdownButton enabled property logic][]
 
-[`DropdownButton`]: {{site.api}}/flutter/material/DropdownButton-class.html
-[`DropdownButtonFormField`]: {{site.api}}/flutter/material/DropdownButtonFormField-class.html
+[`DropdownButton`]: {{site.material_ui}}/DropdownButton-class.html
+[`DropdownButtonFormField`]: {{site.material_ui}}/DropdownButtonFormField-class.html
 [issue-57953]: {{site.repo.flutter}}/issues/57953
 [Update DropdownButton enabled property logic]: {{site.repo.flutter}}/pull/182419

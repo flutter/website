@@ -108,9 +108,9 @@ Relevant PRs:
 * Deprecated in [#46115][]
 * Removed in [#83923][]
 
-[`InputDecoration`]: {{site.api}}/flutter/material/InputDecoration-class.html
-[`InputDecorationTheme`]: {{site.api}}/flutter/material/InputDecorationTheme-class.html
-[`FloatingLabelBehavior`]: {{site.api}}/flutter/material/FloatingLabelBehavior-class.html
+[`InputDecoration`]: {{site.material_ui}}/InputDecoration-class.html
+[`InputDecorationTheme`]: {{site.material_ui}}/InputDecorationTheme-class.html
+[`FloatingLabelBehavior`]: {{site.material_ui}}/FloatingLabelBehavior-class.html
 [InputDecoration: option to always float label]: {{site.repo.flutter}}/issues/30664
 [#46115]: {{site.repo.flutter}}/pull/46115
 [#83923]: {{site.repo.flutter}}/pull/83923
@@ -268,7 +268,7 @@ Relevant PRs:
 * Removed in [#83924][]
 
 [Update the TextTheme API]: /go/update-text-theme-api
-[`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
+[`TextTheme`]: {{site.material_ui}}/TextTheme-class.html
 [Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}/issues/45745
 [#48547]: {{site.repo.flutter}}/pull/48547
 [#83924]: {{site.repo.flutter}}/pull/83924
@@ -324,7 +324,7 @@ Relevant PRs:
 * Removed in [#83924][]
 
 [Update the TextTheme API]: /go/update-text-theme-api
-[`Typography`]: {{site.api}}/flutter/material/Typography-class.html
+[`Typography`]: {{site.material_ui}}/Typography-class.html
 [Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}/issues/45745
 [#48547]: {{site.repo.flutter}}/pull/48547
 [#83924]: {{site.repo.flutter}}/pull/83924
