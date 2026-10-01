@@ -47,9 +47,8 @@ Decoupling the design systems provides several benefits:
   Decoupling lays the groundwork for a style-neutral Flutter core widget
   catalog, making it easier to build and maintain custom design systems.
 
-Contributions to `package:flutter/material.dart` and
-`package:flutter/cupertino.dart` inside the core SDK were frozen
-starting in Flutter 3.44.
+Contributions to Material and Cupertino packages inside the core SDK
+were frozen starting in Flutter 3.44.
 The initial 1.0.0 versions of `package:material_ui` and `package:cupertino_ui`
 match the frozen framework code to provide a seamless transition.
 Future releases of the packages will use semantic versioning for major, minor,

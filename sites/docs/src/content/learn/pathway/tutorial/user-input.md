@@ -28,8 +28,8 @@ but it needs a way for the user to input those guesses.
 In this lesson, build that functionality with two interaction widgets:
 [`TextField`][] and [`IconButton`][].
 
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
+[`IconButton`]: {{site.material_ui}}/IconButton-class.html
 
 ### Implement callback functions
 
@@ -622,10 +622,10 @@ class GuessInput extends StatelessWidget {
 
 This method does the same as the `onSubmitted` callback on the `TextField`.
 
-[`Icon`]: {{site.api}}/flutter/material/Icons-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
+[`Icon`]: {{site.material_ui}}/Icons-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
+[`ElevatedButton`]: {{site.material_ui}}/ElevatedButton-class.html
+[`IconButton`]: {{site.material_ui}}/IconButton-class.html
 
 :::note Challenge - Share "on submitted" logic.
 

@@ -576,14 +576,14 @@ Key information:
 [`ClipRect`]: {{site.api}}/flutter/widgets/ClipRect-class.html
 [Create a new Flutter app]: /reference/create-new-app
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
-[`CupertinoPageRoute`]: {{site.pub-api}}/cupertino_ui/latest/cupertino_ui/CupertinoPageRoute-class.html
+[`CupertinoPageRoute`]: {{site.cupertino_ui}}/CupertinoPageRoute-class.html
 [`debugPaintSizeEnabled`]: /tools/devtools/inspector#debugging-layout-issues-visually
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
-[`InkWell`]: {{site.pub-api}}/material_ui/latest/material_ui/InkWell-class.html
+[`InkWell`]: {{site.material_ui}}/InkWell-class.html
 [Material Design motion spec]: {{site.material2}}/design/motion/understanding-motion.html#principles
-[`MaterialPageRoute`]: {{site.pub-api}}/material_ui/latest/material_ui/MaterialPageRoute-class.html
-[`MaterialRectArcTween`]: {{site.pub-api}}/material_ui/latest/material_ui/MaterialRectArcTween-class.html
-[`MaterialRectCenterArcTween`]: {{site.pub-api}}/material_ui/latest/material_ui/MaterialRectCenterArcTween-class.html
+[`MaterialPageRoute`]: {{site.material_ui}}/MaterialPageRoute-class.html
+[`MaterialRectArcTween`]: {{site.material_ui}}/MaterialRectArcTween-class.html
+[`MaterialRectCenterArcTween`]: {{site.material_ui}}/MaterialRectCenterArcTween-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`PageRouteBuilder`]: {{site.api}}/flutter/widgets/PageRouteBuilder-class.html
 [Radial hero animations]: #radial-hero-animations

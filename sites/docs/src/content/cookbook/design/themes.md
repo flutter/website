@@ -77,8 +77,8 @@ Most instances of `ThemeData` set values for the following two properties. These
 1. [`colorScheme`][] defines the colors.
 1. [`textTheme`][] defines text styling.
 
-[`colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
-[`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
+[`colorScheme`]: {{site.material_ui}}/ThemeData/colorScheme.html
+[`textTheme`]: {{site.material_ui}}/ThemeData/textTheme.html
 
 To learn what colors, fonts, and other properties, you can define,
 check out the [`ThemeData`][] documentation.
@@ -266,5 +266,5 @@ class MyHomePage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`copyWith()`]: {{site.material_ui}}/ThemeData/copyWith.html
+[`ThemeData`]: {{site.material_ui}}/ThemeData-class.html
