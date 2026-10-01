@@ -175,9 +175,9 @@ other widgets.
 
 ### Animation<wbr>\<double>
 
-In Flutter, an `Animation` object is independent of what
-is rendered onscreen. An `Animation` is an abstract class that
-tracks its current value and its state (completed or dismissed).
+In Flutter, an `Animation` object is independent of what is rendered onscreen.
+An `Animation` is an abstract class that exposes its current value
+and its status: dismissed, forward, reverse, or completed.
 One of the more commonly used animation types is `Animation<double>`.
 
 An `Animation` object sequentially generates
@@ -214,7 +214,8 @@ don't subclass `AnimationController` to implement a curve.
 
 You can use [`Curves`][] with `CurvedAnimation`.
 The `Curves` class defines many commonly used curves,
-or you can create your own. For example:
+or you can create your own by overriding `transformInternal()`.
+For example:
 
 <?code-excerpt "animation/animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
 ```dart
@@ -222,7 +223,7 @@ import 'dart:math';
 
 class ShakeCurve extends Curve {
   @override
-  double transform(double t) => sin(t * pi * 2);
+  double transformInternal(double t) => t + sin(t * pi * 4) * 0.2;
 }
 ```
 
@@ -265,15 +266,12 @@ You can use your stateful object as the vsync by adding
 You can find an example of this in [animate1][] on GitHub.
 
 :::note
-In some cases, a position might
-exceed the 0.0-1.0 range of the `AnimationController`.
-For example, the `fling()` function
-allows you to provide velocity, force, and position
-(using the `Force` object). The position can be anything and
-so can be outside of the 0.0 to 1.0 range.
+A controller's values stay within its
+`lowerBound` and `upperBound` (0.0 and 1.0 by default),
+even when driven by `fling()`.
 
-A `CurvedAnimation` can also exceed the 0.0 to 1.0 range,
-even if the `AnimationController` doesn't.
+A `CurvedAnimation`, however, can exceed the 0.0 to 1.0 range,
+even if its parent `AnimationController` doesn't.
 Depending on the curve selected, the output of
 the `CurvedAnimation` can have a wider range than the input.
 For example, elastic curves such as `Curves.elasticIn`
@@ -293,10 +291,8 @@ following `Tween` goes from -200.0 to 0.0:
 tween = Tween<double>(begin: -200, end: 0);
 ```
 
-A `Tween` is a stateless object that takes only `begin` and `end`.
-The sole job of a `Tween` is to define a mapping from an
-input range to an output range. The input range is commonly
-0.0 to 1.0, but that's not a requirement.
+A `Tween` defines a mapping from an input range to an output range.
+The input range is commonly 0.0 to 1.0, but that's not a requirement.
 
 A `Tween` inherits from `Animatable<T>`, not from `Animation<T>`.
 An `Animatable`, like `Animation`, doesn't have to output double.
@@ -307,15 +303,17 @@ For example, `ColorTween` specifies a progression between two colors.
 colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
 ```
 
-A `Tween` object doesn't store any state. Instead, it provides the
-[`evaluate(Animation<double> animation)`][] method that uses the
-`transform` function to map the current value of the animation
-(between 0.0 and 1.0), to the actual animation value.
+A `Tween` stores mutable `begin` and `end` values,
+but doesn't track animation progress.
+Instead, it provides the [`evaluate(Animation<double> animation)`][]
+method that uses the `transform` function to
+map the current value of the animation
+(between 0.0 and 1.0) to the actual animation value.
 
-The current value of the `Animation` object is available from the
-`.value` getter. The `evaluate()` function also performs some housekeeping,
-such as ensuring that `begin` and `end` are returned when the
-animation values are 0.0 and 1.0, respectively.
+The current value of the `Animation` object is
+available from the `.value` getter.
+The tween returns `begin` and `end` when
+the animation values are 0.0 and 1.0, respectively.
 
 #### Tween.animate
 

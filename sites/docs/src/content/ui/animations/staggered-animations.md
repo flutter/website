@@ -88,7 +88,7 @@ To set up the animation:
   `Animation` objects.
 * Create a `Tween` for each property being animated.
   * The `Tween` defines a range of values.
-  * The `animate` method `Tween` requires the `parent` controller,
+  * The `animate()` method of `Tween` takes a parent animation
     and produces an `Animation` for that property.
 * Specify the interval with the `curve` property of `CurvedAnimation`.
 
@@ -140,6 +140,8 @@ responsible for building the animating portion of the widget tree.
 The stateful widget creates the controller, plays the animation,
 and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected anywhere on the screen.
+
+**App source:** [staggered animation example][]
 
 ### Stateless widget: StaggerAnimation
 
@@ -313,8 +315,6 @@ class _StaggerDemoState extends State<StaggerDemo>
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 10; // 1 is normal animation speed.
-
     return Scaffold(
       appBar: AppBar(title: const Text('Staggered Animation')),
       body: GestureDetector(
@@ -337,6 +337,7 @@ class _StaggerDemoState extends State<StaggerDemo>
 }
 
 void main() {
+  timeDilation = 10; // 1 is normal animation speed.
   runApp(const MaterialApp(home: StaggerDemo()));
 }
 ```
@@ -350,4 +351,5 @@ void main() {
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [`Interval`]: {{site.api}}/flutter/animation/Interval-class.html
+[staggered animation example]: {{site.repo.this}}/tree/main/examples/animation/staggered_animation
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

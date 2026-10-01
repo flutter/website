@@ -12,11 +12,13 @@ These widgets are collectively referred to as _implicit animations_,
 or _implicitly animated widgets_, deriving their name from the
 [`ImplicitlyAnimatedWidget`][] class that they implement.
 
-With implicit animations, you don't need to manage an `AnimationController`
-or `Ticker`. Instead, you pass a `duration` (and an optional `curve`)
-to an `AnimatedFoo` widget, and whenever a target property changes in
-`setState()`, the widget automatically interpolates from the old value
-to the new value:
+With implicit animations, you don't need to
+manage an `AnimationController` or `Ticker`.
+Instead, you pass a `duration` and an optional `curve`
+to an implicitly animated widget, such as `AnimatedOpacity`.
+When you update the widget with a new target value,
+such as after calling `setState()`,
+the widget automatically animates to that value:
 
 <?code-excerpt "animation/implicit/lib/main.dart (fade-box-demo)"?>
 ```dart
@@ -54,14 +56,17 @@ class _FadeBoxDemoState extends State<FadeBoxDemo> {
 }
 ```
 
-When no built-in `AnimatedFoo` widget covers the property you want to
-animate, you can build a custom implicit animation with
-[`TweenAnimationBuilder`][].
+**App source:** [implicit animation example][]
+
+When no built-in implicitly animated widget covers
+the property you want to animate,
+you can build a custom implicit animation with [`TweenAnimationBuilder`][].
 
 The following set of resources provides many ways to learn
 about implicit animations in Flutter.
 
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
+[implicit animation example]: {{site.repo.this}}/tree/main/examples/animation/implicit
 
 ## Documentation
 

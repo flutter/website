@@ -39,8 +39,6 @@ class HeroAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 5; // 1 means normal animation speed.
-
     return Scaffold(
       appBar: AppBar(title: const Text('Basic Hero Animation')),
       body: Center(
@@ -78,6 +76,7 @@ class HeroAnimation extends StatelessWidget {
 }
 
 void main() {
+  timeDilation = 5; // 1 means normal animation speed.
   runApp(const MaterialApp(home: HeroAnimation()));
 }
 // #enddocregion hero-animation

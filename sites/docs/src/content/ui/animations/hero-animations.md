@@ -49,7 +49,9 @@ using Flutter's widgets. To learn more, visit
 A [_Route_][] describes a page or screen in a Flutter app.
 :::
 
-You can create this animation in Flutter with `Hero` widgets.
+## Hero animation styles
+
+You can create hero animations in Flutter with `Hero` widgets.
 As the hero animates from the source to the destination route,
 the destination route (minus the hero) fades into view.
 Typically, heroes are small parts of the UI, like images,
@@ -57,7 +59,7 @@ that both routes have in common. From the user's perspective,
 the hero "flies" between the routes. This guide shows how
 to create the following hero animations:
 
-### Standard hero animations
+### Standard animations {:#standard-hero-animation-preview}
 
 A _standard hero animation_ flies the hero from one route to a new route,
 usually landing at a different location and with a different size.
@@ -71,7 +73,7 @@ the original route.
 
 <YouTubeEmbed id="CEcFnqRDfgw" title="Standard hero animation in Flutter"></YouTubeEmbed>
 
-### Radial hero animations
+### Radial animations {:#radial-hero-animation-preview}
 
 In a _radial hero animation_, as the hero flies between routes
 its shape appears to change from circular to rectangular.
@@ -337,14 +339,12 @@ The `HeroAnimation` class creates the source and destination
 Here's the code:
 
 <?code-excerpt "animation/hero_animation/lib/main.dart (hero-animation)"?>
-```dart highlightLines=6,11,14-17,25,28-29
+```dart highlightLines=9,12-15,23,26-27,43
 class HeroAnimation extends StatelessWidget {
   const HeroAnimation({super.key});
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 5; // 1 means normal animation speed.
-
     return Scaffold(
       appBar: AppBar(title: const Text('Basic Hero Animation')),
       body: Center(
@@ -382,6 +382,7 @@ class HeroAnimation extends StatelessWidget {
 }
 
 void main() {
+  timeDilation = 5; // 1 means normal animation speed.
   runApp(const MaterialApp(home: HeroAnimation()));
 }
 ```
@@ -603,6 +604,7 @@ To run the examples yourself:
       assets:
         - images/
     ```
+1.  Run the app with `flutter run`.
 
 [Animations in Flutter tutorial]: /ui/animations/tutorial
 [asset declarations]: /ui/assets/assets-and-images#specifying-assets

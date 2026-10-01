@@ -17,11 +17,12 @@ and methods in the animation library that you can learn about in
 [Introduction to animations][].
 
 The Flutter SDK also provides built-in explicit animations,
-such as [`FadeTransition`][], [`SizeTransition`][],
-and [`SlideTransition`][]. These simple animations are
-triggered by setting a beginning and ending point.
-They are simpler to implement
-than custom explicit animations, which are described here.
+such as [`FadeTransition`][], [`SizeTransition`][], and [`SlideTransition`][].
+These widgets take an `Animation` object,
+often driven by an `AnimationController`,
+and update the UI as its value changes.
+They require less code than the custom explicit animations
+described in this tutorial.
 
 The following sections walk you through several animation examples.
 Each section provides a link to the source code for that example.
@@ -31,8 +32,8 @@ Each section provides a link to the source code for that example.
 :::secondary What's the point?
 * How to add basic animation to a widget using `addListener()` and
   `setState()`.
-* Every time the `Animation` generates a new number, the `addListener()`
-  function calls `setState()`.
+* Every time the `Animation` generates a new number,
+  the callback registered with `addListener()` calls `setState()`.
 * How to define an `AnimationController` with the required
   `vsync` parameter.
 * How to use the `..` syntax in `..addListener`,
@@ -130,11 +131,10 @@ The changes from the non-animated example are highlighted:
 
 **App source:** [animate1][]
 
-The `addListener()` function calls `setState()`,
+The callback registered with `addListener()` calls `setState()`,
 so every time the `Animation` generates a new number,
-the current frame is marked dirty, which forces
-`build()` to be called again. In `build()`,
-the container changes size because its height and
+the widget is marked for rebuilding.
+In `build()`, the container changes size because its height and
 width now use `animation.value` instead of a hardcoded value.
 Dispose of the controller when the `State` object is
 discarded to prevent memory leaks.
@@ -192,8 +192,9 @@ in the [Dart language documentation][].
 
 The `AnimatedWidget` base class allows you to separate out
 the core widget code from the animation code.
-`AnimatedWidget` doesn't need to maintain a `State`
-object to hold the animation. Add the following `AnimatedLogo` class:
+`AnimatedWidget` manages its own `State` object and animation listener,
+so you don't need to implement them in your subclass.
+Add the following `AnimatedLogo` class:
 
 <?code-excerpt "animation/animate2/lib/main.dart (AnimatedLogo)"?>
 ```dart
@@ -245,6 +246,10 @@ and it passes the `Animation` object to `AnimatedLogo`:
 +
   class LogoApp extends StatefulWidget {
     // ...
+  }
+
+  class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
+    // ...
 
     @override
     void initState() {
@@ -288,7 +293,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 
 :::secondary What's the point?
 * Use `addStatusListener()` for notifications of changes
-  to the animation's state, such as starting, stopping,
+  to the animation's status, such as starting, reaching an endpoint,
   or reversing direction.
 * Run an animation in an infinite loop by reversing direction when
   the animation has either completed or returned to its starting state,
@@ -361,6 +366,8 @@ While `addStatusListener()` is useful for reacting to status changes,
 if your only goal is to loop an animation continuously in one or both
 directions, you can call [`controller.repeat(reverse: true)`][repeat]
 instead of manually toggling `forward()` and `reverse()` in a status listener.
+Calling `stop()` doesn't change the animation's status,
+so it doesn't notify status listeners.
 :::
 
 ## Refactoring with AnimatedBuilder
@@ -393,7 +400,7 @@ is to separate responsibilities into different classes:
 You can accomplish this separation with the help of the
 `AnimatedBuilder` class (or its general-purpose counterpart,
 [`ListenableBuilder`][]). An `AnimatedBuilder` is a
-separate class in the render tree. Like `AnimatedWidget`,
+separate widget in the widget tree. Like `AnimatedWidget`,
 `AnimatedBuilder` automatically listens to notifications
 from the `Animation` object, and marks the widget tree
 dirty as necessary, so you don't need to call `addListener()`.
@@ -438,9 +445,8 @@ like it's specified twice. What's happening is that the
 outer reference to `child` is passed to `AnimatedBuilder`,
 which passes it to the anonymous closure, which then uses
 that object as its child. The net result is that the
-`AnimatedBuilder` is inserted in between the two widgets
-in the render tree, and the static `child` subtree is built only once
-rather than on every animation frame.
+`AnimatedBuilder` is inserted in between the two widgets in the widget tree,
+and animation ticks don't rebuild the static `child` subtree.
 
 <?code-excerpt "animation/animate4/lib/main.dart (grow-transition)"?>
 ```dart
@@ -528,6 +534,10 @@ in the bullet points above.
 
   class LogoApp extends StatefulWidget {
     // ...
+  }
+
+  class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
+    // ...
 
     @override
 -   Widget build(BuildContext context) => AnimatedLogo(animation: animation);
@@ -560,10 +570,10 @@ opacity animates from transparent to opaque.
 This example shows how to use multiple tweens on the same animation
 controller, where each tween manages a different effect in
 the animation. It is for illustrative purposes only.
-If you were tweening opacity and size in production code,
-prefer [`FadeTransition`][] and [`SizeTransition`][]
-(avoid animating the `Opacity` widget directly, which can force
-a costly offscreen `saveLayer` pass on each frame).
+For opacity animations in production code,
+prefer [`FadeTransition`][] to avoid rebuilding widgets on every frame.
+For size changes, consider [`SizeTransition`][]
+when you want to animate how much of a child is revealed.
 :::
 
 Each tween manages an aspect of the animation. For example:
@@ -578,11 +588,10 @@ sizeAnimation = Tween<double>(begin: 0, end: 300).animate(controller);
 opacityAnimation = Tween<double>(begin: 0.1, end: 1).animate(controller);
 ```
 
-You can get the size with `sizeAnimation.value` and the opacity
-with `opacityAnimation.value`, but the constructor for `AnimatedWidget`
-only takes a single `Animation` object. To solve this problem,
-the example creates its own `Tween` objects and explicitly calculates the
-values.
+You can get the size with `sizeAnimation.value` and
+the opacity with `opacityAnimation.value`.
+However, `AnimatedLogo` already listens to the controller's animation,
+so it can calculate both values from that single animation instead.
 
 Change `AnimatedLogo` to encapsulate its own `Tween` objects,
 and its `build()` method calls `Tween.evaluate()`

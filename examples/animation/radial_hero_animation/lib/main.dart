@@ -134,9 +134,10 @@ class RadialExpansionDemo extends StatelessWidget {
                       builder: (context, child) {
                         return Opacity(
                           opacity: opacityCurve.transform(animation.value),
-                          child: _buildPage(context, imageName, description),
+                          child: child,
                         );
                       },
+                      child: _buildPage(context, imageName, description),
                     );
                   },
                 ),
@@ -150,8 +151,6 @@ class RadialExpansionDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 5; // 1 is normal animation speed.
-
     return Scaffold(
       appBar: AppBar(title: const Text('Radial Transition Demo')),
       body: Container(
@@ -171,5 +170,6 @@ class RadialExpansionDemo extends StatelessWidget {
 }
 
 void main() {
+  timeDilation = 5; // 1 is normal animation speed.
   runApp(const MaterialApp(home: RadialExpansionDemo()));
 }

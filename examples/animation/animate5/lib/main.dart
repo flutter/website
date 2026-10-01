@@ -135,6 +135,6 @@ class UsedInTutorialTextOnly extends _LogoAppState {
 // #docregion ShakeCurve
 class ShakeCurve extends Curve {
   @override
-  double transform(double t) => sin(t * pi * 2);
+  double transformInternal(double t) => t + sin(t * pi * 4) * 0.2;
 }
 // #enddocregion ShakeCurve

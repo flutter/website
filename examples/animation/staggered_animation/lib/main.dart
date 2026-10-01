@@ -143,8 +143,6 @@ class _StaggerDemoState extends State<StaggerDemo>
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 10; // 1 is normal animation speed.
-
     return Scaffold(
       appBar: AppBar(title: const Text('Staggered Animation')),
       body: GestureDetector(
@@ -167,6 +165,7 @@ class _StaggerDemoState extends State<StaggerDemo>
 }
 
 void main() {
+  timeDilation = 10; // 1 is normal animation speed.
   runApp(const MaterialApp(home: StaggerDemo()));
 }
 // #enddocregion stagger-demo

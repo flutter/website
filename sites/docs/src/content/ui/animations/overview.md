@@ -33,10 +33,7 @@ rebuild with the new value of the animation.
 
 This pattern is so common that Flutter provides widgets
 that rebuild when animations change value:
-[`AnimatedWidget`][] and [`AnimatedBuilder`][]
-(along with [`ListenableBuilder`][] for general `Listenable` objects
-and [`ImplicitlyAnimatedWidget`][] / [`TweenAnimationBuilder`][]
-for implicit animations).
+[`AnimatedWidget`][] and [`AnimatedBuilder`][].
 The first, `AnimatedWidget`, is most useful for
 stateless animated widgets. To use `AnimatedWidget`,
 subclass it and implement the [`build`][] function.
@@ -44,6 +41,12 @@ The second, `AnimatedBuilder`, is useful for more complex widgets
 that include an animation as part of a larger build function.
 To use `AnimatedBuilder`, construct the widget
 and pass it a `builder` function.
+To rebuild in response to other kinds of `Listenable` objects,
+use [`ListenableBuilder`][].
+
+For implicit animations, which manage their own controller,
+use an [`ImplicitlyAnimatedWidget`][] subclass,
+such as `AnimatedOpacity` or [`TweenAnimationBuilder`][].
 
 ### `addStatusListener`
 
@@ -173,11 +176,12 @@ of the `Simulation` class for different effects.
 The [`Animatable`][] abstract class maps a
 double to a value of a particular type.
 
-`Animatable` classes are stateless and immutable.
+An `Animatable` doesn't track animation progress,
+though some subclasses have mutable configuration.
 
 #### Tweens
 
-The [`Tween<T>`][] abstract class maps a double
+The [`Tween<T>`][] class maps a double
 value nominally in the range 0.0-1.0 to a typed value
 (for example, a `Color`, or another double).
 It is an `Animatable`.
@@ -188,7 +192,8 @@ and a way to interpolate (`lerp`) between the begin
 and end values for a given input value (the double nominally in
 the range 0.0-1.0).
 
-`Tween` classes are stateless and immutable.
+A `Tween` doesn't track animation progress,
+but its `begin` and `end` values are mutable.
 
 #### Composing animatables
 
@@ -231,21 +236,23 @@ Some are very stateful.
 Most `Animation` subclasses take an explicit "parent"
 `Animation<double>`. They are driven by that parent.
 
-The `CurvedAnimation` subclass takes an `Animation<double>` class (the
-parent) and a couple of `Curve` classes (the forward and reverse
-curves) as input, and uses the value of the parent as input to the
-curves to determine its output. `CurvedAnimation` is immutable and
-stateless.
+The `CurvedAnimation` subclass takes an `Animation<double>` object
+(the parent), a forward curve, and an optional reverse curve.
+It uses the parent's value as input to the curve
+for the current direction.
+If the parent reverses before reaching an endpoint,
+`CurvedAnimation` keeps using the same curve
+to avoid an abrupt jump in value.
 
 The `ReverseAnimation` subclass takes an
-`Animation<double>` class as its parent and reverses
+`Animation<double>` object as its parent and reverses
 all the values of the animation. It assumes the parent
 is using a value nominally in the range 0.0-1.0 and returns
 a value in the range 1.0-0.0. The status and direction of the parent
 animation are also reversed. `ReverseAnimation` is immutable and
 stateless.
 
-The `ProxyAnimation` subclass takes an `Animation<double>` class as
+The `ProxyAnimation` subclass takes an `Animation<double>` object as
 its parent and merely forwards the current state of that parent.
 However, the parent is mutable.
 
@@ -271,25 +278,27 @@ interpolation from the lower bound to the upper bound (or vice versa,
 for the reverse direction) over the given duration.
 
 When using `repeat()`, the animation controller uses a linear
-interpolation between the given bounds over the given duration, but
-does not stop.
+interpolation between the given bounds over the given duration.
+It repeats indefinitely unless you specify a `count` or stop it.
 
-When using `animateTo()`, the animation controller does a linear
-interpolation over the given duration from the current value to the
-given target. If no duration is given to the method, the default
-duration of the controller and the range described by the controller's
-lower bound and upper bound is used to determine the velocity of the
-animation.
+When using `animateTo()`, the animation controller interpolates
+from the current value to the given target,
+using a linear curve unless you specify a different `curve`.
+If you omit `duration`, it scales the controller's duration
+by the distance to the target as a fraction of the controller's range.
 
-When using `fling()`, a `Force` is used to create a specific
-simulation which is then used to drive the controller.
+When using `fling()`, the animation controller uses a spring simulation
+with the given initial velocity and optional `SpringDescription`.
 
-When using `animateWith()`, the given simulation is used to drive the
-controller.
+When using `animateWith()`, the given simulation is
+used to drive the controller.
 
-These methods all return the future that the `Ticker` provides and
-which will resolve when the controller next stops or changes
-simulation.
+These methods return a `TickerFuture` that completes
+when the animation finishes successfully.
+Canceling the animation, including by starting another animation or
+disposing the controller, leaves this future incomplete.
+Use its `orCancel` property to await a future that
+throws `TickerCanceled` on cancellation.
 
 #### Attaching animatables to animations
 
