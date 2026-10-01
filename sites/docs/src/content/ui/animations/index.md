@@ -253,9 +253,10 @@ wherever an `Animation` object is needed. However, the `AnimationController`
 has additional methods to control the animation. For example, you start
 an animation with the `.forward()` method. The generation of numbers is
 tied to the screen refresh rate (typically 60 to 120 frames per second).
-After each number is generated, each `Animation` object calls the
-attached `Listener` objects. To create a custom display list for each
-child, refer to [`RepaintBoundary`][].
+After each number is generated,
+each `Animation` object calls the attached listener callbacks.
+To create a custom display list for each child,
+refer to [`RepaintBoundary`][].
 
 When creating an `AnimationController`, you pass it a `vsync` argument.
 The presence of `vsync` prevents offscreen animations from consuming
@@ -265,8 +266,9 @@ You can use your stateful object as the vsync by adding
 You can find an example of this in [animate1][] on GitHub.
 
 :::note
-In some cases, a position might exceed the `AnimationController`'s
-0.0-1.0 range. For example, the `fling()` function
+In some cases, a position might
+exceed the 0.0-1.0 range of the `AnimationController`.
+For example, the `fling()` function
 allows you to provide velocity, force, and position
 (using the `Force` object). The position can be anything and
 so can be outside of the 0.0 to 1.0 range.
@@ -357,12 +359,13 @@ final Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
 
 ### Animation notifications
 
-An [`Animation`][] object can have `Listener`s and `StatusListener`s,
-defined with `addListener()` and `addStatusListener()`.
-A `Listener` is called whenever the value of the animation changes.
-The most common behavior of a `Listener` is to call `setState()`
-to cause a rebuild. A `StatusListener` is called when an animation begins,
-ends, moves forward, or moves reverse, as defined by `AnimationStatus`.
+An [`Animation`][] object can have listeners and status listeners,
+registered with `addListener()` and `addStatusListener()`.
+A listener is called whenever the value of the animation changes.
+The most common behavior of a listener is to
+call `setState()` to cause a rebuild.
+A status listener is called when an animation begins, ends,
+moves forward, or moves in reverse, as defined by `AnimationStatus`.
 
 ## Codelabs, tutorials, and articles
 

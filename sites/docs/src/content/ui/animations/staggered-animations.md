@@ -8,7 +8,7 @@ shortTitle: Staggered
 * A staggered animation consists of sequential or overlapping
     animations.
 * To create a staggered animation, use multiple `Animation` objects.
-* One `AnimationController` controls all of the `Animation`s.
+* One `AnimationController` controls all of the `Animation` objects.
 * Each `Animation` object specifies the animation during an `Interval`.
 * For each property being animated, create a `Tween`.
 :::
@@ -66,7 +66,7 @@ widgets. To learn more, visit [Building Layouts in Flutter][].
   object that is managed by the controller.
 :::
 
-The following diagram shows the `Interval`s used in the
+The following diagram shows the `Interval` objects used in the
 staggered animation example.
 You might notice the following characteristics:
 
@@ -88,10 +88,9 @@ To set up the animation:
   `Animation` objects.
 * Create a `Tween` for each property being animated.
   * The `Tween` defines a range of values.
-  * The `Tween`'s `animate` method requires the
-    `parent` controller, and produces an `Animation`
-    for that property.
-* Specify the interval on the `Animation`'s `curve` property.
+  * The `animate` method `Tween` requires the `parent` controller,
+    and produces an `Animation` for that property.
+* Specify the interval with the `curve` property of `CurvedAnimation`.
 
 When the controlling animation's value changes,
 the new animation's value changes, triggering the UI to update.
@@ -134,7 +133,7 @@ borderRadius =
 Like all interactive widgets, the complete animation consists
 of a widget pair: a stateless and a stateful widget.
 
-The stateless widget specifies the `Tween`s,
+The stateless widget specifies the `Tween` objects,
 defines the `Animation` objects, and provides a `build()` function
 responsible for building the animating portion of the widget tree.
 
@@ -146,9 +145,9 @@ The animation begins when a tap is detected anywhere on the screen.
 
 In the stateless widget, `StaggerAnimation`,
 the `build()` function instantiates an
-[`AnimatedBuilder`][]&mdash;a general-purpose widget for building
-animations. The `AnimatedBuilder`
-builds a widget and configures it using the `Tween`s' current values.
+[`AnimatedBuilder`][]&mdash;a general-purpose widget for building animations.
+The `AnimatedBuilder` builds a widget and configures it
+using the current values of the `Animation` objects.
 The example creates a function named `_buildAnimation()` (which performs
 the actual UI updates), and assigns it to its `builder` property.
 `AnimatedBuilder` listens to notifications from the animation controller,

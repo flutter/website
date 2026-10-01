@@ -192,9 +192,10 @@ the range 0.0-1.0).
 
 #### Composing animatables
 
-Passing an `Animatable<double>` (the parent) to an `Animatable`'s
-`chain()` method creates a new `Animatable` subclass that applies the
-parent's mapping then the child's mapping.
+Passing an `Animatable<double>` (the parent) to the
+`chain()` method of an `Animatable` object
+creates a new `Animatable` subclass that
+applies the parent's mapping then the child's mapping.
 
 ### Curves
 
@@ -292,8 +293,9 @@ simulation.
 
 #### Attaching animatables to animations
 
-Passing an `Animation<double>` (the new parent) to an `Animatable`'s
-`animate()` method creates a new `Animation` subclass that acts like
+Passing an `Animation<double>` (the new parent) to
+the `animate()` method of an `Animatable` object
+creates a new `Animation` subclass that acts like
 the `Animatable` but is driven from the given parent.
 
 

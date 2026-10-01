@@ -13,7 +13,7 @@ class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
     : super(listenable: animation);
 
-  // Make the Tweens static because they don't change.
+  // Make the tweens static because they don't change.
   static final _opacityTween = Tween<double>(begin: 0.1, end: 1);
   static final _sizeTween = Tween<double>(begin: 0, end: 300);
 

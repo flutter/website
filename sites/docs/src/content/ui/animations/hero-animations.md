@@ -102,7 +102,7 @@ how Flutter performs a hero animation.
 * Use two hero widgets in different routes but with matching tags to
   implement the animation.
 * The `Navigator` manages a stack containing the app's routes.
-* Pushing a route on or popping a route from the `Navigator`'s stack
+* Pushing a route on or popping a route from the `Navigator` stack
   triggers the animation.
 * The Flutter framework calculates a rectangle tween,
   [`RectTween`][], that defines the hero's boundary
@@ -137,12 +137,13 @@ Hero animation code has the following structure:
 1. Create a route that contains the destination hero.
    The destination route defines the widget tree that exists
    at the end of the animation.
-1. Trigger the animation by pushing the destination route on the
-   `Navigator`'s stack. The `Navigator` push and pop operations trigger
+1. Trigger the animation by pushing
+   the destination route on the `Navigator` stack.
+   The `Navigator` push and pop operations trigger
    a hero animation for each pair of heroes with matching tags in
    the source and destination routes.
 
-Flutter calculates the tween that animates the `Hero`'s bounds from
+Flutter calculates the tween that animates the `Hero` widget's bounds from
 the starting point to the endpoint (interpolating size and position),
 and performs the animation in an overlay.
 
@@ -181,9 +182,8 @@ At `t=0.0`, Flutter does the following:
 
 ![The hero flies in the overlay to its final position and size](/assets/images/docs/ui/animations/hero-transition-2.png)
 
-As the hero flies, its rectangular bounds are animated using
-[`Tween<Rect>`][], specified in `Hero`'s
-[`createRectTween`][] property.
+As the hero flies, its rectangular bounds are animated using [`Tween<Rect>`][],
+specified by the [`createRectTween`][] property of the `Hero` widget.
 By default, Flutter uses an instance of
 [`MaterialRectArcTween`][], which animates the
 rectangle's opposing corners along a curved path.
@@ -223,12 +223,13 @@ implement hero animations:
 
 [`InkWell`][]
 : Specifies what happens when tapping the hero.
-  The `InkWell`'s `onTap()` method builds the
-  new route and pushes it to the `Navigator`'s stack.
+  The `onTap()` callback of the `InkWell` widget builds the
+  new route and pushes it to the `Navigator` stack.
 
 [`Navigator`][]
-: The `Navigator` manages a stack of routes. Pushing a route on or
-  popping a route from the `Navigator`'s stack triggers the animation.
+: The `Navigator` manages a stack of routes.
+  Pushing a route on or popping a route from the `Navigator` stack
+  triggers the animation.
 
 [`Route`][]
 : Specifies a screen or page. Most apps,
@@ -324,7 +325,7 @@ Key information:
   flies to its destination.
 * The `SizedBox` specifies the hero's size at the start and
   end of the animation.
-* Setting the `Image`'s `fit` property to `BoxFit.contain`
+* Setting the `Image` widget's `fit` property to `BoxFit.contain`
   ensures that the image is as large as possible during the
   transition without changing its aspect ratio.
 
@@ -389,12 +390,12 @@ Key information:
 
 * When the user taps the `InkWell` containing the source hero,
   the code creates the destination route using `MaterialPageRoute`.
-  Pushing the destination route to the `Navigator`'s stack triggers
-  the animation.
+  Pushing the destination route to the `Navigator` stack
+  triggers the animation.
 * The `Container` positions the `PhotoHero` in the destination
   route's top-left corner, below the `AppBar`.
 * The `onTap()` method for the destination `PhotoHero`
-  pops the `Navigator`'s stack, triggering the animation
+  pops the `Navigator` stack, triggering the animation
   that flies the `Hero` back to the original route.
 * Use the `timeDilation` property to slow the transition
   while debugging.
@@ -494,8 +495,8 @@ class Photo extends StatelessWidget {
 Key information:
 
 * The `InkWell` captures the tap gesture.
-  The calling function passes the `onTap()` function to the
-  `Photo`'s constructor.
+  The calling function passes the `onTap()` function to
+  the `Photo` constructor.
 * During flight, the `InkWell` draws its splash on its first
   `Material` ancestor.
 * The `Material` widget has a slightly opaque color, so the
