@@ -344,14 +344,14 @@ class HeroAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    [!timeDilation = 5.0; // 1.0 means normal animation speed.!]
+    [!timeDilation = 5; // 1 means normal animation speed.!]
 
     return Scaffold(
       appBar: AppBar(title: const Text('Basic Hero Animation')),
       body: Center(
         [!child: PhotoHero(!]
           photo: 'images/flippers.png',
-          width: 300.0,
+          width: 300,
           [!onTap: ()!] {
             [!Navigator.of(context).push(!]
               [!MaterialPageRoute<void>(!]
@@ -365,7 +365,7 @@ class HeroAnimation extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       [!child: PhotoHero(!]
                         photo: 'images/flippers.png',
-                        width: 100.0,
+                        width: 100,
                         [!onTap: ()!] {
                           [!Navigator.of(context).pop();!]
                         },
@@ -527,7 +527,7 @@ Here's the code:
 ```dart
 class RadialExpansion extends StatelessWidget {
   const RadialExpansion({super.key, required this.maxRadius, this.child})
-    : [!clipRectSize = 2.0 * (maxRadius / math.sqrt2);!]
+    : [!clipRectSize = 2 * (maxRadius / math.sqrt2);!]
 
   final double maxRadius;
   final double clipRectSize;

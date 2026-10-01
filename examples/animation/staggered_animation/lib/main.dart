@@ -10,15 +10,15 @@ class StaggerAnimation extends StatelessWidget {
       // of the controller's duration defined by the animation's interval.
       // For example, the opacity animation transforms its value during
       // the first 10% of the controller's duration.
-      opacity = Tween<double>(begin: 0.0, end: 1.0).animate(
+      opacity = Tween<double>(begin: 0, end: 1).animate(
         CurvedAnimation(
           parent: controller,
-          curve: const Interval(0.0, 0.100, curve: Curves.ease),
+          curve: const Interval(0, 0.100, curve: Curves.ease),
         ),
       ),
 
       // #docregion width
-      width = Tween<double>(begin: 50.0, end: 150.0).animate(
+      width = Tween<double>(begin: 50, end: 150).animate(
         CurvedAnimation(
           parent: controller,
           curve: const Interval(0.125, 0.250, curve: Curves.ease),
@@ -26,7 +26,7 @@ class StaggerAnimation extends StatelessWidget {
       ),
       // #enddocregion width
 
-      height = Tween<double>(begin: 50.0, end: 150.0).animate(
+      height = Tween<double>(begin: 50, end: 150).animate(
         CurvedAnimation(
           parent: controller,
           curve: const Interval(0.250, 0.375, curve: Curves.ease),
@@ -141,7 +141,7 @@ class _StaggerDemoState extends State<StaggerDemo>
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 10.0; // 1.0 is normal animation speed.
+    timeDilation = 10; // 1 is normal animation speed.
     return Scaffold(
       appBar: AppBar(title: const Text('Staggered Animation')),
       body: GestureDetector(

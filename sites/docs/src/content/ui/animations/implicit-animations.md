@@ -40,7 +40,7 @@ class _FadeBoxDemoState extends State<FadeBoxDemo> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         AnimatedOpacity(
-          opacity: _visible ? 1.0 : 0.0,
+          opacity: _visible ? 1 : 0,
           duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
           child: const FlutterLogo(size: 100),

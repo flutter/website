@@ -28,7 +28,7 @@ class Photo extends StatelessWidget {
 // #docregion RadialExpansion
 class RadialExpansion extends StatelessWidget {
   const RadialExpansion({super.key, required this.maxRadius, this.child})
-    : clipRectSize = 2.0 * (maxRadius / math.sqrt2);
+    : clipRectSize = 2 * (maxRadius / math.sqrt2);
 
   final double maxRadius;
   final double clipRectSize;
@@ -54,10 +54,10 @@ class RadialExpansion extends StatelessWidget {
 class RadialExpansionDemo extends StatelessWidget {
   const RadialExpansionDemo({super.key});
 
-  static const double kMinRadius = 32.0;
-  static const double kMaxRadius = 128.0;
+  static const double kMinRadius = 32;
+  static const double kMaxRadius = 128;
   static const Interval opacityCurve = Interval(
-    0.0,
+    0,
     0.75,
     curve: Curves.fastOutSlowIn,
   );
@@ -82,8 +82,8 @@ class RadialExpansionDemo extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
-                width: kMaxRadius * 2.0,
-                height: kMaxRadius * 2.0,
+                width: kMaxRadius * 2,
+                height: kMaxRadius * 2,
                 child: Hero(
                   createRectTween: _createRectTween,
                   tag: imageName,
@@ -117,8 +117,8 @@ class RadialExpansionDemo extends StatelessWidget {
     String description,
   ) {
     return SizedBox(
-      width: kMinRadius * 2.0,
-      height: kMinRadius * 2.0,
+      width: kMinRadius * 2,
+      height: kMinRadius * 2,
       child: Hero(
         createRectTween: _createRectTween,
         tag: imageName,
@@ -151,7 +151,7 @@ class RadialExpansionDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 5.0; // 1.0 is normal animation speed.
+    timeDilation = 5; // 1 is normal animation speed.
 
     return Scaffold(
       appBar: AppBar(title: const Text('Radial Transition Demo')),
