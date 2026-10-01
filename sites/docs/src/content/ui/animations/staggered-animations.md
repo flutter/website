@@ -99,9 +99,8 @@ When the controlling animation's value changes,
 the new animation's value changes, triggering the UI to update.
 
 The following code creates a tween for the `width` property.
-It builds a [`CurvedAnimation`][],
-specifying an eased curve. Consult [`Curves`][] for
-other available predefined animation curves.
+It builds a [`CurvedAnimation`][], specifying an eased curve.
+For other available predefined animation curves, consult [`Curves`][].
 
 <?code-excerpt "staggered_animation/lib/main.dart (width)"?>
 ```dart
@@ -273,6 +272,7 @@ specifying a 2000 ms duration. It plays the animation,
 and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected on the screen.
 The animation runs forward, then backward.
+Taps during playback are ignored so the sequence can finish.
 
 <?code-excerpt "staggered_animation/lib/main.dart (stagger-demo)" replace="/(class StaggerDemo extends StatefulWidget|Future.* _playAnimation\(\) async|await _controller\.(forward|reverse)\(\)\.orCancel;|Widget build\(BuildContext context\))/[!$&!]/g"?>
 ```dart
@@ -284,8 +284,8 @@ The animation runs forward, then backward.
 }
 
 class _StaggerDemoState extends State<StaggerDemo>
-    with TickerProviderStateMixin {
-  late AnimationController _controller;
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
 
   @override
   void initState() {
@@ -304,6 +304,8 @@ class _StaggerDemoState extends State<StaggerDemo>
   }
 
   [!Future<void> _playAnimation() async!] {
+    if (_controller.isAnimating) return;
+
     try {
       [!await _controller.forward().orCancel;!]
       [!await _controller.reverse().orCancel;!]
@@ -315,13 +317,12 @@ class _StaggerDemoState extends State<StaggerDemo>
   @override
   [!Widget build(BuildContext context)!] {
     timeDilation = 10; // 1 is normal animation speed.
+
     return Scaffold(
       appBar: AppBar(title: const Text('Staggered Animation')),
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: () {
-          _playAnimation();
-        },
+        onTap: _playAnimation,
         child: Center(
           child: Container(
             width: 300,

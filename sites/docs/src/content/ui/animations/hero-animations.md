@@ -474,10 +474,9 @@ The `Photo` class builds the widget tree that holds the image:
 <?code-excerpt "radial_hero_animation/lib/main.dart (photo)" replace="/(Material\(|color: Theme.*|InkWell\(|onTap,|Image\.asset\()/[!$&!]/g"?>
 ```dart
 class Photo extends StatelessWidget {
-  const Photo({super.key, required this.photo, this.color, this.onTap});
+  const Photo({super.key, required this.photo, this.onTap});
 
   final String photo;
-  final Color? color;
   final VoidCallback? onTap;
 
   @override

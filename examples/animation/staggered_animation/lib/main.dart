@@ -111,8 +111,8 @@ class StaggerDemo extends StatefulWidget {
 }
 
 class _StaggerDemoState extends State<StaggerDemo>
-    with TickerProviderStateMixin {
-  late AnimationController _controller;
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
 
   @override
   void initState() {
@@ -131,6 +131,8 @@ class _StaggerDemoState extends State<StaggerDemo>
   }
 
   Future<void> _playAnimation() async {
+    if (_controller.isAnimating) return;
+
     try {
       await _controller.forward().orCancel;
       await _controller.reverse().orCancel;
@@ -142,13 +144,12 @@ class _StaggerDemoState extends State<StaggerDemo>
   @override
   Widget build(BuildContext context) {
     timeDilation = 10; // 1 is normal animation speed.
+
     return Scaffold(
       appBar: AppBar(title: const Text('Staggered Animation')),
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: () {
-          _playAnimation();
-        },
+        onTap: _playAnimation,
         child: Center(
           child: Container(
             width: 300,

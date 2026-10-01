@@ -5,10 +5,9 @@ import 'package:material_ui/material_ui.dart';
 
 // #docregion photo
 class Photo extends StatelessWidget {
-  const Photo({super.key, required this.photo, this.color, this.onTap});
+  const Photo({super.key, required this.photo, this.onTap});
 
   final String photo;
-  final Color? color;
   final VoidCallback? onTap;
 
   @override
@@ -100,8 +99,8 @@ class RadialExpansionDemo extends StatelessWidget {
               ),
               Text(
                 description,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-                textScaler: const TextScaler.linear(3),
+                style: Theme.of(context).textTheme.headlineMedium
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 16),
             ],
