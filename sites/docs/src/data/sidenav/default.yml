@@ -276,6 +276,8 @@
   permalink: /data-and-backend
   icon: storage
   children:
+    - title: Choose a database
+      permalink: /data-and-backend/choose-a-database
     - title: State management
       permalink: /data-and-backend/state-mgmt
       children:
