@@ -26,14 +26,14 @@ tags:
   - ios
   - open-source
   - firebase
-publishDate: 2026-09-29
+publishDate: 2026-10-01
 successMetrics:
   - text: "1,600+"
     desc: business listings approved through self-service
   - text: "5.0"
     desc: Google Play rating across 228 reviews
-  - text: 3 months
-    desc: to launch on iOS and Android
+  - text: "3"
+    desc: months to launch on iOS and Android
 ---
 
 Following the devastating February 2023 earthquakes in Turkey, thousands of
