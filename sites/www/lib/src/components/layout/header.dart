@@ -41,6 +41,7 @@ class _HeaderState extends State<Header> {
   bool _navOpen = false;
   bool _searchActive = false;
   bool _isMobile = false;
+  bool _isDarkMode = false;
   String? _expandedMenuKey;
   StreamSubscription<void>? _resizeSubscription;
 
@@ -69,6 +70,24 @@ class _HeaderState extends State<Header> {
         }
       }
     });
+  }
+
+  void _toggleTheme() {
+    setState(() {
+      _isDarkMode = !_isDarkMode;
+      _applyTheme(_isDarkMode);
+    });
+  }
+
+  void _applyTheme(bool darkMode) {
+    if (!kIsWeb) return;
+
+    final body = web.document.body;
+    if (body == null) return;
+
+    body.classList.toggle('theme-dark', darkMode);
+    body.classList.toggle('theme-light', !darkMode);
+    web.window.localStorage.setItem('flutter-site-theme', darkMode ? 'dark' : 'light');
   }
 
   void _handleMobileClick(String key, web.Event e) {
@@ -114,6 +133,13 @@ class _HeaderState extends State<Header> {
   void initState() {
     super.initState();
     if (kIsWeb) {
+      final savedTheme = web.window.localStorage.getItem('flutter-site-theme');
+      _isDarkMode = switch (savedTheme) {
+        'dark' => true,
+        'light' => false,
+        _ => web.window.matchMedia('(prefers-color-scheme: dark)').matches,
+      };
+      _applyTheme(_isDarkMode);
       _updateIsMobile();
       _resizeSubscription = web.EventStreamProviders.resizeEvent
           .forTarget(web.window)
@@ -222,6 +248,21 @@ class _HeaderState extends State<Header> {
                     events: {'click': (_) => _toggleSearch()},
                     const [Icon(symbol: 'close')],
                   ),
+              ],
+            ),
+            button(
+              classes: 'icon-btn theme-toggle',
+              attributes: {
+                'type': 'button',
+                'aria-label': _isDarkMode ? 'Switch to light mode' : 'Switch to dark mode',
+              },
+              events: {'click': (_) => _toggleTheme()},
+              [
+                Icon(
+                  symbol: _isDarkMode ? 'light_mode' : 'dark_mode',
+                  label: _isDarkMode ? 'Switch to light mode' : 'Switch to dark mode',
+                  size: .md,
+                ),
               ],
             ),
             const a(

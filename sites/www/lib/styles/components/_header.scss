@@ -171,6 +171,17 @@
     }
   }
 
+  .theme-toggle {
+    margin-left: var(--spacer-sm);
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    &:hover,
+    &.active {
+      background-color: rgba(255, 255, 255, 0.18);
+    }
+  }
+
   .search {
     display: none;
     align-items: center;
@@ -637,6 +648,16 @@ body.in-content {
       }
     }
 
+    .theme-toggle {
+      background-color: var(--grey-2);
+      color: var(--grey-6);
+
+      &:hover,
+      &.active {
+        background-color: var(--grey-1);
+      }
+    }
+
     .search {
       &:focus-within {
         outline: 2px solid var(--primary);
@@ -660,6 +681,66 @@ body.in-content {
     a.btn#get-started__header {
       background-color: var(--blue-6);
       color: white;
+    }
+  }
+}
+
+body.theme-dark {
+  .site-header:not(.mobile-nav-open) {
+    background-color: rgba(23, 27, 36, 0.94);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.22);
+
+    nav {
+      color: var(--site-base-fgColor);
+
+      >ul >li a.btn {
+        color: var(--site-base-fgColor);
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.07);
+          color: #f2f4f8;
+        }
+      }
+    }
+
+    .icon-btn {
+      color: var(--site-base-fgColor);
+
+      &:hover,
+      &.active {
+        background-color: rgba(255, 255, 255, 0.07);
+      }
+    }
+
+    .theme-toggle {
+      background-color: rgba(255, 255, 255, 0.06);
+      color: var(--site-base-fgColor);
+
+      &:hover,
+      &:focus-visible {
+        background-color: rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    .search {
+      form {
+        input {
+          color: var(--site-base-fgColor);
+
+          &::placeholder {
+            color: var(--site-base-fgColor-alt);
+          }
+        }
+      }
+
+      &.active {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    a.btn#get-started__header {
+      background-color: var(--site-filledButton-bgColor);
+      color: var(--site-filledButton-fgColor);
     }
   }
 }

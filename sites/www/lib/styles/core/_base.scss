@@ -20,6 +20,37 @@ body {
   &.interior {
     padding-top: var(--ui-header-height);
   }
+
+  &.theme-dark {
+    background-color: var(--site-base-bgColor);
+    color: var(--site-base-fgColor);
+
+    main {
+      background-color: var(--site-base-bgColor);
+      color: var(--site-base-fgColor);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--site-base-fgColor);
+    }
+
+    p:not(:where(.post-content *)) {
+      color: var(--site-base-fgColor-lighter);
+    }
+
+    a:not(.btn) {
+      color: var(--site-link-fgColor);
+    }
+
+    hr {
+      border-color: var(--site-outline-variant);
+    }
+  }
 }
 
 @keyframes marketing-slide-up {
