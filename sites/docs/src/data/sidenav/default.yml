@@ -276,8 +276,6 @@
   permalink: /data-and-backend
   icon: storage
   children:
-    - title: Choose a database
-      permalink: /data-and-backend/choose-a-database
     - title: State management
       permalink: /data-and-backend/state-mgmt
       children:
@@ -318,6 +316,8 @@
     - title: Persistence
       permalink: /data-and-backend/persistence
       children:
+        - title: Choose a database
+          permalink: /data-and-backend/persistence/choose-a-database
         - title: Store key-value data on disk
           permalink: /cookbook/persistence/key-value
         - title: Read and write files

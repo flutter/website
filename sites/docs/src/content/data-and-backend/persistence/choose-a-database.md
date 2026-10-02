@@ -33,7 +33,7 @@ The following table summarizes how each option stores and syncs data.
 
 {:.table .table-striped}
 
-## Choose Cloud Firestore for realtime NoSQL data
+## Choose Cloud Firestore for NoSQL data
 
 [Cloud Firestore][] is the recommended default when your app needs
 a scalable cloud database that keeps data in sync
@@ -68,7 +68,7 @@ $ flutter pub add cloud_firestore
 Then follow the [Cloud Firestore quickstart][firestore-quickstart]
 to set up your database.
 
-## Choose Firebase SQL Connect for relational SQL data
+## Choose Firebase SQL Connect for SQL data
 
 [Firebase SQL Connect][] is the recommended default when your data is
 relational and benefits from a structured schema.
@@ -95,7 +95,7 @@ inventory management, and apps with reporting needs.
 To get started, follow the guide to
 [use generated Flutter SDKs][sql-connect-flutter] with SQL Connect.
 
-## Use SQLite or key-value storage for on-device data
+## Use SQLite or key-value storage locally
 
 If your data doesn't need to leave the device,
 you can store it locally without a cloud backend:
@@ -114,7 +114,7 @@ Local-only data isn't backed up or synced across devices.
 If users expect to access their data after reinstalling your app or
 on another device, use a cloud database instead.
 
-## Combine cloud and local storage in one app
+## Combine cloud and local storage
 
 Many apps use more than one storage option.
 For example, an app might use Cloud Firestore or Firebase SQL Connect
