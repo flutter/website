@@ -61,7 +61,7 @@ class _BlogCategoriesState extends State<BlogCategories> {
   void initState() {
     super.initState();
     if (kIsWeb) {
-      _updateCategoryFromUrl();
+      _updateCategoryFromUrl(initial: true);
       _popStateSubscription = web.EventStreamProviders.popStateEvent
           .forTarget(web.window)
           .listen((_) => _updateCategoryFromUrl());
@@ -74,16 +74,26 @@ class _BlogCategoriesState extends State<BlogCategories> {
     super.dispose();
   }
 
-  void _updateCategoryFromUrl() {
+  void _updateCategoryFromUrl({bool initial = false}) {
     final uri = Uri.parse(web.window.location.href);
     final slug = uri.queryParameters['category'];
     final category = component.categories
         .where((c) => c.slug == slug)
         .firstOrNull;
 
-    setState(() {
+    if (initial) {
       selectedCategory = category;
-    });
+      if (category != null) {
+        _applyLayout(category);
+      }
+      return;
+    }
+
+    if (category != selectedCategory) {
+      setState(() {
+        selectedCategory = category;
+      });
+    }
     _applyLayout(category);
   }
 
@@ -107,7 +117,7 @@ class _BlogCategoriesState extends State<BlogCategories> {
     final container = web.document.getElementById('blog-container');
     if (container != null) {
       if (category == null) {
-        container.removeAttribute('data-selected');
+        container.setAttribute('data-selected', 'all');
       } else {
         container.setAttribute('data-selected', category.slug);
       }
@@ -121,21 +131,30 @@ class _BlogCategoriesState extends State<BlogCategories> {
         final cardCategory = card.getAttribute('data-category');
 
         final isVisible = category == null || cardCategory == category.slug;
-
-        // Remove existing layout classes.
-        card.classList.remove('layout-featured');
-        card.classList.remove('layout-grid');
-        card.classList.remove('layout-list');
-
+        String? targetClass;
         if (isVisible) {
           if (visibleCount == 0) {
-            card.classList.add('layout-featured');
+            targetClass = 'layout-featured';
           } else if (visibleCount < 5) {
-            card.classList.add('layout-grid');
+            targetClass = 'layout-grid';
           } else {
-            card.classList.add('layout-list');
+            targetClass = 'layout-list';
           }
           visibleCount++;
+        }
+
+        for (final layoutClass in const [
+          'layout-featured',
+          'layout-grid',
+          'layout-list',
+        ]) {
+          if (layoutClass == targetClass) {
+            if (!card.classList.contains(layoutClass)) {
+              card.classList.add(layoutClass);
+            }
+          } else if (card.classList.contains(layoutClass)) {
+            card.classList.remove(layoutClass);
+          }
         }
       }
     }
