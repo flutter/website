@@ -1,0 +1,19 @@
+name: implicit_animation
+description: Sample code for implicit animations.
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.13.0-0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  material_ui: ^1.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
