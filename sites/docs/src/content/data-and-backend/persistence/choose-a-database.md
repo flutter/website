@@ -70,6 +70,13 @@ $ flutter pub add cloud_firestore
 Then follow the [Cloud Firestore quickstart][firestore-quickstart]
 to set up your database.
 
+:::note
+Cloud Firestore is Firebase's recommended NoSQL database for new apps
+instead of [Firebase Realtime Database][realtime-db], unless your app
+only needs low-latency synchronization for small, frequent state
+updates like presence indicators.
+:::
+
 ## Choose Firebase SQL Connect for SQL data
 
 [Firebase SQL Connect][] (formerly Firebase Data Connect) is the
@@ -99,7 +106,14 @@ Choose Firebase SQL Connect if your app needs:
 Common use cases include ecommerce, booking and scheduling,
 inventory management, and apps with reporting needs.
 
-To get started, follow the guide to
+To add Firebase SQL Connect to your app, run the following command
+from the root of your Flutter project:
+
+```console
+$ flutter pub add firebase_data_connect
+```
+
+Then follow the guide to
 [use generated Flutter SDKs][sql-connect-flutter] with SQL Connect.
 
 ## Use SQLite or key-value storage locally
@@ -129,6 +143,14 @@ For example, an app might use Cloud Firestore or Firebase SQL Connect
 for shared, synced data, and `shared_preferences` for
 device-specific settings, such as a theme preference.
 
+Both Cloud Firestore and Firebase SQL Connect also integrate directly
+with other Firebase services—including
+[Firebase Authentication][firebase-auth] ([`firebase_auth`][]),
+[Cloud Storage for Firebase][firebase-storage] ([`firebase_storage`][]),
+and [Firebase AI Logic][firebase-ai] ([`firebase_ai`][])—so you can
+manage authentication, databases, file storage, and AI features in a
+single project.
+
 To design an app that keeps working without a network connection,
 check out [Offline-first support][offline-first].
 
@@ -143,15 +165,22 @@ To start building with a cloud database, check out the following resources:
 
 [Cloud Firestore]: {{site.firebase}}/docs/firestore
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore
+[firebase-ai]: {{site.firebase}}/docs/ai-logic/get-started
+[`firebase_ai`]: {{site.pub-pkg}}/firebase_ai
+[firebase-auth]: {{site.firebase}}/docs/auth/flutter/start
+[`firebase_auth`]: {{site.pub-pkg}}/firebase_auth
 [`firebase_data_connect`]: {{site.pub-pkg}}/firebase_data_connect
 [firebase-page]: /data-and-backend/firebase
 [firebase-setup]: {{site.firebase}}/docs/flutter/setup
 [Firebase SQL Connect]: {{site.firebase}}/docs/sql-connect
+[firebase-storage]: {{site.firebase}}/docs/storage/flutter/start
+[`firebase_storage`]: {{site.pub-pkg}}/firebase_storage
 [firestore-quickstart]: {{site.firebase}}/docs/firestore/quickstart
 [firestore-rules]: {{site.firebase}}/docs/firestore/security/get-started
 [key-value-architecture]: /app-architecture/design-patterns/key-value-data
 [key-value-recipe]: /cookbook/persistence/key-value
 [offline-first]: /app-architecture/design-patterns/offline-first
+[realtime-db]: {{site.firebase}}/docs/database/flutter/start
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [sql-architecture]: /app-architecture/design-patterns/sql
