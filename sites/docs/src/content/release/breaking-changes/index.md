@@ -40,11 +40,13 @@ They're sorted by release and listed in alphabetical order:
 * [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
 * [Restrict Android engine flags in release mode][]
 * [Removal of `useInheritedMediaQuery`][]
+* [Soft hyphens render at line breaks][]
 
 [Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 [Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
 [Removal of `useInheritedMediaQuery`]: /release/breaking-changes/remove-useInheritedMediaQuery
+[Soft hyphens render at line breaks]: /release/breaking-changes/soft-hyphen-rendering
 
 <a id="released-in-flutter-347" aria-hidden="true"></a>
 ### Released in Flutter 3.47
