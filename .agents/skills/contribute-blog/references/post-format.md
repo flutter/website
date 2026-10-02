@@ -79,7 +79,10 @@ If the hero image should appear in the post's body,
 include it explicitly in the Markdown content with `<DashImage>`.
 
 Use post-local paths such as `images/hero.webp`.
-Prefer optimized WebP for new static raster artwork when quality permits.
+Convert new static PNG or JPEG artwork to WebP by running
+`dart run dash_site optimize-images <image paths...>`
+with each image's path relative to the repository root,
+then reference the resulting `.webp` files.
 Don't upscale sources or commit unused variants.
 
 Set `socialImage` when `image` is animated (such as a GIF),
