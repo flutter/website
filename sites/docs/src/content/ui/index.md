@@ -15,12 +15,6 @@ which the framework diffs against the previous description in order
 to determine the minimal changes needed in the underlying render
 tree to transition from one state to the next.
 
-:::note
-If you would like to become better acquainted with Flutter by diving
-into some code, check out [building layouts][],
-and [adding interactivity to your Flutter app][].
-:::
-
 ## Hello world
 
 The minimal Flutter app simply calls the [`runApp()`][]
@@ -277,15 +271,6 @@ This pattern recurs throughout the framework and is something you
 might consider when designing your own widgets.
 
 For more information, check out [Material Components widgets][].
-
-:::note
-Material is one of the 2 bundled designs included with Flutter.
-To create an iOS-centric design,
-check out the [Cupertino components][] package,
-which has its own versions of
-[`CupertinoApp`][], and [`CupertinoNavigationBar`][].
-:::
-
 
 ## Handling gestures
 
