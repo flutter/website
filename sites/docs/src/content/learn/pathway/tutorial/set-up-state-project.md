@@ -72,14 +72,15 @@ $ flutter create wikipedia_reader --empty
 
 ### Add required dependencies
 
-Your app needs the [`http` package][] to make HTTP requests.
-Add it to your project:
+Your app needs the [`http` package][] to make HTTP requests, and the [`material_ui` package][] for some UI components.
+Add them to your project:
 
 ```console
-$ cd wikipedia_reader && flutter pub add http
+$ cd wikipedia_reader && flutter pub add http material_ui && flutter pub get
 ```
 
 [`http` package]: {{site.pub}}/packages/http
+[`material_ui` package]: {{site.pub}}/packages/material_ui
 
 ### Examine the starter code
 
