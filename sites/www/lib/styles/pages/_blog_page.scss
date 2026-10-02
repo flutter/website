@@ -1,4 +1,4 @@
-@use 'package:site_shared/_sass/base/mixins';
+@use "package:site_shared/_sass/base/mixins";
 
 .blog main {
   display: flex;
@@ -27,10 +27,66 @@
       }
     }
 
-
     > .content {
       padding: 1.5rem;
       color: var(--site-base-fgColor);
+    }
+
+    .toc {
+      margin: 1.5rem 0;
+      background: var(--site-inset-bgColor);
+      border: 1px solid var(--site-inset-borderColor);
+      border-radius: var(--ui-border-radius-sm);
+
+      details {
+        padding: 1rem 1.25rem;
+      }
+
+      summary {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-family: var(--site-ui-fontFamily);
+        font-weight: var(--site-fontWeight-bold);
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        .material-symbols {
+          transition: transform 0.15s var(--ui-anim-func);
+        }
+      }
+
+      details[open] summary .material-symbols {
+        transform: rotate(90deg);
+      }
+
+      .toc-list {
+        margin: 0.75rem 0 0;
+
+        ul {
+          margin: 0;
+          padding-left: 1rem;
+          list-style: none;
+          border-left: 1px solid var(--site-outline-variant);
+        }
+
+        li {
+          margin: 0.5rem 0;
+        }
+
+        a {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
     @media (min-width: 576px) {
@@ -73,7 +129,7 @@
         color: var(--site-base-fgColor-alt);
         user-select: none;
 
-        >span {
+        > span {
           font-size: 1.75rem;
         }
 
@@ -126,7 +182,9 @@
   cursor: pointer;
   opacity: 0;
   transform: translateY(0.5rem);
-  transition: opacity 0.2s var(--ui-anim-func), transform 0.2s var(--ui-anim-func);
+  transition:
+    opacity 0.2s var(--ui-anim-func),
+    transform 0.2s var(--ui-anim-func);
   pointer-events: none;
   visibility: hidden;
 
