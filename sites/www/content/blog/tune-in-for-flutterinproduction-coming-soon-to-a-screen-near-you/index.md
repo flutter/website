@@ -5,7 +5,9 @@ description: >-
   PT on December 17, 2024.
 publishDate: 2024-12-03
 author: kkboateng
-image: images/1SSIgDyW3jMaOF5nxH5D9lw.gif
+coverImage:
+  url: images/1SSIgDyW3jMaOF5nxH5D9lw.gif
+  display: false
 category: news
 layout: blog
 ---

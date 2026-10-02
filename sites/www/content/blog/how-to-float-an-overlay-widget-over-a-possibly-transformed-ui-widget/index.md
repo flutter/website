@@ -5,7 +5,9 @@ description: >-
   you want to overlay a floating widget on top of that widget.
 publishDate: 2020-03-02
 author: josealba
-image: images/0FB5HpEeEvZ6NjJXl.webp
+coverImage:
+  url: images/0FB5HpEeEvZ6NjJXl.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

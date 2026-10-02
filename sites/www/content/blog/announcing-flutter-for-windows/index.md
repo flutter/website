@@ -4,7 +4,9 @@ description: >-
   Build high-quality Windows apps that also run on mobile and web
 publishDate: 2022-02-03
 author: timsneath
-image: images/0LtCDFBQudFeDS_f6.jpg
+coverImage:
+  url: images/0LtCDFBQudFeDS_f6.jpg
+  display: false
 category: release
 layout: blog
 ---

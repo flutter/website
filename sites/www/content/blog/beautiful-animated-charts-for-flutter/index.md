@@ -5,7 +5,9 @@ description: >-
   fully-featured, animated charting library for Flutter!
 publishDate: 2018-03-23
 author: mit-mit
-image: images/1CB1OU6uH4SsgJUB2j962dg.webp
+coverImage:
+  url: images/1CB1OU6uH4SsgJUB2j962dg.webp
+  display: false
 category: news
 layout: blog
 ---

@@ -5,7 +5,9 @@ description: >-
   tooling updates, and more!
 publishDate: 2021-12-09
 author: csells
-image: images/00frogkEKgpNOgCVF.webp
+coverImage:
+  url: images/00frogkEKgpNOgCVF.webp
+  display: false
 category: release
 layout: blog
 ---

@@ -5,7 +5,9 @@ description: >-
   stand-alone support for web and desktop, too!
 publishDate: 2020-12-09
 author: csells
-image: images/0PEc27voy2YR_winG.webp
+coverImage:
+  url: images/0PEc27voy2YR_winG.webp
+  display: false
 category: news
 layout: blog
 ---

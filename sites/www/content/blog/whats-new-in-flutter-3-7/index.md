@@ -4,7 +4,9 @@ description: >-
   Material 3 updates, iOS improvements, and much more!
 publishDate: 2023-01-24
 author: itsjustkevin
-image: images/1AsyYVtFMXY0iS6gLz_O4BA.png
+coverImage:
+  url: images/1AsyYVtFMXY0iS6gLz_O4BA.png
+  display: false
 category: release
 layout: blog
 ---

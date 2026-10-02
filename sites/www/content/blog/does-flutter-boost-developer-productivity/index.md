@@ -5,7 +5,9 @@ description: >-
   developer productivity and the tools and workflows that influence it.
 publishDate: 2022-05-05
 author: jayoung-lee
-image: images/0hjsh42RwSy9QAK1S.webp
+coverImage:
+  url: images/0hjsh42RwSy9QAK1S.webp
+  display: false
 category: news
 layout: blog
 ---

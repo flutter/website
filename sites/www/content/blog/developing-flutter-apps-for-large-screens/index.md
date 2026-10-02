@@ -4,7 +4,9 @@ description: >-
   How to optimize your Flutter app to meet Android's large screen requirements
 publishDate: 2023-09-26
 author: mariam_hasnany
-image: images/04I4h-v1nPuUbxBt4.webp
+coverImage:
+  url: images/04I4h-v1nPuUbxBt4.webp
+  display: false
 category: case-study
 layout: blog
 ---

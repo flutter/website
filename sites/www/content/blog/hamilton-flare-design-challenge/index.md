@@ -5,7 +5,9 @@ description: >-
   create animations inspired by the Hamilton app.
 publishDate: 2019-07-18
 author: aguinis
-image: images/0wAn4IQgexh-pkr6K.webp
+coverImage:
+  url: images/0wAn4IQgexh-pkr6K.webp
+  display: false
 category: news
 layout: blog
 ---

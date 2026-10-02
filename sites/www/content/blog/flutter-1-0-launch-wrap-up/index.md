@@ -5,7 +5,9 @@ description: >-
   launch.
 publishDate: 2018-12-28
 author: csells
-image: images/14_hWh5hMP6F3W6DZ-6OK2Q.webp
+coverImage:
+  url: images/14_hWh5hMP6F3W6DZ-6OK2Q.webp
+  display: false
 category: release
 layout: blog
 ---

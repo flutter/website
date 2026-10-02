@@ -5,7 +5,9 @@ description: >-
   desktop, and web
 publishDate: 2022-05-11
 author: timsneath
-image: images/0ZQ9Xa7CINFVMA95w.webp
+coverImage:
+  url: images/0ZQ9Xa7CINFVMA95w.webp
+  display: false
 category: release
 layout: blog
 ---

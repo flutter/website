@@ -5,7 +5,9 @@ description: >-
   and a major refresh of the Flutter Casual Games Toolkit.
 publishDate: 2023-11-15
 author: mit-mit
-image: images/0iomk4DoJwIXI44jX.webp
+coverImage:
+  url: images/0iomk4DoJwIXI44jX.webp
+  display: false
 category: news
 layout: blog
 ---

@@ -5,7 +5,9 @@ description: >-
   so thank you for choosing AnimatedBuilder and AnimatedWidget.
 publishDate: 2020-01-19
 author: efortuna
-image: images/1BdRzZMnfFtwe0Wn1dxWp4g.gif
+coverImage:
+  url: images/1BdRzZMnfFtwe0Wn1dxWp4g.gif
+  display: false
 category: deep-dive
 layout: blog
 ---

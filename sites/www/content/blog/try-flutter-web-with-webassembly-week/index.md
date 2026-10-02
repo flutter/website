@@ -4,12 +4,13 @@ description: >-
   Unlock up to 2x to 5x faster web performance by opting into Wasm compilation today
 publishDate: 2026-08-17
 author: kevmoo
-image: images/header.webp
+coverImage:
+  alt: ""
+  caption: "Welcome to Try Flutter Web with WebAssembly Week"
+  url: images/header.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/header.webp" alt="Dash celebrating Try Flutter Web with WebAssembly Week" caption="Welcome to Try Flutter Web with WebAssembly Week" />
 
 Flutter lets you build expressive, multi-platform apps from a
 single codebase. Whether you're building a dashboard, a tool for your team, or

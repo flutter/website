@@ -4,12 +4,13 @@ description: >-
   If you start giving away coffee, people will show up.
 publishDate: 2026-06-22
 author: craiglabenz
-image: images/1o8sb5en4Yhr9J0R1cMMO_g.jpeg
+coverImage:
+  alt: ""
+  caption: "Dash sits on a coffee shop’s checkout counter drinking a latte with the Flutter logo printed on top"
+  url: images/1o8sb5en4Yhr9J0R1cMMO_g.jpeg
 category: case-study
 layout: blog
 ---
-
-<DashImage figure src="images/1o8sb5en4Yhr9J0R1cMMO_g.jpeg" alt="Dash sits on a coffee shop’s checkout counter drinking a latte with the Flutter logo printed on top" caption="Dash sits on a coffee shop’s checkout counter drinking a latte with the Flutter logo printed on top" />
 
 If you start giving away coffee, people will show up. The Flutter team had been trying for a while to find a way to put this principle to work with a demo that started with a Flutter app and ended with a hot, tasty beverage. The problem was how to make it more interesting, more personal than just taking orders and delivering. Coffee’s cool, but it’s not *The One Thing You Definitely Remember from Google I/O* cool.
 

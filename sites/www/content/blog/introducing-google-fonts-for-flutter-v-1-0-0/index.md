@@ -5,7 +5,9 @@ description: >-
   add and configure fonts in Flutter apps.
 publishDate: 2020-04-23
 author: clocksmith
-image: images/1ndZ8HED7jp2f0X4IFSwtdA.webp
+coverImage:
+  url: images/1ndZ8HED7jp2f0X4IFSwtdA.webp
+  display: false
 category: news
 layout: blog
 ---

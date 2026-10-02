@@ -5,7 +5,9 @@ description: >-
   This week, Flutter made its debut at the Game Developers Conference (GDC)…
 publishDate: 2024-03-20
 author: zoeyfan
-image: images/0zVBJt_90TX8KEYoD.webp
+coverImage:
+  url: images/0zVBJt_90TX8KEYoD.webp
+  display: false
 category: news
 layout: blog
 ---

@@ -5,7 +5,9 @@ description: >-
   improve perceived performance in your Flutter apps.
 publishDate: 2020-05-26
 author: perclasson
-image: images/1Pp2MNotBJdSHDcW3Fhz19A.gif
+coverImage:
+  url: images/1Pp2MNotBJdSHDcW3Fhz19A.gif
+  display: false
 category: deep-dive
 layout: blog
 ---

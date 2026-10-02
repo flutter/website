@@ -6,7 +6,9 @@ description: >-
   user satisfaction and understand user needs.
 publishDate: 2018-08-30
 author: jayoung-lee
-image: images/1gM8BhAAqil2B79RCarJ5-A.jpeg
+coverImage:
+  url: images/1gM8BhAAqil2B79RCarJ5-A.jpeg
+  display: false
 category: news
 layout: blog
 ---

@@ -5,7 +5,9 @@ description: >-
   including federated plugins and platform implementations.
 publishDate: 2020-04-30
 author: csells
-image: images/1yM2BlF_ckdUzoDnSdAjPoA.webp
+coverImage:
+  url: images/1yM2BlF_ckdUzoDnSdAjPoA.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

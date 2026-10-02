@@ -5,7 +5,9 @@ description: >-
   Flutter apps on all Linux distros
 publishDate: 2020-07-08
 author: csells
-image: images/0uMT4fCQFO8VQwB0Q.webp
+coverImage:
+  url: images/0uMT4fCQFO8VQwB0Q.webp
+  display: false
 category: news
 layout: blog
 ---

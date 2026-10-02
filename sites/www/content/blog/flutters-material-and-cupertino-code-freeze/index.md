@@ -6,12 +6,13 @@ description: >-
   and now our first major milestone has arrived!
 publishDate: 2026-04-07
 author: justinmc
-image: images/1JN1_t6kPRkgGFVJyetZE0w.webp
+coverImage:
+  alt: ""
+  caption: "Material and Cupertino libraries are frozen and will be moved from the Flutter framework to new packages"
+  url: images/1JN1_t6kPRkgGFVJyetZE0w.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1JN1_t6kPRkgGFVJyetZE0w.webp" alt="Material and Cupertino libraries are frozen and will be moved from the Flutter framework to new packages" caption="Material and Cupertino libraries are frozen and will be moved from the Flutter framework to new packages" />
 
 ## Flutter’s Material and Cupertino code freeze
 

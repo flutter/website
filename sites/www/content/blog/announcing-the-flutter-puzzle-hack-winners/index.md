@@ -4,12 +4,12 @@ description: >-
   Drumroll please…!!!
 publishDate: 2022-04-21
 author: kkboateng
-image: images/1RpaR1pTpRa0PUdNdfv4njA.webp
+coverImage:
+  alt: ""
+  url: images/1RpaR1pTpRa0PUdNdfv4njA.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1RpaR1pTpRa0PUdNdfv4njA.webp" />
 
 The [Flutter Puzzle Hack](https://flutter.dev/events/puzzle-hack) asked participants to push their creativity to its limits by reimagining a classic slide puzzle. It’s safe to say the submissions blew the judges away!
 

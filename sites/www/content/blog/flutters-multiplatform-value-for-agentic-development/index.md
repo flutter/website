@@ -6,7 +6,9 @@ description: >-
   just a single, shared codebase.
 publishDate: 2026-05-18
 author: mit-mit
-image: images/1aotSzcGPZg3gYqhwDy4LWQ.webp
+coverImage:
+  url: images/1aotSzcGPZg3gYqhwDy4LWQ.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

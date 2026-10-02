@@ -5,12 +5,14 @@ description: >-
   interactive, draggable, and scalable Flutter interfaces.
 publishDate: 2019-06-13
 author: justinmc
-image: images/16hQYJrDKEE1r961qkxrMwQ.jpeg
+coverImage:
+  alt: >-
+    A phone running the 2D Transformations demo, with a grid of hexagonal
+    tiles.
+  url: images/16hQYJrDKEE1r961qkxrMwQ.jpeg
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/16hQYJrDKEE1r961qkxrMwQ.jpeg" />
 
 When it first clicked for me that Flutter gives me full control of everything on the screen, right down to the last pixel, I immediately wanted to go beyond the fixed and predictable world of most app UIs. The fully custom widgets that I could draw using [CustomPaint](https://api.flutter.dev/flutter/widgets/CustomPaint-class.html) begged to be broken out of the typical ScrollView or Container. I wanted to move around, zoom in on things, and navigate the world that Flutter makes it possible to create. The [Transform](https://api.flutter.dev/flutter/widgets/Transform-class.html) widget was my vehicle for navigating this world, and [GestureDetector](https://api.flutter.dev/flutter/widgets/GestureDetector-class.html) provided the controls.
 

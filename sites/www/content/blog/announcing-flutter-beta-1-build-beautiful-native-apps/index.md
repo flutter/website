@@ -5,7 +5,9 @@ description: >-
   we are excited to announce the first beta release of Flutter.
 publishDate: 2018-02-27
 author: sethladd
-image: images/1qo6Fo51uAmD3B3d6VfcbAQ.webp
+coverImage:
+  url: images/1qo6Fo51uAmD3B3d6VfcbAQ.webp
+  display: false
 category: release
 layout: blog
 ---

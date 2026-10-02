@@ -4,7 +4,9 @@ description: >-
   With a focus on code samples, app performance, and writing packages
 publishDate: 2020-07-22
 author: jayoung-lee
-image: images/1BJJb_evaKM8qgJV5VCn95Q.webp
+coverImage:
+  url: images/1BJJb_evaKM8qgJV5VCn95Q.webp
+  display: false
 category: news
 layout: blog
 ---

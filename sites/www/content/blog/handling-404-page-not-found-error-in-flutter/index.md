@@ -5,12 +5,14 @@ description: >-
   in your Flutter web application.
 publishDate: 2020-06-10
 author: josealba
-image: images/1eU-430nepv8cz3OYLIycng.webp
+coverImage:
+  alt: >-
+    Flutter's 404 page pairs a missing-page message with links to the
+    homepage, documentation, and other resources.
+  url: images/1eU-430nepv8cz3OYLIycng.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1eU-430nepv8cz3OYLIycng.webp" />
 
 Flutter has released web support that allows you to create dynamic websites. Flutter supports handling any error that might come from web usage such as 404 errors. But, how do you make a custom 404 page for your Flutter application?
 

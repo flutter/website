@@ -5,7 +5,9 @@ description: >-
   reactive view frameworks like Flutter
 publishDate: 2018-01-19
 author: amir_h
-image: images/10gdFpYTSo_TTCqd-XVcvYw.webp
+coverImage:
+  url: images/10gdFpYTSo_TTCqd-XVcvYw.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

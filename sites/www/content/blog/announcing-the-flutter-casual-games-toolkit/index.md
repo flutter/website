@@ -4,7 +4,9 @@ description: >-
   A starter kit of resources to help you get from concept to launch
 publishDate: 2022-05-12
 author: zoeyfan
-image: images/1rIXhQTkBae35i5YkSN8soQ.webp
+coverImage:
+  url: images/1rIXhQTkBae35i5YkSN8soQ.webp
+  display: false
 category: news
 layout: blog
 ---

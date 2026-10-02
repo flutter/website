@@ -5,7 +5,9 @@ description: >-
   the context of a cross-platform mobile app
 publishDate: 2017-03-31
 author: mravn
-image: images/1OSc2sFHg8KH4ZQR2ymytKg.webp
+coverImage:
+  url: images/1OSc2sFHg8KH4ZQR2ymytKg.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

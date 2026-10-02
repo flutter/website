@@ -4,7 +4,9 @@ description: >-
   Ongoing progress towards an ambient computing vision
 publishDate: 2020-06-17
 author: timsneath
-image: images/0OLMhLy7-b-4BisTc.webp
+coverImage:
+  url: images/0OLMhLy7-b-4BisTc.webp
+  display: false
 category: news
 layout: blog
 ---

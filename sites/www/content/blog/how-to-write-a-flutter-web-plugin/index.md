@@ -5,7 +5,9 @@ description: >-
   connecting Dart APIs to browser implementations.
 publishDate: 2019-11-20
 author: harryterkelsen
-image: images/1UTowUOvpkFW35rcuJ3Lf1w.webp
+coverImage:
+  url: images/1UTowUOvpkFW35rcuJ3Lf1w.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

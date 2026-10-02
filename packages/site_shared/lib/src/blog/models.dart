@@ -31,6 +31,48 @@ extension type Post(Map<String, Object?> data) {
       );
     }
 
+    if (data['coverImage'] case final coverData?) {
+      if (coverData is Map && coverData.isEmpty) {
+        // Treat an empty map as absent.
+      } else if (coverData is! Map<String, Object?> ||
+          coverData['url'] is! String ||
+          (coverData['url'] as String).isEmpty) {
+        throw ArgumentError(
+          'Invalid "coverImage" metadata$sourceDescription. '
+          'Must include a non-empty "url" string.',
+        );
+      } else {
+        if (coverData['display'] != null && coverData['display'] is! bool) {
+          throw ArgumentError(
+            'Invalid "display" in "coverImage" metadata$sourceDescription. '
+            'Must be a boolean if provided.',
+          );
+        }
+        final display = coverData['display'] != false;
+        if (display && coverData['alt'] is! String) {
+          throw ArgumentError(
+            'Invalid "coverImage" metadata$sourceDescription. '
+            'Must include an "alt" string when displayed '
+            '(empty string for decorative).',
+          );
+        }
+        if (!display &&
+            coverData['alt'] != null &&
+            coverData['alt'] is! String) {
+          throw ArgumentError(
+            'Invalid "alt" in "coverImage" metadata$sourceDescription. '
+            'Must be a string if provided.',
+          );
+        }
+        if (coverData['caption'] != null && coverData['caption'] is! String) {
+          throw ArgumentError(
+            'Invalid "caption" in "coverImage" metadata$sourceDescription. '
+            'Must be a string if provided.',
+          );
+        }
+      }
+    }
+
     return post;
   }
 
@@ -47,7 +89,15 @@ extension type Post(Map<String, Object?> data) {
 
   String get title => data['title'] as String;
   String get description => data['description'] as String;
+
+  /// The card image URL, derived from [coverImage] and
+  /// resolved by the page's data loaders.
   String? get image => data['image'] as String?;
+  CoverImage? get coverImage => switch (data['coverImage']) {
+    final Map<String, Object?> coverImageData when coverImageData.isNotEmpty =>
+      CoverImage(coverImageData),
+    _ => null,
+  };
   String get publishDate => data['publishDate'] as String;
 
   DateTime get dateObject => DateTime.parse(publishDate);
@@ -63,6 +113,13 @@ extension type Post(Map<String, Object?> data) {
 
   String get readingTime => data['readingTime'] as String? ?? '5 min read';
   String get category => data['category'] as String;
+}
+
+extension type CoverImage(Map<String, Object?> data) {
+  String get url => data['url'] as String;
+  String? get alt => data['alt'] as String?;
+  String? get caption => data['caption'] as String?;
+  bool get display => data['display'] != false;
 }
 
 extension type Author(Map<String, Object?> data) {

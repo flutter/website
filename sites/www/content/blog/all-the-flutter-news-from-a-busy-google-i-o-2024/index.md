@@ -5,7 +5,9 @@ description: >-
   success stories announced at Google I/O 2024
 publishDate: 2024-05-30
 author: mit-mit
-image: images/1--DvqdXSA38rPuqMK5c0tQ.webp
+coverImage:
+  url: images/1--DvqdXSA38rPuqMK5c0tQ.webp
+  display: false
 category: news
 layout: blog
 ---

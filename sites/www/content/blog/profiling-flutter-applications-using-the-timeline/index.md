@@ -5,7 +5,9 @@ description: >-
   specific performance issues in your Flutter apps
 publishDate: 2019-03-01
 author: chinmaygarde
-image: images/1MBoVBDD8a68IiUpcaD3CjQ.webp
+coverImage:
+  url: images/1MBoVBDD8a68IiUpcaD3CjQ.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

@@ -5,7 +5,9 @@ description: >-
   Flutter web usage, slivers, and platform-specific development challenges.
 publishDate: 2020-10-20
 author: jayoung-lee
-image: images/0_CopRAy_n9COQGqR.webp
+coverImage:
+  url: images/0_CopRAy_n9COQGqR.webp
+  display: false
 category: news
 layout: blog
 ---

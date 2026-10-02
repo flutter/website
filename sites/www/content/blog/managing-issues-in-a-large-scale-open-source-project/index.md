@@ -4,7 +4,9 @@ description: >-
   How the Flutter team addresses its issue backlog
 publishDate: 2020-07-17
 author: kf6gpe
-image: images/0E-lTv57-czvPhZre.webp
+coverImage:
+  url: images/0E-lTv57-czvPhZre.webp
+  display: false
 category: case-study
 layout: blog
 ---

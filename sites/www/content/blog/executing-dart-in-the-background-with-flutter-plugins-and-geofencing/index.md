@@ -4,12 +4,15 @@ description: >-
   Learn how Flutter plugins can run Dart code in the background on Android.
 publishDate: 2018-09-20
 author: bkonyi
-image: images/0ae_YppUn96m93qkT.webp
+coverImage:
+  alt: >-
+    A Raspberry Pi connects through a relay to a wall-mounted garage door
+    control.
+  caption: "No garage door remote? Not a problem with Flutter and a Raspberry Pi!"
+  url: images/0ae_YppUn96m93qkT.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/0ae_YppUn96m93qkT.webp" alt="No garage door remote? Not a problem with Flutter and a Raspberry Pi!" caption="No garage door remote? Not a problem with Flutter and a Raspberry Pi!" />
 
 ***04/11/2022***: *This article has been updated to replace broken links due to docs and plugins changing names or locations.*
 

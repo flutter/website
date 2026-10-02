@@ -5,7 +5,9 @@ description: >-
   build and maintain applications across multiple platforms.
 publishDate: 2021-06-29
 author: sfshaza
-image: images/0s0fEzRKPUlPITzxE.webp
+coverImage:
+  url: images/0s0fEzRKPUlPITzxE.webp
+  display: false
 category: case-study
 layout: blog
 ---

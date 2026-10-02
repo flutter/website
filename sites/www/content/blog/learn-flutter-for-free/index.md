@@ -4,7 +4,9 @@ description: >-
   Ten hours of video and hands-on tutorials to build beautiful apps
 publishDate: 2020-04-08
 author: aguinis
-image: images/0li3Xi9x6pYTCZYE2.webp
+coverImage:
+  url: images/0li3Xi9x6pYTCZYE2.webp
+  display: false
 category: news
 layout: blog
 ---

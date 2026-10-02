@@ -4,7 +4,9 @@ description: >-
   Ready for active development of production-quality web apps
 publishDate: 2019-07-25
 author: kevmoo
-image: images/1HcggEjhP_Li6Tt7KIzB10g.webp
+coverImage:
+  url: images/1HcggEjhP_Li6Tt7KIzB10g.webp
+  display: false
 category: news
 layout: blog
 ---

@@ -5,7 +5,9 @@ description: >-
   5 KB or less for a chance to win prizes.
 publishDate: 2019-02-21
 author: aguinis
-image: images/1AyxOZQPLHstjafeVvwHbUg.webp
+coverImage:
+  url: images/1AyxOZQPLHstjafeVvwHbUg.webp
+  display: false
 category: news
 layout: blog
 ---

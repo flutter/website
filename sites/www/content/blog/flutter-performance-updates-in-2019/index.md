@@ -5,7 +5,9 @@ description: >-
   including rendering, memory, and app size optimizations.
 publishDate: 2020-07-31
 author: sfshaza
-image: images/1bWXPMmCXDmBWN7rZbxZcyg.webp
+coverImage:
+  url: images/1bWXPMmCXDmBWN7rZbxZcyg.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

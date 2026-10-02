@@ -5,7 +5,9 @@ description: >-
   influence developers' decisions to adopt Flutter.
 publishDate: 2021-05-13
 author: jayoung-lee
-image: images/0_m-0usdhsHPmeZ8U.webp
+coverImage:
+  url: images/0_m-0usdhsHPmeZ8U.webp
+  display: false
 category: news
 layout: blog
 ---

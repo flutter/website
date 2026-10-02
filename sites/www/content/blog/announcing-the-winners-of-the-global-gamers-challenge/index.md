@@ -4,12 +4,12 @@ description: >-
   Our 10 top projects, and how to stay involved with sustainability games
 publishDate: 2024-05-14
 author: kkboateng
-image: images/0S_bBN0WiR_Q5F08J.webp
+coverImage:
+  alt: ""
+  url: images/0S_bBN0WiR_Q5F08J.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/0S_bBN0WiR_Q5F08J.webp" />
 
 We asked the Flutter and Global Citizen communities to come together to build epic Flutter games that focused on helping the planet. Hundreds of innovative game projects were submitted by thousands of passionate developers spanning over 50 countries.
 

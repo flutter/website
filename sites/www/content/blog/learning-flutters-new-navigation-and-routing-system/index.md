@@ -5,7 +5,9 @@ description: >-
   declarative navigation, deep links, and web URLs.
 publishDate: 2020-09-30
 author: johnpryan
-image: images/1PYHrYurwAGyQC8vsnAaWiA.webp
+coverImage:
+  url: images/1PYHrYurwAGyQC8vsnAaWiA.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

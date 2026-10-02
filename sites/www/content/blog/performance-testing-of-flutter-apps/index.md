@@ -5,7 +5,9 @@ description: >-
   but does that mean you don't need to think about performance at all? No.
 publishDate: 2019-05-09
 author: filiph
-image: images/1MxtHyEfdBlANwu7ZRyX2mw.webp
+coverImage:
+  url: images/1MxtHyEfdBlANwu7ZRyX2mw.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

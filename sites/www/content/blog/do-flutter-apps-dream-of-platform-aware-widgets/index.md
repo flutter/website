@@ -4,7 +4,9 @@ description: >-
   Agnostic layout with platform specific widgets
 publishDate: 2018-03-01
 author: swavkulinski
-image: images/1xgjvZHIs2PUHXRrn8COFRw.webp
+coverImage:
+  url: images/1xgjvZHIs2PUHXRrn8COFRw.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

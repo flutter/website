@@ -5,7 +5,9 @@ description: >-
   having to open your mobile device's browser?
 publishDate: 2019-01-31
 author: efortuna
-image: images/1aMgCX1bmq6hRNgmsDDVOXQ.gif
+coverImage:
+  url: images/1aMgCX1bmq6hRNgmsDDVOXQ.gif
+  display: false
 category: deep-dive
 layout: blog
 ---

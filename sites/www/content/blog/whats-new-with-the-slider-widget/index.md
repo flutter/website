@@ -5,12 +5,13 @@ description: >-
   customize its appearance and behavior with Material components.
 publishDate: 2020-06-18
 author: josealba
-image: images/10vbyZT-NITTvqljO8HtU4w.webp
+coverImage:
+  alt: >-
+    A phone mockup showing a slider beside the text “Selecting a range?”
+  url: images/10vbyZT-NITTvqljO8HtU4w.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/10vbyZT-NITTvqljO8HtU4w.webp" />
 
 Flutter lets you create beautiful, natively compiled applications. The reason Flutter can do this is because Flutter loves Material. [Material](https://material.io) is a design system that helps build high-quality, digital experiences. As UI design continues to evolve, Material continues to update its components, motion, and design system.
 

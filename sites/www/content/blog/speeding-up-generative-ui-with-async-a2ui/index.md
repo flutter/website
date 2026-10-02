@@ -5,12 +5,12 @@ description: >-
   latency and build instant, responsive generative UI in Flutter.
 publishDate: 2026-08-13
 author: redbrogdon
-image: images/hero_image.webp
+coverImage:
+  alt: ""
+  url: images/hero_image.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/hero_image.webp" alt="Speeding up generative UI with async A2UI" />
 
 Generative UI (GenUI) is changing how I build user interfaces.
 Instead of presenting every user with a static set of screens,

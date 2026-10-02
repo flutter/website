@@ -5,7 +5,9 @@ description: >-
   what they built with Flutter in 5 KB or less.
 publishDate: 2019-05-07
 author: aguinis
-image: images/1q-DyfLgHgeJRsrEsm9wOVw.jpeg
+coverImage:
+  url: images/1q-DyfLgHgeJRsrEsm9wOVw.jpeg
+  display: false
 category: news
 layout: blog
 ---

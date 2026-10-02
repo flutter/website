@@ -6,7 +6,9 @@ description: >-
   our new stable build, Flutter 1.5
 publishDate: 2019-05-07
 author: csells
-image: images/1udBMeDS6NNhlgbXYyHA_iA.webp
+coverImage:
+  url: images/1udBMeDS6NNhlgbXYyHA_iA.webp
+  display: false
 category: release
 layout: blog
 ---

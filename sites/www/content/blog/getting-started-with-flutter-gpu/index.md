@@ -4,7 +4,9 @@ description: >-
   Build custom renderers and render 3D scenes in Flutter.
 publishDate: 2024-08-06
 author: bdero
-image: images/1jfeUgpEP9AgAz94yVxVW1g.webp
+coverImage:
+  url: images/1jfeUgpEP9AgAz94yVxVW1g.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

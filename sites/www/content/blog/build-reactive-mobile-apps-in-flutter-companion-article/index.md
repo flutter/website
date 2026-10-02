@@ -5,7 +5,9 @@ description: >-
   reactive mobile apps and managing state in Flutter.
 publishDate: 2018-06-01
 author: filiph
-image: images/1DnixY5zJXnLe_x_eqSKkUA.webp
+coverImage:
+  url: images/1DnixY5zJXnLe_x_eqSKkUA.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

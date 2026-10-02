@@ -5,7 +5,9 @@ description: >-
   The initial load time of a Flutter web application can be improved by…
 publishDate: 2020-05-19
 author: perclasson
-image: images/0Z8CmvWbWVXUb9Wy4.webp
+coverImage:
+  url: images/0Z8CmvWbWVXUb9Wy4.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

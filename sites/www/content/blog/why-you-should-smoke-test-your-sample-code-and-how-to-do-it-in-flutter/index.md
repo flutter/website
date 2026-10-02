@@ -5,7 +5,9 @@ description: >-
   with Travis CI to catch breakages on every change and across Flutter releases.
 publishDate: 2018-06-06
 author: filiph
-image: images/1khKciHLLdyG1gIY3qmwbLw.webp
+coverImage:
+  url: images/1khKciHLLdyG1gIY3qmwbLw.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

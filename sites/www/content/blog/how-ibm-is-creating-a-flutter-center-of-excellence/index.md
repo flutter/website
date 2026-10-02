@@ -4,7 +4,9 @@ description: >-
   Learn why and how IBM makes their clients successful with Flutter
 publishDate: 2023-09-13
 author: jjmutter
-image: images/1YqawQ_2If_xPlvIbC0mj3g.webp
+coverImage:
+  url: images/1YqawQ_2If_xPlvIbC0mj3g.webp
+  display: false
 category: case-study
 layout: blog
 ---

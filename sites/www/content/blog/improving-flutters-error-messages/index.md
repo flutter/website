@@ -5,7 +5,9 @@ description: >-
   improves the usability of error messages in Flutter.
 publishDate: 2019-09-09
 author: taodong
-image: images/1l8l2xWisc5Mtc6xzFaucmg.webp
+coverImage:
+  url: images/1l8l2xWisc5Mtc6xzFaucmg.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

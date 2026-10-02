@@ -5,7 +5,9 @@ description: >-
   make enum-based code easier to read and maintain.
 publishDate: 2020-07-17
 author: josealba
-image: images/1j9632GFfT3IT7sfeiHUZtw.webp
+coverImage:
+  url: images/1j9632GFfT3IT7sfeiHUZtw.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

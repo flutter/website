@@ -5,7 +5,9 @@ description: >-
   learn what it takes to support a new target.
 publishDate: 2018-11-30
 author: chinmaygarde
-image: images/1K1lyX_AOOILKyv3stAtlQg.jpeg
+coverImage:
+  url: images/1K1lyX_AOOILKyv3stAtlQg.jpeg
+  display: false
 category: deep-dive
 layout: blog
 ---

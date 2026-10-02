@@ -10,7 +10,6 @@ import 'package:jaspr_content/jaspr_content.dart';
 import '../../blog.dart';
 import 'blog_card.dart';
 import 'blog_index.dart';
-import 'client/blog_categories.dart';
 
 class BlogNextPosts extends StatelessComponent {
   const BlogNextPosts({

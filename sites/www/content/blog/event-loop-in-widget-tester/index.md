@@ -5,7 +5,9 @@ description: >-
   Take a closer look at how they manage the event loop.
 publishDate: 2018-11-14
 author: mehmetf
-image: images/1ajiMVoQuEXYZ4IJzr-yOQQ.webp
+coverImage:
+  url: images/1ajiMVoQuEXYZ4IJzr-yOQQ.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

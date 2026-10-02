@@ -5,7 +5,9 @@ description: >-
   but their use is less common.
 publishDate: 2019-03-29
 author: efortuna
-image: images/1sHDIVXBu9RpJYN9Zdn8iBw.gif
+coverImage:
+  url: images/1sHDIVXBu9RpJYN9Zdn8iBw.gif
+  display: false
 category: deep-dive
 layout: blog
 ---

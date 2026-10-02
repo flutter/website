@@ -4,7 +4,9 @@ description: >-
   Run performance tests for Flutter web apps in Chrome
 publishDate: 2020-10-02
 author: tianguang
-image: images/0LitJY47Vl0J17C5V.webp
+coverImage:
+  url: images/0LitJY47Vl0J17C5V.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

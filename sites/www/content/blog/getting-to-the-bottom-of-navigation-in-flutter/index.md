@@ -6,7 +6,9 @@ description: >-
   Here's how to do it in Flutter.
 publishDate: 2019-06-27
 author: hansmuller
-image: images/1pzfLG6bpSs8KGe48AXZR_g.webp
+coverImage:
+  url: images/1pzfLG6bpSs8KGe48AXZR_g.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

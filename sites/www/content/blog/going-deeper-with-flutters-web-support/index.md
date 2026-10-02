@@ -4,7 +4,9 @@ description: >-
   Harnessing the full power of the web platform for app-centric experiences
 publishDate: 2020-07-29
 author: mariam_hasnany
-image: images/1dbcXXNRiMmMXxA1YsZYwcQ.webp
+coverImage:
+  url: images/1dbcXXNRiMmMXxA1YsZYwcQ.webp
+  display: false
 category: deep-dive
 layout: blog
 ---

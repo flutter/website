@@ -5,7 +5,9 @@ description: >-
   Flutter-specific docs, snippets and videos
 publishDate: 2020-08-19
 author: csells
-image: images/0v4wFYjvXB2iCem55.webp
+coverImage:
+  url: images/0v4wFYjvXB2iCem55.webp
+  display: false
 category: news
 layout: blog
 ---

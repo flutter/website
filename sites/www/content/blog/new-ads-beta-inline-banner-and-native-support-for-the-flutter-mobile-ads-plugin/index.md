@@ -4,7 +4,9 @@ description: >-
   Beta program opens for inline banner and native ads support
 publishDate: 2020-11-11
 author: haddadniaj
-image: images/10kWrLLh_g2Ywwgcs_iAL-w.webp
+coverImage:
+  url: images/10kWrLLh_g2Ywwgcs_iAL-w.webp
+  display: false
 category: news
 layout: blog
 ---

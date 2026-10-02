@@ -8,7 +8,9 @@ publishDate: 2019-06-07
 author:
   - filiph
   - efortuna
-image: images/1pI9tDcnxm87Vq1hX1Yzwpg.jpeg
+coverImage:
+  url: images/1pI9tDcnxm87Vq1hX1Yzwpg.jpeg
+  display: false
 category: case-study
 layout: blog
 ---

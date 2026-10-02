@@ -4,7 +4,9 @@ description: >-
   The business case for Flutter
 publishDate: 2018-11-01
 author: wmleler
-image: images/1OOmIZ2plXASJUl49v6TlDA.gif
+coverImage:
+  url: images/1OOmIZ2plXASJUl49v6TlDA.gif
+  display: false
 category: deep-dive
 layout: blog
 ---

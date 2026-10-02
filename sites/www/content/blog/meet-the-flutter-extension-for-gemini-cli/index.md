@@ -5,12 +5,12 @@ description: >-
   Gemini CLI
 publishDate: 2025-10-08
 author: johnpryan
-image: images/1CXyt0NsoasPW5__Ev4AGNg.webp
+coverImage:
+  alt: ""
+  url: images/1CXyt0NsoasPW5__Ev4AGNg.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1CXyt0NsoasPW5__Ev4AGNg.webp" />
 
 ## Meet the Flutter Extension for Gemini CLI
 

@@ -5,7 +5,9 @@ description: >-
   app template, and more!
 publishDate: 2021-09-08
 author: csells
-image: images/0esYsdKzKL64130ln.webp
+coverImage:
+  url: images/0esYsdKzKL64130ln.webp
+  display: false
 category: release
 layout: blog
 ---

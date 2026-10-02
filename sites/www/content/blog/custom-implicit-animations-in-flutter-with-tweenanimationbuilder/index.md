@@ -6,7 +6,9 @@ description: >-
   How do you choose the right animation widget?
 publishDate: 2019-12-15
 author: efortuna
-image: images/1ZiMTAgg11y3BHH24bTt6Mg.gif
+coverImage:
+  url: images/1ZiMTAgg11y3BHH24bTt6Mg.gif
+  display: false
 category: deep-dive
 layout: blog
 ---

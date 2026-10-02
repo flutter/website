@@ -5,7 +5,9 @@ description: >-
   most important and difficult tasks faced by Flutter developers.
 publishDate: 2020-05-15
 author: jayoung-lee
-image: images/0OfKgvG4OS6Jt7Wum.webp
+coverImage:
+  url: images/0OfKgvG4OS6Jt7Wum.webp
+  display: false
 category: news
 layout: blog
 ---

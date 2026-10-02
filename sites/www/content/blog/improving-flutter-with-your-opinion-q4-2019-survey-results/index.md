@@ -7,7 +7,9 @@ publishDate: 2020-02-11
 author:
   - jayoung-lee
   - taodong
-image: images/0W4ladsI7F9pgXph1.webp
+coverImage:
+  url: images/0W4ladsI7F9pgXph1.webp
+  display: false
 category: news
 layout: blog
 ---

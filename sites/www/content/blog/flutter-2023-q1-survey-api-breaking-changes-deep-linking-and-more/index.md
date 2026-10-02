@@ -5,7 +5,9 @@ description: >-
   and other priorities for Flutter developers.
 publishDate: 2023-06-30
 author: jayoung-lee
-image: images/0BujM3j2SMg1qp3hi.webp
+coverImage:
+  url: images/0BujM3j2SMg1qp3hi.webp
+  display: false
 category: news
 layout: blog
 ---

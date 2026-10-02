@@ -5,7 +5,9 @@ description: >-
   and community highlights from Google Cloud Next.
 publishDate: 2024-04-16
 author: kkboateng
-image: images/0mlHluTwnXfWI-Yzy.webp
+coverImage:
+  url: images/0mlHluTwnXfWI-Yzy.webp
+  display: false
 category: news
 layout: blog
 ---

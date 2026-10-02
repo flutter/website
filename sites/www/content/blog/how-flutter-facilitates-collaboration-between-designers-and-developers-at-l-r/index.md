@@ -5,7 +5,9 @@ description: >-
   designers and developers while building a Global Citizen app.
 publishDate: 2024-02-19
 author: ivan
-image: images/0dv6mhmjDb4HP59LA.webp
+coverImage:
+  url: images/0dv6mhmjDb4HP59LA.webp
+  display: false
 category: case-study
 layout: blog
 ---

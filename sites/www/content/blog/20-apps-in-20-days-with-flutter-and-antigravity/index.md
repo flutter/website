@@ -4,12 +4,13 @@ description: >-
   Why I stopped planning and started building.
 publishDate: 2026-03-05
 author: lamek
-image: images/18qm-mMi6Hod2jBw1_2nNEw.webp
+coverImage:
+  alt: ""
+  caption: "Dash having fun building Flutter apps."
+  url: images/18qm-mMi6Hod2jBw1_2nNEw.webp
 category: case-study
 layout: blog
 ---
-
-<DashImage figure src="images/18qm-mMi6Hod2jBw1_2nNEw.webp" alt="Dash having fun building Flutter apps." caption="Dash having fun building Flutter apps." />
 
 Hi, I’m Kevin Lamenzo! I recently joined the Dart and Flutter teams (🎉), and this January I set out on a quest: build 20 apps in 20 days using Flutter and [Antigravity](https://antigravity.google/). But why? First, the cost of curiosity has officially hit zero. You can go from idea to app in 10 minutes. Second, as a new member of the team I wanted to learn about the framework by building something. Last, and most importantly, I wanted to test the theory that in 2026, we all can be builders now.
 

@@ -5,7 +5,9 @@ description: >-
   build experiences that are flexible, accessible, and expressive
 publishDate: 2020-11-04
 author: andremobilelabonte
-image: images/1kcT41A5GvXp8XrjHjiuc4A.webp
+coverImage:
+  url: images/1kcT41A5GvXp8XrjHjiuc4A.webp
+  display: false
 category: news
 layout: blog
 ---

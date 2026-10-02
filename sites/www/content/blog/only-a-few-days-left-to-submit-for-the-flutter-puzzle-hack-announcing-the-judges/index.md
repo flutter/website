@@ -4,12 +4,12 @@ description: >-
   Get your project in before the submission deadline!
 publishDate: 2022-03-09
 author: kkboateng
-image: images/0LgF82TK9xt1aI14Y.webp
+coverImage:
+  alt: ""
+  url: images/0LgF82TK9xt1aI14Y.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/0LgF82TK9xt1aI14Y.webp" />
 
 There are only a few days left to submit to the [Flutter Puzzle Hack](https://flutterhack.devpost.com/). We’re excited by the puzzles we’ve seen so far, and can’t wait to see even more! Don’t forget that prizes include 4 fully loaded MacBooks, tons of Flutter swag, and cash to over 40 winners, so be sure to get your submission in for a chance at some of these awesome prizes.
 

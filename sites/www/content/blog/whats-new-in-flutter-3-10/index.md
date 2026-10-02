@@ -5,7 +5,9 @@ description: >-
   Impeller in stable, and more
 publishDate: 2023-05-10
 author: itsjustkevin
-image: images/1CPv57Dp1cYXPz-YtZ2jMcA.webp
+coverImage:
+  url: images/1CPv57Dp1cYXPz-YtZ2jMcA.webp
+  display: false
 category: release
 layout: blog
 ---

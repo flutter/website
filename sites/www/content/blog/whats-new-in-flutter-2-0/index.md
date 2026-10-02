@@ -5,7 +5,9 @@ description: >-
   so much more!
 publishDate: 2021-03-03
 author: csells
-image: images/0KQZef4s2-koToHMA.webp
+coverImage:
+  url: images/0KQZef4s2-koToHMA.webp
+  display: false
 category: release
 layout: blog
 ---
