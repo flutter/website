@@ -99,6 +99,17 @@ except where an example deliberately deviates to teach a concept.
   This repository doesn't require them,
   except in examples that specifically demonstrate testing.
 
+## Flutter UI packages
+
+The `material_ui` and `cupertino_ui` packages exist and are preferred
+as part of decoupling Material and Cupertino from the Flutter framework.
+Don't report these packages or their APIs as nonexistent or
+recommend replacing their imports with
+`package:flutter/material.dart` or `package:flutter/cupertino.dart`.
+Those Flutter imports remain valid, so don't suggest migrating them.
+`dartpad` code blocks must keep them,
+since DartPad doesn't support these packages yet.
+
 ## Documentation and Markdown
 
 Don't flag:
