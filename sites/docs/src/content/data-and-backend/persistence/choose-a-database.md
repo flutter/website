@@ -26,8 +26,8 @@ The following table summarizes how each option stores and syncs data.
 
 | Option | Data model | Data location | Realtime updates | Offline access |
 |---|---|---|---|---|
-| [Cloud Firestore][] | NoSQL documents and collections | Cloud, with a local cache | Yes | Built in |
-| [Firebase SQL Connect][] | Relational (PostgreSQL) | Cloud | Yes | Optional client cache |
+| [Cloud Firestore][] | NoSQL documents and collections | Cloud, with a local cache | Yes | Built in (reads and writes) |
+| [Firebase SQL Connect][] | Relational (PostgreSQL) | Cloud | Yes | Optional query cache |
 | [SQLite][sqlite-recipe] | Relational | Device only | No | Always local |
 | [Key-value storage][key-value-recipe] | Key-value pairs | Device only | No | Always local |
 
@@ -38,9 +38,10 @@ The following table summarizes how each option stores and syncs data.
 [Cloud Firestore][] is the recommended default when your app needs
 a scalable cloud database that keeps data in sync
 across users and devices.
-Cloud Firestore stores data as documents organized into collections,
-and the [`cloud_firestore`][] package gives your Flutter app
-direct, secure access from client code.
+Cloud Firestore stores data as documents organized into collections.
+The [`cloud_firestore`][] package gives your Flutter app direct
+access from client code, secured with
+[Cloud Firestore Security Rules][firestore-rules].
 
 Choose Cloud Firestore if your app needs:
 
@@ -49,7 +50,8 @@ Choose Cloud Firestore if your app needs:
   for example, with a `StreamBuilder` widget.
 * **Offline support:** read and write cached data while the device is
   offline, and sync changes when the connection returns.
-  Offline persistence is supported on Android, Apple platforms, and the web.
+  Offline persistence is enabled by default on Android and Apple
+  platforms, and can be enabled on the web.
 * **Flexible, evolving data:** store nested or semi-structured data
   without defining a schema up front.
 * **Automatic scaling:** serve many users without
@@ -70,22 +72,27 @@ to set up your database.
 
 ## Choose Firebase SQL Connect for SQL data
 
-[Firebase SQL Connect][] is the recommended default when your data is
-relational and benefits from a structured schema.
-SQL Connect is backed by a fully managed PostgreSQL database
-on Cloud SQL. You define your schema, queries, and mutations in GraphQL,
-and SQL Connect generates a type-safe Dart SDK for your Flutter app.
+[Firebase SQL Connect][] (formerly Firebase Data Connect) is the
+recommended default when your data is relational and benefits from a
+structured schema. SQL Connect is backed by a fully managed PostgreSQL
+database on Cloud SQL. You define your schema, queries, and mutations
+in GraphQL, deploy them to the server, and use the generated
+type-safe Dart SDK (powered by the [`firebase_data_connect`][]
+package) in your Flutter app.
 
 Choose Firebase SQL Connect if your app needs:
 
 * **Relational data:** model entities with relationships,
   such as users, orders, and products, and query across them.
-* **A strict schema:** enforce data types and constraints
-  in the database instead of in client code.
-* **Type-safe Dart code:** call generated Dart methods for each query
-  and mutation instead of building requests by hand.
-* **Realtime updates:** subscribe to a query to get
-  new results when the underlying data changes.
+* **A strict schema:** enforce data types, relational constraints,
+  and foreign keys in the database.
+* **Type-safe Dart code:** call generated Dart methods for each
+  predefined server query and mutation instead of building requests
+  by hand.
+* **Realtime updates:** subscribe to queries for automatic or
+  configured refresh updates when data changes.
+* **Optional query caching:** cache query responses on the client to
+  reduce network requests and read cached results while offline.
 * **Vector search:** build AI-powered features, such as
   semantic search, on top of your relational data.
 
@@ -101,8 +108,8 @@ If your data doesn't need to leave the device,
 you can store it locally without a cloud backend:
 
 * **SQLite:** store and query large amounts of structured data
-  on the device. To learn how, check out
-  [Persist data with SQLite][sqlite-recipe] and
+  on the device with packages like [`sqflite`][]. To learn how,
+  check out [Persist data with SQLite][sqlite-recipe] and
   [Persistent storage architecture: SQL][sql-architecture].
 * **Key-value storage:** save small amounts of simple data,
   such as user preferences and settings, with the
@@ -110,9 +117,10 @@ you can store it locally without a cloud backend:
   [Store key-value data on disk][key-value-recipe] and
   [Persistent storage architecture: Key-value data][key-value-architecture].
 
-Local-only data isn't backed up or synced across devices.
-If users expect to access their data after reinstalling your app or
-on another device, use a cloud database instead.
+Local-only data isn't synced across devices, and isn't guaranteed
+to persist if a user uninstalls your app or switches devices.
+If users expect reliable access to their data across devices or
+after reinstalling your app, use a cloud database instead.
 
 ## Combine cloud and local storage
 
@@ -135,14 +143,17 @@ To start building with a cloud database, check out the following resources:
 
 [Cloud Firestore]: {{site.firebase}}/docs/firestore
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore
+[`firebase_data_connect`]: {{site.pub-pkg}}/firebase_data_connect
 [firebase-page]: /data-and-backend/firebase
 [firebase-setup]: {{site.firebase}}/docs/flutter/setup
 [Firebase SQL Connect]: {{site.firebase}}/docs/sql-connect
 [firestore-quickstart]: {{site.firebase}}/docs/firestore/quickstart
+[firestore-rules]: {{site.firebase}}/docs/firestore/security/get-started
 [key-value-architecture]: /app-architecture/design-patterns/key-value-data
 [key-value-recipe]: /cookbook/persistence/key-value
 [offline-first]: /app-architecture/design-patterns/offline-first
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
+[`sqflite`]: {{site.pub-pkg}}/sqflite
 [sql-architecture]: /app-architecture/design-patterns/sql
 [sql-connect-flutter]: {{site.firebase}}/docs/sql-connect/flutter-sdk
 [sqlite-recipe]: /cookbook/persistence/sqlite
