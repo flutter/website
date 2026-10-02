@@ -83,9 +83,11 @@
   --site-base-fgColor-lighter: #{color.scale(#212121, $lightness: 20%)};
   --site-base-fgColor-alt: #6a6f71;
   --site-primary-color: #1967d2;
+  --site-primary-color-highlight: #{color.change(#0468d7, $alpha: 0.05)};
   --site-interaction-base-values: 0 0 0;
 
   --site-raised-bgColor: var(--grey-3);
+  --site-header-bgColor: var(--site-base-bgColor);
 
   --site-inset-bgColor: #f9fafb;
   --site-inset-fgColor: var(--site-base-fgColor);
@@ -100,6 +102,9 @@
 
   --site-secondaryContainer-bgColor: #c2e5ff;
   --site-secondaryContainer-fgColor: var(--site-base-fgColor);
+
+  --site-code-highlight-bgColor: rgba(255, 245, 156, 0.8);
+  --site-diagram-wrap-bgColor: #f8f9fa;
 
   --screen-xl-min: 1280px;
 

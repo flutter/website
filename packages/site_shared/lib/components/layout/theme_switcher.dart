@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:async';
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
@@ -13,6 +15,15 @@ import '../common/material_icon.dart';
 @client
 final class ThemeSwitcher extends StatefulComponent {
   const ThemeSwitcher();
+
+  @override
+  State<StatefulComponent> createState() => _ThemeSwitcherState();
+}
+
+/// A [ThemeSwitcher] variant for use inside an existing `@client` component,
+/// such as a client-hydrated header, to avoid nested `@client` anchors.
+final class NestedThemeSwitcher extends StatefulComponent {
+  const NestedThemeSwitcher({super.key});
 
   @override
   State<StatefulComponent> createState() => _ThemeSwitcherState();
@@ -32,46 +43,123 @@ enum _Theme {
   String get id => '$name-mode';
 }
 
-final class _ThemeSwitcherState extends State<ThemeSwitcher> {
+final class _ThemeSwitcherState extends State<StatefulComponent> {
   _Theme _currentTheme = _Theme.light;
+  StreamSubscription<web.Event>? _pageShowSubscription;
+  StreamSubscription<web.StorageEvent>? _storageSubscription;
+  StreamSubscription<web.Event>? _mediaQuerySubscription;
 
   @override
   void initState() {
+    super.initState();
     if (kIsWeb) {
-      final classList = web.document.body!.classList;
-      // If them theme is auto, it and the result will be added as classes.
-      // So it should be checked for first.
-      if (classList.contains(_Theme.auto.id)) {
-        _currentTheme = _Theme.auto;
-      } else if (classList.contains(_Theme.dark.id)) {
-        _currentTheme = _Theme.dark;
-      } else if (classList.contains(_Theme.light.id)) {
-        _currentTheme = _Theme.light;
-      } else {
-        // Default to light mode if no theme is set yet.
-        _currentTheme = _Theme.light;
-        classList.add(_Theme.light.id);
+      _syncThemeFromStorage();
+      _pageShowSubscription =
+          const web.EventStreamProvider<web.Event>(
+                'pageshow',
+              )
+              .forTarget(web.window)
+              .listen(
+                (_) => _syncThemeFromStorage(updateState: true),
+              );
+      _storageSubscription = web.EventStreamProviders.storageEvent
+          .forTarget(web.window)
+          .listen((_) => _syncThemeFromStorage(updateState: true));
+      _mediaQuerySubscription =
+          const web.EventStreamProvider<web.Event>(
+                'change',
+              )
+              .forTarget(web.window.matchMedia('(prefers-color-scheme: dark)'))
+              .listen(
+                (_) {
+                  if (_currentTheme == _Theme.auto) {
+                    _applyThemeToBody(_Theme.auto);
+                  }
+                },
+              );
+    }
+  }
+
+  @override
+  void dispose() {
+    unawaited(_pageShowSubscription?.cancel());
+    unawaited(_storageSubscription?.cancel());
+    unawaited(_mediaQuerySubscription?.cancel());
+    super.dispose();
+  }
+
+  _Theme _themeFromBodyClasses() {
+    final classList =
+        (web.document.body ?? web.document.documentElement)?.classList;
+    if (classList == null) return _Theme.light;
+    if (classList.contains(_Theme.auto.id)) {
+      return _Theme.auto;
+    } else if (classList.contains(_Theme.dark.id)) {
+      return _Theme.dark;
+    } else {
+      return _Theme.light;
+    }
+  }
+
+  void _applyThemeToBody(_Theme theme) {
+    final isAuto = theme == _Theme.auto;
+    final isDark = isAuto
+        ? web.window.matchMedia('(prefers-color-scheme: dark)').matches
+        : theme == _Theme.dark;
+    final resolvedId = isDark ? _Theme.dark.id : _Theme.light.id;
+    final oppositeId = isDark ? _Theme.light.id : _Theme.dark.id;
+
+    for (final element in [
+      web.document.documentElement,
+      web.document.body,
+    ]) {
+      if (element == null) continue;
+      final classList = element.classList;
+      if (classList.contains(resolvedId) &&
+          classList.contains(_Theme.auto.id) == isAuto &&
+          !classList.contains(oppositeId)) {
+        continue;
+      }
+      for (final mode in _Theme.values) {
+        classList.remove(mode.id);
+      }
+      classList.add(resolvedId);
+      if (isAuto) {
+        classList.add(_Theme.auto.id);
       }
     }
+  }
 
-    super.initState();
+  void _syncThemeFromStorage({bool updateState = false}) {
+    String? storedThemeId;
+    try {
+      storedThemeId = web.window.localStorage.getItem('theme');
+    } catch (_) {
+      // localStorage is not available, fall back to body classes.
+    }
+
+    final resolvedTheme = switch (storedThemeId) {
+      'auto-mode' => _Theme.auto,
+      'dark-mode' => _Theme.dark,
+      'light-mode' => _Theme.light,
+      _ => _themeFromBodyClasses(),
+    };
+
+    _applyThemeToBody(resolvedTheme);
+
+    if (updateState && resolvedTheme != _currentTheme) {
+      setState(() {
+        _currentTheme = resolvedTheme;
+      });
+    } else {
+      _currentTheme = resolvedTheme;
+    }
   }
 
   void _setTheme(_Theme newTheme) {
     if (newTheme == _currentTheme) return;
 
-    final classList = web.document.body!.classList;
-    for (final mode in _Theme.values) {
-      classList.remove(mode.id);
-    }
-    classList.add(newTheme.id);
-    if (newTheme == _Theme.auto) {
-      classList.add(
-        web.window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? _Theme.dark.id
-            : _Theme.light.id,
-      );
-    }
+    _applyThemeToBody(newTheme);
 
     try {
       web.window.localStorage.setItem('theme', newTheme.id);
@@ -120,11 +208,12 @@ final class _ThemeButtonEntry extends StatelessComponent {
   final void Function(_Theme) setMode;
 
   @override
-  Component build(BuildContext _) => li([
+  Component build(BuildContext context) => li([
     button(
       events: {
         'click': (_) {
           setMode(mode);
+          context.findAncestorStateOfType<DropdownState>()?.toggle(to: false);
         },
       },
       attributes: {

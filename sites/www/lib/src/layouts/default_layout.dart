@@ -20,6 +20,10 @@ class DefaultLayout extends PageLayout {
 
   List<String> get defaultBodyTags => const [];
 
+  List<Component> get leadingHeadElements => const [];
+
+  List<Component> get leadingBodyElements => const [];
+
   @override
   Component buildLayout(Page page, Component child) {
     final pageData = page.data.page;
@@ -66,6 +70,7 @@ class DefaultLayout extends PageLayout {
         return Document(
           title: documentTitle,
           head: [
+            ...leadingHeadElements,
             link(rel: 'icon', href: context.asset('/images/favicon.png')),
             link(
               rel: 'apple-touch-icon',
@@ -135,7 +140,7 @@ class DefaultLayout extends PageLayout {
               href:
                   'https://fonts.googleapis.com/css2?'
                   'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
-                  '24,400,0..1,0',
+                  '24,400,0..1,0&display=block',
             ),
 
             const script(
@@ -208,6 +213,7 @@ class DefaultLayout extends PageLayout {
               Document.body(
                 attributes: {'class': bodyTags.join(' ')},
               ),
+            ...leadingBodyElements,
             Header(
               pageUrl: page.url,
               contrastLogoSrc: context.asset('/images/flutter-logo-white.svg'),

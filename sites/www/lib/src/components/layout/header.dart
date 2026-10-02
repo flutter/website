@@ -6,6 +6,7 @@ import 'dart:async';
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/layout/theme_switcher.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../data/nav_items.dart';
@@ -224,6 +225,7 @@ class _HeaderState extends State<Header> {
                   ),
               ],
             ),
+            if (isBlog) const NestedThemeSwitcher(),
             const a(
               href: 'https://docs.flutter.dev/get-started/quick',
               id: 'get-started__header',

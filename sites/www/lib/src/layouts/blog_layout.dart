@@ -12,6 +12,7 @@ import 'package:site_shared/components/blog/blog_next_posts.dart';
 import 'package:site_shared/components/blog/post_info.dart';
 import 'package:site_shared/components/common/breadcrumbs.dart';
 import 'package:site_shared/components/common/client/back_to_top_button.dart';
+import 'package:site_shared/server_util.dart';
 import 'package:site_shared/util.dart';
 
 import '../utils/scroll_spy.dart';
@@ -27,6 +28,33 @@ class BlogLayout extends DefaultLayout {
 
   @override
   List<String> get defaultBodyTags => ['interior', 'blog'];
+
+  @override
+  List<Component> get leadingHeadElements => const [
+    Component.element(
+      tag: 'style',
+      children: [
+        .text(
+          'html.dark-mode, '
+          'html.dark-mode body.blog, '
+          'html.dark-mode body.blog main { '
+          'background-color: #121317; color: #dcdcdc; color-scheme: dark; '
+          '} '
+          'html.dark-mode body.blog '
+          'header.site-header:not(.mobile-nav-open), '
+          'html.dark-mode body.blog .site-footer { '
+          'background-color: #1c1e27; '
+          '}',
+        ),
+      ],
+    ),
+    themeInitScript,
+  ];
+
+  @override
+  List<Component> get leadingBodyElements => const [
+    themeSyncBodyScript,
+  ];
 
   @override
   Component buildLayout(Page page, Component child) {
