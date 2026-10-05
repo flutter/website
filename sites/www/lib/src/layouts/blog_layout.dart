@@ -30,30 +30,10 @@ class BlogLayout extends DefaultLayout {
   List<String> get defaultBodyTags => ['interior', 'blog'];
 
   @override
-  List<Component> get leadingHeadElements => const [
-    Component.element(
-      tag: 'style',
-      children: [
-        .text(
-          'html.dark-mode, '
-          'html.dark-mode body.blog, '
-          'html.dark-mode body.blog main { '
-          'background-color: #121317; color: #dcdcdc; color-scheme: dark; '
-          '} '
-          'html.dark-mode body.blog '
-          'header.site-header:not(.mobile-nav-open), '
-          'html.dark-mode body.blog .site-footer { '
-          'background-color: #1c1e27; '
-          '}',
-        ),
-      ],
-    ),
-    themeInitScript,
-  ];
-
-  @override
   List<Component> get leadingBodyElements => const [
-    themeSyncBodyScript,
+    // The theme setting logic should remain before other scripts to
+    // avoid a flash of the initial theme on load.
+    themeInitScript,
   ];
 
   @override

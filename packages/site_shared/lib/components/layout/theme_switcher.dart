@@ -64,7 +64,11 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
               );
       _storageSubscription = web.EventStreamProviders.storageEvent
           .forTarget(web.window)
-          .listen((_) => _syncThemeFromStorage(updateState: true));
+          .listen((event) {
+            if (event.key == null || event.key == 'theme') {
+              _syncThemeFromStorage(updateState: true);
+            }
+          });
       _mediaQuerySubscription =
           const web.EventStreamProvider<web.Event>(
                 'change',
@@ -91,8 +95,7 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
   }
 
   _Theme _themeFromBodyClasses() {
-    final classList =
-        (web.document.body ?? web.document.documentElement)?.classList;
+    final classList = web.document.body?.classList;
     if (classList == null) return _Theme.light;
     if (classList.contains(_Theme.auto.id)) {
       return _Theme.auto;
@@ -104,6 +107,9 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
   }
 
   void _applyThemeToBody(_Theme theme) {
+    final classList = web.document.body?.classList;
+    if (classList == null) return;
+
     final isAuto = theme == _Theme.auto;
     final isDark = isAuto
         ? web.window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -111,24 +117,17 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
     final resolvedId = isDark ? _Theme.dark.id : _Theme.light.id;
     final oppositeId = isDark ? _Theme.light.id : _Theme.dark.id;
 
-    for (final element in [
-      web.document.documentElement,
-      web.document.body,
-    ]) {
-      if (element == null) continue;
-      final classList = element.classList;
-      if (classList.contains(resolvedId) &&
-          classList.contains(_Theme.auto.id) == isAuto &&
-          !classList.contains(oppositeId)) {
-        continue;
-      }
-      for (final mode in _Theme.values) {
-        classList.remove(mode.id);
-      }
-      classList.add(resolvedId);
-      if (isAuto) {
-        classList.add(_Theme.auto.id);
-      }
+    if (classList.contains(resolvedId) &&
+        classList.contains(_Theme.auto.id) == isAuto &&
+        !classList.contains(oppositeId)) {
+      return;
+    }
+    for (final mode in _Theme.values) {
+      classList.remove(mode.id);
+    }
+    classList.add(resolvedId);
+    if (isAuto) {
+      classList.add(_Theme.auto.id);
     }
   }
 

@@ -18,10 +18,11 @@ class DefaultLayout extends PageLayout {
   @override
   Pattern get name => 'default';
 
+  /// CSS classes to include on the document `<body>` element by default.
   List<String> get defaultBodyTags => const [];
 
-  List<Component> get leadingHeadElements => const [];
-
+  /// Additional components to insert at the beginning of the document `<body>`,
+  /// before the site header (for example, early initialization scripts).
   List<Component> get leadingBodyElements => const [];
 
   @override
@@ -70,7 +71,6 @@ class DefaultLayout extends PageLayout {
         return Document(
           title: documentTitle,
           head: [
-            ...leadingHeadElements,
             link(rel: 'icon', href: context.asset('/images/favicon.png')),
             link(
               rel: 'apple-touch-icon',
@@ -218,9 +218,7 @@ class DefaultLayout extends PageLayout {
               pageUrl: page.url,
               contrastLogoSrc: context.asset('/images/flutter-logo-white.svg'),
               defaultLogoSrc: context.asset('/images/flutter-logo.svg'),
-              darkLogoSrc: page.url.startsWith('/blog')
-                  ? context.asset('/images/flutter-logo-dark.svg')
-                  : null,
+              darkLogoSrc: context.asset('/images/flutter-logo-dark.svg'),
               banner: banner,
             ),
             child,

@@ -4,8 +4,8 @@ html {
 }
 
 body {
-  background-color: white;
-  color: var(--grey-6);
+  background-color: var(--site-base-bgColor);
+  color: var(--site-base-fgColor-lighter);
   display: flex;
   flex-direction: column;
   line-height: inherit;

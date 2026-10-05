@@ -163,7 +163,7 @@
       text-decoration: none;
 
       &:hover {
-        color: var(--site-primary-color);
+        color: var(--site-link-fgColor);
       }
     }
   }
@@ -238,7 +238,7 @@
       &:hover {
         transform: translateY(-4px);
         box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
-        border-color: var(--site-primary-color);
+        border-color: var(--site-link-fgColor);
       }
 
       .blog-card-image {
@@ -371,7 +371,7 @@
     display: block;
 
     &:hover .post-info-name {
-      color: var(--site-primary-color);
+      color: var(--site-link-fgColor);
     }
   }
 
@@ -485,7 +485,7 @@
         color: var(--site-base-fgColor);
 
         &:hover {
-          color: var(--site-primary-color);
+          color: var(--site-link-fgColor);
         }
       }
     }

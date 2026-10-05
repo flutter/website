@@ -106,7 +106,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
       (p) => _header.Header(
         contrastLogoSrc: p['contrastLogoSrc'] as String,
         defaultLogoSrc: p['defaultLogoSrc'] as String,
-        darkLogoSrc: p['darkLogoSrc'] as String?,
+        darkLogoSrc: p['darkLogoSrc'] as String,
         banner: _banner_content.BannerContent.fromJson(
           p['banner'] as Map<String, Object?>,
         ),
