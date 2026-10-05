@@ -53,7 +53,7 @@ and configure your preferred editor:
 
 - **Target platforms:** Set up development tools for [Android][], [iOS][],
   [web][], [Windows][], [macOS][], or [Linux][].
-- **IDEs and editors:** Configure [VS Code][], [Android Studio, or IntelliJ][],
+- **IDEs and editors:** Configure [VS Code][], [Android Studio or IntelliJ][],
   or view all environment options in [Custom setup][].
 - **Next steps:** Follow the [Flutter learning pathway][] to build your first
   Flutter app.
