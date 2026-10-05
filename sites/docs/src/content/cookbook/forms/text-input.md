@@ -117,10 +117,10 @@ For more information on input validation, see the
 
 
 [Building a form with validation]: /cookbook/forms/validation/
-[`decoration`]: {{site.api}}/flutter/material/TextField/decoration.html
+[`decoration`]: {{site.material_ui}}/TextField/decoration.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [Handle changes to a text field]: /cookbook/forms/text-field-changes/
-[`InputDecoration`]: {{site.api}}/flutter/material/InputDecoration-class.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
+[`InputDecoration`]: {{site.material_ui}}/InputDecoration-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
+[`TextFormField`]: {{site.material_ui}}/TextFormField-class.html

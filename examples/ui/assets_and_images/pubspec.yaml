@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.9
+  cupertino_icons: ^2.0.0
+  material_ui: ^1.5.0
   vector_graphics: ^1.2.3
 
 dev_dependencies:

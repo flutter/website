@@ -298,7 +298,7 @@ To follow our investigation, see [Dart issue 32936]({{site.repo.dart-sdk}}/issue
 
 ### v0.1.9
 
-* [#14901](https://github.com/flutter/flutter/pull/14901) A [Slider](https://api.flutter.dev/flutter/material/Slider-class.html) visual update changed the colors, opacities, and the value indicator shape and behavior. It also removed the "`thumbOpenAtMin`" flag from the Slider class, which is no longer needed, and can be emulated by the custom thumb shape support.
+* [#14901](https://github.com/flutter/flutter/pull/14901) A [Slider](https://pub.dev/documentation/material_ui/latest/material_ui/Slider-class.html) visual update changed the colors, opacities, and the value indicator shape and behavior. It also removed the "`thumbOpenAtMin`" flag from the Slider class, which is no longer needed, and can be emulated by the custom thumb shape support.
 
 ## Changes in v0.1.5 (since v0.1.4) - beta 1.1
 

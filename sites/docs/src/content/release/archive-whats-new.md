@@ -297,7 +297,7 @@ This website release includes several important updates!
 * DevTools also has updates. Check out the release notes for
   [DevTools 2.35.0][], [DevTools 2.36.0][], and [DevTools 2.37.2][].
 
-[`CarouselView`]: {{site.api}}/flutter/material/CarouselView-class.html
+[`CarouselView`]: {{site.material_ui}}/CarouselView-class.html
 [Cupertino catalog]: /ui/widgets/cupertino
 [DevTools 2.35.0]: /tools/devtools/release-notes/release-notes-2.35.0
 [DevTools 2.36.0]: /tools/devtools/release-notes/release-notes-2.36.0
@@ -773,31 +773,6 @@ and [Introducing Dart 3 alpha][].
   engine, Impeller. Because Impeller isn't yet
   ready for a stable release, you can find more
   information on our [Flutter GitHub wiki][Impeller].
-
-{% comment %}
-
-* Missing docs (xxx):
-  * Frame analysis tab in Performance view - Kenzie
-  * Menu bars (M3) - Greg Spencer
-    No docs yet (other than API docs)
-  * Cascading menus (M3) - Greg Spencer
-    No docs yet (other than API docs)
-  * Custom context menus - Justin
-    No docs yet (he volunteered to do something after 3.7)
-  * CupertinoListSelection, CupertinoListTile (new Cupertino) - Mitchell Goodwin
-  * AnimatedGrid, AnimatedSliverGrid (new widgets) - Kate
-  * Material 3 - what had been worked on? started? who in eng owns this?
-  * Global selection improvements - ChunHeng Tai (chtai)
-  * magnification property (who owns this? - I asked Justin)
-    No docs yet (other than API docs)
-    <https://main-api.flutter.dev/flutter/material/TextField/magnifierConfiguration.html>
-  * Implementing iOS PlatformView BackdropFilter. (Blur) - Leigha and Chris Yang
-    <https://docs.google.com/document/d/1V7Jc_RGaknrBBPPBBKB8lT7f3PKhYr8sin35MSMFAf4/edit>
-  * Memory management updates - Zach Anderson
-  * toImageSync - new API for rendering improvement - Zach Anderson
-    Nope, nothing available
-  * Font asset hot reload - Jonah
-{% endcomment -%}
 
 [Add a Flutter screen to an iOS app]: /add-to-app/ios/add-flutter-screen
 [Adding an iOS clip target]: /platform-integration/ios/ios-app-clip
@@ -1672,9 +1647,9 @@ Happy Fluttering!
 [Improving Flutter's Error Messages]: {{site.flutter-blog}}/improving-flutters-error-messages-e098513cecf9
 [Performance view]: /tools/devtools/performance
 [preparing a web app for release]: /deployment/web
-[`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
+[`SelectableText`]: {{site.material_ui}}/SelectableText-class.html
 [Showcase]: {{site.main-url}}/showcase
-[`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
+[`ToggleButtons`]: {{site.material_ui}}/ToggleButtons-class.html
 [ToggleButtons demo]: https://github.com/csells/flutter_toggle_buttons
 [using the dart:ffi library]: /platform-integration/legacy-ffi-plugin
 
@@ -1723,7 +1698,7 @@ component and how to customize it, see
 [Performance best practices]: /perf/best-practices
 [Performance profiling]: /perf/ui-performance
 [Preparing an Android app for release]: /deployment/android
-[`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html
+[`RangeSlider`]: {{site.material_ui}}/RangeSlider-class.html
 [Simple app state management]: /data-and-backend/state-mgmt/simple
 
 ## 07 May 2019: Google I/O 2019: 1.5 release

@@ -98,9 +98,9 @@ Relevant PRs:
 * Removed in [#98539]({{site.repo.flutter}}/pull/98539)
 
 [In-depth migration guide available]: /release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
-[`CupertinoTextField`]: {{site.api}}/flutter/cupertino/CupertinoTextField-class.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
+[`TextFormField`]: {{site.material_ui}}/TextFormField-class.html
+[`CupertinoTextField`]: {{site.cupertino_ui}}/CupertinoTextField-class.html
 
 ---
 
@@ -179,8 +179,8 @@ Relevant PRs:
 * Removed in [#98543]({{site.repo.flutter}}/issues/98543)
 
 [Material Date Picker Redesign]: /go/material-date-picker-redesign
-[`CalendarDatePicker`]: {{site.api}}/flutter/material/CalendarDatePicker-class.html
-[`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
+[`CalendarDatePicker`]: {{site.material_ui}}/CalendarDatePicker-class.html
+[`showDatePicker`]: {{site.material_ui}}/showDatePicker.html
 
 ---
 
@@ -279,17 +279,17 @@ Relevant PRs:
 
 [In-depth migration guide available for detailed styling]: /release/breaking-changes/buttons
 [New Material buttons and themes]: /go/material-button-migration-guide
-[`ButtonStyle`]: {{site.api}}/flutter/material/ButtonStyle-class.html
-[`ButtonStyleButton`]: {{site.api}}/flutter/material/ButtonStyleButton-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`ElevatedButtonTheme`]: {{site.api}}/flutter/material/ElevatedButtonTheme-class.html
-[`ElevatedButtonThemeData`]: {{site.api}}/flutter/material/ElevatedButtonThemeData-class.html
-[`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
-[`OutlinedButtonTheme`]: {{site.api}}/flutter/material/OutlinedButtonTheme-class.html
-[`OutlinedButtonThemeData`]: {{site.api}}/flutter/material/OutlinedButtonThemeData-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`TextButtonTheme`]: {{site.api}}/flutter/material/TextButtonTheme-class.html
-[`TextButtonThemeData`]: {{site.api}}/flutter/material/TextButtonThemeData-class.html
+[`ButtonStyle`]: {{site.material_ui}}/ButtonStyle-class.html
+[`ButtonStyleButton`]: {{site.material_ui}}/ButtonStyleButton-class.html
+[`ElevatedButton`]: {{site.material_ui}}/ElevatedButton-class.html
+[`ElevatedButtonTheme`]: {{site.material_ui}}/ElevatedButtonTheme-class.html
+[`ElevatedButtonThemeData`]: {{site.material_ui}}/ElevatedButtonThemeData-class.html
+[`OutlinedButton`]: {{site.material_ui}}/OutlinedButton-class.html
+[`OutlinedButtonTheme`]: {{site.material_ui}}/OutlinedButtonTheme-class.html
+[`OutlinedButtonThemeData`]: {{site.material_ui}}/OutlinedButtonThemeData-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
+[`TextButtonTheme`]: {{site.material_ui}}/TextButtonTheme-class.html
+[`TextButtonThemeData`]: {{site.material_ui}}/TextButtonThemeData-class.html
 
 ---
 
@@ -356,8 +356,8 @@ Relevant PRs:
 [ScaffoldMessenger Design]: /go/scaffold-messenger
 [SnackBar Delivery]: https://youtu.be/sYG7HAGu_Eg?t=10271
 [Widget of the Week]: https://youtu.be/lytQi-slT5Y
-[`ScaffoldMessenger`]: {{site.api}}/flutter/material/ScaffoldMessenger-class.html
-[`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
+[`ScaffoldMessenger`]: {{site.material_ui}}/ScaffoldMessenger-class.html
+[`SnackBar`]: {{site.material_ui}}/SnackBar-class.html
 
 ---
 
@@ -395,7 +395,7 @@ Relevant PRs:
 * Deprecated in [#65246]({{site.repo.flutter}}/issues/65246)
 * Removed in [#98613]({{site.repo.flutter}}/issues/98613)
 
-[`RectangularSliderTrackShape`]: {{site.api}}/flutter/material/RectangularSliderTrackShape-class.html
+[`RectangularSliderTrackShape`]: {{site.material_ui}}/RectangularSliderTrackShape-class.html
 
 ---
 
@@ -469,8 +469,8 @@ Relevant PRs:
 
 [In-depth migration guide available]: /release/breaking-changes/text-selection-theme
 [Text Selection Theme]: /go/text-selection-theme
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`TextSelectionThemeData`]: {{site.api}}/flutter/material/TextSelectionThemeData-class.html
+[`ThemeData`]: {{site.material_ui}}/ThemeData-class.html
+[`TextSelectionThemeData`]: {{site.material_ui}}/TextSelectionThemeData-class.html
 
 ---
 

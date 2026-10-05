@@ -72,10 +72,10 @@ Relevant PRs:
 
 - [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogTheme.backgroundColor`][]
 
-[`ThemeData.dialogBackgroundColor`]: {{site.api}}/flutter/material/ThemeData/dialogBackgroundColor.html
-[`DialogThemeData.backgroundColor`]: {{site.api}}/flutter/material/DialogThemeData/backgroundColor.html
-[`DialogThemeData`]: {{site.api}}/flutter/material/DialogThemeData-class.html
-[`Dialog`]: {{site.api}}/flutter/material/Dialog-class.html
-[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
+[`ThemeData.dialogBackgroundColor`]: {{site.material_ui}}/ThemeData/dialogBackgroundColor.html
+[`DialogThemeData.backgroundColor`]: {{site.material_ui}}/DialogThemeData/backgroundColor.html
+[`DialogThemeData`]: {{site.material_ui}}/DialogThemeData-class.html
+[`Dialog`]: {{site.material_ui}}/Dialog-class.html
+[`AlertDialog`]: {{site.material_ui}}/AlertDialog-class.html
 [Issue #91772]: {{site.repo.flutter}}/issues/91772
 [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogTheme.backgroundColor`]: {{site.repo.flutter}}/pull/155072
