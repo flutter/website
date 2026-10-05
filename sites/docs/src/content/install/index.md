@@ -11,7 +11,7 @@ description: >-
 ## Choose an installation method {: #install}
 
 To start building multiplatform apps from a single codebase,
-choose how you'd like to install the Flutter SDK:
+choose how you want to install the Flutter SDK:
 
 <div class="card-grid very-wide">
   <div class="card filled-card outlined-card">
