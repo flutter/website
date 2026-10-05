@@ -65,7 +65,7 @@ and configure your preferred editor:
 [macOS]: /platform-integration/macos/setup
 [Linux]: /platform-integration/linux/setup
 [VS Code]: /tools/vs-code#setup
-[Android Studio, or IntelliJ]: /tools/android-studio#setup
+[Android Studio or IntelliJ]: /tools/android-studio#setup
 [Custom setup]: /install/custom
 [Flutter learning pathway]: /learn/pathway
 
