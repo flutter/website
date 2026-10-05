@@ -38,12 +38,12 @@ They're sorted by release and listed in alphabetical order:
 
 * [Added enabled property and made onChanged optional for DropdownButton][]
 * [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
-* [Stricter Android `Intent` Verification for App Entrypoints][]
+* [Stricter Android `Intent` verification for app entrypoints][]
 * [Restrict command-line flags for prebuilt Android release binaries][]
 * [Removal of `useInheritedMediaQuery`][]
 
 [Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
-[Stricter Android `Intent` Verification for App Entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
+[Stricter Android `Intent` verification for app entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 [Restrict command-line flags for prebuilt Android release binaries]: /release/breaking-changes/restrict-command-line-flags-prebuilt-android-release-binaries
 [Removal of `useInheritedMediaQuery`]: /release/breaking-changes/remove-useInheritedMediaQuery
