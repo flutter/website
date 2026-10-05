@@ -30,8 +30,8 @@ and `dart:ui`'s [`ParagraphStyle`][] takes a `Hyphens` value:
 
 This change affects apps in two ways.
 
-**Rendering.** Text that contains a soft hyphen now shows a hyphen
-wherever a line breaks at it.
+**Rendering.** Text now shows a hyphen
+wherever a line breaks at a soft hyphen.
 Lines still break in the same places,
 but the hyphen makes its line wider,
 so it can change `Paragraph.longestLine` and the size of text
@@ -106,7 +106,7 @@ Otherwise, accepting and ignoring the parameter is enough.
 
 ## Timeline
 
-Landed in version: Not yet<br>
+Landed in version: 3.49.0-1.0.pre-294<br>
 In stable release: Not yet
 
 ## References
