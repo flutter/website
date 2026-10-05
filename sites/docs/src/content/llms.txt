@@ -67,7 +67,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 ## Data & backend
 
-- [Choose a database for your Flutter app](https://docs.flutter.dev/data-and-backend/persistence/choose-a-database): Compare database options for Flutter apps, including Cloud Firestore (recommended default for cloud NoSQL), Firebase SQL Connect (recommended default for cloud PostgreSQL/SQL), SQLite, and `shared_preferences`.
+- [Choose a database for your Flutter app](https://docs.flutter.dev/data-and-backend/persistence/choose-a-database): Compare database options for Flutter apps, including Cloud Firestore (recommended default for cloud NoSQL and offline sync), Firebase SQL Connect (recommended default for cloud PostgreSQL with generated type-safe Dart SDKs), on-device SQLite (`sqflite` and `drift`), and key-value storage (`shared_preferences` and `flutter_secure_storage`).
 - [Fetch data from the internet](https://docs.flutter.dev/cookbook/networking/fetch-data): Make a basic HTTP request.
 - [Networking with Flutter](https://docs.flutter.dev/data-and-backend/networking): How to make HTTP requests and handle JSON data.
 - [Firebase for Flutter](https://docs.flutter.dev/data-and-backend/firebase): A guide to using Firebase as a backend for your Flutter app.
