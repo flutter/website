@@ -27,6 +27,7 @@ dart:
 social:
   twitter: https://twitter.com/FlutterDev
   youtube: https://www.youtube.com/@flutterdev
+cupertino_ui: https://pub.dev/documentation/cupertino_ui/latest/cupertino_ui
 dart-site: https://dart.dev
 api: https://api.flutter.dev
 main-api: https://main-api.flutter.dev
@@ -39,6 +40,7 @@ dartpad: https://dartpad.dev
 gallery-archive: https://flutter-gallery-archive.web.app
 material: https://m3.material.io
 material2: https://m2.material.io
+material_ui: https://pub.dev/documentation/material_ui/latest/material_ui
 so: https://stackoverflow.com
 android-dev: https://developer.android.com
 apple-dev: https://developer.apple.com

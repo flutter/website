@@ -35,10 +35,10 @@ the word "legacy" and will eventually be deprecated and removed.
 Check out the [Material 3 gallery][] to test out
 all the new components and compare them with Material 2.
 
-[`ThemeData.colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
-[`ThemeData.textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
-[`ThemeData.segmentedButtonTheme`]: {{site.api}}/flutter/material/ThemeData/segmentedButtonTheme.html
-[`ThemeData.snackBarTheme`]: {{site.api}}/flutter/material/ThemeData/snackBarTheme.html
+[`ThemeData.colorScheme`]: {{site.material_ui}}/ThemeData/colorScheme.html
+[`ThemeData.textTheme`]: {{site.material_ui}}/ThemeData/textTheme.html
+[`ThemeData.segmentedButtonTheme`]: {{site.material_ui}}/ThemeData/segmentedButtonTheme.html
+[`ThemeData.snackBarTheme`]: {{site.material_ui}}/ThemeData/snackBarTheme.html
 
 ## Migration guide
 
@@ -61,7 +61,7 @@ To fix this, manually migrate to the new widgets, such as [`NavigationBar`][].
 
 For more details, check out the [Material 3 umbrella issue][] on GitHub.
 
-[`NavigationBar`]: {{site.api}}/flutter/material/NavigationBar-class.html
+[`NavigationBar`]: {{site.material_ui}}/NavigationBar-class.html
 
 ## Timeline
 
@@ -92,7 +92,7 @@ Relevant PRs:
 [Material 3 gallery]: https://github.com/flutter/samples/tree/main/material_3_demo
 [Material 3 umbrella issue]: {{site.repo.flutter}}/issues/91605
 [Material Design for Flutter]: /ui/design/material
-[`ThemeData.useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
+[`ThemeData.useMaterial3`]: {{site.material_ui}}/ThemeData/useMaterial3.html
 [Add support for M3 motion]: {{site.repo.flutter}}/issues/129942
 [Change the default for `ThemeData.useMaterial3` to true]: {{site.repo.flutter}}/pull/129724
 [Updated `ThemeData.useMaterial3` API doc, default is true]: {{site.repo.flutter}}/pull/130764

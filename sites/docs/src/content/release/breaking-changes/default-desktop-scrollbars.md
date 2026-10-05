@@ -278,10 +278,10 @@ Relevant PRs:
 
 [`ScrollConfiguration`]: {{site.api}}/flutter/widgets/ScrollConfiguration-class.html
 [`ScrollBehavior`]: {{site.api}}/flutter/widgets/ScrollBehavior-class.html
-[`MaterialScrollBehavior`]: {{site.api}}/flutter/material/MaterialScrollBehavior-class.html
-[`CupertinoScrollBehavior`]: {{site.api}}/flutter/cupertino/CupertinoScrollBehavior-class.html
-[`Scrollbar`]: {{site.api}}/flutter/material/Scrollbar-class.html
-[`CupertinoScrollbar`]: {{site.api}}/flutter/cupertino/CupertinoScrollbar-class.html
+[`MaterialScrollBehavior`]: {{site.material_ui}}/MaterialScrollBehavior-class.html
+[`CupertinoScrollBehavior`]: {{site.cupertino_ui}}/CupertinoScrollBehavior-class.html
+[`Scrollbar`]: {{site.material_ui}}/Scrollbar-class.html
+[`CupertinoScrollbar`]: {{site.cupertino_ui}}/CupertinoScrollbar-class.html
 [Issue #40107]: {{site.repo.flutter}}/issues/40107
 [Issue #70866]: {{site.repo.flutter}}/issues/70866
 [Exposing ScrollBehaviors for app-wide settings]: {{site.repo.flutter}}/pull/76739

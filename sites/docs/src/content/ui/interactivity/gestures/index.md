@@ -165,10 +165,10 @@ If you aren't using those widgets, but you want the
 "ink splash" effect on a tap, you can use [`InkWell`][].
 
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`IconButton`]: {{site.material_ui}}/IconButton-class.html
+[`InkWell`]: {{site.material_ui}}/InkWell-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
 
 ### Gesture disambiguation
 

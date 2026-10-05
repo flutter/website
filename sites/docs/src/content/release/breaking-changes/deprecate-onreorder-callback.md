@@ -164,7 +164,7 @@ Relevant PRs:
 
 [`ReorderCallback`]: {{site.api}}/flutter/widgets/ReorderCallback.html
 [`ReorderableList`]: {{site.api}}/flutter/widgets/ReorderableList-class.html
-[`ReorderableListView`]: {{site.api}}/flutter/material/ReorderableListView-class.html
+[`ReorderableListView`]: {{site.material_ui}}/ReorderableListView-class.html
 [`SliverReorderableList`]: {{site.api}}/flutter/widgets/SliverReorderableList-class.html
 
 [issue-127901]: {{site.repo.flutter}}/issues/127901

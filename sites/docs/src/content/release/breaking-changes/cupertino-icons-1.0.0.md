@@ -9,7 +9,7 @@ description: >
 
 ## Summary
 
-The existing cupertino_icons [0.1.3 icons][]
+The existing cupertino_icons, 0.1.3 icons,
 are based on iOS 11 aesthetics with sharp angles and thin lines.
 
 As Apple's iconography updates with new OS versions,
@@ -130,5 +130,4 @@ In stable release: 1.22
 
 ## References
 
-[0.1.3 icons]: https://raw.githubusercontent.com/flutter/cupertino_icons/master/map.png
-[`CupertinoIcons`]: {{site.api}}/flutter/cupertino/CupertinoIcons-class.html
+[`CupertinoIcons`]: {{site.cupertino_ui}}/CupertinoIcons-class.html
