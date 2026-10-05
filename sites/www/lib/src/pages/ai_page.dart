@@ -185,7 +185,7 @@ class AiPage extends StatelessComponent {
               FeatureGridItem(
                 title: 'Build generative AI agents with Google Cloud and Flutter',
                 description:
-                    'Supercharge your generative AI development workflow with Gemini Enterprise and Flutter. '
+                    'Supercharge your generative AI development workflow with Gemini and Flutter. '
                     'Seamlessly integrate with your existing tools and leverage our pre-built components and architectures to accelerate prototyping and deploy production-grade gen AI agents in your apps.',
                 url: 'https://io.google/2024/explore/6f1a4481-7b82-45c9-83eb-caa6e2391152/',
                 icon: context.asset(
