@@ -24,7 +24,7 @@ class Footer extends StatelessComponent {
             ),
             img(
               classes: 'dark-mode-visible',
-              src: context.asset('/images/flutter-logo-white.svg'),
+              src: context.asset('/images/flutter-logo-dark.svg'),
               width: 154,
               alt: 'Flutter',
             ),

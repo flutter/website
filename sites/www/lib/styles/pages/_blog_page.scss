@@ -285,16 +285,6 @@ body.blog header.site-header:not(.mobile-nav-open) {
     background-color: var(--site-header-bgColor);
     border-bottom: 1px solid var(--site-outline-variant);
 
-    .logo {
-      &.logo-contrast {
-        display: block;
-      }
-
-      &.logo-default {
-        display: none;
-      }
-    }
-
     nav {
       color: var(--site-base-fgColor);
 

@@ -22,12 +22,14 @@ class Header extends StatefulComponent {
     super.key,
     required this.contrastLogoSrc,
     required this.defaultLogoSrc,
+    this.darkLogoSrc,
     required this.banner,
     required this.pageUrl,
   });
 
   final String contrastLogoSrc;
   final String defaultLogoSrc;
+  final String? darkLogoSrc;
   final BannerContent banner;
   final String pageUrl;
 
@@ -164,7 +166,19 @@ class _HeaderState extends State<Header> {
             ]),
             div(classes: 'logo logo-default', [
               a(href: '/', [
-                img(src: component.defaultLogoSrc, alt: 'Flutter'),
+                img(
+                  classes: component.darkLogoSrc != null
+                      ? 'light-mode-visible'
+                      : null,
+                  src: component.defaultLogoSrc,
+                  alt: 'Flutter',
+                ),
+                if (component.darkLogoSrc case final darkLogoSrc?)
+                  img(
+                    classes: 'dark-mode-visible',
+                    src: darkLogoSrc,
+                    alt: 'Flutter',
+                  ),
               ]),
             ]),
             if (isBlog)

@@ -173,6 +173,7 @@ Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
 Map<String, Object?> __headerHeader(_header.Header c) => {
   'contrastLogoSrc': c.contrastLogoSrc,
   'defaultLogoSrc': c.defaultLogoSrc,
+  'darkLogoSrc': c.darkLogoSrc,
   'banner': c.banner.toMap(),
   'pageUrl': c.pageUrl,
 };

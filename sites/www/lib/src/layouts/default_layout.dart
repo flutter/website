@@ -218,6 +218,9 @@ class DefaultLayout extends PageLayout {
               pageUrl: page.url,
               contrastLogoSrc: context.asset('/images/flutter-logo-white.svg'),
               defaultLogoSrc: context.asset('/images/flutter-logo.svg'),
+              darkLogoSrc: page.url.startsWith('/blog')
+                  ? context.asset('/images/flutter-logo-dark.svg')
+                  : null,
               banner: banner,
             ),
             child,

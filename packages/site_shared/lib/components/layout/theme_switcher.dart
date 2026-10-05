@@ -82,6 +82,8 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
 
   @override
   void dispose() {
+    // DOM event stream cancellations complete synchronously and don't need to
+    // be awaited in synchronous lifecycle teardown.
     unawaited(_pageShowSubscription?.cancel());
     unawaited(_storageSubscription?.cancel());
     unawaited(_mediaQuerySubscription?.cancel());
