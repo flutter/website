@@ -9,9 +9,9 @@ In this recipe,
 learn how to retrieve the text a user has entered into a text field
 using the following steps:
 
-  1. Create a `TextEditingController`.
-  2. Supply the `TextEditingController` to a `TextField`.
-  3. Display the current value of the text field.
+1.  Create a `TextEditingController`.
+1.  Supply the `TextEditingController` to a `TextField`.
+1.  Display the current value of the text field.
 
 ## 1. Create a `TextEditingController`
 
@@ -20,9 +20,9 @@ create a [`TextEditingController`][]
 and supply it to a `TextField` or `TextFormField`.
 
 :::important
-Call `dispose` of the `TextEditingController` when
-you've finished using it. This ensures that you discard any resources
-used by the object.
+Call `dispose()` on the `TextEditingController` when
+you've finished using it.
+This ensures that you discard any resources used by the object.
 :::
 
 <?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
@@ -69,9 +69,9 @@ return TextField(controller: myController);
 ## 3. Display the current value of the text field
 
 After supplying the `TextEditingController` to the text field,
-begin reading values. Use the [`text`][]
-property provided by the `TextEditingController` to retrieve the
-String that the user has entered into the text field.
+begin reading values.
+Use the [`text`][] property provided by the `TextEditingController`
+to retrieve the `String` that the user has entered into the text field.
 
 The following code displays an alert dialog with the current
 value of the text field when the user taps a floating action button.
@@ -156,7 +156,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                // Retrieve the text the that user has entered by using the
+                // Retrieve the text that the user has entered by using the
                 // TextEditingController.
                 content: Text(myController.text),
               );
@@ -172,7 +172,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/retrieve-input.webp" alt="Retrieve Text Input Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/retrieve-input.png" alt="Retrieve Text Input Demo" />
 </noscript>
 
 
