@@ -26,14 +26,14 @@ This recipe describes how to use an `AnimatedContainer` to animate the size,
 background color, and border radius when the user taps a button
 using the following steps:
 
-  1. Create a StatefulWidget with default properties.
-  2. Build an `AnimatedContainer` using the properties.
-  3. Start the animation by rebuilding with new properties.
+1.  Create a `StatefulWidget` with default properties.
+1.  Build an `AnimatedContainer` using the properties.
+1.  Start the animation by rebuilding with new properties.
 
-## 1. Create a StatefulWidget with default properties
+## 1. Create a `StatefulWidget` with default properties
 
 To start, create [`StatefulWidget`][] and [`State`][] classes.
-Use the custom State class to define the properties that change over
+Use the custom `State` class to define the properties that change over
 time. In this example, that includes the width, height, color, and border
 radius. You can also define the default value of each property.
 
@@ -95,7 +95,7 @@ How to trigger a rebuild?
 Use the [`setState()`][] method.
 
 Add a button to the app. When the user taps the button, update
-the properties with a new width, height, background color and border radius
+the properties with a new width, height, background color, and border radius
 inside a call to `setState()`.
 
 A real app typically transitions between fixed values (for example,
@@ -130,6 +130,7 @@ FloatingActionButton(
       );
     });
   },
+  tooltip: 'Animate',
   child: const Icon(Icons.play_arrow),
 )
 ```
@@ -205,6 +206,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
               );
             });
           },
+          tooltip: 'Animate',
           child: const Icon(Icons.play_arrow),
         ),
       ),
@@ -214,7 +216,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/animated-container.webp" alt="AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/animated-container.png" alt="AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius" />
 </noscript>
 
 

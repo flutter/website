@@ -8,7 +8,7 @@ description: How to animate from one page to another.
 A design language, such as Material, defines standard behaviors when
 transitioning between routes (or screens). Sometimes, though, a custom
 transition between screens can make an app more unique. To help,
-[`PageRouteBuilder`][] provides an [`Animation`] object.
+[`PageRouteBuilder`][] provides an [`Animation`][] object.
 This `Animation` can be used with [`Tween`][] and
 [`Curve`][] objects to customize the transition animation.
 This recipe shows how to transition between
@@ -17,21 +17,21 @@ the bottom of the screen.
 
 To create a custom page route transition, this recipe uses the following steps:
 
-1. Set up a PageRouteBuilder
-2. Create a `Tween`
-3. Add an `AnimatedWidget`
-4. Use a `CurveTween`
-5. Combine the two `Tween`s
+1.  Set up a `PageRouteBuilder`.
+1.  Create a `Tween`.
+1.  Add an `AnimatedWidget`.
+1.  Use a `CurveTween`.
+1.  Combine the two `Tween`s.
 
-## 1. Set up a PageRouteBuilder
+## 1. Set up a `PageRouteBuilder`
 
 To start, use a [`PageRouteBuilder`][] to create a [`Route`][].
 `PageRouteBuilder` has two callbacks, one to build the content of the route
 (`pageBuilder`), and one to build the route's transition (`transitionsBuilder`).
 
 :::note
-The `child` parameter in transitionsBuilder is the widget returned from
-pageBuilder. The `pageBuilder` function is only called the first time the
+The `child` parameter in `transitionsBuilder` is the widget returned from
+`pageBuilder`. The `pageBuilder` function is only called the first time the
 route is built. The framework can avoid extra work because `child` stays the
 same throughout the transition.
 :::
@@ -88,18 +88,18 @@ class Page2 extends StatelessWidget {
 }
 ```
 
-## 2. Create a Tween
+## 2. Create a `Tween`
 
 To make the new page animate in from the bottom, it should animate from
-`Offset(0,1)` to `Offset(0, 0)` (usually defined using the `Offset.zero`
-constructor). In this case, the Offset is a 2D vector for the
+`Offset(0.0, 1.0)` to `Offset(0.0, 0.0)` (usually defined using the `Offset.zero`
+constructor). In this case, the `Offset` is a 2D vector for the
 [`FractionalTranslation`][] widget.
 Setting the `dy` argument to 1 represents a vertical translation one
 full height of the page.
 
 The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
-`Animation<double>` into an `Animation<Offset>` using a Tween:
+`Animation<double>` into an `Animation<Offset>` using a `Tween`:
 
 <?code-excerpt "lib/starter.dart (step1)"?>
 ```dart
@@ -112,14 +112,14 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 },
 ```
 
-## 3. Use an AnimatedWidget
+## 3. Use an `AnimatedWidget`
 
 Flutter has a set of widgets extending [`AnimatedWidget`][]
 that rebuild themselves when the value of the animation changes. For instance,
-SlideTransition takes an `Animation<Offset>` and translates its child (using a
+`SlideTransition` takes an `Animation<Offset>` and translates its child (using a
 `FractionalTranslation` widget) whenever the value of the animation changes.
 
-AnimatedWidget Return a [`SlideTransition`][]
+Return a [`SlideTransition`][]
 with the `Animation<Offset>` and the child widget:
 
 <?code-excerpt "lib/starter.dart (step2)"?>
@@ -134,7 +134,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 },
 ```
 
-## 4. Use a CurveTween
+## 4. Use a `CurveTween`
 
 Flutter provides a selection of easing curves that
 adjust the rate of the animation over time.
@@ -143,19 +143,19 @@ provides a predefined set of commonly used curves.
 For example, `Curves.easeOut`
 makes the animation start quickly and end slowly.
 
-To use a Curve, create a new [`CurveTween`][]
-and pass it a Curve:
+To use a `Curve`, create a new [`CurveTween`][]
+and pass it a `Curve`:
 
 <?code-excerpt "lib/starter.dart (step3)"?>
 ```dart
-var curve = Curves.ease;
-var curveTween = CurveTween(curve: curve);
+const curve = Curves.ease;
+final curveTween = CurveTween(curve: curve);
 ```
 
-This new Tween still produces values from 0 to 1. In the next step, it will be
-combined the `Tween<Offset>` from step 2.
+This new `Tween` still produces values from 0 to 1. In the next step,
+combine it with the `Tween<Offset>` from step 2.
 
-## 5. Combine the two Tweens
+## 5. Combine the two `Tween`s
 
 To combine the tweens,
 use [`chain()`][]:
@@ -166,7 +166,10 @@ const begin = Offset(0.0, 1.0);
 const end = Offset.zero;
 const curve = Curves.ease;
 
-var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+final tween = Tween(
+  begin: begin,
+  end: end,
+).chain(CurveTween(curve: curve));
 ```
 
 Then use this tween by passing it to `animation.drive()`. This creates a new
@@ -177,18 +180,18 @@ Then use this tween by passing it to `animation.drive()`. This creates a new
 return SlideTransition(position: animation.drive(tween), child: child);
 ```
 
-This new Tween (or Animatable) produces `Offset` values by first evaluating the
-`CurveTween`, then evaluating the `Tween<Offset>.` When the animation runs, the
-values are computed in this order:
+This new `Tween` (or `Animatable`) produces `Offset` values by first evaluating
+the `CurveTween`, then evaluating the `Tween<Offset>`. When the animation runs,
+the values are computed in this order:
 
-1. The animation (provided to the transitionsBuilder callback) produces values
-   from 0 to 1.
-2. The CurveTween maps those values to new values between 0 and 1 based on its
-   curve.
-3. The `Tween<Offset>` maps the `double` values to `Offset` values.
+1.  The animation (provided to the `transitionsBuilder` callback) produces
+    values from 0 to 1.
+1.  The `CurveTween` maps those values to new values between 0 and 1 based on
+    its curve.
+1.  The `Tween<Offset>` maps the `double` values to `Offset` values.
 
 Another way to create an `Animation<Offset>` with an easing curve is to use a
-`CurvedAnimation`:
+[`CurvedAnimation`][]:
 
 <?code-excerpt "lib/starter.dart (step4)" replace="/^\},$/}/g"?>
 ```dart
@@ -244,7 +247,10 @@ Route<void> _createRoute() {
       const end = Offset.zero;
       const curve = Curves.ease;
 
-      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+      final tween = Tween(
+        begin: begin,
+        end: end,
+      ).chain(CurveTween(curve: curve));
 
       return SlideTransition(position: animation.drive(tween), child: child);
     },
@@ -264,7 +270,7 @@ class Page2 extends StatelessWidget {
 }
 ```
 <noscript>
-  <img src="/assets/images/docs/cookbook/page-route-animation.webp" alt="Demo showing a custom page route transition animating up from the bottom of the screen" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/page-route-animation.png" alt="Demo showing a custom page route transition animating up from the bottom of the screen" />
 </noscript>
 
 
@@ -272,6 +278,7 @@ class Page2 extends StatelessWidget {
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`chain()`]: {{site.api}}/flutter/animation/Animatable/chain.html
 [`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
+[`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurveTween`]: {{site.api}}/flutter/animation/CurveTween-class.html
 [`FractionalTranslation`]: {{site.api}}/flutter/widgets/FractionalTranslation-class.html

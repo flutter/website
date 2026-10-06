@@ -14,10 +14,10 @@ center using a spring simulation.
 
 This recipe uses these steps:
 
-1. Set up an animation controller
-2. Move the widget using gestures
-3. Animate the widget
-4. Calculate the velocity to simulate a springing motion
+1.  Set up an animation controller.
+1.  Move the widget using gestures.
+1.  Animate the widget.
+1.  Calculate the velocity to simulate a springing motion.
 
 
 ## Step 1: Set up an animation controller
@@ -72,14 +72,14 @@ class _DraggableCardState extends State<DraggableCard> {
 ```
 
 Make the `_DraggableCardState` class extend from
-[SingleTickerProviderStateMixin][].
-Then construct an [AnimationController][] in
+[`SingleTickerProviderStateMixin`][].
+Then construct an [`AnimationController`][] in
 `initState` and set `vsync` to `this`.
 
 :::note
 Extending `SingleTickerProviderStateMixin` allows the state object to be a
-`TickerProvider` for the `AnimationController`. For more information, see the
-documentation for [TickerProvider][].
+`TickerProvider` for the `AnimationController`.
+To learn more, consult the [`TickerProvider`][] documentation.
 :::
 
 ```dart diff
@@ -104,7 +104,7 @@ documentation for [TickerProvider][].
 
 ## Step 2: Move the widget using gestures
 
-Make the widget move when it's dragged, and add an [Alignment][] field to the
+Make the widget move when it's dragged, and add an [`Alignment`][] field to the
 `_DraggableCardState` class:
 
 ```dart diff
@@ -114,11 +114,11 @@ Make the widget move when it's dragged, and add an [Alignment][] field to the
 +   Alignment _dragAlignment = Alignment.center;
 ```
 
-Add a [GestureDetector][] that handles the `onPanDown`, `onPanUpdate`, and
-`onPanEnd` callbacks. To adjust the alignment, use a [MediaQuery][] to get the
-size of the widget, and divide by 2. (This converts units of "pixels dragged" to
-coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
-`_dragAlignment`:
+Add a [`GestureDetector`][] that handles the `onPanDown`, `onPanUpdate`, and
+`onPanEnd` callbacks. To adjust the alignment, use [`MediaQuery.sizeOf()`][] to
+get the size of the widget, and divide by 2. (This converts units of "pixels
+dragged" to coordinates that [`Align`][] uses.) Then, set the `Align` widget's
+`alignment` to `_dragAlignment`:
 
 ```dart diff
   @override
@@ -126,7 +126,7 @@ coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 -   return Align(
 -     child: Card(
 -       child: widget.child,
-+   var size = MediaQuery.of(context).size;
++   final size = MediaQuery.sizeOf(context);
 +   return GestureDetector(
 +     onPanDown: (details) {},
 +     onPanUpdate: (details) {
@@ -152,9 +152,9 @@ coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 
 When the widget is released, it should spring back to the center.
 
-Add an `Animation<Alignment>` field and an `_runAnimation` method. This
+Add an `Animation<Alignment>` field and a `_runAnimation()` method. This
 method defines a `Tween` that interpolates between the point the widget was
-dragged to, to the point in the center.
+dragged to and the point in the center.
 
 ```dart diff
   class _DraggableCardState extends State<DraggableCard>
@@ -224,7 +224,7 @@ Finally, update the `GestureDetector` to manage the animation controller:
 
 The last step is to do a little math, to calculate the velocity of the widget
 after it's finished being dragged. This is so that the widget realistically
-continues at that speed before being snapped back. (The `_runAnimation` method
+continues at that speed before being snapped back. (The `_runAnimation()` method
 already sets the direction by setting the animation's start and end alignment.)
 
 First, import the `physics` package:
@@ -234,7 +234,7 @@ First, import the `physics` package:
 import 'package:flutter/physics.dart';
 ```
 
-The `onPanEnd` callback provides a [DragEndDetails][] object. This object
+The `onPanEnd` callback provides a [`DragEndDetails`][] object. This object
 provides the velocity of the pointer when it stopped contacting the screen. The
 velocity is in pixels per second, but the `Align` widget doesn't use pixels. It
 uses coordinate values between [-1.0, -1.0] and [1.0, 1.0], where [0.0, 0.0]
@@ -242,7 +242,7 @@ represents the center. The `size` calculated in step 2 is used to convert pixels
 to coordinate values in this range.
 
 Finally, `AnimationController` has an `animateWith()` method that can be given a
-[SpringSimulation][]:
+[`SpringSimulation`][]:
 
 <?code-excerpt "lib/main.dart (runAnimation)"?>
 ```dart
@@ -266,7 +266,13 @@ void _runAnimation(Offset pixelsPerSecond, Size size) {
 }
 ```
 
-Don't forget to call `_runAnimation()`  with the velocity and size:
+:::tip
+You can also configure a [`SpringDescription`][] using
+[`SpringDescription.withDurationAndBounce()`][] instead of manually specifying
+`mass`, `stiffness`, and `damping`.
+:::
+
+Don't forget to call `_runAnimation()` with the velocity and size:
 
 <?code-excerpt "lib/main.dart (onPanEnd)"?>
 ```dart
@@ -280,7 +286,7 @@ Now that the animation controller uses a simulation, its `duration` argument
 is no longer required.
 :::
 
-## Interactive Example
+## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter physics simulation hands-on example in DartPad" run="true"
@@ -366,7 +372,7 @@ class _DraggableCardState extends State<DraggableCard>
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery.sizeOf(context);
     return GestureDetector(
       onPanDown: (details) {
         _controller.stop();
@@ -392,15 +398,17 @@ class _DraggableCardState extends State<DraggableCard>
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/animation-physics-card-drag.webp" alt="Demo showing a widget being dragged and snapped back to the center" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/animation-physics-card-drag.png" alt="Demo showing a widget being dragged and snapped back to the center" />
 </noscript>
 
-[Align]: {{site.api}}/flutter/widgets/Align-class.html
-[Alignment]: {{site.api}}/flutter/painting/Alignment-class.html
-[AnimationController]: {{site.api}}/flutter/animation/AnimationController-class.html
-[GestureDetector]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[SingleTickerProviderStateMixin]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
-[TickerProvider]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
-[MediaQuery]: {{site.api}}/flutter/widgets/MediaQuery-class.html
-[DragEndDetails]: {{site.api}}/flutter/gestures/DragEndDetails-class.html
-[SpringSimulation]: {{site.api}}/flutter/physics/SpringSimulation-class.html
+[`Align`]: {{site.api}}/flutter/widgets/Align-class.html
+[`Alignment`]: {{site.api}}/flutter/painting/Alignment-class.html
+[`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
+[`DragEndDetails`]: {{site.api}}/flutter/gestures/DragEndDetails-class.html
+[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[`MediaQuery.sizeOf()`]: {{site.api}}/flutter/widgets/MediaQuery/sizeOf.html
+[`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
+[`SpringDescription`]: {{site.api}}/flutter/physics/SpringDescription-class.html
+[`SpringDescription.withDurationAndBounce()`]: {{site.api}}/flutter/physics/SpringDescription/SpringDescription.withDurationAndBounce.html
+[`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
+[`TickerProvider`]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
