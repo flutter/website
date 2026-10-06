@@ -113,29 +113,26 @@ SourceImageInfo? _readJpeg(RandomAccessFile file) {
     if (markerBytes == null || markerBytes[0] != 0xFF) return null;
     final marker = markerBytes[1];
 
-    // Skip fill bytes and markers without a length.
-    if (marker == 0xFF) {
-      offset += 1;
-      continue;
+    switch (marker) {
+      // Skip fill bytes and markers without a length.
+      case 0xFF:
+        offset += 1;
+        continue;
+      case 0x01 || >= 0xD0 && <= 0xD7:
+        offset += 2;
+        continue;
+      // Stop at the end of the image or the start of the image data,
+      // since the frame header must come before either.
+      case 0xD9 || 0xDA:
+        return null;
     }
-    if (marker == 0x01 || (marker >= 0xD0 && marker <= 0xD7)) {
-      offset += 2;
-      continue;
-    }
-    // Stop at the end of the image or the start of the image data,
-    // since the frame header must come before either.
-    if (marker == 0xD9 || marker == 0xDA) return null;
 
     // The length includes itself, but not the marker.
     final segmentLength = ByteData.sublistView(markerBytes).getUint16(2);
     if (segmentLength < 2) return null;
 
     // Start of frame markers, excluding DHT (C4), JPG (C8), and DAC (CC).
-    if (marker >= 0xC0 &&
-        marker <= 0xCF &&
-        marker != 0xC4 &&
-        marker != 0xC8 &&
-        marker != 0xCC) {
+    if (marker case >= 0xC0 && <= 0xCF && != 0xC4 && != 0xC8 && != 0xCC) {
       // The sample precision, then the height and width.
       final frame = segmentLength >= 7 ? _readAt(file, offset + 4, 5) : null;
       if (frame == null) return null;

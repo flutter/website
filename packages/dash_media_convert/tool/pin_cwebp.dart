@@ -47,17 +47,13 @@ void main(List<String> arguments) async {
       );
       print('Downloading $archiveName...');
 
-      final archiveBytes = await http.readBytes(unhashedPin.archiveUrl);
+      final archiveUrl = unhashedPin.archiveUrl;
+      final archiveBytes = await http.readBytes(archiveUrl);
       final archivePath = p.join(tempDirectory.path, archiveName);
       File(archivePath).writeAsBytesSync(archiveBytes);
       final signaturePath = '$archivePath.asc';
-      File(signaturePath).writeAsBytesSync(
-        await http.readBytes(
-          unhashedPin.archiveUrl.replace(
-            path: '${unhashedPin.archiveUrl.path}.asc',
-          ),
-        ),
-      );
+      File(signaturePath)
+          .writeAsBytesSync(await http.readBytes(Uri.parse('$archiveUrl.asc')));
       await _verifySignature(archivePath, signaturePath);
 
       pins[platform] = CwebpPin(

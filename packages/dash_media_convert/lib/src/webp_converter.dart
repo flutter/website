@@ -179,8 +179,8 @@ final class WebpConverter {
       return const WebpSkipped(.animated);
     }
     final maxWidth = this.maxWidth;
-    final resizeWidth = maxWidth != null && info.width > maxWidth
-        ? maxWidth
+    final resizedWidth = maxWidth != null && info.width > maxWidth
+        ? (from: info.width, to: maxWidth)
         : null;
     final options = switch (info.format) {
       .png => lossyPng ? _WebpOptions.pngLossy : _WebpOptions.pngLossless,
@@ -197,7 +197,7 @@ final class WebpConverter {
       final result = await Process.run(cwebp.executablePath, [
         '-quiet',
         ...options.arguments,
-        if (resizeWidth != null) ...['-resize', '$resizeWidth', '0'],
+        if (resizedWidth case (from: _, :final to)) ...['-resize', '$to', '0'],
         '-o',
         encodedPath,
         // Don't interpret a source path starting with `-` as an option.
@@ -220,9 +220,7 @@ final class WebpConverter {
         sourceSize: sourceSize,
         outputSize: outputSize,
         lossless: options.lossless,
-        resizedWidth: resizeWidth == null
-            ? null
-            : (from: info.width, to: resizeWidth),
+        resizedWidth: resizedWidth,
       );
     } finally {
       await tempDirectory.delete(recursive: true);

@@ -146,6 +146,15 @@ void main() {
         Link(alias).createSync(images);
       });
 
+      test('rejects images that are symlinks', () {
+        final image = p.join(images, 'image.png');
+        File(image).writeAsBytesSync(pngBytes());
+        final link = p.join(directory.path, 'link.png');
+        Link(link).createSync(image);
+
+        expect(validateImagePaths([link]), contains('is a symbolic link'));
+      });
+
       test('rejects output collisions through a symlink', () {
         expect(
           validateImagePaths([

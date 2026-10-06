@@ -43,7 +43,7 @@ final class Cwebp {
   /// falling back to the `.dart_tool` directory of the
   /// current pub workspace if the data home isn't writable.
   static List<String> get _defaultToolCacheDirectories => [
-    p.join(getDartDataHome(packageName), 'cwebp'),
+    p.join(getDartDataHome('dash_media_convert'), 'cwebp'),
     // The package config is in the workspace's `.dart_tool` directory.
     if (Isolate.packageConfigSync case final packageConfig?)
       p.join(p.dirname(p.fromUri(packageConfig)), 'cwebp'),
@@ -102,13 +102,7 @@ final class Cwebp {
     String toolCacheDirectory,
     void Function(String message) log,
   ) async {
-    // Other versions in the directory aren't deleted,
-    // since repositories sharing it might pin different versions.
-    final executablePath = p.join(
-      toolCacheDirectory,
-      '$pinnedCwebpVersion-$platform',
-      p.posix.basename(pin.binaryPathInArchive),
-    );
+    final executablePath = pinnedCwebpPath(toolCacheDirectory, platform, pin);
 
     if (!await _hasExpectedHash(executablePath, pin.binarySha256)) {
       // Fail before downloading if the directory isn't writable.
@@ -195,6 +189,21 @@ final class CwebpPin {
         ));
   }
 }
+
+/// The path that the `cwebp` executable described by [pin] for [platform]
+/// is installed to in [toolCacheDirectory].
+///
+/// Other versions in the directory aren't deleted,
+/// since repositories sharing it might pin different versions.
+String pinnedCwebpPath(
+  String toolCacheDirectory,
+  String platform,
+  CwebpPin pin,
+) => p.join(
+  toolCacheDirectory,
+  '$pinnedCwebpVersion-$platform',
+  p.posix.basename(pin.binaryPathInArchive),
+);
 
 /// The key into [cwebpPins] for the platform this code is running on,
 /// such as `macos_arm64`.

@@ -73,7 +73,7 @@ jobs:
       - name: Cache cwebp
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: ${{ runner.temp }}/dart_data_home/dash_media_convert/cwebp
+          path: ${{ runner.temp }}/dart_data_home
           key: cwebp-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('packages/dash_media_convert/lib/src/cwebp_pins.dart') }}
       - name: Run Dart tests
         run: dart run dash_site test-dart

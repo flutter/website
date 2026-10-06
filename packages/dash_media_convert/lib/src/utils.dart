@@ -7,10 +7,6 @@ import 'dart:math';
 
 final Random _random = Random();
 
-/// The name of this package, which also names
-/// its directory in the Dart data home.
-const String packageName = 'dash_media_convert';
-
 /// Creates the file at [path] by calling [write] to write it to
 /// a temporary path in the same directory, then renaming it into place,
 /// so an interrupted write never leaves a partial file behind.

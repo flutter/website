@@ -53,10 +53,10 @@ void main() {
       /// to avoid downloading it for every test run.
       Future<File> cacheExecutable() {
         final cachedExecutable = File(
-          p.join(
+          pinnedCwebpPath(
             directory.path,
-            '$pinnedCwebpVersion-$currentCwebpPlatform',
-            p.basename(cwebp.executablePath),
+            currentCwebpPlatform,
+            cwebpPins[currentCwebpPlatform]!,
           ),
         );
         cachedExecutable.parent.createSync(recursive: true);

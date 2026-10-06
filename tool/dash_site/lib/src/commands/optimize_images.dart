@@ -25,7 +25,6 @@ final class OptimizeImagesCommand extends Command<int> {
       )
       ..addFlag(
         _lossyPngFlag,
-        defaultsTo: false,
         negatable: false,
         help: 'Encode PNGs lossily at quality 85. Defaults to lossless.',
       );
@@ -62,20 +61,13 @@ final class OptimizeImagesCommand extends Command<int> {
     for (final image in images) {
       // Absolute paths are kept as is by `path.join`.
       final imagePath = path.normalize(path.join(repositoryRoot, image));
-      // Deleting a file symlink leaves the original image behind,
-      // while converting its resolved target would leave a dangling symlink.
-      if (Link(imagePath).existsSync()) {
-        usageException(
-          '$image is a symbolic link. Specify the target image instead.',
-        );
-      }
       if (!File(imagePath).existsSync()) {
         usageException('$image doesn\'t exist.');
       }
       try {
         // Resolve symbolic links so that
         // the image isn't outside the repository.
-        // As the image isn't a symbolic link itself,
+        // As `validateImagePaths` rejects images that are symbolic links,
         // the WebP image written next to it is in the same directory.
         final source = File(imagePath).resolveSymbolicLinksSync();
         if (!path.isWithin(resolvedRoot, source)) {
@@ -105,15 +97,13 @@ final class OptimizeImagesCommand extends Command<int> {
 
     var failed = false;
     var optimizedAny = false;
-    for (final (:imagePath, :result) in results) {
+    for (final (:imagePath, :outputPath, :result) in results) {
       final image = path.relative(imagePath, from: repositoryRoot);
       switch (result) {
         case WebpConverted(:final summary):
           optimizedAny = true;
-          print(
-            'Converted $image to '
-            '${path.setExtension(image, '.webp')}: $summary.',
-          );
+          final output = path.relative(outputPath, from: repositoryRoot);
+          print('Converted $image to $output: $summary.');
         case WebpSkipped(:final reason):
           print('Kept $image because ${reason.description}.');
         case WebpFailed(:final message):

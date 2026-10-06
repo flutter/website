@@ -17,8 +17,14 @@ const Set<String> _optimizableImageExtensions = {'.png', '.jpg', '.jpeg'};
 /// [ImageOptimizer.optimizeFiles].
 ///
 /// Returns a description of the first problem found, such as
-/// an input that isn't a PNG or JPEG or multiple inputs with
-/// the same canonical output path, or `null` if there are none.
+/// an input that isn't a PNG or JPEG, an input that's a symbolic link,
+/// multiple inputs with the same canonical output path,
+/// or `null` if there are none.
+///
+/// Symbolic links are rejected because
+/// deleting one would leave the original image behind,
+/// while converting its resolved target
+/// would leave a dangling link.
 ///
 /// Output paths are compared after resolving symbolic links in
 /// their parent directories, when those directories exist.
@@ -31,6 +37,9 @@ String? validateImagePaths(List<String> imagePaths) {
       p.extension(imagePath).toLowerCase(),
     )) {
       return '$imagePath isn\'t a PNG or JPEG image.';
+    }
+    if (FileSystemEntity.isLinkSync(imagePath)) {
+      return '$imagePath is a symbolic link. Specify the target image instead.';
     }
     final outputPath = _canonicalOutputPath(imagePath);
     if (!outputPaths.add(outputPath.toLowerCase())) {
@@ -59,9 +68,14 @@ String _canonicalOutputPath(String imagePath) {
 
 /// The result of optimizing the image at `imagePath`.
 ///
-/// If the image was converted, it was replaced by a WebP image
-/// with the same name and a `.webp` extension.
-typedef ImageOptimization = ({String imagePath, WebpConversionResult result});
+/// If the image was converted,
+/// it was replaced by the WebP image at `outputPath`,
+/// which has the same name and a `.webp` extension.
+typedef ImageOptimization = ({
+  String imagePath,
+  String outputPath,
+  WebpConversionResult result,
+});
 
 /// Optimizes PNG and JPEG image files in place by
 /// converting them to WebP images and deleting the originals.
@@ -104,18 +118,24 @@ final class ImageOptimizer {
     try {
       return await [
         for (final imagePath in imagePaths)
-          pool.withResource(
-            () async =>
-                (imagePath: imagePath, result: await _optimizeFile(imagePath)),
-          ),
+          pool.withResource(() async {
+            final outputPath = _webpPath(imagePath);
+            return (
+              imagePath: imagePath,
+              outputPath: outputPath,
+              result: await _optimizeFile(imagePath, outputPath),
+            );
+          }),
       ].wait;
     } finally {
       await pool.close();
     }
   }
 
-  Future<WebpConversionResult> _optimizeFile(String imagePath) async {
-    final outputPath = _webpPath(imagePath);
+  Future<WebpConversionResult> _optimizeFile(
+    String imagePath,
+    String outputPath,
+  ) async {
     try {
       if (File(outputPath).existsSync()) {
         return WebpFailed(
