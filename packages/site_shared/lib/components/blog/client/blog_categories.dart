@@ -148,13 +148,7 @@ class _BlogCategoriesState extends State<BlogCategories> {
           'layout-grid',
           'layout-list',
         ]) {
-          if (layoutClass == targetClass) {
-            if (!card.classList.contains(layoutClass)) {
-              card.classList.add(layoutClass);
-            }
-          } else if (card.classList.contains(layoutClass)) {
-            card.classList.remove(layoutClass);
-          }
+          card.classList.toggle(layoutClass, layoutClass == targetClass);
         }
       }
     }

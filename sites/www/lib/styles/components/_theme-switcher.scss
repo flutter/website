@@ -2,14 +2,8 @@ body:not(.dark-mode) .dark-mode-visible {
   display: none !important;
 }
 
-body.dark-mode {
-  .light-mode-visible {
-    display: none !important;
-  }
-
-  .theme-icon {
-    filter: invert(1) brightness(0.8);
-  }
+body.dark-mode .light-mode-visible {
+  display: none !important;
 }
 
 .site-header {

@@ -12,7 +12,6 @@ import 'package:site_shared/components/blog/blog_next_posts.dart';
 import 'package:site_shared/components/blog/post_info.dart';
 import 'package:site_shared/components/common/breadcrumbs.dart';
 import 'package:site_shared/components/common/client/back_to_top_button.dart';
-import 'package:site_shared/server_util.dart';
 import 'package:site_shared/util.dart';
 
 import '../utils/scroll_spy.dart';
@@ -30,11 +29,7 @@ class BlogLayout extends DefaultLayout {
   List<String> get defaultBodyTags => ['interior', 'blog'];
 
   @override
-  List<Component> get leadingBodyElements => const [
-    // The theme setting logic should remain before other scripts to
-    // avoid a flash of the initial theme on load.
-    themeInitScript,
-  ];
+  bool get supportsDarkMode => true;
 
   @override
   Component buildLayout(Page page, Component child) {

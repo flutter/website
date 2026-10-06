@@ -21,9 +21,11 @@ class DefaultLayout extends PageLayout {
   /// CSS classes to include on the document `<body>` element by default.
   List<String> get defaultBodyTags => const [];
 
-  /// Additional components to insert at the beginning of the document `<body>`,
-  /// before the site header (for example, early initialization scripts).
-  List<Component> get leadingBodyElements => const [];
+  /// Whether pages using this layout support switching to a dark theme.
+  ///
+  /// When `true`, the saved theme preference is applied
+  /// before the page paints and the site header includes a theme switcher.
+  bool get supportsDarkMode => false;
 
   @override
   Component buildLayout(Page page, Component child) {
@@ -213,9 +215,12 @@ class DefaultLayout extends PageLayout {
               Document.body(
                 attributes: {'class': bodyTags.join(' ')},
               ),
-            ...leadingBodyElements,
+            // The theme setting logic should remain before other scripts to
+            // avoid a flash of the initial theme on load.
+            if (supportsDarkMode) themeInitScript,
             Header(
               pageUrl: page.url,
+              supportsDarkMode: supportsDarkMode,
               contrastLogoSrc: context.asset('/images/flutter-logo-white.svg'),
               defaultLogoSrc: context.asset('/images/flutter-logo.svg'),
               darkLogoSrc: context.asset('/images/flutter-logo-dark.svg'),

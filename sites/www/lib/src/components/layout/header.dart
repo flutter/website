@@ -25,6 +25,7 @@ class Header extends StatefulComponent {
     required this.darkLogoSrc,
     required this.banner,
     required this.pageUrl,
+    required this.supportsDarkMode,
   });
 
   final String contrastLogoSrc;
@@ -32,6 +33,10 @@ class Header extends StatefulComponent {
   final String darkLogoSrc;
   final BannerContent banner;
   final String pageUrl;
+
+  /// Whether the current page supports a dark theme,
+  /// in which case the header includes a theme switcher.
+  final bool supportsDarkMode;
 
   @override
   State<Header> createState() => _HeaderState();
@@ -171,11 +176,13 @@ class _HeaderState extends State<Header> {
                   src: component.defaultLogoSrc,
                   alt: 'Flutter',
                 ),
-                img(
-                  classes: 'dark-mode-visible',
-                  src: component.darkLogoSrc,
-                  alt: 'Flutter',
-                ),
+                // Avoid loading the dark logo on pages without dark mode.
+                if (component.supportsDarkMode)
+                  img(
+                    classes: 'dark-mode-visible',
+                    src: component.darkLogoSrc,
+                    alt: 'Flutter',
+                  ),
               ]),
             ]),
             if (isBlog)
@@ -236,7 +243,7 @@ class _HeaderState extends State<Header> {
                   ),
               ],
             ),
-            if (isBlog) const NestedThemeSwitcher(),
+            if (component.supportsDarkMode) const NestedThemeSwitcher(),
             const a(
               href: 'https://docs.flutter.dev/get-started/quick',
               id: 'get-started__header',

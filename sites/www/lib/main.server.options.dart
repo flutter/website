@@ -176,6 +176,7 @@ Map<String, Object?> __headerHeader(_header.Header c) => {
   'darkLogoSrc': c.darkLogoSrc,
   'banner': c.banner.toMap(),
   'pageUrl': c.pageUrl,
+  'supportsDarkMode': c.supportsDarkMode,
 };
 Map<String, Object?> __consultants_gridConsultantsGrid(
   _consultants_grid.ConsultantsGrid c,

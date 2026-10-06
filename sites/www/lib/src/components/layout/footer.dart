@@ -22,11 +22,13 @@ class Footer extends StatelessComponent {
               width: 154,
               alt: 'Flutter',
             ),
+            // Lazy load the dark logo so it's only fetched when displayed.
             img(
               classes: 'dark-mode-visible',
               src: context.asset('/images/flutter-logo-dark.svg'),
               width: 154,
               alt: 'Flutter',
+              loading: MediaLoading.lazy,
             ),
           ]),
         ]),

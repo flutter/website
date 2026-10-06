@@ -665,7 +665,7 @@ body.in-content {
       }
 
       &.active {
-        background-color: var(--site-inset-bgColor);
+        background-color: rgb(var(--site-interaction-base-values) / 6%);
       }
     }
 

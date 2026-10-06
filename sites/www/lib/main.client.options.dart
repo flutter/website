@@ -111,6 +111,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
           p['banner'] as Map<String, Object?>,
         ),
         pageUrl: p['pageUrl'] as String,
+        supportsDarkMode: p['supportsDarkMode'] as bool,
       ),
       loader: _header.loadLibrary,
     ),
