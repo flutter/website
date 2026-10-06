@@ -11,6 +11,10 @@ up-to-date information, such as null-safe Dart code.
 These courses are grouped by language and listed alphabetically.
 To include your course, [submit a PR][]:
 
+## Arabic
+
+* [Flutter Master Course From Zero To Hero][] by Usama Elgendy
+
 ## English
 
 * [20 Hour Dart & Flutter YT Course For Beginners][] by Rivaan Ranawat
@@ -73,4 +77,5 @@ To include your course, [submit a PR][]:
 [Flutter University - From Zero to Mastery]: https://www.fudeo.it/?utm_source=flutter_dev
 [Tech Idara - Flutter from Basic to Advanced]: https://www.youtube.com/playlist?list=PLX97VxArfzkmXeUqUxeKW7XS8oYraH7A5
 [FlutterCraft]: https://fluttercraft.app
+[Flutter Master Course From Zero To Hero]: https://usamaelgendy.com/courses/flutter-beginners/
 [submit a PR]: {{site.repo.this}}/pulls

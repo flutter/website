@@ -90,7 +90,7 @@ Relevant PRs:
 
 * [Introduce new Material 3 `Slider` shapes][]
 
-[`Slider`]: {{site.main-api}}/flutter/material/Slider-class.html
-[`Slider.year2023`]: {{site.main-api}}/flutter/material/Slider/year2023.html
+[`Slider`]: {{site.material_ui}}/Slider-class.html
+[`Slider.year2023`]: {{site.material_ui}}/Slider/year2023.html
 [Update `Slider` for Material 3 redesign]: {{site.repo.flutter}}/issues/141842
 [Introduce new Material 3 `Slider` shapes]: {{site.repo.flutter}}/pull/152237
