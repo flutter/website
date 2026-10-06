@@ -12,6 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.5.0
   meta: any
   pigeon: ^28.0.0
 

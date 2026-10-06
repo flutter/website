@@ -292,7 +292,7 @@ ol.steps {
 
   $step-indicator-height: 1.75rem;
 
-  li {
+  li:not(.nav-item) {
     >* {
       &:first-child {
         margin-block-start: 0;
@@ -308,7 +308,7 @@ ol.steps {
     }
   }
 
-  ul>li {
+  ul:not(.nav-tabs)>li {
     &:not(:last-child) {
       padding-block-end: .5rem;
     }
@@ -319,7 +319,7 @@ ol.steps {
     counter-increment: steps;
 
     ol,
-    ul {
+    ul:not(.nav-tabs) {
       padding-inline-start: 2rem;
       margin-block-end: 0.75rem;
     }

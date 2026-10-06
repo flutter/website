@@ -24,7 +24,7 @@
       children:
         - title: Cupertino
           permalink: /ui/widgets/cupertino
-        - title: Material components
+        - title: Material
           permalink: /ui/widgets/material
     - title: Base widgets
       expanded: false
@@ -118,8 +118,8 @@
       permalink: /cookbook/design/themes
     - title: Material design
       permalink: /ui/design/material
-    - title: Migrate to Material 3
-      permalink: /release/breaking-changes/material-3-migration
+    - title: Cupertino design
+      permalink: /ui/design/cupertino
     - title: Text
       permalink: /ui/design/text
       children:
@@ -947,4 +947,6 @@
           permalink: /reference/flutter-cli
         - title: API docs
           permalink: https://api.flutter.dev
+        - title: pub.dev
+          permalink: https://pub.dev
 

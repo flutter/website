@@ -13,8 +13,8 @@ results as the user types.
 How do you run a callback function every time the text changes?
 With Flutter, you have two options:
 
-  1. Supply an `onChanged()` callback to a `TextField` or a `TextFormField`.
-  2. Use a `TextEditingController`.
+1.  Supply an `onChanged()` callback to a `TextField` or a `TextFormField`.
+1.  Use a `TextEditingController`.
 
 ## 1. Supply an `onChanged()` callback to a `TextField` or a `TextFormField`
 
@@ -25,10 +25,10 @@ Whenever the text changes, the callback is invoked.
 In this example, print the current value and length of the text field
 to the console every time the text changes.
 
-It's important to use [characters][] when dealing with user input,
-as text may contain complex characters.
+It's important to use [`characters`][characters] when dealing with user input,
+as text might contain complex characters.
 This ensures that every character is counted correctly
-as they appear to the user.
+as it appears to the user.
 
 <?code-excerpt "lib/main.dart (TextField1)"?>
 ```dart
@@ -39,6 +39,10 @@ TextField(
 ),
 ```
 
+<noscript>
+  <img src="/assets/images/docs/cookbook/text-field-changes.png" alt="Handle Text Field Changes Demo" />
+</noscript>
+
 ## 2. Use a `TextEditingController`
 
 A more powerful, but more elaborate approach, is to supply a
@@ -48,10 +52,10 @@ property of the `TextField` or a `TextFormField`.
 To be notified when the text changes, listen to the controller
 using the [`addListener()`][] method using the following steps:
 
-  1. Create a `TextEditingController`.
-  2. Connect the `TextEditingController` to a text field.
-  3. Create a function to print the latest value.
-  4. Listen to the controller for changes.
+1.  Create a `TextEditingController`.
+1.  Connect the `TextEditingController` to a text field.
+1.  Create a function to print the latest value.
+1.  Listen to the controller for changes.
 
 ### Create a `TextEditingController`
 
@@ -166,7 +170,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Retrieve Text Input',
+      title: 'Handle Text Field Changes',
       home: MyCustomForm(),
     );
   }
@@ -211,7 +215,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Retrieve Text Input')),
+      appBar: AppBar(title: const Text('Handle Text Field Changes')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -231,9 +235,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 [`addListener()`]: {{site.api}}/flutter/foundation/ChangeNotifier/addListener.html
-[`controller`]: {{site.api}}/flutter/material/TextField/controller.html
-[`onChanged()`]: {{site.api}}/flutter/material/TextField/onChanged.html
-[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`controller`]: {{site.material_ui}}/TextField/controller.html
+[`onChanged()`]: {{site.material_ui}}/TextField/onChanged.html
+[`TextField`]: {{site.material_ui}}/TextField-class.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
+[`TextFormField`]: {{site.material_ui}}/TextFormField-class.html
 [characters]: {{site.pub}}/packages/characters

@@ -13,7 +13,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Define the focus node. To manage the lifecycle, create the FocusNode in
   // the initState method, and clean it up in the dispose method.
-  late FocusNode myFocusNode;
+  late final FocusNode myFocusNode;
 
   @override
   void initState() {
@@ -51,6 +51,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
         // When the button is pressed,
         // give focus to the text field using myFocusNode.
         onPressed: () => myFocusNode.requestFocus(),
+        tooltip: 'Focus Second Text Field',
+        child: const Icon(Icons.edit),
       ),
       // #enddocregion FloatingActionButton
     );

@@ -454,6 +454,7 @@ You can also enable this option in code:
 <?code-excerpt "lib/highlight_repaints.dart (toggle)"?>
 ```dart
 import 'package:flutter/rendering.dart';
+import 'package:material_ui/material_ui.dart';
 
 void highlightRepaints() {
   debugRepaintRainbowEnabled = true;
