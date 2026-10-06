@@ -18,9 +18,9 @@ wrong.
 In this example, learn how to add validation to a form that has
 a single text field using the following steps:
 
-  1. Create a `Form` with a `GlobalKey`.
-  2. Add a `TextFormField` with validation logic.
-  3. Create a button to validate and submit the form.
+1.  Create a `Form` with a `GlobalKey`.
+1.  Add a `TextFormField` with validation logic.
+1.  Create a button to validate and submit the form.
 
 ## 1. Create a `Form` with a `GlobalKey`
 
@@ -36,7 +36,7 @@ Create the form as a `StatefulWidget`.
 This allows you to create a unique `GlobalKey<FormState>()` once.
 You can then store it as a variable and access it at different points.
 
-If you made this a `StatelessWidget`, you'd need to store this key *somewhere*.
+If you made this a `StatelessWidget`, you'd need to store this key _somewhere_.
 As it is resource expensive, you wouldn't want to generate a new
 `GlobalKey` each time you run the `build` method.
 
@@ -49,19 +49,17 @@ class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
   @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
-  }
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class.
 // This class holds data related to the form.
-class MyCustomFormState extends State<MyCustomForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that uniquely identifies the Form widget
   // and allows validation of the form.
   //
   // Note: This is a `GlobalKey<FormState>`,
-  // not a GlobalKey<MyCustomFormState>.
+  // not a GlobalKey<_MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -70,7 +68,7 @@ class MyCustomFormState extends State<MyCustomForm> {
     return Form(
       key: _formKey,
       child: const Column(
-        children: <Widget>[
+        children: [
           // Add TextFormFields and ElevatedButton here.
         ],
       ),
@@ -91,14 +89,14 @@ access the form within nested widgets.
 Although the `Form` is in place,
 it doesn't have a way for users to enter text.
 That's the job of a [`TextFormField`][].
-The `TextFormField` widget renders a material design text field
+The `TextFormField` widget renders a Material Design text field
 and can display validation errors when they occur.
 
 Validate the input by providing a `validator()` function to the
 `TextFormField`. If the user's input isn't valid,
 the `validator` function returns a `String` containing
 an error message.
-If there are no errors, the validator must return null.
+If there are no errors, the validator must return `null`.
 
 For this example, create a `validator` that ensures the
 `TextFormField` isn't empty. If it is empty,
@@ -116,6 +114,13 @@ TextFormField(
   },
 ),
 ```
+
+:::tip
+To validate fields automatically as the user interacts with them
+or when a field loses focus, configure the [`autovalidateMode`][]
+property on your `Form` or `TextFormField` using [`AutovalidateMode`][]
+(such as `AutovalidateMode.onUserInteraction` or `AutovalidateMode.onUnfocus`).
+:::
 
 ## 3. Create a button to validate and submit the form
 
@@ -187,19 +192,17 @@ class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
   @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
-  }
+  State<MyCustomForm> createState() => _MyCustomFormState();
 }
 
 // Create a corresponding State class.
 // This class holds data related to the form.
-class MyCustomFormState extends State<MyCustomForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that uniquely identifies the Form widget
   // and allows validation of the form.
   //
   // Note: This is a GlobalKey<FormState>,
-  // not a GlobalKey<MyCustomFormState>.
+  // not a GlobalKey<_MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -243,13 +246,15 @@ class MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/form-validation.webp" alt="Form Validation Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/form-validation.png" alt="Form Validation Demo" />
 </noscript>
 
-To learn how to retrieve these values, check out the
+To learn how to retrieve these values, consult the
 [Retrieve the value of a text field][] recipe.
 
 
+[`AutovalidateMode`]: {{site.api}}/flutter/widgets/AutovalidateMode.html
+[`autovalidateMode`]: {{site.api}}/flutter/widgets/Form/autovalidateMode.html
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`Form.of()`]: {{site.api}}/flutter/widgets/Form/of.html
