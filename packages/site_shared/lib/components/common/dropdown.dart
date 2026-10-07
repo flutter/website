@@ -79,9 +79,16 @@ final class DropdownState extends State<Dropdown> {
             },
             child: component.toggle,
           ),
-          div(id: '${component.id}-content', classes: 'dropdown-content', [
-            component.content,
-          ]),
+          div(
+            id: '${component.id}-content',
+            classes: 'dropdown-content',
+            // Make the content focusable, but not tabbable,
+            // so clicking an area of it that isn't otherwise focusable keeps
+            // focus within the dropdown rather than triggering the `focusout`
+            // handler above with a null `relatedTarget` and closing it.
+            attributes: const {'tabindex': '-1'},
+            [component.content],
+          ),
         ],
       ),
     );

@@ -195,19 +195,11 @@ final class _ThemeButtonEntry extends StatelessComponent {
   final void Function(_Theme) setMode;
 
   @override
-  Component build(BuildContext context) => li([
+  Component build(BuildContext _) => li([
     button(
       events: {
-        'click': (event) {
+        'click': (_) {
           setMode(mode);
-          context.findAncestorStateOfType<DropdownState>()?.toggle(to: false);
-
-          // Closing the menu hides this button, so return focus
-          // to the toggle to keep the user's place in the page.
-          final toggleButton = (event.target as web.Element?)
-              ?.closest('.dropdown')
-              ?.querySelector('.dropdown-button');
-          (toggleButton as web.HTMLElement?)?.focus();
         },
       },
       attributes: {
