@@ -176,7 +176,7 @@ class _HeaderState extends State<Header> {
                   src: component.defaultLogoSrc,
                   alt: 'Flutter',
                 ),
-                // Avoid loading the dark logo on pages without dark mode.
+                // Don't load the dark logo on pages without dark mode.
                 if (component.supportsDarkMode)
                   img(
                     classes: 'dark-mode-visible',

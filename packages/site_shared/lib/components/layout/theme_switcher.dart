@@ -14,7 +14,7 @@ import '../common/material_icon.dart';
 
 @client
 final class ThemeSwitcher extends StatefulComponent {
-  const ThemeSwitcher();
+  const ThemeSwitcher({super.key});
 
   @override
   State<StatefulComponent> createState() => _ThemeSwitcherState();
@@ -46,7 +46,7 @@ enum _Theme {
 }
 
 final class _ThemeSwitcherState extends State<StatefulComponent> {
-  _Theme _currentTheme = _Theme.light;
+  _Theme _currentTheme = .light;
   web.MediaQueryList? _prefersDarkQuery;
   StreamSubscription<web.Event>? _pageShowSubscription;
   StreamSubscription<web.StorageEvent>? _storageSubscription;
@@ -62,19 +62,19 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
       _syncThemeFromStorage();
       _pageShowSubscription = web.EventStreamProviders.pageShowEvent
           .forTarget(web.window)
-          .listen((_) => _syncThemeFromStorage(updateState: true));
+          .listen((_) => _syncThemeFromStorage());
       _storageSubscription = web.EventStreamProviders.storageEvent
           .forTarget(web.window)
           .listen((event) {
             if (event.key == null || event.key == 'theme') {
-              _syncThemeFromStorage(updateState: true);
+              _syncThemeFromStorage();
             }
           });
       _mediaQuerySubscription = web.EventStreamProviders.changeEvent
           .forTarget(prefersDarkQuery)
           .listen((_) {
-            if (_currentTheme == _Theme.auto) {
-              _applyThemeToBody(_Theme.auto);
+            if (_currentTheme == .auto) {
+              _applyThemeToBody(.auto);
             }
           });
     }
@@ -92,13 +92,13 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
 
   _Theme _themeFromBodyClasses() {
     final classList = web.document.body?.classList;
-    if (classList == null) return _Theme.light;
+    if (classList == null) return .light;
     if (classList.contains(_Theme.auto.id)) {
-      return _Theme.auto;
+      return .auto;
     } else if (classList.contains(_Theme.dark.id)) {
-      return _Theme.dark;
+      return .dark;
     } else {
-      return _Theme.light;
+      return .light;
     }
   }
 
@@ -106,40 +106,37 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
     final classList = web.document.body?.classList;
     if (classList == null) return;
 
-    final isAuto = theme == _Theme.auto;
+    final isAuto = theme == .auto;
     final isDark = isAuto
         ? (_prefersDarkQuery?.matches ?? false)
-        : theme == _Theme.dark;
+        : theme == .dark;
 
     classList.toggle(_Theme.light.id, !isDark);
     classList.toggle(_Theme.dark.id, isDark);
     classList.toggle(_Theme.auto.id, isAuto);
   }
 
-  void _syncThemeFromStorage({bool updateState = false}) {
-    _Theme? storedTheme;
+  void _syncThemeFromStorage() {
+    _Theme resolvedTheme;
     try {
       // Match the early theme script, which defaults to light
       // when no valid theme is stored.
-      storedTheme = switch (web.window.localStorage.getItem('theme')) {
-        'auto-mode' => _Theme.auto,
-        'dark-mode' => _Theme.dark,
-        _ => _Theme.light,
+      resolvedTheme = switch (web.window.localStorage.getItem('theme')) {
+        'auto-mode' => .auto,
+        'dark-mode' => .dark,
+        _ => .light,
       };
     } catch (_) {
       // localStorage is not available, fall back to body classes.
+      resolvedTheme = _themeFromBodyClasses();
     }
-
-    final resolvedTheme = storedTheme ?? _themeFromBodyClasses();
 
     _applyThemeToBody(resolvedTheme);
 
-    if (updateState && resolvedTheme != _currentTheme) {
+    if (resolvedTheme != _currentTheme) {
       setState(() {
         _currentTheme = resolvedTheme;
       });
-    } else {
-      _currentTheme = resolvedTheme;
     }
   }
 

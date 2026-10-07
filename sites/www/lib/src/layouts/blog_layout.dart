@@ -60,7 +60,7 @@ class BlogLayout extends DefaultLayout {
       main_([
         article(classes: 'content', [
           div(
-            classes: 'content ${isPost ? 'post-content' : ''}',
+            classes: ['content', if (isPost) 'post-content'].toClasses,
             attributes: scroll.spyContent,
             [
               div(id: 'site-content-title', [

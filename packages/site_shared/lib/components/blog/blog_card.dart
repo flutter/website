@@ -9,27 +9,26 @@ import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../blog.dart';
 import '../../util.dart';
+import 'client/blog_categories.dart';
 
 class BlogCard extends StatelessComponent {
   const BlogCard({
     required this.post,
     required this.url,
-    this.className,
-    this.priority = BlogCardPriority.normal,
+    this.layout = .grid,
     super.key,
   });
 
   final Post post;
   final String url;
-  final String? className;
-  final BlogCardPriority priority;
+  final BlogCardLayout layout;
 
   @override
   Component build(BuildContext context) {
     final authors = context.page.authorsByIds(post.authorIds);
     return a(
       href: url,
-      classes: ['blog-card', ?className].toClasses,
+      classes: ['blog-card', layout.className].toClasses,
       attributes: {'data-category': post.category},
       [
         if (post.image case final postImage?)
@@ -37,13 +36,11 @@ class BlogCard extends StatelessComponent {
             img(
               src: postImage,
               alt: post.title,
-              loading: switch (priority) {
-                .featured => MediaLoading.eager,
-                .high => MediaLoading.lazy,
-                .normal => MediaLoading.lazy,
-              },
+              loading: layout == .featured
+                  ? MediaLoading.eager
+                  : MediaLoading.lazy,
               attributes: {
-                if (priority == .featured)
+                if (layout == .featured)
                   'fetchpriority': 'high'
                 else
                   'decoding': 'async',
@@ -94,20 +91,4 @@ class BlogCard extends StatelessComponent {
       ],
     );
   }
-}
-
-/// Priority levels for blog cards.
-///
-/// Used to configure loading behavior of their content, particularly images.
-enum BlogCardPriority {
-  /// A featured blog card.
-  featured,
-
-  /// A high-priority blog card.
-  ///
-  /// Often the first 5 or so cards.
-  high,
-
-  /// A normal-priority blog card.
-  normal,
 }

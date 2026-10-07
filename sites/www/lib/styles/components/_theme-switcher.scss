@@ -45,7 +45,7 @@
   }
 
   @media (min-width: 1024px) and (any-hover: hover) {
-    &:has(#theme-switcher) .search {
+    &:not(.searching):has(#theme-switcher) .search {
       margin-right: 0.25rem;
     }
 

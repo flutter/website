@@ -175,14 +175,6 @@ body.dark-mode {
 
   --site-code-highlight-bgColor: rgba(164, 158, 62, 0.15);
   --site-diagram-wrap-bgColor: #e1e6ea;
-
-  .opal,
-  .opal span {
-    color: var(--opal-dark-color) !important;
-    font-style: var(--opal-dark-font-style) !important;
-    font-weight: var(--opal-dark-font-weight) !important;
-    text-decoration: var(--opal-dark-text-decoration) !important;
-  }
 }
 
 .text-coral {

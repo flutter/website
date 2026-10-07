@@ -157,15 +157,10 @@
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
     color: var(--site-base-fgColor);
+  }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-
-      &:hover {
-        color: var(--site-link-fgColor);
-      }
-    }
+  &:hover .blog-card-title {
+    color: var(--site-link-fgColor);
   }
 
   .blog-card-content {
@@ -365,16 +360,6 @@
     }
   }
 
-  > a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-
-    &:hover .post-info-name {
-      color: var(--site-link-fgColor);
-    }
-  }
-
   .post-info-author {
     display: flex;
     align-items: center;
@@ -432,6 +417,10 @@
     span {
       color: var(--site-base-fgColor);
       font-weight: var(--site-fontWeight-bold);
+    }
+
+    a:hover {
+      color: var(--site-link-fgColor);
     }
 
     .post-info-author-name {
