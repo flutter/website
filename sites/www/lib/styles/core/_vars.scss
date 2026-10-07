@@ -98,6 +98,10 @@
   --site-link-fgColor: var(--site-primary-color);
   --site-link-fgColor-active: #0553b1;
 
+  --site-heading-fgColor: black;
+  --site-paragraph-fgColor: var(--grey-6);
+  --site-paragraph-link-fgColor: var(--blue-6);
+
   --site-filledButton-bgColor: var(--blue-6);
   --site-filledButton-fgColor: #fff;
 
@@ -169,6 +173,10 @@ body.dark-mode {
 
   --site-link-fgColor: #47b0f8;
   --site-link-fgColor-active: #28a3f7;
+
+  --site-heading-fgColor: var(--site-base-fgColor);
+  --site-paragraph-fgColor: var(--site-base-fgColor);
+  --site-paragraph-link-fgColor: var(--site-link-fgColor);
 
   --site-header-bgColor: var(--site-raised-bgColor);
   --site-footer-bgColor: var(--site-raised-bgColor);

@@ -5,15 +5,9 @@
   color: var(--site-base-fgColor-lighter);
   padding: 70px var(--gutter);
 
-  ul {
-    a {
-      color: var(--site-base-fgColor-lighter);
-
-      &:hover {
-        color: var(--site-base-fgColor);
-        text-decoration: underline;
-      }
-    }
+  ul a:hover {
+    color: var(--site-base-fgColor);
+    text-decoration: underline;
   }
 
   .content {
@@ -37,7 +31,6 @@
 
         a {
           margin-right: 1.25rem;
-          color: var(--site-base-fgColor-lighter);
           display: inline-flex;
           align-items: center;
 
@@ -54,7 +47,6 @@
         span {
           font-family: var(--font-ui);
           font-size: var(--font-size-heading-5);
-          color: var(--site-base-fgColor-lighter);
         }
       }
 

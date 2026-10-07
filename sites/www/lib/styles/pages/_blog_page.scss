@@ -5,19 +5,14 @@ body.blog {
 }
 
 .blog main {
+  // Use the shared base colors rather than the www defaults.
+  --site-heading-fgColor: var(--site-base-fgColor);
+  --site-paragraph-fgColor: var(--site-base-fgColor);
+  --site-paragraph-link-fgColor: var(--site-link-fgColor);
+
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: var(--site-base-bgColor);
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--site-base-fgColor);
-  }
 
   > article {
     width: 60rem;
@@ -77,7 +72,6 @@ body.blog {
 
     > .content {
       padding: 1.5rem;
-      color: var(--site-base-fgColor);
     }
 
     @media (min-width: 576px) {
@@ -130,10 +124,7 @@ body.blog {
   }
 }
 
-// Include `p a` to override the base paragraph link color,
-// which is more specific and applies outside of post content.
-:where(.blog main) a,
-:where(.blog main) p a {
+:where(.blog main) a {
   color: var(--site-link-fgColor);
 
   &:hover {
@@ -143,10 +134,6 @@ body.blog {
   &:active {
     color: var(--site-link-fgColor-active);
   }
-}
-
-:where(.blog main) p {
-  color: var(--site-base-fgColor);
 }
 
 .blog .back-to-top {

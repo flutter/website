@@ -46,89 +46,100 @@ enum _Theme {
 }
 
 final class _ThemeSwitcherState extends State<StatefulComponent> {
+  /// The theme the user selected, which is marked as selected in the menu.
   _Theme _currentTheme = .light;
-  web.MediaQueryList? _prefersDarkQuery;
-  StreamSubscription<web.Event>? _pageShowSubscription;
-  StreamSubscription<web.StorageEvent>? _storageSubscription;
-  StreamSubscription<web.Event>? _mediaQuerySubscription;
+
+  /// The media query for whether the device prefers a dark color scheme,
+  /// used to resolve the [_Theme.auto] theme.
+  late final web.MediaQueryList _prefersDarkQuery;
+
+  /// The subscriptions to window and media query events,
+  /// which are canceled when this state is disposed.
+  final List<StreamSubscription<web.Event>> _subscriptions = [];
 
   @override
   void initState() {
     super.initState();
     if (kIsWeb) {
-      final prefersDarkQuery = _prefersDarkQuery = web.window.matchMedia(
-        '(prefers-color-scheme: dark)',
-      );
+      _prefersDarkQuery = web.window.matchMedia('(prefers-color-scheme: dark)');
       _syncThemeFromStorage();
-      _pageShowSubscription = web.EventStreamProviders.pageShowEvent
-          .forTarget(web.window)
-          .listen((_) => _syncThemeFromStorage());
-      _storageSubscription = web.EventStreamProviders.storageEvent
-          .forTarget(web.window)
-          .listen((event) {
-            if (event.key == null || event.key == 'theme') {
-              _syncThemeFromStorage();
-            }
-          });
-      _mediaQuerySubscription = web.EventStreamProviders.changeEvent
-          .forTarget(prefersDarkQuery)
-          .listen((_) {
-            if (_currentTheme == .auto) {
-              _applyThemeToBody(.auto);
-            }
-          });
+      _subscriptions.addAll([
+        web.EventStreamProviders.pageShowEvent
+            .forTarget(web.window)
+            .listen(_onPageShow),
+        web.EventStreamProviders.storageEvent
+            .forTarget(web.window)
+            .listen(_onStorageChange),
+        web.EventStreamProviders.changeEvent
+            .forTarget(_prefersDarkQuery)
+            .listen(_onPrefersDarkChange),
+      ]);
     }
   }
 
   @override
   void dispose() {
-    // DOM event stream cancellations complete synchronously and don't need to
-    // be awaited in synchronous lifecycle teardown.
-    unawaited(_pageShowSubscription?.cancel());
-    unawaited(_storageSubscription?.cancel());
-    unawaited(_mediaQuerySubscription?.cancel());
+    // DOM event stream cancellations complete synchronously and
+    // don't need to be awaited in synchronous lifecycle teardown.
+    for (final subscription in _subscriptions) {
+      unawaited(subscription.cancel());
+    }
     super.dispose();
   }
 
-  _Theme _themeFromBodyClasses() {
-    final classList = web.document.body?.classList;
-    if (classList == null) return .light;
-    if (classList.contains(_Theme.auto.id)) {
-      return .auto;
-    } else if (classList.contains(_Theme.dark.id)) {
-      return .dark;
-    } else {
-      return .light;
+  /// Resyncs the theme when the page is restored from the back/forward cache,
+  /// as it might have been changed on another page.
+  void _onPageShow(web.Event event) {
+    if ((event as web.PageTransitionEvent).persisted) {
+      _syncThemeFromStorage();
     }
   }
 
+  /// Resyncs the theme when another tab or window changes
+  /// the stored theme preference or clears storage.
+  void _onStorageChange(web.StorageEvent event) {
+    if (event.key == null || event.key == 'theme') {
+      _syncThemeFromStorage();
+    }
+  }
+
+  /// Reapplies the automatic theme when
+  /// the device's preferred color scheme changes.
+  void _onPrefersDarkChange(web.Event _) {
+    if (_currentTheme == .auto) {
+      _applyThemeToBody(.auto);
+    }
+  }
+
+  /// Updates the theme classes on the document body to reflect [theme],
+  /// resolving [_Theme.auto] to light or dark based on the device preference.
   void _applyThemeToBody(_Theme theme) {
     final classList = web.document.body?.classList;
     if (classList == null) return;
 
     final isAuto = theme == .auto;
-    final isDark = isAuto
-        ? (_prefersDarkQuery?.matches ?? false)
-        : theme == .dark;
+    final isDark = isAuto ? _prefersDarkQuery.matches : theme == .dark;
 
     classList.toggle(_Theme.light.id, !isDark);
     classList.toggle(_Theme.dark.id, isDark);
     classList.toggle(_Theme.auto.id, isAuto);
   }
 
+  /// Applies the theme preference saved in local storage
+  /// and updates [_currentTheme] to match it.
   void _syncThemeFromStorage() {
     _Theme resolvedTheme;
     try {
       // Match the early theme script, which defaults to light
       // when no valid theme is stored.
-      resolvedTheme = switch (web.window.localStorage.getItem('theme')) {
-        'auto-mode' => .auto,
-        'dark-mode' => .dark,
-        _ => .light,
-      };
+      final storedTheme = web.window.localStorage.getItem('theme');
+      resolvedTheme = _Theme.values.firstWhere(
+        (theme) => theme.id == storedTheme,
+        orElse: () => .light,
+      );
     } catch (_) {
-      // localStorage is not available, fall back to body classes.
-      resolvedTheme = _themeFromBodyClasses();
+      // localStorage is not available, keep the current theme.
+      resolvedTheme = _currentTheme;
     }
 
     _applyThemeToBody(resolvedTheme);
@@ -140,6 +151,7 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
     }
   }
 
+  /// Applies [newTheme] and saves it as the user's theme preference.
   void _setTheme(_Theme newTheme) {
     if (newTheme == _currentTheme) return;
 

@@ -5,18 +5,17 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-/// Inline `<script>` component that applies the user's saved theme preference
-/// (`light-mode`, `dark-mode`, or `auto-mode`) to `document.body` before the
-/// page paints.
+/// Inline `<script>` component that
+/// applies the user's saved theme preference to
+/// `document.body` before the page paints.
 const Component themeInitScript = script(
   content: '''
 try {
-  const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
+  const storedTheme = window.localStorage.getItem('theme');
   const isAuto = storedTheme === 'auto-mode';
   const isDark = isAuto
       ? window.matchMedia('(prefers-color-scheme: dark)').matches
       : storedTheme === 'dark-mode';
-  document.body.classList.remove('light-mode', 'dark-mode', 'auto-mode');
   document.body.classList.add(isDark ? 'dark-mode' : 'light-mode');
   if (isAuto) document.body.classList.add('auto-mode');
 } catch (_) {
