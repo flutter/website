@@ -270,7 +270,7 @@ class Page2 extends StatelessWidget {
 }
 ```
 <noscript>
-  <img src="/assets/images/docs/cookbook/page-route-animation.png" alt="Demo showing a custom page route transition animating up from the bottom of the screen" />
+  <img src="/assets/images/docs/cookbook/page-route-animation.webp" alt="Demo showing a custom page route transition animating up from the bottom of the screen" />
 </noscript>
 
 
