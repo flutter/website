@@ -7,6 +7,7 @@ environment:
 
 workspace:
   - packages/analysis_defaults
+  - packages/dash_media_convert
   - packages/excerpter
   - packages/site_shared
   - sites/docs
