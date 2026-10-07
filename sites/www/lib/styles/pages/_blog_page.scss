@@ -130,7 +130,10 @@ body.blog {
   }
 }
 
-:where(.blog main) a {
+// Include `p a` to override the base paragraph link color,
+// which is more specific and applies outside of post content.
+:where(.blog main) a,
+:where(.blog main) p a {
   color: var(--site-link-fgColor);
 
   &:hover {

@@ -69,10 +69,10 @@ class BlogIndex extends StatelessComponent {
             BlogCard(
               post: posts[i].post,
               url: posts[i].url,
-              priority: switch (i) {
-                0 => BlogCardPriority.featured,
-                < 5 => BlogCardPriority.high,
-                _ => BlogCardPriority.normal,
+              priority: switch (BlogCardLayout.forIndex(i)) {
+                .featured => BlogCardPriority.featured,
+                .grid => BlogCardPriority.high,
+                .list => BlogCardPriority.normal,
               },
               className: BlogCardLayout.forIndex(i).className,
             ),

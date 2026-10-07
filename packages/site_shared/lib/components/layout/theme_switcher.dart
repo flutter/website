@@ -22,6 +22,8 @@ final class ThemeSwitcher extends StatefulComponent {
 
 /// A [ThemeSwitcher] variant for use inside an existing `@client` component,
 /// such as a client-hydrated header, to avoid nested `@client` anchors.
+// TODO: Remove this variant once
+//  Jaspr fixes nested `@client` components handling.
 final class NestedThemeSwitcher extends StatefulComponent {
   const NestedThemeSwitcher({super.key});
 
@@ -196,9 +198,16 @@ final class _ThemeButtonEntry extends StatelessComponent {
   Component build(BuildContext context) => li([
     button(
       events: {
-        'click': (_) {
+        'click': (event) {
           setMode(mode);
           context.findAncestorStateOfType<DropdownState>()?.toggle(to: false);
+
+          // Closing the menu hides this button, so return focus
+          // to the toggle to keep the user's place in the page.
+          final toggleButton = (event.target as web.Element?)
+              ?.closest('.dropdown')
+              ?.querySelector('.dropdown-button');
+          (toggleButton as web.HTMLElement?)?.focus();
         },
       },
       attributes: {

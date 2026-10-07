@@ -95,7 +95,7 @@ class _BlogCategoriesState extends State<BlogCategories> {
   void initState() {
     super.initState();
     if (kIsWeb) {
-      _updateCategoryFromUrl(initial: true);
+      _updateCategoryFromUrl();
       _popStateSubscription = web.EventStreamProviders.popStateEvent
           .forTarget(web.window)
           .listen((_) => _updateCategoryFromUrl());
@@ -108,26 +108,20 @@ class _BlogCategoriesState extends State<BlogCategories> {
     super.dispose();
   }
 
-  void _updateCategoryFromUrl({bool initial = false}) {
+  void _updateCategoryFromUrl() {
     final uri = Uri.parse(web.window.location.href);
     final slug = uri.queryParameters['category'];
     final category = component.categories
         .where((c) => c.slug == slug)
         .firstOrNull;
 
-    if (initial) {
-      selectedCategory = category;
-      if (category != null) {
-        _applyLayout(category);
-      }
-      return;
-    }
+    // The cards already have the layout for the selected category,
+    // including the server-rendered layout when no category is selected.
+    if (category == selectedCategory) return;
 
-    if (category != selectedCategory) {
-      setState(() {
-        selectedCategory = category;
-      });
-    }
+    setState(() {
+      selectedCategory = category;
+    });
     _applyLayout(category);
   }
 

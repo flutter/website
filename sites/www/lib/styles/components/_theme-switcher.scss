@@ -1,11 +1,3 @@
-body:not(.dark-mode) .dark-mode-visible {
-  display: none !important;
-}
-
-body.dark-mode .light-mode-visible {
-  display: none !important;
-}
-
 .site-header {
   #theme-switcher {
     display: inline-flex;
