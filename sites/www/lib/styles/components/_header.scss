@@ -445,7 +445,7 @@
           &:hover {
 
             /* keep li highlighted while over dropdown */
-            a.btn {
+            > a.btn {
               background-color: rgba(250, 250, 250, 0.15);
             }
 
