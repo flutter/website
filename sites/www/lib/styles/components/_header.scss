@@ -605,7 +605,6 @@ body.interior {
 body.interior,
 body.in-content {
   .site-header:not(.mobile-nav-open) {
-    transition: box-shadow 200ms;
     background-color: var(--site-header-bgColor);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
     top: 0 !important;
