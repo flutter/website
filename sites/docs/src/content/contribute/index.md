@@ -181,6 +181,8 @@ Planning a major architectural change, cross-subsystem feature, new primitive,
 or breaking change?
 Before writing implementation code, propose and align on the design through a
 Request for Comments (RFC) in the [`flutter/rfc` repository][flutter-rfc].
+Routine bug fixes and localized changes don't require an RFC;
+open an issue or pull request directly instead.
 
 To learn when an RFC is required and how to submit one,
 consult the [Flutter RFCs & Design Documents guide][design-docs-guide] and
