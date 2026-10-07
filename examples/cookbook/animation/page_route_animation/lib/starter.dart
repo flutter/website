@@ -80,8 +80,8 @@ Route<void> step2() {
 
 void createCurves() {
   // #docregion step3
-  var curve = Curves.ease;
-  var curveTween = CurveTween(curve: curve);
+  const curve = Curves.ease;
+  final curveTween = CurveTween(curve: curve);
   // #enddocregion step3
 }
 
