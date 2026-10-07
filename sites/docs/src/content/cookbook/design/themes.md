@@ -266,7 +266,7 @@ class MyHomePage extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/themes.png" alt="Themes Demo" />
 </noscript>
 
 [`copyWith()`]: {{site.material_ui}}/ThemeData/copyWith.html

@@ -404,7 +404,7 @@ Download the Raleway and RobotoMono font files from [Google Fonts][].
 
 The resulting Flutter app should display the following screen.
 
-![Custom Fonts Demo](/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
+![Custom Fonts Demo](/assets/images/docs/cookbook/fonts.png)
 
 [variable-fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
 [Export fonts from a package]: /cookbook/design/package-fonts

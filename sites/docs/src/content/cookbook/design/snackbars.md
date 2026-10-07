@@ -10,7 +10,7 @@ take place. For example, when a user swipes away a message in a list,
 you might want to inform them that the message has been deleted.
 You might even want to give them an option to undo the action.
 
-![SnackBar Demo](/assets/images/docs/cookbook/snackbar.webp){:.site-mobile-screenshot}
+![SnackBar Demo](/assets/images/docs/cookbook/snackbar.png)
 
 In Material Design, this is the job of a [`SnackBar`][].
 This recipe implements a snackbar using the following steps:
@@ -146,8 +146,7 @@ class SnackBarPage extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/snackbar.webp"
-    alt="SnackBar Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/snackbar.png" alt="SnackBar Demo" />
 </noscript>
 
 [Gestures]: /cookbook/gestures

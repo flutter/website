@@ -282,7 +282,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/drawer.png" alt="Drawer Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/drawer.png" alt="Drawer Demo" />
 </noscript>
 
 
