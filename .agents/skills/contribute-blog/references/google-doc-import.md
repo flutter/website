@@ -75,7 +75,9 @@ before renaming or moving it:
 - Place images in the post's `images/` directory
   with concise, descriptive names.
 - Keep the highest-quality intended source.
-  Convert static raster images to WebP when quality and clarity are preserved.
+  Convert static PNG and JPEG images to WebP by running
+  `dart run dash_site optimize-images <image paths...>`
+  with each image's path relative to the repository root.
 - If the image is a JPEG, prefer a `.jpg` extension over `.jpeg`.
 - Preserve intentional animation
   and provide a static `socialImage` when needed.

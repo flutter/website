@@ -1,0 +1,22 @@
+name: dash_media_convert
+description: >-
+  Tools for optimizing website media.
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  archive: ^4.0.7
+  crypto: ^3.0.7
+  dart_data_home: ^0.1.1
+  http: ^1.6.0
+  path: ^1.9.1
+  pool: ^1.5.1
+
+dev_dependencies:
+  analysis_defaults:
+    path: ../analysis_defaults
+  image: ^4.9.0
+  test: ^1.31.1
