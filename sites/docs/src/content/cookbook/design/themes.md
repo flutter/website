@@ -23,9 +23,9 @@ applicable for the type of Material component.
 
 Flutter applies styling in the following order:
 
-1. Styles applied to the specific widget.
-1. Themes that override the immediate parent theme.
-1. Main theme for the entire app.
+1.  Styles applied to the specific widget.
+2.  Themes that override the immediate parent theme.
+3.  Main theme for the entire app.
 
 After you define a `Theme`, use it within your own widgets.
 Flutter's Material widgets use your theme to set the background
@@ -72,16 +72,17 @@ MaterialApp(
 );
 ```
 
-Most instances of `ThemeData` set values for the following two properties. These properties affect the entire app.
+Most instances of `ThemeData` set values for the following two properties.
+These properties affect the entire app:
 
-1. [`colorScheme`][] defines the colors.
-1. [`textTheme`][] defines text styling.
+1.  [`colorScheme`][] defines the colors.
+2.  [`textTheme`][] defines text styling.
 
 [`colorScheme`]: {{site.material_ui}}/ThemeData/colorScheme.html
 [`textTheme`]: {{site.material_ui}}/ThemeData/textTheme.html
 
-To learn what colors, fonts, and other properties, you can define,
-check out the [`ThemeData`][] documentation.
+To learn what colors, fonts, and other properties you can define,
+consult the [`ThemeData`][] documentation.
 
 ## Apply a theme
 
@@ -94,7 +95,8 @@ the nearest `Theme` in the tree.
 If you have a standalone `Theme`, that's applied.
 If not, Flutter applies the app's theme.
 
-In the following example, the `Container` constructor uses this technique to set its `color`.
+In the following example, the `Container` constructor uses this technique
+to set its `color`.
 
 <?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
 ```dart
@@ -117,8 +119,8 @@ wrap that section of the app in a `Theme` widget.
 
 You can override a theme in two ways:
 
-1. Create a unique `ThemeData` instance.
-2. Extend the parent theme.
+1.  Create a unique `ThemeData` instance.
+2.  Extend the parent theme.
 
 ### Set a unique `ThemeData` instance
 
@@ -144,16 +146,17 @@ To extend a theme, use the [`copyWith()`][] method.
 ```dart
 Theme(
   // Find and extend the parent theme using `copyWith`.
-  // To learn more, check out the section on `Theme.of`.
+  // To learn more, consult the section on `Theme.of`.
   data: Theme.of(context)
       .copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
-  child: const FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
+  child: FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
 );
 ```
 
 ## Watch a video on `Theme`
 
-To learn more, watch this short Widget of the Week video on the `Theme` widget:
+To learn more, watch this short Widget of the Week video
+on the `Theme` widget:
 
 <YouTubeEmbed id="oTvQDJOBXmM" title="Theme | Flutter widget of the week"></YouTubeEmbed>
 
@@ -214,9 +217,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final String title;
-
   const MyHomePage({super.key, required this.title});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {

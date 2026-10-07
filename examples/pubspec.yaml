@@ -25,6 +25,7 @@ workspace:
   - cookbook/animation/opacity_animation
   - cookbook/animation/page_route_animation
   - cookbook/animation/physics_simulation
+  - cookbook/design/cupertino_sheets
   - cookbook/design/drawer
   - cookbook/design/fonts
   - cookbook/design/orientation

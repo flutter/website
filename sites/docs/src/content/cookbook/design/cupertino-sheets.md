@@ -14,13 +14,13 @@ and can be pulled down to dismiss.
 In Flutter, this is the job of [`showCupertinoSheet`][].
 This recipe implements a Cupertino sheet using the following steps:
 
-  1. Create a `CupertinoApp` or `MaterialApp`.
-  2. Display the sheet content.
+1.  Create a `CupertinoApp` or `MaterialApp`.
+2.  Display the sheet content.
 
 ## 1. Create a `CupertinoApp`
 
 When creating apps that follow the iOS design guidelines,
-you can use `CupertinoApp`.
+you can use [`CupertinoApp`][].
 The following example provides a button in the center of the screen
 that triggers the modal.
 
@@ -43,7 +43,7 @@ class CupertinoSheetDemo extends StatelessWidget {
 
 With the basic app structure in place, display the sheet.
 To show it, call `showCupertinoSheet` and provide a `scrollableBuilder`
-that returns the content for the sheet, such as a `SingleChildScrollView`.
+that returns the content for the sheet, such as a [`SingleChildScrollView`][].
 
 <?code-excerpt "lib/main.dart (ShowCupertinoSheet)"?>
 ```dart
@@ -56,7 +56,7 @@ showCupertinoSheet<void>(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             const SizedBox(height: 100),
             const Text('This is a Cupertino sheet'),
             const SizedBox(height: 20),
@@ -115,7 +115,7 @@ class CupertinoSheetPage extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
+                      children: [
                         const SizedBox(height: 100),
                         const Text('This is a Cupertino sheet'),
                         const SizedBox(height: 20),
@@ -140,4 +140,6 @@ class CupertinoSheetPage extends StatelessWidget {
 }
 ```
 
+[`CupertinoApp`]: {{site.cupertino_ui}}/CupertinoApp-class.html
 [`showCupertinoSheet`]: {{site.cupertino_ui}}/showCupertinoSheet.html
+[`SingleChildScrollView`]: {{site.cupertino_ui}}/SingleChildScrollView-class.html

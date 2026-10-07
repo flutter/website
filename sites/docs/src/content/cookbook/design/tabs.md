@@ -10,11 +10,11 @@ Material Design guidelines.
 Flutter includes a convenient way to create tab layouts as part of
 the [material library][].
 
-This recipe creates a tabbed example using the following steps;
+This recipe creates a tabbed example using the following steps:
 
-  1. Create a `TabController`.
-  2. Create the tabs.
-  3. Create content for each tab.
+1.  Create a `TabController`.
+2.  Create the tabs.
+3.  Create content for each tab.
 
 ## 1. Create a `TabController`
 
