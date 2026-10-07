@@ -223,7 +223,11 @@ final class WebpConverter {
         resizedWidth: resizedWidth,
       );
     } finally {
-      await tempDirectory.delete(recursive: true);
+      try {
+        await tempDirectory.delete(recursive: true);
+      } catch (_) {
+        // Do not let cleanup failures mask the actual result.
+      }
     }
   }
 }
