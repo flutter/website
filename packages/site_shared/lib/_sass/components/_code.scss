@@ -57,16 +57,6 @@ pre {
     --opal-dark-color: var(--site-base-fgColor);
   }
 
-  @at-root body.dark-mode {
-    .opal,
-    .opal span {
-      color: var(--opal-dark-color) !important;
-      font-style: var(--opal-dark-font-style) !important;
-      font-weight: var(--opal-dark-font-weight) !important;
-      text-decoration: var(--opal-dark-text-decoration) !important;
-    }
-  }
-
   a {
     font-family: inherit;
     font-weight: inherit;
@@ -477,5 +467,15 @@ iframe[src^="https://dartpad"] {
         border-right: inherit;
       }
     }
+  }
+}
+
+body.dark-mode {
+  .opal,
+  .opal span {
+    color: var(--opal-dark-color) !important;
+    font-style: var(--opal-dark-font-style) !important;
+    font-weight: var(--opal-dark-font-weight) !important;
+    text-decoration: var(--opal-dark-text-decoration) !important;
   }
 }

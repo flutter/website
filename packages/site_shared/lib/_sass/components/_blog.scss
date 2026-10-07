@@ -159,8 +159,10 @@
     color: var(--site-base-fgColor);
   }
 
-  &:hover .blog-card-title {
-    color: var(--site-link-fgColor);
+  &:hover, &:focus-visible {
+    .blog-card-title {
+      color: var(--site-link-fgColor);
+    }
   }
 
   .blog-card-content {

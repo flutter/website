@@ -9,7 +9,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../blog.dart';
 import '../../util.dart';
-import 'client/blog_categories.dart';
+import 'blog_card_layout.dart';
 
 class BlogCard extends StatelessComponent {
   const BlogCard({
@@ -35,7 +35,8 @@ class BlogCard extends StatelessComponent {
           div(classes: 'blog-card-image', [
             img(
               src: postImage,
-              alt: post.title,
+              // The image is decorative since the title follows it.
+              alt: '',
               loading: layout == .featured
                   ? MediaLoading.eager
                   : MediaLoading.lazy,

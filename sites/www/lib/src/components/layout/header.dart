@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/layout/theme_switcher.dart';
+import 'package:site_shared/util.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../data/nav_items.dart';
@@ -153,7 +154,7 @@ class _HeaderState extends State<Header> {
       if (_isMobile && _navOpen) 'mobile-nav-open',
       if (_searchActive) 'searching',
       'site-header',
-    ].join(' ');
+    ].toClasses;
 
     final isBlog = component.pageUrl.startsWith('/blog');
 
@@ -216,7 +217,7 @@ class _HeaderState extends State<Header> {
                 'icon-btn',
                 'search',
                 if (_navOpen || _searchActive) 'active',
-              ].join(' '),
+              ].toClasses,
               [
                 span(
                   events: {'click': (_) => _toggleSearch()},
@@ -310,7 +311,7 @@ class _NavEntry extends StatelessComponent {
       return li([
         a(
           href: data.href,
-          classes: ['btn', 'top-level', if (isActive) 'active'].join(' '),
+          classes: ['btn', 'top-level', if (isActive) 'active'].toClasses,
           [.text(data.label)],
         ),
       ]);
@@ -321,7 +322,7 @@ class _NavEntry extends StatelessComponent {
       [
         a(
           href: data.href,
-          classes: ['btn', 'top-level', if (isActive) 'active'].join(' '),
+          classes: ['btn', 'top-level', if (isActive) 'active'].toClasses,
           events: {
             'click': ?onMobileClick,
           },
@@ -332,7 +333,7 @@ class _NavEntry extends StatelessComponent {
         ),
         const div(classes: 'dd-connector', []),
         div(
-          classes: ['dd', if (data.secondColumn != null) 'dd-double'].join(' '),
+          classes: ['dd', if (data.secondColumn != null) 'dd-double'].toClasses,
           [
             ul([
               _NavDropdownLink(
@@ -382,7 +383,7 @@ class _NavDropdownLink extends StatelessComponent {
             'btn',
             if (isNested) 'subMenu',
             if (pageUrl == link.href) 'active',
-          ].join(' '),
+          ].toClasses,
           href: link.href,
           target: link.isExternal ? Target.blank : null,
           [.text(link.label)],
