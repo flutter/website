@@ -158,7 +158,8 @@
           text-align: left;
           display: flex;
           color: white;
-          padding: 13px 16px;
+          padding: 12px 14px;
+          height: 2.25rem;
           transition: background-color 300ms ease;
 
           &:active,
@@ -174,7 +175,8 @@
     background-color: white;
     color: var(--blue-6);
     display: none;
-    white-space: nowrap;
+    padding: .5rem 1.75rem;
+    height: 40px;
   }
 
   .hamburger {
@@ -416,7 +418,11 @@
 
   @media (min-width: 1024px) and (any-hover: hover) {
     .content {
-      padding: 0 var(--gutter);
+      padding: 0 2rem;
+
+      @include breakpoints.screen(xl) {
+        padding: 0 var(--gutter);
+      }
     }
 
     nav {
@@ -429,7 +435,7 @@
       >ul {
         >li {
           display: inline-block;
-          margin-left: var(--spacer-sm);
+          margin-left: 6px;
 
           a .icon,
           .dd li.mobile-only {
