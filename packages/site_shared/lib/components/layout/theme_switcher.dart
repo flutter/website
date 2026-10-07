@@ -108,21 +108,10 @@ final class _ThemeSwitcherState extends State<StatefulComponent> {
     final isDark = isAuto
         ? (_prefersDarkQuery?.matches ?? false)
         : theme == _Theme.dark;
-    final resolvedId = isDark ? _Theme.dark.id : _Theme.light.id;
-    final oppositeId = isDark ? _Theme.light.id : _Theme.dark.id;
 
-    if (classList.contains(resolvedId) &&
-        classList.contains(_Theme.auto.id) == isAuto &&
-        !classList.contains(oppositeId)) {
-      return;
-    }
-    for (final mode in _Theme.values) {
-      classList.remove(mode.id);
-    }
-    classList.add(resolvedId);
-    if (isAuto) {
-      classList.add(_Theme.auto.id);
-    }
+    classList.toggle(_Theme.light.id, !isDark);
+    classList.toggle(_Theme.dark.id, isDark);
+    classList.toggle(_Theme.auto.id, isAuto);
   }
 
   void _syncThemeFromStorage({bool updateState = false}) {

@@ -74,9 +74,7 @@ class BlogIndex extends StatelessComponent {
                 < 5 => BlogCardPriority.high,
                 _ => BlogCardPriority.normal,
               },
-              className: i == 0
-                  ? 'layout-featured'
-                  : (i < 5 ? 'layout-grid' : 'layout-list'),
+              className: BlogCardLayout.forIndex(i).className,
             ),
         ],
       ),

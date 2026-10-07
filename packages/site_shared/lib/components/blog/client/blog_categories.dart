@@ -43,6 +43,40 @@ class BlogCategory {
   };
 }
 
+/// The layout of a card in the blog index,
+/// determined by its position among the visible cards.
+enum BlogCardLayout {
+  /// A full-width card with a large image and title,
+  /// used to highlight the most prominent post.
+  featured,
+
+  /// A bordered tile that's arranged in a grid with other cards.
+  grid,
+
+  /// A full-width row with a small image beside the post details.
+  list,
+  ;
+
+  /// The CSS class applied to a `.blog-card` element to
+  /// style it with this layout.
+  String get className => switch (this) {
+    .featured => 'layout-featured',
+    .grid => 'layout-grid',
+    .list => 'layout-list',
+  };
+
+  /// Returns the layout for the card at the specified [index]
+  /// among the visible cards.
+  ///
+  /// The first card is [featured], the next four are [grid],
+  /// and all remaining cards are [list].
+  static BlogCardLayout forIndex(int index) => switch (index) {
+    0 => featured,
+    < 5 => grid,
+    _ => list,
+  };
+}
+
 @client
 class BlogCategories extends StatefulComponent {
   const BlogCategories({required this.categories, super.key});
@@ -115,41 +149,25 @@ class _BlogCategoriesState extends State<BlogCategories> {
 
   void _applyLayout(BlogCategory? category) {
     final container = web.document.getElementById('blog-container');
-    if (container != null) {
-      if (category == null) {
-        container.setAttribute('data-selected', 'all');
-      } else {
-        container.setAttribute('data-selected', category.slug);
-      }
+    if (container == null) return;
 
-      final cards = container.querySelectorAll('.blog-card');
-      final showFeatured = category?.showFeatured ?? true;
-      var visibleCount = showFeatured ? 0 : 1;
+    container.setAttribute('data-selected', category?.slug ?? 'all');
 
-      for (var i = 0; i < cards.length; i++) {
-        final card = cards.item(i) as web.Element;
-        final cardCategory = card.getAttribute('data-category');
+    final cards = container.querySelectorAll('.blog-card');
+    final showFeatured = category?.showFeatured ?? true;
+    var visibleCount = showFeatured ? 0 : 1;
 
-        final isVisible = category == null || cardCategory == category.slug;
-        String? targetClass;
-        if (isVisible) {
-          if (visibleCount == 0) {
-            targetClass = 'layout-featured';
-          } else if (visibleCount < 5) {
-            targetClass = 'layout-grid';
-          } else {
-            targetClass = 'layout-list';
-          }
-          visibleCount++;
-        }
+    for (var cardIndex = 0; cardIndex < cards.length; cardIndex += 1) {
+      final card = cards.item(cardIndex) as web.Element;
+      final cardCategory = card.getAttribute('data-category');
 
-        for (final layoutClass in const [
-          'layout-featured',
-          'layout-grid',
-          'layout-list',
-        ]) {
-          card.classList.toggle(layoutClass, layoutClass == targetClass);
-        }
+      final isVisible = category == null || cardCategory == category.slug;
+      final targetLayout = isVisible
+          ? BlogCardLayout.forIndex(visibleCount++)
+          : null;
+
+      for (final layout in BlogCardLayout.values) {
+        card.classList.toggle(layout.className, layout == targetLayout);
       }
     }
   }

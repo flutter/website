@@ -25,14 +25,17 @@ body.blog {
     min-width: 8rem;
 
     img {
-      &.diagram-wrap {
+      &.diagram-wrap,
+      &.small-diagram-wrap {
         background-color: var(--site-diagram-wrap-bgColor);
+      }
+
+      &.diagram-wrap {
         padding: 1rem;
         border-radius: 1rem;
       }
 
       &.small-diagram-wrap {
-        background-color: var(--site-diagram-wrap-bgColor);
         padding: 0.5rem;
         border-radius: 0.5rem;
       }
@@ -71,7 +74,6 @@ body.blog {
         }
       }
     }
-
 
     > .content {
       padding: 1.5rem;
