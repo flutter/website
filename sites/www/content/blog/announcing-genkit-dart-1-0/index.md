@@ -53,15 +53,16 @@ can switch between models without rewriting your application logic:
 
 ```dart
 final ai = Genkit(plugins: [googleAI(), anthropic()]);
+final prompt = 'Suggest a weekend getaway from San Francisco.';
 
 final fromGemini = await ai.generate(
   model: googleAI.gemini('gemini-flash-latest'),
-  prompt: 'Suggest a weekend getaway from San Francisco.',
+  prompt: prompt,
 );
 
 final fromClaude = await ai.generate(
   model: anthropic.model('claude-sonnet-5-5'),
-  prompt: 'Suggest a weekend getaway from San Francisco.',
+  prompt: prompt,
 );
 ```
 
@@ -240,8 +241,8 @@ Write a friendly, two-sentence introduction to {{destination}} for a first-time 
 ```
 
 ```dart
-final intro = await ai.prompt('destinationIntro');
-final response = await intro({'destination': 'Kyoto'});
+final introPrompt = await ai.prompt('destinationIntro');
+final response = await introPrompt({'destination': 'Kyoto'});
 ```
 
 ### Monitor your app in production
