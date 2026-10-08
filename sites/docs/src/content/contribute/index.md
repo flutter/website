@@ -127,13 +127,17 @@ You can provide valuable feedback through many avenues, including:
   visit [flutter.dev/research-signup][uxr-signup].
 - Discussing proposals
 
-  Major changes to Flutter are often discussed through [design documents][].
-  Consider reading and providing feedback on proposals that are
-  relevant to you or your apps.
+  Architectural proposals and major changes to Flutter are authored, reviewed,
+  and preserved as Requests for Comments (RFCs) in the
+  [`flutter/rfc` repository][flutter-rfc].
+  Consider reading and providing feedback on proposals that affect
+  you or your apps.
 
-  To find current design docs and proposals,
-  check out [issues with the `design doc` label][design-doc-issues] on
-  the GitHub issue database.
+  To find active proposals and join the discussion,
+  browse [open RFC pull requests][rfc-prs] in `flutter/rfc` or
+  track [issues with the `design doc` label][design-doc-issues].
+  If you want to author a proposal yourself,
+  consult [Architectural proposals (RFCs)](#architectural-proposals-rfcs).
 - Reviewing pull requests
 
   If you're familiar with a particular area of Flutter
@@ -143,7 +147,8 @@ You can provide valuable feedback through many avenues, including:
 
 [open a new issue]: {{site.repo.flutter}}/issues/new
 [uxr-signup]: {{site.main-url}}/research-signup
-[design documents]: {{site.repo.flutter}}/blob/main/docs/contributing/Design-Documents.md
+[flutter-rfc]: {{site.repo.rfc}}
+[rfc-prs]: {{site.repo.rfc}}/pulls
 [design-doc-issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22design+doc%22
 
 ### Try out the beta channel
@@ -169,6 +174,22 @@ and account for any [necessary migrations][].
 ## Contribute code
 
 Directly improve Flutter's codebase and related tools.
+
+### Architectural proposals (RFCs)
+
+Planning a major architectural change, cross-subsystem feature, new primitive,
+or breaking change?
+Before writing implementation code, propose and align on the design through a
+Request for Comments (RFC) in the [`flutter/rfc` repository][flutter-rfc].
+Routine bug fixes and localized changes don't require an RFC;
+open an issue or pull request directly instead.
+
+To learn when an RFC is required and how to submit one,
+consult the [Flutter RFCs & Design Documents guide][design-docs-guide] and
+[RFC 000.0002 (RFC Review & Decision Process)][rfc-0002].
+
+[design-docs-guide]: {{site.repo.flutter}}/blob/main/docs/contributing/Design-Documents.md
+[rfc-0002]: {{site.repo.rfc}}/blob/main/rfc/000.0002-flutter-rfc-review-process.md
 
 ### Flutter framework
 
