@@ -135,7 +135,7 @@ You can provide valuable feedback through many avenues, including:
 
   To find active proposals and join the discussion,
   browse [open RFC pull requests][rfc-prs] in `flutter/rfc` or
-  tracking [issues with the `design doc` label][design-doc-issues].
+  track [issues with the `design doc` label][design-doc-issues].
   If you want to author a proposal yourself,
   consult [Architectural proposals (RFCs)](#architectural-proposals-rfcs).
 - Reviewing pull requests
