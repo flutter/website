@@ -352,15 +352,6 @@ might consider when designing your own widgets.
 
 For more information, check out [Material Components widgets][].
 
-:::note
-Material is one of the 2 bundled designs included with Flutter.
-To create an iOS-centric design,
-check out the [Cupertino components][] package,
-which has its own versions of
-[`CupertinoApp`][], and [`CupertinoNavigationBar`][].
-:::
-
-
 ## Handling gestures
 
 Most applications include some form of user interaction with the system.

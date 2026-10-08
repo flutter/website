@@ -68,6 +68,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
               );
             });
           },
+          tooltip: 'Animate',
           child: const Icon(Icons.play_arrow),
         ),
         // #enddocregion FAB

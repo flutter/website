@@ -11,15 +11,67 @@ that manage animations for you.
 These widgets are collectively referred to as _implicit animations_,
 or _implicitly animated widgets_, deriving their name from the
 [`ImplicitlyAnimatedWidget`][] class that they implement.
-The following set of resources provide many ways to learn
+
+With implicit animations, you don't need to
+manage an `AnimationController` or `Ticker`.
+Instead, you pass a `duration` and an optional `curve`
+to an implicitly animated widget, such as `AnimatedOpacity`.
+When you update the widget with a new target value,
+such as after calling `setState()`,
+the widget automatically animates to that value:
+
+<?code-excerpt "animation/implicit/lib/main.dart (fade-box-demo)"?>
+```dart
+import 'package:material_ui/material_ui.dart';
+
+class FadeBoxDemo extends StatefulWidget {
+  const FadeBoxDemo({super.key});
+
+  @override
+  State<FadeBoxDemo> createState() => _FadeBoxDemoState();
+}
+
+class _FadeBoxDemoState extends State<FadeBoxDemo> {
+  bool _visible = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        AnimatedOpacity(
+          opacity: _visible ? 1 : 0,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+          child: const FlutterLogo(size: 100),
+        ),
+        const SizedBox(height: 16),
+        ElevatedButton(
+          onPressed: () => setState(() => _visible = !_visible),
+          child: const Text('Toggle opacity'),
+        ),
+      ],
+    );
+  }
+}
+```
+
+**App source:** [implicit animation example][]
+
+When no built-in implicitly animated widget covers
+the property you want to animate,
+you can build a custom implicit animation with [`TweenAnimationBuilder`][].
+
+The following set of resources provides many ways to learn
 about implicit animations in Flutter.
 
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
+[implicit animation example]: {{site.repo.this}}/tree/main/examples/animation/implicit
 
 ## Documentation
 
 [Animations in Flutter codelab][]
-: Learn about implicit and explicit animations 
+: Learn about implicit and explicit animations
   and get hands-on experience adding implicit animations
   to a complete Flutter app.
 
@@ -27,13 +79,23 @@ about implicit animations in Flutter.
 : A step-by-step recipe for using the
   [`AnimatedContainer`][] implicitly animated widget.
 
+[Fade a widget in and out][]
+: A cookbook recipe showing how to fade a widget using [`AnimatedOpacity`][].
+
+[`TweenAnimationBuilder`][] API page
+: Create custom implicit animations for any property using a `Tween`
+  and a `builder` callback.
+
 [`ImplicitlyAnimatedWidget`][] API page
 : All implicit animations extend the `ImplicitlyAnimatedWidget` class.
 
 [Animations in Flutter codelab]: {{site.codelabs}}/advanced-flutter-animations
 [`AnimatedContainer` sample]: /cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
+[`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
+[Fade a widget in and out]: /cookbook/animation/opacity-animation
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
+[`TweenAnimationBuilder`]: {{site.api}}/flutter/widgets/TweenAnimationBuilder-class.html
 
 ## Flutter in Focus videos
 
@@ -49,7 +111,7 @@ that are relevant to implicit animations.
 
 ## The Boring Show
 
-Watch the Boring Show to follow Google Engineers build apps
+Watch the Boring Show to follow Google engineers building apps
 from scratch in Flutter. The following episode covers
 using implicit animations in a news aggregator app.
 
