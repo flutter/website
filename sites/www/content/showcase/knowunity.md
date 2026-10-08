@@ -83,7 +83,7 @@ animation widgets and combined them with third-party tools like
 flying across the screen to celebrate when a student levels up.
 
 Knowunity integrated a range of Gemini models using
-[Gemini Agent Enterprise Platform](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform)
+[Gemini platform](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform)
 to power their AI study companion. They use lightweight, fast models like Gemini
 Flash-Lite for quick, simple responses, and advanced reasoning models such as
 Gemini 3.1 Pro for complex academic queries to deliver high-quality, real-time
