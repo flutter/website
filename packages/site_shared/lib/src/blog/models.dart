@@ -52,7 +52,7 @@ extension type Post(Map<String, Object?> data) {
           case String():
           case null when !showInPost:
             break;
-          case _ when showInPost:
+          case null:
             throw ArgumentError(
               'Invalid "coverImage" metadata$sourceDescription. '
               'Must include an "alt" string when shown in the post '
