@@ -12,13 +12,13 @@ several different projects,
 or for coders publishing their packages to [pub.dev][].
 This recipe uses the following steps:
 
-  1. Add a font to a package.
-  2. Add the package and font to the app.
-  3. Use the font.
+1.  Add a font to a package.
+2.  Add the package and font to the app.
+3.  Use the font.
 
 :::note
-Check out the [google_fonts][] package for direct access
-to almost 1000 open-sourced font families.
+Consult the [google_fonts][] package for direct access
+to over 1,000 open-sourced font families.
 :::
 
 ## 1. Add a font to a package
@@ -78,8 +78,10 @@ flutter:
 ## 3. Use the font
 
 Use a [`TextStyle`][] to change the appearance of text.
-To use package fonts, declare which font you'd like to use and
-which package the font belongs to.
+Since you declared the font family in the app's `pubspec.yaml`,
+specify the `fontFamily` in `TextStyle`.
+(If the package declares the font family in its own `pubspec.yaml` instead,
+also pass `package: 'awesome_package'` to `TextStyle`.)
 
 <?code-excerpt "lib/main.dart (TextStyle)"?>
 ```dart
@@ -106,6 +108,7 @@ dependencies:
   awesome_package:
   flutter:
     sdk: flutter
+  material_ui: ^1.5.0
 
 dev_dependencies:
   flutter_test:
@@ -158,7 +161,7 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Package Fonts Demo](/assets/images/docs/cookbook/package-fonts.png){:.site-mobile-screenshot}
+![Package Fonts Demo](/assets/images/docs/cookbook/package-fonts.png)
 
 [Google Fonts]: https://fonts.google.com
 [google_fonts]: {{site.pub-pkg}}/google_fonts

@@ -14,18 +14,19 @@ In Flutter, use the [`Drawer`][] widget in combination with a
 [`Scaffold`][] to create a layout with a Material Design drawer.
 This recipe uses the following steps:
 
-  1. Create a `Scaffold`.
-  2. Add a drawer.
-  3. Populate the drawer with items.
-  4. Close the drawer programmatically.
+1.  Create a `Scaffold`.
+2.  Add a drawer.
+3.  Populate the drawer with items.
+4.  Open the drawer programmatically.
+5.  Close the drawer programmatically.
 
 ## 1. Create a `Scaffold`
 
 To add a drawer to the app, wrap it in a [`Scaffold`][] widget.
 The `Scaffold` widget provides a consistent visual structure to apps that
-follow the Material Design Guidelines.
+follow the Material Design guidelines.
 It also supports special Material Design
-components, such as Drawers, AppBars, and SnackBars.
+components, such as drawers, app bars, and snackbars.
 
 In this example, create a `Scaffold` with a `drawer`:
 
@@ -65,8 +66,8 @@ content takes more space than the screen supports.
 
 Populate the `ListView` with a [`DrawerHeader`][]
 and two [`ListTile`][] widgets.
-For more information on working with Lists,
-see the [list recipes][].
+To learn more about working with lists,
+consult the [list recipes][].
 
 <?code-excerpt "lib/drawer.dart (DrawerListView)"?>
 ```dart
@@ -103,11 +104,13 @@ Drawer(
 
 ## 4. Open the drawer programmatically
 
-Typically, you don't need to write any code to open a `drawer`,
-Because when the `leading` widget is null, the default implementation in `AppBar` is `DrawerButton`.
+Typically, you don't need to write any code to open a `Drawer`,
+because when the `leading` widget is null,
+`AppBar` automatically adds a `DrawerButton`.
 
-But if you want to have free control of the `drawer`.
-You can do this by using the `Builder` call `Scaffold.of(context).openDrawer()`.
+However, if you want to customize how the `Drawer` opens,
+you can use a `Builder` to get the `Scaffold` context and call
+`Scaffold.of(context).openDrawer()`.
 
 <?code-excerpt "lib/drawer.dart (DrawerOpen)" replace="/null, //g"?>
 ```dart
@@ -160,8 +163,8 @@ The `_onItemTapped` function changes the selected item's index
 and displays the corresponding text in the center of the `Scaffold`.
 
 :::note
-For more information on implementing navigation,
-check out the [Navigation][] section of the cookbook.
+To learn more about implementing navigation,
+consult the [Navigation][] section of the cookbook.
 :::
 
 <?code-excerpt "lib/main.dart"?>
@@ -199,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
     fontSize: 30,
     fontWeight: FontWeight.bold,
   );
-  static const List<Widget> _widgetOptions = <Widget>[
+  static const List<Widget> _widgetOptions = [
     Text('Index 0: Home', style: optionStyle),
     Text('Index 1: Business', style: optionStyle),
     Text('Index 2: School', style: optionStyle),
@@ -279,7 +282,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/drawer.png" alt="Drawer Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/drawer.png" alt="Drawer Demo" />
 </noscript>
 
 
