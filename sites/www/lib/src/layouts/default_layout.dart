@@ -45,6 +45,13 @@ class DefaultLayout extends PageLayout {
       {'coverImage': {'url': final String coverImageUrl}} => coverImageUrl,
       _ => null,
     };
+    // Only describe the social image with the cover image's alt text
+    // if the cover image is also used as the social image.
+    final socialImageAlt = switch (pageData) {
+      {'socialImage': String()} => null,
+      {'coverImage': {'alt': final String alt}} when alt.isNotEmpty => alt,
+      _ => null,
+    };
     final titleBase =
         (pageData['titleBase'] ?? siteData['titleBase']) as String?;
     final documentTitle = titleBase == null ? title : '$title | $titleBase';
@@ -86,6 +93,8 @@ class DefaultLayout extends PageLayout {
             meta(name: 'twitter:description', content: description),
             if (socialImage != null)
               meta(name: 'twitter:image', content: socialImageUrl),
+            if (socialImageAlt != null)
+              meta(name: 'twitter:image:alt', content: socialImageAlt),
 
             meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
@@ -100,6 +109,11 @@ class DefaultLayout extends PageLayout {
               attributes: const {'property': 'og:image'},
               content: socialImageUrl,
             ),
+            if (socialImageAlt != null)
+              meta(
+                attributes: const {'property': 'og:image:alt'},
+                content: socialImageAlt,
+              ),
 
             if (kGenerateMode)
               const meta(

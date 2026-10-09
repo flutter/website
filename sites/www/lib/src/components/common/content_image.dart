@@ -16,6 +16,7 @@ class ContentImage extends StatelessComponent {
     this.figureClass,
     this.imageClass,
     this.imageStyle = '',
+    this.isHighPriority = false,
     super.key,
   });
 
@@ -40,6 +41,10 @@ class ContentImage extends StatelessComponent {
   /// The inline CSS declarations for the image.
   final String imageStyle;
 
+  /// Whether the image should load eagerly with a high fetch priority,
+  /// such as for a hero image that's likely the largest contentful paint.
+  final bool isHighPriority;
+
   @override
   Component build(BuildContext context) {
     final child = Component.fragment([
@@ -47,8 +52,10 @@ class ContentImage extends StatelessComponent {
         src: src,
         alt: alt,
         classes: imageClass,
+        loading: isHighPriority ? MediaLoading.eager : null,
         attributes: {
           if (imageStyle.isNotEmpty) 'style': imageStyle,
+          if (isHighPriority) 'fetchpriority': 'high',
         },
       ),
       if (caption case final caption? when caption.isNotEmpty)

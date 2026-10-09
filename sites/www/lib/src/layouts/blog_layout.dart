@@ -104,6 +104,8 @@ class BlogLayout extends DefaultLayout {
                   alt: coverImage.alt ?? '',
                   caption: coverImage.caption,
                   isFigure: true,
+                  figureClass: 'blog-cover-image',
+                  isHighPriority: true,
                 ),
               child,
               if (isPost)
