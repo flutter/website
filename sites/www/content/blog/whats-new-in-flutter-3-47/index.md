@@ -5,7 +5,6 @@ publishDate: 2026-08-12
 author: twerske
 coverImage:
   alt: ""
-  caption: "What's new in Flutter 3.47"
   url: images/hero_image.webp
 socialImage: images/hero_image_cover.webp
 category: release

@@ -7,8 +7,8 @@ publishDate: 2019-06-13
 author: justinmc
 coverImage:
   alt: >-
-    A phone running the 2D Transformations demo, with a grid of hexagonal
-    tiles.
+    A phone running the 2D Transformations demo,
+    with a grid of hexagonal tiles.
   url: images/16hQYJrDKEE1r961qkxrMwQ.jpeg
 category: deep-dive
 layout: blog

@@ -7,7 +7,6 @@ publishDate: 2025-11-18
 author: abdallahshaban557
 coverImage:
   alt: ""
-  caption: "Introducing the GenUI SDK for Flutter"
   url: images/12R8k2Qbswy4G7h3yYIyk1A.webp
 category: news
 layout: blog
