@@ -45,6 +45,12 @@
   --ui-header-height: calc(var(--ui-header-navigation-height) + var(--ui-header-event-banner-height));
   --ui-logo-width: 126px;
 
+  // Used by shared content styles (such as the heading `scroll-margin-top`
+  // rules in `_content.scss`) to keep anchor-linked headings clear of the
+  // fixed header. This site has no subheader, unlike docs.flutter.dev.
+  --site-header-height: var(--ui-header-height);
+  --site-subheader-height: 0px;
+
   --font-size-heading-1: 46px;
   --font-size-heading-2: 34px;
   --font-size-heading-3: 24px;
