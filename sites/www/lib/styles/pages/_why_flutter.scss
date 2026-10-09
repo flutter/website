@@ -18,6 +18,7 @@
   // Shared section furniture.
   .stacked-header {
     margin-bottom: var(--spacer);
+    text-align: center;
 
     .why-flutter-kicker {
       margin-bottom: var(--spacer-sm);
@@ -29,6 +30,7 @@
 
     .why-flutter-sub {
       margin-bottom: 0;
+      margin-inline: auto;
       max-width: 840px;
     }
   }
