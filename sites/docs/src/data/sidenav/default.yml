@@ -933,7 +933,7 @@
         - title: Create useful bug reports
           permalink: /resources/bug-reports
         - title: Discover proposed features
-          permalink: /resources/design-docs
+          permalink: https://github.com/flutter/rfc
     - title: Reference
       permalink: /reference
       children:

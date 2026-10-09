@@ -4,13 +4,13 @@ description: >-
   And reduced the app's server bill
 publishDate: 2026-09-22
 author: craiglabenz
-image: images/DartFullStack_GenLatteArt.webp
-socialImage: images/DartFullStack_GenLatteArt.webp
+coverImage:
+  alt: "How I converted an app to fullstack Dart"
+  caption: "How I converted an app to fullstack Dart"
+  url: images/DartFullStack_GenLatteArt.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/DartFullStack_GenLatteArt.webp" alt="How I converted an app to fullstack Dart" caption="How I converted an app to fullstack Dart" />
 
 If you've followed the
 [winding saga of the Flutter team's venture into running pop-up coffee stands](/blog/how-we-built-a-flutter-powered-ai-coffee-shop),

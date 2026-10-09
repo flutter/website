@@ -14,10 +14,10 @@ a smooth experience.
 The [`AnimatedOpacity`][] widget makes it easy to perform opacity
 animations. This recipe uses the following steps:
 
-  1. Create a box to fade in and out.
-  2. Define a `StatefulWidget`.
-  3. Display a button that toggles the visibility.
-  4. Fade the box in and out.
+1.  Create a box to fade in and out.
+1.  Define a `StatefulWidget`.
+1.  Display a button that toggles the visibility.
+1.  Fade the box in and out.
 
 ## 1. Create a box to fade in and out
 
@@ -41,11 +41,11 @@ update that data. When updating the data,
 you can also ask Flutter to rebuild the UI with those changes.
 
 In this case, you have one piece of data:
-a boolean representing whether the button is visible.
+a boolean representing whether the green box is visible.
 
 To construct a `StatefulWidget`, create two classes: A
 `StatefulWidget` and a corresponding `State` class.
-Pro tip: The Flutter plugins for Android Studio and VSCode include
+Pro tip: The Flutter plugins for Android Studio and VS Code include
 the `stful` snippet to quickly generate this code.
 
 <?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
@@ -53,9 +53,9 @@ the `stful` snippet to quickly generate this code.
 // The StatefulWidget's job is to take data and create a State class.
 // In this case, the widget takes a title, and creates a _MyHomePageState.
 class MyHomePage extends StatefulWidget {
-  final String title;
-
   const MyHomePage({super.key, required this.title});
+
+  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -82,13 +82,13 @@ In this example, if the box is visible, hide it.
 If the box is hidden, show it.
 
 To handle this, display a button. When a user presses the button,
-flip the boolean from true to false, or false to true.
+flip the boolean from `true` to `false`, or `false` to `true`.
 Make this change using [`setState()`][],
 which is a method on the `State` class.
 This tells Flutter to rebuild the widget.
 
-For more information on working with user input,
-see the [Gestures][] section of the cookbook.
+To learn more about working with user input,
+consult the [Gestures][] section of the cookbook.
 
 <?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/^\),$/)/g"?>
 ```dart
@@ -113,15 +113,15 @@ to `true` or `false`. How to fade the box in and out? With an
 
 The `AnimatedOpacity` widget requires three arguments:
 
-* `opacity`: A value from 0.0 (invisible) to 1.0 (fully visible).
-* `duration`: How long the animation should take to complete.
-* `child`: The widget to animate. In this case, the green box.
+- `opacity`: A value from 0.0 (invisible) to 1.0 (fully visible).
+- `duration`: How long the animation should take to complete.
+- `child`: The widget to animate. In this case, the green box.
 
 <?code-excerpt "lib/main.dart (AnimatedOpacity)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 AnimatedOpacity(
-  // If the widget is visible, animate to 0.0 (invisible).
-  // If the widget is hidden, animate to 1.0 (fully visible).
+  // If the widget should be visible, animate to 1.0 (fully visible).
+  // If the widget should be hidden, animate to 0.0 (invisible).
   opacity: _visible ? 1.0 : 0.0,
   duration: const Duration(milliseconds: 500),
   // The green box must be a child of the AnimatedOpacity widget.
@@ -173,8 +173,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(title: Text(widget.title)),
       body: Center(
         child: AnimatedOpacity(
-          // If the widget is visible, animate to 0.0 (invisible).
-          // If the widget is hidden, animate to 1.0 (fully visible).
+          // If the widget should be visible, animate to 1.0 (fully visible).
+          // If the widget should be hidden, animate to 0.0 (invisible).
           opacity: _visible ? 1.0 : 0.0,
           duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.
@@ -198,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/fade-in-out.webp" alt="Fade In and Out Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/fade-in-out.webp" alt="Fade In and Out Demo" />
 </noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html

@@ -100,7 +100,10 @@ coverImage:
 You can then embed the image elsewhere in the article body using `<DashImage>`.
 
 Use post-local paths such as `images/hero.webp`.
-Prefer optimized WebP for new static raster artwork when quality permits.
+Convert new static PNG or JPEG artwork to WebP by running
+`dart run dash_site optimize-images <image paths...>`
+with each image's path relative to the repository root,
+then reference the resulting `.webp` files.
 Don't upscale sources or commit unused variants.
 
 Set `socialImage` when `coverImage` is animated (such as a GIF),
