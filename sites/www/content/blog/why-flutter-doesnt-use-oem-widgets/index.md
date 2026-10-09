@@ -7,9 +7,10 @@ publishDate: 2017-11-16
 author: xster
 coverImage:
   alt: >-
-    A Nexus S 4G displays a Material Design contact screen; its settings
-    show Android 4.1.2.
-  caption: "Modern, consistent Material Design on a phone shipped **4 years** before Material Design was unveiled"
+    An older Nexus phone displays a Material Design contact screen.
+  caption: >-
+    Modern, consistent Material Design on a phone shipped **4 years**
+    before Material Design was unveiled.
   url: images/1Tt9lpvpKa1700v74KcjcIw.webp
 category: deep-dive
 layout: blog

@@ -6,7 +6,9 @@ description: >-
 publishDate: 2026-10-08
 author: chrisraygill
 coverImage:
-  alt: "Announcing Genkit Dart 1.0"
+  alt: >-
+    Dash stands beside a stack of blocks bearing the
+    Dart and Genkit logos and the version number 1.0.
   url: images/banner.png
 category: news
 layout: blog

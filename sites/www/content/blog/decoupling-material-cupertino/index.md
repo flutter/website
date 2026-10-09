@@ -7,7 +7,8 @@ publishDate: 2026-09-09
 author: craiglabenz
 coverImage:
   alt: >-
-    Dash removes blocks labeled Material UI and Cupertino UI from a tower.
+    Dash extracts blocks labeled Material UI and Cupertino UI
+    and lifts them away from a tower of blue blocks.
   url: images/Flutter_CupertinoMaterial_Jenga_Low.gif
 socialImage: images/FlutterJenga_Still_OptA.png
 category: news
