@@ -1,6 +1,15 @@
 @use 'package:site_shared/_sass/base/mixins';
 
+body.blog {
+  color: var(--site-base-fgColor);
+}
+
 .blog main {
+  // Use the shared base colors rather than the www defaults.
+  --site-heading-fgColor: var(--site-base-fgColor);
+  --site-paragraph-fgColor: var(--site-base-fgColor);
+  --site-paragraph-link-fgColor: var(--site-link-fgColor);
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9,6 +18,40 @@
     width: 60rem;
     max-width: 100%;
     min-width: 8rem;
+
+    img {
+      &.diagram-wrap,
+      &.small-diagram-wrap {
+        background-color: var(--site-diagram-wrap-bgColor);
+      }
+
+      &.diagram-wrap {
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      &.small-diagram-wrap {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+    }
+
+    blockquote {
+      background-color: var(--site-inset-bgColor);
+      padding: 0.75rem 1rem;
+      border-left: solid 5px var(--site-inset-borderColor);
+      margin: 0;
+      margin-block-end: 1rem;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    hr {
+      border: 1px solid var(--site-outline-variant);
+      border-radius: 1rem;
+    }
 
     .post-info .post-info-actions {
       a,
@@ -22,15 +65,13 @@
 
         &:hover {
           text-decoration: none;
-          background: rgba(0, 0, 0, 0.06);
+          @include mixins.interaction-style(6%);
         }
       }
     }
 
-
     > .content {
       padding: 1.5rem;
-      color: var(--site-base-fgColor);
     }
 
     @media (min-width: 576px) {
@@ -41,8 +82,6 @@
 
     // Styles extracted from _button.scss until the www site can import it.
     .code-block-wrapper .code-block-body .copy-button {
-      --site-interaction-base-values: 0 0 0;
-
       display: flex;
       align-items: center;
       width: fit-content;
@@ -54,7 +93,7 @@
 
       font-family: var(--site-ui-fontFamily);
       font-weight: 500;
-      color: var(--site-primary-color);
+      color: var(--site-link-fgColor);
       text-decoration: none;
       cursor: pointer;
       background: none;
@@ -86,24 +125,14 @@
 }
 
 :where(.blog main) a {
-  color: var(--site-primary-color);
+  color: var(--site-link-fgColor);
 
   &:hover {
     text-decoration: underline;
   }
-}
 
-.blog header {
-  .subtype {
-    padding: 0 0.3rem;
-    font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 1.3;
-    border-radius: 0.25rem;
-    background-color: var(--site-secondaryContainer-bgColor);
-    color: var(--site-secondaryContainer-fgColor);
-    margin-left: 0.4rem;
-    letter-spacing: normal;
+  &:active {
+    color: var(--site-link-fgColor-active);
   }
 }
 

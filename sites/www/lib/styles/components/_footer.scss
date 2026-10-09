@@ -1,17 +1,13 @@
 @use '../core/breakpoints';
 
 .site-footer {
-  background-color: var(--grey-1);
+  background-color: var(--site-footer-bgColor);
+  color: var(--site-base-fgColor-lighter);
   padding: 70px var(--gutter);
 
-  ul {
-    a {
-      color: var(--grey-6);
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  ul a:hover {
+    color: var(--site-base-fgColor);
+    text-decoration: underline;
   }
 
   .content {
@@ -25,7 +21,7 @@
     }
 
     &.footer-social {
-      border-bottom: 1px solid var(--grey-4);
+      border-bottom: 1px solid var(--site-outline-variant);
       align-items: center;
       padding-bottom: 34px;
 
@@ -35,9 +31,12 @@
 
         a {
           margin-right: 1.25rem;
-          color: var(--grey-6);
           display: inline-flex;
           align-items: center;
+
+          &:hover {
+            color: var(--site-base-fgColor);
+          }
         }
 
         .footer-social-icon {
@@ -48,7 +47,6 @@
         span {
           font-family: var(--font-ui);
           font-size: var(--font-size-heading-5);
-          color: var(--grey-6);
         }
       }
 
@@ -130,7 +128,7 @@
 
       li:first-child {
         margin-bottom: var(--spacer-sm);
-        color: black;
+        color: var(--site-base-fgColor);
         font-weight: var(--font-weight-bold);
         display: block;
       }

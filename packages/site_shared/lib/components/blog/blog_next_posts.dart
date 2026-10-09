@@ -45,11 +45,10 @@ class BlogNextPosts extends StatelessComponent {
     return section(classes: 'blog-next-posts', [
       h2([.text(nextPostsTitle)]),
       div(classes: 'blog-posts-grid', [
-        for (final post in nextPosts)
+        for (final (:post, :url) in nextPosts)
           BlogCard(
-            post: post.post,
-            url: post.url,
-            className: 'layout-grid',
+            post: post,
+            url: url,
           ),
       ]),
     ]);

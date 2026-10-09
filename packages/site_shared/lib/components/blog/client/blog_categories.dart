@@ -10,6 +10,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../../util.dart';
+import '../blog_card_layout.dart';
 
 class BlogCategory {
   const BlogCategory({
@@ -81,6 +82,10 @@ class _BlogCategoriesState extends State<BlogCategories> {
         .where((c) => c.slug == slug)
         .firstOrNull;
 
+    // The cards already have the layout for the selected category,
+    // including the server-rendered layout when no category is selected.
+    if (category == selectedCategory) return;
+
     setState(() {
       selectedCategory = category;
     });
@@ -105,38 +110,25 @@ class _BlogCategoriesState extends State<BlogCategories> {
 
   void _applyLayout(BlogCategory? category) {
     final container = web.document.getElementById('blog-container');
-    if (container != null) {
-      if (category == null) {
-        container.removeAttribute('data-selected');
-      } else {
-        container.setAttribute('data-selected', category.slug);
-      }
+    if (container == null) return;
 
-      final cards = container.querySelectorAll('.blog-card');
-      final showFeatured = category?.showFeatured ?? true;
-      var visibleCount = showFeatured ? 0 : 1;
+    container.setAttribute('data-selected', category?.slug ?? 'all');
 
-      for (var i = 0; i < cards.length; i++) {
-        final card = cards.item(i) as web.Element;
-        final cardCategory = card.getAttribute('data-category');
+    final cards = container.querySelectorAll('.blog-card');
+    final showFeatured = category?.showFeatured ?? true;
+    var visibleCount = showFeatured ? 0 : 1;
 
-        final isVisible = category == null || cardCategory == category.slug;
+    for (var cardIndex = 0; cardIndex < cards.length; cardIndex += 1) {
+      final card = cards.item(cardIndex) as web.Element;
+      final cardCategory = card.getAttribute('data-category');
 
-        // Remove existing layout classes.
-        card.classList.remove('layout-featured');
-        card.classList.remove('layout-grid');
-        card.classList.remove('layout-list');
+      final isVisible = category == null || cardCategory == category.slug;
+      final targetLayout = isVisible
+          ? BlogCardLayout.forIndex(visibleCount++)
+          : null;
 
-        if (isVisible) {
-          if (visibleCount == 0) {
-            card.classList.add('layout-featured');
-          } else if (visibleCount < 5) {
-            card.classList.add('layout-grid');
-          } else {
-            card.classList.add('layout-list');
-          }
-          visibleCount++;
-        }
+      for (final layout in BlogCardLayout.values) {
+        card.classList.toggle(layout.className, layout == targetLayout);
       }
     }
   }

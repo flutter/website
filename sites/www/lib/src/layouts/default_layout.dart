@@ -18,7 +18,14 @@ class DefaultLayout extends PageLayout {
   @override
   Pattern get name => 'default';
 
+  /// CSS classes to include on the document `<body>` element by default.
   List<String> get defaultBodyTags => const [];
+
+  /// Whether pages using this layout support switching to a dark theme.
+  ///
+  /// When `true`, the saved theme preference is applied
+  /// before the page paints and the site header includes a theme switcher.
+  bool get supportsDarkMode => false;
 
   @override
   Component buildLayout(Page page, Component child) {
@@ -135,7 +142,7 @@ class DefaultLayout extends PageLayout {
               href:
                   'https://fonts.googleapis.com/css2?'
                   'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
-                  '24,400,0..1,0',
+                  '24,400,0..1,0&display=block',
             ),
 
             const script(
@@ -208,10 +215,15 @@ class DefaultLayout extends PageLayout {
               Document.body(
                 attributes: {'class': bodyTags.join(' ')},
               ),
+            // The theme setting logic should remain before other scripts to
+            // avoid a flash of the initial theme on load.
+            if (supportsDarkMode) themeInitScript,
             Header(
               pageUrl: page.url,
+              supportsDarkMode: supportsDarkMode,
               contrastLogoSrc: context.asset('/images/flutter-logo-white.svg'),
               defaultLogoSrc: context.asset('/images/flutter-logo.svg'),
+              darkLogoSrc: context.asset('/images/flutter-logo-dark.svg'),
               banner: banner,
             ),
             child,

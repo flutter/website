@@ -40,7 +40,7 @@ final class DropdownState extends State<Dropdown> {
     return GlobalEventListener(
       onClick: (event) {
         if (!_expanded) return;
-        final target = event.target as web.HTMLElement?;
+        final target = event.target as web.Element?;
         if (target == null || target.closest('#${component.id}') == null) {
           toggle(to: false);
         }
@@ -58,7 +58,7 @@ final class DropdownState extends State<Dropdown> {
           },
           'focusout': (e) {
             final relatedTarget =
-                (e as web.FocusEvent).relatedTarget as web.HTMLElement?;
+                (e as web.FocusEvent).relatedTarget as web.Element?;
             if (relatedTarget == null ||
                 relatedTarget.closest('#${component.id}') == null) {
               toggle(to: false);
@@ -79,9 +79,16 @@ final class DropdownState extends State<Dropdown> {
             },
             child: component.toggle,
           ),
-          div(id: '${component.id}-content', classes: 'dropdown-content', [
-            component.content,
-          ]),
+          div(
+            id: '${component.id}-content',
+            classes: 'dropdown-content',
+            // Make the content focusable, but not tabbable,
+            // so clicking an area of it that isn't otherwise focusable keeps
+            // focus within the dropdown rather than triggering the `focusout`
+            // handler above with a null `relatedTarget` and closing it.
+            attributes: const {'tabindex': '-1'},
+            [component.content],
+          ),
         ],
       ),
     );
