@@ -5,8 +5,7 @@ description: >-
 publishDate: 2026-09-22
 author: craiglabenz
 coverImage:
-  alt: "Dash holds a latte with the Dart logo on the foam."
-  caption: "How I converted an app to fullstack Dart"
+  alt: "Dash holds a latte with the Dart logo printed on the foam."
   url: images/DartFullStack_GenLatteArt.webp
 category: deep-dive
 layout: blog
