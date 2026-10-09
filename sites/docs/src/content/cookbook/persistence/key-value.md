@@ -13,6 +13,10 @@ Normally, you would have to
 write native platform integrations for storing data on each platform.
 Fortunately, the [`shared_preferences`][] plugin can be used to
 persist key-value data to disk on each platform Flutter supports.
+To compare `shared_preferences` with other local and cloud database
+options, check out [Choose a database for your Flutter app][].
+
+[Choose a database for your Flutter app]: /data-and-backend/persistence/choose-a-database
 
 This recipe uses the following steps:
 
