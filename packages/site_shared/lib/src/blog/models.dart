@@ -121,13 +121,29 @@ extension type Post(Map<String, Object?> data) {
   String get category => data['category'] as String;
 }
 
+/// The cover image of a blog [Post],
+/// as configured by the `coverImage` property in its front matter.
+///
+/// Besides optionally being shown at the top of the post,
+/// the cover image is used as the post's image on blog cards and
+/// as its social sharing image if no `socialImage` is specified.
 extension type CoverImage(Map<String, Object?> data) {
   /// The image URL, already resolved by the page's asset data loader.
   String get url => data['url'] as String;
+
+  /// The alternative text for the image, or `null` if not provided.
+  ///
+  /// An empty string marks the image as decorative.
+  /// [Post.parse] requires this if [showInPost] is `true`.
   String? get alt => data['alt'] as String?;
+
+  /// The optional caption, rendered as inline Markdown
+  /// below the image when shown in the post.
   String? get caption => data['caption'] as String?;
 
   /// Whether the layout renders this image at the top of the post body.
+  ///
+  /// Defaults to `true` if not specified.
   bool get showInPost => data['showInPost'] != false;
 }
 
