@@ -6,7 +6,7 @@ publishDate: 2023-09-13
 author: jjmutter
 coverImage:
   url: images/1YqawQ_2If_xPlvIbC0mj3g.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

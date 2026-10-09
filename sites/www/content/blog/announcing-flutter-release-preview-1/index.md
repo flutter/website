@@ -6,7 +6,7 @@ publishDate: 2018-06-20
 author: timsneath
 coverImage:
   url: images/1PEcgvfvQj4Gd1hFBBfCX_g.webp
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

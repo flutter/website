@@ -7,7 +7,7 @@ publishDate: 2019-12-04
 author: theaflowers
 coverImage:
   url: images/08lW_z0nxESDIBO9R.gif
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

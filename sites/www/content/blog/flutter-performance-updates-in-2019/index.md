@@ -7,7 +7,7 @@ publishDate: 2020-07-31
 author: sfshaza
 coverImage:
   url: images/1bWXPMmCXDmBWN7rZbxZcyg.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

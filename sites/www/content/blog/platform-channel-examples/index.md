@@ -6,7 +6,7 @@ publishDate: 2020-08-29
 author: ayushbherwani1998
 coverImage:
   url: images/15PoXySK4-tAKWAY1zCzfHg.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

@@ -8,7 +8,7 @@ publishDate: 2019-05-07
 author: kevmoo
 coverImage:
   url: images/1jQBkI-cZwOP_KAEnPhzDtg.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

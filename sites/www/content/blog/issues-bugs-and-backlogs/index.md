@@ -6,7 +6,7 @@ publishDate: 2019-11-25
 author: kf6gpe
 coverImage:
   url: images/1D_MCtnl2h_spFgoORikDcA.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

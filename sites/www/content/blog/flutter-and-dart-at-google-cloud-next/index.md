@@ -7,7 +7,7 @@ publishDate: 2024-04-16
 author: kkboateng
 coverImage:
   url: images/0mlHluTwnXfWI-Yzy.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

@@ -7,7 +7,7 @@ publishDate: 2020-10-20
 author: jayoung-lee
 coverImage:
   url: images/0_CopRAy_n9COQGqR.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

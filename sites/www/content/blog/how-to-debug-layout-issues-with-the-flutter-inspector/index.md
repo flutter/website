@@ -6,7 +6,7 @@ publishDate: 2020-07-27
 author: ktjlee
 coverImage:
   url: images/1oWDuoKe1gCDL5UPrQUwePg.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

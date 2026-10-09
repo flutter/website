@@ -6,7 +6,7 @@ publishDate: 2020-02-13
 author: harryterkelsen
 coverImage:
   url: images/1jLlh4b9zQ3u0aUA-hHAgKg.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

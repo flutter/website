@@ -7,7 +7,7 @@ publishDate: 2023-05-10
 author: itsjustkevin
 coverImage:
   url: images/1CPv57Dp1cYXPz-YtZ2jMcA.webp
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

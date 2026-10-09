@@ -6,7 +6,7 @@ publishDate: 2022-12-08
 author: jayoung-lee
 coverImage:
   url: images/0XaZXV1SPtqbuZhFc.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

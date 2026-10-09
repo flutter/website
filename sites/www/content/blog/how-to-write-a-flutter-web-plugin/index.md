@@ -7,7 +7,7 @@ publishDate: 2019-11-20
 author: harryterkelsen
 coverImage:
   url: images/1UTowUOvpkFW35rcuJ3Lf1w.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

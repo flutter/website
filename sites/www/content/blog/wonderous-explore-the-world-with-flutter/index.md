@@ -6,7 +6,7 @@ publishDate: 2022-08-30
 author: leighajarett
 coverImage:
   url: images/1Tb-JXZnxo2pu232C4c2KqQ.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

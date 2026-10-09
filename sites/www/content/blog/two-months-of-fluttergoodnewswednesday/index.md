@@ -6,7 +6,7 @@ publishDate: 2020-05-27
 author: timsneath
 coverImage:
   url: images/0B33kcAC_6aXEEdVZ.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

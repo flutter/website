@@ -6,7 +6,7 @@ publishDate: 2026-02-11
 author: itsjustkevin
 coverImage:
   url: images/1jmKuW7ItWRJAHNABfTEhHA.gif
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

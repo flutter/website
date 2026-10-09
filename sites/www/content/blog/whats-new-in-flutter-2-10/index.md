@@ -6,7 +6,7 @@ publishDate: 2022-02-03
 author: csells
 coverImage:
   url: images/0278rYAB5Pac8_7SD.webp
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

@@ -6,7 +6,7 @@ publishDate: 2020-11-18
 author: piinks
 coverImage:
   url: images/0n5eFBwWfgtkuLtDf.jpg
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

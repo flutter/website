@@ -7,7 +7,7 @@ publishDate: 2019-02-14
 author: aguinis
 coverImage:
   url: images/0GoTVv7PbwxvjCh4S.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

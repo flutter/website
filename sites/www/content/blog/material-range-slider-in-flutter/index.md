@@ -6,7 +6,7 @@ publishDate: 2019-07-11
 author: clocksmith
 coverImage:
   url: images/0wtmSldtwjSvtRtuI.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

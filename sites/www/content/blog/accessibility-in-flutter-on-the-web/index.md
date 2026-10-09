@@ -7,7 +7,7 @@ publishDate: 2024-04-16
 author: tomayac
 coverImage:
   url: images/0pF3_jPjWNcie3LH0.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

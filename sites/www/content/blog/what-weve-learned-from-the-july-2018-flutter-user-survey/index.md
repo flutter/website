@@ -8,7 +8,7 @@ publishDate: 2018-08-30
 author: jayoung-lee
 coverImage:
   url: images/1gM8BhAAqil2B79RCarJ5-A.jpeg
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

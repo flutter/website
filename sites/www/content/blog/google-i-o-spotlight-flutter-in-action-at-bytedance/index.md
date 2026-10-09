@@ -7,7 +7,7 @@ publishDate: 2021-06-29
 author: sfshaza
 coverImage:
   url: images/0s0fEzRKPUlPITzxE.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

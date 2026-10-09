@@ -7,7 +7,7 @@ publishDate: 2024-05-30
 author: mit-mit
 coverImage:
   url: images/1--DvqdXSA38rPuqMK5c0tQ.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

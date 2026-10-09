@@ -7,7 +7,7 @@ publishDate: 2018-01-19
 author: amir_h
 coverImage:
   url: images/10gdFpYTSo_TTCqd-XVcvYw.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

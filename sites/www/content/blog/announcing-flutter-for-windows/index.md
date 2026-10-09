@@ -6,7 +6,7 @@ publishDate: 2022-02-03
 author: timsneath
 coverImage:
   url: images/0LtCDFBQudFeDS_f6.jpg
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

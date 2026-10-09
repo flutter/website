@@ -6,7 +6,7 @@ publishDate: 2018-05-10
 author: mit-mit
 coverImage:
   url: images/1cyTGpzWuHqvYFGTV7uQyXA.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

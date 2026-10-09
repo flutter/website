@@ -6,7 +6,7 @@ publishDate: 2021-01-14
 author: kf6gpe
 coverImage:
   url: images/0XGMajBOXRRgyu3Pa.jpg
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

@@ -7,7 +7,7 @@ publishDate: 2022-05-11
 author: timsneath
 coverImage:
   url: images/0ZQ9Xa7CINFVMA95w.webp
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

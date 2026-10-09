@@ -6,7 +6,7 @@ publishDate: 2023-01-25
 author: timsneath
 coverImage:
   url: images/01m_CqCW7oMEoqPrl.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

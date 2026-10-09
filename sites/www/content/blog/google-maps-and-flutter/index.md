@@ -7,7 +7,7 @@ publishDate: 2018-12-14
 author: kenzieschmoll
 coverImage:
   url: images/14dSyF9z9lAYvHVxFPS_oiw.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

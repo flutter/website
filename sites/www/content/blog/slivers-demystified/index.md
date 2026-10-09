@@ -6,7 +6,7 @@ publishDate: 2018-10-18
 author: efortuna
 coverImage:
   url: images/1acfGrRUFKsC4z_0wHHt_Lg.gif
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

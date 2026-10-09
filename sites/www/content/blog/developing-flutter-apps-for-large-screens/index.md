@@ -6,7 +6,7 @@ publishDate: 2023-09-26
 author: mariam_hasnany
 coverImage:
   url: images/04I4h-v1nPuUbxBt4.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

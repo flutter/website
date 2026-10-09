@@ -6,7 +6,7 @@ publishDate: 2018-03-01
 author: swavkulinski
 coverImage:
   url: images/1xgjvZHIs2PUHXRrn8COFRw.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

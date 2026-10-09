@@ -6,7 +6,7 @@ publishDate: 2020-11-11
 author: haddadniaj
 coverImage:
   url: images/10kWrLLh_g2Ywwgcs_iAL-w.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

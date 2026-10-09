@@ -6,7 +6,7 @@ publishDate: 2019-07-25
 author: kevmoo
 coverImage:
   url: images/1HcggEjhP_Li6Tt7KIzB10g.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

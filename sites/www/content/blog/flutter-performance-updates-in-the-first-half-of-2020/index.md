@@ -7,7 +7,7 @@ publishDate: 2021-02-12
 author: liyuqian
 coverImage:
   url: images/15WEbz38iKKh5EfCj55mGYw.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

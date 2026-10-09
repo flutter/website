@@ -6,7 +6,7 @@ publishDate: 2020-08-05
 author: csells
 coverImage:
   url: images/0Ve1UjCRej9MtX2kv.webp
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

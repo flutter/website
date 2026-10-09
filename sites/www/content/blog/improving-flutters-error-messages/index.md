@@ -7,7 +7,7 @@ publishDate: 2019-09-09
 author: taodong
 coverImage:
   url: images/1l8l2xWisc5Mtc6xzFaucmg.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

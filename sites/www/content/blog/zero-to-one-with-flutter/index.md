@@ -8,7 +8,7 @@ publishDate: 2017-02-22
 author: mravn
 coverImage:
   url: images/1n76TpChNv8Q25WrfBiuWpw.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

@@ -98,7 +98,7 @@ class BlogLayout extends DefaultLayout {
               ]),
               if (post != null) PostInfo(post: post, url: page.url),
               if (post?.coverImage case final coverImage?
-                  when coverImage.display)
+                  when coverImage.showInPost)
                 ContentImage(
                   src: coverImage.url,
                   alt: coverImage.alt ?? '',

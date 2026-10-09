@@ -6,7 +6,7 @@ publishDate: 2025-07-23
 author: antfitch
 coverImage:
   url: images/1lPy6kRkj2N5ybEhHIKjbVw.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

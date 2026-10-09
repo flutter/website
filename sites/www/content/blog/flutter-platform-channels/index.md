@@ -6,7 +6,7 @@ publishDate: 2018-08-28
 author: mravn
 coverImage:
   url: images/1ykNghfAKtx0xsZWedfgslg.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

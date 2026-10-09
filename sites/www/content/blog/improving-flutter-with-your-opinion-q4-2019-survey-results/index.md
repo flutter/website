@@ -9,7 +9,7 @@ author:
   - taodong
 coverImage:
   url: images/0W4ladsI7F9pgXph1.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

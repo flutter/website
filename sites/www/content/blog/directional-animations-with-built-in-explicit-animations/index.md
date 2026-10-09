@@ -7,7 +7,7 @@ publishDate: 2020-01-10
 author: fitzface
 coverImage:
   url: images/01xmX3Sfp_rLOAwwl.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

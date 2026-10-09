@@ -6,7 +6,7 @@ publishDate: 2023-01-20
 author: hellobrianjames
 coverImage:
   url: images/0x9XqN84kLr7s86vK.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

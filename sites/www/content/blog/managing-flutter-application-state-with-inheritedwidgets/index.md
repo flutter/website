@@ -8,7 +8,7 @@ publishDate: 2018-12-20
 author: hansmuller
 coverImage:
   url: images/1IVBU5tVCV5TFUI3E5V4fEg.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

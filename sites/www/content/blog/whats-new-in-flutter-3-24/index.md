@@ -6,7 +6,7 @@ publishDate: 2024-08-06
 author: itsjustkevin
 coverImage:
   url: images/0bdcb6KGonosfPZ6m.webp
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

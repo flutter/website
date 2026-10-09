@@ -7,7 +7,7 @@ publishDate: 2023-04-06
 author: leighajarett
 coverImage:
   url: images/1XksvK4Wq0YbZoIG8udUShw.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

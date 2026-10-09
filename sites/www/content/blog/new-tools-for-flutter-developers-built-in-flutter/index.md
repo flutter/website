@@ -6,7 +6,7 @@ publishDate: 2020-06-24
 author: filiph
 coverImage:
   url: images/0VLibsxLD9Wv35Pr8.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

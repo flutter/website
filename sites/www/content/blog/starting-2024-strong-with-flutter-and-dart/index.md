@@ -7,7 +7,7 @@ publishDate: 2024-02-15
 author: brandonbadger
 coverImage:
   url: images/0gO0yYMh4FUkpue3w.gif
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

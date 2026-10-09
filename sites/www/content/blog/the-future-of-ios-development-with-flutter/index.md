@@ -7,7 +7,7 @@ publishDate: 2023-05-18
 author: leighajarett
 coverImage:
   url: images/1OGs9_siPcMAYd1yDAp-AOA.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

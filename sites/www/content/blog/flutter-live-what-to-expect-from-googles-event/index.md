@@ -7,7 +7,7 @@ publishDate: 2018-12-02
 author: csells
 coverImage:
   url: images/0MhKKsmIlYcORAT-q.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

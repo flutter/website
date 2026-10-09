@@ -6,7 +6,7 @@ publishDate: 2023-01-24
 author: verygoodopensource
 coverImage:
   url: images/18zOCQg2Qwh_dzC4ndMzoqg.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

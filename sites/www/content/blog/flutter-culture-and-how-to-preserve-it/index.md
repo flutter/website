@@ -10,7 +10,7 @@ author:
   - efortuna
 coverImage:
   url: images/1pI9tDcnxm87Vq1hX1Yzwpg.jpeg
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

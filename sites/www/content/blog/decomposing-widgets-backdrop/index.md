@@ -7,7 +7,7 @@ publishDate: 2018-06-26
 author: mjohnsullivan
 coverImage:
   url: images/1in7MRIAKfRn-qDgJKc9XVw.jpeg
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

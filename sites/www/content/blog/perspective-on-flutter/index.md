@@ -6,7 +6,7 @@ publishDate: 2018-06-18
 author: wmleler
 coverImage:
   url: images/1WdpLQEC_L1PYDO1KgxxfMQ.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

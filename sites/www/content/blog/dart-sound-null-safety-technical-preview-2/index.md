@@ -6,7 +6,7 @@ publishDate: 2020-10-22
 author: mit-mit
 coverImage:
   url: images/0FE-q5RdXwPgtRVE5.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

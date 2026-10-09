@@ -6,7 +6,7 @@ publishDate: 2020-07-17
 author: kf6gpe
 coverImage:
   url: images/0E-lTv57-czvPhZre.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

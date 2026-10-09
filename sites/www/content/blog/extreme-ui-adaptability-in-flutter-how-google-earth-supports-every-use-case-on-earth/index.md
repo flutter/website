@@ -7,7 +7,7 @@ publishDate: 2024-02-07
 author: craiglabenz
 coverImage:
   url: images/1RXf-GaJ4uz5_ZKU8QgIVkw.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

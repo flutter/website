@@ -7,7 +7,7 @@ publishDate: 2021-02-11
 author: jayoung-lee
 coverImage:
   url: images/0hs9oiR_zpBhkzT9u.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

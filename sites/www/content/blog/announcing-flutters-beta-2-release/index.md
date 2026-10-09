@@ -8,7 +8,7 @@ publishDate: 2018-04-09
 author: mit-mit
 coverImage:
   url: images/14DxDp03lkhJN3engJhXhWQ.webp
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

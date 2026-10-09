@@ -7,7 +7,7 @@ publishDate: 2020-07-17
 author: josealba
 coverImage:
   url: images/1j9632GFfT3IT7sfeiHUZtw.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

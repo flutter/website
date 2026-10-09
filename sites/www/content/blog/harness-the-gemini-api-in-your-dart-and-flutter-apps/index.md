@@ -6,7 +6,7 @@ publishDate: 2024-02-15
 author: anderdobo
 coverImage:
   url: images/1-KkJmzvv3jNhh88TWxIBJg.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

@@ -6,7 +6,7 @@ publishDate: 2018-11-01
 author: wmleler
 coverImage:
   url: images/1OOmIZ2plXASJUl49v6TlDA.gif
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

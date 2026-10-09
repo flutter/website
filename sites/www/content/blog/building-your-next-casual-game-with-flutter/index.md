@@ -6,7 +6,7 @@ publishDate: 2023-11-15
 author: zoeyfan
 coverImage:
   url: images/03DmGJe1yD4eKdnfs.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

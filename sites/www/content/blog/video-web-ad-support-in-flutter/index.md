@@ -7,7 +7,7 @@ publishDate: 2024-12-17
 author: zoeyfan
 coverImage:
   url: images/0xsAbaMexfbR30wgK.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

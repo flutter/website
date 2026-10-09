@@ -6,7 +6,7 @@ publishDate: 2020-07-29
 author: mariam_hasnany
 coverImage:
   url: images/1dbcXXNRiMmMXxA1YsZYwcQ.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

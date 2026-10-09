@@ -6,7 +6,7 @@ publishDate: 2022-05-12
 author: taodong
 coverImage:
   url: images/0ZrpkIfhAQ0MW1RYp.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

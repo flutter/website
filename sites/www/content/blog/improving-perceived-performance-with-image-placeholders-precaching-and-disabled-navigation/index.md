@@ -7,7 +7,7 @@ publishDate: 2020-05-26
 author: perclasson
 coverImage:
   url: images/1Pp2MNotBJdSHDcW3Fhz19A.gif
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

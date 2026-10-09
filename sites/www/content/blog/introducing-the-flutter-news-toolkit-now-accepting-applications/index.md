@@ -7,7 +7,7 @@ publishDate: 2022-11-10
 author: zoeyfan
 coverImage:
   url: images/1eQsCJ1lXurwLVnD5wIDxkg.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

@@ -7,7 +7,7 @@ publishDate: 2025-05-20
 author: anderdobo
 coverImage:
   url: images/151UZbL3Qb7BGDEuujTTg6A.gif
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

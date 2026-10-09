@@ -7,7 +7,7 @@ publishDate: 2020-09-30
 author: johnpryan
 coverImage:
   url: images/1PYHrYurwAGyQC8vsnAaWiA.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

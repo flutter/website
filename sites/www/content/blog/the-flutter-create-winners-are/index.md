@@ -7,7 +7,7 @@ publishDate: 2019-05-07
 author: aguinis
 coverImage:
   url: images/1q-DyfLgHgeJRsrEsm9wOVw.jpeg
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

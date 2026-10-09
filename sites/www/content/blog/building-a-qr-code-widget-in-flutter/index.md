@@ -6,7 +6,7 @@ publishDate: 2018-03-05
 author: lukeaf
 coverImage:
   url: images/1iuOxHUF0bBlZtiktVx6XyA.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

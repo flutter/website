@@ -7,7 +7,7 @@ publishDate: 2026-02-03
 author: ericwindmill
 coverImage:
   url: images/1rHBScksI6g6at1HsqSuPhA.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

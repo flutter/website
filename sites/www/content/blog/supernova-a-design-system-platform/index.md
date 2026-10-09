@@ -6,7 +6,7 @@ publishDate: 2021-09-30
 author: mariam_hasnany
 coverImage:
   url: images/1GOSImwOIA3oqItUMRmq5Kw.webp
-  display: false
+  showInPost: false
 category: case-study
 layout: blog
 ---

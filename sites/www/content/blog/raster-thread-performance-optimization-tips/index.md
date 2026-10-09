@@ -7,7 +7,7 @@ publishDate: 2021-09-01
 author: filiph
 coverImage:
   url: images/116rv_KQNNU3IsAHCfI3G6A.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

@@ -7,7 +7,7 @@ publishDate: 2018-07-20
 author: chinmaygarde
 coverImage:
   url: images/1xfvovQJT-5OsHBDBIQa92A.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

@@ -8,7 +8,7 @@ publishDate: 2026-05-18
 author: mit-mit
 coverImage:
   url: images/1aotSzcGPZg3gYqhwDy4LWQ.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

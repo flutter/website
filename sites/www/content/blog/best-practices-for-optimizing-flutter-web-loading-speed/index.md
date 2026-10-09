@@ -7,7 +7,7 @@ publishDate: 2024-05-06
 author: mhclin113
 coverImage:
   url: images/0_bz3_DRzn9aoB0qD.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

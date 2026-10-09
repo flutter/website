@@ -8,7 +8,7 @@ publishDate: 2018-03-06
 author: devoncarew
 coverImage:
   url: images/1GKGBr7v55mRKhQyOkNaFoA.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

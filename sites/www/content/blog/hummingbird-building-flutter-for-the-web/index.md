@@ -7,7 +7,7 @@ publishDate: 2018-12-04
 author: yegorj
 coverImage:
   url: images/0gD64Y8ECWBBuSZrx.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

@@ -7,7 +7,7 @@ publishDate: 2022-08-03
 author: rich_hall
 coverImage:
   url: images/1B5i6MSUhz554dVTR484AuA.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

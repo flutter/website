@@ -7,7 +7,7 @@ publishDate: 2019-05-09
 author: filiph
 coverImage:
   url: images/1MxtHyEfdBlANwu7ZRyX2mw.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

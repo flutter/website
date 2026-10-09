@@ -6,7 +6,7 @@ publishDate: 2023-11-15
 author: kenzieschmoll
 coverImage:
   url: images/1JsdgKjxlVmm5EAFfXvQ2yA.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

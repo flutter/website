@@ -7,7 +7,7 @@ publishDate: 2019-12-11
 author: mariam_hasnany
 coverImage:
   url: images/0M7sTluUPVsk6DcnU.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

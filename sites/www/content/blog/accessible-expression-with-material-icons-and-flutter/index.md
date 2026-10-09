@@ -7,7 +7,7 @@ publishDate: 2020-11-04
 author: andremobilelabonte
 coverImage:
   url: images/1kcT41A5GvXp8XrjHjiuc4A.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

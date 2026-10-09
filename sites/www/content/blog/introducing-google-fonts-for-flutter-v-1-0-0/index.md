@@ -7,7 +7,7 @@ publishDate: 2020-04-23
 author: clocksmith
 coverImage:
   url: images/1ndZ8HED7jp2f0X4IFSwtdA.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

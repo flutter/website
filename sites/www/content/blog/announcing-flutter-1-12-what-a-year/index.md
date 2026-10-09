@@ -7,7 +7,7 @@ publishDate: 2019-12-11
 author: csells
 coverImage:
   url: images/1sW6TueDcNzw806cjigLJaA.webp
-  display: false
+  showInPost: false
 category: release
 layout: blog
 ---

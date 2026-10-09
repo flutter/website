@@ -7,7 +7,7 @@ publishDate: 2019-03-29
 author: efortuna
 coverImage:
   url: images/1sHDIVXBu9RpJYN9Zdn8iBw.gif
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

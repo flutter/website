@@ -7,7 +7,7 @@ publishDate: 2019-05-08
 author: timsneath
 coverImage:
   url: images/13XedGb879lTK2vbCP0uscA.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

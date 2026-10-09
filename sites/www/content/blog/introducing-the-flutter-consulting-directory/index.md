@@ -6,7 +6,7 @@ publishDate: 2023-09-13
 author: leighajarett
 coverImage:
   url: images/1m5eYW0Qgmdse1bpkqbsPLQ.webp
-  display: false
+  showInPost: false
 category: news
 layout: blog
 ---

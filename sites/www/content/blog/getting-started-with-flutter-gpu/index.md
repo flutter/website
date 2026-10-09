@@ -6,7 +6,7 @@ publishDate: 2024-08-06
 author: bdero
 coverImage:
   url: images/1jfeUgpEP9AgAz94yVxVW1g.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

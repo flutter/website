@@ -7,7 +7,7 @@ publishDate: 2018-11-14
 author: mehmetf
 coverImage:
   url: images/1ajiMVoQuEXYZ4IJzr-yOQQ.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

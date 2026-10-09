@@ -7,7 +7,7 @@ publishDate: 2020-07-23
 author: guidez
 coverImage:
   url: images/0GWFHSeCrjUgPdkJ-.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

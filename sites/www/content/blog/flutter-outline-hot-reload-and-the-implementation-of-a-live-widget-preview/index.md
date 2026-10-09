@@ -7,7 +7,7 @@ publishDate: 2018-04-04
 author: scheglov
 coverImage:
   url: images/0TUzb7DjU9HweZAAI.webp
-  display: false
+  showInPost: false
 category: deep-dive
 layout: blog
 ---

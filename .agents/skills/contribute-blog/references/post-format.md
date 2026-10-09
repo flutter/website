@@ -68,12 +68,12 @@ layout: blog
 : Post-relative hero/cover image that supplies the `/blog` card thumbnail,
   social preview, and optional in-body rendering before the first paragraph.
   Contains `url` (path to image), `alt` (alternative text; empty string `""`
-  for decorative images; required when `display` is `true`), optional `caption`,
-  and optional `display` (boolean; defaults to `true`).
-  Set `display: false` if you want the card thumbnail and social preview
-  without automatically rendering the image at the top of the post (for
-  example, if you prefer to place the image elsewhere in the body with
-  `<DashImage>` or omit in-body display).
+  for decorative images; required when `showInPost` is `true`),
+  optional `caption`, and optional `showInPost` (boolean; defaults to `true`).
+  Set `showInPost: false` if you want the card thumbnail and social preview
+  without automatically rendering the image at the top of the post.
+  For  example, if you prefer to place the image
+  elsewhere in the body with `<DashImage>` or omit it from the body.
 
 `socialImage` (optional)
 : Static image override (WebP or PNG under 5 MB) for social sharing metadata
@@ -82,19 +82,19 @@ layout: blog
 ## Card and social images
 
 `coverImage` is optional but recommended when suitable artwork exists.
-It supplies the default card image and social preview (unless overridden
-by `socialImage`), and automatically renders at the top of the post body
-when `display` is `true` (the default).
+It supplies the default card image and social preview,
+unless overridden by `socialImage`, and automatically renders at
+the top of the post body when `showInPost` is `true` (the default).
 If `coverImage` is omitted, no image is rendered at the top of the post body,
 and the `/blog` card displays without a thumbnail.
 
-To supply a card and social preview image without rendering it at the top
-of the post, set `display: false`:
+To supply a card and social preview image without
+rendering it at the top of the post, set `showInPost: false`:
 
 ```yaml
 coverImage:
   url: images/workflow.webp
-  display: false
+  showInPost: false
 ```
 
 You can then embed the image elsewhere in the article body using `<DashImage>`.
