@@ -4,12 +4,12 @@ description: >-
   A closer look at building a web app with Flutter and Firebase
 publishDate: 2021-05-17
 author: verygoodopensource
-image: images/0diM5YKjX2b2OgNvD.webp
+coverImage:
+  alt: ""
+  url: images/0diM5YKjX2b2OgNvD.webp
 category: case-study
 layout: blog
 ---
-
-<DashImage figure src="images/0diM5YKjX2b2OgNvD.webp" />
 
 We (the folks at Very Good Ventures) teamed up with Google to bring an interactive experience to this year’s Google I/O: a [photo booth](https://photobooth.flutter.dev/)! You can take pictures with well-known Google mascots: [Flutter’s Dash](https://flutter.dev/dash), Android Jetpack, Chrome’s Dino, and Firebase’s Sparky, and decorate photos with stickers, including party hats, pizza, funky glasses, and more. Finally, you can share photos on social media and download them to update your profile picture for the event!
 

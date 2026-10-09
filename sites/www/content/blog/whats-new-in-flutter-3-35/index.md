@@ -4,12 +4,12 @@ description: >-
   Hot Reload, Widget Previews, and More
 publishDate: 2025-08-14
 author: itsjustkevin
-image: images/1KLn6ye1qAU9vAI3zgIhLCg.webp
+coverImage:
+  alt: ""
+  url: images/1KLn6ye1qAU9vAI3zgIhLCg.webp
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/1KLn6ye1qAU9vAI3zgIhLCg.webp" />
 
 ## What’s new in Flutter 3.35
 

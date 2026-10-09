@@ -5,13 +5,14 @@ description: >-
   for building AI-powered features and agentic workflows with Dart and Flutter.
 publishDate: 2026-10-08
 author: chrisraygill
-image: images/banner.png
-socialImage: images/banner.png
+coverImage:
+  alt: >-
+    Dash stands beside a stack of blocks bearing the
+    Dart and Genkit logos and the version number 1.0.
+  url: images/banner.png
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/banner.png" alt="Announcing Genkit Dart 1.0" />
 
 Dart and Flutter let you build high-quality apps for mobile, web, and desktop
 from a single codebase. With

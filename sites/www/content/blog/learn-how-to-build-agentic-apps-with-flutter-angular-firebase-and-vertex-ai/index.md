@@ -7,12 +7,12 @@ description: >-
   create entirely new kinds of experiences.
 publishDate: 2025-04-24
 author: kkboateng
-image: images/0bWWt_FlITTVh_813.webp
+coverImage:
+  alt: ""
+  url: images/0bWWt_FlITTVh_813.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/0bWWt_FlITTVh_813.webp" />
 
 The way we build applications is evolving. Imagine apps that don’t just respond to user input but proactively assist, automate tasks, and create entirely new kinds of experiences. Welcome to the world of **agentic apps**!
 

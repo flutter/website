@@ -5,12 +5,16 @@ description: >-
   the future of non-OEM widgets, and bespoke mobile design
 publishDate: 2017-11-16
 author: xster
-image: images/1Tt9lpvpKa1700v74KcjcIw.webp
+coverImage:
+  alt: >-
+    An older Nexus phone displays a Material Design contact screen.
+  caption: >-
+    Modern, consistent Material Design on a phone shipped **4 years**
+    before Material Design was unveiled.
+  url: images/1Tt9lpvpKa1700v74KcjcIw.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1Tt9lpvpKa1700v74KcjcIw.webp" alt="Modern, consistent Material Design on a phone shipped **4 years** before Material Design was unveiled" caption="Modern, consistent Material Design on a phone shipped **4 years** before Material Design was unveiled" />
 
 ## Preface
 

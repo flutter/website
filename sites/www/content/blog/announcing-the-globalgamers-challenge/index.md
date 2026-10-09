@@ -4,12 +4,12 @@ description: >-
   Build epic Flutter games to assist in the battle to defend the planet
 publishDate: 2024-01-09
 author: kkboateng
-image: images/0e6DUZrDIvURyxTW2.webp
+coverImage:
+  alt: ""
+  url: images/0e6DUZrDIvURyxTW2.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/0e6DUZrDIvURyxTW2.webp" />
 
 We know Flutter devs love a good [challenge](https://flutter.dev/events/puzzle-hack), so just in time for the new year, we’re excited to announce the next Flutter challenge!
 

@@ -5,12 +5,12 @@ description: >-
   demonstrates Flutter desktop capabilities and best practices.
 publishDate: 2021-08-22
 author: abd99
-image: images/1aRiqWvnUYD-cSbGhxTnUsw.jpeg
+coverImage:
+  alt: ""
+  url: images/1aRiqWvnUYD-cSbGhxTnUsw.jpeg
 category: case-study
 layout: blog
 ---
-
-<DashImage figure src="images/1aRiqWvnUYD-cSbGhxTnUsw.jpeg" />
 
 [Google Summer of Code](https://summerofcode.withgoogle.com/) (GSoC) is an open source, summer program sponsored by Google. During this program, students work on a project under the guidance of an open source organization.
 

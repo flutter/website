@@ -5,12 +5,14 @@ description: >-
   differ when building Flutter apps for the web.
 publishDate: 2020-09-21
 author: josealba
-image: images/1BzcKF4qdbLIFFB6XL8x-9A.webp
+coverImage:
+  alt: >-
+    The Flutter Gallery home screen, with example apps and Material,
+    Cupertino, and style demos.
+  url: images/1BzcKF4qdbLIFFB6XL8x-9A.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1BzcKF4qdbLIFFB6XL8x-9A.webp" />
 
 Flutter has released web support that allows you to create dynamic websites. With Flutter web, macOS, Linux, and Windows operating systems (even on mobile devices connected to a mouse, keyboard, or other peripherals), you now have access to platform-specific behaviors including focus support, keyboard input, custom mouse cursors, and hover input. But, how do you make use of these platform behaviors in Flutter?
 

@@ -5,12 +5,12 @@ description: >-
   building faster, more capable multiplatform apps.
 publishDate: 2025-11-12
 author: twerske
-image: images/1DwdxTpj5OEQzUzyj4lq6_A.gif
+coverImage:
+  alt: ""
+  url: images/1DwdxTpj5OEQzUzyj4lq6_A.gif
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/1DwdxTpj5OEQzUzyj4lq6_A.gif" />
 
 ## Announcing Flutter 3.38 & Dart 3.10: Building the future of apps
 

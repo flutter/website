@@ -5,12 +5,12 @@ description: >-
   and security in Flutter 3.10
 publishDate: 2023-05-10
 author: timsneath
-image: images/1bzC0ul7jBVhOJiastVGKlw.webp
+coverImage:
+  alt: ""
+  url: images/1bzC0ul7jBVhOJiastVGKlw.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1bzC0ul7jBVhOJiastVGKlw.webp" />
 
 We’re *delighted* to be back for this year’s Google I/O, streaming live around the world from near our headquarters in Mountain View, California!
 

@@ -5,12 +5,13 @@ description: >-
   community highlights from Google Cloud Next.
 publishDate: 2026-04-27
 author: twerske
-image: images/1MdrcuqmMZPxXdrkJbDAdIA.webp
+coverImage:
+  alt: ""
+  caption: "Google Cloud Next Recap 2026"
+  url: images/1MdrcuqmMZPxXdrkJbDAdIA.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1MdrcuqmMZPxXdrkJbDAdIA.webp" alt="Google Cloud Next Recap 2026" caption="Google Cloud Next Recap 2026" />
 
 ## That’s a wrap: Everything Flutter at Google Cloud Next
 

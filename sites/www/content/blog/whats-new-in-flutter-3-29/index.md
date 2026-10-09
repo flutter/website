@@ -4,12 +4,12 @@ description: >-
   Enhancing Performance and Fidelity Across Platforms
 publishDate: 2025-02-12
 author: itsjustkevin
-image: images/1-XHpdhmBoEU-K3pSPWTX3g.webp
+coverImage:
+  alt: ""
+  url: images/1-XHpdhmBoEU-K3pSPWTX3g.webp
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/1-XHpdhmBoEU-K3pSPWTX3g.webp" />
 
 ## What’s new in Flutter 3.29
 
