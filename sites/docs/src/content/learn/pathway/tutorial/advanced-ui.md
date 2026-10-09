@@ -70,14 +70,15 @@ uses the minimal "empty" template.
 
 [Flutter CLI tool]: /reference/flutter-cli
 
-### Add the Cupertino Icons dependency
+### Add the Cupertino dependencies
 
-This project uses the [`cupertino_icons` package][],
-an official Flutter package.
-Add it as a dependency by running the following command:
+This project uses the [`cupertino_ui` package][] for Cupertino widgets
+and the [`cupertino_icons` package][] for Cupertino icon assets.
+Add both official Flutter packages as dependencies
+by running the following command:
 
 ```console
-$ flutter pub add cupertino_icons
+$ flutter pub add cupertino_ui cupertino_icons
 ```
 
 ### Set up the project structure
@@ -539,6 +540,7 @@ class RolodexApp extends StatelessWidget {
 With all the extraneous code out of the way, in the next lesson,
 you'll start building the app in earnest.
 
+[`cupertino_ui` package]: {{site.pub-pkg}}/cupertino_ui
 [`cupertino_icons` package]: {{site.pub-pkg}}/cupertino_icons
 
 ### Review
