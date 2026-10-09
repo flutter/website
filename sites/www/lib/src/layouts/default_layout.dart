@@ -41,7 +41,12 @@ class DefaultLayout extends PageLayout {
     }
 
     final socialImage = switch (pageData) {
-      {'socialImage': final String socialImage} => socialImage,
+      {'socialImage': final String socialImage} when socialImage.isNotEmpty =>
+        socialImage,
+      {'socialImage': Object()} => throw Exception(
+        'Page at ${page.path} has an invalid "socialImage". '
+        'Must be a non-empty string if provided.',
+      ),
       {'coverImage': {'url': final String coverImageUrl}} => coverImageUrl,
       _ => null,
     };

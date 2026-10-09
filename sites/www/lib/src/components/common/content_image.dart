@@ -29,7 +29,10 @@ class ContentImage extends StatelessComponent {
   /// The optional caption, rendered as inline Markdown.
   final String? caption;
 
-  /// Whether to wrap the image and caption in a figure.
+  /// Whether to wrap the image in a figure.
+  ///
+  /// The image is always wrapped in a figure if it has a non-empty [caption],
+  /// since a `<figcaption>` must be a child of a `<figure>`.
   final bool isFigure;
 
   /// The CSS classes for the optional figure wrapper.
@@ -47,6 +50,11 @@ class ContentImage extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
+    final caption = switch (this.caption) {
+      final caption? when caption.isNotEmpty => caption,
+      _ => null,
+    };
+
     final child = Component.fragment([
       img(
         src: src,
@@ -58,12 +66,14 @@ class ContentImage extends StatelessComponent {
           if (isHighPriority) 'fetchpriority': 'high',
         },
       ),
-      if (caption case final caption? when caption.isNotEmpty)
+      if (caption != null)
         figcaption(classes: 'figure-caption', [
           DashMarkdown(content: caption, inline: true),
         ]),
     ]);
 
-    return isFigure ? figure(classes: figureClass, [child]) : child;
+    return isFigure || caption != null
+        ? figure(classes: figureClass, [child])
+        : child;
   }
 }

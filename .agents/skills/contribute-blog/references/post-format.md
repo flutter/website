@@ -72,8 +72,8 @@ layout: blog
   optional `caption`, and optional `showInPost` (boolean; defaults to `true`).
   Set `showInPost: false` if you want the card thumbnail and social preview
   without automatically rendering the image at the top of the post.
-  For  example, if you prefer to place the image
-  elsewhere in the body with `<DashImage>` or omit it from the body.
+  For example, when you place the image elsewhere in the body with `<DashImage>`
+  or want to omit it from the body.
 
 `socialImage` (optional)
 : Static image override (WebP or PNG under 5 MB) for social sharing metadata
