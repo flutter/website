@@ -40,8 +40,11 @@ class DefaultLayout extends PageLayout {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
 
-    final pageImage = pageData['image'] as String?;
-    final socialImage = pageData['socialImage'] as String? ?? pageImage;
+    final socialImage = switch (pageData) {
+      {'socialImage': final String socialImage} => socialImage,
+      {'coverImage': {'url': final String coverImageUrl}} => coverImageUrl,
+      _ => null,
+    };
     final titleBase =
         (pageData['titleBase'] ?? siteData['titleBase']) as String?;
     final documentTitle = titleBase == null ? title : '$title | $titleBase';

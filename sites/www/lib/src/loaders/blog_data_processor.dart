@@ -4,10 +4,10 @@
 
 import 'package:jaspr_content/jaspr_content.dart';
 
-/// Adds derived data to each filesystem-backed blog post.
+/// Validates and adds derived data to each filesystem-backed blog post.
 ///
-/// Run before the asset data loader so the derived card image is resolved
-/// for both blog cards and social metadata.
+/// Run before the asset data loader so invalid cover image metadata
+/// is reported before the asset loader tries to resolve it.
 final class BlogPostDataProcessor implements DataLoader {
   static final RegExp _wordPattern = RegExp(r'\w+');
 
@@ -32,22 +32,21 @@ final class BlogPostDataProcessor implements DataLoader {
     }
 
     // Reject invalid URLs before the asset loader tries to read them.
-    final coverImageUrl = switch (page.data.page['coverImage']) {
-      null => null,
-      final Map<Object?, Object?> coverImage when coverImage.isEmpty => null,
-      {'url': final String url} when url.trim().isNotEmpty => url,
-      _ => throw ArgumentError(
-        'Invalid "coverImage" metadata at "${page.url}". '
-        'Must include a non-empty "url" string.',
-      ),
-    };
+    switch (page.data.page['coverImage']) {
+      case null:
+      case Map<Object?, Object?>(isEmpty: true):
+      case {'url': final String url} when url.trim().isNotEmpty:
+        break;
+      default:
+        throw ArgumentError(
+          'Invalid "coverImage" metadata at "${page.url}". '
+          'Must include a non-empty "url" string.',
+        );
+    }
 
     page.apply(
       data: {
-        'page': {
-          'readingTime': '$readingTime min read',
-          'image': ?coverImageUrl,
-        },
+        'page': {'readingTime': '$readingTime min read'},
       },
     );
   }

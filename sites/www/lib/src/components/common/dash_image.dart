@@ -38,14 +38,16 @@ class DashImage with CustomComponentBase {
             .map((style) => style.endsWith(';') ? style : '$style;')
             .join(' ');
 
-    return ContentImage(
-      src: imgSrc,
-      alt: alt,
-      caption: caption,
-      isFigure: isFigure,
-      figureClass: figureClass,
-      imageClass: imgClass,
-      imageStyle: style,
+    return Builder(
+      builder: (context) => ContentImage(
+        src: context.resolveAsset(imgSrc),
+        alt: alt,
+        caption: caption,
+        isFigure: isFigure,
+        figureClass: figureClass,
+        imageClass: imgClass,
+        imageStyle: style,
+      ),
     );
   }
 }

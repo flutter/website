@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/markdown.dart';
 
 /// An image in page content, with an optional figure and Markdown caption.
@@ -20,7 +19,7 @@ class ContentImage extends StatelessComponent {
     super.key,
   });
 
-  /// The image path, resolved relative to the current page.
+  /// The image URL, already resolved to its final asset path.
   final String src;
 
   /// The alternative text, or an empty string for a decorative image.
@@ -45,7 +44,7 @@ class ContentImage extends StatelessComponent {
   Component build(BuildContext context) {
     final child = Component.fragment([
       img(
-        src: context.resolveAsset(src),
+        src: src,
         alt: alt,
         classes: imageClass,
         attributes: {

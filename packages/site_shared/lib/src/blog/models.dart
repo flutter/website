@@ -89,10 +89,6 @@ extension type Post(Map<String, Object?> data) {
 
   String get title => data['title'] as String;
   String get description => data['description'] as String;
-
-  /// The card image URL, derived from [coverImage] and
-  /// resolved by the page's data loaders.
-  String? get image => data['image'] as String?;
   CoverImage? get coverImage => switch (data['coverImage']) {
     final Map<String, Object?> coverImageData when coverImageData.isNotEmpty =>
       CoverImage(coverImageData),
@@ -116,6 +112,7 @@ extension type Post(Map<String, Object?> data) {
 }
 
 extension type CoverImage(Map<String, Object?> data) {
+  /// The image URL, already resolved by the page's asset data loader.
   String get url => data['url'] as String;
   String? get alt => data['alt'] as String?;
   String? get caption => data['caption'] as String?;
