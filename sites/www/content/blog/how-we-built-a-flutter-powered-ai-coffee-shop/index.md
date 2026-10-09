@@ -5,8 +5,7 @@ description: >-
 publishDate: 2026-06-22
 author: craiglabenz
 coverImage:
-  alt: ""
-  caption: >-
+  alt: >-
     Dash sits on a coffee shop counter holding a latte with
     the Flutter logo printed on the foam.
   url: images/1o8sb5en4Yhr9J0R1cMMO_g.jpeg

@@ -6,7 +6,6 @@ publishDate: 2023-01-05
 author: shamiramarshall
 coverImage:
   alt: ""
-  caption: "Banner for #17DaysOfFlutter"
   url: images/1cKk9QrcolzFfqB2ZWyUxSQ.webp
 category: news
 layout: blog
