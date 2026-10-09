@@ -1284,7 +1284,7 @@
     - "Enterprise"
   options_GCP_partner: false
 - title: "PixelForce"
-  summary: "An Australian app development company that turns business ideas into mobile and web apps that earn revenue. We built and scaled SWEAT from launch to a $400M acquisition."
+  summary: "An Australian app development company that turns business ideas into mobile and web apps that earn revenue. They built and scaled SWEAT from launch to a $400M acquisition."
   card: "images/third_party/partners/PixelForce_logo.png"
   external_url: "https://pixelforce.com/services/flutter-app-development-company"
   options_location:
