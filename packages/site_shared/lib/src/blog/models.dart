@@ -31,49 +31,51 @@ extension type Post(Map<String, Object?> data) {
       );
     }
 
-    if (data['coverImage'] case final coverData?) {
-      if (coverData is Map && coverData.isEmpty) {
-        // Treat an empty map as absent.
-        // The asset data loader adds an empty `coverImage` map to
-        // pages without one when resolving the `page.coverImage.url` property.
-      } else if (coverData is! Map<String, Object?> ||
-          coverData['url'] is! String ||
-          (coverData['url'] as String).isEmpty) {
-        throw ArgumentError(
-          'Invalid "coverImage" metadata$sourceDescription. '
-          'Must include a non-empty "url" string.',
-        );
-      } else {
-        if (coverData['showInPost'] != null &&
-            coverData['showInPost'] is! bool) {
-          throw ArgumentError(
+    switch (data['coverImage']) {
+      // Treat an empty map as absent.
+      // The asset data loader adds an empty `coverImage` map to
+      // pages without one when resolving the `page.coverImage.url` property.
+      case null || Map(isEmpty: true):
+        break;
+      case final Map<String, Object?> coverData &&
+          {'url': String(isNotEmpty: true)}:
+        final showInPost = switch (coverData['showInPost']) {
+          null => true,
+          final bool showInPost => showInPost,
+          _ => throw ArgumentError(
             'Invalid "showInPost" in "coverImage" metadata$sourceDescription. '
             'Must be a boolean if provided.',
-          );
+          ),
+        };
+
+        switch (coverData['alt']) {
+          case String():
+          case null when !showInPost:
+            break;
+          case _ when showInPost:
+            throw ArgumentError(
+              'Invalid "coverImage" metadata$sourceDescription. '
+              'Must include an "alt" string when shown in the post '
+              '(empty string for decorative).',
+            );
+          default:
+            throw ArgumentError(
+              'Invalid "alt" in "coverImage" metadata$sourceDescription. '
+              'Must be a string if provided.',
+            );
         }
-        final showInPost = coverData['showInPost'] != false;
-        if (showInPost && coverData['alt'] is! String) {
-          throw ArgumentError(
-            'Invalid "coverImage" metadata$sourceDescription. '
-            'Must include an "alt" string when shown in the post '
-            '(empty string for decorative).',
-          );
-        }
-        if (!showInPost &&
-            coverData['alt'] != null &&
-            coverData['alt'] is! String) {
-          throw ArgumentError(
-            'Invalid "alt" in "coverImage" metadata$sourceDescription. '
-            'Must be a string if provided.',
-          );
-        }
-        if (coverData['caption'] != null && coverData['caption'] is! String) {
+
+        if (coverData['caption'] is! String?) {
           throw ArgumentError(
             'Invalid "caption" in "coverImage" metadata$sourceDescription. '
             'Must be a string if provided.',
           );
         }
-      }
+      default:
+        throw ArgumentError(
+          'Invalid "coverImage" metadata$sourceDescription. '
+          'Must include a non-empty "url" string.',
+        );
     }
 
     return post;
