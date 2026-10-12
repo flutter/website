@@ -628,9 +628,9 @@ appropriate backend format and generates its necessary
 runtime metadata. The compiled shader is then included in
 the application just like an asset.
 
-Each shader file must be listed individually
-(directory paths aren't supported).
-The `shaders` field has the following structure:
+The `shaders` field accepts a list of individual file paths;
+directory paths aren't supported.
+The field has the following structure:
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -647,6 +647,11 @@ flutter:
     - assets/shaders/shader_a.frag
     - assets/shaders/shader_b.frag
 ```
+
+Don't list shader files under the `assets` field,
+either directly or through a directory that contains them.
+The Flutter tool reports an error if a shader is declared
+in both places.
 
 Like other assets, shaders also support `flavors`, `platforms`,
 and `transformers`.
