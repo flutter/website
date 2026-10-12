@@ -5,12 +5,12 @@ description: >-
   Genkit, and the Gemini API
 publishDate: 2024-06-26
 author: verygoodopensource
-image: images/04ylubp836_tc4Nni.webp
+coverImage:
+  alt: ""
+  url: images/04ylubp836_tc4Nni.webp
 category: case-study
 layout: blog
 ---
-
-<DashImage figure src="images/04ylubp836_tc4Nni.webp" />
 
 For this year’s I/O, Very Good Ventures partnered with the Flutter and Firebase teams at Google to create a unique, digital experience to showcase the power of the Gemini API.
 

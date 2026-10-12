@@ -31,6 +31,53 @@ extension type Post(Map<String, Object?> data) {
       );
     }
 
+    switch (data['coverImage']) {
+      // Treat an empty map as absent.
+      // The asset data loader adds an empty `coverImage` map to
+      // pages without one when resolving the `page.coverImage.url` property.
+      case null || Map(isEmpty: true):
+        break;
+      case final Map<String, Object?> coverData &&
+          {'url': String(isNotEmpty: true)}:
+        final showInPost = switch (coverData['showInPost']) {
+          null => true,
+          final bool showInPost => showInPost,
+          _ => throw ArgumentError(
+            'Invalid "showInPost" in "coverImage" metadata$sourceDescription. '
+            'Must be a boolean if provided.',
+          ),
+        };
+
+        switch (coverData['alt']) {
+          case String():
+          case null when !showInPost:
+            break;
+          case null:
+            throw ArgumentError(
+              'Invalid "coverImage" metadata$sourceDescription. '
+              'Must include an "alt" string when shown in the post '
+              '(empty string for decorative).',
+            );
+          default:
+            throw ArgumentError(
+              'Invalid "alt" in "coverImage" metadata$sourceDescription. '
+              'Must be a string if provided.',
+            );
+        }
+
+        if (coverData['caption'] is! String?) {
+          throw ArgumentError(
+            'Invalid "caption" in "coverImage" metadata$sourceDescription. '
+            'Must be a string if provided.',
+          );
+        }
+      default:
+        throw ArgumentError(
+          'Invalid "coverImage" metadata$sourceDescription. '
+          'Must include a non-empty "url" string.',
+        );
+    }
+
     return post;
   }
 
@@ -47,7 +94,16 @@ extension type Post(Map<String, Object?> data) {
 
   String get title => data['title'] as String;
   String get description => data['description'] as String;
-  String? get image => data['image'] as String?;
+
+  /// The post's cover image, or `null` if it doesn't have one.
+  ///
+  /// An empty map, as added by the asset data loader
+  /// to posts without a cover image, is treated as absent.
+  CoverImage? get coverImage => switch (data['coverImage']) {
+    final Map<String, Object?> coverImageData when coverImageData.isNotEmpty =>
+      CoverImage(coverImageData),
+    _ => null,
+  };
   String get publishDate => data['publishDate'] as String;
 
   DateTime get dateObject => DateTime.parse(publishDate);
@@ -63,6 +119,32 @@ extension type Post(Map<String, Object?> data) {
 
   String get readingTime => data['readingTime'] as String? ?? '5 min read';
   String get category => data['category'] as String;
+}
+
+/// The cover image of a blog [Post],
+/// as configured by the `coverImage` property in its front matter.
+///
+/// Besides optionally being shown at the top of the post,
+/// the cover image is used as the post's image on blog cards and
+/// as its social sharing image if no `socialImage` is specified.
+extension type CoverImage(Map<String, Object?> data) {
+  /// The image URL, already resolved by the page's asset data loader.
+  String get url => data['url'] as String;
+
+  /// The alternative text for the image, or `null` if not provided.
+  ///
+  /// An empty string marks the image as decorative.
+  /// [Post.parse] requires this if [showInPost] is `true`.
+  String? get alt => data['alt'] as String?;
+
+  /// The optional caption, rendered as inline Markdown
+  /// below the image when shown in the post.
+  String? get caption => data['caption'] as String?;
+
+  /// Whether the layout renders this image at the top of the post body.
+  ///
+  /// Defaults to `true` if not specified.
+  bool get showInPost => data['showInPost'] != false;
 }
 
 extension type Author(Map<String, Object?> data) {

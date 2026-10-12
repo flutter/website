@@ -32,7 +32,10 @@ description: >-
   A short, plain-text summary that stands on its own.
 publishDate: YYYY-MM-DD
 author: author-id
-image: images/card-image.webp
+coverImage:
+  alt: "Descriptive alt text, or empty for decorative."
+  caption: "Optional caption."
+  url: images/hero.webp
 category: deep-dive
 layout: blog
 ---
@@ -61,22 +64,40 @@ layout: blog
 `layout` (required)
 : Must be `blog`.
 
-`image` (optional)
-: Post-relative path (for example, `images/hero.webp`) to the card and
-  default social preview image.
+`coverImage` (optional)
+: Post-relative hero/cover image that supplies the `/blog` card thumbnail,
+  social preview, and optional in-body rendering before the first paragraph.
+  Contains `url` (path to image), `alt` (alternative text; empty string `""`
+  for decorative images; required when `showInPost` is `true`),
+  optional `caption`, and optional `showInPost` (boolean; defaults to `true`).
+  Set `showInPost: false` if you want the card thumbnail and social preview
+  without automatically rendering the image at the top of the post.
+  For example, when you place the image elsewhere in the body with `<DashImage>`
+  or want to omit it from the body.
 
 `socialImage` (optional)
 : Static image override (WebP or PNG under 5 MB) for social sharing metadata
-  when `image` is animated or exceeds 5 MB.
+  when `coverImage` is animated or exceeds 5 MB.
 
 ## Card and social images
 
-`image` is optional in the data model but
-recommended when suitable artwork exists.
-It supplies the blog card image and social preview.
-The body layout doesn't render `image` automatically.
-If the hero image should appear in the post's body,
-include it explicitly in the Markdown content with `<DashImage>`.
+`coverImage` is optional but recommended when suitable artwork exists.
+It supplies the default card image and social preview,
+unless overridden by `socialImage`, and automatically renders at
+the top of the post body when `showInPost` is `true` (the default).
+If `coverImage` is omitted, no image is rendered at the top of the post body,
+and the `/blog` card displays without a thumbnail.
+
+To supply a card and social preview image without
+rendering it at the top of the post, set `showInPost: false`:
+
+```yaml
+coverImage:
+  url: images/workflow.webp
+  showInPost: false
+```
+
+You can then embed the image elsewhere in the article body using `<DashImage>`.
 
 Use post-local paths such as `images/hero.webp`.
 Convert new static PNG or JPEG artwork to WebP by running
@@ -85,11 +106,13 @@ with each image's path relative to the repository root,
 then reference the resulting `.webp` files.
 Don't upscale sources or commit unused variants.
 
-Set `socialImage` when `image` is animated (such as a GIF),
+Set `socialImage` when `coverImage` is animated (such as a GIF),
 larger than 5 MB, or otherwise unsuitable for social previews:
 
 ```yaml
-image: images/animated-hero.gif
+coverImage:
+  alt: "Animated hero diagram"
+  url: images/animated-hero.gif
 socialImage: images/social-cover.webp
 ```
 
@@ -99,7 +122,8 @@ Use a static WebP or PNG under 5 MB for `socialImage`.
 
 ### Images
 
-Use `<DashImage>` for post-local figures, asset processing, or captions:
+Hero images at the top of a post are defined using `coverImage` in frontmatter.
+For images within the article body, use `<DashImage>`:
 
 ```markdown
 <DashImage figure src="images/workflow.webp" alt="Diagram showing requests moving from the Flutter app through the API to the cache" caption="Requests move through the API before reaching the cache." />

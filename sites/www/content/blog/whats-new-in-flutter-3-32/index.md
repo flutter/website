@@ -4,12 +4,12 @@ description: >-
   Hot reload on web, native fidelity, and deeper integrations
 publishDate: 2025-05-20
 author: itsjustkevin
-image: images/1FTpRgnrZGMzzCjEl4sCmiw.webp
+coverImage:
+  alt: ""
+  url: images/1FTpRgnrZGMzzCjEl4sCmiw.webp
 category: release
 layout: blog
 ---
-
-<DashImage figure src="images/1FTpRgnrZGMzzCjEl4sCmiw.webp" />
 
 ## What’s new in Flutter 3.32
 

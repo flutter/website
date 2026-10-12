@@ -4,12 +4,13 @@ description: >-
   How hiding widgets can also hide inefficiency in your code
 publishDate: 2018-06-27
 author: lukeaf
-image: images/1q-Y9wu-ZE_4YHLYcPpjgGA.jpeg
+coverImage:
+  alt: ""
+  caption: "By Marian ([https://www.flickr.com/photos/lescientist/8430282209](https://www.flickr.com/photos/lescientist/8430282209)) ([CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/))"
+  url: images/1q-Y9wu-ZE_4YHLYcPpjgGA.jpeg
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1q-Y9wu-ZE_4YHLYcPpjgGA.jpeg" alt="By Marian ([https://www.flickr.com/photos/lescientist/8430282209](https://www.flickr.com/photos/lescientist/8430282209)) ([CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/))" caption="By Marian ([https://www.flickr.com/photos/lescientist/8430282209](https://www.flickr.com/photos/lescientist/8430282209)) ([CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/))" />
 
 **Update**: Flutter now has a built in Visibility widget so it’s better you use that. However, it’s still a good read on widget design and implementation so give it a read and a clap!
 
