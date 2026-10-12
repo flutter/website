@@ -403,8 +403,11 @@
    * ================================= */
 
   @media (min-width: 1024px) and (any-hover: hover) {
+    --dd-offset-top: 44px;
+
     .content {
-      padding-inline: clamp(24px, 3vw, 48px); // Scale side padding with the viewport, between 24px and 48px.
+      // Scale side padding with the viewport, between 24px and 48px.
+      padding-inline: clamp(24px, 3vw, 48px);
       column-gap: 24px;
     }
 
