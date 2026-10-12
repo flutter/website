@@ -621,33 +621,25 @@ To learn more about plugins, see
 
 ### shaders field {: #shaders }
 
-GLSL Shaders with the `.frag` extension must be declared in
-the shaders section of your project's `pubspec.yaml` file.
+GLSL shaders with the `.frag` extension must be declared in
+the `shaders` section of your project's `pubspec.yaml` file.
 The Flutter command-line tool compiles the shader to its
 appropriate backend format and generates its necessary
 runtime metadata. The compiled shader is then included in
 the application just like an asset.
 
+Each shader file must be listed individually
+(directory paths aren't supported).
 The `shaders` field has the following structure:
 
 ```yaml title="pubspec.yaml"
 flutter:
   shaders:
-    -  { path_to_file | path_to_directory }
+    - [path_to_file]
     [...]
 ```
 
-```yaml
-# path_to_file structure
-- assets/shaders/file
-```
-
-```yaml
-# path_to_directory structure
-- assets/shaders/
-```
-
-Add specific shaders:
+For example, to add specific shaders to your project:
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -656,24 +648,13 @@ flutter:
     - assets/shaders/shader_b.frag
 ```
 
-Add a directory of shaders:
+Like other assets, shaders also support `flavors`, `platforms`,
+and `transformers`.
 
-```yaml title="pubspec.yaml"
-flutter:
-  shaders:
-    - assets/shaders/
-```
+To learn more about using shaders in Flutter, check out
+[Writing and using fragment shaders][].
 
-Alternatively, you can add your shader directory to the
-`assets` field:
-
-```yaml title="pubspec.yaml"
-flutter:
-  assets:
-    - assets/shaders/my_shader.frag
-```
-
-Like other assets, shaders also support `flavors` and `transformers`.
+[Writing and using fragment shaders]: /ui/design/graphics/fragment-shaders
 
 ### uses-material-design field {: #uses-material-design }
 
