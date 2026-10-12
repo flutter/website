@@ -4,12 +4,13 @@ description: >-
   Sarah Fullmer tells us about support for Flutter meetups.
 publishDate: 2021-10-01
 author: sfshaza
-image: images/14eNp-BypLrDgEwkyWbm2zw.webp
+coverImage:
+  alt: ""
+  caption: "Join forces with other Flutter enthusiasts!"
+  url: images/14eNp-BypLrDgEwkyWbm2zw.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/14eNp-BypLrDgEwkyWbm2zw.webp" alt="Join forces with other Flutter enthusiasts!" caption="Join forces with other Flutter enthusiasts!" />
 
 The Flutter Meetup Network (FMN) is an international network of Meetup groups united by their enthusiasm for Flutter. The FMN program mission is ***to foster a thriving worldwide community of Flutter developers by empowering community organizers to educate and inspire local communities with engaging events.***
 

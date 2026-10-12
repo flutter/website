@@ -4,12 +4,12 @@ description: >-
   Giving designers a fast path to production Flutter code
 publishDate: 2021-04-29
 author: gskinner
-image: images/1OoVDCYfw18QB91Fpe5jDAg.webp
+coverImage:
+  alt: ""
+  url: images/1OoVDCYfw18QB91Fpe5jDAg.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1OoVDCYfw18QB91Fpe5jDAg.webp" />
 
 Flutter is Google’s open-source UI toolkit for building beautiful apps for mobile, desktop, web, and embedded devices from a single codebase. Over the last couple of years, it has become the leading choice for developers who want to build apps for multiple platforms; but designers need a visual tool for prototyping and creating Flutter UI, rather than handcrafting Dart source code. Enter [*XD to Flutter*](https://github.com/AdobeXD/xd-to-flutter-plugin)!
 
