@@ -7,7 +7,7 @@ description: >-
 ---
 
 Firebase is Google's app development platform that provides managed
-backend services for Flutter apps across Android, iOS, web, and macOS.
+backend services for Flutter apps on mobile, web, and desktop.
 Each Firebase service is available as a separate Firebase Flutter
 plugin on pub.dev, so you can add only the services your app needs:
 
@@ -18,7 +18,7 @@ plugin on pub.dev, so you can add only the services your app needs:
 | [Firebase Authentication][firebase-auth] | User sign-in with email, phone, and providers like Google or Apple | [`firebase_auth`][] |
 | [Cloud Storage for Firebase][firebase-storage] | File uploads and downloads for user photos, videos, and documents | [`firebase_storage`][] |
 | [Firebase AI Logic][firebase-ai] | Direct client access to Gemini and Imagen models | [`firebase_ai`][] |
-| [Cloud Functions for Firebase][firebase-functions-dart] | Serverless backend logic written in Dart, TypeScript, Python, or Go | [`cloud_functions`][] (client), [`firebase_functions`][] (server) |
+| [Cloud Functions for Firebase][firebase-functions-dart] | Serverless backend logic written in JavaScript, TypeScript, Python, or Dart (experimental) | [`cloud_functions`][] (client), [`firebase_functions`][] (server) |
 | [Firebase Crashlytics][crashlytics] | Realtime crash reporting and diagnostics | [`firebase_crashlytics`][] |
 
 {:.table .table-striped}
@@ -106,6 +106,7 @@ class AuthGate extends StatelessWidget {
         if (snapshot.hasData) {
           return HomeScreen(user: snapshot.data!);
         }
+        // Your own sign-in UI.
         return const SignInScreen();
       },
     );
@@ -216,7 +217,7 @@ To install the plugin, run:
 $ flutter pub add firebase_data_connect
 ```
 
-To learn when to choose SQL Connect vs. Cloud Firestore or local SQLite,
+To learn when to choose SQL Connect, Cloud Firestore, or local SQLite,
 check out [Choose a database for your Flutter app][choose-db], or follow
 the guide to [use generated Flutter SDKs][sql-connect-flutter].
 
@@ -226,6 +227,13 @@ When your app needs custom server-side logic, background triggers, or
 administrative access to Firebase services, you can write
 [Cloud Functions for Firebase in Dart][firebase-functions-dart] using
 the [`firebase_functions`][] and [`firebase_admin_sdk`][] packages.
+
+:::note
+Dart support for Cloud Functions for Firebase is experimental.
+You must enable the `dartfunctions` experiment in the Firebase CLI
+before running `firebase init functions`, and the APIs might change
+before a stable release.
+:::
 
 Using Dart on both your Flutter frontend and your Firebase backend lets
 you share a single Dart package for data models, JSON serialization,
