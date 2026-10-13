@@ -35,7 +35,7 @@ and base presentation widgets (`CustomPaint`, `Image`, `RichText`).
 
 * **Building a custom design system:**
   If your application uses a bespoke visual language that doesn't
-  strictkly follow Material Design or Apple Human Interface Guidelines,
+  strictly follow Material Design or Apple Human Interface Guidelines,
   build on top of widgets rather than overriding opinionated design system defaults.
 * **Creating design-agnostic packages:**
   If you publish a reusable component or utility package on pub.dev,
