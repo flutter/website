@@ -192,8 +192,8 @@ public class MyFlutterActivity extends FlutterActivity {
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: TBD
+Landed in version: 3.50.0-0.1.pre
+In stable release: 3.50
 
 ## References
 
