@@ -199,17 +199,10 @@ sync changes when connectivity returns. To get started, follow the
 
 ## Query relational SQL data with Firebase SQL Connect
 
-For structured, relational data—such as in ecommerce storefronts,
-appointment booking systems, or inventory trackers—[Firebase SQL Connect][]
-(formerly Firebase Data Connect) provides a fully managed PostgreSQL
-database on Cloud SQL.
-
-SQL Connect generates a type-safe Dart SDK powered by the
-[`firebase_data_connect`][] package directly from your backend schema
-and queries. Because client models and query methods are generated from
-a single schema, your Flutter app stays in sync with your PostgreSQL
-database without manual model duplication or cross-language schema
-drift.
+If your app needs a relational database, [Firebase SQL Connect][]
+(formerly Firebase Data Connect) provides a managed PostgreSQL
+database and generates a type-safe Dart SDK, built on the
+[`firebase_data_connect`][] package, from your schema and queries.
 
 To install the plugin, run:
 
@@ -217,9 +210,10 @@ To install the plugin, run:
 $ flutter pub add firebase_data_connect
 ```
 
-To learn when to choose SQL Connect, Cloud Firestore, or local SQLite,
-check out [Choose a database for your Flutter app][choose-db], or follow
-the guide to [use generated Flutter SDKs][sql-connect-flutter].
+To compare SQL Connect with Cloud Firestore and local SQLite, check out
+[Choose a database for your Flutter app][choose-db]. To set up a
+SQL Connect backend and call it from Flutter, follow the guide to
+[use generated Flutter SDKs][sql-connect-flutter].
 
 ## Share Dart code with a serverless Firebase backend
 
