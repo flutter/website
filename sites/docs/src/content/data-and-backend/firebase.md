@@ -8,11 +8,8 @@ description: >-
 
 Firebase is Google's app development platform that provides managed
 backend services for Flutter apps across Android, iOS, web, and macOS.
-Using the official FlutterFire plugins, you can add authentication,
-cloud databases, file storage, generative AI features, and crash
-reporting without provisioning or managing servers.
-
-Here's a quick look at the most common Firebase services for Flutter:
+Each Firebase service is available as a separate Firebase Flutter
+plugin on pub.dev, so you can add only the services your app needs:
 
 | Service | Use case | Package |
 |---|---|---|
@@ -263,9 +260,9 @@ following official and community resources.
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore
 [`cloud_functions`]: {{site.pub-pkg}}/cloud_functions
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
-[crashlytics]: {{site.firebase}}/docs/crashlytics/get-started?platform=flutter
+[crashlytics]: {{site.firebase}}/docs/crashlytics/flutter/get-started
 [dart-server]: {{site.dart-site}}/server#sharing-code-between-flutter-apps-and-dart-backends
-[firebase-ai]: {{site.firebase}}/docs/ai-logic/get-started?platform=flutter
+[firebase-ai]: {{site.firebase}}/docs/ai-logic/get-started
 [`firebase_ai`]: {{site.pub-pkg}}/firebase_ai
 [`firebase_admin_sdk`]: {{site.pub-pkg}}/firebase_admin_sdk
 [firebase-auth]: {{site.firebase}}/docs/auth/flutter/start
