@@ -5,12 +5,15 @@ description: >-
   improving live coding streams for developer communities.
 publishDate: 2019-10-28
 author: yanchenum
-image: images/05e8cSvZaG83--mC7.webp
+coverImage:
+  alt: >-
+    A coding livestream showing Dart code, an Android emulator, viewer chat,
+    and the presenter's webcam.
+  caption: "(credit: [https://www.youtube.com/watch?v=YYP5lqgno4k](https://www.youtube.com/watch?v=YYP5lqgno4k))"
+  url: images/05e8cSvZaG83--mC7.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/05e8cSvZaG83--mC7.webp" alt="(credit: [https://www.youtube.com/watch?v=YYP5lqgno4k](https://www.youtube.com/watch?v=YYP5lqgno4k))" caption="(credit: [https://www.youtube.com/watch?v=YYP5lqgno4k](https://www.youtube.com/watch?v=YYP5lqgno4k))" />
 
 Live streaming has become an emerging practice for knowledge sharing in developer communities, where developers broadcast their work to live audiences on streaming platforms such as YouTube. As a summer intern with Google’s Flutter team, I conducted an interview study to understand why and how developers share programming knowledge via live streaming. In this article, I would like to share some of the best practices I found for hosting a live streamed coding session, so that *you* can successfully create your own and share programming knowledge with your community. I would encourage anyone to try live streaming because not only can your livestream help others, but you, the streamer, can get real time feedback from your audience as well.
 

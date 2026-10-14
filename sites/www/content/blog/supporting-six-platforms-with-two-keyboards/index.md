@@ -5,12 +5,12 @@ description: >-
   Linux without losing your sanity
 publishDate: 2022-12-06
 author: domesticmouse
-image: images/1RQs5hWCyE30nkyfsVqDb0A.jpeg
+coverImage:
+  alt: ""
+  url: images/1RQs5hWCyE30nkyfsVqDb0A.jpeg
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1RQs5hWCyE30nkyfsVqDb0A.jpeg" />
 
 The joy of Flutter is the ease of developing applications for six platforms. The pain is verifying your application on six platforms.
 

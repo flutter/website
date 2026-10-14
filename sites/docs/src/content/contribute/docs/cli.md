@@ -30,6 +30,8 @@ The site's CLI tool can be accessed by running
 
 ### `format-dart`
 
+### `optimize-images`
+
 ### `refresh-excerpts`
 
 ### `serve`

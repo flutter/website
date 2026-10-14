@@ -5,12 +5,12 @@ description: >-
   are already thinking of how to push your creativity to new limits.
 publishDate: 2022-01-20
 author: verygoodopensource
-image: images/1r5DaUW3Cdoad6GQBwWIh3Q.webp
+coverImage:
+  alt: ""
+  url: images/1r5DaUW3Cdoad6GQBwWIh3Q.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1r5DaUW3Cdoad6GQBwWIh3Q.webp" />
 
 By now you’ve probably read through the [Flutter Puzzle Hack](https://flutterhack.devpost.com/) challenge and are already thinking of how to push your creativity to new limits. We’re here to give you some more info about how the sample codebase is structured and give you some ideas for creating your contest submission.
 

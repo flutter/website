@@ -5,12 +5,14 @@ description: >-
   and write your first multi-window Flutter application.
 publishDate: 2026-08-24
 author: mattkae
-image: images/banner.gif
+coverImage:
+  alt: >-
+    A Flutter desktop demo opens and closes separate windows and modal
+    dialogs.
+  url: images/banner.gif
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/banner.gif" />
 
 Flutter was originally released in 2018 with support for the two
 major mobile platforms: Android and iOS. Since then,

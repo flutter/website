@@ -10,7 +10,7 @@ They are used to build forms,
 send messages, create search experiences, and more.
 In this recipe, explore how to create and style text fields.
 
-Flutter provides two text fields:
+Flutter provides two Material Design text fields:
 [`TextField`][] and [`TextFormField`][].
 
 ## `TextField`
@@ -23,7 +23,7 @@ You can add a label, icon, inline hint text, and error text by supplying an
 property of the `TextField`.
 To remove the decoration entirely (including the
 underline and the space reserved for the label),
-set the `decoration` to null.
+set the `decoration` to `null`.
 
 <?code-excerpt "lib/main.dart (TextField)" replace="/^child\: //g"?>
 ```dart
@@ -35,8 +35,12 @@ TextField(
 ),
 ```
 
+<noscript>
+  <img src="/assets/images/docs/cookbook/text-input.png" alt="Text Input Demo" />
+</noscript>
+
 To retrieve the value when it changes,
-see the [Handle changes to a text field][] recipe.
+consult the [Handle changes to a text field][] recipe.
 
 ## `TextFormField`
 
@@ -58,7 +62,7 @@ TextFormField(
 
 ## Interactive example
 
-<?code-excerpt "lib/main.dart" replace="/^child\: //g"?>
+<?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter text input hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
@@ -87,7 +91,7 @@ class MyCustomForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
+      children: [
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextField(
@@ -112,15 +116,15 @@ class MyCustomForm extends StatelessWidget {
 }
 ```
 
-For more information on input validation, see the
-[Building a form with validation][] recipe.
+To learn more about input validation,
+consult the [Build a form with validation][] recipe.
 
 
-[Building a form with validation]: /cookbook/forms/validation/
+[Build a form with validation]: /cookbook/forms/validation
 [`decoration`]: {{site.material_ui}}/TextField/decoration.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
-[Handle changes to a text field]: /cookbook/forms/text-field-changes/
+[Handle changes to a text field]: /cookbook/forms/text-field-changes
 [`InputDecoration`]: {{site.material_ui}}/InputDecoration-class.html
 [`TextField`]: {{site.material_ui}}/TextField-class.html
 [`TextFormField`]: {{site.material_ui}}/TextFormField-class.html
