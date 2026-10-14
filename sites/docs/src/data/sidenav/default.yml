@@ -316,6 +316,8 @@
     - title: Persistence
       permalink: /data-and-backend/persistence
       children:
+        - title: Choose a database
+          permalink: /data-and-backend/persistence/choose-a-database
         - title: Store key-value data on disk
           permalink: /cookbook/persistence/key-value
         - title: Read and write files
@@ -933,7 +935,7 @@
         - title: Create useful bug reports
           permalink: /resources/bug-reports
         - title: Discover proposed features
-          permalink: /resources/design-docs
+          permalink: https://github.com/flutter/rfc
     - title: Reference
       permalink: /reference
       children:

@@ -5,12 +5,12 @@ description: >-
   Google Mobile Ads SDK for Flutter and its app monetization features.
 publishDate: 2021-11-16
 author: zoeyfan
-image: images/0zOegrJCYTuapgWgf.webp
+coverImage:
+  alt: ""
+  url: images/0zOegrJCYTuapgWgf.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/0zOegrJCYTuapgWgf.webp" />
 
 There are many ways for apps to make money: accepting payments as a storefront for a physical business; offering subscriptions or in-app purchases; or including ads directly in your application. Today, we are excited to announce the [Google Mobile Ads SDK for Flutter](https://pub.dev/packages/google_mobile_ads) is now generally available, after a six-month beta period. Great news for Flutter apps that require the presence of in-app ads!
 

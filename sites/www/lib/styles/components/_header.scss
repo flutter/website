@@ -418,12 +418,12 @@
    * ================================= */
 
   @media (min-width: 1024px) and (any-hover: hover) {
-    .content {
-      padding: 0 2rem;
+    --dd-offset-top: 44px;
 
-      @include breakpoints.screen(xl) {
-        padding: 0 var(--gutter);
-      }
+    .content {
+      // Scale side padding with the viewport, between 24px and 48px.
+      padding-inline: clamp(24px, 3vw, 48px);
+      column-gap: 24px;
     }
 
     nav {
@@ -434,9 +434,15 @@
       font-size: var(--font-size-default);
 
       >ul {
+        gap: 6px;
+
         >li {
           display: inline-block;
-          margin-left: 6px;
+
+          >a.btn {
+            height: 36px;
+            padding: 8px 12px;
+          }
 
           a .icon,
           .dd li.mobile-only {
@@ -566,11 +572,12 @@
 
     a.btn#get-started__header {
       display: flex;
+      padding-inline: 20px;
     }
 
     .search {
       display: flex;
-      margin-right: var(--gutter-sm);
+      margin-right: 12px;
     }
 
     &.searching {
