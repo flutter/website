@@ -17,6 +17,10 @@ import 'package:flutter_website/src/components/pages/consultants_grid.dart'
     as _consultants_grid;
 import 'package:flutter_website/src/components/pages/events_grid.dart'
     as _events_grid;
+import 'package:flutter_website/src/components/pages/flutter_create_countdown.dart'
+    as _flutter_create_countdown;
+import 'package:flutter_website/src/components/pages/flutter_create_signup.dart'
+    as _flutter_create_signup;
 import 'package:flutter_website/src/components/pages/games_adaptive_media.dart'
     as _games_adaptive_media;
 import 'package:flutter_website/src/components/pages/showcase_grid.dart'
@@ -88,6 +92,15 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'events_grid',
       params: __events_gridEventsGrid,
     ),
+    _flutter_create_countdown.FlutterCreateCountdown:
+        ClientTarget<_flutter_create_countdown.FlutterCreateCountdown>(
+          'flutter_create_countdown',
+        ),
+    _flutter_create_signup.FlutterCreateSignup:
+        ClientTarget<_flutter_create_signup.FlutterCreateSignup>(
+          'flutter_create_signup',
+          params: __flutter_create_signupFlutterCreateSignup,
+        ),
     _games_adaptive_media.GamesAdaptiveMedia:
         ClientTarget<_games_adaptive_media.GamesAdaptiveMedia>(
           'games_adaptive_media',
@@ -179,6 +192,9 @@ Map<String, Object?> __events_gridEventsGrid(_events_grid.EventsGrid c) => {
   'items': c.items.map((i) => i.toId()).toList(),
   'past': c.past,
 };
+Map<String, Object?> __flutter_create_signupFlutterCreateSignup(
+  _flutter_create_signup.FlutterCreateSignup c,
+) => {'compact': c.compact};
 Map<String, Object?> __games_adaptive_mediaGamesAdaptiveMedia(
   _games_adaptive_media.GamesAdaptiveMedia c,
 ) => {'mobileAssets': c.mobileAssets, 'desktopAssets': c.desktopAssets};

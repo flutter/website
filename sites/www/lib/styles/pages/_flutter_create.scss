@@ -1,0 +1,786 @@
+@use '../core/breakpoints';
+
+// Styles for the Flutter Create 2026 landing page (`/flutter-create-2026`).
+//
+// Written mobile-first, following the visual language of the
+// "Why Flutter" page: a blue gradient hero, generous type, tinted cards,
+// and chip highlights.
+
+body.flutter-create {
+  --fc-teal: #6cf7d6;
+  --fc-navy: #031a33;
+
+  .fc-container {
+    margin-inline: auto;
+    max-width: 1200px;
+    padding-inline: var(--gutter-sm);
+
+    @include breakpoints.screen(lg) {
+      padding-inline: var(--gutter);
+    }
+  }
+
+  .fc-section {
+    padding-block: var(--gutter-md);
+
+    @include breakpoints.screen(lg) {
+      padding-block: var(--gutter-lg);
+    }
+  }
+
+  .fc-kicker {
+    color: var(--primary);
+    font-size: var(--font-size-heading-4);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin: 0 0 var(--spacer-sm);
+  }
+
+  h2 {
+    font-size: var(--font-size-heading-2);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+    margin: 0 0 var(--spacer-sm);
+
+    @include breakpoints.screen(md) {
+      font-size: var(--font-size-heading-1);
+    }
+  }
+
+  .fc-sub {
+    color: var(--grey-6);
+    font-size: var(--font-size-heading-3);
+    line-height: 1.3;
+    margin: 0;
+    max-width: 720px;
+  }
+
+  .fc-body {
+    color: var(--grey-6);
+    font-size: var(--font-size-heading-4);
+    line-height: 1.5;
+    margin: var(--spacer-sm) 0 0;
+  }
+
+  .fc-live-dot {
+    animation: fc-pulse 1.8s ease-out infinite;
+    background: #ff4e4e;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    height: 8px;
+    width: 8px;
+  }
+
+  .fc-terminal-prompt {
+    color: var(--fc-teal);
+  }
+}
+
+// Each sign-up form renders its sign-in and success states stacked in a
+// single grid cell, so the form reserves the height of the taller state and
+// the page doesn't shift when switching between them.
+//
+// The visible state is chosen by the `fc-signed-up` class on the root
+// element, which an inline script sets before the first paint for visitors
+// with a recorded sign-up, and the forms keep in sync afterwards.
+body.flutter-create .fc-swap {
+  display: grid;
+
+  > .fc-swap-signin,
+  > .fc-swap-done {
+    grid-area: 1 / 1;
+    min-width: 0;
+  }
+
+  > .fc-swap-done {
+    visibility: hidden;
+  }
+}
+
+html.fc-signed-up body.flutter-create .fc-swap {
+  > .fc-swap-signin {
+    visibility: hidden;
+  }
+
+  > .fc-swap-done {
+    visibility: visible;
+  }
+}
+
+// A button that looks like a text link.
+body.flutter-create .fc-switch-account {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-default);
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@keyframes fc-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 78, 78, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 78, 78, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 78, 78, 0); }
+}
+
+@keyframes fc-blink {
+  50% { opacity: 0; }
+}
+
+// ── Hero ──────────────────────────────────────────────────────────────────
+
+body.flutter-create .fc-hero {
+  background: linear-gradient(180deg, var(--blue-4) 0%, var(--blue-8) 100%);
+  color: white;
+  overflow: hidden;
+  position: relative;
+
+  // `core/_base.scss` sets colours directly on headings and paragraphs,
+  // so text on the dark background restates white.
+  h1,
+  p {
+    color: white;
+  }
+
+  .fc-hero-glow {
+    background: radial-gradient(ellipse 70% 60% at 30% 50%, var(--blue-8) 30%, transparent 100%);
+    filter: blur(70px);
+    inset: -10%;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .fc-hero-stage {
+    align-items: center;
+    display: grid;
+    gap: var(--spacer);
+    grid-template-columns: 1fr;
+    margin-inline: auto;
+    max-width: 1200px;
+    padding: var(--gutter-md) var(--gutter-sm);
+    position: relative;
+
+    @include breakpoints.screen(lg) {
+      gap: var(--gutter);
+      grid-template-columns: 1.3fr 1fr;
+      padding: var(--gutter-lg) var(--gutter);
+    }
+  }
+
+  .fc-hero-copy {
+    text-align: center;
+
+    @include breakpoints.screen(lg) {
+      text-align: left;
+    }
+
+    h1 {
+      font-size: var(--font-size-heading-1);
+      font-weight: var(--font-weight-bolder);
+      letter-spacing: -1px;
+      line-height: 1.05;
+      margin: var(--spacer-md) 0 var(--spacer-md);
+
+      @include breakpoints.screen(md) {
+        font-size: 64px;
+      }
+
+      @include breakpoints.screen(xl) {
+        font-size: 72px;
+      }
+    }
+  }
+
+  .fc-gradient-text {
+    background: linear-gradient(90deg, var(--fc-teal) 0%, var(--blue-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .fc-pill {
+    align-items: center;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: var(--font-size-heading-5);
+    font-weight: var(--font-weight-bold);
+    gap: 10px;
+    margin: 0;
+    padding: 8px 16px;
+  }
+
+  .fc-hero-lede {
+    font-size: var(--font-size-heading-4);
+    line-height: 1.5;
+    margin: 0 auto var(--spacer);
+    max-width: 520px;
+    opacity: 0.92;
+
+    @include breakpoints.screen(lg) {
+      font-size: 20px;
+      margin-inline: 0;
+    }
+  }
+
+  .fc-hero-signup {
+    > .fc-swap-signin,
+    > .fc-swap-done {
+      align-items: center;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @include breakpoints.screen(lg) {
+        align-items: flex-start;
+      }
+    }
+
+    // Keep "Use a different account" below the confirmation pill, nudged
+    // in to line up with the pill's check icon on wide screens.
+    > .fc-swap-done {
+      @include breakpoints.screen(lg) {
+        .fc-switch-account {
+          margin-left: 18px;
+        }
+      }
+    }
+
+    .fc-google-btn-hero {
+      align-items: center;
+      background: white;
+      border: none;
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(2, 16, 40, 0.35);
+      color: #1f1f1f;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: var(--font-ui);
+      font-size: var(--font-size-heading-5);
+      font-weight: var(--font-weight-bold);
+      gap: 10px;
+      height: 52px;
+      padding-inline: 22px;
+      white-space: nowrap;
+
+      @include breakpoints.screen(md) {
+        font-size: var(--font-size-heading-4);
+        gap: 12px;
+        height: 56px;
+        padding-inline: 28px;
+      }
+      transition: transform 0.2s var(--ui-anim-func), box-shadow 0.2s;
+
+      &:hover:not(:disabled) {
+        box-shadow: 0 14px 36px rgba(2, 16, 40, 0.45);
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+    }
+
+    .fc-google-logo {
+      height: 22px;
+      width: 22px;
+    }
+
+    .fc-hero-signup-caption {
+      font-size: var(--font-size-heading-5);
+      margin: 0;
+      opacity: 0.85;
+    }
+
+    .fc-fine-print {
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 4px 0 0;
+      max-width: 480px;
+      opacity: 0.75;
+
+      a {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+
+    .fc-signup-error {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: var(--ui-border-radius-sm);
+      color: var(--red);
+      font-size: var(--font-size-default);
+      margin: 0;
+      padding: 8px 12px;
+    }
+
+    .fc-hero-signup-done {
+      align-items: center;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      display: inline-flex;
+      font-size: var(--font-size-heading-5);
+      font-weight: var(--font-weight-bold);
+      gap: 10px;
+      padding: 10px 18px;
+
+      .icon {
+        color: var(--fc-teal);
+      }
+    }
+
+    .fc-switch-account {
+      color: white;
+      font-size: 13px;
+      opacity: 0.85;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// The faux livestream player.
+body.flutter-create .fc-stream {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--ui-border-radius);
+  box-shadow: 0 30px 80px rgba(2, 16, 40, 0.45);
+  margin-inline: auto;
+  max-width: 560px;
+  padding: 14px;
+  transform: perspective(1400px) rotateY(-6deg) rotateX(2deg);
+  width: 100%;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.6s var(--ui-anim-func);
+
+    &:hover {
+      transform: perspective(1400px) rotateY(0) rotateX(0);
+    }
+  }
+
+  .fc-stream-bar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 6px 12px;
+  }
+
+  .fc-stream-badge {
+    align-items: center;
+    background: rgba(3, 26, 51, 0.55);
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 13px;
+    font-weight: var(--font-weight-bold);
+    gap: 8px;
+    letter-spacing: 0.06em;
+    padding: 6px 12px;
+    text-transform: uppercase;
+  }
+
+  .fc-stream-dots {
+    display: inline-flex;
+    gap: 6px;
+
+    span {
+      background: rgba(255, 255, 255, 0.45);
+      border-radius: 50%;
+      height: 8px;
+      width: 8px;
+    }
+  }
+
+  .fc-stream-screen {
+    align-items: center;
+    aspect-ratio: 16 / 9;
+    background:
+      radial-gradient(circle at 50% 35%, rgba(19, 185, 253, 0.35), transparent 60%),
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 28px 28px,
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 28px 28px,
+      var(--fc-navy);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding: var(--gutter-sm);
+
+    img {
+      filter: drop-shadow(0 8px 24px rgba(19, 185, 253, 0.5));
+      height: 64px;
+      width: 64px;
+
+      @include breakpoints.screen(md) {
+        height: 80px;
+        width: 80px;
+      }
+    }
+  }
+
+  .fc-terminal {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-family: var(--font-code);
+    font-size: 15px;
+    margin: 0;
+    padding: 10px 16px;
+
+    @include breakpoints.screen(md) {
+      font-size: 18px;
+    }
+  }
+
+  .fc-terminal-arg {
+    color: var(--blue-3);
+  }
+
+  .fc-terminal-cursor {
+    animation: fc-blink 1.1s steps(1) infinite;
+    background: white;
+    display: inline-block;
+    height: 1.1em;
+    margin-left: 4px;
+    vertical-align: text-bottom;
+    width: 0.55em;
+  }
+
+  .fc-countdown {
+    align-items: baseline;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 14px 6px 4px;
+  }
+
+  .fc-countdown-number {
+    font-size: 36px;
+    font-weight: var(--font-weight-bolder);
+    line-height: 1;
+  }
+
+  .fc-countdown-label {
+    font-size: var(--font-size-heading-4);
+    font-weight: var(--font-weight-bold);
+    opacity: 0.9;
+  }
+}
+
+// ── About ─────────────────────────────────────────────────────────────────
+
+body.flutter-create .fc-about {
+  .fc-about-grid {
+    display: grid;
+    gap: var(--spacer);
+    grid-template-columns: 1fr;
+
+    @include breakpoints.screen(lg) {
+      align-items: center;
+      gap: var(--gutter-lg);
+      grid-template-columns: 1.1fr 1fr;
+    }
+  }
+
+  .fc-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fc-chip {
+    align-items: center;
+    background: #f2f9f5;
+    border-radius: 999px;
+    display: flex;
+    font-size: var(--font-size-heading-4);
+    gap: 12px;
+    margin: 0;
+    padding: 6px 24px 6px 6px;
+
+    &:nth-child(2) { background: var(--blue-1); }
+    &:nth-child(3) { background: #eeeafe; }
+  }
+
+  .fc-chip-icon {
+    align-items: center;
+    background: white;
+    border-radius: 50%;
+    color: var(--blue-7);
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+  }
+}
+
+// ── Topics ────────────────────────────────────────────────────────────────
+
+body.flutter-create .fc-topics {
+  background: linear-gradient(180deg, var(--grey-1) 0%, white 100%);
+
+  .fc-section-header {
+    margin-bottom: var(--spacer);
+  }
+
+  .fc-topic-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+
+    @include breakpoints.screen(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoints.screen(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .fc-topic {
+    background: white;
+    border-radius: var(--ui-border-radius-sm);
+    box-shadow: inset 0 0 0 1px #e5f0fc;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-sm);
+    padding: var(--spacer-md);
+    transition: box-shadow 0.3s, transform 0.3s var(--ui-anim-func);
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px #d2e5fb, var(--ui-drop-shadow-sm);
+      transform: translateY(-4px);
+    }
+
+    h3 {
+      color: var(--blue-9);
+      font-size: var(--font-size-heading-3);
+      font-weight: var(--font-weight-bold);
+      line-height: 1.2;
+      margin: var(--spacer-sm) 0 0;
+    }
+
+    p {
+      color: var(--grey-6);
+      font-size: var(--font-size-heading-4);
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    &.tint-blue { --fc-tint: #ebfafd; }
+    &.tint-violet { --fc-tint: #eeeafe; }
+    &.tint-green { --fc-tint: #edfffb; }
+    &.tint-yellow { --fc-tint: #fcfcf2; }
+    &.tint-pink { --fc-tint: #fdeef4; }
+  }
+
+  .fc-topic-icon {
+    align-items: center;
+    background: var(--fc-tint);
+    border-radius: var(--ui-border-radius-sm);
+    color: var(--blue-9);
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    width: 64px;
+
+    .icon {
+      font-size: 30px;
+    }
+  }
+}
+
+// ── Sign-up ───────────────────────────────────────────────────────────────
+
+body.flutter-create .fc-signup {
+  padding-top: 0;
+
+  .fc-signup-card {
+    background: linear-gradient(120deg, var(--blue-8) 0%, var(--blue-6) 55%, var(--blue-4) 100%);
+    border-radius: var(--ui-border-radius);
+    color: white;
+    display: grid;
+    gap: var(--spacer);
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    padding: var(--spacer-md) var(--gutter-sm);
+    position: relative;
+
+    &::after {
+      background: radial-gradient(circle, rgba(108, 247, 214, 0.35), transparent 65%);
+      content: '';
+      height: 420px;
+      pointer-events: none;
+      position: absolute;
+      right: -120px;
+      top: -160px;
+      width: 420px;
+    }
+
+    @include breakpoints.screen(lg) {
+      align-items: center;
+      gap: var(--gutter);
+      grid-template-columns: 1.1fr 1fr;
+      padding: var(--gutter-md);
+    }
+  }
+
+  .fc-signup-copy {
+    position: relative;
+    z-index: 1;
+
+    .fc-kicker {
+      color: var(--fc-teal);
+    }
+
+    h2 {
+      color: white;
+    }
+  }
+
+  .fc-signup-panel {
+    background: white;
+    border-radius: var(--ui-border-radius-sm);
+    box-shadow: var(--ui-drop-shadow);
+    color: var(--site-base-fgColor);
+    padding: var(--spacer-md);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+body.flutter-create .flutter-create-signup {
+  > .fc-swap-signin {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  > .fc-swap-done {
+    align-self: center;
+  }
+
+  h3 {
+    color: var(--blue-9);
+    font-size: var(--font-size-heading-3);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+  }
+
+  .fc-signup-lede {
+    color: var(--grey-6);
+    font-size: var(--font-size-heading-5);
+    margin: 0;
+  }
+
+  .fc-google-btn {
+    align-items: center;
+    background: white;
+    border: 1px solid var(--grey-4);
+    border-radius: 999px;
+    color: #1f1f1f;
+    cursor: pointer;
+    display: flex;
+    font-family: var(--font-ui);
+    font-size: var(--font-size-heading-5);
+    font-weight: var(--font-weight-bold);
+    gap: 12px;
+    height: 52px;
+    justify-content: center;
+    transition: background 0.2s, box-shadow 0.2s;
+    width: 100%;
+
+    &:hover:not(:disabled) {
+      background: var(--grey-1);
+      box-shadow: var(--ui-drop-shadow-sm);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+  }
+
+  .fc-google-logo {
+    height: 20px;
+    width: 20px;
+  }
+
+  .fc-fine-print {
+    color: var(--grey-6);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .fc-signup-error {
+    background: #fdecea;
+    border-radius: var(--ui-border-radius-sm);
+    color: var(--red);
+    font-size: var(--font-size-default);
+    margin: 0;
+    padding: 8px 12px;
+  }
+
+  .fc-signup-success {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    p {
+      color: var(--grey-6);
+      margin: 0;
+    }
+  }
+
+  .fc-success-icon {
+    align-items: center;
+    background: #edfffb;
+    border-radius: 50%;
+    color: var(--green-3);
+    display: flex;
+    height: 56px;
+    justify-content: center;
+    width: 56px;
+  }
+
+  .fc-signup-success-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+
+  .fc-switch-account {
+    color: var(--blue-6);
+  }
+
+  .fc-btn-outline-dark {
+    align-self: flex-start;
+    border: 1px solid var(--blue-6);
+    color: var(--blue-6);
+    transition: background-color 0.2s, color 0.2s;
+
+    // Override the site-wide `main .btn:hover` fill, which would otherwise
+    // pair a blue background with this button's blue text.
+    &:hover,
+    &:focus-visible {
+      background-color: var(--blue-6);
+      color: white;
+    }
+  }
+}
