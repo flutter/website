@@ -15,7 +15,7 @@ consider [installing Flutter with VS Code][with-vs-code] for
 a streamlined setup experience.
 :::
 
-[with-vs-code]: /install/with-vs-code
+[with-vs-code]: /install/quick
 
 ## Choose your development platform {: #dev-platform}
 

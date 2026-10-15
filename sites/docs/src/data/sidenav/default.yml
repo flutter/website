@@ -1,6 +1,6 @@
 - header: Get started
 
-- title: Quick start
+- title: Install Flutter
   permalink: /install/quick
 - title: Learn Flutter
   permalink: /learn
@@ -892,10 +892,10 @@
   children:
     - title: Overview
       permalink: /install
+    - title: Install with VS Code
+      permalink: /install/quick
     - title: Install manually
       permalink: /install/manual
-    - title: Install with VS Code
-      permalink: /install/with-vs-code
     - divider
     - title: SDK archive
       permalink: /install/archive

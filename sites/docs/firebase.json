@@ -183,6 +183,7 @@
       { "source": "/get-started/web", "destination": "/platform-integration/web/building", "type": 301 },
       { "source": "/get-started/quick", "destination": "/install/quick", "type": 301 },
       { "source": "/install/custom", "destination": "/install", "type": 301 },
+      { "source": "/install/with-vs-code", "destination": "/install/quick", "type": 301 },
       { "source": "/ios-14", "destination": "/platform-integration/ios/ios-debugging", "type": 301 },
       { "source": "/ios-project-migration", "destination": "https://web.archive.org/web/20220614103526/https://docs.flutter.dev/development/ios-project-migration", "type": 301 },
       { "source": "/layout", "destination": "/ui/layout", "type": 301 },
