@@ -4,7 +4,8 @@ test drive Flutter's developer experience.
 
 If you've developed with Flutter before,
 or you prefer to use a different editor or IDE,
-you can follow the [custom setup instructions][] instead.
+you can [install Flutter manually][] or
+visit [Manage your Flutter installation][] instead.
 
 :::note What you'll achieve
 
@@ -15,7 +16,8 @@ you can follow the [custom setup instructions][] instead.
 
 :::
 
-[custom setup instructions]: /install/custom
+[install Flutter manually]: /install/manual
+[Manage your Flutter installation]: /install
 
 ## Confirm your development platform {: #dev-platform}
 

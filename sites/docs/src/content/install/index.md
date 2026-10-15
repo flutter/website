@@ -1,5 +1,5 @@
 ---
-title: Manage your Flutter installation
+title: Install and set up Flutter
 shortTitle: Manage installation
 description: >-
   Download and install the Flutter SDK, configure your IDE and target
@@ -13,7 +13,7 @@ description: >-
 To start building multiplatform apps from a single codebase,
 choose how you'd like to install the Flutter SDK:
 
-<div class="card-grid very-wide">
+<div class="card-grid wide">
   <div class="card filled-card outlined-card">
     <div class="card-header">
       <span class="card-title">
@@ -22,11 +22,11 @@ choose how you'd like to install the Flutter SDK:
       </span>
       <span class="card-subtitle" style="margin-top: 0.1rem;">Recommended</span>
     </div>
-    <div class="card-content" style="flex-direction: column; align-items: flex-start;">
+    <div class="card-content" style="flex-direction: column; align-items: flex-start; justify-content: space-between; flex: 1;">
       <p>Use the Flutter extension in VS Code or another Code OSS-based editor
         to download and install the Flutter SDK, set up your
         environment, and run your first app.</p>
-      <a class="filled-button" href="/install/quick">Install with VS Code</a>
+      <a class="filled-button" style="padding: 0.55rem 1.15rem; margin-top: 0.5rem;" href="/install/quick">Install with VS Code</a>
     </div>
   </div>
   <div class="card outlined-card">
@@ -37,17 +37,16 @@ choose how you'd like to install the Flutter SDK:
       </span>
       <span class="card-subtitle" style="margin-top: 0.1rem;">Windows, macOS, Linux, and ChromeOS</span>
     </div>
-    <div class="card-content" style="flex-direction: column; align-items: flex-start;">
+    <div class="card-content" style="flex-direction: column; align-items: flex-start; justify-content: space-between; flex: 1;">
       <p>Download the latest stable Flutter SDK bundle for your operating
         system, extract the archive, and add Flutter to your
         <code>PATH</code>.</p>
-      <a class="outlined-button" href="/install/manual">Download SDK and install</a>
+      <a class="outlined-button" style="padding: 0.55rem 1.15rem; margin-top: 0.5rem;" href="/install/manual">Download SDK and install</a>
     </div>
   </div>
 </div>
 
 <a id="editor" aria-hidden="true"></a>
-<a id="next-steps" aria-hidden="true"></a>
 
 ## Set up target platforms and editors {: #target-platform}
 
@@ -59,8 +58,6 @@ set up the tools for your target platforms and configure your preferred editor:
   [Linux][].
 - **IDEs and editors:** Configure Flutter support in [VS Code][] or
   [Android Studio and IntelliJ][].
-- **Next steps:** Follow the [Flutter learning pathway][] to build your first
-  Flutter app.
 
 [Android]: /platform-integration/android/setup
 [iOS]: /platform-integration/ios/setup
@@ -70,7 +67,6 @@ set up the tools for your target platforms and configure your preferred editor:
 [Linux]: /platform-integration/linux/setup
 [VS Code]: /tools/vs-code#setup
 [Android Studio and IntelliJ]: /tools/android-studio#setup
-[Flutter learning pathway]: /learn/pathway
 
 <a id="try" aria-hidden="true"></a>
 <a id="update" aria-hidden="true"></a>
@@ -99,3 +95,12 @@ troubleshoot, or remove your SDK installation:
 [Add Flutter to PATH]: /install/add-to-path
 [Troubleshoot SDK]: /install/troubleshoot
 [Uninstall SDK]: /install/uninstall
+
+<a id="next-steps" aria-hidden="true"></a>
+
+:::tip Ready to start building?
+Once your environment is set up,
+follow the [Flutter learning pathway][] to build your first Flutter app.
+:::
+
+[Flutter learning pathway]: /learn/pathway
