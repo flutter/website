@@ -39,7 +39,7 @@ laid out with [`TextWidthBasis.longestLine`][].
 Golden image tests that contain such text might need updating.
 
 This applies to all platforms except the web,
-where soft hyphens aren't rendered yet.
+where soft hyphens are rendered starting in a later release.
 Widgets built on `EditableText`, such as `TextField` and `SelectableText`,
 also render the hyphen but don't have a `hyphens` parameter yet,
 so there's no way to opt out for them.
