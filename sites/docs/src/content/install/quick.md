@@ -6,7 +6,6 @@ description: >-
   Learn how to use VS Code or another Code OSS-based editor to quickly
   install and set up the Flutter SDK.
 showBanner: false
-sitemap: false
 ---
 
 {% render "docs/install/quick.md" site: site %}
