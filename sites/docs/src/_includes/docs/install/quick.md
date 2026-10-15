@@ -1,5 +1,5 @@
 Learn how to use [Visual Studio Code (VS Code)][VS Code] or any compatible
-Code OSS-based editor (such as [VSCodium][], [Cursor][], or [Windsurf][])
+Code OSS-based editor (such as [Antigravity][], [Cursor][], or [Windsurf][])
 to quickly install and set up your Flutter development environment.
 
 If you prefer a different editor or IDE,
@@ -8,7 +8,7 @@ configure target platforms and manage an existing SDK in
 [Install and set up Flutter][].
 
 [VS Code]: https://code.visualstudio.com
-[VSCodium]: https://vscodium.com
+[Antigravity]: https://antigravity.google/
 [Cursor]: https://cursor.com/
 [Windsurf]: https://windsurf.com/
 [install Flutter manually]: /install/manual
