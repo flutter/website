@@ -12,16 +12,13 @@ import '../common/material_icon.dart';
 /// before a table of contents is worth showing.
 const int _minEntriesForToc = 2;
 
-/// Displays an automatically generated table of contents for the current
-/// page, derived from the `h2` and `h3` headings found in its rendered
-/// content.
+/// A collapsible table of contents for a blog post,
+/// listing the post's `h2` and `h3` headings.
 ///
-/// Requires [TableOfContentsExtension] to be applied to the page so that
-/// its headings are available as a [TableOfContents] under the page's `toc`
-/// data.
-///
-/// Renders nothing if the page sets `showToc: false` in its front matter or
-/// doesn't contain enough headings to warrant a table of contents.
+/// Requires [TableOfContentsExtension] to be registered,
+/// which stores the headings in the page's `toc` data.
+/// Renders nothing if the post sets `showToc: false` in its front matter or
+/// has fewer than two `h2` headings.
 final class BlogTableOfContents extends StatelessComponent {
   const BlogTableOfContents({super.key});
 
