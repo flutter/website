@@ -167,27 +167,28 @@ and CanvasKit build produced by `flutter build web --wasm`.
 | :--- | :--- | :--- | :--- |
 | **Chromium** (Chrome, Edge, Opera, Brave) | **137+** (Desktop & Android) | Runs `dart2wasm` + `skwasm` by default; Chrome `< 137` falls back to `dart2js` + CanvasKit. | Enabled by default (`wasmAllowList.blink: true`). |
 | **WebKit** (Safari macOS & iOS, all iOS browsers) | **Safari 26.2+** (macOS & iOS 26.2+) | Falls back to `dart2js` + CanvasKit by default (`wasmAllowList.webkit: false`). | Set `wasmAllowList: { webkit: true }` in [Flutter web app initialization][]. Safari `<= 26.1` automatically falls back to `dart2js` + CanvasKit via runtime feature detection. |
-| **Gecko** (Firefox) | **Firefox 147+** (**155+** recommended for [Bugzilla #1996818][firefox-gc-bug]) | Falls back to `dart2js` + CanvasKit by default (`wasmAllowList.gecko: false`). | Set `wasmAllowList: { gecko: true }` in [Flutter web app initialization][]. Firefox `< 147` automatically falls back to `dart2js` + CanvasKit. |
+| **Gecko** (Firefox) | **Firefox 147+** | Falls back to `dart2js` + CanvasKit by default (`wasmAllowList.gecko: false`). | Set `wasmAllowList: { gecko: true }` in [Flutter web app initialization][]. Firefox `< 147` automatically falls back to `dart2js` + CanvasKit. |
 
 {:.table}
 
 [WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [wasm-js-string]: https://github.com/WebAssembly/js-string-builtins
 [wasm-eh]: https://github.com/WebAssembly/exception-handling
-[firefox-gc-bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1996818
 
 ## Using compatible JS interop libraries {:#js-interop-wasm}
 
-To support compilation to Wasm, Dart has changed
+To support compilation to Wasm, Dart has modernized
 how it enables interop with browser and JavaScript APIs.
-This prevents Dart code that uses `dart:html` or `package:js`
-from compiling to Wasm.
+Legacy web and JS interop libraries (`dart:html`, `dart:js`, `dart:js_util`,
+`dart:indexed_db`, `dart:svg`, `dart:web_audio`, `dart:web_gl`, and
+`package:js`) are not supported when compiling to Wasm, and are **deprecated
+and planned for removal from the Dart SDK in an upcoming release**.
 
-Instead, Dart now provides new, lightweight interop solutions built around
-static JS interop:
+Instead, Dart provides lightweight interop solutions built around
+static JS interop that work across both JavaScript and WebAssembly targets:
 
-- [`package:web`][], which replaces `dart:html` (and other web libraries)
-- [`dart:js_interop`][], which replaces `package:js` and `dart:js`
+- [`package:web`][], which replaces `dart:html` (and other legacy web libraries)
+- [`dart:js_interop`][], which replaces `package:js`, `dart:js`, and `dart:js_util`
 
 For a detailed guide on migrating existing code,
 see the [`package:web` migration guide][].
@@ -222,21 +223,21 @@ Found incompatibilities with WebAssembly.
 package:my_app/main.dart 1:1 - dart:html unsupported (0)
 ```
 
-To enforce Wasm-compatible JS interop across JavaScript (`dart2js` / `ddc`)
-builds as well—including the JavaScript fallback build produced by
-`flutter build web --wasm`—pass `--no-deprecated-js-interop` to
-`flutter build web`, `flutter run`, `flutter drive`, or
-`flutter test --platform chrome`:
+In Flutter 3.50 and later, you can also enforce modern JS interop across
+JavaScript (`dart2js` / `ddc`) builds—both to ensure Wasm compatibility and to
+prepare your app for the upcoming removal of deprecated legacy web libraries
+from the Dart SDK—by passing `--no-deprecated-js-interop` to `flutter build web`,
+`flutter run`, `flutter drive`, or `flutter test --platform chrome`:
 
 ```console
 $ flutter build web --no-deprecated-js-interop
 ```
 
-Passing `--no-deprecated-js-interop` causes imports of legacy libraries
-(`dart:html`, `dart:js`, `dart:js_util`, `dart:indexed_db`, `dart:svg`,
-`dart:web_audio`, `dart:web_gl`, and `package:js`) to fail at compile time and
-evaluates `dart.library.html`, `dart.library.js`, and `dart.library.js_util`
-to `false` in conditional imports.
+Passing `--no-deprecated-js-interop` causes imports of deprecated legacy
+libraries (`dart:html`, `dart:js`, `dart:js_util`, `dart:indexed_db`,
+`dart:svg`, `dart:web_audio`, `dart:web_gl`, and `package:js`) to fail at
+compile time and evaluates `dart.library.html`, `dart.library.js`, and
+`dart.library.js_util` to `false` in conditional imports.
 
 #### 2. Inspect the compiler dependency tree
 

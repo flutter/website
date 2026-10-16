@@ -83,6 +83,10 @@ in `firebase.json` or stripping them prior to deployment).
 
 ### Web content hashing (--web-content-hash) {:#web-content-hashing}
 
+:::version-note
+Web content hashing (`--web-content-hash`) requires Flutter 3.50 or later.
+:::
+
 To enable automatic content-based cache busting across deployments, pass
 `--web-content-hash` to `flutter build web`:
 
@@ -108,13 +112,14 @@ SHA-256 content hash into compiled entrypoints and all files under
   * Bundled `canvaskit/**` files when building with `--no-web-resources-cdn`.
   * `main.dart.wasm.map` when building with `--source-maps` (the `.wasm`
     binary's `sourceMappingURL` custom section references the unhashed
-    `.wasm.map` filename), as well as deferred `.part.js` chunks.
+    `.wasm.map` filename).
 
 See the [Web FAQ][web-faq-caching] for a complete `firebase.json` example.
 
 :::note
-`--web-content-hash` cannot currently be combined with
-`--enable-wasm-deferred-loading`.
+`--web-content-hash` does not yet support deferred imports (`deferred as`) in
+either JavaScript (`dart2js`) or WebAssembly (`dart2wasm` /
+`--enable-wasm-deferred-loading`) builds.
 :::
 
 #### Overlay deployments for active browser tabs
@@ -261,6 +266,11 @@ shorter strings (e.g. by renaming `AlignmentGeometryTween` to something like
 | release               | Yes            | Yes                     |
 
 ## Mobile browser viewport and SafeArea {:#mobile-browser-viewport-and-safearea}
+
+:::version-note
+Support for `viewport-fit=cover` `SafeArea` insets and URL percent-encoding
+preservation in browser history requires Flutter 3.50 or later.
+:::
 
 On mobile browsers (such as iOS Safari and Android Chrome) with display cutouts,
 notches, or home indicators, Flutter web defaults to rendering within the
