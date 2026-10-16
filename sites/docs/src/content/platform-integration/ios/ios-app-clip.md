@@ -272,68 +272,108 @@ into the App Clip bundle.
 
 ## Step 8 - Integrate plugins
 
-**8.1**
+If your project uses Flutter plugins, integrate them with your App Clip target.
 
-Open the `Podfile` for your Flutter project
-or add-to-app host project.
+<Tabs key="plugin-dependency-manager">
+<Tab name="Swift Package Manager (default)">
 
-For full-Flutter apps, replace the following section:
+1.  In Xcode, add `FlutterGeneratedPluginSwiftPackage` to your App Clip target:
 
-```ruby
-target 'Runner' do
-  use_frameworks!
-  use_modular_headers!
+    1.  Open `ios/Runner.xcworkspace` in Xcode.
+    1.  In the project navigator, select the **Runner** project.
+    1.  Under **TARGETS**, select your App Clip target.
+    1.  Open the **General** tab.
+    1.  Under **Frameworks, Libraries, and Embedded Content**, click **+**.
+    1.  Select `FlutterGeneratedPluginSwiftPackage` and click **Add**.
+        If it doesn't appear in the list,
+        click **Add Other... > Add Package Dependency...**,
+        click **Add Local...**, navigate to
+        `ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`,
+        and add it to your App Clip target.
 
-  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-end
-```
+1.  Add the prepare pre-action to your App Clip scheme:
 
-with:
+    1.  Go to **Product > Scheme > Edit Scheme...**.
+    1.  Select your App Clip scheme from the scheme drop-down list at the top.
+    1.  Expand the **Build** section in the left sidebar,
+        then select **Pre-actions**.
+    1.  Click **+** and select **New Run Script Action**.
+    1.  Set **Provide build settings from** to your App Clip target.
+    1.  In the script field, enter:
 
-```ruby
-use_frameworks!
-use_modular_headers!
-flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+        ```sh
+        "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" prepare
+        ```
 
-target 'Runner'
-target '<name of your App Clip target>'
-```
+    1.  Click **Close**.
 
-At the top of the file,
-also uncomment `platform :ios, '13.0'` and set the
-version to the lowest of the two target's iOS
-Deployment Target.
+For more details on managing Xcode targets with SwiftPM,
+refer to [Swift Package Manager for app developers][].
 
-For add-to-app, add to:
+</Tab>
+<Tab name="CocoaPods (legacy)">
 
-```ruby
-target 'MyApp' do
-  install_all_flutter_pods(flutter_application_path)
-end
-```
+1.  Open the `Podfile` for your Flutter project
+    or add-to-app host project.
 
-with:
+    For full-Flutter apps, replace the following section:
 
-```ruby
-target 'MyApp' do
-  install_all_flutter_pods(flutter_application_path)
-end
+    ```ruby
+    target 'Runner' do
+      use_frameworks!
+      use_modular_headers!
 
-target '<name of your App Clip target>'
-  install_all_flutter_pods(flutter_application_path)
-end
-```
+      flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+    end
+    ```
 
-**8.2**
+    with:
 
-From the command line,
-enter your Flutter project directory
-and then install the pod:
+    ```ruby
+    use_frameworks!
+    use_modular_headers!
+    flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 
-```console
-cd ios
-pod install
-```
+    target 'Runner'
+    target '<name of your App Clip target>'
+    ```
+
+    At the top of the file,
+    uncomment `platform :ios, '13.0'` and set the
+    version to the lowest of the two targets' iOS
+    Deployment Target.
+
+    For add-to-app, replace:
+
+    ```ruby
+    target 'MyApp' do
+      install_all_flutter_pods(flutter_application_path)
+    end
+    ```
+
+    with:
+
+    ```ruby
+    target 'MyApp' do
+      install_all_flutter_pods(flutter_application_path)
+    end
+
+    target '<name of your App Clip target>'
+      install_all_flutter_pods(flutter_application_path)
+    end
+    ```
+
+1.  From the command line,
+    enter your Flutter project's `ios` directory
+    and install the pods:
+
+    ```console
+    cd ios
+    pod install
+    ```
+
+</Tab>
+</Tabs>
 
 ## Run
 
@@ -348,6 +388,7 @@ also consult Apple's doc on
 [Testing Your App Clip's Launch Experience][testing].
 
 [testing]: {{site.apple-dev}}/documentation/app_clips/testing_your_app_clip_s_launch_experience
+[Swift Package Manager for app developers]: /packages-and-plugins/swift-package-manager/for-app-developers
 
 ## Debugging, hot reload
 

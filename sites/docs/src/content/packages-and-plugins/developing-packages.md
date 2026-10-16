@@ -477,9 +477,14 @@ Then use the following steps:
    `hello/example/ios/Runner.xcworkspace` file.
 
 The iOS platform code for your plugin is located in
+`hello/ios/hello/Sources/hello`
+(or `hello/darwin/hello/Sources/hello` if using `sharedDarwinSource`).
+To edit your plugin code with full Xcode support in the example app,
+refer to [Add plugin as local package in example app][].
+
+If you are using legacy CocoaPods, the platform code is located under
 `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
-in the Project Navigator. (If you are using `sharedDarwinSource`,
-the path will end with `Flutter/hello/Sources/hello` instead.)
+in the Project Navigator.
 
 You can run the example app by pressing the run (&#9654;) button.
 
@@ -543,16 +548,35 @@ pod files during the native app build step.
 If your plugin requires a privacy manifest, for example,
 if it uses any **required reason APIs**,
 update the `PrivacyInfo.xcprivacy` file to
-describe your plugin's privacy impact,
-and add the following to the bottom of your podspec file:
+describe your plugin's privacy impact.
+
+With Swift Package Manager, place `PrivacyInfo.xcprivacy` in your plugin's
+`Resources` directory
+(such as `hello/ios/hello/Sources/hello/Resources/PrivacyInfo.xcprivacy`).
+Declare the resource in your `Package.swift` file:
+
+```swift title="Package.swift"
+targets: [
+  .target(
+    name: "hello",
+    resources: [
+      .process("Resources/PrivacyInfo.xcprivacy"),
+    ]
+  ),
+]
+```
+
+If your plugin also supports CocoaPods for backward compatibility,
+add the following to the bottom of your `.podspec` file:
 
 ```ruby
 s.resource_bundles = {'your_plugin_privacy' => ['your_plugin/Sources/your_plugin/Resources/PrivacyInfo.xcprivacy']}
 ```
 
 For more information,
-check out [Privacy manifest files][] on the Apple developer site.
+consult [Privacy manifest files][] on the Apple developer site.
 
+[Add plugin as local package in example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors#optional-but-recommended-add-plugin-as-local-package-in-example-app
 [Privacy manifest files]: {{site.apple-dev}}/documentation/bundleresources/privacy_manifest_files
 
 #### Step 2d: Add Linux platform code (.h+.cc)
