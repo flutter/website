@@ -1,114 +1,106 @@
 ---
-title: Install Flutter
-shortTitle: Install
+title: Install and set up Flutter
+shortTitle: Manage installation
 description: >-
-  Learn how to install the Flutter SDK.
+  Download and install the Flutter SDK, configure your IDE and target
+  platforms, or update and troubleshoot an existing Flutter installation.
 ---
-
-Ready to build beautiful, multiplatform apps from a single codebase?
-Choose from the following two options to get started setting up
-your Flutter development environment.
-
-<div class="card-grid very-wide">
-  <a class="card filled-card outlined-card" href="/install/quick">
-    <div class="card-header">
-      <span class="card-title">
-        <Icon id="rocket_launch" filled="true" size="1.675rem" />
-        <span>Quick start</span>
-      </span>
-      <span class="card-subtitle" style="margin-top: 0.1rem;">Recommended</span>
-    </div>
-    <div class="card-content">
-      <p>Use VS Code or another Code OSS-based editor to quickly
-        install, set up, and try out Flutter development!</p>
-    </div>
-  </a>
-  <a class="card outlined-card" href="/install/custom">
-    <div class="card-header">
-      <span class="card-title">
-        <Icon id="tune" filled="true" size="1.675rem" />
-        <span>Custom setup</span>
-      </span>
-    </div>
-    <div class="card-content">
-      <p>Install the Flutter SDK, set up any initial target platform, and
-        get started learning and developing with Flutter!</p>
-    </div>
-  </a>
-</div>
-
-## Try Flutter {:#try}
-
-You can quickly try Flutter online without any local setup.
-
-<div class="card-grid">
-  <a class="card outlined-card" href="{{site.dartpad}}" target="_blank">
-    <div class="card-header">
-      <span class="card-title">
-        <span>DartPad</span>
-        <Icon id="open_in_new" size="1rem" />
-      </span>
-    </div>
-    <div class="card-content">
-      <p>Quickly build and run simple single-file Flutter apps on the web.</p>
-    </div>
-  </a>
-</div>
 
 <a id="get-started" aria-hidden="true"></a>
 
-## Update Flutter {: #update}
+## Choose an installation method {: #install}
 
-If you already have Flutter installed and would like to
-upgrade your Flutter SDK installation or change to a different release channel,
-check out [Upgrading Flutter][].
+To start building multiplatform apps from a single codebase,
+choose how you'd like to install the Flutter SDK:
 
-When upgrading, also remember to check out the published list of
-[breaking changes and migration guides][].
-
-[Upgrading Flutter]: /install/upgrade
-[breaking changes and migration guides]: /release/breaking-changes
-
-## Download previous releases {: #previous-releases}
-
-If you're looking to download and install previous releases of Flutter,
-check out the [SDK archive][].
-
-:::note
-We recommend keeping your apps and development environments
-up to date with the **latest** `stable` or `beta` releases.
-:::
-
-[SDK archive]: /install/archive
-
-## Troubleshoot and uninstall Flutter {: #uninstall}
-
-Guides to help you resolve common issues with your Flutter development environment and uninstall Flutter.
-
-<div class="card-list">
-  <a class="card outlined-card" href="/install/add-to-path">
+<div class="card-grid wide">
+  <div class="card filled-card outlined-card">
     <div class="card-header">
-      <span class="card-title">Add Flutter to path</span>
+      <span class="card-title">
+        <Icon id="rocket_launch" filled="true" size="1.675rem" />
+        <span>Install with VS Code</span>
+      </span>
+      <span class="card-subtitle" style="margin-top: 0.1rem;">Recommended</span>
     </div>
-    <div class="card-content">
-      <p>Using Flutter on the command line requires that the Flutter SDK is added to your system's `PATH` environment variable.</p>
+    <div class="card-content" style="flex-direction: column; align-items: flex-start; justify-content: space-between; flex: 1;">
+      <p>Use the Flutter extension in VS Code or another Code OSS-based editor
+        to download and install the Flutter SDK, set up your
+        environment, and run your first app.</p>
+      <a class="filled-button" style="padding: 0.55rem 1.15rem; margin-top: 0.5rem;" href="/install/quick">Install with VS Code</a>
     </div>
-  </a>
-  <a class="card outlined-card" href="/install/troubleshoot">
+  </div>
+  <div class="card outlined-card">
     <div class="card-header">
-      <span class="card-title">Troubleshoot SDK</span>
+      <span class="card-title">
+        <Icon id="download" filled="true" size="1.675rem" />
+        <span>Download and install manually</span>
+      </span>
+      <span class="card-subtitle" style="margin-top: 0.1rem;">Windows, macOS, Linux, and ChromeOS</span>
     </div>
-    <div class="card-content">
-      <p>Use this guide to resolve common issues with your Flutter development environment.</p>
+    <div class="card-content" style="flex-direction: column; align-items: flex-start; justify-content: space-between; flex: 1;">
+      <p>Download the latest stable Flutter SDK bundle for your operating
+        system, extract the archive, and add Flutter to your
+        <code>PATH</code>.</p>
+      <a class="outlined-button" style="padding: 0.55rem 1.15rem; margin-top: 0.5rem;" href="/install/manual">Download SDK and install</a>
     </div>
-  </a>
-  <a class="card outlined-card" href="/install/uninstall">
-    <div class="card-header">
-      <span class="card-title">Uninstall SDK</span>
-    </div>
-    <div class="card-content">
-      <p>Uninstall Flutter from your system.</p>
-    </div>
-  </a>
+  </div>
 </div>
 
+<a id="editor" aria-hidden="true"></a>
+
+## Set up target platforms and editors {: #target-platform}
+
+After you install the Flutter SDK,
+set up the tools for your target platforms and configure your preferred editor:
+
+- **Target platforms:** Set up development tools for [Android][], [iOS][],
+  [web][] (requires only a supported browser), [Windows][], [macOS][], or
+  [Linux][].
+- **IDEs and editors:** Configure Flutter support in [VS Code][] or
+  [Android Studio and IntelliJ][].
+
+[Android]: /platform-integration/android/setup
+[iOS]: /platform-integration/ios/setup
+[web]: /platform-integration/web/setup
+[Windows]: /platform-integration/windows/setup
+[macOS]: /platform-integration/macos/setup
+[Linux]: /platform-integration/linux/setup
+[VS Code]: /tools/vs-code#setup
+[Android Studio and IntelliJ]: /tools/android-studio#setup
+
+<a id="try" aria-hidden="true"></a>
+<a id="update" aria-hidden="true"></a>
+<a id="previous-releases" aria-hidden="true"></a>
+
+## Manage or troubleshoot your SDK {: #uninstall}
+
+If you already have Flutter installed,
+use the following guides to update, configure,
+troubleshoot, or remove your SDK installation:
+
+- **[Upgrade Flutter][]:** Upgrade your Flutter SDK to the latest release,
+  switch release channels, or review [breaking changes and migration guides][].
+- **[SDK archive][]:** Download and install previous releases of the Flutter
+  SDK.
+- **[Add Flutter to PATH][]:** Configure your system's `PATH` environment
+  variable to run Flutter on the command line.
+- **[Troubleshoot SDK][]:** Resolve common issues with your Flutter development
+  environment.
+- **[Uninstall SDK][]:** Remove the Flutter SDK and related configuration files
+  from your system.
+
+[Upgrade Flutter]: /install/upgrade
+[breaking changes and migration guides]: /release/breaking-changes
+[SDK archive]: /install/archive
+[Add Flutter to PATH]: /install/add-to-path
+[Troubleshoot SDK]: /install/troubleshoot
+[Uninstall SDK]: /install/uninstall
+
+<a id="next-steps" aria-hidden="true"></a>
+
+:::tip Ready to start building?
+Once your environment is set up,
+follow the [Flutter learning pathway][] to build your first Flutter app.
+:::
+
+[Flutter learning pathway]: /learn/pathway

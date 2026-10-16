@@ -73,15 +73,6 @@
     }
   }
 
-  #call-to-action {
-    padding: 0.5rem 1rem;
-    display: none;
-
-    @media (min-width: 1024px) {
-      display: unset;
-    }
-  }
-
   #header-search {
     display: none;
     position: relative;
