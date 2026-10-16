@@ -34,6 +34,7 @@ import 'src/pages/ecosystem_page.dart';
 import 'src/pages/embedded_page.dart';
 import 'src/pages/events_page.dart';
 import 'src/pages/flip_page.dart';
+import 'src/pages/flutter_create_page.dart';
 import 'src/pages/games_page.dart';
 import 'src/pages/google_integrations_page.dart';
 import 'src/pages/home_page.dart';
@@ -126,6 +127,7 @@ void main() {
           defineComponent('ShowcasePage', const ShowcasePage()),
           defineComponent('BrandPage', const BrandPage()),
           defineComponent('FlipPage', const FlipPage()),
+          defineComponent('FlutterCreatePage', const FlutterCreatePage()),
           defineComponent('NewsPage', const NewsPage()),
           defineComponent('WhyFlutterPage', const WhyFlutterPage()),
           defineComponentWithAttrs('Image', Image.fromAttrs),
