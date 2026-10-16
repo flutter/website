@@ -35,6 +35,11 @@ final class TestDartCommand extends Command<int> {
 Future<int> _testDart({bool verboseLogging = false}) async {
   final directoriesToTest = <(String directory, String executable)>[
     (path.join('tool', 'dash_site'), 'dart'),
+    for (final directory in findNestedDirectoriesWithPubspec(
+      Directory('packages'),
+    )..sort())
+      if (Directory(path.join(directory, 'test')).existsSync())
+        (directory, 'dart'),
     for (final site in Site.values)
       if (Directory(path.join(site.directory, 'test')).existsSync())
         (site.directory, 'dart'),

@@ -6,12 +6,12 @@ description: >-
   and updates on Cupertino widgets.
 publishDate: 2026-08-06
 author: twerske
-image: images/q2-survey-header.webp
+coverImage:
+  alt: ""
+  url: images/q2-survey-header.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/q2-survey-header.webp" />
 
 The Flutter team has been running user surveys twice a year
 since Flutter's 1.0 release in 2018.

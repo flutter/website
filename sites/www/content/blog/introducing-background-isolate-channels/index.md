@@ -5,12 +5,12 @@ description: >-
   use Plugins and Platform Channels from any isolate.
 publishDate: 2023-01-09
 author: gaaclarke
-image: images/1bSKidxVM7-brUJFuyKdVFg.webp
+coverImage:
+  alt: ""
+  url: images/1bSKidxVM7-brUJFuyKdVFg.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1bSKidxVM7-brUJFuyKdVFg.webp" />
 
 Now as of Flutter 3.7, I’m pleased to announce that developers can use Plugins and Platform Channels from *any* isolate. This has been one of our [highest ranked issues](https://github.com/flutter/flutter/issues/13937) and has been around since 2018. It was deprioritized since it wasn’t trivial to implement and there was a workaround, albeit cumbersome: always use Plugins from the root isolate (the isolate that Flutter provides). However, as Flutter has matured it has increasingly focused on performance, following the old software adage “Make it work, make it right, make it fast.” Choosing to implement this feature was a happy intersection of improving performance and also making Flutter easier to use. So, it became an easy decision to make the investment.
 
