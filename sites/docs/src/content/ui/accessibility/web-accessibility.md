@@ -91,10 +91,10 @@ with their roles:
   `<input type="range" role="slider">` element with synchronized
   `aria-label`, `aria-valuenow`, `aria-valuetext`, and keyboard arrow
   navigation.
-* **Landmarks and menus**: Named routes with `scopesRoute: true` and a
-  non-empty `namesRoute` label emit `role="region"` landmarks, and scrollable
-  menus (`MenuAnchor`, `DropdownMenu`) expose direct item counts to screen
-  readers without intermediate `group` wrappers.
+* **Landmarks and menus**: Named routes with `scopesRoute: true`,
+  `namesRoute: true`, and a non-empty `label` emit `role="region"` landmarks,
+  and scrollable menus (`MenuAnchor`, `DropdownMenu`) expose direct item counts
+  to screen readers without intermediate `group` wrappers.
 * **Focus preservation and keyboard dismissal**: The web engine preserves DOM
   focus across semantic role changes without scrolling, restores focus when
   dialogs or modal routes close in `WidgetsApp.router` apps, and dismisses
@@ -155,9 +155,10 @@ Default 500% pinch-to-zoom (`maximum-scale=5.0`) and automatic iOS Safari
 16px text-input font sizing require Flutter 3.50 or later.
 :::
 
-In full-page mode, Flutter web configures its `<meta flt-viewport>` tag with
-`maximum-scale=5.0` (without `user-scalable=no`) so users can pinch-to-zoom up
-to 500% in compliance with WCAG 2.1 AA Success Criterion 1.4.4 (Resize Text).
+In full-page mode, Flutter web configures its `<meta name="viewport" flt-viewport>`
+tag with `maximum-scale=5.0` (without `user-scalable=no`) so users can
+pinch-to-zoom up to 500% in compliance with WCAG 2.1 AA Success Criterion 1.4.4
+(Resize Text).
 On iOS Safari, Flutter also enforces a minimum 16px font size on hidden
 semantic `<input>` and `<textarea>` elements to prevent unintended browser
 auto-zoom when focusing text fields.
