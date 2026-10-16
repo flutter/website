@@ -13,6 +13,7 @@ import 'tutorial_structure_processor.dart';
 /// content loaded with Jaspr Content.
 const List<PageExtension> allNodeProcessingExtensions = [
   AttributeProcessor(),
+  HeaderIdDeduplicationExtension(),
   HeaderExtractorExtension(),
   HeaderWrapperExtension(),
   TableWrapperExtension(),

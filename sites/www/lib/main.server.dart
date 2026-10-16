@@ -97,6 +97,7 @@ void main() {
         ],
         extensions: [
           ShowcaseStoryExtension(),
+          const HeaderIdDeduplicationExtension(),
           const TableOfContentsExtension(),
           const TableWrapperExtension(),
           const MermaidProcessor(),
