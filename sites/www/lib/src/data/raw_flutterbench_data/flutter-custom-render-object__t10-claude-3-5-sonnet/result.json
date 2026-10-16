@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-00000000000a",
+  "task_name": "google/flutter-custom-render-object",
+  "trial_name": "flutter-custom-render-object__t10-claude-3-5-sonnet",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-custom-render-object__t10-claude-3-5-sonnet",
+  "task_id": {
+    "path": "dataset/flutter-custom-render-object"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-custom-render-object"
+    },
+    "trial_name": "flutter-custom-render-object__t10-claude-3-5-sonnet",
+    "eval_key": "claude-code__claude-3-5-sonnet__adhoc",
+    "agent": {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-3-5-sonnet",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "claude-code",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "claude-3-5-sonnet",
+      "provider": "anthropic"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 83422,
+    "n_cache_tokens": 61675,
+    "n_output_tokens": 3866,
+    "cost_usd": 0.3083
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.52
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:14:10.000000Z",
+  "finished_at": "2026-09-09T19:16:24.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:14:10.000000Z",
+    "finished_at": "2026-09-09T19:14:20.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:14:20.000000Z",
+    "finished_at": "2026-09-09T19:14:30.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:14:30.000000Z",
+    "finished_at": "2026-09-09T19:16:03.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:16:03.000000Z",
+    "finished_at": "2026-09-09T19:16:24.000000Z"
+  }
+}

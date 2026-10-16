@@ -1,0 +1,146 @@
+{
+  "job_name": "2026-09-09__12-00-00_mock",
+  "jobs_dir": "jobs",
+  "n_attempts": 1,
+  "install_only": false,
+  "timeout_multiplier": 1.0,
+  "n_concurrent_trials": 4,
+  "quiet": false,
+  "environment": {
+    "type": "docker",
+    "delete": true
+  },
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-3-7-sonnet",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    },
+    {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-3-5-sonnet",
+      "skills": [],
+      "mcp_servers": []
+    },
+    {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-3-5-haiku",
+      "skills": [],
+      "mcp_servers": []
+    },
+    {
+      "name": "codex-agent",
+      "model_name": "openai/o3",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    },
+    {
+      "name": "codex-agent",
+      "model_name": "openai/gpt-5",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    },
+    {
+      "name": "codex-agent",
+      "model_name": "openai/gpt-4o",
+      "skills": [],
+      "mcp_servers": []
+    },
+    {
+      "name": "codex-agent",
+      "model_name": "openai/gpt-4o-mini",
+      "skills": [],
+      "mcp_servers": []
+    },
+    {
+      "name": "antigravity-sdk",
+      "model_name": "google/gemini-3.5-pro",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    },
+    {
+      "name": "antigravity-sdk",
+      "model_name": "google/gemini-3.5-flash",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    },
+    {
+      "name": "gemini-cli",
+      "model_name": "google/gemini-3.1-flash-lite",
+      "skills": [],
+      "mcp_servers": []
+    },
+    {
+      "name": "deepseek-cli",
+      "model_name": "deepseek/deepseek-r1",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    },
+    {
+      "name": "deepseek-cli",
+      "model_name": "deepseek/deepseek-v3",
+      "skills": [],
+      "mcp_servers": []
+    },
+    {
+      "name": "deepseek-cli",
+      "model_name": "deepseek/deepseek-coder-v2",
+      "skills": [],
+      "mcp_servers": []
+    }
+  ],
+  "tasks": [
+    {
+      "path": "dataset/dart-build-cli-app"
+    },
+    {
+      "path": "dataset/flutter-manage-state-with-bloc"
+    },
+    {
+      "path": "dataset/flutter-offline-sync-sqlite"
+    },
+    {
+      "path": "dataset/flutter-adaptive-material-cupertino"
+    },
+    {
+      "path": "dataset/flutter-custom-render-object"
+    }
+  ]
+}

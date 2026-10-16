@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-00000000000e",
+  "task_name": "google/flutter-adaptive-material-cupertino",
+  "trial_name": "flutter-adaptive-material-cupertino__t14-claude-3-5-haiku",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-adaptive-material-cupertino__t14-claude-3-5-haiku",
+  "task_id": {
+    "path": "dataset/flutter-adaptive-material-cupertino"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-adaptive-material-cupertino"
+    },
+    "trial_name": "flutter-adaptive-material-cupertino__t14-claude-3-5-haiku",
+    "eval_key": "claude-code__claude-3-5-haiku__adhoc",
+    "agent": {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-3-5-haiku",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "claude-code",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "claude-3-5-haiku",
+      "provider": "anthropic"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 66988,
+    "n_cache_tokens": 45287,
+    "n_output_tokens": 2561,
+    "cost_usd": 0.0638
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.45
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T19:19:50.000000Z",
+  "finished_at": "2026-09-09T19:22:36.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T19:19:50.000000Z",
+    "finished_at": "2026-09-09T19:20:00.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T19:20:00.000000Z",
+    "finished_at": "2026-09-09T19:20:10.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T19:20:10.000000Z",
+    "finished_at": "2026-09-09T19:22:04.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T19:22:04.000000Z",
+    "finished_at": "2026-09-09T19:22:36.000000Z"
+  }
+}
