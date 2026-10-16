@@ -58,6 +58,10 @@
 
         .material-symbols {
           transition: transform 0.15s var(--ui-anim-func);
+
+          @media (prefers-reduced-motion: reduce) {
+            transition: none;
+          }
         }
       }
 
