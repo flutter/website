@@ -10,14 +10,14 @@ take place. For example, when a user swipes away a message in a list,
 you might want to inform them that the message has been deleted.
 You might even want to give them an option to undo the action.
 
-![SnackBar Demo](/assets/images/docs/cookbook/snackbar.webp){:.site-mobile-screenshot}
+![SnackBar Demo](/assets/images/docs/cookbook/snackbar.png)
 
 In Material Design, this is the job of a [`SnackBar`][].
 This recipe implements a snackbar using the following steps:
 
-  1. Create a `Scaffold`.
-  2. Display a `SnackBar`.
-  3. Provide an optional action.
+1.  Create a `Scaffold`.
+2.  Display a `SnackBar`.
+3.  Provide an optional action.
 
 ## 1. Create a `Scaffold`
 
@@ -45,7 +45,7 @@ return MaterialApp(
 ## 2. Display a `SnackBar`
 
 With the `Scaffold` in place, display a `SnackBar`.
-First, create a `SnackBar`, then display it using `ScaffoldMessenger`.
+First, create a `SnackBar`, then display it using [`ScaffoldMessenger`][].
 
 <?code-excerpt "lib/partial.dart (DisplaySnackBar)"?>
 ```dart
@@ -69,10 +69,10 @@ the `ScaffoldMessenger` widget:
 You might want to provide an action to the user when
 the `SnackBar` is displayed.
 For example, if the user accidentally deletes a message,
-an `action` in the `SnackBar` could allow recovering the message.
+they might use an optional action in the `SnackBar` to recover the message.
 
 Here's an example that provides
-an additional `action` to the `SnackBar` widget:
+an additional `action` to the `SnackBar` widget using [`SnackBarAction`][]:
 
 <?code-excerpt "lib/main.dart (SnackBarAction)"?>
 ```dart
@@ -91,8 +91,8 @@ final snackBar = SnackBar(
 
 :::note
 In this example, the `SnackBar` displays when a user taps a button.
-For more information on working with user input,
-see the [Gestures][] section of the cookbook.
+To learn more about working with user input,
+consult the [Gestures][] section of the cookbook.
 :::
 
 <?code-excerpt "lib/main.dart"?>
@@ -146,11 +146,12 @@ class SnackBarPage extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/snackbar.webp"
-    alt="SnackBar Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/snackbar.png" alt="SnackBar Demo" />
 </noscript>
 
 [Gestures]: /cookbook/gestures
 [material library]: {{site.material_ui}}
 [`Scaffold`]: {{site.material_ui}}/Scaffold-class.html
+[`ScaffoldMessenger`]: {{site.material_ui}}/ScaffoldMessenger-class.html
 [`SnackBar`]: {{site.material_ui}}/SnackBar-class.html
+[`SnackBarAction`]: {{site.material_ui}}/SnackBarAction-class.html

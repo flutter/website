@@ -58,9 +58,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final String title;
-
   const MyHomePage({super.key, required this.title});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -122,10 +122,10 @@ void theme(BuildContext context) {
   // #docregion ThemeCopyWith
   Theme(
     // Find and extend the parent theme using `copyWith`.
-    // To learn more, check out the section on `Theme.of`.
+    // To learn more, consult the section on `Theme.of`.
     data: Theme.of(context)
         .copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
-    child: const FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
+    child: FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
   );
   // #enddocregion ThemeCopyWith
 }

@@ -38,7 +38,7 @@ class CupertinoSheetPage extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
+                      children: [
                         const SizedBox(height: 100),
                         const Text('This is a Cupertino sheet'),
                         const SizedBox(height: 20),
