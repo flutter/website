@@ -74,6 +74,13 @@ corresponding ARIA roles in the web page's HTML structure.
 
 **1. Automatic Semantics from Standard Widgets**
 
+:::version-note
+Enhanced `<input type="range" role="slider">` semantics for `Slider`,
+`RangeSlider`, and `SemanticsRole.slider`, named route `role="region"`
+landmarks, DOM focus preservation across role updates and `WidgetsApp.router`
+dialogs, and `Escape` key tooltip dismissal require Flutter 3.50 or later.
+:::
+
 Many standard Flutter widgets, like `TabBar`, `MenuAnchor`, `Slider`,
 `RangeSlider`, and `Table`, automatically include semantic information along
 with their roles:
@@ -140,6 +147,11 @@ class MyCustomListWidget extends StatelessWidget {
 ```
 
 ## Viewport zoom and mobile text inputs
+
+:::version-note
+Default 500% pinch-to-zoom (`maximum-scale=5.0`) and automatic iOS Safari
+16px text-input font sizing require Flutter 3.50 or later.
+:::
 
 In full-page mode, Flutter web configures its `<meta flt-viewport>` tag with
 `maximum-scale=5.0` (without `user-scalable=no`) so users can pinch-to-zoom up

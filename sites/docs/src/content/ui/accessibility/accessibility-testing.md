@@ -110,8 +110,7 @@ flutter run -d chrome --profile --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=t
 ```
 
 You can also enable semantic node visualization at runtime without rebuilding
-by appending `?debugShowSemanticsNodes=true` to your app's URL, or by setting
-`debugShowSemanticsNodes: true` in your custom `flutter_bootstrap.js`
+by setting `debugShowSemanticsNodes: true` in your custom `flutter_bootstrap.js`
 [initialization configuration][]:
 
 ```js title="web/flutter_bootstrap.js"
