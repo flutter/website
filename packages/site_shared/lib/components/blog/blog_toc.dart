@@ -35,7 +35,7 @@ final class BlogTableOfContents extends StatelessComponent {
 
     return nav(
       classes: 'toc',
-      attributes: {'aria-label': 'Table of contents'},
+      attributes: {'aria-label': 'In this article'},
       [
         details(
           [
