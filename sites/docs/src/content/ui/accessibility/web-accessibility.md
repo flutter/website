@@ -19,8 +19,9 @@ to expose the UI's meaning and structure to web browsers.
 For performance reasons, Flutter's web accessibility is not on by default.
 To turn on accessibility, the user needs to press an invisible button with
 `aria-label="Enable accessibility"`.
-In multi-view or embedded web apps, this `<flt-semantics-placeholder>`
-button is scoped inside each `<flutter-view>` element.
+On mobile browsers in multi-view or embedded web apps, this
+`<flt-semantics-placeholder>` button is scoped inside each `<flutter-view>`
+element so it does not intercept taps on surrounding HTML content.
 After pressing the button, the DOM tree will reflect all accessibility
 information for the widgets.
 
@@ -85,10 +86,11 @@ Many standard Flutter widgets, like `TabBar`, `MenuAnchor`, `Slider`,
 `RangeSlider`, and `Table`, automatically include semantic information along
 with their roles:
 
-* **Sliders**: `Slider`, `RangeSlider` (which assigns `SemanticsRole.slider`
-  to each thumb), and custom widgets with `SemanticsRole.slider` render a
-  focusable `<input type="range" role="slider">` element with synchronized
-  `aria-valuenow`, `aria-valuetext`, and keyboard arrow navigation.
+* **Sliders**: `Slider` and `RangeSlider` (via `SemanticsFlag.isSlider`) and
+  custom widgets with `SemanticsRole.slider` render a focusable
+  `<input type="range" role="slider">` element with synchronized
+  `aria-label`, `aria-valuenow`, `aria-valuetext`, and keyboard arrow
+  navigation.
 * **Landmarks and menus**: Named routes with `scopesRoute: true` and a
   non-empty `namesRoute` label emit `role="region"` landmarks, and scrollable
   menus (`MenuAnchor`, `DropdownMenu`) expose direct item counts to screen
