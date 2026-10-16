@@ -101,6 +101,20 @@ The most basic `flutter_bootstrap.js` file would look something like this:
 _flutter.loader.load();
 ```
 
+:::tip Compatibility with `--web-content-hash`
+When you build with [`flutter build web --web-content-hash`][web-content-hashing],
+Flutter injects the content-hashed entrypoint filenames (`mainJsPath`,
+`mainWasmPath`, `jsSupportRuntimePath`) and hashed asset manifest mappings
+(`assetManifest`, `fontManifest`, `extraAssets`) into
+`{% raw %}{{flutter_build_config}}{% endraw %}`. Custom `web/index.html` or
+`web/flutter_bootstrap.js` files must include
+`{% raw %}{{flutter_build_config}}{% endraw %}` and call `_flutter.loader.load()`
+rather than hardcoding `"main.dart.js"` or calling the deprecated
+`FlutterLoader.loadEntrypoint()` API.
+:::
+
+[web-content-hashing]: /deployment/web#web-content-hashing
+
 ## Customize the Flutter loader
 
 The `_flutter.loader.load()` JavaScript API can be invoked with optional
@@ -129,6 +143,11 @@ The `config` argument is an object that can have the following optional fields:
 |`hostElement`| HTML Element into which Flutter renders the app (see [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`multiViewEnabled`| Enables multi-view mode for [embedding Flutter views][embedding-flutter-web] into host DOM elements dynamically. |`bool`|
 |`nonce`| A [Content Security Policy (CSP) nonce][nonce-mdn] string applied to inline scripts and styles created by the engine. |`String`|
+|`renderer`| Explicitly forces the renderer to `'canvaskit'` or `'skwasm'`. |`String`|
+|`suppressMultithreadingWarning`| When `true`, suppresses the console warning logged when `skwasm` runs single-threaded because `Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy` headers are absent. |`bool`|
+|`verboseBuildSelection`| When `true`, logs detailed `console.warn` diagnostics explaining why each candidate build in `_flutter.buildConfig.builds` was selected or skipped. |`bool`|
+|`wasmAllowList`| Browser engine allowlist (`{ blink?: boolean, webkit?: boolean, gecko?: boolean, unknown?: boolean }`) controlling which browser engines can run the `skwasm` + `dart2wasm` build when runtime WebAssembly feature probes pass (see [Support for WebAssembly][wasm-support]). Defaults to `{ blink: true, gecko: false, webkit: false, unknown: false }`. |`Object`|
+|`wasmDeferredModulesLoader`| Custom `(moduleNames: string[], onModuleLoaded: (moduleName: string, bytes: Uint8Array) => Promise<void>) => Promise<void>` hook used to fetch deferred `.wasm` modules when `--enable-wasm-deferred-loading` is enabled. |`Function`|
 
 {:.table}
 
@@ -154,6 +173,11 @@ to run in **single-threaded mode**. This is useful if:
 _flutter.loader.load({
   config: {
     forceSingleThreadedSkwasm: true,
+    wasmAllowList: {
+      blink: true,
+      webkit: true,
+      gecko: true,
+    },
   },
 });
 ```

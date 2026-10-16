@@ -13,11 +13,13 @@ This page helps you prepare a _release_ version
 of your app and covers the following topics:
 
 * [Building the app for release](#building-the-app-for-release)
+* [Web content hashing and HTTP caching](#web-content-hashing)
 * [Deploying to the web](#deploying-to-the-web)
 * [Deploying to Firebase Hosting](#deploying-to-firebase-hosting)
 * [Handling images on the web](#handling-images-on-the-web)
 * [Opting-in to WebAssembly](#opting-in-to-webassembly)
 * [Minification](#minification)
+* [Mobile browser viewport and SafeArea](#mobile-browser-viewport-and-safearea)
 
 ## Building the app for release
 
@@ -78,6 +80,91 @@ Upload `.map` files to your private error-monitoring service
 from public web hosting (for example, using `"ignore": ["**/*.map"]`
 in `firebase.json` or stripping them prior to deployment).
 :::
+
+### Web content hashing (--web-content-hash) {:#web-content-hashing}
+
+:::version-note
+Web content hashing (`--web-content-hash`) requires Flutter 3.50 or later.
+:::
+
+To enable automatic content-based cache busting across deployments, pass
+`--web-content-hash` to `flutter build web`:
+
+```console
+flutter build web --wasm --web-content-hash
+```
+
+When `--web-content-hash` is enabled, Flutter embeds an 8-character truncated
+SHA-256 content hash into compiled entrypoints and all files under
+`build/web/assets/**`, and records the hashed paths in `flutter_bootstrap.js`
+(`_flutter.buildConfig`):
+
+* **Hashed immutable files (`Cache-Control: public, max-age=31536000, immutable`)**:
+  * Compiled entrypoints: `main.dart.<hash>.js`, `main.dart.<hash>.wasm`, and
+    `main.dart.<hash>.mjs` (plus `main.dart.<hash>.js.map` and
+    `main.dart.<hash>.mjs.map` if `--source-maps` is enabled).
+  * All files under `assets/**`: including `AssetManifest.<hash>.bin`,
+    `AssetManifest.bin.<hash>.json`, `FontManifest.<hash>.json`,
+    `NOTICES.<hash>`, fonts, images, and `shaders/**`.
+* **Unhashed bootstrap and root files (`Cache-Control: max-age=0, must-revalidate` or `no-cache`)**:
+  * `index.html`, `flutter_bootstrap.js`, `flutter.js`, `manifest.json`,
+    `version.json`, `404.html`, and `icons/**`.
+  * Bundled `canvaskit/**` files when building with `--no-web-resources-cdn`.
+  * `main.dart.wasm.map` when building with `--source-maps` (the `.wasm`
+    binary's `sourceMappingURL` custom section references the unhashed
+    `.wasm.map` filename).
+
+See the [Web FAQ][web-faq-caching] for a complete `firebase.json` example.
+
+:::note
+`--web-content-hash` does not yet support deferred imports (`deferred as`) in
+either JavaScript (`dart2js`) or WebAssembly (`dart2wasm` /
+`--enable-wasm-deferred-loading`) builds.
+:::
+
+#### Overlay deployments for active browser tabs
+
+When you deploy a new release (`N`), users with an already-open browser tab
+running the previous release (`N-1`) might lazily fetch an asset, font, or
+image whose filename carries release `N-1`'s content hash.
+
+To avoid mid-session `404` errors during rollouts, use an **overlay
+deployment** strategy: retain at least the previous release's (`N-1`) hashed
+`main.dart.*` and `assets/**` files in your CDN or storage bucket alongside
+release `N`'s hashed files (or prune old hashes after a 24–72 hour grace
+window), and update `index.html` and `flutter_bootstrap.js` atomically last.
+Also exclude `/assets/**`, `/canvaskit/**`, `/icons/**`, and `/main.dart.*`
+from single-page application (SPA) `/index.html` catch-all rewrites so missing
+assets return a genuine `404` instead of `200 text/html`.
+
+#### Custom service workers (`precache_manifest.json`)
+
+When `--web-content-hash` is enabled, `flutter build web` writes a bill of
+materials to `build/web/precache_manifest.json`:
+
+```json title="build/web/precache_manifest.json"
+{
+  "version": 1,
+  "entries": [
+    {
+      "url": "flutter_bootstrap.js",
+      "hash": "a1b2c3d4",
+      "size": 10432,
+      "urlHashed": false
+    },
+    {
+      "url": "main.dart.f215ce97.wasm",
+      "hash": "f215ce97",
+      "size": 1842104,
+      "urlHashed": true
+    }
+  ]
+}
+```
+
+Custom PWA service workers or [Workbox][] pipelines can consume
+`precache_manifest.json` directly (passing `revision: entry.urlHashed ? null : entry.hash`
+so URL-hashed files aren't double-cached with query parameters).
 
 ## Opting-in to WebAssembly
 
@@ -178,6 +265,42 @@ shorter strings (e.g. by renaming `AlignmentGeometryTween` to something like
 | profile               | No             | Yes                     |
 | release               | Yes            | Yes                     |
 
+## Mobile browser viewport and SafeArea {:#mobile-browser-viewport-and-safearea}
+
+:::version-note
+Support for `viewport-fit=cover` `SafeArea` insets and URL percent-encoding
+preservation in browser history requires Flutter 3.50 or later.
+:::
+
+On mobile browsers (such as iOS Safari and Android Chrome) with display cutouts,
+notches, or home indicators, Flutter web defaults to rendering within the
+browser's safe area (`viewport-fit=contain`).
+
+To render edge-to-edge across the entire screen and populate Flutter's
+[`SafeArea`][] and [`MediaQuery.paddingOf`][] with the browser's CSS
+`env(safe-area-inset-*)` insets, add a `<meta name="viewport">` tag with
+`viewport-fit=cover` inside the `<head>` of your `web/index.html` file (included
+as a commented-out option in newly created `web/index.html` templates):
+
+```html title="web/index.html"
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+```
+
+:::note
+If an existing web app already includes `viewport-fit=cover` in
+`web/index.html`, Flutter 3.50 and later honors it instead of stripping it,
+which causes the app to render behind device cutouts unless UI controls are
+wrapped in a [`SafeArea`][] widget. For migration details, see the
+[`viewport-fit=cover` SafeArea breaking change guide][viewport-fit-breaking].
+:::
+
+### URL percent-encoding in browser history
+
+In Flutter 3.50 and later, route strings passed to
+`SystemNavigator.routeInformationUpdated` preserve percent-encoded sequences
+(such as `%2F`, `%26`, `%23`, and `%20`) when written to the browser's URL bar
+and history, rather than decoding them via `Uri.decodeComponent`.
+
 ## Embedding a Flutter app into an HTML page
 
 See [Embedding Flutter web][].
@@ -192,5 +315,9 @@ See [Embedding Flutter web][].
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting
+[`MediaQuery.paddingOf`]: {{site.api}}/flutter/widgets/MediaQuery/paddingOf.html
+[`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
+[viewport-fit-breaking]: /release/breaking-changes/viewport-fit-cover-safe-area
 [Wasm support]: /platform-integration/web/wasm
-[Web renderers]: /platform-integration/web/renderers
+[web-faq-caching]: /platform-integration/web/faq#how-do-i-configure-my-cache-headers
+[Workbox]: https://github.com/GoogleChrome/workbox

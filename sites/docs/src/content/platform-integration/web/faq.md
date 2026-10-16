@@ -164,10 +164,24 @@ to backend services.
 
 ### How do I clear the web cache after a deployment and force an app download?
 
-If you wish to defeat these cache headers after each deployment,
-a common technique is to append a build ID of some sort to the links
-of your static resources, or update the filenames themselves.
-For example, `logo.png` might become `logo.v123.png`.
+In Flutter 3.50 and later, pass `--web-content-hash` when building your web app:
+
+```console
+$ flutter build web --web-content-hash
+```
+
+The `--web-content-hash` flag embeds an 8-character SHA-256 content hash into
+compiled entrypoint filenames (`main.dart.<hash>.js`, `main.dart.<hash>.wasm`,
+`main.dart.<hash>.mjs`), JavaScript source maps (`main.dart.<hash>.js.map`,
+`main.dart.<hash>.mjs.map` when `--source-maps` is enabled), and all files under
+`build/web/assets/**` (including `AssetManifest.<hash>.bin`,
+`FontManifest.<hash>.json`, `NOTICES.<hash>`, and `shaders/**`), updating the
+references in `flutter_bootstrap.js` automatically. For full deployment and
+overlay rollout guidance, see
+[Web content hashing](/deployment/web#web-content-hashing).
+
+If you are not using `--web-content-hash`, you can append a build ID query
+parameter or versioned filename to your bootstrap script tag manually:
 
 ```html
 <!-- Option 1, append build ID as a query parameter in your links -->
@@ -176,9 +190,6 @@ For example, `logo.png` might become `logo.v123.png`.
 <!-- Option 2, update the filename and update your links -->
 <script src="flutter_bootstrap.v123.js" async></script>
 ```
-
-Flutter doesn't currently support appending build IDs to resources
-automatically.
 
 ### How do I configure my cache headers?
 
@@ -189,15 +200,22 @@ However, by default Firebase Hosting sets `Cache-Control: max-age=3600`
 on static files, meaning browsers can serve stale `index.html`,
 `flutter_bootstrap.js`, or manifest files for up to an hour after a deploy.
 
-To make sure that browsers revalidate your app's files on each load
-(receiving fast `304 Not Modified` responses from the CDN edge when unchanged)
-and don't cache missing assets (`404.html`),
-configure your `firebase.json` file as follows:
+If you build with `flutter build web --web-content-hash`, configure
+`firebase.json` so that `index.html`, `flutter_bootstrap.js`, and `404.html`
+revalidate on every load (`max-age=0, must-revalidate`) while hashed
+entrypoints and `assets/**` are cached immutably for one year
+(`public, max-age=31536000, immutable`):
 
 ```json
 {
   "hosting": {
     "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/*.map"
+    ],
     "headers": [
       {
         "source": "**",
@@ -205,6 +223,24 @@ configure your `firebase.json` file as follows:
           {
             "key": "Cache-Control",
             "value": "max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "assets/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "main.dart.*.+(js|wasm|mjs)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
           }
         ]
       },
@@ -228,6 +264,11 @@ configure your `firebase.json` file as follows:
 }
 ```
 
+If you build without `--web-content-hash`, omit the `immutable` rules for
+`assets/**` and `main.dart.*.+(js|wasm|mjs)` so that all files revalidate via
+`"source": "**"` and `"source": "404.html"` (`max-age=0, must-revalidate`),
+receiving fast `304 Not Modified` responses from the CDN edge when unchanged.
+
 The `/index.html` rewrite exclusion
 (`!(/assets/**|/canvaskit/**|/icons/**|/main.dart.*)`) ensures that requests
 for missing assets or compiled entry points return a real `404` status rather
@@ -243,6 +284,9 @@ legacy service workers).
 If your application requires offline support or advanced caching,
 you need to configure a service worker yourself using standard
 web tooling or third-party solutions such as [Workbox][workbox].
+When building with `--web-content-hash`, Flutter generates
+`build/web/precache_manifest.json` containing `{url, hash, size, urlHashed}`
+entries that you can feed into your custom service worker build pipeline.
 
 For more information on building custom service workers,
 check out [Using service workers][].
