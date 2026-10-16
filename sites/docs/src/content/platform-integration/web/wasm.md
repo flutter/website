@@ -179,10 +179,11 @@ and CanvasKit build produced by `flutter build web --wasm`.
 
 To support compilation to Wasm, Dart has modernized
 how it enables interop with browser and JavaScript APIs.
-Legacy web and JS interop libraries (`dart:html`, `dart:js`, `dart:js_util`,
-`dart:indexed_db`, `dart:svg`, `dart:web_audio`, `dart:web_gl`, and
-`package:js`) are not supported when compiling to Wasm, and are **deprecated
-and planned for removal from the Dart SDK in an upcoming release**.
+Legacy Dart SDK web and JS interop libraries (`dart:html`, `dart:js`,
+`dart:js_util`, `dart:indexed_db`, `dart:svg`, `dart:web_audio`, and
+`dart:web_gl`) are **deprecated and planned for removal from the Dart SDK in an
+upcoming release**, and neither those libraries nor the deprecated `package:js`
+package are supported when compiling to Wasm.
 
 Instead, Dart provides lightweight interop solutions built around
 static JS interop that work across both JavaScript and WebAssembly targets:
@@ -233,11 +234,12 @@ from the Dart SDK—by passing `--no-deprecated-js-interop` to `flutter build we
 $ flutter build web --no-deprecated-js-interop
 ```
 
-Passing `--no-deprecated-js-interop` causes imports of deprecated legacy
-libraries (`dart:html`, `dart:js`, `dart:js_util`, `dart:indexed_db`,
-`dart:svg`, `dart:web_audio`, `dart:web_gl`, and `package:js`) to fail at
-compile time and evaluates `dart.library.html`, `dart.library.js`, and
-`dart.library.js_util` to `false` in conditional imports.
+Passing `--no-deprecated-js-interop` causes imports of deprecated legacy `dart:`
+web libraries (`dart:html`, `dart:js`, `dart:js_util`, `dart:indexed_db`,
+`dart:svg`, `dart:web_audio`, and `dart:web_gl`)—as well as packages that
+import them, such as `package:js`—to fail at compile time, and evaluates
+`dart.library.html`, `dart.library.js`, and `dart.library.js_util` to `false`
+in conditional imports.
 
 #### 2. Inspect the compiler dependency tree
 
