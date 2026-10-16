@@ -92,6 +92,8 @@ class _StreamCard extends StatelessComponent {
         ]),
       ]),
       const FlutterCreateCountdown(),
+      // Fills in the countdown before the first paint.
+      const script(content: flutterCreateCountdownScript),
     ]);
   }
 }

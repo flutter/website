@@ -240,7 +240,7 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
           _buildSignInButton(hero: true),
           const p(classes: 'fc-hero-signup-caption', [
             .text(
-              "Sign in and we'll email you when the livestream is about to start.",
+              "Sign in and we'll email you with updates to the livestream.",
             ),
           ]),
           ..._buildErrors(),
