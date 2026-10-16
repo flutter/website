@@ -24,7 +24,7 @@
       children:
         - title: Cupertino
           permalink: /ui/widgets/cupertino
-        - title: Material components
+        - title: Material
           permalink: /ui/widgets/material
     - title: Base widgets
       expanded: false
@@ -118,8 +118,8 @@
       permalink: /cookbook/design/themes
     - title: Material design
       permalink: /ui/design/material
-    - title: Migrate to Material 3
-      permalink: /release/breaking-changes/material-3-migration
+    - title: Cupertino design
+      permalink: /ui/design/cupertino
     - title: Text
       permalink: /ui/design/text
       children:
@@ -316,6 +316,8 @@
     - title: Persistence
       permalink: /data-and-backend/persistence
       children:
+        - title: Choose a database
+          permalink: /data-and-backend/persistence/choose-a-database
         - title: Store key-value data on disk
           permalink: /cookbook/persistence/key-value
         - title: Read and write files
@@ -933,7 +935,7 @@
         - title: Create useful bug reports
           permalink: /resources/bug-reports
         - title: Discover proposed features
-          permalink: /resources/design-docs
+          permalink: https://github.com/flutter/rfc
     - title: Reference
       permalink: /reference
       children:
@@ -947,3 +949,6 @@
           permalink: /reference/flutter-cli
         - title: API docs
           permalink: https://api.flutter.dev
+        - title: pub.dev
+          permalink: https://pub.dev
+

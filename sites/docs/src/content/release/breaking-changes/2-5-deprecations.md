@@ -111,8 +111,8 @@ Relevant PRs:
 
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
-[`DropdownButtonFormField`]: {{site.api}}/flutter/material/DropdownButtonFormField-class.html
+[`TextFormField`]: {{site.material_ui}}/TextFormField-class.html
+[`DropdownButtonFormField`]: {{site.material_ui}}/DropdownButtonFormField-class.html
 [`AutovalidateMode`]: {{site.api}}/flutter/widgets/AutovalidateMode-class.html
 
 ---
@@ -357,8 +357,8 @@ Relevant PRs:
 [In-depth migration guide available]: /release/breaking-changes/bottom-navigation-title-to-label
 [BottomNavigationBarItem title]: /go/bottom-navigation-bar-title-deprecation
 [`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
-[`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
-[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
+[`BottomNavigationBar`]: {{site.material_ui}}/BottomNavigationBar-class.html
+[`Tooltip`]: {{site.material_ui}}/Tooltip-class.html
 
 ---
 

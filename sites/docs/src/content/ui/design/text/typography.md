@@ -51,9 +51,9 @@ All the platform specific typographical scales that Flutter exposes are
 contained in the [`Typography`][] class. Usually, you will not need to
 reference this class directly as the `TextTheme` will be localized to your target platform.
 
-[`TextTheme`]: https://api.flutter.dev/flutter/material/TextTheme-class.html
-[`TextStyle`]: https://api.flutter.dev/flutter/painting/TextStyle-class.html
-[`Typography`]: https://api.flutter.dev/flutter/material/Typography-class.html
+[`TextTheme`]: {{site.material_ui}}/TextTheme-class.html
+[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
+[`Typography`]: {{site.material_ui}}/Typography-class.html
 
 ## Variable fonts
 

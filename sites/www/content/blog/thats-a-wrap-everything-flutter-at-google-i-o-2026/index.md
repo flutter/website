@@ -6,12 +6,13 @@ description: >-
   the Flutter and Dart communities.
 publishDate: 2026-05-28
 author: twerske
-image: images/1N5Jz1tLlbGEC9sU49O97IA.webp
+coverImage:
+  alt: ""
+  caption: "Flutter recap at Google I/O 2026!"
+  url: images/1N5Jz1tLlbGEC9sU49O97IA.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1N5Jz1tLlbGEC9sU49O97IA.webp" alt="Flutter recap at Google I/O 2026!" caption="Flutter recap at Google I/O 2026!" />
 
 ## That’s a wrap: Everything Flutter at Google I/O 2026
 

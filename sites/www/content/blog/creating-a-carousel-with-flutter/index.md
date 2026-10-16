@@ -5,12 +5,13 @@ description: >-
   calls for sliding, animated, background-image carousels.
 publishDate: 2018-04-09
 author: ezra-sandzer-bell
-image: images/0-y8UdKzHXj8SEouz.jpg
+coverImage:
+  alt: ""
+  caption: "Creating Background Image Carousels with Flutter"
+  url: images/0-y8UdKzHXj8SEouz.jpg
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/0-y8UdKzHXj8SEouz.jpg" alt="Creating Background Image Carousels with Flutter" caption="Creating Background Image Carousels with Flutter" />
 
 As a mobile developer, you may find yourself with a design that calls for sliding, animated, background-image carousels. In this article, I will review some of the existing documentation for implementing a carousel in Flutter, and fill you in on the information gaps so that you have everything you need to get started!
 

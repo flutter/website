@@ -650,9 +650,9 @@ applying each where it is most effective:
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [`GlobalKey<T>`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
 [`IconTheme`]: {{site.api}}/flutter/widgets/IconTheme-class.html
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`InkWell`]: {{site.material_ui}}/InkWell-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
-[`Material`]: {{site.api}}/flutter/material/Material-class.html
+[`Material`]: {{site.material_ui}}/Material-class.html
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [`Rect`]: {{site.api}}/flutter/dart-ui/Rect-class.html
 [`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
@@ -661,7 +661,7 @@ applying each where it is most effective:
 [`State<T>`]: {{site.api}}/flutter/widgets/State-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html
-[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
+[`TextButton`]: {{site.material_ui}}/TextButton-class.html
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html
 
@@ -725,10 +725,10 @@ Flutter provides built-in APIs to display open source licenses:
   or [`showLicensePage`][].
 * For custom presentations, access the raw licenses from the [`LicenseRegistry`][].
 
-[`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
+[`AboutListTile`]: {{site.material_ui}}/AboutListTile-class.html
 [`LicenseRegistry`]: {{site.api}}/flutter/foundation/LicenseRegistry-class.html
-[`showAboutDialog`]: {{site.api}}/flutter/material/showAboutDialog.html
-[`showLicensePage`]: {{site.api}}/flutter/material/showLicensePage.html
+[`showAboutDialog`]: {{site.material_ui}}/showAboutDialog.html
+[`showLicensePage`]: {{site.material_ui}}/showLicensePage.html
 
 ### Who works on Flutter?
 

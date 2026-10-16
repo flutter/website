@@ -60,7 +60,7 @@ void main() {
   final assetManager = AssetManager(
     directory: 'content',
     outputPrefix: 'assets',
-    dataProperties: const {'page.image', 'page.socialImage'},
+    dataProperties: const {'page.coverImage.url', 'page.socialImage'},
     assetTransformers: [
       TrackingAssetTransformer(),
       const ResizingAssetTransformer(),

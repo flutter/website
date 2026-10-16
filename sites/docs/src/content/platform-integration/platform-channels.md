@@ -278,8 +278,8 @@ prefix', for example: `samples.flutter.dev/battery`.
 ```dart
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 ```
 
 <?code-excerpt "platform_channels/lib/platform_channels.dart (my-home-page-state)"?>

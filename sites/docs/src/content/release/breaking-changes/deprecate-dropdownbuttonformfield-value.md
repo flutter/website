@@ -70,7 +70,7 @@ Relevant PRs:
 
 - [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
 
-[`DropdownButtonFormField`]: {{site.api}}/flutter/material/DropdownButtonFormField/DropdownButtonFormField.html
+[`DropdownButtonFormField`]: {{site.material_ui}}/DropdownButtonFormField/DropdownButtonFormField.html
 [`DropdownButtonFormField.initialValue`]: {{site.main-api}}/flutter/widgets/FormField/initialValue.html
 [Issue #169983]: {{site.repo.flutter}}/issues/169983
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: {{site.repo.flutter}}/pull/170805

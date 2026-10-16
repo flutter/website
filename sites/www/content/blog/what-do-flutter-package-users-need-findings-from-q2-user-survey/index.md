@@ -5,12 +5,15 @@ description: >-
   discover, evaluate, and use packages.
 publishDate: 2019-07-25
 author: jayoung-lee
-image: images/0JGPtcSX7QYbN8Dvn.webp
+coverImage:
+  alt: >-
+    A word cloud of survey comments in the shape of the Flutter logo, with
+    app, Dart, widget, and need among the largest words.
+  caption: "*A word cloud made with the Q2 survey comments* ☁️ *(link to the original [image](https://raw.githubusercontent.com/timsneath/wordcloud_flutter/master/flutter_wordcloud.png), [code](https://github.com/timsneath/wordcloud_flutter))*"
+  url: images/0JGPtcSX7QYbN8Dvn.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/0JGPtcSX7QYbN8Dvn.webp" alt="*A word cloud made with the Q2 survey comments* ☁️ *(link to the original [image](https://raw.githubusercontent.com/timsneath/wordcloud_flutter/master/flutter_wordcloud.png), [code](https://github.com/timsneath/wordcloud_flutter))*" caption="*A word cloud made with the Q2 survey comments* ☁️ *(link to the original [image](https://raw.githubusercontent.com/timsneath/wordcloud_flutter/master/flutter_wordcloud.png), [code](https://github.com/timsneath/wordcloud_flutter))*" />
 
 We recently ran our sixth quarterly user survey and collected responses from over 7,000 Flutter users. We found that 92.5% of the respondents are satisfied or very satisfied, which is slightly higher than the [last quarter](https://flutter.dev/blog/insights-from-flutters-first-user-survey-of-2019)! We are thrilled to see a consistent level of satisfaction with Flutter. In this article, we cover some deep-dive questions around Flutter’s ecosystem, because we recognize that helping the Flutter community grow the ecosystem is important.
 

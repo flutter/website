@@ -85,8 +85,8 @@ Relevant PR:
   ReorderableList in material_localizations.
 
 [PR 124711]: {{site.repo.flutter}}/pull/124711
-[`ReorderableListView`]: {{site.api}}/flutter/material/ReorderableListView-class.html
+[`ReorderableListView`]: {{site.material_ui}}/ReorderableListView-class.html
 [`ReorderableList`]: {{site.api}}/flutter/widgets/ReorderableList-class.html
 [`SliverReorderableList`]: {{site.api}}/flutter/widgets/SliverReorderableList-class.html
-[`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
+[`MaterialLocalizations`]: {{site.material_ui}}/MaterialLocalizations-class.html
 [`WidgetsLocalizations`]: {{site.api}}/flutter/widgets/WidgetsLocalizations-class.html
