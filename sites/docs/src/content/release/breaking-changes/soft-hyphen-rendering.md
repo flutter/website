@@ -107,6 +107,7 @@ Otherwise, accepting and ignoring the parameter is enough.
 ## Timeline
 
 Landed in version: 3.49.0-1.0.pre-294<br>
+On the web, landed in version: 3.50.0-1.0.pre-109<br>
 In stable release: Not yet
 
 ## References
@@ -127,6 +128,8 @@ Relevant issues:
 Relevant PRs:
 
 * [Support soft hyphen (U+00AD) rendering with a Hyphens API][]
+* [Render soft hyphens on Skwasm][pr-193850]
+* [Render soft hyphens on CanvasKit][pr-194339]
 
 [`Hyphens`]: {{site.api}}/flutter/dart-ui/Hyphens.html
 [`ParagraphStyle`]: {{site.api}}/flutter/dart-ui/ParagraphStyle-class.html
@@ -137,3 +140,5 @@ Relevant PRs:
 [`TextWidthBasis.longestLine`]: {{site.api}}/flutter/painting/TextWidthBasis.html
 [issue-18443]: {{site.repo.flutter}}/issues/18443
 [Support soft hyphen (U+00AD) rendering with a Hyphens API]: {{site.repo.flutter}}/pull/185152
+[pr-193850]: {{site.repo.flutter}}/pull/193850
+[pr-194339]: {{site.repo.flutter}}/pull/194339
