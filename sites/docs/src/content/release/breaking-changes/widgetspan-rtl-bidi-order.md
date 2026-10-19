@@ -87,7 +87,7 @@ Relevant PRs:
 
 * [Skia CL 1366676][]
 
-[after]: /assets/images/docs/breaking-changes/widgetspan-rtl-after.png
-[before]: /assets/images/docs/breaking-changes/widgetspan-rtl-before.png
+[after]: /assets/images/docs/breaking-changes/widgetspan-rtl-after.webp
+[before]: /assets/images/docs/breaking-changes/widgetspan-rtl-before.webp
 [Issue 54400]: {{site.repo.flutter}}/issues/54400
 [Skia CL 1366676]: https://skia-review.googlesource.com/c/skia/+/1366676
