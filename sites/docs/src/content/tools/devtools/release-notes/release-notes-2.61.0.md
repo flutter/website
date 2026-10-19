@@ -22,7 +22,7 @@ To learn more about DevTools, check out the
 ## Inspector updates
 
 * Added the widget source file path to the Inspector details pane
-  (`filename.dart:line:column`), matching legacy Inspector behavior. -
+  (`filename.dart:line:column`), matching legacy Inspector behavior.
   [#9972](https://github.com/flutter/devtools/pull/9972),
   [#9922](https://github.com/flutter/devtools/issues/9922)
 
@@ -50,11 +50,11 @@ To learn more about DevTools, check out the
 
 * Prevented values from being garbage-collected, while being evaluated.
   [#9885](https://github.com/flutter/devtools/pull/9885)
-* Update to latest version of the Dart syntax highlighting grammar
-  [#9920](https://github.com/flutter/devtools/pull/9920).
+* Updated to latest version of the Dart syntax highlighting grammar
+  [#9920](https://github.com/flutter/devtools/pull/9920)
 * Fixed a bug in the TextMate grammar parser that could result in code after
   comments being classified as comments.
-  [#9921](https://github.com/flutter/devtools/pull/9921).
+  [#9921](https://github.com/flutter/devtools/pull/9921)
 * Fixed an overflow in the debugging controls when the Debugger screen is
   narrow, such as when DevTools is embedded in an IDE side panel. The controls
   now scroll horizontally instead of overflowing.
@@ -68,10 +68,10 @@ To learn more about DevTools, check out the
   connection details, lifecycle events, frame-level inspection, and connection
   timing information. [#9968](https://github.com/flutter/devtools/pull/9968)
 * Fixed an issue where the Network tab would stop capturing HTTP requests after
-  a hot restart. -
+  a hot restart.
   [#9856](https://github.com/flutter/devtools/pull/9856)
 * Fixed an issue where the Network tab would stop capturing new HTTP requests
-  after pressing Clear while recording. -
+  after pressing Clear while recording.
   [#9856](https://github.com/flutter/devtools/pull/9856)
 
 ## Logging updates
@@ -79,8 +79,8 @@ To learn more about DevTools, check out the
 * Corrected time units and cumulative nature of GC events.
   [#9890](https://github.com/flutter/devtools/pull/9890)
 * Fixed a bug where long `dart:developer` log messages lost their structured
-  Details view. -
-  [#10011](https://github.com/flutter/devtools/pull/10011),
+  Details view.
+  [#10011](https://github.com/flutter/devtools/pull/10011)
 
 ## Deep links tool updates
 
