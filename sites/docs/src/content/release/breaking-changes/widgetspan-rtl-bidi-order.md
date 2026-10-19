@@ -9,10 +9,10 @@ description: >-
 
 ## Summary
 
-`WidgetSpan`s in right-to-left (RTL) and mixed-direction text
+`WidgetSpan` widgets in right-to-left (RTL) and mixed-direction text
 now follow the visual order determined by the Unicode bidirectional algorithm.
 Apps that compensated for the previous incorrect order
-can display inline widgets in the wrong positions after upgrading.
+might display inline widgets in the wrong positions after upgrading.
 
 ## Background
 
@@ -21,10 +21,10 @@ in source order, even when the surrounding text was visually reordered.
 This caused inline widgets in Arabic, Hebrew, and mixed-direction text
 to appear in the wrong positions.
 
-The fix places placeholders in bidirectional visual order.
-Placeholder boxes remain associated with widgets in logical insertion order;
-their coordinates reflect the corrected positions.
-No public API signatures changed.
+Paragraph layout now places inline widget placeholders in bidirectional visual
+order. Your `WidgetSpan` children stay in logical reading order in your Dart
+code, and layout returns placeholder boxes with the corrected visual
+coordinates. No public API signatures changed.
 
 The following example shows the corrected positions of inline widgets
 in mixed-direction text:
@@ -35,13 +35,13 @@ in mixed-direction text:
 
 ## Migration guide
 
-If your app uses `WidgetSpan`s without compensating for the old layout,
+If your app uses `WidgetSpan` widgets without compensating for the old layout,
 no code changes are needed.
 Otherwise, remove workarounds added specifically for this issue:
 
-* `Transform.translate` offsets and `GlobalKey`-based code that
-  measured and swapped widgets on the same line.
-* Reversing the source order of `WidgetSpan`s for RTL text.
+* Translating or swapping widgets on the same line using `Transform.translate`
+  offsets or `GlobalKey` measurements.
+* Reversing the source order of `WidgetSpan` widgets for RTL text.
   Keep spans in the logical order of the content and let text layout
   determine their visual positions.
 * Mirroring placeholder-box x-coordinates in custom layout code.
