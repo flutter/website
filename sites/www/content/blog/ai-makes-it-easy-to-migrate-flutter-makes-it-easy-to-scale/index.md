@@ -4,7 +4,7 @@ description: >-
   Why verification speed, not code generation, is the real bottleneck of
   agentic development, and how a single source of truth powers multi-platform
   scale.
-publishDate: 2026-10-30
+publishDate: 2026-10-21
 author:
   - carlosmendonca
   - twerske
@@ -241,6 +241,7 @@ workflow:
   [**Official Dart and Flutter Agent Plugins**](https://github.com/flutter/agent-plugins)
   in your IDE.
 - Check out the [**GenUI SDK for Flutter**](https://docs.flutter.dev/ai/genui).
-- Share how your team is pairing Flutter and AI in our community discussions.
+- Share how your team is pairing Flutter and AI in our
+  [**community discussions**](https://flutter.dev/community).
 - Re-watch our
   [**keynote at flutterCon Berlin**](https://www.youtube.com/watch?v=Zz4ku_bmxG8).
