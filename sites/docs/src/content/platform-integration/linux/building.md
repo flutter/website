@@ -40,7 +40,7 @@ including common packages such as [`url_launcher`],
 [`shared_preferences`], [`file_selector`], and [`path_provider`].
 
 [C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
-[Bind to native code using FFI]: /platform-integration/interop/bind-native-code
+[Bind to native code using FFI]: /interop/bind-native-code
 [Canonical]: {{site.pub}}/publishers/canonical.com/packages
 [support-linux]: {{site.pub}}/packages?q=platform%3Alinux
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher

@@ -32,7 +32,7 @@ also consider building your UI with [adaptive and responsive design][] in mind.
 
 [supported platforms]: /reference/supported-platforms
 [Flutter plugins]: /packages-and-plugins/using-packages
-[Native interop]: /platform-integration/interop
+[Native interop]: /interop
 [write platform-specific code]: /platform-integration/platform-channels
 [create your own plugin]: /packages-and-plugins/developing-packages
 [adaptive and responsive design]: /ui/adaptive-responsive/
@@ -142,7 +142,7 @@ Learn how to add custom integrations with Android to your Flutter app.
       <p>Learn how the latest Android APIs in your app from Dart.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="/platform-integration/interop/bind-native-code">
+  <a class="card outlined-card" href="/interop/bind-native-code">
     <div class="card-header">
       <span class="card-title">Bind to native code</span>
     </div>
@@ -197,7 +197,7 @@ Learn how to add custom integrations with iOS to your Flutter app.
       <p>Learn about plugins that support functionality from native iOS frameworks.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="/platform-integration/interop/bind-native-code">
+  <a class="card outlined-card" href="/interop/bind-native-code">
     <div class="card-header">
       <span class="card-title">Bind to native code</span>
     </div>
@@ -318,7 +318,7 @@ Learn how to add custom integrations with Windows to your Flutter app.
 Learn how to add custom integrations with macOS to your Flutter app.
 
 <div class="card-grid">
-  <a class="card outlined-card" href="/platform-integration/interop/bind-native-code">
+  <a class="card outlined-card" href="/interop/bind-native-code">
     <div class="card-header">
       <span class="card-title">Bind to native code</span>
     </div>

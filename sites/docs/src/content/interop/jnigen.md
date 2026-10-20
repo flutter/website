@@ -23,7 +23,7 @@ low-latency interop, or need to pass massive amounts of raw data between Dart
 and the JVM.
 
 For standard, cross-platform plugin development where you don't have
-critical data transfers, use [Pigeon](/platform-integration/interop/pigeon)
+critical data transfers, use [Pigeon](/interop/pigeon)
 instead.
 
 ## Developer flow
@@ -52,7 +52,7 @@ which parses the classes and generates the corresponding Dart bindings.
 Last, import the generated Dart file into your app and call the functions
 directly.
 JNIgen communicates directly through the underlying FFI layer,
-so refer to the [`dart:ffi` guide](/platform-integration/interop/dart-ffi)
+so refer to the [`dart:ffi` guide](/interop/dart-ffi)
 to learn how to manage native memory lifetimes and execute native calls
 without blocking the UI thread.
 

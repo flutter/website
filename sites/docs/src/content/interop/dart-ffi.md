@@ -8,9 +8,9 @@ description: >-
 The `dart:ffi` (Foreign Function Interface) library is a core Dart SDK library
 that provides the low-level APIs to call C-ABI functions from Dart.
 
-Rather than a code generation tool like [Pigeon](/platform-integration/interop/pigeon),
-[FFIgen](/platform-integration/interop/ffigen),
-or [JNIgen](/platform-integration/interop/jnigen),
+Rather than a code generation tool like [Pigeon](/interop/pigeon),
+[FFIgen](/interop/ffigen),
+or [JNIgen](/interop/jnigen),
 `dart:ffi` is the underlying technology that powers these tools
 and enables native memory interop.
 

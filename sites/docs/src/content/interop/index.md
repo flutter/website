@@ -51,18 +51,18 @@ Follow the steps below to walk through the decision tree in detail:
 
 **Goal B: C-ABI wrapping**
 : Wrap an existing native library (C, C++, Rust, or Go).
-  Use [FFIgen](/platform-integration/interop/ffigen)
+  Use [FFIgen](/interop/ffigen)
   (or [Flutter Rust Bridge][frb] for Rust).
 
 **Goal C: Pure Dart package**
 : Build a Dart CLI tool without Flutter framework dependencies.
-  Use [FFIgen](/platform-integration/interop/ffigen) or
-  [JNIgen](/platform-integration/interop/jnigen).
+  Use [FFIgen](/interop/ffigen) or
+  [JNIgen](/interop/jnigen).
 
 ### Step 2: Evaluate Pigeon for Flutter plugins
 
 If you are building a Flutter plugin,
-first verify whether [Pigeon](/platform-integration/interop/pigeon) satisfies
+first verify whether [Pigeon](/interop/pigeon) satisfies
 your technical constraints.
 
 Do any of the following requirements apply to your feature?
@@ -77,12 +77,12 @@ Do any of the following requirements apply to your feature?
 Based on whether any of the preceding requirements apply,
 choose your interop tool:
 
-**No (most common) — Use [Pigeon](/platform-integration/interop/pigeon)**
+**No (most common) — Use [Pigeon](/interop/pigeon)**
 : This is the default, recommended path.
   It provides necessary guardrails, creates easily digestible interface
   mappings, and is highly efficient for most API surface areas.
 
-**Yes — Use [FFIgen](/platform-integration/interop/ffigen) or [JNIgen](/platform-integration/interop/jnigen)**
+**Yes — Use [FFIgen](/interop/ffigen) or [JNIgen](/interop/jnigen)**
 : You need the flexibility, complexity, and performance of direct interop for
   larger surface areas.
 
@@ -114,7 +114,7 @@ refer to [Using packages](/packages-and-plugins/using-packages).
   [Developing plugin packages](/packages-and-plugins/developing-packages#plugin).
 - **FFI package.**
   A package that compiles and bundles native C or C++ code using Dart build
-  hooks and [`dart:ffi`](/platform-integration/interop/dart-ffi).
+  hooks and [`dart:ffi`](/interop/dart-ffi).
   This template also includes an FFIgen configuration to regenerate
   Dart bindings (`flutter create --template=package_ffi`).
   For more details, refer to
@@ -141,16 +141,16 @@ languages:
 
 | Target language | Direct interop | Pigeon |
 | --- | --- | --- |
-| **C** | [FFIgen](/platform-integration/interop/ffigen) | Not recommended. Supported with platform channels, but not maintained by the Flutter team. |
-| **C++ with `extern "C"`** | [FFIgen](/platform-integration/interop/ffigen) | (Refer to C) |
+| **C** | [FFIgen](/interop/ffigen) | Not recommended. Supported with platform channels, but not maintained by the Flutter team. |
+| **C++ with `extern "C"`** | [FFIgen](/interop/ffigen) | (Refer to C) |
 | **C++ without `extern "C"`** | FFIgen (not yet supported) | Supported with platform channels, but not maintained by the Flutter team. |
-| **Rust with `extern "C"`** | [FFIgen](/platform-integration/interop/ffigen) | (Refer to C) |
+| **Rust with `extern "C"`** | [FFIgen](/interop/ffigen) | (Refer to C) |
 | **Rust without `extern "C"`** | [Flutter Rust Bridge][frb] | Not supported |
-| **Go with `extern "C"`** | [FFIgen](/platform-integration/interop/ffigen) | (Refer to C) |
+| **Go with `extern "C"`** | [FFIgen](/interop/ffigen) | (Refer to C) |
 | **Go without `extern "C"`** | Not supported | Not supported |
-| **Java** | [JNIgen](/platform-integration/interop/jnigen) | Supported through Kotlin |
-| **Kotlin** | [JNIgen](/platform-integration/interop/jnigen) | Supported (recommended) |
-| **Objective-C** | [FFIgen](/platform-integration/interop/ffigen) | Supported through Swift |
+| **Java** | [JNIgen](/interop/jnigen) | Supported through Kotlin |
+| **Kotlin** | [JNIgen](/interop/jnigen) | Supported (recommended) |
+| **Objective-C** | [FFIgen](/interop/ffigen) | Supported through Swift |
 | **Swift without Obj-C compatibility annotations** | [`package:swiftgen`][swiftgen-pub] (experimental) | Supported (recommended) |
 
 {:.table .table-striped}
@@ -166,9 +166,9 @@ consult the [native interop layers guide][interop-layers].
 ### Layer 1: Low-level bindings
 
 Layer 1 consists of thin, high-performance, and unopinionated wrappers around
-native code (for example, [`dart:ffi`](/platform-integration/interop/dart-ffi),
-`dart:js_interop`, [FFIgen](/platform-integration/interop/ffigen),
-and [JNIgen](/platform-integration/interop/jnigen)).
+native code (for example, [`dart:ffi`](/interop/dart-ffi),
+`dart:js_interop`, [FFIgen](/interop/ffigen),
+and [JNIgen](/interop/jnigen)).
 These APIs mirror native signatures closely,
 but require manual memory and threading management.
 
@@ -176,7 +176,7 @@ but require manual memory and threading management.
 
 Layer 2 consists of idiomatic Dart APIs that wrap the low-level layer to hide
 platform-specific complexities (for example,
-[Pigeon](/platform-integration/interop/pigeon) or the
+[Pigeon](/interop/pigeon) or the
 [`sqlite3` package][sqlite3-pub]).
 These manage concurrency, memory lifetimes, and data conversions automatically.
 

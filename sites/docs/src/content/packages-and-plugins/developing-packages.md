@@ -1036,7 +1036,7 @@ For additional details on `.podspec` files, see the
 All web dependencies are handled by the `pubspec.yaml`
 file, like any other Dart package.
 
-[bind-native]: /platform-integration/interop/bind-native-code
+[bind-native]: /interop/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
 [`device_info_plus`]: {{site.pub-api}}/device_info_plus

@@ -362,24 +362,24 @@
       permalink: /app-architecture/design-patterns
 
 - title: Native interop
-  permalink: /platform-integration/interop
+  permalink: /interop
   icon: alt_route
   children:
     - title: Overview
-      permalink: /platform-integration/interop
+      permalink: /interop
     - title: Pigeon
-      permalink: /platform-integration/interop/pigeon
+      permalink: /interop/pigeon
     - title: FFIgen
-      permalink: /platform-integration/interop/ffigen
+      permalink: /interop/ffigen
       children:
         - title: Overview
-          permalink: /platform-integration/interop/ffigen
+          permalink: /interop/ffigen
         - title: "dart:ffi"
-          permalink: /platform-integration/interop/dart-ffi
+          permalink: /interop/dart-ffi
         - title: Bind to native code
-          permalink: /platform-integration/interop/bind-native-code
+          permalink: /interop/bind-native-code
     - title: JNIgen
-      permalink: /platform-integration/interop/jnigen
+      permalink: /interop/jnigen
     - title: Platform channels
       permalink: /platform-integration/platform-channels
 

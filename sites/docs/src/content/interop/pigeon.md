@@ -20,14 +20,14 @@ native interop (direct FFI and JNI) or platform channels.
 
 :::note
 For low-level integrations that require direct access to native memory
-or C and C++ libraries, use [FFIgen](/platform-integration/interop/ffigen)
-or [JNIgen](/platform-integration/interop/jnigen) instead.
+or C and C++ libraries, use [FFIgen](/interop/ffigen)
+or [JNIgen](/interop/jnigen) instead.
 :::
 
 ### Pigeon with native interop
 
-Pigeon with native interop uses [FFIgen](/platform-integration/interop/ffigen)
-and [JNIgen](/platform-integration/interop/jnigen) under the hood to generate
+Pigeon with native interop uses [FFIgen](/interop/ffigen)
+and [JNIgen](/interop/jnigen) under the hood to generate
 direct native bindings (using FFI on iOS and macOS, and JNI on Android).
 
 Use this option if your use case requires any of the following:
@@ -100,8 +100,8 @@ Keep the following constraints and limitations in mind when working with Pigeon:
 
 For specialized use cases requiring direct manipulation of raw native pointers
 or C and C++ memory management,
-use [FFIgen](/platform-integration/interop/ffigen) or
-[JNIgen](/platform-integration/interop/jnigen) instead.
+use [FFIgen](/interop/ffigen) or
+[JNIgen](/interop/jnigen) instead.
 
 ### Inheritance
 
