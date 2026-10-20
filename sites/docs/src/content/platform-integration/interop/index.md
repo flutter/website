@@ -15,6 +15,12 @@ or read on to learn about the native interop layers.
 
 ## Choose your interop solution
 
+:::important
+Migrating a plugin between Pigeon and FFIgen or JNIgen is non-trivial.
+Choose your interop solution carefully based on your initial project
+constraints.
+:::
+
 ```mermaid
 flowchart TD
     Start(["Step 1: What is your primary goal?"]) --> GoalA["Goal A: Platform integration<br>(Swift, Kotlin, Java, Obj-C)"]
@@ -38,16 +44,18 @@ Follow the steps below to walk through the decision tree in detail:
 
 ### Step 1: Determine your primary goal
 
-- **Goal A: Platform integration.**
-  Communicate with native OS features (Swift, Kotlin, Java, or Objective-C)
+**Goal A: Platform integration**
+: Communicate with native OS features (Swift, Kotlin, Java, or Objective-C)
   or expose an API surface.
   Proceed to [Step 2: Evaluate Pigeon for Flutter plugins](#step-2-evaluate-pigeon-for-flutter-plugins).
-- **Goal B: C-ABI wrapping.**
-  Wrap an existing native library (C, C++, Rust, or Go).
+
+**Goal B: C-ABI wrapping**
+: Wrap an existing native library (C, C++, Rust, or Go).
   Use [FFIgen](/platform-integration/interop/ffigen)
   (or [Flutter Rust Bridge][frb] for Rust).
-- **Goal C: Pure Dart package.**
-  Build a Dart CLI tool without Flutter framework dependencies.
+
+**Goal C: Pure Dart package**
+: Build a Dart CLI tool without Flutter framework dependencies.
   Use [FFIgen](/platform-integration/interop/ffigen) or
   [JNIgen](/platform-integration/interop/jnigen).
 
@@ -56,12 +64,6 @@ Follow the steps below to walk through the decision tree in detail:
 If you are building a Flutter plugin,
 first verify whether [Pigeon](/platform-integration/interop/pigeon) satisfies
 your technical constraints.
-
-:::important
-Migrating a plugin between Pigeon and FFIgen or JNIgen is non-trivial.
-Choose your interop solution carefully based on your initial project
-constraints.
-:::
 
 Do any of the following requirements apply to your feature?
 
@@ -72,13 +74,16 @@ Do any of the following requirements apply to your feature?
   guardrails.
 - Your target language is C, C++, Rust, or Go.
 
-- **No (most common): Use [Pigeon](/platform-integration/interop/pigeon).**
-  This is the default, recommended path.
+Based on whether any of the preceding requirements apply,
+choose your interop tool:
+
+**No (most common) — Use [Pigeon](/platform-integration/interop/pigeon)**
+: This is the default, recommended path.
   It provides necessary guardrails, creates easily digestible interface
   mappings, and is highly efficient for most API surface areas.
-- **Yes: Use [FFIgen](/platform-integration/interop/ffigen) or
-  [JNIgen](/platform-integration/interop/jnigen).**
-  You need the flexibility, complexity, and performance of direct interop for
+
+**Yes — Use [FFIgen](/platform-integration/interop/ffigen) or [JNIgen](/platform-integration/interop/jnigen)**
+: You need the flexibility, complexity, and performance of direct interop for
   larger surface areas.
 
 :::note
@@ -110,7 +115,7 @@ refer to [Using packages](/packages-and-plugins/using-packages).
 - **FFI package.**
   A package that compiles and bundles native C or C++ code using Dart build
   hooks and [`dart:ffi`](/platform-integration/interop/dart-ffi).
-  This template also includes an `ffigen.yaml` configuration file to regenerate
+  This template also includes an FFIgen configuration to regenerate
   Dart bindings (`flutter create --template=package_ffi`).
   For more details, refer to
   [Developing FFI packages](/packages-and-plugins/developing-packages#ffi).
@@ -147,6 +152,8 @@ languages:
 | **Kotlin** | [JNIgen](/platform-integration/interop/jnigen) | Supported (recommended) |
 | **Objective-C** | [FFIgen](/platform-integration/interop/ffigen) | Supported through Swift |
 | **Swift without Obj-C compatibility annotations** | [`package:swiftgen`][swiftgen-pub] (experimental) | Supported (recommended) |
+
+{:.table .table-striped}
 
 ## Understand interop layers
 

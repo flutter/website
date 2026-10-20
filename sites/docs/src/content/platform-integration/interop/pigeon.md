@@ -26,8 +26,9 @@ or [JNIgen](/platform-integration/interop/jnigen) instead.
 
 ### Pigeon with native interop
 
-Pigeon with native interop (direct FFI and JNI) generates direct native bindings
-using FFI on iOS and macOS, and JNI on Android.
+Pigeon with native interop uses [FFIgen](/platform-integration/interop/ffigen)
+and [JNIgen](/platform-integration/interop/jnigen) under the hood to generate
+direct native bindings (using FFI on iOS and macOS, and JNI on Android).
 
 Use this option if your use case requires any of the following:
 
@@ -72,7 +73,8 @@ refer to the [native interop guide][pigeon-native-guide].
 :::
 
 After the code is generated, you implement the generated native interfaces
-in your host project (such as `android/`, `ios/`, or `macos/`)
+in the platform-specific directories of your Flutter project
+(such as `android/`, `ios/`, or `macos/`)
 and register them with the Flutter engine.
 Finally, you call the generated Dart classes from your Flutter app,
 or invoke the generated native APIs to call back into your Dart code.
@@ -91,6 +93,8 @@ and native implementations, refer to the following examples:
 - [`shared_preferences` plugin][shared-preferences-source]
 
 ## Constraints and limitations
+
+Keep the following constraints and limitations in mind when working with Pigeon:
 
 ### High-frequency data
 

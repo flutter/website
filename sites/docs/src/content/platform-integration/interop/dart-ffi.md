@@ -19,9 +19,8 @@ and enables native memory interop.
 When you use FFIgen or JNIgen to generate Dart bindings,
 the generated code does not automatically convert Dart objects
 like `String` or `List` into native formats.
-Because Dart memory is automatically garbage collected
-and native C memory is manually managed,
-you must use `dart:ffi` to bridge this gap.
+Dart memory is automatically garbage collected while native C memory is
+manually managed, so you must use `dart:ffi` to bridge this gap.
 
 The two most common scenarios when `dart:ffi` is needed are
 memory allocation and data conversion.

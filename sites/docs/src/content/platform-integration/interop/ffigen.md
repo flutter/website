@@ -44,19 +44,17 @@ Generating bindings with FFIgen follows these steps:
 1.  Call the generated code from Dart.
 
 To start, identify the native header files or APIs you want to wrap.
-Then write a configuration script (typically `tool/ffigen.dart` or
-`ffigen.yaml`).
+Then write a configuration script (typically `tool/ffigen.dart`).
 This configuration specifies where the header files are located
 and where to output the generated Dart code.
 
-Next, run the generator tool (such as `dart run tool/ffigen.dart` or
-`dart run ffigen`), which parses the headers and generates the corresponding
-Dart bindings.
+Next, run the configuration script (`dart run tool/ffigen.dart`),
+which parses the headers and generates the corresponding Dart bindings.
 
 Last, import the generated Dart file into your app and call the functions
 directly.
-Because FFIgen communicates directly using the underlying FFI layer,
-refer to the [`dart:ffi` guide](/platform-integration/interop/dart-ffi)
+FFIgen communicates directly through the underlying FFI layer,
+so refer to the [`dart:ffi` guide](/platform-integration/interop/dart-ffi)
 to learn how to manage native memory lifetimes and execute native calls
 without blocking the UI thread.
 

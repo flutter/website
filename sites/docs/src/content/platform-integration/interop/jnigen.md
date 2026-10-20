@@ -17,8 +17,8 @@ Dart code.
 Use JNIgen when you need to call Java or Kotlin libraries, wrap compiled JAR
 or AAR files, or interact directly with Android from your Dart code.
 
-Because JNIgen uses direct JNI bindings through `dart:ffi`,
-it is also the recommended tool when you require high-performance,
+JNIgen uses direct JNI bindings through `dart:ffi`,
+making it the recommended tool when you require high-performance,
 low-latency interop, or need to pass massive amounts of raw data between Dart
 and the JVM.
 
@@ -42,21 +42,19 @@ For a complete list of configuration options, consult the
 
 To start, identify the native Java classes, packages, or compiled JAR/AAR files
 you want to wrap.
-Then write a configuration script (typically `tool/jnigen.dart` or
-`jnigen.yaml`).
+Then write a configuration script (typically `tool/jnigen.dart`).
 This configuration specifies where the native files are located,
 what packages to include, and where to output the generated Dart code.
 
-Next, run the generator tool (such as `dart run tool/jnigen.dart` or
-`dart run jnigen --config jnigen.yaml`),
+Next, run the configuration script (`dart run tool/jnigen.dart`),
 which parses the classes and generates the corresponding Dart bindings.
 
 Last, import the generated Dart file into your app and call the functions
 directly.
-Because JNIgen communicates directly using the underlying FFI layer,
-refer to the [`dart:ffi` guide](/platform-integration/interop/dart-ffi) to learn
-how to manage native memory lifetimes and execute native calls without blocking
-the UI thread.
+JNIgen communicates directly through the underlying FFI layer,
+so refer to the [`dart:ffi` guide](/platform-integration/interop/dart-ffi)
+to learn how to manage native memory lifetimes and execute native calls
+without blocking the UI thread.
 
 :::note
 If the native API changes, you need to update your configuration script and
@@ -97,9 +95,8 @@ when implementing interfaces.
 
 ### JVM runtime type checks
 
-JNI wrappers are Dart extension types, and they compile down to `JObject`
-at runtime.
-Because of this, Dart's native `is` and `as` keywords do not check the Java
+JNI wrappers are Dart extension types that compile down to `JObject`
+at runtime, so Dart's native `is` and `as` keywords do not check the Java
 runtime type.
 Use `x.isA(Foo.type)` and `x.as(Foo.type)` instead.
 
