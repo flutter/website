@@ -19,26 +19,30 @@ For low-level integrations that require direct access to native memory or C/C++ 
 use [FFIgen](/platform-integration/interop/ffigen) or [JNIgen](/platform-integration/interop/jnigen) instead.
 :::
 
-### Pigeon with native interop
+### Pigeon with native interop (recommended for Android, iOS, and macOS)
 
-Pigeon with native interop (direct FFI and JNI) generates direct native bindings using
-FFI or JNI for mobile platforms (Android and iOS).
+Pigeon with native interop (direct FFI and JNI) generates direct native bindings
+using FFI on iOS and macOS, and JNI on Android.
+This is the recommended default when targeting Android, iOS, or macOS.
 
-Use this option if your use case requires any of the following:
+Use this option if you're building for Android, iOS, or macOS,
+especially when your use case requires any of the following:
 
-* You need synchronous execution on your native platform.
-* You are doing high-frequency data streaming (for example, audio or camera frames).
-* You are calling native code from background Dart isolates.
+* Synchronous execution on your native platform.
+* High-frequency data streaming (for example, audio or camera frames).
+* Calling native code directly from background Dart isolates.
 
 ### Pigeon with platform channels
 
-Pigeon with platform channels generates standard platform channels that support all
-platforms (Android, iOS, macOS, Windows, Linux, and Web).
+Pigeon with platform channels generates standard platform channels that support
+Android, iOS, macOS, Windows, and Linux.
+You can generate platform channels for Windows and Linux from the same Pigeon
+file that uses native interop on Android, iOS, and macOS.
 
 Use this option if your use case requires any of the following:
 
-* You need desktop (Windows, Linux).
-* You want zero external toolchains.
+* Desktop support on Windows or Linux.
+* Zero external toolchains.
 
 ## Developer flow
 
@@ -56,10 +60,12 @@ run the Pigeon generator tool, which parses your definition file and produces th
 necessary code for both Dart and your target native platform.
 
 :::note
-If you’re using the Pigeon with native interop communication option,
-set `swiftOptions: SwiftOptions(useFfi: true)` and `kotlinOptions: KotlinOptions(useJni: true)`
-in the `@ConfigurePigeon` section of your schema. For complete prerequisites and build
-configuration, refer to the [native interop guide][pigeon-native-guide].
+To enable Pigeon with native interop, set `swiftOptions: SwiftOptions(useFfi: true)`,
+`kotlinOptions: KotlinOptions(useJni: true)`, and `appDirectory` (for example,
+`'./'` for an app or `'example/'` for a plugin) in the `@ConfigurePigeon`
+annotation of your Pigeon file.
+For complete prerequisites and build configuration,
+refer to the [Pigeon native interop guide][pigeon-native-guide].
 :::
 
 After the code is generated, you implement the generated native interfaces in your host
@@ -73,10 +79,11 @@ and then update your implementation accordingly.
 ## Examples
 
 To explore a complete implementation of this flow, including the Dart definition,
-generated code, and native implementations, check out the following examples:
+generated code, and native implementations, refer to the following examples:
 
-* (coming soon) Example of Pigeon with native interop
+* [Example of Pigeon with native interop][pigeon-native-example]
 * [Example of Pigeon with platform channels][pigeon-example]
+* [`shared_preferences` plugin][shared-preferences-source] (a production plugin using Pigeon with native interop)
 
 ## Constraints and limitations
 
@@ -96,7 +103,8 @@ For `@async` methods, native code must return errors through the provided callba
 
 ## Resources
 
-* [Migrating from Pigeon with platform channels to Pigeon with native interop][pigeon-native-guide]
+* [Migrating from Pigeon with platform channels to Pigeon with native interop][pigeon-migration-guide]
+* [Pigeon native interop guide][pigeon-native-guide]
 * [Pigeon package on pub.dev][pigeon-pub]
 * [Pigeon source code][pigeon-source]
 * [Flutter native interop demos][native-interop-demos]
@@ -104,5 +112,8 @@ For `@async` methods, native code must return errors through the provided callba
 [pigeon-pub]: https://pub.dev/packages/pigeon
 [pigeon-source]: https://github.com/flutter/packages/tree/main/packages/pigeon
 [pigeon-example]: https://github.com/flutter/packages/tree/main/packages/pigeon/example
+[pigeon-native-example]: https://github.com/flutter/packages/tree/main/packages/pigeon/example/native_interop_app
 [pigeon-native-guide]: https://github.com/flutter/packages/blob/main/packages/pigeon/native_interop_guide.md
+[pigeon-migration-guide]: https://github.com/flutter/packages/blob/main/packages/pigeon/native_interop_migration_guide.md
+[shared-preferences-source]: https://github.com/flutter/packages/tree/main/packages/shared_preferences
 [native-interop-demos]: https://github.com/flutter/demos/tree/main/native_interop_demos
