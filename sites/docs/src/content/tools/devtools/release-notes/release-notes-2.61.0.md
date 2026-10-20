@@ -85,7 +85,7 @@ To learn more about DevTools, check out the
 ## Deep links tool updates
 
 * Added a "Watch tutorial" link to the status line that points to the
-  [deep links video tutorial](https://youtu.be/d7sZL6hIElw).
+  [deep links video tutorial](https://youtu.be/d7sZL6h1Elw).
   [#9925](https://github.com/flutter/devtools/pull/9925)
 * Validated build option parameters and surfaced iOS universal link settings
   errors in the Deep Links tool.
