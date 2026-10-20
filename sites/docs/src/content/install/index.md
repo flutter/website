@@ -1,6 +1,6 @@
 ---
 title: Install and set up Flutter
-shortTitle: Manage installation
+shortTitle: Install
 description: >-
   Download and install the Flutter SDK, configure your IDE and target
   platforms, or update and troubleshoot an existing Flutter installation.
@@ -24,8 +24,8 @@ choose how you'd like to install the Flutter SDK:
     </div>
     <div class="card-content" style="flex-direction: column; align-items: flex-start; justify-content: space-between; flex: 1;">
       <p>Use the Flutter extension in VS Code or another Code OSS-based editor
-        to download and install the Flutter SDK, set up your
-        environment, and run your first app.</p>
+        to download and install the Flutter SDK, add it to your
+        <code>PATH</code>, and validate your setup.</p>
       <a class="filled-button" style="padding: 0.55rem 1.15rem; margin-top: 0.5rem;" href="/install/quick">Install with VS Code</a>
     </div>
   </div>
