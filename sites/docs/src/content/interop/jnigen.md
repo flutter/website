@@ -109,6 +109,9 @@ and help trace leaks.
 
 ## Resources
 
+To learn about generating Java and Kotlin bindings with JNIgen,
+refer to the following resources:
+
 - [JNIgen package on pub.dev][jnigen-pub]
 - [JNI package on pub.dev][jni-pub]
 - [Official JNIgen examples on GitHub][jnigen-examples]

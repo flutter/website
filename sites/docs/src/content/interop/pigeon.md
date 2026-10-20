@@ -115,6 +115,9 @@ callback.
 
 ## Resources
 
+To learn about building and migrating plugins with Pigeon,
+refer to the following resources:
+
 - [Migrating from Pigeon with platform channels to Pigeon with native interop][pigeon-migration-guide]
 - [Pigeon native interop guide][pigeon-native-guide]
 - [Pigeon package on pub.dev][pigeon-pub]

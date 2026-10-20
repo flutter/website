@@ -15,12 +15,6 @@ or read on to learn about the native interop layers.
 
 ## Choose your interop solution
 
-:::important
-Migrating a plugin between Pigeon and FFIgen or JNIgen is non-trivial.
-Choose your interop solution carefully based on your initial project
-constraints.
-:::
-
 ```mermaid
 flowchart TD
     Start(["Step 1: What is your primary goal?"]) --> GoalA["Goal A: Platform integration<br>(Swift, Kotlin, Java, Obj-C)"]
@@ -64,6 +58,12 @@ Follow the steps below to walk through the decision tree in detail:
 If you are building a Flutter plugin,
 first verify whether [Pigeon](/interop/pigeon) satisfies
 your technical constraints.
+
+:::important
+Migrating a plugin between Pigeon and FFIgen or JNIgen is non-trivial
+because the glue code lives in different languages.
+Evaluate your plugin's constraints carefully before choosing between them.
+:::
 
 Do any of the following requirements apply to your feature?
 
@@ -131,8 +131,7 @@ refer to [Developing packages and plugins](/packages-and-plugins/developing-pack
 
 ## Tool comparison
 
-The following table compares the two interop approaches across target
-languages:
+The following table compares two interop solutions:
 
 - **Direct interop:** Lower-level direct bindings with higher performance for
   large data; requires manual memory and threading management.

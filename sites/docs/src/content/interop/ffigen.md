@@ -128,6 +128,9 @@ package.
 
 ## Resources
 
+To learn about generating C, Objective-C, and Swift bindings with FFIgen,
+refer to the following resources:
+
 - [FFIgen package on pub.dev][ffigen-pub]
 - [`objective_c` package on pub.dev][objc-pub]
 - [Official FFIgen examples on GitHub][ffigen-examples]
