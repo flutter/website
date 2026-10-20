@@ -79,6 +79,13 @@ layout: blog
 : Static image override (WebP or PNG under 5 MB) for social sharing metadata
   when `coverImage` is animated or exceeds 5 MB.
 
+`showToc` (optional)
+: Whether to show the "In this article" table of contents
+  generated from the post's `##` and `###` headings.
+  Defaults to `true`, though the TOC only appears
+  when the post has at least two `##` headings.
+  To explicitly hide the TOC, set `showToc: false`.
+
 ## Card and social images
 
 `coverImage` is optional but recommended when suitable artwork exists.
