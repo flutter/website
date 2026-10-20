@@ -5,12 +5,12 @@ description: >-
   CodePen is adding support for Flutter
 publishDate: 2020-04-15
 author: zoeyfan
-image: images/06wPqdCz_TzB2gAXr.webp
+coverImage:
+  alt: ""
+  url: images/06wPqdCz_TzB2gAXr.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/06wPqdCz_TzB2gAXr.webp" />
 
 Today we’re excited to announce that [CodePen](https://codepen.io), the leading social development environment for millions of front-end developers and designers, is adding [support for Flutter](https://codepen.io/flutter)! For web developers CodePen has long been a great place for sharing design explorations, new techniques, and ideas. Now with the introduction of Flutter, CodePen enables a new audience to learn, share and promote their creativity.
 

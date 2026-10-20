@@ -74,13 +74,6 @@ Here are some things to keep in mind when designing your UI:
     ("Same instance" is evaluated using `operator ==`,
     but see the pitfalls section at the end of this page
     for advice on when to avoid overriding `operator ==`.)
-  * Use `const` constructors on widgets as much as possible,
-    since they allow Flutter to short-circuit most
-    of the rebuild work. To be automatically reminded
-    to use `const` when possible, enable the
-    recommended lints from the [`flutter_lints`][] package.
-    For more information, check out the
-    [`flutter_lints` migration guide][].
   * To create reusable pieces of UIs,
     prefer using a [`StatelessWidget`][]
     rather than a function.
@@ -92,11 +85,8 @@ For more information, check out:
 * [Widgets vs helper methods][],
   a video from the official Flutter YouTube
   channel that explains why widgets
-  (especially widgets with `const` constructors)
   are more performant than functions.
 
-[`flutter_lints`]: {{site.pub-pkg}}/flutter_lints
-[`flutter_lints` migration guide]: /release/breaking-changes/flutter-lints-package#migration-guide
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [source code for `SlideTransition`]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/widgets/transitions.dart#L168
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
@@ -204,7 +194,7 @@ and are potentially costly:
 * [`Text`][]&mdash;might trigger a call to `saveLayer()`
   if there's an `overflowShader`
 
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`Chip`]: {{site.material_ui}}/Chip-class.html
 [`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
 [`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html

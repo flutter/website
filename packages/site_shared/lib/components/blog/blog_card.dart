@@ -32,11 +32,12 @@ class BlogCard extends StatelessComponent {
       classes: ['blog-card', ?className].toClasses,
       attributes: {'data-category': post.category},
       [
-        if (post.image case final postImage?)
+        if (post.coverImage?.url case final postImage?)
           div(classes: 'blog-card-image', [
             img(
               src: postImage,
-              alt: post.title,
+              // The link already includes the post title below the image.
+              alt: '',
               loading: switch (priority) {
                 .featured => MediaLoading.eager,
                 .high => MediaLoading.lazy,

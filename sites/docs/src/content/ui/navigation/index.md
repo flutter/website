@@ -172,7 +172,7 @@ resources:
 [`Router`]: {{site.api}}/flutter/widgets/Router-class.html
 [Deep linking]: /ui/navigation/deep-linking
 [navigation recipes]: /cookbook/navigation
-[`MaterialApp.routes`]: {{site.api}}/flutter/material/MaterialApp/routes.html
+[`MaterialApp.routes`]: {{site.material_ui}}/MaterialApp/routes.html
 [Navigate with named routes]: /cookbook/navigation/named-routes
 [go_router]: {{site.pub}}/packages/go_router
 [`Page`]: {{site.api}}/flutter/widgets/Page-class.html
@@ -181,4 +181,4 @@ resources:
 [Understanding navigation]: https://material.io/design/navigation/understanding-navigation.html
 [Learning Flutter's new navigation and routing system]: https://flutter.dev/blog/learning-flutters-new-navigation-and-routing-system
 [Router design document]: {{site.main-url}}/go/navigator-with-router
-[`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
+[`MaterialPageRoute`]: {{site.material_ui}}/MaterialPageRoute-class.html

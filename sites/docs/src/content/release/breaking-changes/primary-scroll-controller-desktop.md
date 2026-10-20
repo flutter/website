@@ -207,7 +207,7 @@ Relevant PRs:
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
 [`ScrollAction`]: {{site.api}}/flutter/widgets/ScrollAction-class.html
 [`ScrollIntent`]: {{site.api}}/flutter/widgets/ScrollIntent-class.html
-[`Scrollbar`]: {{site.api}}/flutter/material/Scrollbar-class.html
+[`Scrollbar`]: {{site.material_ui}}/Scrollbar-class.html
 [Updating PrimaryScrollController]: https://docs.google.com/document/d/12OQx7h8UQzzAi0Kxh-saDC2dg7h2fghCCzwJ0ysPmZE/edit?usp=sharing&resourcekey=0-ATO-1Er3HO2HITm59I0IdA
 [Issue #100264]: {{site.repo.flutter}}/issues/100264
 [Updating PrimaryScrollController for Desktop]: {{site.repo.flutter}}/pull/102099

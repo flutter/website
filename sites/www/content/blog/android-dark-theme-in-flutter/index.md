@@ -5,12 +5,12 @@ description: >-
   respond to the system brightness setting.
 publishDate: 2019-05-15
 author: matthew-carroll
-image: images/1wogDV86zrS8BNYI-8Th-TA.jpeg
+coverImage:
+  alt: ""
+  url: images/1wogDV86zrS8BNYI-8Th-TA.jpeg
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/1wogDV86zrS8BNYI-8Th-TA.jpeg" />
 
 ## Android Dark Theme in Flutter
 

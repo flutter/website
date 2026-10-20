@@ -5,13 +5,6 @@ environment:
   sdk: ^3.13.0-0
 
 workspace:
-  - _animation/basic_hero_animation
-  - _animation/basic_radial_hero_animation
-  - _animation/basic_staggered_animation
-  - _animation/hero_animation
-  - _animation/radial_hero_animation
-  - _animation/radial_hero_animation_animate_rectclip
-  - _animation/staggered_pic_selection
   - accessibility
   - animation/animate0
   - animation/animate1
@@ -19,6 +12,10 @@ workspace:
   - animation/animate3
   - animation/animate4
   - animation/animate5
+  - animation/hero_animation
+  - animation/implicit
+  - animation/radial_hero_animation
+  - animation/staggered_animation
   - app-architecture/command
   - app-architecture/offline_first
   - app-architecture/optimistic_state

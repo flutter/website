@@ -57,7 +57,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: var(--site-z-header);
   transition: top 400ms ease;
 
   &.hide {
@@ -81,9 +81,10 @@
   .logo {
     width: var(--ui-logo-width);
     position: relative;
-    z-index: 15;
+    z-index: var(--site-z-floating);
 
     img {
+      display: block;
       width: 100%;
     }
 
@@ -139,7 +140,7 @@
 
       >li {
         position: relative;
-        z-index: 2;
+        z-index: var(--site-z-base);
         display: block;
 
         a.btn {
@@ -251,7 +252,7 @@
       background-color: white !important;
       color: var(--blue-6) !important;
       display: flex;
-      z-index: 15;
+      z-index: var(--site-z-floating);
       position: fixed;
       left: var(--gutter-sm);
       width: calc(100% - var(--gutter-sm) * 2);
@@ -260,7 +261,7 @@
     }
 
     .close {
-      z-index: 15;
+      z-index: var(--site-z-floating);
       position: absolute;
       top: 22px;
       right: 24px;
@@ -384,7 +385,7 @@
     .search {
       display: flex;
       width: 100%;
-      z-index: 5;
+      z-index: var(--site-z-container);
 
       &:focus-within {
         outline: 2px solid var(--blue-1);
@@ -402,8 +403,12 @@
    * ================================= */
 
   @media (min-width: 1024px) and (any-hover: hover) {
+    --dd-offset-top: 44px;
+
     .content {
-      padding: 0 var(--gutter);
+      // Scale side padding with the viewport, between 24px and 48px.
+      padding-inline: clamp(24px, 3vw, 48px);
+      column-gap: 24px;
     }
 
     nav {
@@ -414,9 +419,15 @@
       font-size: var(--font-size-default);
 
       >ul {
+        gap: 6px;
+
         >li {
           display: inline-block;
-          margin-left: var(--spacer-sm);
+
+          >a.btn {
+            height: 36px;
+            padding: 8px 12px;
+          }
 
           a .icon,
           .dd li.mobile-only {
@@ -488,7 +499,7 @@
         background-color: white;
         padding: 18px 14px;
         min-width: 190px;
-        z-index: 11;
+        z-index: var(--site-z-dropdown);
 
         ul {
           display: block;
@@ -545,11 +556,12 @@
 
     a.btn#get-started__header {
       display: flex;
+      padding-inline: 20px;
     }
 
     .search {
       display: flex;
-      margin-right: var(--gutter-sm);
+      margin-right: 12px;
     }
 
     &.searching {

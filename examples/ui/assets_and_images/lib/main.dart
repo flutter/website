@@ -1,8 +1,8 @@
 import 'dart:async' show Future;
 
-import 'package:flutter/material.dart';
 // #docregion root-bundle-load
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:material_ui/material_ui.dart';
 
 Future<String> loadAsset() async {
   return await rootBundle.loadString('assets/config.json');

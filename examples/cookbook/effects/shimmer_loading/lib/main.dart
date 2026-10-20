@@ -18,7 +18,7 @@ class CircleListItem extends StatelessWidget {
         child: ClipOval(
           child: Image.network(
             'https://docs.flutter.dev/assets/images/'
-            'exercise/split-check/Avatar1.jpg',
+            'exercise/effects/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -58,7 +58,7 @@ class CardListItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
             'https://docs.flutter.dev/assets/images/'
-            'exercise/split-check/Food1.jpg',
+            'exercise/effects/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -191,4 +191,5 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
     );
   }
 }
+
 // #enddocregion ExampleUiAnimationState

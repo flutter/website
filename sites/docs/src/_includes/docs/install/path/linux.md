@@ -61,7 +61,7 @@
     <summary>Expand for <code>fish</code> instructions</summary>
 
     ```console
-    $ fish_add_path -g -p <path-to-sdk>/bin
+    $ fish_add_path -U -p <path-to-sdk>/bin
     ```
 
     For example, if you downloaded Flutter into a
@@ -69,7 +69,7 @@
     you'd run the following:
 
     ```console
-    $ fish_add_path -g -p ~/develop/flutter/bin
+    $ fish_add_path -U -p ~/develop/flutter/bin
     ```
 
     </details>

@@ -204,8 +204,8 @@ Relevant PRs:
 
 [`MediaQuery.of`]: {{site.api}}/flutter/widgets/MediaQuery/of.html
 [`Navigator.of`]: {{site.api}}/flutter/widgets/Navigator/of.html
-[`ScaffoldMessenger.of`]: {{site.api}}/flutter/material/ScaffoldMessenger/of.html
-[`Scaffold.of`]: {{site.api}}/flutter/material/Scaffold/of.html
+[`ScaffoldMessenger.of`]: {{site.material_ui}}/ScaffoldMessenger/of.html
+[`Scaffold.of`]: {{site.material_ui}}/Scaffold/of.html
 [`Router.of`]: {{site.api}}/flutter/widgets/Router/of.html
 [`Localizations.localeOf`]: {{site.api}}/flutter/widgets/Localizations/localeOf.html
 [`FocusTraversalOrder.of`]: {{site.api}}/flutter/widgets/FocusTraversalOrder/of.html
@@ -216,18 +216,18 @@ Relevant PRs:
 [`Actions.invoke`]: {{site.api}}/flutter/widgets/Actions/invoke.html
 [`AnimatedList.of`]: {{site.api}}/flutter/widgets/AnimatedList/of.html
 [`SliverAnimatedList.of`]: {{site.api}}/flutter/widgets/SliverAnimatedList/of.html
-[`CupertinoDynamicColor.resolve`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/resolve.html
-[`CupertinoDynamicColor.resolveFrom`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/resolveFrom.html
-[`CupertinoUserInterfaceLevel.of`]: {{site.api}}/flutter/cupertino/CupertinoUserInterfaceLevel/of.html
-[`CupertinoTheme.brightnessOf`]: {{site.api}}/flutter/cupertino/CupertinoTheme/brightnessOf.html
-[`CupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/CupertinoThemeData/resolveFrom.html
-[`NoDefaultCupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/NoDefaultCupertinoThemeData/resolveFrom.html
-[`CupertinoTextThemeData.resolveFrom`]: {{site.api}}/flutter/cupertino/CupertinoTextThemeData/resolveFrom.html
-[`MaterialBasedCupertinoThemeData.resolveFrom`]: {{site.api}}/flutter/material/MaterialBasedCupertinoThemeData/resolveFrom.html
+[`CupertinoDynamicColor.resolve`]: {{site.cupertino_ui}}/CupertinoDynamicColor/resolve.html
+[`CupertinoDynamicColor.resolveFrom`]: {{site.cupertino_ui}}/CupertinoDynamicColor/resolveFrom.html
+[`CupertinoUserInterfaceLevel.of`]: {{site.cupertino_ui}}/CupertinoUserInterfaceLevel/of.html
+[`CupertinoTheme.brightnessOf`]: {{site.cupertino_ui}}/CupertinoTheme/brightnessOf.html
+[`CupertinoThemeData.resolveFrom`]: {{site.cupertino_ui}}/CupertinoThemeData/resolveFrom.html
+[`NoDefaultCupertinoThemeData.resolveFrom`]: {{site.cupertino_ui}}/NoDefaultCupertinoThemeData/resolveFrom.html
+[`CupertinoTextThemeData.resolveFrom`]: {{site.cupertino_ui}}/CupertinoTextThemeData/resolveFrom.html
+[`MaterialBasedCupertinoThemeData.resolveFrom`]: {{site.material_ui}}/MaterialBasedCupertinoThemeData/resolveFrom.html
 [`MediaQuery.maybeOf`]: {{site.api}}/flutter/widgets/MediaQuery/maybeOf.html
 [`Navigator.maybeOf`]: {{site.api}}/flutter/widgets/Navigator/maybeOf.html
-[`ScaffoldMessenger.maybeOf`]: {{site.api}}/flutter/material/ScaffoldMessenger/maybeOf.html
-[`Scaffold.maybeOf`]: {{site.api}}/flutter/material/Scaffold/maybeOf.html
+[`ScaffoldMessenger.maybeOf`]: {{site.material_ui}}/ScaffoldMessenger/maybeOf.html
+[`Scaffold.maybeOf`]: {{site.material_ui}}/Scaffold/maybeOf.html
 [`Router.maybeOf`]: {{site.api}}/flutter/widgets/Router/maybeOf.html
 [`Localizations.maybeLocaleOf`]: {{site.api}}/flutter/widgets/Localizations/maybeLocaleOf.html
 [`FocusTraversalOrder.maybeOf`]: {{site.api}}/flutter/widgets/FocusTraversalOrder/maybeOf.html
@@ -237,9 +237,9 @@ Relevant PRs:
 [`Actions.maybeInvoke`]: {{site.api}}/flutter/widgets/Actions/maybeInvoke.html
 [`AnimatedList.maybeOf`]: {{site.api}}/flutter/widgets/AnimatedList/maybeOf.html
 [`SliverAnimatedList.maybeOf`]: {{site.api}}/flutter/widgets/SliverAnimatedList/maybeOf.html
-[`CupertinoDynamicColor.maybeResolve`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/maybeResolve.html
-[`CupertinoUserInterfaceLevel.maybeOf`]: {{site.api}}/flutter/cupertino/CupertinoUserInterfaceLevel/maybeOf.html
-[`CupertinoTheme.maybeBrightnessOf`]: {{site.api}}/flutter/cupertino/CupertinoTheme/maybeBrightnessOf.html
+[`CupertinoDynamicColor.maybeResolve`]: {{site.cupertino_ui}}/CupertinoDynamicColor/maybeResolve.html
+[`CupertinoUserInterfaceLevel.maybeOf`]: {{site.cupertino_ui}}/CupertinoUserInterfaceLevel/maybeOf.html
+[`CupertinoTheme.maybeBrightnessOf`]: {{site.cupertino_ui}}/CupertinoTheme/maybeBrightnessOf.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Issue 68637]: {{site.repo.flutter}}/issues/68637
 [Remove `nullOk` in `MediaQuery.of`]: {{site.repo.flutter}}/pull/68736

@@ -167,27 +167,27 @@ Other:
 * [Material Theme System Updates][]
 
 
-[accentColor]: {{site.api}}/flutter/material/ThemeData/accentColor.html
-[accentColorBrightness]: {{site.api}}/flutter/material/ThemeData/accentColorBrightness.html
-[accentIconTheme]: {{site.api}}/flutter/material/ThemeData/accentIconTheme.html
-[accentTextTheme]: {{site.api}}/flutter/material/ThemeData/accentTextTheme.html
-[`CheckboxTheme`]: {{site.api}}/flutter/material/CheckboxTheme-class.html
-[color-scheme-prop]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
-[`colorScheme.onSecondary`]: {{site.api}}/flutter/material/ColorScheme/onSecondary.html
-[`colorScheme.secondary`]: {{site.api}}/flutter/material/ColorScheme/secondary.html
-[`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
+[accentColor]: {{site.material_ui}}/ThemeData/accentColor.html
+[accentColorBrightness]: {{site.material_ui}}/ThemeData/accentColorBrightness.html
+[accentIconTheme]: {{site.material_ui}}/ThemeData/accentIconTheme.html
+[accentTextTheme]: {{site.material_ui}}/ThemeData/accentTextTheme.html
+[`CheckboxTheme`]: {{site.material_ui}}/CheckboxTheme-class.html
+[color-scheme-prop]: {{site.material_ui}}/ThemeData/colorScheme.html
+[`colorScheme.onSecondary`]: {{site.material_ui}}/ColorScheme/onSecondary.html
+[`colorScheme.secondary`]: {{site.material_ui}}/ColorScheme/secondary.html
+[`ColorScheme`]: {{site.material_ui}}/ColorScheme-class.html
 [Issue #56918]: {{site.repo.flutter}}/issues/56918
 [FloatingActionButton and ThemeData's accent properties]: /release/breaking-changes/fab-theme-data-accent-properties
-[`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
-[`FloatingActionButtonThemeData`]: {{site.api}}/flutter/material/FloatingActionButtonThemeData-class.html
+[`FloatingActionButton`]: {{site.material_ui}}/FloatingActionButton-class.html
+[`FloatingActionButtonThemeData`]: {{site.material_ui}}/FloatingActionButtonThemeData-class.html
 [Material Design spec]: {{site.material}}/styles/color
 [Material Theme System Updates]: /go/material-theme-system-updates
-[secondary color]: {{site.api}}/flutter/material/ColorScheme/secondary.html
-[onSecondary color]: {{site.api}}/flutter/material/ColorScheme/onSecondary.html
+[secondary color]: {{site.material_ui}}/ColorScheme/secondary.html
+[onSecondary color]: {{site.material_ui}}/ColorScheme/onSecondary.html
 [PR #81336]: {{site.repo.flutter}}/pull/81336
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
-[text-scheme-prop]: {{site.api}}/flutter/material/ThemeData/textTheme.html
-[`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
-[`Theme`]: {{site.api}}/flutter/material/Theme-class.html
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`ThemeData.estimateBrightnessForColor()`]: {{site.api}}/flutter/material/ThemeData/estimateBrightnessForColor.html
+[text-scheme-prop]: {{site.material_ui}}/ThemeData/textTheme.html
+[`TextTheme`]: {{site.material_ui}}/TextTheme-class.html
+[`Theme`]: {{site.material_ui}}/Theme-class.html
+[`ThemeData`]: {{site.material_ui}}/ThemeData-class.html
+[`ThemeData.estimateBrightnessForColor()`]: {{site.material_ui}}/ThemeData/estimateBrightnessForColor.html

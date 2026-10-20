@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:args/args.dart';
 import 'package:args/command_runner.dart';
 
 import 'src/commands/analyze_dart.dart';
@@ -13,6 +14,7 @@ import 'src/commands/clean.dart';
 import 'src/commands/deploy.dart';
 import 'src/commands/format_dart.dart';
 import 'src/commands/generate_release_notes.dart';
+import 'src/commands/optimize_images.dart';
 import 'src/commands/refresh_excerpts.dart';
 import 'src/commands/serve.dart';
 import 'src/commands/stage_preview.dart';
@@ -33,7 +35,7 @@ final class DashSiteCommandRunner extends CommandRunner<int> {
     argParser.addOption(
       siteOptionName,
       defaultsTo: Site.docs.name,
-      allowed: [for (final site in Site.values) site.name],
+      valueHelp: Site.values.map((site) => site.name).join('|'),
       help: 'The site to operate on.',
     );
 
@@ -46,10 +48,33 @@ final class DashSiteCommandRunner extends CommandRunner<int> {
     addCommand(DeployCommand());
     addCommand(FormatDartCommand());
     addCommand(GenerateReleaseNotesCommand());
+    addCommand(OptimizeImagesCommand());
     addCommand(RefreshExcerptsCommand());
     addCommand(ServeSiteCommand());
     addCommand(StagePreviewCommand());
     addCommand(TestDartCommand());
     addCommand(VerifyFirebaseJsonCommand());
+  }
+
+  @override
+  ArgResults parse(Iterable<String> args) {
+    final results = super.parse(args);
+    final siteName = results.option(siteOptionName);
+
+    if (siteName == 'blog') {
+      usageException(
+        'The Flutter blog is part of the www site. '
+        'Use --site=www instead of --site=blog.',
+      );
+    }
+
+    if (!Site.values.any((site) => site.name == siteName)) {
+      usageException(
+        'Invalid option value "$siteName" for "--$siteOptionName". '
+        'Valid options: ${Site.values.map((site) => site.name).join(', ')}.',
+      );
+    }
+
+    return results;
   }
 }

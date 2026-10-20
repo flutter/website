@@ -57,7 +57,8 @@ Available providers include the following:
 
 <Tab name="Firebase AI Logic">
 
-To connect to Gemini using the Vertex AI for Firebase SDK, follow these instructions:
+To connect to Gemini using the Firebase AI Logic SDK,
+follow these instructions:
 
  1. [Create a new Firebase project][] using the Firebase Console.
 
@@ -77,7 +78,7 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
     bindings are initialized and then initialize Firebase:
 
     ```dart
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
     import 'package:firebase_core/firebase_core.dart';
     import 'firebase_options.dart';
 
@@ -90,7 +91,7 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
     }
     ```
 
- 6. Create an instance of the Vertex AI for Firebase generative model and wrap it
+ 6. Create an instance of the Firebase AI Logic generative model and wrap it
     with your `SurfaceController` and `A2uiTransportAdapter`:
 
     ```dart
@@ -183,7 +184,7 @@ Follow these instructions:
     to the agent-generated content.
 
     ```dart
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
     import 'package:genui/genui.dart';
     import 'package:genui_a2a/genui_a2a.dart';
     import 'package:logging/logging.dart';
@@ -620,7 +621,7 @@ To add your own widgets, use the following instructions.
 
     ```dart
     import 'package:json_schema_builder/json_schema_builder.dart';
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
     import 'package:genui/genui.dart';
 
     final _schema = S.object(
