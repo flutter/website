@@ -6,58 +6,56 @@ description: >-
 ---
 
 The `dart:ffi` (Foreign Function Interface) library is a core Dart SDK library
-that provides low-level APIs to call C-ABI functions and manage native memory
-from Dart.
+that provides the low-level APIs to call C-ABI functions from Dart.
 
-Unlike code generation tools such as [Pigeon](/platform-integration/interop/pigeon),
+Rather than a code generation tool like [Pigeon](/platform-integration/interop/pigeon),
 [FFIgen](/platform-integration/interop/ffigen),
 or [JNIgen](/platform-integration/interop/jnigen),
-`dart:ffi` is the underlying runtime layer that powers those tools
-and enables direct native memory interop.
+`dart:ffi` is the underlying technology that powers these tools
+and enables native memory interop.
 
 ## When to use `dart:ffi`
 
-When you use FFIgen or JNIgen to generate Dart bindings for low-level APIs,
-the generated bindings often take native pointers or C structs
-rather than Dart objects like `String` or `List`.
-Because Dart memory is garbage collected
+When you use FFIgen or JNIgen to generate Dart bindings,
+the generated code does not automatically convert Dart objects
+like `String` or `List` into native formats.
+Because Dart memory is automatically garbage collected
 and native C memory is manually managed,
-you use `dart:ffi` and `package:ffi` to bridge the two memory models:
+you must use `dart:ffi` to bridge this gap.
 
-- **Memory allocation.**
-  Allocate space on the native heap for C pointers, structs, and buffers,
-  and free that memory when the native call finishes to prevent memory leaks.
-- **Data conversion.**
-  Convert Dart types (such as `String` or typed data lists) into C-compatible
-  representations (such as `Pointer<Utf8>`) that native code can read.
+The two most common scenarios when `dart:ffi` is needed are
+memory allocation and data conversion.
 
-## Core libraries: `dart:ffi` and `package:ffi`
+With memory allocation, you use `dart:ffi` to allocate space on the system heap
+for native arguments, and you must manually free that memory when done.
+This helps avoid memory leaks.
 
-To work with native memory in Dart, you use two libraries together:
+With data conversion, you use `dart:ffi` to convert Dart data types
+so they can be read by native code.
 
-- **`dart:ffi`.**
-  Built into the core Dart SDK.
-  Provides native representation types (`Pointer`, `Struct`, `Union`, `Int32`),
-  `@Native` annotations, and dynamic library lookup APIs.
-- **`package:ffi`.**
-  A companion package on pub.dev that provides native memory allocators
-  (`calloc`, `malloc`, and `Arena`) and string conversion helpers
-  (`toNativeUtf8`, `toDartString`).
+## Core tools: `dart:ffi` and `package:ffi`
+
+To write interop code, you use two libraries:
+
+- **`dart:ffi`:** Built into the core Dart SDK.
+  It provides native representation types and lookup signatures.
+- **`package:ffi`:** A required dependency for working with `dart:ffi`.
+  It provides memory allocation methods and conversion helpers.
 
 ## Concurrency in Flutter
 
-FFI calls execute synchronously on the calling thread.
-If you invoke a long-running or blocking C function on your Flutter app's
-main UI isolate, your app drops frames or freezes.
-To keep the UI responsive, run blocking FFI calls inside a background
-Dart isolate using `Isolate.run`.
+FFI calls are synchronous and run on the thread they are called on.
+If you invoke a heavy or blocking C function on your Flutter app's
+main UI thread, your app freezes or drops frames.
+To prevent this, execute blocking FFI calls inside a background Dart isolate
+using `Isolate.run`.
 
 ## Resources
 
-To explore code examples for memory allocation, string conversion,
-structs, and dynamic library loading, consult the following resources:
+To explore examples of memory allocation, string conversion,
+and dynamic library loading, refer to these Dart interop resources:
 
-- [C interop guide on dart.dev][dart-c-interop]
+- [C interop guide (includes code examples for pointers, memory allocation, and structs)][dart-c-interop]
 - [`dart:ffi` API reference][dart-ffi-api]
 - [`package:ffi` on pub.dev][package-ffi-pub]
 

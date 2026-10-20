@@ -7,149 +7,134 @@ description: >-
 
 ## Overview
 
-FFIgen (Foreign Function Interface generator) is a code generator tool
+FFIgen (the Foreign Function Interface generator) is a code generator tool
 that creates type-safe Dart bindings for C libraries and Apple frameworks
-(Objective-C and `@objc`-annotated Swift).
-With FFIgen, you can call C, iOS, and macOS APIs directly and synchronously
-from your Dart code.
+(Objective-C and Swift).
+This allows you to call Apple platform APIs (iOS and macOS) directly
+and synchronously from your Dart code.
 
 :::note
-Direct Swift interop without Objective-C compatibility annotations (`@objc`)
-is experimental and uses [`package:swiftgen`][swiftgen-pub].
-For production Swift plugins on iOS and macOS,
-use [Pigeon](/platform-integration/interop/pigeon).
+Direct Swift interop is in experimental support.
 :::
 
 ## When to use FFIgen
 
 Use FFIgen when you need to call C libraries,
-wrap compiled C-ABI binaries (from C, C++, Rust, or Go),
-or interact directly with Objective-C frameworks on iOS and macOS.
+wrap compiled binaries (like C, C++, Rust, or Go),
+or interact directly with Objective-C and Swift frameworks on iOS and macOS.
 
 :::note
 FFIgen parses C and Objective-C headers.
-To wrap a C++ library, expose a C-compatible interface (`extern "C"`)
+To wrap C++ libraries, you must expose a C-compatible interface
 around your C++ code.
-FFIgen can't parse C++ classes or templates directly.
+FFIgen cannot parse C++ classes or templates directly.
 :::
 
-For cross-platform plugin development on Android, iOS, and macOS
-where you don't need direct access to raw C pointers,
-use [Pigeon](/platform-integration/interop/pigeon) instead.
+For standard, cross-platform plugin development where you don't have
+critical data transfers, use [Pigeon](/platform-integration/interop/pigeon)
+instead.
 
 ## Developer flow
 
-Generating bindings with FFIgen follows four steps:
+Generating bindings with FFIgen follows these steps:
 
 1.  Reference the native headers.
 1.  Write the FFIgen configuration script.
-1.  Generate the bindings by running the configuration script.
+1.  Generate the bindings by running FFIgen.
 1.  Call the generated code from Dart.
 
-To start, identify the native header files or Apple framework APIs
-that you want to wrap.
-Then create a configuration script in `tool/ffigen.dart`
-(some existing templates, such as `flutter create --template=package_ffi`,
-use a `ffigen.yaml` file).
+To start, identify the native header files or APIs you want to wrap.
+Then write a configuration script (typically `tool/ffigen.dart` or
+`ffigen.yaml`).
 This configuration specifies where the header files are located
-and where to write the generated Dart bindings.
+and where to output the generated Dart code.
 
-Next, run the configuration script (`dart run tool/ffigen.dart`,
-or `dart run ffigen` if your project uses `ffigen.yaml`),
-which parses the headers and generates the corresponding Dart bindings.
+Next, run the generator tool (such as `dart run tool/ffigen.dart` or
+`dart run ffigen`), which parses the headers and generates the corresponding
+Dart bindings.
 
-Finally, import the generated Dart file into your app or package
-and call the functions directly.
-Because FFIgen communicates directly through the underlying FFI layer,
-consult the [`dart:ffi` guide](/platform-integration/interop/dart-ffi)
-to learn how to manage native memory lifetimes
-and run blocking native calls without freezing the UI thread.
+Last, import the generated Dart file into your app and call the functions
+directly.
+Because FFIgen communicates directly using the underlying FFI layer,
+refer to the [`dart:ffi` guide](/platform-integration/interop/dart-ffi)
+to learn how to manage native memory lifetimes and execute native calls
+without blocking the UI thread.
 
 :::note
-When the native API changes, update your configuration script
+If the native API changes, you need to update your configuration script
 and regenerate the bindings.
 :::
 
-## Examples
+## Example
 
-To explore complete implementations of this workflow,
+To explore a complete implementation of this flow,
 including how to configure the generator,
-refer to the [official FFIgen examples][ffigen-examples]:
+refer to the [official FFIgen examples][ffigen-examples].
 
-- The `simple` example demonstrates the general workflow with a minimal C API
-  (a single function in one header file).
-- The `objective_c` and `swift` examples demonstrate calling Apple frameworks
-  using `tool/ffigen.dart`.
-- The [`code_assets` examples][code-assets-examples] demonstrate real-world
-  bundling use cases, such as system hostname lookups and audio playback.
+The Add example highlights the general flow with a toy native API
+(one function in a single header file).
+
+The `code_assets` examples highlight real-world examples like
+system hostname lookups and audio playback.
 
 ## Constraints and limitations
 
-Keep the following general considerations in mind when working with FFIgen:
+Some general considerations when working with FFIgen:
 
 ### Source header files
 
 FFIgen uses `libclang` to parse headers.
-Resolve any compiler warnings logged during generation
-to prevent unexpected runtime crashes.
+Always resolve compiler warnings logged during generation
+to prevent runtime crashes.
 
-### Operating system differences
+### OS differences
 
-Dart has no preprocessor equivalent to C macros
-(such as `#if TARGET_OS_IPHONE`),
-so handle platform-specific API variations at runtime
-using `Platform.isIOS` or `Platform.isMacOS` checks.
+Dart has no equivalent of C macros (like `#if TARGET_OS_IPHONE`),
+so you must handle minor API variations using runtime `Platform.isIOS` checks.
+
+Some Objective-C and Swift-specific pitfalls when working with FFIgen:
 
 ### Objective-C bindings
 
-Objective-C methods are resolved dynamically at runtime.
-FFIgen maps Objective-C selectors to Dart method signatures automatically,
-but inspect the generated bindings if you wrap heavily overloaded
-native methods.
+Objective-C methods are dynamically resolved.
+FFIgen automatically maps method selectors to Dart signatures,
+but you should verify selectors by reading the bindings
+if you are using heavily overloaded native methods.
 
 ### Objective-C memory management
 
-Dart uses garbage collection, whereas Objective-C uses reference counting.
-Passing Dart closures that capture native wrapper objects can create
-reference cycles across runtimes and leak memory.
-To avoid retain cycles, consult the
-[Objective-C memory management guide][objc-gc-doc].
+Dart uses garbage collection while Objective-C uses reference counting.
+Passing Dart closures that close over native wrapper objects can easily create
+reference cycles and leak memory.
 
-### Objective-C runtime type checks
+### Objective-C runtime checks
 
-FFIgen wrappers enforce static Dart types,
-but the underlying Objective-C object might be a different subclass at runtime.
-Because of this, Dart's `is` and `as` keywords don't check the Objective-C
-runtime type.
+FFIgen wrappers enforce Dart static types,
+but the underlying Objective-C object might have a different runtime subclass,
+so Dart's `is` and `as` keywords won't work as expected.
 Use `.isA()` and `.as()` instead.
 
 ### Objective-C multithreading
 
-UI-related Objective-C calls must run on the platform's main thread.
-Some native callbacks can also crash your app if invoked on the wrong thread.
+UI-related Objective-C calls must run on the iOS main platform thread.
+Also, some types of callbacks can crash your app
+if they are executed on the wrong thread.
 
 ### Swift compatibility
 
-FFIgen interacts with Swift through Objective-C compatibility headers.
-Swift classes and methods must be annotated with `@objc` (or `@objcMembers`)
-and inherit from `NSObject`.
-Pure Swift features without an Objective-C representation—such as Swift structs,
-generics, and enums with associated values—aren't supported by FFIgen.
-For Swift plugins, use [Pigeon](/platform-integration/interop/pigeon),
-or explore the experimental [`package:swiftgen`][swiftgen-pub] package.
+FFIgen interacts with Swift through Objective-C.
+Pure Swift features (such as structs, generics, or enums associated with values)
+are not supported, and classes must be annotated with `@objc`.
+For pure Swift interop, explore the experimental [`package:swiftgen`][swiftgen-pub]
+package.
 
 ## Resources
 
-To learn about generating C and Objective-C bindings,
-consult the following resources:
-
-- [`package:ffigen` on pub.dev][ffigen-pub]
-- [`package:objective_c` on pub.dev][objc-pub]
+- [FFIgen package on pub.dev][ffigen-pub]
+- [`objective_c` package on pub.dev][objc-pub]
 - [Official FFIgen examples on GitHub][ffigen-examples]
 
 [ffigen-pub]: {{site.pub-pkg}}/ffigen
 [objc-pub]: {{site.pub-pkg}}/objective_c
 [swiftgen-pub]: {{site.pub-pkg}}/swiftgen
 [ffigen-examples]: https://github.com/dart-lang/native/tree/main/pkgs/ffigen/example
-[code-assets-examples]: {{site.pub-pkg}}/code_assets/example
-[objc-gc-doc]: https://github.com/dart-lang/native/blob/main/pkgs/ffigen/doc/objc_gc.md

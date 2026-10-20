@@ -8,15 +8,15 @@ description: >-
 ## Overview
 
 Pigeon is the recommended default tool for building Flutter plugins.
-Pigeon replaces the manual setup of raw platform channels
-with generated, type-safe APIs,
-which prevents typos in method names and mismatched argument types.
+Pigeon replaces the manual setup of raw platform channels with generated,
+type-safe APIs.
+This helps prevent typos in method names or mismatched argument types.
 
-## Choose a communication option
+## Choose a communication option with Pigeon
 
-Pigeon supports two communication options depending on your target platform
-and performance requirements:
-native interop (direct FFI and JNI) and platform channels.
+Pigeon supports the following two communication options depending on your target
+platform and performance needs:
+native interop (direct FFI and JNI) or platform channels.
 
 :::note
 For low-level integrations that require direct access to native memory
@@ -24,123 +24,99 @@ or C and C++ libraries, use [FFIgen](/platform-integration/interop/ffigen)
 or [JNIgen](/platform-integration/interop/jnigen) instead.
 :::
 
-### Pigeon with native interop (recommended for Android, iOS, and macOS)
+### Pigeon with native interop
 
-Pigeon with native interop generates direct native bindings
+Pigeon with native interop (direct FFI and JNI) generates direct native bindings
 using FFI on iOS and macOS, and JNI on Android.
-This is the recommended default when targeting Android, iOS, or macOS.
 
-Use this option when building for Android, iOS, or macOS,
-especially if your use case requires any of the following capabilities:
+Use this option if your use case requires any of the following:
 
-- Synchronous execution on the native platform.
-- High-frequency data streaming (for example, audio or camera frames).
-- Calling native code directly from background [Dart isolates][].
+- You need synchronous execution on your native platform.
+- You are doing high-frequency data streaming
+  (for example, audio or camera frames).
+- You are calling native code from background Dart isolates.
 
 ### Pigeon with platform channels
 
 Pigeon with platform channels generates standard platform channels that support
 Android, iOS, macOS, Windows, and Linux.
-You can generate platform channels for Windows and Linux from the same
-Pigeon definition file that uses native interop on Android, iOS, and macOS.
 
-Use this option if your use case requires any of the following capabilities:
+Use this option if your use case requires any of the following:
 
-- Desktop support on Windows or Linux.
-- Zero external toolchains.
+- You need desktop support on Windows or Linux.
+- You want zero external toolchains.
 
 ## Developer flow
 
-The developer workflow with Pigeon follows four steps:
+The developer experience with Pigeon follows a structured cycle:
 
 1.  Create the Pigeon definition file.
-1.  Generate the bindings.
+1.  Generate the code.
 1.  Implement the native interface.
 1.  Call the API from Flutter.
 
 To start, create a Pigeon definition file in Dart
 (typically outside of your `lib/` directory, such as `pigeons/messages.dart`).
-This file defines your data structures and API interfaces using Pigeon
-annotations such as `@HostApi` and `@FlutterApi`.
-Next, run the Pigeon generator tool (`dart run pigeon`),
-which parses your Pigeon definition file and generates code for both Dart
-and your target native platforms.
+This file defines the data structures and the API interfaces
+using Pigeon annotations like `@HostApi` and `@FlutterApi`.
+Next, run the Pigeon generator tool, which parses your Pigeon definition file
+and produces the necessary code for both Dart and your target native platform.
 
-To turn on native interop, set `appDirectory`, `swiftOptions`,
-and `kotlinOptions` in the `@ConfigurePigeon` annotation at the top of your
-Pigeon definition file:
-
-```dart title="pigeons/messages.dart"
-@ConfigurePigeon(
-  PigeonOptions(
-    // Tells FFIgen and JNIgen where your compiled app lives
-    // (use './' for an app, or 'example/' for a plugin).
-    appDirectory: 'example/',
-    // iOS and macOS: call your Swift implementation directly through FFI.
-    swiftOptions: SwiftOptions(useFfi: true),
-    // Android: call your Kotlin implementation directly through JNI.
-    kotlinOptions: KotlinOptions(useJni: true),
-  ),
-)
-```
-
+:::note
+If you're using the Pigeon with native interop communication option,
+set `appDirectory`, `swiftOptions: SwiftOptions(useFfi: true)`, and
+`kotlinOptions: KotlinOptions(useJni: true)` in the `@ConfigurePigeon`
+section of your Pigeon definition file.
 For complete prerequisites and build configuration,
-consult the [Pigeon native interop guide][pigeon-native-guide].
+refer to the [native interop guide][pigeon-native-guide].
+:::
 
-After generating the code, implement the generated native interfaces
-in your app's or plugin's native platform directory
-(such as `android/`, `ios/`, or `macos/`)
+After the code is generated, you implement the generated native interfaces
+in your host project (such as `android/`, `ios/`, or `macos/`)
 and register them with the Flutter engine.
-Finally, call the generated Dart classes from your Flutter app,
+Finally, you call the generated Dart classes from your Flutter app,
 or invoke the generated native APIs to call back into your Dart code.
 
-To modify the API later, update the Pigeon definition file,
-regenerate the code, and update your native implementation.
+If you need to modify the API, first modify the Pigeon definition file,
+regenerate the code, and then update your implementation accordingly.
 
 ## Examples
 
-To explore complete implementations of this workflow,
+To explore a complete implementation of this flow,
 including the Pigeon definition file, generated code,
 and native implementations, refer to the following examples:
 
 - [Example of Pigeon with native interop][pigeon-native-example]
 - [Example of Pigeon with platform channels][pigeon-example]
 - [`shared_preferences` plugin][shared-preferences-source]
-  (a production plugin that uses Pigeon with native interop)
 
 ## Constraints and limitations
 
-Keep the following constraints in mind when working with Pigeon:
+### High-frequency data
 
-### High-frequency raw pointers
-
-For specialized use cases that require direct manipulation of raw native
-pointers or manual C and C++ memory management,
+For specialized use cases requiring direct manipulation of raw native pointers
+or C and C++ memory management,
 use [FFIgen](/platform-integration/interop/ffigen) or
 [JNIgen](/platform-integration/interop/jnigen) instead.
 
 ### Inheritance
 
-Pigeon doesn't support complex class inheritance.
+Pigeon does not support complex inheritance.
 Flatten your data models where possible.
 
-### Asynchronous errors on platform channels
+### (Pigeon with platform channels only) Async errors
 
-When using Pigeon with platform channels, native implementations of `@async`
-methods must return errors through the provided callback.
+For `@async` methods, native code must return errors through the provided
+callback.
 
 ## Resources
 
-To learn about building and migrating plugins with Pigeon,
-consult the following resources:
-
 - [Migrating from Pigeon with platform channels to Pigeon with native interop][pigeon-migration-guide]
 - [Pigeon native interop guide][pigeon-native-guide]
-- [`package:pigeon` on pub.dev][pigeon-pub]
+- [Pigeon package on pub.dev][pigeon-pub]
 - [Pigeon source code][pigeon-source]
 - [Flutter native interop demos][native-interop-demos]
 
-[Dart isolates]: {{site.dart-site}}/language/isolates
 [pigeon-pub]: {{site.pub-pkg}}/pigeon
 [pigeon-source]: {{site.repo.packages}}/tree/main/packages/pigeon
 [pigeon-example]: {{site.repo.packages}}/tree/main/packages/pigeon/example
