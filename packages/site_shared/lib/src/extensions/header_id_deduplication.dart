@@ -25,15 +25,22 @@ final class HeaderIdDeduplicationExtension implements PageExtension {
         if (heading.attributes['id'] case final id?) (heading, id),
     ];
 
-    final originalIds = {for (final (_, id) in headings) id};
-    final usedIds = <String>{};
+    // Start with every original ID taken so a suffixed ID never reuses one.
+    final takenIds = {for (final (_, id) in headings) id};
+    final seenIds = <String>{};
 
-    for (final (heading, originalId) in headings) {
-      final headerId = _uniqueId(originalId, usedIds, originalIds);
-      usedIds.add(headerId);
-      if (headerId != originalId) {
-        heading.attributes['id'] = headerId;
+    for (final (heading, id) in headings) {
+      // The first heading with each ID keeps it.
+      if (seenIds.add(id)) continue;
+
+      var suffix = 1;
+      while (takenIds.contains('$id-$suffix')) {
+        suffix += 1;
       }
+
+      final uniqueId = '$id-$suffix';
+      takenIds.add(uniqueId);
+      heading.attributes['id'] = uniqueId;
     }
 
     return nodes;
@@ -51,23 +58,5 @@ final class HeaderIdDeduplicationExtension implements PageExtension {
           else if (node.children case final children?)
             ..._findHeadings(children),
     ];
-  }
-
-  /// Returns [originalId] if no earlier heading uses it, otherwise
-  /// the first suffixed form that's neither used nor
-  /// the original ID of another heading.
-  static String _uniqueId(
-    String originalId,
-    Set<String> usedIds,
-    Set<String> originalIds,
-  ) {
-    if (!usedIds.contains(originalId)) return originalId;
-
-    for (var i = 1; ; i += 1) {
-      final candidate = '$originalId-$i';
-      if (!usedIds.contains(candidate) && !originalIds.contains(candidate)) {
-        return candidate;
-      }
-    }
   }
 }

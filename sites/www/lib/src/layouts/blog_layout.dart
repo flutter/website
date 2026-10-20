@@ -108,7 +108,7 @@ class BlogLayout extends DefaultLayout {
                   figureClass: 'blog-cover-image',
                   isHighPriority: true,
                 ),
-              if (post != null) const BlogTableOfContents(),
+              if (isPost) const BlogTableOfContents(),
               child,
               if (isPost)
                 BlogNextPosts(currentPage: page, category: pageCategory),

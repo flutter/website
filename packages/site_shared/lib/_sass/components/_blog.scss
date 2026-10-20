@@ -537,6 +537,52 @@
   }
 }
 
+.blog-toc {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--site-inset-bgColor);
+  border: 1px solid var(--site-inset-borderColor);
+  border-radius: var(--ui-border-radius-sm);
+
+  summary {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--site-ui-fontFamily);
+    font-weight: var(--site-fontWeight-bold);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    .material-symbols {
+      transition: transform 0.15s var(--ui-anim-func);
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+  }
+
+  details[open] summary .material-symbols {
+    transform: rotate(90deg);
+  }
+
+  ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1rem;
+    list-style: none;
+    border-left: 1px solid var(--site-outline-variant);
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+}
+
 .blog-next-posts {
   margin: 4rem 0;
   padding-top: 4rem;

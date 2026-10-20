@@ -33,7 +33,7 @@ final class BlogTableOfContents extends StatelessComponent {
     }
 
     return nav(
-      classes: 'toc',
+      classes: 'blog-toc',
       attributes: {'aria-label': 'In this article'},
       [
         details(
@@ -44,7 +44,7 @@ final class BlogTableOfContents extends StatelessComponent {
                 .text('In this article'),
               ],
             ),
-            div(classes: 'toc-list', [toc.build()]),
+            toc.build(),
           ],
         ),
       ],
