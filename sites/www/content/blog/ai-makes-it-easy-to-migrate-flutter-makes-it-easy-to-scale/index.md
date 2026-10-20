@@ -75,7 +75,7 @@ two agents working in separate language paradigms make diverging assumptions:
 - **On Android:** Agent B implements that same state machine using a reactive
   flow that queues events.
 
-<DashImage src="images/parallel-agent-challenge.webp" alt="Takeaway 2: The Parallel Agent Challenge. Directing two autonomous agents on two separate native codebases doesn't eliminate coordination — it introduces non-deterministic drift, shown as two agent trajectories diverging over time." />
+<DashImage src="images/parallel-agent-challenge.webp" alt="The Parallel Agent Challenge. Directing two autonomous agents on two separate native codebases doesn't eliminate coordination — it introduces non-deterministic drift, shown as two agent trajectories diverging over time." />
 
 Both implementations pass local unit tests on Day 1. Weeks later in production,
 Android checkout conversion drops by 3% because retry timing, for example,
