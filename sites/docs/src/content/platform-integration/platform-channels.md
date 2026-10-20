@@ -7,12 +7,12 @@ description: Learn how to write platform-specific code using Flutter's platform 
 <?code-excerpt path-base="platform_integration"?>
 
 :::note
-Refer to the [Native interop landing page](/platform-integration/interop)
-for an overview and recommended approaches for calling native platform code.
+Refer to the [Native interop overview](/platform-integration/interop)
+for recommended approaches to calling native platform code.
 :::
 
 Platform channels pass messages between Flutter and your host platform
-(Android, iOS, macOS, Windows, Linux, or Web).
+(Android, iOS, macOS, Windows, or Linux).
 
 While [Pigeon](/platform-integration/interop/pigeon),
 [FFIgen](/platform-integration/interop/ffigen), and
@@ -25,13 +25,13 @@ maintaining existing codebases.
 You can use platform-specific code in your Flutter app.
 Common ways to do this include:
 
-* Use Flutter's platform channel APIs to pass messages
-  between Flutter and your desired platforms. For more
-  details, refer to [Call platform-specific code using platform channels](#example).
+- Use Flutter's platform channel APIs to pass messages
+  between Flutter and your target platforms.
+  For details, refer to
+  [Call platform-specific code using platform channels](#example).
 
-* Use the `Pigeon` package to generate type-safe
-  platform-specific code. For more
-  details, refer to [Pigeon](/platform-integration/interop/pigeon).
+- Use [Pigeon](/platform-integration/interop/pigeon) to generate type-safe
+  platform-specific bindings.
 
 Flutter supports the following platforms and
 platform-specific languages:
