@@ -24,7 +24,8 @@ final class BlogTableOfContents extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    final pageData = context.page.data;
+    final page = context.page;
+    final pageData = page.data;
     final toc = pageData['toc'];
     if (pageData.page['showToc'] == false ||
         toc is! TableOfContents ||
@@ -44,10 +45,18 @@ final class BlogTableOfContents extends StatelessComponent {
                 .text('In this article'),
               ],
             ),
-            toc.build(),
+            _buildList(toc.entries, page.url),
           ],
         ),
       ],
     );
   }
+
+  static Component _buildList(List<TocEntry> entries, String pageUrl) => ul([
+    for (final entry in entries)
+      li([
+        a(href: '$pageUrl#${entry.id}', [.text(entry.text)]),
+        if (entry.children.isNotEmpty) _buildList(entry.children, pageUrl),
+      ]),
+  ]);
 }

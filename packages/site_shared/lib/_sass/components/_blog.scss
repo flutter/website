@@ -572,14 +572,23 @@
   }
 
   ul {
-    margin: 0.75rem 0 0;
-    padding-left: 1rem;
+    margin: 0;
+    padding-left: 0.75em;
     list-style: none;
+  }
+
+  details > ul {
+    margin-top: 0.75rem;
+    padding-left: 1rem;
     border-left: 1px solid var(--site-outline-variant);
   }
 
   li {
     margin: 0.5rem 0;
+  }
+
+  a {
+    overflow-wrap: anywhere;
   }
 }
 
