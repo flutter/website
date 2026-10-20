@@ -4,7 +4,7 @@ description: >-
   Why verification speed, not code generation, is the real bottleneck of
   agentic development, and how a single source of truth powers multi-platform
   scale.
-publishDate: 2026-10-21
+publishDate: 2026-10-20
 author:
   - carlosmendonca
   - twerske
