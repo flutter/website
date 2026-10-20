@@ -538,8 +538,10 @@
 }
 
 .blog-toc {
+  --toc-icon-size: 24px;
+
   margin: 1.5rem 0;
-  padding: 1rem 1.25rem;
+  padding: 1rem;
   background: var(--site-inset-bgColor);
   border: 1px solid var(--site-inset-borderColor);
   border-radius: var(--ui-border-radius-sm);
@@ -559,6 +561,7 @@
     }
 
     .material-symbols {
+      font-size: var(--toc-icon-size);
       transition: transform 0.15s var(--ui-anim-func);
 
       @media (prefers-reduced-motion: reduce) {
@@ -579,7 +582,10 @@
 
   details > ul {
     margin-top: 0.75rem;
-    padding-left: 1rem;
+    // Center the 1px border under the chevron and
+    // align the entries with the summary text.
+    margin-left: calc(var(--toc-icon-size) / 2 - 0.5px);
+    padding-left: calc(var(--toc-icon-size) / 2 + 0.25rem - 0.5px);
     border-left: 1px solid var(--site-outline-variant);
   }
 
