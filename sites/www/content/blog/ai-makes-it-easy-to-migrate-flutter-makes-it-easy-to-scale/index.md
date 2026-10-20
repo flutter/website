@@ -60,10 +60,10 @@ multiple stacks.
 
 ### Takeaway 2: Parallel agents introduce non-deterministic drift
 
-In systems engineering, coordination overhead between discrete interfaces grows
-combinatorially:
+In systems engineering, coordination overhead between _N_ discrete interfaces
+grows combinatorially:
 
-<p style="text-align: center; font-size: 1.25rem; margin: 1.5rem 0;"><math display="block"><mfrac><mrow><mi>N</mi><mo>(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><mn>2</mn></mfrac></math></p>
+<p style="text-align: center; font-size: 1.25rem; margin: 1.5rem 0;"><math display="block" aria-label="N times (N minus 1) divided by 2"><mfrac><mrow><mi>N</mi><mo>(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><mn>2</mn></mfrac></math></p>
 
 A common assumption is that AI agents erase that coordination tax: *"We'll just
 have Agent A write Swift and Agent B write Kotlin."* In practice, every LLM
@@ -100,7 +100,7 @@ loop:
 | :---- | :---- | :---- |
 | **Code-to-Run Latency** | **2 to 5 minutes** per build, link, archive, and simulator deployment. A 4-turn debugging run costs 20+ minutes waiting on compilers. | **\<200 milliseconds** via Stateful Hot Reload, injecting code changes into the running Dart VM while preserving state. |
 | **Automated Testing** | Requires heavy OS simulator lifecycles and background emulators. | **\<500 milliseconds** via headless widget tests executing in hermetic environments. |
-| **UI & State Inspection** | **Probabilistic and slow:** captures simulator screenshots and passes pixels to vision models to guess layout accuracy. | **Deterministic and structured:** queries the Dart VM Service and DevTools via MCP to inspect the exact Widget and RenderObject tree. |
+| **UI & State Inspection** | **Probabilistic and slow:** Captures simulator screenshots and passes pixels to vision models to guess layout accuracy. | **Deterministic and structured:** Queries the Dart VM Service and DevTools via MCP to inspect the exact Widget and RenderObject tree. |
 
 Flutter was designed to give human developers instant feedback. That exact
 architecture makes it uniquely effective for high-speed agentic verification.
@@ -132,9 +132,9 @@ suite and leak linters).
 To give every Flutter team that same harness, we launched three core
 capabilities:
 
-- **Official Dart and Flutter Agent Plugins:** Bundles our dedicated Model
-  Context Protocol (MCP) server alongside 10 Flutter and 14 Dart skills. It
-  gives agents direct access to the Dart Analyzer and Widget Inspector to
+- **Official Dart and Flutter Agent Plugins:** Bundle our dedicated Model
+  Context Protocol (MCP) server alongside 10 Flutter and 14 Dart skills. They
+  give agents direct access to the Dart Analyzer and Widget Inspector to
   enforce framework best practices.
 - **Specialized Antigravity Agents:** Embedded agents that automatically audit
   running Flutter apps for accessibility issues and submit idiomatic fixes.
@@ -192,18 +192,18 @@ That architectural leverage is why global engineering teams are standardizing
 mission-critical production systems on Flutter:
 
 - **Xiaomi (SU7 EV & HyperOS 4):** Built the
-  [SU7 electric vehicle companion app](https://flutter.dev/showcase/xiaomi) in
+  [SU7 electric vehicle companion app](/showcase/xiaomi) in
   Flutter and rewrote core HyperOS 4 system apps (Gallery, Launcher, Weather)
   using Flutter for UI and Rust for backend logic across hundreds of millions
   of phones.
 - **Universal Destinations & Experiences:** Unified mobile ordering,
   interactive park maps, digital wallets, and
-  [**Epic Universe** park kiosks](https://flutter.dev/showcase/universal-studios),
+  [**Epic Universe** park kiosks](/showcase/universal-studios),
   cutting codebase size by 45% with near-zero crashes.
-- **Automotive: [Toyota and Lexus](https://flutter.dev/showcase/toyota)** power
+- **Automotive:** [**Toyota and Lexus**](/showcase/toyota) power
   in-vehicle infotainment in models like the RAV4, and **BMW** standardized the
   global My BMW app on Flutter.
-- **FinTech:** [**Nubank**](https://flutter.dev/showcase/nubank) serves over
+- **FinTech:** [**Nubank**](/showcase/nubank) serves over
   100 million customers with hundreds of weekly deployments.
 
 ### Do users notice frameworks?
@@ -242,6 +242,6 @@ workflow:
   in your IDE.
 - Check out the [**GenUI SDK for Flutter**](https://docs.flutter.dev/ai/genui).
 - Share how your team is pairing Flutter and AI in our
-  [**community discussions**](https://flutter.dev/community).
-- Re-watch our
-  [**keynote at flutterCon Berlin**](https://www.youtube.com/watch?v=Zz4ku_bmxG8).
+  [**community discussions**](/community).
+- Rewatch our
+  [**keynote at FlutterCon Berlin**](https://www.youtube.com/watch?v=Zz4ku_bmxG8).
