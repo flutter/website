@@ -129,12 +129,14 @@ The `config` argument is an object that can have the following optional fields:
 |`hostElement`| HTML Element into which Flutter renders the app (see [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`multiViewEnabled`| Enables multi-view mode for [embedding Flutter views][embedding-flutter-web] into host DOM elements dynamically. |`bool`|
 |`nonce`| A [Content Security Policy (CSP) nonce][nonce-mdn] string applied to inline scripts and styles created by the engine. |`String`|
+|`preferWebParagraph`| **Experimental.** When `true`, uses the browser's text layout APIs through [WebParagraph][web-paragraph] instead of the text layout bundled in CanvasKit. Has no effect when the browser or renderer doesn't support it. |`bool`|
 
 {:.table}
 
 [embedding-flutter-web]: /platform-integration/web/embedding-flutter-web
 [nonce-mdn]: https://developer.mozilla.org/docs/Web/HTML/Global_attributes/nonce
 [wasm-support]: /platform-integration/web/wasm
+[web-paragraph]: /platform-integration/web/web-paragraph
 
 ## forceSingleThreadedSkwasm
 
