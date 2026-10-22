@@ -155,18 +155,25 @@ Future<void> addTask(String title) {
   });
 }
 
-class TaskList extends StatelessWidget {
+class TaskList extends StatefulWidget {
   const TaskList({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final tasksStream = FirebaseFirestore.instance
-        .collection('tasks')
-        .orderBy('createdAt', descending: true)
-        .snapshots();
+  State<TaskList> createState() => _TaskListState();
+}
 
+class _TaskListState extends State<TaskList> {
+  // Create the stream once so that it isn't recreated on every rebuild.
+  final Stream<QuerySnapshot<Map<String, dynamic>>> _tasksStream =
+      FirebaseFirestore.instance
+          .collection('tasks')
+          .orderBy('createdAt', descending: true)
+          .snapshots();
+
+  @override
+  Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-      stream: tasksStream,
+      stream: _tasksStream,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return const Center(child: Text('Something went wrong.'));
