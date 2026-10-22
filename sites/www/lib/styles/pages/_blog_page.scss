@@ -112,7 +112,7 @@ body.blog {
         color: var(--site-base-fgColor-alt);
         user-select: none;
 
-        >span {
+        > span {
           font-size: 1.75rem;
         }
 
@@ -155,7 +155,9 @@ body.blog {
   cursor: pointer;
   opacity: 0;
   transform: translateY(0.5rem);
-  transition: opacity 0.2s var(--ui-anim-func), transform 0.2s var(--ui-anim-func);
+  transition:
+    opacity 0.2s var(--ui-anim-func),
+    transform 0.2s var(--ui-anim-func);
   pointer-events: none;
   visibility: hidden;
 
