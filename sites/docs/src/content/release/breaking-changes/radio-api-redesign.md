@@ -237,9 +237,9 @@ Relevant PR:
 * [PR 168161][]
 
 [`APG`]: https://www.w3.org/WAI/ARIA/apg/patterns/radio
-[`Radio`]: {{site.api}}/flutter/material/Radio-class.html
-[`RadioListTile`]: {{site.api}}/flutter/material/RadioListTile-class.html
-[`CupertinoRadio`]: {{site.api}}/flutter/cupertino/CupertinoRadio-class.html
+[`Radio`]: {{site.material_ui}}/Radio-class.html
+[`RadioListTile`]: {{site.material_ui}}/RadioListTile-class.html
+[`CupertinoRadio`]: {{site.cupertino_ui}}/CupertinoRadio-class.html
 [`RadioGroup`]: {{site.api}}/flutter/widgets/RadioGroup-class.html
 [Issue 113562]: {{site.repo.flutter}}/issues/113562
 [PR 168161]: {{site.repo.flutter}}/pull/168161

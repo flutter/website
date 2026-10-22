@@ -39,8 +39,6 @@ check out [Add Flutter to existing app][].
 This document can be used as a cookbook by jumping around
 and finding questions that are most relevant to your needs.
 This guide embeds sample code.
-By using the "Open in DartPad" button that appears on hover or focus,
-you can open and run some of the examples on DartPad.
 
 ## Overview
 
@@ -1077,9 +1075,9 @@ To review a complete walkthrough, check out the [video_player example][].
 [widget catalog]: /ui/widgets/layout
 [Understanding constraints]: /ui/layout/constraints
 [`WidgetApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`CupertinoApp`]: {{site.cupertino_ui}}/CupertinoApp-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
+[`CupertinoButton`]: {{site.cupertino_ui}}/CupertinoButton-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [Learning Dart as a Swift Developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart

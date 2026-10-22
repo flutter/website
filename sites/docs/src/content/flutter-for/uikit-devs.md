@@ -333,7 +333,7 @@ fades the widget into a logo when you press the `FloatingActionButton`:
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -417,7 +417,7 @@ see Collin's answer on [StackOverflow][].
 
 <?code-excerpt "lib/canvas.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MaterialApp(home: DemoApp()));
 
@@ -674,8 +674,9 @@ specify the `localizationsDelegates` and
 
 <?code-excerpt "lib/localizations_example.dart"?>
 ```dart
-import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    hide GlobalMaterialLocalizations;
+import 'package:material_ui/material_ui.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -799,7 +800,7 @@ scrolling is fast and smooth.
 
 <?code-excerpt "lib/listview.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -853,7 +854,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -931,7 +932,7 @@ as shown in the next example.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -997,7 +998,7 @@ list or a list with very large amounts of data.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1305,7 +1306,7 @@ the color scheme from seed is set to deepPurple and divider color is grey.
 
 <?code-excerpt "lib/theme.dart (theme)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SampleApp extends StatelessWidget {
   const SampleApp({super.key});
@@ -1550,7 +1551,7 @@ update the state, and pass a new `InputDecoration` object.
 
 <?code-excerpt "lib/validation_errors.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1662,8 +1663,8 @@ displays it in a `ListView`:
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1832,8 +1833,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1995,8 +1996,8 @@ Otherwise, render the `ListView` with the data returned from a network call.
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2086,7 +2087,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [arb]: https://github.com/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [composing]: /resources/architectural-overview#composition
-[Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
+[Cupertino library]: {{site.cupertino_ui}}
 [Cupertino widgets]: /ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter

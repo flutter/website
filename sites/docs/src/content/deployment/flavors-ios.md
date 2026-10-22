@@ -25,32 +25,12 @@ The following illustrates an example of two Flutter flavors
 (staging, production) as Xcode schemes with custom Xcode
 configurations assigned to them:
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Scheme</th>
-      <th>Configurations for the scheme</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>staging</td>
-      <td>
-        Debug-staging</br>
-        Profile-staging</br>
-        Release-staging</br>
-      </td>
-    </tr>
-    <tr>
-      <td>production</td>
-      <td>
-        Debug-production</br>
-        Profile-production</br>
-        Release-production</br>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Scheme | Configurations for the scheme|
+| --- | --- |
+| staging | Debug-staging<br>Profile-staging<br>Release-staging |
+| production | Debug-production<br>Profile-production<br>Releae-production |
+
+{:.table .table-striped}
 
 ## Configure Xcode schemes
 

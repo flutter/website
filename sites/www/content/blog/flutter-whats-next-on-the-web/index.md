@@ -5,12 +5,12 @@ description: >-
   experience and web integration
 publishDate: 2021-09-14
 author: mariam_hasnany
-image: images/17iBUzC4UvwNi8agIsCrZ7w.webp
+coverImage:
+  alt: ""
+  url: images/17iBUzC4UvwNi8agIsCrZ7w.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/17iBUzC4UvwNi8agIsCrZ7w.webp" />
 
 Flutter’s web support [hit the stable milestone](https://flutter.dev/blog/flutter-web-support-hits-the-stable-milestone) in March 2021. So what’s next?
 

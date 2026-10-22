@@ -182,9 +182,9 @@ The Flutter team offers a plugin for this purpose:
 * [`package:webview_flutter`][]
 
 [JS Interoperability]: {{site.dart-site}}/interop/js-interop
-[`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
-[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
+[`Drawer`]: {{site.material_ui}}/Drawer-class.html
+[`ElevatedButton`]: {{site.material_ui}}/ElevatedButton-class.html
+[`FloatingActionButton`]: {{site.material_ui}}/FloatingActionButton-class.html
 [`HtmlElementView.fromTagName` constructor]: {{site.api}}/flutter/widgets/HtmlElementView/HtmlElementView.fromTagName.html
 [`HtmlElementView` widget]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
 [`HTMLVideoElement` class]: {{site.pub}}/documentation/web/latest/web/HTMLVideoElement-extension-type.html

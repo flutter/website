@@ -8,6 +8,8 @@ environment:
 
 dependencies:
   args: ^2.7.0
+  dash_media_convert:
+    path: ../../packages/dash_media_convert
   excerpter:
     path: ../../packages/excerpter
   github: ^9.25.1

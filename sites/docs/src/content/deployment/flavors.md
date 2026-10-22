@@ -26,33 +26,12 @@ The following illustrates an example of the Android
 two product flavors (`staging`, `production`) and two build
 types (`debug`, `release`):
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Product flavors</th>
-      <th>Build types</th>
-      <th>Resulting build variants</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>staging</td>
-      <td>debug</td>
-      <td>
-        stagingDebug</br>
-        stagingRelease</br>
-      </td>
-    </tr>
-    <tr>
-      <td>production</td>
-      <td>release</td>
-      <td>
-        productionDebug</br>
-        productionRelease</br>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Product flavors | Build types | Resulting build variants |
+| --- | --- | --- |
+| staging | debug | stagingDebug<br>stagingRelease |
+| production | release | productionDebug<br>productionRelease |
+
+{:.table .table-striped}
 
 [_product flavor_]: https://developer.android.com/build/build-variants#product-flavors
 [_build variants_]: https://developer.android.com/build/build-variants
@@ -222,38 +201,34 @@ The following steps show how to add distinct app display
 names for two product flavors called `staging` and
 `production` in a project called `flavors_example`.
 
-1.  Update `build.gradle.kts` in your IDE:
+1.  Create flavor-specific resource directories:
 
-    * In the `flavors_example` project, navigate to the
-      `android/app/` directory and open `build.gradle.kts`.
+    * Navigate to the `android/app/src` directory.
 
-    * In the `flavorsDimension` block, add a `resValue()`
-      property called `app_name` to the `staging` and
-      `production` flavors:
+    * Create a directory called `staging/res/values`.
 
-      ```kotlin title="build.gradle.kts"
-      android {
-          ...
-          flavorDimensions += "default"
-          productFlavors {
-              create("staging") {
-                  dimension = "default"
-                  resValue(
-                      type = "string",
-                      name = "app_name",
-                      value = "Flavors staging")
-                  applicationIdSuffix = ".staging"
-              }
-              create("production") {
-                  dimension = "default"
-                  resValue(
-                      type = "string",
-                      name = "app_name",
-                      value = "Flavors production")
-                  applicationIdSuffix = ".production"
-              }
-          }
+    * Navigate to the `staging/res/values` directory.
+
+    * Create the following `strings.xml` file:
+
+      ```xml title="strings.xml"
+      <?xml version="1.0" encoding="utf-8"?>
+      <resources>
+          <string name="app_name">Flavors staging</string>
+      </resources>
       ```
+
+      :::note
+      If your project sets `app_name` with `resValue()` in `build.gradle.kts`,
+      builds with Android Gradle Plugin (AGP) 9.0 or later fail by default
+      with an error such as
+      `Product Flavor <flavor_name> contains custom resource values, but the feature is disabled.`
+      To fix this, remove those `resValue()` calls
+      and define `app_name` in `strings.xml` files as shown in this step.
+      :::
+    
+    * Repeat the previous steps for the `production` flavor,
+      and set the value of `app_name` to `Flavors production`.
 
 1.  Update `AndroidManifest.xml` in your IDE:
 

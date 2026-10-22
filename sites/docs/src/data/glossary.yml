@@ -39,13 +39,11 @@
   short_description: |-
     Flutter's implementation of the iOS design language.
   long_description: |-
-    Flutter's `cupertino` library implements the iOS design language,
+    Flutter's `cupertino_ui` library implements the iOS design language,
     comprising a set of widgets that implement Apple's Human Interface Guidelines.
 
-    The `cupertino` library, originally part of the main Flutter repo,
-    will be decoupled into a separate package.
-    For more information,
-    visit [flutter.dev/go/decouple-design](https://flutter.dev/go/decouple-design).
+    The Cupertino library, originally part of the main Flutter repo,
+    has been decoupled into a separate package, `cupertino_ui` on pub.dev.
   related_links:
     - text: "Human Interface Guidelines"
       link: "https://developer.apple.com/design/human-interface-guidelines/"
@@ -53,6 +51,18 @@
     - text: "Cupertino widgets"
       link: "/ui/widgets/cupertino"
       type: "doc"
+    - text: "cupertino_ui package"
+      link: "https://pub.dev//packages/cupertino_ui"
+      type: "external"
+    - text: "Material and Cupertino decoupling are here"
+      link: "https://blog.flutter.dev/decoupling-material-cupertino"
+      type: "blog"
+    - text: "Material and Cupertino decoupling guide"
+      link: "/release/breaking-changes/material-ui-and-cupertino-ui"
+      type: "doc"
+    - text: "pub.dev"
+      link: "https://pub.dev"
+      type: "external"
   labels:
     - "design"
     - "ui"
@@ -288,12 +298,10 @@
   long_description: |-
     Material Design is an adaptable system of guidelines, components, and tools
     that support the best practices of user interface design.
-    Flutter's `material` library implements Material Design widgets.
+    Flutter's `material_ui` library implements Material Design widgets.
 
-    The `material` library, originally part of the main Flutter repo,
-    will be decoupled into a separate package.
-    For more information,
-    visit [flutter.dev/go/decouple-design](https://flutter.dev/go/decouple-design).
+    The Material library, originally part of the main Flutter repo,
+    has been decoupled into a separate package, `material_ui` on pub.dev.
   related_links:
     - text: "Material Design site"
       link: "https://m3.material.io"
@@ -301,6 +309,18 @@
     - text: "Material widgets"
       link: "/ui/widgets/material"
       type: "doc"
+    - text: "material_ui package"
+      link: "https://pub.dev/packages/material_ui"
+      type: "external"
+    - text: "Material and Cupertino decoupling are here"
+      link: "https://blog.flutter.dev/decoupling-material-cupertino"
+      type: "blog"
+    - text: "Material and Cupertino decoupling guide"
+      link: "/release/breaking-changes/material-ui-and-cupertino-ui"
+      type: "doc"
+    - text: "pub.dev"
+      link: "https://pub.dev"
+      type: "external"
   labels:
     - "design"
     - "ui"
@@ -332,6 +352,51 @@
     - "language"
     - "fundamentals"
 
+- term: "Package"
+  short_description: |-
+    At a minimum, a Dart package is a directory containing a
+    `pubspec.yaml` file.
+  long_description: |-
+    Additionally, a package can contain dependencies (listed in the pubspec),
+    Dart libraries, apps, resources, tests, images, fonts, and examples.
+    The pub.dev site lists many packages—developed by Google engineers
+    and generous members of the Flutter and Dart community—that you can use
+    in your app.
+  related_links:
+    - text: "Packages v Plugins"
+      link: "https://youtu.be/Y9WifT8aN6o"
+      type: "video"
+    - text: "Package dependency management"
+      link: "/packages-and-plugins/dependency-management"
+      type: "doc"
+    - text: "Package versioning guide"
+      link: "https://dart.dev/tools/pub/versioning"
+      type: "doc"
+    - text: "pub.dev"
+      link: "https://pub.dev"
+      type: "external"
+  labels:
+    - "packages"
+    - "plugins"
+
+- term: "Plugin"
+  short_description: |-
+    A plugin package (generally referred to as _a plugin_),
+    is a special kind of package that makes platform functionallity
+    available to the app.
+  long_description: |-
+    Plugin packages can be written for Android (using Kotlin or Java),
+    iOS (using Swift or Objective-C), web, macOS, Windows, Linux, or
+    any combination thereof. For example, a plugin might provide
+    Flutter apps with the ability to use a device's camera.
+  related_links:
+    - text: "Packages v Plugins"
+      link: "https://youtu.be/Y9WifT8aN6o"
+      type: "video"
+  labels:
+    - "packages"
+    - "plugins"
+
 - term: "Prop drilling"
   short_description: |-
     The process of passing data through multiple layers of widgets
@@ -357,9 +422,8 @@
     Pub is the tool used for managing Dart packages.
     It allows you to install, upgrade, and manage dependencies for your Dart app.
     Dependencies are defined in the [`pubspec.yaml`][] file.
-    Packages are hosted on [pub.dev][], the official package repository.
+    Packages are hosted on pub.dev, the official package repository.
     
-    [pub.dev]: https://pub.dev
     [`pubspec.yaml`]: https://dart.dev/tools/pub/pubspec
   related_links:
     - text: "pub.dev"

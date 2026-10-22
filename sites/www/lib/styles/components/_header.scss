@@ -84,6 +84,7 @@
     z-index: var(--site-z-floating);
 
     img {
+      display: block;
       width: 100%;
     }
 
@@ -402,8 +403,12 @@
    * ================================= */
 
   @media (min-width: 1024px) and (any-hover: hover) {
+    --dd-offset-top: 44px;
+
     .content {
-      padding: 0 var(--gutter);
+      // Scale side padding with the viewport, between 24px and 48px.
+      padding-inline: clamp(24px, 3vw, 48px);
+      column-gap: 24px;
     }
 
     nav {
@@ -414,9 +419,15 @@
       font-size: var(--font-size-default);
 
       >ul {
+        gap: 6px;
+
         >li {
           display: inline-block;
-          margin-left: var(--spacer-sm);
+
+          >a.btn {
+            height: 36px;
+            padding: 8px 12px;
+          }
 
           a .icon,
           .dd li.mobile-only {
@@ -545,11 +556,12 @@
 
     a.btn#get-started__header {
       display: flex;
+      padding-inline: 20px;
     }
 
     .search {
       display: flex;
-      margin-right: var(--gutter-sm);
+      margin-right: 12px;
     }
 
     &.searching {

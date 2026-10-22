@@ -104,18 +104,18 @@ Relevant PRs:
 * [Add missing deprecations to CupertinoDynamicColor][]
 
 [`Color`]: {{site.api}}/flutter/dart-ui/Color-class.html
-[`CupertinoDynamicColor`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor-class.html
+[`CupertinoDynamicColor`]: {{site.cupertino_ui}}/CupertinoDynamicColor-class.html
 [wide gamut color spaces]: https://en.wikipedia.org/wiki/RGB_color_spaces
-[`CupertinoDynamicColor.red`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/red.html
-[`CupertinoDynamicColor.r`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/r.html
-[`CupertinoDynamicColor.green`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/green.html
-[`CupertinoDynamicColor.g`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/g.html
-[`CupertinoDynamicColor.blue`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/blue.html
-[`CupertinoDynamicColor.b`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/b.html
-[`CupertinoDynamicColor.opacity`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/opacity.html
-[`CupertinoDynamicColor.a`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/a.html
-[`CupertinoDynamicColor.withOpacity()`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/withOpacity.html
-[`CupertinoDynamicColor.withValues()`]: {{site.api}}/flutter/cupertino/CupertinoDynamicColor/withValues.html
+[`CupertinoDynamicColor.red`]: {{site.cupertino_ui}}/CupertinoDynamicColor/red.html
+[`CupertinoDynamicColor.r`]: {{site.cupertino_ui}}/CupertinoDynamicColor/r.html
+[`CupertinoDynamicColor.green`]: {{site.cupertino_ui}}/CupertinoDynamicColor/green.html
+[`CupertinoDynamicColor.g`]: {{site.cupertino_ui}}/CupertinoDynamicColor/g.html
+[`CupertinoDynamicColor.blue`]: {{site.cupertino_ui}}/CupertinoDynamicColor/blue.html
+[`CupertinoDynamicColor.b`]: {{site.cupertino_ui}}/CupertinoDynamicColor/b.html
+[`CupertinoDynamicColor.opacity`]: {{site.cupertino_ui}}/CupertinoDynamicColor/opacity.html
+[`CupertinoDynamicColor.a`]: {{site.cupertino_ui}}/CupertinoDynamicColor/a.html
+[`CupertinoDynamicColor.withOpacity()`]: {{site.cupertino_ui}}/CupertinoDynamicColor/withOpacity.html
+[`CupertinoDynamicColor.withValues()`]: {{site.cupertino_ui}}/CupertinoDynamicColor/withValues.html
 [Migration guide for wide gamut Color]: /release/breaking-changes/wide-gamut-framework
 [Implement wide gamut color support in the Framework]: {{site.repo.flutter}}/issues/127855
 [CupertinoDynamicColor is missing deprecation notices]: {{site.repo.flutter}}/issues/171059
