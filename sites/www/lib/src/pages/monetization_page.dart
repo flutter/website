@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/feature_grid.dart';
 import '../components/common/icon.dart';
@@ -59,109 +58,98 @@ class MonetizationPage extends StatelessComponent {
         ]),
         section(id: 'tabs', classes: 'games-tabs', [
           Tabs(
-            title: ref(
-              const h2(classes: 'tabs-title', [
-                .text(
-                  'Reach a wider audience and maximize revenue with '
-                  'support for various ad formats across '
-                  'iOS, Android, and the web.',
-                ),
-              ]),
-            ),
+            title: const h2(classes: 'tabs-title', [
+              .text(
+                'Reach a wider audience and maximize revenue with '
+                'support for various ad formats across '
+                'iOS, Android, and the web.',
+              ),
+            ]),
+            labels: const [
+              'GMA SDK',
+              'IMA SDK',
+              'AdSense for H5 games',
+            ],
             tabs: [
-              Tab(
-                label: 'GMA SDK',
-                content: ref(
-                  .fragment([
-                    div(classes: 'media', [
-                      img(
-                        src: context.asset(
-                          'images/ads-in-your-flutter-app.svg',
-                        ),
-                        alt: 'Endless Runner',
-                      ),
-                    ]),
-                    const div(classes: 'text', [
-                      h2(classes: 'title first-tab', [
-                        .text('The Google Mobile Ads SDK for Flutter'),
-                      ]),
-                      p(classes: 'body', [
-                        .text('''
+              .fragment([
+                div(classes: 'media', [
+                  img(
+                    src: context.asset(
+                      'images/ads-in-your-flutter-app.svg',
+                    ),
+                    alt: 'Endless Runner',
+                  ),
+                ]),
+                const div(classes: 'text', [
+                  h2(classes: 'title first-tab', [
+                    .text('The Google Mobile Ads SDK for Flutter'),
+                  ]),
+                  p(classes: 'body', [
+                    .text('''
                   The Google Mobile Ads SDK for Flutter works with both AdMob and Ad Manager. It supports a variety of ad formats such as app open, banner, interstitial, native, rewarded, and rewarded interstitial formats, and features like mediation.
                 '''),
-                      ]),
-                      div(classes: 'a-wrapper', [
-                        a(
-                          classes: 'btn',
-                          href: 'https://docs.flutter.dev/cookbook/plugins/google-mobile-ads',
-                          [.text('Get started')],
-                        ),
-                      ]),
-                    ]),
                   ]),
-                ),
-              ),
-              Tab(
-                label: 'IMA SDK',
-                content: ref(
-                  .fragment([
-                    div(classes: 'media', [
-                      img(
-                        src: context.asset('images/ima-sdk.png'),
-                        alt: 'Basic Template',
-                      ),
-                    ]),
-                    const div(classes: 'text', [
-                      h2(classes: 'title second-tab', [
-                        .text('The Integrated Media Ads SDK for Flutter'),
-                      ]),
-                      p(classes: 'body', [
-                        .text('''
+                  div(classes: 'a-wrapper', [
+                    a(
+                      classes: 'btn',
+                      href: 'https://docs.flutter.dev/cookbook/plugins/google-mobile-ads',
+                      [.text('Get started')],
+                    ),
+                  ]),
+                ]),
+              ]),
+
+              .fragment([
+                div(classes: 'media', [
+                  img(
+                    src: context.asset('images/ima-sdk.png'),
+                    alt: 'Basic Template',
+                  ),
+                ]),
+                const div(classes: 'text', [
+                  h2(classes: 'title second-tab', [
+                    .text('The Integrated Media Ads SDK for Flutter'),
+                  ]),
+                  p(classes: 'body', [
+                    .text('''
                   The Interactive Media Ads SDK for Flutter empowers both app developers and publishers to seamlessly integrate video ads into their video content. With support for pre-roll, mid-roll, and post-roll ad placements on both iOS and Android, the plugin offers a comprehensive solution for instream video ad monetization.
                 '''),
-                      ]),
-                      div(classes: 'a-wrapper', [
-                        a(
-                          classes: 'btn',
-                          href:
-                              'https://pub.dev/packages/interactive_media_ads',
-                          [.text('Get started')],
-                        ),
-                      ]),
-                    ]),
                   ]),
-                ),
-              ),
-              Tab(
-                label: 'AdSense for H5 games',
-                content: ref(
-                  .fragment([
-                    div(classes: 'media', [
-                      img(
-                        src: context.asset('images/adsense-h5.png'),
-                        alt: 'Card Game',
-                      ),
-                    ]),
-                    const div(classes: 'text', [
-                      h2(classes: 'title third-tab', [
-                        .text('AdSense for H5 games'),
-                      ]),
-                      p(classes: 'body', [
-                        .text('''
+                  div(classes: 'a-wrapper', [
+                    a(
+                      classes: 'btn',
+                      href: 'https://pub.dev/packages/interactive_media_ads',
+                      [.text('Get started')],
+                    ),
+                  ]),
+                ]),
+              ]),
+
+              .fragment([
+                div(classes: 'media', [
+                  img(
+                    src: context.asset('images/adsense-h5.png'),
+                    alt: 'Card Game',
+                  ),
+                ]),
+                const div(classes: 'text', [
+                  h2(classes: 'title third-tab', [
+                    .text('AdSense for H5 games'),
+                  ]),
+                  p(classes: 'body', [
+                    .text('''
                   Flutter’s AdSense for H5 games plugin allows you to easily add AdSense interstitial and rewarded ads to your web-based (H5) games built in Flutter. If you are a Flutter web game developer and are interested in monetizing your game, start experimenting today!
                 '''),
-                      ]),
-                      div(classes: 'a-wrapper', [
-                        a(
-                          classes: 'btn',
-                          href: 'https://adsense.google.com/start/h5-beta/?src=flutter',
-                          [.text('Apply for beta')],
-                        ),
-                      ]),
-                    ]),
                   ]),
-                ),
-              ),
+                  div(classes: 'a-wrapper', [
+                    a(
+                      classes: 'btn',
+                      href: 'https://adsense.google.com/start/h5-beta/?src=flutter',
+                      [.text('Apply for beta')],
+                    ),
+                  ]),
+                ]),
+              ]),
             ],
             noSpy: true,
           ),

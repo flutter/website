@@ -66,7 +66,7 @@ final class DropdownState extends State<Dropdown> {
           },
         },
         [
-          Component.wrapElement(
+          .apply(
             classes: 'dropdown-button',
             events: {
               'click': (e) {

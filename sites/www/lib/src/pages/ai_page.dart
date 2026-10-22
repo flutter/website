@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/feature_grid.dart';
@@ -47,7 +46,9 @@ class AiPage extends StatelessComponent {
               href: 'https://docs.flutter.dev/ai/get-started',
               target: Target.blank,
               [
-                .text('Get started with Dart & Flutter MCP, Skills, and AI Plugins!'),
+                .text(
+                  'Get started with Dart & Flutter MCP, Skills, and AI Plugins!',
+                ),
                 RawText('&nbsp;'),
                 Icon.linkArrow(large: true),
               ],
@@ -91,7 +92,7 @@ class AiPage extends StatelessComponent {
         section(id: 'tabs', classes: 'module', attributes: scroll.spy(-300), [
           //TODO: Add a section for GenUI here
           div(classes: 'build-features container', [
-            ref(const h2([.text('Start building AI-driven features now.')])),
+            const h2([.text('Start building AI-driven features now.')]),
             // Firebase Section
             div(classes: 'alternating-item', [
               div(classes: 'media', [
@@ -183,7 +184,8 @@ class AiPage extends StatelessComponent {
                 ),
               ),
               FeatureGridItem(
-                title: 'Build generative AI agents with Google Cloud and Flutter',
+                title:
+                    'Build generative AI agents with Google Cloud and Flutter',
                 description:
                     'Supercharge your generative AI development workflow with Gemini and Flutter. '
                     'Seamlessly integrate with your existing tools and leverage our pre-built components and architectures to accelerate prototyping and deploy production-grade gen AI agents in your apps.',
@@ -211,13 +213,9 @@ class AiPage extends StatelessComponent {
               h4(classes: 'eyebrow', [.text('Find inspiration')]),
               h2([.text('Explore Flutter + AI samples')]),
             ]),
-            Carousel(
-              ref(
-                .fragment([
-                  for (final item in samples) _buildSampleItem(context, item),
-                ]),
-              ),
-            ),
+            Carousel([
+              for (final item in samples) _buildSampleItem(context, item),
+            ]),
           ],
         ),
         const CTASection(),

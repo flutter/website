@@ -46,6 +46,8 @@ import 'package:site_shared/components/layout/site_switcher.dart'
 import 'package:site_shared/components/layout/theme_switcher.dart'
     as _theme_switcher;
 import 'package:site_shared/components/tutorial/client/quiz.dart' as _quiz;
+import 'package:site_shared/components/tutorial/client/stepper.dart'
+    as _stepper;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -151,6 +153,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'site_shared:quiz',
       params: __quizInteractiveQuiz,
     ),
+    _stepper.InteractiveStepper: ClientTarget<_stepper.InteractiveStepper>(
+      'site_shared:stepper',
+      params: __stepperInteractiveStepper,
+    ),
   },
   styles: () => [..._file_tree.FileTree.styles],
 );
@@ -162,7 +168,7 @@ Map<String, Object?> __pagenavPageNav(_pagenav.PageNav c) => {
   'breadcrumbs': c.breadcrumbs,
   'pageNumber': c.pageNumber,
   'initialHeading': c.initialHeading,
-  'content': c.content.toId(),
+  'content': c.content,
 };
 Map<String, Object?> __archive_tableArchiveTable(
   _archive_table.ArchiveTable c,
@@ -192,7 +198,7 @@ Map<String, Object?> __page_header_optionsPageHeaderOptions(
 };
 Map<String, Object?> __simple_tooltipSimpleTooltip(
   _simple_tooltip.SimpleTooltip c,
-) => {'target': c.target.toId(), 'content': c.content.toId()};
+) => {'target': c.target, 'content': c.content};
 Map<String, Object?> __dartpad_injectorDartPadInjector(
   _dartpad_injector.DartPadInjector c,
 ) => {
@@ -207,4 +213,13 @@ Map<String, Object?> __site_switcherSiteSwitcher(
 Map<String, Object?> __quizInteractiveQuiz(_quiz.InteractiveQuiz c) => {
   'title': c.title,
   'questions': c.questions.map((i) => i.toJson()).toList(),
+};
+Map<String, Object?> __stepperInteractiveStepper(
+  _stepper.InteractiveStepper c,
+) => {
+  'titles': c.titles,
+  'steps': c.steps,
+  'collapsible': c.collapsible,
+  'showActions': c.showActions,
+  'showFinish': c.showFinish,
 };

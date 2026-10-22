@@ -4,41 +4,22 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
-
-class Tab {
-  Tab({required this.label, required this.content});
-
-  final String label;
-  final ComponentRef content;
-
-  @decoder
-  static Tab fromMap(Map<String, Object?> map) {
-    return Tab(
-      label: map['label'] as String,
-      content: ComponentRef.fromId(map['content'] as String),
-    );
-  }
-
-  @encoder
-  Map<String, Object?> toMap() {
-    return {'label': label, 'content': content.toId()};
-  }
-}
 
 @client
 class Tabs extends StatefulComponent {
   const Tabs({
     this.title,
     this.header,
+    required this.labels,
     required this.tabs,
     this.noSpy = false,
     super.key,
   });
 
-  final ComponentRef? title;
-  final ComponentRef? header;
-  final List<Tab> tabs;
+  final Component? title;
+  final Component? header;
+  final List<String> labels;
+  final List<Component> tabs;
   final bool noSpy;
 
   @override
@@ -56,7 +37,7 @@ class _TabsState extends State<Tabs> {
         ?component.header,
         div(classes: 'tabs-menu', [
           ul(classes: 'tabs-wrapper', [
-            for (final (index, tab) in component.tabs.indexed)
+            for (final (index, _) in component.tabs.indexed)
               li(
                 classes: 'btn ${index == _activeTab ? 'active' : ''}',
                 events: events(
@@ -64,7 +45,7 @@ class _TabsState extends State<Tabs> {
                     setState(() => _activeTab = index);
                   },
                 ),
-                [.text(tab.label)],
+                [.text(component.labels[index])],
               ),
           ]),
         ]),
@@ -77,7 +58,7 @@ class _TabsState extends State<Tabs> {
               if (component.noSpy) 'no-spy',
               if (index == _activeTab) 'active',
             ].join(' '),
-            [tab.content],
+            [tab],
           ),
       ]),
     ]);

@@ -48,8 +48,6 @@ import 'package:site_shared/components/common/client/copy_button.dart'
     deferred as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
-import 'package:site_shared/components/utils/component_ref.dart'
-    as _component_ref;
 
 /// Default [ClientOptions] for use with your Jaspr project.
 ///
@@ -71,13 +69,13 @@ ClientOptions get defaultClientOptions => ClientOptions(
   clients: {
     'carousel': ClientLoader(
       (p) => _carousel.Carousel(
-        _component_ref.ComponentRef.fromId(p['items'] as String),
-        prevBtn: p['prevBtn'] != null
-            ? _component_ref.ComponentRef.fromId(p['prevBtn'] as String)
-            : null,
-        nextBtn: p['nextBtn'] != null
-            ? _component_ref.ComponentRef.fromId(p['nextBtn'] as String)
-            : null,
+        p
+            .get<List<Object?>>('items')
+            .cast<String>()
+            .map((i) => p.mount(i))
+            .toList(),
+        prevBtn: p.mountOrNull(p.get<String?>('prevBtn')),
+        nextBtn: p.mountOrNull(p.get<String?>('nextBtn')),
       ),
       loader: _carousel.loadLibrary,
     ),
@@ -87,27 +85,26 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'tabs': ClientLoader(
       (p) => _tabs.Tabs(
-        title: p['title'] != null
-            ? _component_ref.ComponentRef.fromId(p['title'] as String)
-            : null,
-        header: p['header'] != null
-            ? _component_ref.ComponentRef.fromId(p['header'] as String)
-            : null,
-        tabs: (p['tabs'] as List<Object?>)
-            .map((i) => _tabs.Tab.fromMap(i as Map<String, Object?>))
+        title: p.mountOrNull(p.get<String?>('title')),
+        header: p.mountOrNull(p.get<String?>('header')),
+        labels: p.get<List<Object?>>('labels').cast<String>(),
+        tabs: p
+            .get<List<Object?>>('tabs')
+            .cast<String>()
+            .map((i) => p.mount(i))
             .toList(),
-        noSpy: p['noSpy'] as bool,
+        noSpy: p.get<bool>('noSpy'),
       ),
       loader: _tabs.loadLibrary,
     ),
     'header': ClientLoader(
       (p) => _header.Header(
-        contrastLogoSrc: p['contrastLogoSrc'] as String,
-        defaultLogoSrc: p['defaultLogoSrc'] as String,
+        contrastLogoSrc: p.get<String>('contrastLogoSrc'),
+        defaultLogoSrc: p.get<String>('defaultLogoSrc'),
         banner: _banner_content.BannerContent.fromJson(
-          p['banner'] as Map<String, Object?>,
+          p.get<Map<String, Object?>>('banner'),
         ),
-        pageUrl: p['pageUrl'] as String,
+        pageUrl: p.get<String>('pageUrl'),
       ),
       loader: _header.loadLibrary,
     ),
@@ -117,62 +114,64 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'consultants_grid': ClientLoader(
       (p) => _consultants_grid.ConsultantsGrid(
-        data: (p['data'] as List<Object?>)
-            .map((i) => (i as Map<String, Object?>))
-            .toList(),
-        items: (p['items'] as List<Object?>)
-            .map((i) => _component_ref.ComponentRef.fromId(i as String))
+        data: p.get<List<Object?>>('data').cast<Map<String, Object?>>(),
+        items: p
+            .get<List<Object?>>('items')
+            .cast<String>()
+            .map((i) => p.mount(i))
             .toList(),
       ),
       loader: _consultants_grid.loadLibrary,
     ),
     'events_grid': ClientLoader(
       (p) => _events_grid.EventsGrid(
-        data: (p['data'] as List<Object?>)
-            .map((i) => (i as Map<String, Object?>))
+        data: p.get<List<Object?>>('data').cast<Map<String, Object?>>(),
+        items: p
+            .get<List<Object?>>('items')
+            .cast<String>()
+            .map((i) => p.mount(i))
             .toList(),
-        items: (p['items'] as List<Object?>)
-            .map((i) => _component_ref.ComponentRef.fromId(i as String))
-            .toList(),
-        past: p['past'] as bool,
+        past: p.get<bool>('past'),
       ),
       loader: _events_grid.loadLibrary,
     ),
     'games_adaptive_media': ClientLoader(
       (p) => _games_adaptive_media.GamesAdaptiveMedia(
-        mobileAssets: (p['mobileAssets'] as Map<String, Object?>)
+        mobileAssets: p
+            .get<Map<String, Object?>>('mobileAssets')
             .cast<String, String>(),
-        desktopAssets: (p['desktopAssets'] as Map<String, Object?>)
+        desktopAssets: p
+            .get<Map<String, Object?>>('desktopAssets')
             .cast<String, String>(),
       ),
       loader: _games_adaptive_media.loadLibrary,
     ),
     'showcase_grid': ClientLoader(
       (p) => _showcase_grid.ShowcaseGrid(
-        data: (p['data'] as List<Object?>)
-            .map((i) => (i as Map<String, Object?>))
-            .toList(),
-        items: (p['items'] as List<Object?>)
-            .map((i) => _component_ref.ComponentRef.fromId(i as String))
+        data: p.get<List<Object?>>('data').cast<Map<String, Object?>>(),
+        items: p
+            .get<List<Object?>>('items')
+            .cast<String>()
+            .map((i) => p.mount(i))
             .toList(),
       ),
       loader: _showcase_grid.loadLibrary,
     ),
     'why_flutter_ai_era_section': ClientLoader(
       (p) => _why_flutter_ai_era_section.WhyFlutterAiEraSection(
-        geminiSprite: p['geminiSprite'] as String,
+        geminiSprite: p.get<String>('geminiSprite'),
       ),
       loader: _why_flutter_ai_era_section.loadLibrary,
     ),
     'why_flutter_cases_section': ClientLoader(
       (p) => _why_flutter_cases_section.WhyFlutterCasesSection(
-        media: (p['media'] as Map<String, Object?>).cast<String, String>(),
+        media: p.get<Map<String, Object?>>('media').cast<String, String>(),
       ),
       loader: _why_flutter_cases_section.loadLibrary,
     ),
     'why_flutter_code_shared_section': ClientLoader(
       (p) => _why_flutter_code_shared_section.WhyFlutterCodeSharedSection(
-        laptopSprite: p['laptopSprite'] as String,
+        laptopSprite: p.get<String>('laptopSprite'),
       ),
       loader: _why_flutter_code_shared_section.loadLibrary,
     ),
@@ -182,29 +181,27 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'why_flutter_hero_section': ClientLoader(
       (p) => _why_flutter_hero_section.WhyFlutterHeroSection(
-        typingSprite: p['typingSprite'] as String,
-        screens: (p['screens'] as List<Object?>).cast<String>(),
-        whitepaperUrl: p['whitepaperUrl'] as String,
-        flutterLogo: p['flutterLogo'] as String,
+        typingSprite: p.get<String>('typingSprite'),
+        screens: p.get<List<Object?>>('screens').cast<String>(),
+        whitepaperUrl: p.get<String>('whitepaperUrl'),
+        flutterLogo: p.get<String>('flutterLogo'),
       ),
       loader: _why_flutter_hero_section.loadLibrary,
     ),
     'site_shared:blog_categories': ClientLoader(
       (p) => _blog_categories.BlogCategories(
-        categories: (p['categories'] as List<Object?>)
-            .map(
-              (i) => _blog_categories.BlogCategory.fromMap(
-                i as Map<String, Object?>,
-              ),
-            )
+        categories: p
+            .get<List<Object?>>('categories')
+            .cast<Map<String, Object?>>()
+            .map((i) => _blog_categories.BlogCategory.fromMap(i))
             .toList(),
       ),
       loader: _blog_categories.loadLibrary,
     ),
     'site_shared:share_button': ClientLoader(
       (p) => _share_button.ShareButton(
-        url: p['url'] as String,
-        title: p['title'] as String,
+        url: p.get<String>('url'),
+        title: p.get<String>('title'),
       ),
       loader: _share_button.loadLibrary,
     ),
@@ -214,26 +211,26 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'site_shared:collapse_button': ClientLoader(
       (p) => _collapse_button.CollapseButton(
-        classes: (p['classes'] as List<Object?>).cast<String>(),
-        title: p['title'] as String?,
+        classes: p.get<List<Object?>>('classes').cast<String>(),
+        title: p.get<String?>('title'),
       ),
       loader: _collapse_button.loadLibrary,
     ),
     'site_shared:copy_button': ClientLoader(
       (p) => _copy_button.CopyButton(
-        buttonText: p['buttonText'] as String?,
-        toCopy: p['toCopy'] as String?,
-        classes: (p['classes'] as List<Object?>).cast<String>(),
-        title: p['title'] as String?,
+        buttonText: p.get<String?>('buttonText'),
+        toCopy: p.get<String?>('toCopy'),
+        classes: p.get<List<Object?>>('classes').cast<String>(),
+        title: p.get<String?>('title'),
       ),
       loader: _copy_button.loadLibrary,
     ),
     'site_shared:dartpad_injector': ClientLoader(
       (p) => _dartpad_injector.DartPadInjector(
-        title: p['title'] as String,
-        theme: p['theme'] as String?,
-        height: p['height'] as String?,
-        runAutomatically: p['runAutomatically'] as bool,
+        title: p.get<String>('title'),
+        theme: p.get<String?>('theme'),
+        height: p.get<String?>('height'),
+        runAutomatically: p.get<bool>('runAutomatically'),
       ),
       loader: _dartpad_injector.loadLibrary,
     ),

@@ -9,6 +9,9 @@ export 'src/utils/slugify.dart';
 /// Whether this build of the site will be deployed to production.
 const bool productionBuild = .fromEnvironment('PRODUCTION');
 
+final ValueNotifier<bool> showPageTitle = ValueNotifier<bool>(true);
+final ValueNotifier<String?> currentPageHeading = ValueNotifier<String?>(null);
+
 /// Split the specific [sourceString] into a list of Jaspr [Component]
 /// by adding a `<wbr>`  element after each underscore.
 ///

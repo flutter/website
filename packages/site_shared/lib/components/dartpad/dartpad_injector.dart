@@ -100,7 +100,7 @@ class _DartPadInjectorState extends State<DartPadInjector> {
       ]);
     }
 
-    return Component.wrapElement(
+    return .apply(
       attributes: {
         'height': ?component.height,
         'title': component.title,
