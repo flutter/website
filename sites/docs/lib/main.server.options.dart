@@ -38,6 +38,7 @@ import 'package:site_shared/components/common/client/page_header_options.dart'
     as _page_header_options;
 import 'package:site_shared/components/common/client/simple_tooltip.dart'
     as _simple_tooltip;
+import 'package:site_shared/components/common/client/tabs.dart' as _tabs;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     as _dartpad_injector;
 import 'package:site_shared/components/layout/menu_toggle.dart' as _menu_toggle;
@@ -134,6 +135,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'site_shared:simple_tooltip',
       params: __simple_tooltipSimpleTooltip,
     ),
+    _tabs.InteractiveDashTabs: ClientTarget<_tabs.InteractiveDashTabs>(
+      'site_shared:tabs',
+      params: __tabsInteractiveDashTabs,
+    ),
     _dartpad_injector.DartPadInjector:
         ClientTarget<_dartpad_injector.DartPadInjector>(
           'site_shared:dartpad_injector',
@@ -199,6 +204,13 @@ Map<String, Object?> __page_header_optionsPageHeaderOptions(
 Map<String, Object?> __simple_tooltipSimpleTooltip(
   _simple_tooltip.SimpleTooltip c,
 ) => {'target': c.target, 'content': c.content};
+Map<String, Object?> __tabsInteractiveDashTabs(_tabs.InteractiveDashTabs c) => {
+  'id': c.id,
+  'tabs': c.tabs.map((i) => i.encode()).toList(),
+  'tabContents': c.tabContents,
+  'saveKey': c.saveKey,
+  'wrapped': c.wrapped,
+};
 Map<String, Object?> __dartpad_injectorDartPadInjector(
   _dartpad_injector.DartPadInjector c,
 ) => {

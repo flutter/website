@@ -38,6 +38,8 @@ import 'package:site_shared/components/common/client/page_header_options.dart'
     deferred as _page_header_options;
 import 'package:site_shared/components/common/client/simple_tooltip.dart'
     deferred as _simple_tooltip;
+import 'package:site_shared/components/common/client/tabs.dart'
+    deferred as _tabs;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
 import 'package:site_shared/components/layout/menu_toggle.dart'
@@ -162,6 +164,24 @@ ClientOptions get defaultClientOptions => ClientOptions(
         content: p.mount(p.get<String>('content')),
       ),
       loader: _simple_tooltip.loadLibrary,
+    ),
+    'site_shared:tabs': ClientLoader(
+      (p) => _tabs.InteractiveDashTabs(
+        id: p.get<String>('id'),
+        tabs: p
+            .get<List<Object?>>('tabs')
+            .cast<Map<String, Object?>>()
+            .map((i) => _tabs.DashTab.decode(i))
+            .toList(),
+        tabContents: p
+            .get<List<Object?>>('tabContents')
+            .cast<String>()
+            .map((i) => p.mount(i))
+            .toList(),
+        saveKey: p.get<String?>('saveKey'),
+        wrapped: p.get<bool>('wrapped'),
+      ),
+      loader: _tabs.loadLibrary,
     ),
     'site_shared:dartpad_injector': ClientLoader(
       (p) => _dartpad_injector.DartPadInjector(
