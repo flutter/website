@@ -19,7 +19,6 @@ void setUpSite() {
   _setUpExpandableCards();
   _setUpPlatformKeys();
   _setUpToc();
-  _setUpSteppers();
   _setUpIdeExplorers();
 }
 
@@ -319,9 +318,6 @@ void _setUpToc() {
   _setUpTocActiveObserver();
 }
 
-final ValueNotifier<bool> showPageTitle = ValueNotifier<bool>(true);
-final ValueNotifier<String?> currentPageHeading = ValueNotifier<String?>(null);
-
 void _setUpTocActiveObserver() {
   final headings = web.document.querySelectorAll(
     'article .header-wrapper, '
@@ -384,99 +380,6 @@ void _setUpTocActiveObserver() {
   for (var i = 0; i < headings.length; i++) {
     observer.observe(headings.item(i) as web.Element);
   }
-}
-
-void _setUpSteppers() {
-  final steppers = web.document.querySelectorAll('.stepper');
-
-  for (var i = 0; i < steppers.length; i++) {
-    final stepper = steppers.item(i) as web.HTMLElement;
-
-    final collapsible = !stepper.classList.contains('non-collapsible');
-
-    final children = stepper.childNodes;
-    final steps = [
-      for (var j = 0; j < children.length; j++)
-        if (children.item(j) case web.Element(
-          nodeType: web.Node.ELEMENT_NODE,
-          tagName: 'DETAILS',
-        ))
-          children.item(j) as web.HTMLDetailsElement,
-    ];
-
-    for (var j = 0; j < steps.length; j++) {
-      final step = steps[j];
-      final header = step.querySelector('summary h2, summary h3');
-
-      if (collapsible) {
-        if (header?.textContent case final title? when step.open) {
-          currentPageHeading.value = title;
-        }
-
-        step.addEventListener(
-          'toggle',
-          ((web.Event e) {
-            // Close all other steps when one is opened.
-            if (step.open) {
-              for (var k = 0; k < steps.length; k++) {
-                final otherStep = steps[k];
-                if (otherStep != step) {
-                  otherStep.open = false;
-                }
-              }
-
-              if (header?.textContent case final title?) {
-                currentPageHeading.value = title;
-              }
-            }
-          }).toJS,
-        );
-      }
-
-      final nextButton = step.querySelector('.next-step-button');
-      if (nextButton != null) {
-        nextButton.addEventListener(
-          'click',
-          ((web.Event e) {
-            e.preventDefault();
-            if (collapsible) {
-              step.open = false;
-            }
-            _scrollTo(step, smooth: false);
-            if (j + 1 < steps.length) {
-              final nextStep = steps[j + 1];
-              nextStep.open = true;
-              _scrollTo(nextStep, smooth: true);
-
-              final nextHeader = nextStep.querySelector(
-                'summary h2, summary h3',
-              );
-              if (nextHeader?.textContent case final title?) {
-                currentPageHeading.value = title;
-              }
-            }
-          }).toJS,
-        );
-      }
-    }
-  }
-}
-
-void _scrollTo(web.Element element, {required bool smooth}) {
-  // Scroll the next step into view, accounting for the fixed header and toc.
-  final headerOffset =
-      web.document.getElementById('site-header')?.clientHeight ?? 0;
-  final tocOffset = web.document.getElementById('pagenav')?.clientHeight ?? 0;
-  final elementPosition = element.getBoundingClientRect().top;
-  final offsetPosition =
-      elementPosition + web.window.scrollY - headerOffset - tocOffset;
-
-  web.window.scrollTo(
-    web.ScrollToOptions(
-      top: offsetPosition,
-      behavior: smooth ? 'smooth' : 'auto',
-    ),
-  );
 }
 
 /// Set up interactivity of the file/detail explorer created with
