@@ -20,6 +20,10 @@ import 'package:flutter_website/src/components/pages/consultants_grid.dart'
     deferred as _consultants_grid;
 import 'package:flutter_website/src/components/pages/events_grid.dart'
     deferred as _events_grid;
+import 'package:flutter_website/src/components/pages/flutter_create_countdown.dart'
+    deferred as _flutter_create_countdown;
+import 'package:flutter_website/src/components/pages/flutter_create_signup.dart'
+    deferred as _flutter_create_signup;
 import 'package:flutter_website/src/components/pages/games_adaptive_media.dart'
     deferred as _games_adaptive_media;
 import 'package:flutter_website/src/components/pages/showcase_grid.dart'
@@ -137,6 +141,16 @@ ClientOptions get defaultClientOptions => ClientOptions(
         past: p['past'] as bool,
       ),
       loader: _events_grid.loadLibrary,
+    ),
+    'flutter_create_countdown': ClientLoader(
+      (p) => _flutter_create_countdown.FlutterCreateCountdown(),
+      loader: _flutter_create_countdown.loadLibrary,
+    ),
+    'flutter_create_signup': ClientLoader(
+      (p) => _flutter_create_signup.FlutterCreateSignup(
+        compact: p['compact'] as bool,
+      ),
+      loader: _flutter_create_signup.loadLibrary,
     ),
     'games_adaptive_media': ClientLoader(
       (p) => _games_adaptive_media.GamesAdaptiveMedia(
