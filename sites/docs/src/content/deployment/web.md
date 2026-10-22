@@ -129,13 +129,15 @@ running the previous release (`N-1`) might lazily fetch an asset, font, or
 image whose filename carries release `N-1`'s content hash.
 
 To avoid mid-session `404` errors during rollouts, use an **overlay
-deployment** strategy: retain at least the previous release's (`N-1`) hashed
-`main.dart.*` and `assets/**` files in your CDN or storage bucket alongside
-release `N`'s hashed files (or prune old hashes after a 24–72 hour grace
-window), and update `index.html` and `flutter_bootstrap.js` atomically last.
-Also exclude `/assets/**`, `/canvaskit/**`, `/icons/**`, and `/main.dart.*`
-from single-page application (SPA) `/index.html` catch-all rewrites so missing
-assets return a genuine `404` instead of `200 text/html`.
+deployment** strategy:
+
+* Retain at least the previous release's (`N-1`) hashed `main.dart.*` and
+  `assets/**` files in your CDN or storage bucket alongside release `N`'s
+  hashed files (or prune old hashes after a 24–72 hour grace window).
+* Update `index.html` and `flutter_bootstrap.js` atomically last.
+* Exclude `/assets/**`, `/canvaskit/**`, `/icons/**`, and `/main.dart.*` from
+  single-page application (SPA) `/index.html` catch-all rewrites so missing
+  assets return a genuine `404` instead of `200 text/html`.
 
 #### Custom service workers (`precache_manifest.json`)
 
@@ -290,7 +292,7 @@ as a commented-out option in newly created `web/index.html` templates):
 If an existing web app already includes `viewport-fit=cover` in
 `web/index.html`, Flutter 3.50 and later honors it instead of stripping it,
 which causes the app to render behind device cutouts unless UI controls are
-wrapped in a [`SafeArea`][] widget. For migration details, see the
+wrapped in a [`SafeArea`][] widget. For migration details, refer to the
 [`viewport-fit=cover` SafeArea breaking change guide][viewport-fit-breaking].
 :::
 
@@ -299,7 +301,7 @@ wrapped in a [`SafeArea`][] widget. For migration details, see the
 In Flutter 3.50 and later, route strings passed to
 `SystemNavigator.routeInformationUpdated` preserve percent-encoded sequences
 (such as `%2F`, `%26`, `%23`, and `%20`) when written to the browser's URL bar
-and history, rather than decoding them via `Uri.decodeComponent`.
+and history, rather than decoding them using `Uri.decodeComponent`.
 
 ## Embedding a Flutter app into an HTML page
 

@@ -225,21 +225,19 @@ package:my_app/main.dart 1:1 - dart:html unsupported (0)
 ```
 
 In Flutter 3.50 and later, you can also enforce modern JS interop across
-JavaScript (`dart2js` / `ddc`) builds—both to ensure Wasm compatibility and to
-prepare your app for the upcoming removal of deprecated legacy web libraries
-from the Dart SDK—by passing `--no-deprecated-js-interop` to `flutter build web`,
+JavaScript (`dart2js` and `ddc`) builds. This ensures Wasm compatibility and
+prepares your app for the upcoming removal of deprecated web libraries from the
+Dart SDK. Pass `--no-deprecated-js-interop` to `flutter build web`,
 `flutter run`, `flutter drive`, or `flutter test --platform chrome`:
 
 ```console
 $ flutter build web --no-deprecated-js-interop
 ```
 
-Passing `--no-deprecated-js-interop` causes imports of deprecated legacy `dart:`
-web libraries (`dart:html`, `dart:js`, `dart:js_util`, `dart:indexed_db`,
-`dart:svg`, `dart:web_audio`, and `dart:web_gl`)—as well as packages that
-import them, such as `package:js`—to fail at compile time, and evaluates
-`dart.library.html`, `dart.library.js`, and `dart.library.js_util` to `false`
-in conditional imports.
+Passing `--no-deprecated-js-interop` causes imports of deprecated `dart:*` web
+libraries (and packages that import them, such as `package:js`) to fail at
+compile time. It also evaluates `dart.library.html`, `dart.library.js`, and
+`dart.library.js_util` to `false` in conditional imports.
 
 #### 2. Inspect the compiler dependency tree
 

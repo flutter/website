@@ -34,10 +34,9 @@ in `web/index.html` before replacing it:
   within the browser's safe area (`viewport-fit=contain`) and reports
   `ViewPadding.zero`.
 * When `viewport-fit=cover` **is** set in `web/index.html`, Flutter web
-  preserves `viewport-fit=cover` on the active `<meta flt-viewport>` tag,
-  measures the browser's CSS `env(safe-area-inset-top)`,
-  `env(safe-area-inset-right)`, `env(safe-area-inset-bottom)`, and
-  `env(safe-area-inset-left)` values, and exposes them through
+  preserves `viewport-fit=cover` on the active
+  `<meta name="viewport" flt-viewport>` tag. It then measures the browser's CSS
+  `env(safe-area-inset-*)` values and exposes them through
   [`FlutterView.viewPadding`][], [`MediaQuery.paddingOf`][], and
   [`SafeArea`][].
 
