@@ -577,7 +577,7 @@
     // align the entries with the summary text.
     margin-left: calc(var(--toc-icon-size) / 2 - 0.5px);
     padding-left: calc(var(--toc-icon-size) / 2 + 0.25rem - 0.5px);
-    border-left: 1px solid var(--site-outline-variant);
+    border-left: 1px solid var(--site-inset-borderColor);
   }
 
   li {
