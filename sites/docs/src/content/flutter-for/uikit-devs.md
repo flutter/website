@@ -531,9 +531,9 @@ In iOS, you typically manage dependencies using Swift Package Manager
 in Xcode (or CocoaPods in older projects).
 Flutter uses Dart's build system and the `pub` package manager
 to handle dependencies.
-Flutter automatically integrates native iOS dependencies
+Flutter automatically integrates the native iOS dependencies of plugins
 using [Swift Package Manager][] by default,
-while supporting CocoaPods as a fallback for backward compatibility.
+and falls back to CocoaPods for plugins that don't support it yet.
 
 In general, declare your external dependencies in `pubspec.yaml`.
 To find packages and plugins for Flutter, visit [pub.dev][].

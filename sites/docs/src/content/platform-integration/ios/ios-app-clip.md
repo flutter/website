@@ -339,7 +339,7 @@ refer to [Swift Package Manager for app developers][].
     ```
 
     At the top of the file,
-    uncomment `platform :ios, '13.0'` and set the
+    uncomment the `platform :ios` line and set the
     version to the lowest of the two targets' iOS
     Deployment Target.
 
@@ -358,7 +358,7 @@ refer to [Swift Package Manager for app developers][].
       install_all_flutter_pods(flutter_application_path)
     end
 
-    target '<name of your App Clip target>'
+    target '<name of your App Clip target>' do
       install_all_flutter_pods(flutter_application_path)
     end
     ```

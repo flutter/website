@@ -517,7 +517,7 @@ called `Runner`, and the Flutter app is called
 
 1.  In Xcode, link Flutter plugins to your app extension target.
 
-    <Tabs key="link-plugins-tabs" wrapped="true">
+    <Tabs key="plugin-dependency-manager" wrapped="true">
 
     <Tab name="Swift Package Manager (default)">
 
@@ -546,13 +546,14 @@ called `Runner`, and the Flutter app is called
     If your project uses CocoaPods, open `ios/Podfile` and ensure
     your extension target inherits the search paths from `Runner`:
 
-    ```ruby title="ios/Podfile"
+    ```ruby title="ios/Podfile" highlightLines=8-10
     target 'Runner' do
       use_frameworks!
-      use_modular_headers!
 
       flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-
+      target 'RunnerTests' do
+        inherit! :search_paths
+      end
       target 'ShareExtension' do
         inherit! :search_paths
       end

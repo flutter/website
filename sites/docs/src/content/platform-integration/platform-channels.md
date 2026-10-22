@@ -710,6 +710,7 @@ create your `FlutterMethodChannel` in the `didInitializeImplicitFlutterEngine` m
 :::
 
 ```objc title="AppDelegate.m"
+#import "AppDelegate.h"
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
 

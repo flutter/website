@@ -479,10 +479,10 @@ Then use the following steps:
 The iOS platform code for your plugin is located in
 `hello/ios/hello/Sources/hello`
 (or `hello/darwin/hello/Sources/hello` if using `sharedDarwinSource`).
-To edit your plugin code with full Xcode support in the example app,
-refer to [Add plugin as local package in example app][].
+In the Project Navigator, it's under **Runner** > **Flutter** > **hello**.
 
-If you are using legacy CocoaPods, the platform code is located under
+If your plugin uses the legacy CocoaPods structure,
+its platform code is located under
 `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
 in the Project Navigator.
 
@@ -547,36 +547,35 @@ pod files during the native app build step.
 
 If your plugin requires a privacy manifest, for example,
 if it uses any **required reason APIs**,
-update the `PrivacyInfo.xcprivacy` file to
+update the `hello/ios/hello/Sources/hello/PrivacyInfo.xcprivacy` file to
 describe your plugin's privacy impact.
+Then uncomment the `PrivacyInfo.xcprivacy` resource
+in your plugin's `Package.swift` file:
 
-With Swift Package Manager, place `PrivacyInfo.xcprivacy` in your plugin's
-`Resources` directory
-(such as `hello/ios/hello/Sources/hello/Resources/PrivacyInfo.xcprivacy`).
-Declare the resource in your `Package.swift` file:
-
-```swift title="Package.swift"
+```swift title="Package.swift" highlightLines=8
 targets: [
   .target(
     name: "hello",
+    dependencies: [
+      .product(name: "FlutterFramework", package: "FlutterFramework")
+    ],
     resources: [
-      .process("Resources/PrivacyInfo.xcprivacy"),
+      .process("PrivacyInfo.xcprivacy"),
     ]
-  ),
+  )
 ]
 ```
 
-If your plugin also supports CocoaPods for backward compatibility,
-add the following to the bottom of your `.podspec` file:
+To also include the privacy manifest when your plugin is used with CocoaPods,
+uncomment the following line in your `hello.podspec` file:
 
-```ruby
-s.resource_bundles = {'your_plugin_privacy' => ['your_plugin/Sources/your_plugin/Resources/PrivacyInfo.xcprivacy']}
+```ruby title="hello.podspec"
+s.resource_bundles = {'hello_privacy' => ['hello/Sources/hello/PrivacyInfo.xcprivacy']}
 ```
 
 For more information,
 consult [Privacy manifest files][] on the Apple developer site.
 
-[Add plugin as local package in example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors#optional-but-recommended-add-plugin-as-local-package-in-example-app
 [Privacy manifest files]: {{site.apple-dev}}/documentation/bundleresources/privacy_manifest_files
 
 #### Step 2d: Add Linux platform code (.h+.cc)
