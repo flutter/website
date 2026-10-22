@@ -13,9 +13,9 @@ class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
     : super(listenable: animation);
 
-  // Make the Tweens static because they don't change.
-  static final _opacityTween = Tween<double>(begin: 0.1, end: 1);
-  static final _sizeTween = Tween<double>(begin: 0, end: 300);
+  // Make the tweens static because they don't change.
+  static final Tween<double> _opacityTween = Tween(begin: 0.1, end: 1);
+  static final Tween<double> _sizeTween = Tween(begin: 0, end: 300);
 
   @override
   Widget build(BuildContext context) {
@@ -106,17 +106,20 @@ class UsedInTutorialTextOnly extends _LogoAppState {
 
   void usedInTutorialOnly1() {
     // #docregion IntTween
-    AnimationController controller = AnimationController(
+    final AnimationController controller = AnimationController(
       duration: const Duration(milliseconds: 500),
       vsync: this,
     );
-    Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
+    final Animation<int> alpha = IntTween(
+      begin: 0,
+      end: 255,
+    ).animate(controller);
     // #enddocregion IntTween
   }
 
   void usedInTutorialOnly2() {
     // #docregion IntTween-curve
-    AnimationController controller = AnimationController(
+    final AnimationController controller = AnimationController(
       duration: const Duration(milliseconds: 500),
       vsync: this,
     );
@@ -124,7 +127,7 @@ class UsedInTutorialTextOnly extends _LogoAppState {
       parent: controller,
       curve: Curves.easeOut,
     );
-    Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
+    final Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
     // #enddocregion IntTween-curve
   }
 }
@@ -132,6 +135,6 @@ class UsedInTutorialTextOnly extends _LogoAppState {
 // #docregion ShakeCurve
 class ShakeCurve extends Curve {
   @override
-  double transform(double t) => sin(t * pi * 2);
+  double transformInternal(double t) => t + sin(t * pi * 4) * 0.2;
 }
 // #enddocregion ShakeCurve

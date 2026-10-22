@@ -5,12 +5,12 @@ description: >-
   including releases, tooling, AI, and community milestones.
 publishDate: 2025-12-17
 author: twerske
-image: images/138nWNBqHADyCszyyX-h98Q.webp
+coverImage:
+  alt: ""
+  url: images/138nWNBqHADyCszyyX-h98Q.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/138nWNBqHADyCszyyX-h98Q.webp" />
 
 ## The Top Ten Highlights from Flutter & Dart in 2025
 

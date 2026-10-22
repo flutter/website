@@ -4,12 +4,14 @@ description: >-
   Testing how Flutter's hot reload scales up.
 publishDate: 2018-03-13
 author: swavkulinski
-image: images/17BKoEbJbiH08LxyMIpQdew.webp
+coverImage:
+  alt: >-
+    VS Code beside an iPhone simulator displaying many nested bordered
+    widgets in the hot reload test app.
+  url: images/17BKoEbJbiH08LxyMIpQdew.webp
 category: deep-dive
 layout: blog
 ---
-
-<DashImage figure src="images/17BKoEbJbiH08LxyMIpQdew.webp" />
 
 When it comes to discussing hot reload there is really no chance to avoid a Zoolander meme so please forgive me the title.
 

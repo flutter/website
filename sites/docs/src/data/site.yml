@@ -12,6 +12,7 @@ repo:
   organization: https://github.com/flutter
   this: https://github.com/flutter/website
   flutter: https://github.com/flutter/flutter
+  rfc: https://github.com/flutter/rfc
   games: https://github.com/flutter/games
   samples: https://github.com/flutter/samples
   packages: https://github.com/flutter/packages
