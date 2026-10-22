@@ -19,11 +19,11 @@ to expose the UI's meaning and structure to web browsers.
 For performance reasons, Flutter's web accessibility is not on by default.
 To turn on accessibility, the user needs to press an invisible button with
 `aria-label="Enable accessibility"`.
-On mobile browsers in multi-view or embedded web apps, this
-`<flt-semantics-placeholder>` button is scoped inside each `<flutter-view>`
-element so it does not intercept taps on surrounding HTML content.
 After pressing the button, the DOM tree will reflect all accessibility
 information for the widgets.
+In embedded or multi-view web apps on mobile browsers, Flutter scopes this
+placeholder button to each Flutter view so it doesn't block taps on the
+surrounding HTML page.
 
 ### Turn on accessibility mode in code
 
@@ -86,7 +86,7 @@ Many standard Flutter widgets, like `TabBar`, `MenuAnchor`, `Slider`,
 `RangeSlider`, and `Table`, automatically include semantic information along
 with their roles:
 
-* **Sliders**: `Slider` and `RangeSlider` (via `SemanticsFlag.isSlider`) and
+* **Sliders**: `Slider` and `RangeSlider` (using `SemanticsFlag.isSlider`) and
   custom widgets with `SemanticsRole.slider` render a focusable
   `<input type="range" role="slider">` element with synchronized
   `aria-label`, `aria-valuenow`, `aria-valuetext`, and keyboard arrow
@@ -95,10 +95,11 @@ with their roles:
   `namesRoute: true`, and a non-empty `label` emit `role="region"` landmarks,
   and scrollable menus (`MenuAnchor`, `DropdownMenu`) expose direct item counts
   to screen readers without intermediate `group` wrappers.
-* **Focus preservation and keyboard dismissal**: The web engine preserves DOM
-  focus across semantic role changes without scrolling, restores focus when
-  dialogs or modal routes close in `WidgetsApp.router` apps, and dismisses
-  visible `Tooltip`s when the user presses `Escape`.
+
+In addition, the web engine preserves DOM focus across semantic role changes
+without scrolling, restores focus when dialogs or modal routes close in
+`WidgetsApp.router` apps, and dismisses visible `Tooltip` widgets when the user
+presses `Escape`.
 
 Whenever possible, prefer using these standard widgets
 as they handle many accessibility aspects out-of-the-box.
@@ -155,10 +156,11 @@ Default 500% pinch-to-zoom (`maximum-scale=5.0`) and automatic iOS Safari
 16px text-input font sizing require Flutter 3.50 or later.
 :::
 
-In full-page mode, Flutter web configures its `<meta name="viewport" flt-viewport>`
-tag with `maximum-scale=5.0` (without `user-scalable=no`) so users can
-pinch-to-zoom up to 500% in compliance with WCAG 2.1 AA Success Criterion 1.4.4
-(Resize Text).
-On iOS Safari, Flutter also enforces a minimum 16px font size on hidden
-semantic `<input>` and `<textarea>` elements to prevent unintended browser
-auto-zoom when focusing text fields.
+By default in full-page mode, Flutter configures the page's
+`<meta name="viewport" flt-viewport>` tag with `maximum-scale=5.0` and without
+`user-scalable=no`. This allows users to pinch-to-zoom up to 500% to meet
+WCAG 2.1 AA text-resizing guidelines.
+
+On iOS Safari, Flutter also automatically sets a minimum `16px` font size on
+its hidden semantic `<input>` and `<textarea>` elements so the browser doesn't
+unexpectedly auto-zoom when a user focuses a text field.
