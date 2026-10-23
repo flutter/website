@@ -4,7 +4,9 @@ description: >-
   PWAs, better debugging, and CanvasKit-based rendering
 publishDate: 2020-04-29
 author: mariam_hasnany
-image: images/1w9xtjSXgRDPcCtNJLYhzpQ.webp
+coverImage:
+  url: images/1w9xtjSXgRDPcCtNJLYhzpQ.webp
+  showInPost: false
 category: news
 layout: blog
 ---

@@ -5,12 +5,12 @@ description: >-
   and today we're happy to share our roadmap for the next generation of apps.
 publishDate: 2026-02-24
 author: twerske
-image: images/1Nx4rPo-suELodUsEQqLFdQ.webp
+coverImage:
+  alt: ""
+  url: images/1Nx4rPo-suELodUsEQqLFdQ.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/1Nx4rPo-suELodUsEQqLFdQ.webp" />
 
 ## Flutter & Dart’s 2026 roadmap
 

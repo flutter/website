@@ -54,7 +54,7 @@ class _DraggableCardState extends State<DraggableCard>
   // #docregion build
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    final size = MediaQuery.sizeOf(context);
     // #docregion gesture
     return GestureDetector(
       onPanDown: (details) {},

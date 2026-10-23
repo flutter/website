@@ -4,12 +4,12 @@ description: >-
   Register for the next Flutter event, streaming live from Nairobi, Kenya
 publishDate: 2022-11-15
 author: kkboateng
-image: images/02u_pjVJlgpQw4XHy.webp
+coverImage:
+  alt: ""
+  url: images/02u_pjVJlgpQw4XHy.webp
 category: news
 layout: blog
 ---
-
-<DashImage figure src="images/02u_pjVJlgpQw4XHy.webp" />
 
 Tune in for **Flutter Forward**, the next global Flutter event, streaming live from Nairobi, Kenya on January 25, 2023.
 

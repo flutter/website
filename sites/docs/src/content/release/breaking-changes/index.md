@@ -38,13 +38,15 @@ They're sorted by release and listed in alphabetical order:
 
 * [Added enabled property and made onChanged optional for DropdownButton][]
 * [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
-* [Restrict command-line flags for prebuilt Android release binaries][]
-* [Removal of `useInheritedMediaQuery`][]
+* [Stricter Android `Intent` verification for app entrypoints][]
+* [Restrict Android engine flags in release mode][]
+* [WidgetSpan order in right-to-left text][]
 
 [Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
+[Stricter Android `Intent` verification for app entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
-[Restrict command-line flags for prebuilt Android release binaries]: /release/breaking-changes/restrict-command-line-flags-prebuilt-android-release-binaries
-[Removal of `useInheritedMediaQuery`]: /release/breaking-changes/remove-useInheritedMediaQuery
+[Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
+[WidgetSpan order in right-to-left text]: /release/breaking-changes/widgetspan-rtl-bidi-order
 
 <a id="released-in-flutter-347" aria-hidden="true"></a>
 ### Released in Flutter 3.47

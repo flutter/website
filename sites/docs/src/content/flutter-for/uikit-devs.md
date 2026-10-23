@@ -333,7 +333,7 @@ fades the widget into a logo when you press the `FloatingActionButton`:
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -417,7 +417,7 @@ see Collin's answer on [StackOverflow][].
 
 <?code-excerpt "lib/canvas.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MaterialApp(home: DemoApp()));
 
@@ -527,17 +527,18 @@ Widget build(BuildContext context) {
 
 ### Managing dependencies
 
-In iOS, you add dependencies with CocoaPods by adding to your `Podfile`.
-Flutter uses Dart's build system and the Pub package manager
-to handle dependencies. The tools delegate the building of the
-native Android and iOS wrapper apps to the
-respective build systems.
+In iOS, you typically manage dependencies using Swift Package Manager
+in Xcode (or CocoaPods in older projects).
+Flutter uses Dart's build system and the `pub` package manager
+to handle dependencies.
+Flutter automatically integrates the native iOS dependencies of plugins
+using [Swift Package Manager][] by default,
+and falls back to CocoaPods for plugins that don't support it yet.
 
-While there is a Podfile in the iOS folder in your
-Flutter project, only use this if you are adding native
-dependencies needed for per-platform integration.
-In general, use `pubspec.yaml` to declare external dependencies in Flutter.
-A good place to find great packages for Flutter is on [pub.dev][].
+In general, declare your external dependencies in `pubspec.yaml`.
+To find packages and plugins for Flutter, visit [pub.dev][].
+To learn how Flutter manages native Apple dependencies,
+consult [Swift Package Manager for app developers][].
 
 ## Navigation
 
@@ -673,8 +674,9 @@ specify the `localizationsDelegates` and
 
 <?code-excerpt "lib/localizations_example.dart"?>
 ```dart
-import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    hide GlobalMaterialLocalizations;
+import 'package:material_ui/material_ui.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -798,7 +800,7 @@ scrolling is fast and smooth.
 
 <?code-excerpt "lib/listview.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -852,7 +854,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -930,7 +932,7 @@ as shown in the next example.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -996,7 +998,7 @@ list or a list with very large amounts of data.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1304,7 +1306,7 @@ the color scheme from seed is set to deepPurple and divider color is grey.
 
 <?code-excerpt "lib/theme.dart (theme)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SampleApp extends StatelessWidget {
   const SampleApp({super.key});
@@ -1549,7 +1551,7 @@ update the state, and pass a new `InputDecoration` object.
 
 <?code-excerpt "lib/validation_errors.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1661,8 +1663,8 @@ displays it in a `ListView`:
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1831,8 +1833,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1994,8 +1996,8 @@ Otherwise, render the `ListView` with the data returned from a network call.
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2085,7 +2087,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [arb]: https://github.com/googlei18n/app-resource-bundle
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [composing]: /resources/architectural-overview#composition
-[Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
+[Cupertino library]: {{site.cupertino_ui}}
 [Cupertino widgets]: /ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
@@ -2111,3 +2113,5 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [widget catalog]: /ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [Learning Dart as a Swift Developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+[Swift Package Manager for app developers]: /packages-and-plugins/swift-package-manager/for-app-developers

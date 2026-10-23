@@ -11,6 +11,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any # Use the pinned version from flutter_localizations.
+  material_ui: ^1.5.0
 
 dev_dependencies:
   flutter_test:

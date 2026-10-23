@@ -1,9 +1,8 @@
 // ignore_for_file: specify_nonobvious_property_types, avoid_print, prefer_const_declarations
 
-import 'package:flutter/material.dart';
-
 // #docregion main
 import 'package:flutter/widgets.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const Center(child: Text('Hello', textDirection: TextDirection.ltr)));

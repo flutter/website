@@ -1,9 +1,9 @@
 // Basic Flutter widget test.
 // Learn more at https://docs.flutter.dev/testing/overview#widget-tests.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lakes_interactive/main.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   testWidgets('Example app smoke test', (tester) async {

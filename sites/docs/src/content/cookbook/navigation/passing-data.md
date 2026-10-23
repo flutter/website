@@ -410,6 +410,6 @@ class DetailScreen extends StatelessWidget {
 
 [`ModalRoute.of()`]: {{site.api}}/flutter/widgets/ModalRoute/of.html
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
-[`onTap()`]: {{site.api}}/flutter/material/ListTile/onTap.html
+[`onTap()`]: {{site.material_ui}}/ListTile/onTap.html
 [`RouteSettings`]: {{site.api}}/flutter/widgets/RouteSettings-class.html
 [Use lists]: /cookbook/lists/basic-list

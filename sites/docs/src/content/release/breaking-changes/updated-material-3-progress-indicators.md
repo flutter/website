@@ -120,10 +120,10 @@ Relevant PRs:
 - [Update Material 3 `LinearProgressIndicator` for new visual style][]
 - [Update Material 3 `CircularProgressIndicator` for new visual style][]
 
-[`LinearProgressIndicator`]: {{site.main-api}}/flutter/material/LinearProgressIndicator-class.html
-[`CircularProgressIndicator`]: {{site.main-api}}/flutter/material/CircularProgressIndicator-class.html
-[`LinearProgressIndicator.year2023`]: {{site.main-api}}/flutter/material/LinearProgressIndicator/year2023.html
-[`CircularProgressIndicator.year2023`]: {{site.main-api}}/flutter/material/CircularProgressIndicator/year2023.html
+[`LinearProgressIndicator`]: {{site.material_ui}}/LinearProgressIndicator-class.html
+[`CircularProgressIndicator`]: {{site.material_ui}}/CircularProgressIndicator-class.html
+[`LinearProgressIndicator.year2023`]: {{site.material_ui}}/LinearProgressIndicator/year2023.html
+[`CircularProgressIndicator.year2023`]: {{site.material_ui}}/CircularProgressIndicator/year2023.html
 [Update both `ProgressIndicator` for Material 3 redesign]: {{site.repo.flutter}}/issues/141340
 [Update Material 3 `LinearProgressIndicator` for new visual style]: {{site.repo.flutter}}/pull/154817
 [Update Material 3 `CircularProgressIndicator` for new visual style]: {{site.repo.flutter}}/pull/158104

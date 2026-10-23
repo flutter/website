@@ -26,33 +26,12 @@ The following illustrates an example of the Android
 two product flavors (`staging`, `production`) and two build
 types (`debug`, `release`):
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Product flavors</th>
-      <th>Build types</th>
-      <th>Resulting build variants</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>staging</td>
-      <td>debug</td>
-      <td>
-        stagingDebug</br>
-        stagingRelease</br>
-      </td>
-    </tr>
-    <tr>
-      <td>production</td>
-      <td>release</td>
-      <td>
-        productionDebug</br>
-        productionRelease</br>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Product flavors | Build types | Resulting build variants |
+| --- | --- | --- |
+| staging | debug | stagingDebug<br>stagingRelease |
+| production | release | productionDebug<br>productionRelease |
+
+{:.table .table-striped}
 
 [_product flavor_]: https://developer.android.com/build/build-variants#product-flavors
 [_build variants_]: https://developer.android.com/build/build-variants
