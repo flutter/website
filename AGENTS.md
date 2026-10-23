@@ -73,6 +73,11 @@ dart run dash_site --site=www build
 # Sync docs code excerpts to Markdown files:
 dart run dash_site --site=docs refresh-excerpts
 
+# Convert PNG and JPEG images,
+# specified relative to the repository root, to WebP.
+# This doesn't update references to them, so do that afterward:
+dart run dash_site optimize-images <image paths...>
+
 # Learn what other commands are available:
 dart run dash_site --help
 ```

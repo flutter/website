@@ -35,7 +35,7 @@ and base presentation widgets (`CustomPaint`, `Image`, `RichText`).
 
 * **Building a custom design system:**
   If your application uses a bespoke visual language that doesn't
-  strictkly follow Material Design or Apple Human Interface Guidelines,
+  strictly follow Material Design or Apple Human Interface Guidelines,
   build on top of widgets rather than overriding opinionated design system defaults.
 * **Creating design-agnostic packages:**
   If you publish a reusable component or utility package on pub.dev,
@@ -351,15 +351,6 @@ This pattern recurs throughout the framework and is something you
 might consider when designing your own widgets.
 
 For more information, check out [Material Components widgets][].
-
-:::note
-Material is one of the 2 bundled designs included with Flutter.
-To create an iOS-centric design,
-check out the [Cupertino components][] package,
-which has its own versions of
-[`CupertinoApp`][], and [`CupertinoNavigationBar`][].
-:::
-
 
 ## Handling gestures
 

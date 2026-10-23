@@ -184,13 +184,13 @@ then extract the SDK to where you want it stored.
         Expand-Archive -Path <sdk_zip_path> -DestinationPath <destination_directory_path>
         ```
 
-    For example, if you downloaded the bundle for Flutter 3.47.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.5 into
     the `$env:USERPROFILE\Downloads` directory and want to
     store the extracted SDK in the `$env:USERPROFILE\develop` directory:
 
     ```powershell
     Expand-Archive `
-      -Path "$env:USERPROFILE\Downloads\flutter_windows_3.47.3-stable.zip" `
+      -Path "$env:USERPROFILE\Downloads\flutter_windows_3.47.5-stable.zip" `
       -DestinationPath "$env:USERPROFILE\develop"
     ```
 
@@ -207,12 +207,12 @@ then extract the SDK to where you want it stored.
         tar -xf <sdk_zip_path> -C <destination_directory_path>
         ```
 
-    For example, if you downloaded the bundle for Flutter 3.47.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.5 into
     the `%USERPROFILE%\Downloads` directory and want to
     store the extracted SDK in the `%USERPROFILE%\develop` directory:
 
     ```bat
-    tar -xf "%USERPROFILE%\Downloads\flutter_windows_3.47.3-stable.zip" -C "%USERPROFILE%\develop"
+    tar -xf "%USERPROFILE%\Downloads\flutter_windows_3.47.5-stable.zip" -C "%USERPROFILE%\develop"
     ```
 
     </Tab>
@@ -274,12 +274,12 @@ For details, check out the
     $ unzip <sdk_zip_path> -d <destination_directory_path>
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.47.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.5 into
     the `~/Downloads` directory and want to
     store the extracted SDK in the `~/develop` directory:
 
     ```console
-    $ unzip ~/Downloads/flutter_macos_3.47.3-stable.zip -d ~/develop/
+    $ unzip ~/Downloads/flutter_macos_3.47.5-stable.zip -d ~/develop/
     ```
 
 {: .steps .macos-only}
@@ -311,12 +311,12 @@ For details, check out the
     $ tar -xf <sdk_zip_path> -C <destination_directory_path>
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.47.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.5 into
     the `~/Downloads` directory and want to
     store the extracted SDK in the `~/develop` directory:
 
     ```console
-    $ tar -xf ~/Downloads/flutter_linux_3.47.3-stable.tar.xz -C ~/develop/
+    $ tar -xf ~/Downloads/flutter_linux_3.47.5-stable.tar.xz -C ~/develop/
     ```
 
 {: .steps .linux-only .chromeos-only}
