@@ -1,29 +1,23 @@
-Learn how to use any Code OSS-based editor, such as VS Code,
-to set up your Flutter development environment and
-test drive Flutter's developer experience.
+Learn how to use [Visual Studio Code (VS Code)][VS Code] or any compatible
+Code OSS-based editor (such as [Antigravity][], [Cursor][], or [Windsurf][])
+to quickly install and set up your Flutter development environment.
 
-If you've developed with Flutter before,
-or you prefer to use a different editor or IDE,
-you can follow the [custom setup instructions][] instead.
+If you prefer a different editor or IDE,
+you can [install Flutter manually][], or
+configure target platforms and manage an existing SDK in
+[Install and set up Flutter][].
 
-:::note What you'll achieve
-
-- Install the software prerequisites for Flutter.
-- Use VS Code to download and install Flutter.
-- Create a new Flutter app from a sample template.
-- Try out Flutter development features like stateful hot reload.
-
-:::
-
-[custom setup instructions]: /install/custom
+[VS Code]: https://code.visualstudio.com
+[Antigravity]: https://antigravity.google/
+[Cursor]: https://cursor.com/
+[Windsurf]: https://windsurf.com/
+[install Flutter manually]: /install/manual
+[Install and set up Flutter]: /install
 
 ## Confirm your development platform {: #dev-platform}
 
-The instructions on this page are configured to cover
-installing and trying out Flutter on a **Windows**{:.selected-os-text} device.
-
-If you'd like to follow the instructions for a different OS,
-please select one of the following.
+These instructions are configured for **Windows**{:.selected-os-text}.
+If you're using a different operating system, select it below:
 
 <OSSelector />
 
@@ -64,24 +58,33 @@ first install the following tools.
  1. <h3>Download and install Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
-    [install and set up Visual Studio Code][vscode-install].
-
-    You can instead install and use any other Code OSS-based editor
-    that supports VS Code extensions.
-    If you choose to do so, for the rest of this article,
-    assume VS Code refers to the editor of your choice.
+    [install and set up Visual Studio Code][vscode-install]
+    (or your preferred Code OSS-based editor).
 
 {: .steps .chromeos-only}
 
- 1. <h3>Install git</h3>
+<div class="macos-only">
 
-    **If you already have git installed, skip to the next
+:::warning
+**Note for Intel Macs:**
+Flutter is deprecating support for Intel-based Macs (x64).
+Future Flutter releases will require Apple Silicon.
+For details, check out the
+[macOS Intel deprecation strategy](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+:::
+
+</div>
+
+ 1. <h3>Install the Xcode command-line tools</h3>
+
+    **If you already have Git installed, skip to the next
     step: Download and install Visual Studio Code.**
 
-    There are a few ways to install git on your Mac,
-    but the way we recommend is by using XCode.
-    This will be important when you target your
-    builds for iOS or macOS.
+    Download the Xcode command-line tools to get access to
+    the command-line tools that Flutter relies on, including Git.
+    This is also required when you target your builds for iOS or macOS.
+
+    To download the tools, run the following command in your preferred terminal:
 
     ```console
     $ xcode-select --install
@@ -94,12 +97,8 @@ first install the following tools.
  1. <h3>Download and install Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
-    [install and set up Visual Studio Code][vscode-install].
-
-    You can instead install and use any other Code OSS-based editor
-    that supports VS Code extensions.
-    If you choose to do so, for the rest of this article,
-    assume VS Code refers to the editor of your choice.
+    [install and set up Visual Studio Code][vscode-install]
+    (or your preferred Code OSS-based editor).
 
 {: .steps .macos-only}
 
@@ -113,12 +112,8 @@ first install the following tools.
  1. <h3>Download and install Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
-    [install and set up Visual Studio Code][vscode-install].
-
-    You can instead install and use any other Code OSS-based editor
-    that supports VS Code extensions.
-    If you choose to do so, for the rest of this article,
-    assume VS Code refers to the editor of your choice.
+    [install and set up Visual Studio Code][vscode-install]
+    (or your preferred Code OSS-based editor).
 
 {: .steps .windows-only}
 
@@ -145,12 +140,8 @@ first install the following tools.
  1. <h3>Download and install Visual Studio Code</h3>
 
     To quickly install Flutter, then edit and debug your apps,
-    [install and set up Visual Studio Code][vscode-install].
-
-    You can instead install and use any other Code OSS-based editor
-    that supports VS Code extensions.
-    If you choose to do so, for the rest of this article,
-    assume VS Code refers to the editor of your choice.
+    [install and set up Visual Studio Code][vscode-install]
+    (or your preferred Code OSS-based editor).
 
 {: .steps .linux-only}
 
@@ -160,47 +151,38 @@ first install the following tools.
 [git-install]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [vscode-install]: https://code.visualstudio.com/docs/setup/setup-overview
 
+<a id="install-flutter" aria-hidden="true"></a>
+
 ## Install and set up Flutter {: #install}
 
-Now that you've installed Git and VS Code,
-follow these steps to use VS Code to install and set up Flutter.
+Now that you've installed the prerequisites,
+use VS Code to download and set up the Flutter SDK:
 
-:::note Download manually
-If you prefer to manually install Flutter,
-follow the instructions in [Install Flutter manually][].
-:::
+ 1. <h3>Install the Flutter extension</h3>
 
- 1. <h3>Launch VS Code</h3>
-
-    If not already open, open VS Code by searching for it with Spotlight
-    or opening it manually from the directory where it's installed.
-
- 1. <h3>Add the Flutter extension to VS Code</h3>
-
-    To add the Dart and Flutter extensions to VS Code,
-    visit the [Flutter extension's marketplace page][flutter-vscode],
-    then click **Install**.
-    If prompted by your browser, allow it to open VS Code.
+    Open VS Code, then install the
+    [Flutter extension from the VS Code Marketplace][flutter-vscode]
+    or press <kbd class="special-key">Cmd/Ctrl</kbd> +
+    <kbd>Shift</kbd> + <kbd>X</kbd> to open the **Extensions** view,
+    search for `Flutter`, and click **Install**.
+    Installing the Flutter extension also installs the Dart extension.
 
  1. <h3>Install Flutter with VS Code</h3>
 
-    1. Open the command palette in VS Code.
+    1. Open the Command Palette in VS Code.
 
        Go to **View** <span aria-label="and then">></span> **Command Palette**
        or press <kbd class="special-key">Cmd/Ctrl</kbd> +
        <kbd>Shift</kbd> + <kbd>P</kbd>.
 
-    1. In the command palette, type `flutter`.
-
-    1. Select **Flutter: New Project**.
+    1. In the Command Palette, type `flutter` and select
+       **Flutter: New Project**.
 
     1. VS Code prompts you to locate the Flutter SDK on your computer.
        Select **Download SDK**.
 
     1. When the **Select Folder for Flutter SDK** dialog displays,
-       choose where you want to install Flutter.
-
-    1. Click **Clone Flutter**.
+       choose where you want to install Flutter and click **Clone Flutter**.
 
        While downloading Flutter, VS Code displays this pop-up notification:
 
@@ -212,7 +194,7 @@ follow the instructions in [Install Flutter manually][].
        If you suspect that the download has hung, click **Cancel** then
        start the installation again.
 
-    1. Click **Add SDK to PATH**.
+    1. Once the download finishes, click **Add SDK to PATH**.
 
        When successful, a notification displays:
 
@@ -221,7 +203,6 @@ follow the instructions in [Install Flutter manually][].
        ```
 
     1. VS Code might display a Google Analytics notice.
-
        If you agree, click **OK**.
 
     1. To ensure that Flutter is available in all terminals:
@@ -231,19 +212,26 @@ follow the instructions in [Install Flutter manually][].
 
        {:type="a"}
 
-    :::note
-    The VS Code setup process might check for Android Studio, which can result in a warning if it's not installed.
-    You can safely ignore this if you're targeting other platforms (like web, iOS, or macOS), as the installation will still succeed.
-    Afterward, run `flutter doctor` to verify your installation.
+ 1. <h3>Validate your setup</h3>
+
+    To verify your installation, open the Command Palette
+    (<kbd class="special-key">Cmd/Ctrl</kbd> +
+    <kbd>Shift</kbd> + <kbd>P</kbd>) and select
+    **Flutter: Run Flutter Doctor**, or run `flutter doctor`
+    in your terminal.
+
+    :::note What to expect in `flutter doctor`
+    You only need checkmarks (`[✓]`) for **Flutter**, **VS Code**,
+    and the platforms you plan to target
+    (for example, **Chrome** lets you build for the web immediately).
+    You can safely ignore `[!]` or `[✗]` warnings for tools like
+    Android Studio or Xcode until you're ready to target those platforms.
     :::
 
- 1. <h3>Troubleshoot installation issues</h3>
-
     If you encounter any issues during installation,
-    check out [Flutter installation troubleshooting][troubleshoot].
+    consult [Flutter installation troubleshooting][troubleshoot].
 
 {:.steps}
 
-[Install Flutter manually]: /install/manual
 [flutter-vscode]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
 [troubleshoot]: /install/troubleshoot
