@@ -35,7 +35,7 @@ Here's a quick look at how each option stores and syncs data:
 [Cloud Firestore][] is the recommended default when your app needs
 a scalable cloud database that keeps data in sync across users and
 devices—such as in chat apps, collaborative tools, live multiplayer
-games, or offline-first field service and inspection apps.
+games, or field service and inspection apps that need offline caching.
 It stores data as documents organized into collections, and the
 [`cloud_firestore`][] package lets your Flutter app read and write
 data directly from client code, secured with
