@@ -44,6 +44,8 @@ import 'package:site_shared/components/common/client/copy_button.dart'
     as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     as _dartpad_injector;
+import 'package:site_shared/components/layout/theme_switcher.dart'
+    as _theme_switcher;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -150,6 +152,9 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:dartpad_injector',
           params: __dartpad_injectorDartPadInjector,
         ),
+    _theme_switcher.ThemeSwitcher: ClientTarget<_theme_switcher.ThemeSwitcher>(
+      'site_shared:theme_switcher',
+    ),
   },
   styles: () => [..._file_tree.FileTree.styles],
 );
@@ -168,8 +173,10 @@ Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
 Map<String, Object?> __headerHeader(_header.Header c) => {
   'contrastLogoSrc': c.contrastLogoSrc,
   'defaultLogoSrc': c.defaultLogoSrc,
+  'darkLogoSrc': c.darkLogoSrc,
   'banner': c.banner.toMap(),
   'pageUrl': c.pageUrl,
+  'supportsDarkMode': c.supportsDarkMode,
 };
 Map<String, Object?> __consultants_gridConsultantsGrid(
   _consultants_grid.ConsultantsGrid c,
