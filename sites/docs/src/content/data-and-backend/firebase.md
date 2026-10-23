@@ -129,8 +129,9 @@ the [FirebaseUI authentication codelab][auth-codelab].
 
 [Cloud Firestore][] is the recommended default when your app needs a
 scalable NoSQL database that syncs data across devices in realtime and
-works offline—such as in chat apps, collaborative tools, or
-offline-first field service apps. To compare Cloud Firestore with
+offers offline caching and persistence—such as in chat apps,
+collaborative tools, or field service apps that need to keep working
+with an unreliable connection. To compare Cloud Firestore with
 relational and local storage options, check out
 [Choose a database for your Flutter app][choose-db].
 
@@ -208,8 +209,8 @@ sync changes when connectivity returns. To get started, follow the
 
 If your app needs a relational database, [Firebase SQL Connect][]
 (formerly Firebase Data Connect) provides a managed PostgreSQL
-database and generates a type-safe Dart SDK, built on the
-[`firebase_data_connect`][] package, from your schema and queries.
+database and generates a type-safe Dart SDK built on the
+[`firebase_data_connect`][] package.
 
 To install the plugin, run:
 
