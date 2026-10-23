@@ -454,6 +454,8 @@
           permalink: /platform-integration/web/web-content-in-flutter
         - title: Display images on the web
           permalink: /platform-integration/web/web-images
+        - title: WebParagraph
+          permalink: /platform-integration/web/web-paragraph
         - title: Web FAQ
           permalink: /platform-integration/web/faq
     - title: Windows
