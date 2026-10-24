@@ -44,6 +44,18 @@ Widgets built on `EditableText`, such as `TextField` and `SelectableText`,
 also render the hyphen but don't have a `hyphens` parameter yet,
 so there's no way to opt out for them.
 
+In Flutter 3.50, the hyphen has a few known issues,
+which a later release fixes:
+
+* It can appear where a line doesn't break at the soft hyphen,
+  such as at the end of the text or before a space or line break.
+* It can extend slightly past the width of the paragraph.
+  With the fix, the line breaks earlier instead when the hyphen doesn't fit.
+* It isn't highlighted when the text is selected.
+
+To avoid these issues in 3.50,
+set `hyphens: Hyphens.hidden` on `Text`, `RichText`, or `TextPainter`.
+
 **API.** `TextStyle.getParagraphStyle` gained an optional `hyphens` parameter.
 Because Dart requires an override to accept every parameter
 of the method it overrides, a class that overrides `getParagraphStyle`
