@@ -1,0 +1,719 @@
+// Copyright 2026, the Flutter authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+
+@use 'sass:map';
+
+// -----------------------------------------------------------------------------
+// Design Tokens
+// -----------------------------------------------------------------------------
+// Keep this set small. Prefer the site-wide custom properties defined in
+// core/_vars.scss, and only add a token here if the site doesn't have one.
+// Before adding a new value, check whether an existing one is close enough.
+
+// Category colors. For tinted backgrounds and borders, combine them with the
+// tint levels below, such as `rgba($color-outcome, $tint-bg)`.
+$color-outcome: #059669; // Green - successful outcomes
+$color-quality: #6366f1; // Indigo - code quality metrics
+$color-dx: #d97706; // Amber - developer experience
+$color-functional: #0284c7; // Sky blue - functional correctness
+$color-llm: #7c3aed; // Violet - LLM grading
+$color-heuristic: #2563eb; // Blue - heuristic grading
+$color-poor: #ea580c; // Orange - poor performance
+$color-failure: #e11d48; // Rose - failures
+$color-grey: #64748b; // Slate - neutral/baseline
+$color-white: #ffffff;
+
+$tint-bg: 0.12;
+$tint-border: 0.25;
+$tint-overlay: 0.08; // White overlays on dark backgrounds.
+
+// Background for dark, full-bleed surfaces like the hero header.
+$bench-dark-gradient: linear-gradient(135deg, var(--blue-10), var(--blue-9));
+
+// Typography scale, from smallest to largest:
+// $font-size-xs (12px), --font-size-default (14px),
+// --font-size-heading-5 (16px), --font-size-heading-4 (18-20px),
+// --font-size-heading-3 (24-28px), --font-size-heading-2 (34-36px).
+$font-size-xs: 0.75rem;
+$font-size-code: 0.875em; // Inline code, relative to the surrounding text.
+$line-height-tight: 1.2;
+$line-height-body: 1.5;
+$letter-spacing-caps: 0.05em;
+
+// Spacing scale, from smallest to largest:
+// $spacing-xs (4px), --spacer-sm (8px), $spacing-md (16px),
+// $spacing-lg (24px), --spacer-md (32px), --spacer (40px), --gutter (50px).
+$spacing-xs: 0.25rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+
+// Borders. For rounded corners, use --ui-border-radius-sm.
+$border-width: 2px;
+$radius-pill: 9999px;
+
+$icon-size: 2.75rem;
+$card-width: 280px;
+$bench-content-max-width: 1000px;
+
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$transition-normal: 0.2s ease;
+
+// -----------------------------------------------------------------------------
+// Shared Mixins
+// -----------------------------------------------------------------------------
+@mixin bench-element-width($max-width: $bench-content-max-width) {
+  width: 100%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin custom-scrollbar($orientation: 'vertical') {
+  scrollbar-width: thin;
+  scrollbar-color: var(--site-inset-borderColor) transparent;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    @if $orientation == 'horizontal' {
+      height: 6px;
+    } @else {
+      width: 6px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+  }
+}
+
+$category-colors: (
+  outcome: $color-outcome,
+  quality: $color-quality,
+  dx: $color-dx,
+  functional: $color-functional,
+  llm: $color-llm,
+  heuristic: $color-heuristic,
+  poor: $color-poor,
+  failure: $color-failure,
+  grey: $color-grey,
+);
+
+// Applies a color's tinted background and matching text color.
+@mixin category-tint($color, $with-border: false) {
+  background-color: rgba($color, $tint-bg);
+  color: $color;
+
+  @if $with-border {
+    border: 1px solid rgba($color, $tint-border);
+  }
+}
+
+// Generates a modifier class for each category in `$classes`, a map from
+// a `$category-colors` key to the class selectors that use that color.
+@mixin category-modifiers($classes, $with-border: false) {
+  @each $category, $selectors in $classes {
+    &:is(#{$selectors}) {
+      @include category-tint(map.get($category-colors, $category), $with-border);
+    }
+  }
+}
+
+@mixin category-badge($with-border: false) {
+  font-size: $font-size-xs;
+  font-weight: var(--font-weight-bold);
+  padding: $spacing-xs var(--spacer-sm);
+  border-radius: var(--ui-border-radius-sm);
+
+  @include category-modifiers(
+    (
+      outcome: '.badge-outcome, .outcome, .badge-deterministic, .badge-perfect, .badge-green',
+      quality: '.badge-quality, .quality, .badge-purple',
+      dx: '.badge-dx, .dx, .badge-amber',
+      functional: '.badge-functional, .badge-blue',
+      llm: '.badge-llm',
+      heuristic: '.badge-heuristic',
+      poor: '.badge-poor',
+      failure: '.badge-failure',
+      grey: '.badge-grey',
+    ),
+    $with-border
+  );
+}
+
+@mixin category-icon-background {
+  width: $icon-size;
+  height: $icon-size;
+  border-radius: var(--ui-border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include category-modifiers(
+    (
+      outcome: '.outcome, .variant-outcome, .variant-perfect, .variant-green',
+      quality: '.quality, .variant-quality, .variant-purple',
+      dx: '.dx, .variant-dx, .variant-amber',
+      functional: '.variant-blue, .variant-functional',
+      grey: '.variant-grey',
+    )
+  );
+
+  .material-symbols {
+    font-size: var(--font-size-heading-3);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// CSS Custom Properties
+// -----------------------------------------------------------------------------
+:root {
+  --bench-success-bg: rgba(20, 194, 173, 0.14);
+  --bench-success-fg: #00796b;
+  --bench-success-border: rgba(20, 194, 173, 0.4);
+
+  --bench-warning-bg: rgba(242, 180, 0, 0.16);
+  --bench-warning-fg: #b06000;
+  --bench-warning-border: rgba(242, 180, 0, 0.45);
+
+  --bench-danger-bg: rgba(212, 51, 36, 0.12);
+  --bench-danger-fg: #c5221f;
+  --bench-danger-border: rgba(212, 51, 36, 0.4);
+
+  --bench-error-bg: rgba(100, 116, 139, 0.12);
+  --bench-error-fg: #d93025;
+  --bench-error-border: #ea8600;
+
+  --bench-diagnostic-bg: rgba(121, 108, 235, 0.08);
+  --bench-diagnostic-border: rgba(121, 108, 235, 0.3);
+  --bench-diagnostic-fg: #5b4cdb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bench-success-bg: rgba(28, 218, 197, 0.2);
+    --bench-success-fg: #80cbc4;
+    --bench-success-border: rgba(28, 218, 197, 0.5);
+
+    --bench-warning-bg: rgba(242, 221, 34, 0.2);
+    --bench-warning-fg: #ffe082;
+    --bench-warning-border: rgba(242, 221, 34, 0.5);
+
+    --bench-danger-bg: rgba(242, 93, 80, 0.2);
+    --bench-danger-fg: #ef9a9a;
+    --bench-danger-border: rgba(242, 93, 80, 0.5);
+
+    --bench-error-bg: rgba(148, 163, 184, 0.18);
+    --bench-error-fg: #ff8a80;
+    --bench-error-border: #ffab40;
+
+    --bench-diagnostic-bg: rgba(198, 186, 250, 0.15);
+    --bench-diagnostic-border: rgba(198, 186, 250, 0.4);
+    --bench-diagnostic-fg: #c6bafa;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Shared Layout & Components
+// -----------------------------------------------------------------------------
+body.flutterbench {
+  background-color: var(--site-base-bgColor);
+  color: var(--site-base-fgColor);
+  font-family: var(--font-body);
+
+  .bench-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+
+    &.content-area {
+      padding-top: var(--spacer-md);
+      padding-bottom: var(--gutter);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Hero Header & Navigation Tabs
+  // ---------------------------------------------------------------------------
+  .bench-hero-header {
+    background: $bench-dark-gradient;
+    color: $color-white;
+    padding: var(--gutter) 0 0 0;
+    border-bottom: 1px solid var(--site-inset-borderColor);
+
+    .hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      margin-bottom: $spacing-md;
+
+      .hero-category-tag {
+        font-size: $font-size-xs;
+        font-weight: var(--font-weight-bolder);
+        letter-spacing: $letter-spacing-caps;
+        padding: $spacing-xs var(--spacer-sm);
+        background-color: var(--blue-5);
+        color: $color-white;
+        border-radius: var(--ui-border-radius-sm);
+      }
+
+      .job-id-tag {
+        font-size: $font-size-xs;
+        color: var(--blue-3);
+        font-family: var(--font-code);
+      }
+    }
+
+    .bench-hero-title {
+      font-size: var(--font-size-heading-2);
+      font-weight: var(--font-weight-bolder);
+      line-height: $line-height-tight;
+      margin-bottom: $spacing-md;
+      color: $color-white;
+    }
+
+    .bench-hero-subtitle {
+      font-size: var(--font-size-heading-4);
+      color: var(--blue-1);
+      max-width: 800px;
+      line-height: $line-height-body;
+      margin-bottom: var(--spacer);
+    }
+
+    .bench-tab-nav {
+      display: flex;
+      gap: var(--spacer-sm);
+      overflow-x: auto;
+      border-bottom: none;
+
+      .bench-nav-link {
+        display: inline-block;
+        padding: $spacing-md $spacing-lg;
+        font-size: var(--font-size-heading-5);
+        font-weight: var(--font-weight-bold);
+        color: var(--blue-2);
+        text-decoration: none;
+        border-bottom: $border-width solid transparent;
+        transition: all $transition-normal;
+
+        &:hover {
+          color: $color-white;
+          border-bottom-color: rgba($color-white, $tint-border);
+        }
+
+        &.active {
+          color: $color-white;
+          border-bottom-color: var(--blue-4);
+        }
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Breadcrumbs
+  // ---------------------------------------------------------------------------
+  .bench-breadcrumbs {
+    font-size: var(--font-size-default);
+    color: var(--site-base-fgColor-alt);
+    margin-bottom: $spacing-lg;
+
+    a {
+      color: var(--site-link-fgColor);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .breadcrumb-sep {
+      margin: 0 $spacing-xs;
+      color: var(--site-inset-borderColor);
+    }
+
+    .current-page {
+      color: var(--site-base-fgColor);
+      font-weight: var(--font-weight-bold);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Filter Bar & Controls
+  // ---------------------------------------------------------------------------
+  .bench-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: $spacing-lg;
+    margin: $spacing-lg 0;
+
+    .dropdown {
+      .filters-dropdown__button {
+        color: var(--site-base-fgColor);
+        border-color: var(--site-inset-borderColor);
+
+        &:hover {
+          color: var(--blue-6);
+          border-color: var(--blue-5);
+        }
+
+        &.primary {
+          background-color: var(--blue-6);
+          border-color: var(--blue-6);
+          color: $color-white !important;
+        }
+      }
+
+      .filters-dropdown-content {
+        left: 0;
+        right: auto;
+        background-color: var(--site-base-bgColor);
+        border: 1px solid var(--site-inset-borderColor);
+
+        .filters-dropdown__filters-container {
+          grid-template-columns: 16rem 1px 16rem;
+
+          > .separator {
+            background-color: var(--site-inset-borderColor);
+
+            &:last-child {
+              display: none;
+            }
+          }
+
+          .filter-title {
+            color: var(--site-base-fgColor);
+          }
+
+          .filters-dropdown__checkbox-container > label {
+            color: var(--site-base-fgColor);
+          }
+        }
+
+        &.mobile-open {
+          .filters-dropdown__filters-container {
+            grid-template-columns: none;
+          }
+        }
+
+        .filters-dropdown__buttons-container {
+          > button:nth-child(1) {
+            color: var(--site-base-fgColor) !important;
+            border-color: var(--site-inset-borderColor) !important;
+          }
+        }
+      }
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: var(--spacer-sm);
+
+      .filter-label {
+        font-size: var(--font-size-default);
+        font-weight: var(--font-weight-bold);
+        color: var(--site-base-fgColor-alt);
+      }
+    }
+
+    .bench-chip {
+      background: var(--site-base-bgColor);
+      border: 1px solid var(--site-inset-borderColor);
+      border-radius: $radius-pill;
+      padding: $spacing-xs $spacing-md;
+      font-size: var(--font-size-default);
+      font-weight: var(--font-weight-normal);
+      color: var(--site-base-fgColor);
+      cursor: pointer;
+      transition: all $transition-normal;
+
+      &:hover {
+        border-color: var(--blue-5);
+        color: var(--blue-6);
+      }
+
+      &.active {
+        background-color: var(--blue-6);
+        border-color: var(--blue-6);
+        color: $color-white;
+      }
+    }
+  }
+
+  // Reused by the leaderboard filter bar and the model detail view's
+  // accuracy/cost/latency switcher, so it isn't scoped to either one.
+  .bench-segmented-control {
+    display: inline-flex;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    overflow: hidden;
+    background-color: var(--site-base-bgColor);
+
+    .segment-btn {
+      background: none;
+      border: none;
+      padding: $spacing-xs $spacing-md;
+      font-size: var(--font-size-default);
+      font-weight: var(--font-weight-normal);
+      color: var(--site-base-fgColor);
+      cursor: pointer;
+      transition: background-color $transition-normal;
+
+      &:not(:last-child) {
+        border-right: 1px solid var(--site-inset-borderColor);
+      }
+
+      &:hover {
+        background-color: var(--site-inset-bgColor);
+      }
+
+      &.active {
+        background-color: var(--blue-6);
+        color: $color-white;
+      }
+    }
+  }
+
+  .bench-search-input {
+    padding: var(--spacer-sm) $spacing-md;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    font-size: var(--font-size-default);
+    background-color: var(--site-base-bgColor);
+    color: var(--site-base-fgColor);
+    width: 180px;
+
+    &:focus-visible {
+      outline: $border-width solid var(--blue-5);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Shared Tables
+  // ---------------------------------------------------------------------------
+  .bench-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    background-color: var(--site-base-bgColor);
+    box-shadow: $shadow-sm;
+    margin-bottom: var(--spacer-md);
+
+    table.bench-table,
+    table.bench-heatmap-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: $font-size-xs;
+
+      thead {
+        background-color: var(--site-inset-bgColor);
+        border-bottom: 1px solid var(--site-inset-borderColor);
+
+        tr th {
+          padding: $spacing-xs;
+          font-weight: var(--font-weight-bolder);
+          text-transform: uppercase;
+          letter-spacing: $letter-spacing-caps;
+          color: var(--site-base-fgColor-alt);
+          white-space: nowrap;
+
+          &.sortable {
+            cursor: pointer;
+            user-select: none;
+
+            &:hover {
+              color: var(--blue-6);
+            }
+          }
+
+          .sort-indicator {
+            font-size: $font-size-xs;
+            margin-left: $spacing-xs;
+
+            &.active {
+              color: var(--blue-6);
+              font-weight: var(--font-weight-bolder);
+            }
+
+            &.inactive {
+              color: var(--site-inset-borderColor);
+            }
+          }
+        }
+      }
+
+      tbody tr {
+        border-bottom: 1px solid var(--site-inset-borderColor);
+        transition: background-color $transition-normal;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &.bench-row {
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--site-inset-bgColor);
+          }
+
+          &:focus-visible {
+            outline: $border-width solid var(--blue-5);
+            outline-offset: -2px;
+          }
+
+          &.selected {
+            background-color: var(--blue-1);
+            box-shadow: inset $border-width 0 0 var(--blue-6);
+          }
+        }
+
+        td {
+          padding: $spacing-xs $spacing-xs;
+        }
+      }
+    }
+  }
+
+  .empty-table-message {
+    display: block;
+    padding: var(--spacer-md) $spacing-md;
+    text-align: center;
+    color: var(--site-base-fgColor-alt);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Shared Cards, Buttons & Navigation
+  // ---------------------------------------------------------------------------
+  .bench-card {
+    background-color: var(--site-base-bgColor);
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    padding: var(--spacer-md);
+    box-shadow: $shadow-sm;
+    margin-bottom: var(--spacer-md);
+
+    .section-heading {
+      font-size: var(--font-size-heading-4);
+      font-weight: var(--font-weight-bolder);
+      color: var(--site-base-fgColor);
+      margin-bottom: var(--spacer-sm);
+    }
+
+    .section-intro-text {
+      font-size: var(--font-size-heading-5);
+      color: var(--site-base-fgColor-alt);
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  .bench-bottom-nav {
+    display: flex;
+    gap: $spacing-md;
+    margin-top: var(--spacer-md);
+  }
+
+  .bench-btn-outline {
+    display: inline-block;
+    padding: $spacing-xs $spacing-md;
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bold);
+    color: var(--site-link-fgColor);
+    text-decoration: none;
+    transition: all $transition-normal;
+
+    &:hover {
+      background-color: var(--site-inset-bgColor);
+      border-color: var(--blue-5);
+    }
+  }
+
+  .bench-btn-sm {
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bold);
+    color: var(--site-link-fgColor);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Shared Text, Score & Error Badges
+  // ---------------------------------------------------------------------------
+  .text-success {
+    color: var(--bench-success-fg);
+  }
+
+  .text-danger {
+    color: var(--bench-danger-fg);
+  }
+
+  .text-muted {
+    margin: 0;
+    font-size: var(--font-size-default);
+    color: var(--site-base-fgColor-alt);
+  }
+
+  .score-pill {
+    display: inline-block;
+    font-weight: var(--font-weight-bolder);
+    font-size: $font-size-xs;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .score-high {
+    color: var(--bench-success-fg) !important;
+  }
+
+  .score-mid {
+    color: var(--bench-warning-fg) !important;
+  }
+
+  .score-low {
+    color: var(--bench-danger-fg) !important;
+  }
+
+  .score-error {
+    color: var(--bench-error-fg) !important;
+  }
+
+  // ErrorStateBadge
+  .bench-error-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    padding: $spacing-xs var(--spacer-sm);
+    border-radius: var(--ui-border-radius-sm);
+    background-color: var(--bench-error-bg);
+    border: 1px dashed var(--bench-error-border);
+    color: var(--bench-error-fg);
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bold);
+    line-height: $line-height-tight;
+
+    // Distinct hatched background for error status
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba($color-failure, $tint-bg),
+      rgba($color-failure, $tint-bg) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+
+    .bench-error-icon {
+      font-size: var(--font-size-default);
+    }
+
+    &.compact {
+      padding: $spacing-xs var(--spacer-sm);
+      font-size: $font-size-xs;
+    }
+  }
+}

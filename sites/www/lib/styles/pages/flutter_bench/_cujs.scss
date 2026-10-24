@@ -1,0 +1,156 @@
+// Copyright 2026, the Flutter authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that
+// can be found in the LICENSE file.
+
+@use 'core' as *;
+
+body.flutterbench {
+  // ---------------------------------------------------------------------------
+  // CUJ Catalog (CUJs page)
+  // ---------------------------------------------------------------------------
+  .cujs-content {
+    .bench-filter-bar {
+      flex-wrap: wrap;
+    }
+
+    .cuj-result-count {
+      font-size: $font-size-xs;
+      color: var(--site-base-fgColor-alt);
+      white-space: nowrap;
+    }
+
+    .cuj-feedback-button {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-xs;
+      white-space: nowrap;
+
+      .material-symbols {
+        font-size: var(--font-size-heading-4);
+      }
+    }
+  }
+
+  .persona-tag {
+    display: inline-block;
+    font-size: $font-size-xs;
+    font-weight: var(--font-weight-bold);
+    padding: $spacing-xs var(--spacer-sm);
+    border-radius: var(--ui-border-radius-sm);
+    white-space: nowrap;
+
+    @include category-modifiers(
+      (
+        functional: '.color-blue',
+        llm: '.color-purple',
+        outcome: '.color-teal',
+        failure: '.color-magenta',
+        dx: '.color-amber',
+        grey: '.color-grey',
+      )
+    );
+  }
+
+  .cuj-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .cuj-card {
+    background-color: var(--site-base-bgColor);
+    border: 1px solid var(--site-inset-borderColor);
+    border-radius: var(--ui-border-radius-sm);
+    padding: $spacing-md $spacing-md;
+
+    .cuj-card-header {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--spacer-sm);
+    }
+
+    .cuj-card-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacer-sm);
+      // Let long goals wrap instead of widening the flex item.
+      min-width: 0;
+    }
+
+    .cuj-goal {
+      margin: 0;
+      font-size: var(--font-size-heading-4);
+      font-weight: var(--font-weight-bold);
+      line-height: $line-height-tight;
+      text-wrap: pretty;
+    }
+
+    .cuj-task-count {
+      margin: 0;
+      font-size: var(--font-size-default);
+      color: var(--site-base-fgColor-alt);
+    }
+
+    .cuj-expand-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 2.25rem;
+      height: 2.25rem;
+      padding: 0;
+      background: none;
+      border: 1px solid var(--site-link-fgColor);
+      border-radius: 50%;
+      color: var(--site-link-fgColor);
+      cursor: pointer;
+      transition:
+        transform $transition-normal,
+        background-color $transition-normal;
+
+      &:hover {
+        background-color: var(--site-inset-bgColor);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+
+    .cuj-card-content {
+      border-top: 1px solid var(--site-inset-borderColor);
+      margin-top: $spacing-md;
+      padding-top: $spacing-md;
+    }
+
+    &:not(.expanded) {
+      .cuj-card-content {
+        display: none;
+      }
+
+      .cuj-expand-button {
+        transform: rotate(180deg);
+      }
+    }
+
+    .cuj-task-list {
+      margin: 0;
+      padding-inline-start: $spacing-md;
+      list-style: disc;
+
+      li {
+        margin-bottom: var(--spacer-sm);
+        font-size: var(--font-size-default);
+        line-height: $line-height-body;
+        color: var(--site-base-fgColor-alt);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "11111111-2222-4333-8444-000000000041",
+  "task_name": "google/flutter-custom-render-object",
+  "trial_name": "flutter-custom-render-object__t65-deepseek-coder-v2",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-custom-render-object__t65-deepseek-coder-v2",
+  "task_id": {
+    "path": "dataset/flutter-custom-render-object"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-custom-render-object"
+    },
+    "trial_name": "flutter-custom-render-object__t65-deepseek-coder-v2",
+    "eval_key": "deepseek-cli__deepseek-coder-v2__adhoc",
+    "agent": {
+      "name": "deepseek-cli",
+      "model_name": "deepseek/deepseek-coder-v2",
+      "skills": [],
+      "mcp_servers": []
+    }
+  },
+  "agent_info": {
+    "name": "deepseek-cli",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "deepseek-coder-v2",
+      "provider": "deepseek"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 72593,
+    "n_cache_tokens": 55605,
+    "n_output_tokens": 2965,
+    "cost_usd": 0.011
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.42
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T20:32:05.000000Z",
+  "finished_at": "2026-09-09T20:35:04.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T20:32:05.000000Z",
+    "finished_at": "2026-09-09T20:32:15.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T20:32:15.000000Z",
+    "finished_at": "2026-09-09T20:32:25.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T20:32:25.000000Z",
+    "finished_at": "2026-09-09T20:34:37.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T20:34:37.000000Z",
+    "finished_at": "2026-09-09T20:35:04.000000Z"
+  }
+}

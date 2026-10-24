@@ -1,0 +1,66 @@
+{
+  "id": "11111111-2222-4333-8444-00000000002d",
+  "task_name": "google/flutter-custom-render-object",
+  "trial_name": "flutter-custom-render-object__t45-gemini-35-flash",
+  "trial_uri": "file:///workspace/jobs/mock/flutter-custom-render-object__t45-gemini-35-flash",
+  "task_id": {
+    "path": "dataset/flutter-custom-render-object"
+  },
+  "config": {
+    "task": {
+      "path": "dataset/flutter-custom-render-object"
+    },
+    "trial_name": "flutter-custom-render-object__t45-gemini-35-flash",
+    "eval_key": "antigravity-sdk__gemini-3.5-flash__adhoc",
+    "agent": {
+      "name": "antigravity-sdk",
+      "model_name": "google/gemini-3.5-flash",
+      "skills": [
+        "dart-flutter-skills"
+      ],
+      "mcp_servers": [
+        {
+          "name": "dart"
+        }
+      ]
+    }
+  },
+  "agent_info": {
+    "name": "antigravity-sdk",
+    "version": "0.3.0",
+    "model_info": {
+      "name": "gemini-3.5-flash",
+      "provider": "google"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 71164,
+    "n_cache_tokens": 48785,
+    "n_output_tokens": 2600,
+    "cost_usd": 0.0061
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 0.65
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-09-09T20:03:45.000000Z",
+  "finished_at": "2026-09-09T20:07:04.000000Z",
+  "environment_setup": {
+    "started_at": "2026-09-09T20:03:45.000000Z",
+    "finished_at": "2026-09-09T20:03:55.000000Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-09-09T20:03:55.000000Z",
+    "finished_at": "2026-09-09T20:04:05.000000Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-09-09T20:04:05.000000Z",
+    "finished_at": "2026-09-09T20:06:32.000000Z"
+  },
+  "verifier": {
+    "started_at": "2026-09-09T20:06:32.000000Z",
+    "finished_at": "2026-09-09T20:07:04.000000Z"
+  }
+}

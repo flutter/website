@@ -1,0 +1,110 @@
+{
+  "reward": {
+    "score": 0.8,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "outcome",
+        "value": 0.8,
+        "raw": true,
+        "weight": 0.6,
+        "description": "Functional correctness and test completion (80%)."
+      },
+      {
+        "name": "quality",
+        "value": 0.77,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Static analysis, clean architecture, and idioms (77%)."
+      },
+      {
+        "name": "dx",
+        "value": 0.9,
+        "raw": true,
+        "weight": 0.1,
+        "description": "Tool adherence and trajectory velocity (90%)."
+      }
+    ]
+  },
+  "outcome": {
+    "score": 0.8,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "sqlite_migrations",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Schema migration and SQLite table initialization."
+      },
+      {
+        "name": "sync_queue_tests",
+        "value": 0.8,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Background sync queue and mutation synchronization."
+      },
+      {
+        "name": "conflict_resolution",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Conflict resolution strategy using timestamp heuristics."
+      }
+    ]
+  },
+  "quality": {
+    "score": 0.77,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "StaticAnalysisGrader",
+        "value": 0.77,
+        "raw": true,
+        "weight": 0.5,
+        "description": "2 linter warnings detected."
+      },
+      {
+        "name": "structural_validation",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Clean separation of concerns and architectural layers."
+      },
+      {
+        "name": "idiomatic_review",
+        "value": 0.77,
+        "raw": true,
+        "weight": 0.2,
+        "description": "Dart 3 idioms (pattern matching, records, sealed classes) adherence."
+      }
+    ]
+  },
+  "dx": {
+    "score": 0.9,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "tool_usage",
+        "value": 0.9,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Dart MCP tools (analyze_files, dtd, hot_reload) utilized efficiently."
+      },
+      {
+        "name": "trajectory",
+        "value": 0.9,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Linear problem-solving without excessive tool backtracking."
+      },
+      {
+        "name": "error_recovery",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Fast turnaround from initial compile warnings to clean build."
+      }
+    ]
+  }
+}

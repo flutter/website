@@ -1,0 +1,110 @@
+{
+  "reward": {
+    "score": 0.99,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "outcome",
+        "value": 0.99,
+        "raw": true,
+        "weight": 0.6,
+        "description": "Functional correctness and test completion (99%)."
+      },
+      {
+        "name": "quality",
+        "value": 0.99,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Static analysis, clean architecture, and idioms (99%)."
+      },
+      {
+        "name": "dx",
+        "value": 0.96,
+        "raw": true,
+        "weight": 0.1,
+        "description": "Tool adherence and trajectory velocity (96%)."
+      }
+    ]
+  },
+  "outcome": {
+    "score": 0.99,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "flutter_build:bundle",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.2,
+        "description": "flutter build bundle succeeded."
+      },
+      {
+        "name": "bloc_unit_tests",
+        "value": 0.99,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Bloc unit tests for state transition validation."
+      },
+      {
+        "name": "outcome_heuristics/bloc_provider_present",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.4,
+        "description": "BlocProvider wrapping widget tree in main.dart."
+      }
+    ]
+  },
+  "quality": {
+    "score": 0.99,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "StaticAnalysisGrader",
+        "value": 0.99,
+        "raw": true,
+        "weight": 0.5,
+        "description": "Zero static analysis issues found."
+      },
+      {
+        "name": "structural_validation",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Clean separation of concerns and architectural layers."
+      },
+      {
+        "name": "idiomatic_review",
+        "value": 0.99,
+        "raw": true,
+        "weight": 0.2,
+        "description": "Dart 3 idioms (pattern matching, records, sealed classes) adherence."
+      }
+    ]
+  },
+  "dx": {
+    "score": 0.96,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "tool_usage",
+        "value": 0.96,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Dart MCP tools (analyze_files, dtd, hot_reload) utilized efficiently."
+      },
+      {
+        "name": "trajectory",
+        "value": 0.96,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Linear problem-solving without excessive tool backtracking."
+      },
+      {
+        "name": "error_recovery",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Fast turnaround from initial compile warnings to clean build."
+      }
+    ]
+  }
+}

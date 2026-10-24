@@ -1,0 +1,110 @@
+{
+  "reward": {
+    "score": 0.71,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "outcome",
+        "value": 0.69,
+        "raw": true,
+        "weight": 0.6,
+        "description": "Functional correctness and test completion (69%)."
+      },
+      {
+        "name": "quality",
+        "value": 0.7,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Static analysis, clean architecture, and idioms (70%)."
+      },
+      {
+        "name": "dx",
+        "value": 0.91,
+        "raw": true,
+        "weight": 0.1,
+        "description": "Tool adherence and trajectory velocity (91%)."
+      }
+    ]
+  },
+  "outcome": {
+    "score": 0.69,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "render_box_layout",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.4,
+        "description": "performLayout honors BoxConstraints and sets size accurately."
+      },
+      {
+        "name": "paint_canvas_verification",
+        "value": 0.69,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Custom painter draws polygons, ticks, and labels without clip bleed."
+      },
+      {
+        "name": "hit_test_gesture",
+        "value": 0.2,
+        "raw": true,
+        "weight": 0.2,
+        "description": "hitTestChildren detects taps on radar chart vertices."
+      }
+    ]
+  },
+  "quality": {
+    "score": 0.7,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "StaticAnalysisGrader",
+        "value": 0.7,
+        "raw": true,
+        "weight": 0.5,
+        "description": "3 linter warnings detected."
+      },
+      {
+        "name": "structural_validation",
+        "value": 0.6,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Clean separation of concerns and architectural layers."
+      },
+      {
+        "name": "idiomatic_review",
+        "value": 0.7,
+        "raw": true,
+        "weight": 0.2,
+        "description": "Dart 3 idioms (pattern matching, records, sealed classes) adherence."
+      }
+    ]
+  },
+  "dx": {
+    "score": 0.91,
+    "kind": "aggregator",
+    "criteria": [
+      {
+        "name": "tool_usage",
+        "value": 0.91,
+        "raw": true,
+        "weight": 0.4,
+        "description": "Dart MCP tools (analyze_files, dtd, hot_reload) utilized efficiently."
+      },
+      {
+        "name": "trajectory",
+        "value": 0.91,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Linear problem-solving without excessive tool backtracking."
+      },
+      {
+        "name": "error_recovery",
+        "value": 1.0,
+        "raw": true,
+        "weight": 0.3,
+        "description": "Fast turnaround from initial compile warnings to clean build."
+      }
+    ]
+  }
+}
