@@ -218,6 +218,17 @@ Set up each iOS device on which you want to test.
 </Tab>
 </Tabs>
 
+## Run an app in debug mode {: #run-in-debug-mode}
+
+Run `flutter devices` from your Flutter project directory
+to list available devices and simulators.
+Then replace `DEVICE_ID` with the ID for your target,
+and run your app in debug mode:
+
+```console
+$ flutter run -d DEVICE_ID
+```
+
 ---
 
 ## Start developing for iOS {: #start-developing}
