@@ -11,17 +11,12 @@ updates:
       github-actions:
         patterns:
           - "*"
-    labels:
-      - "auto.dependencies"
-      - "auto.github-action"
 
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
     directory: "/"
     schedule:
       interval: "weekly"
-    labels:
-      - "auto.dependencies"
 
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
@@ -32,5 +27,3 @@ updates:
       example-dependencies:
         patterns:
           - "*"
-    labels:
-      - "auto.code-examples"
