@@ -5,7 +5,7 @@ description: >-
 
 resolution: workspace
 environment:
-  sdk: ^3.13.0-0
+  sdk: ^3.13.0
 
 #docregion flutter-localizations
 dependencies:
@@ -15,7 +15,7 @@ dependencies:
     sdk: flutter
   intl: any
   #enddocregion flutter-localizations
-  material_ui: ^1.5.0
+  material_ui: ^1.8.0
 
 #docregion generate
 # The following section is specific to Flutter.

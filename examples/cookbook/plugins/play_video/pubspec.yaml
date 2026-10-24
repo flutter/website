@@ -5,12 +5,12 @@ version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.13.0-0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
-  video_player: ^2.14.0
+  video_player: ^2.14.1
 
 dev_dependencies:
   flutter_test:
