@@ -155,14 +155,15 @@ ServerOptions get defaultServerOptions => ServerOptions(
 );
 
 Map<String, Object?> __carouselCarousel(_carousel.Carousel c) => {
-  'items': c.items.toId(),
-  'prevBtn': c.prevBtn?.toId(),
-  'nextBtn': c.nextBtn?.toId(),
+  'items': c.items,
+  'prevBtn': c.prevBtn,
+  'nextBtn': c.nextBtn,
 };
 Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
-  'title': c.title?.toId(),
-  'header': c.header?.toId(),
-  'tabs': c.tabs.map((i) => i.toMap()).toList(),
+  'title': c.title,
+  'header': c.header,
+  'labels': c.labels,
+  'tabs': c.tabs,
   'noSpy': c.noSpy,
 };
 Map<String, Object?> __headerHeader(_header.Header c) => {
@@ -173,10 +174,10 @@ Map<String, Object?> __headerHeader(_header.Header c) => {
 };
 Map<String, Object?> __consultants_gridConsultantsGrid(
   _consultants_grid.ConsultantsGrid c,
-) => {'data': c.data, 'items': c.items.map((i) => i.toId()).toList()};
+) => {'data': c.data, 'items': c.items};
 Map<String, Object?> __events_gridEventsGrid(_events_grid.EventsGrid c) => {
   'data': c.data,
-  'items': c.items.map((i) => i.toId()).toList(),
+  'items': c.items,
   'past': c.past,
 };
 Map<String, Object?> __games_adaptive_mediaGamesAdaptiveMedia(
@@ -184,7 +185,7 @@ Map<String, Object?> __games_adaptive_mediaGamesAdaptiveMedia(
 ) => {'mobileAssets': c.mobileAssets, 'desktopAssets': c.desktopAssets};
 Map<String, Object?> __showcase_gridShowcaseGrid(
   _showcase_grid.ShowcaseGrid c,
-) => {'data': c.data, 'items': c.items.map((i) => i.toId()).toList()};
+) => {'data': c.data, 'items': c.items};
 Map<String, Object?> __why_flutter_ai_era_sectionWhyFlutterAiEraSection(
   _why_flutter_ai_era_section.WhyFlutterAiEraSection c,
 ) => {'geminiSprite': c.geminiSprite};

@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/feature_grid.dart';
@@ -97,102 +96,92 @@ class GamesPage extends StatelessComponent {
         ]),
         section(id: 'tabs', classes: 'games-tabs', [
           Tabs(
-            title: ref(
-              const h2(classes: 'tabs-title', [
-                .text('''
+            title: const h2(classes: 'tabs-title', [
+              .text('''
             From card games to platformers and casual 2D games. Start building your first game in minutes with templates to get started fast.
           '''),
-              ]),
-            ),
+            ]),
+            labels: const [
+              'Endless Runner',
+              'Basic Template',
+              'Card Game',
+            ],
             tabs: [
-              Tab(
-                label: 'Endless Runner',
-                content: ref(
-                  .fragment([
-                    div(classes: 'media', [
-                      img(
-                        src: context.asset(
-                          'images/template-endless-runner.webp',
-                        ),
-                        alt: 'Endless Runner',
-                      ),
-                    ]),
-                    const div(classes: 'text', [
-                      h2(classes: 'title first-tab', [.text('Endless Runner')]),
-                      p(classes: 'body', [
-                        .text('''
+              .fragment([
+                div(classes: 'media', [
+                  img(
+                    src: context.asset(
+                      'images/template-endless-runner.webp',
+                    ),
+                    alt: 'Endless Runner',
+                  ),
+                ]),
+                const div(classes: 'text', [
+                  h2(classes: 'title first-tab', [.text('Endless Runner')]),
+                  p(classes: 'body', [
+                    .text('''
                   A side-scrolling infinite loop game that uses the Flame Game Engine to animate a character that avoids obstacles while running through the map.
                 '''),
-                      ]),
-                      div(classes: 'a-wrapper', [
-                        a(
-                          classes: 'btn white-btn',
-                          href: 'https://github.com/flutter/games/tree/main/templates/endless_runner',
-                          [.text('Get started')],
-                        ),
-                      ]),
-                    ]),
                   ]),
-                ),
-              ),
-              Tab(
-                label: 'Basic Template',
-                content: ref(
-                  .fragment([
-                    div(classes: 'media', [
-                      img(
-                        src: context.asset('images/template-basic.webp'),
-                        alt: 'Basic Template',
-                      ),
-                    ]),
-                    const div(classes: 'text', [
-                      h2(classes: 'title second-tab', [
-                        .text('Basic Template'),
-                      ]),
-                      p(classes: 'body', [
-                        .text('''
+                  div(classes: 'a-wrapper', [
+                    a(
+                      classes: 'btn white-btn',
+                      href: 'https://github.com/flutter/games/tree/main/templates/endless_runner',
+                      [.text('Get started')],
+                    ),
+                  ]),
+                ]),
+              ]),
+
+              .fragment([
+                div(classes: 'media', [
+                  img(
+                    src: context.asset('images/template-basic.webp'),
+                    alt: 'Basic Template',
+                  ),
+                ]),
+                const div(classes: 'text', [
+                  h2(classes: 'title second-tab', [
+                    .text('Basic Template'),
+                  ]),
+                  p(classes: 'body', [
+                    .text('''
                   A simple template to get started with your first Flutter game including start and end screens, audio integrations and game settings pages.
                 '''),
-                      ]),
-                      div(classes: 'a-wrapper', [
-                        a(
-                          classes: 'btn white-btn',
-                          href: 'https://github.com/flutter/games/tree/main/templates/basic',
-                          [.text('Get started')],
-                        ),
-                      ]),
-                    ]),
                   ]),
-                ),
-              ),
-              Tab(
-                label: 'Card Game',
-                content: ref(
-                  .fragment([
-                    div(classes: 'media', [
-                      img(
-                        src: context.asset('images/template-card-game.webp'),
-                        alt: 'Card Game',
-                      ),
-                    ]),
-                    const div(classes: 'text', [
-                      h2(classes: 'title third-tab', [.text('Card Game')]),
-                      p(classes: 'body', [
-                        .text('''
+                  div(classes: 'a-wrapper', [
+                    a(
+                      classes: 'btn white-btn',
+                      href: 'https://github.com/flutter/games/tree/main/templates/basic',
+                      [.text('Get started')],
+                    ),
+                  ]),
+                ]),
+              ]),
+
+              .fragment([
+                div(classes: 'media', [
+                  img(
+                    src: context.asset('images/template-card-game.webp'),
+                    alt: 'Card Game',
+                  ),
+                ]),
+                const div(classes: 'text', [
+                  h2(classes: 'title third-tab', [.text('Card Game')]),
+                  p(classes: 'body', [
+                    .text('''
                   Drag and drop cards in a simple UI for a card game built from the Basic Template, ready for multiplayer integration and more
                 '''),
-                      ]),
-                      div(classes: 'a-wrapper', [
-                        a(
-                          classes: 'btn white-btn',
-                          href: 'https://github.com/flutter/games/tree/main/templates/card',
-                          [.text('Get started')],
-                        ),
-                      ]),
-                    ]),
                   ]),
-                ),
-              ),
+                  div(classes: 'a-wrapper', [
+                    a(
+                      classes: 'btn white-btn',
+                      href: 'https://github.com/flutter/games/tree/main/templates/card',
+                      [.text('Get started')],
+                    ),
+                  ]),
+                ]),
+              ]),
             ],
           ),
           const div(classes: 'divider', []),
@@ -502,14 +491,9 @@ class GamesPage extends StatelessComponent {
           ],
         ),
       ]),
-      Carousel(
-        ref(
-          .fragment([
-            for (final game in featuredGames)
-              _buildFeaturedGameItem(context, game),
-          ]),
-        ),
-      ),
+      Carousel([
+        for (final game in featuredGames) _buildFeaturedGameItem(context, game),
+      ]),
     ]);
   }
 

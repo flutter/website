@@ -14,12 +14,10 @@ import 'package:universal_web/web.dart' as web;
 /// relevant Jaspr components.
 void setUpSite() {
   _setUpSearchKeybindings();
-  _setUpTabs();
   _setUpCollapsibleElements();
   _setUpExpandableCards();
   _setUpPlatformKeys();
   _setUpToc();
-  _setUpSteppers();
   _setUpIdeExplorers();
 }
 
@@ -59,166 +57,6 @@ void _handleSearchShortcut(web.Event event) {
     searchField.focus();
     // Prevent the initial slash from showing up in the search field.
     event.preventDefault();
-  }
-}
-
-// TODO(parlough): Migrate interactivity of tabs to the Jaspr components.
-/// Set up interactivity of tabs created with
-/// the `<Tabs>` and `<Tab>` custom components.
-void _setUpTabs() {
-  _updateTabsFromQueryParameters();
-
-  final tabsWrappers = web.document.querySelectorAll('.tabs-wrapper');
-
-  for (
-    var wrapperIndex = 0;
-    wrapperIndex < tabsWrappers.length;
-    wrapperIndex++
-  ) {
-    final element = tabsWrappers.item(wrapperIndex) as web.HTMLElement;
-    final saveKey = element.dataset['tabSaveKey'];
-    final localStorageKey = saveKey.isNotEmpty ? 'tab-save-$saveKey' : null;
-    final tabs = element.querySelectorAll(':scope > .nav-tabs a.nav-link');
-    web.HTMLElement? tabToChangeTo;
-
-    for (var tabIndex = 0; tabIndex < tabs.length; tabIndex++) {
-      final tabElement = tabs.item(tabIndex) as web.HTMLElement;
-      final saveId = tabElement.dataset['tabSaveId'];
-
-      void handleClick(web.Event event) {
-        event.preventDefault();
-        final currentSaveKey = element.dataset['tabSaveKey'];
-        final currentSaveId = tabElement.dataset['tabSaveId'];
-        if (currentSaveKey.isNotEmpty && currentSaveId.isNotEmpty) {
-          // If the tab wrapper and this tab have a save key and ID defined,
-          // switch other tabs to the tab with the same ID.
-          _findAndActivateTabsWithSaveId(currentSaveKey, currentSaveId);
-          try {
-            web.window.localStorage.setItem(
-              'tab-save-$currentSaveKey',
-              currentSaveId,
-            );
-          } catch (e) {
-            if (kDebugMode) {
-              print('Error accessing localStorage: $e');
-            }
-          }
-        } else {
-          _clearActiveTabs(tabs);
-          _setActiveTab(tabElement);
-        }
-      }
-
-      tabElement.addEventListener('click', handleClick.toJS);
-
-      try {
-        // If a tab was previously specified as selected in local storage,
-        // save a reference to it that can be switched to later.
-        final tabSaveKey = localStorageKey != null
-            ? web.window.localStorage.getItem(localStorageKey)
-            : null;
-        if (saveId.isNotEmpty && tabSaveKey != null && tabSaveKey == saveId) {
-          tabToChangeTo = tabElement;
-        }
-      } catch (e) {
-        if (kDebugMode) {
-          print('Error accessing localStorage: $e');
-        }
-      }
-    }
-
-    if (tabToChangeTo != null) {
-      tabToChangeTo.click();
-    } else if (saveKey == 'dev-os') {
-      // If this tab wrapper is for the archive page,
-      // and no tab was retrieved from local storage,
-      // switch to the tab for the current OS.
-      var currentOperatingSystem = browserOperatingSystem;
-      if (currentOperatingSystem == null) {
-        currentOperatingSystem = .windows;
-      } else if (currentOperatingSystem == .chromeOS) {
-        // ChromeOS uses the Linux tab.
-        currentOperatingSystem = .linux;
-      }
-
-      _activateTabWithSaveId(element, currentOperatingSystem.name);
-    }
-  }
-}
-
-/// Apply force overrides from query parameters to saved tabs.
-void _updateTabsFromQueryParameters() {
-  final currentUrl = Uri.parse(web.window.location.href);
-  final originalQueryParameters = currentUrl.queryParameters;
-  final updatedQueryParameters = {...originalQueryParameters};
-
-  for (final MapEntry(:key, :value) in originalQueryParameters.entries) {
-    if (key.startsWith('tab-save-')) {
-      try {
-        web.window.localStorage.setItem(key, value);
-        updatedQueryParameters.remove(key);
-      } catch (e) {
-        if (kDebugMode) {
-          print('Error accessing localStorage: $e');
-        }
-      }
-    }
-  }
-
-  if (originalQueryParameters.length != updatedQueryParameters.length) {
-    // If the query parameters were updated, update the user's URL.
-    web.window.history.replaceState(
-      null,
-      '',
-      currentUrl.withQueryParameters(updatedQueryParameters).toString(),
-    );
-  }
-}
-
-void _clearActiveTabs(web.NodeList tabs) {
-  for (var tabIndex = 0; tabIndex < tabs.length; tabIndex++) {
-    final tabElement = tabs.item(tabIndex) as web.HTMLElement;
-    tabElement.classList.remove('active');
-    tabElement.ariaSelected = 'false';
-    final panelId = '${tabElement.id}-panel';
-    final panel = web.document.getElementById(panelId);
-    panel?.classList.remove('active');
-  }
-}
-
-void _setActiveTab(web.HTMLElement tab) {
-  tab.classList.add('active');
-  tab.ariaSelected = 'true';
-  final panelId = '${tab.id}-panel';
-  final panel = web.document.getElementById(panelId);
-  panel?.classList.add('active');
-}
-
-void _findAndActivateTabsWithSaveId(String saveKey, String saveId) {
-  final tabsWrappers = web.document.querySelectorAll(
-    '.tabs-wrapper[data-tab-save-key="$saveKey"]',
-  );
-
-  for (
-    var wrapperIndex = 0;
-    wrapperIndex < tabsWrappers.length;
-    wrapperIndex++
-  ) {
-    final wrapper = tabsWrappers.item(wrapperIndex) as web.HTMLElement;
-
-    _activateTabWithSaveId(wrapper, saveId);
-  }
-}
-
-void _activateTabWithSaveId(web.HTMLElement tabWrapper, String saveId) {
-  final tabsNav = tabWrapper.querySelector(':scope > .nav-tabs');
-  if (tabsNav == null) return;
-
-  if (tabsNav.querySelector('a.nav-link[data-tab-save-id="$saveId"]')
-      case final web.HTMLElement tabToActivate) {
-    final tabs = tabsNav.querySelectorAll('a.nav-link');
-    _clearActiveTabs(tabs);
-    _setActiveTab(tabToActivate);
   }
 }
 
@@ -319,9 +157,6 @@ void _setUpToc() {
   _setUpTocActiveObserver();
 }
 
-final ValueNotifier<bool> showPageTitle = ValueNotifier<bool>(true);
-final ValueNotifier<String?> currentPageHeading = ValueNotifier<String?>(null);
-
 void _setUpTocActiveObserver() {
   final headings = web.document.querySelectorAll(
     'article .header-wrapper, '
@@ -384,99 +219,6 @@ void _setUpTocActiveObserver() {
   for (var i = 0; i < headings.length; i++) {
     observer.observe(headings.item(i) as web.Element);
   }
-}
-
-void _setUpSteppers() {
-  final steppers = web.document.querySelectorAll('.stepper');
-
-  for (var i = 0; i < steppers.length; i++) {
-    final stepper = steppers.item(i) as web.HTMLElement;
-
-    final collapsible = !stepper.classList.contains('non-collapsible');
-
-    final children = stepper.childNodes;
-    final steps = [
-      for (var j = 0; j < children.length; j++)
-        if (children.item(j) case web.Element(
-          nodeType: web.Node.ELEMENT_NODE,
-          tagName: 'DETAILS',
-        ))
-          children.item(j) as web.HTMLDetailsElement,
-    ];
-
-    for (var j = 0; j < steps.length; j++) {
-      final step = steps[j];
-      final header = step.querySelector('summary h2, summary h3');
-
-      if (collapsible) {
-        if (header?.textContent case final title? when step.open) {
-          currentPageHeading.value = title;
-        }
-
-        step.addEventListener(
-          'toggle',
-          ((web.Event e) {
-            // Close all other steps when one is opened.
-            if (step.open) {
-              for (var k = 0; k < steps.length; k++) {
-                final otherStep = steps[k];
-                if (otherStep != step) {
-                  otherStep.open = false;
-                }
-              }
-
-              if (header?.textContent case final title?) {
-                currentPageHeading.value = title;
-              }
-            }
-          }).toJS,
-        );
-      }
-
-      final nextButton = step.querySelector('.next-step-button');
-      if (nextButton != null) {
-        nextButton.addEventListener(
-          'click',
-          ((web.Event e) {
-            e.preventDefault();
-            if (collapsible) {
-              step.open = false;
-            }
-            _scrollTo(step, smooth: false);
-            if (j + 1 < steps.length) {
-              final nextStep = steps[j + 1];
-              nextStep.open = true;
-              _scrollTo(nextStep, smooth: true);
-
-              final nextHeader = nextStep.querySelector(
-                'summary h2, summary h3',
-              );
-              if (nextHeader?.textContent case final title?) {
-                currentPageHeading.value = title;
-              }
-            }
-          }).toJS,
-        );
-      }
-    }
-  }
-}
-
-void _scrollTo(web.Element element, {required bool smooth}) {
-  // Scroll the next step into view, accounting for the fixed header and toc.
-  final headerOffset =
-      web.document.getElementById('site-header')?.clientHeight ?? 0;
-  final tocOffset = web.document.getElementById('pagenav')?.clientHeight ?? 0;
-  final elementPosition = element.getBoundingClientRect().top;
-  final offsetPosition =
-      elementPosition + web.window.scrollY - headerOffset - tocOffset;
-
-  web.window.scrollTo(
-    web.ScrollToOptions(
-      top: offsetPosition,
-      behavior: smooth ? 'smooth' : 'auto',
-    ),
-  );
 }
 
 /// Set up interactivity of the file/detail explorer created with

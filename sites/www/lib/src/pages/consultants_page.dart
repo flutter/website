@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/icon.dart';
@@ -65,7 +64,7 @@ class ConsultantsPage extends StatelessComponent {
             data: _extractFilterData(partners),
             items: [
               for (final (index, partner) in partners.indexed)
-                ref(_buildPartnerItem(context, index, partner)),
+                _buildPartnerItem(context, index, partner),
             ],
           ),
         ]),
@@ -84,14 +83,10 @@ class ConsultantsPage extends StatelessComponent {
 
     return section(id: 'featured-events', classes: 'module carousel-section', [
       const h1([.text('Resources for Flutter '), br(), .text(' Consultants')]),
-      Carousel(
-        ref(
-          .fragment([
-            for (final resource in featuredResources)
-              _buildFeaturedCard(context, resource),
-          ]),
-        ),
-      ),
+      Carousel([
+        for (final resource in featuredResources)
+          _buildFeaturedCard(context, resource),
+      ]),
     ]);
   }
 

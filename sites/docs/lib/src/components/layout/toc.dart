@@ -7,7 +7,6 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/client/on_this_page_button.dart';
 import 'package:site_shared/components/common/material_icon.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 import 'package:site_shared/markdown.dart';
 import 'package:site_shared/util.dart';
 
@@ -68,70 +67,68 @@ final class PageNavBar extends StatelessComponent {
       ],
       pageNumber: linkedPageTitle != null ? currentLinkedPageNumber : null,
       initialHeading: currentTitle,
-      content: ref(
-        div([
-          if (data.pageEntries.isEmpty) ...[
+      content: div([
+        if (data.pageEntries.isEmpty) ...[
+          a(
+            href: '#site-content-title',
+            classes: 'pagenav-title',
+            [
+              const MaterialIcon('vertical_align_top'),
+              span([.text(currentTitle)]),
+            ],
+          ),
+          const _DropdownDivider(),
+          if (data.toc case final tocData?)
+            nav(
+              attributes: const {'role': 'menu'},
+              [_TocContents(tocData)],
+            ),
+        ] else ...[
+          if (data case PageNavigationData(
+            :final parentTitle?,
+            :final parentUrl?,
+          )) ...[
             a(
-              href: '#site-content-title',
+              href: parentUrl,
               classes: 'pagenav-title',
               [
-                const MaterialIcon('vertical_align_top'),
-                span([.text(currentTitle)]),
+                const MaterialIcon('school'),
+                span([.text(parentTitle)]),
               ],
             ),
             const _DropdownDivider(),
-            if (data.toc case final tocData?)
-              nav(
-                attributes: const {'role': 'menu'},
-                [_TocContents(tocData)],
-              ),
-          ] else ...[
-            if (data case PageNavigationData(
-              :final parentTitle?,
-              :final parentUrl?,
-            )) ...[
+          ],
+          for (final page in data.pageEntries) ...[
+            if (!page.isDivider) ...[
               a(
-                href: parentUrl,
-                classes: 'pagenav-title',
+                classes: [
+                  'page-link',
+                  if (page == currentLinkedPage) 'active',
+                ].toClasses,
+                href: page.url,
+                attributes: const {'role': 'menuitem'},
                 [
-                  const MaterialIcon('school'),
-                  span([.text(parentTitle)]),
+                  span(classes: 'page-number', [
+                    .text('${pageEntryNumber++}'),
+                  ]),
+                  DashMarkdown(inline: true, content: page.title),
                 ],
               ),
-              const _DropdownDivider(),
-            ],
-            for (final page in data.pageEntries) ...[
-              if (!page.isDivider) ...[
-                a(
-                  classes: [
-                    'page-link',
-                    if (page == currentLinkedPage) 'active',
-                  ].toClasses,
-                  href: page.url,
-                  attributes: const {'role': 'menuitem'},
-                  [
-                    span(classes: 'page-number', [
-                      .text('${pageEntryNumber++}'),
-                    ]),
-                    DashMarkdown(inline: true, content: page.title),
-                  ],
+              if (data.toc case final tocData? when currentLinkedPage == page)
+                nav(
+                  attributes: const {'role': 'menu'},
+                  [_TocContents(tocData)],
                 ),
-                if (data.toc case final tocData? when currentLinkedPage == page)
-                  nav(
-                    attributes: const {'role': 'menu'},
-                    [_TocContents(tocData)],
-                  ),
-              ] else ...[
-                if (page != data.pageEntries.first) const _DropdownDivider(),
-                div(
-                  classes: 'page-divider',
-                  [.text(page.title)],
-                ),
-              ],
+            ] else ...[
+              if (page != data.pageEntries.first) const _DropdownDivider(),
+              div(
+                classes: 'page-divider',
+                [.text(page.title)],
+              ),
             ],
           ],
-        ]),
-      ),
+        ],
+      ]),
     );
   }
 }

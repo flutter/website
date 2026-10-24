@@ -38,6 +38,8 @@ import 'package:site_shared/components/common/client/page_header_options.dart'
     deferred as _page_header_options;
 import 'package:site_shared/components/common/client/simple_tooltip.dart'
     deferred as _simple_tooltip;
+import 'package:site_shared/components/common/client/tabs.dart'
+    deferred as _tabs;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
 import 'package:site_shared/components/layout/menu_toggle.dart'
@@ -48,10 +50,10 @@ import 'package:site_shared/components/layout/theme_switcher.dart'
     deferred as _theme_switcher;
 import 'package:site_shared/components/tutorial/client/quiz.dart'
     deferred as _quiz;
+import 'package:site_shared/components/tutorial/client/stepper.dart'
+    deferred as _stepper;
 import 'package:site_shared/components/tutorial/models/quiz_model.dart'
     as _quiz_model;
-import 'package:site_shared/components/utils/component_ref.dart'
-    as _component_ref;
 
 /// Default [ClientOptions] for use with your Jaspr project.
 ///
@@ -73,8 +75,8 @@ ClientOptions get defaultClientOptions => ClientOptions(
   clients: {
     'download_latest_button': ClientLoader(
       (p) => _download_latest_button.DownloadLatestButton(
-        os: p['os'] as String,
-        arch: p['arch'] as String?,
+        os: p.get<String>('os'),
+        arch: p.get<String?>('arch'),
       ),
       loader: _download_latest_button.loadLibrary,
     ),
@@ -84,17 +86,17 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'pagenav': ClientLoader(
       (p) => _pagenav.PageNav(
-        breadcrumbs: (p['breadcrumbs'] as List<Object?>).cast<String>(),
-        pageNumber: p['pageNumber'] as int?,
-        initialHeading: p['initialHeading'] as String,
-        content: _component_ref.ComponentRef.fromId(p['content'] as String),
+        breadcrumbs: p.get<List<Object?>>('breadcrumbs').cast<String>(),
+        pageNumber: p.get<int?>('pageNumber'),
+        initialHeading: p.get<String>('initialHeading'),
+        content: p.mount(p.get<String>('content')),
       ),
       loader: _pagenav.loadLibrary,
     ),
     'archive_table': ClientLoader(
       (p) => _archive_table.ArchiveTable(
-        os: p['os'] as String,
-        channel: p['channel'] as String,
+        os: p.get<String>('os'),
+        channel: p.get<String>('channel'),
       ),
       loader: _archive_table.loadLibrary,
     ),
@@ -121,26 +123,26 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'site_shared:collapse_button': ClientLoader(
       (p) => _collapse_button.CollapseButton(
-        classes: (p['classes'] as List<Object?>).cast<String>(),
-        title: p['title'] as String?,
+        classes: p.get<List<Object?>>('classes').cast<String>(),
+        title: p.get<String?>('title'),
       ),
       loader: _collapse_button.loadLibrary,
     ),
     'site_shared:copy_button': ClientLoader(
       (p) => _copy_button.CopyButton(
-        buttonText: p['buttonText'] as String?,
-        toCopy: p['toCopy'] as String?,
-        classes: (p['classes'] as List<Object?>).cast<String>(),
-        title: p['title'] as String?,
+        buttonText: p.get<String?>('buttonText'),
+        toCopy: p.get<String?>('toCopy'),
+        classes: p.get<List<Object?>>('classes').cast<String>(),
+        title: p.get<String?>('title'),
       ),
       loader: _copy_button.loadLibrary,
     ),
     'site_shared:download_button': ClientLoader(
-      (p) => _download_button.DownloadButton(name: p['name'] as String),
+      (p) => _download_button.DownloadButton(name: p.get<String>('name')),
       loader: _download_button.loadLibrary,
     ),
     'site_shared:feedback': ClientLoader(
-      (p) => _feedback.FeedbackComponent(issueUrl: p['issueUrl'] as String),
+      (p) => _feedback.FeedbackComponent(issueUrl: p.get<String>('issueUrl')),
       loader: _feedback.loadLibrary,
     ),
     'site_shared:on_this_page_button': ClientLoader(
@@ -149,26 +151,44 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'site_shared:page_header_options': ClientLoader(
       (p) => _page_header_options.PageHeaderOptions(
-        title: p['title'] as String,
-        markdownUrl: p['markdownUrl'] as String?,
-        sourceUrl: p['sourceUrl'] as String?,
-        issueUrl: p['issueUrl'] as String?,
+        title: p.get<String>('title'),
+        markdownUrl: p.get<String?>('markdownUrl'),
+        sourceUrl: p.get<String?>('sourceUrl'),
+        issueUrl: p.get<String?>('issueUrl'),
       ),
       loader: _page_header_options.loadLibrary,
     ),
     'site_shared:simple_tooltip': ClientLoader(
       (p) => _simple_tooltip.SimpleTooltip(
-        target: _component_ref.ComponentRef.fromId(p['target'] as String),
-        content: _component_ref.ComponentRef.fromId(p['content'] as String),
+        target: p.mount(p.get<String>('target')),
+        content: p.mount(p.get<String>('content')),
       ),
       loader: _simple_tooltip.loadLibrary,
     ),
+    'site_shared:tabs': ClientLoader(
+      (p) => _tabs.InteractiveDashTabs(
+        id: p.get<String>('id'),
+        tabs: p
+            .get<List<Object?>>('tabs')
+            .cast<Map<String, Object?>>()
+            .map((i) => _tabs.DashTab.decode(i))
+            .toList(),
+        tabContents: p
+            .get<List<Object?>>('tabContents')
+            .cast<String>()
+            .map((i) => p.mount(i))
+            .toList(),
+        saveKey: p.get<String?>('saveKey'),
+        wrapped: p.get<bool>('wrapped'),
+      ),
+      loader: _tabs.loadLibrary,
+    ),
     'site_shared:dartpad_injector': ClientLoader(
       (p) => _dartpad_injector.DartPadInjector(
-        title: p['title'] as String,
-        theme: p['theme'] as String?,
-        height: p['height'] as String?,
-        runAutomatically: p['runAutomatically'] as bool,
+        title: p.get<String>('title'),
+        theme: p.get<String?>('theme'),
+        height: p.get<String?>('height'),
+        runAutomatically: p.get<bool>('runAutomatically'),
       ),
       loader: _dartpad_injector.loadLibrary,
     ),
@@ -177,7 +197,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
       loader: _menu_toggle.loadLibrary,
     ),
     'site_shared:site_switcher': ClientLoader(
-      (p) => _site_switcher.SiteSwitcher(isFlutter: p['isFlutter'] as bool),
+      (p) => _site_switcher.SiteSwitcher(isFlutter: p.get<bool>('isFlutter')),
       loader: _site_switcher.loadLibrary,
     ),
     'site_shared:theme_switcher': ClientLoader(
@@ -186,14 +206,32 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'site_shared:quiz': ClientLoader(
       (p) => _quiz.InteractiveQuiz(
-        title: p['title'] as String?,
-        questions: (p['questions'] as List<Object?>)
-            .map(
-              (i) => _quiz_model.Question.fromMap(i as Map<Object?, Object?>),
-            )
+        title: p.get<String?>('title'),
+        questions: p
+            .get<List<Object?>>('questions')
+            .cast<Map<Object?, Object?>>()
+            .map((i) => _quiz_model.Question.fromMap(i))
             .toList(),
       ),
       loader: _quiz.loadLibrary,
+    ),
+    'site_shared:stepper': ClientLoader(
+      (p) => _stepper.InteractiveStepper(
+        titles: p
+            .get<List<Object?>>('titles')
+            .cast<String>()
+            .map((i) => p.mount(i))
+            .toList(),
+        steps: p
+            .get<List<Object?>>('steps')
+            .cast<String>()
+            .map((i) => p.mount(i))
+            .toList(),
+        collapsible: p.get<bool>('collapsible'),
+        showActions: p.get<bool>('showActions'),
+        showFinish: p.get<bool>('showFinish'),
+      ),
+      loader: _stepper.loadLibrary,
     ),
   },
 );

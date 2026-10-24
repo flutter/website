@@ -6,7 +6,6 @@ import 'dart:async';
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 import 'package:universal_web/web.dart' as web;
 
 import 'icon.dart';
@@ -15,9 +14,9 @@ import 'icon.dart';
 class Carousel extends StatelessComponent {
   const Carousel(this.items, {this.prevBtn, this.nextBtn});
 
-  final ComponentRef items;
-  final ComponentRef? prevBtn;
-  final ComponentRef? nextBtn;
+  final List<Component> items;
+  final Component? prevBtn;
+  final Component? nextBtn;
 
   @override
   Component build(BuildContext context) {
@@ -28,7 +27,7 @@ class Carousel extends StatelessComponent {
 class CarouselBase extends StatefulComponent {
   const CarouselBase(this.items, {this.prevBtn, this.nextBtn});
 
-  final Component items;
+  final List<Component> items;
   final Component? prevBtn;
   final Component? nextBtn;
 
@@ -180,7 +179,7 @@ class _CarouselState extends State<CarouselBase> {
         key: _sliderKey,
         classes: 'carousel-slider',
         events: {'scroll': (_) => _onScroll()},
-        [component.items],
+        [.fragment(component.items)],
       ),
       div(classes: 'carousel-progress container', [
         div(classes: 'carousel-track', [

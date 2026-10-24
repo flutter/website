@@ -5,7 +5,6 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../../utils/asset_utils.dart';
 import '../../utils/stories.dart';
@@ -29,13 +28,9 @@ class CaseStudies extends StatelessComponent {
       div(classes: 'stacked-header container', [
         h2([.text(title)]),
       ]),
-      Carousel(
-        ref(
-          .fragment([
-            for (final story in stories) _buildStoryItem(context, story),
-          ]),
-        ),
-      ),
+      Carousel([
+        for (final story in stories) _buildStoryItem(context, story),
+      ]),
     ]);
   }
 

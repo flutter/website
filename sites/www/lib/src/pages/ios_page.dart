@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/icon.dart';
@@ -202,60 +201,56 @@ class IosPage extends StatelessComponent {
         .text('In addition, over 30 teams in Google use Flutter'),
       ]),
       Carousel(
-        ref(
-          .fragment([
-            for (final app in googleApps) _buildGoogleAppItem(context, app),
-          ]),
+        [
+          for (final app in googleApps) _buildGoogleAppItem(context, app),
+        ],
+
+        prevBtn: svg(
+          width: 45.px,
+          height: 45.px,
+          viewBox: '0 0 45 45',
+          attributes: const {'fill': 'none'},
+          const [
+            path(
+              d: 'M19.9565 22.4584L27.3976 29.8996L25.1312 32.1661L15.4286 22.4636L25.1312 12.761L27.3976 15.0275L19.9565 22.4687V22.4584Z',
+              fill: Color('#00BAFD'),
+              [],
+            ),
+            path(
+              d: 'M22.9629 42.7226C34.1545 42.7226 43.227 33.6501 43.227 22.4585C43.227 11.2669 34.1545 2.19434 22.9629 2.19434C11.7714 2.19434 2.69873 11.2669 2.69873 22.4585C2.69873 33.6501 11.7714 42.7226 22.9629 42.7226Z',
+              stroke: Color('#00BAFD'),
+              strokeWidth: '3.62229',
+              attributes: {
+                'stroke-linecap': 'round',
+                'stroke-linejoin': 'round',
+              },
+              [],
+            ),
+          ],
         ),
-        prevBtn: ref(
-          svg(
-            width: 45.px,
-            height: 45.px,
-            viewBox: '0 0 45 45',
-            attributes: const {'fill': 'none'},
-            const [
-              path(
-                d: 'M19.9565 22.4584L27.3976 29.8996L25.1312 32.1661L15.4286 22.4636L25.1312 12.761L27.3976 15.0275L19.9565 22.4687V22.4584Z',
-                fill: Color('#00BAFD'),
-                [],
-              ),
-              path(
-                d: 'M22.9629 42.7226C34.1545 42.7226 43.227 33.6501 43.227 22.4585C43.227 11.2669 34.1545 2.19434 22.9629 2.19434C11.7714 2.19434 2.69873 11.2669 2.69873 22.4585C2.69873 33.6501 11.7714 42.7226 22.9629 42.7226Z',
-                stroke: Color('#00BAFD'),
-                strokeWidth: '3.62229',
-                attributes: {
-                  'stroke-linecap': 'round',
-                  'stroke-linejoin': 'round',
-                },
-                [],
-              ),
-            ],
-          ),
-        ),
-        nextBtn: ref(
-          svg(
-            width: 45.px,
-            height: 45.px,
-            viewBox: '0 0 45 45',
-            attributes: const {'fill': 'none'},
-            const [
-              path(
-                d: 'M25.6738 22.4585L18.2327 15.0173L20.4991 12.7507L30.2017 22.4533L20.4991 32.1559L18.2327 29.8893L25.6738 22.4481V22.4585Z',
-                fill: Color('#AA7DFB'),
-                [],
-              ),
-              path(
-                d: 'M22.6675 42.7226C33.8591 42.7226 42.9316 33.6501 42.9316 22.4585C42.9316 11.2669 33.8591 2.19434 22.6675 2.19434C11.476 2.19434 2.40332 11.2669 2.40332 22.4585C2.40332 33.6501 11.476 42.7226 22.6675 42.7226Z',
-                stroke: Color('#AA7DFB'),
-                strokeWidth: '3.62229',
-                attributes: {
-                  'stroke-linecap': 'round',
-                  'stroke-linejoin': 'round',
-                },
-                [],
-              ),
-            ],
-          ),
+
+        nextBtn: svg(
+          width: 45.px,
+          height: 45.px,
+          viewBox: '0 0 45 45',
+          attributes: const {'fill': 'none'},
+          const [
+            path(
+              d: 'M25.6738 22.4585L18.2327 15.0173L20.4991 12.7507L30.2017 22.4533L20.4991 32.1559L18.2327 29.8893L25.6738 22.4481V22.4585Z',
+              fill: Color('#AA7DFB'),
+              [],
+            ),
+            path(
+              d: 'M22.6675 42.7226C33.8591 42.7226 42.9316 33.6501 42.9316 22.4585C42.9316 11.2669 33.8591 2.19434 22.6675 2.19434C11.476 2.19434 2.40332 11.2669 2.40332 22.4585C2.40332 33.6501 11.476 42.7226 22.6675 42.7226Z',
+              stroke: Color('#AA7DFB'),
+              strokeWidth: '3.62229',
+              attributes: {
+                'stroke-linecap': 'round',
+                'stroke-linejoin': 'round',
+              },
+              [],
+            ),
+          ],
         ),
       ),
     ]);
