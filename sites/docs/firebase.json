@@ -196,6 +196,7 @@
       { "source": "/platform-integration/android/install-android", "destination": "/platform-integration/android/setup", "type": 301 },
       { "source": "/platform-integration/android/install-android/:rest*", "destination": "/platform-integration/android/setup", "type": 301 },
       { "source": "/platform-integration/android/splash-screen-migration", "destination": "/release/breaking-changes/splash-screen-migration", "type": 301 },
+      { "source": "/platform-integration/bind-native-code", "destination": "/interop/bind-native-code", "type": 301 },
       { "source": "/platform-integration/c-interop", "destination": "/platform-integration/legacy-ffi-plugin", "type": 301 },
       { "source": "/platform-integration/ios-app-clip", "destination": "/platform-integration/ios/ios-app-clip", "type": 301 },
       { "source": "/platform-integration/ios/c-interop", "destination": "/platform-integration/legacy-ffi-plugin", "type": 301 },

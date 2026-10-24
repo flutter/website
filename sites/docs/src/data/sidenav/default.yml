@@ -363,6 +363,28 @@
     - title: Design patterns
       permalink: /app-architecture/design-patterns
 
+- title: Native interop
+  permalink: /interop
+  icon: alt_route
+  children:
+    - title: Overview
+      permalink: /interop
+    - title: Pigeon
+      permalink: /interop/pigeon
+    - title: FFIgen
+      permalink: /interop/ffigen
+      children:
+        - title: Overview
+          permalink: /interop/ffigen
+        - title: "dart:ffi"
+          permalink: /interop/dart-ffi
+        - title: Bind to native code
+          permalink: /interop/bind-native-code
+    - title: JNIgen
+      permalink: /interop/jnigen
+    - title: Platform channels
+      permalink: /platform-integration/platform-channels
+
 - title: Platform integration
   permalink: /platform-integration
   icon: integration_instructions
@@ -371,10 +393,6 @@
       permalink: /reference/supported-platforms
     - title: Build desktop apps with Flutter
       permalink: /platform-integration/desktop
-    - title: Write platform-specific code
-      permalink: /platform-integration/platform-channels
-    - title: Bind to native code
-      permalink: /platform-integration/bind-native-code
     - title: Android
       permalink: /platform-integration/android
       children:
