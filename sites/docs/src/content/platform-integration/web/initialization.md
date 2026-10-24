@@ -146,7 +146,7 @@ The `config` argument is an object that can have the following optional fields:
 |`renderer`| Explicitly forces the renderer to `'canvaskit'` or `'skwasm'`. |`String`|
 |`suppressMultithreadingWarning`| When `true`, suppresses the console warning logged when `skwasm` runs single-threaded because `Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy` headers are absent. |`bool`|
 |`verboseBuildSelection`| When `true`, logs detailed `console.warn` diagnostics explaining why each candidate build in `_flutter.buildConfig.builds` was selected or skipped. |`bool`|
-|`wasmAllowList`| Browser engine allowlist (`{ blink?: boolean, webkit?: boolean, gecko?: boolean, unknown?: boolean }`) controlling which browser engines can run the `skwasm` + `dart2wasm` build when runtime WebAssembly feature probes pass (see [Support for WebAssembly][wasm-support]). Defaults to `{ blink: true, gecko: false, webkit: false, unknown: false }`. |`Object`|
+|`wasmAllowList`| Browser engine allowlist (`{ blink?: boolean, webkit?: boolean, gecko?: boolean, unknown?: boolean }`) controlling which browser engines can run the `skwasm` + `dart2wasm` build when runtime WebAssembly feature probes pass (refer to [Support for WebAssembly][wasm-support]). Defaults to `{ blink: true, gecko: false, webkit: false, unknown: false }`. |`Object`|
 |`wasmDeferredModulesLoader`| Custom `(moduleNames: string[], onModuleLoaded: (moduleName: string, bytes: Uint8Array) => Promise<void>) => Promise<void>` hook used to fetch deferred `.wasm` modules when `--enable-wasm-deferred-loading` is enabled. |`Function`|
 
 {:.table}
