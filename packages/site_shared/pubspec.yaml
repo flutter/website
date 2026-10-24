@@ -11,14 +11,14 @@ dependencies:
   html: ^0.15.6
   http: ^1.6.0
   intl: ^0.20.2
-  jaspr: ^0.23.2
-  jaspr_content: ^0.5.3
+  jaspr: ^0.24.0-beta.0
+  jaspr_content: ^0.6.0-beta.0
   markdown: ^7.3.1
   markdown_description_list: ^0.2.0
   mermaid_core: ^0.3.0
   meta: ^1.18.2
   nanoid2: ^2.0.1
-  opal: ^0.2.4
+  opal: ^0.3.0
   path: ^1.9.1
   universal_web: ^1.1.1+1
   xml: ^7.0.1

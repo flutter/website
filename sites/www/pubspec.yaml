@@ -17,8 +17,8 @@ dependencies:
   http: ^1.6.0
   image: ^4.9.0
   intl: ^0.20.2
-  jaspr: ^0.23.2
-  jaspr_content: ^0.5.3
+  jaspr: ^0.24.0-beta.0
+  jaspr_content: ^0.6.0-beta.0
   markdown: ^7.3.1
   path: ^1.9.1
   site_shared:
@@ -33,10 +33,10 @@ dev_dependencies:
   code_builder: ^4.11.1
   dart_mappable_builder: ^4.8.0
   dart_style: ^3.1.8
-  jaspr_builder: ^0.23.2
+  jaspr_builder: ^0.24.0-beta.0
   sass_builder: ^2.4.0+1
   sealed_countries: ^3.2.1
-  test: ^1.31.0
+  test: ^1.31.1
   youtube_transcript_api: ^1.0.0
 
 jaspr:
