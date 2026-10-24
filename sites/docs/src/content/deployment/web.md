@@ -114,7 +114,7 @@ SHA-256 content hash into compiled entrypoints and all files under
     binary's `sourceMappingURL` custom section references the unhashed
     `.wasm.map` filename).
 
-See the [Web FAQ][web-faq-caching] for a complete `firebase.json` example.
+For a complete `firebase.json` example, refer to the [Web FAQ][web-faq-caching].
 
 :::note
 `--web-content-hash` does not yet support deferred imports (`deferred as`) in
