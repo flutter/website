@@ -21,6 +21,9 @@ To turn on accessibility, the user needs to press an invisible button with
 `aria-label="Enable accessibility"`.
 After pressing the button, the DOM tree will reflect all accessibility
 information for the widgets.
+In embedded or multi-view web apps on mobile browsers, Flutter scopes this
+placeholder button to each Flutter view so it doesn't block taps on the
+surrounding HTML page.
 
 ### Turn on accessibility mode in code
 
@@ -46,7 +49,6 @@ void main() {
 
 Semantic roles define the purpose of a UI element, helping screen readers
 and other assistive tools interpret and present your application effectively
-to users. For example, a role can indicate if a widget is a button, a link,
 to users. For example, a role can indicate whether a widget is a button, a link,
 a heading, a slider, or part of a table.
 
@@ -73,8 +75,32 @@ corresponding ARIA roles in the web page's HTML structure.
 
 **1. Automatic Semantics from Standard Widgets**
 
-Many standard Flutter widgets, like `TabBar`, `MenuAnchor`, and `Table`,
-automatically include semantic information along with their roles.
+:::version-note
+Enhanced `<input type="range" role="slider">` semantics for `Slider`,
+`RangeSlider`, and `SemanticsRole.slider`, named route `role="region"`
+landmarks, DOM focus preservation across role updates and `WidgetsApp.router`
+dialogs, and `Escape` key tooltip dismissal require Flutter 3.50 or later.
+:::
+
+Many standard Flutter widgets, like `TabBar`, `MenuAnchor`, `Slider`,
+`RangeSlider`, and `Table`, automatically include semantic information along
+with their roles:
+
+* **Sliders**: `Slider` and `RangeSlider` (using `SemanticsFlag.isSlider`) and
+  custom widgets with `SemanticsRole.slider` render a focusable
+  `<input type="range" role="slider">` element with synchronized
+  `aria-label`, `aria-valuenow`, `aria-valuetext`, and keyboard arrow
+  navigation.
+* **Landmarks and menus**: Named routes with `scopesRoute: true`,
+  `namesRoute: true`, and a non-empty `label` emit `role="region"` landmarks,
+  and scrollable menus (`MenuAnchor`, `DropdownMenu`) expose direct item counts
+  to screen readers without intermediate `group` wrappers.
+
+In addition, the web engine preserves DOM focus across semantic role changes
+without scrolling, restores focus when dialogs or modal routes close in
+`WidgetsApp.router` apps, and dismisses visible `Tooltip` widgets when the user
+presses `Escape`.
+
 Whenever possible, prefer using these standard widgets
 as they handle many accessibility aspects out-of-the-box.
 
@@ -122,3 +148,19 @@ class MyCustomListWidget extends StatelessWidget {
   }
 }
 ```
+
+## Viewport zoom and mobile text inputs
+
+:::version-note
+Default 500% pinch-to-zoom (`maximum-scale=5.0`) and automatic iOS Safari
+16px text-input font sizing require Flutter 3.50 or later.
+:::
+
+By default in full-page mode, Flutter configures the page's
+`<meta name="viewport" flt-viewport>` tag with `maximum-scale=5.0` and without
+`user-scalable=no`. This allows users to pinch-to-zoom up to 500% to meet
+WCAG 2.1 AA text-resizing guidelines.
+
+On iOS Safari, Flutter also automatically sets a minimum `16px` font size on
+its hidden semantic `<input>` and `<textarea>` elements so the browser doesn't
+unexpectedly auto-zoom when a user focuses a text field.

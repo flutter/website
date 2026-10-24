@@ -41,12 +41,14 @@ They're sorted by release and listed in alphabetical order:
 * [Restrict Android engine flags in release mode][]
 * [Stricter Android `Intent` verification for app entrypoints][]
 * [Web `viewport-fit=cover` `SafeArea` support][]
+* [WidgetSpan order in right-to-left text][]
 
 [Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
-[Stricter Android `Intent` verification for app entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 [Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
+[Stricter Android `Intent` verification for app entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
 [Web `viewport-fit=cover` `SafeArea` support]: /release/breaking-changes/viewport-fit-cover-safe-area
+[WidgetSpan order in right-to-left text]: /release/breaking-changes/widgetspan-rtl-bidi-order
 
 <a id="released-in-flutter-347" aria-hidden="true"></a>
 ### Released in Flutter 3.47
