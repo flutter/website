@@ -44,18 +44,19 @@ Android app for deferred loading.
 <ol>
 <li>
 
-Add Play Core to the Android app's
-build.gradle dependencies.
-In `android/app/build.gradle` add the following:
+Add Play Feature Delivery 2.1.0 to the Android app's
+`build.gradle` dependencies. Play Core 1.x is rejected for apps
+targeting Android 14 (API 34) or later.
+In `android/app/build.gradle`, add the following:
 
-<Tabs key="android-play-core">
+<Tabs key="android-feature-delivery">
 <Tab name="Kotlin">
 
 ```kotlin title="android/app/build.gradle.kts"
 ...
 dependencies {
   ...
-  implementation("com.google.android.play:core:1.8.0")
+  implementation("com.google.android.play:feature-delivery:2.1.0")
   ...
 }
 ```
@@ -67,7 +68,7 @@ dependencies {
 ...
 dependencies {
   ...
-  implementation "com.google.android.play:core:1.8.0"
+  implementation "com.google.android.play:feature-delivery:2.1.0"
   ...
 }
 ```
