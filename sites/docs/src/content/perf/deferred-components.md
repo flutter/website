@@ -97,7 +97,7 @@ the `android:name` property on the application in
 </manifest>
 ```
 
-`io.flutter.app.FlutterPlayStoreSplitApplication` handles
+`io.flutter.embedding.android.FlutterPlayStoreSplitApplication` handles
 both of these tasks for you. If you use
 `FlutterPlayStoreSplitApplication`,
 you can skip to step 1.3.
@@ -105,7 +105,7 @@ you can skip to step 1.3.
 If your Android application
 is large or complex, you might want to separately support
 `SplitCompat` and provide the
-`PlayStoreDynamicFeatureManager` manually.
+`PlayStoreDeferredComponentManager` manually.
 
 To support `SplitCompat`, there are three methods
 (as detailed in the [Android docs][]), any of which are valid:
@@ -163,7 +163,7 @@ the Flutter embedder by adding the following code
 to your app initialization:
 
 ```java
-import io.flutter.embedding.engine.dynamicfeatures.PlayStoreDeferredComponentManager;
+import io.flutter.embedding.engine.deferredcomponents.PlayStoreDeferredComponentManager;
 import io.flutter.FlutterInjector;
 ...
 PlayStoreDeferredComponentManager deferredComponentManager = new
@@ -420,7 +420,7 @@ to the name of a deferred component to install. For example:
 ...
 <application
     android:label="MyApp"
-    android:name="io.flutter.app.FlutterPlayStoreSplitApplication"
+    android:name="io.flutter.embedding.android.FlutterPlayStoreSplitApplication"
     android:icon="@mipmap/ic_launcher">
     ...
     <meta-data android:name="io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager.loadingUnitMapping" android:value="2:boxComponent"/>
