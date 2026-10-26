@@ -226,7 +226,7 @@ Then replace the placeholder with the ID for your target,
 and run your app in debug mode:
 
 ```console
-$ flutter run -d DEVICE_ID
+$ flutter run -d <device_id>
 ```
 
 ---
