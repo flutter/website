@@ -57,6 +57,21 @@ Skills use **progressive disclosure** to conserve model context:
   for Dart development, including unit test authoring, dependency resolution,
   and static analysis remediation.
 
+### Quality assurance and linting
+
+Use [`package:skills_lint`]({{site.pub-pkg}}/skills_lint) to validate
+in-repository skills (such as those under the `.agents/skills/` directory)
+and published package skills against the
+[Agent Skills specification][agentskills].
+The linter checks `SKILL.md` YAML frontmatter, directory structure,
+naming conventions, and relative file paths to keep your skill definitions
+valid and ready for AI assistants to use as your codebase evolves.
+
+To set up and run the linter, refer to [Validate and lint skills](
+{{site.dart-site}}/tools/pub/package-skills#validate-and-lint-skills).
+
+[agentskills]: https://agentskills.io/specification
+
 ---
 
 ## Dart and Flutter MCP server
@@ -110,9 +125,9 @@ dart run skills@ get
 ```
 
 To learn how to discover and install package skills, check out
-[Package skills](https://dart.dev/ai/package-skills).
+[Package skills]({{site.dart-site}}/ai/package-skills).
 To bundle skills with your own package, check out
-[Ship skills with packages](https://dart.dev/tools/pub/package-skills).
+[Ship skills with packages]({{site.dart-site}}/tools/pub/package-skills).
 
 ---
 
@@ -194,6 +209,6 @@ interact:
 * Follow the [Get started with AI](/ai/get-started) guide to install official
   plugins in your editor.
 * Learn how to install skills with
-  [Package skills](https://dart.dev/ai/package-skills).
+  [Package skills]({{site.dart-site}}/ai/package-skills).
 * Learn how to distribute skills with
-  [Ship skills with packages](https://dart.dev/tools/pub/package-skills).
+  [Ship skills with packages]({{site.dart-site}}/tools/pub/package-skills).
