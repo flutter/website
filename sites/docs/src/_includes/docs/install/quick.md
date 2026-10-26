@@ -17,7 +17,8 @@ configure target platforms and manage an existing SDK in
 ## Confirm your development platform {: #dev-platform}
 
 These instructions are configured for **Windows**{:.selected-os-text}.
-If you're using a different operating system, select it below:
+If you're using a different operating system,
+select it from one of the following:
 
 <OSSelector />
 
