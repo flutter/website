@@ -97,6 +97,18 @@
     }
   }
 
+  .subtype {
+    padding: 0 0.3rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.3;
+    border-radius: 0.25rem;
+    background-color: var(--site-secondaryContainer-bgColor);
+    color: var(--site-secondaryContainer-fgColor);
+    margin-left: 0.4rem;
+    letter-spacing: normal;
+  }
+
   --anim-offset: 30px;
   --dd-offset-top: 54px;
 
@@ -147,7 +159,8 @@
           text-align: left;
           display: flex;
           color: white;
-          padding: 13px 16px;
+          padding: 12px 14px;
+          height: 2.25rem;
           transition: background-color 300ms ease;
 
           &:active,
@@ -163,6 +176,8 @@
     background-color: white;
     color: var(--blue-6);
     display: none;
+    padding: .5rem 1.75rem;
+    height: 40px;
   }
 
   .hamburger {
@@ -437,7 +452,7 @@
           &:hover {
 
             /* keep li highlighted while over dropdown */
-            a.btn {
+            > a.btn {
               background-color: rgba(250, 250, 250, 0.15);
             }
 
@@ -496,7 +511,8 @@
         transform: translate(-50%, 0);
         border-radius: 6px;
         box-shadow: var(--ui-drop-shadow);
-        background-color: white;
+        background-color: var(--site-header-bgColor);
+        border: 1px solid var(--site-outline-variant);
         padding: 18px 14px;
         min-width: 190px;
         z-index: var(--site-z-dropdown);
@@ -515,7 +531,7 @@
             }
 
             a.btn {
-              color: var(--grey-6);
+              color: var(--site-base-fgColor-lighter);
               padding: var(--spacer-sm) 16px;
               display: flex;
               justify-content: flex-start;
@@ -529,9 +545,9 @@
 
               &:active,
               &:hover {
-                background-color: var(--grey-2);
+                background-color: rgb(var(--site-interaction-base-values) / 6%);
                 transition: background-color 300ms, color 300ms ease;
-                color: black;
+                color: var(--site-base-fgColor);
               }
             }
 
@@ -596,8 +612,7 @@ body.interior {
 body.interior,
 body.in-content {
   .site-header:not(.mobile-nav-open) {
-    transition: background-color 300ms, box-shadow 200ms, top 300px ease;
-    background-color: white;
+    background-color: var(--site-header-bgColor);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
     top: 0 !important;
     /* Override `.hide`. */
@@ -613,8 +628,7 @@ body.in-content {
     }
 
     nav {
-      transition: color 300ms;
-      color: black;
+      color: var(--site-base-fgColor);
 
       >ul {
         >li {
@@ -625,15 +639,15 @@ body.in-content {
           }
 
           a.btn {
-            color: var(--grey-6);
+            color: var(--site-base-fgColor-lighter);
 
             &:hover {
-              background-color: var(--grey-1);
-              color: var(--blue-6);
+              background-color: rgb(var(--site-interaction-base-values) / 5%);
+              color: var(--site-link-fgColor);
             }
 
             &.active {
-              color: var(--blue-6);
+              color: var(--site-link-fgColor);
             }
           }
         }
@@ -641,37 +655,37 @@ body.in-content {
     }
 
     .icon-btn {
-      color: var(--grey-6);
+      color: var(--site-base-fgColor-lighter);
 
       &:hover,
       &.active {
-        background-color: var(--grey-1);
+        background-color: rgb(var(--site-interaction-base-values) / 5%);
       }
     }
 
     .search {
       &:focus-within {
-        outline: 2px solid var(--primary);
+        outline: 2px solid var(--site-primary-color);
       }
 
       form {
         input {
-          color: black;
+          color: var(--site-base-fgColor);
 
           &::placeholder {
-            color: var(--grey-5);
+            color: var(--site-base-fgColor-alt);
           }
         }
       }
 
       &.active {
-        background-color: var(--grey-2);
+        background-color: rgb(var(--site-interaction-base-values) / 6%);
       }
     }
 
     a.btn#get-started__header {
-      background-color: var(--blue-6);
-      color: white;
+      background-color: var(--site-filledButton-bgColor);
+      color: var(--site-filledButton-fgColor);
     }
   }
 }

@@ -6,3 +6,4 @@
 library;
 
 export 'src/utils/cache_busted_build_asset_url.dart';
+export 'src/utils/theme_script.dart';
