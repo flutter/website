@@ -222,7 +222,7 @@ Set up each iOS device on which you want to test.
 
 Run `flutter devices` from your Flutter project directory
 to list available devices and simulators.
-Then replace `DEVICE_ID` with the ID for your target,
+Then replace the placeholder with the ID for your target,
 and run your app in debug mode:
 
 ```console
