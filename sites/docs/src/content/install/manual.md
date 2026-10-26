@@ -48,8 +48,8 @@ first complete the following setup.
 
  1. <h3>Install the Xcode command-line tools</h3>
 
-    **If you already have Git installed, skip to the next
-    step: Set up an editor or IDE.**
+    **If you already have Git installed,**
+    you can skip to the next step: Set up an editor or IDE.
 
     Download the Xcode command-line tools to get access to
     the command-line tools that Flutter relies on, including Git.
