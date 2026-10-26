@@ -41,13 +41,20 @@ Android app for deferred loading.
 
 ### Step 1: Dependencies and initial project setup
 
+**Flutter SDK compatibility:** Play Feature Delivery 2.1.0 must be compatible
+with the Play APIs used by the Flutter Android embedding. Flutter SDK releases
+whose embedding was built against Play Core 1.x are incompatible and can fail
+with a `NoSuchMethodError` at runtime. Update to a Flutter release that
+includes the corresponding embedding migration before applying these
+instructions. Track the migration in [Flutter issue #195160][].
+
 <ol>
 <li>
 
 Add Play Feature Delivery 2.1.0 to the Android app's
-`build.gradle` dependencies. Play Core 1.x is rejected for apps
-targeting Android 14 (API 34) or later.
-In `android/app/build.gradle`, add the following:
+dependencies. Play Core 1.x is rejected for apps targeting
+Android 14 (API 34) or later. In the app-level
+`build.gradle` or `build.gradle.kts` file, add the following:
 
 <Tabs key="android-feature-delivery">
 <Tab name="Kotlin">
@@ -682,6 +689,7 @@ Play store's delivery feature.
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
 [Flutter Gallery's `lib/deferred_widget.dart`]: {{site.repo.gallery-archive}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
+[Flutter issue #195160]: https://github.com/flutter/flutter/issues/195160
 [github.com/google/bundletool/releases]: https://github.com/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 [release or profile mode]: /testing/build-modes
