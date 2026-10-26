@@ -72,7 +72,9 @@ set up the tools for your target platforms and configure your preferred editor:
 <a id="update" aria-hidden="true"></a>
 <a id="previous-releases" aria-hidden="true"></a>
 
-## Manage or troubleshoot your SDK {: #uninstall}
+<a id="uninstall" aria-hidden="true"></a>
+
+## Manage or troubleshoot your installation {: #manage}
 
 If you already have Flutter installed,
 use the following guides to update, configure,
