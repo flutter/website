@@ -48,6 +48,8 @@ import 'package:site_shared/components/common/client/copy_button.dart'
     deferred as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
+import 'package:site_shared/components/layout/theme_switcher.dart'
+    deferred as _theme_switcher;
 import 'package:site_shared/components/utils/component_ref.dart'
     as _component_ref;
 
@@ -104,10 +106,12 @@ ClientOptions get defaultClientOptions => ClientOptions(
       (p) => _header.Header(
         contrastLogoSrc: p['contrastLogoSrc'] as String,
         defaultLogoSrc: p['defaultLogoSrc'] as String,
+        darkLogoSrc: p['darkLogoSrc'] as String,
         banner: _banner_content.BannerContent.fromJson(
           p['banner'] as Map<String, Object?>,
         ),
         pageUrl: p['pageUrl'] as String,
+        supportsDarkMode: p['supportsDarkMode'] as bool,
       ),
       loader: _header.loadLibrary,
     ),
@@ -236,6 +240,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
         runAutomatically: p['runAutomatically'] as bool,
       ),
       loader: _dartpad_injector.loadLibrary,
+    ),
+    'site_shared:theme_switcher': ClientLoader(
+      (p) => _theme_switcher.ThemeSwitcher(),
+      loader: _theme_switcher.loadLibrary,
     ),
   },
 );

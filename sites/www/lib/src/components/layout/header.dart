@@ -6,6 +6,8 @@ import 'dart:async';
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/layout/theme_switcher.dart';
+import 'package:site_shared/util.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../data/nav_items.dart';
@@ -21,14 +23,21 @@ class Header extends StatefulComponent {
     super.key,
     required this.contrastLogoSrc,
     required this.defaultLogoSrc,
+    required this.darkLogoSrc,
     required this.banner,
     required this.pageUrl,
+    required this.supportsDarkMode,
   });
 
   final String contrastLogoSrc;
   final String defaultLogoSrc;
+  final String darkLogoSrc;
   final BannerContent banner;
   final String pageUrl;
+
+  /// Whether the current page supports a dark theme,
+  /// in which case the header includes a theme switcher.
+  final bool supportsDarkMode;
 
   @override
   State<Header> createState() => _HeaderState();
@@ -145,7 +154,7 @@ class _HeaderState extends State<Header> {
       if (_isMobile && _navOpen) 'mobile-nav-open',
       if (_searchActive) 'searching',
       'site-header',
-    ].join(' ');
+    ].toClasses;
 
     final isBlog = component.pageUrl.startsWith('/blog');
 
@@ -163,7 +172,20 @@ class _HeaderState extends State<Header> {
             ]),
             div(classes: 'logo logo-default', [
               a(href: '/', [
-                img(src: component.defaultLogoSrc, alt: 'Flutter'),
+                img(
+                  classes: 'light-mode-visible',
+                  src: component.defaultLogoSrc,
+                  alt: 'Flutter',
+                ),
+                // Don't load the dark logo on pages without dark mode, and
+                // lazy load it otherwise so it's only fetched when displayed.
+                if (component.supportsDarkMode)
+                  img(
+                    classes: 'dark-mode-visible',
+                    src: component.darkLogoSrc,
+                    alt: 'Flutter',
+                    loading: MediaLoading.lazy,
+                  ),
               ]),
             ]),
             if (isBlog)
@@ -197,7 +219,7 @@ class _HeaderState extends State<Header> {
                 'icon-btn',
                 'search',
                 if (_navOpen || _searchActive) 'active',
-              ].join(' '),
+              ].toClasses,
               [
                 span(
                   events: {'click': (_) => _toggleSearch()},
@@ -224,6 +246,7 @@ class _HeaderState extends State<Header> {
                   ),
               ],
             ),
+            if (component.supportsDarkMode) const NestedThemeSwitcher(),
             const a(
               href: 'https://docs.flutter.dev/get-started/quick',
               id: 'get-started__header',
@@ -290,7 +313,7 @@ class _NavEntry extends StatelessComponent {
       return li([
         a(
           href: data.href,
-          classes: ['btn', 'top-level', if (isActive) 'active'].join(' '),
+          classes: ['btn', 'top-level', if (isActive) 'active'].toClasses,
           [.text(data.label)],
         ),
       ]);
@@ -301,7 +324,7 @@ class _NavEntry extends StatelessComponent {
       [
         a(
           href: data.href,
-          classes: ['btn', 'top-level', if (isActive) 'active'].join(' '),
+          classes: ['btn', 'top-level', if (isActive) 'active'].toClasses,
           events: {
             'click': ?onMobileClick,
           },
@@ -312,7 +335,7 @@ class _NavEntry extends StatelessComponent {
         ),
         const div(classes: 'dd-connector', []),
         div(
-          classes: ['dd', if (data.secondColumn != null) 'dd-double'].join(' '),
+          classes: ['dd', if (data.secondColumn != null) 'dd-double'].toClasses,
           [
             ul([
               _NavDropdownLink(
@@ -362,7 +385,7 @@ class _NavDropdownLink extends StatelessComponent {
             'btn',
             if (isNested) 'subMenu',
             if (pageUrl == link.href) 'active',
-          ].join(' '),
+          ].toClasses,
           href: link.href,
           target: link.isExternal ? Target.blank : null,
           [.text(link.label)],

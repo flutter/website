@@ -31,6 +31,9 @@ class BlogLayout extends DefaultLayout {
   List<String> get defaultBodyTags => ['interior', 'blog'];
 
   @override
+  bool get supportsDarkMode => true;
+
+  @override
   Component buildLayout(Page page, Component child) {
     final pageData = page.data.page;
     final pageTitle = pageData['title'] as String? ?? 'Untitled';
@@ -59,7 +62,7 @@ class BlogLayout extends DefaultLayout {
       main_([
         article(classes: 'content', [
           div(
-            classes: 'content ${isPost ? 'post-content' : ''}',
+            classes: ['content', if (isPost) 'post-content'].toClasses,
             attributes: scroll.spyContent,
             [
               div(id: 'site-content-title', [
