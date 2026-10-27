@@ -86,6 +86,7 @@ class _FiltersState extends State<Filters> {
   @override
   void initState() {
     super.initState();
+    assert(component.showInitialCount > 0, 'showInitialCount must be greater than 0');
     _showItemsCount = component.showInitialCount;
     _matchingIndexes = [
       for (var index = 0; index < component.items.length; index++) index,
