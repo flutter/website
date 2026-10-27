@@ -15,14 +15,15 @@ To download a specific Flutter version or release channel,
 visit the [SDK archive][], or manage an existing installation in
 [Install and set up Flutter][].
 
-[with-vs-code]: /install/quick
+[with-vs-code]: /install/with-vs-code
 [SDK archive]: /install/archive
 [Install and set up Flutter]: /install
 
 ## Confirm your development platform {: #dev-platform}
 
 These instructions are configured for **Windows**{:.selected-os-text}.
-If you're using a different operating system, select it below:
+If you're using a different operating system,
+select it from one of the following:
 
 <OSSelector />
 
@@ -310,7 +311,7 @@ $ flutter doctor
 ```
 
 :::note What to expect in `flutter doctor`
-You only need checkmarks (`[✓]`) for **Flutter**, your preferred editor,
+You only need checkmarks (`[✓]`) for **Flutter**
 and the platforms you plan to target
 (for example, **Chrome** lets you build for the web immediately).
 You can safely ignore `[!]` or `[✗]` warnings for tools like

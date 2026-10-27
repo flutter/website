@@ -50,7 +50,7 @@ follow [Install Flutter with VS Code][] instead.
   </a>
 </div>
 
-[Install Flutter with VS Code]: /install/quick
+[Install Flutter with VS Code]: /install/with-vs-code
 
 ## Windows
 

@@ -1,18 +1,12 @@
 Learn how to use [Visual Studio Code (VS Code)][VS Code] or any compatible
-Code OSS-based editor (such as [Antigravity][], [Cursor][], or [Windsurf][])
-to quickly install and set up your Flutter development environment.
+Code OSS-based editor to quickly install and set up your
+Flutter development environment.
 
 If you prefer a different editor or IDE,
-you can [install Flutter manually][], or
-configure target platforms and manage an existing SDK in
-[Install and set up Flutter][].
+you can [install Flutter manually][].
 
 [VS Code]: https://code.visualstudio.com
-[Antigravity]: https://antigravity.google/
-[Cursor]: https://cursor.com/
-[Windsurf]: https://windsurf.com/
 [install Flutter manually]: /install/manual
-[Install and set up Flutter]: /install
 
 ## Confirm your development platform {: #dev-platform}
 
@@ -78,8 +72,8 @@ For details, check out the
 
  1. <h3>Install the Xcode command-line tools</h3>
 
-    **If you already have Git installed, skip to the next
-    step: Download and install Visual Studio Code.**
+    **If you already have Git installed,**
+    you can skip to the next step: Download and install Visual Studio Code.
 
     Download the Xcode command-line tools to get access to
     the command-line tools that Flutter relies on, including Git.
@@ -221,13 +215,11 @@ use VS Code to download and set up the Flutter SDK:
     **Flutter: Run Flutter Doctor**, or run `flutter doctor`
     in your terminal.
 
-    :::note What to expect in `flutter doctor`
-    You only need checkmarks (`[✓]`) for **Flutter**, **VS Code**,
+    In the output, you only need checkmarks (`[✓]`) for **Flutter**
     and the platforms you plan to target
     (for example, **Chrome** lets you build for the web immediately).
     You can safely ignore `[!]` or `[✗]` warnings for tools like
     Android Studio or Xcode until you're ready to target those platforms.
-    :::
 
     If you encounter any issues during installation,
     consult [Flutter installation troubleshooting][troubleshoot].
