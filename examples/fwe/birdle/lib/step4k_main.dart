@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'game.dart';
 import 'step2_main.dart' show Tile;
@@ -36,8 +36,8 @@ class GamePage extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion GamePage
+
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
   final void Function(String) onSubmitGuess;

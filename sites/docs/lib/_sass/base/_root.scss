@@ -5,10 +5,11 @@ $base_primary_color: #0468D7;
 // Root variables shared by both light and dark mode.
 body {
   // Site typography.
-  --site-ui-fontFamily: 'Google Sans', 'Roboto', ui-sans, sans-serif;
-  --site-body-fontFamily: 'Google Sans Text', 'Roboto', ui-sans, sans-serif;
-  --site-code-fontFamily: 'Google Sans Mono', 'Roboto Mono', ui-monospace, monospace;
+  --site-ui-fontFamily: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
+  --site-body-fontFamily: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
+  --site-code-fontFamily: 'Google Sans Code', 'Roboto Mono', ui-monospace, monospace;
   --site-icon-fontFamily: 'Material Symbols Outlined', 'Material Symbols', 'Material Icons';
+  font-optical-sizing: auto;
 
   // Site layout sizes.
   --site-header-height: 4rem;
@@ -93,9 +94,27 @@ body {
   --site-alert-warning-color: #9e6300;
   --site-alert-error-color: #cd3434;
 
-  &:not(.dark-mode) .dark-mode-visible {
-    display: none !important;
-  }
+  --site-tag-blue-bgColor: #0468D7;
+  --site-tag-blue-fgColor: #fff;
+  --site-tag-green-bgColor: #188038;
+  --site-tag-green-fgColor: #fff;
+  --site-tag-grey-bgColor: var(--site-inset-borderColor);
+  --site-tag-grey-fgColor: var(--site-base-fgColor);
+  --site-tag-subtleGrey-bgColor: var(--site-raised-bgColor-translucent);
+  --site-tag-subtleGrey-borderColor: var(--site-inset-borderColor);
+  --site-tag-subtleGrey-fgColor: var(--site-base-fgColor);
+  --site-tag-purple-bgColor: #673AB7;
+  --site-tag-purple-fgColor: #fff;
+  --site-tag-teal-bgColor: #158477;
+  --site-tag-teal-fgColor: #fff;
+  --site-tag-magenta-bgColor: #9A2E6E;
+  --site-tag-magenta-fgColor: #fff;
+  --site-tag-red-bgColor: #B71C1C;
+  --site-tag-red-fgColor: #fff;
+  --site-tag-orange-bgColor: #C44F00;
+  --site-tag-orange-fgColor: #fff;
+  --site-tag-amber-bgColor: #A65A16;
+  --site-tag-amber-fgColor: #fff;
 
   &.dark-mode {
     color-scheme: dark;
@@ -161,16 +180,26 @@ body {
     --site-alert-warning-color: #cea11f;
     --site-alert-error-color: #ff5d5d;
 
-    .opal,
-    .opal span {
-      color: var(--opal-dark-color) !important;
-      font-style: var(--opal-dark-font-style) !important;
-      font-weight: var(--opal-dark-font-weight) !important;
-      text-decoration: var(--opal-dark-text-decoration) !important;
-    }
-
-    .light-mode-visible {
-      display: none !important;
-    }
+    --site-tag-blue-bgColor: #0553B1;
+    --site-tag-blue-fgColor: #fff;
+    --site-tag-green-bgColor: #188038;
+    --site-tag-green-fgColor: #fff;
+    --site-tag-grey-bgColor: var(--site-inset-borderColor);
+    --site-tag-grey-fgColor: var(--site-base-fgColor);
+    --site-tag-subtleGrey-bgColor: var(--site-raised-bgColor-translucent);
+    --site-tag-subtleGrey-borderColor: var(--site-inset-borderColor);
+    --site-tag-subtleGrey-fgColor: var(--site-base-fgColor);
+    --site-tag-purple-bgColor: #673AB7;
+    --site-tag-purple-fgColor: #fff;
+    --site-tag-teal-bgColor: #106c62;
+    --site-tag-teal-fgColor: #fff;
+    --site-tag-magenta-bgColor: #84255D;
+    --site-tag-magenta-fgColor: #fff;
+    --site-tag-red-bgColor: #B71C1C;
+    --site-tag-red-fgColor: #fff;
+    --site-tag-orange-bgColor: #C44F00;
+    --site-tag-orange-fgColor: #fff;
+    --site-tag-amber-bgColor: #A65A16;
+    --site-tag-amber-fgColor: #fff;
   }
 }

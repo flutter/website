@@ -35,7 +35,7 @@ Around the same time, Rive was working with the Flutter team on the Flutter Inte
 
 **Their solution**
 
-The team decided to give Flutter a shot. They built a prototype with Canvaskit in Flutter, and immediately noticed an improvement. In addition to offering a true multi-platform solution, it also became much easier to onboard new engineers. They also really liked the built-in testing capabilities, which made it much easier to maintain the quality and stability of the app.
+The team decided to give Flutter a shot. They built a prototype with CanvasKit in Flutter, and immediately noticed an improvement. In addition to offering a true multi-platform solution, it also became much easier to onboard new engineers. They also really liked the built-in testing capabilities, which made it much easier to maintain the quality and stability of the app.
 
 **Results**
 
@@ -45,4 +45,4 @@ They’ve also found that it’s very easy to add custom pieces in Flutter. Feat
 
 The general stability of the app has improved, too. Thanks to the built-in testing features, they now run thousands of tests per build, which has given them the confidence to move to a daily release cycle.
 
-Based on their success, the team is now working on launching a desktop application for MacOS. For this release, the team says they don’t even have to do much customization, as the abstraction has already been done.They’ve also found that it’s very easy to add custom pieces in Flutter. Feature-building is easier and more fun, and designers are much better able to tinker and build out prototypes. This has allowed them to develop much richer experiences in Rive, including animations, interactive graphics, and fluid and reactive layouts.
+Based on their success, the team is now working on launching a desktop application for macOS. For this release, the team says they don’t even have to do much customization, as the abstraction has already been done.They’ve also found that it’s very easy to add custom pieces in Flutter. Feature-building is easier and more fun, and designers are much better able to tinker and build out prototypes. This has allowed them to develop much richer experiences in Rive, including animations, interactive graphics, and fluid and reactive layouts.

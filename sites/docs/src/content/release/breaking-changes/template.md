@@ -40,10 +40,11 @@ description: >-
   * DON'T use the abbreviation `i.e.` or `e.g.`.
     Use "for example" or "such as", and similar.
   * For links, use the macros where possible.
-    See the examples at the end of this template,
-    but don't use "github.com" or "api.flutter.dev" or
-    "pub.dev" in your URLs. Use the {{site.github}},
-    {{site.api}}, or {{site.pub}} macros.
+    See the examples at the end of this template.
+    For GitHub links, use a matching repository macro when available;
+    otherwise, use a raw `https://github.com` URL.
+    Don't use "api.flutter.dev" or "pub.dev" in your URLs.
+    Use the {{site.api}} or {{site.pub}} macros.
   * AVOID "will" when possible, in other words,
     stay in the present tense. For example:
     Bad: "When encountering an xxx value,

@@ -13,7 +13,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - E-commerce & Retail
 successMetrics:
   - perc: 12
     desc: increase in IAP

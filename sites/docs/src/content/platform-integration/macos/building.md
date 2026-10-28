@@ -33,6 +33,15 @@ pop-up buttons, and modal dialogs.
 
 ## Building macOS apps
 
+:::warning macOS Intel (x64) deprecation
+As Apple phases out Intel-based Macs,
+Flutter is phasing out support for Intel (x64) hardware.
+For details on the timeline and impact,
+refer to the [macOS Intel deprecation strategy][].
+
+[macOS Intel deprecation strategy]: {{site.main-url}}/go/macos-intel-deprecation
+:::
+
 To distribute your macOS application, you can either
 [distribute it through the macOS App Store][],
 or you can distribute the `.app` itself,
@@ -108,7 +117,7 @@ If you keep the App Sandbox enabled (which is required if you
 plan to distribute your application in the [App Store][]),
 you need to manage entitlements for your application
 when you add certain plugins or other native functionality.
-For instance, using the [`file_chooser`][] plugin
+For instance, using the [`file_selector`][] plugin
 requires adding either the
 `com.apple.security.files.user-selected.read-only` or
 `com.apple.security.files.user-selected.read-write` entitlement.
@@ -145,7 +154,7 @@ on the Apple Developer site.
 [App Sandbox]: {{site.apple-dev}}/documentation/security/app_sandbox
 [App Store]: {{site.apple-dev}}/app-store/submissions/
 [Entitlements]: {{site.apple-dev}}/documentation/bundleresources/entitlements
-[`file_chooser`]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
+[`file_selector`]: {{site.pub-pkg}}/file_selector
 
 ## Hardened Runtime
 

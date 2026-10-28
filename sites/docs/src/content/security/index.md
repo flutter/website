@@ -109,7 +109,7 @@ The best way to receive security updates is to subscribe to the
 technical release blog post.
 
 [Discord channel]: https://discord.gg/BS8KZyg
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[flutter-announce]: {{site.groups.flutter-announce}}
 
 ## Best practices
 

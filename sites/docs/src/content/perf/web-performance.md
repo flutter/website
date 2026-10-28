@@ -14,7 +14,7 @@ These events are exposed in the
 
 :::note
 For information on how to optimize web loading speed,
-check out the (free) article on Medium,
+read the Flutter blog post
 [Best practices for optimizing Flutter web loading speed][article].
 
 [article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c

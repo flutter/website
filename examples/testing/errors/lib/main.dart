@@ -1,9 +1,11 @@
 // ignore_for_file: directives_ordering
 
 import 'error_handler.dart';
+
 // #docregion all-errors
-import 'package:flutter/material.dart';
 import 'dart:ui';
+
+import 'package:material_ui/material_ui.dart';
 
 Future<void> main() async {
   await myErrorsHandler.initialize();
@@ -36,5 +38,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion all-errors

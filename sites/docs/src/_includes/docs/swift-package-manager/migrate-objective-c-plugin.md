@@ -65,12 +65,16 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            // If the plugin name contains "_", replace with "-" for the library name
            .library(name: "plugin-name", targets: ["plugin_name"])
        ],
-       dependencies: [],
+       dependencies: [
+           .package(name: "FlutterFramework", path: "../FlutterFramework")
+       ],
        targets: [
            .target(
                // TODO: Update your target name.
                name: "plugin_name",
-               dependencies: [],
+               dependencies: [
+                   .product(name: "FlutterFramework", package: "FlutterFramework")
+               ],
                resources: [
                    // TODO: If your plugin requires a privacy manifest
                    // (in other words, if it uses any required reason APIs),
@@ -122,12 +126,16 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            // If the plugin name contains "_", replace with "-" for the library name
            .library(name: [!"plugin-name"!], targets: [[!"plugin_name"!]])
        ],
-       dependencies: [],
+       dependencies: [
+           .package(name: "FlutterFramework", path: "../FlutterFramework")
+       ],
        targets: [
            .target(
                // TODO: Update your target name.
                name: [!"plugin_name"!],
-               dependencies: [],
+               dependencies: [
+                   .product(name: "FlutterFramework", package: "FlutterFramework")
+               ],
                resources: [
                    // TODO: If your plugin requires a privacy manifest
                    // (for example, if it uses any required reason APIs),
@@ -233,6 +241,25 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.
+
+1. Add the `FlutterFramework` as a dependency.
+
+   Update `Package.swift` to include `FlutterFramework`:
+
+   ```swift title="Package.swift"
+   dependencies: [
+       [!.package(name: "FlutterFramework", path: "../FlutterFramework")!]
+   ],
+   targets: [
+       .target(
+           // TODO: Update your target name.
+           name: "plugin_name",
+           dependencies: [
+               [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
+           ]
+       )
+   ]
+   ```
 
 1. If your header files are no longer in the same directory as your
    implementation files, you should update your import statements.
@@ -458,7 +485,7 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 
 [`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
 [`public_header_files`]: https://guides.cocoapods.org/syntax/podspec.html#public_header_files
-[Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
+[Swift Package Manager's documentation]: https://github.com/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
 [Pigeon]: https://pub.dev/packages/pigeon
 [CocoaPods `dependency`]: https://guides.cocoapods.org/syntax/podspec.html#dependency
 [Swift Package Manager dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency

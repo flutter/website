@@ -13,5 +13,4 @@ Future<http.Response> updateAlbum(String title) {
     body: jsonEncode(<String, String>{'title': title}),
   );
 }
-
 // #enddocregion updateAlbum

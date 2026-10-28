@@ -146,7 +146,7 @@ You need to initialize the Mobile Ads SDK before loading ads.
 
     <?code-excerpt "lib/main.dart (main)"?>
     ```dart
-    void main() async {
+    void main() {
       WidgetsFlutterBinding.ensureInitialized();
       unawaited(MobileAds.instance.initialize());
     
@@ -406,7 +406,6 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
     // Start loading.
     bannerAd.load();
   }
-
 }
 ```
 

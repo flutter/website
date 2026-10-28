@@ -5,6 +5,10 @@ section#stories {
   padding-bottom: var(--gutter-lg);
 }
 
+.story-grid + .story-grid {
+  margin-top: var(--gutter-lg);
+}
+
 .story-grid {
   .story-grid-header {
     h3 {
@@ -19,6 +23,15 @@ section#stories {
     grid-template-columns: 1fr;
     column-gap: var(--gutter-sm);
     row-gap: var(--gutter);
+  }
+
+  .filters-empty-results {
+    padding: var(--gutter-md) 0;
+    text-align: center;
+
+    p {
+      margin-bottom: var(--gutter-sm);
+    }
   }
 
   @include breakpoints.screen(md) {
@@ -59,7 +72,7 @@ section#stories {
 
   > h2 {
     font-size: var(--font-size-heading-2);
-    font-weight: 400;
+    font-weight: var(--font-weight-normal);
     max-width: 950px;
     margin: 0 auto var(--gutter-md);
   }
@@ -131,22 +144,22 @@ section#stories {
     .success-metrics-wrapper {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       flex-flow: wrap;
       column-gap: var(--gutter);
 
       > div {
         max-width: 195px;
-      
+
         h4 {
           font-size: 54px;
           margin-bottom: var(--spacer-sm);
         }
-  
+
         h3 {
-          font-family: var(--font-roboto);
+          font-family: var(--font-body);
           font-size: var(--font-size-heading-4);
-          font-weight: var(--font-weight-default);
+          font-weight: var(--font-weight-normal);
         }
       }
     }
@@ -223,7 +236,7 @@ section#stories {
 
   h4 {
     font-size: 14px;
-    font-weight: var(--font-weight-default);
+    font-weight: var(--font-weight-normal);
     margin-bottom: 14px;
   }
 

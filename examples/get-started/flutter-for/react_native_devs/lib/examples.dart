@@ -6,10 +6,11 @@ import 'dart:io';
 // #enddocregion import-dart-io
 
 // #docregion package-import
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 // #enddocregion package-import
 // #docregion shared-prefs
 import 'package:shared_preferences/shared_preferences.dart';
+
 // #enddocregion shared-prefs
 
 // #docregion main
@@ -161,7 +162,6 @@ class ThemeExample extends StatelessWidget {
       home: const StylingPage(),
     );
   }
-
   // #enddocregion theme
 }
 
@@ -199,7 +199,6 @@ class ThemeDataExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion theme-data
 }
 
@@ -249,7 +248,6 @@ class DrawerExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion drawer
 }
 
@@ -274,7 +272,6 @@ class ScaffoldExample extends StatelessWidget {
       body: Container(),
     );
   }
-
   // #enddocregion scaffold
 }
 
@@ -310,7 +307,6 @@ class GestureDetectorExample extends StatelessWidget {
       },
     );
   }
-
   // #enddocregion gesture-detector
 }
 
@@ -369,7 +365,7 @@ class _TextEditingExampleState extends State<TextEditingExample> {
         ElevatedButton(
           child: const Text('Submit'),
           onPressed: () {
-            showDialog(
+            showDialog<void>(
               context: context,
               builder: (context) {
                 return AlertDialog(
@@ -383,7 +379,6 @@ class _TextEditingExampleState extends State<TextEditingExample> {
       ],
     );
   }
-
   // #enddocregion text-editing-controller
 }
 
@@ -404,7 +399,7 @@ class _FormExampleState extends State<FormExample> {
     final form = formKey.currentState;
     if (form != null && form.validate()) {
       form.save();
-      showDialog(
+      showDialog<void>(
         context: context,
         builder: (context) {
           return AlertDialog(
@@ -444,7 +439,6 @@ class _FormExampleState extends State<FormExample> {
       ),
     );
   }
-
   // #enddocregion form-state
 }
 

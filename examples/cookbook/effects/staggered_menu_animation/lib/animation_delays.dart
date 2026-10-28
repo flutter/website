@@ -38,5 +38,4 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 
   // #docregion delays
 }
-
 // #enddocregion delays

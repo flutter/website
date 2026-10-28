@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import '../data/contact.dart';
 import '../data/contact_group.dart';
@@ -95,9 +95,8 @@ class _ContactGroupsView extends StatelessWidget {
   }
 
   Widget _buildTrailing(List<Contact> contacts, BuildContext context) {
-    final TextStyle style = CupertinoTheme.of(
-      context,
-    ).textTheme.textStyle.copyWith(color: CupertinoColors.systemGrey);
+    final TextStyle style = CupertinoTheme.of(context).textTheme.textStyle
+        .copyWith(color: CupertinoColors.systemGrey);
 
     return Row(
       mainAxisSize: MainAxisSize.min,

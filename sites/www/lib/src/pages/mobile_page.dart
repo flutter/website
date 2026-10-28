@@ -35,8 +35,7 @@ class MobilePage extends StatelessComponent {
   Component _buildHero(BuildContext context) {
     return HeroSection(
       title: 'Flutter on Mobile',
-      text:
-          'Bring your app idea to more users from day one by building with Flutter on iOS and Android simultaneously, without sacrificing features, quality, or performance.',
+      text: 'Bring your app idea to more users from day one by building with Flutter on iOS and Android simultaneously, without sacrificing features, quality, or performance.',
       media: img(
         src: context.asset('images/flutter-on-mobile.png'),
         alt: 'Flutter on Mobile',
@@ -48,20 +47,17 @@ class MobilePage extends StatelessComponent {
     return FeatureColumnsSection([
       FeatureColumn(
         title: 'All mobile on day one',
-        description:
-            'Reach your full addressable market from day one by targeting users in both ecosystems from a single codebase.',
+        description: 'Reach your full addressable market from day one by targeting users in both ecosystems from a single codebase.',
         image: context.asset('images/all-mobile-day-one.png'),
       ),
       FeatureColumn(
         title: 'Do more with less',
-        description:
-            'Unite your mobile development team resources towards building one seamless customer experience.',
+        description: 'Unite your mobile development team to build one seamless customer experience.',
         image: context.asset('images/do-more-with-less.png'),
       ),
       FeatureColumn(
         title: 'One experience',
-        description:
-            'Release simultaneously on iOS and Android with feature parity for the best experience for all users.',
+        description: 'Release simultaneously on iOS and Android with feature parity for the best experience for all users.',
         image: context.asset('images/one-experience.png'),
       ),
     ]);
@@ -107,32 +103,27 @@ class MobilePage extends StatelessComponent {
         items: [
           FeatureGridItem(
             title: 'See the samples',
-            description:
-                'Reference code examples and sample applications for building Flutter mobile apps while you learn.',
+            description: 'Reference code examples and sample applications for building Flutter mobile apps while you learn.',
             icon: context.asset('../images/icons/see-the-samples.svg'),
             url: 'https://flutter.github.io/samples/#',
           ),
           FeatureGridItem(
             title: 'Watch the video',
-            description:
-                'Learn how to build platform adaptive apps that look and feel natural on any mobile device with the same code.',
+            description: 'Learn how to build platform-adaptive apps that look and feel natural on any mobile device with the same code.',
             icon: context.asset('../images/icons/watch-the-video.svg'),
             url: 'https://www.youtube.com/watch?v=RCdeSKVt7LI',
           ),
           FeatureGridItem(
             title: 'Get started in docs',
-            description:
-                'Dig in and start building with more detailed resources for Flutter on mobile in docs.',
+            description: 'Dig in and start building with more detailed resources for Flutter on mobile in docs.',
             icon: context.asset('../images/icons/get-started-in-docs.svg'),
             url: 'https://docs.flutter.dev/get-started/codelab',
           ),
           FeatureGridItem(
             title: 'Follow the roadmap',
-            description:
-                'See where we’re going and how to be involved. Flutter support for mobile is continually growing and evolving.',
+            description: 'See where we’re going and how to be involved. Flutter support for mobile is continually growing and evolving.',
             icon: context.asset('../images/icons/follow-the-roadmap.svg'),
-            url:
-                'https://github.com/flutter/flutter/blob/main/docs/roadmap/Roadmap.md',
+            url: 'https://github.com/flutter/flutter/blob/main/docs/roadmap/Roadmap.md',
           ),
         ],
       ),

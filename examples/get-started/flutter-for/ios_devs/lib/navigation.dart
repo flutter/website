@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const App());
@@ -67,9 +67,8 @@ class HomePage extends StatelessWidget {
                 // tapped, push the detailsPageRouteName route
                 // to the Navigator and pass the person's instance
                 // to the route.
-                Navigator.of(
-                  context,
-                ).pushNamed(detailsPageRouteName, arguments: person);
+                Navigator.of(context)
+                    .pushNamed(detailsPageRouteName, arguments: person);
               },
             );
           },
@@ -96,5 +95,4 @@ class DetailsPage extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion details-page

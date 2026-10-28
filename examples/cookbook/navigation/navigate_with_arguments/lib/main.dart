@@ -179,5 +179,4 @@ class ScreenArguments {
 
   ScreenArguments(this.title, this.message);
 }
-
 // #enddocregion ScreenArguments

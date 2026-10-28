@@ -1730,7 +1730,7 @@ From Thu Feb 21 20:22:00 2019 -0800 to Wed May 1 16:56:00 2019 -0700
 
 [8557](https://github.com/flutter/engine/pull/8557) Update README.md (cla: yes)
 
-[8562](https://github.com/flutter/engine/pull/8562) Add missing <memory> include to text_input_model.h (cla: yes)
+[8562](https://github.com/flutter/engine/pull/8562) Add missing `<memory>` include to text_input_model.h (cla: yes)
 
 [8563](https://github.com/flutter/engine/pull/8563) Remove unused import in FlutterActivityDelegate (cla: yes)
 
@@ -1818,7 +1818,7 @@ From Thu Feb 21 20:22:00 2019 -0800 to Wed May 1 16:56:00 2019 -0700
 
 [8658](https://github.com/flutter/engine/pull/8658) Allow native bindings in secondary isolates. (cla: yes)
 
-[8659](https://github.com/flutter/engine/pull/8659) Replace ThreadLocal with ThreadLocalUniquePtr<T> (cla: yes)
+[8659](https://github.com/flutter/engine/pull/8659) Replace ThreadLocal with `ThreadLocalUniquePtr<T>` (cla: yes)
 
 [8661](https://github.com/flutter/engine/pull/8661) Put the testing lib in the flutter namespace. (cla: yes)
 

@@ -92,8 +92,8 @@ or you can use a [`CupertinoApp`][] widget, which supports an iOS-style app,
 or you can use the lower level [`WidgetsApp`][],
 which you can customize in any way you want.
 
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`CupertinoApp`]: {{site.cupertino_ui}}/CupertinoApp-class.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 
 The following code defines the home page, a stateful widget.
@@ -295,7 +295,7 @@ as shown in the following example:
 
 <?code-excerpt "lib/views_stateful.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -481,7 +481,7 @@ the widget into a logo when you press the `FloatingActionButton`:
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const FadeAppTest());
@@ -567,7 +567,7 @@ see Collin's answer on [Custom Paint][].
 
 <?code-excerpt "lib/draw.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(home: DemoApp()));
@@ -814,8 +814,8 @@ and displays it in a `ListView`:
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -984,8 +984,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1145,8 +1145,8 @@ Otherwise, render the `ListView` with the data returned from a network call.
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1342,7 +1342,9 @@ specify the `localizationsDelegates` and
 
 <?code-excerpt "lib/strings.dart (localization)"?>
 ```dart
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    hide GlobalMaterialLocalizations;
+import 'package:material_ui/material_ui.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -1783,7 +1785,7 @@ and Flutter takes care of making sure that scrolling is fast and smooth.
 
 <?code-excerpt "lib/listview.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1833,7 +1835,8 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 <?code-excerpt "lib/listview_item_clicked.dart"?>
 ```dart
 import 'dart:developer' as developer;
-import 'package:flutter/material.dart';
+
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1908,7 +1911,8 @@ as shown in the next example.
 <?code-excerpt "lib/dynamic_listview.dart"?>
 ```dart
 import 'dart:developer' as developer;
-import 'package:flutter/material.dart';
+
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1978,7 +1982,8 @@ which automatically recycles list elements for you:
 <?code-excerpt "lib/listview_builder.dart"?>
 ```dart
 import 'dart:developer' as developer;
-import 'package:flutter/material.dart';
+
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2131,7 +2136,7 @@ to retrieve user input:
 
 <?code-excerpt "lib/form.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MyForm extends StatefulWidget {
   const MyForm({super.key});
@@ -2164,7 +2169,7 @@ class _MyFormState extends State<MyForm> {
         // When the user presses the button, show an alert dialog with the
         // text that the user has typed into our text field.
         onPressed: () {
-          showDialog(
+          showDialog<void>(
             context: context,
             builder: (context) {
               return AlertDialog(
@@ -2219,7 +2224,7 @@ update the state, and pass a new `InputDecoration` object.
 
 <?code-excerpt "lib/validation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2336,12 +2341,13 @@ The [`camera`][] plugin is popular for accessing the camera.
 ### How do I log in with Facebook?
 
 To log in with Facebook, use the
-[`flutter_facebook_login`][] community plugin.
+[`flutter_facebook_auth`][] community plugin.
 
 ### How do I use Firebase features?
 
 Most Firebase functions are covered by [first party plugins][].
-These plugins are first-party integrations, maintained by the Flutter team:
+These plugins are first-party integrations,
+maintained by the Flutter and Firebase teams:
 
  * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
@@ -2349,7 +2355,7 @@ These plugins are first-party integrations, maintained by the Flutter team:
  * [`firebase_database`][] for Firebase RTDB
  * [`firebase_storage`][] for Firebase Cloud Storage
  * [`firebase_messaging`][] for Firebase Messaging (FCM)
- * [`flutter_firebase_ui`][] for quick Firebase Auth integrations
+ * [`firebase_ui_auth`][] for quick Firebase Auth integrations
    (Facebook, Google, Twitter and email)
  * [`cloud_firestore`][] for Firebase Cloud Firestore
 
@@ -2473,7 +2479,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Animations overview]: /ui/animations
 [Animations tutorial]: /ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
-[arb]: {{site.github}}/google/app-resource-bundle
+[arb]: https://github.com/google/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: /resources/architectural-overview#composition
@@ -2489,8 +2495,8 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
-[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
-[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
+[`flutter_facebook_auth`]: {{site.pub-pkg}}/flutter_facebook_auth
+[`firebase_ui_auth`]: {{site.pub-pkg}}/firebase_ui_auth
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http

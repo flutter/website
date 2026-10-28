@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
+
 import '../viewmodel/theme_switch_viewmodel.dart';
 
 // #docregion ThemeSwitch
@@ -30,5 +31,4 @@ class ThemeSwitch extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion ThemeSwitch

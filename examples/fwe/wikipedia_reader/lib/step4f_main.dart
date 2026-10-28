@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'summary.dart';
 
@@ -13,5 +13,4 @@ class ArticleWidget extends StatelessWidget {
     return const Text('Article content will be displayed here...');
   }
 }
-
 // #enddocregion article

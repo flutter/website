@@ -107,7 +107,7 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
 ## Changes in v0.6.0 (since v0.5.1) - beta 6
 
 ### v0.6.0
-* Dart SDK updated to a Dart 2 build (2.1.0-dev.0.0). Package and plugin authors should ensure their `pubspec.yaml` files include a Dart SDK constraint with an upper bound of `<3.0.0`. See the [Getting ready for Dart 2 post](https://blog.dart.dev/getting-ready-for-dart-2-and-making-your-packages-look-great-on-the-pub-site-118464d7f59d) for details.
+* Dart SDK updated to a Dart 2 build (2.1.0-dev.0.0). Package and plugin authors should ensure their `pubspec.yaml` files include a Dart SDK constraint with an upper bound of `<3.0.0`. See the [Getting ready for Dart 2 post](https://dart.dev/blog/getting-ready-for-dart-2-and-making-your-packages-look-great-on-the-pub-site) for details.
 * [#19025](https://github.com/flutter/flutter/pull/19025) renamed `CupertinoRefreshControl` to `CupertinoSliverRefreshControl` for consistency.
 * [#19317](https://github.com/flutter/flutter/pull/19317) Add cursorWidth and cursorRadius to TextField (Material) cursor.
 * [#20116](https://github.com/flutter/flutter/pull/20116) reduced release binary sizes by ~2MB
@@ -192,7 +192,7 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
 ## Changes in v0.3.1 (since v0.2.8) - beta 2 update
 
 We are aware of a potential problem with certificate validation in the `HttpClient` implementation.
-To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang/sdk/issues/32936).
+To follow our investigation, see [Dart issue 32936]({{site.repo.dart-sdk}}/issues/32936).
 
 ### v0.3.1
 
@@ -298,7 +298,7 @@ To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang
 
 ### v0.1.9
 
-* [#14901](https://github.com/flutter/flutter/pull/14901) A [Slider](https://api.flutter.dev/flutter/material/Slider-class.html) visual update changed the colors, opacities, and the value indicator shape and behavior. It also removed the "`thumbOpenAtMin`" flag from the Slider class, which is no longer needed, and can be emulated by the custom thumb shape support.
+* [#14901](https://github.com/flutter/flutter/pull/14901) A [Slider](https://pub.dev/documentation/material_ui/latest/material_ui/Slider-class.html) visual update changed the colors, opacities, and the value indicator shape and behavior. It also removed the "`thumbOpenAtMin`" flag from the Slider class, which is no longer needed, and can be emulated by the custom thumb shape support.
 
 ## Changes in v0.1.5 (since v0.1.4) - beta 1.1
 

@@ -26,7 +26,7 @@
   background_color: "#027DFD"
   button_text: "Read this Story"
 - title: "Build Wonders with Flutter"
-  summary: "See why Flutter is such a valuable tool for award winning design agencies like gSkinner"
+  summary: "See why Flutter is such a valuable tool for award-winning design agencies like gSkinner."
   card: "images/third_party/resources/App.png"
   external_url: "https://www.youtube.com/watch?v=6IKhXXFFOuw"
   background_color: "#027DFD"

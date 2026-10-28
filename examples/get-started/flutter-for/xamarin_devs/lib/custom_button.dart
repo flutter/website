@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // #docregion custom-button
 class CustomButton extends StatelessWidget {
@@ -21,6 +21,5 @@ class UseCustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(child: CustomButton('Hello'));
   }
-
   // #enddocregion use-custom-button
 }

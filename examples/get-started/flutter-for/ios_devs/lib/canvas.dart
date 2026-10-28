@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MaterialApp(home: DemoApp()));
 
@@ -64,5 +64,4 @@ class SignaturePainter extends CustomPainter {
   bool shouldRepaint(SignaturePainter oldDelegate) =>
       oldDelegate.points != points;
 }
-
 // #enddocregion custom-painter

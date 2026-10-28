@@ -28,7 +28,7 @@ With several popular multiplatform games already under their belts, the Etermax 
 
 **Why Flutter?**
 
-In November 2022, the Extermax team assessed several frameworks, including Flutter, by building a proof of concept within Trivia Crack and testing them in a live production environment. This included testing compatibility for ads, video players, and camera recording, and integrating various third-party SDKs such as Amplitude, Appsflyer, Bugsnag, and Firebase. They also investigated the feasibility of incorporating native views. After weeks of rigorous testing, the team chose Flutter and began the migration.
+In November 2022, the Etermax team assessed several frameworks, including Flutter, by building a proof of concept within Trivia Crack and testing them in a live production environment. This included testing compatibility for ads, video players, and camera recording, and integrating various third-party SDKs such as Amplitude, Appsflyer, Bugsnag, and Firebase. They also investigated the feasibility of incorporating native views. After weeks of rigorous testing, the team chose Flutter and began the migration.
 
 <Image src="images/third_party/case_studies/etermax/case_study_body_1.png" format="fullwidth" alt="" />
 

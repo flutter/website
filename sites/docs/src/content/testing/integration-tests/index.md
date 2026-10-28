@@ -61,7 +61,7 @@ the `lib/main.dart` file should resemble the following code.
 
 <?code-excerpt "lib/main.dart"?>
 ```dart title="lib/main.dart"
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MyApp());
 
@@ -203,10 +203,10 @@ and your app's Dart file.
 
     <?code-excerpt "integration_test/counter_test.dart (initial)" replace="/introduction/counter_app/g"?>
     ```dart title="integration_test/counter_test.dart"
-    import 'package:flutter/material.dart';
     import 'package:flutter_test/flutter_test.dart';
     import 'package:how_to/main.dart';
     import 'package:integration_test/integration_test.dart';
+    import 'package:material_ui/material_ui.dart';
     
     void main() {
       IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -620,7 +620,7 @@ Firebase Test Lab Console, consult the [iOS Device Testing instructions][].
 [Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing
 [ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-[Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
+[Download GeckoDriver]: https://github.com/mozilla/geckodriver/releases
 [Firebase Console]: https://console.firebase.google.com/
 [Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab
 [Firebase Test Lab]: {{site.firebase}}/docs/test-lab

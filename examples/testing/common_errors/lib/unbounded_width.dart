@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class ProblemWidget extends StatelessWidget {
   const ProblemWidget({super.key});
@@ -13,7 +13,6 @@ class ProblemWidget extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion problem
 }
 
@@ -30,6 +29,5 @@ class SolutionWidget extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion solution
 }

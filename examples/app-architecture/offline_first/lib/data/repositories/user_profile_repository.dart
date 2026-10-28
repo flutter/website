@@ -142,6 +142,5 @@ class UserProfileRepository {
       // Try again later
     }
   }
-
   // #enddocregion sync
 }

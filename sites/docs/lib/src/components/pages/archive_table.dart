@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:collection/collection.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:meta/meta.dart';
@@ -55,12 +56,18 @@ class _ArchiveTableState extends State<ArchiveTable> {
       final releasesData = await FlutterRelease.fetchFlutterReleases(
         component.os,
       );
-      final filteredReleases = releasesData
+      final releasesByVersion = releasesData
           .where((release) => release.channel == channel)
-          .toList();
+          .groupListsBy((release) => release.version);
+
+      // Sort releases within a version by architecture so arm64 is first.
+      final orderedReleases = [
+        for (final releases in releasesByVersion.values)
+          ...releases.sortedBy((r) => r.architecture),
+      ];
 
       setState(() {
-        releases = filteredReleases;
+        releases = orderedReleases;
         isLoading = false;
       });
     } catch (e) {
@@ -141,16 +148,16 @@ class _ArchiveTableState extends State<ArchiveTable> {
     ]);
   }
 
-  static final windowsCutoff = Date.parse('4/3/2023');
-  static final otherOsCutoff = Date.parse('12/15/2022');
+  static final int _windowsCutoff = Date.parse('4/3/2023');
+  static final int _otherOsCutoff = Date.parse('12/15/2022');
 
   Component buildProvenanceLink(FlutterRelease release) {
     final dateValue = release.releaseDate.valueOf();
 
-    if (os == 'windows' && dateValue < windowsCutoff) {
+    if (os == 'windows' && dateValue < _windowsCutoff) {
       // Provenance not available before 4/3/2023 for Windows
       return const span([.text('-')]);
-    } else if (dateValue < otherOsCutoff) {
+    } else if (dateValue < _otherOsCutoff) {
       // Provenance not available before 12/15/2022 for macOS and Linux
       return const span([.text('-')]);
     }
@@ -162,7 +169,7 @@ class _ArchiveTableState extends State<ArchiveTable> {
           'flutter_${os}_${release.version}-$channel.'
           '$archiveExtension.intoto.jsonl',
       target: Target.blank,
-      [const .text('Attestation bundle')],
+      const [.text('Attestation bundle')],
     );
   }
 }

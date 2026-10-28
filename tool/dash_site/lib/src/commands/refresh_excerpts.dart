@@ -8,6 +8,7 @@ import 'dart:io';
 import 'package:args/command_runner.dart';
 import 'package:excerpter/excerpter.dart';
 import 'package:path/path.dart' as path;
+
 import '../sites.dart';
 import '../utils.dart';
 
@@ -41,7 +42,7 @@ final class RefreshExcerptsCommand extends Command<int> {
   String get name => 'refresh-excerpts';
 
   @override
-  Future<int> run() async => _refreshExcerpts(
+  Future<int> run() => _refreshExcerpts(
     site: selectedSite,
     verboseLogging: argResults.get<bool>(_verboseFlag, false),
     dryRun: argResults.get<bool>(_dryRunFlag, false),
@@ -70,6 +71,8 @@ Future<int> _refreshExcerpts({
       // Workaround for https://github.com/dart-lang/dart_style/issues/1644
       // to remove extra new lines after block close.
       SimpleReplaceTransform(RegExp(r'[\r\n]+$'), ''),
+      // Compress extra empty lines, working around formatting oddities.
+      SimpleReplaceTransform(RegExp(r'\n{3,}'), '\n\n'),
     ],
   );
 

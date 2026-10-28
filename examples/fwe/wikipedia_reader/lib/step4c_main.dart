@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'summary.dart';
 
@@ -42,5 +42,4 @@ class _ArticleViewState extends State<ArticleView> {
     );
   }
 }
-
 // #enddocregion view-model

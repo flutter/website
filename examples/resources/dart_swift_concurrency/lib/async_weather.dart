@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ enum Weather { rainy, windy, sunny }
 class HomePageViewModel {
   const HomePageViewModel();
   Future<Weather> load() async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future<void>.delayed(const Duration(seconds: 1));
     return Weather.sunny;
   }
 }
@@ -56,5 +56,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion home-page-widget

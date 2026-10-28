@@ -13,7 +13,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - Transit & Logistics
 tags:
   - android
   - ios

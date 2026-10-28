@@ -1,6 +1,6 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:provider/provider.dart';
 
 import 'app_model.dart';
@@ -195,9 +195,9 @@ class _TabMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Wrap all the main menu buttons in Expanded() so they fill up the screen horizontally
-    List<Expanded> tabButtons = getMainMenuChildren(
-      context,
-    ).map((btn) => Expanded(child: btn)).toList();
+    List<Expanded> tabButtons = getMainMenuChildren(context)
+        .map((btn) => Expanded(child: btn))
+        .toList();
     return Column(
       children: [
         // Top Divider

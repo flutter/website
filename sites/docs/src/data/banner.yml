@@ -1,0 +1,12 @@
+# The following entries are rendered in order as part of the site banner.
+# Three types of entries are supported:
+# - `text` for plain text.
+# - `link` with `text`, `url`, and optional `newTab: true`.
+# - `newLine: true` for inserting a line break.
+
+- text: "Security update: Flutter 3.47.8 now blocks compromised eMudhra CA keys. Read the "
+- link:
+    text: "security advisory"
+    url: https://github.com/dart-lang/sdk/security/advisories/GHSA-frr6-h895-5pxp
+    newTab: true
+- text: "."

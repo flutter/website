@@ -83,18 +83,21 @@ Map<String, List<String>> _findInvalidLinkReferences(Directory directory) {
 }
 
 List<String> _findInContent(String content) {
+  var transformedContent = content;
   for (final replacement in _allReplacements) {
-    content = content.replaceAll(replacement, '');
+    transformedContent = transformedContent.replaceAll(replacement, '');
   }
 
-  // Use regex to find all links that displayed abnormally,
+  // Use a regular expression to find all links that displayed abnormally,
   // since a valid reference link should be an `<a>` tag after rendered:
   //
   // - `[flutter.dev][]`
   // - `[GitHub repo][repo]`
   // See also:
   // - https://github.github.com/gfm/#reference-link
-  final invalidFound = _invalidLinkReferencePattern.allMatches(content);
+  final invalidFound = _invalidLinkReferencePattern.allMatches(
+    transformedContent,
+  );
 
   if (invalidFound.isEmpty) {
     return const [];
@@ -111,14 +114,14 @@ List<String> _findInContent(String content) {
 /// ```html
 /// <!-- TODO(somebody): [Links here][are not rendered]. -->
 /// ```
-final _htmlCommentPattern = RegExp(r'<!--.*?-->', dotAll: true);
+final RegExp _htmlCommentPattern = RegExp(r'<!--.*?-->', dotAll: true);
 
 /// Ignore blocks with code:
 ///
 /// ```dart
 /// [[highlight]]flutter[[/highlight]]
 /// ```
-final _codeBlockPattern = RegExp(r'<pre.*?</pre>', dotAll: true);
+final RegExp _codeBlockPattern = RegExp(r'<pre.*?</pre>', dotAll: true);
 
 /// Ignore PR titles that look like a link
 /// directly embedded in a paragraph
@@ -130,7 +133,7 @@ final _codeBlockPattern = RegExp(r'<pre.*?</pre>', dotAll: true);
 /// (cla: yes, waiting for tree to go green, platform-web, needs tests)
 /// </p>
 /// ```
-final _pullRequestTitlePattern = RegExp(
+final RegExp _pullRequestTitlePattern = RegExp(
   r'<p><a href="https://github.com/.*?/pull/\d+">\d+</a>.*?</p>',
   dotAll: true,
 );
@@ -143,17 +146,17 @@ final _pullRequestTitlePattern = RegExp(
 /// <li>[docs][FWW] DropdownButton, ScaffoldMessenger, and StatefulBuilder links
 /// by @craiglabenz in https://github.com/flutter/flutter/pull/100316</li>
 /// ```
-final _pullRequestTitleInListItemPattern = RegExp(
+final RegExp _pullRequestTitleInListItemPattern = RegExp(
   r'<li>(?:(?!<li>).)*?in\s+(?:(?!<li>).)*?</li>',
   dotAll: true,
 );
 
 /// All replacements to run on a file content before finding invalid references.
-final _allReplacements = [
+final List<RegExp> _allReplacements = [
   _htmlCommentPattern,
   _codeBlockPattern,
   _pullRequestTitlePattern,
   _pullRequestTitleInListItemPattern,
 ];
 
-final _invalidLinkReferencePattern = RegExp(r'\[[^\[\]]+]\[[^\[\]]*]');
+final RegExp _invalidLinkReferencePattern = RegExp(r'\[[^\[\]]+]\[[^\[\]]*]');

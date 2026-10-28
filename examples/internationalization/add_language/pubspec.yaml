@@ -3,14 +3,15 @@ description: An i18n app example that adds a supported language
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: any # Use the pinned version from flutter_localizations
+  intl: any # Use the pinned version from flutter_localizations.
+  material_ui: ^1.8.0
 
 dev_dependencies:
   flutter_test:

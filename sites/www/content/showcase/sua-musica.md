@@ -12,7 +12,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - Music
 successMetrics:
   - perc: 350
     desc: increase in impressions

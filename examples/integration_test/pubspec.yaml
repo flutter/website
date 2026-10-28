@@ -4,11 +4,12 @@ version: 0.0.1
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.8.0
 
 dev_dependencies:
   integration_test:
@@ -17,7 +18,7 @@ dev_dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-  test: ^1.31.0
+  test: ^1.31.1
 
 flutter:
   uses-material-design: true

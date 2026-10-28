@@ -1,0 +1,136 @@
+@use '../components/filterable-index';
+
+$font-size-sm: 0.875rem;
+$font-size-xl: 1.5rem;
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$transition-normal: 0.2s ease;
+
+// The critical user journey index reuses the two column layout, search field,
+// and filter sidebar of the learning resources index, which are styled in
+// `_filterable-index.scss`.
+//
+// The journeys themselves render as full-width expandable cards, following
+// the glossary in `_glossary.scss`. Expanding and collapsing is wired up
+// by the `_setUpExpandableCards` global script.
+
+// The feedback button is the sidebar footer, so it sits below the filter card
+// and slides in with it when the sidebar becomes a drawer.
+.cuj-feedback {
+  margin-block-start: $spacing-md;
+
+  .outlined-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: filterable-index.$mobile-breakpoint) {
+    margin-block-start: 0;
+    padding: 0.75rem;
+    border-block-start: 1px solid var(--site-inset-borderColor);
+  }
+}
+
+#all-cujs-list {
+  margin-block-start: $spacing-md;
+
+  .cuj-card {
+    padding: 0.75rem $spacing-md;
+    gap: $spacing-xs;
+
+    .card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: $spacing-sm;
+    }
+
+    .cuj-card-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+      // Allow long goals to wrap instead of widening the flex item.
+      min-width: 0;
+    }
+
+    .card-title {
+      display: block;
+      margin: 0;
+      font-family: var(--site-ui-fontFamily);
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.35;
+      text-wrap: pretty;
+    }
+
+    .card-header-buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: $spacing-xs;
+      flex-shrink: 0;
+
+      .icon-button {
+        border-radius: $spacing-lg;
+
+        > span {
+          font-size: $font-size-xl;
+        }
+      }
+    }
+
+    .cuj-task-count {
+      margin: 0;
+      font-size: $font-size-sm;
+      color: var(--site-base-fgColor-lighter);
+    }
+
+    // The shared card styles lay `.card-content` out as a centered row.
+    // Journeys need a plain block so the task list stacks below the divider.
+    .card-content {
+      display: block;
+      border-block-start: 0.05rem solid var(--site-inset-borderColor);
+      margin-block-start: $spacing-sm;
+      padding-block-start: $spacing-sm;
+    }
+
+    &.collapsed {
+      .card-content {
+        display: none;
+      }
+
+      .expand-button {
+        transform: rotate(180deg);
+      }
+    }
+
+    .expand-button {
+      transition: transform $transition-normal;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+
+    .cuj-task-list {
+      margin: 0;
+      padding-inline-start: 1.15rem;
+
+      li {
+        padding-inline-start: 0;
+        margin-block-end: $spacing-sm;
+        font-size: $font-size-sm;
+        line-height: 1.45;
+        color: var(--site-base-fgColor-lighter);
+
+        &:last-child {
+          margin-block-end: 0;
+        }
+      }
+    }
+  }
+}

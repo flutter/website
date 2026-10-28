@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MyApp());
 
@@ -209,5 +209,4 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 
   // #docregion favorite-state-build
 }
-
 // #enddocregion favorite-state, favorite-state-build

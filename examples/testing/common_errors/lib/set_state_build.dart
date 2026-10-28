@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class ProblemWidget extends StatelessWidget {
   const ProblemWidget({super.key});
@@ -7,7 +7,7 @@ class ProblemWidget extends StatelessWidget {
   // #docregion problem
   Widget build(BuildContext context) {
     // Don't do this.
-    showDialog(
+    showDialog<void>(
       context: context,
       builder: (context) {
         return const AlertDialog(title: Text('Alert Dialog'));
@@ -18,7 +18,6 @@ class ProblemWidget extends StatelessWidget {
       child: Column(children: <Widget>[Text('Show Material Dialog')]),
     );
   }
-
   // #enddocregion problem
 }
 
@@ -39,7 +38,7 @@ class FirstScreen extends StatelessWidget {
             // Immediately show a dialog upon loading the second screen.
             Navigator.push(
               context,
-              PageRouteBuilder(
+              PageRouteBuilder<void>(
                 barrierDismissible: true,
                 opaque: false,
                 pageBuilder: (_, anim1, anim2) => const MyDialog(),

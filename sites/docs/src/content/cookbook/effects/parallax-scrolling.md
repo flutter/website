@@ -518,9 +518,8 @@ void paintChildren(FlowPaintingContext context) {
   // Paint the background.
   context.paintChild(
     0,
-    transform: Transform.translate(
-      offset: Offset(0.0, childRect.top),
-    ).transform,
+    transform: Transform.translate(offset: Offset(0.0, childRect.top))
+        .transform,
   );
 }
 ```
@@ -542,7 +541,6 @@ class ParallaxFlowDelegate extends FlowDelegate {
     required this.listItemContext,
     required this.backgroundImageKey,
   }) : super(repaint: scrollable.position);
-}
 ```
 
 Congratulations!
@@ -693,7 +691,6 @@ class ParallaxFlowDelegate extends FlowDelegate {
     required this.backgroundImageKey,
   }) : super(repaint: scrollable.position);
 
-
   final ScrollableState scrollable;
   final BuildContext listItemContext;
   final GlobalKey backgroundImageKey;
@@ -739,9 +736,8 @@ class ParallaxFlowDelegate extends FlowDelegate {
     // Paint the background.
     context.paintChild(
       0,
-      transform: Transform.translate(
-        offset: Offset(0.0, childRect.top),
-      ).transform,
+      transform: Transform.translate(offset: Offset(0.0, childRect.top))
+          .transform,
     );
   }
 
@@ -751,7 +747,6 @@ class ParallaxFlowDelegate extends FlowDelegate {
         listItemContext != oldDelegate.listItemContext ||
         backgroundImageKey != oldDelegate.backgroundImageKey;
   }
-
 }
 
 class Parallax extends SingleChildRenderObjectWidget {

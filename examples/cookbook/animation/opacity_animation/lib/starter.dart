@@ -1,14 +1,14 @@
+// ignore_for_file: prefer_final_fields, unused_field
+
 import 'package:flutter/material.dart';
-// ignore_for_file: prefer_final_fields
-// ignore_for_file: unused_field
 
 // #docregion Starter
 // The StatefulWidget's job is to take data and create a State class.
 // In this case, the widget takes a title, and creates a _MyHomePageState.
 class MyHomePage extends StatefulWidget {
-  final String title;
-
   const MyHomePage({super.key, required this.title});
+
+  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -26,5 +26,4 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container();
   }
 }
-
 // #enddocregion Starter

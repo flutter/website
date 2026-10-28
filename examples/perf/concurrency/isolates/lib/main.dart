@@ -5,8 +5,8 @@
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MyApp());
 
@@ -56,7 +56,7 @@ class Photo {
     required this.thumbnailUrl,
   });
 
-  factory Photo.fromJson(Map<String, dynamic> data) {
+  factory Photo.fromJson(Map<String, Object?> data) {
     return Photo(
       albumId: data['albumId'] as int,
       id: data['id'] as int,

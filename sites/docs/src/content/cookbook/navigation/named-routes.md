@@ -227,7 +227,7 @@ class SecondScreen extends StatelessWidget {
 </noscript>
 
 
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html
 [Navigate to a new screen and back]: /cookbook/navigation/navigation-basics
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html

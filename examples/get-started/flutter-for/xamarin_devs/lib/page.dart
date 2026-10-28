@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // #docregion my-app
 class MyApp extends StatelessWidget {
@@ -66,5 +66,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
 // #enddocregion my-home-page-state

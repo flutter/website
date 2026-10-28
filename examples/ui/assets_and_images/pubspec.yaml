@@ -4,18 +4,19 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.9
-  vector_graphics: ^1.2.2
+  cupertino_icons: ^2.0.0
+  material_ui: ^1.8.0
+  vector_graphics: ^1.2.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  vector_graphics_compiler: ^1.2.5
+  vector_graphics_compiler: ^1.3.2
 
 flutter:
   uses-material-design: true

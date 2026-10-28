@@ -210,8 +210,8 @@ Relevant PRs:
 
 [`ScrollConfiguration`]: {{site.api}}/flutter/widgets/ScrollConfiguration-class.html
 [`ScrollBehavior`]: {{site.api}}/flutter/widgets/ScrollBehavior-class.html
-[`MaterialScrollBehavior`]: {{site.api}}/flutter/material/MaterialScrollBehavior-class.html
-[`CupertinoScrollBehavior`]: {{site.api}}/flutter/cupertino/CupertinoScrollBehavior-class.html
+[`MaterialScrollBehavior`]: {{site.material_ui}}/MaterialScrollBehavior-class.html
+[`CupertinoScrollBehavior`]: {{site.cupertino_ui}}/CupertinoScrollBehavior-class.html
 [`PointerDeviceKind`]: {{site.api}}/flutter/dart-ui/PointerDeviceKind-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [Issue #71322]: {{site.repo.flutter}}/issues/71322

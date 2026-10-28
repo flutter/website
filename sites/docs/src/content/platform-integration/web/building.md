@@ -81,41 +81,8 @@ You can pass the `--wasm` flag to run your app using WebAssembly:
 $ flutter run -d chrome --wasm
 ```
 
-Flutter web offers multiple build modes and renderers.
-For more information, check out [Web renderers][].
-
-### Disable hot reload in VS Code
-
-To temporarily disable hot reload support from VS Code,
-update your [`launch.json` file][] file with
-the flag `--no-web-experimental-hot-reload`.
-
-```plaintext
-"configurations": [
-    ...
-    {
-      "name": "Flutter for web (hot reload disabled)",
-      "type": "dart",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "args": [
-        "-d",
-        "chrome",
-        "--no-web-experimental-hot-reload",
-      ]
-    }
-  ]
-```
-
-### Disable hot reload from the command line
-
-If you use `flutter run` from the command line,
-you can temporarily disable hot reload on the web with the
-following command:
-
-```console
-flutter run -d chrome --no-web-experimental-hot-reload
-```
+To learn more about WebAssembly compilation and server requirements,
+check out [Support for WebAssembly (Wasm)][Wasm support].
 
 ### Use hot reload in DartPad
 
@@ -126,9 +93,8 @@ session by selecting a sample app provided by DartPad.
 
 [Hot restart]: /tools/hot-reload
 [How to switch channels]: /install/upgrade#switching-flutter-channels
-[`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
-[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml
-[GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
+[Web Hot Reload issue template]: {{site.repo.dart-sdk}}/issues/new?template=5_web_hot_reload.yml
+[GitHub project]: https://github.com/orgs/dart-lang/projects/107/views/1
 
 ## Build your app
 
@@ -157,6 +123,9 @@ which need to be served together.
 To learn more about how to deploy these assets to the web,
 visit [Build and release a web app][].
 For answers to other common questions, visit the [Web FAQ][].
+
+If you encounter errors when compiling your app with Wasm, check out
+[Diagnosing Wasm compilation errors](/platform-integration/web/wasm#diagnosing-wasm-compilation-errors).
 
 ## Debugging
 
@@ -188,7 +157,7 @@ running integration tests in a browser, check out the [Integration testing][] pa
 [Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [Logging]: /tools/devtools/logging
 [Running Flutter inspector]: /tools/devtools/inspector
-[Setup-web]: {{site.url}}/platform-integration/web/setup
+[Setup-web]: /platform-integration/web/setup
 [Web FAQ]: /platform-integration/web/faq
-[Web renderers]: /platform-integration/web/renderers
+[Wasm support]: /platform-integration/web/wasm
 [Widget tests]: /testing/overview#widget-tests

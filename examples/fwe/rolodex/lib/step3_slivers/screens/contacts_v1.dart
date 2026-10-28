@@ -1,6 +1,6 @@
 // ignore_for_file: unused_element_parameter
 
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import '../data/contact_group.dart';
 import '../main.dart';
@@ -56,5 +56,4 @@ class _ContactListView extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion contact_list_view

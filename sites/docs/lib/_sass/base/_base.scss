@@ -292,7 +292,7 @@ ol.steps {
 
   $step-indicator-height: 1.75rem;
 
-  li {
+  li:not(.nav-item) {
     >* {
       &:first-child {
         margin-block-start: 0;
@@ -308,7 +308,7 @@ ol.steps {
     }
   }
 
-  ul>li {
+  ul:not(.nav-tabs)>li {
     &:not(:last-child) {
       padding-block-end: .5rem;
     }
@@ -319,7 +319,7 @@ ol.steps {
     counter-increment: steps;
 
     ol,
-    ul {
+    ul:not(.nav-tabs) {
       padding-inline-start: 2rem;
       margin-block-end: 0.75rem;
     }
@@ -409,57 +409,6 @@ p+dl {
   font-size: .875rem;
   font-style: italic;
   color: var(--site-base-fgColor-lighter);
-}
-
-.card-os-bug {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    width: 24px;
-    height: 24px;
-    background-position: center center;
-    background-size: contain;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    z-index: var(--site-z-floating);
-    /* Place in front of card */
-  }
-}
-
-.card-macos {
-  @extend .card-os-bug;
-
-  &::before {
-    background-image: url("/assets/images/docs/brand-svg/macos-bug.svg");
-  }
-}
-
-.card-windows {
-  @extend .card-os-bug;
-
-  &::before {
-    background-image: url("/assets/images/docs/brand-svg/windows-bug.svg");
-  }
-}
-
-.card-linux {
-  @extend .card-os-bug;
-
-  &::before {
-    background-image: url("/assets/images/docs/brand-svg/linux.svg");
-  }
-}
-
-.card-chromeos {
-  @extend .card-os-bug;
-
-  &::before {
-    background-image: url("/assets/images/docs/brand-svg/chromeos.svg");
-  }
 }
 
 .video-wrapper {

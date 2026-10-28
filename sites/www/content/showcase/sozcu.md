@@ -14,7 +14,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - Media and Entertainment
 successMetrics:
   - perc: 149
     desc: average eCPM

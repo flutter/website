@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // #docregion import
 import 'package:flutter/physics.dart';
+
 // #enddocregion import
 
 void main() {
@@ -84,7 +85,7 @@ class _DraggableCardState extends State<DraggableCard>
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery.sizeOf(context);
     return GestureDetector(
       onPanDown: (details) {
         _controller.stop();

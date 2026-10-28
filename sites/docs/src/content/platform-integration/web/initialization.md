@@ -54,7 +54,7 @@ However, in some scenarios, you might have a reason to
 customize this initialization process, such as:
 
 * Setting a custom Flutter configuration for your app.
-* Changing the settings for the Flutter service worker.
+* Integrating a custom service worker for offline support or caching.
 * Writing custom JavaScript code to
   run at different stages of the startup process.
 
@@ -73,7 +73,7 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
-| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Common warning" info below). |
+| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | **Deprecated.** Previously substituted a build version number for Flutter's legacy service worker loader. Flutter no longer generates or registers a caching service worker; refer to [Service worker deprecation](#service-worker-version-deprecation) and the [Web FAQ](/platform-integration/web/faq#how-do-i-configure-a-service-worker). |
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
 
 {:.table}
@@ -101,6 +101,20 @@ The most basic `flutter_bootstrap.js` file would look something like this:
 _flutter.loader.load();
 ```
 
+:::tip Compatibility with `--web-content-hash`
+When you build with [`flutter build web --web-content-hash`][web-content-hashing],
+Flutter injects the content-hashed entrypoint filenames (`mainJsPath`,
+`mainWasmPath`, `jsSupportRuntimePath`) and hashed asset manifest mappings
+(`assetManifest`, `fontManifest`, `extraAssets`) into
+`{% raw %}{{flutter_build_config}}{% endraw %}`. Custom `web/index.html` or
+`web/flutter_bootstrap.js` files must include
+`{% raw %}{{flutter_build_config}}{% endraw %}` and call `_flutter.loader.load()`
+rather than hardcoding `"main.dart.js"` or calling the deprecated
+`FlutterLoader.loadEntrypoint()` API.
+:::
+
+[web-content-hashing]: /deployment/web#web-content-hashing
+
 ## Customize the Flutter loader
 
 The `_flutter.loader.load()` JavaScript API can be invoked with optional
@@ -122,15 +136,24 @@ The `config` argument is an object that can have the following optional fields:
 |`canvasKitVariant`| The CanvasKit variant to download. Your options cover:<br><br>1. `auto`: Downloads the optimal variant for the browser. The option defaults to this value.<br>2. `full`: Downloads the full variant of CanvasKit that works in all browsers.<br>3. `chromium`: Downloads a smaller variant of CanvasKit that uses Chromium compatible APIs. **_Warning_**: Don't use the `chromium` option unless you plan on only using Chromium-based browsers. |`String`|
 |`canvasKitForceCpuOnly`| When `true`, forces CPU-only rendering in CanvasKit (the engine won't use WebGL). |`bool`|
 |`canvasKitMaximumSurfaces`| The maximum number of overlay surfaces that the CanvasKit renderer can use. |`double`|
-|`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
-|`entrypointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/".  |`String`|
-|`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
-|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"skwasm"`. |`String`|
-|`forceSingleThreadedSkwasm`| Forces the Skia WASM renderer to run in single-threaded mode for compatibility. |`bool`|
+|`debugShowSemanticsNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging). |`bool`|
+|`entrypointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/". |`String`|
+|`fontFallbackBaseUrl`| Base URL for downloading fallback fonts when bundled fonts lack required glyphs. Defaults to `"https://fonts.gstatic.com/s/"`. |`String`|
+|`forceSingleThreadedSkwasm`| Forces single-threaded SkWasm mode for compatibility (only impacts apps compiled with `--wasm` when [WebAssembly][wasm-support] is selected at runtime). |`bool`|
+|`hostElement`| HTML Element into which Flutter renders the app (see [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
+|`multiViewEnabled`| Enables multi-view mode for [embedding Flutter views][embedding-flutter-web] into host DOM elements dynamically. |`bool`|
+|`nonce`| A [Content Security Policy (CSP) nonce][nonce-mdn] string applied to inline scripts and styles created by the engine. |`String`|
+|`renderer`| Explicitly forces the renderer to `'canvaskit'` or `'skwasm'`. |`String`|
+|`suppressMultithreadingWarning`| When `true`, suppresses the console warning logged when `skwasm` runs single-threaded because `Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy` headers are absent. |`bool`|
+|`verboseBuildSelection`| When `true`, logs detailed `console.warn` diagnostics explaining why each candidate build in `_flutter.buildConfig.builds` was selected or skipped. |`bool`|
+|`wasmAllowList`| Browser engine allowlist (`{ blink?: boolean, webkit?: boolean, gecko?: boolean, unknown?: boolean }`) controlling which browser engines can run the `skwasm` + `dart2wasm` build when runtime WebAssembly feature probes pass (refer to [Support for WebAssembly][wasm-support]). Defaults to `{ blink: true, gecko: false, webkit: false, unknown: false }`. |`Object`|
+|`wasmDeferredModulesLoader`| Custom `(moduleNames: string[], onModuleLoaded: (moduleName: string, bytes: Uint8Array) => Promise<void>) => Promise<void>` hook used to fetch deferred `.wasm` modules when `--enable-wasm-deferred-loading` is enabled. |`Function`|
 
 {:.table}
 
-[web-renderers]: /platform-integration/web/renderers
+[embedding-flutter-web]: /platform-integration/web/embedding-flutter-web
+[nonce-mdn]: https://developer.mozilla.org/docs/Web/HTML/Global_attributes/nonce
+[wasm-support]: /platform-integration/web/wasm
 
 ## forceSingleThreadedSkwasm
 
@@ -138,7 +161,7 @@ A boolean flag to force the Skia WebAssembly (skwasm) renderer
 to run in **single-threaded mode**. This is useful if:
 
 * Your environment doesn't support multi-threaded WASM. For example,
- `SharedArrayBuffer` is not available or required security
+  `SharedArrayBuffer` is not available or required security
   headers are missing.  
 * You want maximum browser compatibility.
 * Use `false` (default) to allow multi-threaded rendering when
@@ -149,33 +172,35 @@ to run in **single-threaded mode**. This is useful if:
 ```js
 _flutter.loader.load({
   config: {
-    renderer: 'skwasm',
     forceSingleThreadedSkwasm: true,
+    wasmAllowList: {
+      blink: true,
+      webkit: true,
+      gecko: true,
+    },
   },
 });
 ```
 
 ## Example: Customizing Flutter configuration based on URL query parameters
 
-The following example shows a custom `flutter_bootstrap.js` that allows
-the user to select a renderer by providing a `renderer` query parameter,
-such as `?renderer=skwasm`, in the URL of their website:
+The following example shows a custom `flutter_bootstrap.js` that enables
+single-threaded mode when a `force_st` query parameter is present in the URL:
 
 ```js
 {% raw %}{{flutter_js}}{% endraw %}
 {% raw %}{{flutter_build_config}}{% endraw %}
 
 const searchParams = new URLSearchParams(window.location.search);
-const renderer = searchParams.get('renderer');
-const userConfig = renderer ? {'renderer': renderer} : {};
+const forceSt = searchParams.has('force_st');
+const userConfig = forceSt ? { forceSingleThreadedSkwasm: true } : {};
 _flutter.loader.load({
   config: userConfig,
 });
 ```
 
 This script evaluates the `URLSearchParams` of the page to determine whether
-the user passed a `renderer` query parameter and then
-changes the user configuration of the Flutter app.
+the user passed a `force_st` query parameter and configures the app accordingly.
 
 ## The onEntrypointLoaded callback
 
@@ -185,8 +210,7 @@ The initialization process is split into the following stages:
 
 **Loading the entrypoint script**
 : The `load` function calls the `onEntrypointLoaded` callback once the
-  Service Worker is initialized, and the `main.dart.js` entrypoint has
-  been downloaded and run by the browser.
+  main entrypoint script has been downloaded and run by the browser.
   Flutter also calls `onEntrypointLoaded` on
   every hot restart during development.
 
@@ -208,8 +232,31 @@ The initialization process is split into the following stages:
   methods can be used to manage app views from the host app.
   To learn more, check out [Embedded mode][embedded-mode].
 
-[embedded-mode]: {{site.docs}}/platform-integration/web/embedding-flutter-web/#embedded-mode
+[embedded-mode]: /platform-integration/web/embedding-flutter-web#embedded-mode
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+:::warning
+When you provide your own `onEntrypointLoaded` callback, the `config`
+that you pass to `_flutter.loader.load()` is **not** forwarded to the
+engine automatically. Flutter only applies that `config` for you when
+you omit `onEntrypointLoaded` and let the loader start the app.
+
+In a custom callback, pass the configuration to `initializeEngine()`
+yourself, otherwise it's silently ignored:
+
+```js
+_flutter.loader.load({
+  onEntrypointLoaded: async function(engineInitializer) {
+    const appRunner = await engineInitializer.initializeEngine({
+      // Set your run-time configuration here.
+      renderer: 'canvaskit',
+    });
+    await appRunner.runApp();
+  },
+});
+```
+
+:::
 
 ## Example: Display a progress indicator
 
@@ -227,6 +274,8 @@ loading.textContent = "Loading Entrypoint...";
 _flutter.loader.load({
   onEntrypointLoaded: async function(engineInitializer) {
     loading.textContent = "Initializing engine...";
+    // If you have a `config`, pass it here. The config given to `load()`
+    // is not forwarded when you supply your own `onEntrypointLoaded`.
     const appRunner = await engineInitializer.initializeEngine();
 
     loading.textContent = "Running app...";
@@ -235,17 +284,81 @@ _flutter.loader.load({
 });
 ```
 
-## Common warning
+## Common warnings {:#common-warnings}
+
+This section describes common web build and initialization warnings
+and how to resolve them.
+
+### Service worker deprecation {:#service-worker-version-deprecation}
+
+If you experience a warning similar to the following during `flutter build web`:
+
+```text
+Warning: In index.html:37: Flutter's service worker is deprecated and will be removed in a future Flutter release.
+See https://github.com/flutter/flutter/issues/156910 for more details.
+```
+
+Remove legacy service worker variables, registration calls, and
+`serviceWorkerSettings` from your `web/index.html` or custom
+`web/flutter_bootstrap.js` file:
+
+```js
+// Remove legacy serviceWorkerVersion declarations:
+var serviceWorkerVersion = null;
+const serviceWorkerVersion = null;
+
+// Remove legacy flutter_service_worker.js registration calls:
+navigator.serviceWorker.register('flutter_service_worker.js');
+
+// Remove serviceWorkerSettings from _flutter.loader.load():
+_flutter.loader.load({
+  serviceWorkerSettings: {
+    serviceWorkerVersion: {% raw %}{{flutter_service_worker_version}}{% endraw %},
+  },
+});
+```
+
+If your app requires a custom service worker, refer to the
+[Web FAQ](/platform-integration/web/faq#how-do-i-configure-a-service-worker)
+and [Web content hashing (`precache_manifest.json`)][web-content-hashing].
+
+### FlutterLoader.loadEntrypoint deprecation
 
 If you experience a warning similar to the following:
 
 ```text
-Warning: In index.html:37: Local variable for "serviceWorkerVersion" is deprecated.
-Use "{{flutter_service_worker_version}}" template token instead.
+Warning: In index.html:40: "FlutterLoader.loadEntrypoint" is deprecated.
+Use "FlutterLoader.load" instead.
 ```
 
-You can fix this by deleting the following line from the `web/index.html` file:
+This warning occurs when an older `web/index.html` file uses
+`_flutter.loader.loadEntrypoint()` instead of `_flutter.loader.load()`.
+The CLI message references the `FlutterLoader` interface,
+which JavaScript code accesses through `_flutter.loader`.
+
+If your app uses the default initialization and doesn't require
+custom bootstrapping, replace the legacy script block in `web/index.html`
+with the standard script tag:
 
 ```html title="web/index.html"
-var serviceWorkerVersion = null;
+<script src="flutter_bootstrap.js" async></script>
 ```
+
+If you customized your initialization logic,
+update your bootstrap code in `web/index.html`
+(or a custom `web/flutter_bootstrap.js` file)
+to call `_flutter.loader.load()` instead:
+
+```js
+_flutter.loader.load({
+  onEntrypointLoaded: async function(engineInitializer) {
+    const appRunner = await engineInitializer.initializeEngine();
+    await appRunner.runApp();
+  }
+});
+```
+
+To review an example that updates DOM elements during startup,
+consult the [progress indicator example][].
+
+[progress indicator example]: #example-display-a-progress-indicator

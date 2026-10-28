@@ -210,7 +210,7 @@ return const SelectableText.rich(
 );
 ```
 
-[`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
+[`SelectableText`]: {{site.material_ui}}/SelectableText-class.html
 
 ### Title bars
 
@@ -230,7 +230,7 @@ This package lets you add whatever widgets you want to the
 This makes it easy to adapt the title bar as you navigate
 to different sections of the app.
 
-[`bits_dojo`]: {{site.github}}/bitsdojo/bitsdojo_window
+[`bits_dojo`]: https://github.com/bitsdojo/bitsdojo_window
 
 ### Context menus and tooltips
 
@@ -300,7 +300,7 @@ a feeling that something isn't quite right.
 [`custom_pop_up_menu`]: {{site.pub}}/packages/custom_pop_up_menu
 [`flutter_portal`]: {{site.pub}}/packages/flutter_portal
 [`super_tooltip`]: {{site.pub}}/packages/super_tooltip
-[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
+[`Tooltip`]: {{site.material_ui}}/Tooltip-class.html
 
 ### Horizontal button order
 

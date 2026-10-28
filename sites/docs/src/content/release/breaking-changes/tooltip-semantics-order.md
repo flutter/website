@@ -142,5 +142,5 @@ Relevant PRs:
 
 * [OverlayPortal.overlayChild contributes semantics to OverlayPortal instead of Overlay][]
 
-[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
+[`Tooltip`]: {{site.material_ui}}/Tooltip-class.html
 [OverlayPortal.overlayChild contributes semantics to OverlayPortal instead of Overlay]: {{site.repo.flutter}}/pull/134921

@@ -22,7 +22,7 @@ For more information on implementing fancy scrolling effects
 in Flutter, see the following resources:
 
 **[Slivers, Demystified][]**
-: A free article on Medium that
+: A Flutter blog post that
   explains how to implement custom scrolling
   using the sliver classes.
 
@@ -59,7 +59,7 @@ check out these related API docs:
 
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
 [sliver-app-bar-video]: {{site.yt.watch}}?v=R9C5KMJKluE
-[`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
+[`SliverAppBar`]: {{site.material_ui}}/SliverAppBar-class.html
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
 [SliverList and SliverGrid]: {{site.yt.watch}}?v=ORiTTaVY6mM
 [`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html

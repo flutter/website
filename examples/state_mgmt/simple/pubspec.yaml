@@ -4,18 +4,19 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
 
+  material_ui: ^1.8.0
   provider: ^6.1.5+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  test: ^1.31.0
+  test: ^1.31.1
 
 flutter:
   uses-material-design: true

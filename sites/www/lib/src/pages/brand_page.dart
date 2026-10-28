@@ -50,10 +50,10 @@ class BrandPage extends StatelessComponent {
                   h2([.text('Flutter logo')]),
                   p([
                     .text(
-                      '''Do not use the Flutter mark or any variant of the Flutter mark in 
-                  conjunction with the overall name of your application, product, service, 
-                  or website. Do not alter or use the Flutter mark in a way that may be 
-                  confusing or misleading, and never use Flutter branding as the most 
+                      '''Do not use the Flutter mark or any variant of the Flutter mark in
+                  conjunction with the overall name of your application, product, service,
+                  or website. Do not alter or use the Flutter mark in a way that may be
+                  confusing or misleading, and never use Flutter branding as the most
                   prominent element on your page.
                 ''',
                     ),
@@ -66,8 +66,8 @@ class BrandPage extends StatelessComponent {
                     h3([.text('Standard lockup')]),
                     p([
                       .text(
-                        '''The standard lockup can be used in slide decks and blog posts. It 
-                      should never be used in-product or in a way that implies that 
+                        '''The standard lockup can be used in slide decks and blog posts. It
+                      should never be used in-product or in a way that implies that
                       Flutter is endorsing or has built the product.
                     ''',
                       ),
@@ -153,9 +153,8 @@ class BrandPage extends StatelessComponent {
                 const h4([.text('Dark')]),
                 const p([
                   .text(
-                    '''For darker background with overlapping shapes or varied patterns when 
-                  transparency is not available.
-                ''',
+                    'For darker backgrounds with overlapping shapes or '
+                    'varied patterns when transparency is not available.',
                   ),
                 ]),
                 div(classes: 'downloadable-image-harness', [
@@ -189,7 +188,8 @@ class BrandPage extends StatelessComponent {
                 const h4([.text('Transparency')]),
                 const p([
                   .text(
-                    'For darker background backgrounds with overlapping shapes or varied patterns.',
+                    'For darker backgrounds with '
+                    'overlapping shapes or varied patterns.',
                   ),
                 ]),
                 div(classes: 'downloadable-image-harness', [
@@ -222,7 +222,7 @@ class BrandPage extends StatelessComponent {
               div([
                 const h4([.text('Knockout')]),
                 const p([
-                  .text('For solid darker backgrounds with high contrasts'),
+                  .text('For solid darker backgrounds with high contrast.'),
                 ]),
                 div(classes: 'downloadable-image-harness', [
                   div(classes: 'downloadable-image', [
@@ -267,7 +267,8 @@ class BrandPage extends StatelessComponent {
                 const h4([.text('Vertical lockup')]),
                 const p([
                   .text(
-                    'When there is limited horizontal space, a vertical lockup can be used',
+                    'When there is limited horizontal space, '
+                    'a vertical lockup can be used.',
                   ),
                 ]),
                 div(classes: 'downloadable-image-harness', [
@@ -301,9 +302,8 @@ class BrandPage extends StatelessComponent {
                 const h4([.text('Logomark')]),
                 const p([
                   .text(
-                    '''When there is limited vertical and horizontal space, the logomark can be used by 
-                  itself without the logotype.
-                ''',
+                    'When there is limited vertical and horizontal space, '
+                    'the logomark can be used by itself without the logotype.',
                   ),
                 ]),
                 div(classes: 'downloadable-image-harness', [
@@ -337,9 +337,9 @@ class BrandPage extends StatelessComponent {
                 const h4([.text('Build with Flutter')]),
                 const p([
                   .text(
-                    '''When referring in the context of another app. This includes in blog posts, press 
-                  interviews, and in the app itself.
-                ''',
+                    'When referring to Flutter in the context of another app. '
+                    'This includes in blog posts, press interviews, '
+                    'and in the app itself.',
                   ),
                 ]),
                 div(classes: 'downloadable-image-harness', [
@@ -380,12 +380,12 @@ class BrandPage extends StatelessComponent {
                 h3([.text('Sizing & Spacing')]),
                 p([
                   .text(
-                    '''To ensure legibility, the Flutter lockup and icon should sit within 
-                an open space. A minimum margin of space equivalent to the height 
-                of a single 'F' should always be maintained around the lockup or icon. 
-                A greater margin of space should be proved when possible. The logo 
-                should never be overlapped or crowded by text or artwork. Additionally 
-                the logo should not be linked to other logos or labels. Only approved 
+                    '''To ensure legibility, the Flutter lockup and icon should sit within
+                an open space. A minimum margin of space equivalent to the height
+                of a single 'F' should always be maintained around the lockup or icon.
+                A greater margin of space should be provided when possible. The logo
+                should never be overlapped or crowded by text or artwork. Additionally
+                the logo should not be linked to other logos or labels. Only approved
                 brand lockups should be used.
               ''',
                   ),
@@ -416,8 +416,8 @@ class BrandPage extends StatelessComponent {
                 h3([.text('Alignment')]),
                 p([
                   .text(
-                    '''The Flutter icon appears off balance when center aligned. When center 
-                aligning the icon, use the upper and lower left corners as reference 
+                    '''The Flutter icon appears off balance when center aligned. When center
+                aligning the icon, use the upper and lower left corners as reference
                 points to provide optical balance.
               ''',
                   ),
@@ -464,15 +464,15 @@ class BrandPage extends StatelessComponent {
                 h3([.text('Contrast')]),
                 p([
                   .text(
-                    '''When using the knockout version of the logo, always ensure foreground and background 
+                    '''When using the knockout version of the logo, always ensure foreground and background
                 colors pass ''',
                   ),
                   a(href: 'https://webaim.org/resources/contrastchecker', [
                     .text('WCAG AA accessibility'),
                   ]),
-                  .text(''' 
-                standards. WCAG 2.0 level AA requires a contrast ratio of at least 4.5:1 for normal 
-                text and 3:1 for large text. WCAG 2.1 requires a contrast ratio of at least 3:1 for 
+                  .text('''
+                standards. WCAG 2.0 level AA requires a contrast ratio of at least 4.5:1 for normal
+                text and 3:1 for large text. WCAG 2.1 requires a contrast ratio of at least 3:1 for
                 graphics and user interface components.
               '''),
                 ]),
@@ -522,8 +522,8 @@ class BrandPage extends StatelessComponent {
                 h3([.text('Ligatures')]),
                 p([
                   .text(
-                    '''Turn standard ligatures off when rendering the name 'Flutter' in a 
-                headline format. The two 't' characters should remain distinct. 
+                    '''Turn standard ligatures off when rendering the name 'Flutter' in a
+                headline format. The two 't' characters should remain distinct.
               ''',
                   ),
                 ]),

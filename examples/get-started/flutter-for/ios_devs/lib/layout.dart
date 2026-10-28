@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -73,7 +73,6 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion simple-widget
 }
 
@@ -93,7 +92,6 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion row
 }
 
@@ -113,7 +111,6 @@ class ColumnExample extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion column
 }
 
@@ -132,6 +129,5 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion list-view
 }

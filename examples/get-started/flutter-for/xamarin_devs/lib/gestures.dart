@@ -1,5 +1,6 @@
 import 'dart:developer' as developer;
-import 'package:flutter/material.dart';
+
+import 'package:material_ui/material_ui.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -14,7 +15,6 @@ class MyWidget extends StatelessWidget {
       child: const Text('Button'),
     );
   }
-
   // #enddocregion elevated-button
 }
 
@@ -83,5 +83,4 @@ class _RotatingFlutterDetectorState extends State<RotatingFlutterDetector>
     );
   }
 }
-
 // #enddocregion rotating-flutter-detector

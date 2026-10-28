@@ -7,13 +7,14 @@ version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.8.0
   meta: any
-  pigeon: ^26.3.4
+  pigeon: ^28.1.0
 
 dev_dependencies:
   flutter_test:

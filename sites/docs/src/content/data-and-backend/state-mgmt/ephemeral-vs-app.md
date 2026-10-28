@@ -139,5 +139,5 @@ and is often local to a single widget. The rest is your app state.
 Both types have their place in any Flutter app, and the split between
 the two depends on your own preference and the complexity of the app.
 
-[Do whatever is less awkward]: {{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978
+[Do whatever is less awkward]: https://github.com/reduxjs/redux/issues/1287#issuecomment-175351978
 [`PageView`]: {{site.api}}/flutter/widgets/PageView-class.html

@@ -46,9 +46,8 @@ final class FileUpdater {
     required this.defaultTransforms,
   });
 
-  /// Process the file at [pathToUpdate] and determine
-  /// what, if any, updates need to be made to its injected
-  /// code excerpts.
+  /// Process the file at [pathToUpdate] and determine what, if any,
+  /// updates need to be made to its injected code excerpts.
   Future<FileProcessResults> process() async {
     if (_results case final results?) return results;
 
@@ -131,7 +130,7 @@ final class FileUpdater {
         final oldLines = <String>[];
         String? codeBlockClose;
 
-        while (lineIndex < originalLines.length) {
+        while (lineIndex + 1 < originalLines.length) {
           lineIndex += 1;
           final codeLine = originalLines[lineIndex];
 
@@ -176,9 +175,9 @@ final class FileUpdater {
         var updatedLines = region.linesWithPlaster(plaster);
 
         final transforms = [
+          ...defaultTransforms,
           ...instruction.transforms,
           ...wholeFileTransforms,
-          ...defaultTransforms,
         ];
 
         for (final transform in transforms) {
@@ -211,11 +210,12 @@ final class FileUpdater {
           instructionIndent + (instruction.indentBy ?? 0),
         ).transform(updatedLines);
 
-        final updatedExcerpt = updatedLines.join('\n');
+        final finalUpdatedLines = updatedLines.toList(growable: false);
         if (!(const IterableEquality<String>().equals(
           oldLines,
-          updatedLines,
+          finalUpdatedLines,
         ))) {
+          final updatedExcerpt = finalUpdatedLines.join('\n');
           excerptsUpdated.add((
             instructionLine: instructionLineNumber,
             updated: updatedExcerpt,
@@ -223,12 +223,14 @@ final class FileUpdater {
         }
 
         updatedContent.writeln(lineAfterInstruction);
-        updatedContent.writeln(updatedExcerpt);
+        for (final updatedLine in finalUpdatedLines) {
+          updatedContent.writeln(updatedLine);
+        }
         updatedContent.writeln(codeBlockClose);
       }
     }
 
-    return FileProcessResults._(
+    return _results = FileProcessResults._(
       pathToUpdate,
       updatedContent.toString(),
       excerptsVisited,
@@ -339,9 +341,25 @@ sealed class _Instruction {
 
     final path = match.namedGroup('path');
     final argumentString = match.namedGroup('args')?.trim() ?? '';
-    final argumentPairs = _splitArgs
-        .allMatches(argumentString)
-        .map((m) => (arg: m.namedGroup('arg')!, value: m.namedGroup('value')!));
+    final argumentPairs = <({String arg, String value})>[];
+    var argumentOffset = 0;
+    while (argumentOffset < argumentString.length) {
+      final argumentMatch =
+          _splitArgs.matchAsPrefix(argumentString, argumentOffset)
+              as RegExpMatch?;
+      if (argumentMatch == null) {
+        reportError(
+          'Invalid argument syntax near '
+          '"${argumentString.substring(argumentOffset)}".',
+        );
+      }
+
+      argumentPairs.add((
+        arg: argumentMatch.namedGroup('arg')!,
+        value: argumentMatch.namedGroup('value')!,
+      ));
+      argumentOffset = argumentMatch.end;
+    }
 
     if (path == null) {
       if (argumentPairs.length != 1) {
@@ -441,17 +459,29 @@ final class _InjectInstruction extends _Instruction {
           }
           plasterTemplate = argValue;
         case 'skip':
-          transforms.add(SkipTransform(int.parse(argValue)));
+          transforms.add(
+            SkipTransform(_parseIntArgument(argName, argValue, reportError)),
+          );
         case 'take':
-          transforms.add(TakeTransform(int.parse(argValue)));
+          transforms.add(
+            TakeTransform(_parseIntArgument(argName, argValue, reportError)),
+          );
         case 'from':
-          transforms.add(FromTransform(_argStringToPattern(argValue)));
+          transforms.add(
+            FromTransform(_argStringToPattern(argValue, reportError)),
+          );
         case 'to':
-          transforms.add(ToTransform(_argStringToPattern(argValue)));
+          transforms.add(
+            ToTransform(_argStringToPattern(argValue, reportError)),
+          );
         case 'remove':
-          transforms.add(RemoveTransform(_argStringToPattern(argValue)));
+          transforms.add(
+            RemoveTransform(_argStringToPattern(argValue, reportError)),
+          );
         case 'retain':
-          transforms.add(RetainTransform(_argStringToPattern(argValue)));
+          transforms.add(
+            RetainTransform(_argStringToPattern(argValue, reportError)),
+          );
         case 'replace':
           transforms.addAll(stringToReplaceTransforms(argValue, reportError));
         default:
@@ -462,7 +492,9 @@ final class _InjectInstruction extends _Instruction {
       }
     }
 
-    final indentBy = indentByString == null ? null : int.parse(indentByString);
+    final indentBy = indentByString == null
+        ? null
+        : _parseIntArgument('indent-by', indentByString, reportError);
 
     if (indentBy != null && indentBy < 0) {
       reportError('The `indent-by` argument must be positive.');
@@ -478,12 +510,21 @@ final class _InjectInstruction extends _Instruction {
   }
 }
 
-/// Convert the specified string [value] to a regular expression
-/// if wrapped in `/`.
-Pattern _argStringToPattern(String value) {
-  if (value.startsWith('/') && value.endsWith('/')) {
+/// Convert the specified string [value] to a
+/// regular expression if wrapped in `/`.
+Pattern _argStringToPattern(
+  String value,
+  Never Function(String error) reportError,
+) {
+  if (value.length >= 2 && value.startsWith('/') && value.endsWith('/')) {
     final regularExpression = value.substring(1, value.length - 1);
-    return RegExp(regularExpression);
+    try {
+      return RegExp(regularExpression);
+    } on FormatException catch (error) {
+      reportError(
+        'Invalid regular expression "$regularExpression": ${error.message}',
+      );
+    }
   }
 
   // Unescape an escaped starting slash.
@@ -494,6 +535,24 @@ Pattern _argStringToPattern(String value) {
   return value;
 }
 
+/// Parses [value] as an integer for the argument named [argumentName],
+/// reporting an error through [reportError] if parsing fails.
+int _parseIntArgument(
+  String argumentName,
+  String value,
+  Never Function(String error) reportError,
+) {
+  final parsedValue = int.tryParse(value);
+  if (parsedValue == null) {
+    reportError(
+      'The `$argumentName` argument must be an integer, '
+      'but "$value" was provided.',
+    );
+  }
+
+  return parsedValue;
+}
+
 /// Convert from the specified [contentType],
 /// representing a content type names or programming language, to
 /// its line comment format, including prefix and suffix.
@@ -501,42 +560,31 @@ Pattern _argStringToPattern(String value) {
 /// `null` is returned if no line comment format is known.
 ({String prefix, String suffix})? _contentTypeToCommentFormat(
   String contentType,
-) {
-  switch (contentType.trim().toLowerCase()) {
-    case 'c':
-    case 'c++':
-    case 'cc':
-    case 'cpp':
-    case 'cs':
-    case 'csharp':
-    case 'dart':
-    case 'go':
-    case 'gradle':
-    case 'groovy':
-    case 'java':
-    case 'javascript':
-    case 'js':
-    case 'kotlin':
-    case 'kt':
-    case 'objc':
-    case 'rs':
-    case 'sass':
-    case 'scss':
-    case 'swift':
-    case 'ts':
-    case 'typescript':
-      return (prefix: '// ', suffix: '');
-    case 'css':
-      return (prefix: '/* ', suffix: ' */');
-    case 'html':
-    case 'xml':
-      return (prefix: '<!-- ', suffix: ' -->');
-    case 'python':
-    case 'py':
-    case 'yml':
-    case 'yaml':
-      return (prefix: '# ', suffix: '');
-    case _:
-      return null;
-  }
-}
+) => switch (contentType.trim().toLowerCase()) {
+  'c' ||
+  'c++' ||
+  'cc' ||
+  'cpp' ||
+  'cs' ||
+  'csharp' ||
+  'dart' ||
+  'go' ||
+  'gradle' ||
+  'groovy' ||
+  'java' ||
+  'javascript' ||
+  'js' ||
+  'kotlin' ||
+  'kt' ||
+  'objc' ||
+  'rs' ||
+  'sass' ||
+  'scss' ||
+  'swift' ||
+  'ts' ||
+  'typescript' => (prefix: '// ', suffix: ''),
+  'css' => (prefix: '/* ', suffix: ' */'),
+  'html' || 'xml' => (prefix: '<!-- ', suffix: ' -->'),
+  'python' || 'py' || 'yml' || 'yaml' => (prefix: '# ', suffix: ''),
+  _ => null,
+};

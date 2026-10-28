@@ -6,24 +6,24 @@ description: >-
   Learn how to install and set up the Flutter SDK manually.
 ---
 
-Learn how to install and manually set up
-your Flutter development environment.
+Learn how to manually download and set up the Flutter SDK
+and configure your development environment.
 
-:::tip
-If you're just looking to quickly install Flutter,
-consider [installing Flutter with VS Code][with-vs-code] for
-a streamlined setup experience.
-:::
+For a faster, automated setup in VS Code (or any Code OSS-based editor),
+follow [Install Flutter with VS Code][with-vs-code] instead.
+To download a specific Flutter version or release channel,
+visit the [SDK archive][], or manage an existing installation in
+[Install and set up Flutter][].
 
 [with-vs-code]: /install/with-vs-code
+[SDK archive]: /install/archive
+[Install and set up Flutter]: /install
 
-## Choose your development platform {: #dev-platform}
+## Confirm your development platform {: #dev-platform}
 
-The instructions on this page are configured to cover
-installing Flutter on a **Windows**{:.selected-os-text} device.
-
-If you'd like to follow the instructions for a different OS,
-please select one of the following.
+These instructions are configured for **Windows**{:.selected-os-text}.
+If you're using a different operating system,
+select it from one of the following:
 
 <OSSelector />
 
@@ -48,6 +48,9 @@ first complete the following setup.
 {: .steps .windows-only}
 
  1. <h3>Install the Xcode command-line tools</h3>
+
+    **If you already have Git installed,**
+    you can skip to the next step: Set up an editor or IDE.
 
     Download the Xcode command-line tools to get access to
     the command-line tools that Flutter relies on, including Git.
@@ -168,28 +171,28 @@ then extract the SDK to where you want it stored.
 
  1. <h3>Extract the SDK</h3>
 
-    Extract the SDK bundle you downloaded into
-    the directory you want to store the Flutter SDK in.
+    Extract the downloaded `.zip` archive into your chosen directory
+    (for example, from `Downloads` into `develop`,
+    adjusting the filename and paths as needed):
 
-    1. Copy the following command.
-    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
-    1. Replace `<destination_directory_path>` with the path to the
-       folder you want the extracted SDK to be in.
-    1. Run the edited command in your preferred terminal.
+    <Tabs key="windows-terminal">
+    <Tab name="PowerShell">
 
-    ```console
-    $ Expand-Archive –Path <sdk_zip_path> -Destination <destination_directory_path>
+    ```powershell
+    Expand-Archive `
+      -Path "$env:USERPROFILE\Downloads\flutter_windows_3.47.5-stable.zip" `
+      -DestinationPath "$env:USERPROFILE\develop"
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
-    the `%USERPROFILE%\Downloads` directory and want to
-    store the extracted SDK in the `%USERPROFILE%\develop` directory:
+    </Tab>
+    <Tab name="Command prompt">
 
-    ```console
-    $ Expand-Archive `
-      -Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
-      -Destination $env:USERPROFILE\develop\
+    ```bat
+    tar -xf "%USERPROFILE%\Downloads\flutter_windows_3.47.5-stable.zip" -C "%USERPROFILE%\develop"
     ```
+
+    </Tab>
+    </Tabs>
 
     :::note
     If the `flutter.bat` file is missing from the `bin` directory
@@ -200,15 +203,32 @@ then extract the SDK to where you want it stored.
 
 {: .steps .windows-only}
 
+<div class="macos-only">
+
+:::warning
+**Note for Intel Macs:**
+Flutter is deprecating support for Intel-based Macs (x64).
+Future Flutter releases will require Apple Silicon.
+For details, check out the
+[macOS Intel deprecation strategy](https://docs.google.com/document/d/1ty3js_Eg2sNIbDuyYS_aV7h4jYdx1hEpX_mV135gO4s/edit?tab=t.0#heading=h.cx7d8y57ce6p).
+:::
+
+</div>
+
  1. <h3>Download the Flutter SDK bundle</h3>
+
+    To choose the correct bundle,
+    you need to know your Mac's processor type.
+    *(To check, go to **Apple menu () > About This Mac**
+    and look at the **Processor** or **Chip** section.)*
 
     Depending on your macOS device's cpu architecture,
     download one of the following installation bundles to get the
     latest stable release of the Flutter SDK.
 
-    | Apple Silicon (ARM64)                            | Intel                                          |
-    |--------------------------------------------------|------------------------------------------------|
-    | <DownloadLatestButton os="macos" arch="arm64" /> | <DownloadLatestButton os="macos" arch="x64" /> |
+    | Apple Silicon (ARM64)                                                 | Intel                                                               |
+    |-----------------------------------------------------------------------|---------------------------------------------------------------------|
+    | <DownloadLatestButton os="macos" arch="arm64"></DownloadLatestButton> | <DownloadLatestButton os="macos" arch="x64"></DownloadLatestButton> |
 
  1. <h3>Create a folder to store the SDK</h3>
 
@@ -217,25 +237,12 @@ then extract the SDK to where you want it stored.
 
  1. <h3>Extract the SDK</h3>
 
-    Extract the SDK bundle you downloaded into
-    the directory you want to store the Flutter SDK in.
-
-    1. Copy the following command.
-    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
-    1. Replace `<destination_directory_path>` with the path to the
-       folder you want the extracted SDK to be in.
-    1. Run the edited command in your preferred terminal.
+    Extract the downloaded `.zip` archive into your chosen directory
+    (for example, from `~/Downloads` into `~/develop/`,
+    adjusting the filename and paths as needed):
 
     ```console
-    $ unzip <sdk_zip_path> -d <destination_directory_path>
-    ```
-
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
-    the `~/Downloads` directory and want to
-    store the extracted SDK in the `~/develop` directory:
-
-    ```console
-    $ unzip ~/Downloads/flutter_macos_3.29.3-stable.zip -d ~/develop/
+    $ unzip ~/Downloads/flutter_macos_3.47.5-stable.zip -d ~/develop/
     ```
 
 {: .steps .macos-only}
@@ -254,25 +261,12 @@ then extract the SDK to where you want it stored.
 
  1. <h3>Extract the SDK</h3>
 
-    Extract the SDK bundle you downloaded into
-    the directory you want to store the Flutter SDK in.
-
-    1. Copy the following command.
-    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
-    1. Replace `<destination_directory_path>` with the path to the
-       folder you want the extracted SDK to be in.
-    1. Run the edited command in your preferred terminal.
+    Extract the downloaded `.tar.xz` archive into your chosen directory
+    (for example, from `~/Downloads` into `~/develop/`,
+    adjusting the filename and paths as needed):
 
     ```console
-    $ tar -xf <sdk_zip_path> -C <destination_directory_path>
-    ```
-
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
-    the `~/Downloads` directory and want to
-    store the extracted SDK in the `~/develop` directory:
-
-    ```console
-    $ tar -xf ~/Downloads/flutter_linux_3.29.3-stable.tar.xz -C ~/develop/
+    $ tar -xf ~/Downloads/flutter_linux_3.47.5-stable.tar.xz -C ~/develop/
     ```
 
 {: .steps .linux-only .chromeos-only}
@@ -308,96 +302,31 @@ Adding Flutter to your `PATH` allows you to use the
 
 </div>
 
+## Validate your setup {: #validate-setup}
+
+To verify your Flutter installation, run `flutter doctor` in your terminal:
+
+```console
+$ flutter doctor
+```
+
+:::note What to expect in `flutter doctor`
+You only need checkmarks (`[✓]`) for **Flutter**
+and the platforms you plan to target
+(for example, **Chrome** lets you build for the web immediately).
+You can safely ignore `[!]` or `[✗]` warnings for tools like
+Android Studio or Xcode until you're ready to target those platforms.
+:::
+
+If you encounter any issues during installation,
+consult [Flutter installation troubleshooting][troubleshoot].
+
+[troubleshoot]: /install/troubleshoot
+
 ## Continue your Flutter journey {: #next-steps}
 
 Now that you've successfully installed Flutter,
-set up development for at least one target platform
+set up development for a target platform or start learning
 to continue your journey with Flutter.
 
-:::recommend
-If you don't yet have a preferred platform
-to target during development,
-the Flutter team recommends you first try out
-[developing on the web][web-setup]!
-:::
-
-[web-setup]: /platform-integration/web/setup
-
-<div class="card-grid link-cards">
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/flutter-on-phone.svg"
-           height="160" aria-hidden="true"
-           alt="A representation of Flutter on multiple devices.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Set up a target platform</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/platform-integration/web/setup">Target the web</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/android/setup">Target Android</a>
-        </li>
-        <li class="macos-only">
-          <a class="text-button" href="/platform-integration/ios/setup">Target iOS</a>
-        </li>
-        <li class="macos-only">
-          <a class="text-button" href="/platform-integration/macos/setup">Target macOS</a>
-        </li>
-        <li class="windows-only">
-          <a class="text-button" href="/platform-integration/windows/setup">Target Windows</a>
-        </li>
-        <li class="linux-only">
-          <a class="text-button" href="/platform-integration/linux/setup">Target Linux</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/pointing-the-way.png"
-           height="160" aria-hidden="true"
-           alt="Dash helping you explore Flutter learning resources.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Learn Flutter development</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/up-to-date.png" height="160"
-           aria-hidden="true" alt="Keep up to date with Flutter">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Stay up to date with Flutter</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/install/upgrade">Update Flutter</a>
-        </li>
-        <li>
-          <a class="text-button" href="/release/release-notes">Find out what's new</a>
-        </li>
-        <li>
-          <a class="text-button" href="{{site.social.youtube}}">Subscribe on YouTube</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+{% render "docs/get-started/setup-next-steps.html", site: site %}

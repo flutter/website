@@ -77,7 +77,7 @@ final disabledDropdown = DropdownButton<String>(
   items: const [
     DropdownMenuItem(value: 'Option 1', child: Text('Option 1')),
   ],
-  onChanged: null, // This was the only way to disable it
+  onChanged: null, // This was the only way to disable it.
 );
 ```
 
@@ -89,7 +89,7 @@ Code after migration:
     items: const [
       DropdownMenuItem(value: 'Option 1', child: Text('Option 1')),
     ],
--   onChanged: null, // This was the only way to disable it
+-   onChanged: null, // This was the only way to disable it.
 +   enabled: false,
   );
 ```
@@ -127,7 +127,7 @@ Code after migration:
 
 ## Timeline
 
-Landed in version: 3.44.0-1.0.pre-629<br>
+Landed in version: Not yet<br>
 In stable release: Not yet
 
 ## References
@@ -145,7 +145,7 @@ Relevant PRs:
 
 * [Update DropdownButton enabled property logic][]
 
-[`DropdownButton`]: {{site.api}}/flutter/material/DropdownButton-class.html
-[`DropdownButtonFormField`]: {{site.api}}/flutter/material/DropdownButtonFormField-class.html
+[`DropdownButton`]: {{site.material_ui}}/DropdownButton-class.html
+[`DropdownButtonFormField`]: {{site.material_ui}}/DropdownButtonFormField-class.html
 [issue-57953]: {{site.repo.flutter}}/issues/57953
 [Update DropdownButton enabled property logic]: {{site.repo.flutter}}/pull/182419

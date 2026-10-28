@@ -32,5 +32,4 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 
   // #docregion animation-controller
 }
-
 // #enddocregion animation-controller

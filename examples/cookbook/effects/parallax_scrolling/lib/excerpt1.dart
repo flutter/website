@@ -9,5 +9,4 @@ class ParallaxRecipe extends StatelessWidget {
     return const SingleChildScrollView(child: Column(children: []));
   }
 }
-
 // #enddocregion ParallaxRecipe

@@ -37,7 +37,10 @@ by default to:
 
 Because this automatic configuration happens before your `build.gradle` files
 are processed, it might break custom `abiFilters` settings that depend on the
-set being empty.
+set being empty. Flutter can preserve `abiFilters` that you configure in
+`defaultConfig`, but it can't safely preserve every `buildTypes` or
+`productFlavors` ABI filter customization with the current Android Gradle
+Plugin APIs.
 
 ## Migration guide
 If your app doesn't customize `abiFilters`, no changes are required.
@@ -57,28 +60,32 @@ flutter build apk --splits-per-abi
 This creates separate APKs for each architecture and automatically disables
 the automatic `abiFilters` configuration.
 
-### Option 2: Clear and reconfigure abiFilters
+### Option 2: Configure abiFilters in defaultConfig
 
 If you must use a single APK with custom architecture filters, clear the
-automatically set filters and configure your own in your `build.gradle`.
+automatically set filters and configure your own in `defaultConfig`.
 For example:
 
 ```kotlin
 android {
-    buildTypes {
-        release {
+    defaultConfig {
+        ndk {
             // Clear the automatically set filters.
-            ndk.abiFilters.clear()
+            abiFilters.clear()
             // Set your custom filters.
-            ndk.abiFilters.addAll(listOf("arm64-v8a"))
+            abiFilters.addAll(listOf("arm64-v8a"))
         }
     }
 }
 ```
 
-### Disabling abiFIlters ###
-It is possible, but not recommended, to disable this abi filtering. Pass the `-Pdisable-abi-filtering`flag when running `flutter build`
-or `flutter run`.
+### Option 3: Disable Flutter's default ABI filtering
+
+If your app configures ABI filters in `buildTypes` or `productFlavors`,
+pass `-Pdisable-abi-filtering=true` when running `flutter build` or
+`flutter run`. This prevents Flutter from applying its default ABI filters,
+so your build type or product flavor configuration controls which
+architectures are included.
 
 ## Timeline
 

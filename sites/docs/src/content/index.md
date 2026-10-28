@@ -22,7 +22,7 @@ description: >-
   <Card title="Videos" link="https://www.youtube.com/@flutterdev" outlined="true">
     View the many videos on the Flutter YouTube channel.
   </Card>
-  <Card title="Create with AI" link="/ai/create-with-ai" outlined="true">
+  <Card title="Develop with AI" link="/ai/get-started" outlined="true">
     Learn how to build with and integrate powerful AI tools.
   </Card>
 </div>
@@ -38,7 +38,7 @@ Ready to build beautiful, multiplatform apps from a single codebase?
 First, [set up your Flutter environment][],
 then follow the [Flutter learning pathway][].
 
-[set up your Flutter environment]: /install/quick
+[set up your Flutter environment]: /install/with-vs-code
 [Flutter learning pathway]: /learn/pathway
 
 ### Docs

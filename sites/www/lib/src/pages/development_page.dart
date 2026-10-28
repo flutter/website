@@ -29,8 +29,7 @@ class DevelopmentPage extends StatelessComponent {
           ),
           logo: context.asset('/images/third_party/logos/tencent.svg'),
           logoAlt: 'Tencent',
-          quote:
-              'When using Flutter, 90% of the code became multi-platform and only needed to be updated once.',
+          quote: 'When using Flutter, 90% of the code became multi-platform and only needed to be updated once.',
           author: 'Fei Song',
           company: 'Senior Software Engineer, Tencent',
         ),
@@ -42,8 +41,7 @@ class DevelopmentPage extends StatelessComponent {
   Component _buildHero(BuildContext context) {
     return HeroSection(
       title: 'Beautiful apps for every screen',
-      text:
-          'Flutter allows you to build apps for mobile, web, desktop, and embedded devices — all from a single codebase.',
+      text: 'Flutter allows you to build apps for mobile, web, desktop, and embedded devices — all from a single codebase.',
       media: img(
         src: context.asset('images/beautiful-apps-for-every-screen.png'),
         alt: 'Beautiful apps for every screen',
@@ -55,20 +53,17 @@ class DevelopmentPage extends StatelessComponent {
     return FeatureColumnsSection([
       FeatureColumn(
         title: 'Single codebase',
-        description:
-            'Maintain one codebase and deploy to multiple platforms, speeding up and simplifying workflows.',
+        description: 'Maintain one codebase and deploy to multiple platforms, speeding up and simplifying workflows.',
         image: context.asset('images/single-codebase.png'),
       ),
       FeatureColumn(
         title: 'Performant by design',
-        description:
-            'Flutter gives you the power of hardware-accelerated graphics for performant apps on any platform.',
+        description: 'Flutter gives you the power of hardware-accelerated graphics for performant apps on any platform.',
         image: context.asset('images/performant-by-design.png'),
       ),
       FeatureColumn(
         title: 'Customize every pixel',
-        description:
-            'The Flutter rendering engine lets you control every pixel, and its widget library automatically adapts to any screen.',
+        description: 'The Flutter rendering engine lets you control every pixel, and its widget library automatically adapts to any screen.',
         image: context.asset('images/customize-every-pixel.svg'),
       ),
     ]);
@@ -117,8 +112,7 @@ class DevelopmentPage extends StatelessComponent {
         Feature(
           eyebrow: 'Desktop',
           title: 'Windows, macOS, and Linux apps',
-          description:
-              'Transform your apps into desktop experiences with a single codebase and familiar tooling. Target Windows, macOS, and Linux without rewriting.',
+          description: 'Transform your apps into desktop experiences with a single codebase and familiar tooling. Target Windows, macOS, and Linux without rewriting.',
           actions: const [
             FeatureAction(
               label: 'Flutter on desktop',
@@ -168,8 +162,7 @@ class DevelopmentPage extends StatelessComponent {
                     ),
                     FeatureAction.link(
                       label: 'Community favorites',
-                      url:
-                          'https://docs.flutter.dev/packages-and-plugins/favorites',
+                      url: 'https://docs.flutter.dev/packages-and-plugins/favorites',
                     ),
                   ],
                 ),
@@ -217,7 +210,7 @@ class DevelopmentPage extends StatelessComponent {
               title: 'Extensive Flutter docs',
               description:
                   'Find documentation for everything Flutter - '
-                  'from interactive examples and tutorials, to '
+                  'from interactive examples and tutorials to '
                   'building and deploying your first Flutter app.',
               actions: const [
                 FeatureAction(
@@ -226,8 +219,7 @@ class DevelopmentPage extends StatelessComponent {
                 ),
                 FeatureAction.link(
                   label: 'Switching to Flutter? View our guides ',
-                  url:
-                      'https://docs.flutter.dev/get-started/learn-flutter#apply-your-existing-knowledge',
+                  url: 'https://docs.flutter.dev/get-started/learn-flutter#apply-your-existing-knowledge',
                   collapsed: false,
                 ),
               ],
@@ -241,8 +233,7 @@ class DevelopmentPage extends StatelessComponent {
             Feature(
               eyebrow: 'AI',
               title: 'Build GenAI experiences',
-              description:
-                  'Build your own generative AI-based features into Dart and Flutter apps with leading AI models and APIs.',
+              description: 'Build your own generative AI-based features into Dart and Flutter apps with leading AI models and APIs.',
               actions: const [FeatureAction(label: 'Learn more', url: '/ai')],
               media: img(
                 src: context.asset('images/build-ai-experiences.png'),

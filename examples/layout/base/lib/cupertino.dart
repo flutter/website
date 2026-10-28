@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,5 +31,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion my-app

@@ -80,8 +80,8 @@ You can ignore this step and follow the recipe with your own game
 project. Adapt the code at appropriate places.
 :::
 
-[`card`]: {{site.github}}/flutter/games/tree/main/templates/card#readme
-[`flutter/games` repository]: {{site.github}}/flutter/games
+[`card`]: {{site.repo.games}}/tree/main/templates/card#readme
+[`flutter/games` repository]: {{site.repo.games}}
 
 ## 2. Install Firestore
 
@@ -390,6 +390,7 @@ Notice the following features of this code:
     <?code-excerpt "lib/play_session/play_session_screen.dart (imports)"?>
     ```dart
     import 'package:cloud_firestore/cloud_firestore.dart';
+    
     import '../multiplayer/firestore_controller.dart';
     ```
 

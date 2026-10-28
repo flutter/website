@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -22,6 +22,5 @@ class ImageExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset('images/my_image.png');
   }
-
   // #enddocregion image-asset
 }

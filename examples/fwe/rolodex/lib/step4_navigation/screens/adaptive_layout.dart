@@ -1,8 +1,9 @@
 // #docregion imports
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import 'contact_groups.dart';
 import 'contacts.dart';
+
 // #enddocregion imports
 
 const largeScreenMinWidth = 600;
@@ -61,9 +62,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       ),
     );
   }
-
   // #enddocregion build_large_screen
   // #docregion reverted-state
 }
-
 // #enddocregion reverted-state

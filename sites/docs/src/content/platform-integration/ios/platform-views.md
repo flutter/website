@@ -96,7 +96,8 @@ On the platform side, use either Swift or Objective-C:
 Implement the factory and the platform view.
 The `FLNativeViewFactory` creates the platform view,
 and the platform view provides a reference to the `UIView`.
-For example, `FLNativeView.swift`:
+
+For example, implement the factory class:
 
 ```swift
 import Flutter
@@ -127,7 +128,17 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
           return FlutterStandardMessageCodec.sharedInstance()
     }
 }
+```
 
+Depending on the UI framework you are using,
+choose one of the following implementations for `FLNativeView`:
+
+<Tabs key="swift-ui-framework">
+<Tab name="UIKit">
+
+For UIKit, implement the `FLNativeView` class:
+
+```swift
 class FLNativeView: NSObject, FlutterPlatformView {
     private var _view: UIView
 
@@ -159,8 +170,70 @@ class FLNativeView: NSObject, FlutterPlatformView {
 }
 ```
 
+</Tab>
+<Tab name="SwiftUI">
+
+To display SwiftUI views within a platform view on iOS,
+wrap the SwiftUI view inside a `UIHostingController`.
+Since `UIHostingController` is a view controller,
+you can retrieve its view using the `view` property,
+and return it from the platform view's `view()` method.
+
+To prevent premature deallocation, store the `UIHostingController`
+instance as a property of `FLNativeView`. Use the `frame`
+passed to the initializer to set the frame of the hosting
+controller's view so Flutter sizes it correctly.
+
+For SwiftUI, implement the `FLNativeView` class and its SwiftUI view:
+
+```swift
+import SwiftUI
+
+class FLNativeView: NSObject, FlutterPlatformView {
+    private let hostingController: UIHostingController<MySwiftUIView>
+
+    init(
+        frame: CGRect,
+        viewIdentifier viewId: Int64,
+        arguments args: Any?,
+        binaryMessenger messenger: FlutterBinaryMessenger?
+    ) {
+        hostingController = UIHostingController(rootView: MySwiftUIView())
+        super.init()
+        hostingController.view.frame = frame
+    }
+
+    func view() -> UIView {
+        return hostingController.view
+    }
+}
+
+struct MySwiftUIView: View {
+    var body: some View {
+        Text("Native text from iOS (SwiftUI)")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.blue)
+            .foregroundColor(.white)
+    }
+}
+```
+
+</Tab>
+</Tabs>
+
 Finally, register the platform view.
 This can be done in an app or a plugin.
+
+:::version-note
+In Flutter 3.41 and later,
+iOS apps use the `UIScene` lifecycle by default.
+For apps using `UIScene`,
+you must implement `FlutterImplicitEngineDelegate`
+and register your platform views inside
+`didInitializeImplicitFlutterEngine(_:)`.
+For more information,
+refer to the [UISceneDelegate adoption guide][].
+:::
 
 For app registration,
 modify the App's `AppDelegate.swift`:
@@ -285,6 +358,17 @@ and the platform view provides a reference to the
 Finally, register the platform view.
 This can be done in an app or a plugin.
 
+:::version-note
+In Flutter 3.41 and later,
+iOS apps use the `UIScene` lifecycle by default.
+For apps using `UIScene`,
+you must implement `FlutterImplicitEngineDelegate`
+and register your platform views inside
+`didInitializeImplicitFlutterEngine:`.
+For more information,
+refer to the [UISceneDelegate adoption guide][].
+:::
+
 For app registration,
 modify the App's `AppDelegate.m`:
 
@@ -292,6 +376,9 @@ modify the App's `AppDelegate.m`:
 #import "AppDelegate.h"
 #import "FLNativeView.h"
 #import "GeneratedPluginRegistrant.h"
+
+@interface AppDelegate () <FlutterImplicitEngineDelegate>
+@end
 
 @implementation AppDelegate
 
@@ -400,3 +487,4 @@ There are some limitations when composing iOS Platform Views.
 [`BackdropFilter`]: {{site.api}}/flutter/foundation/BackdropFilter.html
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [design-doc]: {{site.main-url}}/go/ios-platformview-backdrop-filter-blur
+[UISceneDelegate adoption guide]: /release/breaking-changes/uiscenedelegate#migrate-appdelegate

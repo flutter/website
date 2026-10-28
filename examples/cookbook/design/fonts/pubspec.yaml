@@ -5,12 +5,13 @@ version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.9
+  material_ui: ^1.8.0
+  cupertino_icons: ^2.0.0
 
 dev_dependencies:
   flutter_test:

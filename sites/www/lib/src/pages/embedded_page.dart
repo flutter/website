@@ -67,8 +67,7 @@ class EmbeddedPage extends StatelessComponent {
                     'Reference code examples and sample applications for '
                     'building Flutter embedded apps while you learn.',
                 icon: context.asset('../images/icons/see-the-samples.svg'),
-                url:
-                    'https://github.com/flutter/engine/tree/main/examples/glfw#flutter-embedder-engine-glfw-example',
+                url: 'https://github.com/flutter/engine/tree/main/examples/glfw#flutter-embedder-engine-glfw-example',
               ),
               FeatureGridItem(
                 title: 'Watch the video',
@@ -86,8 +85,7 @@ class EmbeddedPage extends StatelessComponent {
                     'custom Flutter engine embedders for '
                     'target devices not supported out of the box.',
                 icon: context.asset('../images/icons/follow-the-roadmap.svg'),
-                url:
-                    'https://github.com/flutter/engine/blob/main/docs/Custom-Flutter-Engine-Embedders.md',
+                url: 'https://github.com/flutter/engine/blob/main/docs/Custom-Flutter-Engine-Embedders.md',
               ),
             ],
           ),

@@ -23,5 +23,4 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
     return Container();
   }
 }
-
 // #enddocregion Starter

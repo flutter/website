@@ -42,7 +42,7 @@ The Dart VM allocates memory for the object at the moment of the object creation
 and releases (or deallocates) the memory when the object
 is no longer used (see [Dart garbage collection][]).
 
-[Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
+[Dart garbage collection]: https://flutter.dev/blog/flutter-dont-fear-the-garbage-collector
 
 ### Object types
 
@@ -453,5 +453,5 @@ For more information, check out the following resources:
 * To understand Android memory structure,
   check out [Android: Memory allocation among processes][].
 
-[memory-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
+[memory-tutorial]: https://medium.com/@fluttergems/mastering-dart-flutter-devtools-memory-view-part-7-of-8-e7f5aaf07e15
 [Android: Memory allocation among processes]: {{site.android-dev}}/topic/performance/memory-management

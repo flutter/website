@@ -93,15 +93,30 @@ app in the future, you will need the symbol map.
       file should be placed. For example,
       `out/android`.
 
+   :::note
+   On Windows x64, the build generates a PDB file
+   (`app.windows-x64.pdb`) instead of a SYMBOLS file.
+   :::
+
 1. Once you've obfuscated your binary, **backup
-   the SYMBOLS file**. You might need this if you lose
-   your original SYMBOLS file and you
+   the SYMBOLS file** (or the PDB file on Windows x64).
+   You might need this if you lose
+   your original SYMBOLS file (or PDB file) and you
    want to de-obfuscate a stack trace.
 
 ## Read an obfuscated stack trace
 
 To debug a stack trace created by an obfuscated app,
 use the following steps to make it human readable:
+
+:::note
+On Windows x64, `--split-debug-info` generates a PDB file
+instead of a SYMBOLS file,
+and the `flutter symbolize` command doesn't support
+PDB files. To read a stack trace from an obfuscated
+Windows x64 build, load the PDB file in a Windows
+debugger such as WinDbg.
+:::
 
 1. Find the matching SYMBOLS file.
    For example, a crash from an Android arm64

@@ -1,11 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/date_symbol_data_custom.dart' as date_symbol_data_custom;
 import 'package:intl/date_symbols.dart' as intl;
 import 'package:intl/intl.dart' as intl;
+import 'package:material_ui/material_ui.dart';
 
 /// A custom set of date patterns for the `nn` locale.
 ///
@@ -223,7 +222,7 @@ class _NnMaterialLocalizationsDelegate
   bool isSupported(Locale locale) => locale.languageCode == 'nn';
 
   @override
-  Future<MaterialLocalizations> load(Locale locale) async {
+  Future<MaterialLocalizations> load(Locale locale) {
     final String localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
     // The locale (in this case `nn`) needs to be initialized into the custom

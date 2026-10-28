@@ -39,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // #docregion AnimatedOpacity
         child: AnimatedOpacity(
-          // If the widget is visible, animate to 0.0 (invisible).
-          // If the widget is hidden, animate to 1.0 (fully visible).
+          // If the widget should be visible, animate to 1.0 (fully visible).
+          // If the widget should be hidden, animate to 0.0 (invisible).
           opacity: _visible ? 1.0 : 0.0,
           duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.

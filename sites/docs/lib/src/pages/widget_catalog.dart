@@ -1,3 +1,7 @@
+// Copyright 2025 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 import 'dart:io';
 
 import 'package:collection/collection.dart';
@@ -5,18 +9,17 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
+import 'package:site_shared/markdown.dart';
+import 'package:site_shared/util.dart';
 
 import '../components/pages/widget_catalog.dart';
-import '../markdown/markdown_parser.dart';
 import '../models/widget_catalog_model.dart';
-import '../util.dart';
-
-final _widgetCatalogIndexFile = File(
-  path.join(siteSrcDirectoryPath, 'data', 'catalog', 'index.yml'),
-);
 
 List<MemoryPage> get widgetCatalogPages {
-  final catalogData = _widgetCatalogIndexFile.readAsStringSync();
+  final widgetCatalogIndexFile = File(
+    path.join('src', 'data', 'catalog', 'index.yml'),
+  );
+  final catalogData = widgetCatalogIndexFile.readAsStringSync();
   final catalog =
       (DataLoader.parseData('index.yml', catalogData) as List<Object?>)
           .cast<Map<String, Object?>>()
@@ -34,6 +37,10 @@ List<MemoryPage> get widgetCatalogPages {
             'description':
                 'A catalog of Flutter\'s ${category.title.unCapitalize()}. '
                 '${category.description}',
+            'dateModifiedSources': [
+              'src/data/catalog/index.yml',
+              'src/data/catalog/widgets.yml',
+            ],
           },
         },
         builder: (context) {
@@ -81,22 +88,11 @@ List<MemoryPage> get widgetCatalogPages {
                 ),
             ],
 
-            if (isMaterialCatalog)
-              const p([
-                .text('Find more widgets in the '),
-                a(href: '/ui/widgets/material2', [
-                  .text('Material 2 widget catalog'),
-                ]),
-                .text(' and other categories of the '),
-                a(href: '/ui/widgets', [.text('widget catalog')]),
-                .text('.'),
-              ])
-            else
-              const p([
-                .text('Find more widgets in the '),
-                a(href: '/ui/widgets', [.text('widget catalog')]),
-                .text('.'),
-              ]),
+            const p([
+              .text('Find more widgets in the '),
+              a(href: '/ui/widgets', [.text('widget catalog')]),
+              .text('.'),
+            ]),
           ]);
         },
       ),
@@ -105,48 +101,20 @@ List<MemoryPage> get widgetCatalogPages {
 
 const _additionalCatalogContent = {
   'Material components': '''
-Flutter provides a variety of visual, behavioral, and motion-rich widgets
-that implement the [Material 3][] design specification.
-Material 3 is the default design language of Flutter,
-enabling you to design and build beautiful, usable apps
+Flutter's `material_ui` provides a variety of visual, behavioral,
+and motion-rich widgets that implement the [Material 3][] design specification.
+Material enables you to design and build beautiful, usable apps
 that can adapt to any platform.
 
-:::secondary
-The transition to Material 3 as the default was
-completed in Flutter 3.16.
+Previously, Material was part of the core Flutter SDK, but it has been
+decoupled from the framework. You can access Material from the
+[`material_ui`][] package on pub.dev. For more information, visit
+the [decoupling migration guide][].
 
-To learn more about this transition, how to complete it for your own widgets,
-or how to temporarily opt-out, check out
-the [Migrate to Material 3][] migration guide.
-:::
-
-To catch these and other widgets in action,
-check out the [Material 3 demo][] web app.
-
-[Material 3]: https://m3.material.io/get-started
-[Migrate to Material 3]: /release/breaking-changes/material-3-migration
-[Material 3 demo]: https://github.com/flutter/samples/tree/main/material_3_demo/
-''',
-  'Material 2 components': '''
-Flutter provides a variety of widgets
-that implement the [Material 2][] design guidelines,
-enabling you to create intuitive and beautiful apps.
-
-:::version-note
-[Material 3][], the latest version of Material Design, is
-Flutter's default design language as of Flutter 3.16.
-
-Material 2 will eventually be deprecated.
-To learn more about this transition, check out
-the [Migrate to Material 3][] migration guide.
-
-Also check out the [Material 3 widget catalog][].
-:::
-
+[decoupling migration guide]: /release/breaking-changes/material-ui-and-cupertino-ui
+[`material_ui`]: http://pub.dev/packages/material_ui
 [Material 3]: https://m3.material.io/
-[Material 2]: https://m2.material.io/design
-[Migrate to Material 3]: /release/breaking-changes/material-3-migration
-[Material 3 widget catalog]: /ui/widgets/material
+[Material widget catalog]: /ui/widgets/material
 ''',
 };
 

@@ -19,7 +19,7 @@ A minimal package consists of the following:
 
 :::note
 For a list of dos and don'ts when writing an effective plugin,
-see the Medium article by Mehmet Fidanboylu,
+see the Flutter blog post by Mehmet Fidanboylu,
 [Writing a good plugin][].
 :::
 
@@ -48,7 +48,7 @@ Packages can contain more than one kind of content:
   A concrete example is the [`url_launcher`][] plugin package.
   To see how to use the `url_launcher` package, and how it
   was extended to implement support for web,
-  see the Medium article by Harry Terkelsen,
+  see the Flutter blog post by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
 
 **FFI packages**
@@ -133,6 +133,23 @@ you need to develop a plugin package.
 The API is connected to the platform-specific
 implementation(s) using a [platform channel][].
 
+### Supporting multiple Flutter instances
+
+All Flutter platforms allow apps to create
+[multiple Flutter engines][].
+Each engine creates its own instance of every registered plugin,
+and those plugin instances can have independent lifetimes.
+Don't assume that a plugin class has only one instance.
+Keep engine-specific state on the plugin instance rather than
+in global or static variables, and clean it up when the plugin
+detaches from its engine.
+
+If plugin instances share a native singleton or other global resource,
+coordinate access across the instances, for example by using
+reference counting.
+Release the resource only after every plugin instance
+has stopped using it.
+
 ### Federated plugins
 
 **Federated plugins** are a way of splitting the API of a plugin
@@ -210,7 +227,7 @@ endorsed plugin implementation of `foobar`.
 
 For more information on federated plugins,
 why they are useful, and how they are
-implemented, see the Medium article by Harry Terkelsen,
+implemented, see the Flutter blog post by Harry Terkelsen,
 [How To Write a Flutter Web Plugin, Part 2][].
 
 ### Specifying a plugin's supported platforms {:#plugin-platforms}
@@ -460,9 +477,14 @@ Then use the following steps:
    `hello/example/ios/Runner.xcworkspace` file.
 
 The iOS platform code for your plugin is located in
+`hello/ios/hello/Sources/hello`
+(or `hello/darwin/hello/Sources/hello` if using `sharedDarwinSource`).
+In the Project Navigator, it's under **Runner** > **Flutter** > **hello**.
+
+If your plugin uses the legacy CocoaPods structure,
+its platform code is located under
 `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
-in the Project Navigator. (If you are using `sharedDarwinSource`,
-the path will end with `Flutter/hello/Sources/hello` instead.)
+in the Project Navigator.
 
 You can run the example app by pressing the run (&#9654;) button.
 
@@ -525,16 +547,34 @@ pod files during the native app build step.
 
 If your plugin requires a privacy manifest, for example,
 if it uses any **required reason APIs**,
-update the `PrivacyInfo.xcprivacy` file to
-describe your plugin's privacy impact,
-and add the following to the bottom of your podspec file:
+update the `hello/ios/hello/Sources/hello/PrivacyInfo.xcprivacy` file to
+describe your plugin's privacy impact.
+Then uncomment the `PrivacyInfo.xcprivacy` resource
+in your plugin's `Package.swift` file:
 
-```ruby
-s.resource_bundles = {'your_plugin_privacy' => ['your_plugin/Sources/your_plugin/Resources/PrivacyInfo.xcprivacy']}
+```swift title="Package.swift" highlightLines=8
+targets: [
+  .target(
+    name: "hello",
+    dependencies: [
+      .product(name: "FlutterFramework", package: "FlutterFramework")
+    ],
+    resources: [
+      .process("PrivacyInfo.xcprivacy"),
+    ]
+  )
+]
+```
+
+To also include the privacy manifest when your plugin is used with CocoaPods,
+uncomment the following line in your `hello.podspec` file:
+
+```ruby title="hello.podspec"
+s.resource_bundles = {'hello_privacy' => ['hello/Sources/hello/PrivacyInfo.xcprivacy']}
 ```
 
 For more information,
-check out [Privacy manifest files][] on the Apple developer site.
+consult [Privacy manifest files][] on the Apple developer site.
 
 [Privacy manifest files]: {{site.apple-dev}}/documentation/bundleresources/privacy_manifest_files
 
@@ -999,7 +1039,35 @@ For more information on `build.gradle` files, see the
 ### iOS
 
 The following example sets a dependency for
-`url_launcher` in `hello/ios/hello.podspec`:
+`url_launcher` in `hello/ios/hello/Package.swift`:
+
+```swift
+let package = Package(
+  // lines skipped
+  dependencies: [
+    .package(path: "../url_launcher"),
+  ],
+  targets: [
+    .target(
+      name: "hello",
+      dependencies: [
+        .product(name: "url_launcher", package: "url_launcher"),
+      ],
+    ),
+  ],
+)
+```
+
+You can now `import url_launcher` and
+access the source code at `hello/ios/hello/Sources`.
+
+For additional details on Swift package manifests,
+consult [Apple's PackageDescription documentation][].
+
+#### CocoaPods (legacy)
+
+If your plugin supports CocoaPods for backward compatibility,
+set a dependency in `hello/ios/hello.podspec`:
 
 ```ruby
 Pod::Spec.new do |s|
@@ -1011,14 +1079,15 @@ You can now `#import "UrlLauncherPlugin.h"` and
 access the `UrlLauncherPlugin` class in the source code
 at `hello/ios/Classes`.
 
-For additional details on `.podspec` files, see the
-[CocoaPods Documentation][].
+For additional details on `.podspec` files,
+consult the [CocoaPods Documentation][].
 
 ### Web
 
 All web dependencies are handled by the `pubspec.yaml`
 file, like any other Dart package.
 
+[Apple's PackageDescription documentation]: {{site.apple-dev}}/documentation/packagedescription
 [bind-native]: /platform-integration/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
@@ -1035,6 +1104,7 @@ file, like any other Dart package.
 [How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
 [How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
+[multiple Flutter engines]: /add-to-app/multiple-flutters
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
 [`package:ffigen`]: {{site.pub}}/packages/ffigen
@@ -1046,4 +1116,22 @@ file, like any other Dart package.
 [test your plugin]: #testing-your-plugin
 [unit tests]: /testing/overview#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
+## Bundle AI package skills
+
+You can help AI coding assistants use your package effectively by bundling
+custom instructions and recipes directly inside your repository.
+
+To distribute skills with your package:
+
+1. Create a `skills/` directory in the root of your package repo.
+2. Inside `skills/`, create a subdirectory named after your package (for
+   example, `skills/<package_name>/`).
+3. Add a `SKILL.md` file with guidelines and idiomatic code examples.
+4. Publish your package to `pub.dev`.
+
+When developers add your package as a dependency, their assistants can
+automatically discover your instructions. To learn more about authoring
+guidelines and best practices, check out
+[Ship skills with packages](https://dart.dev/tools/pub/package-skills).
+
 [Writing a good plugin]: {{site.flutter-blog}}/writing-a-good-flutter-plugin-1a561b986c9c

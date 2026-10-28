@@ -44,7 +44,7 @@ an iOS physical device or on the iOS Simulator.
     ```
 
     If you downloaded Xcode elsewhere or need to use a different version,
-    replace `/Applications/Xcode.app` with the path to there instead.
+    replace `/Applications/Xcode.app` with the path to your Xcode installation.
 
  1. <h3>Agree to the Xcode licenses</h3>
 
@@ -95,15 +95,19 @@ an iOS physical device or on the iOS Simulator.
 
 ## Set up an iOS device {: #set-up-devices}
 
-We recommend starting with the iOS Simulator as
-it's easier to get set up than a physical iOS device.
-However, you should also test your app on an actual
-physical device.
+It's easiest to first set up the simulator,
+but be sure to also test your app on a physical device.
 
 <Tabs key="ios-simulator-or-physical-device">
 <Tab name="Simulator">
 
-Start the iOS Simulator with the following command:
+Start the simulator (renamed to Device Hub on Xcode 27):
+
+```console
+$ open -a DeviceHub
+```
+
+On Xcode 26 or earlier, start the Simulator app:
 
 ```console
 $ open -a Simulator
@@ -118,8 +122,6 @@ on the Apple Developer site.
 </Tab>
 <Tab name="Physical device">
 
-[Flutter on latest iOS]: /platform-integration/ios/ios-latest
-
 Set up each iOS device on which you want to test.
 
  1. <h3>Configure your physical iOS device</h3>
@@ -133,10 +135,18 @@ Set up each iOS device on which you want to test.
 
        ![Trust Mac](/assets/images/docs/setup/trust-computer.png)
 
- 1. <h3>Configure your physical iOS device</h3>
+ 1. <h3>Enable Developer Mode</h3>
 
     Apple requires enabling **[Developer Mode][]**
     on the device to protect against malicious software.
+
+    :::note
+    If the **Developer Mode** option is not visible
+    under **Settings > Privacy & Security**, connect the device
+    to your Mac, unlock it, and trust the computer.
+    Open Xcode (or run `flutter run`) to initiate device configuration,
+    which makes the option appear.
+    :::
 
     1. Tap on **Settings** <span aria-label="and then">></span>
        **Privacy & Security** <span aria-label="and then">></span>
@@ -168,7 +178,7 @@ Set up each iOS device on which you want to test.
 
     :::note Apple Developer program
     When you want to _deploy_ your app to the App Store,
-    you'll need to upgrade your personal Apple Developer account to
+    you must upgrade your personal Apple Developer account to
     a professional account.
     :::
 
@@ -207,6 +217,17 @@ Set up each iOS device on which you want to test.
 
 </Tab>
 </Tabs>
+
+## Run an app in debug mode {: #run-in-debug-mode}
+
+Run `flutter devices` from your Flutter project directory
+to list available devices and simulators.
+Then replace the placeholder with the ID for your target,
+and run your app in debug mode:
+
+```console
+$ flutter run -d <device_id>
+```
 
 ---
 

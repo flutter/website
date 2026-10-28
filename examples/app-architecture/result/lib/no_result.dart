@@ -3,7 +3,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class UserProfile {
   final String name;
@@ -108,7 +108,7 @@ class UserProfileViewModelNoTryCatch extends ChangeNotifier {
 
 class DatabaseService {
   Future<UserProfile> createTemporaryUser() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future<void>.delayed(const Duration(seconds: 2));
     return UserProfile('John Doe', 'john@example.com');
   }
 }

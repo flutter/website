@@ -30,7 +30,7 @@ A Deep Dive Into the System Navigation Bar in Android][article].
 You can also find more discussion in [Issue 168635][] on GitHub.
 
 [article]: https://leancode.co/blog/mastering-edge-to-edge-in-flutter
-[Issue 168635]: {{site.github}}/flutter/flutter/issues/168635#issuecomment-3485274018
+[Issue 168635]: {{site.repo.flutter}}/issues/168635#issuecomment-3485274018
 
 ## Android 15 (and below)
 

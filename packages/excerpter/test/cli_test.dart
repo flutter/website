@@ -27,4 +27,39 @@ void main() {
 
     expect(process.exitCode, equals(1));
   });
+
+  test('multiple stale excerpts return one failure exit code', () {
+    final temporaryDirectory = Directory.systemTemp.createTempSync(
+      'excerpter-cli-test-',
+    );
+    addTearDown(() => temporaryDirectory.deleteSync(recursive: true));
+
+    File(
+      path.join(temporaryDirectory.path, 'source.dart'),
+    ).writeAsStringSync('void main() {}\n');
+    final target = File(path.join(temporaryDirectory.path, 'target.md'))
+      ..writeAsStringSync(
+        '<?code-excerpt "source.dart"?>\n'
+        '```dart\n'
+        'outdated\n'
+        '```\n'
+        '\n'
+        '<?code-excerpt "source.dart"?>\n'
+        '```dart\n'
+        'outdated\n'
+        '```\n',
+      );
+
+    final process = Process.runSync(Platform.executable, [
+      'run',
+      excerpterPath,
+      '--dry-run',
+      '--fail-on-update',
+      '--base-source=${temporaryDirectory.path}',
+      target.path,
+    ]);
+
+    expect(process.stdout, contains('2 out of 2 excerpts'));
+    expect(process.exitCode, equals(1));
+  });
 }

@@ -15,8 +15,8 @@ This file provides a curated list of resources to help Large Language Models und
 
 ## Latest release
 
-- [What's new in Flutter 3.41](https://blog.flutter.dev/whats-new-in-flutter-3-41-302ec140e632): The official announcement for the 3.41 release of Flutter.
-- [Announcing Dart 3.11](https://blog.dart.dev/announcing-dart-3-11-b6529be4203a): The official announcement for the 3.11 release of Dart.
+- [What's new in Flutter 3.44](https://flutter.dev/blog/whats-new-in-flutter-3-44): The official announcement for the 3.44 release of Flutter.
+- [Announcing Dart 3.12](https://dart.dev/blog/announcing-dart-3-12): The official announcement for the 3.12 release of Dart.
 
 ## Learning resources
 
@@ -41,7 +41,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Retrieve the value of a text field](https://docs.flutter.dev/cookbook/forms/retrieve-input): Get the text a user has entered.
 - [Focus a text field](https://docs.flutter.dev/cookbook/forms/focus): Programmatically focus a text field.
 - [Basic list](https://docs.flutter.dev/cookbook/lists/basic-list): Create a simple scrolling list.
-- [Grid list](https://docs.flutter.dev/cookbook/lists/grid-list): Display items in a grid.
+- [Grid list](https://docs.flutter.dev/cookbook/lists/grid-lists): Display items in a grid.
 - [Horizontal list](https://docs.flutter.dev/cookbook/lists/horizontal-list): Create a list that scrolls horizontally.
 
 ## Adding interactivity & navigation
@@ -67,9 +67,10 @@ This file provides a curated list of resources to help Large Language Models und
 
 ## Data & backend
 
+- [Choose a database for your Flutter app](https://docs.flutter.dev/data-and-backend/persistence/choose-a-database): Compare database options for Flutter apps, including Cloud Firestore (recommended default for cloud NoSQL and offline sync), Firebase SQL Connect (recommended default for cloud PostgreSQL with generated type-safe Dart SDKs), on-device SQLite (`sqflite` and `drift`), and key-value storage (`shared_preferences` and `flutter_secure_storage`).
 - [Fetch data from the internet](https://docs.flutter.dev/cookbook/networking/fetch-data): Make a basic HTTP request.
 - [Networking with Flutter](https://docs.flutter.dev/data-and-backend/networking): How to make HTTP requests and handle JSON data.
-- [Firebase for Flutter](https://docs.flutter.dev/data-and-backend/firebase): A guide to using Firebase as a backend for your Flutter app.
+- [Firebase for Flutter](https://docs.flutter.dev/data-and-backend/firebase): Connect your Flutter app to Firebase with `flutterfire configure`, authenticate users with `firebase_auth`, sync NoSQL data with `cloud_firestore`, query PostgreSQL with `firebase_data_connect`, and share Dart code with the experimental `firebase_functions` SDK.
 - [Persist data with SQLite](https://docs.flutter.dev/cookbook/persistence/sqlite): Learn the basics of local database storage.
 - [Store key-value data on disk](https://docs.flutter.dev/cookbook/persistence/key-value): For simple data storage using `shared_preferences`.
 
@@ -79,7 +80,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Firebase AI Logic package](https://pub.dev/packages/firebase_ai): The pub.dev package for Firebase AI Logic.
 - [GenUI SDK for Flutter](https://docs.flutter.dev/ai/genui): Learn how to use the GenUI SDK for Flutter to build more interactive experiences in your apps.
 - [Genkit Dart](https://genkit.dev): An open-source, model-agnostic framework for building AI-powered apps in Dart and Flutter with type-safe schemas, flows, and built-in observability.
-- [Genkit Dart quickstart](https://genkit.dev/docs/dart/get-started): Get started building AI-powered Dart and Flutter apps with Genkit.
+- [Genkit Dart quickstart](https://genkit.dev/docs/dart/overview): Get started building AI-powered Dart and Flutter apps with Genkit.
 
 ## Testing & debugging
 
@@ -98,8 +99,8 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### AI-assisted development
 
-- [Create with AI](https://docs.flutter.dev/ai/create-with-ai): An overview of how to use AI to supercharge your Flutter development.
-- [The Dart and Flutter MCP Server](https://docs.flutter.dev/ai/mcp-server): Technical details on the server that enables AI features in the IDE.
+- [Get started with AI](https://docs.flutter.dev/ai/get-started): How to set up and use AI agent plugins for Flutter and Dart.
+- [How Flutter AI tools work](https://docs.flutter.dev/ai/tools): Technical details on the skills, MCP server, and tools for AI coding assistants.
 - [Supercharge your Dart & Flutter development experience with the Dart and Flutter MCP server](https://blog.flutter.dev/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49): A blog post explaining the benefits of the MCP server.
 - [Gemini in Android Studio now speaks fluent Flutter](https://blog.flutter.dev/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274): A blog post about Gemini's Flutter capabilities in Android Studio.
 
@@ -127,7 +128,6 @@ This file provides a curated list of resources to help Large Language Models und
     - [iOS integration](https://docs.flutter.dev/platform-integration/ios): The main landing page for iOS-specific information.
     - [Build and release for iOS](https://docs.flutter.dev/deployment/ios): A guide to packaging and deploying your Flutter app to the Apple App Store.
 - **Web:**
-    - [Web renderers](https://docs.flutter.dev/platform-integration/web/renderers): Learn about the HTML and CanvasKit renderers.
     - [Building a web application with Flutter](https://docs.flutter.dev/platform-integration/web/building): Configure, run, and build a web application using Flutter.
     - [Adding Flutter to any web application](https://docs.flutter.dev/platform-integration/web/embedding-flutter-web): Embed Flutter views in an existing web app or use Flutter for the full page.
     - [Support for WebAssembly (Wasm)](https://docs.flutter.dev/platform-integration/web/wasm): Compile Flutter web apps to WebAssembly.
@@ -169,7 +169,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Flutter blog](https://blog.flutter.dev): The official blog for the Flutter project.
 - [Flutter release notes](https://docs.flutter.dev/release/release-notes): Detailed notes on what's new in each release.
 - [Flutter breaking changes and migration guides](https://docs.flutter.dev/release/breaking-changes): Breaking changes and migration guides for each Flutter release.
-- [Dart blog](https://blog.dart.dev): The official blog for the Dart language.
+- [Dart blog](https://dart.dev/blog): The official blog for the Dart language.
 - [Dart breaking changes](https://dart.dev/resources/breaking-changes): A list of breaking changes for each Dart release.
 
 ## API reference

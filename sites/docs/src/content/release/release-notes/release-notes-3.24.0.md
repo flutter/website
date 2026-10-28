@@ -148,7 +148,7 @@ check out the Flutter [CHANGELOG][].
 * Maintain the same layout constraints for item in the ReorderableList during dragging as before dragging. by @yiiim in [147863](https://github.com/flutter/flutter/pull/147863)
 * Fix abi key for local golden file testing by @Piinks in [148072](https://github.com/flutter/flutter/pull/148072)
 * Reland Native ios context menu (#143002) (#148238) by @justinmc in [148265](https://github.com/flutter/flutter/pull/148265)
-* Update _handlePushRouteInformation to Future<bool>  to indicate whether any of the observer has handled the route or not by @hangyujin in [147901](https://github.com/flutter/flutter/pull/147901)
+* Update _handlePushRouteInformation to `Future<bool>`  to indicate whether any of the observer has handled the route or not by @hangyujin in [147901](https://github.com/flutter/flutter/pull/147901)
 * Fix leaky tests. by @polina-c in [148434](https://github.com/flutter/flutter/pull/148434)
 * Enhanced enum features for `AnimationStatus` by @nate-thegrate in [147801](https://github.com/flutter/flutter/pull/147801)
 * Add tests for scaffold.of.#.dart API examples. by @ksokolovskyi in [147637](https://github.com/flutter/flutter/pull/147637)

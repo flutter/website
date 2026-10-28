@@ -320,7 +320,8 @@ void main() {
     final valid = <String, Object?>{
       'title': 'FlutterCon',
       'description': 'Conference',
-      'date': '2025-09-24',
+      'startDate': '2025-09-24',
+      'endDate': '2025-09-26',
       'card': 'images/calendar/fluttercon.png',
       'location': 'EMEA',
       'host': 'Community',
@@ -330,7 +331,8 @@ void main() {
     test('decodes valid data and computes derived state', () {
       final decoded = CalendarEvent.fromJson(valid);
       expect(decoded.hasExternalLink, isFalse);
-      expect(decoded.date, DateTime(2025, 9, 24));
+      expect(decoded.startDate, DateTime(2025, 9, 24));
+      expect(decoded.endDate, DateTime(2025, 9, 26));
       expect(decoded.backgroundColor, '#eebb22');
       expect(decoded.location, EventLocation.emea);
       expect(decoded.host, EventHost.community);
@@ -351,8 +353,32 @@ void main() {
       expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
     });
 
-    test('throws when date includes a time', () {
-      final invalid = {...valid}..['date'] = DateTime(2025, 9, 24, 12);
+    test('throws when date is used', () {
+      final invalid = {
+        ...valid,
+        'date': '2025-09-24',
+      };
+      expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
+    });
+
+    test('throws when startDate includes a time', () {
+      final invalid = {
+        ...valid,
+      }..['startDate'] = DateTime(2025, 9, 24, 12);
+      expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
+    });
+
+    test('throws when endDate includes a time', () {
+      final invalid = {
+        ...valid,
+      }..['endDate'] = DateTime(2025, 9, 26, 12);
+      expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
+    });
+
+    test('throws when endDate is before startDate', () {
+      final invalid = {
+        ...valid,
+      }..['endDate'] = '2025-09-23';
       expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
     });
 
@@ -442,18 +468,32 @@ void main() {
   group('BannerContent.fromJson', () {
     final valid = <String, Object?>{
       'text': 'Flutter 3.41 is here',
+      'mobileText': 'Flutter 3.41 is here',
       'link': 'https://blog.flutter.dev',
     };
 
     test('decodes valid data', () {
       final decoded = BannerContent.fromJson(valid);
       expect(decoded.text, 'Flutter 3.41 is here');
+      expect(decoded.mobileText, 'Flutter 3.41 is here');
       expect(decoded.toMap()['text'], 'Flutter 3.41 is here');
+      expect(decoded.toMap()['mobileText'], 'Flutter 3.41 is here');
+    });
+
+    test('decodes without optional mobileText', () {
+      final minimal = {...valid}..remove('mobileText');
+      final decoded = BannerContent.fromJson(minimal);
+      expect(decoded.mobileText, isNull);
     });
 
     test('throws when required field is missing', () {
       final invalid = {...valid}..remove('link');
       expect(() => BannerContent.fromJson(invalid), _throwsMapperException);
+    });
+
+    test('throws when mobileText is blank', () {
+      final invalid = {...valid}..['mobileText'] = ' ';
+      expect(() => BannerContent.fromJson(invalid), _throwsValidationError);
     });
 
     test('throws when link is not a URL or root-relative path', () {

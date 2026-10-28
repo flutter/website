@@ -1,7 +1,9 @@
 include: package:analysis_defaults/analysis.yaml
 
 analyzer:
-  exclude: [src]
+  exclude:
+    - build/**
+    - src
 
 formatter:
   trailing_commas: preserve

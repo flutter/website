@@ -26,7 +26,7 @@
     h3 {
       font-size: var(--font-size-heading-2);
       margin-bottom: var(--gutter-sm);
-      font-weight: var(--font-weight-default);
+      font-weight: var(--font-weight-normal);
       max-width: 820px;
     }
 
@@ -164,8 +164,8 @@
   &.try-flutter-insert {
     background-image: linear-gradient(to right, #b993f4, #53c0f9, #00f0ea);
     border-radius: 40px;
-    font-family: var(--font-gsans);
-    
+    font-family: var(--font-ui);
+
     .text {
       h2 {
         font-size: 48px;
@@ -181,7 +181,7 @@
         background-color: #ffffff;
         border-color: #ffffff;
         color: #6a1ff4 !important;
-        font-weight: 700;
+        font-weight: var(--font-weight-bold);
         margin-right: var(--gutter-sm);
       }
 

@@ -13,5 +13,4 @@ Future<http.Response> deleteAlbum(String id) async {
 
   return response;
 }
-
 // #enddocregion deleteAlbum

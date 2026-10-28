@@ -41,5 +41,4 @@ class ShimmerState extends State<Shimmer> {
     return widget.child ?? const SizedBox();
   }
 }
-
 // #enddocregion ShimmerState

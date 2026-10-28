@@ -5,9 +5,9 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/components/common/client/simple_tooltip.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
-import '../components/common/client/simple_tooltip.dart';
-import '../components/util/component_ref.dart';
 import '../pages/glossary.dart';
 
 /// A node-processing, page extension for Jaspr Content that looks for links to
@@ -52,8 +52,8 @@ class GlossaryLinkProcessor implements PageExtension {
             Builder(
               builder: (context) {
                 return SimpleTooltip(
-                  target: context.ref(target),
-                  content: context.ref(content),
+                  target: ref(target),
+                  content: ref(content),
                 );
               },
             ),
@@ -94,7 +94,7 @@ class GlossaryTooltipContent extends StatelessComponent {
                 'Learn more about \'${entry.term}\' and '
                 'find related resources.',
           },
-          [const .text('Learn more')],
+          const [.text('Learn more')],
         ),
       ]),
     ]);

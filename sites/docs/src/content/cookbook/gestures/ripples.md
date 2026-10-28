@@ -22,9 +22,8 @@ Create a ripple effect using the following steps:
 InkWell(
   // When the user taps the button, show a snackbar.
   onTap: () {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('Tap')));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('Tap')));
   },
   child: const Padding(
     padding: EdgeInsets.all(12),
@@ -78,9 +77,8 @@ class MyButton extends StatelessWidget {
     return InkWell(
       // When the user taps the button, show a snackbar.
       onTap: () {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text('Tap')));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(content: Text('Tap')));
       },
       child: const Padding(
         padding: EdgeInsets.all(12),
@@ -96,4 +94,4 @@ class MyButton extends StatelessWidget {
 </noscript>
 
 
-[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`InkWell`]: {{site.material_ui}}/InkWell-class.html

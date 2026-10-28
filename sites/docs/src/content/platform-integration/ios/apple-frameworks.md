@@ -50,32 +50,31 @@ You might need to change app settings or initialization logic.
 If that's needed, the package's "Readme" page on [pub.dev][]
 should provide details.
 
-### Flutter Plugins and Apple Frameworks
+### Flutter plugins and Apple frameworks
 
-| Use Case                                       | Apple Framework or Class                                                              | Flutter Plugin               |
-|------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------|
-| Access the photo library                       | `PhotoKit` using the `Photos` and `PhotosUI ` frameworks and `UIImagePickerController`| [`image_picker`][]           |
-| Access the camera                              | `UIImagePickerController` using the `.camera` `sourceType`                            | [`image_picker`][]           |
-| Use advanced camera features                   | `AVFoundation`                                                                        | [`camera`][]                 |
-| Offer In-app purchases                         | `StoreKit`                                                                            | [`in_app_purchase`][][^1]    |
-| Process payments                               | `PassKit`                                                                             | [`pay`][][^2]                |
-| Send push notifications                        | `UserNotifications`                                                                   | [`firebase_messaging`][][^3] |
-| Access GPS coordinates                         | `CoreLocation`                                                                        | [`geolocator`][]             |
-| Access sensor data[^4]                         | `CoreMotion`                                                                          | [`sensors_plus`][]           |
-| Make network requests                          | `URLSession`                                                                          | [`http`][]                   |
-| Store key-values                               | `@AppStorage` property wrapper and `NSUserDefaults`                                   | [`shared_preferences`][]     |
-| Persist to a database                          | `CoreData` or SQLite                                                                  | [`sqflite`][]                |
-| Access health data                             | `HealthKit`                                                                           | [`health`][]                 |
-| Use machine learning                           | `CoreML`                                                                              | [`google_ml_kit`][][^5]      |
-| Recognize text                                 | `VisionKit`                                                                           | [`google_ml_kit`][][^5]      |
-| Recognize speech                               | `Speech`                                                                              | [`speech_to_text`][]         |
-| Use augmented reality                          | `ARKit`                                                                               | [`ar_flutter_plugin`][]      |
-| Access weather data                            | `WeatherKit`                                                                          | [`weather`][][^6]            |
-| Access and manage contacts                     | `Contacts`                                                                            | [`contacts_service`][]       |
-| Expose quick actions on the home screen        | `UIApplicationShortcutItem`                                                           | [`quick_actions`][]          |
-| Index items in Spotlight search                | `CoreSpotlight`                                                                       | [`flutter_core_spotlight`][] |
-| Configure, update and communicate with Widgets | `WidgetKit`                                                                           | [`home_widget`][]            |
-| Automate app actions with Siri/Shortcuts       | `AppIntents`                                                                          | [`intelligence`][]            |
+| Use Case                                       | Apple Framework or Class                                                               | Flutter integration          |
+|------------------------------------------------|----------------------------------------------------------------------------------------|------------------------------|
+| Access the photo library                       | `PhotoKit` using the `Photos` and `PhotosUI ` frameworks and `UIImagePickerController` | [`image_picker`][]           |
+| Access the camera                              | `UIImagePickerController` using the `.camera` `sourceType`                             | [`image_picker`][]           |
+| Use advanced camera features                   | `AVFoundation`                                                                         | [`camera`][]                 |
+| Offer In-app purchases                         | `StoreKit`                                                                             | [`in_app_purchase`][][^1]    |
+| Process payments                               | `PassKit`                                                                              | [`pay`][][^2]                |
+| Send push notifications                        | `UserNotifications`                                                                    | [`firebase_messaging`][][^3] |
+| Access GPS coordinates                         | `CoreLocation`                                                                         | [`geolocator`][]             |
+| Access sensor data[^4]                         | `CoreMotion`                                                                           | [`sensors_plus`][]           |
+| Make network requests                          | `URLSession`                                                                           | [`http`][]                   |
+| Store key-values                               | `@AppStorage` property wrapper and `NSUserDefaults`                                    | [`shared_preferences`][]     |
+| Persist to a database                          | `CoreData` or SQLite                                                                   | [`sqflite`][]                |
+| Access health data                             | `HealthKit`                                                                            | [`health`][]                 |
+| Use machine learning                           | `CoreML`                                                                               | [`google_ml_kit`][][^5]      |
+| Recognize text                                 | `VisionKit`                                                                            | [`google_ml_kit`][][^5]      |
+| Recognize speech                               | `Speech`                                                                               | [`speech_to_text`][]         |
+| Use augmented reality                          | `ARKit`                                                                                | [`arkit_plugin`][]           |
+| Access weather data                            | `WeatherKit`                                                                           | [`weather`][][^6]            |
+| Access and manage contacts                     | `Contacts`                                                                             | [`flutter_contacts`][]       |
+| Expose quick actions on the home screen        | `UIApplicationShortcutItem`                                                            | [`quick_actions`][]          |
+| Configure, update and communicate with Widgets | `WidgetKit`                                                                            | [`home_widget`][]            |
+| Automate app actions with Siri/Shortcuts       | `AppIntents`                                                                           | [`intelligence`][]           |
 
 {:.table .table-striped .nowrap}
 
@@ -102,14 +101,13 @@ should provide details.
 [`google_ml_kit`]: {{site.pub-pkg}}/google_ml_kit
 [Use a custom TensorFlow Lite model with Flutter]: {{site.firebase}}/docs/ml/flutter/use-custom-models
 [`speech_to_text`]: {{site.pub-pkg}}/speech_to_text
-[`ar_flutter_plugin`]: {{site.pub-pkg}}/ar_flutter_plugin
+[`arkit_plugin`]: {{site.pub-pkg}}/arkit_plugin
 [`weather`]: {{site.pub-pkg}}/weather
-[`contacts_service`]: {{site.pub-pkg}}/contacts_service
+[`flutter_contacts`]: {{site.pub-pkg}}/flutter_contacts
 [`health`]: {{site.pub-pkg}}/health
 [OpenWeatherMap API]: https://openweathermap.org/api
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [Writing platform-specific code]: /platform-integration/platform-channels
 [`camera`]: {{site.pub-pkg}}/camera
-[`flutter_core_spotlight`]: {{site.pub-pkg}}/flutter_core_spotlight
 [`home_widget`]: {{site.pub-pkg}}/home_widget
 [`intelligence`]: {{site.pub-pkg}}/intelligence

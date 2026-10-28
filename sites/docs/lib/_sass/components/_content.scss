@@ -96,6 +96,10 @@ main {
         background-color: var(--site-raised-bgColor);
         border: var(--site-outline) 1px solid;
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+
+        .dropdown-divider {
+          background-color: var(--site-outline);
+        }
       }
     }
   }
@@ -106,7 +110,7 @@ main {
 
   b,
   strong {
-    font-weight: bolder;
+    font-weight: 600;
   }
 
   h1,

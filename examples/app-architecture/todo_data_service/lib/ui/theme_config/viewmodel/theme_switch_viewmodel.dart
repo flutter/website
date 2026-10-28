@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../data/repositories/theme_repository.dart';
 import '../../../utils/command.dart';
@@ -42,5 +42,4 @@ class ThemeSwitchViewModel extends ChangeNotifier {
     return result;
   }
 }
-
 // #enddocregion ThemeSwitchViewModel

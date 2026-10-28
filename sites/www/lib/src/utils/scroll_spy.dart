@@ -46,9 +46,9 @@ class ScrollNotifier extends ChangeNotifier {
 
     for (var i = 0; i < nodes.length; i++) {
       final node = nodes.item(i) as web.HTMLElement;
-      final data =
-          jsonDecode(node.getAttribute('data-scroll-spy') ?? '[]')
-              as List<Object?>;
+      final data = jsonDecode(
+        node.getAttribute('data-scroll-spy') ?? '[]',
+      ) as List<Object?>;
 
       final offset = data.firstOrNull as int? ?? 0;
       final id = data.skip(1).firstOrNull as String?;

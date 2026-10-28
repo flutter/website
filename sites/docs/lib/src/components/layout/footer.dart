@@ -22,32 +22,13 @@ final class DashFooter extends StatelessComponent {
             attributes: {'title': 'Flutter'},
             [
               img(
-                src:
-                    '/assets/images/branding/flutter/logo+text/horizontal/white.svg',
+                src: '/assets/images/branding/flutter/logo+text/horizontal/white.svg',
                 alt: 'Flutter logo',
                 width: 164,
               ),
             ],
           ),
           div(classes: 'footer-social-links', [
-            a(
-              href: 'https://blog.flutter.dev',
-              target: Target.blank,
-              attributes: {
-                'rel': 'noopener',
-                'title': 'Flutter\'s blog',
-              },
-              [
-                svg([
-                  Component.element(
-                    tag: 'use',
-                    attributes: {
-                      'href': '/assets/images/social/medium.svg#medium',
-                    },
-                  ),
-                ]),
-              ],
-            ),
             a(
               href: 'https://youtube.com/@flutterdev',
               target: Target.blank,

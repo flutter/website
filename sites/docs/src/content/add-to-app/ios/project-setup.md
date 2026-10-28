@@ -13,7 +13,7 @@ however, the CocoaPods registry permanently becomes
 :::
 
 [cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
-[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+[Swift Package Manager]: https://docs.swift.org/latest/documentation/packagemanagerdocs/
 
 Flutter UI components can be incrementally added
 into your existing iOS application using Swift packages.
@@ -166,6 +166,7 @@ The example directory structure resembles the following:
     1. Navigate to your target's **General** tab
        and add `FlutterNativeIntegration` under
        **Frameworks, Libraries, and Embedded Content**.
+
        <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutternativeintegration-library.png" caption="FlutterNativeIntegration under Frameworks, Libraries, and Embedded Content." />
 
  1. <h3>Add build settings</h3>

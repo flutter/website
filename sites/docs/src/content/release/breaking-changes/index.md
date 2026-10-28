@@ -24,10 +24,10 @@ To avoid being broken by future versions of Flutter,
 consider submitting your tests to the framework's [test registry][].
 
 [breaking change policy]: /release/compatibility-policy
-[Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Dart announce]: {{site.groups}}/a/dartlang.org/g/announce
+[Flutter announce]: {{site.groups.flutter-announce}}
+[Dart announce]: {{site.groups.dart-announce}}
 [`dart fix`]: /tools/flutter-fix
-[test registry]: {{site.github}}/flutter/tests
+[test registry]: https://github.com/flutter/tests
 
 ## Breaking changes by release
 
@@ -37,12 +37,31 @@ They're sorted by release and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Added enabled property and made onChanged optional for DropdownButton][]
-* [Large screen orientation and resizability restrictions ignored on Android 17][]
-* [Update semantics header and headingLevel behavior on iOS and Android][]
+* [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
+* [Restrict Android engine flags in release mode][]
+* [Soft hyphens render at line breaks][]
+* [Stricter Android `Intent` verification for app entrypoints][]
+* [Web `viewport-fit=cover` `SafeArea` support][]
+* [WidgetSpan order in right-to-left text][]
 
 [Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
-[Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
+[Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
+[Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
+[Soft hyphens render at line breaks]: /release/breaking-changes/soft-hyphen-rendering
+[Stricter Android `Intent` verification for app entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
+[Web `viewport-fit=cover` `SafeArea` support]: /release/breaking-changes/viewport-fit-cover-safe-area
+[WidgetSpan order in right-to-left text]: /release/breaking-changes/widgetspan-rtl-bidi-order
+
+<a id="released-in-flutter-347" aria-hidden="true"></a>
+### Released in Flutter 3.47
+
+* [OpenGL ES render-to-texture content is stored top-down][]
+* [Update semantics header and headingLevel behavior on iOS and Android][]
+* [Removal of `describeEnum`][]
+
+[OpenGL ES render-to-texture content is stored top-down]: /release/breaking-changes/opengles-render-to-texture-top-down
 [Update semantics header and headingLevel behavior on iOS and Android]: /release/breaking-changes/semantics-header-heading-level
+[Removal of `describeEnum`]: /release/breaking-changes/remove-describeEnum
 
 <a id="released-in-flutter-344" aria-hidden="true"></a>
 ### Released in Flutter 3.44
@@ -52,6 +71,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `TextInputConnection.setStyle`][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [`IconData` class marked as `final`][]
+* [Large screen orientation and resizability restrictions ignored on Android 17][]
 * [ListTile reports an error in debug when wrapped in a colored widget][]
 * [Migrating Flutter Android projects to built-in Kotlin][]
 * [Page transition builders reorganization][]
@@ -61,6 +81,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
 [Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
 [`IconData` class marked as `final`]: /release/breaking-changes/icondata-class-marked-final
+[Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
 [ListTile reports an error in debug when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
 [Migrating Flutter Android projects to built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders

@@ -257,7 +257,7 @@ see [The Framework architecture][] in the
 [debug mode]: /testing/build-modes#debug
 [Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
 [UIKit]: {{site.apple-dev}}/documentation/uikit
-[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 [The Framework architecture]: {{site.repo.flutter}}/blob/main/docs/about/The-Framework-architecture.md
 [MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
 
@@ -338,8 +338,8 @@ from a resource perspective,
 is rendering a texture using an image file.
 First, the compressed image
 is fetched from persistent storage.
-The image is decompressed into host memory (GPU memory),
-and transferred to device memory (RAM).
+The image is decompressed into host memory (RAM),
+and transferred to device memory (GPU memory).
 
 In other words, image I/O can be expensive.
 The cache provides snapshots of complex hierarchies so

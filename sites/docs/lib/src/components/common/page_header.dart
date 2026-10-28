@@ -5,12 +5,13 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/components/common/breadcrumbs.dart';
+import 'package:site_shared/components/common/client/page_header_options.dart';
+import 'package:site_shared/markdown.dart';
+import 'package:site_shared/util.dart';
 
-import '../../markdown/markdown_parser.dart';
-import '../../util.dart';
+import '../../pages/markdown.dart';
 import '../../utils/page_source_info.dart';
-import 'breadcrumbs.dart';
-import 'client/page_header_options.dart';
 
 final class PageHeader extends StatelessComponent {
   const PageHeader({
@@ -28,7 +29,8 @@ final class PageHeader extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    final sourceInfo = context.page.sourceInfo;
+    final page = context.page;
+    final sourceInfo = page.sourceInfo;
 
     return header(
       id: 'site-content-title',
@@ -47,6 +49,7 @@ final class PageHeader extends StatelessComponent {
           ),
         PageHeaderOptions(
           title: title,
+          markdownUrl: canonicalMarkdownOutput.routeForPage(page),
           sourceUrl: sourceInfo.sourceUrl,
           issueUrl: sourceInfo.issueUrl,
         ),

@@ -39,10 +39,10 @@ Atlas Associates’ small team was able to ship Arc, a high-performance app, to 
 
 To power the app, the team chose a hybrid backend of specialized services. For the core experience, they relied on [Firebase](https://firebase.google.com/). [Firestore](https://firebase.google.com/products/firestore) served as the primary database, providing real-time synchronization and robust offline capabilities for ephemeral messages. They used [Firebase Authentication](https://firebase.google.com/products/auth) for a secure identity layer and [App Check](https://firebase.google.com/products/app-check) to ensure all backend requests came from a legitimate instance of their app, creating a critical defense against abuse.
 
-They also used a combination of additional Google Cloud products, including [Cloud Run](https://cloud.google.com/run) for complex, stateful, or computationally intensive microservices, and [Vertex AI](https://cloud.google.com/vertex-ai) for a variety of AI tasks, including calling the Gemini API, RAG and Vertex AI Search.
+They also used a combination of additional Google Cloud products, including [Cloud Run](https://cloud.google.com/run) for complex, stateful, or computationally intensive microservices, and [Vertex AI](https://cloud.google.com/vertex-ai) for a variety of AI tasks, including calling the Gemini API, RAG, and Vertex AI Search.
 
 “ By combining the rapid development capabilities of Flutter and Firebase with the scalable power of Cloud Run and the intelligence of Vertex AI, we have built a platform designed for global competition. ” - Takayuki Miyano, Founder, Atlas Associates
 
 **Results**
 
-Using Flutter with the power of Firebase and Google Cloud, Atlas Associations achieved incredible development velocity—shipping 144 updates in 34 months with a compact team. This sets the team up to move quickly and continue to define the next generation of communication experiences.
+Using Flutter with the power of Firebase and Google Cloud, Atlas Associates achieved incredible development velocity—shipping 144 updates in 34 months with a compact team. This sets the team up to move quickly and continue to define the next generation of communication experiences.

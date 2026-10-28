@@ -1,3 +1,14 @@
+# Marketing site-wide banner content.
+#
+# Fields:
+# - text: Required, non-empty text displayed in wide layouts.
+# - mobileText: Optional, non-empty concise text displayed in narrow layouts.
+#   If omitted, normal `text` field is displayed in every layout.
+# - link: Required, absolute https URL that the whole banner links to.
+
 text: >-
-  Help improve Flutter! Take our Q2 survey
-link: https://google.qualtrics.com/jfe/form/SV_3drKjSfjNeLZfq6?Source=Website
+  Security update: Flutter 3.47.8 now blocks compromised eMudhra CA keys.
+  Read the security advisory
+mobileText: >-
+  Security update: Flutter 3.47.8 is available. Read the security advisory
+link: https://github.com/dart-lang/sdk/security/advisories/GHSA-frr6-h895-5pxp

@@ -90,5 +90,4 @@ class _ExpandableFabState extends State<ExpandableFab> {
     );
   }
 }
-
 // #enddocregion ExpandableFabState

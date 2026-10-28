@@ -12,7 +12,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Travel & Lifestyle
+  - Media and Entertainment
 tags:
   - mobile
   - android

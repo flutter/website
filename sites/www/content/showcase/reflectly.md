@@ -1,6 +1,9 @@
 ---
 title: Reflectly
-description: Despite having just two engineers, the Reflectly team was able to deliver both an iOS and Android app in just 2.5 months. Watch the video above to learn more about how the team accomplished this feat.
+description:
+  Despite having just two engineers, the Reflectly team was able to deliver both
+  an iOS and Android app in just 2.5 months. Watch the video above to learn more
+  about how the team accomplished this feat.
 headline: Reflectly
 summary: Reflectly designs unique digital experiences with Flutter
 companyName: Reflectly
@@ -13,7 +16,6 @@ platforms:
   - Mobile
 industries:
   - Health
-  - Travel & Lifestyle
 successMetrics:
   - perc: 50
     desc: decrease in development time
@@ -26,4 +28,6 @@ tags:
 publishDate: 2021-11-05
 ---
 
-Despite having just two engineers, the Reflectly team was able to deliver both an iOS and Android app in just 2.5 months. Watch the video above to learn more about how the team accomplished this feat.
+Despite having just two engineers, the Reflectly team was able to deliver both
+an iOS and Android app in just 2.5 months. Watch the video above to learn more
+about how the team accomplished this feat.

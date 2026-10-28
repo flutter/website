@@ -13,7 +13,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   // Define the focus node. To manage the lifecycle, create the FocusNode in
   // the initState method, and clean it up in the dispose method.
-  late FocusNode myFocusNode;
+  late final FocusNode myFocusNode;
 
   @override
   void initState() {
@@ -35,6 +35,5 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     return TextField(focusNode: myFocusNode);
   }
-
   // #enddocregion Build
 }

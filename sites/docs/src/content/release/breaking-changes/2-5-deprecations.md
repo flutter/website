@@ -111,8 +111,8 @@ Relevant PRs:
 
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
-[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
-[`DropdownButtonFormField`]: {{site.api}}/flutter/material/DropdownButtonFormField-class.html
+[`TextFormField`]: {{site.material_ui}}/TextFormField-class.html
+[`DropdownButtonFormField`]: {{site.material_ui}}/DropdownButtonFormField-class.html
 [`AutovalidateMode`]: {{site.api}}/flutter/widgets/AutovalidateMode-class.html
 
 ---
@@ -357,8 +357,8 @@ Relevant PRs:
 [In-depth migration guide available]: /release/breaking-changes/bottom-navigation-title-to-label
 [BottomNavigationBarItem title]: /go/bottom-navigation-bar-title-deprecation
 [`BottomNavigationBarItem`]: {{site.api}}/flutter/widgets/BottomNavigationBarItem-class.html
-[`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
-[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
+[`BottomNavigationBar`]: {{site.material_ui}}/BottomNavigationBar-class.html
+[`Tooltip`]: {{site.material_ui}}/Tooltip-class.html
 
 ---
 
@@ -419,8 +419,8 @@ Relevant PRs:
 [`Platform.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-io/Platform/packageConfig.html
 [`Isolate.packageConfig`]: {{site.dart.api}}/stable/2.15.1/dart-isolate/Isolate/packageConfig.html
 [`Platform.packageConfig`]: {{site.pub-api}}/platform/3.0.0/platform/Platform/packageConfig.html
-[#47769]: {{site.github}}/dart-lang/sdk/issues/47769
-[PR #38]: {{site.github}}/google/platform.dart/pull/38
+[#47769]: {{site.repo.dart-sdk}}/issues/47769
+[PR #38]: https://github.com/google/platform.dart/pull/38
 [PR #94603]: {{site.repo.flutter}}/pull/94603
 
 ---

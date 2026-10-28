@@ -1,6 +1,6 @@
 // ignore_for_file: directives_ordering, prefer_const_constructors
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:provider/provider.dart';
 
 // #docregion imports
@@ -8,6 +8,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'firebase_options.dart';
+
 // #enddocregion imports
 
 void main() async {

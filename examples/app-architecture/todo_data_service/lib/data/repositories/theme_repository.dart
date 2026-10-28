@@ -38,5 +38,4 @@ class ThemeRepository {
   /// ViewModels should call [isDarkMode] to get the current theme setting.
   Stream<bool> observeDarkMode() => _darkModeController.stream;
 }
-
 // #enddocregion ThemeRepository

@@ -18,10 +18,10 @@ A demo of hot reload in DartPad
 
 ## How to perform a hot reload
 
-If you are using an AI coding assistant like [Google Antigravity](/ai/antigravity),
-you can use Agent mode to automatically hot reload your running application
-as soon as you prompt the agent to apply changes.
-For details, see [Agentic Hot Reload](/ai/antigravity#agentic-hot-reload).
+If you are using an AI coding assistant like Google Antigravity,
+the assistant can automatically hot reload your running application after
+making changes, or when asked to "Reload the app".
+To learn more, check out [Get started with AI](/ai/get-started).
 
 To hot reload a Flutter app manually:
 
@@ -377,7 +377,7 @@ For example, consider the following code:
 
 <?code-excerpt "lib/hot-reload/before.dart (build)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(MyApp());
@@ -398,6 +398,7 @@ After running this app, change the code as follows:
 <?code-excerpt "lib/hot-reload/after.dart (main)"?>
 ```dart
 import 'package:flutter/widgets.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const Center(child: Text('Hello', textDirection: TextDirection.ltr)));
@@ -440,4 +441,4 @@ widgets and render objects.
 [Dart runtime]: {{site.dart-site}}/overview#platform
 [Flutter editor]: /tools/editors
 [Issue 43574]: {{site.repo.flutter}}/issues/43574
-[kernel files]: {{site.github}}/dart-lang/sdk/tree/main/pkg/kernel
+[kernel files]: {{site.repo.dart-sdk}}/tree/main/pkg/kernel

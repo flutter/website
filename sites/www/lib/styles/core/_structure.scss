@@ -1,7 +1,7 @@
 @use 'breakpoints';
 
 main {
-  background-color: white;
+  background-color: var(--site-base-bgColor);
   flex: 1 0 auto;
   overflow: hidden;
 }
@@ -20,7 +20,7 @@ main {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 2.19%;
   margin: 0 auto;
-  max-width: var(--screen-xl-min);  
+  max-width: var(--screen-xl-min);
 }
 
 .centered {

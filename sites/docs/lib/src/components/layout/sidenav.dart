@@ -5,11 +5,11 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/util.dart';
 
 import '../../models/sidenav_model.dart';
-import '../../util.dart';
 import '../../utils/active_nav.dart';
-import '../common/material_icon.dart';
 
 /// The site-wide side navigation menu,
 /// with entries loaded from files in the `src/data/sidenav` directory.
@@ -44,7 +44,7 @@ final class DashSideNav extends StatelessComponent {
           active: activeEntry == ActiveNavEntry.learn,
         ),
         _TopNavItem(
-          href: '/ai/create-with-ai',
+          href: '/ai/get-started',
           label: 'AI',
           iconId: 'auto_awesome',
           active: activeEntry == ActiveNavEntry.ai,
@@ -361,9 +361,11 @@ final class _ActiveNavigationPath {
       final entry = entries[entryIndex];
       final newPath = [...currentPath, entryIndex];
 
-      if (entry case NavLink(
-        :final permalink,
-      ) when !_isExternalLink(permalink)) {
+      if (entry
+          case NavLink(
+            :final permalink,
+          )
+          when !_isExternalLink(permalink)) {
         final normalizedPermalink = _normalizePermalink(permalink);
         results[normalizedPermalink] = newPath;
       } else if (entry case NavSection(:final children)) {

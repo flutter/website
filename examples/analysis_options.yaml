@@ -3,7 +3,7 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   language:
     strict-casts: true
-    # strict-inference: true
+    strict-inference: true
     strict-raw-types: true
   errors:
     avoid_print: ignore
@@ -28,13 +28,13 @@ linter:
     - missing_code_block_language_in_doc_comment
     - no_self_assignments
     - no_wildcard_variable_uses
-    - one_member_abstracts
     - only_throw_errors
     - prefer_asserts_in_initializer_lists
     - prefer_const_constructors
     - prefer_const_declarations
     - prefer_const_literals_to_create_immutables
     - prefer_final_fields
+    - prefer_if_elements_to_conditional_expressions
     - prefer_relative_imports
     - prefer_single_quotes
     - simple_directive_paths
@@ -51,6 +51,7 @@ linter:
     - unnecessary_library_directive
     - unnecessary_null_aware_operator_on_extension_on_nullable
     - unnecessary_parenthesis
+    - unnecessary_primary_constructor_body
     - unnecessary_statements
     - unnecessary_unawaited
     - unnecessary_underscores

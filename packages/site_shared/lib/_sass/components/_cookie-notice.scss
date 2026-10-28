@@ -1,0 +1,62 @@
+@use '../base/mixins';
+
+// Align the managed banner with the site theme, including dark mode.
+body .glue-cookie-notification-bar {
+  background-color: var(--site-inset-bgColor);
+  color: var(--site-inset-fgColor);
+  padding: .75rem 1rem;
+  z-index: var(--site-z-top);
+
+  .glue-cookie-notification-bar__text {
+    font-family: var(--site-body-fontFamily);
+    font-size: inherit;
+    color: inherit;
+  }
+
+  .glue-cookie-notification-bar__more {
+    white-space: nowrap;
+
+    &, &:visited {
+      color: var(--site-link-fgColor);
+    }
+
+    &:hover, &:focus, &:active {
+      color: var(--site-link-fgColor-active);
+      background-color: var(--site-raised-bgColor);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--site-link-fgColor);
+    }
+  }
+
+  .glue-cookie-notification-bar__accept,
+  .glue-cookie-notification-bar__reject {
+    height: 40px;
+    min-height: 40px;
+    font-family: var(--site-ui-fontFamily);
+    font-size: 14px;
+    white-space: nowrap;
+
+    // Preserve the managed banner's system colors in high contrast mode.
+    @media (forced-colors: none) {
+      &, &:visited, &:hover, &:focus, &:active {
+        background-color: var(--site-filledButton-bgColor);
+        color: var(--site-filledButton-fgColor);
+      }
+
+      &:hover {
+        @include mixins.interaction-style(4%);
+      }
+
+      &:active {
+        @include mixins.interaction-style(8%);
+      }
+
+      &:focus {
+        border-color: var(--site-inset-bgColor);
+        box-shadow: 0 0 0 2px var(--site-link-fgColor);
+      }
+    }
+  }
+}

@@ -13,7 +13,6 @@ platforms:
   - Mobile
 industries:
   - Banking & Finance
-  - Google
 successMetrics:
   - perc: 70
     desc: reduction in engineering effort

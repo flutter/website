@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+
 // #enddocregion imports
 
 void main() async {
@@ -148,5 +149,4 @@ class Dog {
     return 'Dog{id: $id, name: $name, age: $age}';
   }
 }
-
 // #enddocregion Dog

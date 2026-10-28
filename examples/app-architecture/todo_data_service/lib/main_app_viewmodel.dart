@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'data/repositories/theme_repository.dart';
 import 'utils/result.dart';
@@ -37,5 +37,4 @@ class MainAppViewModel extends ChangeNotifier {
     super.dispose();
   }
 }
-
 // #enddocregion MainAppViewModel

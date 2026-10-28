@@ -206,7 +206,7 @@ Otherwise, do the following:
    This command requires administrator privileges.
 
 [Flutter SDK archive]: /install/archive
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[flutter-announce]: {{site.groups.flutter-announce}}
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
 [test registry]: {{site.repo.organization}}/tests
 [contribute to Flutter]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md

@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -85,12 +85,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
     // The 'echo' isolate sends its SendPort as the first message.
     SendPort sendPort = await receivePort.first as SendPort;
 
-    final msg =
-        await sendReceive(
-              sendPort,
-              'https://jsonplaceholder.typicode.com/posts',
-            )
-            as List<Object?>;
+    final msg = await sendReceive(
+      sendPort,
+      'https://jsonplaceholder.typicode.com/posts',
+    ) as List<Object?>;
     final posts = msg.cast<Map<String, Object?>>();
 
     setState(() {
@@ -121,6 +119,5 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
-
   // #enddocregion load-data
 }

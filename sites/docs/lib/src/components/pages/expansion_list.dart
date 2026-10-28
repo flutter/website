@@ -7,9 +7,8 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
-
-import '../../markdown/markdown_parser.dart';
-import '../../util.dart';
+import 'package:site_shared/markdown.dart';
+import 'package:site_shared/util.dart';
 
 class ExpansionListItem {
   ExpansionListItem({
@@ -141,8 +140,7 @@ class _ExpansionListState extends State<ExpansionList> {
                     )
                   else
                     const img(
-                      src:
-                          '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
+                      src: '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
                       alt: 'An icon showing a generic application.',
                     ),
                 ]),
@@ -172,8 +170,8 @@ class _ExpansionListState extends State<ExpansionList> {
             [
               DashMarkdown(content: item.content),
               p([
-                a(href: item.url, [
-                  const .text('Read full article'),
+                a(href: item.url, const [
+                  .text('Read full article'),
                 ]),
               ]),
               // Required to add "margin" that doesn't cause expansion jank.

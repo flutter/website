@@ -24,7 +24,6 @@ class MacOSCompositionWidget extends StatelessWidget {
       creationParamsCodec: const StandardMessageCodec(),
     );
   }
-
   // #enddocregion macos-composition
 }
 
@@ -50,6 +49,5 @@ class TogetherWidget extends StatelessWidget {
         throw UnsupportedError('Unsupported platform view');
     }
   }
-
   // #enddocregion together-widget
 }

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class RowExample extends StatelessWidget {
   const RowExample({super.key});
@@ -16,7 +16,6 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion row
 }
 
@@ -60,7 +59,6 @@ class GridExample extends StatelessWidget {
       }),
     );
   }
-
   // #enddocregion grid
 }
 
@@ -80,7 +78,6 @@ class StackExample extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion stack
 }
 
@@ -92,7 +89,6 @@ class ScrollViewExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SingleChildScrollView(child: Text('Long Content'));
   }
-
   // #enddocregion scroll-view
 }
 
@@ -111,6 +107,5 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion list-view
 }

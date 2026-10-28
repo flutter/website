@@ -1,6 +1,6 @@
 // #docregion english-words
 import 'package:english_words/english_words.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,5 +25,4 @@ class DemoPage extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion english-words

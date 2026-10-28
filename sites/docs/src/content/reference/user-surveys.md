@@ -25,7 +25,7 @@ We use the responses you submit via survey to improve
 Flutter and Dart. We store this information independent
 of the information sent to Google via analytics.
 To see how we used prior surveys to improve Flutter and Dart,
-check out our blogs on [Medium][].
+check out the survey posts on the [Flutter blog][].
 
 ## How can I disable it?
 
@@ -37,4 +37,4 @@ To mute survey announcements, you might do one of the following:
   [Disabling
 analytics reporting](/reference/crash-reporting#disabling-analytics-reporting).
 
-[Medium]: {{site.flutter-blog}}/search?q=survey
+[Flutter blog]: {{site.flutter-blog}}/search?q=survey

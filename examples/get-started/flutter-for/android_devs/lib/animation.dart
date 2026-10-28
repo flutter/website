@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const FadeAppTest());
@@ -39,6 +39,12 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       vsync: this,
     );
     curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override

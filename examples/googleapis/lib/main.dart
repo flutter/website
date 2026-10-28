@@ -9,17 +9,17 @@ import 'dart:convert';
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 // #enddocregion auth-import
 
-import 'package:flutter/material.dart';
-
 // #docregion google-import
 /// Provides the `GoogleSignIn` class.
 import 'package:google_sign_in/google_sign_in.dart';
 // #enddocregion google-import
 
 // #docregion youtube-import
-/// Provides the `YouTubeApi` class.
+// Provides the `YouTubeApi` class.
 import 'package:googleapis/youtube/v3.dart';
 // #enddocregion youtube-import
+
+import 'package:material_ui/material_ui.dart';
 
 const _title = 'My YouTube Favorites';
 
@@ -37,8 +37,8 @@ class _LikedVideosWidget extends StatefulWidget {
 class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   // #docregion post-init
   GoogleSignInAccount? _currentUser;
-
   // #enddocregion post-init
+
   List<PlaylistItemSnippet>? _favoriteVideos;
 
   // #docregion init
@@ -189,9 +189,8 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
       }
     }
 
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(message)));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   static const _errorMessageMap = {

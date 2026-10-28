@@ -5,10 +5,10 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-
-import '../../markdown/markdown_parser.dart';
-import '../common/button.dart';
-import '../common/material_icon.dart';
+import 'package:site_shared/components/common/button.dart';
+import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/components/common/tags.dart';
+import 'package:site_shared/markdown.dart';
 
 class PlatformsGrid extends CustomComponentBase {
   const PlatformsGrid();
@@ -90,9 +90,17 @@ class PlatformCard extends CustomComponentBase {
           href: deployToLink,
         ),
       ]),
-      div(classes: 'platform-card-tags', [
-        for (final a in arch) span([.text(a)]),
-      ]),
+      Tags(
+        [
+          for (final architecture in arch)
+            Tag(
+              architecture,
+              color: .subtleGrey,
+              size: .small,
+            ),
+        ],
+        classes: const ['platform-card-tags'],
+      ),
 
       div(classes: 'platform-card-details', [
         span([

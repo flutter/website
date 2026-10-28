@@ -28,7 +28,8 @@ on:
   schedule:
     - cron: '0 0 * * 0'
 
-permissions: read-all
+permissions:
+  contents: read
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -52,7 +53,9 @@ jobs:
             experimental: true
     continue-on-error: ${{ matrix.experimental }}
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
       - uses: subosito/flutter-action@e938fdf56512cc96ef2f93601a5a40bde3801046
         with:
           channel: ${{ matrix.branch }}
@@ -67,6 +70,14 @@ jobs:
       - name: Analyze Dart code
         run: dart run dash_site analyze-dart
         continue-on-error: ${{ matrix.experimental }}
+      - name: Cache cwebp
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/dart_data_home
+          key: cwebp-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('packages/dash_media_convert/lib/src/cwebp_pins.dart') }}
       - name: Run Dart tests
         run: dart run dash_site test-dart
+        env:
+          # Set DART_DATA_HOME to a well-known location.
+          DART_DATA_HOME: ${{ runner.temp }}/dart_data_home
         continue-on-error: ${{ matrix.experimental }}

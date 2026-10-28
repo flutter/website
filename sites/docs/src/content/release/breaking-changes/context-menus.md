@@ -78,9 +78,9 @@ All related deprecated features were flagged with the deprecation warning "Use
 In general, any previous changes to context menus that have been deprecated now
 require the use of the `contextMenuBuilder` parameter on the relevant
 text-editing or text-selection widget (
-[on `TextField`]({{site.api}}/flutter/material/TextField/contextMenuBuilder.html),
+[on `TextField`]({{site.material_ui}}/TextField/contextMenuBuilder.html),
 for example). Return a built-in context menu widget like
-[`AdaptiveTextSelectionToolbar`]({{site.api}}/flutter/material/AdaptiveTextSelectionToolbar-class.html)
+[`AdaptiveTextSelectionToolbar`]({{site.material_ui}}/AdaptiveTextSelectionToolbar-class.html)
 to use Flutter's built-in context menus, or return your own widget for something
 totally custom.
 
@@ -326,8 +326,8 @@ In stable release: 3.7.0
 
 API documentation:
 
-* [`TextField.contextMenuBuilder`]({{site.api}}/flutter/material/TextField/contextMenuBuilder.html)
-* [`AdaptiveTextSelectionToolbar`]({{site.api}}/flutter/material/AdaptiveTextSelectionToolbar-class.html)
+* [`TextField.contextMenuBuilder`]({{site.material_ui}}/TextField/contextMenuBuilder.html)
+* [`AdaptiveTextSelectionToolbar`]({{site.material_ui}}/AdaptiveTextSelectionToolbar-class.html)
 
 Relevant issues:
 

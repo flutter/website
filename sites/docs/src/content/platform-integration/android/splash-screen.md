@@ -23,7 +23,7 @@ You have a couple options for implementing a splash screen:
    assumes the manual approach.
 
 [pub.dev]: {{site.pub}}/packages?q=splash+screen
-[splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
+[splash screen sample app]: {{site.repo.samples}}/tree/main/android_splash_screen
 
 ## Initializing the app
 

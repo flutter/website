@@ -11,8 +11,8 @@ class MyCustomForm extends StatefulWidget {
 // Define a corresponding State class.
 // This class holds the data related to the Form.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Create a text controller and use it to retrieve the current value
-  // of the TextField.
+  // Create a text controller and use it to
+  // retrieve the current value of the TextField.
   final myController = TextEditingController();
 
   @override
@@ -35,12 +35,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
         // When the user presses the button, show an alert dialog containing
         // the text that the user has entered into the text field.
         onPressed: () {
-          showDialog(
+          showDialog<void>(
             context: context,
             builder: (context) {
               return AlertDialog(
-                // Retrieve the text that the user has entered by using the
-                // TextEditingController.
+                // Retrieve the text that the user has entered by
+                // using the TextEditingController.
                 content: Text(myController.text),
               );
             },

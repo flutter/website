@@ -7919,7 +7919,7 @@ There were 959 pull requests.
 
 [21061](https://github.com/flutter/engine/pull/21061) Remove the type parameter from `SkObjectFinalizationRegistry`. (cla: yes, waiting for tree to go green)
 
-[21069](https://github.com/flutter/engine/pull/21069) Add missing <cstring> header (cla: yes)
+[21069](https://github.com/flutter/engine/pull/21069) Add missing `<cstring>` header (cla: yes)
 
 [21075](https://github.com/flutter/engine/pull/21075) Disable a flaky Scenarios test (cla: yes)
 

@@ -64,6 +64,12 @@ take full advantage of the framework.
 
 </Stepper>
 
+## Ready to start?
+
+Get started by installing Flutter and setting up your development environment:
+
+[Start with Step 1: Quick Install →](/learn/pathway/quick-install)
+
 <img src="/assets/images/docs/learn/beginner.jpg" alt="Dash with question marks around her; looking curious." class="image-wrapper learn-image-wrapper">
 
 

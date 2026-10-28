@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'summary.dart';
 
@@ -22,5 +22,4 @@ class ArticleWidget extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion article

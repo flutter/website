@@ -74,5 +74,4 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   ];
   // #docregion step3
 }
-
 // #enddocregion step3

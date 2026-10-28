@@ -15,7 +15,7 @@ The major themes of this release are:
 *   [AndroidX support](https://github.com/flutter/flutter/pull/31028)
     for new projects via the --androidx flag of 'flutter create'
 *   A new widget: the
-    [RangeSlider](https://api.flutter.dev/flutter/material/RangeSlider-class.html)
+    [RangeSlider](https://pub.dev/documentation/material_ui/latest/material_ui/RangeSlider-class.html)
 
 As detailed in our
 [roadmap](https://github.com/flutter/flutter/blob/master/docs/roadmap/Roadmap.md),
@@ -122,7 +122,7 @@ In this release, we've improved support for Android with new support for Android
 
 ## Material
 
-This release includes a number of improvements to existing Material components, including the DatePicker, SnackBar and TimePicker, as well as a new component: the [RangeSlider](https://api.flutter.dev/flutter/material/RangeSlider-class.html).
+This release includes a number of improvements to existing Material components, including the DatePicker, SnackBar and TimePicker, as well as a new component: the [RangeSlider](https://pub.dev/documentation/material_ui/latest/material_ui/RangeSlider-class.html).
 
 
 
@@ -156,7 +156,7 @@ This release includes a number of improvements to existing Material components, 
 The work on web functionality continues with merging of the code from the flutter_web repo
 into the main flutter repo, providing a simpler developer experience for this pre-release
 technology. We've already
-[compiled many of the existing Flutter samples for web]({{site.github}}/flutter/samples/).
+[compiled many of the existing Flutter samples for web]({{site.repo.samples}}/).
 Enjoy!
 
 

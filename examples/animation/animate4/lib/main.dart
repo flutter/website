@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const LogoApp());
 
@@ -84,5 +84,4 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   // #docregion print-state
 }
-
 // #enddocregion print-state

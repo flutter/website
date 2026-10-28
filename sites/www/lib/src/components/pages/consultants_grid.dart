@@ -3,8 +3,8 @@
 // can be found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
-import '../../utils/component_ref.dart';
 import '../common/filters.dart';
 
 @client
@@ -19,6 +19,7 @@ class ConsultantsGrid extends StatelessComponent {
     return Filters(
       data: data,
       items: items,
+      showInitialCount: 90,
       filters: const [
         FilterType('locations', 'Company Location', [
           'Africa',

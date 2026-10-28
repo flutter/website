@@ -1,0 +1,187 @@
+@use '../core/breakpoints';
+
+body.flip #banner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 1027px;
+  justify-content: flex-end;
+
+  .embed-container {
+    height: 100%;
+    max-height: 600px;
+    max-width: 1075px;
+    padding: 0 var(--gutter-sm);
+    width: 100%;
+
+    iframe {
+      position: static;
+    }
+  }
+
+  .hero-details {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-sm);
+    justify-content: space-between;
+    margin: 54px 0 69px;
+
+    p {
+      color: white;
+      font-size: var(--font-size-heading-5);
+      max-width: 579px;
+      text-align: center;
+    }
+  }
+}
+
+body.flip #story .story-detail {
+  padding: 0;
+
+  .tabs {
+    .tabs-content {
+      margin: 64px auto;
+      max-width: 1112px;
+    }
+
+    .tab-content {
+      @include breakpoints.screen(lg) {
+        margin-top: 116px;
+      }
+
+      &.active {
+        display: block;
+      }
+
+      #home.module {
+        padding: 0;
+
+        .features.container {
+          width: 100%;
+        }
+
+        .stacked-feature {
+          hgroup {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: var(--spacer-md);
+            padding: 0;
+            text-align: left;
+            width: fit-content;
+          }
+
+          .overview {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 120px;
+            position: static;
+
+            @include breakpoints.screen(lg) {
+              margin-bottom: 160px;
+
+              &:nth-child(odd) {
+                flex-direction: row;
+
+                .overview-content {
+                  margin-left: 82px;
+                }
+              }
+
+              &:nth-child(even) {
+                flex-direction: row-reverse;
+
+                .overview-content {
+                  margin-right: 82px;
+                }
+              }
+            }
+
+            .overview-content {
+              align-items: flex-start;
+              display: flex;
+              flex: 1;
+              flex-direction: column;
+              justify-content: space-between;
+              margin-top: 60px;
+              padding: 0;
+              text-align: left;
+
+              @include breakpoints.screen(lg) {
+                margin-top: 0;
+              }
+
+              h1 {
+                font-size: var(--font-size-heading-1);
+                line-height: 55px;
+
+                @include breakpoints.screen(lg) {
+                  font-size: 64px;
+                  line-height: 72px;
+                }
+              }
+
+              h4.eyebrow.faqs {
+                color: var(--violet-4);
+                margin-bottom: 16px;
+              }
+
+              p {
+                margin: 0;
+                padding: 0;
+              }
+
+              .btn {
+                margin-top: var(--spacer-md);
+              }
+            }
+          }
+        }
+      }
+
+      #faqs.module {
+        .features.container {
+          margin: 0;
+        }
+
+        .stacked-feature {
+          > hgroup {
+            margin: 0 0 var(--gutter-lg);
+            max-width: fit-content;
+            padding: 0;
+            text-align: left;
+            width: 100%;
+          }
+
+          .feature {
+            align-items: flex-start;
+            border-bottom: 1px solid var(--grey-3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: var(--spacer);
+            padding: 0;
+
+            &:last-child {
+              border-bottom: 0;
+              padding-bottom: 0;
+            }
+
+            h3 {
+              margin: 0;
+            }
+
+            p {
+              margin: var(--gutter-sm) 0 0;
+              padding: 0 0 var(--spacer);
+            }
+          }
+        }
+      }
+    }
+  }
+}

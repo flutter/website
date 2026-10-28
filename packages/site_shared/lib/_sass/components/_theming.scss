@@ -1,0 +1,23 @@
+body:not(.dark-mode) .dark-mode-visible {
+  display: none !important;
+}
+
+body.dark-mode .light-mode-visible {
+  display: none !important;
+}
+
+#theme-switcher {
+  position: relative;
+
+  >.dropdown-content {
+    right: -0.5rem;
+
+    .material-symbols {
+      font-size: 20px;
+    }
+  }
+
+  button[aria-selected="true"] {
+    background-color: var(--site-primary-color-highlight);
+  }
+}

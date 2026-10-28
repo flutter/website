@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 // #docregion toggle
 void showOversizedImages() {
@@ -15,5 +15,4 @@ class ResizedImage extends StatelessWidget {
     return Image.asset('dash.png', cacheHeight: 213, cacheWidth: 392);
   }
 }
-
 // #enddocregion resized-image

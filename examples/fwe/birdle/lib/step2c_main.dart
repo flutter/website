@@ -1,6 +1,6 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'game.dart';
 
@@ -21,5 +21,4 @@ class Tile extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion Tile

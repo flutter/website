@@ -1,7 +1,8 @@
 import 'dart:collection';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:provider/provider.dart';
+
 import 'common.dart';
 
 CartModel somehowGetMyCartModel(BuildContext context) {
@@ -75,7 +76,6 @@ class MyCartUsingWidget extends StatelessWidget {
       // #docregion build
     );
   }
-
   // #enddocregion build
 }
 
@@ -118,7 +118,6 @@ class MyCatalogItem extends StatelessWidget {
     var cartModel = somehowGetMyCartModel(context);
     cartModel.add(item);
   }
-
   // #enddocregion my-tap-handler
 }
 

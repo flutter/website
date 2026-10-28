@@ -77,8 +77,8 @@ Most instances of `ThemeData` set values for the following two properties. These
 1. [`colorScheme`][] defines the colors.
 1. [`textTheme`][] defines text styling.
 
-[`colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
-[`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
+[`colorScheme`]: {{site.material_ui}}/ThemeData/colorScheme.html
+[`textTheme`]: {{site.material_ui}}/ThemeData/textTheme.html
 
 To learn what colors, fonts, and other properties, you can define,
 check out the [`ThemeData`][] documentation.
@@ -104,9 +104,8 @@ Container(
   child: Text(
     'Text with a background color',
     // ···
-    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-      color: Theme.of(context).colorScheme.onPrimary,
-    ),
+    style: Theme.of(context).textTheme.bodyMedium!
+        .copyWith(color: Theme.of(context).colorScheme.onPrimary),
   ),
 ),
 ```
@@ -146,9 +145,8 @@ To extend a theme, use the [`copyWith()`][] method.
 Theme(
   // Find and extend the parent theme using `copyWith`.
   // To learn more, check out the section on `Theme.of`.
-  data: Theme.of(
-    context,
-  ).copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
+  data: Theme.of(context)
+      .copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
   child: const FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
 );
 ```
@@ -226,9 +224,8 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(
-            color: Theme.of(context).colorScheme.onSecondary,
-          ),
+          style: Theme.of(context).textTheme.titleLarge!
+              .copyWith(color: Theme.of(context).colorScheme.onSecondary),
         ),
         backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
@@ -241,9 +238,8 @@ class MyHomePage extends StatelessWidget {
             // TRY THIS: Change the Text value
             //           or change the Theme.of(context).textTheme
             //           to "displayLarge" or "displaySmall".
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
+            style: Theme.of(context).textTheme.bodyMedium!
+                .copyWith(color: Theme.of(context).colorScheme.onPrimary),
           ),
         ),
       ),
@@ -270,5 +266,5 @@ class MyHomePage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
-[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`copyWith()`]: {{site.material_ui}}/ThemeData/copyWith.html
+[`ThemeData`]: {{site.material_ui}}/ThemeData-class.html

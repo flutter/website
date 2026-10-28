@@ -4,17 +4,19 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_ui: ^1.1.4
 
   bitsdojo_window: ^0.1.6
   flextras: ^1.0.0
+  material_ui: ^1.8.0
   provider: ^6.1.5+1
   universal_platform: ^1.1.0
-  platform: ^3.1.6
+  platform: ^3.2.0
 
 dev_dependencies:
   flutter_test:

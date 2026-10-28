@@ -7,6 +7,8 @@ units:
         url: /learn/pathway/quick-install
   - title: Introduction to Flutter UI
     chapters:
+      - title: Tutorial introduction
+        url: /learn/pathway/tutorial
       - title: Create a Flutter app
         url: /learn/pathway/tutorial/create-an-app
       - title: Widget fundamentals

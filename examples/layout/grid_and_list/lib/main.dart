@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   debugPaintSizeEnabled = false; // Set to true for visual layout
@@ -71,6 +71,5 @@ class MyApp extends StatelessWidget {
       leading: Icon(icon, color: Colors.blue[500]),
     );
   }
-
   // #enddocregion list
 }

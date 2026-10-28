@@ -4,9 +4,8 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/common/search.dart';
 import 'package:universal_web/web.dart' as web;
-
-import '../common/search.dart';
 
 @client
 class GlossarySearchSection extends StatefulComponent {

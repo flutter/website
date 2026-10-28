@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's support for WebAssembly (Wasm).
 shortTitle: Wasm
-last-update: Nov 6, 2024
+last-update: Oct 16, 2026
 ---
 
 Flutter and Dart support
@@ -11,7 +11,7 @@ Flutter and Dart support
 as a compilation target when building
 applications for the web.
 
-[`stable`]: {{site.github}}/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md#stable
+[`stable`]: {{site.repo.flutter}}/blob/master/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/dart-js_interop/dart-js_interop-library.html
 
@@ -70,6 +70,41 @@ $ flutter build web --wasm
 The command produces output into the `build/web` directory relative to the
 package root, just like `flutter build web`.
 
+:::note
+Enabling Wasm compilation for a Flutter web app does not use deferred loading
+by default. Deferred loading in Wasm is available in Flutter 3.50 and later and
+can be enabled using the `--enable-wasm-deferred-loading` flag:
+
+```console
+$ flutter build web --wasm --enable-wasm-deferred-loading
+```
+
+To customize how deferred `.wasm` modules are downloaded at runtime, provide a
+`wasmDeferredModulesLoader` callback in your [Flutter web app initialization][]
+configuration.
+:::
+
+#### Wasm production debugging
+
+By default, Wasm release builds strip debug symbols and omit source maps
+to minimize binary size.
+
+- **For error monitoring (recommended)**: Pass `--source-maps` to generate
+  a `main.dart.wasm.map` file for symbolication in error tracking services.
+  For security recommendations and deployment warnings, see
+  [Source maps](/deployment/web#source-maps).
+- **For staging or QA builds**: Pass `--no-strip-wasm` to preserve Wasm
+  function names directly in browser console stack traces, at the cost of
+  an approximate **47% increase** in Wasm binary size.
+
+```console
+# Generate source maps for production error tracking:
+$ flutter build web --wasm --source-maps
+
+# Preserve Wasm function names for staging/QA debugging:
+$ flutter build web --wasm --no-strip-wasm
+```
+
 ### Open the app in a compatible web browser
 Even with the `--wasm` flag, Flutter will still compile the application to
 JavaScript. If WasmGC support is not detected at runtime, the JavaScript output
@@ -113,52 +148,136 @@ To learn more about these headers, check out
 [coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
 
 ## Learn more about browser compatibility
-To run a Flutter app that has been compiled to Wasm,
-you need a browser that supports [WasmGC][].
 
-[Chromium and V8][] support WasmGC since version 119.
-Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
-Firefox announced stable support for WasmGC in Firefox 120,
-but currently doesn't work due to a known limitation (see details below).
+In Flutter 3.50 and later, running a Flutter app compiled to Wasm (`dart2wasm` +
+`skwasm`) requires a browser that supports three standardized WebAssembly
+features:
 
-[WasmGC]: {{site.github}}/WebAssembly/gc/tree/main/proposals/gc
-[Chromium and V8]: https://chromestatus.com/feature/6062715726462976
-[support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
-[issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
+* [WasmGC][] (Garbage Collection)
+* [JS String Builtins][wasm-js-string] (`wasm:js-string`)
+* [Phase 4 Exception Handling][wasm-eh] (`try_table` / `exnref`)
 
-- **Why not Firefox?**
-  Firefox versions 120 and later were previously able to run Flutter/Wasm, but
-  they're experiencing a bug that is blocking compatibility with Flutter's Wasm
-  renderer. Follow [this bug][firefox-bug] for details.
-- **Why not Safari?**
-  Safari now supports WasmGC, but is experiencing a similar bug that is
-  blocking compatibility with Flutter's Wasm renderer.
-  Follow [this bug][safari-bug] for details.
+At startup, `flutter_bootstrap.js` probes the browser's WebAssembly engine for
+these features and checks the `wasmAllowList` configuration before selecting the
+Wasm build. When a browser does not support these features or is not enabled in
+`wasmAllowList`, Flutter automatically falls back to the JavaScript (`dart2js`)
+and CanvasKit build produced by `flutter build web --wasm`.
 
-[firefox-bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
-[safari-bug]: https://bugs.webkit.org/show_bug.cgi?id=267291
+| Browser engine | Minimum version for Wasm | Default behavior in Flutter 3.50 (`--wasm`) | How to enable Wasm |
+| :--- | :--- | :--- | :--- |
+| **Chromium** (Chrome, Edge, Opera, Brave) | **137+** (Desktop & Android) | Runs `dart2wasm` + `skwasm` by default; Chrome `< 137` falls back to `dart2js` + CanvasKit. | Enabled by default (`wasmAllowList.blink: true`). |
+| **WebKit** (Safari macOS & iOS, all iOS browsers) | **Safari 26.2+** (macOS & iOS 26.2+) | Falls back to `dart2js` + CanvasKit by default (`wasmAllowList.webkit: false`). | Set `wasmAllowList: { webkit: true }` in [Flutter web app initialization][]. Safari `<= 26.1` automatically falls back to `dart2js` + CanvasKit via runtime feature detection. |
+| **Gecko** (Firefox) | **Firefox 147+** | Falls back to `dart2js` + CanvasKit by default (`wasmAllowList.gecko: false`). | Set `wasmAllowList: { gecko: true }` in [Flutter web app initialization][]. Firefox `< 147` automatically falls back to `dart2js` + CanvasKit. |
 
-:::warning
-Flutter compiled to Wasm can't run on the iOS version of any browser.
-All browsers on iOS are required to use WebKit,
-and can't use their own browser engine.
-:::
+{:.table}
+
+[WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
+[wasm-js-string]: https://github.com/WebAssembly/js-string-builtins
+[wasm-eh]: https://github.com/WebAssembly/exception-handling
 
 ## Using compatible JS interop libraries {:#js-interop-wasm}
 
-To support compilation to Wasm, Dart has changed
+To support compilation to Wasm, Dart has modernized
 how it enables interop with browser and JavaScript APIs.
-This prevents Dart code that uses `dart:html` or `package:js`
-from compiling to Wasm.
+Legacy Dart SDK web and JS interop libraries (`dart:html`, `dart:js`,
+`dart:js_util`, `dart:indexed_db`, `dart:svg`, `dart:web_audio`, and
+`dart:web_gl`) are **deprecated and planned for removal from the Dart SDK in an
+upcoming release**, and neither those libraries nor the deprecated `package:js`
+package are supported when compiling to Wasm.
 
-Instead, Dart now provides new, lightweight interop solutions built around
-static JS interop:
+Instead, Dart provides lightweight interop solutions built around
+static JS interop that work across both JavaScript and WebAssembly targets:
 
-- [`package:web`][], which replaces `dart:html` (and other web libraries)
-- [`dart:js_interop`][], which replaces `package:js` and `dart:js`
+- [`package:web`][], which replaces `dart:html` (and other legacy web libraries)
+- [`dart:js_interop`][], which replaces `package:js`, `dart:js`, and `dart:js_util`
+
+For a detailed guide on migrating existing code,
+see the [`package:web` migration guide][].
+
+When compiling to Wasm, be aware of runtime differences
+in JS interop types (such as `is`/`as` type casts
+and Zone propagation in callbacks).
+For details, check out Dart's
+[JS interop types documentation]({{site.dart-site}}/interop/js-interop/js-types#compatibility-type-checks-and-casts)
+and the [package:web Zones section]({{site.dart-site}}/interop/js-interop/package-web#zones).
 
 To learn more about JS interop in Dart,
 see Dart's [JS interop][] documentation page.
+
+### Diagnosing Wasm compilation errors {:#diagnosing-wasm-compilation-errors}
+
+When compiling a Flutter web project with `--wasm`, if your application or its
+packages import unsupported web APIs (such as `dart:html` or `package:js`),
+the compilation will fail.
+
+#### 1. Perform early detection and enforce modern JS interop
+
+You can detect incompatibilities early with dry-run warnings. When you run
+`flutter build web` without the `--wasm` flag, a Wasm dry run is still performed
+automatically (pass `--no-wasm-dry-run` to suppress it). If incompatibilities
+are found, you will see a non-fatal warning like this:
+
+```console
+Wasm dry run failed:
+Found incompatibilities with WebAssembly.
+
+package:my_app/main.dart 1:1 - dart:html unsupported (0)
+```
+
+In Flutter 3.50 and later, you can also enforce modern JS interop across
+JavaScript (`dart2js` and `ddc`) builds. This ensures Wasm compatibility and
+prepares your app for the upcoming removal of deprecated web libraries from the
+Dart SDK. Pass `--no-deprecated-js-interop` to `flutter build web`,
+`flutter run`, `flutter drive`, or `flutter test --platform chrome`:
+
+```console
+$ flutter build web --no-deprecated-js-interop
+```
+
+Passing `--no-deprecated-js-interop` causes imports of deprecated `dart:*` web
+libraries (and packages that import them, such as `package:js`) to fail at
+compile time. It also evaluates `dart.library.html`, `dart.library.js`, and
+`dart.library.js_util` to `false` in conditional imports.
+
+#### 2. Inspect the compiler dependency tree
+
+If you run `flutter build web --wasm` and it fails due to an unsupported
+import, `flutter_tools` prints a structured `Context` tree showing which
+package and file imported the unavailable library:
+
+```console
+Context: The unavailable library 'dart:html' is imported through these packages:
+
+    main.dart => package:my_app => dart:html
+
+Detailed import paths for (some of) these imports:
+
+    main.dart => package:my_app/main.dart => dart:html
+```
+
+#### 3. Migrate legacy imports
+
+To fix these compilation errors, you must migrate from legacy JS interop
+packages to modern WebAssembly-compatible alternatives:
+
+- Replace `dart:html` and other legacy web libraries with [`package:web`][].
+- Replace `dart:js` and `package:js` with [`dart:js_interop`][].
+
+For comprehensive migration instructions, check out the
+[`package:web` migration guide on dart.dev]({{site.dart-site}}/interop/js-interop/package-web)
+and Dart's [JS interop usage guide]({{site.dart-site}}/interop/js-interop).
+
+If you need to support both legacy and modern environments during your
+migration, use conditional imports by checking for `dart.library.js_interop`:
+
+```dart
+import 'fallback.dart'
+  if (dart.library.js) 'legacy_web_interop.dart'
+  if (dart.library.js_interop) 'wasm_web_interop.dart';
+```
+
+To learn more about selecting implementations at compile time, see the
+[conditional imports documentation on dart.dev]({{site.dart-site}}/interop/js-interop/package-web#conditional-imports).
 
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web

@@ -223,7 +223,7 @@ create `box.dart` with the following contents:
 
 <?code-excerpt "lib/box.dart"?>
 ```dart title="box.dart"
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A simple blue 30x30 box.
 class DeferredBox extends StatelessWidget {
@@ -254,7 +254,8 @@ it has successfully loaded.
 
 <?code-excerpt "lib/use_deferred_box.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
+
 import 'box.dart' deferred as box;
 
 class SomeWidget extends StatefulWidget {
@@ -680,7 +681,7 @@ Play store's delivery feature.
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
 [Flutter Gallery's `lib/deferred_widget.dart`]: {{site.repo.gallery-archive}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
-[github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
+[github.com/google/bundletool/releases]: https://github.com/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 [release or profile mode]: /testing/build-modes
 [step 3.3]: #step-3.3

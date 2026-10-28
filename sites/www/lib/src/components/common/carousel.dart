@@ -6,9 +6,9 @@ import 'dart:async';
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../../utils/component_ref.dart';
 import 'icon.dart';
 
 @client

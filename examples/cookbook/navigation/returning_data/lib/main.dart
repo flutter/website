@@ -55,7 +55,6 @@ class _SelectionButtonState extends State<SelectionButton> {
       ..removeCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text('$result')));
   }
-
   // #enddocregion navigateAndDisplay
 }
 

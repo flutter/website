@@ -9,7 +9,7 @@ can infer the type from the surrounding context.
 
 :::note
 For a technical overview of this feature, refer to the
-[Dot Shorthands guide](https://dart.dev/language/dot-shorthand) in the Dart
+[Dot Shorthands guide](https://dart.dev/language/dot-shorthands) in the Dart
 documentation.
 :::
 

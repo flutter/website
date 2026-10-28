@@ -295,8 +295,16 @@ class CalendarEventMapper extends ClassMapperBase<CalendarEvent> {
 
   static String _$title(CalendarEvent v) => v.title;
   static const Field<CalendarEvent, String> _f$title = Field('title', _$title);
-  static DateTime _$date(CalendarEvent v) => v.date;
-  static const Field<CalendarEvent, DateTime> _f$date = Field('date', _$date);
+  static DateTime _$startDate(CalendarEvent v) => v.startDate;
+  static const Field<CalendarEvent, DateTime> _f$startDate = Field(
+    'startDate',
+    _$startDate,
+  );
+  static DateTime _$endDate(CalendarEvent v) => v.endDate;
+  static const Field<CalendarEvent, DateTime> _f$endDate = Field(
+    'endDate',
+    _$endDate,
+  );
   static String _$description(CalendarEvent v) => v.description;
   static const Field<CalendarEvent, String> _f$description = Field(
     'description',
@@ -327,7 +335,8 @@ class CalendarEventMapper extends ClassMapperBase<CalendarEvent> {
   @override
   final MappableFields<CalendarEvent> fields = const {
     #title: _f$title,
-    #date: _f$date,
+    #startDate: _f$startDate,
+    #endDate: _f$endDate,
     #description: _f$description,
     #card: _f$card,
     #location: _f$location,
@@ -339,7 +348,8 @@ class CalendarEventMapper extends ClassMapperBase<CalendarEvent> {
   static CalendarEvent _instantiate(DecodingData data) {
     return CalendarEvent(
       title: data.dec(_f$title),
-      date: data.dec(_f$date),
+      startDate: data.dec(_f$startDate),
+      endDate: data.dec(_f$endDate),
       description: data.dec(_f$description),
       card: data.dec(_f$card),
       location: data.dec(_f$location),
@@ -413,7 +423,8 @@ abstract class CalendarEventCopyWith<$R, $In extends CalendarEvent, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({
     String? title,
-    DateTime? date,
+    DateTime? startDate,
+    DateTime? endDate,
     String? description,
     String? card,
     EventLocation? location,
@@ -435,7 +446,8 @@ class _CalendarEventCopyWithImpl<$R, $Out>
   @override
   $R call({
     String? title,
-    DateTime? date,
+    DateTime? startDate,
+    DateTime? endDate,
     String? description,
     String? card,
     EventLocation? location,
@@ -445,7 +457,8 @@ class _CalendarEventCopyWithImpl<$R, $Out>
   }) => $apply(
     FieldCopyWithData({
       if (title != null) #title: title,
-      if (date != null) #date: date,
+      if (startDate != null) #startDate: startDate,
+      if (endDate != null) #endDate: endDate,
       if (description != null) #description: description,
       if (card != null) #card: card,
       if (location != null) #location: location,
@@ -457,7 +470,8 @@ class _CalendarEventCopyWithImpl<$R, $Out>
   @override
   CalendarEvent $make(CopyWithData data) => CalendarEvent(
     title: data.get(#title, or: $value.title),
-    date: data.get(#date, or: $value.date),
+    startDate: data.get(#startDate, or: $value.startDate),
+    endDate: data.get(#endDate, or: $value.endDate),
     description: data.get(#description, or: $value.description),
     card: data.get(#card, or: $value.card),
     location: data.get(#location, or: $value.location),

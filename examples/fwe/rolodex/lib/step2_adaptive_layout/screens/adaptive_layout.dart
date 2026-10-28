@@ -1,6 +1,6 @@
 // ignore_for_file: unused_element
 
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 import 'contact_groups.dart';
 
@@ -52,6 +52,5 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       ),
     );
   }
-
   // #enddocregion panel-and-divider
 }

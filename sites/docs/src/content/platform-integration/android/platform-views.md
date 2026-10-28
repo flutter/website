@@ -31,21 +31,38 @@ visit [Hosting native macOS views][].
 Platform Views on Android have several implementations.
 They come with tradeoffs both in terms of performance and fidelity.
 
-## Hybrid composition  {: #hybrid-composition }
+### Choosing an implementation
 
-Platform Views are rendered as they are normally.
-Flutter content is rendered into a texture.
-SurfaceFlinger composes the Flutter content and the platform views.
+The following matrix summarizes the different implementations and their trade-offs:
 
-* `+` best performance and fidelity of Android views.
-* `-` Flutter performance suffers.
-* `-` FPS of application will be lower.
-* `-` Certain transformations that can be applied to Flutter widgets
-      won't work when applied to platform views.
+| Mode | Benefits | Considerations | Enabler |
+| :--- | :--- | :--- | :--- |
+| **Texture layer** | • Good Flutter performance<br>• Full widget transforms work | • Janky during quick scrolling<br>• SurfaceViews lose accessibility and text magnifier breaks<br>• Platform View -> Renders to texture -> Uploads to Impeller -> Impeller composites Flutter content and Platform View content | Default behavior or standard `AndroidView` |
+| **Hybrid composition** | • Full native fidelity<br>• Correct accessibility and SurfaceView support | • Causes thread merging of raster & platform, which degrades Flutter FPS<br>• Platform View -> Renders into the Android view hierarchy as usual, Flutter content renders into `ImageReader`-backed `FlutterImageView`s (a background layer, plus an overlay layer for content drawn above a platform view), the Android view hierarchy composites them together |• `PlatformViewLink` with `AndroidViewSurface`<br>• [`AndroidViewController` builds either a TLHC or an HC Platform View][AC] |
+| **HCPP** (Experimental) | • Full fidelity and performance<br>• Solves original sync overhead | • Requires Android API 34+, Vulkan support, and use of the Impeller rendering engine<br>• Platform View -> Renders to native Android Surface, Impeller renders to native Android Surface, SurfaceFlinger composites the two together | • `<meta-data>` in `AndroidManifest.xml`<br>• `--enable-hcpp` local flag<br> •[`AndroidViewController` builds either a TLHC or an HC Platform View][AC] |
 
-## Hybrid Composition++ (HCPP)  {: #hcpp }
+{:.table .table-striped}
 
-:::note
+[AC]: {{site.repo.flutter}}/blob/main/dev/integration_tests/hybrid_android_views/lib/android_platform_view.dart
+
+## Hybrid composition {: #hybrid-composition }
+
+Platform views are rendered as they normally are,
+directly in the Android view hierarchy.
+Flutter content is rendered into `ImageReader`s and painted by
+`FlutterImageView`s that sit in the same window as the platform views,
+so the Android view hierarchy composites them together.
+
+Flutter uses two kinds of these layers.
+The main Flutter render surface is swapped for a background
+`FlutterImageView` once a platform view is added.
+Flutter content that draws on top of a platform view
+goes into an additional overlay `FlutterImageView`,
+allocated from a pool and recycled between frames.
+
+## Hybrid composition++ (HCPP) {: #hcpp }
+
+:::version-note
 This feature is experimental and is available starting from Flutter 3.44.
 :::
 
@@ -58,7 +75,10 @@ It is currently available as an opt-in feature.
 
 * **Android API 34 or later**: Required for native transaction
   synchronization capabilities.
-* **Vulkan Rendering**: The device must be capable of rendering with Vulkan.
+* **Impeller with the Vulkan backend**: The device must be capable of
+  rendering with Vulkan. Impeller also has an OpenGLES backend, and
+  falls back to it on devices without usable Vulkan support.
+  HCPP is not available in that configuration.
 
 If these requirements are not met on the end-user device,
 Flutter will automatically fall back to the existing platform view strategy
@@ -67,63 +87,68 @@ configured for the app.
 ### Opt in
 
 Because HCPP acts as a global upgrade for how platform views are backed,
-it's enabled through configuration rather than standard Dart initialization methods
-(`initAndroidView`, and so on).
+it's enabled through configuration rather than
+standard Dart initialization methods (`initAndroidView`, and so on).
 
 You can enable HCPP using one of the following methods:
 
-1. **Command Line Flag (Run/Test)**:
-   Pass the `--enable-hcpp` flag to your `flutter run` or `flutter test` command:
+1.  **Command line flag (run/test)**:
+    Pass the `--enable-hcpp` flag to your
+    `flutter run` or `flutter test` command:
 
-   ```bash
-   flutter run --enable-hcpp
-   ```
+    ```console
+    $ flutter run --enable-hcpp
+    ```
 
-:::note
-   This flag is intended for local execution and testing.
-   It **can't** be passed to the `flutter build` commands.
-   For release builds, use the manifest configuration
-   as shown in the next step.
-:::
+    :::note
+    This flag is intended for local execution and testing.
+    **It can't be passed to the `flutter build` commands.**
+    For release builds, use the manifest configuration
+    as shown in the next step.
+    :::
 
-2. **AndroidManifest.xml**:
-   Include a `<meta-data>` tag inside the `<application>` block of your
-   `AndroidManifest.xml`:
+2.  **AndroidManifest.xml**:
+    Include a `<meta-data>` tag inside the
+    `<application>` block of your `AndroidManifest.xml`:
 
-   ```xml
-   <meta-data
-       android:name="io.flutter.embedding.android.EnableHcpp"
-       android:value="true" />
-   ```
+    ```xml
+    <meta-data
+        android:name="io.flutter.embedding.android.EnableHcpp"
+        android:value="true" />
+    ```
 
 ### Limitations and known issues
 
-* **Complex Overlay Stacking**:
+* **Complex overlay stacking**:
   Transparent platform views won't display correctly
   in layout stacks structured as:
-  Flutter canvas -> Platform View -> Overlay -> Transparent Platform View,
+  **Flutter canvas -> Platform View -> Overlay -> Transparent Platform View**,
   when all four of these layers intersect.
 
-To create a platform view on Android, use the following steps.
-
-## Texture layer { #texturelayerhybridcomposition }
+## Texture layer {: #texture-layer }
 
 Platform Views are rendered into a texture.
 Flutter draws the platform views (using the texture).
 Flutter content is rendered directly into a Surface.
 
-* `+` good performance for Android Views
-* `+` best performance for Flutter rendering.
-* `+` all transformations work correctly.
-* `-` quick scrolling (such as a web view) will be janky
-* `-` SurfaceViews are problematic in this mode and will be moved into a virtual
-display (breaking a11y)
-* `-` Text magnifier will break unless Flutter is rendered into a TextureView.
+This approach provides:
+
+* good performance for Android Views
+* good performance for Flutter rendering
+* all transformations work correctly
+
+However, this approach might cause:
+
+* jankiness on quick scrolling (such as a web view)
+* broken accessibility for `SurfaceView`s
+* broken text magnification unless Flutter is rendered
+  into a `TextureView`
 
 ## On the Dart side
 
-On the Dart side, create a `Widget`
-and add one of the following build implementations.
+To create a platform view on Android, use the following steps.
+First, on the Dart side, create a `Widget` and add one of the
+following build implementations depending on your chosen strategy.
 
 ### Hybrid composition
 
@@ -137,12 +162,12 @@ use the following instructions:
    ```dart
    import 'package:flutter/foundation.dart';
    import 'package:flutter/gestures.dart';
-   import 'package:flutter/material.dart';
    import 'package:flutter/rendering.dart';
    import 'package:flutter/services.dart';
+   import 'package:material_ui/material_ui.dart';
    ```
 
-2. Implement a `build()` method:
+2. Implement a `build` method:
 
    <?code-excerpt "lib/native_view_example_1.dart (hybrid-composition)"?>
    ```dart
@@ -179,7 +204,7 @@ use the following instructions:
    }
    ```
 
-For more information, visit the API docs for:
+For more information, visit the following API docs:
 
 * [`PlatformViewLink`][]
 * [`AndroidViewSurface`][]
@@ -199,11 +224,11 @@ use the following instructions:
 
    <?code-excerpt "lib/native_view_example_2.dart (import)"?>
    ```dart
-   import 'package:flutter/material.dart';
    import 'package:flutter/services.dart';
+   import 'package:material_ui/material_ui.dart';
    ```
 
-2. Implement a `build()` method:
+2. Implement a `build` method:
 
    <?code-excerpt "lib/native_view_example_2.dart (virtual-display)"?>
    ```dart
@@ -222,9 +247,7 @@ use the following instructions:
    }
    ```
 
-For more information, visit the API docs for:
-
-* [`AndroidView`][]
+For more information, visit the [`AndroidView`][] API page.
 
 [`AndroidView`]: {{site.api}}/flutter/widgets/AndroidView-class.html
 
@@ -470,34 +493,79 @@ For more information, visit the API docs for:
 [`PlatformViewFactory`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewFactory.html
 [`PlatformViewRegistry`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformViewRegistry.html
 
-Finally, modify your `build.gradle` file
-to require one of the minimal Android SDK versions:
-
-```kotlin
-android {
-    defaultConfig {
-        minSdk = 19 // if using hybrid composition
-        minSdk = 20 // if using virtual display.
-    }
-}
-```
-
 ### Manual view invalidation
 
 Certain Android Views don't invalidate themselves when their content changes.
-Some example views include `SurfaceView` and `SurfaceTexture`.
-When your Platform View includes these views, you are required to
-manually invalidate the view after they have been drawn to
-(or more specifically: after the swap chain is flipped).
-Manual view invalidation is done by calling `invalidate` on the View
-or one of its parent views.
+Some examples include `SurfaceView` and `SurfaceTexture`.
+When your Platform View includes these views,
+you must manually invalidate it after it has been drawn
+(or, more specifically, after the swap chain is flipped).
+Invalidate the view by calling `invalidate` on it or on one of its parents.
 
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 
 ### Issues
 
-[Existing Platform View issues][]
+Check out the [existing Platform View issues][] on GitHub.
 
-{% render "docs/platform-view-perf.md", site: site %}
+[existing Platform View issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views
 
-[Existing Platform View issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views
+## Performance
+
+Platform views in Flutter come with performance trade-offs.
+
+In a typical Flutter app,
+Flutter rasterizes frames on a dedicated raster thread,
+while platform code, such as plugins and Android views,
+runs on the platform thread, which is the Android main thread.
+This separation keeps Flutter rendering fast and fluid,
+as the platform thread is not blocked by rasterization work.
+
+However, when a platform view is rendered on Android using
+hybrid composition,
+Flutter merges the raster thread into the platform thread
+to ensure correct synchronization between
+the native Android views and the Flutter canvas.
+Because of this thread merging,
+rasterizing complex Flutter widgets alongside a platform view
+competes with other work on the platform thread,
+such as OS messages and plugin interactions,
+potentially causing lower application FPS and frame drops.
+
+Also, prior to Android 10, hybrid composition copied each Flutter frame
+out of the graphic memory into main memory,
+and then copied it back to a GPU texture. As this copy happens per frame,
+the performance of the entire Flutter UI might be impacted.
+In Android 10 or above, the graphics memory is copied only once.
+
+Hybrid Composition++ (HCPP) minimizes this overhead by using native
+transaction synchronization on supported devices (Android API 34+ with Vulkan),
+allowing superior performance without the heavy costs of original hybrid
+composition.
+
+Virtual display, on the other hand, makes each pixel of the native view flow
+through additional intermediate graphic buffers,
+which cost graphic memory and drawing performance.
+This can cause jank during high-frequency updates like fast scrolling.
+
+For complex cases, there are some techniques that
+can be used to mitigate these issues.
+
+For example, you can use a placeholder texture
+while an animation is happening in Dart.
+In other words, if an animation is slow while a
+platform view is rendered,
+then consider taking a screenshot of the
+native view and rendering it as a texture.
+
+For more information, visit the following API pages:
+
+* [`TextureLayer`][]
+* [`TextureRegistry`][]
+* [`FlutterTextureRegistry`][]
+* [`FlutterImageView`][]
+
+[`FlutterImageView`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterImageView.html
+[`FlutterTextureRegistry`]: {{site.api}}/ios-embedder/protocol_flutter_texture_registry-p.html
+[`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
+[`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html

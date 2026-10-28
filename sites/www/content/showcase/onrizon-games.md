@@ -53,6 +53,6 @@ Flutter also made it much easier to upgrade versions or add packages, which had 
 
 **Results**
 
-Using Firebase to measure their performance, they discovered that their earnings from banner and interstitial ads increased by over 100% from the previous version. Their user rating also improved, from an average of 4.28 to 4.58, all within one year
+Using Firebase to measure their performance, they discovered that their earnings from banner and interstitial ads increased by over 100% from the previous version. Their user rating also improved, from an average of 4.28 to 4.58, all within one year.
 
 Based on this success, Onrizon has begun to migrate the rest of their game catalogue to Flutter starting with [Gartic.io](https://gartic.io/), a popular drawing and guessing game, which saw many of the same benefits as StopotS. The team intends to build any future games in Flutter from the start.

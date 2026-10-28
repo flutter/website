@@ -127,7 +127,7 @@ For example:
 
 <?code-excerpt "lib/text_widget.dart (stateful-widget)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -224,7 +224,7 @@ widgets when you click on a `FloatingActionButton`:
 
 <?code-excerpt "lib/layout.dart (toggle-widget)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -312,7 +312,7 @@ widget into a logo when you press the `FloatingActionButton`:
 
 <?code-excerpt "lib/animation.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const FadeAppTest());
@@ -353,6 +353,12 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       vsync: this,
     );
     curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -400,7 +406,7 @@ see Collin's answer on [Custom Paint][].
 
 <?code-excerpt "lib/canvas.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const MaterialApp(home: DemoApp()));
 
@@ -512,7 +518,7 @@ Widget build(BuildContext context) {
 In Android, there are two main use cases for `Intent`s: navigating between
 Activities, and communicating with components. Flutter, on the other hand,
 does not have the concept of intents, although you can still start intents
-through native integrations (using [a plugin][]).
+through native integrations, such as the [`android_intent_plus`][] plugin.
 
 Flutter doesn't really have a direct equivalent to activities and fragments;
 rather, in Flutter you navigate between screens, using a `Navigator` and
@@ -659,8 +665,8 @@ when the widget is rendered:
 
 <?code-excerpt "lib/request_data.dart"?>
 ```dart
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -780,8 +786,8 @@ The following example loads data asynchronously and displays it in a `ListView`:
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -845,7 +851,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
           .cast<Map<String, Object?>>();
     });
   }
-
 }
 ```
 
@@ -914,12 +919,10 @@ Future<void> loadData() async {
   // The 'echo' isolate sends its SendPort as the first message.
   SendPort sendPort = await receivePort.first as SendPort;
 
-  final msg =
-      await sendReceive(
-            sendPort,
-            'https://jsonplaceholder.typicode.com/posts',
-          )
-          as List<Object?>;
+  final msg = await sendReceive(
+    sendPort,
+    'https://jsonplaceholder.typicode.com/posts',
+  ) as List<Object?>;
   final posts = msg.cast<Map<String, Object?>>();
 
   setState(() {
@@ -966,8 +969,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:isolate';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1048,12 +1051,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
     // The 'echo' isolate sends its SendPort as the first message.
     SendPort sendPort = await receivePort.first as SendPort;
 
-    final msg =
-        await sendReceive(
-              sendPort,
-              'https://jsonplaceholder.typicode.com/posts',
-            )
-            as List<Object?>;
+    final msg = await sendReceive(
+      sendPort,
+      'https://jsonplaceholder.typicode.com/posts',
+    ) as List<Object?>;
     final posts = msg.cast<Map<String, Object?>>();
 
     setState(() {
@@ -1084,7 +1085,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
-
 }
 ```
 
@@ -1108,6 +1108,7 @@ To make a network call, call `await` on the `async` function `http.get()`:
 <?code-excerpt "lib/network.dart"?>
 ```dart
 import 'dart:developer' as developer;
+
 import 'package:http/http.dart' as http;
 
 Future<void> loadData() async {
@@ -1136,8 +1137,8 @@ then render the `ProgressIndicator`. Otherwise, render the
 ```dart
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1672,6 +1673,12 @@ class _SampleAppState extends State<SampleApp>
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -1711,7 +1718,7 @@ that scrolling is fast and smooth.
 
 <?code-excerpt "lib/listview.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1770,7 +1777,7 @@ In Flutter, use the touch handling provided by the passed-in widgets.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1847,7 +1854,7 @@ as shown in the next example.
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -1919,7 +1926,7 @@ recycles list elements for you:
 ```dart
 import 'dart:developer' as developer;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2082,7 +2089,7 @@ update the state, and pass a new `InputDecoration` object.
 
 <?code-excerpt "lib/validation_errors.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const SampleApp());
@@ -2169,14 +2176,14 @@ for accessing the camera.
 ### How do I log in with Facebook?
 
 To Log in with Facebook, use the
-[`flutter_facebook_login`][] community plugin.
+[`flutter_facebook_auth`][] community plugin.
 
 ### How do I use Firebase features?
 
 Most Firebase functions are covered by
 [first party plugins][].
 These plugins are first-party integrations,
-maintained by the Flutter team:
+maintained by the Flutter and Firebase teams:
 
  * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
@@ -2184,7 +2191,7 @@ maintained by the Flutter team:
  * [`firebase_database`][] for Firebase RTDB
  * [`firebase_storage`][] for Firebase Cloud Storage
  * [`firebase_messaging`][] for Firebase Messaging (FCM)
- * [`flutter_firebase_ui`][] for quick Firebase Auth integrations
+ * [`firebase_ui_auth`][] for quick Firebase Auth integrations
    (Facebook, Google, Twitter and email)
  * [`cloud_firestore`][] for Firebase Cloud Firestore
 
@@ -2241,7 +2248,7 @@ the color scheme from seed is set to deepPurple and text selection color is red.
 
 <?code-excerpt "lib/theme.dart (theme)"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SampleApp extends StatelessWidget {
   const SampleApp({super.key});
@@ -2296,7 +2303,8 @@ Shared Preferences and NSUserDefaults (the iOS equivalent).
 <?code-excerpt "lib/shared_prefs.dart"?>
 ```dart
 import 'dart:async';
-import 'package:flutter/material.dart';
+
+import 'package:material_ui/material_ui.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -2369,15 +2377,15 @@ see the [`firebase_messaging`][] plugin documentation.
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [DevTools]: /tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
-[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
+[`flutter_facebook_auth`]: {{site.pub-pkg}}/flutter_facebook_auth
 [`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
-[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
-[Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
+[`firebase_ui_auth`]: {{site.pub-pkg}}/firebase_ui_auth
+[Firebase Messaging]: {{site.repo.flutterfire}}/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
 [Flutter for Android Developers: How to design Activity UI in Flutter]: https://burhanrashid52.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter/
@@ -2390,7 +2398,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Material Components]: {{site.material}}/develop/flutter
 [Material Design guidelines]: {{site.material}}/styles
 [optimized for all platforms]: {{site.material}}/develop
-[a plugin]: {{site.pub}}/packages/android_intent
+[`android_intent_plus`]: {{site.pub-pkg}}/android_intent_plus
 [pub.dev]: {{site.pub}}/flutter/packages/
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
 [Shared_Preferences plugin]: {{site.pub}}/packages/shared_preferences

@@ -56,5 +56,4 @@ class ButtonShapeWidget extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion DisplayText

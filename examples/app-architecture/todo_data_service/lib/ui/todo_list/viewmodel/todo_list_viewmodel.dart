@@ -82,6 +82,5 @@ class TodoListViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-
   // #enddocregion Delete
 }

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -19,6 +19,5 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion padding
 }

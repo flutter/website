@@ -371,8 +371,8 @@ class ScreenArguments {
 </noscript>
 
 
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`CupertinoApp`]: {{site.cupertino_ui}}/CupertinoApp-class.html
+[`MaterialApp`]: {{site.material_ui}}/MaterialApp-class.html
 [`ModalRoute.of()`]: {{site.api}}/flutter/widgets/ModalRoute/of.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pushNamed()`]: {{site.api}}/flutter/widgets/Navigator/pushNamed.html

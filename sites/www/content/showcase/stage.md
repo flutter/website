@@ -14,7 +14,7 @@ platforms:
   - Mobile
   - Desktop
 industries:
-  - Travel & Lifestyle
+  - Media and Entertainment
 successMetrics:
   - perc: 50
     desc: increase in developer efficiency

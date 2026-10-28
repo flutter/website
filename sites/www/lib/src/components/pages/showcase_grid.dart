@@ -4,8 +4,8 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
-import '../../utils/component_ref.dart';
 import '../common/filters.dart';
 
 @client
@@ -18,9 +18,10 @@ class ShowcaseGrid extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return Filters(
-      title: const h2([.text('User showcase')]),
+      title: const h2([.text('App showcase')]),
       data: data,
       items: items,
+      showInitialCount: 21,
       filters: const [
         FilterType('platforms', 'Platform', [
           'Mobile',
@@ -29,21 +30,31 @@ class ShowcaseGrid extends StatelessComponent {
           'Embedded',
         ]),
         FilterType('industries', 'Industry', [
+          'Automotive',
           'Banking & Finance',
-          'Health',
-          'Games',
-          'Travel & Lifestyle',
-          'Productivity',
+          'E-commerce & Retail',
           'Education',
+          'Environment & Sustainability',
+          'Games',
+          'Health',
+          'Hospitality',
+          'Media and Entertainment',
+          'Music',
+          'Productivity',
+          'Real Estate',
+          'Smart Home & IoT',
           'Social',
+          'Telecom',
+          'Transit & Logistics',
+          'Travel & Lifestyle',
         ]),
         FilterType('locations', 'Location', [
-          'Asia',
           'Africa',
-          'North America',
-          'South America',
+          'Asia',
           'Europe',
+          'North America',
           'Oceania',
+          'South America',
         ]),
       ],
     );

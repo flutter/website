@@ -14,5 +14,4 @@ Future<http.Response> createAlbum(String title) {
     body: jsonEncode(<String, String>{'title': title}),
   );
 }
-
 // #enddocregion CreateAlbum

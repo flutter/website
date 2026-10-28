@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'game.dart';
 
@@ -65,8 +65,8 @@ class Tile extends StatelessWidget {
     // #enddocregion Tile-Container
   }
 }
-
 // #enddocregion Tile
+
 void docRegionTileUsage() {
   // #docregion TileUsage
   // main.dart line ~16

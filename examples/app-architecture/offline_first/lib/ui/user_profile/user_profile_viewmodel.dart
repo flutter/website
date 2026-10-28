@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
+
 import '../../data/repositories/user_profile_repository.dart';
 import '../../domain/model/user_profile.dart';
 
@@ -55,5 +56,4 @@ class UserProfileViewModel extends ChangeNotifier {
     // #docregion UserProfileViewModel
   }
 }
-
 // #enddocregion UserProfileViewModel

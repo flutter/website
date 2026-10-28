@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:material_ui/material_ui.dart';
 
 // #docregion main
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   unawaited(MobileAds.instance.initialize());
 
