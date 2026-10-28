@@ -1294,7 +1294,7 @@
     - "Small-to-medium Business"
   options_GCP_partner: false
 - title: "The NextApp"
-  summary: "Is a Rotterdam-based web and app development company that has been building custom iOS, Android and web apps with Flutter since 2016, from technical analysis through App Store and Google Play launch."
+  summary: "A Rotterdam-based web and app development company that has been building custom iOS, Android and web apps with Flutter since 2016, from technical analysis through App Store and Google Play launch."
   card: "images/third_party/partners/the-next-app_logo.png"
   external_url: "https://www.thenextapp.nl/en/flutter-app-development/"
   options_location:
@@ -1305,7 +1305,7 @@
     - "Enterprise"
   options_GCP_partner: false
 - title: "MindInventory"
-  summary: "Is a mobile app development company specializing in Flutter app development, helping businesses build scalable, high-performance applications for iOS, Android, web, and desktop. Backed by a team of +300 engineers, they deliver comprehensive development services to a global client base."
+  summary: "A mobile app development company specializing in Flutter app development, helping businesses build scalable, high-performance applications for iOS, Android, web, and desktop. Backed by a team of +300 engineers, they deliver comprehensive development services to a global client base."
   card: "images/third_party/partners/mind-Invetory_logo.png"
   external_url: "https://www.mindinventory.com/flutter-app-development/"
   options_location:
