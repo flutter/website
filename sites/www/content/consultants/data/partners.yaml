@@ -1315,3 +1315,12 @@
     - "Small-to-medium Business"
     - "Enterprise"
   options_GCP_partner: false
+- title: "TAGonSoft SRL"
+  summary: "A Romanian AI-native studio creating mobile applications since 2013 and delivering cross-platform Flutter solutions for iOS, Android, and web since 2021. They leverage AI in their build process, while sr engineers handle code reviews, testing, and end-to-end release management."
+  card: "images/third_party/partners/TAGonSoftware_logo.png"
+  external_url: "https://tagonsoft.com/en/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
