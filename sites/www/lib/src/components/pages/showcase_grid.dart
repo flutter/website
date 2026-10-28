@@ -18,9 +18,10 @@ class ShowcaseGrid extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return Filters(
-      title: const h2([.text('User showcase')]),
+      title: const h2([.text('App showcase')]),
       data: data,
       items: items,
+      showInitialCount: 21,
       filters: const [
         FilterType('platforms', 'Platform', [
           'Mobile',
