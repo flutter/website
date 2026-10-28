@@ -38,7 +38,7 @@ Ready to build beautiful, multiplatform apps from a single codebase?
 First, [set up your Flutter environment][],
 then follow the [Flutter learning pathway][].
 
-[set up your Flutter environment]: /install/quick
+[set up your Flutter environment]: /install/with-vs-code
 [Flutter learning pathway]: /learn/pathway
 
 ### Docs
