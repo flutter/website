@@ -33,9 +33,9 @@ direct native bindings (using FFI on iOS and macOS, and JNI on Android).
 Use this option if your use case requires any of the following:
 
 - You need synchronous execution on your native platform.
-- You are doing high-frequency data streaming
+- You're doing high-frequency data streaming
   (for example, audio or camera frames).
-- You are calling native code from background Dart isolates.
+- You're calling native code from background Dart isolates.
 
 ### Pigeon with platform channels
 
@@ -49,7 +49,7 @@ Use this option if your use case requires any of the following:
 
 ## Developer flow
 
-The developer experience with Pigeon follows a structured cycle:
+Generate type-safe bindings with Pigeon using the following steps:
 
 1.  Create the Pigeon definition file.
 1.  Generate the code.
@@ -64,19 +64,20 @@ Next, run the Pigeon generator tool, which parses your Pigeon definition file
 and produces the necessary code for both Dart and your target native platform.
 
 :::note
-If you're using the Pigeon with native interop communication option,
-set `appDirectory`, `swiftOptions: SwiftOptions(useFfi: true)`, and
-`kotlinOptions: KotlinOptions(useJni: true)` in the `@ConfigurePigeon`
+If you're using Pigeon with the native interop communication option,
+set `appDirectory`, `swiftOptions: SwiftOptions(useFfi: true, ffiModuleName: 'Runner')`,
+and `kotlinOptions: KotlinOptions(useJni: true)` in the `@ConfigurePigeon`
 section of your Pigeon definition file.
 For complete prerequisites and build configuration,
 refer to the [native interop guide][pigeon-native-guide].
 :::
 
-After the code is generated, you implement the generated native interfaces
+After the code is generated, implement the generated native interfaces
 in the platform-specific directories of your Flutter project
 (such as `android/`, `ios/`, or `macos/`)
 and register them with the Flutter engine.
-Finally, you call the generated Dart classes from your Flutter app,
+Finally, call the generated Dart classes from your Flutter app
+(using `<MyApi>.createWithNativeInteropApi()` when using native interop),
 or invoke the generated native APIs to call back into your Dart code.
 
 If you need to modify the API, first modify the Pigeon definition file,
@@ -105,13 +106,16 @@ use [FFIgen](/interop/ffigen) or
 
 ### Inheritance
 
-Pigeon does not support complex inheritance.
+Pigeon doesn't support complex inheritance.
 Flatten your data models where possible.
 
 ### (Pigeon with platform channels only) Async errors
 
-For `@async` methods, native code must return errors through the provided
-callback.
+In Kotlin and Swift, `@async` generates `suspend` and `async throws`
+functions where native code throws `FlutterError` or `PigeonError` directly.
+For `@asyncCallback` methods—or when using the Java, Objective-C, C++,
+or GObject generators—native code must return errors through the provided
+completion callback.
 
 ## Resources
 

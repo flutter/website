@@ -114,9 +114,9 @@ For Windows, you often use `DynamicLoadingSystem()` and provide the name of the
 DLL.
 
 :::note
-For desktop-specific guidance on calling system APIs&mdash;including wrapper
+For desktop-specific guidance on calling system APIs—including wrapper
 packages like [`package:win32`]({{site.pub-pkg}}/win32) and
-[Canonical's Linux packages]({{site.pub}}/publishers/canonical.com/packages)&mdash;refer to
+[Canonical's Linux packages]({{site.pub}}/publishers/canonical.com/packages)—refer to
 [Integrating with Windows](/platform-integration/windows/building#integrating-with-windows)
 and [Integrate with Linux](/platform-integration/linux/building#integrate-with-linux).
 :::

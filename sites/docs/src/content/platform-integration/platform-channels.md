@@ -1425,7 +1425,6 @@ in the Flutter ecosystem, see [publishing packages][].
 [`FirestoreMessageCodec`]: {{site.repo.flutterfire}}/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [developing packages]: /packages-and-plugins/developing-packages
 [Engine Embedder APIs]: {{site.dart.api}}/index.html#more-documentation
-[`Pigeon`]: {{site.pub-pkg}}/pigeon
 [plugins]: /packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
 [`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel

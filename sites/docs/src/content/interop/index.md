@@ -55,7 +55,7 @@ Follow the steps below to walk through the decision tree in detail:
 
 ### Step 2: Evaluate Pigeon for Flutter plugins
 
-If you are building a Flutter plugin,
+If you're building a Flutter plugin,
 first verify whether [Pigeon](/interop/pigeon) satisfies
 your technical constraints.
 
@@ -99,8 +99,9 @@ Depending on how you plan to share your code,
 choose the option that best suits your use case.
 
 :::note
-To learn about the difference between a package and a plugin,
-refer to [Using packages](/packages-and-plugins/using-packages).
+To learn about the difference between a [package](/resources/glossary#package)
+and a [plugin](/resources/glossary#plugin),
+refer to the [Flutter glossary](/resources/glossary).
 :::
 
 - **In-app integration.**
@@ -140,16 +141,16 @@ The following table compares two interop solutions:
 
 | Target language | Direct interop | Pigeon |
 | --- | --- | --- |
-| **C** | [FFIgen](/interop/ffigen) | Not recommended. Supported with platform channels, but not maintained by the Flutter team. |
-| **C++ with `extern "C"`** | [FFIgen](/interop/ffigen) | (Refer to C) |
-| **C++ without `extern "C"`** | FFIgen (not yet supported) | Supported with platform channels, but not maintained by the Flutter team. |
-| **Rust with `extern "C"`** | [FFIgen](/interop/ffigen) | (Refer to C) |
+| **C** | [FFIgen](/interop/ffigen) | Supported on Linux (GObject) with platform channels |
+| **C++ with `extern "C"`** | [FFIgen](/interop/ffigen) | Supported on Windows with platform channels |
+| **C++ without `extern "C"`** | FFIgen (not yet supported) | Supported on Windows with platform channels |
+| **Rust with `extern "C"`** | [FFIgen](/interop/ffigen) | Not supported directly |
 | **Rust without `extern "C"`** | [Flutter Rust Bridge][frb] | Not supported |
-| **Go with `extern "C"`** | [FFIgen](/interop/ffigen) | (Refer to C) |
+| **Go with `extern "C"`** | [FFIgen](/interop/ffigen) | Not supported directly |
 | **Go without `extern "C"`** | Not supported | Not supported |
-| **Java** | [JNIgen](/interop/jnigen) | Supported through Kotlin |
+| **Java** | [JNIgen](/interop/jnigen) | Supported through Kotlin (native interop) or directly with platform channels |
 | **Kotlin** | [JNIgen](/interop/jnigen) | Supported (recommended) |
-| **Objective-C** | [FFIgen](/interop/ffigen) | Supported through Swift |
+| **Objective-C** | [FFIgen](/interop/ffigen) | Supported through Swift (native interop) or directly with platform channels |
 | **Swift without Obj-C compatibility annotations** | [`package:swiftgen`][swiftgen-pub] (experimental) | Supported (recommended) |
 
 {:.table .table-striped}

@@ -9,7 +9,7 @@ description: >-
 
 JNIgen (Java Native Interface generator) is a code generator tool that creates
 type-safe Dart bindings for Java and Kotlin libraries and APIs.
-This allows you to call Android APIs directly and synchronously from your
+This allows calling Android APIs directly and synchronously from your
 Dart code.
 
 ## When to use JNIgen
@@ -28,7 +28,7 @@ instead.
 
 ## Developer flow
 
-Generating bindings with JNIgen follows this general flow:
+Generate bindings with JNIgen using the following general flow:
 
 1.  Reference the native classes or JARs.
 1.  Write the JNIgen configuration script.
@@ -57,7 +57,7 @@ to learn how to manage native memory lifetimes and execute native calls
 without blocking the UI thread.
 
 :::note
-If the native API changes, you need to update your configuration script and
+If the native API changes, update your configuration script and
 regenerate the bindings.
 :::
 
@@ -76,11 +76,11 @@ JNIgen:
 
 ### Threading considerations
 
-JNIgen calls execute synchronously on the calling thread.
+JNIgen calls run synchronously on the calling thread.
 Watch out for two common scenarios:
 
-- Calling platform APIs that must run on the platform thread.
-  Use `runOnPlatformThread` from `dart:ui`.
+- When calling platform APIs that must run on the platform thread,
+  use [`runOnPlatformThread`][run-on-platform-thread] from `dart:ui`.
 - Dart callbacks from Java run on the isolate that created them.
   This can lead to deadlocks if a blocked Java thread waits for a blocked
   Dart thread.
@@ -96,7 +96,7 @@ when implementing interfaces.
 ### JVM runtime type checks
 
 JNI wrappers are Dart extension types that compile down to `JObject`
-at runtime, so Dart's native `is` and `as` keywords do not check the Java
+at runtime, so Dart's native `is` and `as` keywords don't check the Java
 runtime type.
 Use `x.isA(Foo.type)` and `x.as(Foo.type)` instead.
 
@@ -121,3 +121,4 @@ refer to the following resources:
 [jnigen-examples]: https://github.com/dart-lang/native/tree/main/pkgs/jnigen/example
 [permissions-demo]: {{site.repo.demos}}/tree/main/native_interop_demos/permissions_plugin
 [toast-demo]: {{site.repo.demos}}/tree/main/native_interop_demos/android_toast_demo
+[run-on-platform-thread]: {{site.api}}/flutter/dart-ui/runOnPlatformThread.html
