@@ -21,6 +21,7 @@ void setUpSite() {
   _setUpToc();
   _setUpSteppers();
   _setUpIdeExplorers();
+  _setUpDecisionTrees();
 }
 
 void _setUpSearchKeybindings() {
@@ -599,4 +600,185 @@ void _setUpIdeExplorer(web.Element explorer) {
   }
 
   explorer.addEventListener('click', handleClick.toJS);
+}
+
+/// Set up interactivity of decision trees created with
+/// the `<DecisionTree>` custom component.
+void _setUpDecisionTrees() {
+  final trees = web.document.querySelectorAll('.decision-tree');
+  for (var i = 0; i < trees.length; i++) {
+    _setUpDecisionTree(trees.item(i) as web.HTMLElement);
+  }
+}
+
+void _setUpDecisionTree(web.HTMLElement tree) {
+  final steps = tree.querySelectorAll('.decision-tree-step');
+  final recommendations = tree.querySelectorAll(
+    '.decision-tree-recommendation',
+  );
+  final resetButton =
+      tree.querySelector('.decision-tree-reset') as web.HTMLElement?;
+  final toggleAllButton =
+      tree.querySelector('.decision-tree-toggle-all') as web.HTMLElement?;
+  final toggleLabel = tree.querySelector('.decision-tree-toggle-label');
+
+  void setHidden(web.Element element, bool isHidden) {
+    if (isHidden) {
+      element.setAttribute('hidden', 'hidden');
+    } else {
+      element.removeAttribute('hidden');
+    }
+  }
+
+  void hideSubsequentFromStep(web.Element currentStep) {
+    var foundCurrent = false;
+    for (var i = 0; i < steps.length; i++) {
+      final step = steps.item(i) as web.HTMLElement;
+      if (step == currentStep) {
+        foundCurrent = true;
+        continue;
+      }
+      if (foundCurrent) {
+        setHidden(step, true);
+        step.classList.remove('is-active');
+        final options = step.querySelectorAll('.decision-tree-option');
+        for (var j = 0; j < options.length; j++) {
+          final opt = options.item(j) as web.HTMLElement;
+          opt.classList.remove('is-selected');
+          opt.setAttribute('aria-pressed', 'false');
+        }
+      }
+    }
+
+    for (var i = 0; i < recommendations.length; i++) {
+      final rec = recommendations.item(i) as web.HTMLElement;
+      setHidden(rec, true);
+      rec.classList.remove('is-active');
+    }
+  }
+
+  void resetTree() {
+    tree.classList.remove('show-all');
+    if (toggleAllButton != null) {
+      toggleAllButton.setAttribute('aria-pressed', 'false');
+    }
+    if (toggleLabel != null) {
+      toggleLabel.textContent = 'Show all paths';
+    }
+
+    for (var i = 0; i < steps.length; i++) {
+      final step = steps.item(i) as web.HTMLElement;
+      final isFirst = i == 0;
+      setHidden(step, !isFirst);
+      step.classList.toggle('is-active', isFirst);
+      final options = step.querySelectorAll('.decision-tree-option');
+      for (var j = 0; j < options.length; j++) {
+        final opt = options.item(j) as web.HTMLElement;
+        opt.classList.remove('is-selected');
+        opt.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    for (var i = 0; i < recommendations.length; i++) {
+      final rec = recommendations.item(i) as web.HTMLElement;
+      setHidden(rec, true);
+      rec.classList.remove('is-active');
+    }
+
+    if (resetButton != null) {
+      setHidden(resetButton, true);
+    }
+  }
+
+  void toggleShowAll() {
+    final showingAll = tree.classList.toggle('show-all');
+    if (toggleAllButton != null) {
+      toggleAllButton.setAttribute('aria-pressed', '$showingAll');
+    }
+    if (toggleLabel != null) {
+      toggleLabel.textContent = showingAll
+          ? 'Interactive mode'
+          : 'Show all paths';
+    }
+  }
+
+  void selectOption(web.HTMLElement option) {
+    final step = option.closest('.decision-tree-step');
+    if (step == null) return;
+
+    // Exit show-all mode if the user interacts with a specific option.
+    if (tree.classList.contains('show-all')) {
+      tree.classList.remove('show-all');
+      if (toggleAllButton != null) {
+        toggleAllButton.setAttribute('aria-pressed', 'false');
+      }
+      if (toggleLabel != null) {
+        toggleLabel.textContent = 'Show all paths';
+      }
+    }
+
+    final siblingOptions = step.querySelectorAll('.decision-tree-option');
+    for (var i = 0; i < siblingOptions.length; i++) {
+      final sibling = siblingOptions.item(i) as web.HTMLElement;
+      final isSelected = sibling == option;
+      sibling.classList.toggle('is-selected', isSelected);
+      sibling.setAttribute('aria-pressed', '$isSelected');
+    }
+
+    hideSubsequentFromStep(step);
+
+    if (resetButton != null) {
+      setHidden(resetButton, false);
+    }
+
+    final nextStepId = option.getAttribute('data-next-step');
+    if (nextStepId != null && nextStepId.isNotEmpty) {
+      final nextStep = tree.querySelector(
+        '.decision-tree-step[data-step-id="$nextStepId"]',
+      ) as web.HTMLElement?;
+      if (nextStep != null) {
+        setHidden(nextStep, false);
+        nextStep.classList.add('is-active');
+        _scrollTo(nextStep, smooth: true);
+      }
+      return;
+    }
+
+    final recId = option.getAttribute('data-recommendation');
+    if (recId != null && recId.isNotEmpty) {
+      final rec = tree.querySelector(
+        '.decision-tree-recommendation[data-recommendation-id="$recId"]',
+      ) as web.HTMLElement?;
+      if (rec != null) {
+        setHidden(rec, false);
+        rec.classList.add('is-active');
+        _scrollTo(rec, smooth: true);
+      }
+    }
+  }
+
+  void handleClick(web.Event event) {
+    final target = event.target as web.Element?;
+    if (target == null) return;
+
+    if (target.closest('.decision-tree-reset') != null) {
+      event.preventDefault();
+      resetTree();
+      return;
+    }
+
+    if (target.closest('.decision-tree-toggle-all') != null) {
+      event.preventDefault();
+      toggleShowAll();
+      return;
+    }
+
+    if (target.closest('.decision-tree-option')
+        case final web.HTMLElement option) {
+      event.preventDefault();
+      selectOption(option);
+    }
+  }
+
+  tree.addEventListener('click', handleClick.toJS);
 }

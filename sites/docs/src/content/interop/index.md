@@ -15,83 +15,123 @@ or read on to learn about the native interop layers.
 
 ## Choose your interop solution
 
-```mermaid
-flowchart TD
-    Start(["Question 1: What is your primary goal?"]) --> GoalA["Goal A: Platform integration<br>(Swift, Kotlin, Java, Obj-C)"]
-    Start --> GoalB["Goal B: C-ABI wrapping<br>(C, C++, Rust, Go)"]
-    Start --> GoalC["Goal C: Pure Dart package<br>(No Flutter framework)"]
+Select your goals and constraints in the following interactive guide to find
+the recommended interop tool for your project, or click **Show all paths** to
+compare every option at once:
 
-    GoalB --> FFIgen["Use FFIgen<br>(or Flutter Rust Bridge)"]:::directNode
-    GoalC --> Direct["Use FFIgen or JNIgen"]:::directNode
-
-    GoalA --> EvalPigeon{"Question 2: Do high-complexity<br>constraints apply?"}
-    EvalPigeon -->|"No (most common)"| Pigeon["Use Pigeon<br>(Recommended default)"]:::recommendedNode
-    EvalPigeon -->|"Yes (advanced)"| DirectInterop["Use FFIgen or JNIgen"]:::directNode
-
-    classDef recommendedNode stroke:#1e8e3e,stroke-width:2px;
-    classDef directNode stroke:#1a73e8,stroke-width:2px;
-```
-
----
-
-Answer the following questions to walk through the decision tree in detail:
-
-### Question 1: What is your primary goal?
-
-**Goal A: Platform integration**
-: Communicate with native OS features (Swift, Kotlin, Java, or Objective-C)
-  or expose an API surface.
-  Proceed to [Question 2: Do high-complexity constraints apply?](#question-2-do-high-complexity-constraints-apply).
-
-**Goal B: C-ABI wrapping**
-: Wrap an existing native library (C, C++, Rust, or Go).
-  Use [FFIgen](/interop/ffigen)
-  (or [Flutter Rust Bridge][frb] for Rust).
-
-**Goal C: Pure Dart package**
-: Build a Dart CLI tool without Flutter framework dependencies.
-  Use [FFIgen](/interop/ffigen) or
-  [JNIgen](/interop/jnigen).
-
-### Question 2: Do high-complexity constraints apply?
-
-If you're building a Flutter plugin,
-first verify whether [Pigeon](/interop/pigeon) satisfies
-your technical constraints.
-
-:::important
-Migrating a plugin between Pigeon and FFIgen or JNIgen is non-trivial
-because the glue code lives in different languages.
-Evaluate your plugin's constraints carefully before choosing between them.
-:::
-
-Do any of the following requirements apply to your feature?
-
-- Your app processes high-frequency raw data (for example, video processing).
-- Your integration requires advanced language bridging
-  (for example, cross-language subclasses, delegates, or proxies).
-- Your feature requires manual memory management and multithreading over
-  guardrails.
-- Your target language is C, C++, Rust, or Go.
-
-Based on whether any of the preceding requirements apply,
-choose your interop tool:
-
-**No (most common) — Use [Pigeon](/interop/pigeon)**
-: This is the default, recommended path.
-  It provides necessary guardrails, creates easily digestible interface
-  mappings, and is highly efficient for most API surface areas.
-
-**Yes — Use [FFIgen](/interop/ffigen) or [JNIgen](/interop/jnigen)**
-: You need the flexibility, complexity, and performance of direct interop for
-  larger surface areas.
-
-:::note
-Directly using FFIgen and JNIgen introduces potential pitfalls,
-particularly around threading and memory management.
-Pigeon is generally recommended because it has fewer potential pitfalls
-and provides safer guardrails.
-:::
+<DecisionTree title="Choose your interop solution">
+steps:
+  - id: primary-goal
+    question: What is your primary goal?
+    description: >-
+      Choose the option that best matches the native code you want to call
+      and how your Dart or Flutter project is structured.
+    options:
+      - label: "Goal A: Platform integration"
+        subtitle: >-
+          Communicate with native OS features (Swift, Kotlin, Java, or
+          Objective-C) or expose an API surface.
+        icon: devices
+        next_step: complexity-constraints
+      - label: "Goal B: C-ABI wrapping"
+        subtitle: >-
+          Wrap an existing native library written in C, C++, Rust, or Go.
+        icon: memory
+        recommendation: c-abi-wrapping
+      - label: "Goal C: Pure Dart package"
+        subtitle: >-
+          Build a Dart CLI tool or package without Flutter framework
+          dependencies.
+        icon: terminal
+        recommendation: pure-dart
+  # Step 2: Evaluate high-complexity constraints for platform integration.
+  - id: complexity-constraints
+    question: Do high-complexity constraints apply?
+    description: >-
+      If you're building a Flutter plugin, first verify whether
+      [Pigeon](/interop/pigeon) satisfies your technical constraints.
+      Do any of the following requirements apply to your feature?
+    checklist:
+      - >-
+        Your app processes high-frequency raw data
+        (for example, video processing).
+      - >-
+        Your integration requires advanced language bridging
+        (for example, cross-language subclasses, delegates, or proxies).
+      - >-
+        Your feature requires manual memory management and multithreading
+        over guardrails.
+      - Your target language is C, C++, Rust, or Go.
+    callout:
+      type: important
+      title: Important
+      content: >-
+        Migrating a plugin between Pigeon and FFIgen or JNIgen is non-trivial
+        because the glue code lives in different languages. Evaluate your
+        plugin's constraints carefully before choosing between them.
+    options:
+      - label: "No (most common)"
+        subtitle: >-
+          None of these high-complexity requirements apply to my plugin or app.
+        icon: verified
+        recommendation: pigeon
+      - label: "Yes (advanced)"
+        subtitle: >-
+          One or more of these requirements apply; I need direct native
+          bindings.
+        icon: tune
+        recommendation: direct-platform-interop
+# Recommendations
+recommendations:
+  - id: pigeon
+    title: Use Pigeon (Recommended default)
+    icon: recommend
+    description: >-
+      **[Pigeon](/interop/pigeon)** is the default, recommended path for
+      platform integration. It provides necessary guardrails, creates easily
+      digestible interface mappings, and is highly efficient for most API
+      surface areas.
+    link: /interop/pigeon
+    link_text: Learn about Pigeon
+  - id: direct-platform-interop
+    title: Use FFIgen or JNIgen
+    icon: bolt
+    description: >-
+      Use **[FFIgen](/interop/ffigen)** (for C, Objective-C, or Swift) or
+      **[JNIgen](/interop/jnigen)** (for Java or Kotlin) when you need the
+      flexibility, complexity, and performance of direct interop for larger
+      surface areas.
+    callout:
+      type: note
+      title: Note
+      content: >-
+        Directly using FFIgen and JNIgen introduces potential pitfalls,
+        particularly around threading and memory management. Pigeon is
+        generally recommended because it has fewer potential pitfalls and
+        provides safer guardrails.
+    link: /interop/ffigen
+    link_text: Explore FFIgen
+  - id: c-abi-wrapping
+    title: Use FFIgen (or Flutter Rust Bridge)
+    icon: memory
+    description: >-
+      Use **[FFIgen](/interop/ffigen)** to generate Dart FFI bindings for
+      existing C, C++, or Go libraries (or
+      **[Flutter Rust Bridge]({{site.pub-pkg}}/flutter_rust_bridge)** when
+      wrapping Rust libraries without `extern "C"`).
+    link: /interop/ffigen
+    link_text: Explore FFIgen
+  - id: pure-dart
+    title: Use FFIgen or JNIgen
+    icon: terminal
+    description: >-
+      For pure Dart packages and CLI tools without Flutter framework
+      dependencies, use **[FFIgen](/interop/ffigen)** (for C and Objective-C
+      libraries) or **[JNIgen](/interop/jnigen)** (for Java and Kotlin
+      libraries).
+    link: /interop/ffigen
+    link_text: Explore FFIgen
+</DecisionTree>
 
 ## Package your interop code
 
