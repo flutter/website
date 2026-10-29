@@ -69,7 +69,7 @@ To explore a complete implementation of this flow,
 including how to configure the generator,
 refer to the [official FFIgen examples][ffigen-examples].
 
-The `Add` example highlights the general flow with a toy native API
+The `add` example highlights the general flow with a toy native API
 (one function in a single header file).
 
 The `code_assets` examples highlight real-world examples like
