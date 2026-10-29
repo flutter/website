@@ -532,17 +532,6 @@ forward scene lifecycle events to Flutter.
 +       completionHandler: completionHandler
 +     )
     }
-
-+   @available(iOS 26.0, *)
-+   func windowScene(
-+     _ windowScene: UIWindowScene,
-+     didUpdateEffectiveGeometry previousEffectiveGeometry: UIWindowScene.Geometry
-+   ) {
-+     sceneLifeCycleDelegate.windowScene(
-+       windowScene,
-+       didUpdateEffectiveGeometry: previousEffectiveGeometry
-+     )
-+   }
   }
 ```
 
@@ -610,13 +599,6 @@ forward scene lifecycle events to Flutter.
 +   [self.sceneLifeCycleDelegate windowScene:windowScene
 +             performActionForShortcutItem:shortcutItem completionHandler:completionHandler];
   }
-
-+ - (void)windowScene:(UIWindowScene*)windowScene
-+     didUpdateEffectiveGeometry:(UIWindowSceneGeometry*)previousEffectiveGeometry
-+     API_AVAILABLE(ios(26.0)) {
-+   [self.sceneLifeCycleDelegate windowScene:windowScene
-+                 didUpdateEffectiveGeometry:previousEffectiveGeometry];
-+ }
 ```
 
 </Tab>
