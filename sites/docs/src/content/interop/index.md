@@ -41,7 +41,7 @@ Answer the following questions to walk through the decision tree in detail:
 **Goal A: Platform integration**
 : Communicate with native OS features (Swift, Kotlin, Java, or Objective-C)
   or expose an API surface.
-  Proceed to [Question 2: Does Pigeon fit your plugin constraints?](#question-2-does-pigeon-fit-your-plugin-constraints).
+  Proceed to [Question 2: Do high-complexity constraints apply?](#question-2-do-high-complexity-constraints-apply).
 
 **Goal B: C-ABI wrapping**
 : Wrap an existing native library (C, C++, Rust, or Go).
@@ -53,7 +53,7 @@ Answer the following questions to walk through the decision tree in detail:
   Use [FFIgen](/interop/ffigen) or
   [JNIgen](/interop/jnigen).
 
-### Question 2: Does Pigeon fit your plugin constraints?
+### Question 2: Do high-complexity constraints apply?
 
 If you're building a Flutter plugin,
 first verify whether [Pigeon](/interop/pigeon) satisfies
@@ -97,12 +97,9 @@ and provides safer guardrails.
 
 Depending on how you plan to share your code,
 choose the option that best suits your use case.
-
-:::note
 To learn about the difference between a [package](/resources/glossary#package)
 and a [plugin](/resources/glossary#plugin),
 refer to the [Flutter glossary](/resources/glossary).
-:::
 
 - **In-app integration.**
   Write your native interop code directly inside your Flutter app without
@@ -114,18 +111,13 @@ refer to the [Flutter glossary](/resources/glossary).
   For more details, refer to
   [Developing plugin packages](/packages-and-plugins/developing-packages#plugin).
 - **FFI package.**
-  A package that compiles and bundles native C or C++ code using Dart build
-  hooks and [`dart:ffi`](/interop/dart-ffi).
+  A package that compiles and bundles native C or C++ code (or pre-compiled
+  binaries) using [Dart build hooks](/interop/bind-native-code) and
+  [`dart:ffi`](/interop/dart-ffi).
   This template also includes an FFIgen configuration to regenerate
   Dart bindings (`flutter create --template=package_ffi`).
   For more details, refer to
   [Developing FFI packages](/packages-and-plugins/developing-packages#ffi).
-
-:::note
-If you're using pre-compiled binaries (such as `.so` files on Android or
-`.dylib` files on iOS and macOS), use `CodeAsset` in your `hook/build.dart`
-script to bundle them into your package.
-:::
 
 For more details on package authoring,
 refer to [Developing packages and plugins](/packages-and-plugins/developing-packages).
