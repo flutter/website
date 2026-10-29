@@ -14,7 +14,7 @@ This allows calling Apple platform APIs (iOS and macOS) directly
 and synchronously from your Dart code.
 
 :::note
-Direct Swift interop is in experimental support and is likely to change.
+Direct Swift interop is in experimental support.
 :::
 
 ## When to use FFIgen

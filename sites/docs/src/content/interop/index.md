@@ -17,14 +17,14 @@ or read on to learn about the native interop layers.
 
 ```mermaid
 flowchart TD
-    Start(["Step 1: What is your primary goal?"]) --> GoalA["Goal A: Platform integration<br>(Swift, Kotlin, Java, Obj-C)"]
+    Start(["Question 1: What is your primary goal?"]) --> GoalA["Goal A: Platform integration<br>(Swift, Kotlin, Java, Obj-C)"]
     Start --> GoalB["Goal B: C-ABI wrapping<br>(C, C++, Rust, Go)"]
     Start --> GoalC["Goal C: Pure Dart package<br>(No Flutter framework)"]
 
     GoalB --> FFIgen["Use FFIgen<br>(or Flutter Rust Bridge)"]:::directNode
     GoalC --> Direct["Use FFIgen or JNIgen"]:::directNode
 
-    GoalA --> EvalPigeon{"Step 2: Do high-complexity<br>constraints apply?"}
+    GoalA --> EvalPigeon{"Question 2: Do high-complexity<br>constraints apply?"}
     EvalPigeon -->|"No (most common)"| Pigeon["Use Pigeon<br>(Recommended default)"]:::recommendedNode
     EvalPigeon -->|"Yes (advanced)"| DirectInterop["Use FFIgen or JNIgen"]:::directNode
 
@@ -34,14 +34,14 @@ flowchart TD
 
 ---
 
-Follow the steps below to walk through the decision tree in detail:
+Answer the following questions to walk through the decision tree in detail:
 
-### Step 1: Determine your primary goal
+### Question 1: What is your primary goal?
 
 **Goal A: Platform integration**
 : Communicate with native OS features (Swift, Kotlin, Java, or Objective-C)
   or expose an API surface.
-  Proceed to [Step 2: Evaluate Pigeon for Flutter plugins](#step-2-evaluate-pigeon-for-flutter-plugins).
+  Proceed to [Question 2: Does Pigeon fit your plugin constraints?](#question-2-does-pigeon-fit-your-plugin-constraints).
 
 **Goal B: C-ABI wrapping**
 : Wrap an existing native library (C, C++, Rust, or Go).
@@ -53,7 +53,7 @@ Follow the steps below to walk through the decision tree in detail:
   Use [FFIgen](/interop/ffigen) or
   [JNIgen](/interop/jnigen).
 
-### Step 2: Evaluate Pigeon for Flutter plugins
+### Question 2: Does Pigeon fit your plugin constraints?
 
 If you're building a Flutter plugin,
 first verify whether [Pigeon](/interop/pigeon) satisfies
