@@ -1,0 +1,292 @@
+// Copyright 2025 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+.decision-tree {
+  background-color: var(--site-raised-bgColor);
+  border: 1px solid var(--site-inset-borderColor);
+  border-radius: var(--site-radius);
+  margin: 1.5rem 0;
+  overflow: hidden;
+
+  .decision-tree-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--site-inset-bgColor);
+    border-bottom: 1px solid var(--site-inset-borderColor);
+    font-family: var(--site-ui-fontFamily);
+
+    .decision-tree-toolbar-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--site-base-fgColor);
+
+      .material-symbols {
+        color: var(--site-primary-color);
+        font-size: 1.25rem;
+      }
+    }
+
+    .decision-tree-toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  .decision-tree-steps {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .decision-tree-step {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--site-inset-borderColor);
+
+    &[hidden] {
+      display: none;
+    }
+
+    .decision-tree-step-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .decision-tree-step-badge {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      padding: 0.125rem 0.625rem;
+      border-radius: 999px;
+      background-color: var(--site-primary-color-bg);
+      color: var(--site-primary-color);
+      font-family: var(--site-ui-fontFamily);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .decision-tree-question {
+      margin: 0;
+      font-family: var(--site-font-family-alt);
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--site-base-fgColor);
+    }
+
+    .decision-tree-step-description {
+      margin-bottom: 0.75rem;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .decision-tree-checklist {
+      margin: 0.5rem 0 1rem;
+      padding-left: 1.5rem;
+
+      li {
+        margin-bottom: 0.375rem;
+      }
+    }
+
+    .decision-tree-callout {
+      margin: 0.75rem 0 1rem;
+    }
+  }
+
+  .decision-tree-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.875rem;
+    margin-top: 1rem;
+  }
+
+  .decision-tree-option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 1rem 1.125rem;
+    text-align: left;
+    background-color: var(--site-inset-bgColor);
+    border: 1.5px solid var(--site-inset-borderColor);
+    border-radius: var(--site-radius);
+    color: var(--site-base-fgColor);
+    cursor: pointer;
+    transition:
+      border-color 0.15s ease,
+      background-color 0.15s ease,
+      box-shadow 0.15s ease;
+
+    &:hover {
+      background-color: var(--site-hover-bgColor);
+      border-color: var(--site-primary-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--site-primary-color);
+      outline-offset: 2px;
+    }
+
+    &.is-selected,
+    &[aria-pressed='true'] {
+      background-color: var(--site-primary-color-bg);
+      border-color: var(--site-primary-color);
+      box-shadow: 0 0 0 1px var(--site-primary-color);
+
+      .decision-tree-option-icon,
+      .decision-tree-option-arrow {
+        color: var(--site-primary-color);
+      }
+    }
+
+    .decision-tree-option-header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 0.625rem;
+    }
+
+    .decision-tree-option-icon {
+      color: var(--site-primary-color);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .decision-tree-option-label {
+      flex: 1;
+      font-family: var(--site-ui-fontFamily);
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .decision-tree-option-arrow {
+      font-size: 1.125rem;
+      opacity: 0.7;
+      flex-shrink: 0;
+      transition: transform 0.15s ease;
+    }
+
+    &:hover .decision-tree-option-arrow {
+      transform: translateX(2px);
+      opacity: 1;
+    }
+
+    .decision-tree-option-subtitle {
+      font-size: 0.875rem;
+      line-height: 1.45;
+      opacity: 0.85;
+    }
+  }
+
+  .decision-tree-recommendations {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .decision-tree-recommendation {
+    padding: 1.5rem;
+    background-color: var(--site-alert-tip-bg);
+    border-top: 2px solid var(--site-alert-tip-borderColor);
+
+    &[hidden] {
+      display: none;
+    }
+
+    .decision-tree-recommendation-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .decision-tree-recommendation-icon {
+      color: var(--site-alert-tip-color);
+      font-size: 1.75rem;
+      margin-top: 0.125rem;
+      flex-shrink: 0;
+    }
+
+    .decision-tree-recommendation-titles {
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+
+    .decision-tree-recommendation-eyebrow {
+      font-family: var(--site-ui-fontFamily);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--site-alert-tip-color);
+    }
+
+    .decision-tree-recommendation-title {
+      margin: 0;
+      font-family: var(--site-font-family-alt);
+      font-size: 1.375rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--site-base-fgColor);
+    }
+
+    .decision-tree-recommendation-body {
+      margin-bottom: 1rem;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .decision-tree-callout {
+      margin: 1rem 0;
+    }
+
+    .decision-tree-recommendation-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+  }
+
+  // When "Show all paths" is active or when printing, reveal all steps and
+  // recommendations so readers can compare every path at a glance.
+  &.show-all {
+    .decision-tree-step[hidden],
+    .decision-tree-recommendation[hidden] {
+      display: block;
+    }
+
+    .decision-tree-recommendation + .decision-tree-recommendation {
+      border-top: 1px solid var(--site-inset-borderColor);
+    }
+  }
+
+  @media print {
+    .decision-tree-toolbar-actions {
+      display: none;
+    }
+
+    .decision-tree-step[hidden],
+    .decision-tree-recommendation[hidden] {
+      display: block !important;
+    }
+  }
+}

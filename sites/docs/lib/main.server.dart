@@ -8,6 +8,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
 import 'package:site_shared/components/common/card.dart';
+import 'package:site_shared/components/common/decision_tree.dart';
 import 'package:site_shared/components/common/ide_explorer/markdown_component.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/common/tabs.dart';
@@ -96,6 +97,7 @@ final RegExp _passThroughPattern = RegExp(r'.*\.(txt|json|pdf)$');
 
 /// Custom "components" that can be used from Markdown files.
 List<CustomComponent> get _embeddableComponents => [
+  const DecisionTree(),
   const DashTabs(),
   const DashImage(),
   const CodePreview(),
