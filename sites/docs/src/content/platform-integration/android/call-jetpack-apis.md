@@ -54,21 +54,16 @@ two options.
 The most direct and efficient way to invoke native APIs is by
 calling the API directly, via FFI. This links your Dart executable
 to any specified native code at compile-time, allowing you to
-call it directly from the UI thread through a small amount of glue
-code. In most cases, [ffigen][ffigen] or [jnigen][jnigen] are
-helpful in writing this glue code.
+call it directly from the UI thread through generated bindings.
+On Android, [JNIgen][jnigen] generates Dart bindings for Java and
+Kotlin APIs, and [FFIgen][ffigen] generates bindings for C APIs.
 
-For complete guidance on directly calling native code from
-your Flutter app, see the [FFI documentation][ffi].
+For complete guidance on calling native code directly from
+your Flutter app, consult the [Native interop documentation][interop].
 
-In the coming months, the Dart team hopes to make this process
-easier with direct support for calling native APIs using the
-FFI approach, but without any need for the developer to write
-glue code.
-
-[ffi]: {{site.dart-site}}/interop/c-interop
-[ffigen]: {{site.pub}}/packages/ffigen
-[jnigen]: {{site.pub}}/packages/jnigen
+[interop]: /interop
+[ffigen]: /interop/ffigen
+[jnigen]: /interop/jnigen
 
 
 ### Add a MethodChannel
@@ -81,11 +76,11 @@ might or might not matter to you, depending on your use case. As
 with FFI and direct calls to native code, using a `MethodChannel`
 requires a small amount of glue code to translate your Dart objects
 into native objects, and then back again. In most cases,
-[`pkg:pigeon`][pigeon] is helpful in writing this glue code.
+[Pigeon][pigeon] is helpful in generating this glue code.
 
 For complete guidance on adding MethodChannels to your Flutter
-app, see the [`MethodChannel`s documentation][methodchannels].
+app, consult the [`MethodChannel`s documentation][methodchannels].
 
-[methodchannels]: /platform-integration/platform-channels
+[methodchannels]: /interop/platform-channels
 [methodchannels-api-docs]: {{site.api}}/flutter/services/MethodChannel-class.html
-[pigeon]: {{site.pub}}/packages/pigeon
+[pigeon]: /interop/pigeon
