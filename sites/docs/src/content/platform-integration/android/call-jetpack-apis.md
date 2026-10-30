@@ -81,6 +81,6 @@ into native objects, and then back again. In most cases,
 For complete guidance on adding MethodChannels to your Flutter
 app, consult the [`MethodChannel`s documentation][methodchannels].
 
-[methodchannels]: /interop/platform-channels
+[methodchannels]: /platform-integration/platform-channels
 [methodchannels-api-docs]: {{site.api}}/flutter/services/MethodChannel-class.html
 [pigeon]: /interop/pigeon
