@@ -75,6 +75,10 @@ The `add` example highlights the general flow with a toy native API
 The `code_assets` examples highlight real-world examples like
 system hostname lookups and audio playback.
 
+For a production package on pub.dev that uses FFIgen to wrap Apple's
+`NSURLSession` API, check out [`package:cupertino_http`][cupertino-http-pub]
+([source on GitHub][cupertino-http-src]).
+
 ## Constraints and limitations
 
 Some general considerations when working with FFIgen:
@@ -112,13 +116,15 @@ as shown in the [Objective-C memory management guide][objc-gc-doc].
 FFIgen wrappers enforce Dart static types,
 but the underlying Objective-C object might have a different runtime subclass,
 so Dart's `is` and `as` keywords won't work as expected.
-Use `.isA()` and `.as()` instead.
+Use `.isA()` and `.as()` instead, as shown in the
+[Objective-C runtime types guide][objc-runtime-types-doc].
 
 ### Objective-C multithreading
 
 UI-related Objective-C calls must run on the iOS main platform thread.
 Also, some types of callbacks can crash your app
 if they're executed on the wrong thread.
+To learn more, consult the [Objective-C threading guide][objc-threading-doc].
 
 ### Swift compatibility
 
@@ -141,5 +147,9 @@ refer to the following resources:
 [ffigen-pub]: {{site.pub-pkg}}/ffigen
 [objc-pub]: {{site.pub-pkg}}/objective_c
 [swiftgen-pub]: {{site.pub-pkg}}/swiftgen
+[cupertino-http-pub]: {{site.pub-pkg}}/cupertino_http
+[cupertino-http-src]: https://github.com/dart-lang/http/tree/master/pkgs/cupertino_http
 [ffigen-examples]: https://github.com/dart-lang/native/tree/main/pkgs/ffigen/example
 [objc-gc-doc]: https://github.com/dart-lang/native/blob/main/pkgs/ffigen/doc/objc_gc.md
+[objc-runtime-types-doc]: https://github.com/dart-lang/native/blob/main/pkgs/ffigen/doc/objc_runtime_types.md
+[objc-threading-doc]: https://github.com/dart-lang/native/blob/main/pkgs/ffigen/doc/objc_threading.md

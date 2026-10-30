@@ -14,38 +14,37 @@ or [JNIgen](/interop/jnigen),
 `dart:ffi` is the underlying technology that powers these tools
 and enables native memory interop.
 
-## When to use `dart:ffi`
+## When to use `dart:ffi` and `package:ffi`
 
-When you use FFIgen or JNIgen to generate Dart bindings,
-the generated code doesn't automatically convert Dart objects
-like `String` or `List` into native formats.
 Dart memory is automatically garbage collected while native C memory is
-manually managed, so use `dart:ffi` to bridge this gap.
+manually managed, so use `dart:ffi` and `package:ffi` to bridge this gap.
 
-The two most common scenarios when `dart:ffi` is needed are
-memory allocation and data conversion.
+The two most common scenarios when `package:ffi` is needed alongside `dart:ffi`
+are memory allocation and C string conversion.
 
-With memory allocation, use `dart:ffi` to allocate space on the system heap
+With memory allocation, use `package:ffi` to allocate space on the system heap
 for native arguments, and manually free that memory when done
 to prevent memory leaks.
 
-With data conversion, use `dart:ffi` to convert Dart data types
-so they can be read by native code.
+With data conversion, use `package:ffi` to convert Dart strings into C strings
+(`Pointer<Utf8>` or `Pointer<Utf16>`) so they can be read by native C code.
 
 ## Core tools: `dart:ffi` and `package:ffi`
 
-To write interop code, use two libraries:
+To write C interop code, use two libraries:
 
-- **`dart:ffi`:** Built into the core Dart SDK.
-  It provides native representation types and lookup signatures.
-- **`package:ffi`:** A required dependency for working with `dart:ffi`.
-  It provides memory allocation methods and conversion helpers.
+- **`dart:ffi`:** Built into the core Dart SDK and required for doing FFI
+  interop. It provides native representation types, pointers, structs, and
+  function lookup signatures.
+- **`package:ffi`:** A companion package that contains utilities helpful in
+  common C interop use cases, such as memory allocation (`calloc` and `malloc`)
+  and C string conversion helpers.
 
 ## Concurrency in Flutter
 
 FFI calls are synchronous and run on the thread on which they're called.
 If you invoke a heavy or blocking C function on your Flutter app's
-main UI thread, your app freezes or drops frames.
+main UI thread, your app may freeze or drop frames.
 To prevent this, execute blocking FFI calls inside a background Dart isolate
 using `Isolate.run`.
 
