@@ -1,26 +1,37 @@
 ---
-title: Writing custom platform-specific code
-shortTitle: Platform-specific code
-description: Learn how to write custom platform-specific code in your app.
+title: Write platform-specific code with platform channels
+shortTitle: Platform channels
+description: Learn how to write platform-specific code using Flutter's platform channels.
 ---
 
 <?code-excerpt path-base="platform_integration"?>
 
-This guide describes how to use custom platform-specific
-code with Flutter.
+:::note
+Refer to the [Native interop overview](/interop)
+for recommended approaches to calling native platform code.
+:::
+
+Platform channels pass messages between Flutter and your host platform
+(Android, iOS, macOS, Windows, or Linux).
+
+While [Pigeon](/interop/pigeon),
+[FFIgen](/interop/ffigen), and
+[JNIgen](/interop/jnigen) are recommended for new projects,
+platform channels remain available for low-level message passing and
+maintaining existing codebases.
 
 ## Overview
 
 You can use platform-specific code in your Flutter app.
-A few common ways to do this include:
+Common ways to do this include:
 
-* Use Flutter's platform channel APIs to pass messages
-  between Flutter and your desired platforms. For more
-  information, see [Call platform-specific code using platform channels](#example).
+- Use Flutter's platform channel APIs to pass messages
+  between Flutter and your target platforms.
+  For details, refer to
+  [Call platform-specific code using platform channels](#example).
 
-* Use the `Pigeon` package to generate type-safe
-  platform-specific code. For more
-  information, see [Call platform-specific code using the Pigeon package](#pigeon).
+- Use [Pigeon](/interop/pigeon) to generate type-safe
+  platform-specific bindings.
 
 Flutter supports the following platforms and
 platform-specific languages:
@@ -1134,71 +1145,11 @@ it displays 'Battery level not available'.
 
 ## Call platform-specific code using the Pigeon package {:#pigeon}
 
-You can use the [`Pigeon`][] package as
-an alternative to Flutter's platform channel APIs
-to generate code that sends messages in a
-structured, type-safe manner. The workflow for Pigeon
-looks like this:
-
-  * The Flutter app sends structured
-    type-safe messages to its _host_, the non-Dart portion
-    of the app, over a platform channel.
-
-  * The _host_ listens on the platform channel, and receives
-    the message. It then calls into any number of
-    platform-specific APIs using the native programming
-    language and sends a response back to the _client_,
-    the Flutter portion of the app.
-
-Using this package eliminates the need to match
-strings between host and client for the names and
-data types of messages. It supports nested classes,
-grouping messages into APIs, generation of asynchronous
-wrapper code, and sending messages in either direction. The
-generated code is readable and guarantees there are no
-conflicts between multiple clients of different versions.
-
-With Pigeon, the messaging protocol is defined
-in a subset of Dart that then generates messaging
-code for Android, iOS, macOS, or Windows. For example:
-
-<?code-excerpt "pigeon/lib/pigeon_source.dart (search)"?>
-```dart title="pigeon_source.dart"
-import 'package:pigeon/pigeon.dart';
-
-class SearchRequest {
-  final String query;
-
-  SearchRequest({required this.query});
-}
-
-class SearchReply {
-  final String result;
-
-  SearchReply({required this.result});
-}
-
-@HostApi()
-abstract class Api {
-  @async
-  SearchReply search(SearchRequest request);
-}
-```
-
-<?code-excerpt "pigeon/lib/use_pigeon.dart (use-api)"?>
-```dart title="use_pigeon.dart"
-import 'generated_pigeon.dart';
-
-Future<void> onClick() async {
-  SearchRequest request = SearchRequest(query: 'test');
-  Api api = SomeApi();
-  SearchReply reply = await api.search(request);
-  print('reply: ${reply.result}');
-}
-```
-
-You can find a complete example and more information
-on the [`pigeon`][] page on pub.dev.
+Pigeon is the recommended default tool for generating type-safe bindings
+between Dart and host platforms.
+To learn how to use Pigeon, define API contracts, and choose between
+native interop and platform channels,
+refer to the dedicated [Pigeon guide](/interop/pigeon).
 
 ## Channels and platform threading
 
@@ -1478,7 +1429,6 @@ in the Flutter ecosystem, see [publishing packages][].
 [`FirestoreMessageCodec`]: {{site.repo.flutterfire}}/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [developing packages]: /packages-and-plugins/developing-packages
 [Engine Embedder APIs]: {{site.dart.api}}/index.html#more-documentation
-[`Pigeon`]: {{site.pub-pkg}}/pigeon
 [plugins]: /packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
 [`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel
