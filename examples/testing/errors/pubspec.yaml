@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^4.15.2
+  firebase_core: ^5.1.0
   material_ui: ^1.8.0
 
 dev_dependencies:
