@@ -5,14 +5,14 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.13.0-0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_ui: ^1.1.1
+  cupertino_ui: ^1.1.4
   cupertino_icons: ^2.0.0
-  material_ui: ^1.5.0
+  material_ui: ^1.8.0
 
 dev_dependencies:
   flutter_test:

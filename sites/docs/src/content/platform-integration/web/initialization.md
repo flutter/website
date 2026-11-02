@@ -73,7 +73,7 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
-| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version for custom service worker configurations (Flutter no longer generates a service worker by default; see the [Web FAQ](/platform-integration/web/faq#how-do-i-configure-a-service-worker)). |
+| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | **Deprecated.** Previously substituted a build version number for Flutter's legacy service worker loader. Flutter no longer generates or registers a caching service worker; refer to [Service worker deprecation](#service-worker-version-deprecation) and the [Web FAQ](/platform-integration/web/faq#how-do-i-configure-a-service-worker). |
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
 
 {:.table}
@@ -100,6 +100,20 @@ The most basic `flutter_bootstrap.js` file would look something like this:
 
 _flutter.loader.load();
 ```
+
+:::tip Compatibility with `--web-content-hash`
+When you build with [`flutter build web --web-content-hash`][web-content-hashing],
+Flutter injects the content-hashed entrypoint filenames (`mainJsPath`,
+`mainWasmPath`, `jsSupportRuntimePath`) and hashed asset manifest mappings
+(`assetManifest`, `fontManifest`, `extraAssets`) into
+`{% raw %}{{flutter_build_config}}{% endraw %}`. Custom `web/index.html` or
+`web/flutter_bootstrap.js` files must include
+`{% raw %}{{flutter_build_config}}{% endraw %}` and call `_flutter.loader.load()`
+rather than hardcoding `"main.dart.js"` or calling the deprecated
+`FlutterLoader.loadEntrypoint()` API.
+:::
+
+[web-content-hashing]: /deployment/web#web-content-hashing
 
 ## Customize the Flutter loader
 
@@ -129,6 +143,11 @@ The `config` argument is an object that can have the following optional fields:
 |`hostElement`| HTML Element into which Flutter renders the app (see [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`multiViewEnabled`| Enables multi-view mode for [embedding Flutter views][embedding-flutter-web] into host DOM elements dynamically. |`bool`|
 |`nonce`| A [Content Security Policy (CSP) nonce][nonce-mdn] string applied to inline scripts and styles created by the engine. |`String`|
+|`renderer`| Explicitly forces the renderer to `'canvaskit'` or `'skwasm'`. |`String`|
+|`suppressMultithreadingWarning`| When `true`, suppresses the console warning logged when `skwasm` runs single-threaded because `Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy` headers are absent. |`bool`|
+|`verboseBuildSelection`| When `true`, logs detailed `console.warn` diagnostics explaining why each candidate build in `_flutter.buildConfig.builds` was selected or skipped. |`bool`|
+|`wasmAllowList`| Browser engine allowlist (`{ blink?: boolean, webkit?: boolean, gecko?: boolean, unknown?: boolean }`) controlling which browser engines can run the `skwasm` + `dart2wasm` build when runtime WebAssembly feature probes pass (refer to [Support for WebAssembly][wasm-support]). Defaults to `{ blink: true, gecko: false, webkit: false, unknown: false }`. |`Object`|
+|`wasmDeferredModulesLoader`| Custom `(moduleNames: string[], onModuleLoaded: (moduleName: string, bytes: Uint8Array) => Promise<void>) => Promise<void>` hook used to fetch deferred `.wasm` modules when `--enable-wasm-deferred-loading` is enabled. |`Function`|
 
 {:.table}
 
@@ -154,6 +173,11 @@ to run in **single-threaded mode**. This is useful if:
 _flutter.loader.load({
   config: {
     forceSingleThreadedSkwasm: true,
+    wasmAllowList: {
+      blink: true,
+      webkit: true,
+      gecko: true,
+    },
   },
 });
 ```
@@ -265,20 +289,38 @@ _flutter.loader.load({
 This section describes common web build and initialization warnings
 and how to resolve them.
 
-### Service worker version deprecation
+### Service worker deprecation {:#service-worker-version-deprecation}
 
-If you experience a warning similar to the following:
+If you experience a warning similar to the following during `flutter build web`:
 
 ```text
-Warning: In index.html:37: Local variable for "serviceWorkerVersion" is deprecated.
-Use "{{flutter_service_worker_version}}" template token instead.
+Warning: In index.html:37: Flutter's service worker is deprecated and will be removed in a future Flutter release.
+See https://github.com/flutter/flutter/issues/156910 for more details.
 ```
 
-Delete the following line from the `web/index.html` file:
+Remove legacy service worker variables, registration calls, and
+`serviceWorkerSettings` from your `web/index.html` or custom
+`web/flutter_bootstrap.js` file:
 
-```html title="web/index.html"
+```js
+// Remove legacy serviceWorkerVersion declarations:
 var serviceWorkerVersion = null;
+const serviceWorkerVersion = null;
+
+// Remove legacy flutter_service_worker.js registration calls:
+navigator.serviceWorker.register('flutter_service_worker.js');
+
+// Remove serviceWorkerSettings from _flutter.loader.load():
+_flutter.loader.load({
+  serviceWorkerSettings: {
+    serviceWorkerVersion: {% raw %}{{flutter_service_worker_version}}{% endraw %},
+  },
+});
 ```
+
+If your app requires a custom service worker, refer to the
+[Web FAQ](/platform-integration/web/faq#how-do-i-configure-a-service-worker)
+and [Web content hashing (`precache_manifest.json`)][web-content-hashing].
 
 ### FlutterLoader.loadEntrypoint deprecation
 

@@ -1,7 +1,7 @@
 @use 'breakpoints';
 
 main {
-  background-color: white;
+  background-color: var(--site-base-bgColor);
   flex: 1 0 auto;
   overflow: hidden;
 }

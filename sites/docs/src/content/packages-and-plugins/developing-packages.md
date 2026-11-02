@@ -477,9 +477,14 @@ Then use the following steps:
    `hello/example/ios/Runner.xcworkspace` file.
 
 The iOS platform code for your plugin is located in
+`hello/ios/hello/Sources/hello`
+(or `hello/darwin/hello/Sources/hello` if using `sharedDarwinSource`).
+In the Project Navigator, it's under **Runner** > **Flutter** > **hello**.
+
+If your plugin uses the legacy CocoaPods structure,
+its platform code is located under
 `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
-in the Project Navigator. (If you are using `sharedDarwinSource`,
-the path will end with `Flutter/hello/Sources/hello` instead.)
+in the Project Navigator.
 
 You can run the example app by pressing the run (&#9654;) button.
 
@@ -542,16 +547,34 @@ pod files during the native app build step.
 
 If your plugin requires a privacy manifest, for example,
 if it uses any **required reason APIs**,
-update the `PrivacyInfo.xcprivacy` file to
-describe your plugin's privacy impact,
-and add the following to the bottom of your podspec file:
+update the `hello/ios/hello/Sources/hello/PrivacyInfo.xcprivacy` file to
+describe your plugin's privacy impact.
+Then uncomment the `PrivacyInfo.xcprivacy` resource
+in your plugin's `Package.swift` file:
 
-```ruby
-s.resource_bundles = {'your_plugin_privacy' => ['your_plugin/Sources/your_plugin/Resources/PrivacyInfo.xcprivacy']}
+```swift title="Package.swift" highlightLines=8
+targets: [
+  .target(
+    name: "hello",
+    dependencies: [
+      .product(name: "FlutterFramework", package: "FlutterFramework")
+    ],
+    resources: [
+      .process("PrivacyInfo.xcprivacy"),
+    ]
+  )
+]
+```
+
+To also include the privacy manifest when your plugin is used with CocoaPods,
+uncomment the following line in your `hello.podspec` file:
+
+```ruby title="hello.podspec"
+s.resource_bundles = {'hello_privacy' => ['hello/Sources/hello/PrivacyInfo.xcprivacy']}
 ```
 
 For more information,
-check out [Privacy manifest files][] on the Apple developer site.
+consult [Privacy manifest files][] on the Apple developer site.
 
 [Privacy manifest files]: {{site.apple-dev}}/documentation/bundleresources/privacy_manifest_files
 

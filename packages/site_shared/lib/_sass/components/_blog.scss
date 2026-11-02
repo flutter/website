@@ -157,14 +157,11 @@
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
     color: var(--site-base-fgColor);
+  }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-
-      &:hover {
-        color: var(--site-primary-color);
-      }
+  &:hover, &:focus-visible {
+    .blog-card-title {
+      color: var(--site-link-fgColor);
     }
   }
 
@@ -238,7 +235,7 @@
       &:hover {
         transform: translateY(-4px);
         box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
-        border-color: var(--site-primary-color);
+        border-color: var(--site-link-fgColor);
       }
 
       .blog-card-image {
@@ -365,16 +362,6 @@
     }
   }
 
-  > a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-
-    &:hover .post-info-name {
-      color: var(--site-primary-color);
-    }
-  }
-
   .post-info-author {
     display: flex;
     align-items: center;
@@ -434,6 +421,10 @@
       font-weight: var(--site-fontWeight-bold);
     }
 
+    a:hover {
+      color: var(--site-link-fgColor);
+    }
+
     .post-info-author-name {
       white-space: nowrap;
     }
@@ -485,7 +476,7 @@
         color: var(--site-base-fgColor);
 
         &:hover {
-          color: var(--site-primary-color);
+          color: var(--site-link-fgColor);
         }
       }
     }
@@ -534,6 +525,67 @@
 
   .postbreak span {
     background-color: var(--site-base-fgColor);
+  }
+}
+
+.blog-toc {
+  --toc-icon-size: 24px;
+
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--site-inset-bgColor);
+  border: 1px solid var(--site-inset-borderColor);
+  border-radius: var(--ui-border-radius-sm);
+
+  summary {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--site-ui-fontFamily);
+    font-weight: var(--site-fontWeight-bold);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    .material-symbols {
+      font-size: var(--toc-icon-size);
+      transition: transform 0.15s var(--ui-anim-func);
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+  }
+
+  details[open] summary .material-symbols {
+    transform: rotate(90deg);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 0.75em;
+    list-style: none;
+  }
+
+  details > ul {
+    margin-top: 0.75rem;
+    // Center the 1px border under the chevron and
+    // align the entries with the summary text.
+    margin-left: calc(var(--toc-icon-size) / 2 - 0.5px);
+    padding-left: calc(var(--toc-icon-size) / 2 + 0.25rem - 0.5px);
+    border-left: 1px solid var(--site-inset-borderColor);
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    overflow-wrap: anywhere;
   }
 }
 

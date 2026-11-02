@@ -7,8 +7,8 @@
 # - link: Required, absolute https URL that the whole banner links to.
 
 text: >-
-  Flutter 3.47 is here! Standalone design packages are now opt-in.
-  Learn more
+  Security update: Flutter 3.47.8 now blocks compromised eMudhra CA keys.
+  Read the security advisory
 mobileText: >-
-  Flutter 3.47 is here! Learn more
-link: https://flutter.dev/blog/whats-new-in-flutter-3-47
+  Security update: Flutter 3.47.8 is available. Read the security advisory
+link: https://github.com/dart-lang/sdk/security/advisories/GHSA-frr6-h895-5pxp

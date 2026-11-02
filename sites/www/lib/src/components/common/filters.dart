@@ -40,6 +40,7 @@ class Filters extends StatefulComponent {
     required this.data,
     required this.items,
     required this.filters,
+    this.showInitialCount = 9,
     this.scope = '',
     this.emptyResultsMessage = 'No results match these filters.',
     this.emptyDataMessage = 'No results are available.',
@@ -50,6 +51,7 @@ class Filters extends StatefulComponent {
   final List<Map<String, Object?>> data;
   final List<Component> items;
   final List<FilterType> filters;
+  final int showInitialCount;
 
   /// Prefix applied to the URL parameters and element IDs this component owns.
   ///
@@ -67,7 +69,7 @@ class Filters extends StatefulComponent {
 }
 
 class _FiltersState extends State<Filters> {
-  int _showItemsCount = 9;
+  late int _showItemsCount;
   Map<FilterType, Set<String>> _activeFilters = {};
 
   /// Indexes into [Filters.items] of the items matching [_activeFilters],
@@ -84,6 +86,8 @@ class _FiltersState extends State<Filters> {
   @override
   void initState() {
     super.initState();
+    assert(component.showInitialCount > 0, 'showInitialCount must be greater than 0');
+    _showItemsCount = component.showInitialCount;
     _matchingIndexes = [
       for (var index = 0; index < component.items.length; index++) index,
     ];
@@ -212,7 +216,7 @@ class _FiltersState extends State<Filters> {
           classes: 'btn',
           onClick: () {
             setState(() {
-              _showItemsCount += 9;
+              _showItemsCount += component.showInitialCount;
             });
           },
           const [.text('Load more')],

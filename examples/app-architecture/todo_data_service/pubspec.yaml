@@ -3,7 +3,7 @@ description: Example for key_value_data cookbook recipe
 
 resolution: workspace
 environment:
-  sdk: ^3.13.0-0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
@@ -11,17 +11,17 @@ dependencies:
   freezed_annotation: ^3.1.0
   json_annotation: ^4.12.0
   path: ^1.9.1
-  shared_preferences: ^2.5.5
-  sqflite: ^2.4.3
-  sqflite_common_ffi: ^2.4.2+1
-  material_ui: ^1.5.0
+  shared_preferences: ^2.5.6
+  sqflite: ^2.4.5
+  sqflite_common_ffi: ^2.4.5
+  material_ui: ^1.8.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.16.1
   freezed: ^4.0.1
-  json_serializable: ^6.14.1
+  json_serializable: ^6.15.2
 
 flutter:
   uses-material-design: true

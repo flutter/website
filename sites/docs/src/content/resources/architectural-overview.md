@@ -1068,8 +1068,7 @@ runs into such a difference.
 During development time, Flutter web uses
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc),
 a compiler that supports incremental compilation
-and therefore allows hot restart and
-[hot reload behind a flag][].
+and therefore allows both hot reload and hot restart.
 Conversely, when you are ready to create a production app
 for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js) or
 `dart2wasm` compiles the Flutter core and framework along with your

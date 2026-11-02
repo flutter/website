@@ -3,12 +3,12 @@ description: Example for command cookbook recipe
 
 resolution: workspace
 environment:
-  sdk: ^3.13.0-0
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
-  material_ui: ^1.5.0
+  material_ui: ^1.8.0
 
 flutter:
   uses-material-design: true

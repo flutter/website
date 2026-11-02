@@ -9,13 +9,11 @@ showToc: false
 To remove the Flutter SDK from your development machine,
 delete the directories that store Flutter and its configuration files.
 
-## Choose your development platform {: #dev-platform }
+## Confirm your development platform {: #dev-platform }
 
-The instructions on this page are configured to cover
-uninstall Flutter on a **Windows**{:.selected-os-text} device.
-
-If you'd like to follow the instructions for a different OS,
-please select one of the following.
+These instructions are configured for **Windows**{:.selected-os-text}.
+If you're using a different operating system,
+select it from one of the following:
 
 <OSSelector />
 
