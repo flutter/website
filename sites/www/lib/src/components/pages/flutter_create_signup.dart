@@ -17,9 +17,24 @@ import '../common/icon.dart';
 /// The OAuth 2.0 client ID used to request
 /// Google Developer Profiles API access tokens.
 ///
-/// Provide it at build time with
+/// Override it at build time with
 /// `--dart-define=GDP_OAUTH_CLIENT_ID=<client-id>`.
-const String _oauthClientId = String.fromEnvironment('GDP_OAUTH_CLIENT_ID');
+///
+/// Non-production builds, including local development and PR previews,
+/// default to [_devOauthClientId]. Production builds have no default,
+/// so they must be given the production client ID explicitly.
+const String _oauthClientId = String.fromEnvironment(
+  'GDP_OAUTH_CLIENT_ID',
+  defaultValue: productionBuild ? '' : _devOauthClientId,
+);
+
+/// The OAuth 2.0 client for development and PR previews.
+///
+/// OAuth client IDs for browser apps are public by design. Which sites can use
+/// this one is restricted by the authorized JavaScript origins configured on
+/// the client, such as `http://localhost:8094` and specific PR preview URLs.
+const String _devOauthClientId =
+    '689428580108-ptuppb9e8bctprb9bp7l2ihf204052vm.apps.googleusercontent.com';
 
 /// An optional API key sent along with Developer Profiles API requests.
 ///
