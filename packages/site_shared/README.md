@@ -18,7 +18,8 @@ build documentation websites using Dart, Jaspr, and Jaspr Content:
 - **UI components** (`lib/components`):
   Reusable, modular components built for use across documentation pages.
   - **Common components** (`lib/components/common`):
-    Everyday UI elements such as breadcrumbs, buttons, code blocks, and more.
+    Everyday UI elements such as breadcrumbs, buttons, code blocks,
+    interactive decision trees (`decision_tree.dart`), and more.
   - **Layout components** (`lib/components/layout`):
     Structural layout elements like theme switchers,
     site switchers, banners, and menu toggles.
