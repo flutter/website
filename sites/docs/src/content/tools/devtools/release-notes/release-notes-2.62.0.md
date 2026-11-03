@@ -17,6 +17,7 @@ the `package:provider` DevTools extension. [#10046](https://github.com/flutter/d
 * Added user-facing error notifications when importing data files that are
   missing required fields or contain no data for the screen.
   [#10005](https://github.com/flutter/devtools/pull/10005)
+
 ## Performance updates
 
 * Reduced the memory used when saving Performance data for offline viewing,
