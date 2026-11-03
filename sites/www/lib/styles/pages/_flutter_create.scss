@@ -2,17 +2,42 @@
 
 // Styles for the Flutter Create 2026 landing page (`/create`).
 //
-// Written mobile-first, following the visual language of the
-// "Why Flutter" page: a blue gradient hero, generous type, tinted cards,
-// and chip highlights.
+// Matches the official Flutter Create brand playbook:
+// ice-blue creative studio canvas, collage papercraft textures,
+// washi tape strips, sticky notes, and handcrafted Dash mascots.
 
 body.flutter-create {
-  --fc-teal: #6cf7d6;
-  --fc-navy: #031a33;
+  // ── Brand Playbook Color Tokens (Slides 11 & 13) ──────────────────────────
+  --fc-navy: #041E3C;
+  --fc-navy-muted: #2d4563;
+  --fc-ice: #E7F8FF;
+  --fc-ice-deep: #d2f0fc;
+  --fc-blue: #027DFD;
+  --fc-blue-deep: #0553B1;
+  --fc-cyan: #81DDF9;
+  --fc-cyan-soft: #B8EAFE;
+  --fc-coral: #FE6467;
+  --fc-coral-soft: #ff8c8f;
+  --fc-yellow: #FFF275;
+  --fc-yellow-pale: #F9F8C4;
+  --fc-pink: #F8BBD0;
+  --fc-lavender: #A57CF6;
+  --fc-lilac: #C6BAFA;
+  --fc-teal: #1CDAC5;
+  --fc-mint: #A7FFEB;
+
+  background-color: var(--fc-ice);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(129, 221, 249, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(248, 187, 208, 0.2) 0%, transparent 45%),
+    linear-gradient(rgba(4, 30, 60, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(4, 30, 60, 0.025) 1px, transparent 1px);
+  background-size: auto, auto, 24px 24px, 24px 24px;
+  color: var(--fc-navy);
 
   .fc-container {
     margin-inline: auto;
-    max-width: 1200px;
+    max-width: 1240px;
     padding-inline: var(--gutter-sm);
 
     @include breakpoints.screen(lg) {
@@ -29,18 +54,21 @@ body.flutter-create {
   }
 
   .fc-kicker {
-    color: var(--primary);
-    font-size: var(--font-size-heading-4);
+    color: var(--fc-blue-deep);
+    font-size: var(--font-size-heading-5);
     font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
     line-height: 1.2;
     margin: 0 0 var(--spacer-sm);
+    text-transform: uppercase;
   }
 
   h2 {
+    color: var(--fc-navy);
     font-size: var(--font-size-heading-2);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: -0.3px;
-    line-height: 1.1;
+    font-weight: var(--font-weight-bolder);
+    letter-spacing: -0.5px;
+    line-height: 1.15;
     margin: 0 0 var(--spacer-sm);
 
     @include breakpoints.screen(md) {
@@ -49,42 +77,101 @@ body.flutter-create {
   }
 
   .fc-sub {
-    color: var(--grey-6);
-    font-size: var(--font-size-heading-3);
-    line-height: 1.3;
+    color: var(--fc-navy-muted);
+    font-size: var(--font-size-heading-4);
+    line-height: 1.45;
     margin: 0;
-    max-width: 720px;
+    max-width: 760px;
   }
 
   .fc-body {
-    color: var(--grey-6);
+    color: var(--fc-navy-muted);
     font-size: var(--font-size-heading-4);
-    line-height: 1.5;
+    line-height: 1.55;
     margin: var(--spacer-sm) 0 0;
   }
 
   .fc-live-dot {
     animation: fc-pulse 1.8s ease-out infinite;
-    background: #ff4e4e;
+    background: var(--fc-coral);
     border-radius: 50%;
     display: inline-block;
     flex-shrink: 0;
-    height: 8px;
-    width: 8px;
-  }
-
-  .fc-terminal-prompt {
-    color: var(--fc-teal);
+    height: 10px;
+    width: 10px;
   }
 }
 
-// Each sign-up form renders its sign-in and success states stacked in a
-// single grid cell, so the form reserves the height of the taller state and
-// the page doesn't shift when switching between them.
-//
-// The visible state is chosen by the `fc-signed-up` class on the root
-// element, which an inline script sets before the first paint for visitors
-// with a recorded sign-up, and the forms keep in sync afterwards.
+// ── Washi Tape Effects (Brand Playbook Slides 7 & 8) ─────────────────────────
+
+body.flutter-create {
+  .fc-tape {
+    box-shadow: 0 1px 3px rgba(4, 30, 60, 0.12);
+    height: 16px;
+    opacity: 0.92;
+    position: absolute;
+    transform-origin: center;
+    width: 70px;
+    z-index: 2;
+
+    // Organic semi-transparent textured tape feel
+    backdrop-filter: blur(1px);
+
+    &.fc-tape-yellow { background: rgba(255, 242, 117, 0.88); }
+    &.fc-tape-teal { background: rgba(28, 218, 197, 0.85); }
+    &.fc-tape-coral { background: rgba(254, 100, 103, 0.85); }
+    &.fc-tape-lavender { background: rgba(165, 124, 246, 0.85); }
+    &.fc-tape-mint { background: rgba(167, 255, 235, 0.9); }
+    &.fc-tape-blue { background: rgba(129, 221, 249, 0.85); }
+    &.fc-tape-purple { background: rgba(198, 186, 250, 0.88); }
+
+    &.fc-tape-top-center {
+      left: 50%;
+      top: -9px;
+      transform: translateX(-50%) rotate(-1deg);
+      width: 90px;
+    }
+
+    &.fc-tape-top-left {
+      left: 18px;
+      top: -8px;
+      transform: rotate(-3deg);
+      width: 80px;
+    }
+
+    &.fc-tape-top-right {
+      right: 18px;
+      top: -8px;
+      transform: rotate(3deg);
+      width: 80px;
+    }
+  }
+
+  .fc-tape-badge {
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(4, 30, 60, 0.1);
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: var(--font-weight-bold);
+    gap: 10px;
+    letter-spacing: 0.02em;
+    margin: 0 0 var(--spacer);
+    padding: 7px 18px;
+    position: relative;
+    transform: rotate(-1deg);
+    width: fit-content;
+
+    &.fc-tape-yellow {
+      background: rgba(255, 242, 117, 0.95);
+      border-left: 3px dashed rgba(220, 185, 40, 0.6);
+      border-right: 3px dashed rgba(220, 185, 40, 0.6);
+      color: var(--fc-navy);
+    }
+  }
+}
+
+// ── Zero-Flash Sign-up Swap ───────────────────────────────────────────────
+
 body.flutter-create .fc-swap {
   display: grid;
 
@@ -109,65 +196,76 @@ html.fc-signed-up body.flutter-create .fc-swap {
   }
 }
 
-// A button that looks like a text link.
 body.flutter-create .fc-switch-account {
   background: none;
   border: none;
+  color: var(--fc-blue-deep);
   cursor: pointer;
   font-family: var(--font-ui);
   font-size: var(--font-size-default);
   padding: 0;
   text-decoration: underline;
   text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--fc-navy);
+  }
 }
 
 @keyframes fc-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 78, 78, 0.6); }
-  70% { box-shadow: 0 0 0 8px rgba(255, 78, 78, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 78, 78, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(254, 100, 103, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(254, 100, 103, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(254, 100, 103, 0); }
 }
 
-@keyframes fc-blink {
-  50% { opacity: 0; }
-}
-
-// ── Hero ──────────────────────────────────────────────────────────────────
+// ── Hero Section ──────────────────────────────────────────────────────────
 
 body.flutter-create .fc-hero {
-  background: linear-gradient(180deg, var(--blue-4) 0%, var(--blue-8) 100%);
-  color: white;
   overflow: hidden;
+  padding-block: var(--gutter-sm) var(--gutter-md);
   position: relative;
 
-  // `core/_base.scss` sets colours directly on headings and paragraphs,
-  // so text on the dark background restates white.
-  h1,
-  p {
-    color: white;
-  }
-
-  .fc-hero-glow {
-    background: radial-gradient(ellipse 70% 60% at 30% 50%, var(--blue-8) 30%, transparent 100%);
-    filter: blur(70px);
-    inset: -10%;
+  .fc-hero-backdrop {
+    inset: 0;
+    overflow: hidden;
     pointer-events: none;
     position: absolute;
+
+    .fc-blob {
+      border-radius: 50%;
+      filter: blur(60px);
+      position: absolute;
+    }
+
+    .fc-blob-sky {
+      background: rgba(129, 221, 249, 0.35);
+      height: 480px;
+      right: 5%;
+      top: -40px;
+      width: 480px;
+    }
+
+    .fc-blob-pink {
+      background: rgba(248, 187, 208, 0.3);
+      height: 360px;
+      left: -60px;
+      top: 180px;
+      width: 360px;
+    }
   }
 
   .fc-hero-stage {
     align-items: center;
     display: grid;
-    gap: var(--spacer);
+    gap: var(--spacer-md);
     grid-template-columns: 1fr;
-    margin-inline: auto;
-    max-width: 1200px;
-    padding: var(--gutter-md) var(--gutter-sm);
     position: relative;
+    z-index: 1;
 
     @include breakpoints.screen(lg) {
-      gap: var(--gutter);
-      grid-template-columns: 1.3fr 1fr;
-      padding: var(--gutter-lg) var(--gutter);
+      gap: var(--gutter-lg);
+      grid-template-columns: 1.15fr 1fr;
+      padding-block: var(--spacer-md);
     }
   }
 
@@ -178,54 +276,49 @@ body.flutter-create .fc-hero {
       text-align: left;
     }
 
-    h1 {
-      font-size: var(--font-size-heading-1);
-      font-weight: var(--font-weight-bolder);
-      letter-spacing: -1px;
-      line-height: 1.05;
-      margin: var(--spacer-md) 0 var(--spacer-md);
+    .fc-hero-title {
+      line-height: 1;
+      margin: 0 0 var(--spacer-sm);
+    }
+
+    .fc-hero-brand-logo {
+      display: inline-block;
+      height: auto;
+      max-width: 100%;
+      width: 420px;
 
       @include breakpoints.screen(md) {
-        font-size: 64px;
+        width: 480px;
       }
 
       @include breakpoints.screen(xl) {
-        font-size: 72px;
+        width: 520px;
       }
     }
-  }
 
-  .fc-gradient-text {
-    background: linear-gradient(90deg, var(--fc-teal) 0%, var(--blue-2) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+    .fc-hero-tagline {
+      color: var(--fc-navy);
+      font-size: 22px;
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.3px;
+      line-height: 1.25;
+      margin: 0 0 var(--spacer-sm);
 
-  .fc-pill {
-    align-items: center;
-    backdrop-filter: blur(8px);
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 999px;
-    display: inline-flex;
-    font-size: var(--font-size-heading-5);
-    font-weight: var(--font-weight-bold);
-    gap: 10px;
-    margin: 0;
-    padding: 8px 16px;
-  }
+      @include breakpoints.screen(md) {
+        font-size: 26px;
+      }
+    }
 
-  .fc-hero-lede {
-    font-size: var(--font-size-heading-4);
-    line-height: 1.5;
-    margin: 0 auto var(--spacer);
-    max-width: 520px;
-    opacity: 0.92;
+    .fc-hero-lede {
+      color: var(--fc-navy-muted);
+      font-size: var(--font-size-heading-4);
+      line-height: 1.55;
+      margin: 0 auto var(--spacer-md);
+      max-width: 540px;
 
-    @include breakpoints.screen(lg) {
-      font-size: 20px;
-      margin-inline: 0;
+      @include breakpoints.screen(lg) {
+        margin-inline: 0;
+      }
     }
   }
 
@@ -243,49 +336,38 @@ body.flutter-create .fc-hero {
       }
     }
 
-    // Keep "Use a different account" below the confirmation pill, nudged
-    // in to line up with the pill's check icon on wide screens.
-    > .fc-swap-done {
-      @include breakpoints.screen(lg) {
-        .fc-switch-account {
-          margin-left: 18px;
-        }
-      }
-    }
-
     .fc-google-btn-hero {
       align-items: center;
       background: white;
-      border: none;
+      border: 1px solid rgba(4, 30, 60, 0.12);
       border-radius: 999px;
-      box-shadow: 0 10px 30px rgba(2, 16, 40, 0.35);
+      box-shadow: 0 6px 20px rgba(4, 30, 60, 0.12), 0 1px 3px rgba(4, 30, 60, 0.06);
       color: #1f1f1f;
       cursor: pointer;
       display: inline-flex;
       font-family: var(--font-ui);
       font-size: var(--font-size-heading-5);
       font-weight: var(--font-weight-bold);
-      gap: 10px;
+      gap: 12px;
       height: 52px;
-      padding-inline: 22px;
+      padding-inline: 24px;
+      transition: transform 0.2s var(--ui-anim-func), box-shadow 0.2s;
       white-space: nowrap;
 
       @include breakpoints.screen(md) {
         font-size: var(--font-size-heading-4);
-        gap: 12px;
         height: 56px;
-        padding-inline: 28px;
+        padding-inline: 30px;
       }
-      transition: transform 0.2s var(--ui-anim-func), box-shadow 0.2s;
 
       &:hover:not(:disabled) {
-        box-shadow: 0 14px 36px rgba(2, 16, 40, 0.45);
+        box-shadow: 0 10px 28px rgba(4, 30, 60, 0.18);
         transform: translateY(-2px);
       }
 
       &:disabled {
         cursor: not-allowed;
-        opacity: 0.7;
+        opacity: 0.65;
       }
     }
 
@@ -295,28 +377,30 @@ body.flutter-create .fc-hero {
     }
 
     .fc-hero-signup-caption {
-      font-size: var(--font-size-heading-5);
+      color: var(--fc-navy-muted);
+      font-size: 14px;
+      font-weight: var(--font-weight-bold);
       margin: 0;
-      opacity: 0.85;
     }
 
     .fc-fine-print {
+      color: var(--fc-navy-muted);
       font-size: 13px;
       line-height: 1.5;
       margin: 4px 0 0;
       max-width: 480px;
-      opacity: 0.75;
 
       a {
-        color: white;
+        color: var(--fc-blue-deep);
         text-decoration: underline;
       }
     }
 
     .fc-signup-error {
-      background: rgba(255, 255, 255, 0.92);
+      background: #ffebee;
+      border: 1px solid #ffcdd2;
       border-radius: var(--ui-border-radius-sm);
-      color: var(--red);
+      color: #c62828;
       font-size: var(--font-size-default);
       margin: 0;
       padding: 8px 12px;
@@ -324,179 +408,143 @@ body.flutter-create .fc-hero {
 
     .fc-hero-signup-done {
       align-items: center;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: white;
+      border: 1px solid rgba(4, 30, 60, 0.1);
       border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(4, 30, 60, 0.08);
+      color: var(--fc-navy);
       display: inline-flex;
       font-size: var(--font-size-heading-5);
       font-weight: var(--font-weight-bold);
       gap: 10px;
-      padding: 10px 18px;
+      padding: 12px 22px;
 
       .icon {
-        color: var(--fc-teal);
+        color: #0f9d58;
       }
     }
+  }
 
-    .fc-switch-account {
-      color: white;
-      font-size: 13px;
-      opacity: 0.85;
+  // Hero Studio Card
+  .fc-hero-card {
+    margin-inline: auto;
+    max-width: 580px;
+    position: relative;
+    transform: rotate(0.8deg);
+    transition: transform 0.4s var(--ui-anim-func);
+    width: 100%;
 
+    @media (prefers-reduced-motion: no-preference) {
       &:hover {
-        opacity: 1;
+        transform: rotate(0deg) translateY(-4px);
       }
+    }
+
+    .fc-card-inner {
+      background: white;
+      border: 8px solid white;
+      border-radius: 12px;
+      box-shadow:
+        0 18px 45px rgba(4, 30, 60, 0.12),
+        0 3px 10px rgba(4, 30, 60, 0.05);
+      overflow: hidden;
+    }
+
+    .fc-hero-card-img {
+      aspect-ratio: 1400 / 900;
+      border-radius: 6px;
+      display: block;
+      height: auto;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .fc-card-footer {
+      align-items: center;
+      background: #fbfdff;
+      border-top: 1px solid #ebf4f8;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      padding: 12px 16px;
+    }
+
+    .fc-card-status {
+      align-items: center;
+      color: var(--fc-navy);
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: var(--font-weight-bold);
+      gap: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .fc-countdown {
+      align-items: baseline;
+      background: var(--fc-yellow-pale);
+      border: 1px solid rgba(220, 185, 40, 0.35);
+      border-radius: 6px;
+      display: inline-flex;
+      gap: 6px;
+      padding: 4px 12px;
+    }
+
+    .fc-countdown-number {
+      color: var(--fc-navy);
+      font-size: 20px;
+      font-weight: var(--font-weight-bolder);
+      line-height: 1;
+    }
+
+    .fc-countdown-label {
+      color: var(--fc-navy-muted);
+      font-size: 13px;
+      font-weight: var(--font-weight-bold);
     }
   }
 }
 
-// The faux livestream player.
-body.flutter-create .fc-stream {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: var(--ui-border-radius);
-  box-shadow: 0 30px 80px rgba(2, 16, 40, 0.45);
-  margin-inline: auto;
-  max-width: 560px;
-  padding: 14px;
-  transform: perspective(1400px) rotateY(-6deg) rotateX(2deg);
-  width: 100%;
-
-  @media (prefers-reduced-motion: no-preference) {
-    transition: transform 0.6s var(--ui-anim-func);
-
-    &:hover {
-      transform: perspective(1400px) rotateY(0) rotateX(0);
-    }
-  }
-
-  .fc-stream-bar {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 4px 6px 12px;
-  }
-
-  .fc-stream-badge {
-    align-items: center;
-    background: rgba(3, 26, 51, 0.55);
-    border-radius: 999px;
-    display: inline-flex;
-    font-size: 13px;
-    font-weight: var(--font-weight-bold);
-    gap: 8px;
-    letter-spacing: 0.06em;
-    padding: 6px 12px;
-    text-transform: uppercase;
-  }
-
-  .fc-stream-dots {
-    display: inline-flex;
-    gap: 6px;
-
-    span {
-      background: rgba(255, 255, 255, 0.45);
-      border-radius: 50%;
-      height: 8px;
-      width: 8px;
-    }
-  }
-
-  .fc-stream-screen {
-    align-items: center;
-    aspect-ratio: 16 / 9;
-    background:
-      radial-gradient(circle at 50% 35%, rgba(19, 185, 253, 0.35), transparent 60%),
-      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 28px 28px,
-      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 28px 28px,
-      var(--fc-navy);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    padding: var(--gutter-sm);
-
-    img {
-      filter: drop-shadow(0 8px 24px rgba(19, 185, 253, 0.5));
-      height: 64px;
-      width: 64px;
-
-      @include breakpoints.screen(md) {
-        height: 80px;
-        width: 80px;
-      }
-    }
-  }
-
-  .fc-terminal {
-    background: rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    font-family: var(--font-code);
-    font-size: 15px;
-    margin: 0;
-    padding: 10px 16px;
-
-    @include breakpoints.screen(md) {
-      font-size: 18px;
-    }
-  }
-
-  .fc-terminal-arg {
-    color: var(--blue-3);
-  }
-
-  .fc-terminal-cursor {
-    animation: fc-blink 1.1s steps(1) infinite;
-    background: white;
-    display: inline-block;
-    height: 1.1em;
-    margin-left: 4px;
-    vertical-align: text-bottom;
-    width: 0.55em;
-  }
-
-  .fc-countdown {
-    align-items: baseline;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    padding: 14px 6px 4px;
-  }
-
-  .fc-countdown-number {
-    font-size: 36px;
-    font-weight: var(--font-weight-bolder);
-    line-height: 1;
-  }
-
-  .fc-countdown-label {
-    font-size: var(--font-size-heading-4);
-    font-weight: var(--font-weight-bold);
-    opacity: 0.9;
-  }
-}
-
-// ── About ─────────────────────────────────────────────────────────────────
+// ── About Section ─────────────────────────────────────────────────────────
 
 body.flutter-create .fc-about {
   .fc-about-grid {
+    align-items: center;
+    background: white;
+    border: 1px solid rgba(4, 30, 60, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(4, 30, 60, 0.05);
     display: grid;
-    gap: var(--spacer);
+    gap: var(--spacer-md);
     grid-template-columns: 1fr;
+    padding: var(--spacer-md) var(--gutter-sm);
+    position: relative;
+
+    // Subtle lined paper effect inside the card
+    background-image:
+      linear-gradient(90deg, transparent 48px, #ffccd2 48px, #ffccd2 50px, transparent 50px),
+      linear-gradient(#f0f5fa 1px, transparent 1px);
+    background-size: 100% 100%, 100% 32px;
 
     @include breakpoints.screen(lg) {
-      align-items: center;
       gap: var(--gutter-lg);
-      grid-template-columns: 1.1fr 1fr;
+      grid-template-columns: 1.2fr 1fr;
+      padding: var(--gutter-md) var(--gutter);
+    }
+  }
+
+  .fc-about-copy {
+    padding-left: 0;
+
+    @include breakpoints.screen(md) {
+      padding-left: 28px;
     }
   }
 
   .fc-chips {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -504,42 +552,75 @@ body.flutter-create .fc-about {
 
   .fc-chip {
     align-items: center;
-    background: #f2f9f5;
-    border-radius: 999px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(4, 30, 60, 0.06);
     display: flex;
-    font-size: var(--font-size-heading-4);
-    gap: 12px;
+    font-size: 17px;
+    font-weight: var(--font-weight-bold);
+    gap: 14px;
     margin: 0;
-    padding: 6px 24px 6px 6px;
+    padding: 8px 18px 8px 10px;
+    position: relative;
+    transition: transform 0.2s var(--ui-anim-func);
 
-    &:nth-child(2) { background: var(--blue-1); }
-    &:nth-child(3) { background: #eeeafe; }
+    &.fc-tape-yellow {
+      background: rgba(255, 242, 117, 0.85);
+      border-left: 4px solid #fbc02d;
+      color: var(--fc-navy);
+      transform: rotate(-0.5deg);
+    }
+
+    &.fc-tape-coral {
+      background: rgba(254, 100, 103, 0.18);
+      border-left: 4px solid var(--fc-coral);
+      color: var(--fc-navy);
+      transform: rotate(0.6deg);
+    }
+
+    &.fc-tape-teal {
+      background: rgba(28, 218, 197, 0.22);
+      border-left: 4px solid var(--fc-teal);
+      color: var(--fc-navy);
+      transform: rotate(-0.4deg);
+    }
+
+    &:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
   }
 
   .fc-chip-icon {
     align-items: center;
     background: white;
     border-radius: 50%;
-    color: var(--blue-7);
+    box-shadow: 0 2px 4px rgba(4, 30, 60, 0.1);
+    color: var(--fc-blue-deep);
     display: flex;
-    height: 40px;
+    height: 38px;
     justify-content: center;
-    width: 40px;
+    width: 38px;
+  }
+
+  .fc-chip-text {
+    flex: 1;
   }
 }
 
-// ── Topics ────────────────────────────────────────────────────────────────
+// ── Topics Section (Brand Playbook Slide 7 "Pop Ups") ──────────────────────
 
 body.flutter-create .fc-topics {
-  background: linear-gradient(180deg, var(--grey-1) 0%, white 100%);
-
   .fc-section-header {
-    margin-bottom: var(--spacer);
+    margin-bottom: var(--spacer-md);
+    text-align: center;
+
+    .fc-sub {
+      margin-inline: auto;
+    }
   }
 
   .fc-topic-grid {
     display: grid;
-    gap: 20px;
+    gap: 26px;
     grid-template-columns: 1fr;
 
     @include breakpoints.screen(md) {
@@ -551,115 +632,154 @@ body.flutter-create .fc-topics {
     }
   }
 
-  .fc-topic {
-    background: white;
-    border-radius: var(--ui-border-radius-sm);
-    box-shadow: inset 0 0 0 1px #e5f0fc;
+  .fc-sticky-note {
+    border-radius: 4px;
+    box-shadow:
+      0 8px 22px rgba(4, 30, 60, 0.08),
+      0 2px 6px rgba(4, 30, 60, 0.04);
     display: flex;
     flex-direction: column;
-    gap: var(--spacer-sm);
-    padding: var(--spacer-md);
-    transition: box-shadow 0.3s, transform 0.3s var(--ui-anim-func);
+    padding: 26px 22px 22px;
+    position: relative;
+    transition: transform 0.3s var(--ui-anim-func), box-shadow 0.3s;
 
-    &:hover {
-      box-shadow: inset 0 0 0 1px #d2e5fb, var(--ui-drop-shadow-sm);
-      transform: translateY(-4px);
+    .fc-tape {
+      left: 50%;
+      top: -8px;
+      transform: translateX(-50%);
+      width: 80px;
     }
 
-    h3 {
-      color: var(--blue-9);
-      font-size: var(--font-size-heading-3);
-      font-weight: var(--font-weight-bold);
-      line-height: 1.2;
-      margin: var(--spacer-sm) 0 0;
+    &.rot-neg-1 { transform: rotate(-1.2deg); }
+    &.rot-pos-1 { transform: rotate(1deg); }
+    &.rot-neg-2 { transform: rotate(-1.8deg); }
+    &.rot-pos-2 { transform: rotate(1.5deg); }
+
+    &:hover {
+      box-shadow:
+        0 16px 36px rgba(4, 30, 60, 0.14),
+        0 4px 10px rgba(4, 30, 60, 0.06);
+      transform: rotate(0deg) translateY(-6px) scale(1.02);
+    }
+
+    // Color tints from Slide 7 & 13
+    &.tint-yellow {
+      background: #FFFDE7;
+      border: 1px solid #FFF59D;
+    }
+    &.tint-blue {
+      background: #E1F5FE;
+      border: 1px solid #B3E5FC;
+    }
+    &.tint-purple {
+      background: #EDE7F6;
+      border: 1px solid #D1C4E9;
+    }
+    &.tint-pink {
+      background: #FCE4EC;
+      border: 1px solid #F8BBD0;
+    }
+    &.tint-mint {
+      background: #E8F5E9;
+      border: 1px solid #C8E6C9;
+    }
+    &.tint-butter {
+      background: #FFF9C4;
+      border: 1px solid #FFF176;
+    }
+
+    .fc-topic-header {
+      align-items: center;
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+
+      h3 {
+        color: var(--fc-navy);
+        font-size: 20px;
+        font-weight: var(--font-weight-bold);
+        line-height: 1.25;
+        margin: 0;
+      }
+    }
+
+    .fc-topic-mascot-img {
+      border-radius: 50%;
+      flex-shrink: 0;
+      height: 48px;
+      object-fit: contain;
+      width: 48px;
     }
 
     p {
-      color: var(--grey-6);
-      font-size: var(--font-size-heading-4);
-      line-height: 1.45;
+      color: var(--fc-navy-muted);
+      font-size: 16px;
+      line-height: 1.5;
       margin: 0;
-    }
-
-    &.tint-blue { --fc-tint: #ebfafd; }
-    &.tint-violet { --fc-tint: #eeeafe; }
-    &.tint-green { --fc-tint: #edfffb; }
-    &.tint-yellow { --fc-tint: #fcfcf2; }
-    &.tint-pink { --fc-tint: #fdeef4; }
-  }
-
-  .fc-topic-icon {
-    align-items: center;
-    background: var(--fc-tint);
-    border-radius: var(--ui-border-radius-sm);
-    color: var(--blue-9);
-    display: flex;
-    height: 64px;
-    justify-content: center;
-    width: 64px;
-
-    .icon {
-      font-size: 30px;
     }
   }
 }
 
-// ── Sign-up ───────────────────────────────────────────────────────────────
+// ── Sign-up Section ───────────────────────────────────────────────────────
 
 body.flutter-create .fc-signup {
-  padding-top: 0;
+  padding-bottom: var(--gutter-lg);
 
-  .fc-signup-card {
-    background: linear-gradient(120deg, var(--blue-8) 0%, var(--blue-6) 55%, var(--blue-4) 100%);
-    border-radius: var(--ui-border-radius);
-    color: white;
-    display: grid;
-    gap: var(--spacer);
-    grid-template-columns: 1fr;
+  .fc-signup-board {
+    background: white;
+    border: 1px solid rgba(4, 30, 60, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(4, 30, 60, 0.08);
     overflow: hidden;
     padding: var(--spacer-md) var(--gutter-sm);
     position: relative;
 
-    &::after {
-      background: radial-gradient(circle, rgba(108, 247, 214, 0.35), transparent 65%);
-      content: '';
-      height: 420px;
-      pointer-events: none;
-      position: absolute;
-      right: -120px;
-      top: -160px;
-      width: 420px;
+    @include breakpoints.screen(lg) {
+      padding: var(--gutter-lg) var(--gutter);
     }
+  }
+
+  .fc-signup-grid {
+    display: grid;
+    gap: var(--spacer-md);
+    grid-template-columns: 1fr;
 
     @include breakpoints.screen(lg) {
       align-items: center;
-      gap: var(--gutter);
-      grid-template-columns: 1.1fr 1fr;
-      padding: var(--gutter-md);
+      gap: var(--gutter-lg);
+      grid-template-columns: 1.15fr 1fr;
     }
   }
 
   .fc-signup-copy {
-    position: relative;
-    z-index: 1;
+    .fc-signup-pass-frame {
+      box-shadow: 0 8px 24px rgba(4, 30, 60, 0.08);
+      border-radius: 12px;
+      margin-top: var(--spacer);
+      max-width: 440px;
+      overflow: hidden;
+      transform: rotate(-1deg);
+      transition: transform 0.3s;
 
-    .fc-kicker {
-      color: var(--fc-teal);
-    }
+      &:hover {
+        transform: rotate(0deg) scale(1.02);
+      }
 
-    h2 {
-      color: white;
+      .fc-signup-pass-img {
+        display: block;
+        height: auto;
+        width: 100%;
+      }
     }
   }
 
   .fc-signup-panel {
-    background: white;
-    border-radius: var(--ui-border-radius-sm);
-    box-shadow: var(--ui-drop-shadow);
-    color: var(--site-base-fgColor);
+    background: #fbfdff;
+    border: 1px solid rgba(4, 30, 60, 0.08);
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 1px #eef6fa, 0 8px 20px rgba(4, 30, 60, 0.04);
+    color: var(--fc-navy);
     padding: var(--spacer-md);
-    position: relative;
-    z-index: 1;
   }
 }
 
@@ -675,14 +795,14 @@ body.flutter-create .flutter-create-signup {
   }
 
   h3 {
-    color: var(--blue-9);
+    color: var(--fc-navy);
     font-size: var(--font-size-heading-3);
     font-weight: var(--font-weight-bold);
     margin: 0;
   }
 
   .fc-signup-lede {
-    color: var(--grey-6);
+    color: var(--fc-navy-muted);
     font-size: var(--font-size-heading-5);
     margin: 0;
   }
@@ -690,8 +810,9 @@ body.flutter-create .flutter-create-signup {
   .fc-google-btn {
     align-items: center;
     background: white;
-    border: 1px solid var(--grey-4);
+    border: 1px solid rgba(4, 30, 60, 0.18);
     border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(4, 30, 60, 0.08);
     color: #1f1f1f;
     cursor: pointer;
     display: flex;
@@ -701,12 +822,13 @@ body.flutter-create .flutter-create-signup {
     gap: 12px;
     height: 52px;
     justify-content: center;
-    transition: background 0.2s, box-shadow 0.2s;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
     width: 100%;
 
     &:hover:not(:disabled) {
-      background: var(--grey-1);
-      box-shadow: var(--ui-drop-shadow-sm);
+      background: #f8fafc;
+      box-shadow: 0 6px 18px rgba(4, 30, 60, 0.14);
+      transform: translateY(-2px);
     }
 
     &:disabled {
@@ -721,16 +843,22 @@ body.flutter-create .flutter-create-signup {
   }
 
   .fc-fine-print {
-    color: var(--grey-6);
+    color: var(--fc-navy-muted);
     font-size: 13px;
     line-height: 1.5;
     margin: 0;
+
+    a {
+      color: var(--fc-blue-deep);
+      text-decoration: underline;
+    }
   }
 
   .fc-signup-error {
-    background: #fdecea;
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
     border-radius: var(--ui-border-radius-sm);
-    color: var(--red);
+    color: #c62828;
     font-size: var(--font-size-default);
     margin: 0;
     padding: 8px 12px;
@@ -739,19 +867,19 @@ body.flutter-create .flutter-create-signup {
   .fc-signup-success {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 
     p {
-      color: var(--grey-6);
+      color: var(--fc-navy-muted);
       margin: 0;
     }
   }
 
   .fc-success-icon {
     align-items: center;
-    background: #edfffb;
+    background: #e8f5e9;
     border-radius: 50%;
-    color: var(--green-3);
+    color: #2e7d32;
     display: flex;
     height: 56px;
     justify-content: center;
@@ -762,24 +890,50 @@ body.flutter-create .flutter-create-signup {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 20px;
+    gap: 12px 18px;
   }
 
   .fc-switch-account {
-    color: var(--blue-6);
+    color: var(--fc-blue-deep);
+  }
+
+  .fc-btn-calendar {
+    align-items: center;
+    background: var(--fc-blue);
+    border: none;
+    border-radius: 999px;
+    color: white;
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: var(--font-weight-bold);
+    gap: 8px;
+    padding: 8px 18px;
+    transition: background-color 0.2s, transform 0.2s;
+
+    .icon {
+      font-size: 18px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--fc-blue-deep);
+      color: white;
+      transform: translateY(-1px);
+    }
   }
 
   .fc-btn-outline-dark {
     align-self: flex-start;
-    border: 1px solid var(--blue-6);
-    color: var(--blue-6);
+    border: 1px solid var(--fc-blue-deep);
+    border-radius: 999px;
+    color: var(--fc-blue-deep);
+    font-weight: var(--font-weight-bold);
+    padding: 8px 20px;
     transition: background-color 0.2s, color 0.2s;
 
-    // Override the site-wide `main .btn:hover` fill, which would otherwise
-    // pair a blue background with this button's blue text.
     &:hover,
     &:focus-visible {
-      background-color: var(--blue-6);
+      background-color: var(--fc-blue-deep);
       color: white;
     }
   }

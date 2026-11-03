@@ -35,30 +35,40 @@ class _Hero extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return section(classes: 'fc-hero', [
-      const div(classes: 'fc-hero-glow', []),
-      div(classes: 'fc-hero-stage', [
-        const div(classes: 'fc-hero-copy', [
-          p(classes: 'fc-pill', [
+      const div(classes: 'fc-hero-backdrop', [
+        div(classes: 'fc-blob fc-blob-sky', []),
+        div(classes: 'fc-blob fc-blob-pink', []),
+        div(classes: 'fc-doodle-spiral', []),
+      ]),
+      div(classes: 'fc-container fc-hero-stage', [
+        div(classes: 'fc-hero-copy', [
+          const p(classes: 'fc-tape-badge fc-tape-yellow', [
             span(classes: 'fc-live-dot', []),
-            .text('Livestream · November 11, 2026'),
+            .text('Ready. Set. · November 11, 2026 · Livestream'),
           ]),
-          h1([
-            .text('Flutter '),
-            span(classes: 'fc-gradient-text', [.text('Everywhere')]),
-            .text(', Everyday'),
-          ]),
-          p(classes: 'fc-hero-lede', [
-            .text(
-              'Join the Flutter team, partners, and community for a day '
-              'celebrating how Flutter shows up in everyday life, '
-              'everywhere you go.',
+          h1(classes: 'fc-hero-title', [
+            img(
+              src: context.asset('/images/create/flutter-create-logo.webp'),
+              alt: 'Flutter Create',
+              classes: 'fc-hero-brand-logo',
+              width: 580,
+              height: 200,
             ),
           ]),
-          FlutterCreateSignup(compact: true),
+          const p(classes: 'fc-hero-tagline', [
+            .text('Crafted for every screen, everyday.'),
+          ]),
+          const p(classes: 'fc-hero-lede', [
+            .text(
+              'Join the Flutter team, partners, and community for a day '
+              'celebrating the craft of building beautiful apps everywhere you go.',
+            ),
+          ]),
+          const FlutterCreateSignup(compact: true),
         ]),
         div(classes: 'fc-hero-visual', [
-          _StreamCard(
-            logoUrl: context.asset('/images/flutter-logo-mark-320x.png'),
+          _HeroCard(
+            heroCompUrl: context.asset('/images/create/hero-comp.webp'),
           ),
         ]),
       ]),
@@ -66,34 +76,34 @@ class _Hero extends StatelessComponent {
   }
 }
 
-/// A stylized livestream player with a `flutter create` terminal prompt.
-class _StreamCard extends StatelessComponent {
-  const _StreamCard({required this.logoUrl});
+/// A tactile Polaroid-style studio card showcasing the Flutter Create artwork
+/// and the live countdown badge.
+class _HeroCard extends StatelessComponent {
+  const _HeroCard({required this.heroCompUrl});
 
-  final String logoUrl;
+  final String heroCompUrl;
 
   @override
   Component build(BuildContext context) {
-    return div(classes: 'fc-stream', [
-      const div(classes: 'fc-stream-bar', [
-        span(classes: 'fc-stream-badge', [
-          span(classes: 'fc-live-dot', []),
-          .text('Live soon'),
+    return div(classes: 'fc-hero-card', [
+      const div(classes: 'fc-tape fc-tape-top-center fc-tape-teal', []),
+      div(classes: 'fc-card-inner', [
+        img(
+          src: heroCompUrl,
+          alt: 'Flutter Create illustration with sketching hand and Dash',
+          classes: 'fc-hero-card-img',
+          width: 700,
+          height: 450,
+        ),
+        const div(classes: 'fc-card-footer', [
+          div(classes: 'fc-card-status', [
+            span(classes: 'fc-live-dot', []),
+            .text('Wednesday, Nov 11 · Online'),
+          ]),
+          FlutterCreateCountdown(),
+          script(content: flutterCreateCountdownScript),
         ]),
-        span(classes: 'fc-stream-dots', [span([]), span([]), span([])]),
       ]),
-      div(classes: 'fc-stream-screen', [
-        img(src: logoUrl, alt: '', width: 72, height: 72),
-        const p(classes: 'fc-terminal', [
-          span(classes: 'fc-terminal-prompt', [.text(r'$ ')]),
-          .text('flutter create '),
-          span(classes: 'fc-terminal-arg', [.text('everywhere')]),
-          span(classes: 'fc-terminal-cursor', []),
-        ]),
-      ]),
-      const FlutterCreateCountdown(),
-      // Fills in the countdown before the first paint.
-      const script(content: flutterCreateCountdownScript),
     ]);
   }
 }
@@ -101,10 +111,23 @@ class _StreamCard extends StatelessComponent {
 class _About extends StatelessComponent {
   const _About();
 
-  static const List<({String icon, String label})> _highlights = [
-    (icon: 'live_tv', label: 'Single-day livestream'),
-    (icon: 'rocket_launch', label: 'Launches with the latest release'),
-    (icon: 'diversity_3', label: 'Co-hosted with partners and community'),
+  static const List<({String icon, String label, String tapeColor})>
+  _highlights = [
+    (
+      icon: 'live_tv',
+      label: 'Single-day global livestream',
+      tapeColor: 'yellow',
+    ),
+    (
+      icon: 'rocket_launch',
+      label: 'Launches alongside the next release',
+      tapeColor: 'coral',
+    ),
+    (
+      icon: 'diversity_3',
+      label: 'Co-hosted with partners and community',
+      tapeColor: 'teal',
+    ),
   ];
 
   @override
@@ -126,9 +149,9 @@ class _About extends StatelessComponent {
         div(classes: 'fc-about-side', [
           ul(classes: 'fc-chips', [
             for (final highlight in _highlights)
-              li(classes: 'fc-chip', [
+              li(classes: 'fc-chip fc-tape-${highlight.tapeColor}', [
                 span(classes: 'fc-chip-icon', [Icon(symbol: highlight.icon)]),
-                span([.text(highlight.label)]),
+                span(classes: 'fc-chip-text', [.text(highlight.label)]),
               ]),
           ]),
         ]),
@@ -137,60 +160,88 @@ class _About extends StatelessComponent {
   }
 }
 
+/// Topics rendered as sticky notes inspired by Slide 7 ("Pop Ups")
+/// of the Flutter Create Brand Playbook.
 class _Topics extends StatelessComponent {
   const _Topics();
 
   static const List<
-    ({String icon, String tint, String title, String description})
+    ({
+      String tint,
+      String tapeColor,
+      String title,
+      String description,
+      String mascotImage,
+      String mascotAlt,
+      String rotationClass,
+    })
   >
   _topics = [
     (
-      icon: 'new_releases',
-      tint: 'blue',
+      tint: 'yellow',
+      tapeColor: 'teal',
       title: "What's new in Flutter",
       description:
           'A tour of the latest Flutter and Dart release, '
           'launching the same day.',
+      mascotImage: '/images/create/dashes/collage.webp',
+      mascotAlt: 'Collage Dash',
+      rotationClass: 'rot-neg-1',
     ),
     (
-      icon: 'auto_awesome',
-      tint: 'violet',
+      tint: 'blue',
+      tapeColor: 'yellow',
       title: 'AI on every screen',
       description:
           'Generative UI, on-device models, and AI developer tools '
           'that keep your agents reliable.',
+      mascotImage: '/images/create/dashes/wire.webp',
+      mascotAlt: 'Wire Dash',
+      rotationClass: 'rot-pos-1',
     ),
     (
-      icon: 'devices',
-      tint: 'green',
+      tint: 'purple',
+      tapeColor: 'mint',
       title: 'Desktop and embedded',
       description:
           'Multi-window desktop apps and '
           'Flutter on new kinds of devices.',
+      mascotImage: '/images/create/dashes/woody.webp',
+      mascotAlt: 'Woody Dash',
+      rotationClass: 'rot-neg-2',
     ),
     (
-      icon: 'integration_instructions',
-      tint: 'yellow',
+      tint: 'pink',
+      tapeColor: 'purple',
       title: 'Native interop',
       description:
           'Call platform APIs directly from Dart with generated '
           'bindings for Swift, Objective-C, Kotlin, and Java.',
+      mascotImage: '/images/create/dashes/sewn.webp',
+      mascotAlt: 'Sewn Dash',
+      rotationClass: 'rot-pos-2',
     ),
     (
-      icon: 'palette',
-      tint: 'pink',
+      tint: 'mint',
+      tapeColor: 'coral',
       title: 'Design systems',
       description:
           'New ways to build and maintain '
           'custom design libraries with Flutter.',
+      mascotImage: '/images/create/dashes/knitted.webp',
+      mascotAlt: 'Knitted Dash',
+      rotationClass: 'rot-neg-1',
     ),
     (
-      icon: 'bolt',
-      tint: 'blue',
+      tint: 'butter',
+      tapeColor: 'blue',
       title: 'Dart and WebAssembly',
       description:
           'What Dart and Wasm unlock for fast, '
           'portable apps on the web and beyond.',
+      mascotImage: '/images/create/dashes/patchwork.webp',
+      mascotAlt: 'Patchwork Dash',
+      rotationClass: 'rot-pos-1',
     ),
   ];
 
@@ -210,11 +261,27 @@ class _Topics extends StatelessComponent {
         ]),
         div(classes: 'fc-topic-grid', [
           for (final topic in _topics)
-            div(classes: 'fc-topic tint-${topic.tint}', [
-              div(classes: 'fc-topic-icon', [Icon(symbol: topic.icon)]),
-              h3([.text(topic.title)]),
-              p([.text(topic.description)]),
-            ]),
+            div(
+              classes:
+                  'fc-sticky-note tint-${topic.tint} ${topic.rotationClass}',
+              [
+                div(classes: 'fc-tape fc-tape-${topic.tapeColor}', const []),
+                div(classes: 'fc-sticky-content', [
+                  div(classes: 'fc-topic-header', [
+                    img(
+                      src: context.asset(topic.mascotImage),
+                      alt: topic.mascotAlt,
+                      classes: 'fc-topic-mascot-img',
+                      loading: MediaLoading.lazy,
+                      width: 56,
+                      height: 56,
+                    ),
+                    h3([.text(topic.title)]),
+                  ]),
+                  p([.text(topic.description)]),
+                ]),
+              ],
+            ),
         ]),
       ]),
     ]);
@@ -226,13 +293,34 @@ class _Signup extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return const section(id: 'signup', classes: 'fc-section fc-signup', [
+    return section(id: 'signup', classes: 'fc-section fc-signup', [
       div(classes: 'fc-container', [
-        div(classes: 'fc-signup-card', [
-          div(classes: 'fc-signup-copy', [
-            h2([.text('Get notified when we go live')]),
+        div(classes: 'fc-signup-board', [
+          const div(classes: 'fc-tape fc-tape-top-left fc-tape-yellow', []),
+          const div(classes: 'fc-tape fc-tape-top-right fc-tape-teal', []),
+          div(classes: 'fc-signup-grid', [
+            div(classes: 'fc-signup-copy', [
+              const p(classes: 'fc-kicker', [.text('Save the date')]),
+              const h2([.text('Be part of Flutter Create')]),
+              const p(classes: 'fc-body', [
+                .text(
+                  'Reserve your front-row seat for the livestream on '
+                  'Wednesday, November 11, 2026. Free, online, and open to all builders.',
+                ),
+              ]),
+              div(classes: 'fc-signup-pass-frame', [
+                img(
+                  src: context.asset('/images/create/attending-card.webp'),
+                  alt: 'Flutter Create official attendee pass',
+                  classes: 'fc-signup-pass-img',
+                  loading: MediaLoading.lazy,
+                  width: 540,
+                  height: 304,
+                ),
+              ]),
+            ]),
+            const div(classes: 'fc-signup-panel', [FlutterCreateSignup()]),
           ]),
-          div(classes: 'fc-signup-panel', [FlutterCreateSignup()]),
         ]),
       ]),
     ]);
