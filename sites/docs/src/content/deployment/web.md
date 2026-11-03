@@ -222,7 +222,7 @@ npm install -g firebase-tools
    * Select an existing Firebase project or create a new project.
    * When asked `What do you want to use as your public directory?`,
      enter `build/web`.
-   * Choose whether to configure the site as a single-page app
+   * Choose whether to configure the site as a single-page application
      (rewriting all URLs to `/index.html`).
      If `build/web/index.html` already exists,
      answer `no` when asked whether to overwrite it.
@@ -238,8 +238,8 @@ npm install -g firebase-tools
     To run `flutter build web` automatically whenever you deploy,
     add `"predeploy": ["flutter build web"]` to the `"hosting"` section
     of your `firebase.json` file.
-    For recommended `Cache-Control` headers and single-page app rewrite
-    rules in `firebase.json`, check out the [Web FAQ][web-faq-caching].
+    For recommended `Cache-Control` headers and single-page application
+    rewrite rules in `firebase.json`, check out the [Web FAQ][web-faq-caching].
     :::
 
 4. Deploy the release bundle to Firebase Hosting:
