@@ -109,13 +109,13 @@ use [FFIgen](/interop/ffigen) or
 Pigeon doesn't support complex inheritance.
 Flatten your data models where possible.
 
-### (Pigeon with platform channels only) Async errors
+### Async errors
 
-In Kotlin and Swift, `@async` generates `suspend` and `async throws`
-functions where native code throws `FlutterError` or `PigeonError` directly.
-For `@asyncCallback` methods—or when using the Java, Objective-C, C++,
-or GObject generators—native code must return errors through the provided
-completion callback.
+If you use [Pigeon with platform channels](#pigeon-with-platform-channels),
+`@async` methods generate Kotlin `suspend` and Swift `async throws` functions
+where native code throws `FlutterError` or `PigeonError` directly.
+For `@asyncCallback` methods or other target languages,
+native code must return errors through the provided completion callback.
 
 ## Resources
 
