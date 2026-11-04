@@ -109,13 +109,28 @@ use [FFIgen](/interop/ffigen) or
 Pigeon doesn't support complex inheritance.
 Flatten your data models where possible.
 
-### (Pigeon with platform channels only) Async errors
+### Async errors
 
-In Kotlin and Swift, `@async` generates `suspend` and `async throws`
-functions where native code throws `FlutterError` or `PigeonError` directly.
+If you use [Pigeon with platform channels](#pigeon-with-platform-channels)
+in Kotlin and Swift, `@async` generates `suspend` and `async throws` functions
+where native code throws `FlutterError` or `PigeonError` directly.
 For `@asyncCallback` methods—or when using the Java, Objective-C, C++,
 or GObject generators—native code must return errors through the provided
 completion callback.
+
+### Multiple Flutter engines
+
+If you use [Pigeon with native interop](#pigeon-with-native-interop),
+`<Api>Registrar` registers `@HostApi` implementations process-wide
+rather than per `FlutterEngine` ([Flutter issue #195877][issue-195877]).
+If your `@HostApi` implementation only depends on process-wide state
+(such as Android's `applicationContext` or Apple's `UserDefaults`),
+don't call `register(null)` in `onDetachedFromEngine`,
+because unregistering on detach removes the instance for all remaining engines.
+If your `@HostApi` depends on per-engine or per-activity state
+(such as `ActivityAware`, `TextureRegistry`, or `PlatformViewRegistry`),
+use [Pigeon with platform channels](#pigeon-with-platform-channels)
+until per-engine native interop registration is available.
 
 ## Resources
 
@@ -136,3 +151,4 @@ refer to the following resources:
 [pigeon-migration-guide]: {{site.repo.packages}}/blob/main/packages/pigeon/native_interop_migration_guide.md
 [shared-preferences-source]: {{site.repo.packages}}/tree/main/packages/shared_preferences
 [native-interop-demos]: {{site.repo.demos}}/tree/main/native_interop_demos
+[issue-195877]: {{site.repo.flutter}}/issues/195877
