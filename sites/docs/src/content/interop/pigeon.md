@@ -111,12 +111,11 @@ Flatten your data models where possible.
 
 ### Async errors
 
-If you use [Pigeon with platform channels](#pigeon-with-platform-channels)
-in Kotlin and Swift, `@async` generates `suspend` and `async throws` functions
+If you use [Pigeon with platform channels](#pigeon-with-platform-channels),
+`@async` methods generate Kotlin `suspend` and Swift `async throws` functions
 where native code throws `FlutterError` or `PigeonError` directly.
-For `@asyncCallback` methods—or when using the Java, Objective-C, C++,
-or GObject generators—native code must return errors through the provided
-completion callback.
+For `@asyncCallback` methods or other target languages,
+native code must return errors through the provided completion callback.
 
 ### Multiple Flutter engines
 
