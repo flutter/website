@@ -34,7 +34,10 @@ consider submitting your tests to the framework's [test registry][].
 The following guides are available.
 They're sorted by release and listed in alphabetical order:
 
-### Not yet released to stable
+<!-- ### Not yet released to stable -->
+
+<a id="released-in-flutter-350" aria-hidden="true"></a>
+### Released in Flutter 3.50
 
 * [Added enabled property and made onChanged optional for DropdownButton][]
 * [Migrate to standalone `material_ui` and `cupertino_ui` packages][]

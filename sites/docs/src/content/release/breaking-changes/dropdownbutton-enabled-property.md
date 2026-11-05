@@ -127,8 +127,8 @@ Code after migration:
 
 ## Timeline
 
-Landed in version: Not yet<br>
-In stable release: Not yet
+Landed in `package:material_ui` version: 1.8.0<br>
+In stable release: 3.50
 
 ## References
 
@@ -143,9 +143,11 @@ Relevant issues:
 
 Relevant PRs:
 
+* [Add enabled parameter to DropdownButtonFormField][]
 * [Update DropdownButton enabled property logic][]
 
 [`DropdownButton`]: {{site.material_ui}}/DropdownButton-class.html
 [`DropdownButtonFormField`]: {{site.material_ui}}/DropdownButtonFormField-class.html
 [issue-57953]: {{site.repo.flutter}}/issues/57953
+[Add enabled parameter to DropdownButtonFormField]: {{site.repo.packages}}/pull/12610
 [Update DropdownButton enabled property logic]: {{site.repo.flutter}}/pull/182419
