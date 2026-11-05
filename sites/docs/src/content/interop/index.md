@@ -16,8 +16,7 @@ code generators to direct FFI bindings.
 Flutter's interop tools take one of two architectural approaches
 to bridging Dart and native code.
 FFIgen and JNIgen use a bottom-up approach, which starts from existing
-native APIs on a single platform and generates Dart bindings that
-mirror them directly.
+native APIs and generates Dart bindings that mirror them directly.
 Pigeon uses a top-down approach, which starts from a single Dart schema
 and generates matching client and host interfaces across multiple platforms.
 Choose the approach that best fits your integration needs.
