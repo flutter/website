@@ -8,7 +8,7 @@ description: Learn how to write platform-specific code using Flutter's platform 
 
 :::note
 Refer to the [Native interop overview](/interop)
-for recommended approaches to calling native platform code.
+to learn about FFIgen, JNIgen, and Pigeon.
 :::
 
 Platform channels pass messages between Flutter and your host platform

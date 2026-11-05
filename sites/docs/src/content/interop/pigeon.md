@@ -7,30 +7,32 @@ description: >-
 
 ## Overview
 
-Pigeon is the recommended default tool for building Flutter plugins.
 Pigeon replaces the manual setup of raw platform channels with generated,
 type-safe APIs.
 This helps prevent typos in method names or mismatched argument types.
 
-## Choose a communication option with Pigeon
-
-Pigeon supports the following two communication options depending on your target
-platform and performance needs:
-native interop (direct FFI and JNI) or platform channels.
-
-:::note
 For low-level integrations that require direct access to native memory
 or C and C++ libraries, use [FFIgen](/interop/ffigen)
 or [JNIgen](/interop/jnigen) instead.
+
+## Choose a communication option with Pigeon
+
+Pigeon supports the following two communication options
+depending on your target platform and performance needs:
+native interop (direct FFI and JNI, in preview) or platform channels.
+
+### Pigeon with native interop (preview) {:#pigeon-with-native-interop}
+
+:::note
+Pigeon with native interop is in preview and isn't
+stable for production use.
 :::
 
-### Pigeon with native interop
+Pigeon with native interop generates direct native bindings using
+[FFIgen](/interop/ffigen) (FFI on iOS and macOS) and
+[JNIgen](/interop/jnigen) (JNI on Android).
 
-Pigeon with native interop uses [FFIgen](/interop/ffigen)
-and [JNIgen](/interop/jnigen) under the hood to generate
-direct native bindings (using FFI on iOS and macOS, and JNI on Android).
-
-Use this option if your use case requires any of the following:
+Try this preview option if your use case requires any of the following:
 
 - You need synchronous execution on your native platform.
 - You're doing high-frequency data streaming
@@ -117,6 +119,20 @@ where native code throws `FlutterError` or `PigeonError` directly.
 For `@asyncCallback` methods or other target languages,
 native code must return errors through the provided completion callback.
 
+### Multiple Flutter engines
+
+If you use [Pigeon with native interop](#pigeon-with-native-interop),
+`<Api>Registrar` registers `@HostApi` implementations process-wide
+rather than per `FlutterEngine` ([Flutter issue #195877][issue-195877]).
+If your `@HostApi` implementation depends only on process-wide state
+(such as Android's `applicationContext` or Apple's `UserDefaults`),
+don't call `register(null)` in `onDetachedFromEngine`,
+because unregistering on detach removes the instance for all remaining engines.
+If your `@HostApi` implementation depends on per-engine or per-activity state
+(such as `ActivityAware`, `TextureRegistry`, or `PlatformViewRegistry`),
+use [Pigeon with platform channels](#pigeon-with-platform-channels)
+until per-engine native interop registration is available.
+
 ## Resources
 
 To learn about building and migrating plugins with Pigeon,
@@ -136,3 +152,4 @@ refer to the following resources:
 [pigeon-migration-guide]: {{site.repo.packages}}/blob/main/packages/pigeon/native_interop_migration_guide.md
 [shared-preferences-source]: {{site.repo.packages}}/tree/main/packages/shared_preferences
 [native-interop-demos]: {{site.repo.demos}}/tree/main/native_interop_demos
+[issue-195877]: {{site.repo.flutter}}/issues/195877
