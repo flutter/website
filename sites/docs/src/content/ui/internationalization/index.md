@@ -486,6 +486,22 @@ return Column(
 );
 ```
 
+Plural messages can use two kinds of cases.
+Explicit values (`=0`, `=1`, `=2`) match an exact number.
+Plural categories (`zero`, `one`, `two`, `few`, `many`, `other`)
+are chosen by the plural rules of the locale,
+so in some locales a category covers more than one number.
+For example, `one` also applies to 21 and 31 in Ukrainian,
+and to 0 in French.
+
+By default, `gen-l10n` treats `=0`, `=1` and `=2` as the
+`zero`, `one` and `two` categories.
+To make explicit values match only that exact number and
+take precedence over the categories, as specified by ICU,
+set `use-explicit-plural-values: true` in `l10n.yaml`.
+With this option, you can use any non-negative integer
+as an explicit value, such as `=3` or `=10`.
+
 Similar to plurals,
 you can also choose a value based on a `String` placeholder.
 This is most often used to support gendered languages.
@@ -858,6 +874,7 @@ at the command line or refer to the following table:
 | `[no-]suppress-warnings`            | When specified, all warnings are suppressed. |
 | `[no-]relax-syntax`                 | When specified, the syntax is relaxed so that the special character "{" is treated as a string if not followed by a valid placeholder and "}" is treated as a string if it doesn't close any previous "{" that is treated as a special character. |
 | `[no-]use-named-parameters`         | Whether to use named parameters for the generated localization methods. |
+| `[no-]use-explicit-plural-values`   | Whether explicit plural cases such as `=1` match only that exact value and take precedence over plural categories such as `one`, as specified by ICU. When false (the default), `=0`, `=1` and `=2` are treated as `zero`, `one` and `two`. |
 
 {:.table .table-striped}
 
