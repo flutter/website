@@ -1294,7 +1294,7 @@
     - "Small-to-medium Business"
   options_GCP_partner: false
 - title: "The Next App"
-  summary: "They have built apps since 2016 and moved to Flutter in 2018, as one of the first agencies in the Netherlands. From Rotterdam, they build custom iOS, Android and web apps, from Bluetooth-controlled hardware to tools that keep working offline in the field."
+  summary: "The Next App has built apps since 2016 and moved to Flutter in 2018, as one of the first agencies in the Netherlands. From Rotterdam, they build custom iOS, Android and web apps, from Bluetooth-controlled hardware to tools that keep working offline in the field."
   card: "images/third_party/partners/the-next-app_logo.png"
   external_url: "https://www.thenextapp.nl/en/flutter-app-development/"
   options_location:
