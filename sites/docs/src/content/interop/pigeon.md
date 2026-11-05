@@ -122,16 +122,13 @@ native code must return errors through the provided completion callback.
 ### Multiple Flutter engines
 
 If you use [Pigeon with native interop](#pigeon-with-native-interop),
-`<Api>Registrar` registers `@HostApi` implementations process-wide
-rather than per `FlutterEngine` ([Flutter issue #195877][issue-195877]).
-If your `@HostApi` implementation depends only on process-wide state
-(such as Android's `applicationContext` or Apple's `UserDefaults`),
-don't call `register(null)` in `onDetachedFromEngine`,
-because unregistering on detach removes the instance for all remaining engines.
-If your `@HostApi` implementation depends on per-engine or per-activity state
-(such as `ActivityAware`, `TextureRegistry`, or `PlatformViewRegistry`),
-use [Pigeon with platform channels](#pigeon-with-platform-channels)
-until per-engine native interop registration is available.
+`<MyApi>.createWithNativeInteropApi()` binds to the most recently registered
+host instance for a given `name` rather than looking up the calling
+`FlutterEngine` ([Flutter issue #195877][issue-195877]).
+Don't register multiple engines under the same `name` before each earlier
+engine initializes its Dart API client
+(such as pre-warming engines back-to-back or lazily instantiating the
+Dart client after another engine attaches).
 
 ## Resources
 
