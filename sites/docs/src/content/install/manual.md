@@ -180,7 +180,7 @@ then extract the SDK to where you want it stored.
 
     ```powershell
     Expand-Archive `
-      -Path "$env:USERPROFILE\Downloads\flutter_windows_3.47.5-stable.zip" `
+      -Path "$env:USERPROFILE\Downloads\flutter_windows_3.50.0-stable.zip" `
       -DestinationPath "$env:USERPROFILE\develop"
     ```
 
@@ -188,7 +188,7 @@ then extract the SDK to where you want it stored.
     <Tab name="Command prompt">
 
     ```bat
-    tar -xf "%USERPROFILE%\Downloads\flutter_windows_3.47.5-stable.zip" -C "%USERPROFILE%\develop"
+    tar -xf "%USERPROFILE%\Downloads\flutter_windows_3.50.0-stable.zip" -C "%USERPROFILE%\develop"
     ```
 
     </Tab>
@@ -242,7 +242,7 @@ For details, check out the
     adjusting the filename and paths as needed):
 
     ```console
-    $ unzip ~/Downloads/flutter_macos_3.47.5-stable.zip -d ~/develop/
+    $ unzip ~/Downloads/flutter_macos_3.50.0-stable.zip -d ~/develop/
     ```
 
 {: .steps .macos-only}
@@ -266,7 +266,7 @@ For details, check out the
     adjusting the filename and paths as needed):
 
     ```console
-    $ tar -xf ~/Downloads/flutter_linux_3.47.5-stable.tar.xz -C ~/develop/
+    $ tar -xf ~/Downloads/flutter_linux_3.50.0-stable.tar.xz -C ~/develop/
     ```
 
 {: .steps .linux-only .chromeos-only}
