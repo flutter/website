@@ -368,7 +368,7 @@ class _FinePrint extends StatelessComponent {
       .text(
         'Signing up creates or updates your Google Developer Program '
         'profile, adds Flutter to your interests, and opts you in to '
-        'event emails. ',
+        'emails. ',
       ),
       a(
         href: 'https://developers.google.com/profile/terms',
