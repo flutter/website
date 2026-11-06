@@ -7,8 +7,8 @@ description: >-
 
 ## Overview
 
-Pigeon replaces the manual setup of raw platform channels with generated,
-type-safe APIs.
+[Pigeon][pigeon-pub] replaces the manual setup of raw platform channels
+with generated, type-safe APIs.
 This helps prevent typos in method names or mismatched argument types.
 
 For low-level integrations that require direct access to native memory
