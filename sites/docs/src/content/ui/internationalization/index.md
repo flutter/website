@@ -494,8 +494,8 @@ so in some locales a category covers more than one number.
 For example, `one` also applies to 21 and 31 in Ukrainian,
 and to 0 in French.
 
-By default, `gen-l10n` treats `=0`, `=1` and `=2` as the
-`zero`, `one` and `two` categories.
+By default, `gen-l10n` treats `=0`, `=1`, and `=2` as the
+`zero`, `one`, and `two` categories.
 To make explicit values match only that exact number and
 take precedence over the categories, as specified by ICU,
 set `use-explicit-plural-values: true` in `l10n.yaml`.
