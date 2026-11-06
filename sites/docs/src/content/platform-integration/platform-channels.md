@@ -1145,8 +1145,7 @@ it displays 'Battery level not available'.
 
 ## Call platform-specific code using the Pigeon package {:#pigeon}
 
-Pigeon is the recommended default tool for generating type-safe bindings
-between Dart and host platforms.
+Pigeon generates type-safe bindings between Dart and host platforms.
 To learn how to use Pigeon, define API contracts, and choose between
 native interop and platform channels,
 refer to the dedicated [Pigeon guide](/interop/pigeon).
