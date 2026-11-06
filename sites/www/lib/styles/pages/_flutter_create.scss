@@ -212,13 +212,19 @@ body.flutter-create .fc-swap {
   }
 }
 
-html.fc-signed-up body.flutter-create .fc-swap {
-  > .fc-swap-signin {
-    visibility: hidden;
+html.fc-signed-up body.flutter-create {
+  .fc-swap {
+    > .fc-swap-signin {
+      visibility: hidden;
+    }
+
+    > .fc-swap-done {
+      visibility: visible;
+    }
   }
 
-  > .fc-swap-done {
-    visibility: visible;
+  .fc-hero .fc-hero-copy .fc-hero-cta-wrap .fc-hero-loop-arrow {
+    visibility: hidden;
   }
 }
 

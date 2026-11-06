@@ -22,6 +22,12 @@ const String developerProfilesScope =
 /// to mark the user as interested in Flutter.
 const String flutterInterestNodeId = 'E-product-Flutter';
 
+/// The Nomenclature node ID that represents the Dart programming language.
+///
+/// Add it to a profile with [DeveloperProfilesClient.addInterests]
+/// to mark the user as interested in Dart.
+const String dartInterestNodeId = 'E-language-DartLang';
+
 /// A deployment of the Google Developer Profiles API.
 enum DeveloperProfilesEnvironment {
   /// The staging deployment, used for development and testing.

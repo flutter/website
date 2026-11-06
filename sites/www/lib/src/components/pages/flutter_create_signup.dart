@@ -45,7 +45,7 @@ const String _gisScriptUrl = 'https://accounts.google.com/gsi/client';
 
 /// A sign-up form that uses Google Sign-In to
 /// create or update the user's Google Developer profile,
-/// opting them in to event emails and adding Flutter as an interest.
+/// opting them in to event emails and adding Flutter and Dart as interests.
 @client
 class FlutterCreateSignup extends StatefulComponent {
   /// Creates a sign-up form.
@@ -218,7 +218,10 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
           eventEmail: .enabled,
           originUri: web.window.location.href,
         );
-        await client.addInterests(profile.name, const [flutterInterestNodeId]);
+        await client.addInterests(profile.name, const [
+          flutterInterestNodeId,
+          dartInterestNodeId,
+        ]);
 
         // Persist the sign-up and notify every form on the page,
         // including this one.
@@ -289,8 +292,8 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
           .text(
             _status == .success && _createdProfile
                 ? 'We created your Google Developer Program profile and '
-                      "added Flutter to your interests. We'll let you know "
-                      'when the livestream is about to start.'
+                      'added Flutter and Dart to your interests. '
+                      "We'll let you know when the livestream is about to start."
                 : "We'll let you know when the livestream is about to start.",
           ),
         ]),
@@ -367,8 +370,8 @@ class _FinePrint extends StatelessComponent {
     return const p(classes: 'fc-fine-print', [
       .text(
         'Signing up creates or updates your Google Developer Program '
-        'profile, adds Flutter to your interests, and opts you in to '
-        'emails. ',
+        'profile, adds Flutter and Dart to your interests, and opts '
+        'you in to emails. ',
       ),
       a(
         href: 'https://developers.google.com/profile/terms',
