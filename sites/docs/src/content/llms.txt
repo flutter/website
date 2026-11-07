@@ -15,8 +15,8 @@ This file provides a curated list of resources to help Large Language Models und
 
 ## Latest release
 
-- [What's new in Flutter 3.44](https://flutter.dev/blog/whats-new-in-flutter-3-44): The official announcement for the 3.44 release of Flutter.
-- [Announcing Dart 3.12](https://dart.dev/blog/announcing-dart-3-12): The official announcement for the 3.12 release of Dart.
+- [What's new in Flutter 3.50](https://flutter.dev/blog/whats-new-in-flutter-3-50): The official announcement for the 3.50 release of Flutter.
+- [Announcing Dart 3.14](https://dart.dev/blog/announcing-dart-3-14): The official announcement for the 3.14 release of Dart.
 
 ## Learning resources
 
@@ -101,6 +101,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 - [Get started with AI](https://docs.flutter.dev/ai/get-started): How to set up and use AI agent plugins for Flutter and Dart.
 - [How Flutter AI tools work](https://docs.flutter.dev/ai/tools): Technical details on the skills, MCP server, and tools for AI coding assistants.
+- [Package skills](https://docs.flutter.dev/ai/package-skills): Discover AI agent skills bundled in pub packages and author skills for your own packages.
 - [Supercharge your Dart & Flutter development experience with the Dart and Flutter MCP server](https://blog.flutter.dev/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49): A blog post explaining the benefits of the MCP server.
 - [Gemini in Android Studio now speaks fluent Flutter](https://blog.flutter.dev/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274): A blog post about Gemini's Flutter capabilities in Android Studio.
 
@@ -115,6 +116,12 @@ This file provides a curated list of resources to help Large Language Models und
 
 ## Platform integration
 
+- [Native interoperability overview](https://docs.flutter.dev/interop): Compare and choose the right approach for calling native C, C++, Objective-C, Swift, Java, and Kotlin code from Flutter.
+- [Multiplatform native interop with Pigeon](https://docs.flutter.dev/interop/pigeon): Generate type-safe, idiomatic multiplatform bindings between Dart and native host languages using `package:pigeon`.
+- [C and Objective-C interop with FFIgen](https://docs.flutter.dev/interop/ffigen): Generate Dart FFI bindings from C and Objective-C header files using `package:ffigen`.
+- [Java and Kotlin interop with JNIgen](https://docs.flutter.dev/interop/jnigen): Generate Dart bindings for Android Java and Kotlin APIs using `package:jnigen`.
+- [Direct C interop with dart:ffi](https://docs.flutter.dev/interop/dart-ffi): Call simple C functions directly from Dart using `dart:ffi`.
+- [Bind native code with build hooks](https://docs.flutter.dev/interop/bind-native-code): Compile and bundle native code assets automatically in Dart and Flutter packages using `hook/build.dart`.
 - [Writing custom platform-specific code](https://docs.flutter.dev/platform-integration/platform-channels): Communicate with native code using platform channels.
 - [Hosting native Android views in your Flutter app with Platform Views](https://docs.flutter.dev/platform-integration/android/platform-views): Embed native Android views in a Flutter app using platform views.
 - [Host native iOS views in your Flutter app with platform views](https://docs.flutter.dev/platform-integration/ios/platform-views): Embed native iOS views in a Flutter app using platform views.
@@ -133,8 +140,10 @@ This file provides a curated list of resources to help Large Language Models und
     - [Support for WebAssembly (Wasm)](https://docs.flutter.dev/platform-integration/web/wasm): Compile Flutter web apps to WebAssembly.
 - **Desktop:**
     - [Build and release for Windows](https://docs.flutter.dev/deployment/windows): A guide to packaging and deploying your Flutter app to Windows.
+    - [Set up Windows flavors](https://docs.flutter.dev/deployment/flavors-windows): Configure build flavors for Windows desktop apps.
     - [Build and release for macOS](https://docs.flutter.dev/deployment/macos): A guide to packaging and deploying your Flutter app to macOS.
     - [Build and release for Linux](https://docs.flutter.dev/deployment/linux): A guide to packaging and deploying your Flutter app to Linux.
+    - [Set up Linux flavors](https://docs.flutter.dev/deployment/flavors-linux): Configure build flavors for Linux desktop apps.
 
 ## Practical development concerns
 
@@ -153,6 +162,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Organize a theme](https://docs.flutter.dev/cookbook/design/themes): Learn how to use `ThemeData` for a consistent design.
 - [Cupertino (iOS-style) widgets](https://docs.flutter.dev/ui/widgets/cupertino): Build apps that look and feel native on iOS.
 - [Material widgets](https://docs.flutter.dev/ui/widgets/material): A comprehensive list of Material Design widgets.
+- [Migrate to standalone material_ui and cupertino_ui packages](https://docs.flutter.dev/release/breaking-changes/material-ui-and-cupertino-ui): Migrate from the deprecated in-framework Material and Cupertino libraries to the standalone `package:material_ui` and `package:cupertino_ui` packages.
 - [Use a custom font](https://docs.flutter.dev/cookbook/design/fonts): Implement custom typography in your app.
 
 ## Advanced topics & internals
