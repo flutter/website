@@ -429,8 +429,7 @@ To review the full timeline, refer to the
 ## Android
 
 On Android, Flutter 3.50 hardens release-mode `Intent` security,
-expands Hybrid Composition++ for platform views
-(opt-in on 3.50 stable and enabled by default on the beta channel),
+expands Hybrid Composition++ for platform views,
 and unlocks opt-in support for Android Gradle Plugin 9’s new DSL.
 
 ### Intent security hardening
