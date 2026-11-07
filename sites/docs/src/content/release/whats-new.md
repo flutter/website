@@ -29,21 +29,22 @@ check out the [Flutter 3.50 blog post][3.50-blog-post].
 
 **Docs updated or added since the 3.47 release**
 
-* A new [Native interoperability][native-interop] section brings together
+* A new [Native interop][native-interop] section brings together
   guides for calling native code across Android, iOS, macOS, Windows, and Linux.
-  It includes refreshed walkthroughs for [Pigeon][pigeon],
+  It includes updated guides for [Pigeon][pigeon],
   [C and Objective-C interop][c-interop] with `package:ffigen`,
   [Java and Kotlin interop][java-interop] with `package:jnigen`,
   and bundling native code with [build hooks][bind-native-code].
 
-* With the in-framework Material and Cupertino libraries formally deprecated
+* With the bundled Material and Cupertino libraries formally deprecated
   in Flutter 3.50, a new [migration guide][design-pkg-migration] walks you
   through migrating to the standalone `material_ui` and `cupertino_ui` packages
   using `dart fix` and `MaterialUiCompatibilityBridge`.
 
-* The [Flutter installation][install] documentation has been overhauled with
-  streamlined quick-install and custom-setup flows,
-  along with new instructions on [running Flutter apps on iOS devices][ios-setup]
+* The [Flutter installation][install] documentation has been updated with
+  consolidated quick-install and manual-setup flows.
+  New instructions also walk you through
+  [running Flutter apps on iOS devices][ios-setup],
   contributed by community member [poyito777][].
 
 * The web documentation covers the new `--web-content-hash` build flag for
