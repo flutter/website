@@ -120,7 +120,7 @@ Otherwise, accepting and ignoring the parameter is enough.
 
 Landed in version: 3.49.0-1.0.pre-294<br>
 On the web, landed in version: 3.50.0-1.0.pre-109<br>
-In stable release: Not yet
+In stable release: 3.50
 
 ## References
 
