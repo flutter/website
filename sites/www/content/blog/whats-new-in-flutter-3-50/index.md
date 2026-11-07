@@ -23,7 +23,7 @@ For any native integration, you can now skip platform-channel message passing an
 
 <DashImage figure src="images/native_interop_runtime.webp" alt="Diagram comparing traditional MethodChannels serialization with direct generated JNI and FFI host API calls." caption="Direct native interoperability skips platform-channel serialization to call native APIs directly through FFI and JNI." />
 
-Thank you to all the package authors, contributors, and Early Access Program participants, especially Jon Holtan, Rody Davis, Dominik Roszkowski, Alexander Thiele, and Morgan McKenzie. These community members tested early builds, reviewed documentation, and helped shape these APIs. To explore the architectural overview, language compatibility matrix, and memory guidelines, refer to the restructured [native interop documentation](https://docs.flutter.dev/interop), and stay tuned for a dedicated deep-dive post on direct native interoperability.
+Thank you to all the package authors, contributors, and Early Access Program participants, especially Jon Holtan, Rody Davis, Dominik Roszkowski, Alexander Thiele, and Morgan McKenzie. These community members tested early builds, reviewed documentation, and helped shape these APIs. To explore all the details, check out the [new native interop documentation](https://docs.flutter.dev/interop), and stay tuned for a dedicated post on direct native interop.
 
 ## Web platform
 
