@@ -41,6 +41,7 @@ They're sorted by release and listed in alphabetical order:
 * [Restrict Android engine flags in release mode][]
 * [Soft hyphens render at line breaks][]
 * [Stricter Android `Intent` verification for app entrypoints][]
+* [TextStyle.getParagraphStyle has a new hyphenCharacter parameter][]
 * [Web `viewport-fit=cover` `SafeArea` support][]
 * [WidgetSpan order in right-to-left text][]
 
@@ -49,6 +50,7 @@ They're sorted by release and listed in alphabetical order:
 [Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
 [Soft hyphens render at line breaks]: /release/breaking-changes/soft-hyphen-rendering
 [Stricter Android `Intent` verification for app entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
+[TextStyle.getParagraphStyle has a new hyphenCharacter parameter]: /release/breaking-changes/soft-hyphen-character
 [Web `viewport-fit=cover` `SafeArea` support]: /release/breaking-changes/viewport-fit-cover-safe-area
 [WidgetSpan order in right-to-left text]: /release/breaking-changes/widgetspan-rtl-bidi-order
 
