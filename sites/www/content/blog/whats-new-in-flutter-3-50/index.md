@@ -19,11 +19,11 @@ As always, we couldn’t do any of this without the Flutter community and all of
 
 Last year, we shared our [vision for direct native interoperability](/blog/flutters-path-towards-seamless-interop) to eliminate the serialization overhead, string-based plumbing, and mandatory async latency of traditional platform channels. In Flutter 3.50, that multi-year investment reaches production readiness: [FFIgen](https://pub.dev/packages/ffigen) for Objective-C and [JNIgen](https://pub.dev/packages/jnigen) for Java and Kotlin join FFIgen’s long-standing C support as stable. You can also preview [Pigeon's](https://pub.dev/packages/pigeon) new native interop mode, which uses both generators to create type-safe bindings under the hood.
 
-For any native integration, you can now skip platform-channel message passing and call between Dart and platform code directly—including synchronously or from background isolates. Use FFIgen to bind C and Objective-C APIs directly, or use JNIgen to bind Android system APIs and custom Java or Kotlin libraries in your Flutter and Dart apps. When building multi-platform plugins, Pigeon’s native interop mode handles data conversion and native lifetimes automatically on iOS, macOS, and Android. We’ve already migrated [`shared_preferences`](https://github.com/flutter/packages/tree/main/packages/shared_preferences/shared_preferences) to use Pigeon and native interop.
+For any native integration, you can now skip platform-channel message passing and call between Dart and platform code directly—including synchronously or from background isolates. Use FFIgen to bind C and Objective-C APIs directly, or use JNIgen to bind Android system APIs and custom Java or Kotlin libraries in your Flutter and Dart apps. When building multi-platform plugins, Pigeon’s native interop mode handles data conversion and native lifetimes automatically on iOS, macOS, and Android.
 
 <DashImage figure src="images/native_interop_runtime.webp" alt="Diagram comparing traditional MethodChannels serialization with direct generated JNI and FFI host API calls." caption="Direct native interoperability skips platform-channel serialization to call native APIs directly through FFI and JNI." />
 
-Thank you to all the package authors, contributors, and Early Access Program participants, especially Jon Holtan, Rody Davis, Dominik Roszkowski, Alexander Thiele, and Morgan McKenzie. These community members tested early builds, reviewed documentation, and helped shape these APIs. To explore the full architectural overview, language compatibility matrix, and memory guidelines, refer to the restructured [native interop documentation](https://docs.flutter.dev/interop) and the dedicated post, [Announcing stable direct native interoperability](https://docs.google.com/document/d/1qou8AaMSZpacQTlYBR-mbGPq2S6KRcJd3rwnFoOpZHo/edit?tab=t.wxknxg58xmkx) *\[TODO: link published interop post\]*.
+Thank you to all the package authors, contributors, and Early Access Program participants, especially Jon Holtan, Rody Davis, Dominik Roszkowski, Alexander Thiele, and Morgan McKenzie. These community members tested early builds, reviewed documentation, and helped shape these APIs. To explore the architectural overview, language compatibility matrix, and memory guidelines, refer to the restructured [native interop documentation](https://docs.flutter.dev/interop), and stay tuned for a dedicated deep-dive post on direct native interoperability.
 
 ## Web platform
 
@@ -85,7 +85,7 @@ Across the core framework, community and team contributions add sliver clipping 
 
 Community contributors delivered standout upgrades for custom scroll views in Flutter 3.50. [Emmanuel Lefebvre Dibon](https://github.com/manu-sncf) added `SliverClipRect` and `SliverClipRRect` with a `clipOverlap` option to round or clip scrolling sections without cutting off pinned headers. [Mairramer](https://github.com/Mairramer) added `itemExtentBuilder` to `ListView.separated` so lists with dividers can size variable-height rows on demand without building offscreen widgets. [Mairramer](https://github.com/Mairramer) also introduced `ScrollPhysics.shouldUpdate` so apps can update scroll behavior dynamically when configuration settings change. [Soroush Yousefpour](https://github.com/gabrimatic) updated `RawScrollbar.mouseCursor` to change the mouse pointer only over the scrollbar thumb and track, keeping the standard cursor over nearby content. Framework fixes now stop `Scrollable.ensureVisible` at the exact offset needed to reveal a pinned header instead of scrolling past it. `SliverFillRemaining` now calculates overscroll stretch offsets accurately at the end of a scroll view. Finally, `TreeSliver` clips expanding and collapsing branches cleanly so animated child rows never overlap neighboring items.
 
-*\[Image: SliverClipRRect demo\] TODO*
+<DashImage figure src="images/sliver_clip_rrect.gif" alt="Animated demo of SliverClipRRect clipping scrolling sliver content to rounded corners." caption="SliverClipRRect rounds and clips scrolling sections without cutting off pinned headers." />
 
 ### Text input and selection
 
@@ -113,8 +113,6 @@ Under the hood, Flutter 3.50 expands Impeller’s hardware-accelerated primitive
 
 Impeller’s Signed Distance Field (SDF) renderer for macOS, Linux, and Windows draws sharp borders, shapes, and gradients directly on the GPU instead of calculating complex geometry on the CPU. This lowers frame render times and keeps scrolling and animations smooth, even on screens packed with cards, borders, and shadows. Flutter 3.50 extends this fast path to lines, thin borders, rounded corners, and gradients, while speeding up macOS gradients and repeated text shadows. For custom 3D scenes and 2D games, Flutter GPU adds support for 2D texture arrays. Game and graphics developers can now batch sprite sheets, tilemaps, and terrain layers into fewer draw calls without visual seams between tiles. Flutter GPU also reports clearer Dart error messages when a shader pipeline is misconfigured, helping you catch and fix graphics bugs faster.
 
-*\[Image: Impeller SDF rendering demo\] TODO*
-
 Community contributors also landed high-impact OpenGL startup and GPU stability fixes. Contributor [xiaowei-guan](https://github.com/xiaowei-guan) moved OpenGL shader setup to a background thread so apps display their first frame faster. Contributor [seunggi](https://github.com/dfdgsdfg) resolved Mali GPU crashes when loading textures, preventing unexpected app exits on affected Android devices. Contributor [krll-kov](https://github.com/krll-kov) fixed OpenGL ES 2 texture rendering on older devices and preserved transparency across frames in animated images. Flutter also falls back automatically from Vulkan to OpenGL on B-series PowerVR GPUs to prevent rendering glitches.
 
 ### Desktop graphics
@@ -129,7 +127,7 @@ As our first stable release since Xcode 27 and iOS 27 shipped, Flutter 3.50 cuts
 
 A major rework of how the engine schedules frame generation following iOS touch events, contributed by community member [Matej Knopp](https://github.com/knopp), delivers touch events to the framework immediately so the frame builds in the same display refresh rather than waiting for the next vsync. The result is a full frame less input latency—**16 ms faster on 60 Hz iOS devices** and **8 ms faster on 120 Hz ProMotion displays**—verified through [extensive benchmarking](https://github.com/flutter/flutter/issues/191199) on hardware going all the way back to the 2015 iPhone 6S. We have more work underway to drive iOS input latency down even further in upcoming releases. Stay tuned.
 
-*\[Image: iOS touch response before and after comparison\] TODO*
+<DashImage figure src="images/ios_touch_smoothing.gif" alt="Side-by-side comparison showing faster iOS touch response in Flutter 3.50." caption="Faster iOS touch scheduling reduces input latency by a full frame in Flutter 3.50." />
 
 ### Debugging on iOS 27
 
