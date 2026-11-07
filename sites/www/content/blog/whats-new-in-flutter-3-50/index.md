@@ -59,7 +59,7 @@ To learn more about configuring `Cache-Control` headers, refer to [Web content h
 
 Flutter web apps and plugins use JS interop libraries to access browser features like local storage or wrap third-party JavaScript SDKs. Dart’s older JS-only libraries (`dart:html`, `dart:js`, `dart:js_util`, and `package:js`) are now deprecated in favor of `dart:js_interop` and `package:web`. These modern replacements work across both JavaScript and WebAssembly builds, and the legacy libraries will be removed in a future Dart release. Pass `--no-deprecated-js-interop` to `flutter build web`, `flutter run`, or `flutter test --platform chrome` to catch outdated JS imports. This fails the build early if your app or any of its packages still depend on legacy browser libraries, helping you prepare for WebAssembly.
 
-To learn more, refer to [Using compatible JS interop libraries](https://docs.flutter.dev/platform-integration/web/wasm#js-interop-wasm) and the [Dart 3.14 announcement post](https://dart.dev/blog/announcing-dart-3-14) *\[TODO: link Dart 3.14 post\]*.
+To learn more, refer to [Using compatible JS interop libraries](https://docs.flutter.dev/platform-integration/web/wasm#js-interop-wasm) and the [Dart 3.14 announcement post](https://dart.dev/blog/announcing-dart-3-14).
 
 ### Native browser text layout preview
 
