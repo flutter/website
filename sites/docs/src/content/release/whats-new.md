@@ -22,6 +22,88 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups.flutter-announce}}
 [release notes]: /release/release-notes
 
+## 11 November 2026: Release 3.50
+
+Flutter 3.50 is live! For details,
+check out the [Flutter 3.50 blog post][3.50-blog-post].
+
+**Docs updated or added since the 3.47 release**
+
+* A new [Native interop][native-interop] section brings together
+  guides for calling native code across Android, iOS, macOS, Windows, and Linux.
+  It includes updated guides for [Pigeon][pigeon],
+  [C and Objective-C interop][c-interop] with `package:ffigen`,
+  [Java and Kotlin interop][java-interop] with `package:jnigen`,
+  and bundling native code with [build hooks][bind-native-code].
+
+* With the bundled Material and Cupertino libraries formally deprecated
+  in Flutter 3.50, a new [migration guide][design-pkg-migration] walks you
+  through migrating to the standalone `material_ui` and `cupertino_ui` packages
+  using `dart fix` and `MaterialUiCompatibilityBridge`.
+
+* The [Flutter installation][install] documentation has been updated with
+  consolidated quick-install and manual-setup flows.
+  New instructions also walk you through
+  [running Flutter apps on iOS devices][ios-setup],
+  contributed by community member [poyito777][].
+
+* The web documentation covers the new `--web-content-hash` build flag for
+  [cache-busting hashed web assets][web-deploy],
+  updated browser compatibility guidance for [WebAssembly][wasm-350],
+  the `--no-deprecated-js-interop` build flag,
+  and refreshed [web accessibility][web-a11y] guidance.
+
+* The AI documentation has been reorganized around a unified
+  [get started guide][ai-get-started], an [AI tools overview][ai-tools]
+  covering agentic rules, custom agents (including the built-in Flutter
+  accessibility agent), and `package:skills_lint`, and a new guide on
+  [package skills][package-skills].
+
+* The data and backend section features a new guide to help you
+  [choose a database for your Flutter app][choose-database] and expanded
+  [Firebase][firebase-docs] integration documentation.
+
+* New guides cover setting up desktop app flavors for
+  [Windows][flavors-windows] and [Linux][flavors-linux].
+
+* The platform integration documentation includes readiness updates for
+  [iOS 27, macOS 27, and Xcode 27][supported-platforms] alongside expanded
+  [Swift Package Manager][swiftpm-350] migration guidance for apps and plugins.
+
+* The contributing and compatibility documentation now details the public
+  [Flutter RFC process][rfc-process] for proposing significant framework and
+  ecosystem changes.
+
+As always, check out the [breaking changes][bc-3-50] page for this release,
+which includes links to migration guides and other vital information.
+
+[3.50-blog-post]: {{site.main-url}}/blog/whats-new-in-flutter-3-50
+[native-interop]: /interop
+[pigeon]: /interop/pigeon
+[c-interop]: /interop/ffigen
+[java-interop]: /interop/jnigen
+[bind-native-code]: /interop/bind-native-code
+[design-pkg-migration]: /release/breaking-changes/material-ui-and-cupertino-ui
+[install]: /install
+[ios-setup]: /platform-integration/ios/setup
+[poyito777]: https://github.com/poyito777
+[web-deploy]: /deployment/web
+[wasm-350]: /platform-integration/web/wasm
+[web-a11y]: /ui/accessibility/web-accessibility
+[ai-get-started]: /ai/get-started
+[ai-tools]: /ai/tools
+[package-skills]: /ai/package-skills
+[choose-database]: /data-and-backend/persistence/choose-a-database
+[firebase-docs]: /data-and-backend/firebase
+[flavors-windows]: /deployment/flavors-windows
+[flavors-linux]: /deployment/flavors-linux
+[supported-platforms]: /reference/supported-platforms
+[swiftpm-350]: /packages-and-plugins/swift-package-manager/for-app-developers
+[rfc-process]: /release/compatibility-policy
+[bc-3-50]: /release/breaking-changes#released-in-flutter-3-50
+
+---
+
 ## 12 August 2026: Release 3.47
 
 Flutter 3.47 is live! For details,
@@ -127,88 +209,6 @@ significant changes:
 [navaronbracke]: https://github.com/navaronbracke
 [official glossary]: /resources/glossary
 [onReorder]: /release/breaking-changes/separated-builder-find-child-index-callback
-
----
-
-## 12 November 2025: Release 3.38
-
-Flutter 3.38 is live! For details,
-check out the [Flutter 3.38 technical blog post][3.38-tech].
-
-[3.38-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
-
-**Website update**
-
-A significant update to the website has recently landed!
-As with the update to the dart.dev website that landed
-earlier this year, the docs.flutter.dev website has been
-reimplemented to use [Jaspr][], a Dart web framework.
-
-Let us know what you think!
-
-[Jaspr]: https://jaspr.site/
-
-**Docs updated or added since the 3.35 release**
-
-* The Dart language now supports _dot shorthands_ syntax
-  (aka _shorthands_), which allows you to write more
-  concise code. For more information, visit the
-  [Dart dot shorthands][] page on dart.dev. Over time,
-  the samples on this website will be updated
-  to take advantage of this new feature.
-
-* The `flutter run` command now supports a configuration file
-  that allows you to specify web settings like host, port,
-  certification, and header.
-  The web dev config file also supports proxy settings,
-  making it possible to forward specific path requests
-  to another server. This makes it easier to develop a
-  web client that connects to dynamic endpoints on the same host. 
-  For more information, visit
-  [setting up a web development configuration file][web-config-file].
-
-* Development continues on the Flutter Widget Previewer tool,
-  introduced as an experimental feature in the 3.35 release.
-  For this release, the previewer better integrates with the VS Code
-  and IntelliJ IDEs (including Android Studio).
-  It's still an experimental feature.
-  For more info about the latest version, 
-  check out the [Widget Previewer tool page][].
-
-* The Flutter 3.38 release fully supports the platform releases
-  for iOS 26, Xcode 26, and macOS 26, all of which were released in September. 
-  For the most recent info on Flutter's support for iOS,
-  visit [Flutter on latest iOS][].
-
-* Flutter 3.38 supports the new Apple-mandated [UIScene lifecycle][].
-  To support this, code migration is required.
-  For more information, visit the [UIScene migration guide][].
-
-* With a focus on improving Flutter's accessibility,
-  the [accessibility docs][] have also been completely reworked. 
-
-* Also, don't forget to check out the [breaking changes][bc-3.38]
-  page for this release. That's where you'll find information
-  about breaking changes, code deprecations, and migration guides.
-
-Other relevant resources:
-
-* [3.38 release notes and changelog][]
-* [DevTools 2.51.1 release notes][]
-* [Dart 3.10 release][] blog post
-
-[3.38 release notes and changelog]: /release/release-notes/release-notes-3.38.0
-[accessibility docs]: /ui/accessibility
-[bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
-[Dart 3.10 release]: {{site.dart-blog}}/announcing-dart-3-10
-[Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
-[DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
-[Flutter on latest iOS]: /platform-integration/ios/ios-latest
-[UIScene lifecycle]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
-[UIScene migration guide]: /release/breaking-changes/uiscenedelegate
-[Widget Previewer tool page]: /tools/widget-previewer
-[web-config-file]: /platform-integration/web/web-dev-config-file
-
 
 ---
 
