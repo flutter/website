@@ -242,7 +242,8 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.
 
-1. Add the `FlutterFramework` as a dependency.
+1. Add `FlutterFramework` as a dependency and set your plugin's minimum Dart
+   and Flutter versions.
 
    Update `Package.swift` to include `FlutterFramework`:
 
@@ -259,6 +260,16 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            ]
        )
    ]
+   ```
+
+   `FlutterFramework` is available in Flutter 3.41 and later.
+   In your plugin's `pubspec.yaml`,
+   set the `environment` constraints to at least the following versions:
+
+   ```yaml title="pubspec.yaml"
+   environment:
+     sdk: ^3.11.0
+     flutter: ">=3.41.0"
    ```
 
 1. If your header files are no longer in the same directory as your
