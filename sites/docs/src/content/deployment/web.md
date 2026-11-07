@@ -208,43 +208,47 @@ To get started, [install or update][install-firebase-cli] the Firebase CLI:
 npm install -g firebase-tools
 ```
 
-### Initialize Firebase
+### Initialize and deploy
 
-1. Enable the web frameworks preview to the [Firebase framework-aware CLI][]:
-
-    ```console
-    firebase experiments:enable webframeworks
-    ```
-
-2. In an empty directory or an existing Flutter project, run the initialization
-command:
+1. In the root directory of your Flutter project,
+   run the initialization command:
 
     ```console
     firebase init hosting
     ```
 
-3. Answer `yes` when asked if you want to use a web framework.
+2. Follow the CLI prompts:
 
-4. If you're in an empty directory,
-    you'll be asked to choose your web framework. Choose `Flutter Web`.
+   * Select an existing Firebase project or create a new project.
+   * When asked `What do you want to use as your public directory?`,
+     enter `build/web`.
+   * Choose whether to configure the site as a single-page application
+     (rewriting all URLs to `/index.html`).
+     If `build/web/index.html` already exists,
+     answer `no` when asked whether to overwrite it.
+   * Choose whether to set up automatic builds and deploys with GitHub.
 
-5. Choose your hosting source directory; this could be an existing flutter app.
+3. Build your web app for release:
 
-6. Select a region to host your files.
+    ```console
+    flutter build web
+    ```
 
-7. Choose whether to set up automatic builds and deploys with GitHub.
+    :::tip
+    To run `flutter build web` automatically whenever you deploy,
+    add `"predeploy": ["flutter build web"]` to the `"hosting"` section
+    of your `firebase.json` file.
+    For recommended `Cache-Control` headers and single-page application
+    rewrite rules in `firebase.json`, check out the [Web FAQ][web-faq-caching].
+    :::
 
-8. Deploy the app to Firebase Hosting:
+4. Deploy the release bundle to Firebase Hosting:
 
     ```console
     firebase deploy
     ```
 
-    Running this command automatically runs `flutter build web --release`,
-    so you don't have to build your app in a separate step.
-
-To learn more, visit the official [Firebase Hosting][] documentation for
-Flutter on the web.
+To learn more, visit the official [Firebase Hosting][] documentation.
 
 ## Handling images on the web
 
@@ -311,8 +315,7 @@ See [Embedding Flutter web][].
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /platform-integration/web/web-images
-[Firebase Hosting]: {{site.firebase}}/docs/hosting/frameworks/flutter
-[Firebase framework-aware CLI]: {{site.firebase}}/docs/hosting/frameworks/frameworks-overview
+[Firebase Hosting]: {{site.firebase}}/docs/hosting
 [install-firebase-cli]: {{site.firebase}}/docs/cli#install_the_firebase_cli
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
