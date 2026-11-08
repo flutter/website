@@ -1,7 +1,8 @@
 ---
 title: Soft hyphens render at line breaks
 description: >-
-  Text now shows a hyphen when a line breaks at a soft hyphen (U+00AD),
+  On native platforms, text now shows a hyphen when
+  a line breaks at a soft hyphen (U+00AD),
   and TextStyle.getParagraphStyle has a new hyphens parameter.
 ---
 
@@ -30,7 +31,7 @@ and `dart:ui`'s [`ParagraphStyle`][] takes a `Hyphens` value:
 
 This change affects apps in two ways.
 
-**Rendering.** Text now shows a hyphen
+**Rendering.** On native platforms, text now shows a hyphen
 wherever a line breaks at a soft hyphen.
 Lines still break in the same places,
 but the hyphen makes its line wider,
@@ -40,8 +41,11 @@ Golden image tests that contain such text might need updating.
 
 In Flutter 3.50, this rendering change applies to all platforms except the web,
 where soft hyphens remain invisible at line breaks.
+The web gets this rendering change in a later release,
+so web apps might need the same updates at that point.
 
-Widgets built on `EditableText`, such as `TextField` and `SelectableText`,
+On native platforms, widgets built on `EditableText`,
+such as `TextField` and `SelectableText`,
 also render the hyphen but don't have a `hyphens` parameter yet,
 so there's no way to opt out for them.
 
@@ -120,8 +124,9 @@ Otherwise, accepting and ignoring the parameter is enough.
 ## Timeline
 
 Landed in version: 3.49.0-1.0.pre-294<br>
+In stable release: 3.50 (all platforms except the web)<br>
 On the web, landed in version: 3.50.0-1.0.pre-109<br>
-In stable release: 3.50
+On the web, in stable release: After 3.50
 
 ## References
 

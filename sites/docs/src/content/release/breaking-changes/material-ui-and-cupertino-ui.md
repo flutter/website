@@ -220,7 +220,7 @@ Treat this migration as a major version bump for your package.
 
 ## Timeline
 
-Landed in version: 3.50.0-1.0.pre-153<br>
+Landed in version: 3.49.0-1.0.pre-295<br>
 In stable release: 3.50
 
 ## References
@@ -243,6 +243,11 @@ Relevant blog posts and announcements:
 * [What's new in Flutter 3.47][]
 * [Flutter's Material and Cupertino code freeze][]
 
+Related changes in `package:material_ui`:
+
+* [Added enabled to DropdownButtonFormField and made onChanged optional][]
+
+[Added enabled to DropdownButtonFormField and made onChanged optional]: /release/breaking-changes/dropdownbutton-enabled-property
 [`flutter/packages`]: {{site.repo.packages}}
 [Issue 191448]: {{site.repo.flutter}}/issues/191448
 [PR 192957]: {{site.repo.flutter}}/pull/192957
