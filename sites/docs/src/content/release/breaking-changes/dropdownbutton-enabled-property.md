@@ -1,22 +1,21 @@
 ---
-title: Added enabled property and made onChanged optional for DropdownButton
+title: Added enabled property and made onChanged optional for DropdownButtonFormField
 description: >-
-  DropdownButton and DropdownButtonFormField now support an explicit enabled
-  property, and their onChanged callbacks are no longer required.
+  DropdownButtonFormField in material_ui now supports an explicit enabled
+  parameter, and its onChanged callback is no longer required.
 ---
 
 {% render "docs/breaking-changes.md" %}
 
 ## Summary
 
-`DropdownButton` and `DropdownButtonFormField` now include
-an `enabled` property to explicitly manage their interactive state,
+In `package:material_ui`, `DropdownButtonFormField` now includes
+an `enabled` parameter to explicitly manage its interactive state,
 and the `onChanged` callback is no longer marked as `required`.
 
 ## Background
 
-Previously, `DropdownButton` and `DropdownButtonFormField` didn't
-have an `enabled` parameter.
+Previously, `DropdownButtonFormField` didn't have an `enabled` parameter.
 The only way to disable the dropdown
 (graying it out and making it non-interactive) was to
 pass `null` to the `required` `onChanged` callback.
@@ -29,40 +28,19 @@ To improve this API, a dedicated `enabled` property was introduced,
 and `onChanged` was made optional.
 
 The `enabled` property is optional.
-Making it mandatory introduces a massive breaking change that
-breaks nearly every existing `DropdownButton` implementation in
-the Flutter ecosystem.
-Instead, to preserve backward compatibility,
+To preserve backward compatibility,
 if the `enabled` argument isn't explicitly provided,
-the button determines its state by falling back to whether
+a field with items determines its interactive state by checking whether
 `onChanged` is provided (that is, it's enabled if `onChanged != null`,
 and disabled if `onChanged == null`).
 
-The minor breaking change here is structural:
-while the old conditional `onChanged` pattern technically
-still works due to the fallback logic,
-developers are encouraged to migrate to the clearer API by
-explicitly using the `enabled` property.
-
 ## Migration guide
 
-If you previously disabled your `DropdownButton` by
+If you previously disabled your `DropdownButtonFormField` by
 conditionally passing `null` to `onChanged`,
-migrate to the new `enabled` property.
+you can migrate to the new `enabled` property.
 This cleanly separates the state of the widget (enabled/disabled) from
 its behavior (the callback).
-
-To automatically migrate your code for simple cases
-(such as statically passing `null`), run the following command:
-
-```console
-$ dart fix --apply
-```
-
-:::important
-Note that `dart fix` will not automatically migrate cases where `onChanged`
-is set using conditional logic. For those, you must update your code manually.
-:::
 
 ### Case 1: Statically disabled dropdown {: #case-1-statically-disabled }
 
@@ -72,8 +50,8 @@ you can now simply omit `onChanged` and use `enabled: false`.
 Code before migration:
 
 ```dart
-final disabledDropdown = DropdownButton<String>(
-  value: 'Option 1',
+final disabledDropdown = DropdownButtonFormField<String>(
+  initialValue: 'Option 1',
   items: const [
     DropdownMenuItem(value: 'Option 1', child: Text('Option 1')),
   ],
@@ -84,8 +62,8 @@ final disabledDropdown = DropdownButton<String>(
 Code after migration:
 
 ```dart diff
-  final disabledDropdown = DropdownButton<String>(
-    value: 'Option 1',
+  final disabledDropdown = DropdownButtonFormField<String>(
+    initialValue: 'Option 1',
     items: const [
       DropdownMenuItem(value: 'Option 1', child: Text('Option 1')),
     ],
@@ -102,8 +80,8 @@ the interactive state by using the `enabled` property directly.
 Code before migration:
 
 ```dart
-final conditionalDropdown = DropdownButton<String>(
-  value: 'Option 1',
+final conditionalDropdown = DropdownButtonFormField<String>(
+  initialValue: 'Option 1',
   items: const [
     DropdownMenuItem(value: 'Option 1', child: Text('Option 1')),
   ],
@@ -114,8 +92,8 @@ final conditionalDropdown = DropdownButton<String>(
 Code after migration:
 
 ```dart diff
-  final conditionalDropdown = DropdownButton<String>(
-    value: 'Option 1',
+  final conditionalDropdown = DropdownButtonFormField<String>(
+    initialValue: 'Option 1',
     items: const [
       DropdownMenuItem(value: 'Option 1', child: Text('Option 1')),
     ],
@@ -128,7 +106,7 @@ Code after migration:
 ## Timeline
 
 Landed in `package:material_ui` version: 1.8.0<br>
-In stable release: 3.50
+Minimum supported Flutter version: 3.47
 
 ## References
 
@@ -144,10 +122,10 @@ Relevant issues:
 Relevant PRs:
 
 * [Add enabled parameter to DropdownButtonFormField][]
-* [Update DropdownButton enabled property logic][]
+* [Original SDK proposal][] (closed without merging)
 
 [`DropdownButton`]: {{site.material_ui}}/DropdownButton-class.html
 [`DropdownButtonFormField`]: {{site.material_ui}}/DropdownButtonFormField-class.html
 [issue-57953]: {{site.repo.flutter}}/issues/57953
 [Add enabled parameter to DropdownButtonFormField]: {{site.repo.packages}}/pull/12610
-[Update DropdownButton enabled property logic]: {{site.repo.flutter}}/pull/182419
+[Original SDK proposal]: {{site.repo.flutter}}/pull/182419

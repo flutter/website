@@ -9,8 +9,8 @@ description: >-
 
 ## Summary
 
-When a line of text breaks at a soft hyphen (U+00AD),
-Flutter now draws a visible hyphen at the end of the line.
+On native platforms, Flutter now draws a visible hyphen
+when a line of text breaks at a soft hyphen (U+00AD).
 A new [`Hyphens`][] enum controls this,
 and [`TextStyle.getParagraphStyle`][] has a new `hyphens` parameter.
 Classes that override `getParagraphStyle` must add the parameter.
@@ -38,8 +38,9 @@ so it can change `Paragraph.longestLine` and the size of text
 laid out with [`TextWidthBasis.longestLine`][].
 Golden image tests that contain such text might need updating.
 
-This applies to all platforms except the web,
-where soft hyphens are rendered starting in a later release.
+In Flutter 3.50, this rendering change applies to all platforms except the web,
+where soft hyphens remain invisible at line breaks.
+
 Widgets built on `EditableText`, such as `TextField` and `SelectableText`,
 also render the hyphen but don't have a `hyphens` parameter yet,
 so there's no way to opt out for them.

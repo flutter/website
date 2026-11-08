@@ -39,7 +39,7 @@ They're sorted by release and listed in alphabetical order:
 <a id="released-in-flutter-350" aria-hidden="true"></a>
 ### Released in Flutter 3.50
 
-* [Added enabled property and made onChanged optional for DropdownButton][]
+* [Added enabled property and made onChanged optional for DropdownButtonFormField][] (`material_ui` 1.8.0)
 * [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
 * [Restrict Android engine flags in release mode][]
 * [Soft hyphens render at line breaks][]
@@ -47,7 +47,7 @@ They're sorted by release and listed in alphabetical order:
 * [Web `viewport-fit=cover` `SafeArea` support][]
 * [WidgetSpan order in right-to-left text][]
 
-[Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
+[Added enabled property and made onChanged optional for DropdownButtonFormField]: /release/breaking-changes/dropdownbutton-enabled-property
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 [Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
 [Soft hyphens render at line breaks]: /release/breaking-changes/soft-hyphen-rendering
@@ -525,7 +525,6 @@ The following breaking change was reverted in release 2.2:
 [MouseTracker no longer attaches annotations]: /release/breaking-changes/mouse-tracker-no-longer-attaches-annotations
 [Nullable CupertinoTheme.brightness]: /release/breaking-changes/nullable-cupertinothemedata-brightness
 [Rebuild optimization for OverlayEntries and Routes]: /release/breaking-changes/overlay-entry-rebuilds
-[Replace AnimationSheetBuilder.display with collate]: /release/breaking-changes/animation-sheet-builder-display
 [Scrollable AlertDialog]: /release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /release/breaking-changes/text-input-client-current-value
