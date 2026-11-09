@@ -20,13 +20,20 @@ import '../common/icon.dart';
 /// Override it at build time with
 /// `--dart-define=GDP_OAUTH_CLIENT_ID=<client-id>`.
 ///
-/// Non-production builds, including local development and PR previews,
-/// default to [_devOauthClientId]. Production builds have no default,
-/// so they must be given the production client ID explicitly.
+/// Production builds default to [_prodOauthClientId]; non-production builds,
+/// including local development and PR previews, default to [_devOauthClientId].
 const String _oauthClientId = String.fromEnvironment(
   'GDP_OAUTH_CLIENT_ID',
-  defaultValue: productionBuild ? '' : _devOauthClientId,
+  defaultValue: productionBuild ? _prodOauthClientId : _devOauthClientId,
 );
+
+/// The OAuth 2.0 client for `flutter.dev` in production.
+///
+/// OAuth client IDs for browser apps are public by design. Which sites can use
+/// this one is restricted by the authorized JavaScript origins configured on
+/// the client (`https://flutter.dev`).
+const String _prodOauthClientId =
+    '689428580108-90tt42dajs2fkt6rgjp69bq8itila8st.apps.googleusercontent.com';
 
 /// The OAuth 2.0 client for development and PR previews.
 ///
@@ -45,7 +52,8 @@ const String _gisScriptUrl = 'https://accounts.google.com/gsi/client';
 
 /// A sign-up form that uses Google Sign-In to
 /// create or update the user's Google Developer profile,
-/// opting them in to event emails and adding Flutter and Dart as interests.
+/// enrolling them in the Flutter Developer Community, adding Flutter and Dart
+/// as interests, and opting them in to event and Flutter update emails.
 @client
 class FlutterCreateSignup extends StatefulComponent {
   /// Creates a sign-up form.
@@ -209,19 +217,28 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
       final accessToken = await _requestAccessToken();
       final client = DeveloperProfilesClient(
         accessToken: accessToken,
-        environment: .staging,
+        environment: productionBuild ? .production : .staging,
         apiKey: _apiKey.isEmpty ? null : _apiKey,
       );
 
       try {
+        final originUri = web.window.location.href;
         final profile = await client.ensureProfile(
           eventEmail: .enabled,
-          originUri: web.window.location.href,
+          originUri: originUri,
         );
         await client.addInterests(profile.name, const [
           flutterInterestNodeId,
           dartInterestNodeId,
         ]);
+        await client.joinProgramGroup(
+          profile.name,
+          flutterProgramGroupId,
+          emailPreferences: const {
+            flutterDevUpdatesEmailPreferenceId: .enabled,
+          },
+          originUri: originUri,
+        );
 
         // Persist the sign-up and notify every form on the page,
         // including this one.
@@ -291,7 +308,8 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
         p([
           .text(
             _status == .success && _createdProfile
-                ? 'We created your Google Developer Program profile and '
+                ? 'We created your Google Developer Program profile, '
+                      'joined the Flutter Developer Community, and '
                       'added Flutter and Dart to your interests. '
                       "We'll let you know when the livestream is about to start."
                 : "We'll let you know when the livestream is about to start.",
@@ -370,8 +388,8 @@ class _FinePrint extends StatelessComponent {
     return const p(classes: 'fc-fine-print', [
       .text(
         'Signing up creates or updates your Google Developer Program '
-        'profile, adds Flutter and Dart to your interests, and opts '
-        'you in to emails. ',
+        'profile, joins the Flutter Developer Community, adds Flutter '
+        'and Dart to your interests, and opts you in to emails. ',
       ),
       a(
         href: 'https://developers.google.com/profile/terms',

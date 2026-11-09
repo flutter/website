@@ -28,6 +28,18 @@ const String flutterInterestNodeId = 'E-product-Flutter';
 /// to mark the user as interested in Dart.
 const String dartInterestNodeId = 'E-language-DartLang';
 
+/// The ID of the Flutter Developer Community program group
+/// (`FLUTTER_DEV`, Gamma product ID `2484`).
+///
+/// Enroll a profile in this program with
+/// [DeveloperProfilesClient.joinProgramGroup].
+const String flutterProgramGroupId = 'flutter';
+
+/// The email preference ID for Flutter updates on the
+/// [flutterProgramGroupId] community program (`flutter_dev_updates`).
+const String flutterDevUpdatesEmailPreferenceId =
+    'flutter_dev_updates_email_preference';
+
 /// A deployment of the Google Developer Profiles API.
 enum DeveloperProfilesEnvironment {
   /// The staging deployment, used for development and testing.
@@ -45,15 +57,19 @@ enum DeveloperProfilesEnvironment {
 /// A user's preference for receiving a category of email.
 enum EmailPreference {
   /// The user opted out of this category of email.
-  disabled('DISABLED'),
+  disabled('DISABLED', 'EMAIL_DISABLED'),
 
   /// The user opted in to this category of email.
-  enabled('ENABLED');
+  enabled('ENABLED', 'EMAIL_ENABLED');
 
-  const EmailPreference(this.value);
+  const EmailPreference(this.value, this.programValue);
 
-  /// The value of this preference as expected by the API.
+  /// The value of this preference as expected on a profile resource.
   final String value;
+
+  /// The value of this preference as expected on a program membership
+  /// (`ProfileProgramData`) resource.
+  final String programValue;
 }
 
 /// The save state of an interest on a profile.
@@ -202,19 +218,62 @@ final class DeveloperProfilesClient {
     );
   }
 
+  /// Enrolls the profile with resource name [profileName] in the
+  /// community program [programGroupId], or updates its program settings
+  /// if the user is already a member.
+  ///
+  /// Pass [emailPreferences] to set program-specific email preferences,
+  /// keyed by preference ID such as [flutterDevUpdatesEmailPreferenceId],
+  /// and [originUri] to record the page where the user joined.
+  Future<Map<String, Object?>> joinProgramGroup(
+    String profileName,
+    String programGroupId, {
+    Map<String, EmailPreference> emailPreferences = const {},
+    String? originUri,
+  }) {
+    final resourceName = '$profileName/programs/$programGroupId';
+    final awardingUri = originUri?.replaceFirst(RegExp(r'^https?://'), '');
+    return _send(
+      'PATCH',
+      resourceName,
+      queryParameters: {
+        'allowMissing': 'true',
+        if (emailPreferences.isNotEmpty)
+          'updateMask': 'profile_program_data.email_preferences',
+      },
+      body: {
+        'name': resourceName,
+        if (awardingUri != null && awardingUri.isNotEmpty)
+          'awardingUri': awardingUri,
+        if (emailPreferences.isNotEmpty)
+          'emailPreferences': {
+            for (final MapEntry(:key, :value) in emailPreferences.entries)
+              key: {
+                'id': key,
+                'emailPreference': value.programValue,
+              },
+          },
+      },
+    );
+  }
+
   /// Closes the underlying HTTP client.
   void close() => _httpClient.close();
 
   Future<Map<String, Object?>> _send(
     String method,
     String path, {
+    Map<String, String>? queryParameters,
     Map<String, Object?>? body,
   }) async {
     final baseUri = Uri.parse('${environment.baseUrl}/v1beta1/$path');
-    final uri = switch (_apiKey) {
-      final apiKey? => baseUri.replace(queryParameters: {'key': apiKey}),
-      null => baseUri,
+    final mergedQuery = <String, String>{
+      ...?queryParameters,
+      'key': ?_apiKey,
     };
+    final uri = mergedQuery.isEmpty
+        ? baseUri
+        : baseUri.replace(queryParameters: mergedQuery);
     final request = http.Request(method, uri)
       ..headers['Authorization'] = 'Bearer $_accessToken';
     if (body != null) {
