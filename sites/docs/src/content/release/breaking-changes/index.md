@@ -47,7 +47,7 @@ They're sorted by release and listed in alphabetical order:
 * [Web `viewport-fit=cover` `SafeArea` support][]
 * [WidgetSpan order in right-to-left text][]
 
-[Added enabled property and made onChanged optional for DropdownButtonFormField]: /release/breaking-changes/dropdownbutton-enabled-property
+[Added enabled property and made onChanged optional for DropdownButtonFormField]: /release/breaking-changes/dropdownbuttonformfield-enabled-parameter
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 [Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
 [Soft hyphens render at line breaks]: /release/breaking-changes/soft-hyphen-rendering

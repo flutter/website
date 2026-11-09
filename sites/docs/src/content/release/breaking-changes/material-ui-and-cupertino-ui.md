@@ -247,7 +247,7 @@ Related changes in `package:material_ui`:
 
 * [Added enabled to DropdownButtonFormField and made onChanged optional][]
 
-[Added enabled to DropdownButtonFormField and made onChanged optional]: /release/breaking-changes/dropdownbutton-enabled-property
+[Added enabled to DropdownButtonFormField and made onChanged optional]: /release/breaking-changes/dropdownbuttonformfield-enabled-parameter
 [`flutter/packages`]: {{site.repo.packages}}
 [Issue 191448]: {{site.repo.flutter}}/issues/191448
 [PR 192957]: {{site.repo.flutter}}/pull/192957
