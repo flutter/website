@@ -174,10 +174,10 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 
 1. Move all files from `ios/Classes` to `ios/plugin_name/Sources/plugin_name`.
 
-1. Add `FlutterFramework` as a dependency and set your plugin's minimum Dart
-   and Flutter versions.
+1. Add `FlutterFramework` as a dependency.
 
-   Update `Package.swift` to include `FlutterFramework`:
+   If your `Package.swift` doesn't already include `FlutterFramework`,
+   add it:
 
    ```swift title="Package.swift"
    dependencies: [
@@ -189,13 +189,16 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            name: "plugin_name",
            dependencies: [
                [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
-           ]
+           ],
+           // ...
        )
    ]
    ```
 
-   `FlutterFramework` is available in Flutter 3.41 and later.
-   In your plugin's `pubspec.yaml`,
+1. Set your plugin's minimum Dart and Flutter versions.
+
+   `FlutterFramework` requires Flutter 3.41 or later.
+   In the `pubspec.yaml` file of the package that contains `Package.swift`,
    set the `environment` constraints to at least the following versions:
 
    ```yaml title="pubspec.yaml"
@@ -352,11 +355,11 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
       Swift Package Manager feature turned on migrates the project to add
       Swift Package Manager integration.
 
-      This raises the example app's Flutter SDK requirement to version 3.24 or
-      higher.
+      This raises the example app's Flutter SDK requirement.
 
-      If you'd like to run the example app using an older Flutter SDK version,
-      do not commit the migration's changes to your version control system.
+      If you'd like to run the example app using an
+      older Flutter SDK version that your plugin supports,
+      don't commit the migration's changes to your version control system.
       If needed, you can always
       [undo the Swift Package Manager migration][removeSPM].
       :::
