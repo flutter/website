@@ -36,6 +36,7 @@ Place the package directory next to your app directory.
     - fonts/
       - Raleway-Regular.ttf
       - Raleway-Italic.ttf
+  - pubspec.yaml
 
 </FileTree>
 
