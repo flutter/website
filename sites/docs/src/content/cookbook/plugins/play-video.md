@@ -246,7 +246,7 @@ FloatingActionButton(
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter video player hands-on example in DartPad" run="true"
+```dartpad title="Flutter video player hands-on example in DartPad"
 import 'dart:async';
 
 import 'package:flutter/material.dart';

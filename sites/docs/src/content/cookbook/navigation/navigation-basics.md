@@ -208,7 +208,7 @@ onPressed: () {
 <Tab name="Android">
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
+```dartpad title="Flutter navigation hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() {
@@ -268,7 +268,7 @@ class SecondRoute extends StatelessWidget {
 <Tab name="iOS">
 
 <?code-excerpt "lib/main_cupertino.dart"?>
-```dartpad title="Flutter Cupertino theme hands-on example in DartPad" run="true"
+```dartpad title="Flutter Cupertino theme hands-on example in DartPad"
 import 'package:flutter/cupertino.dart';
 
 void main() {

@@ -160,7 +160,7 @@ To learn more, watch this short Widget of the Week video on the `Theme` widget:
 ## Try an interactive example
 
 <?code-excerpt "lib/main.dart (FullApp)"?>
-```dartpad title="Flutter themes hands-on example in DartPad" run="true"
+```dartpad title="Flutter themes hands-on example in DartPad"
 import 'package:flutter/material.dart';
 // Include the Google Fonts package to provide more text format options
 // https://pub.dev/packages/google_fonts

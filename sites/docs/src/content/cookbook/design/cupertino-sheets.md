@@ -77,7 +77,7 @@ showCupertinoSheet<void>(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter CupertinoSheet hands-on example in DartPad" run="true"
+```dartpad title="Flutter CupertinoSheet hands-on example in DartPad"
 import 'package:flutter/cupertino.dart';
 
 void main() => runApp(const CupertinoSheetDemo());

@@ -213,7 +213,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter page routing hands-on example in DartPad" run="true"
+```dartpad title="Flutter page routing hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() {

@@ -30,7 +30,7 @@ ListView(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter lists hands-on example in DartPad" run="true"
+```dartpad title="Flutter lists hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

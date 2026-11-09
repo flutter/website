@@ -177,7 +177,7 @@ body: ListView.builder(
 ### Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter passing data hands-on example in DartPad" run="true"
+```dartpad title="Flutter passing data hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 class Todo {

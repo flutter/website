@@ -96,7 +96,7 @@ see the [Gestures][] section of the cookbook.
 :::
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter snackbar hands-on example in DartPad" run="true"
+```dartpad title="Flutter snackbar hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SnackBarDemo());

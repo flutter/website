@@ -133,7 +133,7 @@ widgets, for simplicity.
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter Hero animation hands-on example in DartPad" run="true"
+```dartpad title="Flutter Hero animation hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const HeroApp());

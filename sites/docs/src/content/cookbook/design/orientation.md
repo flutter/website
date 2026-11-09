@@ -78,7 +78,7 @@ is [discouraged][]. Instead use `MediaQuery.sizeOf(context)`
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter app orientation hands-on example in DartPad" run="true"
+```dartpad title="Flutter app orientation hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() {

@@ -131,6 +131,13 @@
     ],
     "headers": [
       {
+        "source": "/assets/dartpad/**/*.tar.gz",
+        "headers": [
+          { "key": "Access-Control-Allow-Origin", "value": "*" },
+          { "key": "Cache-Control", "value": "max-age=3600" }
+        ]
+      },
+      {
         "source": "/assets/*.@(jpg|jpeg|png|webp|avif|svg|mp4|css)",
         "headers": [
           {

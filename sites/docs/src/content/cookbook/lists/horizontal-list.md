@@ -28,7 +28,7 @@ ListView(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter horizontal list hands-on example in DartPad" run="true"
+```dartpad title="Flutter horizontal list hands-on example in DartPad"
 import 'dart:ui';
 
 import 'package:flutter/material.dart';

@@ -236,7 +236,7 @@ Run the app:
 <!-- Start DartPad -->
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter drag a widget hands-on example in DartPad" run="true"
+```dartpad title="Flutter drag a widget hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() {

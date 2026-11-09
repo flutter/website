@@ -138,7 +138,7 @@ FloatingActionButton(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter animated container hands-on example in DartPad" run="true"
+```dartpad title="Flutter animated container hands-on example in DartPad"
 import 'dart:math';
 
 import 'package:flutter/material.dart';

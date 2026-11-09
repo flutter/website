@@ -165,7 +165,7 @@ check out the [Navigation][] section of the cookbook.
 :::
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter drawer hands-on example in DartPad" run="true"
+```dartpad title="Flutter drawer hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

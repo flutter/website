@@ -132,7 +132,7 @@ AnimatedOpacity(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Implicit Animation Opacity DartPad hands-on example" run="true"
+```dartpad title="Implicit Animation Opacity DartPad hands-on example"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

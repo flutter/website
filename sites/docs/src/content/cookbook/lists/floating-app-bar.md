@@ -223,7 +223,7 @@ SliverList.builder(
 <Tab name="Material widgets">
 
 <?code-excerpt "lib/main_material.dart"?>
-```dartpad title="Flutter floating app bar hands-on example in DartPad" run="false"
+```dartpad title="Flutter floating app bar hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -279,7 +279,7 @@ class MyApp extends StatelessWidget {
 <Tab name="Cupertino widgets">
 
 <?code-excerpt "lib/main_cupertino.dart"?>
-```dartpad title="Flutter floating navigation bar hands-on example in DartPad" run="false"
+```dartpad title="Flutter floating navigation bar hands-on example in DartPad"
 import 'package:flutter/cupertino.dart';
 
 void main() => runApp(const MyApp());

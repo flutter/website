@@ -549,7 +549,7 @@ on and off as the content loads.
 ## Interactive example
 
 <?code-excerpt "lib/original_example.dart" remove="code-excerpt-closing-bracket"?>
-```dartpad title="Flutter shimmer loading hands-on example in DartPad" run="true"
+```dartpad title="Flutter shimmer loading hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() {

@@ -158,7 +158,7 @@ onPressed: () {
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter Named Routes hands-on example in DartPad" run="true"
+```dartpad title="Flutter Named Routes hands-on example in DartPad"
 import 'package:flutter/material.dart';
 
 void main() {

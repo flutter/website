@@ -378,7 +378,7 @@ Run the app:
   first screen.
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter nested navigation hands-on example in DartPad" run="true" height="640px"
+```dartpad title="Flutter nested navigation hands-on example in DartPad" height="640px"
 import 'package:flutter/material.dart';
 
 const routeHome = '/';
