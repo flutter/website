@@ -27,10 +27,13 @@ This example uses the [go_router][] package to handle the routing.
 The Flutter team maintains the `go_router` package.
 It provides a simple API to handle complex routing scenarios.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 1. To create a new application, type `flutter create <app-name>`.
 
     ```console
     $ flutter create deeplink_cookbook
+    $ cd deeplink_cookbook
     ```
 
 2. To include the `go_router` package as a dependency,
