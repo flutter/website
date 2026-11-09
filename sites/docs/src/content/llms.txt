@@ -162,7 +162,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Organize a theme](https://docs.flutter.dev/cookbook/design/themes): Learn how to use `ThemeData` for a consistent design.
 - [Cupertino (iOS-style) widgets](https://docs.flutter.dev/ui/widgets/cupertino): Build apps that look and feel native on iOS.
 - [Material widgets](https://docs.flutter.dev/ui/widgets/material): A comprehensive list of Material Design widgets.
-- [Migrate to standalone material_ui and cupertino_ui packages](https://docs.flutter.dev/release/breaking-changes/material-ui-and-cupertino-ui): Migrate from the deprecated in-framework Material and Cupertino libraries to the standalone `package:material_ui` and `package:cupertino_ui` packages.
+- [Migrate to standalone material_ui and cupertino_ui packages](https://docs.flutter.dev/release/breaking-changes/material-ui-and-cupertino-ui): Migrate from the in-framework Material and Cupertino libraries to the standalone `package:material_ui` and `package:cupertino_ui` packages.
 - [Use a custom font](https://docs.flutter.dev/cookbook/design/fonts): Implement custom typography in your app.
 
 ## Advanced topics & internals
