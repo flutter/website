@@ -6,7 +6,7 @@ author: twerske
 coverImage:
   alt: "Chef Dash looking into a 350-degree oven at cookies labeled Interop, Impeller, and Genkit."
   url: images/hero_image.webp
-socialImage: images/hero_image.webp
+socialImage: images/hero_image_cover.webp
 category: release
 layout: blog
 ---
