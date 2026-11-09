@@ -11,8 +11,8 @@ description: >-
 
 The Material and Cupertino design libraries are now available as
 standalone packages: [`package:material_ui`][] and [`package:cupertino_ui`][].
-In Flutter 3.47, developers can opt in to these packages ahead of
-the formal deprecation of the in-framework design libraries.
+Starting in Flutter 3.47, developers could opt in to these packages ahead of
+the formal deprecation of the in-framework design libraries in Flutter 3.50.
 
 ## Background
 
@@ -53,8 +53,7 @@ The initial 1.0.0 versions of `package:material_ui` and `package:cupertino_ui`
 match the frozen framework code to provide a seamless transition.
 Future releases of the packages will use semantic versioning for major, minor,
 and patch updates.
-The in-framework design libraries are scheduled for formal deprecation
-in an upcoming stable release.
+The in-framework design libraries are formally deprecated in Flutter 3.50.
 
 ## Migration guide
 
@@ -219,6 +218,11 @@ While the symbols and class names remain the same,
 they are technically referenced from an entirely new library.
 Treat this migration as a major version bump for your package.
 
+## Timeline
+
+Landed in version: 3.49.0-1.0.pre-295<br>
+In stable release: 3.50
+
 ## References
 
 Package documentation:
@@ -230,13 +234,23 @@ Relevant issues:
 
 * [Issue 191448][]
 
+Relevant PRs:
+
+* [PR 192957][]
+
 Relevant blog posts and announcements:
 
 * [What's new in Flutter 3.47][]
 * [Flutter's Material and Cupertino code freeze][]
 
+Related changes in `package:material_ui`:
+
+* [Added enabled to DropdownButtonFormField and made onChanged optional][]
+
+[Added enabled to DropdownButtonFormField and made onChanged optional]: /release/breaking-changes/dropdownbuttonformfield-enabled-parameter
 [`flutter/packages`]: {{site.repo.packages}}
 [Issue 191448]: {{site.repo.flutter}}/issues/191448
+[PR 192957]: {{site.repo.flutter}}/pull/192957
 [`package:cupertino_ui`]: {{site.pub-pkg}}/cupertino_ui
 [`package:material_ui`]: {{site.pub-pkg}}/material_ui
 [Flutter's Material and Cupertino code freeze]: {{site.main-url}}/blog/flutters-material-and-cupertino-code-freeze
