@@ -8,4 +8,5 @@
 - link:
     text: "blog post"
     url: https://flutter.dev/blog/whats-new-in-flutter-3-50
+    newTab: true
 - text: "."
