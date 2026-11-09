@@ -39,7 +39,7 @@ They're sorted by release and listed in alphabetical order:
 <a id="released-in-flutter-350" aria-hidden="true"></a>
 ### Released in Flutter 3.50
 
-* [Added enabled property and made onChanged optional for DropdownButtonFormField][] (`material_ui` 1.8.0)
+* [Added `enabled` to `DropdownButtonFormField` and made `onChanged` optional][] (`material_ui` 1.8.0)
 * [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
 * [Restrict Android engine flags in release mode][]
 * [Soft hyphens render at line breaks][]
@@ -47,7 +47,7 @@ They're sorted by release and listed in alphabetical order:
 * [Web `viewport-fit=cover` `SafeArea` support][]
 * [WidgetSpan order in right-to-left text][]
 
-[Added enabled property and made onChanged optional for DropdownButtonFormField]: /release/breaking-changes/dropdownbuttonformfield-enabled-parameter
+[Added `enabled` to `DropdownButtonFormField` and made `onChanged` optional]: /release/breaking-changes/dropdownbuttonformfield-enabled-parameter
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 [Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
 [Soft hyphens render at line breaks]: /release/breaking-changes/soft-hyphen-rendering
