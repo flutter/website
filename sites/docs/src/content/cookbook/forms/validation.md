@@ -22,6 +22,8 @@ a single text field using the following steps:
 1.  Add a `TextFormField` with validation logic.
 1.  Create a button to validate and submit the form.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create a `Form` with a `GlobalKey`
 
 Create a [`Form`][].

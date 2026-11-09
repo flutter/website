@@ -23,6 +23,8 @@ To create a custom page route transition, this recipe uses the following steps:
 1.  Use a `CurveTween`.
 1.  Combine the two `Tween`s.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Set up a `PageRouteBuilder`
 
 To start, use a [`PageRouteBuilder`][] to create a [`Route`][].

@@ -21,6 +21,8 @@ Check out the [google_fonts][] package for direct access
 to almost 1000 open-sourced font families.
 :::
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add a font to a package
 
 To export a font from a package, you need to import the font files into the

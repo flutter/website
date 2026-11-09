@@ -21,6 +21,8 @@ This recipe uses the following steps:
   3. Create a detail screen that can display information about a todo.
   4. Navigate and pass data to the detail screen.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Define a todo class
 
 First, you need a simple way to represent todos. For this example,

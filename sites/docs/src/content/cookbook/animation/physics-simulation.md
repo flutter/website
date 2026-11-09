@@ -20,6 +20,8 @@ This recipe uses these steps:
 1.  Calculate the velocity to simulate a springing motion.
 
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## Step 1: Set up an animation controller
 
 Start with a stateful widget called `DraggableCard`:

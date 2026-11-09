@@ -18,6 +18,8 @@ This recipe uses the following steps:
   2. Add a `Hero` widget to the first screen.
   3. Add a `Hero` widget to the second screen.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create two screens showing the same image
 
 In this example, display the same image on both screens.

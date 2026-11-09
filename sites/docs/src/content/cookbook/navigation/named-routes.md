@@ -33,6 +33,8 @@ demonstrating how to use named routes using the following steps:
   3. Navigate to the second screen using `Navigator.pushNamed()`.
   4. Return to the first screen using `Navigator.pop()`.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create two screens
 
 First, create two screens to work with. The first screen contains a
