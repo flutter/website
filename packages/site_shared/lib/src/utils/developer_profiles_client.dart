@@ -113,11 +113,9 @@ final class DeveloperProfilesClient {
   ///
   /// Requests go to the [environment] deployment, which
   /// defaults to [DeveloperProfilesEnvironment.staging].
-  /// If specified, `apiKey` is sent as the `key` query parameter.
   DeveloperProfilesClient({
     required this._accessToken,
     this.environment = .staging,
-    this._apiKey,
     http.Client? httpClient,
   }) : _httpClient = httpClient ?? http.Client();
 
@@ -125,7 +123,6 @@ final class DeveloperProfilesClient {
   final DeveloperProfilesEnvironment environment;
 
   final String _accessToken;
-  final String? _apiKey;
   final http.Client _httpClient;
 
   /// Returns the resource name (`profiles/{id}`) of
@@ -267,13 +264,9 @@ final class DeveloperProfilesClient {
     Map<String, Object?>? body,
   }) async {
     final baseUri = Uri.parse('${environment.baseUrl}/v1beta1/$path');
-    final mergedQuery = <String, String>{
-      ...?queryParameters,
-      'key': ?_apiKey,
-    };
-    final uri = mergedQuery.isEmpty
+    final uri = queryParameters == null || queryParameters.isEmpty
         ? baseUri
-        : baseUri.replace(queryParameters: mergedQuery);
+        : baseUri.replace(queryParameters: queryParameters);
     final request = http.Request(method, uri)
       ..headers['Authorization'] = 'Bearer $_accessToken';
     if (body != null) {

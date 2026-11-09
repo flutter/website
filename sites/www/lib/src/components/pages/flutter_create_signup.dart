@@ -17,14 +17,15 @@ import '../common/icon.dart';
 /// The OAuth 2.0 client ID used to request
 /// Google Developer Profiles API access tokens.
 ///
-/// Override it at build time with
+/// Provide or override it at build time with
 /// `--dart-define=GDP_OAUTH_CLIENT_ID=<client-id>`.
 ///
-/// Production builds default to [_prodOauthClientId]; non-production builds,
-/// including local development and PR previews, default to [_devOauthClientId].
+/// Production builds default to [_prodOauthClientId]. Non-production builds,
+/// including local development and PR previews, have no default, so they must
+/// provide a client ID explicitly.
 const String _oauthClientId = String.fromEnvironment(
   'GDP_OAUTH_CLIENT_ID',
-  defaultValue: productionBuild ? _prodOauthClientId : _devOauthClientId,
+  defaultValue: productionBuild ? _prodOauthClientId : '',
 );
 
 /// The OAuth 2.0 client for `flutter.dev` in production.
@@ -34,19 +35,6 @@ const String _oauthClientId = String.fromEnvironment(
 /// the client (`https://flutter.dev`).
 const String _prodOauthClientId =
     '689428580108-90tt42dajs2fkt6rgjp69bq8itila8st.apps.googleusercontent.com';
-
-/// The OAuth 2.0 client for development and PR previews.
-///
-/// OAuth client IDs for browser apps are public by design. Which sites can use
-/// this one is restricted by the authorized JavaScript origins configured on
-/// the client, such as `http://localhost:8094` and specific PR preview URLs.
-const String _devOauthClientId =
-    '689428580108-ptuppb9e8bctprb9bp7l2ihf204052vm.apps.googleusercontent.com';
-
-/// An optional API key sent along with Developer Profiles API requests.
-///
-/// Provide it at build time with `--dart-define=GDP_API_KEY=<api-key>`.
-const String _apiKey = String.fromEnvironment('GDP_API_KEY');
 
 const String _gisScriptUrl = 'https://accounts.google.com/gsi/client';
 
@@ -218,7 +206,6 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
       final client = DeveloperProfilesClient(
         accessToken: accessToken,
         environment: productionBuild ? .production : .staging,
-        apiKey: _apiKey.isEmpty ? null : _apiKey,
       );
 
       try {

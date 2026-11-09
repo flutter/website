@@ -33,7 +33,6 @@ void main() {
         final client = DeveloperProfilesClient(
           accessToken: 'test-token',
           environment: .staging,
-          apiKey: 'test-api-key',
           httpClient: mockHttp,
         );
         addTearDown(client.close);
@@ -61,7 +60,6 @@ void main() {
           equals({
             'allowMissing': 'true',
             'updateMask': 'profile_program_data.email_preferences',
-            'key': 'test-api-key',
           }),
         );
         expect(
