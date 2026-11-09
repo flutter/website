@@ -1052,7 +1052,7 @@ On the web, Flutter compiles your application code into either JavaScript
 or [WebAssembly][Dart WebAssembly support] (when building with `--wasm`),
 rendering graphics using a WebAssembly build of the Skia engine.
 
-![Flutter web architecture](/assets/images/docs/arch-overview/archdiagram.webp){:width="80%" .diagram-wrap}
+![Flutter web architecture](/assets/images/docs/arch-overview/archdiagram.webp){:width="80%"}
 
 Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need
