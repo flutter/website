@@ -66,7 +66,7 @@ who were soon using Buzz to build Buzz itself.
 When the team open-sourced [Buzz][buzz-repo] in July 2026
 ([announcement][buzz-announcement]),
 launch-day adoption surged to 10 to 100 times what they expected,
-climbing to \~500,000 downloads and \~33,000 stars on GitHub
+climbing to about 500,000 downloads and about 33,000 stars on GitHub
 in less than 3 months.
 With feature requests and bug reports pouring in
 from a fast-growing developer community,
