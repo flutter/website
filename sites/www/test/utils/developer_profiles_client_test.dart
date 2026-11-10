@@ -163,5 +163,40 @@ void main() {
         }),
       );
     });
+
+    test('close does not close a caller-supplied http.Client', () async {
+      final sharedHttp = _CloseTrackingClient(
+        MockClient((_) async => http.Response('{}', 200)),
+      );
+
+      final client = DeveloperProfilesClient(
+        accessToken: 'test-token',
+        httpClient: sharedHttp,
+      )..close();
+
+      expect(sharedHttp.isClosed, isFalse);
+      await expectLater(client.getProfile(), completes);
+    });
   });
+}
+
+final class _CloseTrackingClient extends http.BaseClient {
+  _CloseTrackingClient(this._inner);
+
+  final http.Client _inner;
+  bool isClosed = false;
+
+  @override
+  Future<http.StreamedResponse> send(http.BaseRequest request) {
+    if (isClosed) {
+      throw http.ClientException('Client is already closed.');
+    }
+    return _inner.send(request);
+  }
+
+  @override
+  void close() {
+    isClosed = true;
+    _inner.close();
+  }
 }

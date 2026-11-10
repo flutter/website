@@ -7,8 +7,9 @@ import 'dart:async';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-/// The local calendar date of the Flutter Create 2026 livestream.
-final DateTime _eventDate = DateTime(2026, 11, 11);
+/// The calendar date of the Flutter Create 2026 livestream,
+/// stored in UTC so day-difference calculations aren't skewed by DST.
+final DateTime _eventDate = DateTime.utc(2026, 11, 11);
 
 const String _fallbackLabel = 'November 11 · Online';
 const String _dayLabel = 'day to go';
@@ -25,8 +26,9 @@ const String flutterCreateCountdownScript =
     '(function(){'
     'var s=document.currentScript,e=s&&s.previousElementSibling;'
     "if(!e||!e.classList.contains('fc-countdown'))return;"
-    'var n=new Date(),t=new Date(n.getFullYear(),n.getMonth(),n.getDate()),'
-    'd=Math.round((new Date(2026,10,11)-t)/864e5),'
+    'var n=new Date(),'
+    't=Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()),'
+    'd=(Date.UTC(2026,10,11)-t)/864e5,'
     "l=function(x){var c=document.createElement('span');"
     "c.className='fc-countdown-label';c.textContent=x;return c;};"
     'e.textContent="";'
@@ -60,7 +62,7 @@ class _FlutterCreateCountdownState extends State<FlutterCreateCountdown> {
 
   void _update() {
     final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
+    final today = DateTime.utc(now.year, now.month, now.day);
     setState(() => _daysLeft = _eventDate.difference(today).inDays);
   }
 

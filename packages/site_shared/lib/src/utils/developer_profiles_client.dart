@@ -117,13 +117,15 @@ final class DeveloperProfilesClient {
     required this._accessToken,
     this.environment = .staging,
     http.Client? httpClient,
-  }) : _httpClient = httpClient ?? http.Client();
+  }) : _httpClient = httpClient ?? http.Client(),
+       _shouldCloseClient = httpClient == null;
 
   /// The deployment of the API that requests are sent to.
   final DeveloperProfilesEnvironment environment;
 
   final String _accessToken;
   final http.Client _httpClient;
+  final bool _shouldCloseClient;
 
   /// Returns the resource name (`profiles/{id}`) of
   /// the signed-in user's profile, or `null` if they don't have one.
@@ -254,8 +256,12 @@ final class DeveloperProfilesClient {
     );
   }
 
-  /// Closes the underlying HTTP client.
-  void close() => _httpClient.close();
+  /// Closes the underlying HTTP client if it was created by this client.
+  void close() {
+    if (_shouldCloseClient) {
+      _httpClient.close();
+    }
+  }
 
   Future<Map<String, Object?>> _send(
     String method,
