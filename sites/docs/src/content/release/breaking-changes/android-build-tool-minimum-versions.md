@@ -23,9 +23,12 @@ that names the dependency and the minimum version.
 | Kotlin Gradle Plugin (KGP)* | 2.2.20 | **2.4.10** | 2.4.20 | 2.4.20 |
 | Java (JDK) | 17 | 17 | 17 | — |
 
-\* The KGP version is only checked if your project applies
-the `org.jetbrains.kotlin.android` (`kotlin-android`) plugin.
-Projects that use AGP's [built-in Kotlin][] aren't checked.
+\* Not checked for projects that use AGP's [built-in Kotlin][].
+With `android.builtInKotlin=false` (the value Flutter's templates and
+migrator set), Flutter applies the `kotlin-android` plugin for you
+whenever KGP is on the classpath, which template projects declare in
+`settings.gradle.kts`. So the KGP check applies to template-based apps
+even if they contain no Kotlin code.
 
 In addition, Flutter 3.50 **doesn't support AGP 10 or later**.
 A project that uses AGP 10 fails to build until a future Flutter release
@@ -37,11 +40,17 @@ The following defaults are **unchanged** from Flutter 3.47:
 and NDK `28.2.13676358`.
 
 :::warning
-The new AGP minimum (9.1.1) is higher than the version that
-Flutter 3.47 warned about (9.0.1).
-If your project uses AGP 9.0.1 through 9.1.0,
-Flutter 3.47 didn't warn you, but Flutter 3.50 fails to build it.
-Check your AGP version before you upgrade.
+**Projects created with Flutter 3.44 or 3.47 need manual updates.**
+The templates in those releases used AGP 9.0.1 and 9.1.0 and
+KGP 2.3.20 and 2.4.0, all of which are below the new minimums,
+and `flutter upgrade` doesn't edit your Gradle files.
+Until you update the versions as described in the
+[migration guide](#migration-guide), those projects fail to build
+with Flutter 3.50.
+
+The new AGP minimum (9.1.1) is also higher than the version that
+Flutter 3.47 warned about (9.0.1),
+so projects on AGP 9.0.1 through 9.1.0 got no advance warning.
 :::
 
 Because every supported AGP version is now 9 or later,
@@ -75,7 +84,8 @@ Flutter 3.50 raises the minimums for two reasons:
 
 Flutter 3.50 doesn't support AGP 10 because AGP 10 removes the
 legacy DSL and Variant APIs and the `android.newDsl=false` opt-out
-that Flutter still relies on.
+that Flutter still sets for projects, and Flutter hasn't been
+validated against it.
 To learn more, refer to the [AGP roadmap][].
 
 [support policy]: /go/android-dependency-versions
@@ -91,9 +101,10 @@ the build.
 If a dependency is below the minimum, the build fails:
 
 ```plaintext noHighlight
-Error: Your project's Android Gradle Plugin version (9.0.1) is lower
-than Flutter's minimum supported version of 9.1.1. Please upgrade
-your Android Gradle Plugin version.
+Error: Your project's Android Gradle Plugin version (Android Gradle Plugin
+version 9.1.0) is lower than Flutter's minimum supported version of
+Android Gradle Plugin version 9.1.1. Please upgrade your Android Gradle
+Plugin version.
 Alternatively, use the flag "--android-skip-build-dependency-validation"
 to bypass this check.
 
@@ -113,13 +124,15 @@ Error: Your project's Android Gradle Plugin version (10.0.0) is not yet
 supported. Flutter does not support Android Gradle Plugin 10, and support
 will be added in a future Flutter release. Please downgrade your
 Android Gradle Plugin version to a version below 10.0.0 to continue.
+Alternatively, use the flag "--android-skip-build-dependency-validation"
+to bypass this check (unsupported; your build may fail).
 ```
 
 Other changes to the version checks in Flutter 3.50:
 
-* The checks run before anything else in the Flutter Gradle Plugin,
-  so an unsupported version now reports this message instead of
-  an unrelated Gradle or AGP error.
+* The checks run before the Flutter Gradle Plugin reads any Android
+  DSL or registers tasks, so an unsupported version now reports this
+  message instead of an unrelated Gradle or AGP error.
 * If your project uses AGP's built-in Kotlin
   (AGP 9 or later without `android.builtInKotlin=false`),
   Flutter no longer checks the KGP version,
@@ -133,8 +146,8 @@ Other changes to the version checks in Flutter 3.50:
 ### Check your current versions
 
 Run `flutter analyze --suggestions` from your project directory.
-It reports the Java, Gradle, and AGP versions that your project uses
-and whether they're compatible with each other.
+It reports the Java, Gradle, AGP, and KGP versions that your project
+uses and whether they're compatible with each other.
 You can also run `flutter doctor -v` to check which Java version
 Flutter uses for Android builds.
 
@@ -150,9 +163,9 @@ the `plugins` block of `android/settings.gradle.kts`
 ```kotlin diff title="<flutter-project>/android/settings.gradle.kts"
 plugins {
     id("dev.flutter.flutter-plugin-loader") version "1.0.0"
--   id("com.android.application") version "8.11.1" apply false
+-   id("com.android.application") version "9.1.0" apply false
 +   id("com.android.application") version "9.3.1" apply false
-    id("org.jetbrains.kotlin.android") version "2.4.20" apply false
+    id("org.jetbrains.kotlin.android") version "2.4.0" apply false
 }
 ```
 
@@ -181,7 +194,7 @@ For other versions, refer to the
 [AGP and Gradle compatibility table][].
 
 ```properties diff title="<flutter-project>/android/gradle/wrapper/gradle-wrapper.properties"
-- distributionUrl=https\://services.gradle.org/distributions/gradle-8.14-all.zip
+- distributionUrl=https\://services.gradle.org/distributions/gradle-9.1.0-all.zip
 + distributionUrl=https\://services.gradle.org/distributions/gradle-9.5.0-all.zip
 ```
 
@@ -195,8 +208,10 @@ Flutter 3.50 suppresses them for the Gradle invocations it makes.
 
 ### Update the Kotlin Gradle Plugin
 
-Skip this step if your project uses [built-in Kotlin][],
-or doesn't use Kotlin at all.
+Skip this step if your project uses [built-in Kotlin][]
+(`android.builtInKotlin=true`).
+If `android.builtInKotlin=false` is set, update KGP even if your
+project contains no Kotlin code, because Flutter applies KGP for you.
 
 If your project applies `org.jetbrains.kotlin.android`,
 update it to 2.4.20 (2.4.10 is the minimum):
@@ -205,7 +220,7 @@ update it to 2.4.20 (2.4.10 is the minimum):
 plugins {
     id("dev.flutter.flutter-plugin-loader") version "1.0.0"
     id("com.android.application") version "9.3.1" apply false
--   id("org.jetbrains.kotlin.android") version "2.2.20" apply false
+-   id("org.jetbrains.kotlin.android") version "2.4.0" apply false
 +   id("org.jetbrains.kotlin.android") version "2.4.20" apply false
 }
 ```

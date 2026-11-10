@@ -79,7 +79,8 @@ To learn more, refer to
 
 The FGP copies the APKs that AGP builds into
 `build/app/outputs/flutter-apk/`.
-Previously it did this in a `doLast` block on AGP's package task.
+Previously it did this in a `doLast` block on the variant's
+`assemble` task.
 Now a `copyFlutterApks<Variant>` task (for example, `copyFlutterApksRelease`)
 does the copy, and `assemble<Variant>` depends on it.
 The task reads AGP's `SingleArtifact.APK` artifact and
@@ -126,6 +127,9 @@ Two consequences:
   To learn how to adjust it, refer to
   [Setting a per-ABI or per-variant versionCode][versioncode-guide].
 
+Flutter reads the DSL `versionCode` in its own `finalizeDsl` callback,
+so a value that your build script changes in a later `finalizeDsl`
+callback isn't seen.
 `-P force-version-code-ignoring-abi=true` still disables the offset.
 
 ### Custom build types are copied to plugins with `initWith`
@@ -173,7 +177,8 @@ Your host app consumes them like any other Android library.
 Flutter no longer looks up or configures the host `:app` project.
 
 * `flutter.hostAppProjectName` in `gradle.properties` has no effect.
-  If it's set, Flutter prints a warning. Remove it.
+  If it's set, Flutter logs a warning when the host app builds
+  from Gradle or Android Studio. Remove it.
 * The Flutter build mode comes from the module variant your host consumes:
   the module's `debug` variant builds debug Flutter artifacts,
   `profile` builds profile, and `release` builds release.
@@ -210,9 +215,9 @@ from the module and from each Android plugin it uses.
 * The warning that a plugin's `compileSdk` is newer than the app's
   now compares versions numerically, including preview versions,
   instead of comparing strings.
-* Flutter's dependency version checks run before anything else,
-  so an unsupported Gradle, Java, AGP, or Kotlin version reports
-  a clear message instead of an API error.
+* Flutter's dependency version checks run before the FGP reads any
+  Android DSL or registers tasks, so an unsupported Gradle, Java, AGP,
+  or Kotlin version reports a clear message instead of an API error.
   To learn more, refer to
   [Raised minimum Android build tool versions][].
 
@@ -332,7 +337,7 @@ output.versionCode.set((abiCodes[abi] ?: 0) * 1000 + flutter.versionCode * 10000
 To verify, inspect a built APK:
 
 ```console
-$ apkanalyzer manifest print versionCode build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
+$ apkanalyzer manifest version-code build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
 ```
 
 ### Custom build types
@@ -408,26 +413,35 @@ Variant API artifacts (for example, `SingleArtifact.APK` or
   have a particular type.
 * If your plugin's example app has a custom build type,
   set `matchingFallbacks` on it.
-* Test your plugin's example app with AGP 9.1.1 or later
-  **without** `android.newDsl=false` in `gradle.properties`,
-  so that it keeps working when Flutter removes that opt-out.
+* Test your plugin's example app with AGP 9.1.1 or later with
+  `android.newDsl=true` and `android.builtInKotlin=true` in
+  `gradle.properties` (the new DSL requires built-in Kotlin,
+  because KGP rejects it),
+  so that it keeps working when Flutter removes the opt-outs.
 
-### Keep the opt-out for now
+### Keep the opt-out, or opt in early
 
 If you can't migrate your build scripts yet,
 you don't need to do anything in Flutter 3.50:
 `android.newDsl=false` is still present.
-If you removed it by hand, you can add it back to
-`android/gradle.properties`:
-
-```properties title="<flutter-project>/android/gradle.properties"
-android.newDsl=false
-```
-
-Flutter's migrator never removes an opt-out that you added by hand
-(one without Flutter's marker comment).
+If the `android.newDsl` line is missing from
+`android/gradle.properties`, Flutter's migrator adds it back
+(set to `false`) on the next build.
 Treat it as a short-term unblock:
 AGP 10 removes the legacy APIs, and the opt-out stops working with it.
+
+To verify your migrated build scripts against the new DSL now,
+set both properties to `true` by hand
+(the migrator never changes an existing line):
+
+```properties title="<flutter-project>/android/gradle.properties"
+android.newDsl=true
+android.builtInKotlin=true
+```
+
+The new DSL requires built-in Kotlin, because KGP rejects
+`android.newDsl=true`.
+If a plugin you use still needs KGP, keep both set to `false`.
 
 ## Timeline
 
