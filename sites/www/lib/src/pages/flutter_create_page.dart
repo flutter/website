@@ -95,10 +95,15 @@ class _Hero extends StatelessComponent {
           const div(classes: 'fc-hero-badge-wrap', [
             p(classes: 'fc-tape-badge fc-tape-yellow', [
               span(classes: 'fc-live-dot', []),
-              .text(
-                'Ready. Set. · November 11, 2026 · 10AM to 12PM PST · '
-                'Livestream',
-              ),
+              span([
+                .text('Ready. Set.'),
+                span(
+                  classes: 'fc-tape-divider',
+                  attributes: {'aria-hidden': 'true'},
+                  [],
+                ),
+                .text('November 11, 2026 · 10AM to 12PM PST'),
+              ]),
             ]),
             _Prop(
               '/images/create/goodies/scribble-burst.webp',

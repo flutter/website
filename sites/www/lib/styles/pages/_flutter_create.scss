@@ -195,6 +195,16 @@ body.flutter-create {
       border: 1px solid rgba(205, 170, 28, 0.35);
       color: var(--fc-navy);
     }
+
+    .fc-tape-divider {
+      background: rgba(4, 30, 60, 0.26);
+      border-radius: 1px;
+      display: inline-block;
+      height: 13px;
+      margin-inline: 10px;
+      vertical-align: -2px;
+      width: 1.5px;
+    }
   }
 }
 
