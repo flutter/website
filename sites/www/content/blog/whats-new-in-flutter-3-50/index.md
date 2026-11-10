@@ -265,6 +265,8 @@ Color animations using `HSVColor.lerp` and `HSLColor.lerp`
 now take the shortest path around the color wheel,
 avoiding unexpected color shifts.
 
+<DashImage figure src="images/decoration_image_placeholder.gif" width="320px" alt="Animated demo of DecorationImage displaying blurred placeholder cards before loading crisp full-resolution images." caption="`DecorationImage.placeholder` displays a fallback image while container background images load." />
+
 ### Accessibility and navigation
 
 Flutter 3.50 improves keyboard navigation, screen-reader support,
@@ -464,9 +466,9 @@ on `AndroidViewSurface` and a layout ordering fix in `RenderAndroidView`.
 Community contributor [Amaan Ansari](https://github.com/amaan-0331)
 also fixed a crash when a `FlutterEngine` outlives its `Activity`.
 
-HCPP is available as an opt-in on 3.50 stable
-(and enabled by default on the beta channel)
-ahead of becoming the stable default in a future release.
+HCPP has been available since Flutter 3.44 stable
+and is now enabled by default on the beta channel as of 3.49.0-0.1.pre.
+It will become the stable default in a future release.
 Keep in mind that **HCPP requires Android 14 (API 34) or higher
 and Impeller running on Vulkan**;
 on devices that don’t meet both requirements,
@@ -477,6 +479,8 @@ watch `logcat` in debug mode for
 `Using HCPP platform view rendering strategy` when a platform view mounts,
 and check out
 [Hosting native Android views with Platform Views](https://docs.flutter.dev/platform-integration/android/platform-views#hcpp).
+
+<DashImage figure src="images/hcpp_scroll_comparison.webp" alt="Side-by-side Android comparison showing Heavy HC Playground at 68 FPS versus Heavy HCPP Playground at 118 FPS." caption="Hybrid Composition++ (right) maintains higher frame rates than legacy Hybrid Composition (left) under heavy platform-view scrolling." />
 
 ### Built-in Kotlin for plugins
 
@@ -609,6 +613,8 @@ to support 8 to 10 million monthly active students.
 [Buzz](https://www.youtube.com/watch?v=QhYZEid79VU) uses Flutter
 on iOS and Android to power an open-source workspace
 where people and AI agents collaborate side by side.
+The Google AI Edge team built the Eloquent and Foresight apps with Flutter
+to bring on-device AI inference to users on mobile and desktop.
 
 ### The business value of Flutter
 
