@@ -65,7 +65,7 @@
     - "Enterprise"
   options_GCP_partner: false
 - title: "gskinner.com"
-  summary: "We collaborate with smart, motivated clients to conceptualize, design, and build world-class interactive experiences."
+  summary: "They collaborate with smart, motivated clients to conceptualize, design, and build world-class interactive experiences."
   card: "images/third_party/partners/GSkinner.png"
   external_url: "https://flutter.gskinner.com/"
   options_location:
@@ -94,7 +94,7 @@
     - "Enterprise"
   options_GCP_partner: false
 - title: "Superformula Corporation"
-  summary: "We are digital experts driven by the passion needed to accelerate and transform your business."
+  summary: "They are digital experts driven by the passion needed to accelerate and transform your business."
   card: "images/third_party/partners/Superformula_1.png"
   external_url: "https://www.superformula.com/services/flutter/"
   options_location:
@@ -114,7 +114,7 @@
     - "Small-to-medium Business"
   options_GCP_partner: false
 - title: "Merixstudio"
-  summary: "We build and modernize enterprise Flutter apps across mobile, web, and connected devices - consulting, design, and engineering in one team. 25+ years in business. 100+ experts. ISO 27001 & 9001 certified. Google-trusted Flutter Consultant. Clutch #1 in Poland."
+  summary: "They build and modernize enterprise Flutter apps across mobile, web, and connected devices - consulting, design, and engineering in one team. 25+ years in business. 100+ experts. ISO 27001 & 9001 certified. Google-trusted Flutter Consultant. Clutch #1 in Poland."
   card: "images/third_party/partners/Merix_Studio.png"
   external_url: "https://www.merixstudio.com/development/flutter"
   options_location:
@@ -126,7 +126,7 @@
     - "Enterprise"
   options_GCP_partner: false
 - title: "glueglue"
-  summary: "We are a digital product agency specializing in turning the most complex and ambitious ideas into web and mobile apps that are not only beautiful but also incredibly user-friendly. Our mission is to create digital products that enhance people's lives. Our approach is straightforward and effective. We design solutions based on real needs and behaviors of individuals."
+  summary: "They are a digital product agency specializing in turning the most complex and ambitious ideas into web and mobile apps that are not only beautiful but also incredibly user-friendly. Our mission is to create digital products that enhance people's lives. Our approach is straightforward and effective. We design solutions based on real needs and behaviors of individuals."
   card: "images/third_party/partners/glueglue.png"
   external_url: "https://www.glueglue.com/en/services/sviluppo-applicazioni-web-e-mobile-native-con-flutter"
   options_location:
@@ -135,7 +135,7 @@
     - "Startup"
   options_GCP_partner: false
 - title: "Solid Software"
-  summary: "We build secure, complex, and well-designed Flutter mobile and web applications. Flutter Early Adopters from 2018."
+  summary: "They build secure, complex, and well-designed Flutter mobile and web applications. Flutter Early Adopters from 2018."
   card: "images/third_party/partners/Solid.png"
   external_url: "https://solid.software"
   options_location:
@@ -1016,7 +1016,7 @@
     - "Enterprise"
   options_GCP_partner: false
 - title: "Moonwise"
-  summary: "We are agent assisted Flutter experts from Sweden, designing and developing beautiful cross-platform apps."
+  summary: "Moonwise is a group of agent assisted Flutter experts from Sweden, designing and developing beautiful cross-platform apps."
   card: "images/third_party/partners/Moonwise_logo.png"
   external_url: "https://moonwise.se/"
   options_location:
@@ -1293,8 +1293,8 @@
     - "Startup"
     - "Small-to-medium Business"
   options_GCP_partner: false
-- title: "The NextApp"
-  summary: "A Rotterdam-based web and app development company that has been building custom iOS, Android and web apps with Flutter since 2016, from technical analysis through App Store and Google Play launch."
+- title: "The Next App"
+  summary: "The Next App has built apps since 2016 and moved to Flutter in 2018, as one of the first agencies in the Netherlands. From Rotterdam, they build custom iOS, Android and web apps, from Bluetooth-controlled hardware to tools that keep working offline in the field."
   card: "images/third_party/partners/the-next-app_logo.png"
   external_url: "https://www.thenextapp.nl/en/flutter-app-development/"
   options_location:

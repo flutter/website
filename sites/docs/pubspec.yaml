@@ -8,33 +8,33 @@ environment:
 
 dependencies:
   collection: ^1.19.1
-  html: ^0.15.6
+  html: ^0.15.7
   http: ^1.6.0
-  jaspr: ^0.23.2
-  jaspr_content: ^0.5.3
+  jaspr: ^0.23.5
+  jaspr_content: ^0.5.4
   # Used as our template engine.
-  liquify: ^1.5.1
+  liquify: ^1.6.1
   markdown: ^7.3.1
   markdown_description_list: ^0.2.0
-  meta: ^1.18.2
-  nanoid2: ^2.0.1
+  meta: ^1.19.0
+  nanoid2: ^2.1.0
   # Used for syntax highlighting.
-  opal: ^0.2.4
+  opal: ^0.3.0
   path: ^1.9.1
-  pub_semver: ^2.2.0
+  pub_semver: ^2.2.1
   site_shared:
     path: ../../packages/site_shared
-  universal_web: ^1.1.1+1
-  yaml: ^3.1.3
+  universal_web: ^1.1.1+2
+  yaml: ^3.1.4
 
 dev_dependencies:
   analysis_defaults:
     path: ../../packages/analysis_defaults
   build_runner: ^2.15.1
-  build_web_compilers: ^4.8.0
-  jaspr_builder: ^0.23.2
-  sass: ^1.101.2
-  sass_builder: ^2.4.0+1
+  build_web_compilers: ^4.8.5
+  jaspr_builder: ^0.23.5
+  sass: ^1.107.1
+  sass_builder: ^2.4.1
 
 jaspr:
   mode: static

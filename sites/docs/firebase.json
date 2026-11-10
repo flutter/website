@@ -198,6 +198,7 @@
       { "source": "/platform-integration/android/install-android", "destination": "/platform-integration/android/setup", "type": 301 },
       { "source": "/platform-integration/android/install-android/:rest*", "destination": "/platform-integration/android/setup", "type": 301 },
       { "source": "/platform-integration/android/splash-screen-migration", "destination": "/release/breaking-changes/splash-screen-migration", "type": 301 },
+      { "source": "/platform-integration/bind-native-code", "destination": "/interop/bind-native-code", "type": 301 },
       { "source": "/platform-integration/c-interop", "destination": "/platform-integration/legacy-ffi-plugin", "type": 301 },
       { "source": "/platform-integration/ios-app-clip", "destination": "/platform-integration/ios/ios-app-clip", "type": 301 },
       { "source": "/platform-integration/ios/c-interop", "destination": "/platform-integration/legacy-ffi-plugin", "type": 301 },
@@ -228,6 +229,7 @@
       { "source": "/release/release-notes/changelogs/changelog-1.17.0", "destination": "/release/release-notes/release-notes-1.17.0", "type": 301 },
       { "source": "/release/release-notes/supported-platforms", "destination": "/reference/supported-platforms", "type": 301 },
       { "source": "/release/breaking-changes/can-request-focus", "destination": "https://github.com/flutter/flutter/issues/149067", "type": 301 },
+      { "source": "/release/breaking-changes/dropdownbutton-enabled-property", "destination": "/release/breaking-changes/dropdownbuttonformfield-enabled-parameter", "type": 301 },
       {
         "source": "/release/breaking-changes/restrict-command-line-flags-prebuilt-android-release-binaries",
         "destination": "/release/breaking-changes/restrict-android-engine-flags-release-mode",
