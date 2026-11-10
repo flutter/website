@@ -253,7 +253,7 @@ This page has release notes for Flutter 3.50.
 * [web] Respect text affinity in getLineBoundary at a soft wrap by @flutter-zl in [192664](https://github.com/flutter/flutter/pull/192664)
 * Fix pointer id/coordinate mismatch in Android platform view multi-touch by @kaluli123123 in [191631](https://github.com/flutter/flutter/pull/191631)
 * Fixes bug where sibling node fail to update size by @chunhtai in [191220](https://github.com/flutter/flutter/pull/191220)
-* perf(widgets): use const <Never>{} in InheritedModelElement and avoid redundant casts in RenderObjectElement.update by @kevmoo in [192913](https://github.com/flutter/flutter/pull/192913)
+* perf(widgets): use `const <Never>{}` in InheritedModelElement and avoid redundant casts in RenderObjectElement.update by @kevmoo in [192913](https://github.com/flutter/flutter/pull/192913)
 * [web] Unskip and strengthen missing glyph tofu test on Wimp by @kevmoo in [193426](https://github.com/flutter/flutter/pull/193426)
 * [web] Unskip web tests that now pass in gestures, services, and widgets by @harryterkelsen in [193512](https://github.com/flutter/flutter/pull/193512)
 * [web] Preserve DOM focus on role update and honor isAccessibilityFocusBlocked by @kevmoo in [192963](https://github.com/flutter/flutter/pull/192963)
