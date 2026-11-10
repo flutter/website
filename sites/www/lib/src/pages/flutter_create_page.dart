@@ -95,7 +95,10 @@ class _Hero extends StatelessComponent {
           const div(classes: 'fc-hero-badge-wrap', [
             p(classes: 'fc-tape-badge fc-tape-yellow', [
               span(classes: 'fc-live-dot', []),
-              .text('Ready. Set. · November 11, 2026 · Livestream'),
+              .text(
+                'Ready. Set. · November 11, 2026 · 10AM to 12PM PST · '
+                'Livestream',
+              ),
             ]),
             _Prop(
               '/images/create/goodies/scribble-burst.webp',
@@ -559,7 +562,8 @@ class _Signup extends StatelessComponent {
               const p(classes: 'fc-body', [
                 .text(
                   'Reserve your spot for the livestream on Wednesday, '
-                  'November 11, 2026. Free, online, and open to every builder.',
+                  'November 11, 2026, from 10AM to 12PM PST. Free, online, '
+                  'and open to every builder.',
                 ),
               ]),
               div(classes: 'fc-signup-pass-wrap', [

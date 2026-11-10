@@ -183,8 +183,10 @@ body.flutter-create {
     gap: 10px;
     letter-spacing: 0.02em;
     margin: 0;
+    max-width: 100%;
     padding: 8px 18px;
     position: relative;
+    text-align: left;
     transform: rotate(-1.2deg);
     width: fit-content;
 
@@ -302,6 +304,7 @@ body.flutter-create .fc-hero {
   }
 
   .fc-hero-copy {
+    min-width: 0;
     text-align: center;
 
     @include breakpoints.screen(lg) {
@@ -311,6 +314,7 @@ body.flutter-create .fc-hero {
     .fc-hero-badge-wrap {
       display: inline-flex;
       margin-bottom: var(--spacer);
+      max-width: 100%;
       position: relative;
 
       .fc-hero-burst {
@@ -1099,11 +1103,16 @@ body.flutter-create .fc-signup {
 
   .fc-signup-copy {
     .fc-signup-pass-wrap {
-      display: inline-block;
+      display: block;
+      margin-inline: auto;
       margin-top: calc(var(--spacer) + 6px);
       max-width: 440px;
       position: relative;
       width: 100%;
+
+      @include breakpoints.screen(lg) {
+        margin-inline: 0;
+      }
 
       .fc-pass-clip {
         left: 22px;
@@ -1267,31 +1276,6 @@ body.flutter-create .flutter-create-signup {
 
   .fc-switch-account {
     color: var(--fc-blue-deep);
-  }
-
-  .fc-btn-calendar {
-    align-items: center;
-    background: var(--fc-blue);
-    border: none;
-    border-radius: 999px;
-    color: white;
-    display: inline-flex;
-    font-size: 14px;
-    font-weight: var(--font-weight-bold);
-    gap: 8px;
-    padding: 8px 18px;
-    transition: background-color 0.2s, transform 0.2s;
-
-    .icon {
-      font-size: 18px;
-    }
-
-    &:hover,
-    &:focus-visible {
-      background-color: var(--fc-blue-deep);
-      color: white;
-      transform: translateY(-1px);
-    }
   }
 
   .fc-btn-outline-dark {

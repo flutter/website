@@ -304,15 +304,6 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
         ]),
         const div(classes: 'fc-signup-success-actions', [
           a(
-            classes: 'btn fc-btn-calendar',
-            href: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Flutter+Create+2026&dates=20261111T170000Z/20261111T200000Z&details=Flutter+Create+livestream+event.+Watch+live+at+https%3A%2F%2Fflutter.dev%2Fcreate&location=https%3A%2F%2Fflutter.dev%2Fcreate',
-            target: Target.blank,
-            [
-              Icon(symbol: 'calendar_add_on'),
-              span([.text('Add to calendar')]),
-            ],
-          ),
-          a(
             classes: 'btn fc-btn-outline-dark',
             href: 'https://developers.google.com/profile/u/me',
             target: Target.blank,
