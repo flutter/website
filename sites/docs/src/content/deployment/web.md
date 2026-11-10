@@ -53,11 +53,12 @@ to view the release version of your app.
 You might need to deploy a profile or debug build for testing.
 To do this, pass the `--profile` or `--debug` flag
 to the `flutter build web` command.
-Profile builds are specialized for performance profiling in Chrome DevTools,
-while debug builds enable assertions for development testing.
+Profile builds configure your app for performance profiling in Chrome DevTools,
+and debug builds enable assertions for development testing.
 
 To customize compiler optimizations for either WebAssembly (`dart2wasm`)
-or JavaScript (`dart2js`), pass `-O<0-4>` (or `--optimization-level=<0-4>`):
+or JavaScript (`dart2js`), pass the `--optimization-level=LEVEL` flag (or
+shorthand `-O0` through `-O4`), where `LEVEL` is an integer from `0` to `4`:
 
 * In `--release` and `--profile` modes, `dart2wasm` defaults to `-O2`
   (sound optimizations), whereas `dart2js` defaults to `-O4`.
@@ -208,7 +209,7 @@ and compression settings:
 
 * **Wasm MIME type**:
   Serve all `.wasm` files with `Content-Type: application/wasm`
-  so browsers can stream-compile modules during download using
+  so browsers can stream-compile modules during download by calling
   `WebAssembly.compileStreaming()`.
 * **Cross-origin isolation for multi-threaded rendering**:
   Return `Cross-Origin-Opener-Policy: same-origin` and
@@ -219,7 +220,7 @@ and compression settings:
   refer to the [COOP and COEP guide on web.dev][coep].
 * **Static pre-compression**:
   Pre-compress `.wasm`, `.mjs`, `.js`, font files, and asset manifests
-  using Brotli (`br`) and Gzip (`gzip`) during CI/CD or at CDN ingest
+  with Brotli (`br`) and Gzip (`gzip`) during CI/CD or at CDN ingest
   to minimize transfer size over the network.
 
 ### Reduce cold-start latency {:#reduce-cold-start-latency}
@@ -238,13 +239,14 @@ To shorten time-to-first-frame on cold cache loads:
   Release builds enable font icon tree shaking automatically
   (pass `--no-tree-shake-icons` only when debugging dynamic icon code points).
   To split large features into on-demand `.wasm` chunks,
-  build with `--enable-wasm-deferred-loading`.
+  build with the `--enable-wasm-deferred-loading` flag.
   Keep in mind that `--enable-wasm-deferred-loading` is incompatible with
   `--web-content-hash`.
 * **Render an HTML loading shell**:
   Include lightweight HTML and CSS inside `web/index.html`
-  (or update DOM state from `onEntrypointLoaded` in `flutter_bootstrap.js`)
-  so users receive immediate visual feedback while the engine initializes.
+  (or update DOM state from the `onEntrypointLoaded` callback in
+  `flutter_bootstrap.js`) so your app's users receive visual feedback while the
+  engine initializes.
 
 ### Serve assets from a CDN or self-hosted origin {:#multi-asset-and-cdn-loading}
 
@@ -255,19 +257,19 @@ match the hosting architecture and privacy requirements:
   Pass `--no-web-resources-cdn` to bundle CanvasKit and `skwasm` files
   directly into `build/web/canvaskit/` instead of fetching them from
   `gstatic.com` at runtime.
-  When using `--web-content-hash`, bundled files under `canvaskit/**` remain
-  unhashed and require revalidating cache headers.
+  When you build with the `--web-content-hash` flag, bundled files under
+  `canvaskit/**` remain unhashed and require revalidating cache headers.
 * **Serve static assets from a dedicated CDN**:
-  Configure `assetBase` and `entrypointBaseUrl` in
+  Configure the `assetBase` and `entrypointBaseUrl` options in
   `_flutter.loader.load({ config: ... })` (and `canvasKitBaseUrl` when
   self-hosting engine binaries on a CDN).
   To inject a CDN prefix into `web/index.html` at build time, reference the
   `$FLUTTER_STATIC_ASSETS_URL` placeholder in `web/index.html` and pass
   `--static-assets-url=https://cdn.example.com/` (including the trailing `/`)
   to `flutter build web`.
-  When using `--enable-wasm-deferred-loading` with custom asset routing,
-  provide a `wasmDeferredModulesLoader` callback to fetch deferred `.wasm`
-  modules from the CDN.
+  When you build with the `--enable-wasm-deferred-loading` flag and custom asset
+  routing, provide a `wasmDeferredModulesLoader` callback to fetch deferred
+  `.wasm` modules from the CDN.
   For configuration details,
   refer to [Customize the Flutter loader][web-init-loader].
 
@@ -393,7 +395,8 @@ and history, rather than decoding them using `Uri.decodeComponent`.
 
 ## Embed a Flutter app into an HTML page {:#embedding-a-flutter-app-into-an-html-page}
 
-See [Embedding Flutter web][].
+To embed Flutter into an existing web page,
+refer to [Add Flutter to any web application][Embedding Flutter web].
 
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 

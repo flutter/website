@@ -295,7 +295,8 @@ type safety.
 To call a JavaScript library loaded on the page (such as an analytics SDK or
 a custom host API), declare a zero-cost `extension type` over `JSObject`
 annotated with `@JS()`.
-Convert Dart primitives with `.toJS` and structured maps with `.jsify()`:
+Convert Dart primitives with the `.toJS` getter and structured maps with the
+`.jsify()` method:
 
 ```dart title="analytics_interop.dart"
 import 'dart:js_interop';
@@ -317,8 +318,8 @@ void logAnalyticsEvent(String eventName, Map<String, Object?> parameters) {
 
 Rather than coupling Dart code directly to global JavaScript functions on the
 host page, dispatch standard DOM `CustomEvent` messages through `package:web`.
-Host scripts can subscribe and unsubscribe independently using
-`window.addEventListener`:
+Host scripts can subscribe and unsubscribe independently by calling the
+`window.addEventListener()` method:
 
 ```dart title="host_events.dart"
 import 'dart:js_interop';
@@ -344,14 +345,15 @@ window.addEventListener('flutter:view-ready', (event) => {
 
 ### Measure startup and frame milestones with the User Timing API {:#record-startup-and-frame-milestones}
 
-To record Flutter startup and interaction milestones in Chrome DevTools
-**Performance** traces and browser `PerformanceObserver` listeners, combine
+To record Flutter startup and interaction milestones in the Chrome DevTools
+**Performance** panel and browser `PerformanceObserver` listeners, combine
 `WidgetsBinding.instance.addPostFrameCallback` with the browser's User Timing
 API (`window.performance.mark` and `window.performance.measure`).
 The `flutter_first_frame` mark records a timestamp relative to navigation start
-(`performance.timeOrigin`), while `flutter_first_frame_render` measures Dart
-execution from `main()` (after engine and `.wasm` instantiation) to the first
-rendered frame:
+(`performance.timeOrigin`).
+The `flutter_first_frame_render` measure tracks Dart execution from
+`main()`—after engine and `.wasm` module instantiation—to the first rendered
+frame:
 
 ```dart title="main.dart"
 import 'dart:js_interop';
@@ -391,7 +393,8 @@ To keep frame times smooth:
 - Perform tight loops, filtering, and state aggregation in Dart on WasmGC
   objects rather than calling JS getters or setters on each iteration.
 - Batch state or structured data updates into a single interop call per frame
-  or user action instead of invoking `.jsify()` or JS interop per list item.
+  or user action instead of calling the `.jsify()` method or JS interop
+  functions for each list item.
 
 To learn more about how `dart2wasm` represents types and compiles interop calls,
 consult [Dart WebAssembly compilation][dart-wasm].

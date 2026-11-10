@@ -64,10 +64,10 @@ based on your isolation, performance, and communication requirements:
 
 | Feature | `iframe` embedding | Direct DOM embedding (`hostElement` / multiview) |
 | --- | --- | --- |
-| **Isolation & sandboxing** | Full browser sandboxing with separate JS global scope, DOM tree, and CSS styles | Shares the same DOM tree and JavaScript context |
-| **Memory & engine instances** | Each `iframe` initializes its own Flutter engine, WebAssembly/JS runtime, and memory heap | A single Flutter engine instance and memory heap can manage one or more views (when using multiview) |
+| **Isolation and sandboxing** | Full browser sandboxing with separate JS global scope, DOM tree, and CSS styles | Shares the same DOM tree and JavaScript context |
+| **Memory and engine instances** | Each `iframe` initializes its own Flutter engine, WebAssembly/JS runtime, and memory heap | A single Flutter engine instance and memory heap can manage one or more views (when using multiview) |
 | **JavaScript interop** | Communication requires asynchronous messaging (such as `postMessage`) | Direct synchronous communication using `package:web` and `dart:js_interop` |
-| **Styling & layout** | Independent frame isolated from host page CSS | Direct integration into host page CSS layout (such as flexbox and grid) |
+| **Styling and layout** | Independent frame isolated from host page CSS | Direct integration into host page CSS layout (such as flexbox and grid) |
 | **State sharing** | State must be synchronized across window boundaries | Direct state sharing in Dart across all attached views |
 | **Best for** | Third-party widgets, untrusted content, isolated micro-frontends, or simple drop-in embeds. | Embedded UI components in existing web apps, multi-view dashboards, and tight host-app integration |
 
@@ -482,8 +482,8 @@ To keep surrounding page content stable while Flutter initializes:
 
 ### Coexist with third-party cross-origin scripts and iframes {: #coexist-with-third-party-scripts }
 
-When building with `--wasm`, multi-threaded `skwasm` rendering requires
-cross-origin isolation (`COOP` and `COEP` HTTP response headers).
+When you build with the `--wasm` flag, multi-threaded `skwasm` rendering
+requires cross-origin isolation (`COOP` and `COEP` HTTP response headers).
 On host pages that load third-party scripts, analytics, external images, or
 cross-origin embeds, choose the header strategy that matches the page:
 
@@ -494,8 +494,8 @@ cross-origin embeds, choose the header strategy that matches the page:
   requiring third-party servers to return `Cross-Origin-Resource-Policy`
   headers.
 * **Third-party cross-origin `<iframe>` embeds**:
-  Cross-origin `<iframe>` elements that don't opt in to COEP are blocked when
-  the host document sets `Cross-Origin-Embedder-Policy`.
+  When the host document sets the `Cross-Origin-Embedder-Policy` header, the
+  browser blocks cross-origin `<iframe>` elements that don't opt in to COEP.
   When the host page embeds incompatible third-party iframes, omit the `COEP`
   and `COOP` headers and pass a shared configuration object to both
   `_flutter.loader.load()` and `initializeEngine()` to run `skwasm` in
@@ -523,9 +523,10 @@ cross-origin embeds, choose the header strategy that matches the page:
   });
   ```
 
-  Passing `flutterConfig` to `load()` configures the `skwasm` loader before
-  instantiation, while passing it to `initializeEngine()` applies runtime
-  engine settings such as `multiViewEnabled`.
+  Passing the `flutterConfig` object to the `load()` method configures the
+  `skwasm` loader before instantiation, while passing it to the
+  `initializeEngine()` method applies runtime engine settings such as
+  `multiViewEnabled`.
   This configuration preserves `dart2wasm` and single-threaded `skwasm`
   execution without breaking third-party cross-origin iframes.
   For additional details about loader flags,

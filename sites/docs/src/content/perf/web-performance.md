@@ -20,7 +20,7 @@ read the Flutter blog post
 
 To emit custom timeline events from Dart code, use the `dart:developer`
 [`Timeline`][] and [`TimelineTask`][] APIs, or record browser-level marks with
-`window.performance` (refer to
+the `window.performance` property (refer to
 [Measure startup and frame milestones][wasm-user-timing]).
 
 ![Screenshot of the Chrome DevTools performance panel](/assets/images/docs/tools/devtools/chrome-devtools-performance-panel.png)
@@ -72,7 +72,8 @@ the following top-level properties to `true` in `main()` before profiling:
 
 To capture a frame trace:
 
-1.  _[Optional]_ Enable the desired tracing flags in `main()`.
+1.  Optional: Set the tracing flags that you want to track to `true` in
+    `main()`.
 1.  Launch the app in profile mode (`flutter run -d chrome --profile`, adding
     `--wasm` for WebAssembly builds).
 1.  Open the [Chrome DevTools Performance panel][] and
@@ -86,12 +87,13 @@ CPU conditions:
 1.  Serve the built app (or staging URL) and open it in a Chrome **Incognito**
     or **Guest** window so browser extensions don't skew CPU timings or inject
     DOM nodes.
-1.  Open Chrome DevTools, select the **Performance** panel to view the
-    **Live Metrics** screen, and configure **CPU** throttling (for example,
-    **4x slowdown**) and **Network** throttling (such as **Fast 4G**) to match
-    target devices.
-1.  Click **Record and reload page** to profile startup, or interact with the
-    page while recording a trace to inspect responsiveness and layout stability.
+1.  Open Chrome DevTools and select the **Performance** panel to open the live
+    metrics screen.
+1.  To simulate target devices, set **CPU** to **4x slowdown** and **Network**
+    to **Fast 4G**.
+1.  To profile startup, click **Record and reload**.
+    To inspect responsiveness and layout stability, record a trace while you
+    interact with the page.
 
 ### Largest Contentful Paint (LCP ≤ 2.5 s)
 
@@ -110,17 +112,17 @@ CPU conditions:
 
 ### Interaction to Next Paint (INP ≤ 200 ms)
 
-- Click, tap, and type across key flows in the app while watching the
-  **Interactions** log in **Live Metrics**.
+- Interact with key flows in your app (clicking controls and typing) while
+  watching the **Interactions** log on the live metrics screen.
 - Record a trace around slow interactions and inspect the **Main** thread
   (plus `skwasm` worker threads when cross-origin isolation is active).
 - Look for long tasks exceeding 50 ms, expensive synchronous layout or shader
-  compilation spikes, or V8 **Minor GC** and **Major GC** pauses.
+  compilation spikes, or V8 `Minor GC` and `Major GC` pauses.
 
 ### Cumulative Layout Shift (CLS ≤ 0.1)
 
-- Check the **Layout shifts** log in **Live Metrics** during initial load and
-  view transitions.
+- Check the **Layout shifts** log on the live metrics screen during initial load
+  and view transitions.
 - Verify that removing the HTML loading indicator or mounting embedded Flutter
   views with `addView()` doesn't shift surrounding DOM content.
 - For host container sizing rules that prevent layout shifts on embedded pages,
@@ -136,23 +138,23 @@ weight and runtime memory usage:
 1.  Build a stripped release bundle (`flutter build web --wasm`) and serve
     `build/web` over HTTP with Brotli (`br`) or Gzip (`gzip`) compression
     enabled.
-1.  Open Chrome DevTools, select the **Network** panel, select
-    **Disable cache**, and select the **Wasm** filter.
-1.  Reload the page and compare **Size** (compressed bytes transferred over the
-    wire) against **Content** (uncompressed binary size) for both
-    `main.dart.wasm` (compiled Dart code) and `skwasm.wasm` (the rendering
-    engine).
-1.  Switch the filter to **All** (or **Font** and **Img**) to inspect payloads
-    loaded from `assets/**`, such as bundled fonts, `AssetManifest.bin`, and
-    images.
+1.  Open Chrome DevTools and select the **Network** panel.
+1.  Select the **Disable cache** checkbox, and then click the **Wasm** filter.
+1.  Reload the page and inspect the **Size** column for both `main.dart.wasm`
+    (compiled Dart code) and `skwasm.wasm` (the rendering engine).
+    With **Big request rows** enabled in **Network settings**, the top value
+    shows compressed bytes transferred over the wire and the bottom value shows
+    uncompressed resource size.
+1.  To inspect payloads loaded from `assets/**`—such as bundled fonts,
+    `AssetManifest.bin`, and images—click **All** (or **Font** and **Img**).
     To reduce initial download size, consult
-    [Measuring app size][app-size] and consider splitting routes with
-    `--enable-wasm-deferred-loading` (refer to
+    [Measuring app size][app-size] and consider splitting routes with the
+    `--enable-wasm-deferred-loading` flag (refer to
     [Reduce cold-start latency][cold-start]).
 
 ### Runtime WasmGC and engine memory
 
-1.  Run or serve the app using `--profile`
+1.  Run or serve the app with the `--profile` flag
     (or `flutter build web --wasm --no-strip-wasm`)
     so Dart class and type names are retained.
 1.  Open Chrome DevTools, select the **Memory** panel, select **Heap snapshot**,
@@ -162,8 +164,7 @@ weight and runtime memory usage:
       Managed directly on the V8 garbage-collected heap alongside JavaScript
       objects.
       Filter by Dart class names in the snapshot **Summary** view (or compare
-      two snapshots using the **Comparison** view) to spot retained state or
-      leaks.
+      two snapshots in the **Comparison** view) to spot retained state or leaks.
     - **Engine linear memory (`WebAssembly.Memory`)**:
       Allocated by `skwasm` for native C++ rendering structures, surfaces, and
       raster caches, visible under `JSArrayBufferData` / `WebAssembly.Memory`

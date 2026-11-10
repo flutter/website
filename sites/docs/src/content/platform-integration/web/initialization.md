@@ -44,7 +44,8 @@ replaced with the contents of the `flutter_bootstrap.js` file when
 the `index.html` file is copied to the
 output directory (`build/web`) during the build step.
 Inlining the bootstrap script eliminates an extra network round-trip during
-startup; for production optimization guidance, refer to
+startup.
+For production optimization guidance, refer to
 [Reduce cold-start latency][cold-start].
 
 [cold-start]: /deployment/web#reduce-cold-start-latency
@@ -145,7 +146,7 @@ The `config` argument is an object that can have the following optional fields:
 |`entrypointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/". |`String`|
 |`fontFallbackBaseUrl`| Base URL for downloading fallback fonts when bundled fonts lack required glyphs. Defaults to `"https://fonts.gstatic.com/s/"`. |`String`|
 |`forceSingleThreadedSkwasm`| Forces single-threaded SkWasm mode for compatibility (only impacts apps compiled with `--wasm` when [WebAssembly][wasm-support] is selected at runtime). |`bool`|
-|`hostElement`| HTML Element into which Flutter renders the app (refer to [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
+|`hostElement`| HTML element into which Flutter renders the app (refer to [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`multiViewEnabled`| Enables multi-view mode for [embedding Flutter views][embedding-flutter-web] into host DOM elements dynamically. |`bool`|
 |`nonce`| A [Content Security Policy (CSP) nonce][nonce-mdn] string applied to inline scripts and styles created by the engine. |`String`|
 |`renderer`| Explicitly forces the renderer to `'canvaskit'` or `'skwasm'`. |`String`|
@@ -247,7 +248,7 @@ When you provide a custom `onEntrypointLoaded` callback,
 `wasmAllowList`, `renderer`, `entrypointBaseUrl`,
 `forceSingleThreadedSkwasm`, `suppressMultithreadingWarning`,
 `verboseBuildSelection`, and `wasmDeferredModulesLoader`),
-but does **not** automatically forward `config` to
+but doesn't automatically forward the `config` object to
 `engineInitializer.initializeEngine()`.
 
 Pass the configuration object to both `_flutter.loader.load()` and
