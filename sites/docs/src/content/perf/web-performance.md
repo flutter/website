@@ -1,57 +1,185 @@
 ---
 title: Debug performance for web apps
-description: Learn how to use Chrome DevTools to debug web performance issues.
+description: >-
+  Learn how to profile Flutter web and WebAssembly apps, measure Core Web
+  Vitals, and inspect Wasm footprint in Chrome DevTools.
 ---
 
-:::note
-Profiling Flutter web apps requires Flutter version 3.14 or later.
-:::
-
-The Flutter framework emits timeline events as it works to build frames,
-draw scenes, and track other activity such as garbage collections.
-These events are exposed in the
-[Chrome DevTools performance panel][] for debugging.
+The Flutter framework emits timeline events as it builds frames,
+draws scenes, and tracks runtime activity such as garbage collections.
+These events appear directly in the
+[Chrome DevTools Performance panel][] for profiling and debugging.
 
 :::note
-For information on how to optimize web loading speed,
+To learn more about optimizing initial load times,
 read the Flutter blog post
 [Best practices for optimizing Flutter web loading speed][article].
 
 [article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
 :::
 
-You can also emit your own timeline events using the `dart:developer`
-[Timeline][] and [TimelineTask][] APIs for further performance analysis.
-
-[Chrome DevTools performance panel]: https://developer.chrome.com/docs/devtools/performance
-[Timeline]: {{site.api}}/flutter/dart-developer/Timeline-class.html
-[TimelineTask]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
+To emit custom timeline events from Dart code, use the `dart:developer`
+[`Timeline`][] and [`TimelineTask`][] APIs, or record browser-level marks with
+`window.performance` (refer to
+[Measure startup and frame timing][wasm-user-timing]).
 
 ![Screenshot of the Chrome DevTools performance panel](/assets/images/docs/tools/devtools/chrome-devtools-performance-panel.png)
 
+## Build and run for performance profiling {:#build-and-run-for-profiling}
+
+Always evaluate runtime performance in [profile mode][] or release mode rather
+than debug mode.
+Choose the build flags that match the target runtime and metric under test:
+
+- **CPU, frame, and memory profiling (`--profile`)**:
+  Run `flutter run -d chrome --profile` (or add `--wasm` to profile a
+  WebAssembly build).
+  For a deployable profile bundle, run `flutter build web --profile` (or
+  `flutter build web --wasm --profile`).
+  In Wasm profile builds, `dart2wasm` compiles with `-O2` optimizations and
+  passes `--no-strip-wasm` so Wasm function names and WasmGC type names remain
+  readable in Chrome DevTools flame charts and heap snapshots.
+- **Network transfer and cold-start size (`--release`)**:
+  Build with `flutter build web` or `flutter build web --wasm` (release mode is
+  the default).
+  Release builds minify JavaScript and strip symbol names from
+  `main.dart.wasm`, giving accurate compressed and uncompressed download sizes.
+  To preserve readable stack traces in a Wasm staging build, pass
+  `--no-strip-wasm` (expect an approximate 47% increase in `.wasm` binary size).
+
+```console
+# Launch in Chrome for interactive performance profiling (JS or Wasm):
+flutter run -d chrome --profile
+flutter run -d chrome --wasm --profile
+
+# Build a stripped Wasm production bundle to measure download size:
+flutter build web --wasm
+```
+
 ## Optional flags to enhance tracing
 
-To configure which timeline events are tracked, set any of the following top-level properties to `true`
-in your app's `main` method.
+To configure which widget and rendering timeline events are tracked, set any of
+the following top-level properties to `true` in `main()` before profiling:
 
-- [debugProfileBuildsEnabled][]: Adds `Timeline` events for every `Widget` built.
-- [debugProfileBuildsEnabledUserWidgets][]: Adds `Timeline` events for every user-created `Widget` built.
-- [debugProfileLayoutsEnabled][]: Adds `Timeline` events for every `RenderObject` layout.
-- [debugProfilePaintsEnabled][]: Adds `Timeline` events for every `RenderObject` painted.
+- [`debugProfileBuildsEnabled`][]:
+  Adds `Timeline` events for every `Widget` built.
+- [`debugProfileBuildsEnabledUserWidgets`][]:
+  Adds `Timeline` events for every user-created `Widget` built.
+- [`debugProfileLayoutsEnabled`][]:
+  Adds `Timeline` events for every `RenderObject` layout.
+- [`debugProfilePaintsEnabled`][]:
+  Adds `Timeline` events for every `RenderObject` painted.
 
-[debugProfileBuildsEnabled]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
-[debugProfileBuildsEnabledUserWidgets]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabledUserWidgets.html
-[debugProfileLayoutsEnabled]: {{site.api}}/flutter/rendering/debugProfileLayoutsEnabled.html
-[debugProfilePaintsEnabled]: {{site.api}}/flutter/rendering/debugProfilePaintsEnabled.html
+To capture a frame trace:
 
-## Instructions
+1.  _[Optional]_ Enable the desired tracing flags in `main()`.
+1.  Launch the app in profile mode (`flutter run -d chrome --profile`, adding
+    `--wasm` for WebAssembly builds).
+1.  Open the [Chrome DevTools Performance panel][] and
+    [record a runtime trace][start recording] while reproducing the interaction.
 
-1. _[Optional]_ Set any desired tracing flags to true from your app's main method.
-2. Run your Flutter web app in [profile mode][].
-3. Open up the [Chrome DevTools Performance panel][] for your application,
-    and [start recording][] to capture timeline events.
+## Profile Core Web Vitals (LCP, INP, and CLS) {:#profile-core-web-vitals}
 
-[start recording]: https://developer.chrome.com/docs/devtools/performance/#record
+Use Chrome DevTools to measure [Core Web Vitals][] under realistic network and
+CPU conditions:
 
+1.  Serve the built app (or staging URL) and open it in a Chrome **Incognito**
+    or **Guest** window so browser extensions don't skew CPU timings or inject
+    DOM nodes.
+1.  Open Chrome DevTools, select the **Performance** panel to view the
+    **Live Metrics** screen, and configure **CPU** throttling (for example,
+    **4x slowdown**) and **Network** throttling (such as **Fast 4G**) to match
+    target devices.
+1.  Click **Record and reload page** to profile startup, or interact with the
+    page while recording a trace to inspect responsiveness and layout stability.
+
+### Largest Contentful Paint (LCP ≤ 2.5 s)
+
+- In full-page CanvasKit and `skwasm` apps, Chrome often attributes LCP to the
+  host HTML loading element (or the initial canvas surface) rather than internal
+  Flutter widgets painted onto the canvas.
+- Pair the browser's LCP value with a User Timing mark recorded on the first
+  Flutter frame (`window.performance.mark('flutter_first_frame')`; refer to
+  [Measure startup and frame timing][wasm-user-timing]).
+- Expand the **Network** track in the recorded trace to verify that
+  `flutter_bootstrap.js`, the rendering engine (`skwasm.wasm` or
+  `canvaskit.wasm`), and the compiled app (`main.dart.wasm` or `main.dart.js`)
+  download in parallel without sequential waterfalls.
+  To eliminate bootstrap round-trips, refer to
+  [Reduce cold-start latency][cold-start].
+
+### Interaction to Next Paint (INP ≤ 200 ms)
+
+- Click, tap, and type across key flows in the app while watching the
+  **Interactions** log in **Live Metrics**.
+- Record a trace around slow interactions and inspect the **Main** thread
+  (plus `skwasm` worker threads when cross-origin isolation is active).
+- Look for long tasks exceeding 50 ms, expensive synchronous layout or shader
+  compilation spikes, or V8 **Minor GC** and **Major GC** pauses.
+
+### Cumulative Layout Shift (CLS ≤ 0.1)
+
+- Check the **Layout shifts** log in **Live Metrics** during initial load and
+  view transitions.
+- Verify that removing the HTML loading indicator or mounting embedded Flutter
+  views with `addView()` doesn't shift surrounding DOM content.
+- For host container sizing rules that prevent layout shifts on embedded pages,
+  refer to [Prevent Cumulative Layout Shift (CLS)][prevent-cls].
+
+## Inspect Wasm module size and memory footprint {:#inspect-wasm-footprint}
+
+Use the Chrome DevTools **Network** and **Memory** panels to audit both download
+weight and runtime memory usage:
+
+### Network transfer and binary footprint
+
+1.  Build a stripped release bundle (`flutter build web --wasm`) and serve
+    `build/web` over HTTP with Brotli (`br`) or Gzip (`gzip`) compression
+    enabled.
+1.  Open Chrome DevTools, select the **Network** panel, select
+    **Disable cache**, and select the **Wasm** filter.
+1.  Reload the page and compare **Size** (compressed bytes transferred over the
+    wire) against **Content** (uncompressed binary size) for both
+    `main.dart.wasm` (compiled Dart code) and `skwasm.wasm` (the rendering
+    engine).
+1.  Switch the filter to **All** (or **Font** and **Img**) to inspect payloads
+    loaded from `assets/**`, such as bundled fonts, `AssetManifest.bin`, and
+    images.
+    To reduce initial download size, consult
+    [Measuring app size][app-size] and consider splitting routes with
+    `--enable-wasm-deferred-loading` (refer to
+    [Reduce cold-start latency][cold-start]).
+
+### Runtime WasmGC and engine memory
+
+1.  Run or serve the app using `--profile`
+    (or `flutter build web --wasm --no-strip-wasm`)
+    so Dart class and type names are retained.
+1.  Open Chrome DevTools, select the **Memory** panel, select **Heap snapshot**,
+    and click **Take snapshot**.
+1.  Inspect two distinct memory regions used by Flutter Wasm apps:
+    - **Dart WasmGC objects**:
+      Managed directly on the V8 garbage-collected heap alongside JavaScript
+      objects.
+      Filter by Dart class names in the snapshot **Summary** view (or compare
+      two snapshots using the **Comparison** view) to spot retained state or
+      leaks.
+    - **Engine linear memory (`WebAssembly.Memory`)**:
+      Allocated by `skwasm` for native C++ rendering structures, surfaces, and
+      raster caches, visible under `JSArrayBufferData` / `WebAssembly.Memory`
+      entries.
+
+[app-size]: /perf/app-size
+[Chrome DevTools Performance panel]: https://developer.chrome.com/docs/devtools/performance
+[cold-start]: /deployment/web#reduce-cold-start-latency
+[Core Web Vitals]: https://web.dev/articles/vitals
+[`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
+[`debugProfileBuildsEnabledUserWidgets`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabledUserWidgets.html
+[`debugProfileLayoutsEnabled`]: {{site.api}}/flutter/rendering/debugProfileLayoutsEnabled.html
+[`debugProfilePaintsEnabled`]: {{site.api}}/flutter/rendering/debugProfilePaintsEnabled.html
+[prevent-cls]: /platform-integration/web/embedding-flutter-web#prevent-cls
 [profile mode]: /testing/build-modes#profile
-[Chrome DevTools performance panel]: https://developer.chrome.com/docs/devtools/performance
+[start recording]: https://developer.chrome.com/docs/devtools/performance/#record
+[`Timeline`]: {{site.api}}/flutter/dart-developer/Timeline-class.html
+[`TimelineTask`]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
+[wasm-user-timing]: /platform-integration/web/wasm#record-startup-and-frame-milestones

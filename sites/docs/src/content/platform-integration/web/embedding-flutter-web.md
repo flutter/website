@@ -67,8 +67,8 @@ based on your isolation, performance, and communication requirements:
 | **Isolation & sandboxing** | Full browser sandboxing with separate JS global scope, DOM tree, and CSS styles | Shares the same DOM tree and JavaScript context |
 | **Memory & engine instances** | Each `iframe` initializes its own Flutter engine, WebAssembly/JS runtime, and memory heap | A single Flutter engine instance and memory heap can manage one or more views (when using multiview) |
 | **JavaScript interop** | Communication requires asynchronous messaging (such as `postMessage`) | Direct synchronous communication using `package:web` and `dart:js_interop` |
-| **Styling & layout** | Independent frame isolated from host page CSS | Direct integration into host page CSS layout (such as flexbox and grid) | `CupertinoPageScaffold` |
-| **State sharing** | State must be synchronized across window boundaries | Direct state sharin in Dart across all attached views |
+| **Styling & layout** | Independent frame isolated from host page CSS | Direct integration into host page CSS layout (such as flexbox and grid) |
+| **State sharing** | State must be synchronized across window boundaries | Direct state sharing in Dart across all attached views |
 | **Best for** | Third-party widgets, untrusted content, isolated micro-frontends, or simple drop-in embeds. | Embedded UI components in existing web apps, multi-view dashboards, and tight host-app integration |
 
 {:.table .table-striped}
@@ -421,3 +421,101 @@ to your host element:
 ```html title="index.html"
 <div id="flutter_host"></div>
 ```
+
+## Best practices for host pages and third-party scripts {: #landing-pages-and-third-party-scripts }
+
+When embedding a Flutter view into an existing web page—such as a dashboard,
+content-rich page, or application that loads third-party scripts—apply the
+following patterns to protect initial page-load performance and avoid
+cross-origin header conflicts.
+
+### Lazy-load embedded views below the fold {: #lazy-load-embedded-views }
+
+Downloading and initializing the Flutter engine during initial page load can
+compete with host HTML, CSS, and critical images for bandwidth and main-thread
+time.
+If an embedded Flutter view sits below the fold or opens on user interaction,
+delay calling `_flutter.loader.load()` using an `IntersectionObserver`
+(or an event listener such as `click` or `pointerenter`).
+Deferring initialization keeps the host page's Largest Contentful Paint (LCP)
+fast and avoids main-thread contention while initial page content renders:
+
+```js title="lazy_flutter_loader.js"
+const hostElement = document.getElementById('flutter_host');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+
+    _flutter.loader.load({
+      config: { hostElement },
+    });
+  },
+  // Start loading before the container scrolls into view.
+  { rootMargin: '200px' },
+);
+
+observer.observe(hostElement);
+```
+
+### Prevent Cumulative Layout Shift (CLS) {: #prevent-cls }
+
+In addition to the [mandatory CSS properties](#mandatory-css-properties)
+required for Flutter to compute non-zero view bounds,
+mounting a Flutter view into a container whose height changes after layout
+triggers a Cumulative Layout Shift (CLS) on the host page.
+
+To keep surrounding page content stable while Flutter initializes:
+
+* Size `#flutter_host` to its final layout dimensions upfront using explicit
+  `width` and `height` values or CSS `aspect-ratio`
+  (for example, `width: 100%; aspect-ratio: 16 / 9;`).
+* Render a lightweight HTML or CSS skeleton placeholder inside `#flutter_host`
+  that matches the reserved dimensions until Flutter paints its first frame.
+
+### Coexist with third-party cross-origin scripts and iframes {: #coexist-with-third-party-scripts }
+
+When building with `--wasm`, multi-threaded `skwasm` rendering requires
+cross-origin isolation (`COOP` and `COEP` response headers).
+On host pages that load third-party scripts, analytics, external images, or
+cross-origin embeds, choose the header strategy that matches the page:
+
+* **Third-party scripts, analytics, and images**:
+  Configure the server to send `Cross-Origin-Opener-Policy: same-origin` and
+  `Cross-Origin-Embedder-Policy: credentialless` rather than `require-corp`.
+  With `credentialless`, the browser loads cross-origin subresources without
+  requiring third-party servers to return `Cross-Origin-Resource-Policy`
+  headers.
+* **Third-party cross-origin `<iframe>` embeds**:
+  Cross-origin `<iframe>` elements that don't opt in to COEP are blocked when
+  the host document sets `Cross-Origin-Embedder-Policy`.
+  When the host page embeds incompatible third-party iframes, omit the `COEP`
+  and `COOP` headers and configure `initializeEngine()` to run `skwasm` in
+  single-threaded mode:
+
+  ```js title="flutter_bootstrap.js"
+  {% raw %}{{flutter_js}}{% endraw %}
+  {% raw %}{{flutter_build_config}}{% endraw %}
+
+  _flutter.loader.load({
+    onEntrypointLoaded: async function(engineInitializer) {
+      const engine = await engineInitializer.initializeEngine({
+        multiViewEnabled: true,
+        forceSingleThreadedSkwasm: true,
+        suppressMultithreadingWarning: true,
+      });
+      const app = await engine.runApp();
+      app.addView({
+        hostElement: document.getElementById('flutter_host'),
+      });
+    },
+  });
+  ```
+
+  This configuration preserves `dart2wasm` and single-threaded `skwasm`
+  execution without breaking third-party cross-origin iframes.
+  For additional details about loader flags,
+  refer to [Customize the Flutter loader][customize-flutter-loader].
+
+[customize-flutter-loader]: /platform-integration/web/initialization#customize-the-flutter-loader

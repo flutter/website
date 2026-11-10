@@ -43,6 +43,11 @@ The `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` token is
 replaced with the contents of the `flutter_bootstrap.js` file when
 the `index.html` file is copied to the
 output directory (`build/web`) during the build step.
+Inlining the bootstrap script eliminates an extra network round-trip during
+startup; for production optimization guidance, refer to
+[Reduce cold-start latency][cold-start].
+
+[cold-start]: /deployment/web#reduce-cold-start-latency
 
 <a id="customizing-initialization" aria-hidden="true"></a>
 
@@ -131,7 +136,7 @@ The `config` argument is an object that can have the following optional fields:
 
 | Name | Description | Dart&nbsp;type |
 |---|---|---|
-|`assetBase`| The base URL of the `assets` directory of the app. Add this when Flutter loads from a different domain or subdirectory than the actual web app. You might need this when you embed Flutter web into another app, or when you deploy its assets to a CDN. |`String`|
+|`assetBase`| The base URL of the `assets` directory of the app. Add this when Flutter loads from a different domain or subdirectory than the actual web app. You might need this when you embed Flutter web into another app, or when you deploy its assets to a CDN (refer to [Serve assets from a CDN or self-hosted origin][multi-asset-cdn]). |`String`|
 |`canvasKitBaseUrl`| The base URL from where `canvaskit.wasm` is downloaded. |`String`|
 |`canvasKitVariant`| The CanvasKit variant to download. Your options cover:<br><br>1. `auto`: Downloads the optimal variant for the browser. The option defaults to this value.<br>2. `full`: Downloads the full variant of CanvasKit that works in all browsers.<br>3. `chromium`: Downloads a smaller variant of CanvasKit that uses Chromium compatible APIs. **_Warning_**: Don't use the `chromium` option unless you plan on only using Chromium-based browsers. |`String`|
 |`canvasKitForceCpuOnly`| When `true`, forces CPU-only rendering in CanvasKit (the engine won't use WebGL). |`bool`|
@@ -140,18 +145,19 @@ The `config` argument is an object that can have the following optional fields:
 |`entrypointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/". |`String`|
 |`fontFallbackBaseUrl`| Base URL for downloading fallback fonts when bundled fonts lack required glyphs. Defaults to `"https://fonts.gstatic.com/s/"`. |`String`|
 |`forceSingleThreadedSkwasm`| Forces single-threaded SkWasm mode for compatibility (only impacts apps compiled with `--wasm` when [WebAssembly][wasm-support] is selected at runtime). |`bool`|
-|`hostElement`| HTML Element into which Flutter renders the app (see [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
+|`hostElement`| HTML Element into which Flutter renders the app (refer to [embedding Flutter views][embedding-flutter-web]). When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`multiViewEnabled`| Enables multi-view mode for [embedding Flutter views][embedding-flutter-web] into host DOM elements dynamically. |`bool`|
 |`nonce`| A [Content Security Policy (CSP) nonce][nonce-mdn] string applied to inline scripts and styles created by the engine. |`String`|
 |`renderer`| Explicitly forces the renderer to `'canvaskit'` or `'skwasm'`. |`String`|
 |`suppressMultithreadingWarning`| When `true`, suppresses the console warning logged when `skwasm` runs single-threaded because `Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy` headers are absent. |`bool`|
 |`verboseBuildSelection`| When `true`, logs detailed `console.warn` diagnostics explaining why each candidate build in `_flutter.buildConfig.builds` was selected or skipped. |`bool`|
 |`wasmAllowList`| Browser engine allowlist (`{ blink?: boolean, webkit?: boolean, gecko?: boolean, unknown?: boolean }`) controlling which browser engines can run the `skwasm` + `dart2wasm` build when runtime WebAssembly feature probes pass (refer to [Support for WebAssembly][wasm-support]). Defaults to `{ blink: true, gecko: false, webkit: false, unknown: false }`. |`Object`|
-|`wasmDeferredModulesLoader`| Custom `(moduleNames: string[], onModuleLoaded: (moduleName: string, bytes: Uint8Array) => Promise<void>) => Promise<void>` hook used to fetch deferred `.wasm` modules when `--enable-wasm-deferred-loading` is enabled. |`Function`|
+|`wasmDeferredModulesLoader`| Custom `(moduleNames: string[], onModuleLoaded: (moduleName: string, bytes: Uint8Array) => Promise<void>) => Promise<void>` hook used to fetch deferred `.wasm` modules when `--enable-wasm-deferred-loading` is enabled (refer to [Serve assets from a CDN or self-hosted origin][multi-asset-cdn]). |`Function`|
 
 {:.table}
 
 [embedding-flutter-web]: /platform-integration/web/embedding-flutter-web
+[multi-asset-cdn]: /deployment/web#multi-asset-and-cdn-loading
 [nonce-mdn]: https://developer.mozilla.org/docs/Web/HTML/Global_attributes/nonce
 [wasm-support]: /platform-integration/web/wasm
 

@@ -14,10 +14,10 @@ of your app and covers the following topics:
 
 * [Building the app for release](#building-the-app-for-release)
 * [Web content hashing and HTTP caching](#web-content-hashing)
+* [Deploying WebAssembly in production](#deploy-webassembly-in-production)
 * [Deploying to the web](#deploying-to-the-web)
 * [Deploying to Firebase Hosting](#deploying-to-firebase-hosting)
 * [Handling images on the web](#handling-images-on-the-web)
-* [Opting-in to WebAssembly](#opting-in-to-webassembly)
 * [Minification](#minification)
 * [Mobile browser viewport and SafeArea](#mobile-browser-viewport-and-safearea)
 
@@ -49,12 +49,24 @@ and open the /build/web directory. Navigate to
 to view the release version of your app.
 
 ## Additional build flags
+
 You might need to deploy a profile or debug build for testing.
 To do this, pass the `--profile` or `--debug` flag
 to the `flutter build web` command.
-Profile builds are specialized for performance profiling using Chrome DevTools,
-and debug builds can be used to configure dart2js
-to respect assertions and change the optimization level (using the `-O` flag.)
+Profile builds are specialized for performance profiling in Chrome DevTools,
+while debug builds enable assertions for development testing.
+
+To customize compiler optimizations for either WebAssembly (`dart2wasm`)
+or JavaScript (`dart2js`), pass `-O<0-4>` (or `--optimization-level=<0-4>`):
+
+* In `--release` and `--profile` modes, `dart2wasm` defaults to `-O2`
+  (sound optimizations), whereas `dart2js` defaults to `-O4`.
+* In `--profile` mode, `flutter build web --wasm --profile` automatically
+  passes `-O2 --no-strip-wasm --no-minify` so function and type names remain
+  readable in performance traces.
+
+To learn how optimization levels affect `dart2wasm` code generation,
+consult [Dart WebAssembly compilation][dart-wasm].
 
 ### Source maps
 
@@ -168,20 +180,91 @@ Custom PWA service workers or [Workbox][] pipelines can consume
 `precache_manifest.json` directly (passing `revision: entry.urlHashed ? null : entry.hash`
 so URL-hashed files aren't double-cached with query parameters).
 
-## Opting-in to WebAssembly
+<a id="opting-in-to-webassembly" aria-hidden="true"></a>
 
-To compile and optimize your app for WebAssembly,
-use the `--wasm` flag when running or building.
+## Deploying WebAssembly in production {:#deploy-webassembly-in-production}
 
-For more information, see [Support for WebAssembly (Wasm)][Wasm support].
+Running `flutter build web --wasm` produces a dual-target release bundle
+in `build/web`:
 
-:::important Serving WebAssembly builds
-WebAssembly builds use multiple threads for improved rendering performance
-and require your web server to return specific COEP/COOP HTTP response headers
-(`Cross-Origin-Embedder-Policy: credentialless` and
-`Cross-Origin-Opener-Policy: same-origin`).
-For full details, see [Support for WebAssembly (Wasm)][Wasm support].
-:::
+* **WebAssembly target (`skwasm` + `dart2wasm`)**:
+  Emits `main.dart.wasm` and its JS runtime module `main.dart.mjs`,
+  paired with the `skwasm` rendering engine.
+* **JavaScript fallback (CanvasKit + `dart2js`)**:
+  Emits `main.dart.js`, paired with the CanvasKit renderer.
+
+At startup, `flutter_bootstrap.js` probes the browser's WebAssembly capabilities
+and automatically falls back to `main.dart.js` when a browser doesn't support
+the required Wasm features or isn't enabled in `wasmAllowList`.
+For browser compatibility details,
+refer to [Support for WebAssembly (Wasm)][Wasm support].
+For `dart2wasm` compiler internals,
+consult [Dart WebAssembly compilation][dart-wasm].
+
+### Configure server headers and compression {:#server-headers-and-compression}
+
+Configure the production web server or CDN with the following response headers
+and compression settings:
+
+* **Wasm MIME type**:
+  Serve all `.wasm` files with `Content-Type: application/wasm`
+  so browsers can stream-compile modules during download using
+  `WebAssembly.compileStreaming()`.
+* **Cross-origin isolation for multi-threaded rendering**:
+  Return `Cross-Origin-Opener-Policy: same-origin` and
+  `Cross-Origin-Embedder-Policy: credentialless` (or `require-corp`)
+  on the document response to enable `SharedArrayBuffer` and
+  multi-threaded `skwasm` rendering.
+  To learn more about `credentialless` isolation,
+  visit the [Chrome COEP credentialless guide][coep].
+* **Static pre-compression**:
+  Pre-compress `.wasm`, `.mjs`, `.js`, font files, and asset manifests
+  using Brotli (`br`) and Gzip (`gzip`) during CI/CD or at CDN ingest
+  to minimize transfer size over the network.
+
+### Reduce cold-start latency {:#reduce-cold-start-latency}
+
+To shorten time-to-first-frame on cold cache loads:
+
+* **Inline the bootstrap script**:
+  Replace the external `<script src="flutter_bootstrap.js" async></script>` tag
+  in `web/index.html` with an inline `<script>` containing
+  `{% raw %}{{flutter_bootstrap_js}}{% endraw %}`.
+  Inlining eliminates an extra network round-trip before the browser begins
+  downloading `main.dart.wasm` and the rendering engine.
+  For template syntax details, refer to [Bootstrapping][web-init-bootstrapping].
+* **Trim initial bundle weight**:
+  Release builds enable font icon tree shaking automatically
+  (pass `--no-tree-shake-icons` only when debugging dynamic icon code points).
+  To split large features into on-demand `.wasm` chunks,
+  build with `--enable-wasm-deferred-loading`.
+  Keep in mind that `--enable-wasm-deferred-loading` is incompatible with
+  `--web-content-hash`.
+* **Render an HTML loading shell**:
+  Include lightweight HTML and CSS inside `web/index.html`
+  (or update DOM state from `onEntrypointLoaded` in `flutter_bootstrap.js`)
+  so users receive immediate visual feedback while the engine initializes.
+
+### Serve assets from a CDN or self-hosted origin {:#multi-asset-and-cdn-loading}
+
+Customize where engine binaries, compiled modules, and assets load from to
+match the hosting architecture and privacy requirements:
+
+* **Self-host engine binaries and fallback fonts**:
+  Pass `--no-web-resources-cdn` to bundle CanvasKit and `skwasm` files
+  directly into `build/web/canvaskit/` instead of fetching them from
+  `gstatic.com` at runtime.
+  When using `--web-content-hash`, bundled files under `canvaskit/**` remain
+  unhashed and should use revalidating cache headers.
+* **Serve static assets from a dedicated CDN**:
+  Pass `--static-assets-url=https://cdn.example.com/` to `flutter build web`
+  at build time, or configure `assetBase` and `entrypointBaseUrl` in
+  `_flutter.loader.load({ config: ... })` at runtime.
+  When using `--enable-wasm-deferred-loading` with custom asset routing,
+  provide a `wasmDeferredModulesLoader` callback to fetch deferred `.wasm`
+  modules from the CDN.
+  For configuration details,
+  refer to [Customize the Flutter loader][web-init-loader].
 
 ## Deploying to the web
 
@@ -309,6 +392,8 @@ See [Embedding Flutter web][].
 
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 
+[coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
+[dart-wasm]: {{site.dart-site}}/web/wasm
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /platform-integration/web/web-images
 [Firebase Hosting]: {{site.firebase}}/docs/hosting/frameworks/flutter
@@ -322,4 +407,6 @@ See [Embedding Flutter web][].
 [viewport-fit-breaking]: /release/breaking-changes/viewport-fit-cover-safe-area
 [Wasm support]: /platform-integration/web/wasm
 [web-faq-caching]: /platform-integration/web/faq#how-do-i-configure-my-cache-headers
+[web-init-bootstrapping]: /platform-integration/web/initialization#bootstrapping
+[web-init-loader]: /platform-integration/web/initialization#customize-the-flutter-loader
 [Workbox]: https://github.com/GoogleChrome/workbox

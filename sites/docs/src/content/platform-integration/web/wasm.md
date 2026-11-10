@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's support for WebAssembly (Wasm).
 shortTitle: Wasm
-last-update: Oct 16, 2026
+last-update: Nov 9, 2026
 ---
 
 Flutter and Dart support
@@ -144,8 +144,11 @@ unless the server is configured to send specific HTTP headers.
 
 To learn more about these headers, check out
 [Load cross-origin resources without CORP headers using COEP: credentialless][coep].
+For production MIME types, pre-compression, cold-start optimization, and CDN
+serving, refer to [Deploying WebAssembly in production][deploy-wasm].
 
 [coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
+[deploy-wasm]: /deployment/web#deploy-webassembly-in-production
 
 ## Learn more about browser compatibility
 
@@ -153,9 +156,9 @@ In Flutter 3.50 and later, running a Flutter app compiled to Wasm (`dart2wasm` +
 `skwasm`) requires a browser that supports three standardized WebAssembly
 features:
 
-* [WasmGC][] (Garbage Collection)
-* [JS String Builtins][wasm-js-string] (`wasm:js-string`)
-* [Phase 4 Exception Handling][wasm-eh] (`try_table` / `exnref`)
+- [WasmGC][] (Garbage Collection)
+- [JS String Builtins][wasm-js-string] (`wasm:js-string`)
+- [Phase 4 Exception Handling][wasm-eh] (`try_table` / `exnref`)
 
 At startup, `flutter_bootstrap.js` probes the browser's WebAssembly engine for
 these features and checks the `wasmAllowList` configuration before selecting the
@@ -279,6 +282,112 @@ import 'fallback.dart'
 To learn more about selecting implementations at compile time, see the
 [conditional imports documentation on dart.dev]({{site.dart-site}}/interop/js-interop/package-web#conditional-imports).
 
+## Interoperate with JavaScript and browser APIs {:#host-scripts-and-measurement-apis}
+
+When a Flutter Wasm app interacts with external JavaScript libraries,
+host-page scripts, or browser APIs, use [`dart:js_interop`][] and
+[`package:web`][] to communicate across the Wasm-to-JS boundary with static
+type safety.
+
+### Call external JavaScript libraries with extension types {:#call-external-javascript-sdks}
+
+To call a JavaScript library loaded on the page (such as an analytics SDK or
+a custom host API), declare a zero-cost `extension type` over `JSObject`
+annotated with `@JS()`.
+Convert Dart primitives with `.toJS` and structured maps with `.jsify()`:
+
+```dart title="analytics_interop.dart"
+import 'dart:js_interop';
+
+@JS('appAnalytics')
+external AppAnalytics? get _analytics;
+
+extension type AppAnalytics._(JSObject _) implements JSObject {
+  external void trackEvent(JSString name, [JSAny? parameters]);
+}
+
+void logAnalyticsEvent(String eventName, Map<String, Object?> parameters) {
+  // Safely no-ops if the external script hasn't loaded.
+  _analytics?.trackEvent(eventName.toJS, parameters.jsify());
+}
+```
+
+### Communicate with the host page using custom DOM events {:#decouple-embedded-views-with-customevent}
+
+Rather than coupling Dart code directly to global JavaScript functions on the
+host page, dispatch standard DOM `CustomEvent` messages through `package:web`.
+Host scripts can subscribe and unsubscribe independently using
+`window.addEventListener`:
+
+```dart title="host_events.dart"
+import 'dart:js_interop';
+import 'package:web/web.dart' as web;
+
+void notifyHostPage(String eventName, Map<String, Object?> payload) {
+  web.window.dispatchEvent(
+    web.CustomEvent(
+      eventName,
+      web.CustomEventInit(detail: payload.jsify(), bubbles: true),
+    ),
+  );
+}
+```
+
+On the host page, listen for the custom event:
+
+```js title="host_page.js"
+window.addEventListener('flutter:view-ready', (event) => {
+  console.log('Flutter view ready:', event.detail);
+});
+```
+
+### Measure startup and frame timing with the User Timing API {:#record-startup-and-frame-milestones}
+
+To record Flutter startup and interaction milestones in Chrome DevTools
+**Performance** traces and browser `PerformanceObserver` listeners, combine
+`WidgetsBinding.instance.addPostFrameCallback` with the browser's User Timing
+API (`window.performance.mark` and `window.performance.measure`):
+
+```dart title="main.dart"
+import 'dart:js_interop';
+import 'package:flutter/widgets.dart';
+import 'package:web/web.dart' as web;
+
+void main() {
+  web.window.performance.mark('flutter_main_start');
+  WidgetsFlutterBinding.ensureInitialized();
+
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    web.window.performance.mark('flutter_first_frame');
+    web.window.performance.measure(
+      'flutter_first_frame_render',
+      'flutter_main_start'.toJS,
+      'flutter_first_frame',
+    );
+  });
+
+  runApp(const MyApp());
+}
+```
+
+### Batch calls across the Wasm-to-JS boundary
+
+In Wasm builds, Dart memory (managed WasmGC heap objects) is separate from the
+JavaScript heap.
+Crossing the Wasm-to-JS boundary to convert strings, lists, or maps incurs
+copying overhead when performed repeatedly.
+
+To keep frame times smooth:
+
+- Perform tight loops, filtering, and state aggregation in Dart on the Wasm
+  heap rather than calling JS getters or setters on each iteration.
+- Batch state or structured data updates into a single interop call per frame
+  or user action instead of invoking JS interop per list item.
+
+To learn more about how `dart2wasm` represents types and compiles interop calls,
+consult [Dart WebAssembly compilation][dart-wasm].
+
+[dart-wasm]: {{site.dart-site}}/web/wasm
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
 [JS interop]: {{site.dart-site}}/interop/js-interop
