@@ -257,6 +257,8 @@ The `regular` style of an italic font _is_ italic.
 
 ## Set a font as the default
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 To apply a font to text, you can set the font as the app's default font
 in its `theme`.
 
@@ -327,9 +329,13 @@ Download the Raleway and RobotoMono font files from [Google Fonts][].
    name: custom_fonts
    description: An example of how to use custom fonts with Flutter
 
+   environment:
+     sdk: ^3.13.0
+
    dependencies:
      flutter:
        sdk: flutter
+     material_ui: ^1.8.0
 
    dev_dependencies:
      flutter_test:

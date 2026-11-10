@@ -19,6 +19,8 @@ This recipe uses the following steps:
   3. Send data to the server.
   4. Close the WebSocket connection.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Connect to a WebSocket server
 
 The [`web_socket_channel`][] package provides the
