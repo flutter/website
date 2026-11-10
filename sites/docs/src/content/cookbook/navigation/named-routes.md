@@ -33,6 +33,8 @@ demonstrating how to use named routes using the following steps:
   3. Navigate to the second screen using `Navigator.pushNamed()`.
   4. Return to the first screen using `Navigator.pop()`.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create two screens
 
 First, create two screens to work with. The first screen contains a
@@ -41,7 +43,7 @@ button that navigates back to the first.
 
 <?code-excerpt "lib/main_original.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -159,6 +161,10 @@ onPressed: () {
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter Named Routes hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {

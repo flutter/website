@@ -21,6 +21,8 @@ This recipe uses the following steps:
   3. Create a detail screen that can display information about a todo.
   4. Navigate and pass data to the detail screen.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Define a todo class
 
 First, you need a simple way to represent todos. For this example,
@@ -178,6 +180,10 @@ body: ListView.builder(
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter passing data hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class Todo {
@@ -323,7 +329,7 @@ ListView.builder(
 
 <?code-excerpt "lib/main_routesettings.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class Todo {
   final String title;

@@ -32,6 +32,8 @@ This recipe uses the following steps:
   3. Ensure tapping a button adds the todo.
   4. Ensure swipe-to-dismiss removes the todo.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create a widget to test
 
 For this example,

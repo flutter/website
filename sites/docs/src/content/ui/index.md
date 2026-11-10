@@ -102,6 +102,10 @@ function with a widget:
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter Hello World hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -170,6 +174,10 @@ Below are some simple widgets that combine these and other widgets:
 
 <?code-excerpt "lib/main_myappbar.dart"?>
 ```dartpad title="Flutter combining widgets hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
@@ -294,6 +302,10 @@ widget is entirely optional but a good practice.
 
 <?code-excerpt "lib/main_tutorial.dart"?>
 ```dartpad title="Flutter Material design hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -360,6 +372,10 @@ input gestures. See how that works by creating a simple button:
 
 <?code-excerpt "lib/main_mybutton.dart"?>
 ```dartpad title="Flutter button hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -427,6 +443,10 @@ Consider this basic example, using the [`ElevatedButton`][] mentioned earlier:
 
 <?code-excerpt "lib/main_counter.dart"?>
 ```dartpad title="Flutter state management hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
@@ -511,6 +531,10 @@ this works in practice:
 
 <?code-excerpt "lib/main_counterdisplay.dart"?>
 ```dartpad title="Flutter Hello World hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class CounterDisplay extends StatelessWidget {
@@ -596,6 +620,10 @@ intended purchases. Start by defining the presentation class,
 
 <?code-excerpt "lib/main_shoppingitem.dart"?>
 ```dartpad title="Flutter complete shopping list item hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class Product {
@@ -700,6 +728,10 @@ Here's an example parent widget that stores mutable state:
 
 <?code-excerpt "lib/main_shoppinglist.dart"?>
 ```dartpad title="Flutter storing mutable state hands-on example in DartPad"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 class Product {

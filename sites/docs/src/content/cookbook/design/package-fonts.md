@@ -23,40 +23,44 @@ to almost 1000 open-sourced font families.
 
 ## 1. Add a font to a package
 
-To export a font from a package, you need to import the font files into the
-`lib` folder of the package project. You can place font files directly in the
-`lib` folder or in a subdirectory, such as `lib/fonts`.
+To export fonts, place the files in your package's `lib` directory
+or one of its subdirectories.
+This example uses `lib/fonts` in a Flutter package named `awesome_package`.
+Place the package directory next to your app directory.
 
-In this example, assume you've got a Flutter library called
-`awesome_package` with fonts living in a `lib/fonts` folder.
+<FileTree>
 
-```plaintext
-awesome_package/
-  lib/
-    awesome_package.dart
-    fonts/
-      Raleway-Regular.ttf
-      Raleway-Italic.ttf
-```
+- awesome_package/
+  - lib/
+    - awesome_package.dart
+    - fonts/
+      - Raleway-Regular.ttf
+      - Raleway-Italic.ttf
+  - pubspec.yaml
+
+</FileTree>
 
 ## 2. Add the package and fonts to the app
 
 Now you can use the fonts in the package by
 updating the `pubspec.yaml` in the *app's* root directory.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ### Add the package to the app
 
-To add the `awesome_package` package as a dependency,
-run `flutter pub add`:
+From your app's directory, add `awesome_package`
+using a [path package descriptor][].
 
 ```console
-$ flutter pub add awesome_package
+$ flutter pub add "awesome_package:{path: ../awesome_package}"
 ```
+
+[path package descriptor]: {{site.dart-site}}/tools/pub/dependencies#path-package-descriptor
 
 ### Declare the font assets
 
-Now that you've imported the package, tell Flutter where to
-find the fonts from the `awesome_package`.
+In your app's `pubspec.yaml`, declare the font files from `awesome_package`.
 
 To declare package fonts, prefix the path to the font with
 `packages/awesome_package`.
@@ -102,10 +106,15 @@ The Raleway and RobotoMono fonts were downloaded from
 name: package_fonts
 description: An example of how to use package fonts with Flutter
 
+environment:
+  sdk: ^3.13.0
+
 dependencies:
   awesome_package:
+    path: ../awesome_package
   flutter:
     sdk: flutter
+  material_ui: ^1.8.0
 
 dev_dependencies:
   flutter_test:
