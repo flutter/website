@@ -20,6 +20,9 @@ of your app and covers the following topics:
 * [Handle images on the web](#handling-images-on-the-web)
 * [Minification](#minification)
 * [Mobile browser viewport and SafeArea](#mobile-browser-viewport-and-safearea)
+* [Embed a Flutter app into an HTML page][embed-html]
+
+[embed-html]: #embedding-a-flutter-app-into-an-html-page
 
 ## Build the app for release {:#building-the-app-for-release}
 
@@ -50,24 +53,23 @@ to view the release version of your app.
 
 ## Additional build flags
 
-You might need to deploy a profile or debug build for testing.
-To do this, pass the `--profile` or `--debug` flag
-to the `flutter build web` command.
-Profile builds configure your app for performance profiling in Chrome DevTools,
-and debug builds enable assertions for development testing.
+Pass `--release` (default), `--profile`, or `--debug` to `flutter build web`
+depending on whether you are deploying to production, profiling in Chrome
+DevTools, or testing with assertions:
 
-To customize compiler optimizations for either WebAssembly (`dart2wasm`)
-or JavaScript (`dart2js`), pass the `--optimization-level=LEVEL` flag (or
-shorthand `-O0` through `-O4`), where `LEVEL` is an integer from `0` to `4`:
+| Build mode | WebAssembly (`--wasm`) | JavaScript (default) | Purpose |
+| :--- | :--- | :--- | :--- |
+| `--release` (default) | `-O2` (minified, stripped symbols) | `-O4` (minified) | Production deployment |
+| `--profile` | `-O2 --no-strip-wasm` (readable function and type names) | `-O4` (unminified symbols) | Performance and memory profiling |
+| `--debug` | `-O0` (assertions enabled) | `-O1` (assertions enabled) | Development testing |
 
-* In `--release` and `--profile` modes, `dart2wasm` defaults to `-O2`
-  (sound optimizations), whereas `dart2js` defaults to `-O4`.
-* In `--profile` mode, `flutter build web --wasm --profile` automatically
-  passes `-O2 --no-strip-wasm --no-minify` so function and type names remain
-  readable in performance traces.
+{:.table .table-striped}
 
-To learn how optimization levels affect `dart2wasm` code generation,
-consult [Dart WebAssembly compilation][dart-wasm].
+To override the default compiler optimization level, pass
+`--optimization-level=LEVEL` (`-O0` through `-O4` for `dart2wasm`; `-O1`
+through `-O4` for `dart2js`).
+For `dart2wasm` optimization details,
+refer to [Dart WebAssembly compilation][dart-wasm].
 
 ### Source maps
 
@@ -112,20 +114,12 @@ SHA-256 content hash into compiled entrypoints and all files under
 `build/web/assets/**`, and records the hashed paths in `flutter_bootstrap.js`
 (`_flutter.buildConfig`):
 
-* **Hashed immutable files (`Cache-Control: public, max-age=31536000, immutable`)**:
-  * Compiled entrypoints: `main.dart.<hash>.js`, `main.dart.<hash>.wasm`, and
-    `main.dart.<hash>.mjs` (plus `main.dart.<hash>.js.map` and
-    `main.dart.<hash>.mjs.map` if `--source-maps` is enabled).
-  * All files under `assets/**`: including `AssetManifest.<hash>.bin`,
-    `AssetManifest.bin.<hash>.json`, `FontManifest.<hash>.json`,
-    `NOTICES.<hash>`, fonts, images, and `shaders/**`.
-* **Unhashed bootstrap and root files (`Cache-Control: max-age=0, must-revalidate` or `no-cache`)**:
-  * `index.html`, `flutter_bootstrap.js`, `flutter.js`, `manifest.json`,
-    `version.json`, `404.html`, and `icons/**`.
-  * Bundled `canvaskit/**` files when building with `--no-web-resources-cdn`.
-  * `main.dart.wasm.map` when building with `--source-maps` (the `.wasm`
-    binary's `sourceMappingURL` custom section references the unhashed
-    `.wasm.map` filename).
+| Artifact group | Files in `build/web` | Recommended `Cache-Control` |
+| :--- | :--- | :--- |
+| **Hashed immutable files** | `main.dart.<hash>.js`, `main.dart.<hash>.wasm`, `main.dart.<hash>.mjs` (plus `.js.map` and `.mjs.map`), and all files under `assets/**` (`AssetManifest.<hash>.bin`, `FontManifest.<hash>.json`, `NOTICES.<hash>`, fonts, images, and `shaders/**`) | `public, max-age=31536000, immutable` |
+| **Unhashed bootstrap and root files** | `index.html`, `flutter_bootstrap.js`, `flutter.js`, `manifest.json`, `version.json`, `404.html`, `icons/**`, bundled `canvaskit/**` (with `--no-web-resources-cdn`), and `main.dart.wasm.map` (with `--source-maps`) | `no-cache` (or `max-age=0, must-revalidate`) |
+
+{:.table .table-striped}
 
 For a complete `firebase.json` example, refer to the [Web FAQ][web-faq-caching].
 
@@ -188,40 +182,38 @@ so URL-hashed files aren't double-cached with query parameters).
 Running `flutter build web --wasm` produces a dual-target release bundle
 in `build/web`:
 
-* **WebAssembly target (`skwasm` + `dart2wasm`)**:
+* **WebAssembly target (`dart2wasm`)**:
   Emits `main.dart.wasm` and its JS runtime module `main.dart.mjs`,
-  paired with the `skwasm` rendering engine.
-* **JavaScript fallback (CanvasKit + `dart2js`)**:
-  Emits `main.dart.js`, paired with the CanvasKit renderer.
+  paired with Flutter's WebAssembly rendering engine.
+* **JavaScript fallback (`dart2js`)**:
+  Emits `main.dart.js` for browsers without the required Wasm features.
 
 At startup, `flutter_bootstrap.js` probes the browser's WebAssembly capabilities
 and automatically falls back to `main.dart.js` when a browser doesn't support
 the required Wasm features or isn't enabled in `wasmAllowList`.
 For browser compatibility details,
 refer to [Support for WebAssembly (Wasm)][Wasm support].
-For `dart2wasm` compiler internals,
-consult [Dart WebAssembly compilation][dart-wasm].
+For `dart2wasm` compiler flags and generic Wasm server configuration,
+refer to [Dart WebAssembly compilation][dart-wasm] and
+[Serve WebAssembly in production][dart-wasm-serving].
 
 ### Configure server headers and compression {:#server-headers-and-compression}
 
-Configure the production web server or CDN with the following response headers
-and compression settings:
+Configure the production web server or CDN with the following headers and
+compression settings:
 
-* **Wasm MIME type**:
-  Serve all `.wasm` files with `Content-Type: application/wasm`
-  so browsers can stream-compile modules during download by calling
-  `WebAssembly.compileStreaming()`.
 * **Cross-origin isolation for multi-threaded rendering**:
   Return `Cross-Origin-Opener-Policy: same-origin` and
-  `Cross-Origin-Embedder-Policy: credentialless` (or `require-corp`)
-  on the document response to enable `SharedArrayBuffer` and
-  multi-threaded `skwasm` rendering.
-  To learn more about configuring cross-origin isolation headers,
-  refer to the [COOP and COEP guide on web.dev][coep].
-* **Static pre-compression**:
-  Pre-compress `.wasm`, `.mjs`, `.js`, font files, and asset manifests
-  with Brotli (`br`) and Gzip (`gzip`) during CI/CD or at CDN ingest
-  to minimize transfer size over the network.
+  `Cross-Origin-Embedder-Policy: credentialless` (or `require-corp`) on the
+  document response to enable `SharedArrayBuffer` and multi-threaded
+  WebAssembly rendering (refer to the [COOP and COEP guide on web.dev][coep]).
+* **Wasm MIME type and static pre-compression**:
+  Serve all `.wasm` files (both `main.dart.wasm` and self-hosted engine
+  binaries) with `Content-Type: application/wasm`, and pre-compress `.wasm`,
+  `.mjs`, `.js`, fonts, and `assets/**` manifests with Brotli (`br`) and Gzip
+  (`gzip`).
+  For streaming compilation and compression details, refer to
+  [Serve WebAssembly in production][dart-wasm-serving].
 
 ### Reduce cold-start latency {:#reduce-cold-start-latency}
 
@@ -254,7 +246,7 @@ Customize where engine binaries, compiled modules, and assets load from to
 match the hosting architecture and privacy requirements:
 
 * **Self-host engine binaries and fallback fonts**:
-  Pass `--no-web-resources-cdn` to bundle CanvasKit and `skwasm` files
+  Pass `--no-web-resources-cdn` to bundle Flutter's rendering engine files
   directly into `build/web/canvaskit/` instead of fetching them from
   `gstatic.com` at runtime.
   When you build with the `--web-content-hash` flag, bundled files under
@@ -342,7 +334,7 @@ The web supports the standard `Image` widget to display images.
 By design, web browsers run untrusted code without harming the host computer.
 This limits what you can do with images compared to mobile and desktop platforms.
 
-For more information, see [Displaying images on the web][].
+To learn more, refer to [Displaying images on the web][].
 
 ## Minification
 
@@ -356,6 +348,8 @@ shorter strings (e.g. by renaming `AlignmentGeometryTween` to something like
 | debug                 | No             | No                      |
 | profile               | No             | Yes                     |
 | release               | Yes            | Yes                     |
+
+{:.table .table-striped}
 
 ## Mobile browser viewport and SafeArea {:#mobile-browser-viewport-and-safearea}
 
@@ -402,6 +396,7 @@ refer to [Add Flutter to any web application][Embedding Flutter web].
 
 [coep]: https://web.dev/articles/coop-coep
 [dart-wasm]: {{site.dart-site}}/web/wasm
+[dart-wasm-serving]: {{site.dart-site}}/web/deployment#serving-wasm-in-production
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /platform-integration/web/web-images
 [Firebase Hosting]: {{site.firebase}}/docs/hosting/frameworks/flutter

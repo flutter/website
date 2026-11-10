@@ -29,32 +29,15 @@ the `window.performance` property (refer to
 
 Always evaluate runtime performance in [profile mode][] or release mode rather
 than debug mode.
-Choose the build flags that match the target runtime and metric under test:
+Choose the command that matches the metric under test:
 
-- **CPU, frame, and memory profiling (`--profile`)**:
-  Run `flutter run -d chrome --profile` (or add `--wasm` to profile a
-  WebAssembly build).
-  For a deployable profile bundle, run `flutter build web --profile` (or
-  `flutter build web --wasm --profile`).
-  In Wasm profile builds, `dart2wasm` compiles with `-O2` optimizations and
-  passes `--no-strip-wasm` so Wasm function names and WasmGC type names remain
-  readable in Chrome DevTools flame charts and heap snapshots.
-- **Network transfer and cold-start size (`--release`)**:
-  Build with `flutter build web` or `flutter build web --wasm` (release mode is
-  the default).
-  Release builds minify JavaScript and strip symbol names from
-  `main.dart.wasm`, giving accurate compressed and uncompressed download sizes.
-  To preserve readable stack traces in a Wasm staging build, pass
-  `--no-strip-wasm` (expect an approximate 47% increase in `.wasm` binary size).
+| What to measure | Command | Notes |
+| :--- | :--- | :--- |
+| **CPU, frame rendering, and memory** | `flutter run -d chrome --profile` (add `--wasm` for WebAssembly) | Compiles with production optimizations (`-O2` for Wasm) while preserving symbol and WasmGC type names in traces and heap snapshots. |
+| **Deployable profile bundle** | `flutter build web --profile` (add `--wasm` for WebAssembly) | Generates a static profile bundle in `build/web` for testing on staging hosts or target devices. |
+| **Download size and cold-start load** | `flutter build web` or `flutter build web --wasm` | Builds a minified, symbol-stripped release bundle with production file sizes. |
 
-```console
-# Launch in Chrome for interactive performance profiling (JS or Wasm):
-flutter run -d chrome --profile
-flutter run -d chrome --wasm --profile
-
-# Build a stripped Wasm production bundle to measure download size:
-flutter build web --wasm
-```
+{:.table .table-striped}
 
 ## Configure optional timeline flags {:#optional-flags-to-enhance-tracing}
 
@@ -81,105 +64,60 @@ To capture a frame trace:
 
 ## Profile Core Web Vitals (LCP, INP, and CLS) {:#profile-core-web-vitals}
 
-Use Chrome DevTools to measure [Core Web Vitals][] under realistic network and
-CPU conditions:
+Record a trace in the [Chrome DevTools Performance panel][] to evaluate
+[Core Web Vitals][] and inspect Flutter-specific rendering behavior:
 
-1.  Serve the built app (or staging URL) and open it in a Chrome **Incognito**
-    or **Guest** window so browser extensions don't skew CPU timings or inject
-    DOM nodes.
-1.  Open Chrome DevTools and select the **Performance** panel to open the live
-    metrics screen.
-1.  To simulate target devices, set **CPU** to **4x slowdown** and **Network**
-    to **Fast 4G**.
-1.  To profile startup, click **Record and reload**.
-    To inspect responsiveness and layout stability, record a trace while you
-    interact with the page.
-
-### Largest Contentful Paint (LCP ≤ 2.5 s)
-
-- In full-page CanvasKit and `skwasm` apps, Chrome often attributes LCP to the
-  host HTML loading element (or the initial canvas surface) rather than internal
-  Flutter widgets painted onto the canvas.
-- Pair the browser's LCP value with a User Timing mark recorded on the first
-  Flutter frame (`window.performance.mark('flutter_first_frame')`; refer to
-  [Measure startup and frame milestones][wasm-user-timing]).
-- Expand the **Network** track in the recorded trace to verify that
-  `flutter_bootstrap.js`, the rendering engine (`skwasm.wasm` or
-  `canvaskit.wasm`), and the compiled app (`main.dart.wasm` or `main.dart.js`)
-  download in parallel without sequential waterfalls.
-  To eliminate bootstrap round-trips, refer to
-  [Reduce cold-start latency][cold-start].
-
-### Interaction to Next Paint (INP ≤ 200 ms)
-
-- Interact with key flows in your app (clicking controls and typing) while
-  watching the **Interactions** log on the live metrics screen.
-- Record a trace around slow interactions and inspect the **Main** thread
-  (plus `skwasm` worker threads when cross-origin isolation is active).
-- Look for long tasks exceeding 50 ms, expensive synchronous layout or shader
-  compilation spikes, or V8 `Minor GC` and `Major GC` pauses.
-
-### Cumulative Layout Shift (CLS ≤ 0.1)
-
-- Check the **Layout shifts** log on the live metrics screen during initial load
-  and view transitions.
-- Verify that removing the HTML loading indicator or mounting embedded Flutter
-  views with `addView()` doesn't shift surrounding DOM content.
-- For host container sizing rules that prevent layout shifts on embedded pages,
-  refer to [Prevent Cumulative Layout Shift (CLS)][prevent-cls].
+- **Largest Contentful Paint (LCP)**:
+  In full-page Flutter web apps, Chrome often attributes LCP to the host HTML
+  loading element (or initial canvas surface) rather than internal Flutter
+  widgets.
+  - Record a User Timing mark on the first Flutter frame to measure actual app
+    readiness (refer to
+    [Measure startup and frame milestones][wasm-user-timing]).
+  - Verify that `flutter_bootstrap.js`, Flutter's rendering engine, and
+    `main.dart.wasm` (or `main.dart.js`) download in parallel without waterfalls
+    (refer to [Reduce cold-start latency][cold-start]).
+- **Interaction to Next Paint (INP)**:
+  Inspect the **Main** thread (plus WebAssembly worker threads when
+  cross-origin isolation is active) around slow interactions for long tasks,
+  synchronous layout or shader compilation spikes, or V8 garbage-collection
+  pauses.
+- **Cumulative Layout Shift (CLS)**:
+  Verify that removing the HTML loading indicator or mounting embedded Flutter
+  views with `addView()` doesn't shift surrounding DOM content (refer to
+  [Prevent Cumulative Layout Shift (CLS)][prevent-cls]).
 
 ## Inspect Wasm module size and memory footprint {:#inspect-wasm-footprint}
 
-Use the Chrome DevTools **Network** and **Memory** panels to audit both download
-weight and runtime memory usage:
+For general `dart2wasm` size and WasmGC heap profiling steps in Chrome
+DevTools, refer to [Profile Wasm performance and footprint][dart-wasm-profile].
+In a Flutter Wasm app, also check the following Flutter-specific artifacts:
 
-### Network transfer and binary footprint
-
-1.  Build a stripped release bundle (`flutter build web --wasm`) and serve
-    `build/web` over HTTP with Brotli (`br`) or Gzip (`gzip`) compression
-    enabled.
-1.  Open Chrome DevTools and select the **Network** panel.
-1.  Select the **Disable cache** checkbox, and then click the **Wasm** filter.
-1.  Reload the page and inspect the **Size** column for both `main.dart.wasm`
-    (compiled Dart code) and `skwasm.wasm` (the rendering engine).
-    With **Big request rows** enabled in **Network settings**, the top value
-    shows compressed bytes transferred over the wire and the bottom value shows
-    uncompressed resource size.
-1.  To inspect payloads loaded from `assets/**`—such as bundled fonts,
-    `AssetManifest.bin`, and images—click **All** (or **Font** and **Img**).
-    To reduce initial download size, consult
-    [Measuring app size][app-size] and consider splitting routes with the
-    `--enable-wasm-deferred-loading` flag (refer to
-    [Reduce cold-start latency][cold-start]).
-
-### Runtime WasmGC and engine memory
-
-1.  Run or serve the app with the `--profile` flag
-    (or `flutter build web --wasm --no-strip-wasm`)
-    so Dart class and type names are retained.
-1.  Open Chrome DevTools, select the **Memory** panel, select **Heap snapshot**,
-    and click **Take snapshot**.
-1.  Inspect two distinct memory regions used by Flutter Wasm apps:
-    - **Dart WasmGC objects**:
-      Managed directly on the V8 garbage-collected heap alongside JavaScript
-      objects.
-      Filter by Dart class names in the snapshot **Summary** view (or compare
-      two snapshots in the **Comparison** view) to spot retained state or leaks.
-    - **Engine linear memory (`WebAssembly.Memory`)**:
-      Allocated by `skwasm` for native C++ rendering structures, surfaces, and
-      raster caches, visible under `JSArrayBufferData` / `WebAssembly.Memory`
-      entries.
+- **Bundle and asset payloads**:
+  Build a stripped release bundle (`flutter build web --wasm`) and inspect
+  `main.dart.wasm`, Flutter's rendering engine `.wasm` binary, and `assets/**`
+  in the [Chrome DevTools Network panel][].
+  To reduce initial download size, refer to [Measuring app size][app-size] and
+  [Reduce cold-start latency][cold-start] (`--enable-wasm-deferred-loading`).
+- **Engine and WasmGC memory**:
+  Run with `--profile` (or `flutter build web --wasm --no-strip-wasm`) when
+  [recording heap snapshots][] to inspect both Dart WasmGC objects on the V8
+  heap and `WebAssembly.Memory` linear memory allocated by Flutter's rendering
+  engine.
 
 [app-size]: /perf/app-size
+[Chrome DevTools Network panel]: https://developer.chrome.com/docs/devtools/network
 [Chrome DevTools Performance panel]: https://developer.chrome.com/docs/devtools/performance
 [cold-start]: /deployment/web#reduce-cold-start-latency
 [Core Web Vitals]: https://web.dev/articles/vitals
+[dart-wasm-profile]: {{site.dart-site}}/web/wasm#profile-wasm
 [`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
 [`debugProfileBuildsEnabledUserWidgets`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabledUserWidgets.html
 [`debugProfileLayoutsEnabled`]: {{site.api}}/flutter/rendering/debugProfileLayoutsEnabled.html
 [`debugProfilePaintsEnabled`]: {{site.api}}/flutter/rendering/debugProfilePaintsEnabled.html
 [prevent-cls]: /platform-integration/web/embedding-flutter-web#prevent-cls
 [profile mode]: /testing/build-modes#profile
+[recording heap snapshots]: https://developer.chrome.com/docs/devtools/memory-problems/heap-snapshots
 [start recording]: https://developer.chrome.com/docs/devtools/performance/#record
 [`Timeline`]: {{site.api}}/flutter/dart-developer/Timeline-class.html
 [`TimelineTask`]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html

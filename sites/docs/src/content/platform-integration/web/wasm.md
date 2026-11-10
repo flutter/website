@@ -92,7 +92,7 @@ to minimize binary size.
 
 - **For error monitoring (recommended)**: Pass `--source-maps` to generate
   a `main.dart.wasm.map` file for symbolication in error tracking services.
-  For security recommendations and deployment warnings, see
+  For security recommendations and deployment warnings, refer to
   [Source maps](/deployment/web#source-maps).
 - **For staging or QA builds**: Pass `--no-strip-wasm` to preserve Wasm
   function names directly in browser console stack traces, at the cost of
@@ -137,11 +137,11 @@ unless the server is configured to send specific HTTP headers.
 :::
 
 | Name | Value |
-|-|-|
-| `Cross-Origin-Embedder-Policy` | `credentialless` <br> or <br> `require-corp` |
+| :--- | :--- |
+| `Cross-Origin-Embedder-Policy` | `credentialless` or `require-corp` |
 | `Cross-Origin-Opener-Policy` | `same-origin` |
 
-{:.table}
+{:.table .table-striped}
 
 To learn more about these headers, check out
 [Load cross-origin resources without CORP headers using COEP: credentialless][coep].
@@ -153,13 +153,12 @@ serving, refer to [Deploy WebAssembly in production][deploy-wasm].
 
 ## Learn more about browser compatibility
 
-In Flutter 3.50 and later, running a Flutter app compiled to Wasm (`dart2wasm` +
-`skwasm`) requires a browser that supports three standardized WebAssembly
-features:
-
-- [WasmGC][] (Garbage Collection)
-- [JS String Builtins][wasm-js-string] (`wasm:js-string`)
-- [Phase 4 Exception Handling][wasm-eh] (`try_table` / `exnref`)
+In Flutter 3.50 and later, running a Flutter app compiled to WebAssembly
+(`dart2wasm`) requires a browser that supports [WasmGC][],
+[JS String Builtins][wasm-js-string] (`wasm:js-string`), and
+[Phase 4 Exception Handling][wasm-eh] (`try_table` and `exnref`).
+For architectural details on how Dart uses these proposals, refer to
+[Dart WebAssembly compilation][dart-wasm].
 
 At startup, `flutter_bootstrap.js` probes the browser's WebAssembly engine for
 these features and checks the `wasmAllowList` configuration before selecting the
@@ -169,11 +168,11 @@ and CanvasKit build produced by `flutter build web --wasm`.
 
 | Browser engine | Minimum version for Wasm | Default behavior in Flutter 3.50 (`--wasm`) | How to enable Wasm |
 | :--- | :--- | :--- | :--- |
-| **Chromium** (Chrome, Edge, Opera, Brave) | **137+** (Desktop & Android) | Runs `dart2wasm` + `skwasm` by default; Chrome `< 137` falls back to `dart2js` + CanvasKit. | Enabled by default (`wasmAllowList.blink: true`). |
+| **Chromium** (Chrome, Edge, Opera, Brave) | **137+** (Desktop & Android) | Runs WebAssembly (`dart2wasm`) by default; Chrome `< 137` falls back to `dart2js` + CanvasKit. | Enabled by default (`wasmAllowList.blink: true`). |
 | **WebKit** (Safari macOS & iOS, all iOS browsers) | **Safari 26.2+** (macOS & iOS 26.2+) | Falls back to `dart2js` + CanvasKit by default (`wasmAllowList.webkit: false`). | Set `wasmAllowList: { webkit: true }` in [Flutter web app initialization][]. Safari `<= 26.1` automatically falls back to `dart2js` + CanvasKit via runtime feature detection. |
 | **Gecko** (Firefox) | **Firefox 147+** | Falls back to `dart2js` + CanvasKit by default (`wasmAllowList.gecko: false`). | Set `wasmAllowList: { gecko: true }` in [Flutter web app initialization][]. Firefox `< 147` automatically falls back to `dart2js` + CanvasKit. |
 
-{:.table}
+{:.table .table-striped}
 
 [WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [wasm-js-string]: https://github.com/WebAssembly/js-string-builtins
@@ -283,36 +282,14 @@ import 'fallback.dart'
 To learn more about selecting implementations at compile time, see the
 [conditional imports documentation on dart.dev]({{site.dart-site}}/interop/js-interop/package-web#conditional-imports).
 
-## Interoperate with JavaScript and browser APIs {:#host-scripts-and-measurement-apis}
+## Interoperate with host pages and browser APIs {:#host-scripts-and-measurement-apis}
 
-When a Flutter Wasm app interacts with external JavaScript libraries,
-host-page scripts, or browser APIs, use [`dart:js_interop`][] and
-[`package:web`][] to communicate across the Wasm-to-JS boundary with static
-type safety.
-
-### Call external JavaScript libraries with extension types {:#call-external-javascript-sdks}
-
-To call a JavaScript library loaded on the page (such as an analytics SDK or
-a custom host API), declare a zero-cost `extension type` over `JSObject`
-annotated with `@JS()`.
-Convert Dart primitives with the `.toJS` getter and structured maps with the
-`.jsify()` method:
-
-```dart title="analytics_interop.dart"
-import 'dart:js_interop';
-
-@JS('appAnalytics')
-external AppAnalytics? get _analytics;
-
-extension type AppAnalytics._(JSObject _) implements JSObject {
-  external void trackEvent(JSString name, [JSAny? parameters]);
-}
-
-void logAnalyticsEvent(String eventName, Map<String, Object?> parameters) {
-  // Safely no-ops if the external script hasn't loaded.
-  _analytics?.trackEvent(eventName.toJS, parameters.jsify());
-}
-```
+For `@JS()` extension-type syntax, WasmGC representation details, and boundary
+performance guidelines, refer to
+[WebAssembly support in JS interop][js-interop-wasm-dart] and
+[Dart WebAssembly compilation][dart-wasm].
+The following patterns cover Flutter-specific integration with host pages and
+browser performance APIs.
 
 ### Communicate with the host page through custom DOM events {:#decouple-embedded-views-with-customevent}
 
@@ -351,9 +328,8 @@ To record Flutter startup and interaction milestones in the Chrome DevTools
 API (`window.performance.mark` and `window.performance.measure`).
 The `flutter_first_frame` mark records a timestamp relative to navigation start
 (`performance.timeOrigin`).
-The `flutter_first_frame_render` measure tracks Dart execution from
-`main()`—after engine and `.wasm` module instantiation—to the first rendered
-frame:
+The `flutter_first_frame_render` measure tracks Dart execution from `main()`
+(after engine and `.wasm` module instantiation) to the first rendered frame:
 
 ```dart title="main.dart"
 import 'dart:js_interop';
@@ -377,29 +353,8 @@ void main() {
 }
 ```
 
-### Batch calls across the Wasm-to-JS boundary
-
-In Wasm builds, `dart2wasm` allocates Dart objects as WasmGC structs and arrays
-on the browser's garbage-collected heap and uses `wasm:js-string` builtins for
-zero-copy string references.
-However, Dart collections, maps, and typed lists use static WasmGC
-representations that differ from JavaScript `Array` and `Object` instances.
-Converting structured payloads with `.jsify()` or `.dartify()`, or invoking JS
-interop functions repeatedly in tight loops, allocates wrapper objects and
-copies collection elements across the Wasm-to-JS boundary.
-
-To keep frame times smooth:
-
-- Perform tight loops, filtering, and state aggregation in Dart on WasmGC
-  objects rather than calling JS getters or setters on each iteration.
-- Batch state or structured data updates into a single interop call per frame
-  or user action instead of calling the `.jsify()` method or JS interop
-  functions for each list item.
-
-To learn more about how `dart2wasm` represents types and compiles interop calls,
-consult [Dart WebAssembly compilation][dart-wasm].
-
 [dart-wasm]: {{site.dart-site}}/web/wasm
+[js-interop-wasm-dart]: {{site.dart-site}}/interop/js-interop#wasm-support
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
 [JS interop]: {{site.dart-site}}/interop/js-interop
