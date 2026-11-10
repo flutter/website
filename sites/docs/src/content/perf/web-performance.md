@@ -21,11 +21,11 @@ read the Flutter blog post
 To emit custom timeline events from Dart code, use the `dart:developer`
 [`Timeline`][] and [`TimelineTask`][] APIs, or record browser-level marks with
 `window.performance` (refer to
-[Measure startup and frame timing][wasm-user-timing]).
+[Measure startup and frame milestones][wasm-user-timing]).
 
 ![Screenshot of the Chrome DevTools performance panel](/assets/images/docs/tools/devtools/chrome-devtools-performance-panel.png)
 
-## Build and run for performance profiling {:#build-and-run-for-profiling}
+## Build and run in profile mode {:#build-and-run-for-profiling}
 
 Always evaluate runtime performance in [profile mode][] or release mode rather
 than debug mode.
@@ -56,7 +56,7 @@ flutter run -d chrome --wasm --profile
 flutter build web --wasm
 ```
 
-## Optional flags to enhance tracing
+## Configure optional timeline flags {:#optional-flags-to-enhance-tracing}
 
 To configure which widget and rendering timeline events are tracked, set any of
 the following top-level properties to `true` in `main()` before profiling:
@@ -100,7 +100,7 @@ CPU conditions:
   Flutter widgets painted onto the canvas.
 - Pair the browser's LCP value with a User Timing mark recorded on the first
   Flutter frame (`window.performance.mark('flutter_first_frame')`; refer to
-  [Measure startup and frame timing][wasm-user-timing]).
+  [Measure startup and frame milestones][wasm-user-timing]).
 - Expand the **Network** track in the recorded trace to verify that
   `flutter_bootstrap.js`, the rendering engine (`skwasm.wasm` or
   `canvaskit.wasm`), and the compiled app (`main.dart.wasm` or `main.dart.js`)

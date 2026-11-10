@@ -12,16 +12,16 @@ This builds a _debug_ version of your app.
 This page helps you prepare a _release_ version
 of your app and covers the following topics:
 
-* [Building the app for release](#building-the-app-for-release)
+* [Build the app for release](#building-the-app-for-release)
 * [Web content hashing and HTTP caching](#web-content-hashing)
-* [Deploying WebAssembly in production](#deploy-webassembly-in-production)
-* [Deploying to the web](#deploying-to-the-web)
-* [Deploying to Firebase Hosting](#deploying-to-firebase-hosting)
-* [Handling images on the web](#handling-images-on-the-web)
+* [Deploy WebAssembly in production](#deploy-webassembly-in-production)
+* [Deploy to the web](#deploying-to-the-web)
+* [Deploy to Firebase Hosting](#deploying-to-firebase-hosting)
+* [Handle images on the web](#handling-images-on-the-web)
 * [Minification](#minification)
 * [Mobile browser viewport and SafeArea](#mobile-browser-viewport-and-safearea)
 
-## Building the app for release
+## Build the app for release {:#building-the-app-for-release}
 
 Build the app for deployment using the `flutter build web` command.
 
@@ -182,7 +182,7 @@ so URL-hashed files aren't double-cached with query parameters).
 
 <a id="opting-in-to-webassembly" aria-hidden="true"></a>
 
-## Deploying WebAssembly in production {:#deploy-webassembly-in-production}
+## Deploy WebAssembly in production {:#deploy-webassembly-in-production}
 
 Running `flutter build web --wasm` produces a dual-target release bundle
 in `build/web`:
@@ -232,7 +232,8 @@ To shorten time-to-first-frame on cold cache loads:
   `{% raw %}{{flutter_bootstrap_js}}{% endraw %}`.
   Inlining eliminates an extra network round-trip before the browser begins
   downloading `main.dart.wasm` and the rendering engine.
-  For template syntax details, refer to [Bootstrapping][web-init-bootstrapping].
+  For template syntax details,
+  refer to [Bootstrap the app][web-init-bootstrapping].
 * **Trim initial bundle weight**:
   Release builds enable font icon tree shaking automatically
   (pass `--no-tree-shake-icons` only when debugging dynamic icon code points).
@@ -270,7 +271,7 @@ match the hosting architecture and privacy requirements:
   For configuration details,
   refer to [Customize the Flutter loader][web-init-loader].
 
-## Deploying to the web
+## Deploy to the web {:#deploying-to-the-web}
 
 When you are ready to deploy your app,
 upload the release bundle
@@ -282,7 +283,7 @@ many others:
 * [GitHub Pages][]
 * [Google Cloud Hosting][]
 
-## Deploying to Firebase Hosting
+## Deploy to Firebase Hosting {:#deploying-to-firebase-hosting}
 
 You can use the Firebase CLI to build and release your Flutter app with Firebase
 Hosting.
@@ -333,7 +334,7 @@ command:
 To learn more, visit the official [Firebase Hosting][] documentation for
 Flutter on the web.
 
-## Handling images on the web
+## Handle images on the web {:#handling-images-on-the-web}
 
 The web supports the standard `Image` widget to display images.
 By design, web browsers run untrusted code without harming the host computer.
@@ -390,7 +391,7 @@ In Flutter 3.50 and later, route strings passed to
 (such as `%2F`, `%26`, `%23`, and `%20`) when written to the browser's URL bar
 and history, rather than decoding them using `Uri.decodeComponent`.
 
-## Embedding a Flutter app into an HTML page
+## Embed a Flutter app into an HTML page {:#embedding-a-flutter-app-into-an-html-page}
 
 See [Embedding Flutter web][].
 

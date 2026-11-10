@@ -85,7 +85,7 @@ To customize how deferred `.wasm` modules are downloaded at runtime, provide a
 configuration.
 :::
 
-#### Wasm production debugging
+#### Debug Wasm builds in production {:#wasm-production-debugging}
 
 By default, Wasm release builds strip debug symbols and omit source maps
 to minimize binary size.
@@ -146,7 +146,7 @@ unless the server is configured to send specific HTTP headers.
 To learn more about these headers, check out
 [Load cross-origin resources without CORP headers using COEP: credentialless][coep].
 For production MIME types, pre-compression, cold-start optimization, and CDN
-serving, refer to [Deploying WebAssembly in production][deploy-wasm].
+serving, refer to [Deploy WebAssembly in production][deploy-wasm].
 
 [coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
 [deploy-wasm]: /deployment/web#deploy-webassembly-in-production
@@ -179,7 +179,7 @@ and CanvasKit build produced by `flutter build web --wasm`.
 [wasm-js-string]: https://github.com/WebAssembly/js-string-builtins
 [wasm-eh]: https://github.com/WebAssembly/exception-handling
 
-## Using compatible JS interop libraries {:#js-interop-wasm}
+## Use compatible JS interop libraries {:#js-interop-wasm}
 
 To support compilation to Wasm, Dart has modernized
 how it enables interop with browser and JavaScript APIs.
@@ -208,7 +208,7 @@ and the [package:web Zones section]({{site.dart-site}}/interop/js-interop/packag
 To learn more about JS interop in Dart,
 see Dart's [JS interop][] documentation page.
 
-### Diagnosing Wasm compilation errors {:#diagnosing-wasm-compilation-errors}
+### Diagnose Wasm compilation errors {:#diagnosing-wasm-compilation-errors}
 
 When compiling a Flutter web project with `--wasm`, if your application or its
 packages import unsupported web APIs (such as `dart:html` or `package:js`),
@@ -313,7 +313,7 @@ void logAnalyticsEvent(String eventName, Map<String, Object?> parameters) {
 }
 ```
 
-### Communicate with the host page using custom DOM events {:#decouple-embedded-views-with-customevent}
+### Communicate with the host page through custom DOM events {:#decouple-embedded-views-with-customevent}
 
 Rather than coupling Dart code directly to global JavaScript functions on the
 host page, dispatch standard DOM `CustomEvent` messages through `package:web`.
@@ -342,7 +342,7 @@ window.addEventListener('flutter:view-ready', (event) => {
 });
 ```
 
-### Measure startup and frame timing with the User Timing API {:#record-startup-and-frame-milestones}
+### Measure startup and frame milestones with the User Timing API {:#record-startup-and-frame-milestones}
 
 To record Flutter startup and interaction milestones in Chrome DevTools
 **Performance** traces and browser `PerformanceObserver` listeners, combine

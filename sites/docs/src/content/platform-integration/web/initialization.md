@@ -6,7 +6,7 @@ description: Customize how Flutter apps are initialized on the web.
 This page details the initialization process for Flutter web apps and
 how it can be customized.
 
-## Bootstrapping
+## Bootstrap the app {:#bootstrapping}
 
 The `flutter build web` command produces
 a script called `flutter_bootstrap.js` in
@@ -188,7 +188,7 @@ _flutter.loader.load({
 });
 ```
 
-## Example: Customizing Flutter configuration based on URL query parameters
+## Example: Customize Flutter configuration based on URL query parameters {:#example-customizing-flutter-configuration-based-on-url-query-parameters}
 
 The following example shows a custom `flutter_bootstrap.js` that enables
 single-threaded mode when a `force_st` query parameter is present in the URL:

@@ -1,5 +1,5 @@
 ---
-title: Adding Flutter to any web application
+title: Add Flutter to any web application
 shortTitle: Add Flutter to any web app
 description: Learn the different ways to embed Flutter views into web content.
 ---
@@ -40,7 +40,7 @@ check out [Customize app initialization][].
 
 [Customize app initialization]: /platform-integration/web/initialization
 
-### `iframe` embedding
+### Embed with an `iframe` {: #iframe-embedding }
 
 Full page mode is recommended when embedding a Flutter web application through an
 `iframe`. The page that embeds the `iframe` can size and position it as needed,
@@ -55,7 +55,7 @@ check out the [Inline Frame element][] docs on MDN.
 
 [Inline Frame element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 
-### Compare `iframe` and direct DOM embedding {: #compare-iframe-and-dom-embedding }
+### Compare `iframe` and direct DOM modes {: #compare-iframe-and-dom-embedding }
 
 When integrating Flutter into an existing web application,
 choose between `iframe` embedding and direct DOM embedding
@@ -122,7 +122,7 @@ let viewId = app.addView({
 let viewConfig = app.removeView(viewId);
 ```
 
-### Handling view changes from Dart
+### Handle view changes from Dart {: #handling-view-changes-from-dart }
 
 View additions and removals are surfaced to Flutter through the
 [`didChangeMetrics` method][] of the `WidgetsBinding` class.
@@ -248,7 +248,7 @@ void main() {
 [`runApp` function]: {{site.api}}/flutter/widgets/runApp.html
 [`runWidget` function]: {{site.api}}/flutter/widgets/runWidget.html
 
-### Identifying views
+### Identify views {: #identifying-views }
 
 Each `FlutterView` has an identifier assigned by Flutter when
 attached. This `viewId` can be used to uniquely identify each view,
