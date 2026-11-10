@@ -335,7 +335,7 @@ Download the Raleway and RobotoMono font files from [Google Fonts][].
    dependencies:
      flutter:
        sdk: flutter
-     material_ui: ^1.8.0
+     material_ui: ^1.11.0
 
    dev_dependencies:
      flutter_test:
