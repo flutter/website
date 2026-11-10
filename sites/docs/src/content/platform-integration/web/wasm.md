@@ -1,7 +1,8 @@
 ---
 title: Support for WebAssembly (Wasm)
 description: >-
-  Current status of Flutter's support for WebAssembly (Wasm).
+  Learn how to build, run, and interoperate with JavaScript and browser APIs in
+  Flutter WebAssembly (Wasm) apps.
 shortTitle: Wasm
 last-update: Nov 9, 2026
 ---
@@ -346,7 +347,11 @@ window.addEventListener('flutter:view-ready', (event) => {
 To record Flutter startup and interaction milestones in Chrome DevTools
 **Performance** traces and browser `PerformanceObserver` listeners, combine
 `WidgetsBinding.instance.addPostFrameCallback` with the browser's User Timing
-API (`window.performance.mark` and `window.performance.measure`):
+API (`window.performance.mark` and `window.performance.measure`).
+The `flutter_first_frame` mark records a timestamp relative to navigation start
+(`performance.timeOrigin`), while `flutter_first_frame_render` measures Dart
+execution from `main()` (after engine and `.wasm` instantiation) to the first
+rendered frame:
 
 ```dart title="main.dart"
 import 'dart:js_interop';
@@ -372,17 +377,21 @@ void main() {
 
 ### Batch calls across the Wasm-to-JS boundary
 
-In Wasm builds, Dart memory (managed WasmGC heap objects) is separate from the
-JavaScript heap.
-Crossing the Wasm-to-JS boundary to convert strings, lists, or maps incurs
-copying overhead when performed repeatedly.
+In Wasm builds, `dart2wasm` allocates Dart objects as WasmGC structs and arrays
+on the browser's garbage-collected heap and uses `wasm:js-string` builtins for
+zero-copy string references.
+However, Dart collections, maps, and typed lists use static WasmGC
+representations that differ from JavaScript `Array` and `Object` instances.
+Converting structured payloads with `.jsify()` or `.dartify()`, or invoking JS
+interop functions repeatedly in tight loops, allocates wrapper objects and
+copies collection elements across the Wasm-to-JS boundary.
 
 To keep frame times smooth:
 
-- Perform tight loops, filtering, and state aggregation in Dart on the Wasm
-  heap rather than calling JS getters or setters on each iteration.
+- Perform tight loops, filtering, and state aggregation in Dart on WasmGC
+  objects rather than calling JS getters or setters on each iteration.
 - Batch state or structured data updates into a single interop call per frame
-  or user action instead of invoking JS interop per list item.
+  or user action instead of invoking `.jsify()` or JS interop per list item.
 
 To learn more about how `dart2wasm` represents types and compiles interop calls,
 consult [Dart WebAssembly compilation][dart-wasm].

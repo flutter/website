@@ -422,7 +422,7 @@ to your host element:
 <div id="flutter_host"></div>
 ```
 
-## Best practices for host pages and third-party scripts {: #landing-pages-and-third-party-scripts }
+## Optimize host pages and third-party scripts {: #landing-pages-and-third-party-scripts }
 
 When embedding a Flutter view into an existing web page—such as a dashboard,
 content-rich page, or application that loads third-party scripts—apply the
@@ -434,13 +434,19 @@ cross-origin header conflicts.
 Downloading and initializing the Flutter engine during initial page load can
 compete with host HTML, CSS, and critical images for bandwidth and main-thread
 time.
+The default `flutter_bootstrap.js` script calls `_flutter.loader.load()`
+immediately when loaded.
 If an embedded Flutter view sits below the fold or opens on user interaction,
-delay calling `_flutter.loader.load()` using an `IntersectionObserver`
+create a custom `web/flutter_bootstrap.js` file that delays calling
+`_flutter.loader.load()` with an `IntersectionObserver`
 (or an event listener such as `click` or `pointerenter`).
 Deferring initialization keeps the host page's Largest Contentful Paint (LCP)
 fast and avoids main-thread contention while initial page content renders:
 
-```js title="lazy_flutter_loader.js"
+```js title="web/flutter_bootstrap.js"
+{% raw %}{{flutter_js}}{% endraw %}
+{% raw %}{{flutter_build_config}}{% endraw %}
+
 const hostElement = document.getElementById('flutter_host');
 
 const observer = new IntersectionObserver(
@@ -468,8 +474,8 @@ triggers a Cumulative Layout Shift (CLS) on the host page.
 
 To keep surrounding page content stable while Flutter initializes:
 
-* Size `#flutter_host` to its final layout dimensions upfront using explicit
-  `width` and `height` values or CSS `aspect-ratio`
+* Size `#flutter_host` to its final layout dimensions upfront by using explicit
+  `width` and `height` values or the CSS `aspect-ratio` property
   (for example, `width: 100%; aspect-ratio: 16 / 9;`).
 * Render a lightweight HTML or CSS skeleton placeholder inside `#flutter_host`
   that matches the reserved dimensions until Flutter paints its first frame.
@@ -477,7 +483,7 @@ To keep surrounding page content stable while Flutter initializes:
 ### Coexist with third-party cross-origin scripts and iframes {: #coexist-with-third-party-scripts }
 
 When building with `--wasm`, multi-threaded `skwasm` rendering requires
-cross-origin isolation (`COOP` and `COEP` response headers).
+cross-origin isolation (`COOP` and `COEP` HTTP response headers).
 On host pages that load third-party scripts, analytics, external images, or
 cross-origin embeds, choose the header strategy that matches the page:
 
@@ -491,20 +497,24 @@ cross-origin embeds, choose the header strategy that matches the page:
   Cross-origin `<iframe>` elements that don't opt in to COEP are blocked when
   the host document sets `Cross-Origin-Embedder-Policy`.
   When the host page embeds incompatible third-party iframes, omit the `COEP`
-  and `COOP` headers and configure `initializeEngine()` to run `skwasm` in
+  and `COOP` headers and pass a shared configuration object to both
+  `_flutter.loader.load()` and `initializeEngine()` to run `skwasm` in
   single-threaded mode:
 
-  ```js title="flutter_bootstrap.js"
+  ```js title="web/flutter_bootstrap.js"
   {% raw %}{{flutter_js}}{% endraw %}
   {% raw %}{{flutter_build_config}}{% endraw %}
 
+  const flutterConfig = {
+    multiViewEnabled: true,
+    forceSingleThreadedSkwasm: true,
+    suppressMultithreadingWarning: true,
+  };
+
   _flutter.loader.load({
+    config: flutterConfig,
     onEntrypointLoaded: async function(engineInitializer) {
-      const engine = await engineInitializer.initializeEngine({
-        multiViewEnabled: true,
-        forceSingleThreadedSkwasm: true,
-        suppressMultithreadingWarning: true,
-      });
+      const engine = await engineInitializer.initializeEngine(flutterConfig);
       const app = await engine.runApp();
       app.addView({
         hostElement: document.getElementById('flutter_host'),
@@ -513,6 +523,9 @@ cross-origin embeds, choose the header strategy that matches the page:
   });
   ```
 
+  Passing `flutterConfig` to `load()` configures the `skwasm` loader before
+  instantiation, while passing it to `initializeEngine()` applies runtime
+  engine settings such as `multiViewEnabled`.
   This configuration preserves `dart2wasm` and single-threaded `skwasm`
   execution without breaking third-party cross-origin iframes.
   For additional details about loader flags,

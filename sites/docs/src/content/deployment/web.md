@@ -215,8 +215,8 @@ and compression settings:
   `Cross-Origin-Embedder-Policy: credentialless` (or `require-corp`)
   on the document response to enable `SharedArrayBuffer` and
   multi-threaded `skwasm` rendering.
-  To learn more about `credentialless` isolation,
-  visit the [Chrome COEP credentialless guide][coep].
+  To learn more about configuring cross-origin isolation headers,
+  refer to the [COOP and COEP guide on web.dev][coep].
 * **Static pre-compression**:
   Pre-compress `.wasm`, `.mjs`, `.js`, font files, and asset manifests
   using Brotli (`br`) and Gzip (`gzip`) during CI/CD or at CDN ingest
@@ -255,11 +255,15 @@ match the hosting architecture and privacy requirements:
   directly into `build/web/canvaskit/` instead of fetching them from
   `gstatic.com` at runtime.
   When using `--web-content-hash`, bundled files under `canvaskit/**` remain
-  unhashed and should use revalidating cache headers.
+  unhashed and require revalidating cache headers.
 * **Serve static assets from a dedicated CDN**:
-  Pass `--static-assets-url=https://cdn.example.com/` to `flutter build web`
-  at build time, or configure `assetBase` and `entrypointBaseUrl` in
-  `_flutter.loader.load({ config: ... })` at runtime.
+  Configure `assetBase` and `entrypointBaseUrl` in
+  `_flutter.loader.load({ config: ... })` (and `canvasKitBaseUrl` when
+  self-hosting engine binaries on a CDN).
+  To inject a CDN prefix into `web/index.html` at build time, reference the
+  `$FLUTTER_STATIC_ASSETS_URL` placeholder in `web/index.html` and pass
+  `--static-assets-url=https://cdn.example.com/` (including the trailing `/`)
+  to `flutter build web`.
   When using `--enable-wasm-deferred-loading` with custom asset routing,
   provide a `wasmDeferredModulesLoader` callback to fetch deferred `.wasm`
   modules from the CDN.
@@ -392,7 +396,7 @@ See [Embedding Flutter web][].
 
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 
-[coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
+[coep]: https://web.dev/articles/coop-coep
 [dart-wasm]: {{site.dart-site}}/web/wasm
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /platform-integration/web/web-images

@@ -152,7 +152,7 @@ The `config` argument is an object that can have the following optional fields:
 |`suppressMultithreadingWarning`| When `true`, suppresses the console warning logged when `skwasm` runs single-threaded because `Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy` headers are absent. |`bool`|
 |`verboseBuildSelection`| When `true`, logs detailed `console.warn` diagnostics explaining why each candidate build in `_flutter.buildConfig.builds` was selected or skipped. |`bool`|
 |`wasmAllowList`| Browser engine allowlist (`{ blink?: boolean, webkit?: boolean, gecko?: boolean, unknown?: boolean }`) controlling which browser engines can run the `skwasm` + `dart2wasm` build when runtime WebAssembly feature probes pass (refer to [Support for WebAssembly][wasm-support]). Defaults to `{ blink: true, gecko: false, webkit: false, unknown: false }`. |`Object`|
-|`wasmDeferredModulesLoader`| Custom `(moduleNames: string[], onModuleLoaded: (moduleName: string, bytes: Uint8Array) => Promise<void>) => Promise<void>` hook used to fetch deferred `.wasm` modules when `--enable-wasm-deferred-loading` is enabled (refer to [Serve assets from a CDN or self-hosted origin][multi-asset-cdn]). |`Function`|
+|`wasmDeferredModulesLoader`| Custom `(moduleNames: string[], onModuleLoaded: (moduleName: string, module: Response \| Promise<Response> \| ArrayBuffer) => Promise<void>) => Promise<void>` hook used to fetch deferred `.wasm` modules when `--enable-wasm-deferred-loading` is enabled (refer to [Serve assets from a CDN or self-hosted origin][multi-asset-cdn]). |`Function`|
 
 {:.table}
 
@@ -242,21 +242,29 @@ The initialization process is split into the following stages:
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 :::warning
-When you provide your own `onEntrypointLoaded` callback, the `config`
-that you pass to `_flutter.loader.load()` is **not** forwarded to the
-engine automatically. Flutter only applies that `config` for you when
-you omit `onEntrypointLoaded` and let the loader start the app.
+When you provide a custom `onEntrypointLoaded` callback,
+`_flutter.loader.load()` consumes loader-stage options (such as
+`wasmAllowList`, `renderer`, `entrypointBaseUrl`,
+`forceSingleThreadedSkwasm`, `suppressMultithreadingWarning`,
+`verboseBuildSelection`, and `wasmDeferredModulesLoader`),
+but does **not** automatically forward `config` to
+`engineInitializer.initializeEngine()`.
 
-In a custom callback, pass the configuration to `initializeEngine()`
-yourself, otherwise it's silently ignored:
+Pass the configuration object to both `_flutter.loader.load()` and
+`initializeEngine()` so that both loader-stage and engine-stage settings
+(such as `multiViewEnabled`, `hostElement`, `assetBase`, and `nonce`)
+take effect:
 
 ```js
+const flutterConfig = {
+  renderer: 'canvaskit',
+  assetBase: 'https://cdn.example.com/app/',
+};
+
 _flutter.loader.load({
+  config: flutterConfig,
   onEntrypointLoaded: async function(engineInitializer) {
-    const appRunner = await engineInitializer.initializeEngine({
-      // Set your run-time configuration here.
-      renderer: 'canvaskit',
-    });
+    const appRunner = await engineInitializer.initializeEngine(flutterConfig);
     await appRunner.runApp();
   },
 });
