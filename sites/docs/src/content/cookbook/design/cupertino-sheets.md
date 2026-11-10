@@ -78,11 +78,7 @@ showCupertinoSheet<void>(
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter CupertinoSheet hands-on example in DartPad"
-// DartPad doesn't support `cupertino_ui` yet,
-// so this example imports Cupertino from the Flutter SDK.
-// To run locally, depend on `cupertino_ui` and use this import instead:
-// import 'package:cupertino_ui/cupertino_ui.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 void main() => runApp(const CupertinoSheetDemo());
 

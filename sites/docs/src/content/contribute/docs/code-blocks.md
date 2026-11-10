@@ -45,7 +45,7 @@ might start with the following code block:
 
 ````markdown
 ```dartpad title="Flutter provider example" dependencies="{flutter: {sdk: flutter}, provider: ^6.1.0}"
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 ```
 ````

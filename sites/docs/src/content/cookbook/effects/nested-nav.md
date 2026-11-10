@@ -379,11 +379,7 @@ Run the app:
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter nested navigation hands-on example in DartPad" height="640px"
-// DartPad doesn't support `material_ui` yet,
-// so this example imports Material from the Flutter SDK.
-// To run locally, depend on `material_ui` and use this import instead:
-// import 'package:material_ui/material_ui.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 const routeHome = '/';
 const routeSettings = '/settings';

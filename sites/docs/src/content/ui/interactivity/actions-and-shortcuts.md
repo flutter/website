@@ -425,12 +425,8 @@ shortcuts are logged.
 
 <?code-excerpt "ui/actions_and_shortcuts/lib/copyable_text.dart"?>
 ```dartpad title="Copyable text DartPad hands-on example"
-// DartPad doesn't support `material_ui` yet,
-// so this example imports Material from the Flutter SDK.
-// To run locally, depend on `material_ui` and use this import instead:
-// import 'package:material_ui/material_ui.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A text field that also has buttons to select all the text and copy the
 /// selected text to the clipboard.
