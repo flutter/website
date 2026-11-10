@@ -262,7 +262,7 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
           _buildSignInButton(hero: true),
           const p(classes: 'fc-hero-signup-caption', [
             .text(
-              "Sign in and we'll email you with updates to the livestream.",
+              "Sign in and we'll keep you updated with the latest from Flutter.",
             ),
           ]),
           ..._buildErrors(),
@@ -271,7 +271,9 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
         const div(classes: 'fc-swap-done', [
           div(classes: 'fc-hero-signup-done', [
             Icon(symbol: 'check_circle', filled: true),
-            span([.text("We'll keep you informed about the stream.")]),
+            span([
+              .text("We'll keep you updated with the latest from Flutter."),
+            ]),
           ]),
           _SwitchAccountButton(),
         ]),
@@ -282,7 +284,8 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
       div(classes: 'fc-swap-signin', [
         const p(classes: 'fc-signup-lede', [
           .text(
-            'Sign in with Google to stay informed about updates to the livestream.',
+            'Sign in with Google to stay updated on Flutter news, events, '
+            'and releases.',
           ),
         ]),
         _buildSignInButton(hero: false),
@@ -298,8 +301,10 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
                 ? 'We created your Google Developer Program profile, '
                       'joined the Flutter Developer Community, and '
                       'added Flutter and Dart to your interests. '
-                      "We'll let you know when the livestream is about to start."
-                : "We'll let you know when the livestream is about to start.",
+                      "We'll keep you updated on Flutter news, events, and "
+                      'releases.'
+                : "We'll keep you updated on Flutter news, events, and "
+                      'releases.',
           ),
         ]),
         const div(classes: 'fc-signup-success-actions', [
