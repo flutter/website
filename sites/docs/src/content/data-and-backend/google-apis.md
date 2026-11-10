@@ -51,11 +51,11 @@ To use Google APIs, follow these steps:
 
 ## 1. Pick the desired API
 
-From your Flutter project directory, add `googleapis` 18.0.0
+From your Flutter project directory, add `googleapis`
 and the packages for sign-in and authorization.
 
 ```console
-$ flutter pub add "googleapis:^18.0.0" googleapis_auth
+$ flutter pub add googleapis googleapis_auth
 $ flutter pub add google_sign_in extension_google_sign_in_as_googleapis_auth
 ```
 

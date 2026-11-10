@@ -28,9 +28,6 @@ check out [Available Firebase Flutter plugins][Firebase plugins].
 
 ## Connect a Flutter app to Firebase
 
-If your iOS or macOS app uses `firebase_core` 5.0.0 or later
-with Swift Package Manager, use Xcode 26.2 or later.
-
 To register your Flutter app with a Firebase project and generate
 platform configuration files, use the Firebase CLI and FlutterFire CLI:
 
