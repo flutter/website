@@ -107,7 +107,7 @@ To add Firestore to your game project, complete the following steps:
 1.  From the root of your game project, add the plugins and configure the app.
 
     ```console
-    $ flutter pub add "cloud_firestore:^7.1.0" "firebase_core:^5.1.0"
+    $ flutter pub add cloud_firestore firebase_core
     $ flutterfire configure
     ```
 

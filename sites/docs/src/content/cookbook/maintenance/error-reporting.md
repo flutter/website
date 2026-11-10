@@ -47,19 +47,19 @@ To get a DSN, use the following steps:
 
 ## 2. Import the Sentry package
 
-This recipe uses [`sentry_flutter`][] 10.3.0,
-which requires Flutter 3.44 or later and Dart 3.12 or later.
-Check the requirements for the platforms you target.
+This recipe uses the [`sentry_flutter`][] package.
+Before you add it, check the requirements for the platforms you target:
 
-- On Android, set your app's [`minSdk`][android-sdk] to 26 or higher.
+- On Android, ensure your app's [`minSdk`][android-sdk] meets
+  the plugin's minimum Android SDK version.
 - On iOS and macOS, use [Swift Package Manager][swiftpm].
   On macOS, [allow outgoing network connections][macos-network]
   so the app can send error reports.
 
-From your Flutter project directory, add the package.
+From your Flutter project directory, add the package:
 
 ```console
-$ flutter pub add "sentry_flutter:^10.3.0"
+$ flutter pub add sentry_flutter
 ```
 
 [android-sdk]: /deployment/android#android-sdk-versions
