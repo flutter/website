@@ -216,7 +216,7 @@ at the end of a scroll view.
 Finally, `TreeSliver` clips expanding and collapsing branches cleanly
 so animated child rows never overlap neighboring items.
 
-<DashImage figure src="images/sliver_clip_rrect.gif" width="320px" alt="Animated demo of SliverClipRRect clipping scrolling sliver content to rounded corners." caption="`SliverClipRRect` rounds and clips scrolling sections without cutting off pinned headers." />
+<DashImage figure src="images/sliver_clip_rrect.webp" width="320px" alt="Animated demo of SliverClipRRect clipping scrolling sliver content to rounded corners." caption="`SliverClipRRect` rounds and clips scrolling sections without cutting off pinned headers." />
 
 ### Text input and selection
 
@@ -261,7 +261,7 @@ Color animations using `HSVColor.lerp` and `HSLColor.lerp`
 now take the shortest path around the color wheel,
 avoiding unexpected color shifts.
 
-<DashImage figure src="images/decoration_image_placeholder.gif" width="320px" alt="Animated demo of DecorationImage displaying blurred placeholder cards before loading crisp full-resolution images." caption="`DecorationImage.placeholder` displays a fallback image while container background images load." />
+<DashImage figure src="images/decoration_image_placeholder.webp" width="320px" alt="Animated demo of DecorationImage displaying blurred placeholder cards before loading crisp full-resolution images." caption="`DecorationImage.placeholder` displays a fallback image while container background images load." />
 
 ### Accessibility and navigation
 
@@ -387,7 +387,7 @@ We have more work underway to drive iOS input latency down even further
 in upcoming releases.
 Stay tuned.
 
-<DashImage figure src="images/ios_touch_smoothing.gif" alt="Side-by-side comparison showing faster iOS touch response in Flutter 3.50." caption="Faster iOS touch scheduling reduces input latency by a full frame in Flutter 3.50." />
+<DashImage figure src="images/ios_touch_smoothing.webp" alt="Side-by-side comparison showing faster iOS touch response in Flutter 3.50." caption="Faster iOS touch scheduling reduces input latency by a full frame in Flutter 3.50." />
 
 **Learn more**: [iOS touch input latency benchmarks (\#191199)](https://github.com/flutter/flutter/issues/191199)
 
