@@ -56,6 +56,7 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
       // Exclude secondary Markdown output files from sitemap.
       r'--sitemap-exclude=\.md$',
       '--dart-define=PRODUCTION=$productionRelease',
+      if (!productionRelease) ...nonProductionDartDefines(),
     ],
     workingDirectory: site.directory,
     mode: ProcessStartMode.inheritStdio,

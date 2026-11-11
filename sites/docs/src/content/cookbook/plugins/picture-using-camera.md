@@ -39,6 +39,8 @@ take a photo, and display it using the following steps:
   5. Take a picture with the `CameraController`.
   6. Display the picture with an `Image` widget.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the required dependencies
 
 To complete this recipe, you need to add three dependencies to your app:

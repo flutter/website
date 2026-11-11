@@ -12,9 +12,9 @@ dependencies:
     path: ../../packages/dash_media_convert
   excerpter:
     path: ../../packages/excerpter
-  github: ^9.25.1
+  github: ^9.26.0
   glob: ^2.2.0
-  io: ^1.0.5
+  io: ^1.1.0
   linkcheck: ^3.1.0
   path: ^1.9.1
 

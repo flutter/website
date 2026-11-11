@@ -11,11 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  material_ui: ^1.8.0
+  material_ui: ^1.11.0
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^2.0.0
-  cupertino_ui: ^1.1.4
+  cupertino_ui: ^1.1.6
   http: ^1.6.0
 
 dev_dependencies:

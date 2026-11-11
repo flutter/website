@@ -30,6 +30,8 @@ To follow the discussion on this issue,
 check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}/issues/45296).
 :::
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Find the correct local path
 
 This example displays a counter. When the counter changes,

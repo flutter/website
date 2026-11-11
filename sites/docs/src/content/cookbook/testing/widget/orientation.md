@@ -22,6 +22,8 @@ This recipe uses the following steps:
   1.  Create a landscape orientation test.
   1.  Run the tests.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create an app that updates based on orientation
 
 Create a Flutter app that changes how many columns are shown when an
