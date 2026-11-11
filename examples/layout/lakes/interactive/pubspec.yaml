@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  material_ui: ^1.8.0
+  material_ui: ^1.11.0
   cupertino_icons: ^2.0.0
 
 dev_dependencies:

@@ -17,6 +17,8 @@ This recipe uses the following steps:
   5. Update the existing `title` from user input.
   6. Update and display the response on screen.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `http` package
 
 To add the `http` package as a dependency,
