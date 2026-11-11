@@ -1,9 +1,10 @@
 ---
 title: Support for WebAssembly (Wasm)
 description: >-
-  Current status of Flutter's support for WebAssembly (Wasm).
+  Learn how to build, run, and interoperate with JavaScript and browser APIs in
+  Flutter WebAssembly (Wasm) apps.
 shortTitle: Wasm
-last-update: Oct 16, 2026
+last-update: Nov 9, 2026
 ---
 
 Flutter and Dart support
@@ -84,14 +85,14 @@ To customize how deferred `.wasm` modules are downloaded at runtime, provide a
 configuration.
 :::
 
-#### Wasm production debugging
+#### Debug Wasm builds in production {:#wasm-production-debugging}
 
 By default, Wasm release builds strip debug symbols and omit source maps
 to minimize binary size.
 
 - **For error monitoring (recommended)**: Pass `--source-maps` to generate
   a `main.dart.wasm.map` file for symbolication in error tracking services.
-  For security recommendations and deployment warnings, see
+  For security recommendations and deployment warnings, refer to
   [Source maps](/deployment/web#source-maps).
 - **For staging or QA builds**: Pass `--no-strip-wasm` to preserve Wasm
   function names directly in browser console stack traces, at the cost of
@@ -136,26 +137,28 @@ unless the server is configured to send specific HTTP headers.
 :::
 
 | Name | Value |
-|-|-|
-| `Cross-Origin-Embedder-Policy` | `credentialless` <br> or <br> `require-corp` |
+| :--- | :--- |
+| `Cross-Origin-Embedder-Policy` | `credentialless` or `require-corp` |
 | `Cross-Origin-Opener-Policy` | `same-origin` |
 
-{:.table}
+{:.table .table-striped}
 
 To learn more about these headers, check out
 [Load cross-origin resources without CORP headers using COEP: credentialless][coep].
+For production MIME types, pre-compression, cold-start optimization, and CDN
+serving, refer to [Deploy WebAssembly in production][deploy-wasm].
 
 [coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
+[deploy-wasm]: /deployment/web#deploy-webassembly-in-production
 
 ## Learn more about browser compatibility
 
-In Flutter 3.50 and later, running a Flutter app compiled to Wasm (`dart2wasm` +
-`skwasm`) requires a browser that supports three standardized WebAssembly
-features:
-
-* [WasmGC][] (Garbage Collection)
-* [JS String Builtins][wasm-js-string] (`wasm:js-string`)
-* [Phase 4 Exception Handling][wasm-eh] (`try_table` / `exnref`)
+In Flutter 3.50 and later, running a Flutter app compiled to WebAssembly
+(`dart2wasm`) requires a browser that supports [WasmGC][],
+[JS String Builtins][wasm-js-string] (`wasm:js-string`), and
+[Phase 4 Exception Handling][wasm-eh] (`try_table` and `exnref`).
+For architectural details on how Dart uses these proposals, refer to
+[Dart WebAssembly compilation][dart-wasm].
 
 At startup, `flutter_bootstrap.js` probes the browser's WebAssembly engine for
 these features and checks the `wasmAllowList` configuration before selecting the
@@ -165,17 +168,17 @@ and CanvasKit build produced by `flutter build web --wasm`.
 
 | Browser engine | Minimum version for Wasm | Default behavior in Flutter 3.50 (`--wasm`) | How to enable Wasm |
 | :--- | :--- | :--- | :--- |
-| **Chromium** (Chrome, Edge, Opera, Brave) | **137+** (Desktop & Android) | Runs `dart2wasm` + `skwasm` by default; Chrome `< 137` falls back to `dart2js` + CanvasKit. | Enabled by default (`wasmAllowList.blink: true`). |
+| **Chromium** (Chrome, Edge, Opera, Brave) | **137+** (Desktop & Android) | Runs WebAssembly (`dart2wasm`) by default; Chrome `< 137` falls back to `dart2js` + CanvasKit. | Enabled by default (`wasmAllowList.blink: true`). |
 | **WebKit** (Safari macOS & iOS, all iOS browsers) | **Safari 26.2+** (macOS & iOS 26.2+) | Falls back to `dart2js` + CanvasKit by default (`wasmAllowList.webkit: false`). | Set `wasmAllowList: { webkit: true }` in [Flutter web app initialization][]. Safari `<= 26.1` automatically falls back to `dart2js` + CanvasKit via runtime feature detection. |
 | **Gecko** (Firefox) | **Firefox 147+** | Falls back to `dart2js` + CanvasKit by default (`wasmAllowList.gecko: false`). | Set `wasmAllowList: { gecko: true }` in [Flutter web app initialization][]. Firefox `< 147` automatically falls back to `dart2js` + CanvasKit. |
 
-{:.table}
+{:.table .table-striped}
 
 [WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [wasm-js-string]: https://github.com/WebAssembly/js-string-builtins
 [wasm-eh]: https://github.com/WebAssembly/exception-handling
 
-## Using compatible JS interop libraries {:#js-interop-wasm}
+## Use compatible JS interop libraries {:#js-interop-wasm}
 
 To support compilation to Wasm, Dart has modernized
 how it enables interop with browser and JavaScript APIs.
@@ -204,7 +207,7 @@ and the [package:web Zones section]({{site.dart-site}}/interop/js-interop/packag
 To learn more about JS interop in Dart,
 see Dart's [JS interop][] documentation page.
 
-### Diagnosing Wasm compilation errors {:#diagnosing-wasm-compilation-errors}
+### Diagnose Wasm compilation errors {:#diagnosing-wasm-compilation-errors}
 
 When compiling a Flutter web project with `--wasm`, if your application or its
 packages import unsupported web APIs (such as `dart:html` or `package:js`),
@@ -279,6 +282,79 @@ import 'fallback.dart'
 To learn more about selecting implementations at compile time, see the
 [conditional imports documentation on dart.dev]({{site.dart-site}}/interop/js-interop/package-web#conditional-imports).
 
+## Interoperate with host pages and browser APIs {:#host-scripts-and-measurement-apis}
+
+For `@JS()` extension-type syntax, WasmGC representation details, and boundary
+performance guidelines, refer to
+[WebAssembly support in JS interop][js-interop-wasm-dart] and
+[Dart WebAssembly compilation][dart-wasm].
+The following patterns cover Flutter-specific integration with host pages and
+browser performance APIs.
+
+### Communicate with the host page through custom DOM events {:#decouple-embedded-views-with-customevent}
+
+Rather than coupling Dart code directly to global JavaScript functions on the
+host page, dispatch standard DOM `CustomEvent` messages through `package:web`.
+Host scripts can subscribe and unsubscribe independently by calling the
+`window.addEventListener()` method:
+
+```dart title="host_events.dart"
+import 'dart:js_interop';
+import 'package:web/web.dart' as web;
+
+void notifyHostPage(String eventName, Map<String, Object?> payload) {
+  web.window.dispatchEvent(
+    web.CustomEvent(
+      eventName,
+      web.CustomEventInit(detail: payload.jsify(), bubbles: true),
+    ),
+  );
+}
+```
+
+On the host page, listen for the custom event:
+
+```js title="host_page.js"
+window.addEventListener('flutter:view-ready', (event) => {
+  console.log('Flutter view ready:', event.detail);
+});
+```
+
+### Measure startup and frame milestones with the User Timing API {:#record-startup-and-frame-milestones}
+
+To record Flutter startup and interaction milestones in the Chrome DevTools
+**Performance** panel and browser `PerformanceObserver` listeners, combine
+`WidgetsBinding.instance.addPostFrameCallback` with the browser's User Timing
+API (`window.performance.mark` and `window.performance.measure`).
+The `flutter_first_frame` mark records a timestamp relative to navigation start
+(`performance.timeOrigin`).
+The `flutter_first_frame_render` measure tracks Dart execution from `main()`
+(after engine and `.wasm` module instantiation) to the first rendered frame:
+
+```dart title="main.dart"
+import 'dart:js_interop';
+import 'package:flutter/widgets.dart';
+import 'package:web/web.dart' as web;
+
+void main() {
+  web.window.performance.mark('flutter_main_start');
+  WidgetsFlutterBinding.ensureInitialized();
+
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    web.window.performance.mark('flutter_first_frame');
+    web.window.performance.measure(
+      'flutter_first_frame_render',
+      'flutter_main_start'.toJS,
+      'flutter_first_frame',
+    );
+  });
+
+  runApp(const MyApp());
+}
+```
+
+[dart-wasm]: {{site.dart-site}}/web/wasm
+[js-interop-wasm-dart]: {{site.dart-site}}/interop/js-interop#wasm-support
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
 [JS interop]: {{site.dart-site}}/interop/js-interop
