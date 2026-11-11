@@ -23,6 +23,8 @@ This recipe uses the following steps:
   3. Convert the response into a custom Dart object.
   4. Fetch and display the data with Flutter.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `http` package
 
 The [`http`][] package provides the
