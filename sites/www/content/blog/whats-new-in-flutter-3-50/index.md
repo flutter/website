@@ -1,6 +1,6 @@
 ---
-title: "What’s new in Flutter 3.50"
-description: "Investing in Flutter’s next decade"
+title: "What's new in Flutter 3.50"
+description: "Investing in Flutter's next decade"
 publishDate: 2026-11-11
 author: twerske
 coverImage:
@@ -19,16 +19,16 @@ letting you call between Dart and native platform APIs.
 Faster WebAssembly across Safari and Firefox,
 alongside browser-native text layout,
 gives Flutter web apps a major speed boost.
-We’ve also expanded our platform embedder APIs for custom hardware,
+We've also expanded our platform embedder APIs for custom hardware,
 and now the standalone `material_ui` and `cupertino_ui` packages
 are the default for new projects.
 
-As always, we couldn’t do any of this without the Flutter community
+As always, we couldn't do any of this without the Flutter community
 and all of your contributions across the framework and ecosystem.
 In this release cycle alone, **188 contributors**, including **69 first-time
 contributors**, landed over **1,200 commits**.
 So, run `flutter upgrade` in your terminal to get the latest release,
-or read on to explore what’s new.
+or read on to explore what's new.
 
 ## Direct native interoperability
 
@@ -39,8 +39,8 @@ and mandatory async latency of traditional platform channels.
 In Flutter 3.50, that multi-year investment reaches production readiness:
 [FFIgen](https://pub.dev/packages/ffigen) for Objective-C and
 [JNIgen](https://pub.dev/packages/jnigen) for Java and Kotlin
-join FFIgen’s long-standing C support as stable.
-You can also preview [Pigeon’s](https://pub.dev/packages/pigeon)
+join FFIgen's long-standing C support as stable.
+You can also preview [Pigeon's](https://pub.dev/packages/pigeon)
 new native interop mode,
 which uses both generators to create type-safe bindings under the hood.
 
@@ -52,7 +52,7 @@ Use FFIgen to bind C and Objective-C APIs,
 or use JNIgen to bind Android system APIs
 and custom Java or Kotlin libraries in your Flutter and Dart apps.
 When building multi-platform plugins,
-Pigeon’s native interop mode handles data conversion
+Pigeon's native interop mode handles data conversion
 and native lifetimes automatically on iOS, macOS, and Android.
 
 <DashImage figure src="images/native_interop_runtime.webp" alt="Diagram comparing traditional MethodChannels serialization with direct generated JNI and FFI host API calls." caption="Direct native interoperability skips platform-channel serialization to call native APIs directly through FFI and JNI." />
@@ -124,7 +124,7 @@ replacing the deprecated `flutter_service_worker.js` tokens.
 Flutter web apps and plugins use JS interop libraries
 to access browser features like local storage
 or wrap third-party JavaScript SDKs.
-Dart’s older JS-only libraries
+Dart's older JS-only libraries
 (`dart:html`, `dart:js`, `dart:js_util`, and `package:js`)
 are now deprecated in favor of `dart:js_interop` and `package:web`.
 These modern replacements work across both JavaScript and WebAssembly builds,
@@ -141,7 +141,7 @@ helping you prepare for WebAssembly.
 ### Native browser text layout preview
 
 Built in collaboration with the Chrome team
-on Chrome’s experimental Enhanced `TextMetrics` API,
+on Chrome's experimental Enhanced `TextMetrics` API,
 `WebParagraph` lets the browser shape operating-system fonts
 directly on the canvas instead of bundling C++ font parsers.
 Delegating text layout to the browser shrinks the CanvasKit download
@@ -156,7 +156,7 @@ and renders native color emojis.
 
 Following up on our
 [Google I/O Pluggable Platforms announcement](https://youtu.be/I1uIbGh1dGE?t=2294),
-we’re continuing to make Flutter easier to port
+we're continuing to make Flutter easier to port
 to new operating systems and hardware.
 In Flutter 3.50, we closed two key gaps
 in the underlying Impeller and Vulkan embedder APIs.
@@ -165,7 +165,7 @@ added Vulkan external texture support so custom embedders can
 [pass textures directly to the engine](https://github.com/flutter/flutter/pull/188855)
 for sampling across Impeller and Skia backends.
 Custom embedders can now invoke `FlutterEngineNotifyLowMemoryWarning` to
-[purge Impeller’s offscreen render target cache](https://github.com/flutter/flutter/pull/193497)
+[purge Impeller's offscreen render target cache](https://github.com/flutter/flutter/pull/193497)
 immediately under memory pressure.
 
 ## Decoupled design packages
@@ -242,7 +242,7 @@ when mixing left-to-right and right-to-left scripts.
 ### Image and painting APIs
 
 Community contributors also rounded out
-Flutter’s image loading and caching APIs.
+Flutter's image loading and caching APIs.
 [Kishan Rathore](https://github.com/rkishan516) added
 a `placeholder` `ImageProvider` to `DecorationImage`
 so container backgrounds can display a fallback image while loading.
@@ -270,7 +270,7 @@ and dialog customization across platforms.
 Custom slider widgets can now use `SemanticsRole.slider`
 so screen readers announce their values and controls accurately.
 Apps can check `MediaQueryData.reduceMotion`
-to detect the user’s Reduce Motion setting
+to detect the user's Reduce Motion setting
 and swap slide animations for gentle fades.
 Pressing Escape now closes open `Tooltip` and `RawTooltip` overlays
 without moving keyboard focus, meeting web accessibility standards.
@@ -293,7 +293,7 @@ In partnership with Canonical, and thanks to maintainers
 [Robert Ancell](https://github.com/robert-ancell),
 [Matthew Kosarek](https://github.com/mattkae),
 and [Matej Knopp](https://github.com/knopp),
-Flutter’s experimental multi-window desktop APIs
+Flutter's experimental multi-window desktop APIs
 continue to mature across Linux, macOS, and Windows.
 On Linux, apps can build custom title bars, transparent windows,
 and native drag-to-move or resize controls using `WindowControllerLinux`.
@@ -303,7 +303,7 @@ preventing a visible resize flash on launch.
 Across all three desktop platforms,
 `RegularWindow` is now named `Window` for simpler multi-window code.
 Its `shrinkWrap` property also replaces `sizedToContent`
-to match Flutter’s familiar layout naming.
+to match Flutter's familiar layout naming.
 Finally, `WindowManager` now sits above `WidgetsApp`
 so secondary windows can run their own independent UI and navigation state.
 
@@ -311,14 +311,14 @@ so secondary windows can run their own independent UI and navigation state.
 
 ## Engine
 
-Under the hood, Flutter 3.50 expands Impeller’s
+Under the hood, Flutter 3.50 expands Impeller's
 hardware-accelerated primitive rendering,
 improves mobile GPU stability,
 and upgrades Windows and Linux graphics fidelity.
 
 ### Impeller rendering
 
-Impeller’s Signed Distance Field (SDF) renderer
+Impeller's Signed Distance Field (SDF) renderer
 for macOS, Linux, and Windows draws sharp borders, shapes, and gradients
 directly on the GPU instead of calculating complex geometry on the CPU.
 This lowers frame render times and keeps scrolling and animations smooth,
@@ -334,7 +334,7 @@ Flutter GPU also reports clearer Dart error messages
 when a shader pipeline is misconfigured,
 helping you catch and fix graphics bugs faster.
 
-<DashImage figure src="images/impeller_sdf_vs_msaa.webp" alt="Side-by-side zoomed pixel comparison showing smooth anti-aliased diagonal edges rendered with Impeller SDF versus stepped edges with MSAA." caption="Impeller’s Signed Distance Field (SDF) renderer draws crisp, anti-aliased edges directly on the GPU." />
+<DashImage figure src="images/impeller_sdf_vs_msaa.webp" alt="Side-by-side zoomed pixel comparison showing smooth anti-aliased diagonal edges rendered with Impeller SDF versus stepped edges with MSAA." caption="Impeller's Signed Distance Field (SDF) renderer draws crisp, anti-aliased edges directly on the GPU." />
 
 Community contributors also landed high-impact OpenGL startup
 and GPU stability fixes.
@@ -407,10 +407,10 @@ straight from your terminal during debugging.
 ### Swift Package Manager transition
 
 With the CocoaPods trunk becoming read-only in December 2026,
-Flutter’s temporary CocoaPods fallback is winding down.
+Flutter's temporary CocoaPods fallback is winding down.
 Starting in Flutter 3.50, disabling Swift Package Manager
 triggers a warning on every Flutter CLI command.
-In a future release, we’ll remove the opt-out flag
+In a future release, we'll remove the opt-out flag
 and eventually the CocoaPods fallback itself.
 If you previously disabled Swift Package Manager
 to work around a build issue, re-enable it now to verify your setup.
@@ -434,13 +434,13 @@ before it becomes the default in an upcoming release.
 
 On Android, Flutter 3.50 hardens release-mode `Intent` security,
 expands Hybrid Composition++ for platform views,
-and unlocks opt-in support for Android Gradle Plugin 9’s new DSL.
+and unlocks opt-in support for Android Gradle Plugin 9's new DSL.
 
 ### Intent security hardening
 
 Previously, Android apps built with Flutter accepted
 runtime `Intent` configuration extras
-from any app installed on a user’s device.
+from any app installed on a user's device.
 Flutter 3.50 closes this vulnerability in release builds
 while keeping standard deep linking intact:
 release builds ignore `route`, `dart_entrypoint`,
@@ -456,7 +456,7 @@ now requires profile mode or a fresh build.
 
 ### Hybrid Composition++
 
-Hybrid Composition++ (HCPP) is Flutter’s newest platform view architecture
+Hybrid Composition++ (HCPP) is Flutter's newest platform view architecture
 for embedding native Android views such as maps and web views
 without the scroll tearing or text-input glitches
 of older compositing modes.
@@ -472,7 +472,7 @@ and is now enabled by default on the beta channel as of 3.49.0-0.1.pre.
 It will become the stable default in a future release.
 Keep in mind that **HCPP requires Android 14 (API 34) or higher
 and Impeller running on Vulkan**;
-on devices that don’t meet both requirements,
+on devices that don't meet both requirements,
 Flutter automatically falls back to your existing platform view mode.
 On a supported API 34+ Vulkan device,
 run `flutter config --enable-hcpp`
@@ -483,13 +483,13 @@ and watch `logcat` in debug mode for
 
 ### Built-in Kotlin for plugins
 
-As introduced in [What’s new in Flutter 3.44](/blog/whats-new-in-flutter-3-44),
+As introduced in [What's new in Flutter 3.44](/blog/whats-new-in-flutter-3-44),
 Flutter plugins with Android code must migrate directly
-to the Android Gradle Plugin’s Built-in Kotlin.
+to the Android Gradle Plugin's Built-in Kotlin.
 Plugins that still manually apply the Kotlin Gradle Plugin (KGP), even
 behind an AGP version guard, will receive lower `pub.dev` scores
 in the future and will fail to build under AGP 10.
-Update your plugin’s Gradle configuration,
+Update your plugin's Gradle configuration,
 set your minimum SDK constraint to `flutter: ">=3.44.0"` in `pubspec.yaml`,
 and note the change in your `CHANGELOG.md`.
 
@@ -502,7 +502,7 @@ we rewrote the Flutter Gradle Plugin against the modern public
 Android Gradle Plugin 9 APIs rather than legacy `BaseExtension` internals.
 We also migrated all first-party plugins in `flutter/packages`
 to support Built-in Kotlin across their supported AGP versions.
-On Flutter 3.50 stable, you can opt your app into AGP 9’s new DSL
+On Flutter 3.50 stable, you can opt your app into AGP 9's new DSL
 once every plugin in your project supports Built-in Kotlin.
 
 **Learn more**: [Built-in Kotlin migration guide for app developers](https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers)
@@ -512,7 +512,7 @@ once every plugin in your project supports Built-in Kotlin.
 New Android projects generated by Flutter 3.50 use
 **Android Gradle Plugin (AGP) 9.3.1** and **Gradle 9.5.0**,
 verified against **Kotlin Gradle Plugin 2.4.20** and a minimum of **Java 17**.
-When your project uses AGP’s Built-in Kotlin,
+When your project uses AGP's Built-in Kotlin,
 Flutter no longer prints Kotlin version warnings
 because AGP manages Kotlin compatibility directly.
 The default SDK variables exposed to your Gradle build files in this release
@@ -575,7 +575,7 @@ streaming flows, tool calling, and OpenTelemetry tracing.
 
 ### On-device AI with MediaPipe
 
-Google AI Edge’s new MediaPipe package on `pub.dev`
+Google AI Edge's new MediaPipe package on `pub.dev`
 brings 20 on-device vision, audio, and text tasks,
 powered by LiteRT and LiteRT-LM, straight to Flutter apps.
 Running these models directly on the device
@@ -671,7 +671,7 @@ Two framework cleanups also land in this release:
 
 Thank you to every contributor across the community
 who filed issues, reviewed designs, and landed pull requests
-to help shape Flutter’s next decade.
+to help shape Flutter's next decade.
 Flutter 3.50 arrives fresh from the oven alongside
 [Dart 3.14](https://dart.dev/blog/announcing-dart-3-14).
 Upgrade your SDK today to try everything in this release:
