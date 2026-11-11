@@ -24,8 +24,8 @@ and now the standalone `material_ui` and `cupertino_ui` packages
 are the default for new projects.
 
 As always, we couldn’t do any of this without the Flutter community
-and all of your contributions across the framework and ecosystem—in this
-release cycle alone, **188 contributors**, including **69 first-time
+and all of your contributions across the framework and ecosystem.
+In this release cycle alone, **188 contributors**, including **69 first-time
 contributors**, landed over **1,200 commits**.
 So, run `flutter upgrade` in your terminal to get the latest release,
 or read on to explore what’s new.
@@ -46,7 +46,7 @@ which uses both generators to create type-safe bindings under the hood.
 
 For any native integration,
 you can now skip platform-channel message passing
-and call between Dart and platform code directly—including synchronously
+and call between Dart and platform code directly, including synchronously
 or from background isolates.
 Use FFIgen to bind C and Objective-C APIs,
 or use JNIgen to bind Android system APIs
@@ -378,9 +378,9 @@ contributed by community member [Matej Knopp](https://github.com/knopp),
 delivers touch events to the framework immediately
 so the frame builds in the same display refresh
 rather than waiting for the next vsync.
-The result is a full frame less input latency—**16 ms faster
-on 60 Hz iOS devices** and **8 ms faster on 120 Hz ProMotion displays**—verified
-through extensive benchmarking
+The result is a full frame less input latency (**16 ms faster
+on 60 Hz iOS devices** and **8 ms faster on 120 Hz ProMotion displays**),
+verified through extensive benchmarking
 on hardware going all the way back to the 2015 iPhone 6S.
 We have more work underway to drive iOS input latency down even further
 in upcoming releases.
@@ -393,8 +393,8 @@ Stay tuned.
 ### Debugging on iOS 27
 
 Running an app on a newly paired or freshly upgraded iPhone
-no longer stalls on a white screen until you open Xcode once—the
-Flutter CLI now prepares the device automatically
+no longer stalls on a white screen until you open Xcode once.
+The Flutter CLI now prepares the device automatically
 and tells you what to do if preparation fails.
 Flutter 3.50 also resolves intermittent launch crashes
 when running `flutter run` on iOS 27 devices.
@@ -485,8 +485,8 @@ and watch `logcat` in debug mode for
 As introduced in [What’s new in Flutter 3.44](/blog/whats-new-in-flutter-3-44),
 Flutter plugins with Android code must migrate directly
 to the Android Gradle Plugin’s Built-in Kotlin.
-Plugins that still manually apply the Kotlin Gradle Plugin (KGP)—even
-behind an AGP version guard—will receive lower `pub.dev` scores
+Plugins that still manually apply the Kotlin Gradle Plugin (KGP), even
+behind an AGP version guard, will receive lower `pub.dev` scores
 in the future and will fail to build under AGP 10.
 Update your plugin’s Gradle configuration,
 set your minimum SDK constraint to `flutter: ">=3.44.0"` in `pubspec.yaml`,
@@ -531,7 +531,7 @@ Flutter 3.50 expands first-party tooling for teams
 building with AI coding assistants.
 The official Flutter agent plugins bundle task-oriented agent skills,
 Dart and Flutter MCP server configuration, specialized agents,
-and persistent agent rules—including a proactive hot reload rule
+and persistent agent rules, including a proactive hot reload rule
 (`flutter-hot-reload`) that triggers `hot_reload` or `hot_restart`
 through the MCP server after edits under `lib/`.
 
