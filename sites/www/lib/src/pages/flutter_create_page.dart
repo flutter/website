@@ -186,13 +186,13 @@ class _HeroCard extends StatelessComponent {
           iframe(
             src: _livestreamEmbedUrl,
             classes: 'fc-hero-video',
-            allow:
-                'accelerometer; autoplay; clipboard-write; encrypted-media; '
-                'gyroscope; picture-in-picture; web-share',
-            referrerPolicy: ReferrerPolicy.strictOriginWhenCrossOrigin,
             attributes: {
               'title': 'Flutter Create livestream',
               'allowfullscreen': '',
+              'allow':
+                  'accelerometer; autoplay; clipboard-write; encrypted-media; '
+                  'gyroscope; picture-in-picture; web-share',
+              'referrerpolicy': 'strict-origin-when-cross-origin',
             },
             [],
           ),
