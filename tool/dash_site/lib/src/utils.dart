@@ -91,6 +91,13 @@ String? nonEmpty(String? value) {
   return value;
 }
 
+/// Additional `--dart-define` arguments forwarded from process environment
+/// variables for non-production site builds and local dev servers.
+List<String> nonProductionDartDefines() => [
+  if (nonEmpty(Platform.environment['GDP_OAUTH_CLIENT_ID']) case final value?)
+    '--dart-define=GDP_OAUTH_CLIENT_ID=$value',
+];
+
 extension ArgResultExtensions on ArgResults? {
   /// Assuming its type is [T], get the value specified for
   /// the argument named [key], or the [defaultValue] if not specified.
