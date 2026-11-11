@@ -157,7 +157,7 @@ and renders native color emojis.
 Following up on our
 [Google I/O Pluggable Platforms announcement](https://youtu.be/I1uIbGh1dGE?t=2294),
 we’re continuing to make Flutter easier to port
-to operating systems and hardware.
+to new operating systems and hardware.
 In Flutter 3.50, we closed two key gaps
 in the underlying Impeller and Vulkan embedder APIs.
 Community contributor [xiaowei-guan](https://github.com/xiaowei-guan)
@@ -250,7 +250,7 @@ so container backgrounds can display a fallback image while loading.
 `FadeInImageTransition.fadeInOver` to fade images smoothly
 over opaque placeholders without a blank flash.
 [Koji Wakamiya](https://github.com/koji-1009) added
-`useLogicalPixels` on `ResizeImage` and `useLogicalCacheSize` on `Image`
+`useLogicalSize` on `ResizeImage` and `useLogicalCacheSize` on `Image`
 to scale cached images to screen density without needing a `BuildContext`.
 [Ishaq Hassan](https://github.com/ishaquehassan) exposed `blendMode` on `RawImage`
 so custom widgets can apply color blending effects directly
@@ -283,8 +283,9 @@ lets custom interactive widgets opt out of Tab-key navigation.
 For dialogs, a new `barrierBuilder` callback on `showDialog`
 from [Mairramer](https://github.com/Mairramer)
 lets you customize modal backdrops, such as adding background blur.
-Finally, you can return a result while closing multiple screens at once
-using `Navigator.popUntilWithResult`.
+Finally, `Navigator.popUntilWithResult` now returns its result
+to the last popped route,
+even when the destination route has local history entries.
 
 ### Desktop windowing
 
@@ -381,7 +382,7 @@ rather than waiting for the next vsync.
 The result is a full frame less input latency (**16 ms faster
 on 60 Hz iOS devices** and **8 ms faster on 120 Hz ProMotion displays**),
 verified through extensive benchmarking
-on hardware going all the way back to the 2015 iPhone 6S.
+on hardware going all the way back to the 2015 iPhone 6s.
 We have more work underway to drive iOS input latency down even further
 in upcoming releases.
 Stay tuned.
@@ -504,7 +505,7 @@ to support Built-in Kotlin across their supported AGP versions.
 On Flutter 3.50 stable, you can opt your app into AGP 9’s new DSL
 once every plugin in your project supports Built-in Kotlin.
 
-**Learn more**: [Built-in Kotlin migration guide for app developers](https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin)
+**Learn more**: [Built-in Kotlin migration guide for app developers](https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers)
 
 ### Updated Android toolchain defaults
 
@@ -515,7 +516,7 @@ When your project uses AGP’s Built-in Kotlin,
 Flutter no longer prints Kotlin version warnings
 because AGP manages Kotlin compatibility directly.
 The default SDK variables exposed to your Gradle build files in this release
-target `flutter.compileSdkVersion` **API 36**,
+are `flutter.compileSdkVersion` **API 36**,
 `flutter.targetSdkVersion` **API 36**,
 and `flutter.minSdkVersion` **API 24**.
 
@@ -643,9 +644,9 @@ Flutter 3.50 formally deprecates the coupled
 along with their `flutter_localizations` delegates.
 Android release builds also enforce stricter `Intent` validation
 and block debug engine flags, alongside four widget behavior updates.
-`DropdownButton` and `DropdownButtonFormField` add
+In `package:material_ui`, `DropdownButtonFormField` adds
 an explicit `enabled` property so you can disable dropdowns directly
-instead of passing a `null` `onChanged` callback.
+instead of passing `null` to the `onChanged` callback.
 Text containing soft hyphens now displays a visible hyphen automatically
 whenever a word wraps across lines.
 Inline `WidgetSpan` elements inside right-to-left text
@@ -654,11 +655,15 @@ On mobile browsers, `SafeArea` now accounts for device notches
 and home indicators when `viewport-fit=cover` is set,
 keeping UI clear of screen cutouts.
 
-Two previously deprecated framework APIs are also finalized:
-`ignoringSemantics` is removed from `IgnorePointer`, `AbsorbPointer`,
-`SliverIgnorePointer`, and their render objects;
-and `RenderProxyBox` along with `RenderProxyBoxMixin.computeDryBaseline`
-now return `null` when a child has no baseline.
+Two framework cleanups also land in this release:
+
+- The previously deprecated `ignoringSemantics` property
+  is removed from `IgnorePointer`, `AbsorbPointer`,
+  `SliverIgnorePointer`, and their render objects.
+- `computeDryBaseline` on `RenderProxyBox`
+  and other render objects that use `RenderProxyBoxMixin`
+  now returns `null` when the child has no baseline
+  instead of failing an assertion.
 
 **Learn more**: [Flutter breaking changes](https://docs.flutter.dev/release/breaking-changes)
 
