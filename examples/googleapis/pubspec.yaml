@@ -3,7 +3,7 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.13.0
+  sdk: ^3.14.0-0
 
 dependencies:
   extension_google_sign_in_as_googleapis_auth: ^3.0.0
