@@ -234,7 +234,7 @@ complete the following instructions:
 3. Add a new YAML file to the root directory of the Flutter project.
    Name this file `l10n.yaml` and include the following content:
 
-   <?code-excerpt "gen_l10n_example/l10n.yaml"?>
+   <?code-excerpt "gen_l10n_example/l10n.yaml (config)"?>
    ```yaml title="l10n.yaml"
    arb-dir: lib/l10n
    template-arb-file: app_en.arb
