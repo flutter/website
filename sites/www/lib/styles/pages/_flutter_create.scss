@@ -1,0 +1,1325 @@
+@use '../core/breakpoints';
+
+// Styles for the Flutter Create 2026 landing page (`/create`).
+//
+// Matches the official Flutter Create brand playbook and studio brainstorm kit:
+// ice-blue cutting-mat desk, real photographed masking/grain tapes, 3D pins,
+// paperclips, hand-drawn ink arrows & scribbles, sticky notes, and Dashes.
+
+body.flutter-create {
+  // ── Brand Playbook Color Tokens (Slides 11 & 13) ──────────────────────────
+  --fc-navy: #041E3C;
+  --fc-navy-muted: #294361;
+  --fc-ice: #E7F8FF;
+  --fc-ice-deep: #d2f0fc;
+  --fc-blue: #027DFD;
+  --fc-blue-deep: #0553B1;
+  --fc-cyan: #81DDF9;
+  --fc-cyan-soft: #B8EAFE;
+  --fc-coral: #FE6467;
+  --fc-coral-soft: #ff8c8f;
+  --fc-yellow: #FFF275;
+  --fc-yellow-pale: #F9F8C4;
+  --fc-pink: #F8BBD0;
+  --fc-lavender: #A57CF6;
+  --fc-lilac: #C6BAFA;
+  --fc-teal: #1CDAC5;
+  --fc-mint: #A7FFEB;
+
+  background-color: var(--fc-ice);
+  background-image:
+    radial-gradient(circle at 12% 16%, rgba(129, 221, 249, 0.32) 0%, transparent 42%),
+    radial-gradient(circle at 88% 78%, rgba(248, 187, 208, 0.24) 0%, transparent 45%),
+    linear-gradient(rgba(5, 83, 177, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 83, 177, 0.045) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px, 28px 28px;
+  color: var(--fc-navy);
+  overflow-x: clip;
+
+  main.fc-canvas {
+    isolation: isolate;
+    position: relative;
+
+    // Authentic studio cutting mat & delicate corner ink flecks behind sections
+    &::before {
+      background-image: var(--fc-cutting-mat);
+      background-position: center top;
+      background-repeat: repeat;
+      background-size: 960px auto;
+      content: '';
+      inset: 0;
+      mix-blend-mode: multiply;
+      opacity: 0.28;
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+
+      @include breakpoints.screen(lg) {
+        background-image: var(--fc-ink-spatter), var(--fc-cutting-mat);
+        background-position: top 40px right -140px, center top;
+        background-repeat: no-repeat, repeat;
+        background-size: 760px auto, 1360px auto;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .fc-container {
+    margin-inline: auto;
+    max-width: 1240px;
+    padding-inline: var(--gutter-sm);
+
+    @include breakpoints.screen(lg) {
+      padding-inline: var(--gutter);
+    }
+  }
+
+  .fc-section {
+    padding-block: var(--gutter-md);
+
+    @include breakpoints.screen(lg) {
+      padding-block: var(--gutter-lg);
+    }
+  }
+
+  .fc-kicker {
+    color: var(--fc-blue-deep);
+    font-size: var(--font-size-heading-5);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    margin: 0 0 var(--spacer-sm);
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: var(--fc-navy);
+    font-size: var(--font-size-heading-2);
+    font-weight: var(--font-weight-bolder);
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    margin: 0 0 var(--spacer-sm);
+
+    @include breakpoints.screen(md) {
+      font-size: var(--font-size-heading-1);
+    }
+  }
+
+  .fc-sub {
+    color: var(--fc-navy-muted);
+    font-size: var(--font-size-heading-4);
+    line-height: 1.45;
+    margin: 0;
+    max-width: 760px;
+  }
+
+  .fc-body {
+    color: var(--fc-navy-muted);
+    font-size: var(--font-size-heading-4);
+    line-height: 1.55;
+    margin: var(--spacer-sm) 0 0;
+  }
+
+  .fc-live-dot {
+    animation: fc-pulse 1.8s ease-out infinite;
+    background: var(--fc-coral);
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    height: 10px;
+    width: 10px;
+  }
+}
+
+// ── Physical Brainstorm Props (Tapes, Pins, Clips, Scribbles) ───────────────
+
+body.flutter-create {
+  .fc-prop {
+    height: auto;
+    pointer-events: none;
+    position: absolute;
+    user-select: none;
+  }
+
+  .fc-real-tape {
+    filter: drop-shadow(0 2px 4px rgba(4, 30, 60, 0.14));
+    z-index: 3;
+  }
+
+  .fc-pin,
+  .fc-tack,
+  .fc-paperclip {
+    filter: drop-shadow(0 5px 7px rgba(4, 30, 60, 0.22));
+    z-index: 4;
+  }
+
+  .fc-scribble-underline {
+    display: inline-block;
+    padding-bottom: 6px;
+    position: relative;
+
+    &::after {
+      background-image: var(--fc-underline-img);
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      bottom: -2px;
+      content: '';
+      height: 11px;
+      left: -2%;
+      opacity: 0.85;
+      pointer-events: none;
+      position: absolute;
+      width: 104%;
+    }
+  }
+
+  .fc-tape-badge {
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(4, 30, 60, 0.1);
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: var(--font-weight-bold);
+    gap: 10px;
+    letter-spacing: 0.02em;
+    margin: 0;
+    max-width: 100%;
+    padding: 8px 18px;
+    position: relative;
+    text-align: left;
+    transform: rotate(-1.2deg);
+    width: fit-content;
+
+    &.fc-tape-yellow {
+      background: #fff275;
+      border: 1px solid rgba(205, 170, 28, 0.35);
+      color: var(--fc-navy);
+    }
+
+    .fc-tape-divider {
+      background: rgba(4, 30, 60, 0.26);
+      border-radius: 1px;
+      display: inline-block;
+      height: 13px;
+      margin-inline: 10px;
+      vertical-align: -2px;
+      width: 1.5px;
+    }
+  }
+}
+
+// ── Zero-Flash Sign-up Swap ───────────────────────────────────────────────
+
+body.flutter-create .fc-swap {
+  display: grid;
+
+  > .fc-swap-signin,
+  > .fc-swap-done {
+    grid-area: 1 / 1;
+    min-width: 0;
+  }
+
+  > .fc-swap-done {
+    visibility: hidden;
+  }
+}
+
+html.fc-signed-up body.flutter-create {
+  .fc-swap {
+    > .fc-swap-signin {
+      visibility: hidden;
+    }
+
+    > .fc-swap-done {
+      visibility: visible;
+    }
+  }
+
+  .fc-hero .fc-hero-copy .fc-hero-cta-wrap .fc-hero-loop-arrow {
+    visibility: hidden;
+  }
+}
+
+body.flutter-create .fc-switch-account {
+  background: none;
+  border: none;
+  color: var(--fc-blue-deep);
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-default);
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--fc-navy);
+  }
+}
+
+@keyframes fc-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(254, 100, 103, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(254, 100, 103, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(254, 100, 103, 0); }
+}
+
+// ── Hero Section ──────────────────────────────────────────────────────────
+
+body.flutter-create .fc-hero {
+  overflow: clip;
+  padding-block: var(--gutter-sm) var(--gutter-md);
+  position: relative;
+
+  .fc-hero-backdrop {
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+
+    .fc-blob {
+      border-radius: 50%;
+      filter: blur(60px);
+      position: absolute;
+    }
+
+    .fc-blob-sky {
+      background: rgba(129, 221, 249, 0.35);
+      height: 480px;
+      right: 5%;
+      top: -40px;
+      width: 480px;
+    }
+
+    .fc-blob-pink {
+      background: rgba(248, 187, 208, 0.28);
+      height: 360px;
+      left: -60px;
+      top: 180px;
+      width: 360px;
+    }
+  }
+
+  .fc-hero-stage {
+    align-items: center;
+    display: grid;
+    gap: var(--gutter);
+    grid-template-columns: 1fr;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoints.screen(lg) {
+      gap: var(--gutter-lg);
+      grid-template-columns: 1fr 1.12fr;
+      padding-block: var(--spacer-md);
+    }
+  }
+
+  .fc-hero-copy {
+    min-width: 0;
+    text-align: center;
+
+    @include breakpoints.screen(lg) {
+      text-align: left;
+    }
+
+    .fc-hero-badge-wrap {
+      display: inline-flex;
+      margin-bottom: var(--spacer);
+      max-width: 100%;
+      position: relative;
+
+      .fc-hero-burst {
+        right: -34px;
+        top: -22px;
+        transform: rotate(14deg);
+        width: 42px;
+
+        @include breakpoints.screen(md) {
+          right: -42px;
+          top: -26px;
+          width: 50px;
+        }
+      }
+    }
+
+    .fc-hero-title {
+      line-height: 1;
+      margin: 0 0 var(--spacer-sm);
+    }
+
+    .fc-hero-brand-logo {
+      display: inline-block;
+      height: auto;
+      max-width: 100%;
+      width: 420px;
+
+      @include breakpoints.screen(md) {
+        width: 480px;
+      }
+
+      @include breakpoints.screen(xl) {
+        width: 520px;
+      }
+    }
+
+    .fc-hero-tagline {
+      color: var(--fc-navy);
+      font-size: 22px;
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+      margin: 0 0 var(--spacer-sm);
+
+      @include breakpoints.screen(md) {
+        font-size: 26px;
+      }
+    }
+
+    .fc-hero-lede {
+      color: var(--fc-navy-muted);
+      font-size: var(--font-size-heading-4);
+      line-height: 1.55;
+      margin: 0 auto var(--spacer-md);
+      max-width: 540px;
+
+      @include breakpoints.screen(lg) {
+        margin-inline: 0;
+      }
+    }
+
+    .fc-hero-cta-wrap {
+      position: relative;
+
+      .fc-hero-loop-arrow {
+        display: none;
+
+        @include breakpoints.screen(lg) {
+          display: block;
+          left: 278px;
+          opacity: 0.86;
+          top: -6px;
+          transform: scaleX(-1) rotate(-6deg);
+          width: 112px;
+        }
+      }
+    }
+  }
+
+  .fc-hero-signup {
+    > .fc-swap-signin,
+    > .fc-swap-done {
+      align-items: center;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @include breakpoints.screen(lg) {
+        align-items: flex-start;
+      }
+    }
+
+    .fc-google-btn-hero {
+      align-items: center;
+      background: white;
+      border: 1.5px solid rgba(4, 30, 60, 0.14);
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(4, 30, 60, 0.12), 0 2px 4px rgba(4, 30, 60, 0.06);
+      color: #1f1f1f;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: var(--font-ui);
+      font-size: var(--font-size-heading-5);
+      font-weight: var(--font-weight-bold);
+      gap: 12px;
+      height: 52px;
+      padding-inline: 24px;
+      transition: transform 0.2s var(--ui-anim-func), box-shadow 0.2s;
+      white-space: nowrap;
+
+      @include breakpoints.screen(md) {
+        font-size: var(--font-size-heading-4);
+        height: 56px;
+        padding-inline: 30px;
+      }
+
+      &:hover:not(:disabled) {
+        box-shadow: 0 12px 28px rgba(4, 30, 60, 0.18);
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.65;
+      }
+    }
+
+    .fc-google-logo {
+      height: 22px;
+      width: 22px;
+    }
+
+    .fc-hero-signup-caption {
+      color: var(--fc-navy-muted);
+      font-size: 14px;
+      font-weight: var(--font-weight-bold);
+      margin: 0;
+    }
+
+    .fc-fine-print {
+      color: var(--fc-navy-muted);
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 4px 0 0;
+      max-width: 480px;
+
+      a {
+        color: var(--fc-blue-deep);
+        text-decoration: underline;
+      }
+    }
+
+    .fc-signup-error {
+      background: #ffebee;
+      border: 1px solid #ffcdd2;
+      border-radius: var(--ui-border-radius-sm);
+      color: #c62828;
+      font-size: var(--font-size-default);
+      margin: 0;
+      padding: 8px 12px;
+    }
+
+    .fc-hero-signup-done {
+      align-items: center;
+      background: white;
+      border: 1px solid rgba(4, 30, 60, 0.1);
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(4, 30, 60, 0.08);
+      color: var(--fc-navy);
+      display: inline-flex;
+      font-size: var(--font-size-heading-5);
+      font-weight: var(--font-weight-bold);
+      gap: 10px;
+      padding: 12px 22px;
+
+      .icon {
+        color: #0f9d58;
+      }
+    }
+  }
+
+  // Hero Studio Polaroid Card
+  .fc-hero-card {
+    margin-inline: auto;
+    max-width: 640px;
+    padding-top: 10px;
+    position: relative;
+    width: 100%;
+
+    .fc-hero-tape-top {
+      left: 50%;
+      top: -12px;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 132px;
+    }
+
+    .fc-hero-tape-corner {
+      bottom: -14px;
+      left: -18px;
+      transform: rotate(34deg);
+      width: 104px;
+    }
+
+    .fc-hero-shavings {
+      bottom: -36px;
+      right: -12px;
+      transform: rotate(-8deg);
+      width: 60px;
+      z-index: 3;
+
+      @include breakpoints.screen(md) {
+        bottom: -44px;
+        right: -42px;
+        width: 82px;
+      }
+    }
+
+    .fc-card-inner {
+      background: white;
+      border: 9px solid white;
+      border-radius: 10px;
+      box-shadow:
+        0 20px 48px rgba(4, 30, 60, 0.14),
+        0 3px 10px rgba(4, 30, 60, 0.06);
+      overflow: hidden;
+    }
+
+    .fc-video-frame {
+      aspect-ratio: 16 / 9;
+      background: var(--fc-navy);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .fc-hero-video {
+      border: 0;
+      display: block;
+      height: 100%;
+      inset: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    .fc-card-footer {
+      align-items: center;
+      background: #fbfdff;
+      border-top: 1px solid #e7f1f7;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      padding: 10px 16px;
+    }
+
+    .fc-stream-link {
+      align-items: center;
+      border-radius: 999px;
+      color: var(--fc-navy);
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: var(--font-weight-bold);
+      gap: 8px;
+      letter-spacing: 0.02em;
+      margin-left: -8px;
+      padding: 4px 10px 4px 8px;
+      text-decoration: none;
+      transition: background-color 0.2s, color 0.2s;
+
+      .icon {
+        color: var(--fc-blue-deep);
+        font-size: 15px;
+      }
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--fc-ice);
+        color: var(--fc-blue-deep);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+    }
+
+    .fc-countdown-circled {
+      padding: 4px 10px;
+      position: relative;
+
+      &::after {
+        background-image: var(--fc-circle-img);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: '';
+        inset: -3px -6px;
+        opacity: 0.85;
+        pointer-events: none;
+        position: absolute;
+      }
+    }
+
+    .fc-countdown {
+      align-items: baseline;
+      background: var(--fc-yellow-pale);
+      border-radius: 6px;
+      display: inline-flex;
+      gap: 6px;
+      padding: 4px 10px;
+    }
+
+    .fc-countdown-number {
+      color: var(--fc-navy);
+      font-size: 20px;
+      font-weight: var(--font-weight-bolder);
+      line-height: 1;
+    }
+
+    .fc-countdown-label {
+      color: var(--fc-navy-muted);
+      font-size: 13px;
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}
+
+// ── About Section (Pinned Studio Notebook Sheet) ──────────────────────────
+
+body.flutter-create .fc-about {
+  .fc-about-grid {
+    align-items: center;
+    background-color: white;
+    // Lined studio notebook sheet
+    background-image:
+      linear-gradient(90deg, transparent 48px, #ffb8c3 48px, #ffb8c3 50px, transparent 50px),
+      linear-gradient(#e9f1f8 1px, transparent 1px);
+    background-size: 100% 100%, 100% 32px;
+    border: 1px solid rgba(4, 30, 60, 0.1);
+    border-radius: 14px;
+    box-shadow:
+      0 14px 34px rgba(4, 30, 60, 0.08),
+      0 2px 6px rgba(4, 30, 60, 0.04);
+    display: grid;
+    gap: var(--spacer-md);
+    grid-template-columns: 1fr;
+    padding: calc(var(--spacer-md) + 8px) var(--gutter-sm) var(--spacer-md);
+    position: relative;
+
+    @include breakpoints.screen(lg) {
+      gap: var(--gutter-lg);
+      grid-template-columns: 1.2fr 1fr;
+      padding: var(--gutter-md) var(--gutter);
+    }
+
+    .fc-about-pin {
+      left: 24px;
+      top: -16px;
+      transform: rotate(-8deg);
+      width: 56px;
+    }
+
+    .fc-about-tape {
+      right: 36px;
+      top: -15px;
+      transform: rotate(3.5deg);
+      width: 126px;
+    }
+
+    .fc-about-crumpled {
+      bottom: -24px;
+      right: 14px;
+      transform: rotate(12deg);
+      width: 68px;
+      z-index: 3;
+
+      @include breakpoints.screen(lg) {
+        bottom: -28px;
+        right: -18px;
+        width: 82px;
+      }
+    }
+  }
+
+  .fc-about-copy {
+    padding-left: 0;
+
+    @include breakpoints.screen(md) {
+      padding-left: 34px;
+    }
+  }
+
+  .fc-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fc-chip {
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(4, 30, 60, 0.07);
+    display: flex;
+    font-size: 17px;
+    font-weight: var(--font-weight-bold);
+    gap: 14px;
+    margin: 0;
+    padding: 9px 18px 9px 12px;
+    position: relative;
+    transition: transform 0.2s var(--ui-anim-func);
+
+    &.fc-chip-yellow {
+      background: #fff699;
+      border-left: 4px solid #f2b705;
+      color: var(--fc-navy);
+      transform: rotate(-0.6deg);
+    }
+
+    &.fc-chip-coral {
+      background: #ffe4e6;
+      border-left: 4px solid var(--fc-coral);
+      color: var(--fc-navy);
+      transform: rotate(0.7deg);
+    }
+
+    &.fc-chip-teal {
+      background: #d7fbf5;
+      border-left: 4px solid var(--fc-teal);
+      color: var(--fc-navy);
+      transform: rotate(-0.5deg);
+    }
+
+    &:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+  }
+
+  .fc-chip-icon {
+    align-items: center;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(4, 30, 60, 0.1);
+    color: var(--fc-blue-deep);
+    display: flex;
+    flex-shrink: 0;
+    height: 38px;
+    justify-content: center;
+    width: 38px;
+  }
+
+  .fc-chip-text {
+    flex: 1;
+  }
+}
+
+// ── Brainstorm Topics Wall (All 10 Official Sessions) ─────────────────────
+
+body.flutter-create .fc-topics {
+  .fc-brainstorm-header {
+    margin-bottom: var(--gutter-md);
+    position: relative;
+    text-align: center;
+
+    .fc-brainstorm-kicker-row {
+      align-items: center;
+      display: inline-flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 6px;
+
+      .fc-kicker {
+        margin: 0;
+      }
+
+      .fc-brainstorm-bulb {
+        position: static;
+        transform: rotate(-14deg);
+        width: 36px;
+
+        @include breakpoints.screen(md) {
+          width: 44px;
+        }
+      }
+    }
+
+    .fc-sub {
+      margin-inline: auto;
+    }
+
+    .fc-topics-arrow {
+      display: none;
+
+      @include breakpoints.screen(lg) {
+        bottom: -44px;
+        display: block;
+        opacity: 0.85;
+        right: 12%;
+        transform: rotate(18deg);
+        width: 82px;
+      }
+    }
+  }
+
+  .fc-topic-grid {
+    display: grid;
+    gap: 38px 26px;
+    grid-template-columns: 1fr;
+
+    @include breakpoints.screen(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoints.screen(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .fc-sticky-note {
+    border-radius: 4px;
+    box-shadow:
+      0 10px 24px rgba(4, 30, 60, 0.09),
+      0 2px 5px rgba(4, 30, 60, 0.05);
+    display: flex;
+    flex-direction: column;
+    min-height: 215px;
+    padding: 34px 24px 24px;
+    position: relative;
+    transition: transform 0.28s var(--ui-anim-func), box-shadow 0.28s;
+
+    // Subtle paper grain highlight along top fold
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0) 24%
+    );
+
+    // Fasteners mounted on top of each note
+    .fc-note-tape {
+      left: 50%;
+      max-height: 38px;
+      object-fit: contain;
+      top: -18px;
+      transform: translateX(-50%) rotate(-1.5deg);
+      width: 112px;
+    }
+
+    .fc-note-pin {
+      left: 50%;
+      top: -16px;
+      transform: translateX(-35%) rotate(-6deg);
+      width: 48px;
+    }
+
+    .fc-note-tack {
+      left: 50%;
+      top: -15px;
+      transform: translateX(-40%) rotate(8deg);
+      width: 38px;
+    }
+
+    &.rot-neg-1 { transform: rotate(-1.2deg); }
+    &.rot-pos-1 { transform: rotate(1.1deg); }
+    &.rot-neg-2 { transform: rotate(-1.8deg); }
+    &.rot-pos-2 { transform: rotate(1.5deg); }
+
+    &:hover {
+      box-shadow:
+        0 18px 38px rgba(4, 30, 60, 0.15),
+        0 4px 10px rgba(4, 30, 60, 0.07);
+      transform: rotate(0deg) translateY(-6px) scale(1.015);
+      z-index: 5;
+    }
+
+    // Studio Sticky Note Palette (Brand Playbook Slides 7 & 13)
+    &.tint-yellow {
+      background-color: #fff9c4;
+      border: 1px solid #f7ea7e;
+    }
+
+    &.tint-blue {
+      background-color: #dff4ff;
+      border: 1px solid #b5e4fc;
+    }
+
+    &.tint-mint {
+      background-color: #dffaf0;
+      border: 1px solid #b2f0d9;
+    }
+
+    &.tint-purple {
+      background-color: #eee8ff;
+      border: 1px solid #d5c7fc;
+    }
+
+    &.tint-pink {
+      background-color: #fde4ee;
+      border: 1px solid #f8bbd0;
+    }
+
+    &.tint-butter {
+      background-color: #fffde2;
+      border: 1px solid #f5eb9d;
+    }
+
+    &.tint-aqua {
+      background-color: #daf8fb;
+      border: 1px solid #a9ecf3;
+    }
+
+    &.tint-peach {
+      background-color: #ffe8e5;
+      border: 1px solid #ffc9c3;
+    }
+
+    &.tint-lilac {
+      background-color: #f4eaff;
+      border: 1px solid #dec6fc;
+    }
+
+    .fc-sticky-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fc-topic-track {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(4, 30, 60, 0.1);
+      border-radius: 999px;
+      color: var(--fc-blue-deep);
+      display: inline-block;
+      font-size: 12px;
+      font-weight: var(--font-weight-bold);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      padding: 4px 10px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      color: var(--fc-navy);
+      font-size: 21px;
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.2px;
+      line-height: 1.25;
+      margin: 0 0 10px;
+    }
+
+    p {
+      color: var(--fc-navy-muted);
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0;
+      padding-right: 28px;
+    }
+
+    .fc-note-mascot {
+      bottom: 10px;
+      filter: drop-shadow(0 3px 5px rgba(4, 30, 60, 0.14));
+      height: 54px;
+      object-fit: contain;
+      pointer-events: none;
+      position: absolute;
+      right: 10px;
+      transform: rotate(6deg);
+      width: 54px;
+    }
+  }
+
+  // 10th Session: Paperclipped Customer Showcase Studio Card
+  .fc-showcase-note {
+    align-items: center;
+    background-color: #ffffff;
+    background-image:
+      linear-gradient(rgba(2, 125, 253, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(2, 125, 253, 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+    border: 1.5px solid rgba(4, 30, 60, 0.12);
+    border-radius: 12px;
+    box-shadow:
+      0 14px 32px rgba(4, 30, 60, 0.09),
+      0 2px 6px rgba(4, 30, 60, 0.04);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    margin-top: 42px;
+    padding: 30px 24px 26px;
+    position: relative;
+    transform: rotate(-0.4deg);
+
+    @include breakpoints.screen(md) {
+      grid-template-columns: 1fr auto;
+      padding: 32px 36px;
+    }
+
+    .fc-showcase-clip {
+      left: 28px;
+      top: -20px;
+      transform: rotate(-18deg);
+      width: 48px;
+    }
+
+    .fc-showcase-tape {
+      right: 32px;
+      top: -15px;
+      transform: rotate(2.5deg);
+      width: 118px;
+    }
+
+    .fc-showcase-pill {
+      background: var(--fc-yellow);
+      border: 1px solid rgba(205, 170, 28, 0.35);
+      border-radius: 999px;
+      color: var(--fc-navy);
+      display: inline-block;
+      font-size: 12px;
+      font-weight: var(--font-weight-bold);
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      padding: 5px 12px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      color: var(--fc-navy);
+      font-size: 23px;
+      font-weight: var(--font-weight-bolder);
+      letter-spacing: -0.3px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+    }
+
+    p {
+      color: var(--fc-navy-muted);
+      font-size: 17px;
+      line-height: 1.55;
+      margin: 0;
+      max-width: 780px;
+    }
+
+    .fc-showcase-mascot-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .fc-showcase-mascot {
+      filter: drop-shadow(0 6px 12px rgba(4, 30, 60, 0.15));
+      height: 88px;
+      object-fit: contain;
+      transform: rotate(-5deg);
+      width: 88px;
+    }
+  }
+}
+
+// ── Sign-up Section (Taped Studio Board) ──────────────────────────────────
+
+body.flutter-create .fc-signup {
+  padding-bottom: var(--gutter-lg);
+
+  .fc-signup-board {
+    background: white;
+    border: 1px solid rgba(4, 30, 60, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 18px 44px rgba(4, 30, 60, 0.09);
+    padding: calc(var(--spacer-md) + 6px) var(--gutter-sm) var(--spacer-md);
+    position: relative;
+
+    @include breakpoints.screen(lg) {
+      padding: var(--gutter-lg) var(--gutter);
+    }
+
+    .fc-signup-tape-left {
+      left: 28px;
+      top: -17px;
+      transform: rotate(-4deg);
+      width: 126px;
+    }
+
+    .fc-signup-tape-right {
+      right: 28px;
+      top: -18px;
+      transform: rotate(3.5deg);
+      width: 118px;
+    }
+  }
+
+  .fc-signup-grid {
+    display: grid;
+    gap: var(--spacer-md);
+    grid-template-columns: 1fr;
+
+    @include breakpoints.screen(lg) {
+      align-items: center;
+      gap: var(--gutter-lg);
+      grid-template-columns: 1.15fr 1fr;
+    }
+  }
+
+  .fc-signup-copy {
+    .fc-signup-pass-wrap {
+      display: block;
+      margin-inline: auto;
+      margin-top: calc(var(--spacer) + 6px);
+      max-width: 440px;
+      position: relative;
+      width: 100%;
+
+      @include breakpoints.screen(lg) {
+        margin-inline: 0;
+      }
+
+      .fc-pass-clip {
+        left: 22px;
+        top: -16px;
+        transform: rotate(-16deg);
+        width: 44px;
+      }
+
+      .fc-signup-arrow {
+        display: none;
+
+        @include breakpoints.screen(lg) {
+          bottom: 16px;
+          display: block;
+          opacity: 0.85;
+          right: -68px;
+          transform: rotate(-28deg);
+          width: 64px;
+        }
+      }
+    }
+
+    .fc-signup-pass-frame {
+      border-radius: 12px;
+      box-shadow: 0 10px 26px rgba(4, 30, 60, 0.1);
+      overflow: hidden;
+      transform: rotate(-1.2deg);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: rotate(0deg) scale(1.02);
+      }
+
+      .fc-signup-pass-img {
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  .fc-signup-panel {
+    background: #fbfdff;
+    border: 1px solid rgba(4, 30, 60, 0.1);
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 1px #eef6fa, 0 8px 20px rgba(4, 30, 60, 0.05);
+    color: var(--fc-navy);
+    padding: var(--spacer-md);
+  }
+}
+
+body.flutter-create .flutter-create-signup {
+  > .fc-swap-signin {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  > .fc-swap-done {
+    align-self: center;
+  }
+
+  h3 {
+    color: var(--fc-navy);
+    font-size: var(--font-size-heading-3);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+  }
+
+  .fc-signup-lede {
+    color: var(--fc-navy-muted);
+    font-size: var(--font-size-heading-5);
+    margin: 0;
+  }
+
+  .fc-google-btn {
+    align-items: center;
+    background: white;
+    border: 1px solid rgba(4, 30, 60, 0.18);
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(4, 30, 60, 0.08);
+    color: #1f1f1f;
+    cursor: pointer;
+    display: flex;
+    font-family: var(--font-ui);
+    font-size: var(--font-size-heading-5);
+    font-weight: var(--font-weight-bold);
+    gap: 12px;
+    height: 52px;
+    justify-content: center;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    width: 100%;
+
+    &:hover:not(:disabled) {
+      background: #f8fafc;
+      box-shadow: 0 6px 18px rgba(4, 30, 60, 0.14);
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+  }
+
+  .fc-google-logo {
+    height: 20px;
+    width: 20px;
+  }
+
+  .fc-fine-print {
+    color: var(--fc-navy-muted);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+
+    a {
+      color: var(--fc-blue-deep);
+      text-decoration: underline;
+    }
+  }
+
+  .fc-signup-error {
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+    border-radius: var(--ui-border-radius-sm);
+    color: #c62828;
+    font-size: var(--font-size-default);
+    margin: 0;
+    padding: 8px 12px;
+  }
+
+  .fc-signup-success {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    p {
+      color: var(--fc-navy-muted);
+      margin: 0;
+    }
+  }
+
+  .fc-success-icon {
+    align-items: center;
+    background: #e8f5e9;
+    border-radius: 50%;
+    color: #2e7d32;
+    display: flex;
+    height: 56px;
+    justify-content: center;
+    width: 56px;
+  }
+
+  .fc-signup-success-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .fc-switch-account {
+    color: var(--fc-blue-deep);
+  }
+
+  .fc-btn-outline-dark {
+    align-self: flex-start;
+    border: 1px solid var(--fc-blue-deep);
+    border-radius: 999px;
+    color: var(--fc-blue-deep);
+    font-weight: var(--font-weight-bold);
+    padding: 8px 20px;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--fc-blue-deep);
+      color: white;
+    }
+  }
+}
