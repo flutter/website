@@ -10,6 +10,11 @@ import '../components/pages/flutter_create_countdown.dart';
 import '../components/pages/flutter_create_signup.dart';
 import '../utils/asset_utils.dart';
 
+const String _livestreamUrl =
+    'https://www.youtube.com/live/Qd-SY_16amU?si=kkLPeuDNGu4UUsHw';
+const String _livestreamEmbedUrl =
+    'https://www.youtube.com/embed/Qd-SY_16amU?si=kkLPeuDNGu4UUsHw';
+
 /// The landing page for Flutter Create,
 /// Flutter's Q4 2026 flagship livestream event.
 class FlutterCreatePage extends StatelessComponent {
@@ -145,34 +150,31 @@ class _Hero extends StatelessComponent {
             ),
           ]),
         ]),
-        div(classes: 'fc-hero-visual', [
-          _HeroCard(
-            heroCompUrl: context.asset('/images/create/hero-comp.webp'),
-          ),
+        const div(classes: 'fc-hero-visual', [
+          _HeroCard(),
         ]),
       ]),
     ]);
   }
 }
 
-/// A tactile Polaroid-style studio card showcasing the Flutter Create artwork,
-/// real masking tape strips, pencil shavings, and the live countdown badge.
+/// A tactile Polaroid-style studio card showcasing the Flutter Create
+/// livestream player, real masking tape strips, pencil shavings, a direct link
+/// to the YouTube stream, and the live countdown badge.
 class _HeroCard extends StatelessComponent {
-  const _HeroCard({required this.heroCompUrl});
-
-  final String heroCompUrl;
+  const _HeroCard();
 
   @override
   Component build(BuildContext context) {
-    return div(classes: 'fc-hero-card', [
-      const _Prop(
+    return const div(classes: 'fc-hero-card', [
+      _Prop(
         '/images/create/goodies/tape-yellow-masking.webp',
         classes: 'fc-real-tape fc-hero-tape-top',
         width: 132,
         height: 52,
         eager: true,
       ),
-      const _Prop(
+      _Prop(
         '/images/create/goodies/tape-pink-masking.webp',
         classes: 'fc-real-tape fc-hero-tape-corner',
         width: 112,
@@ -180,25 +182,40 @@ class _HeroCard extends StatelessComponent {
         eager: true,
       ),
       div(classes: 'fc-card-inner', [
-        img(
-          src: heroCompUrl,
-          alt: 'Flutter Create illustration with sketching hand and Dash',
-          classes: 'fc-hero-card-img',
-          width: 700,
-          height: 450,
-        ),
-        const div(classes: 'fc-card-footer', [
-          div(classes: 'fc-card-status', [
-            span(classes: 'fc-live-dot', []),
-            .text('Wednesday, Nov 11 · Online'),
-          ]),
+        div(classes: 'fc-video-frame', [
+          iframe(
+            src: _livestreamEmbedUrl,
+            classes: 'fc-hero-video',
+            attributes: {
+              'title': 'Flutter Create livestream',
+              'allowfullscreen': '',
+              'allow':
+                  'accelerometer; autoplay; clipboard-write; encrypted-media; '
+                  'gyroscope; picture-in-picture; web-share',
+              'referrerpolicy': 'strict-origin-when-cross-origin',
+            },
+            [],
+          ),
+        ]),
+        div(classes: 'fc-card-footer', [
+          a(
+            href: _livestreamUrl,
+            target: Target.blank,
+            attributes: {'rel': 'noopener'},
+            classes: 'fc-stream-link',
+            [
+              span(classes: 'fc-live-dot', []),
+              span([.text('Flutter Create livestream')]),
+              Icon(symbol: 'open_in_new', size: .xs),
+            ],
+          ),
           div(classes: 'fc-countdown-circled', [
             FlutterCreateCountdown(),
             script(content: flutterCreateCountdownScript),
           ]),
         ]),
       ]),
-      const _Prop(
+      _Prop(
         '/images/create/goodies/pencil-shavings.webp',
         classes: 'fc-hero-shavings',
         width: 84,
@@ -393,7 +410,7 @@ class _Topics extends StatelessComponent {
     ),
     (
       track: 'Plugins · ffigen and jnigen',
-      title: 'Dart native interop',
+      title: 'Direct native interop',
       description:
           'Build type-safe Flutter plugins from day one with direct bindings '
           'to Swift, Objective-C, Kotlin, and Java.',

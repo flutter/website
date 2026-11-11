@@ -308,7 +308,7 @@ body.flutter-create .fc-hero {
 
     @include breakpoints.screen(lg) {
       gap: var(--gutter-lg);
-      grid-template-columns: 1.12fr 1fr;
+      grid-template-columns: 1fr 1.12fr;
       padding-block: var(--spacer-md);
     }
   }
@@ -510,18 +510,10 @@ body.flutter-create .fc-hero {
   // Hero Studio Polaroid Card
   .fc-hero-card {
     margin-inline: auto;
-    max-width: 580px;
+    max-width: 640px;
     padding-top: 10px;
     position: relative;
-    transform: rotate(1.1deg);
-    transition: transform 0.4s var(--ui-anim-func);
     width: 100%;
-
-    @media (prefers-reduced-motion: no-preference) {
-      &:hover {
-        transform: rotate(0deg) translateY(-4px);
-      }
-    }
 
     .fc-hero-tape-top {
       left: 50%;
@@ -561,12 +553,21 @@ body.flutter-create .fc-hero {
       overflow: hidden;
     }
 
-    .fc-hero-card-img {
-      aspect-ratio: 1400 / 900;
+    .fc-video-frame {
+      aspect-ratio: 16 / 9;
+      background: var(--fc-navy);
       border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .fc-hero-video {
+      border: 0;
       display: block;
-      height: auto;
-      object-fit: cover;
+      height: 100%;
+      inset: 0;
+      position: absolute;
       width: 100%;
     }
 
@@ -578,17 +579,35 @@ body.flutter-create .fc-hero {
       flex-wrap: wrap;
       gap: 12px;
       justify-content: space-between;
-      padding: 12px 16px;
+      padding: 10px 16px;
     }
 
-    .fc-card-status {
+    .fc-stream-link {
       align-items: center;
+      border-radius: 999px;
       color: var(--fc-navy);
       display: inline-flex;
       font-size: 13px;
       font-weight: var(--font-weight-bold);
       gap: 8px;
       letter-spacing: 0.02em;
+      margin-left: -8px;
+      padding: 4px 10px 4px 8px;
+      text-decoration: none;
+      transition: background-color 0.2s, color 0.2s;
+
+      .icon {
+        color: var(--fc-blue-deep);
+        font-size: 15px;
+      }
+
+      &:hover,
+      &:focus-visible {
+        background-color: var(--fc-ice);
+        color: var(--fc-blue-deep);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
     }
 
     .fc-countdown-circled {
