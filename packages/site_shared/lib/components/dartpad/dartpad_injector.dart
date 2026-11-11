@@ -9,10 +9,7 @@ import 'package:jaspr/jaspr.dart';
 import '../utils/component_ref.dart';
 
 /// The DartPad deployment that serves archive-backed embeds.
-///
-/// Only DartPad's preview deployment supports loading a project from
-/// an archive URL. Switch to `dartpad.dev` once production supports it.
-const _dartPadHost = 'preview.dartpad.dev';
+const _dartPadHost = 'dartpad.dev';
 
 /// Replaces a server-rendered code example with an archive-backed DartPad.
 @client
@@ -81,7 +78,7 @@ class _DartPadInjectorState extends State<DartPadInjector> {
       'file': ?component.file,
       if (component.theme != 'auto') 'theme': component.theme ?? 'light',
     });
-    // Preview's hosting rejects request targets of 8 KiB or more.
+    // Keep local archive URLs under the 8 KiB request-target limit.
     if (archive.startsWith('data:') &&
         url.path.length + 1 + url.query.length >= 8192) {
       return _frame(
