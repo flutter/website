@@ -10,13 +10,13 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^2.0.0
-  material_ui: ^1.8.0
-  vector_graphics: ^1.2.4
+  material_ui: ^1.11.0
+  vector_graphics: ^1.2.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  vector_graphics_compiler: ^1.3.2
+  vector_graphics_compiler: ^1.3.5
 
 flutter:
   uses-material-design: true
