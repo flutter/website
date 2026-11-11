@@ -4,9 +4,8 @@
 # - `link` with `text`, `url`, and optional `newTab: true`.
 # - `newLine: true` for inserting a line break.
 
-- text: "Security update: Flutter 3.47.8 now blocks compromised eMudhra CA keys. Read the "
+- text: "Flutter Create streams live on November 11 at 10 AM PT. "
 - link:
-    text: "security advisory"
-    url: https://github.com/dart-lang/sdk/security/advisories/GHSA-frr6-h895-5pxp
+    text: "Join us"
+    url: https://flutter.dev/create
     newTab: true
-- text: "."

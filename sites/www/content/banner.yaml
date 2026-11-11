@@ -7,8 +7,7 @@
 # - link: Required, absolute https URL that the whole banner links to.
 
 text: >-
-  Security update: Flutter 3.47.8 now blocks compromised eMudhra CA keys.
-  Read the security advisory
+  Flutter Create streams live on November 11 at 10 AM PT. Join us
 mobileText: >-
-  Security update: Flutter 3.47.8 is available. Read the security advisory
-link: https://github.com/dart-lang/sdk/security/advisories/GHSA-frr6-h895-5pxp
+  Join us for Flutter Create on November 11
+link: https://flutter.dev/create
