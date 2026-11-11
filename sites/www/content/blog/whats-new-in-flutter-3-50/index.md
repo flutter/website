@@ -24,7 +24,9 @@ and now the standalone `material_ui` and `cupertino_ui` packages
 are the default for new projects.
 
 As always, we couldn’t do any of this without the Flutter community
-and all of your contributions across the framework and ecosystem.
+and all of your contributions across the framework and ecosystem—in this
+release cycle alone, **188 contributors**, including **69 first-time
+contributors**, landed over **1,200 commits**.
 So, run `flutter upgrade` in your terminal to get the latest release,
 or read on to explore what’s new.
 
@@ -61,9 +63,9 @@ especially Jon Holtan, Rody Davis, Dominik Roszkowski,
 Alexander Thiele, and Morgan McKenzie.
 These community members tested early builds,
 reviewed documentation, and helped shape these APIs.
-To explore all the details,
-check out the [new native interop documentation](https://docs.flutter.dev/interop),
-and stay tuned for a dedicated post on direct native interop.
+Stay tuned for a dedicated post on direct native interop.
+
+**Learn more**: [Native interop documentation](https://docs.flutter.dev/interop)
 
 ## Web platform
 
@@ -97,8 +99,7 @@ _flutter.loader.load({
 });
 ```
 
-To learn more about browser configuration and loader options,
-check out [Support for WebAssembly (Wasm)](https://docs.flutter.dev/platform-integration/web/wasm).
+**Learn more**: [Support for WebAssembly (Wasm)](https://docs.flutter.dev/platform-integration/web/wasm)
 
 ### Built-in web content hashing
 
@@ -116,8 +117,7 @@ The flag also generates `build/web/precache_manifest.json`
 for custom service workers and Workbox pipelines,
 replacing the deprecated `flutter_service_worker.js` tokens.
 
-To learn more about configuring `Cache-Control` headers,
-refer to [Web content hashing and HTTP caching](https://docs.flutter.dev/deployment/web#web-content-hashing).
+**Learn more**: [Web content hashing and HTTP caching](https://docs.flutter.dev/deployment/web#web-content-hashing)
 
 ### Auditing legacy JS interop on web
 
@@ -136,9 +136,7 @@ This fails the build early if your app or any of its packages
 still depend on legacy browser libraries,
 helping you prepare for WebAssembly.
 
-For migration details, check out
-[Using compatible JS interop libraries](https://docs.flutter.dev/platform-integration/web/wasm#js-interop-wasm)
-and the [Dart 3.14 announcement post](https://dart.dev/blog/announcing-dart-3-14).
+**Learn more**: [Using compatible JS interop libraries](https://docs.flutter.dev/platform-integration/web/wasm#js-interop-wasm) and [Announcing Dart 3.14](https://dart.dev/blog/announcing-dart-3-14)
 
 ### Native browser text layout preview
 
@@ -151,8 +149,8 @@ Delegating text layout to the browser shrinks the CanvasKit download
 eliminates network requests for fallback fonts,
 prevents missing-character tofu boxes across international scripts,
 and renders native color emojis.
-Try the preview and share feedback on the
-[WebParagraph experimental preview issue (\#172561)](https://github.com/flutter/flutter/issues/172561).
+
+**Learn more**: [WebParagraph experimental preview (\#172561)](https://github.com/flutter/flutter/issues/172561)
 
 ## Pluggable platforms
 
@@ -183,10 +181,8 @@ New projects created with `flutter create` now import
 
 Run `dart fix --apply --code=migrate_design_widgets`
 to update existing imports and localization delegates automatically.
-For migration details and the broader architectural story,
-check out the [Material and Cupertino migration guide](https://docs.flutter.dev/release/breaking-changes/material-ui-and-cupertino-ui)
-and the dedicated post on
-[decoupling Material and Cupertino](/blog/decoupling-material-cupertino).
+
+**Learn more**: [Material and Cupertino migration guide](https://docs.flutter.dev/release/breaking-changes/material-ui-and-cupertino-ui) and [Decoupling Material and Cupertino](/blog/decoupling-material-cupertino)
 
 ## Framework
 
@@ -337,6 +333,8 @@ Flutter GPU also reports clearer Dart error messages
 when a shader pipeline is misconfigured,
 helping you catch and fix graphics bugs faster.
 
+<DashImage figure src="images/impeller_sdf_vs_msaa.webp" alt="Side-by-side zoomed pixel comparison showing smooth anti-aliased diagonal edges rendered with Impeller SDF versus stepped edges with MSAA." caption="Impeller’s Signed Distance Field (SDF) renderer draws crisp, anti-aliased edges directly on the GPU." />
+
 Community contributors also landed high-impact OpenGL startup
 and GPU stability fixes.
 [xiaowei-guan](https://github.com/xiaowei-guan) moved OpenGL shader setup
@@ -382,13 +380,15 @@ so the frame builds in the same display refresh
 rather than waiting for the next vsync.
 The result is a full frame less input latency—**16 ms faster
 on 60 Hz iOS devices** and **8 ms faster on 120 Hz ProMotion displays**—verified
-through [extensive benchmarking](https://github.com/flutter/flutter/issues/191199)
+through extensive benchmarking
 on hardware going all the way back to the 2015 iPhone 6S.
 We have more work underway to drive iOS input latency down even further
 in upcoming releases.
 Stay tuned.
 
 <DashImage figure src="images/ios_touch_smoothing.gif" alt="Side-by-side comparison showing faster iOS touch response in Flutter 3.50." caption="Faster iOS touch scheduling reduces input latency by a full frame in Flutter 3.50." />
+
+**Learn more**: [iOS touch input latency benchmarks (\#191199)](https://github.com/flutter/flutter/issues/191199)
 
 ### Debugging on iOS 27
 
@@ -412,8 +412,9 @@ triggers a warning on every Flutter CLI command.
 In a future release, we’ll remove the opt-out flag
 and eventually the CocoaPods fallback itself.
 If you previously disabled Swift Package Manager
-to work around a build issue, re-enable it now and check out
-[Swift Package Manager for plugin authors](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors).
+to work around a build issue, re-enable it now to verify your setup.
+
+**Learn more**: [Swift Package Manager for plugin authors](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors)
 
 ### Apple Silicon macOS builds
 
@@ -425,8 +426,8 @@ Because Xcode 27 no longer requires macOS apps to bundle Intel slices,
 you can build Apple Silicon-only macOS apps today
 by running `flutter config --enable-macos-arm64-only`
 before it becomes the default in an upcoming release.
-To review the full timeline, refer to the
-[macOS Intel deprecation strategy](https://flutter.dev/go/macos-intel-deprecation).
+
+**Learn more**: [macOS Intel deprecation strategy](https://flutter.dev/go/macos-intel-deprecation)
 
 ## Android
 
@@ -449,9 +450,8 @@ or paired with a prebuilt release APK (`--use-application-binary`).
 Debug builds log warnings for ignored extras,
 while testing custom engine flags against a prebuilt binary
 now requires profile mode or a fresh build.
-For migration details, refer to
-[Stricter Android `Intent` verification for app entrypoints](https://docs.flutter.dev/release/breaking-changes/stricter-android-entrypoint-intent-verification)
-and [Restrict Android engine flags in release mode](https://docs.flutter.dev/release/breaking-changes/restrict-android-engine-flags-release-mode).
+
+**Learn more**: [Stricter Android `Intent` verification for app entrypoints](https://docs.flutter.dev/release/breaking-changes/stricter-android-entrypoint-intent-verification) and [Restrict Android engine flags in release mode](https://docs.flutter.dev/release/breaking-changes/restrict-android-engine-flags-release-mode)
 
 ### Hybrid Composition++
 
@@ -474,13 +474,11 @@ and Impeller running on Vulkan**;
 on devices that don’t meet both requirements,
 Flutter automatically falls back to your existing platform view mode.
 On a supported API 34+ Vulkan device,
-run `flutter config --enable-hcpp`,
-watch `logcat` in debug mode for
-`Using HCPP platform view rendering strategy` when a platform view mounts,
-and check out
-[Hosting native Android views with Platform Views](https://docs.flutter.dev/platform-integration/android/platform-views#hcpp).
+run `flutter config --enable-hcpp`
+and watch `logcat` in debug mode for
+`Using HCPP platform view rendering strategy` when a platform view mounts.
 
-<DashImage figure src="images/hcpp_scroll_comparison.webp" alt="Side-by-side Android comparison showing Heavy HC Playground at 68 FPS versus Heavy HCPP Playground at 118 FPS." caption="Hybrid Composition++ (right) maintains higher frame rates than legacy Hybrid Composition (left) under heavy platform-view scrolling." />
+**Learn more**: [Hosting native Android views with Platform Views](https://docs.flutter.dev/platform-integration/android/platform-views#hcpp)
 
 ### Built-in Kotlin for plugins
 
@@ -490,10 +488,11 @@ to the Android Gradle Plugin’s Built-in Kotlin.
 Plugins that still manually apply the Kotlin Gradle Plugin (KGP)—even
 behind an AGP version guard—will receive lower `pub.dev` scores
 in the future and will fail to build under AGP 10.
-Follow the
-[Built-in Kotlin migration guide for plugin authors](https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors),
+Update your plugin’s Gradle configuration,
 set your minimum SDK constraint to `flutter: ">=3.44.0"` in `pubspec.yaml`,
 and note the change in your `CHANGELOG.md`.
+
+**Learn more**: [Built-in Kotlin migration guide for plugin authors](https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors)
 
 ### AGP 9 new DSL support
 
@@ -504,8 +503,8 @@ We also migrated all first-party plugins in `flutter/packages`
 to support Built-in Kotlin across their supported AGP versions.
 On Flutter 3.50 stable, you can opt your app into AGP 9’s new DSL
 once every plugin in your project supports Built-in Kotlin.
-To prepare your app and verify plugin readiness, follow the
-[Built-in Kotlin migration guide for app developers](https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin).
+
+**Learn more**: [Built-in Kotlin migration guide for app developers](https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin)
 
 ### Updated Android toolchain defaults
 
@@ -535,8 +534,6 @@ Dart and Flutter MCP server configuration, specialized agents,
 and persistent agent rules—including a proactive hot reload rule
 (`flutter-hot-reload`) that triggers `hot_reload` or `hot_restart`
 through the MCP server after edits under `lib/`.
-To install the plugins for your assistant,
-check out [Get started developing with AI](https://docs.flutter.dev/ai/get-started).
 
 Package authors can also ship agent skills directly
 inside a top-level `skills/` directory in their `pub.dev` packages
@@ -545,8 +542,8 @@ from their package dependencies with `dart run skills@ get`.
 Before publishing, authors can run `package:skills_lint` in CI
 to check `SKILL.md` frontmatter, directory structure,
 and naming conventions against the Agent Skills spec.
-To install or publish skills,
-check out [Package skills](https://dart.dev/ai/package-skills).
+
+**Learn more**: [Get started developing with AI](https://docs.flutter.dev/ai/get-started) and [Package skills](https://dart.dev/ai/package-skills)
 
 ### Analysis server and DevTools
 
@@ -566,10 +563,14 @@ alongside one million Google Play apps and an open Flutter RFC process.
 
 ### Genkit Dart 1.0
 
-[Genkit Dart](https://genkit.dev) reaches its stable 1.0 release
+Genkit Dart reaches its stable 1.0 release
 for building full-stack, multi-model agentic applications
 in Dart and Flutter with end-to-end type safety,
 streaming flows, tool calling, and OpenTelemetry tracing.
+
+<DashImage figure src="images/genkit_dart_demo.webp" alt="Animated demo of the Cymbal Bistro Flutter app using Genkit Dart and A2UI to stream an interactive restaurant reservation card and invoke a booking tool." caption="Genkit Dart 1.0 streaming an interactive A2UI reservation flow and tool call in a Flutter app." />
+
+**Learn more**: [Genkit Dart documentation](https://genkit.dev)
 
 ### On-device AI with MediaPipe
 
@@ -578,8 +579,8 @@ brings 20 on-device vision, audio, and text tasks,
 powered by LiteRT and LiteRT-LM, straight to Flutter apps.
 Running these models directly on the device
 avoids network latency and cloud inference costs.
-Explore interactive demos across different use cases in the
-[MediaPipe Tasks for Flutter gallery](https://google.github.io/flutter-mediapipe/).
+
+**Learn more**: [MediaPipe Tasks for Flutter gallery](https://google.github.io/flutter-mediapipe/)
 
 ### One million Play Store apps
 
@@ -593,14 +594,14 @@ building, shipping, and growing with Flutter.
 Across the broader package ecosystem,
 recycling inline AdMob banners inside scrollable lists
 now delivers a measured **23% performance improvement on iOS**
-in our benchmarks; follow the
-[AdMob banner recycling guide](https://developers.google.com/admob/flutter/banner/banner-recycling)
-to adopt it in your app.
+in our benchmarks.
 We also want to highlight two standout community packages shipping this cycle:
 [Terradart](https://terradart.dev/) for defining cloud infrastructure
 in pure Dart, and
 [`vyuh_diagram_flutter`](https://pub.dev/packages/vyuh_diagram_flutter)
 for building interactive node diagrams programmatically in Flutter.
+
+**Learn more**: [AdMob banner recycling guide](https://developers.google.com/admob/flutter/banner/banner-recycling)
 
 ### Customer showcases
 
@@ -610,7 +611,7 @@ into a single Flutter monorepo in three months
 to serve over 2 million monthly users and 25 million eSIMs.
 [Knowunity](/showcase/knowunity) pairs Flutter with Go and Gemini
 to support 8 to 10 million monthly active students.
-[Buzz](https://www.youtube.com/watch?v=QhYZEid79VU) uses Flutter
+[Buzz](/showcase/buzz) uses Flutter
 on iOS and Android to power an open-source workspace
 where people and AI agents collaborate side by side.
 The Google AI Edge team built the Eloquent and Foresight apps with Flutter
@@ -619,10 +620,11 @@ to bring on-device AI inference to users on mobile and desktop.
 ### The business value of Flutter
 
 To help engineering leaders evaluate Flutter for upcoming roadmaps,
-check out [The business value of Flutter](/why-flutter)
-and our new 2026 whitepaper—packed with data-backed insights
+our new 2026 whitepaper shares data-backed insights
 on engineering productivity, development velocity,
 and business return on investment.
+
+**Learn more**: [The business value of Flutter](/why-flutter)
 
 ### Announcing Flutter RFCs
 
@@ -631,9 +633,8 @@ for technical designs and decision-making.
 RFCs provide a collaborative, transparent space to share ideas early,
 explore trade-offs, align with subsystem maintainers,
 and build architectural consensus before writing production code.
-To learn how to propose or review a design,
-check out [Flutter Design Documents](https://github.com/flutter/flutter/blob/master/docs/contributing/Design-Documents.md#flutter-rfcs--design-documents)
-and the [`flutter/rfc`](https://github.com/flutter/rfc) repository.
+
+**Learn more**: [Flutter Design Documents](https://github.com/flutter/flutter/blob/master/docs/contributing/Design-Documents.md#flutter-rfcs--design-documents) and [`flutter/rfc`](https://github.com/flutter/rfc)
 
 ## Deprecations and breaking changes
 
@@ -658,8 +659,8 @@ Two previously deprecated framework APIs are also finalized:
 `SliverIgnorePointer`, and their render objects;
 and `RenderProxyBox` along with `RenderProxyBoxMixin.computeDryBaseline`
 now return `null` when a child has no baseline.
-To review step-by-step migration guides for every change in this release,
-check out the [Flutter breaking changes page](https://docs.flutter.dev/release/breaking-changes).
+
+**Learn more**: [Flutter breaking changes](https://docs.flutter.dev/release/breaking-changes)
 
 ## Fresh from the oven and ready to upgrade
 
