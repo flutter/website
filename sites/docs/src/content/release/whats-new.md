@@ -53,6 +53,15 @@ check out the [Flutter 3.50 blog post][3.50-blog-post].
   the `--no-deprecated-js-interop` build flag,
   and refreshed [web accessibility][web-a11y] guidance.
 
+* The web and [WebAssembly (Wasm)][wasm] documentation includes expanded
+  production guidance for [deploying Wasm builds][web-deploy-wasm]
+  (server headers, pre-compression, cold-start latency, and CDN asset
+  loading), [optimizing embedded views on host pages][web-embed-optimize]
+  (lazy-loading, preventing layout shifts, and coexisting with third-party
+  scripts), communicating with host pages and measuring startup milestones
+  with [package:web][wasm-host-interop], and
+  [profiling Core Web Vitals and Wasm memory][web-perf] in Chrome DevTools.
+
 * The AI documentation has been reorganized around a unified
   [get started guide][ai-get-started], an [AI tools overview][ai-tools]
   covering agentic rules, custom agents (including the built-in Flutter
@@ -77,30 +86,35 @@ check out the [Flutter 3.50 blog post][3.50-blog-post].
 As always, check out the [breaking changes][bc-3-50] page for this release,
 which includes links to migration guides and other vital information.
 
-[3.50-blog-post]: {{site.main-url}}/blog/whats-new-in-flutter-3-50
-[native-interop]: /interop
-[pigeon]: /interop/pigeon
-[c-interop]: /interop/ffigen
-[java-interop]: /interop/jnigen
-[bind-native-code]: /interop/bind-native-code
-[design-pkg-migration]: /release/breaking-changes/material-ui-and-cupertino-ui
-[install]: /install
-[ios-setup]: /platform-integration/ios/setup
-[poyito777]: https://github.com/poyito777
-[web-deploy]: /deployment/web
-[wasm-350]: /platform-integration/web/wasm
-[web-a11y]: /ui/accessibility/web-accessibility
+[bc-3-50]: /release/breaking-changes#released-in-flutter-3-50
 [ai-get-started]: /ai/get-started
 [ai-tools]: /ai/tools
-[package-skills]: /ai/package-skills
+[bind-native-code]: /interop/bind-native-code
+[3.50-blog-post]: {{site.main-url}}/blog/whats-new-in-flutter-3-50
+[c-interop]: /interop/ffigen
 [choose-database]: /data-and-backend/persistence/choose-a-database
+[design-pkg-migration]: /release/breaking-changes/material-ui-and-cupertino-ui
 [firebase-docs]: /data-and-backend/firebase
 [flavors-windows]: /deployment/flavors-windows
 [flavors-linux]: /deployment/flavors-linux
+[install]: /install
+[ios-setup]: /platform-integration/ios/setup
+[java-interop]: /interop/jnigen
+[native-interop]: /interop
+[package-skills]: /ai/package-skills
+[pigeon]: /interop/pigeon
+[poyito777]: https://github.com/poyito777
+[rfc-process]: /release/compatibility-policy
 [supported-platforms]: /reference/supported-platforms
 [swiftpm-350]: /packages-and-plugins/swift-package-manager/for-app-developers
-[rfc-process]: /release/compatibility-policy
-[bc-3-50]: /release/breaking-changes#released-in-flutter-3-50
+[wasm]: /platform-integration/web/wasm
+[wasm-350]: /platform-integration/web/wasm
+[wasm-host-interop]: /platform-integration/web/wasm#host-scripts-and-measurement-apis
+[web-a11y]: /ui/accessibility/web-accessibility
+[web-deploy]: /deployment/web
+[web-deploy-wasm]: /deployment/web#deploy-webassembly-in-production
+[web-embed-optimize]: /platform-integration/web/embedding-flutter-web#landing-pages-and-third-party-scripts
+[web-perf]: /perf/web-performance
 
 ---
 
