@@ -1214,6 +1214,13 @@ This page has release notes for Flutter 3.50.
 * [flutter-3.50-candidate.0] Sync engine.version to 8ec493d4d9cd3cc17a5639d2684e9ad1e22c47b1 by @flutteractionsbot in [195497](https://github.com/flutter/flutter/pull/195497)
 * [CP-beta]Roll brotli to v1.2.1 by @flutteractionsbot in [195615](https://github.com/flutter/flutter/pull/195615)
 * [flutter-3.50-candidate.0] Sync engine.version to 1b9ee1a58581e9c51a5fc9b38d42ab80388c6d1d by @flutteractionsbot in [195935](https://github.com/flutter/flutter/pull/195935)
+* [CP-beta]Run 10 impeller iOS benchmarks as one devicelab task by @flutteractionsbot in [196009](https://github.com/flutter/flutter/pull/196009)
+* [flutter-3.50-candidate.0] Update Flutter DEPS to Dart fa8c1270c374c1346931583a17c3b7f278d3822d by @flutteractionsbot in [196051](https://github.com/flutter/flutter/pull/196051)
+* [CP-beta]Run the mac_unopt sub-builds as standalone builders by @flutteractionsbot in [196058](https://github.com/flutter/flutter/pull/196058)
+* [flutter-3.50-candidate.0] Sync engine.version to d7ec6a162d83fc207042077980bef98dfd43f875 by @flutteractionsbot in [196062](https://github.com/flutter/flutter/pull/196062)
+* [3.50] Add Flutter 3.50.0 CHANGELOG.md entry by @reidbaker-agent in [195915](https://github.com/flutter/flutter/pull/195915)
+* [beta] Expose engineId on native plugin bindings and registrars on Android, iOS, and macOS by @tarrinneal in [196145](https://github.com/flutter/flutter/pull/196145)
+* [flutter-3.50-candidate.0] Sync engine.version to 371f77202a73e8dff57a8b3bff75bca55c090aee by @flutteractionsbot in [196215](https://github.com/flutter/flutter/pull/196215)
 
 ## New contributors
 
@@ -1287,4 +1294,4 @@ This page has release notes for Flutter 3.50.
 * @aayushkedawat made their first contribution in [193079](https://github.com/flutter/flutter/pull/193079)
 * @RobertOdrowaz made their first contribution in [191350](https://github.com/flutter/flutter/pull/191350)
 
-**Full Changelog**: https://github.com/flutter/flutter/compare/3.47.0...3.50.0-0.4.pre
+**Full Changelog**: https://github.com/flutter/flutter/compare/3.47.0...3.50.0
