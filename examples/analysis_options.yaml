@@ -7,8 +7,6 @@ analyzer:
     strict-raw-types: true
   errors:
     avoid_print: ignore
-  exclude:
-    - internationalization/gen_l10n_example
 
 linter:
   rules:

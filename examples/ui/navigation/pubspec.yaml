@@ -10,8 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  go_router: ^18.1.1
-  material_ui: ^1.8.0
+  go_router: ^18.1.4
+  material_ui: ^1.11.0
 
 flutter:
   uses-material-design: true

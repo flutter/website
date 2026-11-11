@@ -11,5 +11,5 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  material_ui: ^1.8.0
+  material_ui: ^1.11.0
   shared_preferences: ^2.5.6
