@@ -9,8 +9,15 @@ import 'package:universal_web/web.dart' as web;
 import '../../../util.dart';
 import '../../../web_util.dart';
 
+/// An interactive tabs component that manages active tab state and
+/// tab switching in the browser.
+///
+/// Supports synchronizing tab selection across multiple tab sets sharing the
+/// same [saveKey] using browser local storage.
 @client
 class InteractiveDashTabs extends StatefulComponent {
+  /// Creates an interactive tab set with the specified [tabs] and their
+  /// corresponding [tabContents].
   const InteractiveDashTabs({
     required this.id,
     required this.tabs,
@@ -22,16 +29,27 @@ class InteractiveDashTabs extends StatefulComponent {
          'tabs and tabContents must have the same length!',
        );
 
+  /// The HTML element ID for this tab set wrapper.
   final String id;
+
+  /// The optional key used to synchronize and persist the selected tab across
+  /// page visits and matching tab sets.
   final String? saveKey;
+
+  /// Whether the tab container uses wrapped styling.
   final bool wrapped;
+
+  /// The list of tab metadata headers.
   final List<DashTab> tabs;
+
+  /// The list of content components corresponding to each tab in [tabs].
   final List<Component> tabContents;
 
   @override
   State<InteractiveDashTabs> createState() => InteractiveDashTabsState();
 }
 
+/// The state for an [InteractiveDashTabs] component.
 class InteractiveDashTabsState extends State<InteractiveDashTabs> {
   static final Map<String, Set<InteractiveDashTabsState>> tabStates = {};
 
@@ -203,21 +221,34 @@ class InteractiveDashTabsState extends State<InteractiveDashTabs> {
   }
 }
 
+/// Metadata describing a single tab in an [InteractiveDashTabs] component.
 class DashTab {
+  /// Creates metadata for a tab with a display [tabName] and a unique [baseId].
   const DashTab({
     required this.tabName,
     required this.baseId,
     this.saveId,
   });
 
+  /// The human-readable name displayed on the tab header.
   final String tabName;
+
+  /// The base identifier used to construct DOM IDs for this tab.
   final String baseId;
+
+  /// An optional identifier used when persisting or syncing tab selection.
   final String? saveId;
 
+  /// The HTML ID assigned to the tab button element.
   String get tabId => '$baseId-tab';
+
+  /// The HTML ID assigned to the tab panel container.
   String get panelId => '$baseId-tab-panel';
+
+  /// The key used to identify this tab in local storage.
   String get tabSaveId => saveId ?? slugify(tabName);
 
+  /// Decodes a [DashTab] from a serialized map.
   @decoder
   static DashTab decode(Map<String, Object?> map) {
     return DashTab(
@@ -227,6 +258,7 @@ class DashTab {
     );
   }
 
+  /// Encodes this [DashTab] into a serializable map.
   @encoder
   Map<String, Object?> encode() {
     return {

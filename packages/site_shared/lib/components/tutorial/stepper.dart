@@ -7,7 +7,10 @@ import 'package:jaspr_content/jaspr_content.dart';
 
 import 'client/stepper.dart';
 
+/// A custom Markdown component that creates an [InteractiveStepper] from
+/// headings and content within a `<Stepper>` tag.
 class Stepper extends CustomComponent {
+  /// Creates a [Stepper] component processor.
   const Stepper() : super.base();
 
   @override

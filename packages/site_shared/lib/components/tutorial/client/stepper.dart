@@ -10,8 +10,11 @@ import '../../../util.dart';
 import '../../common/button.dart';
 import '../../common/material_icon.dart';
 
+/// An interactive stepper component that displays a sequence of steps with
+/// expand/collapse transitions and step navigation.
 @client
 class InteractiveStepper extends StatefulComponent {
+  /// Creates an interactive stepper with the given [titles] and [steps].
   const InteractiveStepper({
     required this.titles,
     required this.steps,
@@ -22,10 +25,20 @@ class InteractiveStepper extends StatefulComponent {
   }) : assert(steps.length > 0, 'Stepper must have at least one step.'),
        assert(titles.length == steps.length, 'Titles must match step count.');
 
+  /// The title component for each step.
   final List<Component> titles;
+
+  /// The content component for each step.
   final List<Component> steps;
+
+  /// Whether the stepper steps can be collapsed and expanded.
   final bool collapsible;
+
+  /// Whether to show action buttons (such as "Continue") at the end of
+  /// each step.
   final bool showActions;
+
+  /// Whether to show a "Finish" action button on the final step.
   final bool showFinish;
 
   @override

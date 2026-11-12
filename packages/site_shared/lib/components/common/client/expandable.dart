@@ -2,13 +2,22 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+/// @docImport 'trigger.dart';
+library;
+
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
 export 'trigger.dart';
 
+/// A component that manages the expandable and collapsible state of its
+/// [child].
+///
+/// Descendant components can access the [ExpandableController] using
+/// [Expandable.maybeOf] or use a [Trigger] to toggle the expanded state.
 @client
 class Expandable extends StatefulComponent {
+  /// Creates an expandable container around [child].
   const Expandable({
     this.id,
     this.initiallyExpanded = true,
@@ -16,13 +25,24 @@ class Expandable extends StatefulComponent {
     super.key,
   });
 
+  /// The optional HTML element ID for the expandable container.
+  ///
+  /// When running in the browser and matching the URL fragment, the component
+  /// expands automatically and scrolls into view.
   final String? id;
+
+  /// Whether the component is expanded initially.
   final bool initiallyExpanded;
+
+  /// The child component whose visibility and classes are controlled by
+  /// this expandable container.
   final Component child;
 
   @override
   State<Expandable> createState() => _ExpandableState();
 
+  /// Returns the nearest [ExpandableController] enclosing the given [context],
+  /// or `null` if none is found.
   static ExpandableController? maybeOf(BuildContext context) {
     return context
         .dependOnInheritedComponentOfExactType<_InheritedExpandable>();

@@ -5,8 +5,11 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
+/// A tabbed container component that supports custom headers, labels,
+/// and tab panes.
 @client
 class Tabs extends StatefulComponent {
+  /// Creates a tab container with the given [labels] and corresponding [tabs].
   const Tabs({
     this.title,
     this.header,
@@ -16,10 +19,19 @@ class Tabs extends StatefulComponent {
     super.key,
   });
 
+  /// An optional title component displayed alongside the tabs.
   final Component? title;
+
+  /// An optional header component rendered above the tabs menu.
   final Component? header;
+
+  /// The list of tab button labels.
   final List<String> labels;
+
+  /// The list of tab pane content components.
   final List<Component> tabs;
+
+  /// Whether scroll-spy behavior is disabled for these tabs.
   final bool noSpy;
 
   @override
