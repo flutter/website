@@ -84,6 +84,12 @@ the team became productive right away,
 using Flutter to orchestrate complex on-device AI pipelines
 alongside responsive, interactive interfaces.
 
+<Image
+  src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_shared_architecture.webp"
+  format="fullwidth"
+  alt="Architecture diagram showing AI Edge Eloquent and AI Edge Foresight built on a shared Flutter and Dart application layer bridging to native C++ on-device inference via dart:ffi"
+/>
+
 At the core of Eloquent's local intelligence is [LiteRT-LM][litert-lm],
 Google's on-device inference framework for running Gemma models efficiently
 on consumer hardware.

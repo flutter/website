@@ -72,6 +72,12 @@ the team became productive right away,
 using Flutter not only for responsive desktop interfaces
 but also as a unified orchestration layer for local machine learning models.
 
+<Image
+  src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_shared_architecture.webp"
+  format="fullwidth"
+  alt="Architecture diagram showing AI Edge Eloquent and AI Edge Foresight built on a shared Flutter and Dart application layer bridging to native C++ on-device inference via dart:ffi"
+/>
+
 Under the hood, Foresight runs local Gemma and EmbeddingGemma 2 models
 through [LiteRT-LM][litert-lm],
 Google's high-performance on-device inference framework.
