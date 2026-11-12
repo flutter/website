@@ -7,7 +7,7 @@ publishDate: 2026-11-12
 author: mariam_hasnany
 coverImage:
   alt: "Dash plugging Dart and native together"
-  url: images/DartNative_v01.mp4
+  url: images/DartNative.gif
   showInPost: true
 socialImage: images/stable-interop-cover.png
 category: deep-dive
