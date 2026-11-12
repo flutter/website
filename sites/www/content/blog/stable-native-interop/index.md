@@ -17,7 +17,7 @@ layout: blog
 Last year, we introduced our
 [vision for direct native interoperability](https://flutter.dev/blog/flutters-path-towards-seamless-interop),
 aimed at making access to platform APIs a lower effort for Flutter developers.
-Our initial goal was to solve the fundamental challenge with using method
+Our initial goal was to solve the fundamental challenge with using platform
 channels to call native APIs on Android and iOS.
 
 Today, we’re taking a massive step toward that goal.
@@ -128,7 +128,7 @@ Pigeon handles everything between your Dart code and that interface.
 To turn on native interop, set a few options in the
 `@ConfigurePigeon` annotation at the top of that same Pigeon file.
 
-pigeons/messages.dart: the same Pigeon definition file you use today:
+pigeons/messages.dart: (the same Pigeon definition file you use today)
 ```dart
 @ConfigurePigeon(
   PigeonOptions(
