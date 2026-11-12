@@ -78,9 +78,19 @@ compile and debug native Swift and Objective-C code.
     If you've already installed CocoaPods,
     update it following the [CocoaPods update guide][].
 
+    :::tip
+    The default system Ruby included with macOS might be older than
+    required by recent CocoaPods gem dependencies, causing
+    `sudo gem install cocoapods` to fail.
+    If you encounter Ruby version errors, install CocoaPods using
+    [Homebrew][] (`brew install cocoapods`) or a newer Ruby installation
+    managed by a Ruby version manager.
+    :::
+
 {: .steps}
 
 [xcode]: {{site.apple-dev}}/xcode/
+[Homebrew]: https://brew.sh/
 [Flutter plugins]: /packages-and-plugins/developing-packages#types
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods installation guide]: https://guides.cocoapods.org/using/getting-started.html#installation
