@@ -17,6 +17,7 @@ dependencies:
   markdown_description_list: ^0.2.0
   mermaid_core: ^0.3.2
   meta: ^1.19.0
+  mime: ^2.1.0
   nanoid2: ^2.1.0
   opal: ^0.3.0
   path: ^1.9.1
