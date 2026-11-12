@@ -36,7 +36,7 @@ extension type Post(Map<String, Object?> data) {
     return post;
   }
 
-  /// Checks the cover image metadata before or after asset URL resolution.
+  /// Validates the cover image metadata, throwing if invalid.
   static void validateCoverImage(Object? coverImage, {String? source}) {
     final sourceDescription = source == null ? '' : ' at "$source"';
     switch (coverImage) {
