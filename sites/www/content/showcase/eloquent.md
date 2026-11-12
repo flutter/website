@@ -1,14 +1,14 @@
 ---
-title: Google AI Edge Eloquent
+title: Eloquent
 description: >-
   Learn how Google AI Edge Labs used Flutter to expand Eloquent from a Top 20
   iOS dictation app to a local AI desktop showcase for Gemma 4 12B in 10 days
   and scale its local AI suite.
-headline: Google AI Edge Eloquent
+headline: Eloquent
 summary: >-
   Google AI Edge expands Eloquent to desktop in 10 days and scales its local AI
   suite with Flutter
-appName: Google AI Edge Eloquent
+appName: Eloquent
 companyName: Google AI Edge
 logo: images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_eloquent_logo.webp
 card: images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_eloquent_card.webp
@@ -194,7 +194,7 @@ or explore [Google AI Edge Foresight][foresight].
 [eloquent]: https://developers.google.com/edge/eloquent
 [eloquent-ios]: https://apps.apple.com/us/app/google-ai-edge-eloquent/id6756505519
 [foresight]: https://developers.google.com/edge/foresight
-[foresight-showcase]: /showcase/google-ai-edge-foresight
+[foresight-showcase]: /showcase/foresight
 [gemma-4-12b]: https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/
 [litert-lm]: https://developers.google.com/edge/litert-lm
 [mediapipe-solutions]: https://developers.google.com/edge/mediapipe/solutions

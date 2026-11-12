@@ -3,13 +3,13 @@
 #
 # Only apps built with Flutter by teams at Google should be added to this list.
 
-- title: Google AI Edge Eloquent
+- title: Eloquent
   image: images/google_apps/google_ai_edge_eloquent_logo.webp
-  url: /showcase/google-ai-edge-eloquent
+  url: /showcase/eloquent
 
-- title: Google AI Edge Foresight
+- title: Foresight
   image: images/google_apps/google_ai_edge_foresight_logo.webp
-  url: /showcase/google-ai-edge-foresight
+  url: /showcase/foresight
 
 - title: NotebookLM
   image: images/google_apps/image_1.png

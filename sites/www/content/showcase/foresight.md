@@ -1,14 +1,14 @@
 ---
-title: Google AI Edge Foresight
+title: Foresight
 description: >-
   Learn how Google AI Edge Labs built Foresight, an offline-first AI meeting and
   note-taking companion for macOS, reusing 60% of Eloquent's Flutter and C++ AI
   stack to cut initial engineering time by 80%.
-headline: Google AI Edge Foresight
+headline: Foresight
 summary: >-
   Google AI Edge accelerates Foresight on macOS by sharing 60% of its Flutter
   and on-device AI stack
-appName: Google AI Edge Foresight
+appName: Foresight
 companyName: Google AI Edge
 logo: images/third_party/case_studies/google-ai-edge-foresight/google_ai_edge_foresight_logo.webp
 card: images/third_party/case_studies/google-ai-edge-foresight/google_ai_edge_foresight_card.webp
@@ -154,7 +154,7 @@ or download [Eloquent on the App Store][eloquent-ios].
 
 [foresight]: https://developers.google.com/edge/foresight
 [eloquent]: https://developers.google.com/edge/eloquent
-[eloquent-showcase]: /showcase/google-ai-edge-eloquent
+[eloquent-showcase]: /showcase/eloquent
 [eloquent-ios]: https://apps.apple.com/us/app/google-ai-edge-eloquent/id6756505519
 [gemma-4-12b]: https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/
 [litert-lm]: https://developers.google.com/edge/litert-lm
