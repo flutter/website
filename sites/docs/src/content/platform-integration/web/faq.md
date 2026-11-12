@@ -299,7 +299,6 @@ check out [Using service workers][].
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
 [Preparing a web app for release]: /deployment/web
 [roadmap]: {{site.repo.flutter}}/blob/master/docs/roadmap/Roadmap.md#web-platform
-[run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
 [Using service workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
 [Web content in Flutter]: /platform-integration/web/web-content-in-flutter
 [Web support for Flutter]: /platform-integration/web

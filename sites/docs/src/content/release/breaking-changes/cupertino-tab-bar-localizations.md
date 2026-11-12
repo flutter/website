@@ -10,7 +10,7 @@ description: >
 ## Summary
 
 Instances of `CupertinoTabBar` must have a
-`Localizations`parent in order to provide a localized
+`Localizations` parent in order to provide a localized
 `Semantics` hint. Trying to instantiate a
 `CupertinoTabBar` without localizations
 results in an assertion such as the following:

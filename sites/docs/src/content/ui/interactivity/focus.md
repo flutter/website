@@ -353,10 +353,11 @@ to be disposed of, the focus node you pass needs to be owned by a stateful
 widget, so don't just create one each time it is built.
 
 If you need access to the focus node from the descendant of a `Focus` widget,
-you can call `Focus.of(context)` to obtain the focus node of the nearest `Focus
-`widget to the given context. If you need to obtain the `FocusNode` of a `Focus`
-widget within the same build function, use a [`Builder`][] to make sure you have
-the correct context. This is shown in the following example:
+you can call `Focus.of(context)` to obtain the focus node of the nearest
+`Focus` widget to the given context.
+If you need to obtain the `FocusNode` of a `Focus` widget within the same
+build function, use a [`Builder`][] to make sure you have the correct context.
+This is shown in the following example:
 
 <?code-excerpt "ui/focus/lib/samples.dart (builder)"?>
 ```dart

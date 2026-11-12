@@ -108,7 +108,7 @@ Relevant PRs:
 
 Supported by Flutter Fix: yes
 
-The default constructor for `VelocityTracker`was deprecated in v1.22.
+The default constructor for `VelocityTracker` was deprecated in v1.22.
 
 The `VelocityTracker.withKind()` should be used instead. This allows for a
 `PointerDeviceKind` to be specified for the tracker. The previous default for

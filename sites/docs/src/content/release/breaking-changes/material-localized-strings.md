@@ -30,7 +30,7 @@ replaced by the same strings in [`WidgetsLocalizations`][].
 ## Migration guide
 
 If you use these strings in your code,
-you can access them from `WidgetsLocalizations`instead.
+you can access them from `WidgetsLocalizations` instead.
 
 Code before migration:
 

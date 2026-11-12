@@ -106,7 +106,7 @@ while the app initializes.
 ## SplashScreen API
 
 Android 12 introduced the [`SplashScreen`][] API.
-Use the `SplashScreen` API in your `styles.xml`file.
+Use the `SplashScreen` API in your `styles.xml` file.
 For example:
 
 ```xml
