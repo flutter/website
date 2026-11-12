@@ -7,9 +7,9 @@ publishDate: 2026-11-12
 author: mariam_hasnany
 coverImage:
   alt: "Dash plugging Dart and native together"
-  url: images/DartNative.gif
+  url: images/DartNative.webp
   showInPost: true
-socialImage: images/stable-interop-cover.png
+socialImage: images/stable-interop-cover.webp
 category: deep-dive
 layout: blog
 ---
@@ -76,7 +76,7 @@ You can even call platform APIs straight from Dart, often without writing any na
 And because FFIgen and JNIgen generate plain Dart code,
 they work in any Dart project, with or without Flutter.
 
-<DashImage figure src="images/runtime-architure-comparison.png" 
+<DashImage figure src="images/runtime-architure-comparison.webp"
   alt="Runtime architecture comparison that shows Method Channels (top) vs. Direct Interop (bottom)"/>
 
 Raw FFIgen and JNIgen bindings work well for single-platform code and C-ABI libraries.
@@ -123,7 +123,7 @@ the generated interface in Swift or Kotlin.
 That implementation is still where you call the platform APIs you need.
 Pigeon handles everything between your Dart code and that interface.
 
-<DashImage figure src="images/code-generation.png" />
+<DashImage figure src="images/code-generation.webp" />
 
 To turn on native interop, set a few options in the
 `@ConfigurePigeon` annotation at the top of that same Pigeon file.
