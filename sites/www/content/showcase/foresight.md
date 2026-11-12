@@ -44,11 +44,7 @@ and expands them into complete, structured notes
 alongside live transcripts, real-time Q&A, and summaries,
 all running directly on the user's device.
 
-<Image
-  src="images/third_party/case_studies/google-ai-edge-foresight/google_ai_edge_foresight_body_1.webp"
-  format="fullwidth"
-  alt="Google AI Edge Foresight on macOS showing live meeting transcription, enhanced notes, and AI summary powered by EmbeddingGemma 2"
-/>
+<Image src="images/third_party/case_studies/google-ai-edge-foresight/google_ai_edge_foresight_body_1.webp" format="fullwidth" alt="Google AI Edge Foresight on macOS showing live meeting transcription, enhanced notes, and AI summary powered by EmbeddingGemma 2" />
 
 Built by Google AI Edge Labs alongside its sister dictation app
 [Google AI Edge Eloquent][eloquent-showcase],
@@ -72,11 +68,7 @@ the team became productive right away,
 using Flutter not only for responsive desktop interfaces
 but also as a unified orchestration layer for local machine learning models.
 
-<Image
-  src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_shared_architecture.webp"
-  format="fullwidth"
-  alt="Architecture diagram showing AI Edge Eloquent and AI Edge Foresight built on a shared Flutter and Dart application layer bridging to native C++ on-device inference via dart:ffi"
-/>
+<Image src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_shared_architecture.webp" format="fullwidth" alt="Architecture diagram showing AI Edge Eloquent and AI Edge Foresight built on a shared Flutter and Dart application layer bridging to native C++ on-device inference via dart:ffi" />
 
 Under the hood, Foresight runs local Gemma and EmbeddingGemma 2 models
 through [LiteRT-LM][litert-lm],
@@ -101,11 +93,7 @@ the Foresight team reused shared middle-tier packages for chunked model
 downloading, local encryption, isolate management, and C++ LiteRT-LM FFI
 orchestration from day one.
 
-<Image
-  src="images/third_party/case_studies/google-ai-edge-foresight/google_ai_edge_foresight_demo.webp"
-  format="fullwidth"
-  alt="Animated demo of Google AI Edge Foresight expanding shorthand meeting notes into structured enhanced notes"
-/>
+<Image src="images/third_party/case_studies/google-ai-edge-foresight/google_ai_edge_foresight_demo.webp" format="fullwidth" alt="Animated demo of Google AI Edge Foresight expanding shorthand meeting notes into structured enhanced notes" />
 
 On the surface, Foresight also reused Eloquent's shared Flutter design library,
 ensuring both applications look and feel like one cohesive Google AI Edge suite.

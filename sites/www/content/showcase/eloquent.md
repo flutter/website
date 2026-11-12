@@ -48,11 +48,7 @@ Eloquent runs speech recognition and language models locally
 without requiring an internet connection,
 keeping voice notes fast, private, and available offline.
 
-<Image
-  src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_eloquent_body_1.webp"
-  format="fullwidth"
-  alt="Google AI Edge Eloquent on iOS highlighting edits between raw speech disfluencies and polished dictation"
-/>
+<Image src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_eloquent_body_1.webp" format="fullwidth" alt="Google AI Edge Eloquent on iOS highlighting edits between raw speech disfluencies and polished dictation" />
 
 Built by Google AI Edge Labs,
 [Eloquent][eloquent] and its sister app [Foresight][foresight]
@@ -84,11 +80,7 @@ the team became productive right away,
 using Flutter to orchestrate complex on-device AI pipelines
 alongside responsive, interactive interfaces.
 
-<Image
-  src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_shared_architecture.webp"
-  format="fullwidth"
-  alt="Architecture diagram showing AI Edge Eloquent and AI Edge Foresight built on a shared Flutter and Dart application layer bridging to native C++ on-device inference via dart:ffi"
-/>
+<Image src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_shared_architecture.webp" format="fullwidth" alt="Architecture diagram showing AI Edge Eloquent and AI Edge Foresight built on a shared Flutter and Dart application layer bridging to native C++ on-device inference via dart:ffi" />
 
 At the core of Eloquent's local intelligence is [LiteRT-LM][litert-lm],
 Google's on-device inference framework for running Gemma models efficiently
@@ -115,11 +107,7 @@ designers and engineers adapted the interface for larger desktop screens,
 added window resizing and desktop keyboard shortcuts,
 and integrated local 12B model execution on macOS in time for launch day.
 
-<Image
-  src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_eloquent_body_2.webp"
-  format="fullwidth"
-  alt="Google AI Edge Eloquent running locally on macOS desktop alongside the iOS mobile app"
-/>
+<Image src="images/third_party/case_studies/google-ai-edge-eloquent/google_ai_edge_eloquent_body_2.webp" format="fullwidth" alt="Google AI Edge Eloquent running locally on macOS desktop alongside the iOS mobile app" />
 
 Flutter also made it straightforward to craft expressive,
 custom UI interactions that make on-device AI feel transparent.
@@ -136,11 +124,7 @@ Foresight lets users jot down shorthand notes during a meeting
 and expands them into complete, structured notes
 alongside live transcripts and summaries.
 
-<Image
-  src="images/third_party/case_studies/google-ai-edge-foresight/google_ai_edge_foresight_demo.webp"
-  format="fullwidth"
-  alt="Animated demo of Google AI Edge Foresight expanding shorthand meeting notes into structured enhanced notes on macOS"
-/>
+<Image src="images/third_party/case_studies/google-ai-edge-foresight/google_ai_edge_foresight_demo.webp" format="fullwidth" alt="Animated demo of Google AI Edge Foresight expanding shorthand meeting notes into structured enhanced notes on macOS" />
 
 Because Eloquent was built as reusable Dart and Flutter packages,
 Eloquent and Foresight share roughly 60% of their overall infrastructure stack.
