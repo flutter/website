@@ -6,8 +6,10 @@ description: >-
 publishDate: 2026-11-12
 author: mariam_hasnany
 coverImage:
-  url: images/01m_CqCW7oMEoqPrl.webp
-  showInPost: false
+  alt: "Dash plugging Dart and native together"
+  url: images/DartNative_v01.mp4
+  showInPost: true
+socialImage: images/stable-interop-cover.png
 category: deep-dive
 layout: blog
 ---
