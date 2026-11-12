@@ -97,7 +97,7 @@ That developer experience wasn't as friction free as we'd like.
 
 So we decided to bring the developer ergonomics of Pigeon and the
 performance of native interop together.
-**[Pigeon](https://github.com/flutter/packages/blob/main/packages/pigeon/native_interop_guide.md)
+**[Pigeon v30.0+](https://github.com/flutter/packages/blob/main/packages/pigeon/native_interop_guide.md)
 can now use FFIgen and JNIgen under the hood.**
 
 [Pigeon](https://pub.dev/packages/pigeon) with native interop
