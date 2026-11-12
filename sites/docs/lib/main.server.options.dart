@@ -30,6 +30,8 @@ import 'package:site_shared/components/common/client/copy_button.dart'
     as _copy_button;
 import 'package:site_shared/components/common/client/download_button.dart'
     as _download_button;
+import 'package:site_shared/components/common/client/expandable.dart'
+    as _expandable;
 import 'package:site_shared/components/common/client/feedback.dart'
     as _feedback;
 import 'package:site_shared/components/common/client/on_this_page_button.dart'
@@ -39,6 +41,7 @@ import 'package:site_shared/components/common/client/page_header_options.dart'
 import 'package:site_shared/components/common/client/simple_tooltip.dart'
     as _simple_tooltip;
 import 'package:site_shared/components/common/client/tabs.dart' as _tabs;
+import 'package:site_shared/components/common/client/trigger.dart' as _trigger;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     as _dartpad_injector;
 import 'package:site_shared/components/layout/menu_toggle.dart' as _menu_toggle;
@@ -118,6 +121,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:download_button',
           params: __download_buttonDownloadButton,
         ),
+    _expandable.Expandable: ClientTarget<_expandable.Expandable>(
+      'site_shared:expandable',
+      params: __expandableExpandable,
+    ),
     _feedback.FeedbackComponent: ClientTarget<_feedback.FeedbackComponent>(
       'site_shared:feedback',
       params: __feedbackFeedbackComponent,
@@ -138,6 +145,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
     _tabs.InteractiveDashTabs: ClientTarget<_tabs.InteractiveDashTabs>(
       'site_shared:tabs',
       params: __tabsInteractiveDashTabs,
+    ),
+    _trigger.Trigger: ClientTarget<_trigger.Trigger>(
+      'site_shared:trigger',
+      params: __triggerTrigger,
     ),
     _dartpad_injector.DartPadInjector:
         ClientTarget<_dartpad_injector.DartPadInjector>(
@@ -190,6 +201,11 @@ Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
 Map<String, Object?> __download_buttonDownloadButton(
   _download_button.DownloadButton c,
 ) => {'name': c.name};
+Map<String, Object?> __expandableExpandable(_expandable.Expandable c) => {
+  'id': c.id,
+  'initiallyExpanded': c.initiallyExpanded,
+  'child': c.child,
+};
 Map<String, Object?> __feedbackFeedbackComponent(
   _feedback.FeedbackComponent c,
 ) => {'issueUrl': c.issueUrl};
@@ -211,6 +227,7 @@ Map<String, Object?> __tabsInteractiveDashTabs(_tabs.InteractiveDashTabs c) => {
   'saveKey': c.saveKey,
   'wrapped': c.wrapped,
 };
+Map<String, Object?> __triggerTrigger(_trigger.Trigger c) => {'child': c.child};
 Map<String, Object?> __dartpad_injectorDartPadInjector(
   _dartpad_injector.DartPadInjector c,
 ) => {

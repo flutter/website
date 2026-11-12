@@ -10,7 +10,7 @@ body.glossary-page main {
       padding-top: 0.5rem;
     }
 
-    &.collapsed {
+    &:not(.expanded) {
       min-height: 8rem;
 
       .initial-content {

@@ -9,6 +9,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/button.dart';
 import 'package:site_shared/components/common/card.dart';
+import 'package:site_shared/components/common/client/trigger.dart';
 import 'package:site_shared/components/common/tags.dart';
 
 import '../../../models/cuj_model.dart';
@@ -82,15 +83,16 @@ final class _CujCard extends StatelessComponent {
               'aria-label': 'Link to the "${cuj.goal}" journey',
             },
           ),
-          Button(
-            icon: 'keyboard_arrow_up',
-            classes: const ['expand-button'],
-            title: 'Expand or collapse tasks',
-            attributes: {
-              'aria-expanded': 'false',
-              'aria-controls': '$cardId-content',
-              'aria-label': 'Expand or collapse the tasks for "${cuj.goal}"',
-            },
+          Trigger(
+            child: Button(
+              icon: 'keyboard_arrow_up',
+              classes: const ['expand-button'],
+              title: 'Expand or collapse tasks',
+              attributes: {
+                'aria-controls': '$cardId-content',
+                'aria-label': 'Expand or collapse the tasks for "${cuj.goal}"',
+              },
+            ),
           ),
         ]),
       ],

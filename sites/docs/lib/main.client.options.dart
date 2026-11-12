@@ -30,6 +30,8 @@ import 'package:site_shared/components/common/client/copy_button.dart'
     deferred as _copy_button;
 import 'package:site_shared/components/common/client/download_button.dart'
     deferred as _download_button;
+import 'package:site_shared/components/common/client/expandable.dart'
+    deferred as _expandable;
 import 'package:site_shared/components/common/client/feedback.dart'
     deferred as _feedback;
 import 'package:site_shared/components/common/client/on_this_page_button.dart'
@@ -40,6 +42,8 @@ import 'package:site_shared/components/common/client/simple_tooltip.dart'
     deferred as _simple_tooltip;
 import 'package:site_shared/components/common/client/tabs.dart'
     deferred as _tabs;
+import 'package:site_shared/components/common/client/trigger.dart'
+    deferred as _trigger;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
 import 'package:site_shared/components/layout/menu_toggle.dart'
@@ -141,6 +145,14 @@ ClientOptions get defaultClientOptions => ClientOptions(
       (p) => _download_button.DownloadButton(name: p.get<String>('name')),
       loader: _download_button.loadLibrary,
     ),
+    'site_shared:expandable': ClientLoader(
+      (p) => _expandable.Expandable(
+        id: p.get<String?>('id'),
+        initiallyExpanded: p.get<bool>('initiallyExpanded'),
+        child: p.mount(p.get<String>('child')),
+      ),
+      loader: _expandable.loadLibrary,
+    ),
     'site_shared:feedback': ClientLoader(
       (p) => _feedback.FeedbackComponent(issueUrl: p.get<String>('issueUrl')),
       loader: _feedback.loadLibrary,
@@ -182,6 +194,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
         wrapped: p.get<bool>('wrapped'),
       ),
       loader: _tabs.loadLibrary,
+    ),
+    'site_shared:trigger': ClientLoader(
+      (p) => _trigger.Trigger(child: p.mount(p.get<String>('child'))),
+      loader: _trigger.loadLibrary,
     ),
     'site_shared:dartpad_injector': ClientLoader(
       (p) => _dartpad_injector.DartPadInjector(

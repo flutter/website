@@ -2,7 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/util.dart';
 import 'package:site_shared/web_util.dart';
 import 'package:universal_web/js_interop.dart';
@@ -15,7 +14,6 @@ import 'package:universal_web/web.dart' as web;
 void setUpSite() {
   _setUpSearchKeybindings();
   _setUpCollapsibleElements();
-  _setUpExpandableCards();
   _setUpPlatformKeys();
   _setUpToc();
   _setUpIdeExplorers();
@@ -87,48 +85,6 @@ void _setUpCollapsibleElements() {
     }
 
     toggle.addEventListener('click', handleClick.toJS);
-  }
-}
-
-void _setUpExpandableCards() {
-  var currentFragment = web.window.location.hash.trim().toLowerCase();
-  if (currentFragment.startsWith('#')) {
-    // Remove the leading '#' from the fragment.
-    currentFragment = currentFragment.substring(1);
-  }
-  final expandableCards = web.document.querySelectorAll('.expandable-card');
-  web.Element? targetCard;
-
-  for (var i = 0; i < expandableCards.length; i++) {
-    final card = expandableCards.item(i) as web.Element;
-    final expandButton = card.querySelector('.expand-button');
-    if (expandButton == null) continue;
-
-    expandButton.addEventListener(
-      'click',
-      ((web.Event e) {
-        if (card.classList.contains('collapsed')) {
-          card.classList.remove('collapsed');
-          expandButton.ariaExpanded = 'true';
-        } else {
-          card.classList.add('collapsed');
-          expandButton.ariaExpanded = 'false';
-        }
-        e.preventDefault();
-      }).toJS,
-    );
-
-    // If the card is the currently specified fragment, expand it.
-    if (card.id == currentFragment) {
-      card.classList.remove('collapsed');
-      expandButton.ariaExpanded = 'true';
-      targetCard = card;
-    }
-  }
-
-  if (targetCard != null) {
-    // Scroll the expanded card into view.
-    targetCard.scrollIntoView();
   }
 }
 
