@@ -290,9 +290,9 @@ you can create one by subclassing `FlutterSceneDelegate`:
 
     class SceneDelegate: FlutterSceneDelegate {
       override func sceneDidBecomeActive(_ scene: UIScene) {
-        // Custom logic here.
-
         super.sceneDidBecomeActive(scene)
+
+        // Custom logic here.
       }
     }
     ```
@@ -318,9 +318,9 @@ you can create one by subclassing `FlutterSceneDelegate`:
     @implementation SceneDelegate
 
     - (void)sceneDidBecomeActive:(UIScene *)scene {
-      // Custom logic here.
-
       [super sceneDidBecomeActive:scene];
+
+      // Custom logic here.
     }
 
     @end
@@ -330,9 +330,13 @@ you can create one by subclassing `FlutterSceneDelegate`:
     </Tabs>
 
     :::important
-    If you override any `UISceneDelegate` lifecycle methods,
+    When you override a `UISceneDelegate` method that
+    `FlutterSceneDelegate` implements (such as `sceneDidBecomeActive`),
     always call `super` so `FlutterSceneDelegate` continues
     forwarding scene callbacks to Flutter and plugins.
+    Calling `super` on a protocol method not implemented by
+    `FlutterSceneDelegate` fails to compile in Swift or throws
+    an unrecognized selector exception in Objective-C.
     :::
 
  1. In your `Info.plist` file,
