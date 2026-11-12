@@ -126,10 +126,10 @@ Pigeon handles everything between your Dart code and that interface.
 <DashImage figure src="images/code-generation.png" />
 
 To turn on native interop, set a few options in the
-`@ConfigurePigeon` annotation at the top of that same Pigeon file:
+`@ConfigurePigeon` annotation at the top of that same Pigeon file.
 
+pigeons/messages.dart: the same Pigeon definition file you use today:
 ```dart
-/ pigeons/messages.dart: the same Pigeon definition file you use today.
 @ConfigurePigeon(
   PigeonOptions(
     // ...keep your existing input and output paths...
