@@ -462,7 +462,7 @@ that can pause, seek, stop and reverse the animation.
 It requires a `Ticker` that signals when vsync happens,
 and produces a linear interpolation between 0 and 1
 on each frame while it's running.
-You then create one or more`Animation`s and attach them to the controller.
+You then create one or more `Animation`s and attach them to the controller.
 
 For example, you might use `CurvedAnimation`
 to implement an animation along an interpolated curve.
@@ -1773,7 +1773,7 @@ class _RotatingFlutterDetectorState extends State<RotatingFlutterDetector>
 The equivalent to a `ListView` in Flutter is … a `ListView`!
 
 In a Xamarin.Forms `ListView`, you create a `ViewCell`
-and possibly a `DataTemplateSelector`and pass it into the `ListView`,
+and possibly a `DataTemplateSelector` and pass it into the `ListView`,
 which renders each row with what your
 `DataTemplateSelector` or `ViewCell` returns.
 However, you often have to make sure you turn on Cell Recycling
@@ -2130,7 +2130,7 @@ or whether it's bound to a property in a `ViewModel`.
 
 Retrieving information in Flutter is handled by specialized widgets
 and is different from how you are used to.
-If you have a `TextField`or a `TextFormField`,
+If you have a `TextField` or a `TextFormField`,
 you can supply a [`TextEditingController`][]
 to retrieve user input:
 

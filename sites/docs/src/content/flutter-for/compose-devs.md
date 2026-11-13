@@ -284,7 +284,7 @@ with extra space. `MainAxisAlignment.center` positions children in the
 center of the main axis. For `Row`, the main axis is the horizontal
 axis, inversely for `Column`, the main axis is the vertical axis.
 
-::: note
+:::note
 Whereas Flutter's `Row` and `Column` have `MainAxisAlignment`
 and `CrossAxisAlignment` to control how items are placed, the properties that
 control placement in Jetpack Compose are one vertical and horizontal property

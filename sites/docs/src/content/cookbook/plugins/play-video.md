@@ -91,7 +91,7 @@ If you use network-based videos,
 
 Flutter web does **not** support `dart:io`,
 so avoid using the `VideoPlayerController.file` constructor for the plugin.
-Using this constructor attempts to create a`VideoPlayerController.file`
+Using this constructor attempts to create a `VideoPlayerController.file`
 that throws an `UnimplementedError`.
 
 Different web browsers might have different video-playback capabilities,
