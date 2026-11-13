@@ -139,7 +139,7 @@ integration services, see the following:
 [Codemagic CI/CD for Patrol]: https://docs.codemagic.io/integrations/patrol-integration/
 [Continuous delivery using fastlane with Flutter]: /deployment/cd#fastlane
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/en/getting-started/quick-start-guides/getting-started-with-flutter-apps
-[Test Flutter apps on Appcircle]: https://blog.appcircle.io/article/flutter-ci-cd-github-ios-android-web#
+[Test Flutter apps on Appcircle]: https://appcircle.io/blog/flutter-ci-cd-github-ios-android-web
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
 [Test Flutter apps on Travis]: {{site.flutter-blog}}/test-flutter-apps-on-travis-3fd5142ecd8c
 [integration testing page]: /cookbook/testing/integration/introduction
