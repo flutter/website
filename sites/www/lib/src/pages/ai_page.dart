@@ -48,7 +48,8 @@ class AiPage extends StatelessComponent {
               target: Target.blank,
               [
                 .text(
-                  'Get started with Dart & Flutter MCP, Skills, and AI Plugins!',
+                  'Get started with the '
+                  'Dart & Flutter MCP server, agent skills, and AI plugins!',
                 ),
                 RawText('&nbsp;'),
                 Icon.linkArrow(large: true),

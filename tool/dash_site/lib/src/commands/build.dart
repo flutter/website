@@ -115,6 +115,7 @@ List<String> buildJasprBuildArgs(
   // Exclude secondary Markdown output files from sitemap.
   r'--sitemap-exclude=\.md$',
   '--dart-define=PRODUCTION=$productionRelease',
+  if (!productionRelease) ...nonProductionDartDefines(),
   for (final MapEntry(:key, :value) in extraDartDefines.entries)
     if (!productionRelease || !key.startsWith('DASH_REVIEW_'))
       '--dart-define=$key=$value',

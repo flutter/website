@@ -3,7 +3,7 @@ description: >-
   Pub workspace for Flutter websites and related tooling.
 publish_to: none
 environment:
-  sdk: ^3.13.0-0
+  sdk: ^3.14.0-0
 
 workspace:
   - packages/analysis_defaults
@@ -15,6 +15,13 @@ workspace:
   - tool/dash_site
 
 dependency_overrides:
+  # jaspr_builder 0.23.5 with analyzer 13 and 14 support for Dart 3.14.
+  # https://github.com/schultek/jaspr/pull/933
+  jaspr_builder:
+    git:
+      url: https://github.com/schultek/jaspr.git
+      ref: 18736e8f41fce4f17b15748e921672d596ba44b2
+      path: packages/jaspr_builder
   review_comments_cli:
     path: /usr/local/google/home/abdallahshaban/github/review_comments/packages/review_comments_cli
   review_comments_core:

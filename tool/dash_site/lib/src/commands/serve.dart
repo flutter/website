@@ -119,6 +119,7 @@ List<String> buildJasprServeArgs(
     '--web-port=${jasprPorts.webDev}',
     '--proxy-port=${jasprPorts.proxy}',
     '--dart-define=PRODUCTION=false',
+    ...nonProductionDartDefines(),
     if (reviewServerPort != null) ...[
       '--dart-define=DASH_REVIEW_MODE=local',
       '--dart-define=DASH_REVIEW_SITE=${site.name}',

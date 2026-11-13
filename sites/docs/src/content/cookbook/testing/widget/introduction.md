@@ -35,6 +35,8 @@ together throughout this recipe, which uses the following steps:
   5. Search for the widget using a `Finder`.
   6. Verify the widget using a `Matcher`.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `flutter_test` dependency
 
 Before writing tests, include the `flutter_test`
