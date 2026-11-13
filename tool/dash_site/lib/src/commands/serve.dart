@@ -62,7 +62,7 @@ final class ServeSiteCommand extends Command<int> {
         print(
           'Visual review toolbar active -> syncing to '
           '.dash_review/feedback.md '
-          '(API: http://127.0.0.1:${reviewServer.port})',
+          '(API: http://localhost:${reviewServer.port})',
         );
       }
 

@@ -123,7 +123,8 @@ void main() {
       expect(localhostHost.json['ok'], isTrue);
     });
 
-    test('survives abrupt client socket disconnects during 403 and error responses', () async {
+    test('survives abrupt client socket disconnects '
+        'during 403 and error responses', () async {
       final server = await ReviewLocalServer.start(
         repoRoot: tempRepo.path,
         site: 'docs',
