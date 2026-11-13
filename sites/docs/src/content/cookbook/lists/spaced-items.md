@@ -164,12 +164,8 @@ The number of items is defined by the variable `items`,
 change this value to see what happens when the items won't fit the screen.
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter Spaced Items hands-on example in DartPad" run="true"
-// DartPad doesn't support `material_ui` yet,
-// so this example imports Material from the Flutter SDK.
-// To run locally, depend on `material_ui` and use this import instead:
-// import 'package:material_ui/material_ui.dart';
-import 'package:flutter/material.dart';
+```dartpad title="Flutter Spaced Items hands-on example in DartPad"
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const SpacedItemsList());
 

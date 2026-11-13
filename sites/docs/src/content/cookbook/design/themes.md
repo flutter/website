@@ -160,15 +160,11 @@ To learn more, watch this short Widget of the Week video on the `Theme` widget:
 ## Try an interactive example
 
 <?code-excerpt "lib/main.dart (FullApp)"?>
-```dartpad title="Flutter themes hands-on example in DartPad" run="true"
-// DartPad doesn't support `material_ui` yet,
-// so this example imports Material from the Flutter SDK.
-// To run locally, depend on `material_ui` and use this import instead:
-// import 'package:material_ui/material_ui.dart';
-import 'package:flutter/material.dart';
+```dartpad title="Flutter themes hands-on example in DartPad"
 // Include the Google Fonts package to provide more text format options
 // https://pub.dev/packages/google_fonts
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MyApp());

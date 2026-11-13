@@ -13,6 +13,8 @@ import 'package:opal/opal.dart' as opal;
 
 import '../../components/common/wrapped_code_block.dart';
 import '../../components/dartpad/dartpad_injector.dart';
+import '../../components/utils/component_ref.dart';
+import '../dartpad/project.dart';
 import '../highlight/theme/dark.dart';
 import '../highlight/theme/light.dart';
 import '../highlight/token_renderer.dart' as highlighter;
@@ -27,14 +29,15 @@ final class CodeBlockProcessor implements PageExtension {
 
   @override
   Future<List<Node>> apply(Page page, List<Node> nodes) async {
-    return _processNodes(nodes);
+    return _processNodes(nodes, DartPadProjects(page));
   }
 
-  List<Node> _processNodes(List<Node> nodes) {
-    return [for (final node in nodes) _processNode(node)];
+  List<Node> _processNodes(List<Node> nodes, DartPadProjects projects) {
+    return [for (final node in nodes) _processNode(node, projects)];
   }
 
-  Node _processNode(Node node) {
+  Node _processNode(Node node, DartPadProjects projects) {
+    final excerpt = projects.excerptFor(node);
     if (node is! ElementNode) return node;
 
     if (node.tag.toLowerCase() == 'pre') {
@@ -42,7 +45,6 @@ final class CodeBlockProcessor implements PageExtension {
       if (children != null && children.isNotEmpty) {
         final firstChild = children.first;
         if (firstChild is ElementNode && firstChild.tag == 'code') {
-          final lines = _extractContent(firstChild);
           final language = _extractLanguage(
             firstChild.attributes['class'] ?? '',
           );
@@ -54,17 +56,29 @@ final class CodeBlockProcessor implements PageExtension {
           final title = metadata['title'];
 
           if (language == 'dartpad') {
+            final source = firstChild.innerText;
+            final project = projects.build(
+              source,
+              excerpt: excerpt,
+              dependencies: metadata['dependencies'],
+            );
             return ComponentNode(
-              DartPadWrapper(
-                content: lines.join('\n'),
+              DartPadInjector(
+                archive: project.archive,
+                file: project.file,
+                source: ref(
+                  dom.pre([
+                    dom.code([.text(source)]),
+                  ]),
+                ),
                 title: title ?? defaultTitle,
                 theme: metadata['theme'],
                 height: metadata['height'],
-                runAutomatically: metadata['run'] == 'true',
               ),
             );
           }
 
+          final lines = _extractContent(firstChild);
           final tag = metadata['tag'];
 
           final rawHighlightLines = metadata['highlightLines'];
@@ -145,7 +159,7 @@ final class CodeBlockProcessor implements PageExtension {
     return ElementNode(
       node.tag,
       node.attributes,
-      nodeChildren != null ? _processNodes(nodeChildren) : null,
+      nodeChildren != null ? _processNodes(nodeChildren, projects) : null,
     );
   }
 

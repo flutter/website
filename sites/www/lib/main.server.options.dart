@@ -245,8 +245,10 @@ Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
 Map<String, Object?> __dartpad_injectorDartPadInjector(
   _dartpad_injector.DartPadInjector c,
 ) => {
+  'archive': c.archive,
+  'file': c.file,
+  'source': c.source.toId(),
   'title': c.title,
   'theme': c.theme,
   'height': c.height,
-  'runAutomatically': c.runAutomatically,
 };
