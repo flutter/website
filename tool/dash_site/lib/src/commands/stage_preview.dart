@@ -169,7 +169,19 @@ final class StagePreviewCommand extends Command<int> {
       return 1;
     }
 
-    if (await buildSite(selectedSite, productionRelease: false)
+    final reviewDefines = buildStagePreviewDartDefines(
+      selectedSite,
+      prNumber: prNumberArg,
+      repoFullName: repoFullName,
+      commitSha: commitSha,
+      headBranch: headBranch,
+    );
+
+    if (await buildSite(
+          selectedSite,
+          productionRelease: false,
+          extraDartDefines: reviewDefines,
+        )
         case final buildResult when buildResult != 0) {
       return buildResult;
     }
@@ -270,6 +282,42 @@ String? _extractDeployedUrl(String firebaseJsonOutput) {
   return null;
 }
 
+/// Builds compile-time `--dart-define` entries for staged PR previews.
+Map<String, String> buildStagePreviewDartDefines(
+  Site site, {
+  String? prNumber,
+  String? repoFullName,
+  String? commitSha,
+  String? headBranch,
+}) => {
+  'DASH_REVIEW_MODE': 'preview',
+  'DASH_REVIEW_SITE': site.name,
+  if (prNumber != null && prNumber.isNotEmpty)
+    'DASH_REVIEW_PR_NUMBER': prNumber,
+  if (repoFullName != null && repoFullName.isNotEmpty)
+    'DASH_REVIEW_REPO': repoFullName,
+  if (commitSha != null && commitSha.isNotEmpty)
+    'DASH_REVIEW_COMMIT_SHA': commitSha,
+  if (headBranch != null && headBranch.isNotEmpty)
+    'DASH_REVIEW_HEAD_BRANCH': headBranch,
+};
+
+/// Formats the GitHub PR comment body linking to [stagingUrl].
+String formatStagingPreviewCommentBody({
+  required Site site,
+  required String stagingUrl,
+  required String commitSha,
+}) {
+  final commentMarker = '<!-- flutter-preview-${site.name} -->';
+  return '''
+$commentMarker
+Staged preview of the updated ${site.host} site (updated for commit $commitSha):
+
+$stagingUrl
+
+_Tip: Highlight elements or text directly on the staged preview to leave PR comments._''';
+}
+
 /// Posts a new preview comment on the pull request,
 /// or updates the existing one identified by an HTML marker that
 /// includes the [site]'s name.
@@ -281,12 +329,11 @@ Future<int> _commentStagingUrlOnGitHub({
   required _PullRequestContext context,
 }) async {
   final commentMarker = '<!-- flutter-preview-${site.name} -->';
-  final commentBody =
-      '''
-$commentMarker
-Staged preview of the updated ${site.host} site (updated for commit ${context.commitSha}):
-
-$stagingUrl''';
+  final commentBody = formatStagingPreviewCommentBody(
+    site: site,
+    stagingUrl: stagingUrl,
+    commitSha: context.commitSha,
+  );
 
   print('Commenting ${site.host} staging URL on the PR...');
   final gitHub = github.GitHub(
