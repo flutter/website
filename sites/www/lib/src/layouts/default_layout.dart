@@ -5,6 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/review.dart';
 import 'package:site_shared/server_util.dart';
 
 import '../components/layout/footer.dart';
@@ -252,6 +253,11 @@ class DefaultLayout extends PageLayout {
             const Footer(),
             if (page.url.contains('consultants'))
               const ConsultantsCookieSnack(),
+            ...buildReviewOverlayComponents(
+              page,
+              defaultSite: 'www',
+              contentRootPrefix: 'sites/www/content',
+            ),
           ]),
         );
       },
