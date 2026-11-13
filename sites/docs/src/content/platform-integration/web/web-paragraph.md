@@ -6,7 +6,7 @@ description: >-
 shortTitle: WebParagraph
 ---
 
-WebParagraph is a new implementation of Flutter's text layout system
+WebParagraph is an experimental implementation of Flutter's text layout system
 (`ParagraphBuilder`, `Paragraph`, and related `dart:ui` APIs) for the web.
 Instead of shipping a text stack inside the CanvasKit WebAssembly bundle,
 WebParagraph delegates text shaping, measurement, and font fallback to
@@ -50,17 +50,17 @@ visit the [WebParagraph umbrella issue][umbrella].
 
 ## Requirements
 
-WebParagraph is used only when all of the following are true.
+Flutter enables WebParagraph only when all of the following conditions are met.
 If any condition isn't met, the `preferWebParagraph` flag has no effect
 and Flutter uses its default text layout.
 
 Flutter version
-: Use the latest stable release of Flutter.
+: Use Flutter 3.50 or later.
 
 Renderer
 : WebParagraph runs on the CanvasKit renderer, which is used by
   JavaScript builds of your app.
-  The Skwasm renderer used by WebAssembly builds doesn't support it yet.
+  The Skwasm renderer used by WebAssembly builds doesn't support WebParagraph.
   If you build with `--wasm`, set `renderer: 'canvaskit'` in your
   Flutter configuration so the loader picks the JavaScript build.
 
@@ -85,8 +85,7 @@ typeof TextCluster !== 'undefined'
 
 Enable WebParagraph by setting `preferWebParagraph: true` in your app's
 [Flutter configuration][].
-The simplest way is a custom `flutter_bootstrap.js` file
-in your app's `web/` directory:
+Create a custom `flutter_bootstrap.js` file in your app's `web/` directory:
 
 ```js title="web/flutter_bootstrap.js" highlightLines=6
 {% raw %}{{flutter_js}}{% endraw %}
@@ -140,7 +139,7 @@ Then open the app in a browser where you enabled the
 When WebParagraph is active, the loader downloads the
 `webparagraph` variant of CanvasKit instead of the regular one.
 Open the **Network** panel in DevTools and filter by `canvaskit`.
-You should see requests for `canvaskit/webparagraph/canvaskit.js`
+The list shows requests for `canvaskit/webparagraph/canvaskit.js`
 and `canvaskit/webparagraph/canvaskit.wasm`.
 
 If you instead see `canvaskit/chromium/canvaskit.wasm` or
