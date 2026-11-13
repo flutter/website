@@ -40,7 +40,9 @@ They're sorted by release and listed in alphabetical order:
 ### Released in Flutter 3.50
 
 * [Added `enabled` to `DropdownButtonFormField` and made `onChanged` optional][] (`material_ui` 1.8.0)
+* [Flutter Gradle Plugin uses the Android Gradle Plugin Variant API][]
 * [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
+* [Raised minimum Android build tool versions][]
 * [Restrict Android engine flags in release mode][]
 * [Soft hyphens render at line breaks][]
 * [Stricter Android `Intent` verification for app entrypoints][]
@@ -48,7 +50,9 @@ They're sorted by release and listed in alphabetical order:
 * [WidgetSpan order in right-to-left text][]
 
 [Added `enabled` to `DropdownButtonFormField` and made `onChanged` optional]: /release/breaking-changes/dropdownbuttonformfield-enabled-parameter
+[Flutter Gradle Plugin uses the Android Gradle Plugin Variant API]: /release/breaking-changes/flutter-gradle-plugin-variant-api
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
+[Raised minimum Android build tool versions]: /release/breaking-changes/android-build-tool-minimum-versions
 [Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
 [Soft hyphens render at line breaks]: /release/breaking-changes/soft-hyphen-rendering
 [Stricter Android `Intent` verification for app entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
