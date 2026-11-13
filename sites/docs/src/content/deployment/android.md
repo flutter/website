@@ -181,9 +181,9 @@ If not, create one using one of the following methods:
      For example, on macOS and Linux use `Program\ Files`, and
      on Windows use `"Program Files"`.
 
-   * The `-storetype JKS` tag is only required for Java 9
-     or newer. As of the Java 9 release,
-     the keystore type defaults to PKS12.
+   * The `-storetype JKS` flag specifies the `JKS` keystore format
+     instead of the default `PKCS12` format used since Java 9
+     (such as JDK 17 and JDK 21).
    :::
 
 [as-key-steps]: {{site.android-dev}}/studio/publish/app-signing#generate-key
@@ -392,57 +392,15 @@ For details, visit [Shrink, obfuscate, and optimize your app][].
 
 ## Enable multidex support
 
-When writing large apps or making use of large plugins,
-you might encounter Android's dex limit of 64k methods
-when targeting a minimum API of 20 or below.
-This might also be encountered when running debug versions of your app
-using `flutter run` that doesn't have shrinking enabled.
+Multidex support is built natively into Android API 21 and later.
+Because Flutter's [supported deployment platforms][supported-platforms]
+require Android API 24 or later, Flutter apps don't need manual
+multidex configuration.
 
-Flutter tool supports easily enabling multidex.
-The simplest way is to opt into multidex support when prompted.
-The tool detects multidex build errors and
-asks before making changes to your Android project.
-Opting in allows Flutter to automatically depend on
-`androidx.multidex:multidex` and use a generated
-`FlutterMultiDexApplication` as the project's application.
-
-When you try to build and run your app with the **Run** and **Debug**
-options in your IDE, your build might fail with the following message:
-
-<img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png'
-  width="100%" alt='Build failure because Multidex support is required'>
-
-To enable multidex from the command line,
-run `flutter run --debug` and select an Android-powered device:
-
-<img src='/assets/images/docs/deployment/android/cli-select-device.png'
-  width="100%" alt='Selecting an Android device with the flutter CLI.'>
-
-When prompted, enter `y`.
-The Flutter tool enables multidex support and retries the build:
-
-<img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png'
-  width="100%" alt='The output of a successful build after adding multidex.'>
-
-:::version-note
-Multidex support is natively included when targeting
-Android SDK 21 or later.
-:::
-
-You might also choose to manually support multidex by following Android's guides
-and modifying your project's Android directory configuration.
-A [multidex keep file][multidex-keep] must be specified to include:
-
-```plaintext
-io/flutter/embedding/engine/loader/FlutterLoader.class
-io/flutter/util/PathUtils.class
-```
-
-Also, include any other classes used in app startup.
-To learn about adding multidex support manually,
+To learn how Android handles multidex on older API levels,
 consult the official [Android documentation][multidex-docs].
 
-[multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
+[supported-platforms]: /reference/supported-platforms
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
 
 ## Review the app manifest
@@ -711,12 +669,12 @@ Both the version and the build number can be overridden in
 Flutter's build by specifying `--build-name` and `--build-number`, respectively.
 
 In Android, `build-name` is used as `versionName` while
-`build-number` used as `versionCode`. For details,
+`build-number` is used as `versionCode`. For details,
 refer to [Version your app][] in the Android documentation.
 
 When you rebuild the app for Android, any updates in
-the version number from the pubspec file will
-update the `versionName` and `versionCode`in the `local.properties` file.
+the version number from the pubspec file update
+the `versionName` and `versionCode` in the `local.properties` file.
 
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 
@@ -782,7 +740,7 @@ The resulting app bundle or APK files are located in
 You can use the [`apkanalyzer`][] tool and list the files:
 
 ```sh
-apkanalyzer files list --files-only <SOME-APK> files list --files-only <SOME-APK>
+apkanalyzer files list --files-only <SOME-APK>
 ```
 
 Then look for a file in `/lib/<ARCH>/libflutter.so`.
@@ -807,8 +765,7 @@ This is how some reverse engineer an APK to identify it as a Flutter app.
 #### Secondary Evaluation:
 
 Run `apkanalyzer manifest print <SOME-APK>` and look for a `<meta-data>`
-tag with `android:name="flutterEmbedding"`.
-The value can be `1` or `2`.
+tag with `android:name="flutterEmbedding"` and `android:value="2"`.
 
 This command,
 `apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2`,
@@ -821,9 +778,9 @@ returns the following output:
 
 **Why this works**
 
-Flutter has had two different embedders,
-and this flag was read to determine which embedder was used.
-[Flutter 3.22][] removed the ability of v1 embedder apps to build.
+Flutter's v2 Android embedding sets `flutterEmbedding` to `2`.
+([Flutter 3.22][] removed support for building apps with the legacy
+v1 embedder, which previously used `1`.)
 This mechanism is not recommended because it's
 unclear how long the `flutterEmbedding` value will
 continue to be included in all Flutter apps.
