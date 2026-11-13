@@ -21,3 +21,4 @@ dependencies:
 dev_dependencies:
   analysis_defaults:
     path: ../../packages/analysis_defaults
+  test: ^1.31.0
