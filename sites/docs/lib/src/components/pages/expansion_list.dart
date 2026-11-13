@@ -7,6 +7,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
+import 'package:site_shared/components/common/client/expandable.dart';
 import 'package:site_shared/markdown.dart';
 import 'package:site_shared/util.dart';
 
@@ -119,70 +120,69 @@ class _ExpansionListState extends State<ExpansionList> {
   Component build(BuildContext context) {
     return div(classes: 'expansion-panel-list', [
       for (final (index, item) in component.items.indexed)
-        div(classes: 'expansion-panel', [
-          a(
-            classes: ['collapsible', if (!item.expanded) 'collapsed'].toClasses,
-            href: '#${component.baseId}-expansion-$index',
-            attributes: {
-              'data-toggle': 'collapse',
-              'data-target': '#${component.baseId}-expansion-$index',
-              'role': 'button',
-              'aria-expanded': item.expanded ? 'true' : 'false',
-              'aria-controls': '#${component.baseId}-expansion-$index',
-            },
-            [
-              div(classes: 'expansion-panel-title', [
-                div(classes: 'expansion-panel-title-leading', [
-                  if (item.data.iconPath case final iconPath?)
-                    img(
-                      src: iconPath,
-                      alt: 'An icon showing a generic application.',
-                    )
-                  else
-                    const img(
-                      src: '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
-                      alt: 'An icon showing a generic application.',
-                    ),
-                ]),
-                div(classes: 'expansion-panel-title-content', [
-                  p(classes: 'content-title', [
-                    .text(item.data.title),
-                  ]),
-                  ul(classes: 'content-tags', [
-                    for (final contentTag in item.data.contentTags)
-                      li(classes: 'tag', [
-                        .text(contentTag),
+        Expandable(
+          initiallyExpanded: item.expanded,
+          child: div(classes: 'expansion-panel', [
+            Trigger(
+              child: a(
+                classes: 'collapsible',
+                href: '#${component.baseId}-expansion-$index',
+                attributes: {
+                  'role': 'button',
+                  'aria-controls': '#${component.baseId}-expansion-$index',
+                },
+                [
+                  div(classes: 'expansion-panel-title', [
+                    div(classes: 'expansion-panel-title-leading', [
+                      if (item.data.iconPath case final iconPath?)
+                        img(
+                          src: iconPath,
+                          alt: 'An icon showing a generic application.',
+                        )
+                      else
+                        const img(
+                          src: '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
+                          alt: 'An icon showing a generic application.',
+                        ),
+                    ]),
+                    div(classes: 'expansion-panel-title-content', [
+                      p(classes: 'content-title', [
+                        .text(item.data.title),
                       ]),
+                      ul(classes: 'content-tags', [
+                        for (final contentTag in item.data.contentTags)
+                          li(classes: 'tag', [
+                            .text(contentTag),
+                          ]),
+                      ]),
+                      p(classes: 'content-description', [
+                        .text(item.data.description),
+                      ]),
+                    ]),
                   ]),
-                  p(classes: 'content-description', [
-                    .text(item.data.description),
-                  ]),
-                ]),
-              ]),
-            ],
-          ),
-          div(
-            id: '${component.baseId}-expansion-$index',
-            classes: [
-              'expansion-panel-body collapse',
-              if (item.expanded) 'show',
-            ].toClasses,
-            [
-              DashMarkdown(content: item.content),
-              p([
-                a(href: item.url, const [
-                  .text('Read full article'),
-                ]),
-              ]),
-              // Required to add "margin" that doesn't cause expansion jank.
-              const div(
-                classes: 'separator',
-                attributes: {'aria-hidden': 'true'},
-                [],
+                ],
               ),
-            ],
-          ),
-        ]),
+            ),
+            div(
+              id: '${component.baseId}-expansion-$index',
+              classes: 'expansion-panel-body',
+              [
+                DashMarkdown(content: item.content),
+                p([
+                  a(href: item.url, const [
+                    .text('Read full article'),
+                  ]),
+                ]),
+                // Required to add "margin" that doesn't cause expansion jank.
+                const div(
+                  classes: 'separator',
+                  attributes: {'aria-hidden': 'true'},
+                  [],
+                ),
+              ],
+            ),
+          ]),
+        ),
     ]);
   }
 }

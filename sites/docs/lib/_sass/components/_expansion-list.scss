@@ -28,18 +28,18 @@
         color: var(--site-base-fgColor-lighter);
       }
 
-      .collapsing {
-        transition-duration: .2s;
-      }
-
-      &:not(.collapsed) {
-        &::after {
-          transform: rotate(180deg);
-        }
-      }
-
       &:hover {
         text-decoration: none;
+      }
+    }
+
+    &.expanded {
+      > a::after {
+        transform: rotate(180deg);
+      }
+
+      .expansion-panel-body {
+        display: block;
       }
     }
   }
@@ -126,10 +126,6 @@
       margin-bottom: 1rem;
       margin-top: 1.5rem;
       border-top: .05rem solid rgba(0, 0, 0, 0.125);
-    }
-
-    &.show {
-      display: block;
     }
   }
 

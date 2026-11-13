@@ -143,16 +143,6 @@
           @include mixins.interaction-style(5%);
         }
 
-        &:not(.collapsed) {
-          .expander {
-            transform: rotate(180deg);
-          }
-
-          +ul {
-            display: block;
-          }
-        }
-
         &.active {
           background-color: rgb(var(--site-interaction-base-values) / 4%);
 
@@ -160,6 +150,18 @@
             color: var(--site-link-fgColor);
             background-color: color-mix(in srgb, var(--site-primary-color) 10%, transparent);
           }
+        }
+      }
+    }
+
+    &.nav-item.expanded {
+      > button.nav-link {
+        .expander {
+          transform: rotate(180deg);
+        }
+
+        +ul {
+          display: block;
         }
       }
     }
