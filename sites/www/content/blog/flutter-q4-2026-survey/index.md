@@ -2,8 +2,8 @@
 title: "Flutter Q4 survey"
 description: >-
   Just a reminder. Please take the Flutter Q4 survey! The survey closes at the
-  end of day on Monday, Nov 30th.
-publishDate: 2026-11-16
+  end of day on Wednesday, Dec 2nd.
+publishDate: 2026-11-18
 author: CarlosMendonca
 coverImage:
   alt: "Dash completes the Q4 Flutter survey!"
@@ -19,8 +19,7 @@ layout: blog
 Just a reminder.
 
 Please take the [Flutter Q4 survey](xxx)!
-The survey closes at the end of day on Monday, November 30th.
-We will publish the results in December. Ish.
+The survey closes at the end of day on Wednesday, December 2nd.
 
 It won’t take much of your time and your feedback helps drive our roadmap.
 
