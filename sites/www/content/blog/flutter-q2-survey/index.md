@@ -15,7 +15,9 @@ layout: blog
 
 ## Flutter Q2 survey
 
-Just a reminder! Please take the [Flutter Q2 survey](https://google.qualtrics.com/jfe/form/SV_3drKjSfjNeLZfq6?Source=Website)! The survey closes at the end of day on Friday, June 19th.
+Just a reminder! Please take the
+[Flutter Q2 survey](https://google.qualtrics.com/jfe/form/SV_3drKjSfjNeLZfq6?Source=Website)! 
+The survey closes at the end of day on Friday, June 19th.
 
 It won’t take long and your feedback helps drive our roadmap!
 
