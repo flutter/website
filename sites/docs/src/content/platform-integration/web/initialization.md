@@ -172,6 +172,7 @@ The `config` argument is an object that accepts the following optional fields:
 | `canvasKitForceCpuOnly` | Forces CPU-only rendering in CanvasKit without WebGL. | `boolean` |
 | `canvasKitMaximumSurfaces` | Maximum number of overlay surfaces that the CanvasKit renderer can allocate. | `number` |
 | `canvasKitVariant` | CanvasKit build to download: `'auto'` (default, selects the optimal build), `'full'` (all browsers), or `'chromium'` (smaller build for Chromium-based browsers only). | `string` |
+| `preferWebParagraph` | **Experimental.** Uses the browser's text layout APIs through [WebParagraph][web-paragraph] instead of the text stack bundled in CanvasKit. Has no effect when the browser or renderer doesn't support it. Defaults to `false`. | `boolean` |
 
 {:.table .table-striped}
 
@@ -179,6 +180,7 @@ The `config` argument is an object that accepts the following optional fields:
 [multi-asset-cdn]: /deployment/web#multi-asset-and-cdn-loading
 [nonce-mdn]: https://developer.mozilla.org/docs/Web/HTML/Global_attributes/nonce
 [wasm-support]: /platform-integration/web/wasm
+[web-paragraph]: /platform-integration/web/web-paragraph
 
 ## Example usage
 
