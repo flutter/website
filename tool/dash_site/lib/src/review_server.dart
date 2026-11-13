@@ -606,7 +606,7 @@ final class ReviewLocalServer {
 
   Future<void> _handleRequestSafely(HttpRequest request) async {
     try {
-      if (!_validateAndApplySecurityHeaders(request)) {
+      if (!await _validateAndApplySecurityHeaders(request)) {
         return;
       }
 
@@ -671,29 +671,35 @@ final class ReviewLocalServer {
         'error': 'Not found: ${request.uri.path}',
       });
     } on _BadRequestException catch (error) {
-      await _writeJson(request.response, HttpStatus.badRequest, {
-        'ok': false,
-        'error': error.message,
-      });
-    } on Exception catch (error) {
-      await _writeJson(request.response, HttpStatus.internalServerError, {
-        'ok': false,
-        'error': 'Internal server error: $error',
-      });
+      try {
+        await _writeJson(request.response, HttpStatus.badRequest, {
+          'ok': false,
+          'error': error.message,
+        });
+      } on Object {
+        // Ignore socket write/close failures if client already disconnected.
+      }
+    } on Object catch (error) {
+      try {
+        await _writeJson(request.response, HttpStatus.internalServerError, {
+          'ok': false,
+          'error': 'Internal server error: $error',
+        });
+      } on Object {
+        // Ignore socket write/close failures if client already disconnected.
+      }
     }
   }
 
-  bool _validateAndApplySecurityHeaders(HttpRequest request) {
+  Future<bool> _validateAndApplySecurityHeaders(HttpRequest request) async {
     final hostValues = request.headers[HttpHeaders.hostHeader];
     if (hostValues == null ||
         hostValues.length != 1 ||
         !_validHostPattern.hasMatch(hostValues.single.trim())) {
-      unawaited(
-        _writeJson(request.response, HttpStatus.forbidden, {
-          'ok': false,
-          'error': 'Forbidden Host header.',
-        }),
-      );
+      await _writeJson(request.response, HttpStatus.forbidden, {
+        'ok': false,
+        'error': 'Forbidden Host header.',
+      });
       return false;
     }
 
@@ -702,12 +708,10 @@ final class ReviewLocalServer {
       final candidateOrigin = originValues.single.trim();
       if (originValues.length != 1 ||
           !_validOriginPattern.hasMatch(candidateOrigin)) {
-        unawaited(
-          _writeJson(request.response, HttpStatus.forbidden, {
-            'ok': false,
-            'error': 'Forbidden Origin header.',
-          }),
-        );
+        await _writeJson(request.response, HttpStatus.forbidden, {
+          'ok': false,
+          'error': 'Forbidden Origin header.',
+        });
         return false;
       }
 
@@ -1059,11 +1063,17 @@ final class ReviewLocalServer {
     int statusCode,
     Map<String, Object?> body,
   ) async {
-    response
-      ..statusCode = statusCode
-      ..headers.contentType = ContentType.json
-      ..write(jsonEncode(body));
-    await response.close();
+    try {
+      response
+        ..statusCode = statusCode
+        ..headers.contentType = ContentType.json
+        ..write(jsonEncode(body));
+      await response.close();
+    } on IOException {
+      // Client aborted connection mid-response.
+    } on StateError {
+      // Response headers or stream were already closed.
+    }
   }
 
   static String _normalizeApiPath(String rawPath) {

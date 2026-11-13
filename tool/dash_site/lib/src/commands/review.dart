@@ -238,7 +238,10 @@ final class _ReviewResolveSubcommand extends Command<int> {
           updatedCount++;
         }
       }
-      store.saveComments(comments, now: now);
+      if (comments.isNotEmpty ||
+          Directory(store.reviewDirectoryPath).existsSync()) {
+        store.saveComments(comments, now: now);
+      }
       final counts = computeCommentCounts(comments);
       _parent._out.writeln(
         'Resolved $updatedCount comment${updatedCount == 1 ? '' : 's'}. '
@@ -330,7 +333,10 @@ final class _ReviewClearSubcommand extends Command<int> {
     });
 
     final removedCount = beforeCount - comments.length;
-    store.saveComments(comments);
+    if (comments.isNotEmpty ||
+        Directory(store.reviewDirectoryPath).existsSync()) {
+      store.saveComments(comments);
+    }
     final counts = computeCommentCounts(comments);
     _parent._out.writeln(
       'Cleared $removedCount comment${removedCount == 1 ? '' : 's'}. '

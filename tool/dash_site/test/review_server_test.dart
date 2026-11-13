@@ -123,6 +123,34 @@ void main() {
       expect(localhostHost.json['ok'], isTrue);
     });
 
+    test('survives abrupt client socket disconnects during 403 and error responses', () async {
+      final server = await ReviewLocalServer.start(
+        repoRoot: tempRepo.path,
+        site: 'docs',
+        preferredPort: 0,
+      );
+      addTearDown(server.close);
+
+      final rawSocket = await Socket.connect(
+        InternetAddress.loopbackIPv4,
+        server.port,
+      );
+      rawSocket.write(
+        'GET /api/health HTTP/1.1\r\n'
+        'Host: attacker.example.com\r\n\r\n',
+      );
+      rawSocket.destroy();
+      await Future<void>.delayed(const Duration(milliseconds: 50));
+
+      final afterAbort = await sendJsonRequest(
+        server.port,
+        'GET',
+        '/api/health',
+      );
+      expect(afterAbort.status, HttpStatus.ok);
+      expect(afterAbort.json['ok'], isTrue);
+    });
+
     test(
       'enforces strict localhost/127.0.0.1 CORS and handles OPTIONS preflight',
       () async {

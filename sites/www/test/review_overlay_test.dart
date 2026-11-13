@@ -372,6 +372,18 @@ assert.strictEqual(mdMatch.line, 21);
 // Heading anchor fallback maps #constraints to line 20!
 const headingMatch = api.matchNeedleInRightLines(rightLines, '', '#constraints');
 assert.strictEqual(headingMatch.line, 20);
+
+// 4. Open-redirect defense on hydrated dash-review-meta pageUrl values
+const previewOrigin = 'https://flutter-docs--pr14030-9f8e7d.web.app';
+assert.strictEqual(api.sanitizeSameOriginPath('/\\evil.example.com/phish', previewOrigin), null);
+assert.strictEqual(api.sanitizeSameOriginPath('//evil.example.com/phish', previewOrigin), null);
+assert.strictEqual(api.sanitizeSameOriginPath('https://evil.example.com/phish', previewOrigin), null);
+assert.strictEqual(api.sanitizeSameOriginPath('javascript:alert(1)', previewOrigin), null);
+assert.strictEqual(api.sanitizeSameOriginPath('', previewOrigin), null);
+assert.strictEqual(
+  api.sanitizeSameOriginPath('/ui/layout/?tab=web#constraints', previewOrigin),
+  '/ui/layout/?tab=web#constraints'
+);
 ''');
 
         final runResult = await Process.run('node', [

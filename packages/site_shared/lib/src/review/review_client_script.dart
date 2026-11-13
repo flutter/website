@@ -111,6 +111,29 @@ const String _reviewClientScriptBody = r'''
     return "'" + String(value == null ? '' : value).split("'").join("'\\''") + "'";
   }
 
+  function sanitizeSameOriginPath(rawDest, baseOrigin) {
+    const dest = String(rawDest == null ? '' : rawDest).trim();
+    if (!dest || !dest.startsWith('/') || dest.startsWith('//') || dest.includes('\\')) {
+      return null;
+    }
+    const origin = String(
+      baseOrigin || (typeof window !== 'undefined' && window.location ? window.location.origin : '')
+    ).trim();
+    if (!origin) return null;
+    try {
+      const parsed = new URL(dest, origin);
+      if (
+        parsed.origin !== origin ||
+        (parsed.protocol !== 'http:' && parsed.protocol !== 'https:')
+      ) {
+        return null;
+      }
+      return parsed.pathname + parsed.search + parsed.hash;
+    } catch (_) {
+      return null;
+    }
+  }
+
   function normalizePageUrl(url) {
     const raw = String(url || '').split('#')[0].split('?')[0].trim();
     if (!raw || raw === '/') return '/';
@@ -560,6 +583,8 @@ const String _reviewClientScriptBody = r'''
         typeof raw.githubUrl === 'string' && raw.githubUrl.startsWith('https://github.com/')
           ? raw.githubUrl
           : '',
+      commitSha: String(raw.commitSha || (cfg && cfg.commitSha) || '').trim(),
+      diffLine: Number.isInteger(raw.diffLine) ? raw.diffLine : null,
       diffMatched: raw.diffMatched === true
     };
   }
@@ -908,6 +933,8 @@ const String _reviewClientScriptBody = r'''
         elementText: record.elementText.slice(0, 240),
         headingAnchor: record.headingAnchor,
         rectPct: record.rectPct,
+        commitSha: record.commitSha || '',
+        diffLine: record.diffLine || null,
         status: record.status
       };
       const safeJson = JSON.stringify(metaObj)
@@ -918,7 +945,7 @@ const String _reviewClientScriptBody = r'''
 
     function formatGithubCommentBody(record, isInlineDiff) {
       const repo = effectiveRepo();
-      const ref = cfg.commitSha || cfg.headBranch || 'main';
+      const ref = record.commitSha || cfg.commitSha || cfg.headBranch || 'main';
       const file = record.resolvedFile || record.sourceFile;
       const lineFragment = record.startLine
         ? record.endLine && record.endLine > record.startLine
@@ -928,11 +955,12 @@ const String _reviewClientScriptBody = r'''
       const fileUrl = file
         ? 'https://github.com/' + repo + '/blob/' + encodeURIComponent(ref) + '/' + file + lineFragment
         : '';
-      const previewHref = window.location.origin + record.pageUrl + (record.headingAnchor || '');
+      const safePagePath = sanitizeSameOriginPath(record.pageUrl, window.location.origin) || '/';
+      const previewHref = window.location.origin + safePagePath + (record.headingAnchor || '');
       const parts = [];
 
       if (!isInlineDiff) {
-        parts.push('### Visual Preview Feedback (`' + record.pageUrl + '`)');
+        parts.push('### Visual Preview Feedback (`' + safePagePath + '`)');
         parts.push('');
       }
       parts.push(record.comment.trim());
@@ -966,9 +994,10 @@ const String _reviewClientScriptBody = r'''
     function buildGhCliCommand(record) {
       const repo = effectiveRepo();
       const pr = effectivePrNumber() || '<PR_NUMBER>';
-      const sha = cfg.commitSha.trim();
+      const sha = String((record && record.commitSha) || cfg.commitSha || '').trim();
       const prArg = /^\d+$/.test(pr) ? pr : shellQuote(pr);
-      if (record.diffMatched && record.resolvedFile && record.startLine && sha && /^\d+$/.test(pr)) {
+      const targetLine = (record && (record.diffLine || record.startLine)) || null;
+      if (record.diffMatched && record.resolvedFile && targetLine && sha && /^\d+$/.test(pr)) {
         const inlineBody = formatGithubCommentBody(record, true);
         return (
           'gh api ' +
@@ -980,7 +1009,7 @@ const String _reviewClientScriptBody = r'''
           ' -f path=' +
           shellQuote(record.resolvedFile) +
           ' -F line=' +
-          Number(record.startLine) +
+          Number(targetLine) +
           ' -f side=RIGHT'
         );
       }
@@ -1169,6 +1198,32 @@ const String _reviewClientScriptBody = r'''
       return { headSha: headSha, matchedPath: '', matchedLine: null, startLine: null, endLine: null };
     }
 
+    async function applyBestEffortPrDiffMapping(record, token) {
+      if (cfg.mode !== 'preview' || !effectivePrNumber()) return record;
+      if (
+        record.diffMatched &&
+        record.commitSha &&
+        record.resolvedFile &&
+        (record.diffLine || record.startLine)
+      ) {
+        return record;
+      }
+      try {
+        const mapped = await resolvePrDiffLocation(record, token || '');
+        if (mapped.headSha) record.commitSha = String(mapped.headSha);
+        if (mapped.matchedPath) record.resolvedFile = mapped.matchedPath;
+        if (mapped.startLine) record.startLine = mapped.startLine;
+        if (mapped.endLine) record.endLine = mapped.endLine;
+        if (mapped.matchedLine) record.diffLine = mapped.matchedLine;
+        if (mapped.headSha && mapped.matchedPath && mapped.matchedLine) {
+          record.diffMatched = true;
+        }
+      } catch (_) {
+        // Best-effort only; falls back cleanly to top-level gh pr comment.
+      }
+      return record;
+    }
+
     async function postCommentToGithubPr(record, token) {
       const repo = effectiveRepo();
       const pr = effectivePrNumber();
@@ -1177,11 +1232,13 @@ const String _reviewClientScriptBody = r'''
       }
       const api = githubApiBase();
       const mapped = await resolvePrDiffLocation(record, token);
+      if (mapped.headSha) record.commitSha = String(mapped.headSha);
       if (mapped.matchedPath) {
         record.resolvedFile = mapped.matchedPath;
       }
       if (mapped.startLine) record.startLine = mapped.startLine;
       if (mapped.endLine) record.endLine = mapped.endLine;
+      if (mapped.matchedLine) record.diffLine = mapped.matchedLine;
 
       // 1. Try inline PR diff review comment when a RIGHT-side diff line matched.
       if (mapped.headSha && mapped.matchedPath && mapped.matchedLine) {
@@ -1318,6 +1375,8 @@ const String _reviewClientScriptBody = r'''
                     id: ghId,
                     resolvedFile: gh.path || meta.resolvedFile || meta.sourceFile,
                     startLine: gh.line || meta.startLine || null,
+                    diffLine: gh.line || meta.diffLine || meta.startLine || null,
+                    commitSha: gh.commit_id || gh.original_commit_id || meta.commitSha || cfg.commitSha || '',
                     comment: extractHumanBodyFromGithubComment(gh.body),
                     author: (gh.user && gh.user.login) || 'github',
                     createdAt: gh.created_at || meta.createdAt,
@@ -1440,7 +1499,8 @@ const String _reviewClientScriptBody = r'''
         return record;
       }
 
-      // Preview mode without token: pin locally and copy gh CLI command
+      // Preview mode without token: best-effort map against public PR diff, pin locally, and copy gh CLI command
+      await applyBestEffortPrDiffMapping(record, '');
       state.comments.push(record);
       writeFallbackComments(state.comments);
       state.anchorCache.clear();
@@ -1854,14 +1914,16 @@ const String _reviewClientScriptBody = r'''
                       className: 'dr-btn dr-btn-secondary',
                       attrs: { type: 'button', 'data-testid': 'dr-composer-copy-gh' },
                       on: {
-                        click: function () {
+                        click: async function () {
                           const temp = normalizeCommentRecord(
                             Object.assign({}, draft, {
                               comment: textarea.value.trim() || 'Review feedback'
                             }),
                             cfg
                           );
-                          copyToClipboard(buildGhCliCommand(temp), 'Copied gh CLI command');
+                          const savedTok = safeStorageGet(STORAGE_TOKEN_KEY).trim();
+                          await applyBestEffortPrDiffMapping(temp, savedTok);
+                          await copyToClipboard(buildGhCliCommand(temp), 'Copied gh CLI command');
                         }
                       }
                     },
@@ -2002,8 +2064,10 @@ const String _reviewClientScriptBody = r'''
                       className: 'dr-btn dr-btn-secondary',
                       attrs: { type: 'button', 'data-testid': 'dr-thread-copy-gh' },
                       on: {
-                        click: function () {
-                          copyToClipboard(buildGhCliCommand(comment), 'Copied gh CLI command');
+                        click: async function () {
+                          const savedTok = safeStorageGet(STORAGE_TOKEN_KEY).trim();
+                          await applyBestEffortPrDiffMapping(comment, savedTok);
+                          await copyToClipboard(buildGhCliCommand(comment), 'Copied gh CLI command');
                         }
                       }
                     },
@@ -2047,12 +2111,12 @@ const String _reviewClientScriptBody = r'''
 
     function jumpToComment(comment) {
       if (!isCurrentPageComment(comment)) {
-        const dest = String(comment.pageUrl || '/');
-        if (dest.startsWith('/') && !dest.startsWith('//')) {
+        const safeDest = sanitizeSameOriginPath(comment.pageUrl, window.location.origin);
+        if (safeDest) {
           try {
             window.sessionStorage.setItem('dash_review_focus_pin', comment.id);
           } catch (_) {}
-          window.location.href = dest;
+          window.location.href = safeDest;
         }
         return;
       }
@@ -3127,6 +3191,7 @@ const String _reviewClientScriptBody = r'''
   window.__dashReviewInternals = {
     parsePrFromHostname: parsePrFromHostname,
     shellQuote: shellQuote,
+    sanitizeSameOriginPath: sanitizeSameOriginPath,
     parseDiffRightSideLines: parseDiffRightSideLines,
     matchNeedleInRightLines: matchNeedleInRightLines,
     matchNeedleInFullText: matchNeedleInFullText,

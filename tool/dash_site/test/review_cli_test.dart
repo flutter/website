@@ -222,6 +222,26 @@ void main() {
         expect(store.loadComments(), isEmpty);
       },
     );
+
+    test(
+      'clear and resolve --all do not create .dash_review in a clean workspace',
+      () async {
+        final reviewDir = Directory(path.join(tempRepo.path, '.dash_review'));
+        expect(reviewDir.existsSync(), isFalse);
+
+        final resolveAllRes = await runCli(['review', 'resolve', '--all']);
+        expect(resolveAllRes.exitCode, 0);
+        expect(reviewDir.existsSync(), isFalse);
+
+        final clearResolvedRes = await runCli(['review', 'clear']);
+        expect(clearResolvedRes.exitCode, 0);
+        expect(reviewDir.existsSync(), isFalse);
+
+        final clearAllRes = await runCli(['review', 'clear', '--all']);
+        expect(clearAllRes.exitCode, 0);
+        expect(reviewDir.existsSync(), isFalse);
+      },
+    );
   });
 
   group('build, serve, and stage-preview --dart-define isolation', () {
