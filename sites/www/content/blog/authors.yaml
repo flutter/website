@@ -59,6 +59,10 @@ brandonbadger:
   name: "Brandon Badger"
   image: "brandonbadger.webp"
   link: null
+carlosmendonca:
+  name: "Carlos Mendonça"
+  image: "carlosmendonca.webp"
+  link: "https://github.com/CarlosMendonca"
 chinmaygarde:
   name: "Chinmay Garde"
   image: "chinmaygarde.webp"

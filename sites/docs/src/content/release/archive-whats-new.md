@@ -14,6 +14,87 @@ check out the [current what's new][] page.
 
 ---
 
+## 12 November 2025: Release 3.38
+
+Flutter 3.38 is live! For details,
+check out the [Flutter 3.38 technical blog post][3.38-tech].
+
+[3.38-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
+
+**Website update**
+
+A significant update to the website has recently landed!
+As with the update to the dart.dev website that landed
+earlier this year, the docs.flutter.dev website has been
+reimplemented to use [Jaspr][], a Dart web framework.
+
+Let us know what you think!
+
+[Jaspr]: https://jaspr.site/
+
+**Docs updated or added since the 3.35 release**
+
+* The Dart language now supports _dot shorthands_ syntax
+  (aka _shorthands_), which allows you to write more
+  concise code. For more information, visit the
+  [Dart dot shorthands][] page on dart.dev. Over time,
+  the samples on this website will be updated
+  to take advantage of this new feature.
+
+* The `flutter run` command now supports a configuration file
+  that allows you to specify web settings like host, port,
+  certification, and header.
+  The web dev config file also supports proxy settings,
+  making it possible to forward specific path requests
+  to another server. This makes it easier to develop a
+  web client that connects to dynamic endpoints on the same host. 
+  For more information, visit
+  [setting up a web development configuration file][web-config-file].
+
+* Development continues on the Flutter Widget Previewer tool,
+  introduced as an experimental feature in the 3.35 release.
+  For this release, the previewer better integrates with the VS Code
+  and IntelliJ IDEs (including Android Studio).
+  It's still an experimental feature.
+  For more info about the latest version, 
+  check out the [Widget Previewer tool page][].
+
+* The Flutter 3.38 release fully supports the platform releases
+  for iOS 26, Xcode 26, and macOS 26, all of which were released in September. 
+  For the most recent info on Flutter's support for iOS,
+  visit [Flutter on latest iOS][].
+
+* Flutter 3.38 supports the new Apple-mandated [UIScene lifecycle][].
+  To support this, code migration is required.
+  For more information, visit the [UIScene migration guide][].
+
+* With a focus on improving Flutter's accessibility,
+  the [accessibility docs][] have also been completely reworked. 
+
+* Also, don't forget to check out the [breaking changes][bc-3.38]
+  page for this release. That's where you'll find information
+  about breaking changes, code deprecations, and migration guides.
+
+Other relevant resources:
+
+* [3.38 release notes and changelog][]
+* [DevTools 2.51.1 release notes][]
+* [Dart 3.10 release][] blog post
+
+[3.38 release notes and changelog]: /release/release-notes/release-notes-3.38.0
+[accessibility docs]: /ui/accessibility
+[bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
+[Dart 3.10 release]: {{site.dart-blog}}/announcing-dart-3-10
+[Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
+[DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
+[Flutter on latest iOS]: /platform-integration/ios/ios-latest
+[UIScene lifecycle]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
+[UIScene migration guide]: /release/breaking-changes/uiscenedelegate
+[Widget Previewer tool page]: /tools/widget-previewer
+[web-config-file]: /platform-integration/web/web-dev-config-file
+
+---
+
 ## 13 August 2025: Release 3.35
 
 Flutter 3.35 is live! For more information,

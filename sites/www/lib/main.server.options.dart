@@ -17,6 +17,10 @@ import 'package:flutter_website/src/components/pages/consultants_grid.dart'
     as _consultants_grid;
 import 'package:flutter_website/src/components/pages/events_grid.dart'
     as _events_grid;
+import 'package:flutter_website/src/components/pages/flutter_create_countdown.dart'
+    as _flutter_create_countdown;
+import 'package:flutter_website/src/components/pages/flutter_create_signup.dart'
+    as _flutter_create_signup;
 import 'package:flutter_website/src/components/pages/games_adaptive_media.dart'
     as _games_adaptive_media;
 import 'package:flutter_website/src/components/pages/showcase_grid.dart'
@@ -44,6 +48,8 @@ import 'package:site_shared/components/common/client/copy_button.dart'
     as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     as _dartpad_injector;
+import 'package:site_shared/components/layout/theme_switcher.dart'
+    as _theme_switcher;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -88,6 +94,15 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'events_grid',
       params: __events_gridEventsGrid,
     ),
+    _flutter_create_countdown.FlutterCreateCountdown:
+        ClientTarget<_flutter_create_countdown.FlutterCreateCountdown>(
+          'flutter_create_countdown',
+        ),
+    _flutter_create_signup.FlutterCreateSignup:
+        ClientTarget<_flutter_create_signup.FlutterCreateSignup>(
+          'flutter_create_signup',
+          params: __flutter_create_signupFlutterCreateSignup,
+        ),
     _games_adaptive_media.GamesAdaptiveMedia:
         ClientTarget<_games_adaptive_media.GamesAdaptiveMedia>(
           'games_adaptive_media',
@@ -150,6 +165,9 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:dartpad_injector',
           params: __dartpad_injectorDartPadInjector,
         ),
+    _theme_switcher.ThemeSwitcher: ClientTarget<_theme_switcher.ThemeSwitcher>(
+      'site_shared:theme_switcher',
+    ),
   },
   styles: () => [..._file_tree.FileTree.styles],
 );
@@ -168,8 +186,10 @@ Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
 Map<String, Object?> __headerHeader(_header.Header c) => {
   'contrastLogoSrc': c.contrastLogoSrc,
   'defaultLogoSrc': c.defaultLogoSrc,
+  'darkLogoSrc': c.darkLogoSrc,
   'banner': c.banner.toMap(),
   'pageUrl': c.pageUrl,
+  'supportsDarkMode': c.supportsDarkMode,
 };
 Map<String, Object?> __consultants_gridConsultantsGrid(
   _consultants_grid.ConsultantsGrid c,
@@ -179,6 +199,9 @@ Map<String, Object?> __events_gridEventsGrid(_events_grid.EventsGrid c) => {
   'items': c.items.map((i) => i.toId()).toList(),
   'past': c.past,
 };
+Map<String, Object?> __flutter_create_signupFlutterCreateSignup(
+  _flutter_create_signup.FlutterCreateSignup c,
+) => {'compact': c.compact};
 Map<String, Object?> __games_adaptive_mediaGamesAdaptiveMedia(
   _games_adaptive_media.GamesAdaptiveMedia c,
 ) => {'mobileAssets': c.mobileAssets, 'desktopAssets': c.desktopAssets};

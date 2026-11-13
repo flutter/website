@@ -9,8 +9,8 @@ coverImage:
   alt: >-
     Dash extracts blocks labeled Material UI and Cupertino UI
     and lifts them away from a tower of blue blocks.
-  url: images/Flutter_CupertinoMaterial_Jenga_Low.gif
-socialImage: images/FlutterJenga_Still_OptA.png
+  url: images/Flutter_CupertinoMaterial_Jenga_Low.webp
+socialImage: images/FlutterJenga_Still_OptA.webp
 category: news
 layout: blog
 ---

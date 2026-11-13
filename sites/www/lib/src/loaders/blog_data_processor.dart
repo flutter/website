@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/blog.dart';
 
 /// Validates and adds derived data to each filesystem-backed blog post.
 ///
@@ -31,18 +32,7 @@ final class BlogPostDataProcessor implements DataLoader {
       );
     }
 
-    // Reject invalid URLs before the asset loader tries to read them.
-    switch (page.data.page['coverImage']) {
-      case null:
-      case Map<Object?, Object?>(isEmpty: true):
-      case {'url': final String url} when url.trim().isNotEmpty:
-        break;
-      default:
-        throw ArgumentError(
-          'Invalid "coverImage" metadata at "${page.url}". '
-          'Must include a non-empty "url" string.',
-        );
-    }
+    Post.validateCoverImage(page.data.page['coverImage'], source: page.url);
 
     page.apply(
       data: {

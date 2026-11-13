@@ -34,17 +34,26 @@ consider submitting your tests to the framework's [test registry][].
 The following guides are available.
 They're sorted by release and listed in alphabetical order:
 
-### Not yet released to stable
+<!-- ### Not yet released to stable -->
 
-* [Added enabled property and made onChanged optional for DropdownButton][]
+<a id="released-in-flutter-350" aria-hidden="true"></a>
+### Released in Flutter 3.50
+
+* [Added `enabled` to `DropdownButtonFormField` and made `onChanged` optional][] (`material_ui` 1.8.0)
 * [Migrate to standalone `material_ui` and `cupertino_ui` packages][]
-* [Stricter Android `Intent` verification for app entrypoints][]
 * [Restrict Android engine flags in release mode][]
+* [Soft hyphens render at line breaks][]
+* [Stricter Android `Intent` verification for app entrypoints][]
+* [Web `viewport-fit=cover` `SafeArea` support][]
+* [WidgetSpan order in right-to-left text][]
 
-[Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
-[Stricter Android `Intent` verification for app entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
+[Added `enabled` to `DropdownButtonFormField` and made `onChanged` optional]: /release/breaking-changes/dropdownbuttonformfield-enabled-parameter
 [Migrate to standalone `material_ui` and `cupertino_ui` packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 [Restrict Android engine flags in release mode]: /release/breaking-changes/restrict-android-engine-flags-release-mode
+[Soft hyphens render at line breaks]: /release/breaking-changes/soft-hyphen-rendering
+[Stricter Android `Intent` verification for app entrypoints]: /release/breaking-changes/stricter-android-entrypoint-intent-verification
+[Web `viewport-fit=cover` `SafeArea` support]: /release/breaking-changes/viewport-fit-cover-safe-area
+[WidgetSpan order in right-to-left text]: /release/breaking-changes/widgetspan-rtl-bidi-order
 
 <a id="released-in-flutter-347" aria-hidden="true"></a>
 ### Released in Flutter 3.47
@@ -516,7 +525,6 @@ The following breaking change was reverted in release 2.2:
 [MouseTracker no longer attaches annotations]: /release/breaking-changes/mouse-tracker-no-longer-attaches-annotations
 [Nullable CupertinoTheme.brightness]: /release/breaking-changes/nullable-cupertinothemedata-brightness
 [Rebuild optimization for OverlayEntries and Routes]: /release/breaking-changes/overlay-entry-rebuilds
-[Replace AnimationSheetBuilder.display with collate]: /release/breaking-changes/animation-sheet-builder-display
 [Scrollable AlertDialog]: /release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /release/breaking-changes/text-input-client-current-value

@@ -27,18 +27,13 @@ check out the following video.
 
 ## How it works
 
-Adding web support to Flutter involved implementing Flutter's
-core drawing layer on top of standard browser APIs,
-in addition to compiling Dart to JavaScript,
-instead of the ARM machine code that
-is used for mobile applications.
-Using a combination of DOM, Canvas, and WebAssembly,
-Flutter can provide a portable, high-quality,
-and performant user experience across modern browsers.
-We implemented the core drawing layer completely in Dart
-and used Dart's optimized JavaScript compiler to compile the
-Flutter core and framework along with your application into a single,
-minified source file that can be deployed to any web server.
+Flutter on the web compiles your Dart application and the Flutter framework to
+either JavaScript (using `dartdevc` during development and `dart2js` for
+production) or [WebAssembly][] (`dart2wasm` when building with `--wasm`),
+instead of the ARM or x64 machine code used on mobile and desktop platforms.
+Flutter renders your UI using hardware-accelerated browser graphics APIs
+(WebGL and WebGPU) through its CanvasKit and Skwasm renderers, delivering a
+portable, consistent, and high-performance experience across modern browsers.
 
 <img src="/assets/images/docs/arch-overview/web-framework-diagram.png"
   alt="Flutter architecture for web" >
@@ -110,3 +105,4 @@ The following resources can help you get started:
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
 [web FAQ]: /platform-integration/web/faq
 [web samples for Flutter]: https://github.com/flutter/samples/#?platform=web
+[WebAssembly]: /platform-integration/web/wasm

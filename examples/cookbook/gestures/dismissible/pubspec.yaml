@@ -3,11 +3,12 @@ description: Sample code for dismissible cookbook recipe.
 
 resolution: workspace
 environment:
-  sdk: ^3.13.0-0
+  sdk: ^3.14.0-0
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.11.0
 
 flutter:
   uses-material-design: true

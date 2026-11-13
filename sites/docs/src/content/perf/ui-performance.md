@@ -338,8 +338,8 @@ from a resource perspective,
 is rendering a texture using an image file.
 First, the compressed image
 is fetched from persistent storage.
-The image is decompressed into host memory (GPU memory),
-and transferred to device memory (RAM).
+The image is decompressed into host memory (RAM),
+and transferred to device memory (GPU memory).
 
 In other words, image I/O can be expensive.
 The cache provides snapshots of complex hierarchies so

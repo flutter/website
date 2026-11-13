@@ -25,7 +25,7 @@ Additionally, interoperability between two plugins is a challenge and there is n
 
 ## Flutter’s vision for interoperability
 
-Like Michael Thompson said during [#FlutterInProduction](https://flutter.dev/events/flutter-in-production), *“We’re investing a lot in a new approach for this, which we call direct native interop.”*
+Like Michael Thomsen said during [#FlutterInProduction](https://flutter.dev/events/flutter-in-production), *“We’re investing a lot in a new approach for this, which we call direct native interop.”*
 
 Our vision for interoperability is to ultimately make accessing platform APIs more effortless for developers with a simple and seamless developer experience. The goal is to enable Flutter developers to focus more time on the experience they are trying to build and less time trying to leverage the power of the underlying platform.
 

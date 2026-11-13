@@ -51,7 +51,7 @@ jobs:
           persist-credentials: false
       - uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d
         with:
-          sdk: beta
+          sdk: 3.14.0-315.3.beta
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Check if excerpts are up to date
@@ -68,7 +68,7 @@ jobs:
           persist-credentials: false
       - uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d
         with:
-          sdk: beta
+          sdk: 3.14.0-315.3.beta
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Install firebase-tools
@@ -101,7 +101,7 @@ jobs:
           persist-credentials: false
       - uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d
         with:
-          sdk: beta
+          sdk: 3.14.0-315.3.beta
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Validate the firebase.json file

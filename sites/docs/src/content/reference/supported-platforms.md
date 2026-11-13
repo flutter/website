@@ -27,7 +27,7 @@ Flutter supports deploying to the following platforms.
     icon="mobile"
     arch="x64, Arm32, Arm64"
     supported="24 to 37"
-    ci-tested="24 to 36"
+    ci-tested="24 to 37"
     unsupported="23 and earlier"
     deploy-to-link="/deployment/android"
   />
@@ -45,8 +45,9 @@ Flutter supports deploying to the following platforms.
 ## Desktop platforms
 
 :::warning macOS Intel (x64) deprecation
-As Apple phases out Intel-based Macs,
-Flutter is phasing out support for Intel (x64) hardware.
+Flutter is phasing out support for Intel-based Macs.
+macOS Tahoe (26) is the last release for Intel-based Macs.
+macOS Golden Gate (27) requires Apple Silicon.
 For details on the timeline and impact,
 refer to the [macOS Intel deprecation strategy][].
 
@@ -68,7 +69,7 @@ refer to the [macOS Intel deprecation strategy][].
     icon="laptop_mac"
     arch="x64, Arm64"
     supported="Monterey (12) to Golden Gate (27)"
-    ci-tested="Sequoia (15)"
+    ci-tested="Sequoia (15) and Tahoe (26)"
     unsupported="Big Sur (11) and earlier"
     deploy-to-link="/deployment/macos"
   />
@@ -96,6 +97,13 @@ refer to the [macOS Intel deprecation strategy][].
 
 ## Web platforms
 
+:::version-note
+In Flutter 3.50 and later,
+apps built with `--wasm` use WebAssembly in
+Firefox and WebKit-based browsers (Safari and all browsers on iOS)
+only if you [enable them in your app's `wasmAllowList`][wasm-compatibility].
+:::
+
 <PlatformsGrid>
   <PlatformCard
     name="Chrome"
@@ -110,7 +118,7 @@ refer to the [macOS Intel deprecation strategy][].
   <PlatformCard
     name="Firefox"
     icon="language"
-    arch="JavaScript"
+    arch="JavaScript, WebAssembly (147+ with opt-in)"
     deploy-to="web"
     supported="[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)"
     ci-tested="148"
@@ -120,10 +128,10 @@ refer to the [macOS Intel deprecation strategy][].
   <PlatformCard
     name="Safari"
     icon="language"
-    arch="JavaScript"
+    arch="JavaScript, WebAssembly (26.2+ with opt-in)"
     deploy-to="web"
     supported="15.6 and newer"
-    ci-tested="18.6"
+    ci-tested="26"
     unsupported="15.5 and earlier"
     deploy-to-link="/deployment/web"
   />
@@ -139,15 +147,17 @@ refer to the [macOS Intel deprecation strategy][].
   />
 </PlatformsGrid>
 
+[wasm-compatibility]: /platform-integration/web/wasm#learn-more-about-browser-compatibility
+
 ## Previous Flutter versions
 
 To learn about support for previous versions of Flutter,
-see the following resources:
+consult the following resources:
 
 *   [Flutter SDK release notes][].
     Find breaking changes and support updates listed by release.
 *   [Supported platforms page history][supported-platforms-history].
-    To see historical support matrices,
+    To find historical support matrices,
     view previous versions of this page.
 
 [Flutter SDK release notes]: /release/release-notes
