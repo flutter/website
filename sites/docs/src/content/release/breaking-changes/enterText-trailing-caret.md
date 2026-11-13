@@ -59,7 +59,7 @@ Common test failures this change may introduce includes:
   failing after `enterText` calls.
 
 If your tests have to rely on setting the selection to invalid,
-the previous behavior can be achieved using`updateEditingValue`:
+the previous behavior can be achieved using `updateEditingValue`:
 
 ### `TestTextInput.enterText`
 

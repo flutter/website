@@ -168,7 +168,7 @@ final scaledFontSize = MediaQuery.textScalerOf(context).scale(textStyle.fontSize
 If you are using `textScaleFactor` to scale dimensions that are not font sizes,
 there are no generic rules for migrating the code to nonlinear scaling, and it
 might require the UI to be implemented differently.
-Reusing the `MyTooltipBox`example:
+Reusing the `MyTooltipBox` example:
 
 ```dart
 MyTooltipBox(

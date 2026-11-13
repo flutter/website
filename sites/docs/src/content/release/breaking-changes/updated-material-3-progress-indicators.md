@@ -12,7 +12,7 @@ description: >-
 The `LinearProgressIndicator` and `CircularProgressIndicator` have
 been updated to match the Material 3 Design specifications.
 
-The `LinearProgressIndicator`changes include a gap between
+The `LinearProgressIndicator` changes include a gap between
 the active and inactive tracks, a stop indicator, and rounded corners.
 The `CircularProgressIndicator` changes include a gap between
 the active and inactive tracks, and rounded stroke cap.

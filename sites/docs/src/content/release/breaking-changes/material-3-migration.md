@@ -69,7 +69,7 @@ To return your app's UI to its previous behavior (which we don't recommend):
 
 * Set `Colors.grey[50]!` to `ColorScheme.background`
   (when the theme is `Brightness.light`).
-* Set  `Colors.grey[850]!`to `ColorScheme.background`
+* Set `Colors.grey[850]!` to `ColorScheme.background`
   (when the theme is `Brightness.dark`).
 
 Code before migration:
