@@ -58,6 +58,16 @@ install and set up the latest stable version of [Android Studio][].
     If you already have Android Studio installed,
     ensure that it's [up to date][as-update].
 
+    On Linux, `flutter doctor` automatically checks `/opt/android-studio`,
+    `$HOME/android-studio`, and cache metadata under `$HOME/.cache/Google/`
+    written after Android Studio runs once.
+    If you install Android Studio in another location or a nested
+    subdirectory (such as `/opt/android-studio/2025.1.1`) before launching
+    it, launch Android Studio once or set its path with
+    `flutter config --android-studio-dir='<path>'` so `flutter doctor`
+    can detect the installation and its version.
+    {: .linux-only}
+
  1. <h3>Install Android SDK and tools</h3>
 
     1. Launch **Android Studio**.
