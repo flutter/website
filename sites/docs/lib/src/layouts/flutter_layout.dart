@@ -52,6 +52,7 @@ abstract class FlutterDocsLayout extends DashLayout {
   @override
   Iterable<Component> buildExtraHead(Page page) {
     return [
+      const link(rel: 'describedby', type: 'text/plain', href: '/llms.txt'),
       if (canonicalMarkdownOutput.routeForPage(page) case final markdownRoute?)
         link(
           rel: 'alternate',
