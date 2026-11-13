@@ -2,22 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:review_comments_jaspr/review_comments_jaspr.dart'
+    as jaspr_review;
 
-import 'review_client_script.dart';
 import 'review_config.dart';
 
-final String _cachedReviewClientScript = buildReviewClientScript();
-
 /// Builds the `<script>` components required to mount the visual review overlay
-/// on [page].
-///
-/// Returns an empty `const []` list whenever [ReviewConfig.isEnabled] (or
-/// [ReviewEnvironment.isEnabled] when [environment] is overridden in tests) is
-/// `false`, guaranteeing zero emitted bytes in production deployments and
-/// standard CI builds.
+/// on [page] by delegating to `package:review_comments_jaspr`.
 List<Component> buildReviewOverlayComponents(
   Page page, {
   required String defaultSite,
@@ -25,32 +18,20 @@ List<Component> buildReviewOverlayComponents(
   ReviewEnvironment? environment,
 }) {
   final effectiveEnv = environment ?? const ReviewEnvironment.fromEnvironment();
-  if (environment == null) {
-    if (!ReviewConfig.isEnabled) {
-      return const [];
-    }
-  } else if (!effectiveEnv.isEnabled) {
+  if (environment == null ? !ReviewConfig.isEnabled : !effectiveEnv.isEnabled) {
     return const [];
   }
 
-  final configMap = buildReviewPageConfigMap(
+  return jaspr_review.buildReviewOverlayComponents(
     page,
     defaultSite: defaultSite,
     contentRootPrefix: contentRootPrefix,
-    environment: effectiveEnv,
+    defaultRepo: defaultDashReviewRepo,
+    config: effectiveEnv.toCoreConfig(
+      feedbackFile: defaultDashFeedbackFile,
+      cliResolveCommand: defaultDashResolveCommand,
+    ),
+    feedbackFile: defaultDashFeedbackFile,
+    cliResolveCommand: defaultDashResolveCommand,
   );
-  final encodedConfig = encodeReviewJsonForHtml(configMap);
-
-  return [
-    script(
-      id: 'dash-review-config',
-      attributes: const {'type': 'application/json'},
-      content: encodedConfig,
-    ),
-    script(
-      id: 'dash-review-script',
-      defer: true,
-      content: _cachedReviewClientScript,
-    ),
-  ];
 }
