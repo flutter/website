@@ -1533,6 +1533,13 @@ const String _reviewClientScriptBody = r'''
       state.commentMode = Boolean(active);
       state.hoveredEl = null;
       state.dragState = null;
+      if (state.commentMode) {
+        state.activeCommentId = null;
+        state.composerDraft = null;
+        renderComposer();
+        renderThreadPopover();
+        renderPinsAndHighlights();
+      }
       hoverBox.classList.add('dr-hidden');
       dragBox.classList.add('dr-hidden');
       modeBanner.classList.toggle('dr-hidden', !state.commentMode);
@@ -3003,7 +3010,8 @@ const String _reviewClientScriptBody = r'''
       };
 
       const pillLeft = Math.max(90, Math.min(window.innerWidth - 90, rect.left + rect.width / 2));
-      const pillTop = rect.top >= 46 ? rect.top - 38 : rect.bottom + 8;
+      const rawPillTop = rect.top >= 46 ? rect.top - 38 : rect.bottom + 8;
+      const pillTop = Math.max(12, Math.min(window.innerHeight - 48, rawPillTop));
       selectionPill.style.left = Math.round(pillLeft) + 'px';
       selectionPill.style.top = Math.round(pillTop) + 'px';
       selectionPill.classList.remove('dr-hidden');

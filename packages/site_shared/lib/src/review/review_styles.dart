@@ -431,9 +431,8 @@ const String reviewOverlayStyles = '''
 }
 
 .dr-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+  display: inline-block;
+  vertical-align: middle;
   padding: 2px 8px;
   border-radius: 6px;
   background: var(--dr-bg-subtle);
@@ -441,7 +440,7 @@ const String reviewOverlayStyles = '''
   color: var(--dr-fg-muted);
   font-family: var(--dr-code-font);
   font-size: 11px;
-  max-width: 260px;
+  max-width: 310px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

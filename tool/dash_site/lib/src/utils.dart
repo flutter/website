@@ -52,6 +52,21 @@ int installJasprCliIfNecessary() {
   return 0;
 }
 
+/// Returns an environment map with the resolved Dart SDK `bin` directory
+/// prepended to `PATH` so `jaspr_cli` locates the surrounding SDK even when
+/// `dart` in the caller's `PATH` is a symlink.
+Map<String, String> jasprProcessEnvironment() {
+  final sdkBinDir = path.dirname(Platform.resolvedExecutable);
+  final currentPath = Platform.environment['PATH'] ?? '';
+  final separator = Platform.isWindows ? ';' : ':';
+  return {
+    ...Platform.environment,
+    'PATH': currentPath.isEmpty
+        ? sdkBinDir
+        : '$sdkBinDir$separator$currentPath',
+  };
+}
+
 void groupStart(String text) {
   if (_runningInCi) {
     print('::group::$text');
@@ -67,10 +82,13 @@ void groupEnd() {
 }
 
 int runPubGetIfNecessary(String directory) {
-  final pubGetOutput = Process.runSync('flutter', const [
-    'pub',
-    'get',
-  ], workingDirectory: directory);
+  final usesFlutter =
+      directory == 'examples' || path.isWithin('examples', directory);
+  final pubGetOutput = Process.runSync(
+    usesFlutter ? 'flutter' : Platform.resolvedExecutable,
+    const ['pub', 'get'],
+    workingDirectory: directory,
+  );
 
   if (pubGetOutput.exitCode != 0) {
     final normalOutput = pubGetOutput.stdout.toString();

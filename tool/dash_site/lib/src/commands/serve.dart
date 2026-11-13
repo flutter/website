@@ -74,6 +74,7 @@ final class ServeSiteCommand extends Command<int> {
           reviewServerPort: reviewServer?.port,
         ),
         workingDirectory: selectedSite.directory,
+        environment: jasprProcessEnvironment(),
         runInShell: true,
         mode: ProcessStartMode.inheritStdio,
       );

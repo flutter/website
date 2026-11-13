@@ -138,6 +138,7 @@ Future<int> buildSite(
       extraDartDefines: extraDartDefines,
     ),
     workingDirectory: site.directory,
+    environment: jasprProcessEnvironment(),
     mode: ProcessStartMode.inheritStdio,
   );
 
