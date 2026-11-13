@@ -73,7 +73,7 @@ The available uniforms depends on how the shader was defined.
 ```dart
 void updateShader(Canvas canvas, Rect rect, FragmentProgram program) {
   var shader = program.fragmentShader();
-  shader.setFloat(0, 42.0);
+  shader.getUniformFloat('uScale').set(42.0);
   canvas.drawRect(rect, Paint()..shader = shader);
 }
 ```
@@ -149,8 +149,9 @@ used to limit the area that is affected by the [`ImageFilter`][]. Without a
 [`ClipRect`][] the [`BackdropFilter`][] will be applied to the whole screen.
 
 `ImageFilter` fragment shaders receive some uniforms automatically from the
-engine. The `sampler2D` value at index 0 is set to the filter input image, and
-the `float` values at indices 0 and 1 are set to the image's width and height.
+engine. The first `sampler2D` uniform is set to the filter input image,
+and the first float uniform, which must be a `vec2`,
+is set to the image's width and height.
 Your shader must specify this constructor to accept these values (for example, a
 `sampler2D` and a `vec2`), but you should not set them from your Dart code.
 
@@ -215,19 +216,24 @@ and then setting these values in Dart for
 each fragment shader instance.
 
 Floating point uniforms with the GLSL types `float`, `vec2`, `vec3`, and `vec4`
-are set using the [`FragmentShader.setFloat`][] or
-[`FragmentShader.getUniformFloat`][] method. GLSL sampler values, which use the
-`sampler2D` type, are set using the [`FragmentShader.setImageSampler`][] or
+are set using the [`FragmentShader.getUniformFloat`][] method,
+which looks up a uniform by the name it's declared with in the fragment program.
+GLSL sampler values, which use the `sampler2D` type,
+are set using the [`FragmentShader.setImageSampler`][] or
 [`FragmentShader.getImageSampler`][] method.
 
-The correct index for each `uniform` value is determined by the order that the
-uniform values are defined in the fragment program. For data types composed of
-multiple floats, such as a `vec4`, you must call [`FragmentShader.setFloat`][]
-or [`UniformFloatSlot.set`][] once for each value.
+For data types composed of multiple floats, such as a `vec4`,
+pass the index of each component to [`FragmentShader.getUniformFloat`][]
+and call [`UniformFloatSlot.set`][] once for each value.
+To set all the components with one call, use
+[`FragmentShader.getUniformVec2`][], [`FragmentShader.getUniformVec3`][], or
+[`FragmentShader.getUniformVec4`][] instead.
 
-[`FragmentShader.setFloat`]: {{site.api}}/flutter/dart-ui/FragmentShader/setFloat.html
 [`UniformFloatSlot.set`]: {{site.api}}/flutter/dart-ui/UniformFloatSlot/set.html
 [`FragmentShader.getUniformFloat`]: {{site.api}}/flutter/dart-ui/FragmentShader/getUniformFloat.html
+[`FragmentShader.getUniformVec2`]: {{site.api}}/flutter/dart-ui/FragmentShader/getUniformVec2.html
+[`FragmentShader.getUniformVec3`]: {{site.api}}/flutter/dart-ui/FragmentShader/getUniformVec3.html
+[`FragmentShader.getUniformVec4`]: {{site.api}}/flutter/dart-ui/FragmentShader/getUniformVec4.html
 [`FragmentShader.setImageSampler`]: {{site.api}}/flutter/dart-ui/FragmentShader/setImageSampler.html
 [`FragmentShader.getImageSampler`]: {{site.api}}/flutter/dart-ui/FragmentShader/getImageSampler.html
 
@@ -272,10 +278,6 @@ class Foobar {
   }
 }
  ```
-
-When using [`FragmentShader.setFloat`][] note that the indices do not count the
-`sampler2D` uniform. This uniform is set separately with
-[`FragmentShader.setImageSampler`][], with the index starting over at 0.
 
 Any float uniforms that are left uninitialized will default to `0.0`.
 
@@ -370,10 +372,18 @@ and needs to be emulated in the shader.
 
 ```dart
 class SDFPainter {
-  SDFPainter(this.sdfShader, this.renderShader);
+  SDFPainter(this.sdfShader, this.renderShader)
+    : _sdfSize = sdfShader.getUniformVec2('uSize'),
+      _sdfRadius = sdfShader.getUniformFloat('uRadius'),
+      _renderSize = renderShader.getUniformVec2('uSize'),
+      _renderTexture = renderShader.getImageSampler('uTexture');
 
-  FragmentShader sdfShader;
-  FragmentShader renderShader;
+  final FragmentShader sdfShader;
+  final FragmentShader renderShader;
+  final UniformVec2Slot _sdfSize;
+  final UniformFloatSlot _sdfRadius;
+  final UniformVec2Slot _renderSize;
+  final ImageSamplerSlot _renderTexture;
   Image? _sdf;
   bool isDirty = false;
   double radius = 0.5;
@@ -383,18 +393,16 @@ class SDFPainter {
       final recorder = PictureRecorder();
       final subCanvas = Canvas(recorder);
       final paint = Paint()..shader = sdfShader;
-      sdfShader.setFloat(0, size.width);
-      sdfShader.setFloat(1, size.height);
-      sdfShader.setFloat(2, radius);
+      _sdfSize.set(size.width, size.height);
+      _sdfRadius.set(radius);
       subCanvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
       final picture = recorder.endRecording();
       _sdf = picture.toImageSync(size.width.toInt(), size.height.toInt());
       isDirty = false;
     }
 
-    renderShader.setFloat(0, size.width);
-    renderShader.setFloat(1, size.height);
-    renderShader.setImageSampler(0, _sdf!);
+    _renderSize.set(size.width, size.height);
+    _renderTexture.set(_sdf!);
 
     canvas.drawRect(
       Rect.fromLTWH(0, 0, size.width, size.height),
@@ -413,6 +421,8 @@ fragment program objects before starting the animation.
 
 You can reuse a `FragmentShader` object across frames; this is more efficient
 than creating a new `FragmentShader` for each frame.
+Similarly, look up each uniform slot once and reuse it,
+instead of calling `getUniformFloat` on every frame.
 
 For a more detailed guide on writing performant shaders,
 check out [Writing efficient shaders][] on GitHub.
