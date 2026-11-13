@@ -11,7 +11,7 @@ dependencies:
   html: ^0.15.6
   http: ^1.6.0
   intl: ^0.20.2
-  jaspr: ^0.24.0-beta.0
+  jaspr: ^0.24.0-beta.1
   jaspr_content: ^0.6.0-beta.0
   markdown: ^7.3.1
   markdown_description_list: ^0.2.0

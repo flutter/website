@@ -9,11 +9,10 @@ import 'package:jaspr/jaspr.dart';
 /// and tab panes.
 @client
 class Tabs extends StatefulComponent {
-  /// Creates a tab container with the given [labels] and corresponding [tabs].
+  /// Creates a tab container with the given [tabs].
   const Tabs({
     this.title,
     this.header,
-    required this.labels,
     required this.tabs,
     this.noSpy = false,
     super.key,
@@ -25,11 +24,8 @@ class Tabs extends StatefulComponent {
   /// An optional header component rendered above the tabs menu.
   final Component? header;
 
-  /// The list of tab button labels.
-  final List<String> labels;
-
-  /// The list of tab pane content components.
-  final List<Component> tabs;
+  /// The list of tabs.
+  final List<Tab> tabs;
 
   /// Whether scroll-spy behavior is disabled for these tabs.
   final bool noSpy;
@@ -49,7 +45,7 @@ class _TabsState extends State<Tabs> {
         ?component.header,
         div(classes: 'tabs-menu', [
           ul(classes: 'tabs-wrapper', [
-            for (final (index, _) in component.tabs.indexed)
+            for (final (index, tab) in component.tabs.indexed)
               li(
                 classes: 'btn ${index == _activeTab ? 'active' : ''}',
                 events: events(
@@ -57,7 +53,7 @@ class _TabsState extends State<Tabs> {
                     setState(() => _activeTab = index);
                   },
                 ),
-                [.text(component.labels[index])],
+                [.text(tab.header)],
               ),
           ]),
         ]),
@@ -70,9 +66,40 @@ class _TabsState extends State<Tabs> {
               if (component.noSpy) 'no-spy',
               if (index == _activeTab) 'active',
             ].join(' '),
-            [tab],
+            [tab.content],
           ),
       ]),
     ]);
+  }
+}
+
+/// Metadata describing a single tab in an [Tabs] component.
+class Tab {
+  const Tab({
+    required this.header,
+    required this.content,
+  });
+
+  /// The human-readable header.
+  final String header;
+
+  final Component content;
+
+  /// Decodes a [Tab] from a serialized map.
+  @decoder
+  static Tab decode(Map<String, Object?> map, ComponentMount mount) {
+    return Tab(
+      header: map['header'] as String,
+      content: mount(map['content'] as String),
+    );
+  }
+
+  /// Encodes this [Tab] into a serializable map.
+  @encoder
+  Map<String, Object?> encode() {
+    return {
+      'header': header,
+      'content': content,
+    };
   }
 }

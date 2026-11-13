@@ -61,10 +61,13 @@ class Stepper extends CustomComponent {
       }
 
       return InteractiveStepper(
-        titles: [
-          for (final step in steps) builder.build([step.title]),
+        steps: [
+          for (final step in steps)
+            Step(
+              title: builder.build([step.title]),
+              content: builder.build(step.content),
+            ),
         ],
-        steps: [for (final step in steps) builder.build(step.content)],
         collapsible: collapsible,
         showActions: showActions,
         showFinish: showFinish,

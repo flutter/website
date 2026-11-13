@@ -183,12 +183,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
         tabs: p
             .get<List<Object?>>('tabs')
             .cast<Map<String, Object?>>()
-            .map((i) => _tabs.DashTab.decode(i))
-            .toList(),
-        tabContents: p
-            .get<List<Object?>>('tabContents')
-            .cast<String>()
-            .map((i) => p.mount(i))
+            .map((i) => _tabs.DashTab.decode(i, p.mount))
             .toList(),
         saveKey: p.get<String?>('saveKey'),
         wrapped: p.get<bool>('wrapped'),
@@ -233,15 +228,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'site_shared:stepper': ClientLoader(
       (p) => _stepper.InteractiveStepper(
-        titles: p
-            .get<List<Object?>>('titles')
-            .cast<String>()
-            .map((i) => p.mount(i))
-            .toList(),
         steps: p
             .get<List<Object?>>('steps')
-            .cast<String>()
-            .map((i) => p.mount(i))
+            .cast<Map<String, Object?>>()
+            .map((i) => _stepper.Step.decode(i, p.mount))
             .toList(),
         collapsible: p.get<bool>('collapsible'),
         showActions: p.get<bool>('showActions'),

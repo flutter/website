@@ -27,7 +27,9 @@ class Trigger extends StatelessComponent {
     if (expandable == null) return child;
 
     return .apply(
-      attributes: {'aria-expanded': expandable.expanded ? 'true' : 'false'},
+      attributes: {
+        if (kIsWeb) 'aria-expanded': expandable.expanded ? 'true' : 'false',
+      },
       events: {
         'click': (e) {
           e.preventDefault();

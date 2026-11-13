@@ -16,18 +16,13 @@ import '../../../web_util.dart';
 /// same [saveKey] using browser local storage.
 @client
 class InteractiveDashTabs extends StatefulComponent {
-  /// Creates an interactive tab set with the specified [tabs] and their
-  /// corresponding [tabContents].
+  /// Creates an interactive tab set with the specified [tabs].
   const InteractiveDashTabs({
     required this.id,
     required this.tabs,
-    required this.tabContents,
     this.saveKey,
     this.wrapped = false,
-  }) : assert(
-         tabs.length == tabContents.length,
-         'tabs and tabContents must have the same length!',
-       );
+  });
 
   /// The HTML element ID for this tab set wrapper.
   final String id;
@@ -39,11 +34,8 @@ class InteractiveDashTabs extends StatefulComponent {
   /// Whether the tab container uses wrapped styling.
   final bool wrapped;
 
-  /// The list of tab metadata headers.
+  /// The list of tabs.
   final List<DashTab> tabs;
-
-  /// The list of content components corresponding to each tab in [tabs].
-  final List<Component> tabContents;
 
   @override
   State<InteractiveDashTabs> createState() => InteractiveDashTabsState();
@@ -213,7 +205,7 @@ class InteractiveDashTabsState extends State<InteractiveDashTabs> {
                 'role': 'tabpanel',
                 'aria-labelledby': tab.tabId,
               },
-              [component.tabContents[index]],
+              [tab.content],
             ),
         ]),
       ],
@@ -228,6 +220,7 @@ class DashTab {
     required this.tabName,
     required this.baseId,
     this.saveId,
+    required this.content,
   });
 
   /// The human-readable name displayed on the tab header.
@@ -248,13 +241,16 @@ class DashTab {
   /// The key used to identify this tab in local storage.
   String get tabSaveId => saveId ?? slugify(tabName);
 
+  final Component content;
+
   /// Decodes a [DashTab] from a serialized map.
   @decoder
-  static DashTab decode(Map<String, Object?> map) {
+  static DashTab decode(Map<String, Object?> map, ComponentMount mount) {
     return DashTab(
       tabName: map['tabName'] as String,
       baseId: map['baseId'] as String,
       saveId: map['saveId'] as String?,
+      content: mount(map['content'] as String),
     );
   }
 
@@ -265,6 +261,7 @@ class DashTab {
       'tabName': tabName,
       'baseId': baseId,
       'saveId': saveId,
+      'content': content,
     };
   }
 }

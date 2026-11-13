@@ -223,7 +223,6 @@ Map<String, Object?> __simple_tooltipSimpleTooltip(
 Map<String, Object?> __tabsInteractiveDashTabs(_tabs.InteractiveDashTabs c) => {
   'id': c.id,
   'tabs': c.tabs.map((i) => i.encode()).toList(),
-  'tabContents': c.tabContents,
   'saveKey': c.saveKey,
   'wrapped': c.wrapped,
 };
@@ -246,8 +245,7 @@ Map<String, Object?> __quizInteractiveQuiz(_quiz.InteractiveQuiz c) => {
 Map<String, Object?> __stepperInteractiveStepper(
   _stepper.InteractiveStepper c,
 ) => {
-  'titles': c.titles,
-  'steps': c.steps,
+  'steps': c.steps.map((i) => i.encode()).toList(),
   'collapsible': c.collapsible,
   'showActions': c.showActions,
   'showFinish': c.showFinish,

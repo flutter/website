@@ -39,10 +39,8 @@ class DashTabs extends CustomComponent {
             tabName: tab.attributes['name']!,
             baseId: '${_currentTabId++}',
             saveId: tab.attributes['id'],
+            content: builder.build(tab.children),
           ),
-      ],
-      tabContents: [
-        for (final tab in tabs) builder.build(tab.children),
       ],
     );
   }

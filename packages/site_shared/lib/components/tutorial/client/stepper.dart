@@ -14,22 +14,17 @@ import '../../common/material_icon.dart';
 /// expand/collapse transitions and step navigation.
 @client
 class InteractiveStepper extends StatefulComponent {
-  /// Creates an interactive stepper with the given [titles] and [steps].
+  /// Creates an interactive stepper with the given [steps].
   const InteractiveStepper({
-    required this.titles,
     required this.steps,
     this.collapsible = true,
     this.showActions = true,
     this.showFinish = true,
     super.key,
-  }) : assert(steps.length > 0, 'Stepper must have at least one step.'),
-       assert(titles.length == steps.length, 'Titles must match step count.');
+  }) : assert(steps.length > 0, 'Stepper must have at least one step.');
 
-  /// The title component for each step.
-  final List<Component> titles;
-
-  /// The content component for each step.
-  final List<Component> steps;
+  /// The steps.
+  final List<Step> steps;
 
   /// Whether the stepper steps can be collapsed and expanded.
   final bool collapsible;
@@ -52,7 +47,7 @@ class _InteractiveStepperState extends State<InteractiveStepper> {
   @override
   void initState() {
     super.initState();
-    _titleKeys = List.generate(component.titles.length, (_) => GlobalNodeKey());
+    _titleKeys = List.generate(component.steps.length, (_) => GlobalNodeKey());
     if (kIsWeb) {
       context.binding.addPostFrameCallback(_updatePageHeading);
     }
@@ -143,11 +138,11 @@ class _InteractiveStepperState extends State<InteractiveStepper> {
                 [.text('${index + 1}')],
               ),
               div(key: _titleKeys[index], classes: 'step-title', [
-                component.titles[index],
+                step.title,
               ]),
               const MaterialIcon('keyboard_arrow_up'),
             ]),
-            div(classes: 'step-content', [step]),
+            div(classes: 'step-content', [step.content]),
             if (component.showActions &&
                 (index < component.steps.length - 1 || component.showFinish))
               div(classes: 'step-actions', [
@@ -165,5 +160,23 @@ class _InteractiveStepperState extends State<InteractiveStepper> {
           ],
         ),
     ]);
+  }
+}
+
+class Step({required final Component title, required final Component content}) {
+  @decoder
+  static Step decode(Map<String, Object?> map, ComponentMount mount) {
+    return Step(
+      title: mount(map['title'] as String),
+      content: mount(map['content'] as String),
+    );
+  }
+
+  @encoder
+  Map<String, Object?> encode() {
+    return {
+      'title': title,
+      'content': content,
+    };
   }
 }
