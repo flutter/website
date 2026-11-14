@@ -6,7 +6,8 @@
 /// local review proxy middleware on Jaspr `ServerApp`.
 library;
 
-import 'package:review_comments_jaspr/server.dart' as jaspr_review_server;
+import 'package:review_comments_jaspr/review_comments_jaspr.dart'
+    as jaspr_review;
 
 import 'src/review/review_config.dart';
 
@@ -17,7 +18,7 @@ void registerDashReviewServerMiddleware() {
     return;
   }
   const env = ReviewEnvironment.fromEnvironment();
-  jaspr_review_server.registerReviewLocalProxyMiddleware(
+  jaspr_review.registerReviewLocalProxyMiddleware(
     config: env.toCoreConfig(
       feedbackFile: defaultDashFeedbackFile,
       cliResolveCommand: defaultDashResolveCommand,

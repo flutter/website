@@ -22,9 +22,7 @@ dependency_overrides:
       url: https://github.com/schultek/jaspr.git
       ref: 18736e8f41fce4f17b15748e921672d596ba44b2
       path: packages/jaspr_builder
-  review_comments_cli:
-    path: /usr/local/google/home/abdallahshaban/github/review_comments/packages/review_comments_cli
-  review_comments_core:
-    path: /usr/local/google/home/abdallahshaban/github/review_comments/packages/review_comments_core
+  review_comments:
+    path: /usr/local/google/home/abdallahshaban/github/review_comments/packages/review_comments
   review_comments_jaspr:
     path: /usr/local/google/home/abdallahshaban/github/review_comments/packages/review_comments_jaspr

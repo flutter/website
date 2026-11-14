@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:args/command_runner.dart';
-import 'package:review_comments_cli/review_comments_cli.dart' as cli;
+import 'package:review_comments/cli.dart' as cli;
 
 import '../review_source_locator.dart';
 import '../sites.dart';

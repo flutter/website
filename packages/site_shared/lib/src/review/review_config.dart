@@ -3,13 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:review_comments_core/review_comments_core.dart' as core;
+import 'package:review_comments_jaspr/review_comments_jaspr.dart' as core;
 import 'package:review_comments_jaspr/review_comments_jaspr.dart'
     as jaspr_review;
 
 import '../../util.dart';
 
-export 'package:review_comments_core/review_comments_core.dart'
+export 'package:review_comments_jaspr/review_comments_jaspr.dart'
     show encodeReviewJsonForHtml;
 
 /// Default GitHub repository slug for Flutter website PR previews.

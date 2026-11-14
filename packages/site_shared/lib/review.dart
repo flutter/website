@@ -3,11 +3,10 @@
 // found in the LICENSE file.
 
 /// Visual review and staged PR comment overlay shared across Dash sites,
-/// delegating to `package:review_comments_core` and
-/// `package:review_comments_jaspr`.
+/// delegating to `package:review_comments_jaspr`.
 library;
 
-export 'package:review_comments_core/review_comments_core.dart'
+export 'package:review_comments_jaspr/review_comments_jaspr.dart'
     show
         buildReviewClientScript,
         encodeReviewJsonForHtml,
