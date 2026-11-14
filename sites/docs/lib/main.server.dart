@@ -20,6 +20,7 @@ import 'package:site_shared/components/tutorial/summary_card.dart';
 import 'package:site_shared/components/tutorial/tutorial_outline.dart';
 import 'package:site_shared/components/utils/define_component.dart';
 import 'package:site_shared/markdown.dart';
+import 'package:site_shared/review_server.dart';
 
 import 'main.server.options.dart'; // Generated. Do not remove or edit.
 import 'src/components/common/client/download_latest_button.dart';
@@ -47,6 +48,7 @@ import 'src/templating/dash_template_engine.dart';
 void main() {
   // Initializes the server environment with the generated default options.
   Jaspr.initializeApp(options: defaultServerOptions);
+  registerDashReviewServerMiddleware();
 
   runApp(_docsFlutterDevSite);
 }
