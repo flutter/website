@@ -17,7 +17,7 @@ dependencies:
   io: ^1.1.0
   linkcheck: ^3.1.0
   path: ^1.9.1
-  review_comments: ^0.1.0
+  review_comments: ^0.2.0
 
 dev_dependencies:
   analysis_defaults:
