@@ -12,6 +12,9 @@
     ],
     "rewrites": [],
     "redirects": [
+      { "source": "/llms-full.txt", "destination": "/llms.txt", "type": 302 },
+      { "regex": "^/.+/llms\\.txt$", "destination": "/llms.txt", "type": 301 },
+
       { "regex": "^\/(flutter(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "^\/(objcdoc(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "^\/(javadoc(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
@@ -984,6 +987,12 @@
         "headers": [
           { "key": "Cache-Control", "value": "max-age=3600" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      },
+      {
+        "source": "**/*.@(md|txt)",
+        "headers": [
+          { "key": "X-Robots-Tag", "value": "noindex" }
         ]
       },
       {
