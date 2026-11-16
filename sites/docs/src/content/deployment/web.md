@@ -145,15 +145,13 @@ With `--web-content-hash`, files under `build/web/assets/` are renamed on disk.
 Code that references them by a fixed URL, such as `assets/...` paths in
 `index.html`, CSS, or a JavaScript `fetch()` call, receives a `404`.
 Load assets through `rootBundle` or the asset APIs instead.
-Code that loads `AssetManifest.json` directly also fails,
-because Flutter emits only `AssetManifest.bin` and `AssetManifest.bin.json`;
-use `AssetManifest.loadFromAssetBundle(rootBundle)` instead.
 :::
 
 `flutter build web --web-content-hash` fails with an error if
 `web/index.html` or a custom `web/flutter_bootstrap.js` references
 `main.dart.js` or calls the deprecated `loadEntrypoint` API,
-if `web/index.html` doesn't load `flutter_bootstrap.js`, or if a custom
+if `web/index.html` neither loads nor inlines `flutter_bootstrap.js`,
+or if a custom
 `web/flutter_bootstrap.js` omits `{% raw %}{{flutter_build_config}}{% endraw %}`.
 To migrate an older project, run `flutter create . --platforms web`
 or follow [Flutter web app initialization][web-init-bootstrapping].
