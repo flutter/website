@@ -34,7 +34,10 @@ does any of the following:
 - Looks up Flutter's Gradle tasks at the top level of a build script
   or casts `copyFlutterAssets<Variant>` to `org.gradle.api.tasks.Copy`.
 - Defines custom build types (such as `staging`) without `matchingFallbacks`,
-  or sets `flutter.hostAppProjectName` in an add-to-app project.
+  or—in an app with plugins on Flutter 3.50.0—sets `applicationIdSuffix`,
+  `isShrinkResources`, `buildConfigField`, or `resValue` on `profile` or a
+  custom build type.
+- Sets `flutter.hostAppProjectName` in an add-to-app project.
 - Runs `flutter build aar` when an Android plugin lacks the requested flavor
   variant, or customizes `android.publishing.singleVariant`.
 
@@ -113,8 +116,9 @@ Flutter `3.50.0` skipped the offset and logged a warning—refer to
 [Issue 196559][]).
 
 :::important
-`TODO(reidbaker)`: confirm the CP landed and fill in the version
-([PR 196561][] -> `3.50.x`).
+`TODO(reidbaker)`: confirm the cherry-picks landed and fill in the `3.50.x`
+versions on this page ([PR 196561][] for split-per-ABI `versionCode`;
+[PR 196692][] for plugin build types).
 :::
 
 This change has two main effects:
@@ -161,20 +165,55 @@ used by Flutter's offset calculation.
 Passing `-P force-version-code-ignoring-abi=true` still disables Flutter's
 per-ABI offset completely.
 
-### Custom build types are copied to plugins with `initWith`
+### App build types copied to plugins
 
-FGP copies your app's custom build types (such as `staging`) onto each
-Flutter plugin project so that Gradle can resolve variant dependencies.
-Previously, library plugins received a newly created build type that copied
-only `isDebuggable` and `isMinifyEnabled`, without copying `matchingFallbacks`.
-(Only app-type plugin subprojects received the live build type object.)
-Now each plugin that doesn't already define that build type receives an
-`initWith` copy created through the public AGP DSL, which copies
-`matchingFallbacks` as well.
+For each app build type that an Android plugin doesn't already define
+(such as `profile` or a custom `staging` build type),
+FGP creates a matching build type on that plugin so Gradle can resolve variant
+dependencies:
 
-In the public AGP DSL, `LibraryBuildType` doesn't expose `isDebuggable`
-directly, so Flutter relies on `initWith` rather than setting `isDebuggable`
-explicitly on library plugins.
+- **Plugins built as apps (`com.android.application`):**
+  FGP copies the app build type with `initWith(appBuildType)` instead of sharing
+  the live build type object as in Flutter 3.47.
+  `initWith` copies every build type property, including `matchingFallbacks` and
+  `isDebuggable`.
+- **Library plugins (`com.android.library`):**
+  In Flutter `3.50.x`, FGP copies only `matchingFallbacks` and `isDebuggable`,
+  without calling `initWith`:
+  - `matchingFallbacks` lets the plugin's own dependencies resolve a fallback
+    variant.
+  - `isDebuggable` isn't on AGP's public `LibraryBuildType` interface,
+    so Flutter sets it through the `ApplicationBuildType` interface that AGP's
+    build type class implements.
+    Library variants read this flag for `BuildConfig.DEBUG`, R8, and CMake
+    native builds.
+  - Flutter no longer copies `isMinifyEnabled` (which Flutter 3.47 copied).
+    Minifying a library plugin runs R8 with only the plugin's keep rules,
+    stripping plugin classes referenced by `GeneratedPluginRegistrant`,
+    and the app's R8 pass already shrinks plugin code.
+
+In Flutter `3.50.0` ([PR 191606][]), FGP called `initWith(appBuildType)` on
+library plugins too.
+Because `initWith` copies every build type property, apps with Android plugins
+failed during Gradle configuration—even for `flutter run` in debug mode—when
+`profile` or a custom build type set properties that AGP rejects in libraries
+([Issue 196412][], [Issue 196696][]):
+
+- `applicationIdSuffix`: `Library projects cannot set applicationIdSuffix.`
+- `isShrinkResources = true`:
+  `Resource shrinker cannot be used for libraries.`
+  This also affected custom build types (such as `staging`) that call
+  `initWith(getByName("release"))`, because Flutter enables `isShrinkResources`
+  on the app's `release` build type by default.
+- `buildConfigField(...)`:
+  `contains custom BuildConfig fields, but the feature is disabled`
+  (unless the plugin enables `buildFeatures.buildConfig`).
+- `resValue(...)`:
+  `contains custom resource values, but the feature is disabled`
+  (unless the plugin enables `buildFeatures.resValues`).
+
+For the Flutter `3.50.0` workaround, refer to
+[Workaround on Flutter 3.50.0](#workaround-on-flutter-3-50-0).
 
 ### Flutter assets are a generated source directory
 
@@ -445,8 +484,24 @@ android {
 }
 ```
 
-If you run into issues debugging a plugin's native (C++/JNI) code in a custom
-build type, use the standard `debug` build type for native debugging instead.
+#### Workaround on Flutter 3.50.0
+
+In Flutter `3.50.0`, setting `applicationIdSuffix`, `isShrinkResources`,
+`buildConfigField`, or `resValue` on `profile` or a custom build type fails
+plugin configuration (fixed in `3.50.x`).
+If you can't update to `3.50.x` yet, pre-create that build type on library
+subprojects in your root `android/build.gradle.kts` file.
+FGP then skips copying the app's build type onto library plugins:
+
+```kotlin title="<flutter-project>/android/build.gradle.kts"
+subprojects {
+    pluginManager.withPlugin("com.android.library") {
+        extensions.configure<com.android.build.api.dsl.LibraryExtension>("android") {
+            buildTypes.maybeCreate("staging") // or "profile"
+        }
+    }
+}
+```
 
 ### Look up Flutter tasks
 
@@ -547,8 +602,12 @@ Relevant issues:
 - [Issue 180137][]: Migrate from the old to the new AGP DSL
 - [Issue 190845][]: Audit plugins for legacy variant API usage
 - [Issue 193713][]: Publish this migration guide
+- [Issue 196412][]: Cannot use `applicationIdSuffix` in profile mode on
+  Flutter 3.50
 - [Issue 196559][]: `--split-per-abi` gives every split APK the same
   `versionCode` when `versionCode` is set only in `AndroidManifest.xml`
+- [Issue 196696][]: Custom build types break Android builds that use plugins on
+  Flutter 3.50
 
 Relevant pull requests:
 
@@ -567,6 +626,7 @@ Relevant pull requests:
   `aar_init_script` to public AGP APIs
 - [PR 196561][]: Offset split-APK `versionCode` values from a manifest-only
   `versionCode`
+- [PR 196692][]: Do not copy app-only build type properties onto library plugins
 
 Contributor documentation:
 
@@ -577,7 +637,9 @@ Contributor documentation:
 [Issue 180137]: {{site.repo.flutter}}/issues/180137
 [Issue 190845]: {{site.repo.flutter}}/issues/190845
 [Issue 193713]: {{site.repo.flutter}}/issues/193713
+[Issue 196412]: {{site.repo.flutter}}/issues/196412
 [Issue 196559]: {{site.repo.flutter}}/issues/196559
+[Issue 196696]: {{site.repo.flutter}}/issues/196696
 [Migrating the Flutter Gradle Plugin to the AGP public API surface]: {{site.repo.flutter}}/blob/master/docs/platforms/android/Migrating-Flutter-Gradle-Plugin-to-AGP-public-API.md
 [opt-out]: #keep-the-opt-out-or-opt-in-early
 [PR 190957]: {{site.repo.flutter}}/pull/190957
@@ -590,3 +652,4 @@ Contributor documentation:
 [PR 193962]: {{site.repo.flutter}}/pull/193962
 [PR 195640]: {{site.repo.flutter}}/pull/195640
 [PR 196561]: {{site.repo.flutter}}/pull/196561
+[PR 196692]: {{site.repo.flutter}}/pull/196692
