@@ -171,9 +171,12 @@ $ flutter build web --web-content-hash
 ```
 
 The `--web-content-hash` flag embeds an 8-character SHA-256 content hash into
-compiled entrypoints, JavaScript source maps, and all files under
-`build/web/assets/**`, and updates their references in `flutter_bootstrap.js`
-automatically. For the full list of hashed files and overlay rollout guidance,
+the filenames of compiled entrypoints (such as `main.dart.<hash>.wasm`) and
+all files under `build/web/assets/**`, and records the hashed entrypoint and
+asset manifest filenames in `flutter_bootstrap.js` automatically.
+You still need to serve `index.html` and `flutter_bootstrap.js` with
+revalidation so browsers pick up each new deployment.
+For the full list of hashed files and overlay rollout guidance,
 refer to [Web content hashing](/deployment/web#web-content-hashing).
 
 If you are not using `--web-content-hash`, you can append a build ID query
