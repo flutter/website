@@ -16,6 +16,8 @@ and images would fade in as they're loaded? Use the
 `FadeInImage` works with images of any type: in-memory, local assets,
 or images from the internet.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## In-memory
 
 To use a single-pixel, transparent PNG as the placeholder image,

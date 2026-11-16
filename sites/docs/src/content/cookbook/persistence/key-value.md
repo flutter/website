@@ -32,6 +32,8 @@ on the `shared_preferences` package:
 <YouTubeEmbed id="sa_U0jffQII" title="shared_preferences | Flutter package of the week"></YouTubeEmbed>
 :::
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the dependency
 
 Before starting, add the [`shared_preferences`][] package as a dependency.

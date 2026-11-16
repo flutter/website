@@ -110,7 +110,7 @@ follow these instructions:
       systemPromptFragments: ['You are a helpful assistant.'],
     );
 
-    final model = FirebaseAI.vertexAI().generativeModel(
+    final model = FirebaseAI.agentPlatform().generativeModel(
       model: 'gemini-3.5-flash',
       systemInstruction: Content.system(promptBuilder.systemPromptJoined()),
     );
@@ -818,11 +818,11 @@ void main() async {
 
 ### I'm getting errors about my minimum macOS/iOS version.
 
-Firebase has a [minimum version requirement][] for Apple's platforms,
-which might be higher than Flutter's default.
-Check your `Podfile` (for iOS) and `CMakeLists.txt` (for macOS)
-to ensure that you're targeting a version that meets or exceeds
-Firebase's requirements.
+Choose a [deployment target supported by Flutter][supported-platforms]
+that meets the minimum in the build error.
+In Xcode,
+[set the Runner target's minimum deployment version][deployment-target]
+to that version.
 
 [Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
 [create an issue]: {{site.repo.organization}}/genui/issues/new/choose
@@ -831,4 +831,5 @@ Firebase's requirements.
 [Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
 [`genui`]: {{site.pub-pkg}}/genui
 [Key components]: /ai/genui/components
-[minimum version requirement]: https://firebase.google.com/support/release-notes/ios
+[deployment-target]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-use-a-swift-package-manager-flutter-plugin-that-requires-a-higher-os-version
+[supported-platforms]: /reference/supported-platforms

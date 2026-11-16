@@ -31,13 +31,14 @@ It provides a simple API to handle complex routing scenarios.
 
     ```console
     $ flutter create deeplink_cookbook
+    $ cd deeplink_cookbook
     ```
 
-2. To include the `go_router` package as a dependency,
+2. To add the `go_router` and `material_ui` packages as dependencies,
    run `flutter pub add`:
 
     ```console
-    $ flutter pub add go_router
+    $ flutter pub add go_router material_ui
     ```
 
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:

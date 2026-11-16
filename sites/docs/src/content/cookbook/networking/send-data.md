@@ -16,6 +16,8 @@ This recipe uses the following steps:
   4. Get a `title` from user input.
   5. Display the response on screen.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `http` package
 
 To add the `http` package as a dependency,

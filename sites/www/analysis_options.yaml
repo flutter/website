@@ -13,7 +13,6 @@ linter:
     # Disabled for now since we have a lot of strings in code currently.
     lines_longer_than_80_chars: false
 
-    avoid_private_typedef_functions: true
     avoid_type_to_string: true
     avoid_void_async: true
     literal_only_boolean_expressions: true

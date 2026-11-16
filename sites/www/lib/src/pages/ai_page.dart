@@ -47,7 +47,10 @@ class AiPage extends StatelessComponent {
               href: 'https://docs.flutter.dev/ai/get-started',
               target: Target.blank,
               [
-                .text('Get started with Dart & Flutter MCP, Skills, and AI Plugins!'),
+                .text(
+                  'Get started with the '
+                  'Dart & Flutter MCP server, agent skills, and AI plugins!',
+                ),
                 RawText('&nbsp;'),
                 Icon.linkArrow(large: true),
               ],
@@ -183,7 +186,8 @@ class AiPage extends StatelessComponent {
                 ),
               ),
               FeatureGridItem(
-                title: 'Build generative AI agents with Google Cloud and Flutter',
+                title:
+                    'Build generative AI agents with Google Cloud and Flutter',
                 description:
                     'Supercharge your generative AI development workflow with Gemini and Flutter. '
                     'Seamlessly integrate with your existing tools and leverage our pre-built components and architectures to accelerate prototyping and deploy production-grade gen AI agents in your apps.',

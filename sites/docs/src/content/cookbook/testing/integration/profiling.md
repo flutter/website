@@ -35,6 +35,8 @@ This recipe uses the following steps:
   4. Run the test.
   5. Review the results.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Write a test that scrolls through a list of items
 
 In this recipe, record the performance of an app as it scrolls through a

@@ -25,6 +25,8 @@ This recipe uses the following steps:
 2. Write a test that scrolls through the list.
 3. Run the test.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create an app with a list of items
 
 This recipe builds an app that shows a long list of items.

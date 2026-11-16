@@ -637,7 +637,7 @@
     - "Enterprise"
   options_GCP_partner: false
 - title: "OakTree Apps"
-  summary: "OakTree Apps is a fully remote company that works with small and medium enterprises on greenfield projects using Flutter for mobile apps. We are a team of 23, 18 of them being engineers (11 for Flutter/mobile and 7 for backend technologies)."
+  summary: "OakTree Apps is a full service agency specializing in healthcare applications and medical grade software. They build HIPAA and CCPA compliant platforms navigating FDA pathways and clinical validations."
   card: "images/third_party/partners/Pratik_Khivesara.png"
   external_url: "https://oaktreeapps.com/services/flutter-app-development"
   options_location:

@@ -1,3 +1,5 @@
 arb-dir: lib
 template-arb-file: arb_examples.arb
 output-localization-file: app_localizations.dart
+# Remove this header once gen-l10n stops emitting the deprecated delegates.
+header: '// ignore_for_file: deprecated_member_use'

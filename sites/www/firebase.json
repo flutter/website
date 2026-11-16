@@ -15,7 +15,6 @@
       { "source": "/docs/:rest*", "destination": "https://docs.flutter.dev/:rest*", "type": 301 },
       { "source": "/jobs", "destination": "https://docs.flutter.dev/jobs", "type": 301 },
       { "source": "/jobs/:rest*", "destination": "https://docs.flutter.dev/jobs/:rest*", "type": 301 },
-      { "source": "/create", "destination": "https://docs.flutter.dev/create", "type": 301 },
       { "source": "/dash", "destination": "https://docs.flutter.dev/dash", "type": 301 },
       { "source": "/search-all", "destination": "https://docs.flutter.dev/search-all", "type": 301 },
       { "source": "/search", "destination": "https://docs.flutter.dev/search", "type": 301 },

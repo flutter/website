@@ -47,6 +47,7 @@ final class ServeSiteCommand extends Command<int> {
         '--web-port=${jasprPorts.webDev}',
         '--proxy-port=${jasprPorts.proxy}',
         '--dart-define=PRODUCTION=false',
+        ...nonProductionDartDefines(),
         if (release) '--release',
       ],
       workingDirectory: selectedSite.directory,
