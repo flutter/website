@@ -36,7 +36,7 @@ To include your course, [submit a PR][]:
 * [The Complete Dart Developer Guide][] by Andrea Bizzotto
 * [The Complete Flutter Course: Build Android, iOS and Web Apps][]
   by Sagnik Bhattacharya & Paulina Knop (Coding Liquids)
-* [The Complete Flutter Guide: Build Android, iOS and Web apps][]
+* [The Complete Flutter Guide: Build Android, iOS and Web Apps][]
   by Sagnik Bhattacharya & Paulina Knop (Udemy)
 
 ## German
@@ -85,5 +85,5 @@ To include your course, [submit a PR][]:
 [FlutterCraft]: https://fluttercraft.app
 [Flutter Master Course From Zero To Hero]: https://usamaelgendy.com/courses/flutter-beginners/
 [The Complete Flutter Course: Build Android, iOS and Web Apps]: https://codingliquids.com/courses/flutter-course
-[The Complete Flutter Guide: Build Android, iOS and Web apps]: https://www.udemy.com/course/flutter-the-guide-to-build-android-ios-and-web-apps/?referralCode=0895EF14011CB08E80A0
+[The Complete Flutter Guide: Build Android, iOS and Web Apps]: https://www.udemy.com/course/flutter-the-guide-to-build-android-ios-and-web-apps/
 [submit a PR]: {{site.repo.this}}/pulls
