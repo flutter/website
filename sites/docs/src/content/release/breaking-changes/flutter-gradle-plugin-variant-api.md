@@ -25,8 +25,9 @@ at the same file paths.
 You're affected in Flutter 3.50 if your app, module, plugin, or host app
 does any of the following:
 
-- Builds with `flutter build apk --split-per-abi` and sets `versionCode`
-  only in `AndroidManifest.xml`, omits `versionCode`, or computes
+- Builds with `flutter build apk --split-per-abi` without a literal integer
+  `versionCode` in the `android {}` DSL or `AndroidManifest.xml`
+  (such as omitting `versionCode` or using a manifest placeholder), or computes
   `output.versionCode` in Gradle on top of Flutter's offset.
 - Transforms AGP's `SingleArtifact.APK` artifact without preserving
   `output-metadata.json` and ABI filters.
@@ -38,15 +39,13 @@ does any of the following:
   variant, or customizes `android.publishing.singleVariant`.
 
 :::note Legacy variant APIs in your own build scripts
-Flutter 3.50 still sets `android.newDsl=false` in `gradle.properties`
-(new projects get this property from the template, and existing projects get it
-from Flutter's migrator).
-Your own build script code that calls `android.applicationVariants` or
+Flutter 3.50 still sets `android.newDsl=false` by default, so your own build
+script code that calls `android.applicationVariants` or
 `versionCodeOverride`—such as renaming APKs with `outputFileName`—keeps working
 in Flutter 3.50.
-Because a future Flutter release will remove the `android.newDsl=false` opt-out
-and AGP 10 removes the legacy APIs altogether,
-migrate those build scripts to `androidComponents.onVariants` now.
+Migrate those scripts to `androidComponents.onVariants` now before AGP 10 and a
+future Flutter release remove `android.newDsl=false`
+(refer to [Keep the opt-out, or opt in early][opt-out]).
 :::
 
 [Variant API]: {{site.android-dev}}/build/extend-agp
@@ -56,21 +55,15 @@ migrate those build scripts to `androidComponents.onVariants` now.
 AGP 9 deprecated the legacy DSL and variant APIs behind the
 `android.newDsl=false` Gradle property,
 and AGP 10 removes both those APIs and access to AGP internals.
-In Flutter 3.44, Flutter started adding `android.newDsl=false` to keep existing
-build files working on AGP 9.
-For background, consult
-[Migrating Flutter Android projects to built-in Kotlin][].
-
 To support AGP 10 in a future release, the Flutter Gradle Plugin itself had to
 stop calling the legacy AGP APIs.
 Flutter 3.50 completes that migration across FGP's app, add-to-app module,
 and `flutter build aar` code paths.
-Removing the `android.newDsl=false` opt-out from project templates and
-Flutter's migrator is tracked separately in [Issue 180137][].
 
-Built-in Kotlin isn't affected by this change:
-`android.builtInKotlin=false` is still added by default and continues to work.
-For details, consult
+Removing `android.newDsl=false` from project templates and Flutter's migrator
+is tracked separately in [Issue 180137][].
+For how Flutter manages `android.newDsl` and `android.builtInKotlin` in
+`gradle.properties`, consult [Built-in Kotlin and the new AGP DSL][] and
 [Migrating Flutter Android projects to built-in Kotlin][].
 
 [Migrating Flutter Android projects to built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
@@ -101,7 +94,7 @@ Otherwise, the build fails with a Flutter error naming `SingleArtifact.APK`.
 Build logic that only reads the built APK, or that copies extra APKs elsewhere
 after `assemble`, isn't affected.
 
-### Per-ABI `versionCode` is set from the DSL
+### Per-ABI `versionCode` is set from the DSL or manifest
 
 With `flutter build apk --split-per-abi`, Flutter gives each ABI output a
 distinct `versionCode` using `abiOffset * 1000 + versionCode`.
@@ -110,59 +103,49 @@ and `4` for `x86_64`.
 
 Previously, Flutter set `versionCodeOverride` after build scripts ran,
 reading the merged `versionCode` (including one from `AndroidManifest.xml`).
-Now Flutter reads the `android {}` DSL `versionCode` (`defaultConfig` or the
-first product flavor in dimension order) during `finalizeDsl`, and sets
-`output.versionCode` in `onVariants`.
+Now Flutter reads the `android {}` DSL `versionCode` (the first product flavor
+in dimension priority order that sets `versionCode`, or `defaultConfig`) during
+`finalizeDsl`, and sets `output.versionCode` in `onVariants`.
+When the `android {}` block declares no `versionCode`, Flutter `3.50.x` reads an
+integer `android:versionCode` from the highest-priority manifest at execution
+time and applies the same `abiOffset * 1000` offset (matching Flutter 3.47;
+Flutter `3.50.0` skipped the offset and logged a warning—refer to
+[Issue 196559][]).
+
+:::important
+`TODO(reidbaker)`: confirm the CP landed and fill in the version
+([PR 196561][] -> `3.50.x`).
+:::
 
 This change has two main effects:
 
-- **Missing DSL `versionCode` (including manifest-only `versionCode`):**
+- **Missing or non-integer `versionCode` fails `--split-per-abi` builds:**
   Apps created from Flutter's templates set `versionCode = flutter.versionCode`
-  in `defaultConfig` and aren't affected.
-  In Flutter 3.50.0, if your `android {}` block declares no `versionCode`
-  (for example, `android:versionCode` is set only in `AndroidManifest.xml`,
-  or omitted everywhere), Flutter skips the per-ABI offset.
-  Every split APK receives the same `versionCode`, and Gradle warns that Google
-  Play won't accept the split APKs together ([Issue 196559][]).
-  To fix this or disable the ABI offset intentionally, refer to
-  [Fix split-per-ABI `versionCode` warnings or errors][split-abi-fix].
+  in `defaultConfig` and aren't affected, and apps that set a literal integer
+  `android:versionCode` in `AndroidManifest.xml` continue working in `3.50.x`.
+  Split APK builds (`flutter build apk --split-per-abi` or
+  `-Psplit-per-abi=true`) fail when the `android {}` block declares no
+  `versionCode` and any of the following apply:
+  - No manifest sets `android:versionCode`.
+  - The highest-priority manifest that sets `android:versionCode` uses a
+    non-integer value such as `${vc}`.
+  - A higher-priority manifest sets `tools:remove="android:versionCode"` or a
+    `tools:node` other than `merge` on `<manifest>`.
+  - A manifest file can't be parsed (for example, it contains `DOCTYPE`).
 
-  :::important
-  **TODO(reidbaker):** Confirm whether [PR 196561][] (fixing [Issue 196559][])
-  is cherry-picked into a Flutter `3.50.x` hotfix or deferred to a later
-  release.
-  Keep only the matching behavior below before removing draft status:
+  ```plaintext noHighlight
+  Flutter cannot give each split APK of variant 'release' a distinct versionCode:
+  its android {} block declares no versionCode, and no manifest sets one.
+  Google Play does not accept split APKs that share a versionCode.
+  Set versionCode = flutter.versionCode in defaultConfig (or on each product
+  flavor), or pass -P force-version-code-ignoring-abi=true to keep one
+  versionCode.
+  ```
 
-  - **If [PR 196561][] is cherry-picked to `3.50.x`:**
-    When the `android {}` block declares no `versionCode`, Flutter reads an
-    integer `android:versionCode` from the highest-priority manifest and
-    applies the `abiOffset * 1000` offset (matching Flutter 3.47).
-    Split APK builds (`flutter build apk --split-per-abi` or
-    `-Psplit-per-abi=true`) **fail to build** when the `android {}` block
-    declares no `versionCode` and any of the following apply:
-    - No manifest sets `android:versionCode`.
-    - The highest-priority manifest uses a non-integer value such as `${vc}`.
-    - A higher-priority manifest sets `tools:remove="android:versionCode"` or a
-      `tools:node` other than `merge` on `<manifest>`.
-    - A manifest file can't be parsed (for example, it contains `DOCTYPE`).
-
-    ```plaintext noHighlight
-    Flutter cannot give each split APK of variant 'release' a distinct versionCode:
-    its android {} block declares no versionCode, and no manifest sets one.
-    Google Play does not accept split APKs that share a versionCode.
-    Set versionCode = flutter.versionCode in defaultConfig (or on each product
-    flavor), or pass -P force-version-code-ignoring-abi=true to keep one
-    versionCode.
-    ```
-
-    The error triggers lazily only when building split APKs of that variant.
-    Non-split APKs, `flutter build appbundle`, and `flutter run` are
-    unaffected.
-  - **If [PR 196561][] is not cherry-picked to `3.50.x`:**
-    Delete this `:::important` block so only the `3.50.0` warning behavior
-    remains here, and move the build-failure note to the release where
-    [PR 196561][] ships.
-  :::
+  The error triggers lazily only when building split APKs of that variant.
+  Non-split APKs, `flutter build appbundle`, and `flutter run` are unaffected.
+  To fix this error or disable the ABI offset intentionally, refer to
+  [Fix split-per-ABI `versionCode` errors][split-abi-fix].
 
 - **Ordering with your own `onVariants` callbacks:**
   When FGP is applied in `plugins {}`, Flutter's `onVariants` callback runs
@@ -185,8 +168,9 @@ Flutter plugin project so that Gradle can resolve variant dependencies.
 Previously, library plugins received a newly created build type that copied
 only `isDebuggable` and `isMinifyEnabled`, without copying `matchingFallbacks`.
 (Only app-type plugin subprojects received the live build type object.)
-Now each plugin receives an `initWith` copy created through the public AGP DSL,
-which copies `matchingFallbacks` as well.
+Now each plugin that doesn't already define that build type receives an
+`initWith` copy created through the public AGP DSL, which copies
+`matchingFallbacks` as well.
 
 In the public AGP DSL, `LibraryBuildType` doesn't expose `isDebuggable`
 directly, so Flutter relies on `initWith` rather than setting `isDebuggable`
@@ -195,13 +179,14 @@ explicitly on library plugins.
 ### Flutter assets are a generated source directory
 
 Flutter's `flutter_assets` directory is now registered on each variant as a
-generated assets source directory.
-Previously, Flutter copied these files over the merged assets directory after
-AGP's asset merge step.
-If your app bundles its own Android asset at a colliding path
-(such as `src/main/assets/flutter_assets/...`),
-AGP's source-set priority decides which file takes precedence.
-Flutter's asset no longer unconditionally overwrites the app's copy.
+generated assets source directory (`addGeneratedSourceDirectory`).
+Previously, Flutter copied these files into AGP's merged assets output directory
+after `merge<Variant>Assets`, and `process<Variant>Resources` depended on
+`flutter assemble`.
+Now AGP merges `flutter_assets` in the variant overlay—taking precedence over
+static `src/main/assets` unless a later `onVariants` callback registers another
+assets directory—and `process<Variant>Resources` no longer waits on
+`flutter assemble`.
 
 ### Flutter tasks are registered in `onVariants`
 
@@ -224,9 +209,9 @@ A Flutter module (`flutter create --template=module`) now configures tasks in
 Your host app consumes the module like any standard Android library,
 and Flutter no longer looks up or mutates the host `:app` project:
 
-- `flutter.hostAppProjectName` in `gradle.properties` has no effect.
-  If this property is set, Flutter logs a warning when the host app builds from
-  Gradle or Android Studio.
+- `flutter.hostAppProjectName` has no effect.
+  If this Gradle property is set in the build (such as in the host app's
+  `gradle.properties`), Flutter logs a warning.
 - The Flutter build mode matches the module variant consumed by your host app
   (`debug`, `profile`, or `release`).
   For a custom host build type, AGP selects the module variant using
@@ -269,7 +254,7 @@ from the module and each Android plugin:
   For details, consult [Raised minimum Android build tool versions][].
 
 [Raised minimum Android build tool versions]: /release/breaking-changes/android-build-tool-minimum-versions
-[split-abi-fix]: #fix-split-per-abi-versioncode-warnings-or-errors
+[split-abi-fix]: #fix-split-per-abi-versioncode-errors
 [versioncode-guide]: #set-per-abi-or-per-variant-versioncode-values
 
 ## Migration guide
@@ -288,7 +273,7 @@ Code before migration (legacy variant API):
 android {
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            outputFileName = "myapp-${variant.versionName}.apk"
+            outputFileName = outputFileName.replace("app-", "myapp-${variant.versionName}-")
         }
     }
 }
@@ -296,8 +281,8 @@ android {
 
 The public Variant API doesn't expose `outputFileName`.
 Instead, register a `Copy` task that reads `SingleArtifact.APK`.
-Place `androidComponents` at the top level of your build file, next to
-`android {}`:
+Add the `import` at the top of your `android/app/build.gradle.kts` file, and
+place `androidComponents` at the top level next to `android {}`:
 
 ```kotlin title="<flutter-project>/android/app/build.gradle.kts"
 import com.android.build.api.artifact.SingleArtifact
@@ -309,7 +294,7 @@ androidComponents {
             from(variant.artifacts.get(SingleArtifact.APK))
             include("*.apk")
             into(layout.buildDirectory.dir("renamed-apk/${variant.name}"))
-            rename { it.replace("app-", "myapp-") }
+            rename { it.replace("app-", "myapp-${flutter.versionName}-") }
         }
         tasks.matching { it.name == "assemble$variantName" }.configureEach {
             dependsOn(copyApks)
@@ -323,12 +308,12 @@ Flutter's own copy task continues placing APKs in
 (such as `app-release.apk` or `app-arm64-v8a-release.apk`),
 so `flutter build apk` and scripts that read that directory keep working.
 
-### Fix split-per-ABI `versionCode` warnings or errors
+### Fix split-per-ABI `versionCode` errors
 
-Declare `versionCode` in your `android {}` DSL block when building with
-`flutter build apk --split-per-abi`.
-This step is needed if your app sets `android:versionCode` only in
-`AndroidManifest.xml`, uses a manifest placeholder, or omits `versionCode`.
+Declare `versionCode` in your `android {}` DSL block if a
+`flutter build apk --split-per-abi` build fails because your project omits
+`versionCode` or uses a non-integer manifest placeholder (or if you're on
+Flutter 3.50.0 and set `android:versionCode` only in `AndroidManifest.xml`).
 Set `versionCode = flutter.versionCode` in `defaultConfig`
 (or set `versionCode` on each product flavor) in your
 `android/app/build.gradle.kts` file, and remove `android:versionCode` from
@@ -344,22 +329,12 @@ android {
 }
 ```
 
-:::important
-**TODO(reidbaker):** Match the conditions above to the [PR 196561][] `3.50.x`
-cherry-pick decision before removing draft status.
-Without [PR 196561][], manifest-only and missing-`versionCode` apps both log a
-warning and share one `versionCode`.
-With [PR 196561][], manifest-only integer `versionCode` apps work without
-changes, while apps without a readable integer `versionCode` fail the build.
-:::
-
 #### Escape hatch: disable the per-ABI `versionCode` offset
 
 If you intentionally want every split APK to keep the same `versionCode`
 (without Flutter's `abiOffset * 1000` prefix), pass the Gradle project property
 `force-version-code-ignoring-abi=true`.
-This property works in Flutter 3.50.0 both from the command line and from
-`gradle.properties`:
+This property works both from the command line and from `gradle.properties`:
 
 - **Command line:** Pass `-P force-version-code-ignoring-abi=true` to
   `flutter build apk`:
@@ -368,7 +343,7 @@ This property works in Flutter 3.50.0 both from the command line and from
   flutter build apk --split-per-abi -P force-version-code-ignoring-abi=true
   ```
 
-  `-P` (an alias for `--android-project-arg`) is a hidden Flutter CLI option
+  `-P` (shorthand for `--android-project-arg`) is a hidden Flutter CLI option
   listed in `flutter build apk -h -v`.
 
 - **Project configuration:** Add the property to your
@@ -399,7 +374,7 @@ android.applicationVariants.all { variant ->
 }
 ```
 
-Code after migration:
+Code after migration (place the `import` at the top of `build.gradle.kts`):
 
 ```kotlin title="<flutter-project>/android/app/build.gradle.kts"
 import com.android.build.api.variant.FilterConfiguration
@@ -478,8 +453,9 @@ build type, use the standard `debug` build type for native debugging instead.
 FGP now registers tasks inside `androidComponents.onVariants` (after top-level
 `build.gradle.kts` evaluation), and `copyFlutterAssets<Variant>` uses
 `CopyFlutterAssetsTask` instead of `org.gradle.api.tasks.Copy`.
-As a result, top-level `tasks.named("copyFlutterAssetsDebug")` calls and typed
-`Copy::class` lookups both fail.
+In app projects, Flutter registers tasks only for the variants being built when
+a single `assemble<Variant>` task runs, so `tasks.named(...)` throws
+`UnknownTaskException` even inside `onVariants`.
 
 Configure Flutter tasks lazily by name with `tasks.matching`, without
 specifying the `Copy` task type:
@@ -491,18 +467,15 @@ specifying the `Copy` task type:
   }
 ```
 
-Alternatively, call `tasks.named("copyFlutterAssetsDebug")` inside your own
-`androidComponents.onVariants` block, which runs after FGP's callback when FGP
-is applied in `plugins {}`.
 When you need Flutter's build outputs, prefer wiring through Variant API
 artifacts (such as `SingleArtifact.APK` or `variant.sources.assets`) instead of
 depending on task names.
 
 ### Update add-to-app host apps
 
-- Remove `flutter.hostAppProjectName` from the Flutter module's
-  `.android/gradle.properties` file and from your host app's
-  `gradle.properties` file if present.
+- Remove `flutter.hostAppProjectName` from your host app's
+  `gradle.properties` file and from the Flutter module's
+  `.android/gradle.properties` file if present.
   The property has no effect.
 - If your host app defines a custom build type, list the desired Flutter module
   build type first in `matchingFallbacks`.
@@ -535,19 +508,16 @@ depending on task names.
   `matchingFallbacks` on that build type.
 - Test your plugin's example app on AGP `9.1.1` or later with both
   `android.newDsl=true` and `android.builtInKotlin=true` in
-  `gradle.properties`.
-  The new DSL requires built-in Kotlin because KGP rejects
-  `android.newDsl=true`.
+  `gradle.properties` (refer to
+  [Keep the opt-out, or opt in early](#keep-the-opt-out-or-opt-in-early)).
 
 ### Keep the opt-out, or opt in early
 
 If you can't migrate your own build scripts yet, no action is required in
-Flutter 3.50: `android.newDsl=false` remains enabled by default.
-If the `android.newDsl` line is missing from `android/gradle.properties`,
-Flutter's migrator adds `android.newDsl=false` on the next `flutter run` or
-`flutter build` of your app.
-Treat `android.newDsl=false` as a temporary workaround:
-AGP 10 removes the legacy APIs and drops support for this property.
+Flutter 3.50: `android.newDsl=false` remains enabled by default
+(refer to [Built-in Kotlin and the new AGP DSL][]).
+Treat `android.newDsl=false` as a temporary workaround, because AGP 10 removes
+the legacy APIs and drops support for this property.
 
 To test migrated build scripts against the new DSL now, set both properties to
 `true` in `android/gradle.properties`.
@@ -565,7 +535,7 @@ If a plugin in your app still requires KGP, keep both properties set to
 
 ## Timeline
 
-Landed in version: 3.50.0-0.1.pre and 3.50.0-0.4.pre<br>
+Landed in version: 3.49.0-0.1.pre, 3.50.0-0.1.pre, and 3.50.0-0.4.pre<br>
 In stable release: 3.50
 
 ## References
@@ -596,17 +566,20 @@ Relevant pull requests:
 - [PR 193962][] (cherry-picked to 3.50 in [PR 195640][]): Move
   `aar_init_script` to public AGP APIs
 - [PR 196561][]: Offset split-APK `versionCode` values from a manifest-only
-  `versionCode` (TODO(reidbaker): remove or keep based on 3.50.x cherry-pick)
+  `versionCode`
 
 Contributor documentation:
 
 - [Migrating the Flutter Gradle Plugin to the AGP public API surface][]
 
+[Built-in Kotlin and the new AGP DSL]: /release/breaking-changes/android-build-tool-minimum-versions#built-in-kotlin-and-the-new-agp-dsl
 [Issue 166550]: {{site.repo.flutter}}/issues/166550
 [Issue 180137]: {{site.repo.flutter}}/issues/180137
 [Issue 190845]: {{site.repo.flutter}}/issues/190845
 [Issue 193713]: {{site.repo.flutter}}/issues/193713
 [Issue 196559]: {{site.repo.flutter}}/issues/196559
+[Migrating the Flutter Gradle Plugin to the AGP public API surface]: {{site.repo.flutter}}/blob/master/docs/platforms/android/Migrating-Flutter-Gradle-Plugin-to-AGP-public-API.md
+[opt-out]: #keep-the-opt-out-or-opt-in-early
 [PR 190957]: {{site.repo.flutter}}/pull/190957
 [PR 191218]: {{site.repo.flutter}}/pull/191218
 [PR 191606]: {{site.repo.flutter}}/pull/191606
@@ -617,4 +590,3 @@ Contributor documentation:
 [PR 193962]: {{site.repo.flutter}}/pull/193962
 [PR 195640]: {{site.repo.flutter}}/pull/195640
 [PR 196561]: {{site.repo.flutter}}/pull/196561
-[Migrating the Flutter Gradle Plugin to the AGP public API surface]: {{site.repo.flutter}}/blob/master/docs/platforms/android/Migrating-Flutter-Gradle-Plugin-to-AGP-public-API.md

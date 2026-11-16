@@ -13,8 +13,8 @@ description: >-
 To build a Flutter app, module, or plugin for Android,
 Flutter 3.50 requires newer minimum versions of the Android build tools
 than Flutter 3.47 required.
-Builds configured below these minimums—or with Android Gradle Plugin (AGP) 10
-or later—fail with an error naming the dependency and required version.
+Builds that resolve below these minimums—or configure Android Gradle Plugin
+(AGP) 10 or later—fail with an error naming the dependency and required version.
 
 The following table compares the minimum, warning, and template default versions
 between Flutter 3.47 and Flutter 3.50:
@@ -29,12 +29,12 @@ between Flutter 3.47 and Flutter 3.50:
 Flutter skips the KGP version check when your project uses AGP's
 [built-in Kotlin][] (`android.builtInKotlin=true`).
 When `android.builtInKotlin=false` is set
-(the default in Flutter's project templates and migrator),
-Flutter automatically applies the `kotlin-android` plugin whenever KGP is on
-the build classpath.
-Because Flutter's templates declare KGP in `settings.gradle.kts`,
-template-based apps must use KGP 2.4.10 or later
-even if they contain no Kotlin source files.
+(refer to [Built-in Kotlin and the new AGP DSL][kotlin-and-dsl]),
+the Flutter Gradle Plugin depends on KGP `2.4.10` and applies `kotlin-android`
+whenever KGP is on the build classpath.
+Gradle resolves lower unpinned KGP declarations in `settings.gradle.kts` up to
+`2.4.10`, so older KGP declarations log a `< 2.4.20` warning rather than failing
+the build—even if your app has no Kotlin source files.
 
 Flutter 3.50 doesn't support AGP 10 or later.
 Projects configured with AGP 10 fail to build until a future Flutter release
@@ -46,31 +46,27 @@ and the default NDK version is `28.2.13676358`.
 Setting `minSdk` to `23` logs a warning, and `22` or lower fails the build.
 
 :::warning Projects created with Flutter 3.44 or 3.47 need manual updates
-Unmodified projects created with Flutter 3.44 or Flutter 3.47 fail to build
-on Flutter 3.50, and `flutter upgrade` doesn't edit your project's Gradle files:
+Unmodified projects created with Flutter 3.44 or Flutter 3.47 fail to build on
+Flutter 3.50 until you update their Gradle files.
+Neither `flutter upgrade` nor `flutter build` updates these tool versions:
 
-- **Flutter 3.44 templates** used AGP `9.0.1`, Gradle `9.1.0`, and KGP `2.3.20`
-  (all three are below the Flutter 3.50 minimums).
-- **Flutter 3.47 templates** used AGP `9.1.0`, Gradle `9.3.1`, and KGP `2.4.0`
-  (AGP and KGP are below the Flutter 3.50 minimums).
+- **Flutter 3.44 templates** used Gradle `9.1.0` and AGP `9.0.1`.
+  Both are below the Flutter 3.50 minimums, so update Gradle to at least
+  `9.3.1` and AGP to at least `9.1.1`.
+- **Flutter 3.47 templates** used AGP `9.1.0`, which is below the minimum, so
+  update AGP to at least `9.1.1`.
+  Their Gradle version (`9.3.1`) meets the minimum and logs a warning.
 
-In addition, the new minimums are higher than the thresholds that Flutter 3.47
-warned about (AGP `9.0.1`, Gradle `9.1.0`, and KGP `2.3.20`).
-Projects using AGP `9.0.1` through `9.1.0`, Gradle `9.1.0` through `9.3.0`,
-or KGP `2.3.20` through `2.4.9` received no advance warning in Flutter 3.47.
-Follow the [migration guide](#migration-guide) to update your build files.
+Both templates also declared an older KGP (`2.3.20` in 3.44, `2.4.0` in 3.47).
+Flutter 3.50's Gradle plugin resolves KGP up to `2.4.10`, so the build doesn't
+fail on KGP, and instead logs a warning until you declare KGP `2.4.20` or later.
+Update to the Flutter 3.50 template versions (`AGP 9.3.1`, `Gradle 9.5.0`, and
+`KGP 2.4.20`) in the [migration guide](#migration-guide) to clear all warnings.
+
+Projects using AGP `9.0.1` through `9.1.0`, Gradle `9.1.0` through `9.3.0`, or
+KGP `2.3.20` through `2.4.9` also received no advance warning in Flutter 3.47,
+which warned only below AGP `9.0.1`, Gradle `9.1.0`, and KGP `2.3.20`.
 :::
-
-Because Flutter 3.50 requires AGP 9.1.1 or later,
-every Flutter Android project builds with AGP 9.
-Flutter manages AGP 9's compatibility defaults using two Gradle properties:
-[built-in Kotlin][] (`android.builtInKotlin`) and the
-[new AGP DSL][] (`android.newDsl`).
-To learn how Flutter manages these properties during an upgrade, refer to
-[Built-in Kotlin and the new AGP DSL](#built-in-kotlin-and-the-new-agp-dsl).
-
-[built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
-[new AGP DSL]: /release/breaking-changes/flutter-gradle-plugin-variant-api
 
 ## Context
 
@@ -79,10 +75,18 @@ and enforces a [support policy][] for these tools.
 Under that policy, Flutter marks a version as "warn" for at least one stable
 release before raising the minimum ("error") in a later release.
 
+:::important
+`TODO(reidbaker)`: Flutter 3.50 errors on AGP `9.0.1`–`9.1.0`, Gradle
+`9.1.0`–`9.3.0`, and KGP `2.3.20`–`2.4.9` without a prior warning release in
+Flutter 3.47.
+Decide whether to state that Flutter 3.50 is an exception to the policy above
+or remove the policy sentence before publishing.
+:::
+
 Flutter 3.50 raises the minimum versions for two reasons:
 
 - Requiring AGP 9 means every project builds with AGP 9's API surface.
-  The [Flutter Gradle Plugin now uses only public AGP APIs][new AGP DSL]
+  The [Flutter Gradle Plugin now uses only public AGP APIs][variant-api-guide]
   instead of maintaining separate code paths for AGP 8 and AGP 9.
 - AGP 9.1.1 and later support `compileSdk` 37 (Android 17),
   which prepares Flutter to target Android 17 in a future release
@@ -154,10 +158,11 @@ Flutter 3.50 also updates how version checks run:
 
 ## Migration guide
 
-No changes are required if your project already uses AGP `9.1.1` through `9.x`,
-Gradle `9.3.1` or later, Java `17` or later,
-and built-in Kotlin or KGP `2.4.10` or later.
-Otherwise, update each out-of-range tool below.
+No changes are required to pass validation if your project already uses AGP
+`9.1.1` through `9.x`, Gradle `9.3.1` or later, Java `17` or later, and doesn't
+pin KGP below `2.4.10`.
+To clear deprecation warnings, use AGP `9.3.1` or later, Gradle `9.5.0` or
+later, and either [built-in Kotlin][] or KGP `2.4.20` or later.
 
 ### Check your current versions
 
@@ -172,13 +177,9 @@ Check the build files and toolchain settings in your Flutter project:
 - **Java (JDK):** Run `flutter doctor -v` and check the Java version listed
   under the Android toolchain section.
 
-You can also run `flutter analyze --suggestions` from your project directory
-to check whether your Java, Gradle, AGP, and KGP versions are compatible with
-each other.
-When all pairs are compatible, the command prints `compatible` without version
-numbers.
-The command prints versions only when a pair is incompatible,
-and doesn't check Flutter's minimum thresholds.
+Running `flutter analyze --suggestions` checks cross-tool compatibility between
+Java, Gradle, AGP, and KGP (printing `compatible java/gradle/agp/kgp` when
+valid), not Flutter's minimum thresholds.
 
 ### Update the Android Gradle Plugin
 
@@ -186,17 +187,14 @@ Update AGP to `9.3.1` (the default for new Flutter 3.50 projects)
 to avoid the deprecation warning, or to at least `9.1.1`.
 
 Projects created with Flutter 3.16 or later declare AGP in the `plugins {}`
-block of the `android/settings.gradle.kts` (or `android/settings.gradle`) file.
-If that block also declares `org.jetbrains.kotlin.android` and your project
-uses `android.builtInKotlin=false`, update KGP at the same time
-(refer to [Update the Kotlin Gradle Plugin](#update-the-kotlin-gradle-plugin)):
+block of the `android/settings.gradle.kts` (or `android/settings.gradle`) file:
 
 ```kotlin diff title="<flutter-project>/android/settings.gradle.kts"
 plugins {
     id("dev.flutter.flutter-plugin-loader") version "1.0.0"
 -   id("com.android.application") version "9.1.0" apply false
 +   id("com.android.application") version "9.3.1" apply false
-    id("org.jetbrains.kotlin.android") version "2.4.20" apply false
+    id("org.jetbrains.kotlin.android") version "2.4.0" apply false
 }
 ```
 
@@ -233,8 +231,6 @@ For other combinations, consult the [AGP and Gradle compatibility table][].
 Gradle 9 requires Java 17 or later.
 If Flutter uses an older JDK, configure a newer JDK path with
 `flutter config --jdk-dir=JDK_PATH`.
-On Java 24 and later, Gradle prints `--enable-native-access` warnings;
-Flutter 3.50 suppresses these warnings when invoking Gradle.
 
 [AGP and Gradle compatibility table]: {{site.android-dev}}/build/releases/about-agp#updating-gradle
 
@@ -242,11 +238,14 @@ Flutter 3.50 suppresses these warnings when invoking Gradle.
 
 Skip this step if your project uses [built-in Kotlin][]
 (`android.builtInKotlin=true`).
-If `android.builtInKotlin=false` is set, update KGP even when your app
-contains no Kotlin source files, because Flutter applies KGP automatically.
+When `android.builtInKotlin=false` is set, the Flutter Gradle Plugin resolves
+unpinned KGP declarations up to `2.4.10` and applies `kotlin-android` even if
+your app has no Kotlin source files.
+KGP versions resolved below `2.4.20` log a warning (and KGP pinned below
+`2.4.10` fails the build).
 
-Update `org.jetbrains.kotlin.android` to `2.4.20`
-(`2.4.10` is the minimum) in your `android/settings.gradle.kts` file:
+Update `org.jetbrains.kotlin.android` to `2.4.20` in your
+`android/settings.gradle.kts` file:
 
 ```kotlin diff title="<flutter-project>/android/settings.gradle.kts"
 plugins {
@@ -289,36 +288,34 @@ APIs that older versions don't provide, so your build can still fail.
 
 ## Built-in Kotlin and the new AGP DSL
 
-AGP 9 enables built-in Kotlin by default (rejecting the `kotlin-android`
-plugin) and reads only the new AGP DSL.
+AGP 9 enables [built-in Kotlin][] by default (rejecting the `kotlin-android`
+plugin) and reads only the [new AGP DSL][].
 Flutter keeps existing projects building across those AGP 9 changes with two
-Gradle properties:
+Gradle properties in `android/gradle.properties`:
 
 - `flutter create` writes `android.builtInKotlin=false` and
-  `android.newDsl=false` to `android/gradle.properties`.
-- On `flutter run` or `flutter build`, Flutter's migrator appends both lines
-  (with marker comments) to `android/gradle.properties` if they're missing.
+  `android.newDsl=false` to new projects.
+- If either line is missing, Flutter's migrator appends it (with a marker
+  comment) on the next `flutter run` or `flutter build`.
+  Builds started directly from Gradle or Android Studio don't run this migrator.
 
-When a project upgrades from AGP 8 to AGP 9,
-those lines appear in `android/gradle.properties` after the first `flutter run`
-or `flutter build`.
 These properties keep existing build scripts and plugins working without an
-immediate built-in Kotlin migration.
-While `android.builtInKotlin=false` is set, you must still update KGP to at
-least `2.4.10`.
+immediate built-in Kotlin or DSL migration.
+When `android.builtInKotlin=false` is set, KGP below `2.4.20` logs a warning,
+so update KGP to `2.4.20` or migrate to built-in Kotlin.
 
 When you're ready to adopt AGP 9's defaults:
 
 - To migrate to built-in Kotlin (`android.builtInKotlin=true`), follow
   [Migrating Flutter Android projects to built-in Kotlin][built-in Kotlin].
-- To prepare build scripts for the new AGP DSL (`android.newDsl=true`),
-  consult the [Variant API migration guide][new AGP DSL].
+- To prepare build scripts for `android.newDsl=true`,
+  consult the [Variant API migration guide][variant-api-guide].
   Flutter 3.50 still sets `android.newDsl=false`, so migrating your own build
   scripts isn't required yet.
 
 ## Timeline
 
-Landed in version: 3.50.0-0.1.pre, 3.50.0-0.3.pre, and 3.50.0-0.4.pre<br>
+Landed in version: 3.49.0-0.1.pre, 3.50.0-0.1.pre, 3.50.0-0.3.pre, and 3.50.0-0.4.pre<br>
 In stable release: 3.50
 
 ## References
@@ -334,20 +331,22 @@ Relevant pull requests:
 - [PR 193262][]: Update templates to AGP 9.3.1, Gradle 9.5.0, and KGP 2.4.20
 - [PR 193609][]: Add unsupported AGP version error
 - [PR 193813][]: Raise minimum version to AGP 9.1.1
-- [PR 193814][]: Enable native access for Gradle on Java 24+
 - [PR 194918][] (cherry-picked to 3.50 in [PR 195060][]): Run the dependency
   version check before reading Android DSL extensions
 - [PR 195080][] (cherry-picked to 3.50 in [PR 195691][]): Report the real error
   when applying `kotlin-android` fails
 
+[built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
 [Issue 189518]: {{site.repo.flutter}}/issues/189518
 [Issue 193593]: {{site.repo.flutter}}/issues/193593
+[kotlin-and-dsl]: #built-in-kotlin-and-the-new-agp-dsl
+[new AGP DSL]: {{site.android-dev}}/build/releases/agp-9-0-0-release-notes#android-gradle-plugin-changed-dsl
 [PR 192206]: {{site.repo.flutter}}/pull/192206
 [PR 193262]: {{site.repo.flutter}}/pull/193262
 [PR 193609]: {{site.repo.flutter}}/pull/193609
 [PR 193813]: {{site.repo.flutter}}/pull/193813
-[PR 193814]: {{site.repo.flutter}}/pull/193814
 [PR 194918]: {{site.repo.flutter}}/pull/194918
 [PR 195060]: {{site.repo.flutter}}/pull/195060
 [PR 195080]: {{site.repo.flutter}}/pull/195080
 [PR 195691]: {{site.repo.flutter}}/pull/195691
+[variant-api-guide]: /release/breaking-changes/flutter-gradle-plugin-variant-api
