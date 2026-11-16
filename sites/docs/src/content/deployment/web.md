@@ -151,8 +151,8 @@ Load assets through `rootBundle` or the asset APIs instead.
 `web/index.html` or a custom `web/flutter_bootstrap.js` references
 `main.dart.js` or calls the deprecated `loadEntrypoint` API,
 if `web/index.html` neither loads nor inlines `flutter_bootstrap.js`,
-or if a custom
-`web/flutter_bootstrap.js` omits `{% raw %}{{flutter_build_config}}{% endraw %}`.
+or if a custom `web/flutter_bootstrap.js` omits
+`{% raw %}{{flutter_build_config}}{% endraw %}`.
 To migrate an older project, run `flutter create . --platforms web`
 or follow [Flutter web app initialization][web-init-bootstrapping].
 
