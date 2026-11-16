@@ -10,7 +10,7 @@ author:
 coverImage:
   alt: ""
   caption: "Dash watching WWDC 2026"
-  url: images/banner.jpg
+  url: images/banner.webp
 category: deep-dive
 layout: blog
 ---

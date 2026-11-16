@@ -8,7 +8,7 @@ description: Learn how to write platform-specific code using Flutter's platform 
 
 :::note
 Refer to the [Native interop overview](/interop)
-for recommended approaches to calling native platform code.
+to learn about FFIgen, JNIgen, and Pigeon.
 :::
 
 Platform channels pass messages between Flutter and your host platform
@@ -1145,8 +1145,7 @@ it displays 'Battery level not available'.
 
 ## Call platform-specific code using the Pigeon package {:#pigeon}
 
-Pigeon is the recommended default tool for generating type-safe bindings
-between Dart and host platforms.
+Pigeon generates type-safe bindings between Dart and host platforms.
 To learn how to use Pigeon, define API contracts, and choose between
 native interop and platform channels,
 refer to the dedicated [Pigeon guide](/interop/pigeon).

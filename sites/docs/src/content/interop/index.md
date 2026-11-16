@@ -10,88 +10,70 @@ with the host operating system or run code from an existing native library.
 To solve this, Flutter provides several interop tools ranging from
 code generators to direct FFI bindings.
 
-Use the following decision tree to choose your interop solution,
-or read on to learn about the native interop layers.
+<a id="choose-your-interop-solution" aria-hidden="true"></a>
+## Overview of interop tools
 
-## Choose your interop solution
+Flutter's interop tools take one of two architectural approaches
+to bridging Dart and native code.
+FFIgen and JNIgen use a bottom-up approach, which starts from existing
+native APIs and generates Dart bindings that mirror them directly.
+Pigeon uses a top-down approach, which starts from a single Dart schema
+and generates matching client and host interfaces across multiple platforms.
+Choose the approach that best fits your integration needs.
 
 ```mermaid
+%%{init: {'themeVariables': {'clusterBkg': '#1a73e80a', 'clusterBorder': '#1a73e8'}}}%%
 flowchart TD
-    Start(["Question 1: What is your primary goal?"]) --> GoalA["Goal A: Platform integration<br>(Swift, Kotlin, Java, Obj-C)"]
-    Start --> GoalB["Goal B: C-ABI wrapping<br>(C, C++, Rust, Go)"]
-    Start --> GoalC["Goal C: Pure Dart package<br>(No Flutter framework)"]
+    subgraph TopDown["Top-down: Pigeon"]
+        direction TB
+        Contract["Single Dart schema<br>(Platform-agnostic API)"]:::flutterNode --> GenPigeon["Pigeon code generator<br>(Top-down boundary)"]:::flutterNode
+        GenPigeon --> PigeonAPI["Dart and host interfaces<br>(Multi-platform APIs)"]:::flutterAccent
+    end
 
-    GoalB --> FFIgen["Use FFIgen<br>(or Flutter Rust Bridge)"]:::directNode
-    GoalC --> Direct["Use FFIgen or JNIgen"]:::directNode
+    subgraph BottomUp["Bottom-up: FFIgen and JNIgen"]
+        direction TB
+        NativeAPI["Existing native APIs<br>(C, Obj-C, Java, Kotlin)"]:::flutterNode --> GenDirect["FFIgen and JNIgen<br>(Bottom-up generators)"]:::flutterNode
+        GenDirect --> DirectAPI["Direct Dart bindings<br>(Platform-shaped APIs)"]:::flutterAccent
+    end
 
-    GoalA --> EvalPigeon{"Question 2: Do high-complexity<br>constraints apply?"}
-    EvalPigeon -->|"No (most common)"| Pigeon["Use Pigeon<br>(Recommended default)"]:::recommendedNode
-    EvalPigeon -->|"Yes (advanced)"| DirectInterop["Use FFIgen or JNIgen"]:::directNode
-
-    classDef recommendedNode stroke:#1e8e3e,stroke-width:2px;
-    classDef directNode stroke:#1a73e8,stroke-width:2px;
+    classDef flutterNode fill:#1a73e814,stroke:#1a73e8,stroke-width:1.5px;
+    classDef flutterAccent fill:#1a73e826,stroke:#1a73e8,stroke-width:2px;
 ```
 
----
+### Bottom-up with FFIgen and JNIgen
 
-Answer the following questions to walk through the decision tree in detail:
+FFIgen and JNIgen generate low-level Dart bindings directly from your
+target platform's headers or classes.
+Because the generated bindings call native code without serialization
+overhead, you're responsible for managing native memory lifetimes and
+threading in your Dart code.
 
-### Question 1: What is your primary goal?
+- [FFIgen](/interop/ffigen) parses C and Objective-C headers
+  (including `@objc`-annotated Swift) to generate direct
+  [`dart:ffi`](/interop/dart-ffi) bindings.
+  Wrapping an iOS or macOS framework with FFIgen produces an
+  Apple-shaped Dart API; wrapping a C library or C-ABI binary
+  (C, C++ with `extern "C"`, Rust, or Go) produces a C-shaped Dart API.
+- [JNIgen](/interop/jnigen) inspects Java and Kotlin classes,
+  JAR and AAR files, or Android SDK packages to generate direct JNI bindings.
+  Wrapping an Android package with JNIgen produces an
+  Android-shaped Dart API.
 
-**Goal A: Platform integration**
-: Communicate with native OS features (Swift, Kotlin, Java, or Objective-C)
-  or expose an API surface.
-  Proceed to [Question 2: Do high-complexity constraints apply?](#question-2-do-high-complexity-constraints-apply).
+### Top-down with Pigeon
 
-**Goal B: C-ABI wrapping**
-: Wrap an existing native library (C, C++, Rust, or Go).
-  Use [FFIgen](/interop/ffigen)
-  (or [Flutter Rust Bridge][frb] for Rust).
+[Pigeon](/interop/pigeon) starts from a single Dart schema that
+defines an intentional, platform-agnostic boundary contract once and
+enforces identical types and signatures across Android, iOS, macOS,
+Windows, and Linux.
+You implement the generated host interface on each target platform
+while Pigeon handles type safety, data conversion, and cross-runtime
+memory safety across the boundary.
 
-**Goal C: Pure Dart package**
-: Build a Dart CLI tool without Flutter framework dependencies.
-  Use [FFIgen](/interop/ffigen) or
-  [JNIgen](/interop/jnigen).
-
-### Question 2: Do high-complexity constraints apply?
-
-If you're building a Flutter plugin,
-first verify whether [Pigeon](/interop/pigeon) satisfies
-your technical constraints.
-
-:::important
-Migrating a plugin between Pigeon and FFIgen or JNIgen is non-trivial
-because the glue code lives in different languages.
-Evaluate your plugin's constraints carefully before choosing between them.
-:::
-
-Do any of the following requirements apply to your feature?
-
-- Your app processes high-frequency raw data (for example, video processing).
-- Your integration requires advanced language bridging
-  (for example, cross-language subclasses, delegates, or proxies).
-- Your feature requires manual memory management and multithreading over
-  guardrails.
-- Your target language is C, C++, Rust, or Go.
-
-Based on whether any of the preceding requirements apply,
-choose your interop tool:
-
-**No (most common) — Use [Pigeon](/interop/pigeon)**
-: This is the default, recommended path.
-  It provides necessary guardrails, creates easily digestible interface
-  mappings, and is highly efficient for most API surface areas.
-
-**Yes — Use [FFIgen](/interop/ffigen) or [JNIgen](/interop/jnigen)**
-: You need the flexibility, complexity, and performance of direct interop for
-  larger surface areas.
-
-:::note
-Directly using FFIgen and JNIgen introduces potential pitfalls,
-particularly around threading and memory management.
-Pigeon is generally recommended because it has fewer potential pitfalls
-and provides safer guardrails.
-:::
+Pigeon generates bindings over
+[platform channels](/platform-integration/platform-channels)
+for all supported platforms, and offers a preview option to generate
+direct native interop bindings using [FFIgen](/interop/ffigen)
+on iOS and macOS and [JNIgen](/interop/jnigen) on Android.
 
 ## Package your interop code
 
@@ -128,8 +110,8 @@ The following table compares two interop solutions:
 
 - **Direct interop:** Lower-level direct bindings with higher performance for
   large data; requires manual memory and threading management.
-- **Pigeon:** Structured, type-safe code generator; recommended default for
-  Flutter plugins.
+- **Pigeon:** Structured, type-safe code generator for cross-platform
+  boundary contracts.
 
 | Target language | Direct interop | Pigeon |
 | --- | --- | --- |
@@ -140,10 +122,10 @@ The following table compares two interop solutions:
 | **Rust without `extern "C"`** | [Flutter Rust Bridge][frb] | Not supported |
 | **Go with `extern "C"`** | [FFIgen](/interop/ffigen) | Not supported directly |
 | **Go without `extern "C"`** | Not supported | Not supported |
-| **Java** | [JNIgen](/interop/jnigen) | Supported through Kotlin (native interop) or directly with platform channels |
-| **Kotlin** | [JNIgen](/interop/jnigen) | Supported (recommended) |
-| **Objective-C** | [FFIgen](/interop/ffigen) | Supported through Swift (native interop) or directly with platform channels |
-| **Swift without Obj-C compatibility annotations** | [`package:swiftgen`][swiftgen-pub] (experimental) | Supported (recommended) |
+| **Java** | [JNIgen](/interop/jnigen) | Supported with platform channels, or through Kotlin with native interop (preview) |
+| **Kotlin** | [JNIgen](/interop/jnigen) | Supported with platform channels or native interop (preview) |
+| **Objective-C** | [FFIgen](/interop/ffigen) | Supported with platform channels, or through Swift with native interop (preview) |
+| **Swift without Obj-C compatibility annotations** | [`package:swiftgen`][swiftgen-pub] (experimental) | Supported with platform channels or native interop (preview) |
 
 {:.table .table-striped}
 

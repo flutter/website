@@ -24,6 +24,8 @@ This recipe uses the following steps:
   3. Convert the response into a list of photos.
   4. Move this work to a separate isolate.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `http` package
 
 First, add the [`http`][] package to your project.

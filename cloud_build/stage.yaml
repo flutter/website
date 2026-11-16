@@ -1,5 +1,6 @@
 substitutions:
   _SITE: docs
+  _GDP_OAUTH_CLIENT_ID: ''
 steps:
   - name: gcr.io/flutter-dev-230821/firebase-ghcli
     # Build the selected site, deploy it to staging, then comment the link.
@@ -21,6 +22,7 @@ steps:
       - 'REPO_FULL_NAME=$REPO_FULL_NAME'
       - 'COMMIT_SHA=$COMMIT_SHA'
       - 'HEAD_BRANCH=$_HEAD_BRANCH'
+      - 'GDP_OAUTH_CLIENT_ID=$_GDP_OAUTH_CLIENT_ID'
     secretEnv: ['GH_PAT_TOKEN']
 availableSecrets:
   secretManager:

@@ -30,6 +30,8 @@ This recipe uses the following steps:
   2. Find a widget with a specific `Key`.
   3. Find a specific widget instance.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Find a `Text` widget
 
 In testing, you often need to find widgets that contain specific text.

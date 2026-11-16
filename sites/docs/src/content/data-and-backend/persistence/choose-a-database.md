@@ -56,7 +56,8 @@ Cloud Firestore is a good fit when your app needs:
 * **Automatic scaling:** handle growing traffic without
   provisioning or managing servers.
 
-To add Cloud Firestore to your project, run:
+After you [connect your app to Firebase][connect-firebase],
+add the Cloud Firestore plugin.
 
 ```console
 $ flutter pub add cloud_firestore
@@ -174,6 +175,7 @@ To start building with a cloud database, check out the following resources:
 
 [Cloud Firestore]: {{site.firebase}}/docs/firestore
 [`cloud_firestore`]: {{site.pub-pkg}}/cloud_firestore
+[connect-firebase]: /data-and-backend/firebase#connect-a-flutter-app-to-firebase
 [dart-server]: {{site.dart-site}}/server#sharing-code-between-flutter-apps-and-dart-backends
 [`drift`]: {{site.pub-pkg}}/drift
 [firebase-ai]: {{site.firebase}}/docs/ai-logic/get-started

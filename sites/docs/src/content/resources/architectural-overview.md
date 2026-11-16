@@ -55,8 +55,7 @@ independent libraries that each depend on the underlying layer. No layer has
 privileged access to the layer below, and every part of the framework level is
 designed to be optional and replaceable.
 
-![Architectural
-diagram](/assets/images/docs/arch-overview/archdiagram.webp){:width="100%"}
+![Architectural diagram](/assets/images/docs/resources/diagram-layercake.webp){:width="100%"}
 
 To the underlying operating system, Flutter applications are packaged in the
 same way as any other native application. A platform-specific embedder provides
@@ -1052,7 +1051,7 @@ On the web, Flutter compiles your application code into either JavaScript
 or [WebAssembly][Dart WebAssembly support] (when building with `--wasm`),
 rendering graphics using a WebAssembly build of the Skia engine.
 
-![Flutter web architecture](/assets/images/docs/resources/diagram-layercake.webp){:width="80%" .diagram-wrap}
+![Flutter web architecture](/assets/images/docs/arch-overview/archdiagram.webp){:width="80%"}
 
 Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need

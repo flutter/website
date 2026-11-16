@@ -18,6 +18,8 @@ This recipe uses the following steps:
   2. Add a `Hero` widget to the first screen.
   3. Add a `Hero` widget to the second screen.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Create two screens showing the same image
 
 In this example, display the same image on both screens.
@@ -33,7 +35,7 @@ and [Handle taps][] recipes.
 
 <?code-excerpt "lib/main_original.dart"?>
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -134,6 +136,10 @@ widgets, for simplicity.
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter Hero animation hands-on example in DartPad" run="true"
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const HeroApp());

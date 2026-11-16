@@ -5,6 +5,7 @@
 import 'package:intl/intl.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:mime/mime.dart';
 
 import '../../components/blog/client/blog_categories.dart';
 
@@ -31,14 +32,29 @@ extension type Post(Map<String, Object?> data) {
       );
     }
 
-    switch (data['coverImage']) {
+    validateCoverImage(data['coverImage'], source: source);
+    return post;
+  }
+
+  /// Validates the cover image metadata, throwing if invalid.
+  static void validateCoverImage(Object? coverImage, {String? source}) {
+    final sourceDescription = source == null ? '' : ' at "$source"';
+    switch (coverImage) {
       // Treat an empty map as absent.
       // The asset data loader adds an empty `coverImage` map to
       // pages without one when resolving the `page.coverImage.url` property.
       case null || Map(isEmpty: true):
         break;
-      case final Map<String, Object?> coverData &&
-          {'url': String(isNotEmpty: true)}:
+      case final Map<String, Object?> coverData && {'url': final String url}
+          when url.trim().isNotEmpty:
+        final path = Uri.tryParse(url.trim())?.path ?? '';
+        if (lookupMimeType(path)?.startsWith('video/') ?? false) {
+          throw ArgumentError(
+            'Invalid "coverImage" metadata$sourceDescription. '
+            '"$url" is a video. Use an animated or static image instead.',
+          );
+        }
+
         final showInPost = switch (coverData['showInPost']) {
           null => true,
           final bool showInPost => showInPost,
@@ -77,8 +93,6 @@ extension type Post(Map<String, Object?> data) {
           'Must include a non-empty "url" string.',
         );
     }
-
-    return post;
   }
 
   static Post? tryParse(Map<String, Object?> data) {

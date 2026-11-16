@@ -14,6 +14,8 @@ This recipe uses the following steps:
   2. Delete data on the server.
   3. Update the screen.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the `http` package
 
 To add the `http` package as a dependency,

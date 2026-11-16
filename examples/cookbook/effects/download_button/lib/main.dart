@@ -1,4 +1,12 @@
+// DartPad doesn't support `cupertino_ui` or `material_ui` yet,
+// so this example imports both libraries from the Flutter SDK.
+// To run locally, depend on `cupertino_ui` and `material_ui`
+// and use these imports instead:
+// import 'package:cupertino_ui/cupertino_ui.dart';
+// import 'package:material_ui/material_ui.dart';
+// ignore: deprecated_member_use until DartPad supports cupertino_ui.
 import 'package:flutter/cupertino.dart';
+// ignore: deprecated_member_use until DartPad supports material_ui.
 import 'package:flutter/material.dart';
 
 void main() {
