@@ -7,9 +7,9 @@ publishDate: 2026-11-18
 author: carlosmendonca
 coverImage:
   alt: "Dash completes the Q4 Flutter survey!"
-  url: images/DashSurvey.gif
+  url: images/dash-survey.webp
   showInPost: true
-socialImage: images/dash-taking-survey.png
+socialImage: images/dash-taking-survey.webp
 category: news
 layout: blog
 ---
