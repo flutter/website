@@ -27,6 +27,9 @@ split-per-ABI version codes:
 - Apps with Android plugins failed to configure when `profile` or a custom
   build type set `applicationIdSuffix`, `isShrinkResources`,
   `buildConfigField`, or `resValue` ([Issue 196412][], [Issue 196696][]).
+  Gradle reported errors such as
+  `Library projects cannot set applicationIdSuffix` and
+  `Resource shrinker cannot be used for libraries`.
 - `flutter build apk --split-per-abi` skipped per-ABI `versionCode` offsets
   when `android:versionCode` was set only in `AndroidManifest.xml`
   ([Issue 196559][]).
@@ -38,6 +41,11 @@ split-per-ABI version codes:
   Declare a `versionCode` or pass `-P force-version-code-ignoring-abi=true`
   (refer to [Fix split-per-ABI version code errors][vc-split]).
 :::
+
+Existing build scripts that use the legacy variant API
+(`android.applicationVariants` or `versionCodeOverride`)
+keep working in Flutter 3.50
+(refer to [Opt in to the new AGP DSL early][opt-in]).
 
 Update your Android build configuration if your project does any of the
 following:
@@ -332,8 +340,6 @@ If you maintain an Android plugin:
   plugin's `build.gradle(.kts)` file with `androidComponents.onVariants`.
 - Avoid looking up Flutter tasks during top-level build script evaluation or
   casting `copyFlutterAssets<Variant>` to `org.gradle.api.tasks.Copy`.
-- Declare `matchingFallbacks` on any custom build types in your plugin's
-  example app.
 - Test your plugin's example app on AGP `9.1.1` or later with both
   `android.newDsl=true` and `android.builtInKotlin=true` in
   `gradle.properties`.
