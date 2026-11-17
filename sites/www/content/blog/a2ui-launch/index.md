@@ -3,6 +3,10 @@ title: "Announcing A2UI 1.0 and a2ui_flutter"
 description: "Faster, safer, more modular generative UI for Flutter"
 publishDate: 2026-11-17
 author: [redbrogdon, vpm238]
+coverImage:
+  alt: "Dash flies through a field of UI widgets celebrating launch of A2UI 1.0"
+  caption: "A2UI 1.0 and a2ui_flutter (formerly known as genui) are available now!"
+  url: images/a2ui-launch.webp
 category: deep-dive
 layout: blog
 ---
