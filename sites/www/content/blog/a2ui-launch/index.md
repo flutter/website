@@ -53,7 +53,8 @@ the user can switch up the menu with no chance of picking a
 shellfish dish.
 
 <video
-  src="images/Commis.mp4"
+  src="images/commis-catering-demo.webm"
+  controls
   playsinline
   preload="metadata"
   style="width: 100%; height: auto;"
@@ -210,7 +211,8 @@ via `callAgentFunction`, updating weights, fees, and remaining cash
 in-place in under a second without opening a new chat turn.
 
 <video
-  src="images/callagent-function-v2.mov"
+  src="images/callagent-function-v2.webm"
+  controls
   playsinline
   preload="metadata"
   style="width: 100%; height: auto;"
