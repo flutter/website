@@ -286,7 +286,7 @@ and any of them can drive the same Flutter app:
 <DashImage figure src="images/building-the-agent.png"
   alt="An `a2ui_flutter` app driven by an agent built with `a2ui_agent`
   and Genkit Dart, or with the Python or TypeScript agent SDK and
-  frameworks such as Google ADK and CopilotKit"
+  frameworks such as Google ADK and CopilotKit"/>
 
 For a full-stack Dart app, pair `a2ui_agent` with
 [Genkit Dart](https://genkit.dev/docs/dart/get-started/),
