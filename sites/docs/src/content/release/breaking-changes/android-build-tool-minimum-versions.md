@@ -40,11 +40,6 @@ Flutter 3.50 doesn't support AGP 10 or later.
 Projects configured with AGP 10 fail validation until a future Flutter release
 adds AGP 10 support.
 
-Default Android SDK and NDK values are unchanged from Flutter 3.47:
-`compileSdk` is `36`, `targetSdk` is `36`, `minSdk` is `24`,
-and the default NDK version is `28.2.13676358`.
-Setting `minSdk` to `23` logs a warning, and `22` or lower fails the build.
-
 :::warning Projects created with Flutter 3.44 or 3.47 need manual updates
 Unmodified projects created with Flutter 3.44 or Flutter 3.47 fail to build on
 Flutter 3.50 until you update their Gradle files.
@@ -69,12 +64,6 @@ Update to the Flutter 3.50 template versions (`AGP 9.3.1`, `Gradle 9.5.0`, and
 
 Flutter checks your Gradle, Java, AGP, and KGP versions on every Android build
 and enforces a [support policy][] for these tools.
-Under that policy, Flutter marks a version as "warn" for at least one stable
-release before raising the minimum ("error") in a later release.
-In Flutter 3.50, AGP `9.0.1` through `9.1.0`, Gradle `9.1.0` through `9.3.0`,
-and KGP `2.3.20` through `2.4.9` fail validation without a prior warning in
-Flutter 3.47.
-Flutter 3.47 warned only below AGP `9.0.1`, Gradle `9.1.0`, and KGP `2.3.20`.
 
 Flutter 3.50 raises the minimum versions for two reasons:
 
@@ -132,10 +121,6 @@ Check the build files and toolchain settings in your Flutter project:
   `android/gradle/wrapper/gradle-wrapper.properties` file.
 - **Java (JDK):** Run `flutter doctor -v` and check the Java version listed
   under the Android toolchain section.
-
-Running `flutter analyze --suggestions` checks cross-tool compatibility between
-Java, Gradle, AGP, and KGP (printing `compatible java/gradle/agp/kgp` when
-valid), rather than Flutter's minimum thresholds.
 
 ### Update the Android Gradle Plugin
 
