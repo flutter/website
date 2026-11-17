@@ -286,6 +286,24 @@ currently in preview, builds on `a2ui_agent`,
 so you can write the agent, its tools,
 and the Flutter UI in one language. 
 
+Very Good Ventures used this stack for an
+[open-source smart home panel](https://github.com/VGVentures/a2ui_vgv_smart_home)
+that composes a different dashboard for each family member.
+Its Dart Frog backend runs `a2ui_agent` and Genkit Dart,
+turns speech into text with Gemini Live,
+and sends A2UI 1.0 messages to the `a2ui_flutter` app
+on a kitchen wall display. Try the
+[live demo](https://a2ui-vgv-smart-home.web.app/).
+
+<video
+  src="https://a2ui.org/assets/consultants/vgv-walkthrough.mp4"
+  controls
+  playsinline
+  preload="metadata"
+  style="width: 100%; height: auto;"
+  aria-label="Smart home panel walkthrough by Very Good Ventures">
+</video>
+
 ## Summary
 
 With A2UI 1.0 and `a2ui_flutter`, you get a tighter,
