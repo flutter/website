@@ -57,6 +57,16 @@ When asked to review the file:
 3.  Report findings and suggestions to the user, but
     don't make changes without approval.
 
+## Choose a link destination
+
+Prefer a published Markdown version when it
+contains the material the entry describes.
+On `docs.flutter.dev`, look for the page's `rel="alternate"` link
+with `type="text/markdown"`.
+Fetch the Markdown URL and check its contents before using it.
+If Markdown is unavailable or omits relevant content,
+such as a widget catalog's generated list, use the canonical HTML page.
+
 ## Formatting rules
 
 - Each link follows the format: `- [Title](URL): Description.`
