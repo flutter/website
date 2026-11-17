@@ -109,25 +109,26 @@ To enable automatic content-based cache busting across deployments, pass
 flutter build web --wasm --web-content-hash
 ```
 
-When `--web-content-hash` is enabled, Flutter inserts an 8-character truncated
-SHA-256 content hash before the file extension of the compiled entrypoints and
-of every file under `build/web/assets/**`
-(for example, `main.dart.js` becomes `main.dart.<hash>.js`,
-`logo.png` becomes `logo.<hash>.png`, and the extensionless `NOTICES` becomes
-`NOTICES.<hash>`).
+When you pass `--web-content-hash`, Flutter inserts an eight-character
+truncated SHA-256 content hash (`HASH`) before the file extension of compiled
+entrypoints and every file under `build/web/assets/**`.
+For example, `main.dart.js` becomes `main.dart.HASH.js`, `logo.png` becomes
+`logo.HASH.png`, and the extensionless `NOTICES` file becomes `NOTICES.HASH`.
 The flag works with release, profile, and debug builds,
 and with both JavaScript-only and `--wasm` builds.
 
-Flutter records the hashed entrypoint and asset manifest filenames in
-`_flutter.buildConfig`, which is written into `flutter_bootstrap.js`
-(and into `index.html` if it inlines `{% raw %}{{flutter_bootstrap_js}}{% endraw %}`
-or `{% raw %}{{flutter_build_config}}{% endraw %}`).
+Flutter records the hashed entrypoint and asset manifest filenames in the
+`_flutter.buildConfig` object.
+Flutter writes this object to `flutter_bootstrap.js`, and also to `index.html`
+when `index.html` inlines
+`{% raw %}{{flutter_bootstrap_js}}{% endraw %}` or
+`{% raw %}{{flutter_build_config}}{% endraw %}`.
 The hashed asset manifests then map each asset key to its hashed filename,
 so `rootBundle`, `Image.asset`, and fonts resolve hashed assets automatically.
 
 | Artifact group | Files in `build/web` | Recommended `Cache-Control` |
 | :--- | :--- | :--- |
-| **Hashed immutable files** | `main.dart.<hash>.js`, `main.dart.<hash>.wasm`, `main.dart.<hash>.mjs`, their `.js.map` and `.mjs.map` source maps (if you host them), and all files under `assets/**` (including `AssetManifest.<hash>.bin`, `AssetManifest.bin.<hash>.json`, `FontManifest.<hash>.json`, `NOTICES.<hash>`, fonts, images, `shaders/**`, and `packages/**`) | `public, max-age=31536000, immutable` |
+| **Hashed immutable files** | `main.dart.HASH.js`, `main.dart.HASH.wasm`, `main.dart.HASH.mjs`, their `.js.map` and `.mjs.map` source maps (if you host them), and all files under `assets/**` (including `AssetManifest.HASH.bin`, `AssetManifest.bin.HASH.json`, `FontManifest.HASH.json`, `NOTICES.HASH`, fonts, images, `shaders/**`, and `packages/**`) | `public, max-age=31536000, immutable` |
 | **Unhashed bootstrap and root files** | `index.html`, `flutter_bootstrap.js`, `flutter.js`, `flutter.js.map`, `manifest.json`, `version.json`, `favicon.png`, `icons/**`, other files copied from `web/` (such as `404.html`), `flutter_service_worker.js`, `precache_manifest.json`, `canvaskit/**`, and `main.dart.wasm.map` (with `--source-maps`) | `no-cache` (or `max-age=0, must-revalidate`) |
 
 {:.table .table-striped}
@@ -138,21 +139,26 @@ by the Flutter engine revision.
 Flutter still copies an unhashed `canvaskit/` directory into `build/web`,
 which the app uses only when you build with `--no-web-resources-cdn`.
 Because those files keep the same names across Flutter upgrades,
-never serve your own copy of `canvaskit/**` with `immutable` caching.
+don't serve your own copy of `canvaskit/**` with `immutable` caching.
 
-:::warning
-With `--web-content-hash`, files under `build/web/assets/` are renamed on disk.
+:::important
+When you build with `--web-content-hash`, Flutter renames files under
+`build/web/assets/` on disk.
 Code that references them by a fixed URL, such as `assets/...` paths in
-`index.html`, CSS, or a JavaScript `fetch()` call, receives a `404`.
+`index.html`, CSS, or a JavaScript `fetch()` call, receives a `404 Not Found`
+status code.
 Load assets through `rootBundle` or the asset APIs instead.
 :::
 
-`flutter build web --web-content-hash` fails with an error if
-`web/index.html` or a custom `web/flutter_bootstrap.js` references
-`main.dart.js` or calls the deprecated `loadEntrypoint` API,
-if `web/index.html` neither loads nor inlines `flutter_bootstrap.js`,
-or if a custom `web/flutter_bootstrap.js` omits
-`{% raw %}{{flutter_build_config}}{% endraw %}`.
+Running `flutter build web --web-content-hash` fails with an error in any of
+the following cases:
+
+* The `web/index.html` file or a custom `web/flutter_bootstrap.js` file
+  references `main.dart.js` or calls the deprecated `loadEntrypoint()` method.
+* The `web/index.html` file neither loads nor inlines `flutter_bootstrap.js`.
+* A custom `web/flutter_bootstrap.js` file omits the
+  `{% raw %}{{flutter_build_config}}{% endraw %}` token.
+
 To migrate an older project, run `flutter create . --platforms web`
 or follow [Flutter web app initialization][web-init-bootstrapping].
 
@@ -210,12 +216,12 @@ Custom PWA service workers or [Workbox][] pipelines can consume
 `precache_manifest.json` directly (passing `revision: entry.urlHashed ? null : entry.hash`
 so URL-hashed files aren't double-cached with query parameters).
 
-Each `url` is a path relative to `build/web` (with no leading `/` and no
-`--base-href` prefix), and entries are sorted by `url`.
+Each `url` value is a path relative to `build/web`, without a leading `/` or
+`--base-href` prefix, and the manifest sorts entries by `url`.
 The manifest omits dotfiles, `flutter_service_worker.js`, source maps
-(`*.map`), `*.symbols`, and `*.info.json` files.
-It also omits `canvaskit/**` unless you build with `--no-web-resources-cdn`,
-in which case those files are listed with `"urlHashed": false`.
+(`*.map`), `*.symbols` files, and `*.info.json` files.
+When you build with `--no-web-resources-cdn`, the manifest includes
+`canvaskit/**` files with `"urlHashed": false`; otherwise, it omits them.
 
 <a id="opting-in-to-webassembly" aria-hidden="true"></a>
 
