@@ -21,7 +21,8 @@ at the same file paths.
 
 :::important Use Flutter 3.50.1 or later
 Upgrade to **Flutter 3.50.1** or later when adopting Flutter 3.50.
-Flutter 3.50.1 fixes three Android build issues from 3.50.0:
+Flutter 3.50.1 fixes three Android build issues from 3.50.0 and enforces
+split-per-ABI version codes:
 
 - Apps with Android plugins failed to configure when `profile` or a custom
   build type set `applicationIdSuffix`, `isShrinkResources`,
@@ -31,6 +32,11 @@ Flutter 3.50.1 fixes three Android build issues from 3.50.0:
   ([Issue 196559][]).
 - Assets with dot-prefixed filenames (such as `.env`) or underscore-prefixed
   directory names were omitted from Android builds ([Issue 196444][]).
+- In 3.50.1 and later, `flutter build apk --split-per-abi` fails (instead of
+  logging an error) when `android {}` sets no `versionCode` and
+  `AndroidManifest.xml` sets no integer `android:versionCode`.
+  Declare a `versionCode` or pass `-P force-version-code-ignoring-abi=true`
+  (refer to [Fix split-per-ABI version code errors][vc-split]).
 :::
 
 Update your Android build configuration if your project does any of the
@@ -38,11 +44,9 @@ following:
 
 - Computes custom `versionCode` values in Gradle
   (refer to [Customize version codes in Gradle build scripts][vc-custom]).
-- Runs `flutter build apk --split-per-abi` without a literal integer
-  `versionCode` in the `android {}` block or `AndroidManifest.xml`
+- Runs `flutter build apk --split-per-abi` without a `versionCode` in
+  `android {}` or an integer `android:versionCode` in `AndroidManifest.xml`
   (refer to [Fix split-per-ABI version code errors][vc-split]).
-- Defines custom build types (such as `staging`) without `matchingFallbacks`
-  (refer to [Configure profile and custom build types][build-types]).
 - Renames, copies, or transforms APK outputs in Gradle
   (refer to [Rename, copy, or transform APK outputs][apk-outputs]).
 - Looks up Flutter's Gradle tasks at the top level of a build script,
@@ -53,28 +57,8 @@ following:
   (refer to [Update add-to-app projects and AAR builds][add-to-app]).
 - Maintains an Android plugin
   (refer to [Migrate Android plugins][plugins]).
-
-:::note Legacy variant APIs in your own build scripts
-Flutter 3.50 sets `android.newDsl=false` by default,
-so existing build script code that calls `android.applicationVariants` or
-`versionCodeOverride` keeps working in Flutter 3.50.
-Migrate custom build scripts to `androidComponents.onVariants` before AGP 10
-and a future Flutter release remove `android.newDsl=false`
-(refer to [Opt in to the new AGP DSL early][opt-in]).
-:::
-
-## Background
-
-AGP 9 deprecated the legacy DSL and variant APIs behind the
-`android.newDsl=false` Gradle property,
-and AGP 10 removes those APIs along with access to AGP internals.
-To prepare for AGP 10, Flutter 3.50 migrated FGP's app, add-to-app module,
-and `flutter build aar` code paths to AGP's public [Variant API][].
-
-Enabling `android.newDsl=true` in your own project also requires migrating off
-the legacy `kotlin-android` plugin.
-For instructions on that companion migration,
-consult [Migrating Flutter Android projects to built-in Kotlin][].
+- Enables `android.newDsl=true` to test against the new AGP DSL
+  (refer to [Opt in to the new AGP DSL early][opt-in]).
 
 ## Migration guide
 
@@ -91,21 +75,19 @@ distinct `versionCode` using `abiOffset * 1000 + versionCode`.
 The ABI offsets are `1` for `armeabi-v7a`, `2` for `arm64-v8a`,
 and `4` for `x86_64`.
 
-Previously, Flutter applied per-ABI offsets with `versionCodeOverride` after
-app build scripts ran.
-In Flutter 3.50, Flutter sets `output.versionCode` inside its own
-`androidComponents.onVariants` callback,
-which runs _before_ your app's `onVariants` block when FGP is applied in
-`plugins {}`.
+Flutter sets `output.versionCode` in its `androidComponents.onVariants`
+callback, which runs before your app's `onVariants` block when FGP is applied
+in `plugins {}`.
+Because Flutter's callback runs first, `output.versionCode` already includes
+the per-ABI offset.
 
-If your callback derives a value from `output.versionCode`
-(or multiplies Flutter's `versionCode`),
-the calculation starts from Flutter's already-offset number instead of the base
-`versionCode`.
-For example, an app that multiplies by `10,000` and builds with
-`--build-number 42` produces larger values than before:
+If you replace legacy code that read `variant.versionCode` with an
+`onVariants` callback that reads `output.versionCode`, your calculation starts
+from the already-offset number instead of the base `versionCode`.
+For example, multiplying by `10,000` with `--build-number 42` produces larger
+values when reading `output.versionCode`:
 
-| ABI (offset) | Before: `offset * 1000 + 42 * 10000` | Flutter 3.50: `(offset * 1000 + 42) * 10000` |
+| ABI (offset) | Legacy code reading `variant.versionCode`: `offset * 1000 + 42 * 10000` | `onVariants` code reading `output.versionCode`: `(offset * 1000 + 42) * 10000` |
 | :--- | :--- | :--- |
 | `armeabi-v7a` (1) | 421000 | 10420000 |
 | `arm64-v8a` (2) | 422000 | 20420000 |
@@ -113,8 +95,8 @@ For example, an app that multiplies by `10,000` and builds with
 
 The larger values remain distinct, preserve ABI ordering, and increase
 monotonically, so Google Play accepts the updated APKs as upgrades.
-However, downgrading to an earlier Flutter version lowers those values,
-which Google Play rejects.
+However, reverting to a build that produces the `422000`-style values lowers
+`versionCode`, which Google Play rejects.
 
 When migrating off `versionCodeOverride` or writing custom `onVariants` logic,
 compute `versionCode` directly from a base value you control,
@@ -174,9 +156,9 @@ In Flutter 3.50.1 and later, apps that set a literal integer
 `android:versionCode` in `AndroidManifest.xml` also continue receiving per-ABI
 offsets (fixing [Issue 196559][] from Flutter 3.50.0).
 
-In Flutter 3.50.1, `flutter build apk --split-per-abi`
-(or `-Psplit-per-abi=true`) fails when neither the `android {}` block nor
-`AndroidManifest.xml` sets a positive integer `versionCode`.
+In Flutter 3.50.1 and later, `flutter build apk --split-per-abi`
+(or `-Psplit-per-abi=true`) fails when `android {}` sets no `versionCode` and
+`AndroidManifest.xml` sets no integer `android:versionCode`.
 Common causes include omitting `versionCode` or using a manifest placeholder
 such as `${vc}`:
 
@@ -212,9 +194,7 @@ If you distribute per-ABI APKs outside Google Play and want every split APK to
 share one `versionCode`,
 pass the `force-version-code-ignoring-abi=true` Gradle project property:
 
-- **Command line:** Pass `-P force-version-code-ignoring-abi=true`
-  (`-P` is shorthand for `--android-project-arg`,
-  listed in `flutter build apk -h -v`):
+- **Command line:** Pass `-P force-version-code-ignoring-abi=true`:
 
   ```bash
   flutter build apk --split-per-abi -P force-version-code-ignoring-abi=true
@@ -233,33 +213,6 @@ all split APKs share one `versionCode`.
 Google Play rejects multiple APKs in the same release that share a
 `versionCode`.
 :::
-
-### Configure profile and custom build types
-
-In Flutter 3.50.0, apps with Android plugins failed during Gradle configuration
-when `profile` or a custom build type set `applicationIdSuffix`,
-`isShrinkResources`, `buildConfigField`, or `resValue`.
-Affected builds reported errors such as
-`Library projects cannot set applicationIdSuffix` or
-`Resource shrinker cannot be used for libraries`.
-Flutter 3.50.1 fixes these configuration errors
-([Issue 196412][], [Issue 196696][]);
-upgrade to Flutter 3.50.1 or later if your project hits these errors.
-
-When defining a custom build type (such as `staging`),
-declare `matchingFallbacks` so plugins and Android libraries without that build
-type can select `debug` or `release`:
-
-```kotlin title="<flutter-project>/android/app/build.gradle.kts"
-android {
-    buildTypes {
-        create("staging") {
-            initWith(getByName("debug"))
-            matchingFallbacks += listOf("debug", "release")
-        }
-    }
-}
-```
 
 ### Rename, copy, or transform APK outputs
 
@@ -335,13 +288,9 @@ without casting to `Copy`:
 Where possible, wire custom tasks to Variant API artifacts
 (such as `SingleArtifact.APK` or `SingleArtifact.ASSETS`)
 instead of depending on Flutter task names or AGP `intermediates/` paths.
-In Flutter 3.50.1 ([PR 196465][]), `copyFlutterAssets<Variant>` transforms
-`SingleArtifact.ASSETS` rather than writing into `merge<Variant>Assets`
-(Flutter 3.50.0 registered a generated assets source directory).
-Scripts or tests that read
-`build/app/intermediates/assets/<variant>/merge<Variant>Assets/flutter_assets/`
-should read packaged assets from the built APK or AAB instead,
-because AGP `intermediates/` paths aren't a stable API.
+Starting in 3.50.1, `merge<Variant>Assets/` no longer contains
+`flutter_assets/` ([Issue 196444][]);
+read packaged assets from the APK or AAB.
 
 ### Update add-to-app projects and AAR builds
 
@@ -391,16 +340,18 @@ If you maintain an Android plugin:
 
 ### Opt in to the new AGP DSL early
 
-If you can't migrate your own build scripts yet, no action is required in
-Flutter 3.50: `android.newDsl=false` stays enabled by default.
-Treat `android.newDsl=false` as a temporary setting,
-because AGP 10 removes the legacy APIs and drops support for
-`android.newDsl=false`.
+AGP 9 deprecated the legacy DSL and variant APIs behind `android.newDsl=false`,
+and AGP 10 removes both `android.newDsl=false` and the legacy APIs.
+Flutter 3.50 sets `android.newDsl=false` by default,
+so custom build scripts that call `android.applicationVariants` or
+`versionCodeOverride` keep working in Flutter 3.50 until you migrate them to
+`androidComponents.onVariants`.
 
 Once your build scripts and plugins use `androidComponents.onVariants` and
-built-in Kotlin, test against the new AGP DSL by setting both properties to
-`true` in `android/gradle.properties`.
-Flutter's migrator preserves an existing `android.newDsl` setting:
+[built-in Kotlin][Migrating Flutter Android projects to built-in Kotlin],
+test against the new AGP DSL by setting both properties to `true` in
+`android/gradle.properties`
+(Flutter's migrator preserves an existing `android.newDsl` setting):
 
 ```properties title="<flutter-project>/android/gradle.properties"
 android.newDsl=true
@@ -408,8 +359,8 @@ android.builtInKotlin=true
 ```
 
 Enabling `android.newDsl=true` requires `android.builtInKotlin=true`,
-because the Kotlin Gradle Plugin rejects `android.newDsl=true`.
-If any plugin in your app still requires the Kotlin Gradle Plugin,
+because the legacy `kotlin-android` plugin rejects `android.newDsl=true`.
+If any plugin in your app still applies `kotlin-android`,
 keep both properties set to `false`.
 
 ## Timeline
@@ -432,7 +383,6 @@ In stable release: 3.50
 
 [add-to-app]: #update-add-to-app-projects-and-aar-builds
 [apk-outputs]: #rename-copy-or-transform-apk-outputs
-[build-types]: #configure-profile-and-custom-build-types
 [flutter-tasks]: #configure-flutter-gradle-tasks-in-build-scripts
 [Issue 180137]: {{site.repo.flutter}}/issues/180137
 [Issue 190845]: {{site.repo.flutter}}/issues/190845
@@ -443,7 +393,6 @@ In stable release: 3.50
 [Migrating Flutter Android projects to built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
 [opt-in]: #opt-in-to-the-new-agp-dsl-early
 [plugins]: #migrate-android-plugins
-[PR 196465]: {{site.repo.flutter}}/pull/196465
 [Variant API]: {{site.android-dev}}/build/extend-agp
 [vc-custom]: #customize-version-codes-in-gradle-build-scripts
 [vc-split]: #fix-split-per-abi-version-code-errors
