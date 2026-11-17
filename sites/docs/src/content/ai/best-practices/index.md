@@ -20,7 +20,8 @@ API, and secure, by keeping the API keys out of your code.
 If you're new to AI for either of these two use cases, you should know: as good
 as it is (and the Gemini 3 Pro Preview is *very* good), AI still makes mistakes.
 If you're using AI to write your code, then you can use guardrails to keep AI on
-track using tools like the Flutter analyzer and unit tests.
+track—such as the Flutter analyzer, unit tests, and
+[`skills_lint`](/ai/tools#quality-assurance-and-linting) for agent skills.
 
 But what do you do when you're using AI to implement the features in your app,
 knowing that sometimes it's going to get things wrong? Or, to quote a friend of

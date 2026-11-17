@@ -65,7 +65,9 @@ By explicitly calling out branch cutoff dates and release targets,
 we enable everyone to align their development cycles and
 coordinate feature landing effectively.
 
-### What is a branch cutoff date?
+<a id="what-is-a-branch-cutoff-date" aria-hidden="true"></a>
+
+### What is a branch cutoff date? {:#branch-cutoff}
 
 This date is the deadline for pull requests to
 land in the default branches (`main` for Dart and `master` for Flutter) to
@@ -74,14 +76,20 @@ guarantee inclusion in the next stable release.
 * **Before cutoff:** Your PR will ship in the next stable version.
 * **After cutoff:** Your PR will wait for the following cycle.
 
-### 2026 schedule
+<a id="2026-schedule" aria-hidden="true"></a>
 
-| Flutter version | Release target | Branch cutoff date |
-|-----------------|----------------|--------------------|
-| Flutter 3.41    | February, 2026 | 2026-01-06         |
-| Flutter 3.44    | May, 2026      | 2026-04-07         |
-| Flutter 3.47    | August, 2026   | 2026-07-07         |
-| Flutter 3.50    | November, 2026 | 2026-10-06         |
+### 2027 release schedule {:#release-schedule}
+
+The following table lists the target release month for
+each stable Dart and Flutter release in 2027
+and the [branch cutoff date](#branch-cutoff) for that release:
+
+| Stable release target | Branch cutoff date |
+|-----------------------|--------------------|
+| February 2027         | January 5, 2027    |
+| May 2027              | April 6, 2027      |
+| August 2027           | July 6, 2027       |
+| November 2027         | October 5, 2027    |
 
 {:.table}
 

@@ -179,121 +179,123 @@ class HomePage extends StatelessComponent {
               'Flutter is an open-source framework for building beautiful, natively compiled, multi-platform applications from a single codebase.',
             ),
           ]),
-          labels: const [
-            'Fast',
-            'Productive',
-            'Flexible',
-          ],
           tabs: [
-            .fragment([
-              div(classes: 'media', [
-                video(
-                  attributes: {
-                    'muted': '',
-                    'autoplay': '',
-                    'loop': '',
-                    'playsinline': '',
-                    'src': context.asset('home/images/feature-fast.mp4'),
-                    'type': 'video/mp4',
-                  },
-                  [
-                    img(
-                      src: context.asset('home/images/fast.webp'),
-                      alt: 'Fast',
-                    ),
-                  ],
-                ),
-              ]),
-              const div(classes: 'text', [
-                h3(classes: 'text-green', [.text('Fast')]),
-                p([
-                  .text(
-                    'Flutter code compiles to ARM or Intel machine code as well as JavaScript, for fast performance on any device.',
+            Tab(
+              header: 'Fast',
+              content: .fragment([
+                div(classes: 'media', [
+                  video(
+                    attributes: {
+                      'muted': '',
+                      'autoplay': '',
+                      'loop': '',
+                      'playsinline': '',
+                      'src': context.asset('home/images/feature-fast.mp4'),
+                      'type': 'video/mp4',
+                    },
+                    [
+                      img(
+                        src: context.asset('home/images/fast.webp'),
+                        alt: 'Fast',
+                      ),
+                    ],
                   ),
                 ]),
-                a(
-                  classes: 'btn',
-                  href: 'https://dartpad.dev/?id=e66e420f2f0201c772f73819711bf290',
-                  attributes: {'target': '_blank'},
-                  [.text('Try it in DartPad')],
-                ),
-              ]),
-            ]),
-
-            .fragment([
-              div(classes: 'media', [
-                video(
-                  attributes: {
-                    'muted': '',
-                    'autoplay': '',
-                    'loop': '',
-                    'playsinline': '',
-                    'src': context.asset(
-                      'home/images/feature-productive.mp4',
+                const div(classes: 'text', [
+                  h3(classes: 'text-green', [.text('Fast')]),
+                  p([
+                    .text(
+                      'Flutter code compiles to ARM or Intel machine code as well as JavaScript, for fast performance on any device.',
                     ),
-                    'type': 'video/mp4',
-                  },
-                  [
-                    img(
-                      src: context.asset('home/images/productive.webp'),
-                      alt: 'Productive',
-                    ),
-                  ],
-                ),
-              ]),
-              const div(classes: 'text', [
-                h3(classes: 'text-violet', [.text('Productive')]),
-                p([
-                  .text(
-                    'Build and iterate quickly with Hot Reload. '
-                    'Update code and see changes almost instantly, without losing state.',
+                  ]),
+                  a(
+                    classes: 'btn',
+                    href: 'https://dartpad.dev/?id=e66e420f2f0201c772f73819711bf290',
+                    attributes: {'target': '_blank'},
+                    [.text('Try it in DartPad')],
                   ),
                 ]),
-                a(
-                  classes: 'btn',
-                  href: 'https://dartpad.dev/?id=bbd3f10c2593f0add04dd770318b33f7',
-                  attributes: {'target': '_blank'},
-                  [.text('Try it in DartPad')],
-                ),
               ]),
-            ]),
-
-            .fragment([
-              div(classes: 'media', [
-                video(
-                  attributes: {
-                    'muted': '',
-                    'autoplay': '',
-                    'loop': '',
-                    'playsinline': '',
-                    'src': context.asset(
-                      'home/images/feature-flexible.mp4',
-                    ),
-                    'type': 'video/mp4',
-                  },
-                  [
-                    img(
-                      src: context.asset('home/images/flexible.webp'),
-                      alt: 'Flexible',
-                    ),
-                  ],
-                ),
-              ]),
-              const div(classes: 'text', [
-                h3(classes: 'text-coral', [.text('Flexible')]),
-                p([
-                  .text(
-                    'Control every pixel to create customized, adaptive designs that look and feel great on any screen.',
+            ),
+            Tab(
+              header: 'Productive',
+              content: .fragment([
+                div(classes: 'media', [
+                  video(
+                    attributes: {
+                      'muted': '',
+                      'autoplay': '',
+                      'loop': '',
+                      'playsinline': '',
+                      'src': context.asset(
+                        'home/images/feature-productive.mp4',
+                      ),
+                      'type': 'video/mp4',
+                    },
+                    [
+                      img(
+                        src: context.asset('home/images/productive.webp'),
+                        alt: 'Productive',
+                      ),
+                    ],
                   ),
                 ]),
-                a(
-                  classes: 'btn',
-                  href: 'https://dartpad.dev/?id=1ab1b78a18039bbbd5cfbb4b835b5b8d',
-                  attributes: {'target': '_blank'},
-                  [.text('Try it in DartPad')],
-                ),
+                const div(classes: 'text', [
+                  h3(classes: 'text-violet', [.text('Productive')]),
+                  p([
+                    .text(
+                      'Build and iterate quickly with Hot Reload. '
+                      'Update code and see changes almost instantly, without losing state.',
+                    ),
+                  ]),
+                  a(
+                    classes: 'btn',
+                    href: 'https://dartpad.dev/?id=bbd3f10c2593f0add04dd770318b33f7',
+                    attributes: {'target': '_blank'},
+                    [.text('Try it in DartPad')],
+                  ),
+                ]),
               ]),
-            ]),
+            ),
+            Tab(
+              header: 'Flexible',
+              content: .fragment([
+                div(classes: 'media', [
+                  video(
+                    attributes: {
+                      'muted': '',
+                      'autoplay': '',
+                      'loop': '',
+                      'playsinline': '',
+                      'src': context.asset(
+                        'home/images/feature-flexible.mp4',
+                      ),
+                      'type': 'video/mp4',
+                    },
+                    [
+                      img(
+                        src: context.asset('home/images/flexible.webp'),
+                        alt: 'Flexible',
+                      ),
+                    ],
+                  ),
+                ]),
+                const div(classes: 'text', [
+                  h3(classes: 'text-coral', [.text('Flexible')]),
+                  p([
+                    .text(
+                      'Control every pixel to create customized, adaptive designs that look and feel great on any screen.',
+                    ),
+                  ]),
+                  a(
+                    classes: 'btn',
+                    href: 'https://dartpad.dev/?id=1ab1b78a18039bbbd5cfbb4b835b5b8d',
+                    attributes: {'target': '_blank'},
+                    [.text('Try it in DartPad')],
+                  ),
+                ]),
+              ]),
+            ),
           ],
         ),
       ],

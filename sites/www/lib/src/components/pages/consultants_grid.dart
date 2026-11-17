@@ -18,6 +18,7 @@ class ConsultantsGrid extends StatelessComponent {
     return Filters(
       data: data,
       items: items,
+      showInitialCount: 90,
       filters: const [
         FilterType('locations', 'Company Location', [
           'Africa',

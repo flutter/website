@@ -20,6 +20,10 @@ import 'package:flutter_website/src/components/pages/consultants_grid.dart'
     deferred as _consultants_grid;
 import 'package:flutter_website/src/components/pages/events_grid.dart'
     deferred as _events_grid;
+import 'package:flutter_website/src/components/pages/flutter_create_countdown.dart'
+    deferred as _flutter_create_countdown;
+import 'package:flutter_website/src/components/pages/flutter_create_signup.dart'
+    deferred as _flutter_create_signup;
 import 'package:flutter_website/src/components/pages/games_adaptive_media.dart'
     deferred as _games_adaptive_media;
 import 'package:flutter_website/src/components/pages/showcase_grid.dart'
@@ -48,6 +52,8 @@ import 'package:site_shared/components/common/client/copy_button.dart'
     deferred as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
+import 'package:site_shared/components/layout/theme_switcher.dart'
+    deferred as _theme_switcher;
 
 /// Default [ClientOptions] for use with your Jaspr project.
 ///
@@ -87,11 +93,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
       (p) => _tabs.Tabs(
         title: p.mountOrNull(p.get<String?>('title')),
         header: p.mountOrNull(p.get<String?>('header')),
-        labels: p.get<List<Object?>>('labels').cast<String>(),
         tabs: p
             .get<List<Object?>>('tabs')
-            .cast<String>()
-            .map((i) => p.mount(i))
+            .cast<Map<String, Object?>>()
+            .map((i) => _tabs.Tab.decode(i, p.mount))
             .toList(),
         noSpy: p.get<bool>('noSpy'),
       ),
@@ -101,10 +106,12 @@ ClientOptions get defaultClientOptions => ClientOptions(
       (p) => _header.Header(
         contrastLogoSrc: p.get<String>('contrastLogoSrc'),
         defaultLogoSrc: p.get<String>('defaultLogoSrc'),
+        darkLogoSrc: p.get<String>('darkLogoSrc'),
         banner: _banner_content.BannerContent.fromJson(
           p.get<Map<String, Object?>>('banner'),
         ),
         pageUrl: p.get<String>('pageUrl'),
+        supportsDarkMode: p.get<bool>('supportsDarkMode'),
       ),
       loader: _header.loadLibrary,
     ),
@@ -134,6 +141,16 @@ ClientOptions get defaultClientOptions => ClientOptions(
         past: p.get<bool>('past'),
       ),
       loader: _events_grid.loadLibrary,
+    ),
+    'flutter_create_countdown': ClientLoader(
+      (p) => _flutter_create_countdown.FlutterCreateCountdown(),
+      loader: _flutter_create_countdown.loadLibrary,
+    ),
+    'flutter_create_signup': ClientLoader(
+      (p) => _flutter_create_signup.FlutterCreateSignup(
+        compact: p.get<bool>('compact'),
+      ),
+      loader: _flutter_create_signup.loadLibrary,
     ),
     'games_adaptive_media': ClientLoader(
       (p) => _games_adaptive_media.GamesAdaptiveMedia(
@@ -233,6 +250,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
         runAutomatically: p.get<bool>('runAutomatically'),
       ),
       loader: _dartpad_injector.loadLibrary,
+    ),
+    'site_shared:theme_switcher': ClientLoader(
+      (p) => _theme_switcher.ThemeSwitcher(),
+      loader: _theme_switcher.loadLibrary,
     ),
   },
 );

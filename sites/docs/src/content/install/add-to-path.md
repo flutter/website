@@ -12,7 +12,7 @@ Adding Flutter to your `PATH` allows you to use the
 
 :::tip
 If you haven't downloaded Flutter yet,
-follow [Set up and test drive Flutter][] instead.
+follow [Install Flutter with VS Code][] instead.
 :::
 
 <div class="card-grid">
@@ -50,7 +50,7 @@ follow [Set up and test drive Flutter][] instead.
   </a>
 </div>
 
-[Set up and test drive Flutter]: /install/quick
+[Install Flutter with VS Code]: /install/with-vs-code
 
 ## Windows
 

@@ -7,8 +7,7 @@
 # - link: Required, absolute https URL that the whole banner links to.
 
 text: >-
-  Flutter 3.47 is here! Standalone design packages are now opt-in.
-  Learn more
+  Flutter 3.50 is live! Read the blog post
 mobileText: >-
-  Flutter 3.47 is here! Learn more
-link: https://flutter.dev/blog/whats-new-in-flutter-3-47
+  Flutter 3.50 is live! Read the blog post
+link: https://flutter.dev/blog/whats-new-in-flutter-3-50

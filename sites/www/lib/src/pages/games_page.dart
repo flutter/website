@@ -101,87 +101,89 @@ class GamesPage extends StatelessComponent {
             From card games to platformers and casual 2D games. Start building your first game in minutes with templates to get started fast.
           '''),
             ]),
-            labels: const [
-              'Endless Runner',
-              'Basic Template',
-              'Card Game',
-            ],
             tabs: [
-              .fragment([
-                div(classes: 'media', [
-                  img(
-                    src: context.asset(
-                      'images/template-endless-runner.webp',
+              Tab(
+                header: 'Endless Runner',
+                content: .fragment([
+                  div(classes: 'media', [
+                    img(
+                      src: context.asset(
+                        'images/template-endless-runner.webp',
+                      ),
+                      alt: 'Endless Runner',
                     ),
-                    alt: 'Endless Runner',
-                  ),
-                ]),
-                const div(classes: 'text', [
-                  h2(classes: 'title first-tab', [.text('Endless Runner')]),
-                  p(classes: 'body', [
-                    .text('''
+                  ]),
+                  const div(classes: 'text', [
+                    h2(classes: 'title first-tab', [.text('Endless Runner')]),
+                    p(classes: 'body', [
+                      .text('''
                   A side-scrolling infinite loop game that uses the Flame Game Engine to animate a character that avoids obstacles while running through the map.
                 '''),
+                    ]),
+                    div(classes: 'a-wrapper', [
+                      a(
+                        classes: 'btn white-btn',
+                        href: 'https://github.com/flutter/games/tree/main/templates/endless_runner',
+                        [.text('Get started')],
+                      ),
+                    ]),
                   ]),
-                  div(classes: 'a-wrapper', [
-                    a(
-                      classes: 'btn white-btn',
-                      href: 'https://github.com/flutter/games/tree/main/templates/endless_runner',
-                      [.text('Get started')],
+                ]),
+              ),
+              Tab(
+                header: 'Basic Template',
+                content: .fragment([
+                  div(classes: 'media', [
+                    img(
+                      src: context.asset('images/template-basic.webp'),
+                      alt: 'Basic Template',
                     ),
                   ]),
-                ]),
-              ]),
-
-              .fragment([
-                div(classes: 'media', [
-                  img(
-                    src: context.asset('images/template-basic.webp'),
-                    alt: 'Basic Template',
-                  ),
-                ]),
-                const div(classes: 'text', [
-                  h2(classes: 'title second-tab', [
-                    .text('Basic Template'),
-                  ]),
-                  p(classes: 'body', [
-                    .text('''
+                  const div(classes: 'text', [
+                    h2(classes: 'title second-tab', [
+                      .text('Basic Template'),
+                    ]),
+                    p(classes: 'body', [
+                      .text('''
                   A simple template to get started with your first Flutter game including start and end screens, audio integrations and game settings pages.
                 '''),
+                    ]),
+                    div(classes: 'a-wrapper', [
+                      a(
+                        classes: 'btn white-btn',
+                        href: 'https://github.com/flutter/games/tree/main/templates/basic',
+                        [.text('Get started')],
+                      ),
+                    ]),
                   ]),
-                  div(classes: 'a-wrapper', [
-                    a(
-                      classes: 'btn white-btn',
-                      href: 'https://github.com/flutter/games/tree/main/templates/basic',
-                      [.text('Get started')],
+                ]),
+              ),
+              Tab(
+                header: 'Card Game',
+                content: .fragment([
+                  div(classes: 'media', [
+                    img(
+                      src: context.asset('images/template-card-game.webp'),
+                      alt: 'Card Game',
                     ),
                   ]),
-                ]),
-              ]),
-
-              .fragment([
-                div(classes: 'media', [
-                  img(
-                    src: context.asset('images/template-card-game.webp'),
-                    alt: 'Card Game',
-                  ),
-                ]),
-                const div(classes: 'text', [
-                  h2(classes: 'title third-tab', [.text('Card Game')]),
-                  p(classes: 'body', [
-                    .text('''
+                  const div(classes: 'text', [
+                    h2(classes: 'title third-tab', [.text('Card Game')]),
+                    p(classes: 'body', [
+                      .text('''
                   Drag and drop cards in a simple UI for a card game built from the Basic Template, ready for multiplayer integration and more
                 '''),
-                  ]),
-                  div(classes: 'a-wrapper', [
-                    a(
-                      classes: 'btn white-btn',
-                      href: 'https://github.com/flutter/games/tree/main/templates/card',
-                      [.text('Get started')],
-                    ),
+                    ]),
+                    div(classes: 'a-wrapper', [
+                      a(
+                        classes: 'btn white-btn',
+                        href: 'https://github.com/flutter/games/tree/main/templates/card',
+                        [.text('Get started')],
+                      ),
+                    ]),
                   ]),
                 ]),
-              ]),
+              ),
             ],
           ),
           const div(classes: 'divider', []),

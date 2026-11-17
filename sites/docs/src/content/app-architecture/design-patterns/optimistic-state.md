@@ -432,6 +432,10 @@ while also displaying a Snackbar with an error message.
 ```dartpad title="Flutter Optimistic State example in DartPad" run="true"
 // ignore_for_file: avoid_print
 
+// DartPad doesn't support `material_ui` yet,
+// so this example imports Material from the Flutter SDK.
+// To run locally, depend on `material_ui` and use this import instead:
+// import 'package:material_ui/material_ui.dart';
 import 'package:flutter/material.dart';
 
 void main() {

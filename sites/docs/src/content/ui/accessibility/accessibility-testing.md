@@ -109,9 +109,22 @@ using the following command line flag in profile and release modes:
 flutter run -d chrome --profile --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=true
 ```
 
-With the flag activated, the semantic nodes appear on top of the widgets;
+Alternatively, you can enable semantic node visualization in your custom
+`flutter_bootstrap.js` [initialization configuration][] by setting
+`debugShowSemanticsNodes: true`:
+
+```js title="web/flutter_bootstrap.js"
+_flutter.loader.load({
+  config: {
+    debugShowSemanticsNodes: true,
+  },
+});
+```
+
+When enabled, the semantic nodes appear on top of the widgets;
 you can verify that the semantic elements are placed where they should be.
 If the semantic nodes are incorrectly placed, please [file a bug report][].
 
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 [file a bug report]: https://goo.gle/flutter_web_issue
+[initialization configuration]: /platform-integration/web/initialization#customize-the-flutter-loader

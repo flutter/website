@@ -8,8 +8,8 @@ author: redbrogdon
 coverImage:
   alt: ""
   caption: "Learn how to use client-side functions"
-  url: images/A2UI.gif
-socialImage: images/A2UI_Still.png
+  url: images/A2UI.webp
+socialImage: images/A2UI_Still.webp
 category: deep-dive
 layout: blog
 ---

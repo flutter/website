@@ -65,18 +65,11 @@ class BlogIndex extends StatelessComponent {
         classes: 'blog-posts-grid',
         attributes: {'data-selected': 'all'},
         [
-          for (var i = 0; i < posts.length; i++)
+          for (final (i, (:post, :url)) in posts.indexed)
             BlogCard(
-              post: posts[i].post,
-              url: posts[i].url,
-              priority: switch (i) {
-                0 => BlogCardPriority.featured,
-                < 5 => BlogCardPriority.high,
-                _ => BlogCardPriority.normal,
-              },
-              className: i == 0
-                  ? 'layout-featured'
-                  : (i < 5 ? 'layout-grid' : 'layout-list'),
+              post: post,
+              url: url,
+              layout: .forIndex(i),
             ),
         ],
       ),
