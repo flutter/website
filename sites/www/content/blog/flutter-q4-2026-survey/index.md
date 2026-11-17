@@ -1,7 +1,7 @@
 ---
 title: "Flutter Q4 survey"
 description: >-
-  Just a reminder. Please take the Flutter Q2 survey! The survey closes at the
+  Just a reminder. Please take the Flutter Q4 survey! The survey closes at the
   end of day on Wednesday, December 2nd.
 publishDate: 2026-11-18
 author: CarlosMendonca
