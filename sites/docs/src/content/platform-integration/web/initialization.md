@@ -112,11 +112,16 @@ When you build with [`flutter build web --web-content-hash`][web-content-hashing
 Flutter injects the content-hashed entrypoint filenames (`mainJsPath`,
 `mainWasmPath`, `jsSupportRuntimePath`) and hashed asset manifest mappings
 (`assetManifest`, `fontManifest`, `extraAssets`) into
-`{% raw %}{{flutter_build_config}}{% endraw %}`. Custom `web/index.html` or
-`web/flutter_bootstrap.js` files must include
-`{% raw %}{{flutter_build_config}}{% endraw %}` and call `_flutter.loader.load()`
-rather than hardcoding `"main.dart.js"` or calling the deprecated
-`FlutterLoader.loadEntrypoint()` API.
+`{% raw %}{{flutter_build_config}}{% endraw %}`.
+If a custom `web/index.html` or `web/flutter_bootstrap.js` file hardcodes
+`main.dart.js` or calls the deprecated `FlutterLoader.loadEntrypoint()` method,
+the build fails.
+A custom `web/index.html` file must load `flutter_bootstrap.js`, or inline
+`{% raw %}{{flutter_bootstrap_js}}{% endraw %}` or
+`{% raw %}{{flutter_build_config}}{% endraw %}`.
+A custom `web/flutter_bootstrap.js` file must include
+`{% raw %}{{flutter_build_config}}{% endraw %}` and call
+`_flutter.loader.load()`.
 :::
 
 [web-content-hashing]: /deployment/web#web-content-hashing
