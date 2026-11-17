@@ -327,8 +327,7 @@ many others:
 
 ## Deploy to Firebase Hosting {:#deploying-to-firebase-hosting}
 
-You can use the Firebase CLI to build and release your Flutter app with Firebase
-Hosting.
+You can use the Firebase CLI to deploy your Flutter web app to Firebase Hosting.
 
 ### Before you begin
 
@@ -356,9 +355,9 @@ npm install -g firebase-tools
       enter `build/web`.
     * Choose whether to configure the site as a single-page application
       (rewriting all URLs to `/index.html`).
-      If `build/web/index.html` already exists,
-      answer `no` when asked whether to overwrite it.
     * Choose whether to set up automatic builds and deploys with GitHub.
+    * If `build/web/index.html` already exists,
+      answer `no` when asked whether to overwrite it.
 
 1.  Build your web app for release:
 
