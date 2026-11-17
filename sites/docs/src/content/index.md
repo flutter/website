@@ -77,38 +77,30 @@ Coming from another platform? Check out Flutter for:
 
 <div class="video-wrapper">
   <span class="video-intro">Check out the latest in Dart and Flutter</span>
-  <YouTubeEmbed id="I1uIbGh1dGE" title="What's New in Dart and Flutter 3.44" fullWidth></YouTubeEmbed>
+  <YouTubeEmbed id="K5Kk-C3IL94"
+      title="What's new in Flutter 3.50 and Dart 3.14"
+      fullWidth></YouTubeEmbed>
 </div>
 <br>
 
-For more of the latest on Dart and Flutter, check out
-the technical sessions from [Google I/O][io-wrap-up],
-like these!
+For more of the latest on Dart, Flutter, and AI,
+explore the technical sessions from [Flutter Create][flutter-create],
+including these highlights:
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="UNdQhnpm8GY" title="Vibe once, run anywhere with Google and Antigravity"></YouTubeEmbed>
+      <YouTubeEmbed id="zUpNT8HWoq4"
+          title="How to build on-device AI in Flutter with LiteRT-LM and Gemma"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="O0UjId1VoRU" title="How to write really good Flutter code"></YouTubeEmbed>
+      <YouTubeEmbed id="b-u0t5QF3XY"
+          title="The new way to build custom design libraries with Flutter"></YouTubeEmbed>
     </div>
   </div>
 </div>
-
-Also, we launched a new 4-video series at Google I/O called
-the Full-stack developer guide:
-
-<div class="video-wrapper">
-  <YouTubeEmbed id="hNbY3Bmgojg" title="The Full-stack developer guide" fullWidth></YouTubeEmbed>
-</div>
-
-You can find the 4 videos in this series, as well as a wrap-up video,
-on the [Google I/O wrap-up][io-wrap-up] blog post.
-
-[io-wrap-up]: {{site.flutter-blog}}/thats-a-wrap-everything-flutter-at-google-i-o-2026-f316e57186e3
 
 To learn about all of the Flutter video series,
 visit our [videos][] page.
@@ -117,4 +109,5 @@ We release new videos almost every week!
 
 <a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev">Check out the Flutter YouTube channel</a>
 
+[flutter-create]: {{site.yt.playlist}}PLXGqqcxNBa1s
 [videos]: /resources/videos
