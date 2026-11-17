@@ -338,6 +338,8 @@ To get started, [install or update][install-firebase-cli] the Firebase CLI:
 npm install -g firebase-tools
 ```
 
+<a id="initialize-firebase" aria-hidden="true"></a>
+
 ### Initialize and deploy
 
 1. In the root directory of your Flutter project,
