@@ -3,9 +3,6 @@ title: "Announcing A2UI 1.0 and `a2ui_flutter`"
 description: "Faster, Safer, Modular Generative UI for Flutter"
 publishDate: 2026-11-17
 author: [redbrogdon, vpm238]
-coverImage:
-  alt: "xxx"
-  url: images/xxx
 category: deep-dive
 layout: blog
 ---
@@ -222,8 +219,13 @@ leg quantities, the order ticket calls the backend directly
 via `callAgentFunction`, updating weights, fees, and remaining cash
 in-place in under a second without opening a new chat turn.
 
-Image: Screenshot from Somnio Software's crypto portfolio companion (callAgent_Function v2.mov) showing the multi-leg BTC, ETH, and SOL draft order card updating weights, fees, and remaining cash in-place as the SOL stepper increments from 16 to 22.
-[PENDING: I don't have access to this image]
+<video
+  src="images/callagent-function-v2.mov"
+  playsinline
+  preload="metadata"
+  style="width: 100%; height: auto;"
+  aria-label="Somnio Software's crypto portfolio companion showing the multi-leg BTC, ETH, and SOL draft order card updating weights, fees, and remaining cash in-place as the SOL stepper increments from 16 to 22.">
+</video>
 
 ## 5. Observability and customization with Extensibility Metadata
 
