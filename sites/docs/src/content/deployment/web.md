@@ -342,25 +342,25 @@ npm install -g firebase-tools
 
 ### Initialize and deploy
 
-1. In the root directory of your Flutter project,
-   run the initialization command:
+1.  In the root directory of your Flutter project,
+    run the initialization command:
 
     ```console
     firebase init hosting
     ```
 
-2. Follow the CLI prompts:
+1.  Follow the CLI prompts:
 
-   * Select an existing Firebase project or create a new project.
-   * When asked `What do you want to use as your public directory?`,
-     enter `build/web`.
-   * Choose whether to configure the site as a single-page application
-     (rewriting all URLs to `/index.html`).
-     If `build/web/index.html` already exists,
-     answer `no` when asked whether to overwrite it.
-   * Choose whether to set up automatic builds and deploys with GitHub.
+    * Select an existing Firebase project or create a new project.
+    * When asked `What do you want to use as your public directory?`,
+      enter `build/web`.
+    * Choose whether to configure the site as a single-page application
+      (rewriting all URLs to `/index.html`).
+      If `build/web/index.html` already exists,
+      answer `no` when asked whether to overwrite it.
+    * Choose whether to set up automatic builds and deploys with GitHub.
 
-3. Build your web app for release:
+1.  Build your web app for release:
 
     ```console
     flutter build web
@@ -370,11 +370,12 @@ npm install -g firebase-tools
     To run `flutter build web` automatically whenever you deploy,
     add `"predeploy": ["flutter build web"]` to the `"hosting"` section
     of your `firebase.json` file.
-    For recommended `Cache-Control` headers and single-page application
-    rewrite rules in `firebase.json`, check out the [Web FAQ][web-faq-caching].
+    For recommended `Cache-Control` headers and
+    single-page application rewrite rules in `firebase.json`,
+    check out the [Web FAQ][web-faq-caching].
     :::
 
-4. Deploy the release bundle to Firebase Hosting:
+1.  Deploy the release bundle to Firebase Hosting:
 
     ```console
     firebase deploy
