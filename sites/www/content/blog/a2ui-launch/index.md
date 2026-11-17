@@ -1,6 +1,6 @@
 ---
 title: "Announcing A2UI 1.0 and a2ui_flutter"
-description: "Faster, Safer, More modular Generative UI for Flutter"
+description: "Faster, safer, more modular generative UI for Flutter"
 publishDate: 2026-11-17
 author: [redbrogdon, vpm238]
 category: deep-dive
