@@ -11,11 +11,11 @@ description: >-
 ## Summary
 
 Android Gradle Plugin (AGP) 9 deprecated its legacy variant APIs,
-and AGP 10 removes them.
-In Flutter 3.50, the Flutter Gradle Plugin (FGP) migrated off
-`android.applicationVariants`, `android.libraryVariants`, `variant.outputs`,
-and `versionCodeOverride` to AGP's public [Variant API][]
-(`androidComponents.onVariants`).
+and the [AGP migration timeline][] schedules their removal for AGP 10.
+To prepare, the Flutter Gradle Plugin (FGP) in Flutter 3.50 uses AGP's public
+[Variant API][] (`androidComponents.onVariants`).
+FGP no longer calls `android.applicationVariants`, `android.libraryVariants`,
+`variant.outputs`, or `versionCodeOverride`.
 
 You don't need to edit your Gradle scripts in Flutter 3.50.1 or later
 if your project meets all of the following conditions:
@@ -34,7 +34,7 @@ if your project meets all of the following conditions:
 Existing app scripts that call `android.applicationVariants` or
 `versionCodeOverride` keep working in Flutter 3.50 while
 `android.newDsl=false` is the default.
-For details about AGP 10 readiness,
+To test your build without legacy AGP APIs,
 refer to [Opt in to the new AGP DSL early][opt-in].
 
 :::important Use Flutter 3.50.1 or later
@@ -76,7 +76,7 @@ build pattern, or Gradle error:
 | App developer | Fails `--split-per-abi` with `Flutter cannot give each split APK of variant '<name>' a distinct versionCode` | [Fix split-per-ABI version code errors][vc-split] |
 | App developer | Sets `outputFileName`, copies APKs, or fails naming `SingleArtifact.APK` | [Rename, copy, or transform APK outputs][apk-outputs] |
 | App developer | Hits `UnknownTaskException` or `ClassCastException` on `copyFlutterAssets<Variant>`, or reads `merge<Variant>Assets/` | [Configure Flutter Gradle tasks in build scripts][flutter-tasks] |
-| App developer | Enables `android.newDsl=true` to test AGP 10 compatibility | [Opt in to the new AGP DSL early][opt-in] |
+| App developer | Enables `android.newDsl=true` to test without legacy AGP APIs | [Opt in to the new AGP DSL early][opt-in] |
 | Add-to-app or AAR | Sees a `flutter.hostAppProjectName` warning, uses custom host build types, or runs `flutter build aar --flavor` | [Update add-to-app projects and AAR builds][add-to-app] |
 | Plugin author | Calls `android.libraryVariants`, `android.applicationVariants`, or Flutter's tasks in a plugin | [Migrate Android plugins][plugins] |
 
@@ -473,8 +473,10 @@ androidComponents {
 
 ### Opt in to the new AGP DSL early
 
-AGP 9 deprecated the legacy DSL and variant APIs behind `android.newDsl=false`,
-and AGP 10 removes both `android.newDsl=false` and the legacy APIs.
+AGP 9 enables the [new AGP DSL][] by default and deprecates the legacy DSL and
+variant APIs behind `android.newDsl=false`.
+The [AGP migration timeline][] schedules the removal of `android.newDsl=false`
+and the legacy variant APIs for AGP 10.
 Flutter 3.50 sets `android.newDsl=false` by default.
 Build scripts calling `android.applicationVariants` or `versionCodeOverride`
 keep working in Flutter 3.50 until you migrate them to
@@ -520,6 +522,7 @@ In stable release: 3.50
   legacy variant API.
 
 [add-to-app]: #update-add-to-app-projects-and-aar-builds
+[AGP migration timeline]: {{site.android-dev}}/build/releases/gradle-plugin-roadmap#agp-10
 [apk-outputs]: #rename-copy-or-transform-apk-outputs
 [flutter-tasks]: #configure-flutter-gradle-tasks-in-build-scripts
 [Issue 180137]: {{site.repo.flutter}}/issues/180137
@@ -529,6 +532,7 @@ In stable release: 3.50
 [Issue 196559]: {{site.repo.flutter}}/issues/196559
 [Issue 196696]: {{site.repo.flutter}}/issues/196696
 [Migrating Flutter Android projects to built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
+[new AGP DSL]: {{site.android-dev}}/build/releases/agp-9-0-0-release-notes#android-gradle-plugin-new-dsl
 [opt-in]: #opt-in-to-the-new-agp-dsl-early
 [plugins]: #migrate-android-plugins
 [Variant API]: {{site.android-dev}}/build/extend-agp
