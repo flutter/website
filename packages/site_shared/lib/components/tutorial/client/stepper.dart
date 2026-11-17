@@ -62,12 +62,13 @@ class _InteractiveStepperState extends State<InteractiveStepper> {
     }
   }
 
-  void _toggleStep(int index, web.ToggleEvent event) {
-    if (event.newState == 'open') {
+  void _toggleStep(int index, web.Event event) {
+    final target = event.target as web.HTMLDetailsElement;
+    if (target.open) {
       if (openStep == index) return;
       setState(() => openStep = index);
       _updatePageHeading();
-    } else if (event.newState == 'closed') {
+    } else {
       if (openStep != index) return;
       setState(() => openStep = -1);
     }
@@ -127,7 +128,7 @@ class _InteractiveStepperState extends State<InteractiveStepper> {
         details(
           open: !component.collapsible || index == openStep,
           events: component.collapsible
-              ? {'toggle': (e) => _toggleStep(index, e as web.ToggleEvent)}
+              ? {'toggle': (e) => _toggleStep(index, e)}
               : null,
 
           [

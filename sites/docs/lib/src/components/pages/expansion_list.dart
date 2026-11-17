@@ -129,7 +129,7 @@ class _ExpansionListState extends State<ExpansionList> {
                 href: '#${component.baseId}-expansion-$index',
                 attributes: {
                   'role': 'button',
-                  'aria-controls': '#${component.baseId}-expansion-$index',
+                  'aria-controls': '${component.baseId}-expansion-$index',
                 },
                 [
                   div(classes: 'expansion-panel-title', [
