@@ -22,7 +22,7 @@ With 1.0, the protocol and SDK are tighter, faster,
 and equipped with the structural guardrails production teams need,
 on mobile, web, and desktop.
 
-<DashImage figure src="images/examples.png">
+<DashImage figure src="images/examples.webp" />
 
 In this post, we'll look at how Generative UI earns its place
 alongside traditional Flutter screens,
@@ -40,7 +40,7 @@ and navigation tabs are fast and predictable.
 If a static form already handles a workflow cleanly,
 sticking with deterministic UI is a great option.
 
-<DashImage figure src="images/grounding-genui.png">
+<DashImage figure src="images/grounding-genui.webp" />
 
 Generative UI shines when the right interface depends
 on reasoning over open-ended context. Take our **Commis** demo,
@@ -68,7 +68,7 @@ directly with the protocol (welcome, `a2ui_flutter`)
 and consolidate the six concepts from earlier genui releases
 into a leaner architecture:
 
-<DashImage figure src="images/a2ui-flutter-architecture.png">
+<DashImage figure src="images/a2ui-flutter-architecture.webp" />
 
 * `Transport` removed: You're no longer locked into a
   package-specific transport abstraction,
@@ -89,7 +89,7 @@ Give an agent too little freedom, and it can't adapt to your users;
 give it too much, and it might notice that a `Button` accepts
 a child and decide to stuff a `DataTable` inside it.
 
-<DashImage figure src="images/dual-layer-guardrails.png">
+<DashImage figure src="images/dual-layer-guardrails.webp" />
 
 A2UI 1.0 solves this with `allowedParents` and `allowedChildren`
 in your catalog schema. These properties act as dual-layer
@@ -97,10 +97,7 @@ guardrails: they're part of the catalog schema in the agent's prompt,
 so the LLM knows valid nesting rules upfront,
 and they're enforced on the client before widgets are built.
 
-<DashImage figure src="images/catalog-schema.png"
-alt="allowedParents and allowedChildren reach the model in the catalog schema,
-and the Flutter client rejects a DataTable placed inside
-MyButton before building widgets" />
+<DashImage figure src="images/catalog-schema.webp" alt="allowedParents and allowedChildren reach the model in the catalog schema, and the Flutter client rejects a DataTable placed inside MyButton before building widgets" />
 
 ```json
 {
@@ -140,7 +137,7 @@ In the following example, Express describes five components
 in 46% fewer characters than minified JSON,
 which means fewer tokens for the model to generate.
 
-<DashImage figure src="images/express-inference-format.png">
+<DashImage figure src="images/express-inference-format.webp" />
 
 **Solid Software** put Express to the test in **GenUI Clinic**,
 a Flutter healthcare prototype that composes personalized,
@@ -153,7 +150,7 @@ Their team found that switching to the Express format cut
 full-screen dashboard generation from **10 seconds down to 5 seconds**,
 making real-time clinical data retrieval feel practical for future projects.
 
-<DashImage figure src="images/solid-software-example.png">
+<DashImage figure src="images/solid-software-example.webp" />
 
 ## 3. Modular design systems with Multiple Catalogs
 
@@ -162,10 +159,7 @@ forcing teams to manually merge core UI components with
 feature-specific widgets. In A2UI 1.0, **one surface can mix
 components from multiple catalogs**
 
-<DashImage figure src="images/multiple-catalogs.png"
-alt="basicCatalog, healthWidgetsCatalog, and customChartCatalog
-feed one MessageProcessor, and a single surface mixes components
-from all three"/>
+<DashImage figure src="images/multiple-catalogs.webp" alt="basicCatalog, healthWidgetsCatalog, and customChartCatalog feed one MessageProcessor, and a single surface mixes components from all three" />
 
 In Flutter, just pass a list of catalogs when creating
 your `MessageProcessor`:
@@ -194,10 +188,7 @@ chip warrants a new LLM turn, but adjusting a slider, stepper,
 or filter inside an existing card shouldn't wait several seconds
 for a round trip.
 
-<DashImage figure src="images/solid-software-example.png"
-alt="Tapping a chart bar starts a new LLM turn, while tapping
-a stepper calls an agent function directly and updates the
-same order card"/>
+<DashImage figure src="images/callagent-function.webp" alt="Tapping a portfolio chart bar starts a new LLM turn. Changing the SOL quantity uses callAgentFunction to update weights, fees, and remaining cash on the same draft order card." />
 
 New in A2UI 1.0, `callAgentFunction` lets a rendered widget
 invoke a deterministic function exposed by the agent backend directly.
@@ -234,9 +225,7 @@ alongside A2UI messages, such as routing flags, styling hints,
 security context, or correlation tokens that tie multi-agent
 backend logs to mobile telemetry.
 
-<DashImage figure src="images/extensibility-metadata.png"
-  alt="A correlation token in A2UI metadata ties Python
-  multi-agent backend logs to the Flutter app's telemetry"/>
+<DashImage figure src="images/extensibility-metadata.webp" alt="A correlation token in A2UI metadata ties Python multi-agent backend logs to the Flutter app's telemetry" />
 
 A2UI 1.0 supports **extensibility metadata** on surfaces,
 individual components, catalog definitions, and actions.
@@ -286,10 +275,7 @@ and any of them can drive the same Flutter app:
   and `a2ui-a2a` for the A2A protocol
 * TypeScript: `@a2ui/agent` for Node.js
 
-<DashImage figure src="images/building-the-agent.png"
-  alt="An `a2ui_flutter` app driven by an agent built with `a2ui_agent`
-  and Genkit Dart, or with the Python or TypeScript agent SDK and
-  frameworks such as Google ADK and CopilotKit"/>
+<DashImage figure src="images/building-the-agent.webp" alt="An `a2ui_flutter` app driven by an agent built with `a2ui_agent` and Genkit Dart, or with the Python or TypeScript agent SDK and frameworks such as Google ADK and CopilotKit" />
 
 For a full-stack Dart app, pair `a2ui_agent` with
 [Genkit Dart](https://genkit.dev/docs/dart/get-started/),
