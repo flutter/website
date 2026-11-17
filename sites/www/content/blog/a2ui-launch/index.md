@@ -6,7 +6,6 @@ author: [redbrogdon, vpm238]
 category: deep-dive
 layout: blog
 ---
-[PENDING: Need a hero image]
 
 When an AI agent helps a user reason over data or take action
 inside an app, plain text is rarely the best interface.
