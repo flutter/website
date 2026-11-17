@@ -33,10 +33,10 @@ Two version rules apply alongside the minimums in the table:
   on KGP `2.4.10`.
   FGP applies `kotlin-android` whenever KGP is on the classpath, even without
   Kotlin source files.
-  In `settings.gradle(.kts)`, Gradle resolves unpinned KGP versions up to
-  `2.4.10` and logs a warning.
-  Pinning KGP below `2.4.10`, or setting `ext.kotlin_version` below `2.4.10`,
-  fails validation.
+  Gradle dependency resolution upgrades lower KGP versions in
+  `settings.gradle(.kts)` `plugins {}` (such as `2.4.0`) to `2.4.10`,
+  and Flutter logs a warning.
+  Only a strict KGP version constraint below `2.4.10` fails validation.
   For details, refer to [Built-in Kotlin and the new AGP DSL][kotlin-and-dsl].
 - **AGP 10 upper bound:** Flutter 3.50 doesn't support AGP 10 or later,
   and builds configured with AGP 10 fail validation.
@@ -48,16 +48,23 @@ Unmodified apps created with Flutter 3.44 or Flutter 3.47 use AGP versions
 below `9.1.1` and fail validation until updated.
 :::
 
-Use the following table to check how Flutter 3.50 affects your project:
+[Check your versions][check-versions] to determine what your project needs:
 
-| Project configuration | Behavior on Flutter 3.50 | Action |
-| :--- | :--- | :--- |
-| AGP `9.1.1` through `9.x`, Gradle `9.3.1+`, Java 17+, and built-in Kotlin (or KGP `2.4.10+`) | Passes validation; warns below AGP `9.3.1`, Gradle `9.5.0`, or KGP `2.4.20` | Optional: update to `9.3.1`, `9.5.0`, and [built-in Kotlin][] (or KGP `2.4.20`) to clear warnings |
-| Unmodified Flutter 3.47 app (AGP `9.1.0`, Gradle `9.3.1`, KGP `2.4.0`) | Fails on AGP; warns on Gradle and KGP (resolved to `2.4.10`) | [Update AGP][update-agp], [Gradle][update-gradle], and [KGP][update-kgp] |
-| Unmodified Flutter 3.44 app (AGP `9.0.1`, Gradle `9.1.0`, KGP `2.3.20`) | Fails on Gradle and AGP; warns on KGP (resolved to `2.4.10`) | [Update AGP][update-agp], [Gradle][update-gradle], and [KGP][update-kgp] |
-| Pre-3.16 `buildscript` app (`classpath` and `ext.kotlin_version`) | Fails on any tool version below the 3.50 minimum | Update `android/build.gradle` and `gradle-wrapper.properties` ([Check your versions][check-versions]) |
-| Flutter module or add-to-app project | `flutter pub get` updates standalone `.android/`; host Android apps validate host versions | Update the host Android project's Gradle, AGP, and KGP versions ([Check your versions][check-versions]) |
-| Android plugin | Consuming app sets tool versions; plugin's `example/` app runs validation | [Test Flutter plugins][test-plugins] on AGP `9.1.1` and `9.3.1` |
+- **Projects meeting the minimums:** No changes are needed
+  if your Android project already uses AGP `9.1.1` through `9.x`,
+  Gradle `9.3.1` or later, Java 17 or later,
+  and [built-in Kotlin][] (or KGP `2.4.10` or later).
+  Updating to AGP `9.3.1`, Gradle `9.5.0`, and built-in Kotlin
+  (or KGP `2.4.20`) is optional and clears build warnings.
+- **Projects below the minimums:** In your Flutter app or add-to-app host
+  project (including unmodified apps created with Flutter 3.47 or earlier),
+  update [AGP][update-agp], [Gradle][update-gradle], and
+  (when `android.builtInKotlin=false`) [KGP][update-kgp].
+  Standalone Flutter modules regenerate `.android/` automatically
+  when you run `flutter pub get`.
+- **Android plugins:** Consuming apps set the toolchain versions.
+  To validate your plugin's `example/` app,
+  refer to [Test Flutter plugins][test-plugins].
 
 ## Background
 
@@ -106,8 +113,6 @@ Inspect the build files and toolchain settings in your Flutter app
 
 - **AGP and KGP:** Check `plugins {}` in `android/settings.gradle.kts`
   (or `android/settings.gradle`), or check `gradle/libs.versions.toml`.
-  On projects created before Flutter 3.16, check the `buildscript` block in
-  `android/build.gradle`.
   Refer to [Update the Android Gradle Plugin][update-agp] and
   [Update the Kotlin Gradle Plugin][update-kgp].
 - **Gradle:** Check the `distributionUrl` property in
@@ -131,8 +136,8 @@ Before updating AGP, check two compatibility requirements:
 
 Update AGP to `9.3.1` (the Flutter 3.50 template default) to clear warnings,
 or to at least `9.1.1`.
-On projects created with Flutter 3.16 or later, update the `plugins {}` block
-in `android/settings.gradle.kts` (or `android/settings.gradle`).
+Set the `com.android.application` version in the `plugins {}` block of
+`android/settings.gradle.kts` (or `android/settings.gradle`).
 
 Code before migration:
 
@@ -152,30 +157,6 @@ plugins {
     // Minimum in 3.50 is 9.1.1; 9.3.1 clears warnings (requires Gradle 9.5.0+).
     id("com.android.application") version "9.3.1" apply false
     // ...
-}
-```
-
-On projects created before Flutter 3.16, update the `classpath` dependency in
-`android/build.gradle` instead.
-
-Code before migration:
-
-```groovy title="<flutter-project>/android/build.gradle"
-buildscript {
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.11.1'
-    }
-}
-```
-
-Code after migration:
-
-```groovy title="<flutter-project>/android/build.gradle"
-buildscript {
-    dependencies {
-        // Minimum in 3.50 is 9.1.1; 9.3.1 clears warnings (requires Gradle 9.5.0+).
-        classpath 'com.android.tools.build:gradle:9.3.1'
-    }
 }
 ```
 
@@ -213,10 +194,8 @@ Skip this step if your project uses [built-in Kotlin][]
 (`android.builtInKotlin=true`).
 With `android.builtInKotlin=false`, update KGP to `2.4.20` to clear warnings,
 or to at least `2.4.10`.
-
-On projects created with Flutter 3.16 or later, update
-`org.jetbrains.kotlin.android` in `android/settings.gradle.kts`
-(or `android/settings.gradle`).
+Set the `org.jetbrains.kotlin.android` version in the `plugins {}` block of
+`android/settings.gradle.kts` (or `android/settings.gradle`).
 
 Code before migration:
 
@@ -234,30 +213,6 @@ plugins {
     // ...
     // Minimum when applied is 2.4.10; 2.4.20 clears warnings.
     id("org.jetbrains.kotlin.android") version "2.4.20" apply false
-}
-```
-
-On projects created before Flutter 3.16, update `ext.kotlin_version` in
-`android/build.gradle` instead.
-Unlike unpinned `plugins {}` declarations, FGP checks `ext.kotlin_version`
-directly and fails validation below `2.4.10`.
-
-Code before migration:
-
-```groovy title="<flutter-project>/android/build.gradle"
-buildscript {
-    ext.kotlin_version = '2.2.20'
-    // ...
-}
-```
-
-Code after migration:
-
-```groovy title="<flutter-project>/android/build.gradle"
-buildscript {
-    // Minimum when applied is 2.4.10; 2.4.20 clears warnings.
-    ext.kotlin_version = '2.4.20'
-    // ...
 }
 ```
 
