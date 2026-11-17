@@ -18,7 +18,7 @@ layout: blog
 
 Just a reminder.
 
-Please take the [Flutter Q4 survey](xxx)!
+Please take the [Flutter Q4 survey](https://g.dev/flutter/survey-26q4-55c)!
 The survey closes at the end of day on Wednesday, December 2nd.
 
 It won’t take much of your time and your feedback helps drive our roadmap.
