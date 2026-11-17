@@ -2,7 +2,7 @@
 title: "Announcing A2UI 1.0 and `a2ui_flutter`"
 description: "Faster, Safer, Modular Generative UI for Flutter"
 publishDate: 2026-11-17
-author: redbrogdon, vpm238
+author: [redbrogdon, vpm238]
 coverImage:
   alt: "xxx"
   url: images/xxx
@@ -56,12 +56,13 @@ Because the agent both reasons about the request and builds the UI,
 the user can switch up the menu with no chance of picking a
 shellfish dish.
 
-The following video shows Commis, the catering app, pairing
-deterministic recipe and job tabs with an agent surface that
-dynamically builds a shellfish-safe recipe checklist:
-
-<insert images/Commit.mp4>
-[PENDING: convert this mp4 to gif]
+<video
+  src="images/Commis-file.mp4"
+  playsinline
+  preload="metadata"
+  style="width: 100%; height: auto;"
+  aria-label="Commis, the catering app, pairs deterministic recipe and job tabs with an agent surface that dynamically bilds a shellfish-safe recipe checklist">
+</video>
 
 ## From `genui` to `a2ui_flutter`: A simpler architecture
 
