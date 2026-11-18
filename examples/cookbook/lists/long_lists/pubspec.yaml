@@ -8,6 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: any
 
 flutter:
   uses-material-design: true
