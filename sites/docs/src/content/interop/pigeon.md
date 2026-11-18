@@ -39,6 +39,11 @@ Try this preview option if your use case requires any of the following:
   (for example, audio or camera frames).
 - You're calling native code from background Dart isolates.
 
+For a walkthrough of building a plugin using Pigeon with native interop,
+check out [Flutter interop with Pigeon FFI][pigeon-video]:
+
+<YouTubeEmbed id="GHH5DHmg_gE" title="Flutter interop with Pigeon FFI" />
+
 ### Pigeon with platform channels
 
 Pigeon with platform channels generates standard platform channels that support
@@ -150,3 +155,4 @@ refer to the following resources:
 [shared-preferences-source]: {{site.repo.packages}}/tree/main/packages/shared_preferences
 [native-interop-demos]: {{site.repo.demos}}/tree/main/native_interop_demos
 [issue-195877]: {{site.repo.flutter}}/issues/195877
+[pigeon-video]: {{site.yt.watch}}?v=GHH5DHmg_gE

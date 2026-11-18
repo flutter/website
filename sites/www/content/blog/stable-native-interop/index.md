@@ -115,6 +115,11 @@ Before we recommend Pigeon with native interop as the default way to build plugi
 we want to hear how it works for you,
 especially if you try migrating an existing plugin that already uses Pigeon.
 
+For a walkthrough of building a plugin using Pigeon with native interop,
+check out this video:
+
+<YouTubeEmbed id="GHH5DHmg_gE" title="Flutter interop with Pigeon FFI" fullwidth />
+
 ## How to use it
 
 The workflow is the same as Pigeon with platform channels:
