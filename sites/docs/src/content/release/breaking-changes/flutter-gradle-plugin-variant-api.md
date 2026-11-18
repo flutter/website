@@ -70,8 +70,11 @@ valid version codes for split APKs:
   (refer to [Fix split-per-ABI version code errors][vc-split]).
   Use `-P force-version-code-ignoring-abi=true` only when a positive decimal
   `versionCode` already exists.
-  Without one, APKs have an empty `versionCode` (failing `adb install`) or fail
-  AGP manifest tasks.
+  Without one, AGP manifest tasks fail on non-decimal values,
+  or built APKs have an empty `versionCode` that Android reads as `0`.
+  Google Play rejects those APKs,
+  and installing one over a build with a positive `versionCode` fails with
+  `INSTALL_FAILED_VERSION_DOWNGRADE`.
 :::
 
 Use the following table to find the migration section for your role,
@@ -271,8 +274,11 @@ Enabling `force-version-code-ignoring-abi=true` gives every split APK the same
 Use this property only outside Google Play when `android {}` or
 `src/main/AndroidManifest.xml` already sets a positive decimal integer
 `versionCode`.
-Don't pass it when `versionCode` is omitted or `<= 0`: the built APKs have an
-empty `versionCode` and fail `adb install`.
+Don't pass it when `versionCode` is omitted or `<= 0`:
+the built APKs have an empty `versionCode`, which Android reads as `0`.
+Google Play rejects those APKs,
+and installing one over a build with a positive `versionCode` fails with
+`INSTALL_FAILED_VERSION_DOWNGRADE`.
 Non-decimal manifest values (`${vc}`, `@integer/...`, or `0x...`) also still
 fail AGP's manifest tasks with `NumberFormatException`.
 :::
