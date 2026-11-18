@@ -334,9 +334,6 @@ you can create one by subclassing `FlutterSceneDelegate`:
     `FlutterSceneDelegate` implements (such as `sceneDidBecomeActive`),
     always call `super` so `FlutterSceneDelegate` continues
     forwarding scene callbacks to Flutter and plugins.
-    Calling `super` on a protocol method not implemented by
-    `FlutterSceneDelegate` fails to compile in Swift or throws
-    an unrecognized selector exception in Objective-C.
     :::
 
  1. In your `Info.plist` file,
