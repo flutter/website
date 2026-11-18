@@ -63,18 +63,18 @@ valid version codes for split APKs:
   In 3.50.0, Android builds omitted assets with dot-prefixed filenames
   (such as `.env`) or underscore-prefixed directory names ([Issue 196444][]).
 - **Invalid split-APK version codes fail:**
-  In 3.50.1 and later, `--split-per-abi` fails without a positive decimal
-  `versionCode` in `android {}` or `src/main/AndroidManifest.xml`, or on `Int`
-  overflow.
+  In 3.50.1 and later, `--split-per-abi` fails when `android {}` sets no
+  `versionCode` and `src/main/AndroidManifest.xml` lacks a positive decimal
+  `android:versionCode`, including with
+  `-P force-version-code-ignoring-abi=true`.
+  Without that property, builds also fail when `abiOffset * 1000 + versionCode`
+  overflows `Int`.
+  Earlier releases built APKs with no `versionCode`,
+  which Android reads as `0`.
+  Google Play rejects those APKs, and updating a versioned build fails with
+  `INSTALL_FAILED_VERSION_DOWNGRADE`.
   Set `versionCode = flutter.versionCode` in `defaultConfig`
   (refer to [Fix split-per-ABI version code errors][vc-split]).
-  Use `-P force-version-code-ignoring-abi=true` only when a positive decimal
-  `versionCode` already exists.
-  Without one, AGP manifest tasks fail on non-decimal values,
-  or built APKs have an empty `versionCode` that Android reads as `0`.
-  Google Play rejects those APKs,
-  and installing one over a build with a positive `versionCode` fails with
-  `INSTALL_FAILED_VERSION_DOWNGRADE`.
 :::
 
 Use the following table to find the migration section for your role,
@@ -84,7 +84,7 @@ build pattern, or Gradle error:
 | :--- | :--- | :--- |
 | App developer | Computes custom `versionCode` values in `onVariants`, `applicationVariants`, or `versionCodeOverride` | [Customize version codes in Gradle build scripts][vc-custom] |
 | App developer | Hits `Querying the mapped value ... resolveManifestVersionCode<Variant>` or `CircularEvaluationException` on `versionCode` | [Customize version codes in Gradle build scripts][vc-custom] |
-| App developer | Fails `--split-per-abi` with `Flutter cannot give ... split APK of variant '<name>'` or `Circular dependency ... resolveManifestVersionCode<Variant>` | [Fix split-per-ABI version code errors][vc-split] |
+| App developer | Fails `--split-per-abi` with `Flutter cannot give ... variant '<name>' a versionCode` or `Circular dependency ... resolveManifestVersionCode<Variant>` | [Fix split-per-ABI version code errors][vc-split] |
 | App developer | Sets `outputFileName`, copies APKs, or fails naming `SingleArtifact.APK` | [Rename, copy, or transform APK outputs][apk-outputs] |
 | App developer | Hits `UnknownTaskException` or `ClassCastException` on `copyFlutterAssets<Variant>`, or reads `merge<Variant>Assets/` | [Configure Flutter Gradle tasks in build scripts][flutter-tasks] |
 | App developer | Enables `android.newDsl=true` to test without legacy AGP APIs | [Opt in to the new AGP DSL early][opt-in] |
@@ -212,27 +212,31 @@ When `android {}` omits `versionCode`, Flutter matches AGP and reads
 `android:versionCode` only from the main manifest
 (`src/main/AndroidManifest.xml` by default).
 Build-type, product-flavor, and generated overlay manifests aren't read.
-In Flutter 3.50.1 and later, `flutter build apk --split-per-abi`
-(or `-Psplit-per-abi=true`) fails when `android {}` omits `versionCode` and
-the main manifest lacks a positive decimal integer `android:versionCode`:
+In Flutter 3.50.1 and later, `--split-per-abi` (or `-Psplit-per-abi=true`)
+fails when `android {}` omits `versionCode` and the main manifest lacks a
+positive decimal `android:versionCode`.
+This check runs both by default and with
+`-P force-version-code-ignoring-abi=true`:
 
 ```plaintext noHighlight
-Flutter cannot give each split APK of variant 'release' a distinct versionCode:
-its android {} block sets no versionCode, and
+Flutter cannot give the split APKs of variant 'release' a versionCode: its
+android {} block sets no versionCode, and
 <flutter-project>/android/app/src/main/AndroidManifest.xml does not set
-android:versionCode. Google Play does not accept split APKs that share a
-versionCode. Set versionCode = flutter.versionCode in defaultConfig (or on each
-product flavor).
+android:versionCode. Android reads an APK without a versionCode as versionCode
+0. Google Play rejects such APKs, and they cannot be installed over a build of
+the app that has a versionCode. Set versionCode = flutter.versionCode in
+defaultConfig (or on each product flavor).
 ```
 
 Common triggers include omitting `versionCode` everywhere, setting a value
 `<= 0`, or using `${vc}` placeholders, `@integer/...` resources, or `0x...` hex
 literals.
-Builds also fail if `abiOffset * 1000 + versionCode` exceeds `2,147,483,647`
+Without `-P force-version-code-ignoring-abi=true`, builds also fail if
+`abiOffset * 1000 + versionCode` exceeds `2,147,483,647`
 (the highest base `versionCode` across all three ABIs is `2,147,479,647`).
-To fix missing or non-decimal manifest values, set
-`versionCode = flutter.versionCode` in `defaultConfig` (or on each product
-flavor) and remove `android:versionCode` from `AndroidManifest.xml`.
+To fix missing, non-positive, or non-decimal manifest values, set
+`versionCode = flutter.versionCode` in `defaultConfig` (or per flavor) and
+remove `android:versionCode` from `AndroidManifest.xml`.
 To share an existing positive `versionCode` across split APKs outside Google
 Play, refer to [Keep a single version code across split APKs][vc-single].
 
@@ -274,13 +278,14 @@ Enabling `force-version-code-ignoring-abi=true` gives every split APK the same
 Use this property only outside Google Play when `android {}` or
 `src/main/AndroidManifest.xml` already sets a positive decimal integer
 `versionCode`.
-Don't pass it when `versionCode` is omitted or `<= 0`:
-the built APKs have an empty `versionCode`, which Android reads as `0`.
+Passing this property doesn't bypass the manifest check when `android {}`
+omits `versionCode`.
+If `src/main/AndroidManifest.xml` omits `android:versionCode` or sets `<= 0`,
+`${vc}`, `@integer/...`, or `0x...`, the build fails with the
+`resolveManifestVersionCode<Variant>` error.
+Earlier releases built APKs with no `versionCode`, which Android reads as `0`.
 Google Play rejects those APKs,
-and installing one over a build with a positive `versionCode` fails with
-`INSTALL_FAILED_VERSION_DOWNGRADE`.
-Non-decimal manifest values (`${vc}`, `@integer/...`, or `0x...`) also still
-fail AGP's manifest tasks with `NumberFormatException`.
+and updating a versioned build fails with `INSTALL_FAILED_VERSION_DOWNGRADE`.
 :::
 
 To skip per-ABI `versionCode` offsets across split APKs,
