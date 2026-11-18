@@ -84,7 +84,7 @@ build pattern, or Gradle error:
 | :--- | :--- | :--- |
 | App developer | Computes custom `versionCode` values in `onVariants`, `applicationVariants`, or `versionCodeOverride` | [Customize version codes in Gradle build scripts][vc-custom] |
 | App developer | Hits `Querying the mapped value ... resolveManifestVersionCode<Variant>` or `CircularEvaluationException` on `versionCode` | [Customize version codes in Gradle build scripts][vc-custom] |
-| App developer | Fails `--split-per-abi` with `Flutter cannot give ... variant '<name>' a versionCode` or `Circular dependency ... resolveManifestVersionCode<Variant>` | [Fix split-per-ABI version code errors][vc-split] |
+| App developer | Fails `--split-per-abi` with `Flutter cannot give ... variant '<name>' a versionCode` or `Circular dependency ... resolveManifestVersionCode<Variant>` (with or without `-P force-version-code-ignoring-abi=true`) | [Fix split-per-ABI version code errors][vc-split] |
 | App developer | Sets `outputFileName`, copies APKs, or fails naming `SingleArtifact.APK` | [Rename, copy, or transform APK outputs][apk-outputs] |
 | App developer | Hits `UnknownTaskException` or `ClassCastException` on `copyFlutterAssets<Variant>`, or reads `merge<Variant>Assets/` | [Configure Flutter Gradle tasks in build scripts][flutter-tasks] |
 | App developer | Enables `android.newDsl=true` to test without legacy AGP APIs | [Opt in to the new AGP DSL early][opt-in] |
@@ -267,6 +267,7 @@ If a task registered with `variant.sources.manifests.addGeneratedManifestFile`
 also reads `output.versionCode` as an input, manifest-only `--split-per-abi`
 builds fail with
 `Circular dependency between ... resolveManifestVersionCode<Variant>`.
+This cycle occurs with or without `-P force-version-code-ignoring-abi=true`.
 Set `versionCode = flutter.versionCode` in `defaultConfig` so Flutter uses the
 DSL value without registering `resolveManifestVersionCode<Variant>`.
 
