@@ -6,6 +6,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
+import 'client/expandable.dart';
 
 class Card extends StatelessComponent {
   /// Creates a card that can have a [header], [content], and [actions].
@@ -91,7 +92,6 @@ class Card extends StatelessComponent {
       if (outlined) 'outlined-card',
       if (filled) 'filled-card',
       if (expandable) 'expandable-card',
-      if (expandable && !initiallyExpanded) 'collapsed',
       ?additionalClasses,
     ].toClasses;
 
@@ -110,8 +110,10 @@ class Card extends StatelessComponent {
       ?actions,
     ];
 
+    Component component;
+
     if (link case final link?) {
-      return a(
+      component = a(
         classes: classes,
         id: id,
         href: link,
@@ -119,12 +121,22 @@ class Card extends StatelessComponent {
         children,
       );
     } else {
-      return div(
+      component = div(
         classes: classes,
         id: id,
         attributes: attributes,
         children,
       );
+    }
+
+    if (expandable) {
+      return Expandable(
+        id: id,
+        initiallyExpanded: initiallyExpanded,
+        child: component,
+      );
+    } else {
+      return component;
     }
   }
 }
