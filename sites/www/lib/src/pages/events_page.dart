@@ -6,7 +6,6 @@ import 'package:collection/collection.dart';
 import 'package:intl/intl.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/icon.dart';
@@ -51,14 +50,9 @@ class EventsPage extends StatelessComponent {
       const div(classes: 'container', [
         h2([.text('Featured events')]),
       ]),
-      Carousel(
-        ref(
-          .fragment([
-            for (final event in featuredEvents)
-              _buildCarouselCard(context, event),
-          ]),
-        ),
-      ),
+      Carousel([
+        for (final event in featuredEvents) _buildCarouselCard(context, event),
+      ]),
     ]);
   }
 
@@ -128,7 +122,7 @@ class EventsPage extends StatelessComponent {
   }) => EventsGrid(
     data: _extractFilterData(events),
     items: [
-      for (final event in events) ref(_buildEventItem(context, event)),
+      for (final event in events) _buildEventItem(context, event),
     ],
     past: past,
   );
