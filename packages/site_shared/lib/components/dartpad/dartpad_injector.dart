@@ -115,7 +115,7 @@ class _DartPadInjectorState extends State<DartPadInjector> {
       );
     }
 
-    return Component.wrapElement(
+    return .apply(
       classes: classes,
       styles: styles,
       attributes: {'title': component.title},
