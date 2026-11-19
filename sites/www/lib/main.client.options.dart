@@ -8,6 +8,8 @@ import 'package:jaspr/client.dart';
 
 import 'package:flutter_website/src/components/common/carousel.dart'
     deferred as _carousel;
+import 'package:flutter_website/src/components/common/image_zoombox.dart'
+    deferred as _image_zoombox;
 import 'package:flutter_website/src/components/common/newsletter_signup.dart'
     deferred as _newsletter_signup;
 import 'package:flutter_website/src/components/common/tabs.dart'
@@ -84,6 +86,12 @@ ClientOptions get defaultClientOptions => ClientOptions(
         nextBtn: p.mountOrNull(p.get<String?>('nextBtn')),
       ),
       loader: _carousel.loadLibrary,
+    ),
+    'image_zoombox': ClientLoader(
+      (p) => _image_zoombox.ImageZoombox(
+        containerSelector: p['containerSelector'] as String,
+      ),
+      loader: _image_zoombox.loadLibrary,
     ),
     'newsletter_signup': ClientLoader(
       (p) => _newsletter_signup.NewsletterSignup(),
