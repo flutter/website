@@ -35,7 +35,7 @@
     .hidden-fields {
       opacity: 0;
       position: relative;
-      top: -150px;
+      transform: translate3d(0, -150px, 0);
 
       &.active {
         animation: marketing-slide-up 400ms var(--ui-anim-func) forwards;
