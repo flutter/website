@@ -13,6 +13,7 @@ import 'package:site_shared/components/common/youtube_embed.dart';
 import 'package:site_shared/components/utils/define_component.dart';
 import 'package:site_shared/markdown.dart';
 import 'package:site_shared/page_extensions.dart';
+import 'package:site_shared/seo.dart';
 
 import 'main.server.options.dart';
 import 'src/components/common/dash_image.dart';
@@ -80,6 +81,8 @@ void main() {
                   'slug': '404',
                   'bodyTags': 'interior notfound',
                   'description': 'Page not found.',
+                  'sitemap': false,
+                  'noindex': true,
                 },
               },
             ),
@@ -90,6 +93,7 @@ void main() {
       configResolver: PageConfig.all(
         dataLoaders: [
           FilesystemDataLoader('content'),
+          LastModifiedLoader(),
           const BlogPostDataProcessor(),
           assetManager.dataLoader,
         ],
@@ -149,7 +153,7 @@ void main() {
           BlogLayout(),
         ],
         theme: const ContentTheme.none(),
-        secondaryOutputs: const [BlogAtomFeedOutput()],
+        secondaryOutputs: const [BlogAtomFeedOutput(), RobotsTxtOutput()],
       ),
     ),
   );

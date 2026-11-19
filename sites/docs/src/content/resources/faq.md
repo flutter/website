@@ -253,7 +253,7 @@ For cases where you need a platform-native component
 Flutter supports embedding [platform views][] directly into the widget tree.
 
 [catalog of Flutter's widgets]: /ui/widgets
-[platform views]: /platform-integration/platform-views
+[platform views]: /platform-integration/android/platform-views
 
 ### What happens when my mobile OS updates and introduces new widgets?
 

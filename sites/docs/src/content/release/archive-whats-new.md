@@ -87,7 +87,7 @@ Other relevant resources:
 [Dart 3.10 release]: {{site.dart-blog}}/announcing-dart-3-10
 [Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
 [DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
-[Flutter on latest iOS]: /platform-integration/ios/ios-latest
+[Flutter on latest iOS]: /platform-integration/ios
 [UIScene lifecycle]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
 [UIScene migration guide]: /release/breaking-changes/uiscenedelegate
 [Widget Previewer tool page]: /tools/widget-previewer
@@ -133,7 +133,7 @@ You might also check out the [Dart 3.9 release][] blog post.
   migration info.
 
 [Flutter Widget Previewer]: /tools/widget-previewer
-[Create with AI]: /ai/create-with-ai
+[Create with AI]: /ai/get-started
 [bc-3.35]: /release/breaking-changes#released-in-flutter-3-35
 [hot reload]: /tools/hot-reload
 [Protect your app's sensitive content]: /platform-integration/android/sensitive-content
@@ -325,7 +325,7 @@ This website release includes several important updates!
 [Intro to Dart]: {{site.dart-site}}/tutorials
 [plugin-authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
-[web renderers]: /platform-integration/web/renderers
+[web renderers]: /platform-integration/web
 
 ---
 
@@ -754,9 +754,9 @@ You might also check out [Introducing Dart 3][].
 [Android]: /platform-integration/android/restore-state-android
 [iOS]: /platform-integration/ios/restore-state-ios
 [sharing iOS and macOS plugin implementations]: /packages-and-plugins/developing-packages#shared-ios-and-macos-implementations
-[alert dialog]: /platform-integration/platform-adaptations#alert-dialog
-[top app bar and navigation bar]: /platform-integration/platform-adaptations#top-app-bar-and-navigation-bar
-[bottom navigation bar]: /platform-integration/platform-adaptations#bottom-navigation-bars
+[alert dialog]: /ui/adaptive-responsive/platform-adaptations#alert-dialog
+[top app bar and navigation bar]: /ui/adaptive-responsive/platform-adaptations#top-app-bar-and-navigation-bar
+[bottom navigation bar]: /ui/adaptive-responsive/platform-adaptations#bottom-navigation-bars
 [Anatomy of an app]: /resources/architectural-overview#anatomy-of-an-app
 [SDK archive page]: /install/archive
 
@@ -1873,7 +1873,7 @@ Some of the new content includes:
 If you have questions or comments about the revamped site,
 [file an issue][].
 
-[a native debugger _and_ a Dart debugger to your app]: /testing/oem-debuggers
+[a native debugger _and_ a Dart debugger to your app]: /testing/native-debugging
 [Background Dart processes]: /packages-and-plugins/background-processes
 [community]: {{site.main-url}}/community
 [file an issue]: {{site.repo.this}}/issues

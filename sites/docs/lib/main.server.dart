@@ -20,6 +20,7 @@ import 'package:site_shared/components/tutorial/summary_card.dart';
 import 'package:site_shared/components/tutorial/tutorial_outline.dart';
 import 'package:site_shared/components/utils/define_component.dart';
 import 'package:site_shared/markdown.dart';
+import 'package:site_shared/seo.dart';
 
 import 'main.server.options.dart'; // Generated. Do not remove or edit.
 import 'src/components/common/client/download_latest_button.dart';
@@ -41,7 +42,6 @@ import 'src/layouts/tutorial_layout.dart';
 import 'src/loaders/data_processor.dart';
 import 'src/pages/custom_pages.dart';
 import 'src/pages/markdown.dart';
-import 'src/pages/robots_txt.dart';
 import 'src/templating/dash_template_engine.dart';
 
 void main() {
