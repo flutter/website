@@ -36,7 +36,8 @@ They're sorted by release and listed in alphabetical order:
 
 <!-- ### Not yet released to stable -->
 
-<a id="released-in-flutter-350" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-350" />
+
 ### Released in Flutter 3.50
 
 * [Added `enabled` to `DropdownButtonFormField` and made `onChanged` optional][] (`material_ui` 1.8.0)
@@ -55,7 +56,8 @@ They're sorted by release and listed in alphabetical order:
 [Web `viewport-fit=cover` `SafeArea` support]: /release/breaking-changes/viewport-fit-cover-safe-area
 [WidgetSpan order in right-to-left text]: /release/breaking-changes/widgetspan-rtl-bidi-order
 
-<a id="released-in-flutter-347" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-347" />
+
 ### Released in Flutter 3.47
 
 * [OpenGL ES render-to-texture content is stored top-down][]
@@ -66,7 +68,8 @@ They're sorted by release and listed in alphabetical order:
 [Update semantics header and headingLevel behavior on iOS and Android]: /release/breaking-changes/semantics-header-heading-level
 [Removal of `describeEnum`]: /release/breaking-changes/remove-describeEnum
 
-<a id="released-in-flutter-344" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-344" />
+
 ### Released in Flutter 3.44
 
 * [Changing RawMenuAnchor close order][]
@@ -89,7 +92,8 @@ They're sorted by release and listed in alphabetical order:
 [Migrating Flutter Android projects to built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
 
-<a id="released-in-flutter-341" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-341" />
+
 ### Released in Flutter 3.41
 
 * [Merged threads on Linux][]
@@ -104,7 +108,8 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors]: /release/breaking-changes/separated-builder-find-child-index-callback
 [Material 3 tokens update]: /release/breaking-changes/material-color-utilities
 
-<a id="released-in-flutter-338" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-338" />
+
 ### Released in Flutter 3.38
 
 * [`CupertinoDynamicColor` wide gamut support][]
@@ -121,7 +126,8 @@ They're sorted by release and listed in alphabetical order:
 [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`]: /release/breaking-changes/default-android-page-transition
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 
-<a id="released-in-flutter-335" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-335" />
+
 ### Released in Flutter 3.35
 
 * [Component theme normalization updates][]
@@ -146,7 +152,8 @@ They're sorted by release and listed in alphabetical order:
 [The `Visibility` widget is no longer focusable by default when `maintainState` is enabled]: /release/breaking-changes/visibility-maintainfocusability
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
 
-<a id="released-in-flutter-332" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-332" />
+
 ### Released in Flutter 3.32
 
 * [Deprecate `SystemContextMenuController.show`][]
@@ -172,7 +179,8 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
 [Underdamped spring formula changed]: /release/breaking-changes/spring-description-underdamped
 
-<a id="released-in-flutter-329" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-329" />
+
 ### Released in Flutter 3.29
 
 * [Removal of v1 Android embedding Java APIs][]
@@ -189,7 +197,8 @@ They're sorted by release and listed in alphabetical order:
 [Updated Material 3 progress indicators]: /release/breaking-changes/updated-material-3-progress-indicators
 [Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
 
-<a id="released-in-flutter-327" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-327" />
+
 ### Released in Flutter 3.27
 
 * [`Color` wide gamut support][]
@@ -206,7 +215,8 @@ They're sorted by release and listed in alphabetical order:
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
 [Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
 
-<a id="released-in-flutter-324" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-324" />
+
 ### Released in Flutter 3.24
 
 * [Navigator's page APIs breaking change][]
@@ -219,7 +229,8 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `ButtonBar` in favor of `OverflowBar`]: /release/breaking-changes/deprecate-buttonbar
 [New APIs for Android plugins that render to a `Surface`]: /release/breaking-changes/android-surface-plugins
 
-<a id="released-in-flutter-322" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-322" />
+
 ### Released in Flutter 3.22
 
 * [Deprecated API removed after v3.19][]
@@ -236,7 +247,7 @@ They're sorted by release and listed in alphabetical order:
 [Nullable `PageView.controller`]: /release/breaking-changes/pageview-controller
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 
-<a id="released-in-flutter-319" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-319" />
 
 ### Released in Flutter 3.19
 
@@ -254,7 +265,8 @@ They're sorted by release and listed in alphabetical order:
 [Accessibility traversal order of tooltip changed]: /release/breaking-changes/tooltip-semantics-order
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 
-<a id="released-in-flutter-316" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-316" />
+
 ### Released in Flutter 3.16
 
 * [Migrating to Material 3][]
@@ -285,7 +297,8 @@ They're sorted by release and listed in alphabetical order:
 [Windows: External windows should notify Flutter engine of lifecycle changes]: /release/breaking-changes/win-lifecycle-process-function
 [Windows build path changed to add the target architecture]: /release/breaking-changes/windows-build-architecture
 
-<a id="released-in-flutter-313" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-313" />
+
 ### Released in Flutter 3.13
 
 * [Added missing `dispose()` for some disposable objects in Flutter][]
@@ -308,7 +321,8 @@ They're sorted by release and listed in alphabetical order:
 [Migrate a Windows project to ensure the window is shown]: /release/breaking-changes/windows-show-window-migration
 [Updated `Checkbox.fillColor` behavior]: /release/breaking-changes/checkbox-fillColor
 
-<a id="released-in-flutter-310" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-310" />
+
 ### Released in Flutter 3.10
 
 * [Dart 3 changes in Flutter v3.10 and later][]
@@ -327,7 +341,8 @@ They're sorted by release and listed in alphabetical order:
 [Require one data variant for `ClipboardData` constructor]: /release/breaking-changes/clipboard-data-required
 ["Zone mismatch" message]: /release/breaking-changes/zone-errors
 
-<a id="released-in-flutter-37" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-37" />
+
 ### Released in Flutter 3.7
 
 * [Deprecated API removed after v3.3][]
@@ -346,7 +361,8 @@ They're sorted by release and listed in alphabetical order:
 [ThemeData's toggleableActiveColor property has been deprecated]: /release/breaking-changes/toggleable-active-color
 [Migrate a Windows project to support dark title bars]: /release/breaking-changes/windows-dark-mode
 
-<a id="released-in-flutter-33" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-33" />
+
 ### Released in Flutter 3.3
 
 * [Adding ImageProvider.loadBuffer][]
@@ -369,7 +385,8 @@ They're sorted by release and listed in alphabetical order:
 [Page transitions replaced by ZoomPageTransitionsBuilder]: /release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
 [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]: /release/breaking-changes/chip-usedeletebuttontooltip-migration
 
-<a id="released-in-flutter-210" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-210" />
+
 ### Released in Flutter 2.10
 
 * [Deprecated API removed after v2.5][]
@@ -382,7 +399,8 @@ They're sorted by release and listed in alphabetical order:
 [Required Kotlin version]: /release/breaking-changes/kotlin-version
 [Scribble Text Input Client]: /release/breaking-changes/scribble-text-input-client
 
-<a id="released-in-flutter-25" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-25" />
+
 ### Released in Flutter 2.5
 
 * [Default drag scrolling devices][]
@@ -417,7 +435,8 @@ The following breaking change was reverted in release 2.2:
 
 [Network Policy on iOS and Android]: /release/breaking-changes/network-policy-ios-android
 
-<a id="released-in-flutter-22" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-22" />
+
 ### Released in Flutter 2.2
 
 * [Default Scrollbars on Desktop][]
@@ -452,7 +471,8 @@ The following breaking change was reverted in release 2.2:
 [Use maxLengthEnforcement instead of maxLengthEnforced]: /release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
 [Transition of platform channel test interfaces to flutter_test package]: /release/breaking-changes/mock-platform-channels
 
-<a id="released-in-flutter-122" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-122" />
+
 ### Released in Flutter 1.22
 
 * [Android v1 embedding app and plugin creation deprecation][]
@@ -464,7 +484,8 @@ The following breaking change was reverted in release 2.2:
 [Cupertino icons 1.0.0]: /release/breaking-changes/cupertino-icons-1.0.0
 [The new Form, FormField auto-validation API]: /release/breaking-changes/form-field-autovalidation-api
 
-<a id="released-in-flutter-120" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-120" />
+
 ### Released in Flutter 1.20
 
 * [Actions API revision][]
@@ -493,7 +514,8 @@ The following breaking change was reverted in release 2.2:
 [TextField requires MaterialLocalizations]: /release/breaking-changes/text-field-material-localizations
 [The Route Transition record and Transition delegate updates]: /release/breaking-changes/route-transition-record-and-transition-delegate
 
-<a id="released-in-flutter-117" aria-hidden="true"></a>
+<FragmentTarget id="released-in-flutter-117" />
+
 ### Released in Flutter 1.17
 
 * [Adding 'linux' and 'windows' to TargetPlatform enum][]

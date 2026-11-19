@@ -9,6 +9,7 @@ import 'package:jaspr_content/theme.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:site_shared/blog.dart';
 import 'package:site_shared/components/blog/blog_index.dart';
+import 'package:site_shared/components/common/fragment_target.dart';
 import 'package:site_shared/components/common/youtube_embed.dart';
 import 'package:site_shared/components/utils/define_component.dart';
 import 'package:site_shared/markdown.dart';
@@ -141,6 +142,7 @@ void main() {
           const DashImage(),
           const YoutubeEmbed(),
           const FileTree(),
+          const FragmentTargetMarkdownComponent(),
         ],
         layouts: [
           DefaultLayout(),
