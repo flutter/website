@@ -15,6 +15,7 @@ import '../components/sections/hero_section.dart';
 import '../models/content/ai_content.dart';
 import '../utils/asset_utils.dart';
 import '../utils/data_utils.dart';
+import '../utils/image_dimensions.dart';
 import '../utils/scroll_spy.dart';
 
 class AiPage extends StatelessComponent {
@@ -31,15 +32,18 @@ class AiPage extends StatelessComponent {
             'Build and deploy AI-powered features that '
             'reach users on any platform with '
             'Flutter and Google\'s AI capabilities.',
-        media: img(
-          src: context.asset('images/build-with-ai/build-with-ai-hero.png'),
+        media: sizedImg(
+          src: context.asset(
+            'images/build-with-ai/build-with-ai-hero.png',
+            width: 1200,
+          ),
           alt: 'Build with AI',
         ),
       ),
       section(id: 'notification', classes: 'module', [
         div(classes: 'notification container', [
           div(classes: 'notification-message', [
-            img(
+            sizedImg(
               src: context.asset('/home/images/banner-megaphone.webp'),
               alt: 'Notification',
             ),
@@ -98,8 +102,11 @@ class AiPage extends StatelessComponent {
             // Firebase Section
             div(classes: 'alternating-item', [
               div(classes: 'media', [
-                img(
-                  src: context.asset('images/build-with-ai/vertex-tab.png'),
+                sizedImg(
+                  src: context.asset(
+                    'images/build-with-ai/vertex-tab.png',
+                    width: 1200,
+                  ),
                   alt: 'Firebase AI Logic Logo',
                 ),
               ]),
@@ -124,7 +131,7 @@ class AiPage extends StatelessComponent {
             // Genkit Section
             div(classes: 'alternating-item reversed', [
               div(classes: 'media', [
-                img(
+                sizedImg(
                   classes: 'genkit-logo',
                   src: context.asset('images/genkit.jpg'),
                   alt: 'Genkit Logo',
@@ -234,7 +241,11 @@ class AiPage extends StatelessComponent {
       a(href: item.href, target: Target.blank, [
         div([
           div(classes: 'image-container', [
-            img(alt: item.title, src: context.asset(item.image)),
+            sizedImg(
+              alt: item.title,
+              src: context.asset(item.image, width: 635),
+              loading: MediaLoading.lazy,
+            ),
           ]),
           div(classes: 'text', [
             h3([.text(item.title)]),

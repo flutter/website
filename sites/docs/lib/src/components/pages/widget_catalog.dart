@@ -9,6 +9,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/markdown.dart';
 import 'package:site_shared/util.dart';
 
+import '../../extensions/image_dimension_processor.dart';
 import '../../models/widget_catalog_model.dart';
 
 class WidgetCatalogCategories extends CustomComponentBase {
@@ -141,47 +142,45 @@ class WidgetCatalogCard extends StatelessComponent {
         ? {'style': '--bg-color: ${subcategory?.color}'}
         : <String, String>{};
 
-    const placeholderImage = img(
+    final placeholderImage = docsSizedImg(
       alt:
           'Placeholder Flutter logo in place of '
           'missing widget image or visualization.',
       src: '/assets/images/docs/catalog-widget-placeholder.png',
-      attributes: {'aria-hidden': 'true'},
+      attributes: const {'aria-hidden': 'true'},
     );
 
     return div(
       classes: holderClass,
       attributes: styleAttributes,
       [
-        if (isMaterialCatalog) ...[
-          // Material catalog always expects an image.
-          if (widget.imageSrc case final imageSrc? when imageSrc.isNotEmpty)
-            img(alt: imageAlt, src: imageSrc)
-          else
-            placeholderImage,
+        _buildPrimaryImage(imageAlt, placeholderImage),
+        if (isMaterialCatalog)
           if (widget.hoverBackgroundSrc case final hoverBackgroundSrc?
               when hoverBackgroundSrc.isNotEmpty)
             div(classes: 'card-image-material-3-hover', [
-              img(
+              docsSizedImg(
                 alt:
                     'Decorated background for '
                     'Material widget visualizations.',
                 src: hoverBackgroundSrc,
-                attributes: {'aria-hidden': 'true'},
+                attributes: const {'aria-hidden': 'true'},
               ),
             ]),
-        ] else ...[
-          // Standard catalog prefers vector, then image, then placeholder.
-          if (widget.vector case final vector? when vector.isNotEmpty)
-            RawText(vector)
-          else if (widget.imageSrc case final imageSrc?
-              when imageSrc.isNotEmpty)
-            img(alt: imageAlt, src: imageSrc)
-          else
-            placeholderImage,
-        ],
       ],
     );
+  }
+
+  Component _buildPrimaryImage(String imageAlt, Component placeholder) {
+    if (!isMaterialCatalog) {
+      if (widget.vector case final vector? when vector.isNotEmpty) {
+        return RawText(vector);
+      }
+    }
+    if (widget.imageSrc case final imageSrc? when imageSrc.isNotEmpty) {
+      return docsSizedImg(alt: imageAlt, src: imageSrc);
+    }
+    return placeholder;
   }
 }
 

@@ -1,3 +1,5 @@
+@use 'package:site_shared/_sass/base/mixins';
+
 html {
   // Keep fragment targets below the fixed navigation and event banner.
   scroll-padding-top: calc(var(--ui-header-height) + 1.25rem);
@@ -29,7 +31,7 @@ body {
 
   to {
     opacity: 1;
-    top: 0;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -92,27 +94,13 @@ p:not(:where(.post-content *)) {
 }
 
 .material-symbols {
-  font-family: var(--site-icon-fontFamily);
+  @include mixins.material-symbol;
   font-variation-settings:
     'FILL' 0,
     'wght' 400,
     'GRAD' 0,
     'opsz' 24;
-
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
   vertical-align: middle;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  font-feature-settings: 'liga';
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
   user-select: none;
 
   &.ms-filled {

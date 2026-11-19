@@ -5,6 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
+import '../../utils/image_dimensions.dart';
 import 'icon.dart';
 
 class FeatureGridItem extends StatelessComponent {
@@ -24,7 +25,7 @@ class FeatureGridItem extends StatelessComponent {
   Component build(BuildContext context) {
     return div([
       a(href: url, [
-        img(src: icon, alt: title),
+        sizedImg(src: icon, alt: title),
         h3([
           .text(title),
           const RawText('&nbsp;'),

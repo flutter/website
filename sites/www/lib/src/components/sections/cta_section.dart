@@ -6,6 +6,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../utils/asset_utils.dart';
+import '../../utils/image_dimensions.dart';
 import '../common/icon.dart';
 
 class CTASection extends StatelessComponent {
@@ -30,7 +31,7 @@ class CTASection extends StatelessComponent {
           ]),
         ]),
         div(classes: 'media', [
-          img(
+          sizedImg(
             src: context.asset('/images/common/get-started-background.png'),
             alt: 'Powered by Dart',
           ),

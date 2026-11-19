@@ -6,6 +6,8 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/markdown.dart';
 
+import '../../utils/image_dimensions.dart';
+
 /// An image in page content, with an optional figure and Markdown caption.
 class ContentImage extends StatelessComponent {
   const ContentImage({
@@ -55,11 +57,15 @@ class ContentImage extends StatelessComponent {
       _ => null,
     };
 
+    final dims = dimensionsForResolvedAsset(src);
+
     final child = Component.fragment([
       img(
         src: src,
         alt: alt,
         classes: imageClass,
+        width: dims?.width,
+        height: dims?.height,
         loading: isHighPriority ? MediaLoading.eager : null,
         attributes: {
           if (imageStyle.isNotEmpty) 'style': imageStyle,

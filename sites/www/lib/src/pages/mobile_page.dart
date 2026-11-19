@@ -11,6 +11,7 @@ import '../components/sections/cta_section.dart';
 import '../components/sections/feature_columns_section.dart';
 import '../components/sections/hero_section.dart';
 import '../utils/asset_utils.dart';
+import '../utils/image_dimensions.dart';
 import '../utils/scroll_spy.dart';
 
 class MobilePage extends StatelessComponent {
@@ -36,8 +37,8 @@ class MobilePage extends StatelessComponent {
     return HeroSection(
       title: 'Flutter on Mobile',
       text: 'Bring your app idea to more users from day one by building with Flutter on iOS and Android simultaneously, without sacrificing features, quality, or performance.',
-      media: img(
-        src: context.asset('images/flutter-on-mobile.png'),
+      media: sizedImg(
+        src: context.asset('images/flutter-on-mobile.png', width: 1200),
         alt: 'Flutter on Mobile',
       ),
     );
@@ -85,8 +86,11 @@ class MobilePage extends StatelessComponent {
             ]),
           ]),
           div(classes: 'media', [
-            img(
-              src: context.asset('images/build-for-all-as-one-team.png'),
+            sizedImg(
+              src: context.asset(
+                'images/build-for-all-as-one-team.png',
+                width: 1200,
+              ),
               alt: 'Build for all as one team',
             ),
           ]),

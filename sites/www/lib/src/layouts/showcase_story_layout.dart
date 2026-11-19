@@ -7,6 +7,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 import '../utils/asset_utils.dart';
+import '../utils/image_dimensions.dart';
 import 'default_layout.dart';
 
 class ShowcaseStoryExtension extends PageExtension {
@@ -57,7 +58,7 @@ class ShowcaseStoryLayout extends DefaultLayout {
             div(classes: 'container', [
               article(classes: 'story-detail', [
                 div(classes: 'story-logo', [
-                  img(src: context.asset(logo, width: 128), alt: logoAlt),
+                  sizedImg(src: context.asset(logo, width: 128), alt: logoAlt),
                 ]),
                 h1([.text(headline)]),
                 if (data['videoEmbedUrl'] case final String videoUrl
@@ -78,7 +79,7 @@ class ShowcaseStoryLayout extends DefaultLayout {
                   ])
                 else if (data['poster'] case final String posterUrl
                     when posterUrl.isNotEmpty)
-                  img(
+                  sizedImg(
                     classes: 'poster',
                     src: context.asset(posterUrl, width: 1440),
                     alt: mediaAlt,

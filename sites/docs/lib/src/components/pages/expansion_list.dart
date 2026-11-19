@@ -10,6 +10,8 @@ import 'package:path/path.dart' as path;
 import 'package:site_shared/markdown.dart';
 import 'package:site_shared/util.dart';
 
+import '../../extensions/image_dimension_processor.dart';
+
 class ExpansionListItem {
   ExpansionListItem({
     required this.data,
@@ -133,16 +135,10 @@ class _ExpansionListState extends State<ExpansionList> {
             [
               div(classes: 'expansion-panel-title', [
                 div(classes: 'expansion-panel-title-leading', [
-                  if (item.data.iconPath case final iconPath?)
-                    img(
-                      src: iconPath,
-                      alt: 'An icon showing a generic application.',
-                    )
-                  else
-                    const img(
-                      src: '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
-                      alt: 'An icon showing a generic application.',
-                    ),
+                  docsSizedImg(
+                    src: item.data.iconPath ?? '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
+                    alt: 'An icon showing a generic application.',
+                  ),
                 ]),
                 div(classes: 'expansion-panel-title-content', [
                   p(classes: 'content-title', [

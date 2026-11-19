@@ -11,6 +11,7 @@ import '../components/sections/cta_section.dart';
 import '../components/sections/feature_columns_section.dart';
 import '../components/sections/hero_section.dart';
 import '../utils/asset_utils.dart';
+import '../utils/image_dimensions.dart';
 import '../utils/scroll_spy.dart';
 
 class DesktopPage extends StatelessComponent {
@@ -22,8 +23,8 @@ class DesktopPage extends StatelessComponent {
       HeroSection(
         title: 'Flutter on Desktop',
         text: 'Build high-quality desktop apps without compromising compatibility or performance.',
-        media: img(
-          src: context.asset('images/flutter-on-desktop.png'),
+        media: sizedImg(
+          src: context.asset('images/flutter-on-desktop.png', width: 1200),
           alt: 'Flutter on Desktop',
         ),
       ),
@@ -68,8 +69,11 @@ class DesktopPage extends StatelessComponent {
                 ),
               ]),
               div(classes: 'media', [
-                img(
-                  src: context.asset('images/scale-desktop-support.png'),
+                sizedImg(
+                  src: context.asset(
+                    'images/scale-desktop-support.png',
+                    width: 1200,
+                  ),
                   alt: 'Scale desktop support',
                 ),
               ]),

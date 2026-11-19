@@ -7,6 +7,8 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/markdown.dart';
 
+import '../../extensions/image_dimension_processor.dart';
+
 class DashImage with CustomComponentBase {
   const DashImage();
 
@@ -38,11 +40,16 @@ class DashImage with CustomComponentBase {
             .map((style) => style.endsWith(';') ? style : '$style;')
             .join(' ');
 
+    final resolvedSrc = '/assets/images/docs/$imgSrc';
+    final dims = resolveDocsWebImageDimensions(resolvedSrc);
+
     final child = Component.fragment([
       img(
-        src: '/assets/images/docs/$imgSrc',
+        src: resolvedSrc,
         alt: alt,
         classes: imgClass,
+        width: dims?.width,
+        height: dims?.height,
         attributes: {
           if (style.isNotEmpty) 'style': style,
         },

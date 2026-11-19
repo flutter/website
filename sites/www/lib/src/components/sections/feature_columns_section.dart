@@ -5,6 +5,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
+import '../../utils/image_dimensions.dart';
+
 class FeatureColumn extends StatelessComponent {
   const FeatureColumn({
     required this.title,
@@ -24,7 +26,7 @@ class FeatureColumn extends StatelessComponent {
     return div([
       h3([.text(title)]),
       p([.text(description)]),
-      img(src: image, alt: imageAlt ?? title),
+      sizedImg(src: image, alt: imageAlt ?? title),
     ]);
   }
 }
