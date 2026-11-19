@@ -149,6 +149,6 @@ While we believe we’re making good progress at building a solid foundation, th
 
 We hope there are some fun surprises in this article: we’ve made a lot of progress since the December update. However, you should be aware that Flutter’s web support is still in beta, and you should be cautious about deploying it into production environments, since performance and browser compatibility work is still in progress.
 
-If you are new to developing with Flutter on the web, check out [flutter.dev/web](/development/web) to learn more and try out your code on [dartpad.dev](https://dartpad.dev/) or [codepen.io/flutter](https://codepen.io/flutter).
+If you are new to developing with Flutter on the web, check out [flutter.dev/web](https://flutter.dev/web) to learn more and try out your code on [dartpad.dev](https://dartpad.dev/) or [codepen.io/flutter](https://codepen.io/flutter).
 
 For those that are currently developing Flutter web apps, thank you for your support and contributions, we hope you continue experimenting, [filing issues](https://github.com/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version) and [updating plugins](https://flutter.dev/blog/how-to-write-a-flutter-web-plugin-part-2) to support the web!

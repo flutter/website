@@ -57,7 +57,7 @@ Flutter creates module project under `/path/to/my_flutter/`.
 If you use the [CocoaPods method][], save the module
 in the same parent directory as your existing iOS app.
 
-[CocoaPods method]: /add-to-app/ios/project-setup-legacy?tab=embed-using-cocoapods
+[CocoaPods method]: /add-to-app/ios/project-setup-legacy/?tab=embed-using-cocoapods
 
 From the Flutter module directory,
 you can run the same `flutter` commands you would in any other Flutter project,
@@ -205,7 +205,7 @@ You can now [add a Flutter screen][] to your existing iOS app.
 [app-size]: /resources/faq#how-big-is-the-flutter-engine
 [VS Code]: /tools/vs-code
 [News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
-[Debugging your add-to-app module]: /add-to-app/debugging
+[Debugging your add-to-app module]: /add-to-app/debugging/
 [apple-silicon]: https://support.apple.com/en-us/116943
 [read-only]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 [updated integration guide]: /add-to-app/ios/project-setup

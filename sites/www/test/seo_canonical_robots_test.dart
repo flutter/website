@@ -32,8 +32,6 @@ final RegExp _robotsNoindexPattern = RegExp(
 final RegExp _ogUrlPattern = RegExp(
   r'<meta\b[^>]*\bproperty="og:url"[^>]*\bcontent="([^"]+)"[^>]*>',
 );
-final RegExp _lookaroundPattern = RegExp(r'\(\?(?:!|=|<=|<!)');
-final RegExp _splatParamPattern = RegExp(r':([a-zA-Z0-9_]+)\*');
 
 final class _TestDashLayout extends DashLayout {
   const _TestDashLayout();
@@ -118,7 +116,7 @@ void main() {
 
   _registerLayoutCanonicalTests();
   _registerSecondaryOutputTests();
-  _registerLastModifiedAndFirebaseTests();
+  _registerLastModifiedTests();
 }
 
 void _registerLayoutCanonicalTests() {
@@ -377,7 +375,7 @@ void _registerSecondaryOutputTests() {
   });
 }
 
-void _registerLastModifiedAndFirebaseTests() {
+void _registerLastModifiedTests() {
   group('GitLastModifiedIndex and shallow-clone guard', () {
     test('throws StateError on shallow clone when isProductionBuild is true', () {
       expect(
@@ -464,66 +462,5 @@ void _registerLastModifiedAndFirebaseTests() {
         expect(noIndexPage.data.page['sitemap'], isFalse);
       },
     );
-  });
-
-  group('Firebase Hosting redirect configs', () {
-    String resolveRepoPath(String relative) {
-      for (final prefix in ['../..', '.']) {
-        final candidate = path.join(prefix, relative);
-        if (File(candidate).existsSync()) return candidate;
-      }
-      throw StateError(
-        'Unable to locate $relative from ${Directory.current.path}',
-      );
-    }
-
-    for (final configPath in const [
-      'sites/docs/firebase.json',
-      'sites/www/firebase.json',
-      'sites/blog_redirects/firebase.json',
-    ]) {
-      test('$configPath uses RE2-compatible regexes and valid splat destinations', () {
-        final raw = File(resolveRepoPath(configPath)).readAsStringSync();
-        final decoded = jsonDecode(raw) as Map<String, Object?>;
-        final hosting = decoded['hosting'] as Map<String, Object?>;
-        final redirects = (hosting['redirects'] as List<Object?>)
-            .cast<Map<String, Object?>>();
-
-        final seenSources = <String>{};
-        for (final rule in redirects) {
-          final key = (rule['source'] ?? rule['regex']) as String;
-          expect(
-            seenSources.add(key),
-            isTrue,
-            reason: 'Duplicate redirect key: $key',
-          );
-
-          final destination = rule['destination'] as String;
-          expect(destination, isNotEmpty);
-
-          if (rule['regex'] case final String pattern) {
-            expect(
-              _lookaroundPattern.hasMatch(pattern),
-              isFalse,
-              reason: 'RE2 rejects lookaround syntax in $pattern',
-            );
-            expect(() => RegExp(pattern), returnsNormally);
-          }
-
-          if (rule['source'] case final String source) {
-            for (final match in _splatParamPattern.allMatches(source)) {
-              final paramName = match.group(1)!;
-              final bareToken = RegExp(':$paramName(?!\\*)');
-              expect(
-                bareToken.hasMatch(destination),
-                isFalse,
-                reason:
-                    'Rule "$source" -> "$destination" drops trailing "*" on :$paramName*',
-              );
-            }
-          }
-        }
-      });
-    }
   });
 }

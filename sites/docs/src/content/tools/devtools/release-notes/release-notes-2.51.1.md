@@ -8,7 +8,7 @@ showToc: false
 The 2.51.1 release of the Dart and Flutter DevTools
 includes the following changes among other general improvements.
 To learn more about DevTools, check out the
-[DevTools overview](/tools/devtools).
+[DevTools overview](/tools/devtools/overview).
 
 ## General updates
 

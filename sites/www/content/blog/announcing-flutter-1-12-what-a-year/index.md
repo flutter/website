@@ -120,7 +120,7 @@ And finally, to improve the experience of Flutter desktop apps, we’ve done a l
 
 In addition to the Flutter sample, we also recommend [the new Photos Search sample](https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search), which shows off a lot of desktop goodness, including keyboard handling, the new widget density, the new plugins, and the new widgets.
 
-For those of you curious about progress on Windows and Linux, they’re still in technical preview, but both benefit from a lot of the work to get macOS to alpha. We’ll share the updates to those platforms soon. For more details of where we are with desktop support in Flutter for macOS, Windows and Linux, please see [flutter.dev/desktop](/development/desktop).
+For those of you curious about progress on Windows and Linux, they’re still in technical preview, but both benefit from a lot of the work to get macOS to alpha. We’ll share the updates to those platforms soon. For more details of where we are with desktop support in Flutter for macOS, Windows and Linux, please see [flutter.dev/desktop](https://flutter.dev/desktop).
 
 ## Flutter tooling
 

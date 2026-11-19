@@ -136,7 +136,7 @@ This code doesn’t incur the overhead of transitioning between two threads like
 
 ## Flutter for Windows resources
 
-Wherever you are in your Flutter for Windows journey, you should be sure to [read the desktop documentation on flutter.dev](/development/desktop), which includes the latest details. Also, you’ll want to take a spin through the Flutter [codelab for writing a Windows, macOS, and Windows desktop-targeted application](https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client), which includes code for real-world scenarios like authentication using OAuth, accessing the GitHub API, and using GraphQL. Or, for another good example of Flutter desktop code that works on Windows, [check out the Photo Search sample](https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search).
+Wherever you are in your Flutter for Windows journey, you should be sure to [read the desktop documentation on flutter.dev](https://flutter.dev/desktop), which includes the latest details. Also, you’ll want to take a spin through the Flutter [codelab for writing a Windows, macOS, and Windows desktop-targeted application](https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client), which includes code for real-world scenarios like authentication using OAuth, accessing the GitHub API, and using GraphQL. Or, for another good example of Flutter desktop code that works on Windows, [check out the Photo Search sample](https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search).
 
 <DashImage figure src="images/03OlPPAMAvO84mJ6M.webp" />
 

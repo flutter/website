@@ -493,7 +493,7 @@ flutter:
 
 To learn more, visit [Internationalizing Flutter apps][].
 
-[Internationalizing Flutter apps]: /ui/internationalization
+[Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
 
 ### licenses field {: #licenses }
 

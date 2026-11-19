@@ -16,7 +16,7 @@ layout: blog
 
 ### Build high quality, feature rich apps with the new Flutter Extension for Gemini CLI
 
-Today we’re excited to share the first experimental version of the **Flutter Extension for Gemini CLI**, which combines the [Dart and Flutter MCP Server](/blog/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server) with additional context and commands, making it easier and more productive to build Flutter apps with [Gemini CLI](https://geminicli.com/).
+Today we’re excited to share the first experimental version of the **Flutter Extension for Gemini CLI**, which combines the [Dart and Flutter MCP Server](https://blog.flutter.dev/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49) with additional context and commands, making it easier and more productive to build Flutter apps with [Gemini CLI](https://geminicli.com/).
 
 AI agents are changing the way we build Flutter apps by assisting with tasks like feature prototyping, code reviews, as well as writing and running tests. In order to use an AI agent effectively, you need to provide it with context and access to tools to help it become a productive Flutter coding assistant. This is where the Flutter Extension for Gemini CLI comes in. [Gemini CLI extensions](https://blog.google/technology/developers/gemini-cli-extensions) allow you to build integrations with Gemini CLI and your tools, and the Flutter extension builds off of these capabilities.
 

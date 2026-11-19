@@ -27,7 +27,7 @@ Before Flutter, compromises were inevitable. Many developers have become skeptic
 
 With the launch of Flutter 1.0 in 2018 we had a clear mission to resolve that technology dilemma: We aimed to empower developers with the ultimate app framework for crafting beautiful, high-performance user interfaces across all platforms. Also, to enable developers to reach all customers with high-quality apps on all the platforms that customers care about, but *with lower cost* and *in less time*.
 
-Our focus has remained constant through Flutter’s growth era, even as we’ve added support for the six major platforms across mobile, web, and desktop — and continue to push [beyond](/development/embedded), with work like Toyota’s use of Flutter for infotainment systems.
+Our focus has remained constant through Flutter’s growth era, even as we’ve added support for the six major platforms across mobile, web, and desktop — and continue to push [beyond](https://flutter.dev/multi-platform/embedded), with work like Toyota’s use of Flutter for infotainment systems.
 
 <DashImage figure src="images/1nlSy3ZCCbdUXFRH4Q1zstg.webp" />
 

@@ -76,7 +76,7 @@ Check out Agentic Hot Reload in action:
 
 We also recently launched **Agent Skills for Dart and Flutter**, equipping your coding agents with task-oriented, production-grade domain expertise. These skills level up your coding agent and help you save tokens when completing tasks such as adding integration tests or setting up localization, while adhering to recommended best practices.
 
-**Learn more**: [Introducing skills for Dart and Flutter](/blog/introducing-skills-for-dart-and-flutter), [Dart and Flutter MCP server](https://docs.flutter.dev/ai/mcp-server)
+**Learn more**: [Introducing skills for Dart and Flutter](https://blog.flutter.dev/introducing-skills-for-dart-and-flutter-23837c6ec0ae), [Dart and Flutter MCP server](https://docs.flutter.dev/ai/mcp-server)
 
 <DashImage figure src="images/1qw6H8YVAmVFUWuI0b38bZg.webp" alt="Dart & Flutter Agent Skills give your agent step-by-step instructions on how to complete a variety of tasks, like writing integration tests" caption="Dart & Flutter Agent Skills give your agent step-by-step instructions on how to complete a variety of tasks, like writing integration tests" />
 
@@ -280,7 +280,7 @@ If your app uses custom `abiFilters` inside specific build types or product flav
 
 Starting with Flutter 3.44, Swift Package Manager (SwiftPM) replaces CocoaPods as the default dependency manager for iOS and macOS apps. The Flutter CLI handles this migration automatically. When you build or run your app, the CLI updates your Xcode project to use SwiftPM, removing the need to manage Ruby or CocoaPods installations!
 
-**Learn more**: [Say goodbye to CocoaPods: Swift Package Manager is soon the default in Flutter!](/blog/saying-goodbye-to-cocoapods-swift-package-manager-is-soon-the-default-in-flutter)
+**Learn more**: [Say goodbye to CocoaPods: Swift Package Manager is soon the default in Flutter!](https://blog.flutter.dev/saying-goodbye-to-cocoapods-swift-package-manager-is-soon-the-default-in-flutter-645a92714a57)
 
 Add-to-App integration is also more flexible. If you embed Flutter into an existing iOS application, the new `flutter build swift-package` command packages your Flutter app or add-to-app module as a Swift Package for easy consumption in your native project.
 
@@ -434,7 +434,7 @@ This release balances significant architectural shifts with a rigorous focus on 
 
 This release marks a massive milestone for the Material and Cupertino libraries. These libraries have been frozen as of this release, representing the final set of updates to these libraries within the core framework before they transition to standalone packages: `material_ui` and `cupertino_ui`. By the next stable release, the versions of these libraries currently in the framework will be deprecated, and you will be able to migrate to the new, independently-versioned packages.
 
-**Learn more**: For more information on this transition, read the [blog post about the freeze](/blog/flutters-material-and-cupertino-code-freeze) and follow the [main tracking issue for decoupling](https://github.com/flutter/flutter/issues/172932) these libraries from the core framework.
+**Learn more**: For more information on this transition, read the [blog post about the freeze](https://blog.flutter.dev/flutters-material-and-cupertino-code-freeze-d32d94c59c38) and follow the [main tracking issue for decoupling](https://github.com/flutter/flutter/issues/172932) these libraries from the core framework.
 
 Despite the freeze, this release is packed with refinements. A major highlight is the modernization of menus in the Cupertino library. The new `CupertinoMenuAnchor` widget, built on the flexible `RawMenuAnchor` foundation, provides a more robust and native-feeling menu experience for iOS applications ([#182036](https://github.com/flutter/flutter/pull/182036)). This work was made possible by the extensive contributions of community member [davidhicks980](https://github.com/davidhicks980), who also created the RawMenuAnchor widget.
 

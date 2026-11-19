@@ -192,7 +192,7 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
 ## Changes in v0.3.1 (since v0.2.8) - beta 2 update
 
 We are aware of a potential problem with certificate validation in the `HttpClient` implementation.
-To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang/sdk/issues/32936).
+To follow our investigation, see [Dart issue 32936]({{site.repo.dart-sdk}}/issues/32936).
 
 ### v0.3.1
 

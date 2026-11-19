@@ -439,7 +439,7 @@ Learn more about Flutter animations at the following links:
 [article4]: {{site.flutter-blog}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
 [article5]: {{site.flutter-blog}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [article6]: {{site.flutter-blog}}/animation-deep-dive-39d3ffea111f
-[Casual games toolkit]: /resources/games-toolkit
+[Casual games toolkit]: /resources/games-toolkit/
 [Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.yt.watch}}?v=6KiPEqzJIKQ&feature=youtu.be
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.yt.watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html

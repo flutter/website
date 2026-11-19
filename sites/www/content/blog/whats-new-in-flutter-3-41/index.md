@@ -95,7 +95,7 @@ The Flutter team at Google continues to prioritize what matters most to you.
 
 For years, the community has called out that while Flutter is delightful and productive, it can be difficult to know where to begin the learning journey.
 
-We recently launched a completely reimagined [Dart and Flutter Getting Started Experience](/blog/announcing-our-new-dart-and-flutter-getting-started-experience).
+We recently launched a completely reimagined [Dart and Flutter Getting Started Experience](https://blog.flutter.dev/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984).
 
 It’s a new learning pathway designed to guide you through the fundamentals of building apps with Flutter and Dart. Let’s take a quick look at some of the changes:
 

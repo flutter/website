@@ -35,7 +35,7 @@ also consider building your UI with [adaptive and responsive design][] in mind.
 [Native interop]: /interop
 [write platform-specific code]: /platform-integration/platform-channels
 [create your own plugin]: /packages-and-plugins/developing-packages
-[adaptive and responsive design]: /ui/adaptive-responsive
+[adaptive and responsive design]: /ui/adaptive-responsive/
 
 ## Set up platform development {:#setup}
 

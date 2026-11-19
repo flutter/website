@@ -63,4 +63,4 @@ Our planned work includes:
 
 * Improved performance, browser support, and accessibility.
 
-Go to [flutter.dev/web](/development/web) to find examples, documentation, and links to more resources. We’re excited to see what you build!
+Go to [flutter.dev/web](https://flutter.dev/web) to find examples, documentation, and links to more resources. We’re excited to see what you build!

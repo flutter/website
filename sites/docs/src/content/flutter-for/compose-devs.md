@@ -832,7 +832,7 @@ To review a complete example, check out the [`Image`][] docs.
 [Flutter for Android developers]: /flutter-for/android-devs
 [Add Flutter to existing app]: /add-to-app
 [Material]: {{site.material}}/develop/flutter/
-[Platform adaptations]: /ui/adaptive-responsive/platform-adaptations
+[Platform adaptations]: /platform-integration/platform-adaptations
 [widget catalog]: /ui/widgets/layout
 [Understanding constraints]: /ui/layout/constraints
 [`WidgetApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html

@@ -21,7 +21,8 @@ typedef GitRunner = String? Function(
 /// Whether [value] represents an enabled `noindex` frontmatter flag.
 bool isNoIndexFlag(Object? value) => value == true || value == 'true';
 
-/// Loads Git commit timestamps for a site directory and populates page metadata.
+/// Loads Git commit timestamps for a site directory and populates page
+/// metadata.
 ///
 /// Also ensures any page marked `noindex` is excluded from `sitemap.xml`.
 final class LastModifiedLoader implements DataLoader {
@@ -41,8 +42,8 @@ final class GitLastModifiedIndex {
   GitLastModifiedIndex({
     required this.repositoryRoot,
     required this.projectRoot,
-    required Map<String, DateTime> lastModifiedPerPath,
-  }) : _lastModifiedPerPath = lastModifiedPerPath;
+    required this._lastModifiedPerPath,
+  });
 
   /// Builds an index for [projectRoot] (defaulting to [path.current]).
   ///
