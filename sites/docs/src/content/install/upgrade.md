@@ -125,10 +125,20 @@ To switch to a specific Flutter version:
    You can find the Flutter SDK's path using `flutter doctor --verbose`.
    :::
 
-1. Use `git checkout` to switch to your desired **Flutter version**:
+1. Use `git checkout` to switch to your desired **Flutter version**
+   using the version number without a `v` prefix
+   (for example, `git checkout 3.35.0`):
 
    ```console
    $ git checkout <Flutter version>
+   ```
+
+1. Run any `flutter` command (such as `flutter --version`) so the
+   `flutter` CLI tool updates its tool and SDK artifacts to match
+   that checked-out version:
+
+   ```console
+   $ flutter --version
    ```
 
 <a id="upgrading-packages" aria-hidden="true"></a>
@@ -156,7 +166,7 @@ use the `upgrade --major-versions` command:
 $ flutter pub upgrade --major-versions
 ```
 
-This also automatically update the constraints
+This also automatically updates the constraints
 in the `pubspec.yaml` file.
 
 To identify out-of-date package dependencies and get advice
