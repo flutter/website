@@ -5,6 +5,7 @@
 import 'dart:convert';
 
 import 'package:jaspr/jaspr.dart';
+import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 final scroll = ScrollNotifier();
@@ -21,64 +22,99 @@ class ScrollNotifier extends ChangeNotifier {
 
   Map<String, String> get spyContent => spy(headerOffset, .inContent);
 
-  void _add(ScrollId id) {
-    activeIds.add(id);
-    notifyListeners();
+  /// Updates [activeIds] for [id] and returns whether the active state changed.
+  bool updateActiveId(ScrollId id, {required bool isActive}) {
+    final changed = isActive ? activeIds.add(id) : activeIds.remove(id);
+    if (!changed) {
+      return false;
+    }
 
-    if (id == .inContent) {
-      web.document.body!.classList.add('in-content');
+    if (kIsWeb && id == .inContent) {
+      web.document.body?.classList.toggle('in-content', isActive);
+    }
+    return true;
+  }
+
+  /// Evaluates [thresholds] against [scrollY] and notifies listeners at most
+  /// once when the active scroll state changes.
+  void applyThresholds(
+    double scrollY,
+    Iterable<(int offsetTop, ScrollId? id)> thresholds,
+  ) {
+    var changed = false;
+    for (final (offsetTop, id) in thresholds) {
+      if (id != null && updateActiveId(id, isActive: scrollY > offsetTop)) {
+        changed = true;
+      }
+    }
+    if (changed) {
+      notifyListeners();
     }
   }
 
-  void _remove(ScrollId id) {
-    activeIds.remove(id);
-    notifyListeners();
+  void _syncTargets(List<_ScrollTarget> targets, double offsetY) {
+    var changed = false;
 
-    if (id == .inContent) {
-      web.document.body!.classList.remove('in-content');
+    for (final (offsetTop, node, id) in targets) {
+      final isActive = offsetY > offsetTop;
+      if (node.classList.contains('active') != isActive) {
+        node.classList.toggle('active', isActive);
+      }
+      if (id != null && updateActiveId(id, isActive: isActive)) {
+        changed = true;
+      }
+    }
+
+    if (changed) {
+      notifyListeners();
     }
   }
 
   static void init() {
-    final nodes = web.document.querySelectorAll('[data-scroll-spy]');
-
-    final targets = <(int, web.Element, ScrollId?)>[];
-
-    for (var i = 0; i < nodes.length; i++) {
-      final node = nodes.item(i) as web.HTMLElement;
-      final data = jsonDecode(
-        node.getAttribute('data-scroll-spy') ?? '[]',
-      ) as List<Object?>;
-
-      final offset = data.firstOrNull as int? ?? 0;
-      final id = data.skip(1).firstOrNull as String?;
-
-      targets.add((
-        node.offsetTop + offset,
-        node,
-        id != null ? ScrollId.values.byName(id) : null,
-      ));
+    final targets = _collectScrollTargets();
+    if (targets.isEmpty) {
+      return;
     }
 
-    web.EventStreamProviders.scrollEvent.forTarget(web.window).listen((event) {
-      final offsetY = web.window.scrollY;
-      for (final (offsetTop, node, id) in targets) {
-        if (offsetY > offsetTop) {
-          if (!node.classList.contains('active')) {
-            node.classList.add('active');
-          }
-          if (id != null && !scroll.activeIds.contains(id)) {
-            scroll._add(id);
-          }
-        } else {
-          if (node.classList.contains('active')) {
-            node.classList.remove('active');
-          }
-          if (id != null && scroll.activeIds.contains(id)) {
-            scroll._remove(id);
-          }
-        }
-      }
-    });
+    var frameScheduled = false;
+    web.window.addEventListener(
+      'scroll',
+      ((web.Event _) {
+        if (frameScheduled) return;
+        frameScheduled = true;
+        web.window.requestAnimationFrame(
+          ((num _) {
+            frameScheduled = false;
+            scroll._syncTargets(targets, web.window.scrollY);
+          }).toJS,
+        );
+      }).toJS,
+      web.AddEventListenerOptions(passive: true),
+    );
   }
+}
+
+typedef _ScrollTarget = (int offsetTop, web.Element node, ScrollId? id);
+
+List<_ScrollTarget> _collectScrollTargets() {
+  final nodes = web.document.querySelectorAll('[data-scroll-spy]');
+  final targets = <_ScrollTarget>[];
+
+  for (var i = 0; i < nodes.length; i++) {
+    final node = nodes.item(i) as web.HTMLElement;
+    final data = jsonDecode(
+      node.getAttribute('data-scroll-spy') ?? '[]',
+    ) as List<Object?>;
+
+    final offset = data.firstOrNull as int? ?? 0;
+    final id = data.skip(1).firstOrNull as String?;
+
+    targets.add((
+      node.offsetTop + offset,
+      node,
+      id != null ? ScrollId.values.byName(id) : null,
+    ));
+  }
+
+  return targets;
 }

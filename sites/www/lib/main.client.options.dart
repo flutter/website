@@ -48,8 +48,6 @@ import 'package:site_shared/components/common/client/back_to_top_button.dart'
     deferred as _back_to_top_button;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     deferred as _collapse_button;
-import 'package:site_shared/components/common/client/copy_button.dart'
-    deferred as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
 import 'package:site_shared/components/layout/theme_switcher.dart'
@@ -236,15 +234,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
         title: p['title'] as String?,
       ),
       loader: _collapse_button.loadLibrary,
-    ),
-    'site_shared:copy_button': ClientLoader(
-      (p) => _copy_button.CopyButton(
-        buttonText: p['buttonText'] as String?,
-        toCopy: p['toCopy'] as String?,
-        classes: (p['classes'] as List<Object?>).cast<String>(),
-        title: p['title'] as String?,
-      ),
-      loader: _copy_button.loadLibrary,
     ),
     'site_shared:dartpad_injector': ClientLoader(
       (p) => _dartpad_injector.DartPadInjector(

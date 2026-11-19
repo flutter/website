@@ -26,6 +26,8 @@ class _NewsletterFormState extends State<NewsletterForm> {
   // State variables
   bool _submitted = false;
   bool _focused = false;
+  bool _recaptchaInitializing = false;
+  bool _recaptchaRendered = false;
   Map<String, String> _errors = {};
 
   // Form fields
@@ -59,15 +61,47 @@ class _NewsletterFormState extends State<NewsletterForm> {
   };
 
   void onFocus() {
-    setState(() => _focused = true);
+    if (!_focused) {
+      setState(() => _focused = true);
+    }
+    if (_recaptchaInitializing || _recaptchaRendered) {
+      return;
+    }
+    _recaptchaInitializing = true;
 
     context.binding.addPostFrameCallback(() {
-      final elem = web.document.getElementById('g-recaptcha')!;
-      grecaptcha.render(
-        elem,
-        ReCaptchaRenderOptions(sitekey: _recaptchaSiteKey),
-      );
+      unawaited(_renderRecaptchaWhenReady());
     });
+  }
+
+  Future<void> _renderRecaptchaWhenReady() async {
+    try {
+      await _ensureRecaptchaScriptLoaded();
+    } on Object {
+      _recaptchaInitializing = false;
+      return;
+    }
+
+    final api = _grecaptcha;
+    if (!mounted || _recaptchaRendered || api == null) {
+      _recaptchaInitializing = false;
+      return;
+    }
+
+    api.ready(
+      (() {
+        if (!mounted || _recaptchaRendered) return;
+        final elem = web.document.getElementById('g-recaptcha');
+        if (elem == null || elem.hasChildNodes()) {
+          _recaptchaInitializing = false;
+          _recaptchaRendered = elem?.hasChildNodes() ?? false;
+          return;
+        }
+        _recaptchaRendered = true;
+        _recaptchaInitializing = false;
+        api.render(elem, ReCaptchaRenderOptions(sitekey: _recaptchaSiteKey));
+      }).toJS,
+    );
   }
 
   bool _validateEmail(String email) {
@@ -107,7 +141,9 @@ class _NewsletterFormState extends State<NewsletterForm> {
     // Validate captcha
     // alpine-js: var response = grecaptcha.getResponse(); if (response.length == 0)
 
-    final response = grecaptcha.getResponse();
+    final response = _recaptchaRendered
+        ? (_grecaptcha?.getResponse() ?? '')
+        : '';
     if (response.isEmpty) {
       newErrors['captcha'] = _errorMessages['captcha']!;
     }
@@ -399,11 +435,54 @@ class _NewsletterFormState extends State<NewsletterForm> {
   }
 }
 
-@JS()
-external ReCaptcha get grecaptcha;
+const String _recaptchaScriptUrl =
+    'https://www.google.com/recaptcha/api.js?render=explicit';
+
+Future<void>? _recaptchaScriptFuture;
+
+Future<void> _ensureRecaptchaScriptLoaded() {
+  if (_grecaptcha != null) {
+    return Future<void>.value();
+  }
+  if (_recaptchaScriptFuture case final existing?) {
+    return existing;
+  }
+
+  final completer = Completer<void>();
+  final script = web.HTMLScriptElement()
+    ..src = _recaptchaScriptUrl
+    ..async = true
+    ..defer = true;
+
+  script.addEventListener(
+    'load',
+    ((web.Event _) {
+      if (!completer.isCompleted) {
+        completer.complete();
+      }
+    }).toJS,
+  );
+  script.addEventListener(
+    'error',
+    ((web.Event _) {
+      _recaptchaScriptFuture = null;
+      if (!completer.isCompleted) {
+        completer.completeError(StateError('Failed to load reCAPTCHA'));
+      }
+    }).toJS,
+  );
+
+  (web.document.head ?? web.document.body)!.appendChild(script);
+  return _recaptchaScriptFuture = completer.future;
+}
+
+@JS('grecaptcha')
+external ReCaptcha? get _grecaptcha;
 
 extension type ReCaptcha(JSObject _value) implements JSObject {
   external String getResponse();
+
+  external void ready(JSFunction callback);
 
   external JSAny? render(JSObject container, ReCaptchaRenderOptions options);
 }
