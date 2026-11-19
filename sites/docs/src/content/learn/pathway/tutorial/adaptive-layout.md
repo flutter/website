@@ -153,7 +153,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
 
 The `LayoutBuilder` widget provides information about
 the parent's size constraints.
-In the `builder` callback, you receive a`BoxConstraints` object that
+In the `builder` callback, you receive a `BoxConstraints` object that
 tells you the maximum available width and height.
 
 By checking if `constraints.maxWidth > largeScreenMinWidth`,

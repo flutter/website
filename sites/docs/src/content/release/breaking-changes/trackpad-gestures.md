@@ -177,7 +177,7 @@ gesture events and triggers callbacks if recognized.
 
 Ensure that `onPointerPanZoomStart` is passed through to
 each recognizer from the `Listener`.
-The `addPointerPanZoom` method of `GestureRecognizer must be called
+The `addPointerPanZoom` method of `GestureRecognizer` must be called
 for it to show interest and start tracking each trackpad gesture.
 
 Code before migration:

@@ -638,7 +638,6 @@ the Command pattern. [Read about it on GitHub][].
 [`View`]: /app-architecture/guide#views
 [`ViewModel`]: /app-architecture/guide#view-models
 [repositories]: /app-architecture/guide#repositories
-[commands]: /app-architecture/guide#command-objects
 [`package:freezed`]: {{site.pub-pkg}}/freezed
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html

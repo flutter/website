@@ -159,7 +159,7 @@ class ChatPage extends StatelessWidget {
 ```
 
 
-For a complete example, check out the [gemini.dart] and [vertex.dart][]
+For a complete example, check out the [gemini.dart][] and [vertex.dart][]
 examples.
 
 [options]:
