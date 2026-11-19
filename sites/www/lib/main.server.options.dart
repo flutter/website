@@ -7,6 +7,8 @@
 import 'package:jaspr/server.dart';
 import 'package:flutter_website/src/components/common/carousel.dart'
     as _carousel;
+import 'package:flutter_website/src/components/common/image_zoombox.dart'
+    as _image_zoombox;
 import 'package:flutter_website/src/components/common/newsletter_form.dart'
     as _newsletter_form;
 import 'package:flutter_website/src/components/common/tabs.dart' as _tabs;
@@ -73,6 +75,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
     _carousel.Carousel: ClientTarget<_carousel.Carousel>(
       'carousel',
       params: __carouselCarousel,
+    ),
+    _image_zoombox.ImageZoombox: ClientTarget<_image_zoombox.ImageZoombox>(
+      'image_zoombox',
+      params: __image_zoomboxImageZoombox,
     ),
     _newsletter_form.NewsletterForm:
         ClientTarget<_newsletter_form.NewsletterForm>('newsletter_form'),
@@ -177,6 +183,9 @@ Map<String, Object?> __carouselCarousel(_carousel.Carousel c) => {
   'prevBtn': c.prevBtn?.toId(),
   'nextBtn': c.nextBtn?.toId(),
 };
+Map<String, Object?> __image_zoomboxImageZoombox(
+  _image_zoombox.ImageZoombox c,
+) => {'containerSelector': c.containerSelector};
 Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
   'title': c.title?.toId(),
   'header': c.header?.toId(),
