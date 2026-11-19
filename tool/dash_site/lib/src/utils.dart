@@ -36,7 +36,7 @@ int installJasprCliIfNecessary() {
     'global',
     'activate',
     'jaspr_cli',
-    '^0.24.0-beta.1',
+    '^0.24.0-beta.2',
   ]);
 
   if (activateOutput.exitCode != 0) {
