@@ -71,10 +71,23 @@ void main() {
           // MaterialIcon('commented_out')
           final a = MaterialIcon('rocket_launch');
           final b = Button(icon: 'open_in_new', content: 'Open');
+          final c = MaterialIcon('toc');
+          final d = Button(icon: active ? 'note' : 'light', content: 'Toggle');
           ''',
             sourcePath: 'sample.dart',
           ),
-          {'rocket_launch', 'open_in_new'},
+          {'rocket_launch', 'open_in_new', 'toc', 'note', 'light'},
+        );
+
+        expect(
+          extractDataIconValues(
+            '''
+icon: toc
+icon: note
+''',
+            sourcePath: 'sidenav.yml',
+          ),
+          {'toc', 'note'},
         );
 
         expect(
@@ -254,7 +267,7 @@ final RegExp _materialIconCallPattern = RegExp(
   r'''\bMaterialIcon\(\s*['"]([a-z0-9_]+)['"]''',
 );
 final RegExp _namedIconArgPattern = RegExp(
-  r'''\b(?:leadingIcon|trailingIcon|icon|iconId)\s*:\s*(?:[^,);\n]*?\?\s*)?['"]([a-z0-9_]+)['"]''',
+  r'''\b(?:leadingIcon|trailingIcon|icon|iconId)\s*:\s*(?:[^,);\n]*?\?\s*)?['"]([a-z0-9_]+)['"](?:\s*:\s*['"]([a-z0-9_]+)['"])?''',
 );
 final RegExp _materialSpanInDartPattern = RegExp(
   r'''material-symbols['"][\s\S]{0,200}?\.text\(\s*['"]([a-z0-9_]+)['"]\s*\)''',
@@ -282,24 +295,9 @@ final RegExp _scssContentPattern = RegExp(
   r'''\bcontent\s*:\s*['"]([a-z0-9_]+)['"]''',
 );
 
-const Set<String> _nonIconEnumTokens = {
-  'auto',
-  'blog',
-  'caution',
-  'dark',
-  'default',
-  'div',
-  'aside',
-  'span',
-  'important',
-  'light',
-  'none',
-  'note',
-  'theme',
-  'tip',
-  'toc',
-  'tutorial',
-};
+/// HTML element names constructed via `md.Element('span', ...)` in
+/// `alert_syntax.dart` that match [_enumOrSwitchReturnPattern].
+const Set<String> _htmlElementTokens = {'aside', 'div', 'span'};
 
 Set<String> extractDartOutlinedIcons(
   String dartSource, {
@@ -329,6 +327,7 @@ Set<String> extractDartOutlinedIcons(
       icons,
       _enumOrSwitchReturnPattern.allMatches(stripped),
       sourcePath,
+      ignoreTokens: _htmlElementTokens,
     );
   }
 
@@ -344,13 +343,16 @@ bool _isEnumIconSource(String sourcePath) =>
 void _addValidatedMatches(
   Set<String> icons,
   Iterable<RegExpMatch> matches,
-  String sourcePath,
-) {
+  String sourcePath, {
+  Set<String> ignoreTokens = const {},
+}) {
   for (final match in matches) {
-    final value = (match.group(1) ?? match.group(2))!;
-    if (_nonIconEnumTokens.contains(value)) continue;
-    _validateLigature(value, sourcePath: sourcePath);
-    icons.add(value);
+    for (var group = 1; group <= match.groupCount; group++) {
+      final value = match.group(group);
+      if (value == null || ignoreTokens.contains(value)) continue;
+      _validateLigature(value, sourcePath: sourcePath);
+      icons.add(value);
+    }
   }
 }
 
@@ -389,7 +391,7 @@ Set<String> extractDataIconValues(
   final icons = <String>{};
   for (final match in _yamlIconLinePattern.allMatches(content)) {
     final value = match.group(1)!;
-    if (!_nonIconEnumTokens.contains(value)) {
+    if (value != 'none') {
       _validateLigature(value, sourcePath: sourcePath);
       icons.add(value);
     }

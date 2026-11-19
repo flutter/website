@@ -153,8 +153,13 @@ class DefaultLayout extends PageLayout {
             const link(
               href:
                   'https://fonts.googleapis.com/css2?'
-                  'family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0'
-                  '&icon_names=arrow_back,arrow_circle_left,arrow_circle_right,arrow_drop_down,arrow_forward,arrow_outward,arrow_upward,celebration,check,check_circle,close,design_services,diversity_3,download,expand_more,hub,insights,live_tv,mail,menu,north_east,open_in_new,rocket_launch,search,speed'
+                  'family=Material+Symbols+Rounded:'
+                  'opsz,wght,FILL,GRAD@20..48,400,0..1,0'
+                  '&icon_names=arrow_back,arrow_circle_left,arrow_circle_right,'
+                  'arrow_drop_down,arrow_forward,arrow_outward,arrow_upward,'
+                  'celebration,check,check_circle,close,design_services,'
+                  'diversity_3,download,expand_more,hub,insights,live_tv,mail,'
+                  'menu,north_east,open_in_new,rocket_launch,search,speed'
                   '&display=block',
               rel: 'stylesheet',
             ),

@@ -81,6 +81,21 @@ void main() {
             '${unusedInUrl.join(', ')}',
       );
     });
+
+    test(
+      'Dart Rounded extractor captures valid symbols and ternary branches',
+      () {
+        expect(
+          extractWwwDartRoundedIcons('''
+          // Icon(symbol: 'ignored_comment')
+          const a = Icon(symbol: 'toc');
+          const b = Icon(symbol: 'note');
+          final c = Icon(symbol: open ? 'close' : 'light');
+        '''),
+          {'toc', 'note', 'close', 'light'},
+        );
+      },
+    );
   });
 }
 
@@ -150,14 +165,24 @@ Set<String> _discoverWwwDartRoundedIcons(String wwwRoot) {
   final icons = <String>{};
   for (final file in _listFiles(p.join(wwwRoot, 'lib'), {'.dart'})) {
     if (_isGeneratedDartFile(file.path)) continue;
-    final stripped = _stripCStyleComments(file.readAsStringSync());
-    for (final pattern in [
-      _iconCtorPattern,
-      _symbolOrIconNamedArgPattern,
-      _roundedSpanInDartPattern,
-    ]) {
-      for (final match in pattern.allMatches(stripped)) {
-        icons.add(match.group(1)!);
+    icons.addAll(extractWwwDartRoundedIcons(file.readAsStringSync()));
+  }
+  return icons;
+}
+
+Set<String> extractWwwDartRoundedIcons(String dartSource) {
+  final icons = <String>{};
+  final stripped = _stripCStyleComments(dartSource);
+  for (final pattern in [
+    _iconCtorPattern,
+    _symbolOrIconNamedArgPattern,
+    _roundedSpanInDartPattern,
+  ]) {
+    for (final match in pattern.allMatches(stripped)) {
+      for (var group = 1; group <= match.groupCount; group++) {
+        if (match.group(group) case final value?) {
+          icons.add(value);
+        }
       }
     }
   }
@@ -220,7 +245,7 @@ final RegExp _iconCtorPattern = RegExp(
   r'''\bIcon\(\s*(?:[^)]*?\bsymbol:\s*)?['"]([a-z0-9_]+)['"]''',
 );
 final RegExp _symbolOrIconNamedArgPattern = RegExp(
-  r'''\b(?:symbol|icon)\s*:\s*['"]([a-z0-9_]+)['"]''',
+  r'''\b(?:symbol|icon)\s*:\s*(?:[^,);\n]*?\?\s*)?['"]([a-z0-9_]+)['"](?:\s*:\s*['"]([a-z0-9_]+)['"])?''',
 );
 final RegExp _roundedSpanInDartPattern = RegExp(
   r'''material-symbols-rounded['"][\s\S]{0,200}?\.text\(\s*['"]([a-z0-9_]+)['"]\s*\)''',

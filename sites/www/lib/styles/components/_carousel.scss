@@ -188,10 +188,6 @@
     padding-bottom: 60px;
     position: relative;
 
-    >a {
-      display: block;
-    }
-
     &:last-child {
       margin-right: var(--gutter);
     }
@@ -233,6 +229,18 @@
       color: black;
       font-weight: var(--font-weight-bold);
       display: inline-block;
+    }
+
+    >a {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      height: 100%;
+    }
+
+    .read-more {
+      margin-top: auto;
     }
 
     .carousel-card-bg {

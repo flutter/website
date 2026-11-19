@@ -66,7 +66,7 @@
   .stacked-feature {
     .feature {
       display: grid;
-      top: 0;
+      transform: none;
       opacity: 1;
 
       &.full {

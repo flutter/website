@@ -41,7 +41,26 @@ class BlogLayout extends DefaultLayout {
         '&display=swap',
     'https://fonts.googleapis.com/css2?'
         'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0'
-        '&icon_names=accessibility,account_tree,add,add_circle,alt_route,animation,api,apps,arrow_upward,article,asterisk,auto_awesome,bolt,book_5,bug_report,celebration,center_focus_strong,change_circle,check,check_circle,chevron_left,chevron_right,close,close_small,cloud_download,code,code_blocks,computer,construction,content_copy,dark_mode,data_object,delete,description,desktop_windows,devices,dictionary,diversity_3,docs,download,edit_note,error,expand_more,extension,feedback,filter_list,fit_screen,flutter,grid_view,handyman,info,integration_instructions,inventory_2,keyboard_arrow_down,keyboard_arrow_right,keyboard_arrow_up,language,laptop_mac,layers,library_books,light_mode,lightbulb,link,list,live_tv,markdown,menu,merge_type,mobile,more_vert,night_sight_auto,notifications_active,open_in_new,package_2,palette,phone_iphone,photo_album,photo_library,play_arrow,play_lesson,preview,progress_activity,quick_reference_all,refresh,remove,repeat,rocket_launch,routine,rss_feed,school,science,search,share,smart_toy,sort_by_alpha,speed,storage,swap_horiz,swipe_right,sync,tag,terminal,text_fields,thumb_down,thumb_up,timeline,toggle_on,touch_app,translate,tune,unfold_more,update,vertical_align_top,view_column,view_day,view_module,view_quilt,view_sidebar,warning,web_asset,widgets'
+        '&icon_names=accessibility,account_tree,add,add_circle,alt_route,'
+        'animation,api,apps,arrow_upward,article,asterisk,auto_awesome,bolt,'
+        'book_5,bug_report,celebration,center_focus_strong,change_circle,check,'
+        'check_circle,chevron_left,chevron_right,close,close_small,'
+        'cloud_download,code,code_blocks,computer,construction,content_copy,'
+        'dark_mode,data_object,delete,description,desktop_windows,devices,'
+        'dictionary,diversity_3,docs,download,edit_note,error,expand_more,'
+        'extension,feedback,filter_list,fit_screen,flutter,grid_view,handyman,'
+        'info,integration_instructions,inventory_2,keyboard_arrow_down,'
+        'keyboard_arrow_right,keyboard_arrow_up,language,laptop_mac,layers,'
+        'library_books,light_mode,lightbulb,link,list,live_tv,markdown,menu,'
+        'merge_type,mobile,more_vert,night_sight_auto,notifications_active,'
+        'open_in_new,package_2,palette,phone_iphone,photo_album,photo_library,'
+        'play_arrow,play_lesson,preview,progress_activity,quick_reference_all,'
+        'refresh,remove,repeat,rocket_launch,routine,rss_feed,school,science,'
+        'search,share,smart_toy,sort_by_alpha,speed,storage,swap_horiz,'
+        'swipe_right,sync,tag,terminal,text_fields,thumb_down,thumb_up,'
+        'timeline,toggle_on,touch_app,translate,tune,unfold_more,update,'
+        'vertical_align_top,view_column,view_day,view_module,view_quilt,'
+        'view_sidebar,warning,web_asset,widgets'
         '&display=block',
   ];
 
