@@ -10,6 +10,7 @@ import 'package:universal_web/web.dart' as web;
 import '../../components/common/code_block_copy_button.dart';
 
 bool _copyDelegationInitialized = false;
+final _pendingResets = <web.Element, _PendingCopyReset>{};
 
 /// Extracts copyable source text from the `.code-block-wrapper` enclosing
 /// [button], stripping `[aria-hidden="true"]` prompt/fold elements and
@@ -40,55 +41,6 @@ void setUpCodeBlockCopyButtons() {
   }
   _copyDelegationInitialized = true;
 
-  final pendingResets = <web.Element, _PendingCopyReset>{};
-
-  Future<void> handleCopy(web.Element button, String toCopy) async {
-    var feedbackLabel = 'Copied!';
-    try {
-      await web.window.navigator.clipboard.writeText(toCopy).toDart;
-    } on Object {
-      feedbackLabel = 'Failed to copy';
-    }
-
-    final existing = pendingResets.remove(button);
-    existing?.timer.cancel();
-
-    final originalTitle = existing?.title ?? button.getAttribute('title');
-    final originalAriaLabel =
-        existing?.ariaLabel ?? button.getAttribute('aria-label');
-    final wasIconButton =
-        existing?.wasIconButton ?? button.classList.contains('icon-button');
-
-    existing?.feedbackNode.remove();
-    final feedbackNode = web.document.createElement('span')
-      ..className = 'copy-feedback'
-      ..textContent = feedbackLabel;
-
-    if (wasIconButton) {
-      button.classList.remove('icon-button');
-    }
-    button
-      ..appendChild(feedbackNode)
-      ..setAttribute('title', feedbackLabel)
-      ..setAttribute('aria-label', feedbackLabel);
-
-    pendingResets[button] = _PendingCopyReset(
-      title: originalTitle,
-      ariaLabel: originalAriaLabel,
-      wasIconButton: wasIconButton,
-      feedbackNode: feedbackNode,
-      timer: Timer(const Duration(seconds: 2), () {
-        pendingResets.remove(button);
-        feedbackNode.remove();
-        if (wasIconButton) {
-          button.classList.add('icon-button');
-        }
-        _restoreAttribute(button, 'title', originalTitle);
-        _restoreAttribute(button, 'aria-label', originalAriaLabel);
-      }),
-    );
-  }
-
   web.document.addEventListener(
     'click',
     ((web.Event event) {
@@ -110,8 +62,64 @@ void setUpCodeBlockCopyButtons() {
       }
 
       // Clipboard write and transient feedback reset run asynchronously.
-      unawaited(handleCopy(button, toCopy));
+      unawaited(_handleCopy(button, toCopy));
     }).toJS,
+  );
+}
+
+Future<void> _handleCopy(web.Element button, String toCopy) async {
+  var feedbackLabel = 'Copied!';
+  try {
+    await web.window.navigator.clipboard.writeText(toCopy).toDart;
+  } on Object {
+    feedbackLabel = 'Failed to copy';
+  }
+
+  final existing = _pendingResets.remove(button);
+  existing?.timer.cancel();
+
+  final originalTitle = existing?.title ?? button.getAttribute('title');
+  final originalAriaLabel =
+      existing?.ariaLabel ?? button.getAttribute('aria-label');
+  final wasIconButton =
+      existing?.wasIconButton ?? button.classList.contains('icon-button');
+  final originalButtonText =
+      existing?.buttonText ?? (wasIconButton ? null : button.textContent);
+
+  existing?.feedbackNode?.remove();
+  web.Element? feedbackNode;
+  if (wasIconButton) {
+    feedbackNode = web.document.createElement('span')
+      ..className = 'copy-feedback'
+      ..textContent = feedbackLabel;
+    button
+      ..classList.remove('icon-button')
+      ..appendChild(feedbackNode);
+  } else {
+    button.textContent = feedbackLabel;
+  }
+
+  button
+    ..setAttribute('title', feedbackLabel)
+    ..setAttribute('aria-label', feedbackLabel);
+
+  _pendingResets[button] = _PendingCopyReset(
+    title: originalTitle,
+    ariaLabel: originalAriaLabel,
+    buttonText: originalButtonText,
+    wasIconButton: wasIconButton,
+    feedbackNode: feedbackNode,
+    timer: Timer(const Duration(seconds: 2), () {
+      _pendingResets.remove(button);
+      if (wasIconButton) {
+        feedbackNode?.remove();
+        button.classList.add('icon-button');
+      } else {
+        button.textContent = originalButtonText;
+      }
+      _restoreAttribute(button, 'title', originalTitle);
+      _restoreAttribute(button, 'aria-label', originalAriaLabel);
+    }),
   );
 }
 
@@ -127,6 +135,7 @@ final class _PendingCopyReset {
   const _PendingCopyReset({
     required this.title,
     required this.ariaLabel,
+    required this.buttonText,
     required this.wasIconButton,
     required this.feedbackNode,
     required this.timer,
@@ -134,7 +143,8 @@ final class _PendingCopyReset {
 
   final String? title;
   final String? ariaLabel;
+  final String? buttonText;
   final bool wasIconButton;
-  final web.Element feedbackNode;
+  final web.Element? feedbackNode;
   final Timer timer;
 }

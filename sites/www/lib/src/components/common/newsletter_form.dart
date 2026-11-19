@@ -466,6 +466,7 @@ Future<void> _ensureRecaptchaScriptLoaded() {
   script.addEventListener(
     'error',
     ((web.Event _) {
+      script.remove();
       _recaptchaScriptFuture = null;
       if (!completer.isCompleted) {
         completer.completeError(StateError('Failed to load reCAPTCHA'));

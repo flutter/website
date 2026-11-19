@@ -48,14 +48,19 @@ class ResizingAssetTransformer implements AssetTransformer {
       return asset;
     }
 
-    final decoder = img.findDecoderForNamedImage(asset.path);
-    if (decoder == null) {
+    final headerDecoder = _createDecoder(asset.path);
+    if (headerDecoder == null) {
       return asset;
     }
 
     try {
       final sourceBytes = asset.readAsBytes();
-      final decodedSource = _decodeSourceForResize(decoder, sourceBytes, width);
+      final decodedSource = _decodeSourceForResize(
+        asset.path,
+        headerDecoder,
+        sourceBytes,
+        width,
+      );
       if (decodedSource == null) {
         return asset;
       }
@@ -88,21 +93,29 @@ class ResizingAssetTransformer implements AssetTransformer {
   }
 }
 
-({img.Image image, bool losslessWebP})? _decodeSourceForResize(
-  img.Decoder decoder,
-  Uint8List sourceBytes,
-  int targetWidth,
-) {
+img.Decoder? _createDecoder(String assetPath) {
+  final decoder = img.findDecoderForNamedImage(assetPath);
   if (decoder is img.WebPDecoder) {
     decoder.maxPixels = 0;
   }
+  return decoder;
+}
 
-  final info = decoder.startDecode(sourceBytes);
+({img.Image image, bool losslessWebP})? _decodeSourceForResize(
+  String assetPath,
+  img.Decoder headerDecoder,
+  Uint8List sourceBytes,
+  int targetWidth,
+) {
+  final info = headerDecoder.startDecode(sourceBytes);
   if (info != null && info.width <= targetWidth) {
     return null;
   }
 
-  var image = decoder.decode(sourceBytes);
+  // Decode with a fresh decoder instance because stateful decoders such as
+  // PngDecoder append to internal chunk/frame lists on each startDecode call.
+  final decoder = _createDecoder(assetPath);
+  var image = decoder?.decode(sourceBytes);
   if (image == null || image.width <= targetWidth) {
     return null;
   }

@@ -116,6 +116,20 @@ void main() {
 
       expect(result, same(asset));
     });
+
+    test('resizes wider PNG images cleanly without corrupting chunks', () {
+      final sourceImage = _createGradientImage(width: 600, height: 300);
+      final sourceBytes = img.encodePng(sourceImage);
+      final asset = Asset.fromBytes('images/hero.png', sourceBytes);
+
+      final result = transformer.transform(asset, 200);
+
+      expect(result.path, 'images/hero.w200.png');
+      final decoded = img.decodePng(result.readAsBytes());
+      expect(decoded, isNotNull);
+      expect(decoded!.width, 200);
+      expect(decoded.height, 100);
+    });
   });
 }
 

@@ -53,21 +53,17 @@ class ScrollNotifier extends ChangeNotifier {
   }
 
   void _syncTargets(List<_ScrollTarget> targets, double offsetY) {
-    var changed = false;
-
-    for (final (offsetTop, node, id) in targets) {
+    for (final (offsetTop, node, _) in targets) {
       final isActive = offsetY > offsetTop;
       if (node.classList.contains('active') != isActive) {
         node.classList.toggle('active', isActive);
       }
-      if (id != null && updateActiveId(id, isActive: isActive)) {
-        changed = true;
-      }
     }
 
-    if (changed) {
-      notifyListeners();
-    }
+    applyThresholds(
+      offsetY,
+      targets.map((target) => (target.$1, target.$3)),
+    );
   }
 
   static void init() {
