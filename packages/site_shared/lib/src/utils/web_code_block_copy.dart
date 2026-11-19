@@ -4,7 +4,6 @@
 
 import 'dart:async';
 
-import 'package:meta/meta.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
@@ -43,7 +42,6 @@ void setUpCodeBlockCopyButtons() {
 
   final pendingResets = <web.Element, _PendingCopyReset>{};
 
-  @awaitNotRequired
   Future<void> handleCopy(web.Element button, String toCopy) async {
     var feedbackLabel = 'Copied!';
     try {
@@ -111,7 +109,8 @@ void setUpCodeBlockCopyButtons() {
         return;
       }
 
-      handleCopy(button, toCopy);
+      // Clipboard write and transient feedback reset run asynchronously.
+      unawaited(handleCopy(button, toCopy));
     }).toJS,
   );
 }

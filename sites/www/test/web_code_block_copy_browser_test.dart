@@ -29,7 +29,7 @@ void main() {
 '''
                 .toJS;
       web.document.body!.appendChild(wrapper);
-      addTearDown(() => wrapper.remove());
+      addTearDown(wrapper.remove);
 
       final button = wrapper.querySelector('button[$codeBlockCopyAttribute]')!;
       expect(extractCodeBlockText(button), 'flutter test\n\nvoid main() {}\n');

@@ -70,6 +70,7 @@ class _NewsletterFormState extends State<NewsletterForm> {
     _recaptchaInitializing = true;
 
     context.binding.addPostFrameCallback(() {
+      // Load and render reCAPTCHA asynchronously after the frame is presented.
       unawaited(_renderRecaptchaWhenReady());
     });
   }
