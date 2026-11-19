@@ -11,18 +11,40 @@ import 'package:site_shared/image_dimensions.dart';
 
 /// Looks up intrinsic (or post-resize) pixel dimensions for a resolved
 /// `/assets/...` URL produced by `AssetManager`.
-ImageDimensions? dimensionsForResolvedAsset(String src) {
-  if (!src.startsWith('/assets/')) return null;
-  final cleanPath = src.split('#').first.split('?').first;
-  final relativeAssetPath = p.fromUri(cleanPath.substring('/assets/'.length));
-  if (relativeAssetPath.isEmpty) return null;
+ImageDimensions? dimensionsForResolvedAsset(
+  String src, {
+  Iterable<String>? assetRoots,
+}) {
+  final assetSegments = _decodeAssetSegments(src);
+  if (assetSegments == null) return null;
 
-  for (final root in _candidateAssetRoots()) {
-    final candidate = p.normalize(p.join(root, relativeAssetPath));
+  for (final root in assetRoots ?? _candidateAssetRoots()) {
+    final normalizedRoot = p.normalize(root);
+    final candidate = p.normalize(
+      p.joinAll([normalizedRoot, ...assetSegments]),
+    );
+    if (!p.isWithin(normalizedRoot, candidate)) continue;
     final dims = readImageDimensions(candidate);
     if (dims != null) return dims;
   }
   return null;
+}
+
+List<String>? _decodeAssetSegments(String src) {
+  if (!src.startsWith('/assets/')) return null;
+  final cleanPath = src.split('#').first.split('?').first;
+  if (cleanPath.endsWith('/')) return null;
+
+  final uri = Uri.tryParse(cleanPath);
+  if (uri == null || uri.hasScheme || uri.hasAuthority) return null;
+
+  try {
+    final segments = uri.pathSegments;
+    if (segments.length < 2 || segments.first != 'assets') return null;
+    return segments.sublist(1);
+  } on FormatException {
+    return null;
+  }
 }
 
 /// Renders an `<img>` element with `width` and `height` populated from the

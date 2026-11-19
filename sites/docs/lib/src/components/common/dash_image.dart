@@ -5,12 +5,16 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/image_dimensions.dart';
 import 'package:site_shared/markdown.dart';
 
 import '../../extensions/image_dimension_processor.dart';
 
 class DashImage with CustomComponentBase {
-  const DashImage();
+  const DashImage({this.webRoot});
+
+  /// Optional path to the site's `web/` directory for hermetic testing.
+  final String? webRoot;
 
   @override
   Pattern get pattern => RegExp('DashImage', caseSensitive: false);
@@ -29,19 +33,10 @@ class DashImage with CustomComponentBase {
 
     final figureClass = isFigure ? attributes['class'] : null;
     final imgClass = attributes[isFigure ? 'img-class' : 'class'];
-
-    final style =
-        [
-              ?attributes['img-style'],
-              if (attributes['width'] case final w?) 'width: $w',
-              if (attributes['height'] case final h?) 'height: $h',
-            ]
-            .map((style) => style.trim())
-            .map((style) => style.endsWith(';') ? style : '$style;')
-            .join(' ');
+    final style = buildDashImageStyle(attributes);
 
     final resolvedSrc = '/assets/images/docs/$imgSrc';
-    final dims = resolveDocsWebImageDimensions(resolvedSrc);
+    final dims = resolveDocsWebImageDimensions(resolvedSrc, webRoot: webRoot);
 
     final child = Component.fragment([
       img(

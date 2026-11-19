@@ -84,6 +84,10 @@ ImageDimensions? _readImageDimensionsUncached(String path) {
       'image/gif' => _readGif(prefix),
       'image/webp' => _readWebp(prefix),
       'image/avif' => _readAvif(raf),
+      _
+          when lookupMimeType(path) == 'image/avif' &&
+              _matchesAt(prefix, 4, _ftypBox) =>
+        _readAvif(raf),
       _ when lookupMimeType(path) == 'image/svg+xml' || _looksLikeSvg(prefix) =>
         _readSvg(file),
       _ => null,
@@ -93,9 +97,11 @@ ImageDimensions? _readImageDimensionsUncached(String path) {
   }
 }
 
+const List<int> _ftypBox = [0x66, 0x74, 0x79, 0x70];
+
 /// Extends [MimeTypeResolver]'s built-in PNG, JPEG, GIF, and WebP magic-byte
-/// table with ISO-BMFF `ftypavif` so misnamed `.png` AVIF assets match before
-/// file-extension fallback.
+/// table with ISO-BMFF `ftypavif` and `ftypavis` so misnamed `.png` AVIF
+/// assets match before file-extension fallback.
 final MimeTypeResolver _imageMimeResolver = MimeTypeResolver()
   ..addMagicNumber(
     const [
@@ -113,21 +119,41 @@ final MimeTypeResolver _imageMimeResolver = MimeTypeResolver()
       0x66,
     ],
     'image/avif',
-    mask: const [
+    mask: _ftypBrandMask,
+  )
+  ..addMagicNumber(
+    const [
       0x00,
       0x00,
       0x00,
       0x00,
-      0xFF,
-      0xFF,
-      0xFF,
-      0xFF,
-      0xFF,
-      0xFF,
-      0xFF,
-      0xFF,
+      0x66,
+      0x74,
+      0x79,
+      0x70,
+      0x61,
+      0x76,
+      0x69,
+      0x73,
     ],
+    'image/avif',
+    mask: _ftypBrandMask,
   );
+
+const List<int> _ftypBrandMask = [
+  0x00,
+  0x00,
+  0x00,
+  0x00,
+  0xFF,
+  0xFF,
+  0xFF,
+  0xFF,
+  0xFF,
+  0xFF,
+  0xFF,
+  0xFF,
+];
 
 const List<int> _ispeFullBox = [
   0x69,
@@ -262,15 +288,15 @@ final RegExp _svgOpenTagPattern = RegExp(
   dotAll: true,
 );
 final RegExp _svgWidthPattern = RegExp(
-  r'''\bwidth\s*=\s*["']([0-9]+(?:\.[0-9]+)?)(?:px)?["']''',
+  r'''(?<![-\w:])width\s*=\s*["']\s*([0-9]+(?:\.[0-9]+)?)(?:px)?\s*["']''',
   caseSensitive: false,
 );
 final RegExp _svgHeightPattern = RegExp(
-  r'''\bheight\s*=\s*["']([0-9]+(?:\.[0-9]+)?)(?:px)?["']''',
+  r'''(?<![-\w:])height\s*=\s*["']\s*([0-9]+(?:\.[0-9]+)?)(?:px)?\s*["']''',
   caseSensitive: false,
 );
 final RegExp _svgViewBoxPattern = RegExp(
-  r'''\bviewBox\s*=\s*["']\s*[-+0-9.]+[\s,]+[-+0-9.]+[\s,]+([0-9]+(?:\.[0-9]+)?)[\s,]+([0-9]+(?:\.[0-9]+)?)\s*["']''',
+  r'''(?<![-\w:])viewBox\s*=\s*["']\s*[-+0-9.]+[\s,]+[-+0-9.]+[\s,]+([0-9]+(?:\.[0-9]+)?)[\s,]+([0-9]+(?:\.[0-9]+)?)\s*["']''',
   caseSensitive: false,
 );
 
@@ -322,4 +348,34 @@ double? _parseSvgNumber(RegExpMatch? match) {
   if (match == null) return null;
   final value = double.tryParse(match.group(1)!);
   return value != null && value.isFinite && value > 0 ? value : null;
+}
+
+final RegExp _inlineWidthPropertyPattern = RegExp(
+  r'(?:^|;)\s*width\s*:',
+  caseSensitive: false,
+);
+
+/// Builds the normalized inline CSS `style` string for a `<DashImage>`
+/// component's `img-style`, `width`, and `height` [attributes], appending
+/// `width: auto;` on height-only overrides so intrinsic HTML dimensions do not
+/// distort the image's aspect ratio.
+String buildDashImageStyle(Map<String, String> attributes) {
+  final rawWidth = attributes['width']?.trim();
+  final rawHeight = attributes['height']?.trim();
+  final hasExplicitWidth =
+      (rawWidth != null && rawWidth.isNotEmpty) ||
+      _inlineWidthPropertyPattern.hasMatch(attributes['img-style'] ?? '');
+
+  return [
+        ?attributes['img-style'],
+        if (rawWidth != null && rawWidth.isNotEmpty) 'width: $rawWidth',
+        if (rawHeight != null && rawHeight.isNotEmpty) ...[
+          'height: $rawHeight',
+          if (!hasExplicitWidth) 'width: auto',
+        ],
+      ]
+      .map((style) => style.trim())
+      .where((style) => style.isNotEmpty)
+      .map((style) => style.endsWith(';') ? style : '$style;')
+      .join(' ');
 }

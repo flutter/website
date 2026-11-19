@@ -4,6 +4,7 @@
 
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/image_dimensions.dart';
 
 import 'content_image.dart';
 
@@ -27,16 +28,7 @@ class DashImage with CustomComponentBase {
 
     final figureClass = isFigure ? attributes['class'] : null;
     final imgClass = attributes[isFigure ? 'img-class' : 'class'];
-
-    final style =
-        [
-              ?attributes['img-style'],
-              if (attributes['width'] case final w?) 'width: $w',
-              if (attributes['height'] case final h?) 'height: $h',
-            ]
-            .map((style) => style.trim())
-            .map((style) => style.endsWith(';') ? style : '$style;')
-            .join(' ');
+    final style = buildDashImageStyle(attributes);
 
     return Builder(
       builder: (context) => ContentImage(

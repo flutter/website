@@ -60,13 +60,29 @@ String defaultDocsWebRoot() {
 /// Reads intrinsic dimensions for a site-root-relative [src] (such as
 /// `/assets/images/docs/...`) from [webRoot].
 ImageDimensions? resolveDocsWebImageDimensions(String src, {String? webRoot}) {
+  final segments = _decodeRootRelativeSegments(src);
+  if (segments == null) return null;
+
+  final normalizedRoot = p.normalize(webRoot ?? defaultDocsWebRoot());
+  final filePath = p.normalize(p.joinAll([normalizedRoot, ...segments]));
+  if (!p.isWithin(normalizedRoot, filePath)) return null;
+  return readImageDimensions(filePath);
+}
+
+List<String>? _decodeRootRelativeSegments(String src) {
   if (!src.startsWith('/') || src.startsWith('//')) return null;
   final cleanPath = src.split('#').first.split('?').first;
-  if (cleanPath.length <= 1) return null;
+  if (cleanPath.length <= 1 || cleanPath.endsWith('/')) return null;
 
-  final root = webRoot ?? defaultDocsWebRoot();
-  final filePath = p.normalize(p.join(root, p.fromUri(cleanPath.substring(1))));
-  return readImageDimensions(filePath);
+  final uri = Uri.tryParse(cleanPath);
+  if (uri == null || uri.hasScheme || uri.hasAuthority) return null;
+
+  try {
+    final segments = uri.pathSegments;
+    return segments.isEmpty ? null : segments;
+  } on FormatException {
+    return null;
+  }
 }
 
 /// Renders an `<img>` element for `sites/docs` with `width` and `height`
@@ -87,11 +103,25 @@ Component docsSizedImg({
 }
 
 final RegExp _pixelDimensionPattern = RegExp(r'^([1-9]\d*)(?:px)?$');
+final RegExp _inlineWidthPropertyPattern = RegExp(
+  r'(?:^|;)\s*width\s*:',
+  caseSensitive: false,
+);
+final RegExp _inlineHeightPropertyPattern = RegExp(
+  r'(?:^|;)\s*height\s*:',
+  caseSensitive: false,
+);
 
 int? _parsePixelDimension(String? raw) {
   if (raw == null) return null;
   final match = _pixelDimensionPattern.firstMatch(raw.trim());
   return match == null ? null : int.tryParse(match.group(1)!);
+}
+
+String? _cleanDimensionAttribute(String? raw) {
+  if (raw == null) return null;
+  final trimmed = raw.trim().replaceFirst(RegExp(r';+\s*$'), '').trimRight();
+  return trimmed.isEmpty ? null : trimmed;
 }
 
 Map<String, String> _resolveImgAttributes(
@@ -104,8 +134,8 @@ Map<String, String> _resolveImgAttributes(
   final dims = resolveDocsWebImageDimensions(src, webRoot: webRoot);
   if (dims == null) return attributes;
 
-  final rawWidth = attributes['width'];
-  final rawHeight = attributes['height'];
+  final rawWidth = _cleanDimensionAttribute(attributes['width']);
+  final rawHeight = _cleanDimensionAttribute(attributes['height']);
   if (rawWidth != null && rawHeight != null) {
     final parsedW = _parsePixelDimension(rawWidth);
     final parsedH = _parsePixelDimension(rawHeight);
@@ -120,17 +150,31 @@ Map<String, String> _resolveImgAttributes(
   }
 
   if (rawWidth == null && rawHeight == null) {
-    return {
-      ...attributes,
-      'width': '${dims.width}',
-      'height': '${dims.height}',
-    };
+    return _resolveIntrinsicAttributes(attributes, dims);
   }
 
   if (rawWidth != null) {
     return _resolveWidthOnlyAttributes(attributes, rawWidth, dims);
   }
   return _resolveHeightOnlyAttributes(attributes, rawHeight!, dims);
+}
+
+Map<String, String> _resolveIntrinsicAttributes(
+  Map<String, String> attributes,
+  ImageDimensions dims,
+) {
+  final existingStyle = attributes['style'];
+  final needsAutoWidth =
+      existingStyle != null &&
+      _inlineHeightPropertyPattern.hasMatch(existingStyle) &&
+      !_inlineWidthPropertyPattern.hasMatch(existingStyle);
+  return {
+    ...attributes,
+    if (needsAutoWidth)
+      'style': _appendCssDeclaration(existingStyle, 'width: auto;'),
+    'width': '${dims.width}',
+    'height': '${dims.height}',
+  };
 }
 
 Map<String, String> _resolveWidthOnlyAttributes(

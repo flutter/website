@@ -3,4 +3,8 @@
 // found in the LICENSE file.
 
 export 'src/utils/image_dimensions.dart'
-    show ImageDimensions, clearImageDimensionsCache, readImageDimensions;
+    show
+        ImageDimensions,
+        buildDashImageStyle,
+        clearImageDimensionsCache,
+        readImageDimensions;
