@@ -16,8 +16,7 @@ class Question {
       json['question'] as String,
       (json['options'] as List<Object?>)
           .map((e) => AnswerOption.fromJson(e as Map<Object?, Object?>))
-          .toList()
-        ..shuffle(),
+          .toList(),
     );
   }
 

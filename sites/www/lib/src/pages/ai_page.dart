@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/feature_grid.dart';
@@ -94,7 +93,7 @@ class AiPage extends StatelessComponent {
         section(id: 'tabs', classes: 'module', attributes: scroll.spy(-300), [
           //TODO: Add a section for GenUI here
           div(classes: 'build-features container', [
-            ref(const h2([.text('Start building AI-driven features now.')])),
+            const h2([.text('Start building AI-driven features now.')]),
             // Firebase Section
             div(classes: 'alternating-item', [
               div(classes: 'media', [
@@ -215,13 +214,9 @@ class AiPage extends StatelessComponent {
               h4(classes: 'eyebrow', [.text('Find inspiration')]),
               h2([.text('Explore Flutter + AI samples')]),
             ]),
-            Carousel(
-              ref(
-                .fragment([
-                  for (final item in samples) _buildSampleItem(context, item),
-                ]),
-              ),
-            ),
+            Carousel([
+              for (final item in samples) _buildSampleItem(context, item),
+            ]),
           ],
         ),
         const CTASection(),
