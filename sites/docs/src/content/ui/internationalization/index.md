@@ -42,13 +42,12 @@ You can find the source code for this example in
 
 [`gen_l10n_example`]: {{site.repo.this}}/tree/main/examples/internationalization/gen_l10n_example
 
-### Set up an internationalized app with `flutter_localizations` {:#setting-up}
+### Set up an internationalized app {:#setting-up}
 
 By default, Flutter only provides US English localizations.
 To add support for other languages,
-an application must specify additional
-`MaterialApp` (or `CupertinoApp`) properties,
-and include the `flutter_localizations` and `intl` packages.
+configure your `MaterialApp` (or `CupertinoApp`) with
+localization delegates and the locales your app supports.
 
 To begin, start by creating a new Flutter application
 in a directory of your choice with the `flutter create` command.
@@ -74,26 +73,8 @@ To learn more about this migration, check out
 [`material_ui`]: {{site.pub-pkg}}/material_ui
 [Migrate to standalone material_ui and cupertino_ui packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 
-Next, add the `flutter_localizations` and `intl` packages as dependencies:
-
-```console
-$ flutter pub add flutter_localizations:"{sdk: flutter}" intl:any
-```
-
-This updates your `pubspec.yaml` file with the following entries:
-
-<?code-excerpt "gen_l10n_example/pubspec.yaml (flutter-localizations)"?>
-```yaml title="pubspec.yaml" highlightLines=4-6
-dependencies:
-  flutter:
-    sdk: flutter
-  flutter_localizations:
-    sdk: flutter
-  intl: any
-```
-
-The `material_ui` package exports the `GlobalMaterialLocalizations` class,
-so the only import you need is the one your app already has:
+Because `material_ui` already exports `GlobalMaterialLocalizations`,
+you don't need an extra import:
 
 ```dart
 import 'package:material_ui/material_ui.dart';
@@ -101,10 +82,12 @@ import 'package:material_ui/material_ui.dart';
 
 :::warning
 Don't import `package:flutter_localizations/flutter_localizations.dart`
-alongside `package:material_ui/material_ui.dart` without restricting it.
-Both libraries export a class named `GlobalMaterialLocalizations`,
-so referencing it results in an `ambiguous_import` error.
-The copy in `flutter_localizations` is deprecated as of Flutter 3.50.
+alongside `package:material_ui/material_ui.dart` or
+`package:cupertino_ui/cupertino_ui.dart` without `show` or `hide`.
+`flutter_localizations` exports deprecated copies of
+`GlobalMaterialLocalizations` and `GlobalCupertinoLocalizations`
+(as of Flutter 3.50), which conflict with the standalone packages
+and cause an `ambiguous_import` error.
 :::
 
 Then specify `localizationsDelegates` and `supportedLocales` for
@@ -127,13 +110,13 @@ return const MaterialApp(
 If your app is based on `CupertinoApp` instead of `MaterialApp`,
 use `GlobalCupertinoLocalizations.delegates` from
 the [`cupertino_ui`][] package.
-However, if your `CupertinoApp` also renders Material widgets from
-`material_ui`, use `GlobalMaterialLocalizations.delegates` instead,
+If your `CupertinoApp` also uses Material widgets from `material_ui`,
+use `GlobalMaterialLocalizations.delegates` instead,
 which includes the Cupertino and Widgets delegates as well.
 
 If your app is based on `WidgetsApp` instead of `MaterialApp`,
-use `GlobalWidgetsLocalizations.delegate`,
-which is only available from `flutter_localizations`:
+add `flutter_localizations` as a dependency and pass
+`[GlobalWidgetsLocalizations.delegate]` to `localizationsDelegates`:
 
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart'
@@ -351,19 +334,20 @@ complete the following instructions:
    ```
 
    :::warning
-   The `AppLocalizations` class also generates a
-   `localizationsDelegates` list, but as of Flutter 3.50,
-   `gen-l10n` still populates it with the deprecated delegates from
-   `flutter_localizations` rather than the ones from `material_ui`.
-   In an app migrated to `material_ui`, those delegates don't provide
-   `MaterialLocalizations` for any locale other than English.
-   Until this is resolved in [flutter/flutter#191072][],
-   build the list yourself from `AppLocalizations.delegate` and
-   `GlobalMaterialLocalizations.delegates`, as shown in the previous code.
+   `gen-l10n` also generates an `AppLocalizations.localizationsDelegates`
+   list, but in Flutter 3.50 it still populates that list with the
+   deprecated delegates from `flutter_localizations` instead of
+   `material_ui`.
+   Those delegates don't provide `material_ui`'s `MaterialLocalizations`
+   at all: English still works because `MaterialApp` falls back to its
+   English-only default delegate, but non-English locales fail at runtime.
+   Until [flutter/flutter#191072][] is resolved, build the list yourself
+   from `AppLocalizations.delegate` and
+   `GlobalMaterialLocalizations.delegates`, as in the preceding example.
 
-   The generated file also triggers `deprecated_member_use` diagnostics.
-   To silence them until `gen-l10n` is updated,
-   add a `header` to your `l10n.yaml`:
+   The generated file also triggers `deprecated_member_use` warnings.
+   To ignore them until `gen-l10n` is updated, add a `header` to
+   `l10n.yaml` and re-run `flutter gen-l10n`:
 
    <?code-excerpt "gen_l10n_example/l10n.yaml (header)"?>
    ```yaml title="l10n.yaml"
@@ -1201,7 +1185,7 @@ class _NnMaterialLocalizationsDelegate
 ```
 
 For more information about localization strings,
-check out the [flutter_localizations README][].
+check out the [material_ui localizations README][].
 
 Once you've implemented your language-specific subclasses of
 `GlobalMaterialLocalizations` and `LocalizationsDelegate`,
@@ -1224,25 +1208,23 @@ const MaterialApp(
 ```
 
 :::note
-`GlobalMaterialLocalizations` comes from `package:material_ui`,
-but `GlobalWidgetsLocalizations` is only exported by
-`package:flutter_localizations`, which also exports a
-deprecated `GlobalMaterialLocalizations`.
-To use both without an `ambiguous_import` error,
-the example hides the deprecated class when importing
-`flutter_localizations`:
+`GlobalWidgetsLocalizations` is only exported by
+`package:flutter_localizations`, which also exports a deprecated
+`GlobalMaterialLocalizations`.
+To avoid an `ambiguous_import` error with `package:material_ui`,
+the example uses `show` to import only `GlobalWidgetsLocalizations`:
 
 <?code-excerpt "add_language/lib/main.dart (imports)"?>
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart'
-    hide GlobalMaterialLocalizations;
+    show GlobalWidgetsLocalizations;
 import 'package:material_ui/material_ui.dart';
 ```
 :::
 
 [`add_language`]: {{site.repo.this}}/tree/main/examples/internationalization/add_language/lib/main.dart
 
-[flutter_localizations README]: {{site.repo.flutter}}/blob/main/packages/flutter_localizations/lib/src/l10n/README.md
+[material_ui localizations README]: {{site.repo.packages}}/blob/main/packages/material_ui/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.material_ui}}/GlobalMaterialLocalizations-class.html
 
 <a id="alternative-internationalization-workflows"></a>

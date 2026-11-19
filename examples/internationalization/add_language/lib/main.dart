@@ -1,6 +1,6 @@
 // #docregion imports
 import 'package:flutter_localizations/flutter_localizations.dart'
-    hide GlobalMaterialLocalizations;
+    show GlobalWidgetsLocalizations;
 import 'package:material_ui/material_ui.dart';
 // #enddocregion imports
 
