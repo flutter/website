@@ -830,7 +830,7 @@ continue to be included in all Flutter apps.
 Additionally, this won't work for all libraries written
 in Flutter that are imported into Android apps as AAR dependencies.
 
-[Flutter 3.22]: {{site.flutter-blog}}/whats-new-in-flutter-3-22-fbde6c164fe3
+[Flutter 3.22]: {{site.flutter-blog}}/whats-new-in-flutter-3-22
 
 #### Non-technical evaluation
 

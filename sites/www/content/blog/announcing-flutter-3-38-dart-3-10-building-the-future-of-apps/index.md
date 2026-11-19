@@ -36,7 +36,7 @@ We’ve got a whole [Flutter Flight Plans series](https://www.youtube.com/playli
 
 <YoutubeEmbed id="tErMAB5FKNw" title="How I built a Google I/O keynote demo in 30 minutes" fullwidth="true"/>
 
-**Build multi-platform Flutter apps with Gemini CLI:** Head to [the docs](https://docs.flutter.dev/ai/create-with-ai#flutter-extension-for-gemini-cli) to jump into the Flutter extension for Gemini CLI.
+**Build multi-platform Flutter apps with Gemini CLI:** Head to [the docs](https://docs.flutter.dev/ai/get-started) to jump into the Flutter extension for Gemini CLI.
 
 <YoutubeEmbed id="RZPkE5sllck" title="Build multiplatform apps with Gemini CLI" fullwidth="true"/>
 
