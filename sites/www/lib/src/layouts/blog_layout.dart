@@ -120,7 +120,7 @@ class BlogLayout extends DefaultLayout {
           ),
         ]),
         if (isPost) const BackToTopButton(),
-        if (isPost) const ImageZoombox(),
+        if (isPost) ImageZoombox(key: ValueKey(page.url)),
       ]),
     );
   }
