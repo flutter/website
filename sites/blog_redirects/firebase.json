@@ -111,7 +111,7 @@
         "type": 301
       },
       {
-        "source": "/media/**",
+        "source": "/media/:rest*",
         "destination": "https://flutter.dev/blog",
         "type": 301
       },
