@@ -14,7 +14,7 @@ layout: blog
 
 ## Announcing Flutter 3.38 & Dart 3.10: Building the future of apps
 
-Hi, Flutter community! My name is Emma Twersky, and I am unbelievably excited to be your new lead for Flutter and Dart DevRel. I’m not just here to talk about new features; I’m here for this community. The number one reason I’m here is for the incredible culture we have. If you haven’t read it, check out [Flutter culture and how to preserve it](https://blog.flutter.dev/flutter-culture-and-how-to-preserve-it-436b4ed1031d). It’s all about being open, modest, and respectful, all while building fantastic cross-platform apps, and that’s what Flutter and Dart are all about. I’m so excited to be a part of this community, and I can’t wait to share all that we’re working on.
+Hi, Flutter community! My name is Emma Twersky, and I am unbelievably excited to be your new lead for Flutter and Dart DevRel. I’m not just here to talk about new features; I’m here for this community. The number one reason I’m here is for the incredible culture we have. If you haven’t read it, check out [Flutter culture and how to preserve it](/blog/flutter-culture-and-how-to-preserve-it). It’s all about being open, modest, and respectful, all while building fantastic cross-platform apps, and that’s what Flutter and Dart are all about. I’m so excited to be a part of this community, and I can’t wait to share all that we’re working on.
 
 Speaking of fantastic cross-platform apps, our friends over at NotebookLM have been going viral with their Flutter app this year. We visited them to hear about how Flutter accelerated their launch, check it out:
 
@@ -70,7 +70,7 @@ Dive into the [Dart 3.10 technical blog post](https://blog.dart.dev/announcing-d
 
 * **Accessibility:** We’re always working to make Flutter more inclusive. Say hello to the new [`SliverSemantics`](https://api.flutter.dev/flutter/widgets/SliverSemantics-class.html) widget and better default behaviors.
 
-Want all the nitty-gritty details? Of course you do. Check out the [Flutter 3.38 technical blog post](https://blog.flutter.dev/whats-new-in-flutter-3-38-3f7b258f7228).
+Want all the nitty-gritty details? Of course you do. Check out the [Flutter 3.38 technical blog post](/blog/whats-new-in-flutter-3-38).
 
 ## Community and ecosystem spotlight
 

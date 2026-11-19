@@ -159,6 +159,6 @@ We’re also continuing to refine a few areas over the coming months:
 
 With the portability of Dart, the power of the web platform, and the flexibility of the Flutter framework, you can now build apps for iOS, Android, and the browser from the same codebase.
 
-For those of you who already have an existing Flutter web app, you can now build your app in the [stable channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable). If you are new to building Flutter web apps, check out [flutter.dev/web](https://flutter.dev/web), our [get started codelab](https://flutter.dev/docs/get-started/codelab-web), and the Flutter Engage [web breakout session](https://youtu.be/HAstl_NkXl0). And, as you’re building your web app, be sure to file any issues on [GitHub](https://goo.gle/flutter_web_issue).
+For those of you who already have an existing Flutter web app, you can now build your app in the [stable channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable). If you are new to building Flutter web apps, check out [flutter.dev/web](/development/web), our [get started codelab](https://flutter.dev/docs/get-started/codelab-web), and the Flutter Engage [web breakout session](https://youtu.be/HAstl_NkXl0). And, as you’re building your web app, be sure to file any issues on [GitHub](https://goo.gle/flutter_web_issue).
 
 We can’t wait to see what you build with Flutter’s new web support!

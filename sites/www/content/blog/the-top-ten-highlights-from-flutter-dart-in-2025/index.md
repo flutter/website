@@ -24,19 +24,19 @@ What a year! Let’s dig into just 10 of the top moments, although it was hard n
 
 As you might know, Dart and Flutter ship quarterly updates. In 2025, we shipped eight packed stable releases:
 
-1. **[Flutter 3.29](https://blog.flutter.dev/whats-new-in-flutter-3-29-f90c380c2317) & [Dart 3.7](https://blog.dart.dev/announcing-dart-3-7-bf864a1b195c) (Feb 2025):** This release was all about performance and fidelity, with big Impeller updates, the move of Dart execution to the main thread on mobile to improve native interop, and a new Dart formatter.
+1. **[Flutter 3.29](/blog/whats-new-in-flutter-3-29) & [Dart 3.7](https://blog.dart.dev/announcing-dart-3-7-bf864a1b195c) (Feb 2025):** This release was all about performance and fidelity, with big Impeller updates, the move of Dart execution to the main thread on mobile to improve native interop, and a new Dart formatter.
 
-2. **[Flutter 3.32](https://blog.flutter.dev/whats-new-in-flutter-3-32-40c1086bab6e) & [Dart 3.8](https://blog.dart.dev/announcing-dart-3-8-724eaaec9f47) (May 2025):** We got experimental web hot reload, Cupertino “Squircles,” stylus support on Android, cross-compilation for Dart, and null-aware elements.
+2. **[Flutter 3.32](/blog/whats-new-in-flutter-3-32) & [Dart 3.8](https://blog.dart.dev/announcing-dart-3-8-724eaaec9f47) (May 2025):** We got experimental web hot reload, Cupertino “Squircles,” stylus support on Android, cross-compilation for Dart, and null-aware elements.
 
-3. **[Flutter 3.35](https://blog.flutter.dev/whats-new-in-flutter-3-35-c58ef72e3766) & [Dart 3.9](https://blog.dart.dev/announcing-dart-3-9-ba49e8f38298) (Aug 2025):** Web hot reload became default, we launched experimental Widget Previews, introduced the Dart & Flutter [MCP server](https://docs.flutter.dev/ai/mcp-server), and announced the Material/Cupertino decoupling.
+3. **[Flutter 3.35](/blog/whats-new-in-flutter-3-35) & [Dart 3.9](https://blog.dart.dev/announcing-dart-3-9-ba49e8f38298) (Aug 2025):** Web hot reload became default, we launched experimental Widget Previews, introduced the Dart & Flutter [MCP server](https://docs.flutter.dev/ai/mcp-server), and announced the Material/Cupertino decoupling.
 
 4. **[Flutter 3.38](https://flutter.dev/blog/whats-new-in-flutter-3-38) & [Dart 3.10](https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088) (Nov 2025):** Dart added dot shorthands, web tooling improved, and Widget Previews got IDE integration! Plus, crucial iOS 26/Xcode 26 support and the UIScene migration path.
 
-5. We laid out our vision early in the year, sharing our [**Flutter 2025 Roadmap Update**](https://blog.flutter.dev/flutter-2025-roadmap-f127882b117f) and it’s exciting to see how much has been delivered and the continued focus on multi-platform excellence and AI integration.
+5. We laid out our vision early in the year, sharing our [**Flutter 2025 Roadmap Update**](/blog/flutter-2025-roadmap-update) and it’s exciting to see how much has been delivered and the continued focus on multi-platform excellence and AI integration.
 
 … and since many of you have been asking, yes, we plan to be back in early 2026 with a similar annual post as we continue to adjust our roadmap based on your feedback. Our goal is ultimately to continue building the best cross-platform framework with the best developer experience and feature set.
 
-6. Speaking of you… **the Flutter community and ecosystem are thriving!** At [Google I/O](https://blog.flutter.dev/dart-flutter-momentum-at-google-i-o-2025-4863aa4f84a4), we shared that **nearly 30% of new free iOS apps are built with Flutter**.
+6. Speaking of you… **the Flutter community and ecosystem are thriving!** At [Google I/O](/blog/dart-flutter-momentum-at-google-i-o-2025), we shared that **nearly 30% of new free iOS apps are built with Flutter**.
 
 We’re constantly amazed by what you’re building. In 2025, we worked with some amazing companies to showcase how they’re building and betting on Flutter and Dart in big ways, including NotebookLM, teamLab, Agape, Universal Destinations & Experiences, Reflection.app, and GE Appliances.
 
@@ -64,7 +64,7 @@ Flutter is woven into **Agapé Wellness’s** mission to help people feel close,
 
 Now that we know how it works, let’s make it more flexible for the future.
 
-8. The work to **decouple design systems** and move Material and Cupertino into their own packages is underway, as announced in [Flutter 3.35](https://blog.flutter.dev/whats-new-in-flutter-3-35-c58ef72e3766). This is a big step for the maturity and flexibility of the ecosystem. I’ll let Justin explain exactly what this means:
+8. The work to **decouple design systems** and move Material and Cupertino into their own packages is underway, as announced in [Flutter 3.35](/blog/whats-new-in-flutter-3-35). This is a big step for the maturity and flexibility of the ecosystem. I’ll let Justin explain exactly what this means:
 
 <YoutubeEmbed id="W4olXg91iX8" title="Strengthening Flutter's core widgets" fullwidth="true"/>
 
@@ -74,10 +74,10 @@ Now that we know how it works, let’s make it more flexible for the future.
 
 10. Another thing that sped up in 2025 is the pace of AI.
 
-**AI truly took center stage in the Flutter and Dart ecosystem.** The [Building Agentic Apps](https://flutter.dev/events/building-agentic-apps#home) series and our announcements at [Google I/O](https://blog.flutter.dev/dart-flutter-momentum-at-google-i-o-2025-4863aa4f84a4) really set the tone, and we’re ending the year with two [Flutter Flight Plans](https://www.youtube.com/live/zNHoHAPizHM?si=ysUxB6Q2FnSOGmXb) to prepare for take off into the future of apps. 2025 brought a massive leap in AI-assisted development. Read all about it in our [Create with AI](https://docs.flutter.dev/ai/create-with-ai) section of the Flutter documentation.
+**AI truly took center stage in the Flutter and Dart ecosystem.** The [Building Agentic Apps](https://flutter.dev/events/building-agentic-apps#home) series and our announcements at [Google I/O](/blog/dart-flutter-momentum-at-google-i-o-2025) really set the tone, and we’re ending the year with two [Flutter Flight Plans](https://www.youtube.com/live/zNHoHAPizHM?si=ysUxB6Q2FnSOGmXb) to prepare for take off into the future of apps. 2025 brought a massive leap in AI-assisted development. Read all about it in our [Create with AI](https://docs.flutter.dev/ai/create-with-ai) section of the Flutter documentation.
 
-The [**Dart and Flutter MCP Server**](https://blog.flutter.dev/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49) is now stable, empowering tools like Gemini CLI, Antigravity, and wherever you’re building with AI.
-It’s been incredible to see [Gemini in Android Studio supercharge Dart and Flutter development](https://blog.flutter.dev/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274). And the [Flutter Extension for Gemini CLI](https://blog.flutter.dev/meet-the-flutter-extension-for-gemini-cli-f8be3643eaad)? Game changer for AI-assisted app building.
+The [**Dart and Flutter MCP Server**](/blog/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server) is now stable, empowering tools like Gemini CLI, Antigravity, and wherever you’re building with AI.
+It’s been incredible to see [Gemini in Android Studio supercharge Dart and Flutter development](/blog/gemini-in-android-studio-now-speaks-fluent-flutter). And the [Flutter Extension for Gemini CLI](/blog/meet-the-flutter-extension-for-gemini-cli)? Game changer for AI-assisted app building.
 
 We’re also announcing the [Flutter AI Toolkit](https://docs.flutter.dev/ai-toolkit) v1.0, now ready for your production workloads. The Flutter AI Toolkit is a set of AI-related widgets to make it easy to add an GenAI features to your Flutter app. Since our last beta release, the AI Toolkit has migrated to the Firebase AI Logic SDK, adding new features along the way, including multi-turn function calling for agentic workflows, the ability to plug-in custom speech-to-text translators, and full support for turning LLM responses into widgets.
 
@@ -85,7 +85,7 @@ And speaking of new tools, Google introduced [**Antigravity**](https://docs.flut
 
 I want to share one more thing that we’re most excited about heading into 2026…
 
-11. We launched the alpha of the [**GenUI SDK for Flutter**](https://blog.flutter.dev/rich-and-dynamic-user-interfaces-with-flutter-and-generative-ui-178405af2455) on pub.dev, opening doors for creating dynamic UIs with LLMs.
+11. We launched the alpha of the [**GenUI SDK for Flutter**](/blog/rich-and-dynamic-user-interfaces-with-flutter-and-generative-ui) on pub.dev, opening doors for creating dynamic UIs with LLMs.
 
 GenUI is here to help you generate Flutter UI from natural language or structured data, potentially speeding up your development flow significantly. I’ll let Khanh dive into the details:
 

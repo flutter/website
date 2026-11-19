@@ -22,7 +22,7 @@ Flutter expands from mobile devices to support the web and desktop: same codebas
 
 ## News and announcements
 
-* Flutter [now supports the web](https://flutter.dev/web). Open source, [repo on GitHub](https://github.com/flutter/flutter_web).
+* Flutter [now supports the web](/development/web). Open source, [repo on GitHub](https://github.com/flutter/flutter_web).
 
 * Flutter 1.5 ships to the stable channel ([release notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)). Includes preliminary support for [targeting Windows, Mac and Linux operating systems](https://github.com/flutter/flutter/wiki/Desktop-shells). New plug-ins for [in-app payment](https://pub.dev/packages/in_app_purchase), [state management](https://pub.dev/packages/provider). New samples for [ML Kit](https://github.com/firebase/mlkit-custom-image-classifier/tree/master/flutter-app)-based image classification.
 

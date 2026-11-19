@@ -103,7 +103,7 @@ which includes links to migration guides and other vital information.
 [ios-setup]: /platform-integration/ios/setup
 [java-interop]: /interop/jnigen
 [native-interop]: /interop
-[package-skills]: /ai/package-skills
+[package-skills]: https://dart.dev/ai/package-skills
 [pigeon]: /interop/pigeon
 [poyito777]: https://github.com/poyito777
 [rfc-process]: /release/compatibility-policy
@@ -159,8 +159,8 @@ which includes links to migration guides and other vital information.
 
 [3.47-blog-post]: /blog/whats-new-in-flutter-3-47
 [widget-previewer]: /tools/widget-previewer
-[antigravity-cli]: /ai/antigravity-cli
-[ai-evals]: /ai/evals
+[antigravity-cli]: /ai/get-started
+[ai-evals]: /ai/tools
 [dependency-mgmt]: /packages-and-plugins/dependency-management
 [swiftpm]: /packages-and-plugins/swift-package-manager
 [add-to-app]: /add-to-app
