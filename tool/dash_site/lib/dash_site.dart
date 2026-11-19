@@ -21,6 +21,7 @@ import 'src/commands/serve.dart';
 import 'src/commands/stage_preview.dart';
 import 'src/commands/test_dart.dart';
 import 'src/commands/verify_firebase_json.dart';
+import 'src/commands/visual_diff.dart';
 import 'src/sites.dart';
 
 /// The root command runner of the Flutter website tooling.
@@ -56,6 +57,7 @@ final class DashSiteCommandRunner extends CommandRunner<int> {
     addCommand(StagePreviewCommand());
     addCommand(TestDartCommand());
     addCommand(VerifyFirebaseJsonCommand());
+    addCommand(VisualDiffCommand());
   }
 
   @override

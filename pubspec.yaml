@@ -10,6 +10,7 @@ workspace:
   - packages/dash_media_convert
   - packages/excerpter
   - packages/site_shared
+  - packages/visual_diff
   - sites/docs
   - sites/www
   - tool/dash_site

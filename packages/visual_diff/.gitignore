@@ -1,0 +1,5 @@
+.dart_tool/
+build/
+web/*.js
+web/*.deps
+web/*.map

@@ -36,11 +36,18 @@ final class BuildSiteCommand extends Command<int> {
   );
 }
 
-Future<int> buildSite(Site site, {required bool productionRelease}) async {
+Future<int> buildSite(
+  Site site, {
+  required bool productionRelease,
+  String? rootDirectory,
+}) async {
   if (installJasprCliIfNecessary() case final jasprInstallResult
       when jasprInstallResult != 0) {
     return jasprInstallResult;
   }
+
+  final baseDirectory = rootDirectory ?? repositoryRoot;
+  final siteDirectory = path.join(baseDirectory, site.directory);
 
   final process = await Process.start(
     Platform.resolvedExecutable,
@@ -58,7 +65,7 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
       '--dart-define=PRODUCTION=$productionRelease',
       if (!productionRelease) ...nonProductionDartDefines(),
     ],
-    workingDirectory: site.directory,
+    workingDirectory: siteDirectory,
     mode: ProcessStartMode.inheritStdio,
   );
 
@@ -68,7 +75,7 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
   }
 
   final buildOutputDirectoryPath = path.join(
-    repositoryRoot,
+    baseDirectory,
     site.buildOutputDirectory,
   );
   if (!Directory(buildOutputDirectoryPath).existsSync()) {

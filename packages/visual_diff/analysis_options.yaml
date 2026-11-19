@@ -1,0 +1,4 @@
+include: package:analysis_defaults/analysis.yaml
+
+formatter:
+  trailing_commas: preserve

@@ -78,6 +78,10 @@ dart run dash_site --site=docs refresh-excerpts
 # This doesn't update references to them, so do that afterward:
 dart run dash_site optimize-images <image paths...>
 
+# Run local visual regression diffing against main (or another base branch):
+dart run dash_site --site=docs visual-diff
+dart run dash_site --site=www visual-diff
+
 # Learn what other commands are available:
 dart run dash_site --help
 ```
