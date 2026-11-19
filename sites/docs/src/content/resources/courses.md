@@ -35,9 +35,7 @@ To include your course, [submit a PR][]:
 * [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
 * [The Complete Dart Developer Guide][] by Andrea Bizzotto
 * [The Complete Flutter Course: Build Android, iOS and Web Apps][]
-  by Sagnik Bhattacharya & Paulina Knop (Coding Liquids)
-* [The Complete Flutter Guide: Build Android, iOS and Web Apps][]
-  by Sagnik Bhattacharya & Paulina Knop (Udemy)
+  by Sagnik Bhattacharya & Paulina Knop
 
 ## German
 
@@ -85,5 +83,4 @@ To include your course, [submit a PR][]:
 [FlutterCraft]: https://fluttercraft.app
 [Flutter Master Course From Zero To Hero]: https://usamaelgendy.com/courses/flutter-beginners/
 [The Complete Flutter Course: Build Android, iOS and Web Apps]: https://codingliquids.com/courses/flutter-course
-[The Complete Flutter Guide: Build Android, iOS and Web Apps]: https://www.udemy.com/course/flutter-the-guide-to-build-android-ios-and-web-apps/
 [submit a PR]: {{site.repo.this}}/pulls
