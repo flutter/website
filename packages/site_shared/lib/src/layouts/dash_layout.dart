@@ -10,6 +10,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../components/layout/banner.dart';
 import '../../util.dart';
+import '../review/review_overlay.dart';
 import '../utils/cache_busted_build_asset_url.dart';
 import '../utils/theme_script.dart';
 
@@ -257,6 +258,11 @@ function glueCookieNotificationBarLoaded() {
               [.text('Skip to main content')],
             ),
             buildBody(page, child),
+            ...buildReviewOverlayComponents(
+              page,
+              defaultSite: 'docs',
+              contentRootPrefix: 'sites/docs/src/content',
+            ),
           ],
         ),
       ],

@@ -2,6 +2,7 @@ _site
 .cache
 .*-cache
 .*-metadata
+.dash_review/
 .DS_Store
 .env
 .firebase/

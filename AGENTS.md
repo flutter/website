@@ -82,6 +82,35 @@ dart run dash_site optimize-images <image paths...>
 dart run dash_site --help
 ```
 
+### Local visual review
+
+Running `dart run dash_site serve` enables the visual review toolbar
+and starts a local sync server on `127.0.0.1`
+(pass `--no-review` to disable it).
+When you highlight text or elements and add comments in the browser,
+the tool writes two local files (ignored by Git):
+
+- `.dash_review/feedback.md`:
+  Agent-ready Markdown grouped by resolved source file and line numbers.
+- `.dash_review/comments.json`:
+  Structured comment metadata synchronized with the browser overlay.
+
+Manage local review comments from the CLI:
+
+```bash
+# List open or resolved comments (supports --status and --json):
+dart run dash_site review list
+
+# Print a coding-agent prompt for open comments:
+dart run dash_site review prompt
+
+# Mark a comment (or --all) resolved after applying a fix:
+dart run dash_site review resolve <comment-id>
+
+# Clear resolved comments (or pass --all):
+dart run dash_site review clear
+```
+
 ## Content guidelines
 
 ### Writing style

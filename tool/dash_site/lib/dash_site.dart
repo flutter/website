@@ -16,18 +16,22 @@ import 'src/commands/format_dart.dart';
 import 'src/commands/generate_release_notes.dart';
 import 'src/commands/optimize_images.dart';
 import 'src/commands/refresh_excerpts.dart';
+import 'src/commands/review.dart';
 import 'src/commands/serve.dart';
 import 'src/commands/stage_preview.dart';
 import 'src/commands/test_dart.dart';
 import 'src/commands/verify_firebase_json.dart';
 import 'src/sites.dart';
 
+export 'src/review_server.dart';
+export 'src/review_source_locator.dart';
+
 /// The root command runner of the Flutter website tooling.
 ///
 /// To learn about the command, its supported options, and its subcommands,
 /// run `dart run dash_site --help`.
 final class DashSiteCommandRunner extends CommandRunner<int> {
-  DashSiteCommandRunner()
+  DashSiteCommandRunner({String? repoRoot, StringSink? out, StringSink? err})
     : super(
         'dart run dash_site',
         'Infrastructure tooling for the Flutter websites.',
@@ -50,6 +54,7 @@ final class DashSiteCommandRunner extends CommandRunner<int> {
     addCommand(GenerateReleaseNotesCommand());
     addCommand(OptimizeImagesCommand());
     addCommand(RefreshExcerptsCommand());
+    addCommand(ReviewCommand(repoRoot: repoRoot, out: out, err: err));
     addCommand(ServeSiteCommand());
     addCommand(StagePreviewCommand());
     addCommand(TestDartCommand());

@@ -13,6 +13,7 @@ import 'package:site_shared/components/common/youtube_embed.dart';
 import 'package:site_shared/components/utils/define_component.dart';
 import 'package:site_shared/markdown.dart';
 import 'package:site_shared/page_extensions.dart';
+import 'package:site_shared/review_server.dart';
 
 import 'main.server.options.dart';
 import 'src/components/common/dash_image.dart';
@@ -63,6 +64,7 @@ void main() {
   );
 
   ServerApp.addMiddleware(assetManager.middleware);
+  registerDashReviewServerMiddleware();
 
   runApp(
     ContentApp.custom(
