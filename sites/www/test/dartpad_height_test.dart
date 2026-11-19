@@ -2,8 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+@TestOn('vm')
+library;
+
 import 'dart:convert';
 
+import 'package:flutter_website/main.server.options.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/dartpad/dartpad_injector.dart';
@@ -12,13 +16,11 @@ import 'package:test/test.dart';
 
 void main() {
   setUpAll(() {
-    if (!Jaspr.isInitialized) {
-      Jaspr.initializeApp();
-    }
+    Jaspr.initializeApp(options: defaultServerOptions);
   });
 
   test(
-    'DartPadWrapper renders SSR placeholder pre with pixel height',
+    'DartPadWrapper renders SSR placeholder pre and client hydration height',
     () async {
       final response = await renderComponent(
         DartPadWrapper(
@@ -29,9 +31,30 @@ void main() {
         standalone: false,
       );
       final rendered = utf8.decode(response.body);
-      expect(rendered, contains('<pre class="embedded-dartpad"'));
-      expect(rendered, contains('height: 520px'));
-      expect(rendered, contains('<code title="Example">void main() {}</code>'));
+      expect(rendered, contains('<!--@site_shared:dartpad_injector'));
+      expect(rendered, contains('"height":"520px"'));
+      expect(
+        rendered,
+        contains(
+          '<pre class="embedded-dartpad" style="height: 520px">'
+          '<code title="Example">void main() {}</code></pre>',
+        ),
+      );
+    },
+  );
+
+  test(
+    'DartPadInjector defaults SSR placeholder height to 400px when omitted',
+    () async {
+      final response = await renderComponent(
+        const DartPadInjector(title: 'Default height example'),
+        standalone: false,
+      );
+      final rendered = utf8.decode(response.body);
+      expect(
+        rendered,
+        contains('<pre class="embedded-dartpad" style="height: 400px">'),
+      );
     },
   );
 
@@ -60,6 +83,7 @@ void main() {
       'parses positive whole pixel integers and optional px suffix',
       () async {
         expect((await processDartPad('height="520"')).height, 520);
+        expect((await processDartPad('height=520')).height, 520);
         expect((await processDartPad('height="640px"')).height, 640);
       },
     );
@@ -80,7 +104,7 @@ void main() {
       ]) {
         await expectLater(
           processDartPad('height="$height"'),
-          throwsArgumentError,
+          throwsA(isA<ArgumentError>().having((e) => e.name, 'name', 'height')),
           reason: 'height: "$height"',
         );
       }
