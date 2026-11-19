@@ -40,10 +40,18 @@ final class LastModifiedLoader implements DataLoader {
 /// Cached Git modification timestamps for files within a site directory.
 final class GitLastModifiedIndex {
   GitLastModifiedIndex({
-    required this.repositoryRoot,
-    required this.projectRoot,
+    required String? repositoryRoot,
+    required String projectRoot,
     required this._lastModifiedPerPath,
-  });
+    @visibleForTesting path.Context? pathContext,
+  }) : _pathContext = pathContext ?? path.context,
+       repositoryRoot = repositoryRoot == null
+           ? null
+           : _normalizeAbsolute(pathContext ?? path.context, repositoryRoot),
+       projectRoot = _normalizeAbsolute(
+         pathContext ?? path.context,
+         projectRoot,
+       );
 
   /// Builds an index for [projectRoot] (defaulting to [path.current]).
   ///
@@ -54,7 +62,10 @@ final class GitLastModifiedIndex {
     bool? isProductionBuild,
     GitRunner runGit = _defaultRunGit,
   }) {
-    final resolvedProjectRoot = path.canonicalize(projectRoot ?? path.current);
+    final resolvedProjectRoot = _normalizeAbsolute(
+      path.context,
+      projectRoot ?? path.current,
+    );
     final DatesAndRoot(:repositoryRoot, :dates) = loadProjectLastModifiedDates(
       projectRoot: resolvedProjectRoot,
       isProductionBuild: isProductionBuild ?? productionBuild,
@@ -76,6 +87,7 @@ final class GitLastModifiedIndex {
   final String? repositoryRoot;
   final String projectRoot;
   final Map<String, DateTime> _lastModifiedPerPath;
+  final path.Context _pathContext;
 
   /// Returns the newest Git modification timestamp across [inputPaths].
   DateTime? latestModifiedDateForPaths(Iterable<String> inputPaths) {
@@ -133,11 +145,16 @@ final class GitLastModifiedIndex {
       return (inputPath: null, projectInputPath: null);
     }
 
-    final sourcePath = path.canonicalize(
-      path.absolute(path.join(pageLoader.directory, page.path)),
+    final loaderDirectory = _pathContext.isAbsolute(pageLoader.directory)
+        ? pageLoader.directory
+        : _pathContext.join(projectRoot, pageLoader.directory);
+    final sourcePath = _normalizeAbsolute(
+      _pathContext,
+      _pathContext.join(loaderDirectory, page.path),
     );
-    String toPosixRelative(String from) =>
-        path.posix.joinAll(path.split(path.relative(sourcePath, from: from)));
+    String toPosixRelative(String from) => path.posix.joinAll(
+      _pathContext.split(_pathContext.relative(sourcePath, from: from)),
+    );
 
     return (
       inputPath: toPosixRelative(repoRoot),
@@ -159,28 +176,26 @@ DatesAndRoot loadProjectLastModifiedDates({
   required bool isProductionBuild,
   GitRunner runGit = _defaultRunGit,
 }) {
+  final normalizedProjectRoot = _normalizeAbsolute(path.context, projectRoot);
   final rawRepoRoot = runGit(
     const ['rev-parse', '--show-toplevel'],
-    workingDirectory: projectRoot,
+    workingDirectory: normalizedProjectRoot,
   )?.trim();
-  final repoRoot = (rawRepoRoot == null || rawRepoRoot.isEmpty)
-      ? null
-      : path.canonicalize(rawRepoRoot);
+  if (rawRepoRoot == null || rawRepoRoot.isEmpty) {
+    if (isProductionBuild) _throwMissingFullHistory();
+    return (repositoryRoot: null, dates: const {});
+  }
+  final repoRoot = _normalizeAbsolute(path.context, rawRepoRoot);
 
   final isShallow =
       runGit(
         const ['rev-parse', '--is-shallow-repository'],
-        workingDirectory: repoRoot ?? projectRoot,
+        workingDirectory: repoRoot,
       )?.trim() !=
       'false';
 
-  if (repoRoot == null) {
-    if (isProductionBuild) _throwMissingFullHistory();
-    return (repositoryRoot: null, dates: const {});
-  }
-
   final projectPath = path.posix.joinAll(
-    path.split(path.relative(projectRoot, from: repoRoot)),
+    path.split(path.relative(normalizedProjectRoot, from: repoRoot)),
   );
   final logOutput = runGit([
     'log',
@@ -202,6 +217,9 @@ DatesAndRoot loadProjectLastModifiedDates({
     dates: _parseGitLogDates(logOutput, projectPath),
   );
 }
+
+String _normalizeAbsolute(path.Context pathContext, String targetPath) =>
+    pathContext.normalize(pathContext.absolute(targetPath));
 
 Never _throwMissingFullHistory() {
   throw StateError(

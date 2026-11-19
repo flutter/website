@@ -259,20 +259,22 @@ void _registerLayoutCanonicalTests() {
           'https://flutter.dev/development/web',
         );
 
-        final suppressedHtml = await _renderDefaultLayoutPage(
-          _buildPage(
-            pagePath: 'embed.md',
-            url: '/embed',
-            siteUrl: 'https://flutter.dev',
-            pageData: const {
-              'title': 'Embed',
-              'description': 'Embedded view.',
-              'canonical': false,
-            },
-            extraData: bannerData,
-          ),
-        );
-        expect(_extractCanonical(suppressedHtml), isNull);
+        for (final flag in <Object>[false, 'false']) {
+          final suppressedHtml = await _renderDefaultLayoutPage(
+            _buildPage(
+              pagePath: 'embed.md',
+              url: '/embed',
+              siteUrl: 'https://flutter.dev',
+              pageData: {
+                'title': 'Embed',
+                'description': 'Embedded view.',
+                'canonical': flag,
+              },
+              extraData: bannerData,
+            ),
+          );
+          expect(_extractCanonical(suppressedHtml), isNull);
+        }
       },
     );
   });
@@ -432,8 +434,8 @@ void _registerLastModifiedTests() {
         final fsLoader = FilesystemLoader(path.join(siteDir.path, 'content'));
 
         final index = GitLastModifiedIndex(
-          repositoryRoot: path.canonicalize(tempDir.path),
-          projectRoot: path.canonicalize(siteDir.path),
+          repositoryRoot: tempDir.path,
+          projectRoot: siteDir.path,
           lastModifiedPerPath: {
             'content/ai/index.md': DateTime.utc(2026, 11, 2, 15, 0),
             'content/search.html': DateTime.utc(2026, 11, 5, 10, 0),
@@ -462,5 +464,85 @@ void _registerLastModifiedTests() {
         expect(noIndexPage.data.page['sitemap'], isFalse);
       },
     );
+
+    test(
+      'resolves relative FilesystemLoader directory against projectRoot',
+      () {
+        final tempDir = Directory.systemTemp.createTempSync(
+          'seo_relative_loader_test_',
+        );
+        addTearDown(() => tempDir.deleteSync(recursive: true));
+        final siteDir = Directory(path.join(tempDir.path, 'sites', 'www'))
+          ..createSync(recursive: true);
+        final relativeLoader = FilesystemLoader('content');
+
+        final index = GitLastModifiedIndex(
+          repositoryRoot: tempDir.path,
+          projectRoot: siteDir.path,
+          lastModifiedPerPath: {
+            'content/ai/index.md': DateTime.utc(2026, 11, 2, 15, 0),
+          },
+        );
+
+        final aiPage = _buildPage(
+          pagePath: 'ai/index.md',
+          url: '/ai',
+          siteUrl: 'https://flutter.dev',
+          pageData: const {'title': 'AI'},
+          loader: relativeLoader,
+        );
+        index.applyToPage(aiPage);
+        expect(aiPage.data.page['inputPath'], 'sites/www/content/ai/index.md');
+        expect(aiPage.data.page['date'], '2026-11-02');
+        expect(aiPage.data.page['sitemap'], {'lastmod': '2026-11-02'});
+      },
+    );
+
+    test('preserves mixed-case file paths on Windows path contexts', () {
+      final windowsContext = path.Context(
+        style: path.Style.windows,
+        current: r'C:\Users\Dev\website',
+      );
+      final index = GitLastModifiedIndex(
+        repositoryRoot: 'c:/users/dev/website',
+        projectRoot: r'C:\Users\Dev\website\sites\docs',
+        pathContext: windowsContext,
+        lastModifiedPerPath: {
+          'src/content/release/breaking-changes/checkbox-fillColor.md':
+              DateTime.utc(2026, 11, 3, 9, 0),
+        },
+      );
+      final mixedCasePage = _buildPage(
+        pagePath: 'release/breaking-changes/checkbox-fillColor.md',
+        url: '/release/breaking-changes/checkbox-fillcolor',
+        siteUrl: 'https://docs.flutter.dev',
+        pageData: const {'title': 'Checkbox fillColor'},
+        loader: FilesystemLoader(r'src\content'),
+      );
+      index.applyToPage(mixedCasePage);
+      expect(
+        mixedCasePage.data.page['inputPath'],
+        'sites/docs/src/content/release/breaking-changes/checkbox-fillColor.md',
+      );
+      expect(mixedCasePage.data.page['date'], '2026-11-03');
+      expect(mixedCasePage.data.page['sitemap'], {'lastmod': '2026-11-03'});
+    });
+
+    test('skips further git calls when repository root is unavailable', () {
+      final calls = <List<String>>[];
+      final nonProd = loadProjectLastModifiedDates(
+        projectRoot: '/non_git_dir/sites/www',
+        isProductionBuild: false,
+        runGit: (args, {workingDirectory}) {
+          calls.add(args);
+          return null;
+        },
+      );
+      expect(nonProd.repositoryRoot, isNull);
+      expect(nonProd.dates, isEmpty);
+      expect(calls, [
+        ['rev-parse', '--show-toplevel'],
+      ]);
+    });
   });
 }
