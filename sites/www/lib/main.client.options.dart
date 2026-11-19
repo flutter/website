@@ -248,10 +248,12 @@ ClientOptions get defaultClientOptions => ClientOptions(
     ),
     'site_shared:dartpad_injector': ClientLoader(
       (p) => _dartpad_injector.DartPadInjector(
+        archive: p['archive'] as String,
+        file: p['file'] as String?,
+        source: _component_ref.ComponentRef.fromId(p['source'] as String),
         title: p['title'] as String,
         theme: p['theme'] as String?,
         height: p['height'] as String?,
-        runAutomatically: p['runAutomatically'] as bool,
       ),
       loader: _dartpad_injector.loadLibrary,
     ),

@@ -196,10 +196,12 @@ Map<String, Object?> __simple_tooltipSimpleTooltip(
 Map<String, Object?> __dartpad_injectorDartPadInjector(
   _dartpad_injector.DartPadInjector c,
 ) => {
+  'archive': c.archive,
+  'file': c.file,
+  'source': c.source.toId(),
   'title': c.title,
   'theme': c.theme,
   'height': c.height,
-  'runAutomatically': c.runAutomatically,
 };
 Map<String, Object?> __site_switcherSiteSwitcher(
   _site_switcher.SiteSwitcher c,

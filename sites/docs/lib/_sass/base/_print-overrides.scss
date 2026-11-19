@@ -25,7 +25,8 @@
   }
 
   // Remove DartPad iframes since they are not functional.
-  iframe[src^="https://dartpad"]:not(#try-dart-pad) {
+  .embedded-dartpad,
+  .embedded-dartpad-hint {
     display: none;
   }
 

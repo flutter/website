@@ -208,12 +208,8 @@ onPressed: () {
 <Tab name="Android">
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
-// DartPad doesn't support `material_ui` yet,
-// so this example imports Material from the Flutter SDK.
-// To run locally, depend on `material_ui` and use this import instead:
-// import 'package:material_ui/material_ui.dart';
-import 'package:flutter/material.dart';
+```dartpad title="Flutter navigation hands-on example in DartPad"
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(title: 'Navigation Basics', home: FirstRoute()));
@@ -272,12 +268,8 @@ class SecondRoute extends StatelessWidget {
 <Tab name="iOS">
 
 <?code-excerpt "lib/main_cupertino.dart"?>
-```dartpad title="Flutter Cupertino theme hands-on example in DartPad" run="true"
-// DartPad doesn't support `cupertino_ui` yet,
-// so this example imports Cupertino from the Flutter SDK.
-// To run locally, depend on `cupertino_ui` and use this import instead:
-// import 'package:cupertino_ui/cupertino_ui.dart';
-import 'package:flutter/cupertino.dart';
+```dartpad title="Flutter Cupertino theme hands-on example in DartPad"
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 void main() {
   runApp(const CupertinoApp(title: 'Navigation Basics', home: FirstRoute()));

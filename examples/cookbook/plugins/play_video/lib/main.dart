@@ -1,11 +1,6 @@
 import 'dart:async';
 
-// DartPad doesn't support `material_ui` yet,
-// so this example imports Material from the Flutter SDK.
-// To run locally, depend on `material_ui` and use this import instead:
-// import 'package:material_ui/material_ui.dart';
-// ignore: deprecated_member_use until DartPad supports material_ui.
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:video_player/video_player.dart';
 
 void main() => runApp(const VideoPlayerApp());

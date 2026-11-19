@@ -554,13 +554,9 @@ Run the app:
 * Scroll up and down to observe the parallax effect.
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter parallax scrolling hands-on example in DartPad" run="true"
-// DartPad doesn't support `material_ui` yet,
-// so this example imports Material from the Flutter SDK.
-// To run locally, depend on `material_ui` and use this import instead:
-// import 'package:material_ui/material_ui.dart';
-import 'package:flutter/material.dart';
+```dartpad title="Flutter parallax scrolling hands-on example in DartPad"
 import 'package:flutter/rendering.dart';
+import 'package:material_ui/material_ui.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 

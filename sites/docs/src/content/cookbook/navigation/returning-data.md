@@ -197,12 +197,8 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter Return from Data hands-on example in DartPad" run="true"
-// DartPad doesn't support `material_ui` yet,
-// so this example imports Material from the Flutter SDK.
-// To run locally, depend on `material_ui` and use this import instead:
-// import 'package:material_ui/material_ui.dart';
-import 'package:flutter/material.dart';
+```dartpad title="Flutter Return from Data hands-on example in DartPad"
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MaterialApp(title: 'Returning Data', home: HomeScreen()));
