@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../../models/content/events_content.dart';
 import '../common/filters.dart';
@@ -19,7 +18,7 @@ class EventsGrid extends StatelessComponent {
   });
 
   final List<Map<String, Object?>> data;
-  final List<ComponentRef> items;
+  final List<Component> items;
 
   /// Whether these events have already finished.
   ///

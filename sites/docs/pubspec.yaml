@@ -10,8 +10,8 @@ dependencies:
   collection: ^1.19.1
   html: ^0.15.7
   http: ^1.6.0
-  jaspr: ^0.23.5
-  jaspr_content: ^0.5.4
+  jaspr: ^0.24.0-beta.2
+  jaspr_content: ^0.6.0-beta.1
   # Used as our template engine.
   liquify: ^1.6.1
   markdown: ^7.3.1
@@ -31,8 +31,8 @@ dev_dependencies:
   analysis_defaults:
     path: ../../packages/analysis_defaults
   build_runner: ^2.15.1
-  build_web_compilers: ^4.8.5
-  jaspr_builder: ^0.23.5
+  build_web_compilers: ^4.8.12
+  jaspr_builder: ^0.24.0-beta.2
   sass: ^1.107.1
   sass_builder: ^2.4.1
   test: ^1.31.1
