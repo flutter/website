@@ -27,7 +27,7 @@ void main() {
 
   test('populates intrinsic width and height when absent', () async {
     final processor = ImageDimensionProcessor(webRoot: tempWebDir.path);
-    final result = await processor.apply(_page(), [
+    final result = await processor.apply(_page(), const [
       ElementNode('img', {'src': '/assets/images/docs/diagram.png'}, null),
     ]);
 
@@ -40,7 +40,7 @@ void main() {
     'computes proportional height and strips px suffix on pixel width',
     () async {
       final processor = ImageDimensionProcessor(webRoot: tempWebDir.path);
-      final result = await processor.apply(_page(), [
+      final result = await processor.apply(_page(), const [
         ElementNode('img', {
           'src': '/assets/images/docs/diagram.png',
           'width': '320px',
@@ -57,7 +57,7 @@ void main() {
     'moves percentage width to style and sets intrinsic HTML dimensions',
     () async {
       final processor = ImageDimensionProcessor(webRoot: tempWebDir.path);
-      final result = await processor.apply(_page(), [
+      final result = await processor.apply(_page(), const [
         ElementNode('img', {
           'src': '/assets/images/docs/diagram.png',
           'width': '50%',
@@ -66,6 +66,25 @@ void main() {
 
       final imgNode = result.single as ElementNode;
       expect(imgNode.attributes['style'], 'width: 50%;');
+      expect(imgNode.attributes['width'], '800');
+      expect(imgNode.attributes['height'], '400');
+    },
+  );
+
+  test(
+    'moves percentage height to style with width: auto and sets intrinsic '
+    'HTML dimensions',
+    () async {
+      final processor = ImageDimensionProcessor(webRoot: tempWebDir.path);
+      final result = await processor.apply(_page(), const [
+        ElementNode('img', {
+          'src': '/assets/images/docs/diagram.png',
+          'height': '50%',
+        }, null),
+      ]);
+
+      final imgNode = result.single as ElementNode;
+      expect(imgNode.attributes['style'], 'height: 50%; width: auto;');
       expect(imgNode.attributes['width'], '800');
       expect(imgNode.attributes['height'], '400');
     },

@@ -173,7 +173,10 @@ Map<String, String> _resolveHeightOnlyAttributes(
 
   return {
     ...attributes,
-    'style': _appendCssDeclaration(attributes['style'], 'height: $rawHeight;'),
+    'style': _appendCssDeclaration(
+      attributes['style'],
+      'height: $rawHeight; width: auto;',
+    ),
     'width': '${dims.width}',
     'height': '${dims.height}',
   };

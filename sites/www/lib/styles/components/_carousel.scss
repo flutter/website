@@ -213,7 +213,6 @@
 
     h4,
     a,
-    .read-more,
     img,
     .placeholder {
       z-index: 2;
@@ -228,8 +227,7 @@
       margin-bottom: var(--gutter-sm);
     }
 
-    a,
-    .read-more {
+    a {
       color: black;
       font-weight: var(--font-weight-bold);
       display: inline-block;
@@ -262,8 +260,7 @@
         transition: color 400ms var(--ui-anim-func) var(--delay);
       }
 
-      a,
-      .read-more {
+      a {
         color: white;
         transition: color 300ms var(--ui-anim-func) var(--delay);
 

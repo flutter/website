@@ -58,7 +58,7 @@ void main() {
         const ImageDimensions(width: 320, height: 240),
       );
 
-      // Misnamed AVIF with .png extension (matches real marketing calendar assets).
+      // Misnamed AVIF with .png extension (matches marketing calendar assets).
       final avifMisnamedPath = p.join(tempDir.path, 'calendar.png');
       File(avifMisnamedPath).writeAsBytesSync(
         _minimalAvifHeader(width: 512, height: 288),
@@ -77,12 +77,52 @@ void main() {
         const ImageDimensions(width: 839, height: 1039),
       );
 
+      final commaSvgPath = p.join(tempDir.path, 'comma.svg');
+      File(commaSvgPath).writeAsStringSync(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,839,1039"></svg>',
+      );
+      expect(
+        readImageDimensions(commaSvgPath),
+        const ImageDimensions(width: 839, height: 1039),
+      );
+
+      final mixedSvgPath = p.join(tempDir.path, 'mixed.svg');
+      File(mixedSvgPath).writeAsStringSync(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0, 0, 640, 480"></svg>',
+      );
+      expect(
+        readImageDimensions(mixedSvgPath),
+        const ImageDimensions(width: 640, height: 480),
+      );
+
       final spriteSvgPath = p.join(tempDir.path, 'sprite.svg');
       File(spriteSvgPath).writeAsStringSync(
         '<svg xmlns="http://www.w3.org/2000/svg">'
         '<symbol id="icon" viewBox="0 0 24 24"></symbol></svg>',
       );
       expect(readImageDimensions(spriteSvgPath), isNull);
+    },
+  );
+
+  test(
+    'returns null without throwing on malformed binary or overflowing SVG '
+    'files',
+    () {
+      final invalidUtf8Svg = p.join(tempDir.path, 'invalid_utf8.svg');
+      File(invalidUtf8Svg)
+          .writeAsBytesSync([0xFF, 0xFE, 0x3C, 0x73, 0x76, 0x67]);
+      expect(readImageDimensions(invalidUtf8Svg), isNull);
+
+      final overflowSvg = p.join(tempDir.path, 'overflow.svg');
+      File(overflowSvg).writeAsStringSync(
+        '<svg viewBox="0 0 ${'9' * 400} 100"></svg>',
+      );
+      expect(readImageDimensions(overflowSvg), isNull);
+
+      final truncatedJpeg = p.join(tempDir.path, 'truncated.jpg');
+      File(truncatedJpeg)
+          .writeAsBytesSync([0xFF, 0xD8, 0xFF, 0xE0, 0x00, 0x10]);
+      expect(readImageDimensions(truncatedJpeg), isNull);
     },
   );
 }

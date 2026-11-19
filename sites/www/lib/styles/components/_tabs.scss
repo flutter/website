@@ -59,12 +59,12 @@
   .tab-content {
     display: none;
     grid-template-columns: 1fr;
-    transform: translate3d(0, var(--anim-offset), 0);
+    top: var(--anim-offset);
     opacity: 0;
     position: relative;
 
     &.no-spy {
-      transform: none;
+      top: 0;
     }
 
     &.active {

@@ -11,10 +11,6 @@
     'wght' var(--icon-wght, 400),
     'GRAD' var(--icon-grad, 0),
     'opsz' var(--icon-opsz, 24);
-  width: 1em;
-  height: 1em;
-  overflow: hidden;
-  box-sizing: content-box;
 }
 
 .icon {
@@ -22,9 +18,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1em;
-  height: 1em;
-  overflow: hidden;
   line-height: 1;
   vertical-align: middle;
   user-select: none;

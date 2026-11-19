@@ -8,6 +8,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:meta/meta.dart';
+import 'package:mime/mime.dart';
 
 /// Intrinsic pixel dimensions of an image asset.
 @immutable
@@ -54,8 +55,12 @@ void clearImageDimensionsCache() => _dimensionsCache.clear();
 /// exist or does not declare valid positive dimensions.
 ImageDimensions? readImageDimensions(String path) {
   if (_dimensionsCache.containsKey(path)) return _dimensionsCache[path];
-  final result = _readImageDimensionsUncached(path);
-  return _dimensionsCache[path] = result;
+  try {
+    final result = _readImageDimensionsUncached(path);
+    return _dimensionsCache[path] = result;
+  } on Object {
+    return _dimensionsCache[path] = null;
+  }
 }
 
 ImageDimensions? _readImageDimensionsUncached(String path) {
@@ -73,40 +78,57 @@ ImageDimensions? _readImageDimensionsUncached(String path) {
     final prefix = raf.readSync(64);
     if (prefix.length < 6) return null;
 
-    if (_startsWith(prefix, _pngSignature)) return _readPng(prefix);
-    if (prefix[0] == 0xFF && prefix[1] == 0xD8) return _readJpeg(raf);
-    if (_startsWith(prefix, _gif87a) || _startsWith(prefix, _gif89a)) {
-      return _readGif(prefix);
-    }
-    if (_startsWith(prefix, _riffSignature) &&
-        _matchesAt(prefix, 8, _webpTag)) {
-      return _readWebp(prefix);
-    }
-    if (_matchesAt(prefix, 4, _ftypAvif)) return _readAvif(raf);
-    if (path.toLowerCase().endsWith('.svg') || _looksLikeSvg(prefix)) {
-      return _readSvg(file);
-    }
-    return null;
+    return switch (_imageMimeResolver.lookup('', headerBytes: prefix)) {
+      'image/png' => _readPng(prefix),
+      'image/jpeg' => _readJpeg(raf),
+      'image/gif' => _readGif(prefix),
+      'image/webp' => _readWebp(prefix),
+      'image/avif' => _readAvif(raf),
+      _ when lookupMimeType(path) == 'image/svg+xml' || _looksLikeSvg(prefix) =>
+        _readSvg(file),
+      _ => null,
+    };
   } finally {
     raf.closeSync();
   }
 }
 
-const List<int> _pngSignature = [
-  0x89,
-  0x50,
-  0x4E,
-  0x47,
-  0x0D,
-  0x0A,
-  0x1A,
-  0x0A,
-];
-const List<int> _gif87a = [0x47, 0x49, 0x46, 0x38, 0x37, 0x61];
-const List<int> _gif89a = [0x47, 0x49, 0x46, 0x38, 0x39, 0x61];
-const List<int> _riffSignature = [0x52, 0x49, 0x46, 0x46];
-const List<int> _webpTag = [0x57, 0x45, 0x42, 0x50];
-const List<int> _ftypAvif = [0x66, 0x74, 0x79, 0x70, 0x61, 0x76, 0x69, 0x66];
+/// Extends [MimeTypeResolver]'s built-in PNG, JPEG, GIF, and WebP magic-byte
+/// table with ISO-BMFF `ftypavif` so misnamed `.png` AVIF assets match before
+/// file-extension fallback.
+final MimeTypeResolver _imageMimeResolver = MimeTypeResolver()
+  ..addMagicNumber(
+    const [
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0x66,
+      0x74,
+      0x79,
+      0x70,
+      0x61,
+      0x76,
+      0x69,
+      0x66,
+    ],
+    'image/avif',
+    mask: const [
+      0x00,
+      0x00,
+      0x00,
+      0x00,
+      0xFF,
+      0xFF,
+      0xFF,
+      0xFF,
+      0xFF,
+      0xFF,
+      0xFF,
+      0xFF,
+    ],
+  );
+
 const List<int> _ispeFullBox = [
   0x69,
   0x73,
@@ -117,9 +139,6 @@ const List<int> _ispeFullBox = [
   0x00,
   0x00,
 ];
-
-bool _startsWith(Uint8List bytes, List<int> expected) =>
-    _matchesAt(bytes, 0, expected);
 
 bool _matchesAt(Uint8List bytes, int offset, List<int> expected) {
   if (bytes.length < offset + expected.length) return false;
@@ -251,7 +270,7 @@ final RegExp _svgHeightPattern = RegExp(
   caseSensitive: false,
 );
 final RegExp _svgViewBoxPattern = RegExp(
-  r'''\bviewBox\s*=\s*["']\s*[-+0-9.]+\s+[-+0-9.]+\s+([0-9]+(?:\.[0-9]+)?)\s+([0-9]+(?:\.[0-9]+)?)\s*["']''',
+  r'''\bviewBox\s*=\s*["']\s*[-+0-9.]+[\s,]+[-+0-9.]+[\s,]+([0-9]+(?:\.[0-9]+)?)[\s,]+([0-9]+(?:\.[0-9]+)?)\s*["']''',
   caseSensitive: false,
 );
 
@@ -277,19 +296,24 @@ ImageDimensions? _readSvg(File file) {
   if (viewBox == null) return null;
   final vbW = double.tryParse(viewBox.group(1)!);
   final vbH = double.tryParse(viewBox.group(2)!);
-  if (vbW == null || vbH == null || vbW <= 0 || vbH <= 0) return null;
+  if (vbW == null ||
+      vbH == null ||
+      !vbW.isFinite ||
+      !vbH.isFinite ||
+      vbW <= 0 ||
+      vbH <= 0) {
+    return null;
+  }
 
   if (explicitW != null) {
-    return _validDimensions(
-      explicitW.round(),
-      (explicitW * vbH / vbW).round(),
-    );
+    final scaledH = explicitW * vbH / vbW;
+    if (!scaledH.isFinite) return null;
+    return _validDimensions(explicitW.round(), scaledH.round());
   }
   if (explicitH != null) {
-    return _validDimensions(
-      (explicitH * vbW / vbH).round(),
-      explicitH.round(),
-    );
+    final scaledW = explicitH * vbW / vbH;
+    if (!scaledW.isFinite) return null;
+    return _validDimensions(scaledW.round(), explicitH.round());
   }
   return _validDimensions(vbW.round(), vbH.round());
 }
@@ -297,5 +321,5 @@ ImageDimensions? _readSvg(File file) {
 double? _parseSvgNumber(RegExpMatch? match) {
   if (match == null) return null;
   final value = double.tryParse(match.group(1)!);
-  return value != null && value > 0 ? value : null;
+  return value != null && value.isFinite && value > 0 ? value : null;
 }

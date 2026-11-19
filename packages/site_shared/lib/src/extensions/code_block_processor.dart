@@ -59,7 +59,7 @@ final class CodeBlockProcessor implements PageExtension {
                 content: lines.join('\n'),
                 title: title ?? defaultTitle,
                 theme: metadata['theme'],
-                height: _parseDartPadHeight(metadata['height']),
+                height: metadata['height'],
                 runAutomatically: metadata['run'] == 'true',
               ),
             );
@@ -598,31 +598,6 @@ Set<int> _parseNumbersAndRanges(String? input) {
   }
 
   return combinedNumbers;
-}
-
-final RegExp _dartPadHeightPattern = RegExp(r'^([1-9]\d*)(?:px)?$');
-
-/// Returns the DartPad height in pixels specified by [rawHeight],
-/// or `400` if [rawHeight] is `null`.
-///
-/// Accepts a positive integer of pixels with an optional `px` suffix.
-/// Throws an [ArgumentError] for any other value.
-int _parseDartPadHeight(String? rawHeight) {
-  const defaultDartPadHeight = 400;
-  if (rawHeight == null) return defaultDartPadHeight;
-
-  final match = _dartPadHeightPattern.firstMatch(rawHeight);
-  final pixels = match == null ? null : int.tryParse(match.group(1)!);
-  if (pixels == null || pixels <= 0) {
-    throw ArgumentError.value(
-      rawHeight,
-      'height',
-      'DartPad heights must be a positive whole number of pixels, '
-          'such as "520"',
-    );
-  }
-
-  return pixels;
 }
 
 /// Matches a key-value attribute pair, similar to HTML elements.

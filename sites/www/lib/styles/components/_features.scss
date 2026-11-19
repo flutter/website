@@ -137,7 +137,7 @@
     display: none;
     grid-template-columns: 1fr;
     padding: var(--gutter) 0;
-    transform: translate3d(0, var(--anim-offset), 0);
+    top: var(--anim-offset);
     opacity: 0;
     position: relative;
 
@@ -147,7 +147,7 @@
 
     &.nospy {
       display: grid;
-      transform: none;
+      top: 0;
       opacity: 1;
     }
 
