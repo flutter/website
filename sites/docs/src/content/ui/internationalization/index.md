@@ -122,6 +122,11 @@ add `flutter_localizations` as a dependency and pass
 import 'package:flutter_localizations/flutter_localizations.dart'
     show GlobalWidgetsLocalizations;
 ```
+
+The `show` clause isn't required in a file that doesn't import
+`material_ui` or `cupertino_ui`, but it keeps the deprecated
+`GlobalMaterialLocalizations` and `GlobalCupertinoLocalizations`
+out of scope.
 :::
 
 [`cupertino_ui`]: {{site.pub-pkg}}/cupertino_ui
