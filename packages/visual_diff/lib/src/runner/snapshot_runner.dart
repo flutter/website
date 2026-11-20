@@ -262,18 +262,35 @@ final class SnapshotRunner {
             }
 
             // Speed optimization 1: Abort all external third-party requests
-            // (e.g. analytics, CDNs, fonts) to prevent network stalls.
+            // (e.g. analytics, tracking, ads) while allowing fonts and
+            // icon glyphs (Google Fonts, Material Symbols) to load.
+            var inFlightRequests = 0;
             await page.setRequestInterception(true);
             page.onRequest.listen((request) async {
               final uri = Uri.tryParse(request.url);
-              if (uri != null &&
-                  (uri.host == 'localhost' ||
-                      uri.host == '127.0.0.1' ||
-                      uri.scheme == 'data')) {
+              final host = uri?.host.toLowerCase() ?? '';
+              final isAllowed =
+                  host == 'localhost' ||
+                  host == '127.0.0.1' ||
+                  host == 'fonts.googleapis.com' ||
+                  host == 'fonts.gstatic.com' ||
+                  host.endsWith('.gstatic.com') ||
+                  host.endsWith('.googleapis.com') ||
+                  uri?.scheme == 'data';
+              if (isAllowed) {
+                inFlightRequests++;
                 await request.continueRequest();
               } else {
                 await request.abort();
               }
+            });
+
+            page.onRequestFinished.listen((_) {
+              if (inFlightRequests > 0) inFlightRequests--;
+            });
+
+            page.onRequestFailed.listen((_) {
+              if (inFlightRequests > 0) inFlightRequests--;
             });
 
             // Speed optimization 2: Inject cookie-hiding CSS and disable
@@ -345,13 +362,27 @@ final class SnapshotRunner {
                   );
                 } catch (_) {}
 
-                // Ensure local fonts are rendered when JS is enabled.
+                // Wait for any in-flight font or asset requests to finish.
+                final fontDeadline = DateTime.now().add(
+                  const Duration(milliseconds: 1000),
+                );
+                while (inFlightRequests > 0 &&
+                    DateTime.now().isBefore(fontDeadline)) {
+                  await Future<void>.delayed(const Duration(milliseconds: 20));
+                }
+
+                // Ensure local and icon fonts are rendered.
                 if (!disableJavaScript) {
                   try {
                     await page.evaluate<Object?>(
                       '() => document.fonts ? document.fonts.ready : null',
                     );
                   } catch (_) {}
+                } else {
+                  // Settle delay for Chromium to decode and rasterize fonts.
+                  await Future<void>.delayed(
+                    const Duration(milliseconds: 80),
+                  );
                 }
 
                 // Extract live HTML header metadata (title, canonical, meta).

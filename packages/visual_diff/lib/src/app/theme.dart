@@ -672,7 +672,10 @@ body {
 /* Swipe Slider Viewer - Pixel Perfect with clip-path */
 .vd-swipe-wrapper {
   position: relative;
-  display: inline-block;
+  display: grid;
+  grid-template-areas: "stack";
+  align-items: start;
+  justify-items: start;
   max-width: 100%;
   background: var(--vd-surface);
   border: 1px solid var(--vd-border);
@@ -686,24 +689,28 @@ body {
 }
 
 .vd-swipe-baseline {
+  grid-area: stack;
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
+  align-self: start;
   pointer-events: none;
   -webkit-user-drag: none;
   user-select: none;
 }
 
 .vd-swipe-current {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  grid-area: stack;
   display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  align-self: start;
   pointer-events: none;
   -webkit-user-drag: none;
   user-select: none;
+  z-index: 2;
 }
 
 .vd-swipe-divider {
@@ -815,6 +822,10 @@ body {
 /* Onion Skin Viewer */
 .vd-onion-wrapper {
   position: relative;
+  display: grid;
+  grid-template-areas: "stack";
+  align-items: start;
+  justify-items: start;
   background: var(--vd-surface);
   border: 1px solid var(--vd-border);
   border-radius: 8px;
@@ -823,17 +834,22 @@ body {
 }
 
 .vd-onion-baseline {
+  grid-area: stack;
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
+  align-self: start;
 }
 
 .vd-onion-current {
-  position: absolute;
-  top: 0;
-  left: 0;
+  grid-area: stack;
+  display: block;
   width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
+  align-self: start;
+  z-index: 2;
 }
 
 .vd-onion-bar {
