@@ -49,6 +49,10 @@ final class PixelDiffer {
   /// are considered different.
   final double threshold;
 
+  /// Minimum number of differing pixels required to flag an image as changed.
+  /// Differences with fewer than [minDiffPixels] pixels are treated as equal.
+  final int minDiffPixels;
+
   /// Diff highlight color components in RGBA.
   final int highlightR;
   final int highlightG;
@@ -57,6 +61,7 @@ final class PixelDiffer {
 
   const PixelDiffer({
     this.threshold = 0.08,
+    this.minDiffPixels = 10,
     this.highlightR = 255,
     this.highlightG = 0,
     this.highlightB = 122,
@@ -131,10 +136,10 @@ final class PixelDiffer {
       }
     }
 
-    if (diffPixels == 0) {
-      return const PixelDiffResult(
+    if (diffPixels < minDiffPixels) {
+      return PixelDiffResult(
         diffPixels: 0,
-        totalPixels: 0,
+        totalPixels: totalPixels,
         diffPercentage: 0.0,
       );
     }

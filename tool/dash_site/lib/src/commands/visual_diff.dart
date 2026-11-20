@@ -31,6 +31,7 @@ final class VisualDiffCommand extends Command<int> {
   static const String _outputDirOption = 'output-dir';
   static const String _maxHeightOption = 'max-height';
   static const String _javascriptFlag = 'javascript';
+  static const String _minDiffPixelsOption = 'min-diff-pixels';
 
   VisualDiffCommand() {
     argParser.addFlag(
@@ -127,6 +128,13 @@ final class VisualDiffCommand extends Command<int> {
           'Enable JavaScript execution during snapshotting. Defaults to false '
           'for faster initial load snapshots.',
     );
+    argParser.addOption(
+      _minDiffPixelsOption,
+      defaultsTo: '10',
+      help:
+          'Minimum number of differing pixels required to flag a snapshot as '
+          'changed (diffs with fewer pixels are treated as equal).',
+    );
   }
 
   @override
@@ -168,6 +176,8 @@ final class VisualDiffCommand extends Command<int> {
     final maxHeight =
         int.tryParse(results?.option(_maxHeightOption) ?? '4500') ?? 4500;
     final enableJavaScript = results.get<bool>(_javascriptFlag, false);
+    final minDiffPixels =
+        int.tryParse(results?.option(_minDiffPixelsOption) ?? '10') ?? 10;
 
     final RegExp? filterRegex;
     if (filterPattern != null && filterPattern.isNotEmpty) {
@@ -262,6 +272,7 @@ final class VisualDiffCommand extends Command<int> {
           isTargeted: isTargeted,
           explicitRoutes: explicitRoutes,
           viewports: viewports,
+          minDiffPixels: minDiffPixels,
         );
       }
     }
@@ -394,7 +405,9 @@ final class VisualDiffCommand extends Command<int> {
     final manifestFile = File(
       path.join(visualDiffDir.path, 'diff_manifest.json'),
     );
-    const differ = BatchDiffer();
+    final differ = BatchDiffer(
+      pixelDiffer: PixelDiffer(minDiffPixels: minDiffPixels),
+    );
     final manifest = await differ.run(
       baselineDir: baselineDir,
       currentDir: currentDir,
@@ -662,6 +675,7 @@ final class VisualDiffCommand extends Command<int> {
     required bool isTargeted,
     required List<String>? explicitRoutes,
     required List<SnapshotViewport> viewports,
+    int minDiffPixels = 10,
   }) async {
     final currentSnapshotCount = _countPngSnapshots(currentDir);
     if (currentSnapshotCount == 0) {
@@ -728,7 +742,9 @@ final class VisualDiffCommand extends Command<int> {
       path.join(visualDiffDir.path, 'diff_manifest.json'),
     );
     if (manifestFile.existsSync()) {
-      const differ = BatchDiffer();
+      final differ = BatchDiffer(
+        pixelDiffer: PixelDiffer(minDiffPixels: minDiffPixels),
+      );
       await differ.run(
         baselineDir: baselineDir,
         currentDir: currentDir,
