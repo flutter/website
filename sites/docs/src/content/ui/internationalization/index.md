@@ -42,13 +42,12 @@ You can find the source code for this example in
 
 [`gen_l10n_example`]: {{site.repo.this}}/tree/main/examples/internationalization/gen_l10n_example
 
-### Set up an internationalized app with `flutter_localizations` {:#setting-up}
+### Set up an internationalized app {:#setting-up}
 
 By default, Flutter only provides US English localizations.
 To add support for other languages,
-an application must specify additional
-`MaterialApp` (or `CupertinoApp`) properties,
-and include a package called `flutter_localizations`.
+configure your `MaterialApp` (or `CupertinoApp`) with
+localization delegates and the locales your app supports.
 
 To begin, start by creating a new Flutter application
 in a directory of your choice with the `flutter create` command.
@@ -57,39 +56,39 @@ in a directory of your choice with the `flutter create` command.
 $ flutter create <name_of_flutter_app>
 ```
 
-Flutter projects will soon be encouraged to
-use the `material_ui` and `cupertino_ui` packages,
-but the `flutter create` command hasn't yet been updated to do this by default.
-You can get ahead of things and migrate now by running the following command:
+New projects created with `flutter create` depend on the
+[`material_ui`][] package, which provides the Material widgets
+and their localizations.
+If you're adding localization to an existing project that still imports
+`package:flutter/material.dart` or `package:flutter/cupertino.dart`,
+first migrate it to the standalone design packages by running:
 
 ```console
 $ dart fix --apply --code=migrate_design_widgets
 ```
 
-To use `flutter_localizations`, add it and the `intl` package as dependencies:
+To learn more about this migration, check out
+[Migrate to standalone material_ui and cupertino_ui packages][].
 
-```console
-$ flutter pub add flutter_localizations:"{sdk: flutter}" intl:any
-```
+[`material_ui`]: {{site.pub-pkg}}/material_ui
+[Migrate to standalone material_ui and cupertino_ui packages]: /release/breaking-changes/material-ui-and-cupertino-ui
 
-This updates your `pubspec.yaml` file with the following entries:
-
-<?code-excerpt "gen_l10n_example/pubspec.yaml (flutter-localizations)"?>
-```yaml title="pubspec.yaml" highlightLines=4-6
-dependencies:
-  flutter:
-    sdk: flutter
-  flutter_localizations:
-    sdk: flutter
-  intl: any
-```
-
-Import the package with the `flutter_localizations` prefix:
+Because `material_ui` already exports `GlobalMaterialLocalizations`,
+you don't need an extra import:
 
 ```dart
-import 'package:flutter_localizations/flutter_localizations.dart'
-    as flutter_localizations;
+import 'package:material_ui/material_ui.dart';
 ```
+
+:::warning
+Don't import `package:flutter_localizations/flutter_localizations.dart`
+alongside `package:material_ui/material_ui.dart` or
+`package:cupertino_ui/cupertino_ui.dart` without `show` or `hide`.
+`flutter_localizations` exports deprecated copies of
+`GlobalMaterialLocalizations` and `GlobalCupertinoLocalizations`
+(as of Flutter 3.50), which conflict with the standalone packages
+and cause an `ambiguous_import` error.
+:::
 
 Then specify `localizationsDelegates` and `supportedLocales` for
 your `MaterialApp`, `CupertinoApp`, or `WidgetsApp`:
@@ -109,13 +108,30 @@ return const MaterialApp(
 
 :::note
 If your app is based on `CupertinoApp` instead of `MaterialApp`,
-use `GlobalCupertinoLocalizations.delegates`.
+use `GlobalCupertinoLocalizations.delegates` from
+the [`cupertino_ui`][] package.
+If your `CupertinoApp` also uses Material widgets from `material_ui`,
+use `GlobalMaterialLocalizations.delegates` instead,
+which includes the Cupertino and Widgets delegates as well.
 
 If your app is based on `WidgetsApp` instead of `MaterialApp`,
-use `flutter_localizations.GlobalWidgetsLocalizations.delegate`.
+add `flutter_localizations` as a dependency and pass
+`[GlobalWidgetsLocalizations.delegate]` to `localizationsDelegates`:
+
+```dart
+import 'package:flutter_localizations/flutter_localizations.dart'
+    show GlobalWidgetsLocalizations;
+```
+
+The `show` clause isn't required in a file that doesn't import
+`material_ui` or `cupertino_ui`, but it keeps the deprecated
+`GlobalMaterialLocalizations` and `GlobalCupertinoLocalizations`
+out of scope.
 :::
 
-After depending on `flutter_localizations` and adding the previous code,
+[`cupertino_ui`]: {{site.pub-pkg}}/cupertino_ui
+
+After adding the previous code,
 Flutter localizes the Material and Cupertino libraries
 in the selected supported locale.
 Widgets should be adapted to the localized messages and use
@@ -132,9 +148,9 @@ constructor is still fully valid.
 
 The elements of the `localizationsDelegates` list are
 factories that produce collections of localized values.
-`GlobalMaterialLocalizations.delegate` provides localized
+[`GlobalMaterialLocalizations.delegate`][] provides localized
 strings and other values for the Material Components library.
-`flutter_localizations.GlobalWidgetsLocalizations.delegate`
+`GlobalWidgetsLocalizations.delegate`
 defines the default text direction,
 either left-to-right or right-to-left,
 for the `widgets.dart` library.
@@ -143,7 +159,7 @@ More information about these app properties, the types they
 depend on, and how internationalized Flutter apps are typically
 structured, is covered on this page.
 
-[language-count]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
+[`GlobalMaterialLocalizations.delegate`]: {{site.material_ui}}/GlobalMaterialLocalizations/delegate-constant.html
 
 <a id="overriding-locale"></a>
 <a id="overriding-the-locale"></a>
@@ -322,6 +338,28 @@ complete the following instructions:
    );
    ```
 
+   :::warning
+   `gen-l10n` also generates an `AppLocalizations.localizationsDelegates`
+   list, but in Flutter 3.50 it still populates that list with the
+   deprecated delegates from `flutter_localizations` instead of
+   `material_ui`.
+   Those delegates don't provide `material_ui`'s `MaterialLocalizations`
+   at all: English still works because `MaterialApp` falls back to its
+   English-only default delegate, but non-English locales fail at runtime.
+   Until [flutter/flutter#191072][] is resolved, build the list yourself
+   from `AppLocalizations.delegate` and
+   `GlobalMaterialLocalizations.delegates`, as in the preceding example.
+
+   The generated file also triggers `deprecated_member_use` warnings.
+   To ignore them until `gen-l10n` is updated, add a `header` to
+   `l10n.yaml` and re-run `flutter gen-l10n`:
+
+   <?code-excerpt "gen_l10n_example/l10n.yaml (header)"?>
+   ```yaml title="l10n.yaml"
+   header: '// ignore_for_file: deprecated_member_use'
+   ```
+   :::
+
 8. Once the Material app has started,
    you can use `AppLocalizations` anywhere in your app:
 
@@ -362,6 +400,7 @@ return MaterialApp(
 ```
 
 [App Resource Bundle]: https://github.com/google/app-resource-bundle
+[flutter/flutter#191072]: {{site.repo.flutter}}/issues/191072
 [`gen_l10n_example`]: {{site.repo.this}}/tree/main/examples/internationalization/gen_l10n_example
 [`MaterialApp.onGenerateTitle`]: {{site.material_ui}}/MaterialApp/onGenerateTitle.html
 
@@ -573,8 +612,7 @@ The resulting string is as follows:
 
 Numbers, including those that represent currency values,
 are displayed very differently in different locales.
-The localizations generation tool in
-`flutter_localizations` uses the
+The `gen-l10n` tool uses the
 [`NumberFormat`]({{site.api}}/flutter/package-intl_intl/NumberFormat-class.html)
 class in the `intl` package to format
 numbers based on the locale and the desired format.
@@ -786,14 +824,15 @@ Locale myLocale = Localizations.localeOf(context);
 
 [`Locale`]: {{site.api}}/flutter/dart-ui/Locale-class.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
+[widgets-global]: {{site.api}}/flutter/widgets/Localizations-class.html
 
 <a id="specifying-supportedlocales" aria-hidden="true"></a>
 
 ### Specifying the app's supported&shy;Locales parameter
 
-Although the `flutter_localizations` library
-supports many languages and language variants,
+Although the `material_ui`, `cupertino_ui`, and
+`flutter_localizations` libraries
+support many languages and language variants,
 only English language translations are available by default.
 It's up to the developer to decide exactly which languages to support.
 
@@ -1151,7 +1190,7 @@ class _NnMaterialLocalizationsDelegate
 ```
 
 For more information about localization strings,
-check out the [flutter_localizations README][].
+check out the [material_ui localizations README][].
 
 Once you've implemented your language-specific subclasses of
 `GlobalMaterialLocalizations` and `LocalizationsDelegate`,
@@ -1173,10 +1212,25 @@ const MaterialApp(
 ),
 ```
 
+:::note
+`GlobalWidgetsLocalizations` is only exported by
+`package:flutter_localizations`, which also exports a deprecated
+`GlobalMaterialLocalizations`.
+To avoid an `ambiguous_import` error with `package:material_ui`,
+the example uses `show` to import only `GlobalWidgetsLocalizations`:
+
+<?code-excerpt "add_language/lib/main.dart (imports)"?>
+```dart
+import 'package:flutter_localizations/flutter_localizations.dart'
+    show GlobalWidgetsLocalizations;
+import 'package:material_ui/material_ui.dart';
+```
+:::
+
 [`add_language`]: {{site.repo.this}}/tree/main/examples/internationalization/add_language/lib/main.dart
 
-[flutter_localizations README]: {{site.repo.flutter}}/blob/main/packages/flutter_localizations/lib/src/l10n/README.md
-[`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
+[material_ui localizations README]: {{site.repo.packages}}/blob/main/packages/material_ui/lib/src/l10n/README.md
+[`GlobalMaterialLocalizations`]: {{site.material_ui}}/GlobalMaterialLocalizations-class.html
 
 ## Alternative internationalization workflows
 
