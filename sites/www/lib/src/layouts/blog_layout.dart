@@ -16,6 +16,7 @@ import 'package:site_shared/components/common/client/back_to_top_button.dart';
 import 'package:site_shared/util.dart';
 
 import '../components/common/content_image.dart';
+import '../components/common/image_zoombox.dart';
 import '../utils/scroll_spy.dart';
 import 'default_layout.dart';
 
@@ -119,6 +120,7 @@ class BlogLayout extends DefaultLayout {
           ),
         ]),
         if (isPost) const BackToTopButton(),
+        if (isPost) ImageZoombox(key: ValueKey(page.url)),
       ]),
     );
   }
