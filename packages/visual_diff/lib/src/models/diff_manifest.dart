@@ -27,6 +27,10 @@ final class DiffManifest {
   /// Number of screenshots with visual differences.
   final int changedCount;
 
+  /// Number of screenshots with header metadata differences
+  /// (such as title, canonical URL, or meta tags).
+  final int metadataChangedCount;
+
   /// Number of newly introduced screenshots.
   final int addedCount;
 
@@ -39,8 +43,13 @@ final class DiffManifest {
   /// All compared screenshot entries.
   final List<DiffEntry> entries;
 
-  /// Whether any visual differences, additions, or removals were detected.
-  bool get hasDiff => changedCount > 0 || addedCount > 0 || removedCount > 0;
+  /// Whether any visual differences, metadata changes, additions, or removals
+  /// were detected.
+  bool get hasDiff =>
+      changedCount > 0 ||
+      addedCount > 0 ||
+      removedCount > 0 ||
+      metadataChangedCount > 0;
 
   const DiffManifest({
     required this.site,
@@ -48,6 +57,7 @@ final class DiffManifest {
     required this.baseRef,
     required this.totalCount,
     required this.changedCount,
+    this.metadataChangedCount = 0,
     required this.addedCount,
     required this.removedCount,
     required this.unchangedCount,
@@ -61,11 +71,15 @@ final class DiffManifest {
     DateTime? timestamp,
   }) {
     var changed = 0;
+    var metadataChanged = 0;
     var added = 0;
     var removed = 0;
     var unchanged = 0;
 
     for (final entry in entries) {
+      if (entry.hasHeaderDiff) {
+        metadataChanged++;
+      }
       switch (entry.status) {
         case DiffStatus.changed:
           changed++;
@@ -84,6 +98,7 @@ final class DiffManifest {
       baseRef: baseRef,
       totalCount: entries.length,
       changedCount: changed,
+      metadataChangedCount: metadataChanged,
       addedCount: added,
       removedCount: removed,
       unchangedCount: unchanged,
@@ -97,6 +112,7 @@ final class DiffManifest {
     'baseRef': baseRef,
     'totalCount': totalCount,
     'changedCount': changedCount,
+    'metadataChangedCount': metadataChangedCount,
     'addedCount': addedCount,
     'removedCount': removedCount,
     'unchangedCount': unchangedCount,
@@ -111,6 +127,7 @@ final class DiffManifest {
     baseRef: json['baseRef'] as String? ?? 'main',
     totalCount: json['totalCount'] as int? ?? 0,
     changedCount: json['changedCount'] as int? ?? 0,
+    metadataChangedCount: json['metadataChangedCount'] as int? ?? 0,
     addedCount: json['addedCount'] as int? ?? 0,
     removedCount: json['removedCount'] as int? ?? 0,
     unchangedCount: json['unchangedCount'] as int? ?? 0,

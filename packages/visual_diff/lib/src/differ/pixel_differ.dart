@@ -77,8 +77,6 @@ final class PixelDiffer {
       );
     }
 
-    final diffImg = img.Image(width: width, height: height);
-
     var diffPixels = 0;
     var minX = width;
     var minY = height;
@@ -90,6 +88,7 @@ final class PixelDiffer {
     const maxDistanceSquared = 4.0 * 255.0 * 255.0;
     final thresholdDistanceSquared = threshold * threshold * maxDistanceSquared;
 
+    // Fast pass: evaluate pixel differences without allocating diff image.
     for (var y = 0; y < height; y++) {
       final inBaselineY = y < baseline.height;
       final inCurrentY = y < current.height;
@@ -101,6 +100,11 @@ final class PixelDiffer {
         if (inBaselineX && inCurrentX) {
           final p1 = baseline.getPixel(x, y);
           final p2 = current.getPixel(x, y);
+
+          // Fast-path: exact color equality skips distance calculation.
+          if (p1.r == p2.r && p1.g == p2.g && p1.b == p2.b && p1.a == p2.a) {
+            continue;
+          }
 
           final dr = p1.r - p2.r;
           final dg = p1.g - p2.g;
@@ -115,7 +119,57 @@ final class PixelDiffer {
             if (x > maxX) maxX = x;
             if (y < minY) minY = y;
             if (y > maxY) maxY = y;
+          }
+        } else {
+          // Pixel exists in one image but not the other (dimension shift).
+          diffPixels++;
+          if (x < minX) minX = x;
+          if (x > maxX) maxX = x;
+          if (y < minY) minY = y;
+          if (y > maxY) maxY = y;
+        }
+      }
+    }
 
+    if (diffPixels == 0) {
+      return const PixelDiffResult(
+        diffPixels: 0,
+        totalPixels: 0,
+        diffPercentage: 0.0,
+      );
+    }
+
+    // Second pass: only allocate and render diff mask if differences exist.
+    final diffImg = img.Image(width: width, height: height);
+
+    for (var y = 0; y < height; y++) {
+      final inBaselineY = y < baseline.height;
+      final inCurrentY = y < current.height;
+
+      for (var x = 0; x < width; x++) {
+        final inBaselineX = inBaselineY && x < baseline.width;
+        final inCurrentX = inCurrentY && x < current.width;
+
+        if (inBaselineX && inCurrentX) {
+          final p1 = baseline.getPixel(x, y);
+          final p2 = current.getPixel(x, y);
+
+          final isIdentical =
+              p1.r == p2.r && p1.g == p2.g && p1.b == p2.b && p1.a == p2.a;
+
+          final bool isDiff;
+          if (isIdentical) {
+            isDiff = false;
+          } else {
+            final dr = p1.r - p2.r;
+            final dg = p1.g - p2.g;
+            final db = p1.b - p2.b;
+            final da = p1.a - p2.a;
+            final distSquared = (dr * dr) + (dg * dg) + (db * db) + (da * da);
+            isDiff = distSquared > thresholdDistanceSquared;
+          }
+
+          if (isDiff) {
             diffImg.setPixelRgba(
               x,
               y,
@@ -125,22 +179,14 @@ final class PixelDiffer {
               highlightA,
             );
           } else {
-            // Unchanged pixel: render a subtle dimmed grayscale version
-            // of the baseline for visual context.
+            // Unchanged pixel: render a subtle dimmed grayscale version.
             final gray = ((0.299 * p1.r) + (0.587 * p1.g) + (0.114 * p1.b))
                 .round();
             final dimmed = ((gray * 0.45) + 130).clamp(0, 255).toInt();
             diffImg.setPixelRgba(x, y, dimmed, dimmed, dimmed, 180);
           }
         } else {
-          // Pixel exists in one image but not the other (dimension shift).
-          diffPixels++;
-          if (x < minX) minX = x;
-          if (x > maxX) maxX = x;
-          if (y < minY) minY = y;
-          if (y > maxY) maxY = y;
-
-          // Paint added or removed region with highlight color.
+          // Dimension shift.
           diffImg.setPixelRgba(
             x,
             y,
@@ -154,16 +200,18 @@ final class PixelDiffer {
     }
 
     final diffPercentage = (diffPixels / totalPixels) * 100.0;
-
-    final boundingBox = diffPixels > 0
-        ? DiffBoundingBox(minX: minX, minY: minY, maxX: maxX, maxY: maxY)
-        : null;
+    final boundingBox = DiffBoundingBox(
+      minX: minX,
+      minY: minY,
+      maxX: maxX,
+      maxY: maxY,
+    );
 
     return PixelDiffResult(
       diffPixels: diffPixels,
       totalPixels: totalPixels,
       diffPercentage: diffPercentage,
-      diffImage: diffPixels > 0 ? diffImg : null,
+      diffImage: diffImg,
       boundingBox: boundingBox,
     );
   }

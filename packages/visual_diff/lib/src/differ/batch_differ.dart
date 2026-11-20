@@ -2,13 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:image/image.dart' as img;
 import 'package:path/path.dart' as path;
 
 import '../models/diff_entry.dart';
 import '../models/diff_manifest.dart';
+import '../models/header_metadata.dart';
 import 'pixel_differ.dart';
 
 /// Parses a snapshot filename (e.g. `reference__flutter-cli@desktop.png`)
@@ -52,6 +55,39 @@ String _normalizeTargetRoute(String raw) {
   return route;
 }
 
+/// Fast bitwise comparison of two byte buffers using 64-bit word chunks.
+bool _bytesEqual(Uint8List a, Uint8List b) {
+  if (identical(a, b)) return true;
+  if (a.lengthInBytes != b.lengthInBytes) return false;
+  final wordsA = a.buffer.asUint64List(a.offsetInBytes, a.lengthInBytes ~/ 8);
+  final wordsB = b.buffer.asUint64List(b.offsetInBytes, b.lengthInBytes ~/ 8);
+  for (var i = 0; i < wordsA.length; i++) {
+    if (wordsA[i] != wordsB[i]) return false;
+  }
+  final offset = wordsA.length * 8;
+  for (var i = offset; i < a.lengthInBytes; i++) {
+    if (a[i] != b[i]) return false;
+  }
+  return true;
+}
+
+/// Reads width and height directly from PNG IHDR chunk (bytes 16-23)
+/// without decompressing image pixel data.
+({int width, int height}) _readPngDimensions(Uint8List bytes) {
+  if (bytes.length >= 24 &&
+      bytes[0] == 0x89 &&
+      bytes[1] == 0x50 &&
+      bytes[2] == 0x4E &&
+      bytes[3] == 0x47) {
+    final width =
+        (bytes[16] << 24) | (bytes[17] << 16) | (bytes[18] << 8) | bytes[19];
+    final height =
+        (bytes[20] << 24) | (bytes[21] << 16) | (bytes[22] << 8) | bytes[23];
+    return (width: width, height: height);
+  }
+  return (width: 0, height: 0);
+}
+
 /// Executes batch pixel diffing across entire snapshot directories
 /// and compiles a [DiffManifest].
 final class BatchDiffer {
@@ -74,6 +110,8 @@ final class BatchDiffer {
     required String baseRef,
     Set<String>? targetRoutes,
     Set<String>? targetViewports,
+    Map<String, HeaderMetadata>? baselineMetadata,
+    Map<String, HeaderMetadata>? currentMetadata,
     bool verbose = false,
     void Function(String message)? onProgress,
   }) async {
@@ -99,6 +137,49 @@ final class BatchDiffer {
           currentFiles[path.basename(entity.path)] = entity;
         }
       }
+    }
+
+    // Load persisted header metadata if present.
+    final baselineMetaMap = <String, HeaderMetadata>{};
+    final baselineMetaFile = File(path.join(baselineDir.path, 'metadata.json'));
+    if (baselineMetaFile.existsSync()) {
+      try {
+        final json = jsonDecode(
+          baselineMetaFile.readAsStringSync(),
+        ) as Map<String, dynamic>;
+        for (final entry in json.entries) {
+          baselineMetaMap[entry.key] = HeaderMetadata.fromJson(
+            entry.value as Map<String, dynamic>,
+          );
+        }
+      } catch (_) {}
+    }
+    if (baselineMetadata != null) {
+      baselineMetaMap.addAll(baselineMetadata);
+    }
+
+    final currentMetaMap = <String, HeaderMetadata>{};
+    final currentMetaFile = File(path.join(currentDir.path, 'metadata.json'));
+    if (currentMetaFile.existsSync()) {
+      try {
+        final json = jsonDecode(
+          currentMetaFile.readAsStringSync(),
+        ) as Map<String, dynamic>;
+        for (final entry in json.entries) {
+          currentMetaMap[entry.key] = HeaderMetadata.fromJson(
+            entry.value as Map<String, dynamic>,
+          );
+        }
+      } catch (_) {}
+    }
+    if (currentMetadata != null) {
+      currentMetaMap.addAll(currentMetadata);
+      // Persist current metadata map to file.
+      try {
+        const encoder = JsonEncoder.withIndent('  ');
+        final json = currentMetaMap.map((k, v) => MapEntry(k, v.toJson()));
+        currentMetaFile.writeAsStringSync(encoder.convert(json));
+      } catch (_) {}
     }
 
     final allFilenames = <String>{
@@ -153,12 +234,24 @@ final class BatchDiffer {
       final baselineFile = baselineFiles[filename];
       final currentFile = currentFiles[filename];
 
+      final bMeta = baselineMetaMap[parsed.route];
+      final cMeta = currentMetaMap[parsed.route];
+      final headerDiff = HeaderDiff.compare(bMeta, cMeta);
+
       if (baselineFile == null && currentFile != null) {
         // Newly added screenshot.
         final bytes = currentFile.readAsBytesSync();
-        final currentImg = img.decodePng(bytes);
-        final w = currentImg?.width ?? 0;
-        final h = currentImg?.height ?? 0;
+        final dims = _readPngDimensions(bytes);
+        final int w;
+        final int h;
+        if (dims.width > 0 && dims.height > 0) {
+          w = dims.width;
+          h = dims.height;
+        } else {
+          final currentImg = img.decodePng(bytes);
+          w = currentImg?.width ?? 0;
+          h = currentImg?.height ?? 0;
+        }
 
         entries.add(
           DiffEntry(
@@ -173,15 +266,26 @@ final class BatchDiffer {
             width: w,
             height: h,
             currentRelativePath: path.join('current', filename),
+            baselineMetadata: bMeta,
+            currentMetadata: cMeta,
+            headerDiff: headerDiff,
           ),
         );
         log('  🟢 [${i + 1}/${filenamesToDiff.length}] Added: $filename');
       } else if (baselineFile != null && currentFile == null) {
         // Removed screenshot.
         final bytes = baselineFile.readAsBytesSync();
-        final baselineImg = img.decodePng(bytes);
-        final w = baselineImg?.width ?? 0;
-        final h = baselineImg?.height ?? 0;
+        final dims = _readPngDimensions(bytes);
+        final int w;
+        final int h;
+        if (dims.width > 0 && dims.height > 0) {
+          w = dims.width;
+          h = dims.height;
+        } else {
+          final baselineImg = img.decodePng(bytes);
+          w = baselineImg?.width ?? 0;
+          h = baselineImg?.height ?? 0;
+        }
 
         entries.add(
           DiffEntry(
@@ -196,14 +300,61 @@ final class BatchDiffer {
             width: w,
             height: h,
             baselineRelativePath: path.join('baseline', filename),
+            baselineMetadata: bMeta,
+            currentMetadata: cMeta,
+            headerDiff: headerDiff,
           ),
         );
         log('  🔴 [${i + 1}/${filenamesToDiff.length}] Removed: $filename');
       } else if (baselineFile != null && currentFile != null) {
-        // Exists in both: run pixel diff.
         final baselineBytes = baselineFile.readAsBytesSync();
         final currentBytes = currentFile.readAsBytesSync();
 
+        // FAST PATH: Identical PNG bytes guarantees 100% identical pixel
+        // content.
+        if (baselineBytes.length == currentBytes.length &&
+            _bytesEqual(baselineBytes, currentBytes)) {
+          final dims = _readPngDimensions(currentBytes);
+          final oldDiff = File(path.join(diffOutputDir.path, filename));
+          if (oldDiff.existsSync()) {
+            oldDiff.deleteSync();
+          }
+
+          entries.add(
+            DiffEntry(
+              id: id,
+              route: parsed.route,
+              viewport: parsed.viewport,
+              filename: filename,
+              status: DiffStatus.unchanged,
+              diffPercentage: 0.0,
+              diffPixels: 0,
+              totalPixels: dims.width * dims.height,
+              width: dims.width,
+              height: dims.height,
+              baselineRelativePath: path.join('baseline', filename),
+              currentRelativePath: path.join('current', filename),
+              baselineMetadata: bMeta,
+              currentMetadata: cMeta,
+              headerDiff: headerDiff,
+            ),
+          );
+
+          if (headerDiff.hasDiff) {
+            log(
+              '  ℹ️  [${i + 1}/${filenamesToDiff.length}] Meta changed: '
+              '$filename (title: ${headerDiff.titleChanged}, '
+              'meta: ${headerDiff.metaChanges.length})',
+            );
+          } else if (normalizedTargets != null || verbose) {
+            log(
+              '  ✓ [${i + 1}/${filenamesToDiff.length}] Unchanged: $filename',
+            );
+          }
+          continue;
+        }
+
+        // Byte diff detected: decode PNGs and evaluate pixel differences.
         final baselineImg = img.decodePng(baselineBytes);
         final currentImg = img.decodePng(currentBytes);
 
@@ -235,6 +386,9 @@ final class BatchDiffer {
               currentRelativePath: path.join('current', filename),
               diffRelativePath: path.join('diff', filename),
               boundingBox: diffResult.boundingBox,
+              baselineMetadata: bMeta,
+              currentMetadata: cMeta,
+              headerDiff: headerDiff,
             ),
           );
           final pctStr = diffResult.diffPercentage.toStringAsFixed(2);
@@ -262,9 +416,19 @@ final class BatchDiffer {
               height: baselineImg.height,
               baselineRelativePath: path.join('baseline', filename),
               currentRelativePath: path.join('current', filename),
+              baselineMetadata: bMeta,
+              currentMetadata: cMeta,
+              headerDiff: headerDiff,
             ),
           );
-          if (normalizedTargets != null || verbose) {
+
+          if (headerDiff.hasDiff) {
+            log(
+              '  ℹ️  [${i + 1}/${filenamesToDiff.length}] Meta changed: '
+              '$filename (title: ${headerDiff.titleChanged}, '
+              'meta: ${headerDiff.metaChanges.length})',
+            );
+          } else if (normalizedTargets != null || verbose) {
             log(
               '  ✓ [${i + 1}/${filenamesToDiff.length}] Unchanged: $filename',
             );
@@ -321,7 +485,8 @@ final class BatchDiffer {
     if (normalizedTargets != null && normalizedTargets.isNotEmpty) {
       log(
         '✨ Visual diff updated for ${normalizedTargets.length} route(s) '
-        'in ${elapsed}s: ${manifest.changedCount} total changed, '
+        'in ${elapsed}s: ${manifest.changedCount} changed, '
+        '${manifest.metadataChangedCount} meta changed, '
         '${manifest.addedCount} added, ${manifest.removedCount} removed, '
         '${manifest.unchangedCount} unchanged.',
       );
@@ -329,8 +494,8 @@ final class BatchDiffer {
       log(
         '✨ Visual diff complete in ${elapsed}s: '
         '${manifest.changedCount} changed, '
-        '${manifest.addedCount} added, '
-        '${manifest.removedCount} removed, '
+        '${manifest.metadataChangedCount} meta changed, '
+        '${manifest.addedCount} added, ${manifest.removedCount} removed, '
         '${manifest.unchangedCount} unchanged.',
       );
     }

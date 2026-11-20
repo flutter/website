@@ -108,6 +108,8 @@ class _VisualDiffAppState extends State<VisualDiffApp> {
           setState(() => currentMode = ReviewMode.diffMask);
         case '5':
           setState(() => currentMode = ReviewMode.toggle);
+        case '6':
+          setState(() => currentMode = ReviewMode.metadata);
         case 'v':
         case 'V':
           setState(() {

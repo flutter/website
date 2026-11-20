@@ -381,7 +381,9 @@ class _SidebarComponentState extends State<SidebarComponent> {
             },
             [.text('$changedCount')],
           )
-        else if (hasRoute && node.route!.hasDiff)
+        else if (hasRoute &&
+            node.route!.hasDiff &&
+            node.route!.status != DiffStatus.unchanged)
           span(
             classes: 'vd-badge vd-badge-${node.route!.status.name}',
             attributes: const {
@@ -392,6 +394,19 @@ class _SidebarComponentState extends State<SidebarComponent> {
                 '${node.route!.maxDiffPercentage.toStringAsFixed(1)}%',
               ),
             ],
+          ),
+
+        if (hasRoute && node.route!.hasHeaderDiff)
+          const span(
+            classes: 'vd-badge',
+            attributes: {
+              'style':
+                  'font-size: 8px; padding: 1px 4px; margin-left: 3px; '
+                  'background: rgba(14, 165, 233, 0.15); color: #0284c7;',
+              'title':
+                  'Metadata (title, canonical, or meta tags) has differences',
+            },
+            [.text('META')],
           ),
       ],
     );

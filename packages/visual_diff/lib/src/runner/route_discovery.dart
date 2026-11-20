@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:async';
 import 'dart:io';
 
 import 'package:path/path.dart' as path;
@@ -79,6 +80,70 @@ List<String> discoverRoutes(
   }
 
   return sortedRoutes;
+}
+
+/// Watches [buildDirectory] while [buildFuture] is completing, emitting newly
+/// rendered routes as soon as their HTML files are written.
+Stream<String> watchBuildRoutes(
+  Directory buildDirectory, {
+  required Future<int> buildFuture,
+  List<String>? explicitRoutes,
+  RegExp? filter,
+  int? limit,
+}) async* {
+  if (explicitRoutes != null && explicitRoutes.isNotEmpty) {
+    var routes = explicitRoutes.map(_normalizeRoute).toSet().toList()..sort();
+    if (filter != null) {
+      routes = routes.where(filter.hasMatch).toList();
+    }
+    if (limit != null && limit > 0 && routes.length > limit) {
+      routes = routes.sublist(0, limit);
+    }
+    for (final r in routes) {
+      yield r;
+    }
+    return;
+  }
+
+  final yieldedRoutes = <String>{};
+  var buildDone = false;
+  unawaited(buildFuture.whenComplete(() => buildDone = true));
+
+  while (!buildDone) {
+    if (buildDirectory.existsSync()) {
+      final currentRoutes = discoverRoutes(
+        buildDirectory,
+        filter: filter,
+      );
+      for (final r in currentRoutes) {
+        if (!yieldedRoutes.contains(r)) {
+          yieldedRoutes.add(r);
+          yield r;
+          if (limit != null && limit > 0 && yieldedRoutes.length >= limit) {
+            return;
+          }
+        }
+      }
+    }
+    await Future<void>.delayed(const Duration(milliseconds: 100));
+  }
+
+  // Final scan after build completes to ensure all rendered files are emitted.
+  if (buildDirectory.existsSync()) {
+    final finalRoutes = discoverRoutes(
+      buildDirectory,
+      filter: filter,
+    );
+    for (final r in finalRoutes) {
+      if (!yieldedRoutes.contains(r)) {
+        yieldedRoutes.add(r);
+        yield r;
+        if (limit != null && limit > 0 && yieldedRoutes.length >= limit) {
+          return;
+        }
+      }
+    }
+  }
 }
 
 String _normalizeRoute(String rawRoute) {

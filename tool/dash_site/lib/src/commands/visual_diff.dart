@@ -374,66 +374,15 @@ final class VisualDiffCommand extends Command<int> {
       );
     }
 
-    // 2. Build current working copy if requested.
-    if (shouldBuild) {
-      if (isTargeted) {
-        print(
-          '🔨 Building working copy for ${site.name}...\n'
-          '   (Tip: Pass --no-build if the site is already built to test '
-          'instantly.)',
-        );
-      } else {
-        print('🔨 Building current working copy for ${site.name}...');
-      }
-      final buildExitCode = await buildSite(site, productionRelease: false);
-      if (buildExitCode != 0) {
-        stderr.writeln(
-          'Error: Site build failed with exit code $buildExitCode.',
-        );
-        return buildExitCode;
-      }
-    }
-
+    // 2. Build current working copy and capture snapshots eagerly if requested.
     final currentBuildDir = Directory(
       path.join(repositoryRoot, site.buildOutputDirectory),
     );
     if (!currentBuildDir.existsSync()) {
-      stderr.writeln(
-        'Error: Build directory not found at: ${currentBuildDir.path}.\n'
-        'Run "dart run dash_site build" first or omit --no-build.',
-      );
-      return 1;
+      currentBuildDir.createSync(recursive: true);
     }
 
-    final currentRoutes = discoverRoutes(
-      currentBuildDir,
-      explicitRoutes: explicitRoutes,
-      filter: filterRegex,
-      limit: limit,
-    );
-
-    if (currentRoutes.isEmpty) {
-      stderr.writeln(
-        'Error: No routes discovered in current build directory: '
-        '${currentBuildDir.path}',
-      );
-      return 1;
-    }
-
-    if (isTargeted) {
-      print('🎯 Targeted run for ${currentRoutes.length} route(s):');
-      for (final r in currentRoutes.take(5)) {
-        print('   • $r');
-      }
-      if (currentRoutes.length > 5) {
-        print('   • ... and ${currentRoutes.length - 5} more');
-      }
-      print('');
-    }
-
-    // 3. Capture current snapshots.
-    // When updating targeted routes, preserve existing snapshots for other
-    // routes and overwrite only the targeted ones.
+    // 3. Prepare current snapshot output directory.
     if (!isTargeted && currentDir.existsSync()) {
       currentDir.deleteSync(recursive: true);
     }
@@ -444,17 +393,101 @@ final class VisualDiffCommand extends Command<int> {
     }
     diffOutputDir.createSync(recursive: true);
 
-    print('⚡ Starting static server for current snapshotting...');
-    final server = await SnapshotServer.start(currentBuildDir);
-    try {
-      await runner.captureSnapshots(
-        server: server,
-        routes: currentRoutes,
-        outputDirectory: currentDir,
-        viewports: viewports,
+    final List<String> currentRoutes;
+
+    if (shouldBuild) {
+      if (isTargeted) {
+        print(
+          '🔨 Building ${site.name} with eager snapshotting...\n'
+          '   (Tip: Pass --no-build if the site is already built to test '
+          'instantly.)',
+        );
+      } else {
+        print('🔨 Building ${site.name} with eager snapshotting...');
+      }
+
+      final buildProcess = await startSiteBuildProcess(
+        site,
+        productionRelease: false,
       );
-    } finally {
-      await server.close();
+
+      print('⚡ Starting static server for eager snapshotting...');
+      final server = await SnapshotServer.start(currentBuildDir);
+      try {
+        final routeStream = watchBuildRoutes(
+          currentBuildDir,
+          buildFuture: buildProcess.exitCode,
+          explicitRoutes: explicitRoutes,
+          filter: filterRegex,
+          limit: limit,
+        );
+
+        await runner.captureEagerSnapshots(
+          server: server,
+          routeStream: routeStream,
+          outputDirectory: currentDir,
+          viewports: viewports,
+          onProgress: print,
+        );
+
+        final buildExitCode = await buildProcess.exitCode;
+        if (buildExitCode != 0) {
+          stderr.writeln(
+            'Error: Site build failed with exit code $buildExitCode.',
+          );
+          return buildExitCode;
+        }
+
+        currentRoutes = discoverRoutes(
+          currentBuildDir,
+          explicitRoutes: explicitRoutes,
+          filter: filterRegex,
+          limit: limit,
+        );
+      } finally {
+        await server.close();
+      }
+    } else {
+      currentRoutes = discoverRoutes(
+        currentBuildDir,
+        explicitRoutes: explicitRoutes,
+        filter: filterRegex,
+        limit: limit,
+      );
+
+      if (currentRoutes.isEmpty) {
+        stderr.writeln(
+          'Error: No routes discovered in current build directory: '
+          '${currentBuildDir.path}.\n'
+          'Run "dart run dash_site build" first or omit --no-build.',
+        );
+        return 1;
+      }
+
+      if (isTargeted) {
+        print('🎯 Targeted run for ${currentRoutes.length} route(s):');
+        for (final r in currentRoutes.take(5)) {
+          print('   • $r');
+        }
+        if (currentRoutes.length > 5) {
+          print('   • ... and ${currentRoutes.length - 5} more');
+        }
+        print('');
+      }
+
+      print('⚡ Starting static server for current snapshotting...');
+      final server = await SnapshotServer.start(currentBuildDir);
+      try {
+        await runner.captureSnapshots(
+          server: server,
+          routes: currentRoutes,
+          outputDirectory: currentDir,
+          viewports: viewports,
+          onProgress: print,
+        );
+      } finally {
+        await server.close();
+      }
     }
 
     print('✅ Current snapshots saved to ${currentDir.path}\n');
@@ -481,6 +514,10 @@ final class VisualDiffCommand extends Command<int> {
               path.join(baselineDir.path, path.basename(entity.path)),
             );
           }
+        }
+        final currentMeta = File(path.join(currentDir.path, 'metadata.json'));
+        if (currentMeta.existsSync()) {
+          currentMeta.copySync(path.join(baselineDir.path, 'metadata.json'));
         }
         print('✅ Baseline updated.\n');
       }

@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'diff_entry.dart';
+import 'header_metadata.dart';
 
 /// Represents a single deduplicated route across multiple viewport snapshots
 /// (e.g. desktop and mobile).
@@ -41,8 +42,35 @@ final class DiffRoute {
     return DiffStatus.unchanged;
   }
 
-  /// Whether any viewport has visual differences or changes.
-  bool get hasDiff => status != DiffStatus.unchanged;
+  /// Whether any viewport has visual differences or metadata changes.
+  bool get hasDiff => status != DiffStatus.unchanged || hasHeaderDiff;
+
+  /// Whether HTML header metadata (title, canonical, or meta tags) changed.
+  bool get hasHeaderDiff => headerDiff?.hasDiff ?? false;
+
+  /// Captured current header metadata for this route.
+  HeaderMetadata? get currentMetadata {
+    for (final e in viewports.values) {
+      if (e.currentMetadata != null) return e.currentMetadata;
+    }
+    return null;
+  }
+
+  /// Captured baseline header metadata for this route.
+  HeaderMetadata? get baselineMetadata {
+    for (final e in viewports.values) {
+      if (e.baselineMetadata != null) return e.baselineMetadata;
+    }
+    return null;
+  }
+
+  /// Header diff between baseline and current for this route.
+  HeaderDiff? get headerDiff {
+    for (final e in viewports.values) {
+      if (e.headerDiff != null) return e.headerDiff;
+    }
+    return null;
+  }
 
   /// The maximum diff percentage among all viewports.
   double get maxDiffPercentage {

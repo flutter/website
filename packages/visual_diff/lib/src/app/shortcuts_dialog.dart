@@ -22,6 +22,7 @@ class ShortcutsDialog extends StatelessComponent {
       ('Onion Skin review mode', '3'),
       ('Diff Mask review mode', '4'),
       ('Toggle Flicker review mode', '5'),
+      ('Metadata & SEO review mode', '6'),
       ('Focus search bar', '/'),
       ('Switch Viewport (Desktop / Mobile)', 'V'),
       ('Toggle Dark / Light theme', 'T'),

@@ -4,6 +4,8 @@
 
 import 'package:meta/meta.dart';
 
+import 'header_metadata.dart';
+
 /// The visual regression status of a compared screenshot.
 enum DiffStatus {
   /// The screenshot exists in both baseline and current, and differences
@@ -110,6 +112,15 @@ final class DiffEntry {
   /// Bounding box of all detected changes.
   final DiffBoundingBox? boundingBox;
 
+  /// Captured HTML header metadata for the current build.
+  final HeaderMetadata? currentMetadata;
+
+  /// Captured HTML header metadata for the baseline build.
+  final HeaderMetadata? baselineMetadata;
+
+  /// Diff summary of header metadata between baseline and current.
+  final HeaderDiff? headerDiff;
+
   const DiffEntry({
     required this.id,
     required this.route,
@@ -125,9 +136,16 @@ final class DiffEntry {
     this.currentRelativePath,
     this.diffRelativePath,
     this.boundingBox,
+    this.currentMetadata,
+    this.baselineMetadata,
+    this.headerDiff,
   });
 
-  bool get hasDiff => status == DiffStatus.changed;
+  /// Whether any visual or header metadata differences were detected.
+  bool get hasDiff => status == DiffStatus.changed || hasHeaderDiff;
+
+  /// Whether header metadata (title, canonical, or meta tags) has differences.
+  bool get hasHeaderDiff => headerDiff?.hasDiff ?? false;
 
   Map<String, dynamic> toJson() => {
     'id': id,
@@ -144,6 +162,10 @@ final class DiffEntry {
     'currentRelativePath': currentRelativePath,
     'diffRelativePath': diffRelativePath,
     if (boundingBox != null) 'boundingBox': boundingBox!.toJson(),
+    if (currentMetadata != null) 'currentMetadata': currentMetadata!.toJson(),
+    if (baselineMetadata != null)
+      'baselineMetadata': baselineMetadata!.toJson(),
+    if (headerDiff != null) 'headerDiff': headerDiff!.toJson(),
   };
 
   factory DiffEntry.fromJson(Map<String, dynamic> json) => DiffEntry(
@@ -164,6 +186,19 @@ final class DiffEntry {
         ? DiffBoundingBox.fromJson(
             json['boundingBox'] as Map<String, dynamic>,
           )
+        : null,
+    currentMetadata: json['currentMetadata'] != null
+        ? HeaderMetadata.fromJson(
+            json['currentMetadata'] as Map<String, dynamic>,
+          )
+        : null,
+    baselineMetadata: json['baselineMetadata'] != null
+        ? HeaderMetadata.fromJson(
+            json['baselineMetadata'] as Map<String, dynamic>,
+          )
+        : null,
+    headerDiff: json['headerDiff'] != null
+        ? HeaderDiff.fromJson(json['headerDiff'] as Map<String, dynamic>)
         : null,
   );
 }

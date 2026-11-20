@@ -9,6 +9,7 @@ import '../models/diff_entry.dart';
 import '../models/diff_route.dart';
 import 'header.dart';
 import 'viewers/diff_mask_viewer.dart';
+import 'viewers/metadata_viewer.dart';
 import 'viewers/onion_skin_viewer.dart';
 import 'viewers/side_by_side_viewer.dart';
 import 'viewers/swipe_slider_viewer.dart';
@@ -81,6 +82,17 @@ class CanvasComponent extends StatelessComponent {
             classes: 'vd-badge vd-badge-${activeRoute.status.name}',
             [.text(activeRoute.status.name.toUpperCase())],
           ),
+          if (activeRoute.hasHeaderDiff)
+            const span(
+              classes: 'vd-badge',
+              attributes: {
+                'style':
+                    'background: rgba(14, 165, 233, 0.15); color: #0284c7; '
+                    'border: 1px solid rgba(14, 165, 233, 0.3);',
+                'title': 'Header title, canonical, or meta tags have changes',
+              },
+              [.text('META DIFF')],
+            ),
           span(
             classes: 'vd-canvas-dimensions',
             [.text('${activeEntry.width} × ${activeEntry.height} px')],
@@ -182,6 +194,7 @@ class CanvasComponent extends StatelessComponent {
           ReviewMode.onionSkin => OnionSkinViewer(entry: activeEntry),
           ReviewMode.diffMask => DiffMaskViewer(entry: activeEntry),
           ReviewMode.toggle => ToggleViewer(entry: activeEntry),
+          ReviewMode.metadata => MetadataViewer(entry: activeEntry),
         },
       ]),
     ]);

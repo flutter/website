@@ -2,12 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:async';
 import 'dart:collection';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as path;
 import 'package:puppeteer/puppeteer.dart';
 
+import '../models/header_metadata.dart';
+import 'header_extractor.dart';
 import 'route_discovery.dart';
 import 'snapshot_server.dart';
 import 'snapshot_viewport.dart';
@@ -20,7 +24,7 @@ final class SnapshotRunner {
 
   SnapshotRunner({
     this.customChromePath,
-    this.concurrency = 4,
+    this.concurrency = 6,
     this.hideCookieBanner = true,
   });
 
@@ -32,13 +36,33 @@ final class SnapshotRunner {
     required Directory outputDirectory,
     List<SnapshotViewport> viewports = SnapshotViewport.all,
     void Function(String message)? onProgress,
+    void Function(String filename)? onSnapshotSaved,
+  }) async {
+    final result = await captureEagerSnapshots(
+      server: server,
+      routeStream: Stream.fromIterable(routes),
+      expectedTotalRoutes: routes.length,
+      outputDirectory: outputDirectory,
+      viewports: viewports,
+      onProgress: onProgress,
+      onSnapshotSaved: onSnapshotSaved,
+    );
+    return result.capturedCount;
+  }
+
+  /// Concurrently captures snapshots from a live [routeStream] as routes become
+  /// available (e.g. while Jaspr is rendering them in the background).
+  Future<({int capturedCount, Map<String, HeaderMetadata> metadata})>
+  captureEagerSnapshots({
+    required SnapshotServer server,
+    required Stream<String> routeStream,
+    int? expectedTotalRoutes,
+    required Directory outputDirectory,
+    List<SnapshotViewport> viewports = SnapshotViewport.all,
+    void Function(String message)? onProgress,
+    void Function(String filename)? onSnapshotSaved,
   }) async {
     final log = onProgress ?? print;
-
-    if (routes.isEmpty) {
-      log('⚠️  No routes specified or discovered to snapshot.');
-      return 0;
-    }
 
     if (!outputDirectory.existsSync()) {
       outputDirectory.createSync(recursive: true);
@@ -63,125 +87,193 @@ final class SnapshotRunner {
     );
 
     var capturedCount = 0;
-    final totalExpected = routes.length * viewports.length;
+    final totalExpectedSnapshots = expectedTotalRoutes != null
+        ? expectedTotalRoutes * viewports.length
+        : null;
+
+    final capturedMetadata = <String, HeaderMetadata>{};
+
+    // Shared work queue containing tasks for each (route, viewport) pair.
+    final taskQueue = Queue<({String route, SnapshotViewport viewport})>();
+    var streamCompleted = false;
+    final completer = Completer<void>();
 
     try {
-      for (final viewport in viewports) {
-        log(
-          '📸 Capturing ${routes.length} routes for viewport '
-          '"${viewport.name}" (${viewport.width}x${viewport.height})...',
-        );
+      // Allocate dedicated worker tabs. Distribute workers across viewports.
+      final workerCount = concurrency.clamp(1, 16);
+      final workers = <Future<void>>[];
 
-        final queue = Queue<String>.from(routes);
-        final workerCount = concurrency.clamp(1, routes.length);
-        final workers = <Future<void>>[];
+      // Listen to incoming routes from the stream and enqueue viewport tasks.
+      late final StreamSubscription<String> streamSub;
+      streamSub = routeStream.listen(
+        (route) {
+          for (final vp in viewports) {
+            taskQueue.add((route: route, viewport: vp));
+          }
+        },
+        onDone: () {
+          streamCompleted = true;
+          if (taskQueue.isEmpty) {
+            if (!completer.isCompleted) completer.complete();
+          }
+        },
+        onError: (Object e) {
+          streamCompleted = true;
+          if (!completer.isCompleted) completer.completeError(e);
+        },
+      );
 
-        for (var workerIndex = 0; workerIndex < workerCount; workerIndex++) {
-          workers.add(() async {
-            final page = await browser.newPage();
-            try {
-              if (hideCookieBanner) {
-                await page.evaluateOnNewDocument(r'''() => {
-                  const style = document.createElement('style');
-                  style.id = '__visual_diff_hide_cookie__';
-                  style.textContent = `
-                    .glue-cookie-notification-bar,
-                    [class*="glue-cookie-notification-bar"],
-                    #glue-cookie-notification-bar-1 {
-                      display: none !important;
-                      visibility: hidden !important;
-                      opacity: 0 !important;
-                      pointer-events: none !important;
-                    }
-                  `;
-                  (document.head || document.documentElement).appendChild(style);
-                }''');
+      for (var workerIndex = 0; workerIndex < workerCount; workerIndex++) {
+        workers.add(() async {
+          final page = await browser.newPage();
+          try {
+            // Speed optimization 1: Abort all external third-party requests
+            // (e.g. analytics, CDNs, fonts) to prevent network stalls.
+            await page.setRequestInterception(true);
+            page.onRequest.listen((request) async {
+              final uri = Uri.tryParse(request.url);
+              if (uri != null &&
+                  (uri.host == 'localhost' ||
+                      uri.host == '127.0.0.1' ||
+                      uri.scheme == 'data')) {
+                await request.continueRequest();
+              } else {
+                await request.abort();
               }
+            });
 
-              await page.setViewport(
-                DeviceViewport(
-                  width: viewport.width,
-                  height: viewport.height,
-                  deviceScaleFactor: viewport.deviceScaleFactor,
-                  isMobile: viewport.isMobile,
-                  hasTouch: viewport.hasTouch,
-                ),
-              );
-
-              while (queue.isNotEmpty) {
-                final route = queue.removeFirst();
-                final filename = snapshotFileName(route, viewport.name);
-                final outputPath = path.join(outputDirectory.path, filename);
-                final url = '${server.baseUrl}$route';
-
-                try {
-                  try {
-                    await page.goto(
-                      url,
-                      wait: Until.networkIdle,
-                      timeout: const Duration(seconds: 30),
-                    );
-                  } catch (_) {
-                    // networkIdle may time out on continuous polling;
-                    // page load usually succeeded nonetheless.
+            // Speed optimization 2: Inject cookie-hiding CSS on document
+            // creation once.
+            if (hideCookieBanner) {
+              await page.evaluateOnNewDocument(r'''() => {
+                const style = document.createElement('style');
+                style.id = '__visual_diff_hide_cookie__';
+                style.textContent = `
+                  .glue-cookie-notification-bar,
+                  [class*="glue-cookie-notification-bar"],
+                  #glue-cookie-notification-bar-1 {
+                    display: none !important;
+                    visibility: hidden !important;
+                    opacity: 0 !important;
+                    pointer-events: none !important;
                   }
-
-                  try {
-                    await page.evaluate<Object?>('() => document.fonts.ready');
-                  } catch (_) {}
-
-                  if (hideCookieBanner) {
-                    try {
-                      await page.addStyleTag(
-                        content: '''
-                          .glue-cookie-notification-bar,
-                          [class*="glue-cookie-notification-bar"],
-                          #glue-cookie-notification-bar-1 {
-                            display: none !important;
-                            visibility: hidden !important;
-                            opacity: 0 !important;
-                            pointer-events: none !important;
-                          }
-                        ''',
-                      );
-                      await page.evaluate<void>(r'''() => {
-                        document.querySelectorAll(
-                          '.glue-cookie-notification-bar, [class*="glue-cookie-notification-bar"]'
-                        ).forEach(el => el.remove());
-                      }''');
-                    } catch (_) {}
-                  }
-
-                  await Future<void>.delayed(const Duration(milliseconds: 150));
-
-                  final bytes = await page.screenshot(
-                    format: ScreenshotFormat.png,
-                    fullPage: true,
-                  );
-                  await File(outputPath).writeAsBytes(bytes);
-                  capturedCount++;
-                  log(
-                    '  ✓ [$capturedCount/$totalExpected] Captured: $filename',
-                  );
-                } catch (error) {
-                  stderr.writeln(
-                    '  ✗ Failed to snapshot $route (${viewport.name}): $error',
-                  );
-                }
-              }
-            } finally {
-              await page.close();
+                `;
+                (document.head || document.documentElement).appendChild(style);
+              }''');
             }
-          }());
-        }
 
-        await Future.wait(workers);
+            SnapshotViewport? currentViewport;
+
+            while (!streamCompleted || taskQueue.isNotEmpty) {
+              if (taskQueue.isEmpty) {
+                // Wait briefly for more routes to arrive from stream.
+                await Future<void>.delayed(const Duration(milliseconds: 50));
+                continue;
+              }
+
+              final task = taskQueue.removeFirst();
+              final route = task.route;
+              final viewport = task.viewport;
+
+              // Only reconfigure viewport if different from previous task.
+              if (currentViewport?.name != viewport.name) {
+                await page.setViewport(
+                  DeviceViewport(
+                    width: viewport.width,
+                    height: viewport.height,
+                    deviceScaleFactor: viewport.deviceScaleFactor,
+                    isMobile: viewport.isMobile,
+                    hasTouch: viewport.hasTouch,
+                  ),
+                );
+                currentViewport = viewport;
+              }
+
+              final filename = snapshotFileName(route, viewport.name);
+              final outputPath = path.join(outputDirectory.path, filename);
+              final url = '${server.baseUrl}$route';
+
+              try {
+                // Speed optimization 3: Use Until.load instead of networkIdle
+                // which avoids unnecessary 500ms idling delay per page.
+                try {
+                  await page.goto(
+                    url,
+                    wait: Until.load,
+                    timeout: const Duration(seconds: 20),
+                  );
+                } catch (_) {}
+
+                // Ensure local fonts are rendered.
+                try {
+                  await page.evaluate<Object?>(
+                    '() => document.fonts ? document.fonts.ready : null',
+                  );
+                } catch (_) {}
+
+                // Extract live HTML header metadata (title, canonical, meta).
+                if (!capturedMetadata.containsKey(route)) {
+                  try {
+                    final rawMeta = await page.evaluate<Map<String, dynamic>?>(
+                      puppeteerHeaderExtractionScript,
+                    );
+                    if (rawMeta != null) {
+                      capturedMetadata[route] = HeaderMetadata.fromJson(
+                        rawMeta,
+                      );
+                    }
+                  } catch (_) {}
+                }
+
+                // Render next animation frame for visual stability.
+                try {
+                  await page.evaluate<void>(
+                    '() => new Promise(requestAnimationFrame)',
+                  );
+                } catch (_) {}
+
+                final bytes = await page.screenshot(
+                  format: ScreenshotFormat.png,
+                  fullPage: true,
+                );
+                await File(outputPath).writeAsBytes(bytes);
+                capturedCount++;
+
+                onSnapshotSaved?.call(filename);
+
+                final progressStr = totalExpectedSnapshots != null
+                    ? '$capturedCount/$totalExpectedSnapshots'
+                    : '$capturedCount';
+                log('  ✓ [$progressStr] Captured: $filename');
+              } catch (error) {
+                stderr.writeln(
+                  '  ✗ Failed to snapshot $route (${viewport.name}): $error',
+                );
+              }
+            }
+          } finally {
+            await page.close();
+          }
+        }());
       }
+
+      await Future.wait(workers);
+      await streamSub.cancel();
     } finally {
       await browser.close();
     }
 
-    return capturedCount;
+    // Persist all captured header metadata to metadata.json in output dir.
+    if (capturedMetadata.isNotEmpty) {
+      try {
+        final metaFile = File(path.join(outputDirectory.path, 'metadata.json'));
+        const encoder = JsonEncoder.withIndent('  ');
+        final json = capturedMetadata.map((k, v) => MapEntry(k, v.toJson()));
+        metaFile.writeAsStringSync(encoder.convert(json));
+      } catch (_) {}
+    }
+
+    return (capturedCount: capturedCount, metadata: capturedMetadata);
   }
 
   /// Finds a usable Chrome or Chromium executable on the current platform.

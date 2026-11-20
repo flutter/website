@@ -13,7 +13,8 @@ enum ReviewMode {
   swipe('Swipe', '2'),
   onionSkin('Onion Skin', '3'),
   diffMask('Diff Mask', '4'),
-  toggle('Toggle', '5');
+  toggle('Toggle', '5'),
+  metadata('Metadata', '6');
 
   final String label;
   final String keyHint;
@@ -63,6 +64,20 @@ class HeaderComponent extends StatelessComponent {
           const span(
             classes: 'vd-badge vd-badge-unchanged',
             [.text('All match')],
+          ),
+        if (manifest.metadataChangedCount > 0)
+          span(
+            classes: 'vd-badge',
+            attributes: {
+              'style':
+                  'background: rgba(14, 165, 233, 0.15); color: #0284c7; '
+                  'border: 1px solid rgba(14, 165, 233, 0.3); '
+                  'font-weight: 600;',
+              'title':
+                  '${manifest.metadataChangedCount} routes have title '
+                  'or meta tag changes',
+            },
+            [.text('${manifest.metadataChangedCount} meta')],
           ),
       ]),
 
