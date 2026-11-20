@@ -19,8 +19,6 @@ class NewsletterSection extends StatelessComponent {
         ]),
         div(classes: 'form', [NewsletterForm()]),
       ]),
-      // reCAPTCHA script
-      script(src: 'https://www.google.com/recaptcha/api.js'),
     ]);
   }
 }

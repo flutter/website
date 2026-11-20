@@ -26,8 +26,6 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
     deferred as _learning_resource_filters_sidebar;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     deferred as _collapse_button;
-import 'package:site_shared/components/common/client/copy_button.dart'
-    deferred as _copy_button;
 import 'package:site_shared/components/common/client/download_button.dart'
     deferred as _download_button;
 import 'package:site_shared/components/common/client/expandable.dart'
@@ -131,15 +129,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
         title: p.get<String?>('title'),
       ),
       loader: _collapse_button.loadLibrary,
-    ),
-    'site_shared:copy_button': ClientLoader(
-      (p) => _copy_button.CopyButton(
-        buttonText: p.get<String?>('buttonText'),
-        toCopy: p.get<String?>('toCopy'),
-        classes: p.get<List<Object?>>('classes').cast<String>(),
-        title: p.get<String?>('title'),
-      ),
-      loader: _copy_button.loadLibrary,
     ),
     'site_shared:download_button': ClientLoader(
       (p) => _download_button.DownloadButton(name: p.get<String>('name')),
