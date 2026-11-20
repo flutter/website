@@ -7,6 +7,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/tags.dart';
 
+import '../../extensions/image_dimension_processor.dart';
 import '../../models/learning_resource_model.dart';
 import 'learning_resource_filters.dart';
 import 'learning_resource_filters_sidebar.dart';
@@ -62,7 +63,7 @@ final class _ResourceCard extends StatelessComponent {
       [
         if (resource.imageUrl case final imageUrl?)
           div(classes: 'card-image-holder-material-3', [
-            img(src: imageUrl, alt: ''),
+            docsSizedImg(src: imageUrl, alt: ''),
           ]),
         div(classes: 'card-leading', [
           Tag(
@@ -104,6 +105,7 @@ final class _ResourceCard extends StatelessComponent {
     'Dart GitHub' || 'Dart docs' => const img(
       src: '/assets/images/branding/dart/logo.svg',
       width: 24,
+      height: 24,
       alt: 'Dart logo',
     ),
     'Google Codelab' => svg(width: 24.px, height: 24.px, const [
@@ -130,6 +132,7 @@ final class _ResourceCard extends StatelessComponent {
       src: '/assets/images/branding/flutter/icon/1080.png',
       alt: 'Flutter logo',
       width: 24,
+      height: 24,
     ),
   };
 }

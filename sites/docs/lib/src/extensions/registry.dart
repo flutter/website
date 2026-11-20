@@ -6,6 +6,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/page_extensions.dart';
 
 import 'glossary_link_processor.dart';
+import 'image_dimension_processor.dart';
 import 'tutorial_navigation.dart';
 import 'tutorial_structure_processor.dart';
 
@@ -22,4 +23,5 @@ const List<PageExtension> allNodeProcessingExtensions = [
   GlossaryLinkProcessor(),
   TutorialNavigationExtension(),
   TutorialStructureExtension(),
+  ImageDimensionProcessor(),
 ];

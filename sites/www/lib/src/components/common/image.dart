@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 
-import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
 import '../../utils/asset_utils.dart';
+import '../../utils/image_dimensions.dart';
 
 class Image extends StatelessComponent {
   const Image({
@@ -32,7 +32,7 @@ class Image extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return img(
+    return sizedImg(
       src: context.asset(src, width: 1200),
       classes: [
         'richtext-image',

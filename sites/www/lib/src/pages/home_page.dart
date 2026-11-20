@@ -14,6 +14,7 @@ import '../components/sections/newsletter_section.dart';
 import '../models/content/home_content.dart';
 import '../utils/asset_utils.dart';
 import '../utils/data_utils.dart';
+import '../utils/image_dimensions.dart';
 import '../utils/scroll_spy.dart';
 
 class HomePage extends StatelessComponent {
@@ -194,7 +195,7 @@ class HomePage extends StatelessComponent {
                       'type': 'video/mp4',
                     },
                     [
-                      img(
+                      sizedImg(
                         src: context.asset('home/images/fast.webp'),
                         alt: 'Fast',
                       ),
@@ -233,7 +234,7 @@ class HomePage extends StatelessComponent {
                       'type': 'video/mp4',
                     },
                     [
-                      img(
+                      sizedImg(
                         src: context.asset('home/images/productive.webp'),
                         alt: 'Productive',
                       ),
@@ -273,7 +274,7 @@ class HomePage extends StatelessComponent {
                       'type': 'video/mp4',
                     },
                     [
-                      img(
+                      sizedImg(
                         src: context.asset('home/images/flexible.webp'),
                         alt: 'Flexible',
                       ),
@@ -316,7 +317,7 @@ class HomePage extends StatelessComponent {
               url: '/development',
             ),
           ],
-          media: img(
+          media: sizedImg(
             src: context.asset('home/images/development.webp', width: 600),
             alt: 'Development',
           ),
@@ -330,7 +331,7 @@ class HomePage extends StatelessComponent {
           actions: const [
             FeatureAction(label: 'Flutter for developers', url: '/development'),
           ],
-          media: img(
+          media: sizedImg(
             src: context.asset(
               'home/images/developer-experience.webp',
               width: 600,
@@ -348,7 +349,7 @@ class HomePage extends StatelessComponent {
           actions: const [
             FeatureAction(label: 'Explore the ecosystem', url: '/ecosystem'),
           ],
-          media: img(
+          media: sizedImg(
             alt: 'Ecosystem',
             src: context.asset(
               'home/images/stable-and-reliable.webp',
@@ -368,7 +369,7 @@ class HomePage extends StatelessComponent {
               url: '/google-integrations',
             ),
           ],
-          media: img(
+          media: sizedImg(
             alt: 'Seamless Integrations',
             src: context.asset(
               'home/images/seamless-integrations-home.webp',
@@ -399,7 +400,7 @@ class HomePage extends StatelessComponent {
           ]),
         ]),
         div(classes: 'media', [
-          img(
+          sizedImg(
             src: context.asset(
               'home/images/gpay-developer-story.webp',
               width: 385,
@@ -418,25 +419,25 @@ class HomePage extends StatelessComponent {
           div(classes: 'inner-fixed', [
             div(classes: 'logo-col', [
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/abbeyroad.svg'),
                   alt: 'Abbey Road',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/alibaba.svg'),
                   alt: 'Alibaba',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/bmw.svg'),
                   alt: 'BMW',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/emaar.svg'),
                   alt: 'Emaar',
                 ),
@@ -444,19 +445,19 @@ class HomePage extends StatelessComponent {
             ]),
             div(classes: 'logo-col', [
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/capitalone.svg'),
                   alt: 'Capitalone',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/holafly.webp'),
                   alt: 'Holafly',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/ebay.svg'),
                   alt: 'Ebay',
                 ),
@@ -464,13 +465,13 @@ class HomePage extends StatelessComponent {
             ]),
             div(classes: 'logo-col', [
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/sofi.svg'),
                   alt: 'SoFi',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/grab.svg'),
                   alt: 'Grab',
                 ),
@@ -478,7 +479,7 @@ class HomePage extends StatelessComponent {
             ]),
             div(classes: 'logo-col logo-centerpiece', [
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/google.svg'),
                   alt: 'Google',
                 ),
@@ -486,13 +487,13 @@ class HomePage extends StatelessComponent {
             ]),
             div(classes: 'logo-col', [
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/groupon.svg'),
                   alt: 'Groupon',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/toyota.png'),
                   alt: 'Toyota',
                 ),
@@ -500,19 +501,19 @@ class HomePage extends StatelessComponent {
             ]),
             div(classes: 'logo-col', [
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/mgm.svg'),
                   alt: 'MGM',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/nubank.svg'),
                   alt: 'Nubank',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/nytimes.svg'),
                   alt: 'NY Times',
                 ),
@@ -520,7 +521,7 @@ class HomePage extends StatelessComponent {
             ]),
             div(classes: 'logo-col', [
               div([
-                img(
+                sizedImg(
                   src: context.asset(
                     'images/third_party/logos/philips-hue.png',
                   ),
@@ -528,19 +529,19 @@ class HomePage extends StatelessComponent {
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/sonos.svg'),
                   alt: 'Sonos',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/square.svg'),
                   alt: 'Square',
                 ),
               ]),
               div([
-                img(
+                sizedImg(
                   src: context.asset('images/third_party/logos/tencent.svg'),
                   alt: 'Tencent',
                 ),
@@ -606,7 +607,7 @@ class HomePage extends StatelessComponent {
           ]),
         ]),
         div(classes: 'media', [
-          img(
+          sizedImg(
             src: context.asset('images/common/powered-by-dart.svg'),
             alt: 'Powered by Dart',
           ),
@@ -642,6 +643,7 @@ class HomePage extends StatelessComponent {
             src: context.asset(item.image, width: 635),
             width: 635,
             height: 357,
+            loading: MediaLoading.lazy,
           ),
           h4([.text(item.title)]),
           a(

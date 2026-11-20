@@ -11,6 +11,7 @@ import '../models/content/ios_content.dart';
 import '../models/content/showcase_content.dart';
 import '../utils/asset_utils.dart';
 import '../utils/data_utils.dart';
+import '../utils/image_dimensions.dart';
 import '../utils/scroll_spy.dart';
 
 class IosPage extends StatelessComponent {
@@ -49,29 +50,32 @@ class IosPage extends StatelessComponent {
             ]),
           ]),
           div(id: 'header-img-container', classes: 'media img-container', [
-            img(
+            sizedImg(
               classes: 'background',
-              src: context.asset('images/header-image-background.png'),
+              src: context.asset(
+                'images/header-image-background.png',
+                width: 1200,
+              ),
               alt: 'Header image background',
             ),
-            img(
+            sizedImg(
               classes: 'item',
-              src: context.asset('images/header-image-1.png'),
+              src: context.asset('images/header-image-1.png', width: 1200),
               alt: 'Header image 1',
             ),
-            img(
+            sizedImg(
               classes: 'item',
-              src: context.asset('images/header-image-2.png'),
+              src: context.asset('images/header-image-2.png', width: 1200),
               alt: 'Header image 2',
             ),
-            img(
+            sizedImg(
               classes: 'item',
-              src: context.asset('images/header-image-3.png'),
+              src: context.asset('images/header-image-3.png', width: 1200),
               alt: 'Header image 3',
             ),
-            img(
+            sizedImg(
               classes: 'item',
-              src: context.asset('images/header-image-4.png'),
+              src: context.asset('images/header-image-4.png', width: 1200),
               alt: 'Header image 4',
             ),
           ]),
@@ -182,7 +186,7 @@ class IosPage extends StatelessComponent {
                     'style':
                         'background-image: url("${context.asset('images/top-brands-background.svg')}")',
                   },
-                  [img(src: context.asset(brand.src), alt: brand.name)],
+                  [sizedImg(src: context.asset(brand.src), alt: brand.name)],
                 ),
               ],
             ),
@@ -265,6 +269,7 @@ class IosPage extends StatelessComponent {
         src: context.asset('/showcase/${app.image}', width: 635),
         width: 480,
         height: 480,
+        loading: MediaLoading.lazy,
       ),
       div(classes: 'text', [
         h3([.text(app.title)]),
@@ -289,7 +294,7 @@ class IosPage extends StatelessComponent {
             ]),
           ]),
           div(classes: 'media', [
-            img(
+            sizedImg(
               alt: 'Flutter net artwork',
               src: context.asset('images/flutter-net.svg'),
             ),
@@ -314,9 +319,9 @@ class IosPage extends StatelessComponent {
             ]),
           ]),
           div(classes: 'media', [
-            img(
+            sizedImg(
               alt: 'Rich Ecosystem Image',
-              src: context.asset('images/rich-ecosystem-1.png'),
+              src: context.asset('images/rich-ecosystem-1.png', width: 1200),
             ),
           ]),
         ]),
@@ -329,9 +334,9 @@ class IosPage extends StatelessComponent {
             ]),
           ]),
           div(classes: 'media', [
-            img(
+            sizedImg(
               alt: 'Rich Ecosystem Image',
-              src: context.asset('images/rich-ecosystem-2.png'),
+              src: context.asset('images/rich-ecosystem-2.png', width: 1200),
             ),
           ]),
         ]),
@@ -354,14 +359,14 @@ class IosPage extends StatelessComponent {
             ]),
             div(classes: 'github-stats', [
               span(classes: 'stat', [
-                img(
+                sizedImg(
                   alt: 'GitHub Stars',
                   src: context.asset('images/github-stars.svg'),
                 ),
                 const .text(' > 170K GitHub Stars'),
               ]),
               span(classes: 'stat', [
-                img(
+                sizedImg(
                   alt: 'GitHub Contributors',
                   src: context.asset('images/github-contributors.svg'),
                 ),
@@ -370,7 +375,7 @@ class IosPage extends StatelessComponent {
             ]),
           ]),
           div(classes: 'media', [
-            img(
+            sizedImg(
               alt: 'Flutter open Source',
               src: context.asset('images/flutter-open-source.svg'),
             ),
@@ -389,9 +394,9 @@ class IosPage extends StatelessComponent {
             "With its easy-to-grasp framework and the easy-to-use Dart language, Flutter simplifies app development. Flutter has excellent integration with VS Code and lets you 'paint your app to life' in real-time, using stateful hot reload.",
           ),
         ]),
-        img(
-          attributes: const {'alt': 'Productive Team Image'},
-          src: context.asset('images/productive-team.png'),
+        sizedImg(
+          alt: 'Productive Team Image',
+          src: context.asset('images/productive-team.png', width: 1200),
         ),
       ]),
     ]);
@@ -451,8 +456,11 @@ class IosPage extends StatelessComponent {
           ]),
         ]),
         div(classes: 'media', [
-          img(
-            src: context.asset('/images/common/try-flutter-background.png'),
+          sizedImg(
+            src: context.asset(
+              '/images/common/try-flutter-background.png',
+              width: 1200,
+            ),
             alt: 'Flutter next steps',
           ),
         ]),
