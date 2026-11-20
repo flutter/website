@@ -904,5 +904,5 @@ class CardListItem extends StatelessWidget {
 [cloning the example code]: https://github.com/flutter/codelabs
 [issue 44152]: {{site.repo.flutter}}/issues/44152
 [`LinearGradient`]: {{site.api}}/flutter/painting/LinearGradient-class.html
-[`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
+[`Listenable`]: {{site.api}}/flutter/package-listen_listen/Listenable-class.html
 [`ShaderMask`]: {{site.api}}/flutter/widgets/ShaderMask-class.html

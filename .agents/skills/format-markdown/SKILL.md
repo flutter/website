@@ -57,6 +57,24 @@ Apply these conventions unless the target project specifies otherwise.
   follow the `write-technical-docs` rules:
   use sentence case and descriptive wording with no trailing period.
 
+### Fragment targets
+
+- When rewording a heading, preserve links to its original ID.
+  On `docs.flutter.dev`, append `{: #old-id }` to the revised heading.
+  On `flutter.dev`, if the generated ID changes,
+  place `<FragmentTarget id="old-id" />` before the revised heading.
+- For a mid-section target on an element without an `id`,
+  set the ID directly on the HTML element, such as `<li id="old-id">`.
+  On `docs.flutter.dev`, you can also apply `{: #old-id }`
+  to a Markdown block.
+- On either site, use `<FragmentTarget id="old-id" />` on its own line
+  for an additional ID before a heading or mid-section.
+  Stack one `<FragmentTarget>` tag per ID when multiple aliases are needed,
+  and separate the tag or group from following Markdown blocks
+  with a blank line.
+- Don't use empty `<a id="..."></a>` elements or `aria-hidden="true"`
+  on fragment targets.
+
 ### Lists
 
 - Use a **consistent unordered marker** throughout a file.

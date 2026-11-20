@@ -159,7 +159,7 @@ or might partially or completely overlap.
 
 * [Staggered Animations][]
 
-<a id="concepts"></a>
+<FragmentTarget id="concepts" />
 
 ## Essential animation concepts and classes
 
@@ -171,7 +171,7 @@ changes or they can use the animations as the basis of
 more elaborate animations that they pass along to
 other widgets.
 
-<a id="animation-class"></a>
+<FragmentTarget id="animation-class" />
 
 ### Animation<wbr>\<double>
 
