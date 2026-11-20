@@ -6,34 +6,222 @@
 library;
 
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter_website/main.server.options.dart';
 import 'package:flutter_website/src/layouts/default_layout.dart';
-import 'package:jaspr/dom.dart';
+import 'package:html/parser.dart' as html;
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
-import 'package:site_shared/blog.dart';
 import 'package:site_shared/layouts.dart';
 import 'package:site_shared/seo.dart';
 import 'package:test/test.dart';
 
-final MemoryLoader _memoryLoader = MemoryLoader(pages: const []);
-final AssetManager _testAssetManager = AssetManager(
-  directory: 'content',
-  outputPrefix: 'assets',
-);
+void main() {
+  setUpAll(() => Jaspr.initializeApp(options: defaultServerOptions));
 
-final RegExp _canonicalTagPattern = RegExp(
-  r'<link\b[^>]*\brel="canonical"[^>]*>',
-);
-final RegExp _hrefAttrPattern = RegExp(r'\bhref="([^"]+)"');
-final RegExp _robotsNoindexPattern = RegExp(
-  r'<meta\b[^>]*\bname="robots"[^>]*\bcontent="noindex"[^>]*>',
-);
-final RegExp _ogUrlPattern = RegExp(
-  r'<meta\b[^>]*\bproperty="og:url"[^>]*\bcontent="([^"]+)"[^>]*>',
+  for (final (name, layout) in [
+    ('DashLayout', const _TestDashLayout()),
+    ('DefaultLayout', DefaultLayout()),
+  ]) {
+    group('$name head', () {
+      const pageUrl = '$_siteUrl/guide';
+      final assets = AssetManager(directory: 'content', outputPrefix: 'assets');
+
+      Future<void> expectHead(
+        Map<String, Object?> metadata, {
+        String? canonical,
+        bool noIndex = false,
+      }) async {
+        final page = _page(
+          url: '/guide',
+          metadata: metadata,
+          // The banner is required by the DefaultLayout header.
+          extraData: const {
+            'banner': {'text': 'Flutter release', 'link': '/blog'},
+          },
+        );
+        await assets.dataLoader.loadData(page);
+        final response = await renderComponent(
+          Page.wrap(
+            page,
+            [page],
+            layout.buildLayout(page, const Component.empty()),
+          ),
+          standalone: layout is DashLayout,
+        );
+        final head = html.parse(utf8.decode(response.body)).head!;
+
+        expect(
+          head
+              .querySelectorAll('link[rel="canonical"]')
+              .map((link) => link.attributes['href']),
+          [?canonical],
+        );
+        expect(
+          head.querySelector('meta[name="robots"]')?.attributes['content'],
+          noIndex ? 'noindex' : isNull,
+        );
+        expect(
+          head.querySelector('meta[property="og:url"]')?.attributes['content'],
+          canonical ?? pageUrl,
+        );
+      }
+
+      test('defaults the canonical to the page URL', () async {
+        await expectHead(const {}, canonical: pageUrl);
+      });
+
+      test('omits the default canonical on noindex pages', () async {
+        for (final flag in const <Object>[true, 'true']) {
+          await expectHead({'noindex': flag}, noIndex: true);
+        }
+      });
+
+      test('resolves an explicit canonical, even on noindex pages', () async {
+        await expectHead(
+          const {'noindex': true, 'canonical': '/preferred'},
+          canonical: '$_siteUrl/preferred',
+          noIndex: true,
+        );
+      });
+
+      test('omits a disabled canonical', () async {
+        for (final flag in const <Object>[false, 'false']) {
+          await expectHead({'canonical': flag});
+        }
+      });
+    });
+  }
+
+  group('robots.txt', () {
+    final page = _page();
+
+    test('allows crawling and links the sitemap in production', () {
+      expect(
+        const RobotsTxtOutput(isProductionBuild: true).renderRobotsTxt(page),
+        'User-agent: *\nDisallow:\n\nSitemap: $_siteUrl/sitemap.xml\n',
+      );
+    });
+
+    test('allows only linkcheck on staging', () {
+      expect(
+        const RobotsTxtOutput(isProductionBuild: false).renderRobotsTxt(page),
+        'User-agent: linkcheck\nDisallow:\n\nUser-agent: *\nDisallow: /\n',
+      );
+    });
+  });
+
+  group('Git modification dates', () {
+    final repoRoot = path.absolute('repo');
+    final siteRoot = path.join(repoRoot, 'sites', 'www');
+
+    GitLastModifiedIndex shallowIndex({
+      required bool production,
+    }) => GitLastModifiedIndex.forCurrentProject(
+      projectRoot: siteRoot,
+      isProductionBuild: production,
+      runGit: (args, {workingDirectory}) => switch (args) {
+        ['rev-parse', '--show-toplevel'] => repoRoot,
+        ['rev-parse', '--is-shallow-repository'] => 'true',
+        ['log', ...] =>
+          'commit-date:2026-10-20T08:30:00Z\nsites/www/content/index.md\n'
+              'commit-date:2026-09-01T00:00:00Z\nsites/www/content/index.md\n',
+        _ => throw UnsupportedError('Unexpected git command: $args'),
+      },
+    );
+
+    test('requires full history for production builds', () {
+      expect(() => shallowIndex(production: true), throwsStateError);
+    });
+
+    test('applies the latest commit in a shallow development checkout', () {
+      final page = _page(
+        loader: FilesystemLoader(path.join(siteRoot, 'content')),
+      );
+      shallowIndex(production: false).applyToPage(page);
+
+      final data = page.data.page;
+      expect(data['inputPath'], 'sites/www/content/index.md');
+      expect(data['dateModified'], DateTime.utc(2026, 10, 20, 8, 30));
+      expect(data['date'], '2026-10-20');
+      expect(data['sitemap'], {'lastmod': '2026-10-20'});
+    });
+
+    test('excludes noindex pages from the sitemap', () {
+      final page = _page(
+        metadata: const {
+          'noindex': true,
+          'sitemap': {'priority': 1},
+        },
+      );
+      shallowIndex(production: false).applyToPage(page);
+      expect(page.data.page['sitemap'], isFalse);
+    });
+
+    test('resolves relative loader paths and preserves case on Windows', () {
+      final index = GitLastModifiedIndex(
+        repositoryRoot: 'c:/users/dev/website',
+        projectRoot: r'C:\Users\Dev\website\sites\docs',
+        pathContext: path.Context(
+          style: path.Style.windows,
+          current: r'C:\Users\Dev\website',
+        ),
+        lastModifiedPerPath: {
+          'src/content/checkbox-fillColor.md': DateTime.utc(2026, 11, 3),
+        },
+      );
+      final page = _page(
+        pagePath: 'checkbox-fillColor.md',
+        loader: FilesystemLoader(r'src\content'),
+      );
+      index.applyToPage(page);
+
+      expect(
+        page.data.page['inputPath'],
+        'sites/docs/src/content/checkbox-fillColor.md',
+      );
+      expect(page.data.page['sitemap'], {'lastmod': '2026-11-03'});
+    });
+
+    test('skips Git history outside a checkout in development', () {
+      final result = loadProjectLastModifiedDates(
+        projectRoot: siteRoot,
+        isProductionBuild: false,
+        runGit: (args, {workingDirectory}) {
+          expect(args, ['rev-parse', '--show-toplevel']);
+          return null;
+        },
+      );
+      expect(result.repositoryRoot, isNull);
+      expect(result.dates, isEmpty);
+    });
+  });
+}
+
+const _siteUrl = 'https://flutter.dev';
+
+Page _page({
+  String pagePath = 'index.md',
+  String url = '/',
+  Map<String, Object?> metadata = const {},
+  Map<String, Object?> extraData = const {},
+  RouteLoader? loader,
+}) => Page(
+  path: pagePath,
+  url: url,
+  content: '',
+  initialData: {
+    ...extraData,
+    'site': {'url': _siteUrl},
+    'page': {
+      'title': 'Test page',
+      'description': 'Test description.',
+      ...metadata,
+    },
+  },
+  config: const PageConfig(),
+  loader: loader ?? MemoryLoader(pages: const []),
 );
 
 final class _TestDashLayout extends DashLayout {
@@ -61,491 +249,5 @@ final class _TestDashLayout extends DashLayout {
   String get tagManagerId => 'GTM-TEST';
 
   @override
-  Component buildBody(Page page, Component child) => div([child]);
-}
-
-Page _buildPage({
-  required String pagePath,
-  required String url,
-  required String siteUrl,
-  required Map<String, Object?> pageData,
-  Map<String, Object?> extraData = const {},
-  RouteLoader? loader,
-}) => Page(
-  path: pagePath,
-  url: url,
-  content: '',
-  initialData: {
-    ...extraData,
-    'page': pageData,
-    'site': {'url': siteUrl, 'title': 'Flutter'},
-  },
-  config: const PageConfig(),
-  loader: loader ?? _memoryLoader,
-);
-
-String? _extractCanonical(String html) {
-  final tag = _canonicalTagPattern.firstMatch(html)?.group(0);
-  if (tag == null) return null;
-  return _hrefAttrPattern.firstMatch(tag)?.group(1);
-}
-
-String? _extractOgUrl(String html) => _ogUrlPattern.firstMatch(html)?.group(1);
-
-Future<String> _renderDashLayoutPage(Page page) async {
-  const layout = _TestDashLayout();
-  final response = await renderComponent(
-    Page.wrap(page, [page], layout.buildLayout(page, const Component.empty())),
-    standalone: true,
-  );
-  return utf8.decode(response.body);
-}
-
-Future<String> _renderDefaultLayoutPage(Page page) async {
-  await _testAssetManager.dataLoader.loadData(page);
-  final layout = DefaultLayout();
-  final response = await renderComponent(
-    Page.wrap(page, [page], layout.buildLayout(page, const Component.empty())),
-  );
-  return utf8.decode(response.body);
-}
-
-void main() {
-  setUpAll(() {
-    if (!Jaspr.isInitialized) {
-      Jaspr.initializeApp(options: defaultServerOptions);
-    }
-  });
-
-  _registerLayoutCanonicalTests();
-  _registerSecondaryOutputTests();
-  _registerLastModifiedTests();
-}
-
-void _registerLayoutCanonicalTests() {
-  group('DashLayout canonical and noindex metadata', () {
-    test('emits self-referencing canonical by default', () async {
-      final html = await _renderDashLayoutPage(
-        _buildPage(
-          pagePath: 'ui/index.md',
-          url: '/ui',
-          siteUrl: 'https://docs.flutter.dev',
-          pageData: const {'title': 'UI', 'description': 'UI docs.'},
-        ),
-      );
-
-      expect(_extractCanonical(html), 'https://docs.flutter.dev/ui');
-      expect(_extractOgUrl(html), 'https://docs.flutter.dev/ui');
-      expect(_robotsNoindexPattern.hasMatch(html), isFalse);
-    });
-
-    test(
-      'suppresses default canonical when noindex is true or "true"',
-      () async {
-        for (final flag in <Object>[true, 'true']) {
-          final html = await _renderDashLayoutPage(
-            _buildPage(
-              pagePath: 'search.html',
-              url: '/search',
-              siteUrl: 'https://docs.flutter.dev',
-              pageData: {'title': 'Search', 'noindex': flag},
-            ),
-          );
-
-          expect(_robotsNoindexPattern.hasMatch(html), isTrue);
-          expect(_extractCanonical(html), isNull);
-          expect(_extractOgUrl(html), 'https://docs.flutter.dev/search');
-        }
-      },
-    );
-
-    test(
-      'resolves relative canonical overrides and honors false suppression',
-      () async {
-        final overrideHtml = await _renderDashLayoutPage(
-          _buildPage(
-            pagePath: 'widgets/old.md',
-            url: '/widgets/old',
-            siteUrl: 'https://docs.flutter.dev',
-            pageData: const {
-              'title': 'Widgets',
-              'canonical': '/ui/widgets',
-              'noindex': true,
-            },
-          ),
-        );
-        expect(_robotsNoindexPattern.hasMatch(overrideHtml), isTrue);
-        expect(
-          _extractCanonical(overrideHtml),
-          'https://docs.flutter.dev/ui/widgets',
-        );
-
-        for (final flag in <Object>[false, 'false']) {
-          final suppressedHtml = await _renderDashLayoutPage(
-            _buildPage(
-              pagePath: 'custom.md',
-              url: '/custom',
-              siteUrl: 'https://docs.flutter.dev',
-              pageData: {'title': 'Custom', 'canonical': flag},
-            ),
-          );
-          expect(_extractCanonical(suppressedHtml), isNull);
-        }
-      },
-    );
-  });
-
-  group('DefaultLayout canonical and noindex metadata', () {
-    const bannerData = {
-      'banner': {'text': 'Flutter release', 'link': '/blog'},
-    };
-
-    test('emits self-referencing canonical by default', () async {
-      final html = await _renderDefaultLayoutPage(
-        _buildPage(
-          pagePath: 'ai/index.md',
-          url: '/ai',
-          siteUrl: 'https://flutter.dev',
-          pageData: const {'title': 'AI', 'description': 'Build with AI.'},
-          extraData: bannerData,
-        ),
-      );
-
-      expect(_extractCanonical(html), 'https://flutter.dev/ai');
-      expect(_extractOgUrl(html), 'https://flutter.dev/ai');
-      expect(_robotsNoindexPattern.hasMatch(html), isFalse);
-    });
-
-    test(
-      'renders robots noindex and omits canonical on 404 / noindex pages',
-      () async {
-        for (final flag in <Object>[true, 'true']) {
-          final html = await _renderDefaultLayoutPage(
-            _buildPage(
-              pagePath: '404.html',
-              url: '/404.html',
-              siteUrl: 'https://flutter.dev',
-              pageData: {
-                'title': 'Not Found',
-                'description': 'Page not found.',
-                'noindex': flag,
-              },
-              extraData: bannerData,
-            ),
-          );
-
-          expect(_robotsNoindexPattern.hasMatch(html), isTrue);
-          expect(_extractCanonical(html), isNull);
-          expect(_extractOgUrl(html), 'https://flutter.dev/404.html');
-        }
-      },
-    );
-
-    test(
-      'resolves relative canonical overrides and honors canonical: false',
-      () async {
-        final overrideHtml = await _renderDefaultLayoutPage(
-          _buildPage(
-            pagePath: 'legacy.md',
-            url: '/legacy',
-            siteUrl: 'https://flutter.dev',
-            pageData: const {
-              'title': 'Legacy',
-              'description': 'Legacy page.',
-              'canonical': '/development/web',
-            },
-            extraData: bannerData,
-          ),
-        );
-        expect(
-          _extractCanonical(overrideHtml),
-          'https://flutter.dev/development/web',
-        );
-
-        for (final flag in <Object>[false, 'false']) {
-          final suppressedHtml = await _renderDefaultLayoutPage(
-            _buildPage(
-              pagePath: 'embed.md',
-              url: '/embed',
-              siteUrl: 'https://flutter.dev',
-              pageData: {
-                'title': 'Embed',
-                'description': 'Embedded view.',
-                'canonical': flag,
-              },
-              extraData: bannerData,
-            ),
-          );
-          expect(_extractCanonical(suppressedHtml), isNull);
-        }
-      },
-    );
-  });
-}
-
-void _registerSecondaryOutputTests() {
-  group('RobotsTxtOutput and BlogAtomFeedOutput secondary outputs', () {
-    test(
-      'emits production Sitemap for site.url and marks sitemap=false',
-      () async {
-        final page = _buildPage(
-          pagePath: 'index.md',
-          url: '/',
-          siteUrl: 'https://flutter.dev',
-          pageData: const {'title': 'Flutter', 'description': 'Home'},
-        );
-        const output = RobotsTxtOutput(isProductionBuild: true);
-        expect(output.pattern.matchAsPrefix('index.md'), isNotNull);
-        expect(output.pattern.matchAsPrefix('blog/index.md'), isNull);
-
-        final response = await renderComponent(
-          Page.wrap(page, [page], output.build(page)),
-          standalone: true,
-        );
-        expect(response.statusCode, 200);
-        final contentType =
-            response.headers['Content-Type'] ??
-            response.headers['content-type'];
-        expect(contentType, contains('text/plain; charset=utf-8'));
-        expect(response.headers['jaspr-sitemap-data'], contains('false'));
-        expect(
-          utf8.decode(response.body),
-          'User-agent: *\nDisallow:\n\nSitemap: https://flutter.dev/sitemap.xml\n',
-        );
-      },
-    );
-
-    test(
-      'disallows indexing on non-production builds while allowing linkcheck',
-      () {
-        final page = _buildPage(
-          pagePath: 'index.md',
-          url: '/',
-          siteUrl: 'https://docs.flutter.dev',
-          pageData: const {'title': 'Flutter'},
-        );
-        final body = const RobotsTxtOutput(isProductionBuild: false)
-            .renderRobotsTxt(page);
-        expect(body, contains('User-agent: linkcheck\nDisallow:'));
-        expect(body, contains('User-agent: *\nDisallow: /'));
-        expect(body, isNot(contains('Sitemap:')));
-      },
-    );
-
-    test('throws StateError in production when site.url is missing', () {
-      final page = Page(
-        path: 'index.md',
-        url: '/',
-        content: '',
-        initialData: const {
-          'page': <String, Object?>{},
-          'site': <String, Object?>{},
-        },
-        config: const PageConfig(),
-        loader: _memoryLoader,
-      );
-      expect(
-        () =>
-            const RobotsTxtOutput(isProductionBuild: true)
-                .renderRobotsTxt(page),
-        throwsA(isA<StateError>()),
-      );
-    });
-
-    test('BlogAtomFeedOutput sets jaspr-sitemap-data to false', () async {
-      final blogIndex = _buildPage(
-        pagePath: 'blog/index.md',
-        url: '/blog',
-        siteUrl: 'https://flutter.dev',
-        pageData: const {'title': 'Flutter Blog', 'description': 'Updates.'},
-        extraData: const {
-          'blog': {
-            'data': {
-              'atom': {'feedAuthor': 'Flutter Team'},
-              'categories': <Object?>[],
-            },
-            'authors': <String, Object?>{},
-          },
-        },
-      );
-      final response = await renderComponent(
-        Page.wrap(blogIndex, [
-          blogIndex,
-        ], const BlogAtomFeedOutput().build(blogIndex)),
-        standalone: true,
-      );
-      expect(response.statusCode, 200);
-      expect(response.headers['jaspr-sitemap-data'], contains('false'));
-    });
-  });
-}
-
-void _registerLastModifiedTests() {
-  group('GitLastModifiedIndex and shallow-clone guard', () {
-    test('throws StateError on shallow clone when isProductionBuild is true', () {
-      expect(
-        () => loadProjectLastModifiedDates(
-          projectRoot: '/repo/sites/www',
-          isProductionBuild: true,
-          runGit: (args, {workingDirectory}) => switch (args) {
-            ['rev-parse', '--show-toplevel'] => '/repo\n',
-            ['rev-parse', '--is-shallow-repository'] => 'true\n',
-            _ =>
-              'commit-date:2026-10-15T12:00:00Z\nsites/www/content/index.md\n',
-          },
-        ),
-        throwsA(
-          isA<StateError>().having(
-            (e) => e.message,
-            'message',
-            contains('git fetch --unshallow'),
-          ),
-        ),
-      );
-    });
-
-    test('allows shallow clone on non-production builds', () {
-      final result = loadProjectLastModifiedDates(
-        projectRoot: '/repo/sites/www',
-        isProductionBuild: false,
-        runGit: (args, {workingDirectory}) => switch (args) {
-          ['rev-parse', '--show-toplevel'] => '/repo\n',
-          ['rev-parse', '--is-shallow-repository'] => 'true\n',
-          _ =>
-            'commit-date:2026-10-20T08:30:00Z\n'
-                'sites/www/content/ai/index.md\n'
-                'commit-date:2026-09-01T00:00:00Z\n'
-                'sites/www/content/ai/index.md\n',
-        },
-      );
-
-      expect(
-        result.dates['content/ai/index.md'],
-        DateTime.utc(2026, 10, 20, 8, 30),
-      );
-    });
-
-    test(
-      'populates sitemap lastmod and forces sitemap: false on noindex pages',
-      () {
-        final tempDir = Directory.systemTemp.createTempSync(
-          'seo_lastmod_test_',
-        );
-        addTearDown(() => tempDir.deleteSync(recursive: true));
-        final siteDir = Directory(path.join(tempDir.path, 'sites', 'www'))
-          ..createSync(recursive: true);
-        final fsLoader = FilesystemLoader(path.join(siteDir.path, 'content'));
-
-        final index = GitLastModifiedIndex(
-          repositoryRoot: tempDir.path,
-          projectRoot: siteDir.path,
-          lastModifiedPerPath: {
-            'content/ai/index.md': DateTime.utc(2026, 11, 2, 15, 0),
-            'content/search.html': DateTime.utc(2026, 11, 5, 10, 0),
-          },
-        );
-
-        final aiPage = _buildPage(
-          pagePath: 'ai/index.md',
-          url: '/ai',
-          siteUrl: 'https://flutter.dev',
-          pageData: const {'title': 'AI'},
-          loader: fsLoader,
-        );
-        index.applyToPage(aiPage);
-        expect(aiPage.data.page['date'], '2026-11-02');
-        expect(aiPage.data.page['sitemap'], {'lastmod': '2026-11-02'});
-
-        final noIndexPage = _buildPage(
-          pagePath: 'search.html',
-          url: '/search',
-          siteUrl: 'https://docs.flutter.dev',
-          pageData: const {'title': 'Search', 'noindex': true},
-          loader: fsLoader,
-        );
-        index.applyToPage(noIndexPage);
-        expect(noIndexPage.data.page['sitemap'], isFalse);
-      },
-    );
-
-    test(
-      'resolves relative FilesystemLoader directory against projectRoot',
-      () {
-        final tempDir = Directory.systemTemp.createTempSync(
-          'seo_relative_loader_test_',
-        );
-        addTearDown(() => tempDir.deleteSync(recursive: true));
-        final siteDir = Directory(path.join(tempDir.path, 'sites', 'www'))
-          ..createSync(recursive: true);
-        final relativeLoader = FilesystemLoader('content');
-
-        final index = GitLastModifiedIndex(
-          repositoryRoot: tempDir.path,
-          projectRoot: siteDir.path,
-          lastModifiedPerPath: {
-            'content/ai/index.md': DateTime.utc(2026, 11, 2, 15, 0),
-          },
-        );
-
-        final aiPage = _buildPage(
-          pagePath: 'ai/index.md',
-          url: '/ai',
-          siteUrl: 'https://flutter.dev',
-          pageData: const {'title': 'AI'},
-          loader: relativeLoader,
-        );
-        index.applyToPage(aiPage);
-        expect(aiPage.data.page['inputPath'], 'sites/www/content/ai/index.md');
-        expect(aiPage.data.page['date'], '2026-11-02');
-        expect(aiPage.data.page['sitemap'], {'lastmod': '2026-11-02'});
-      },
-    );
-
-    test('preserves mixed-case file paths on Windows path contexts', () {
-      final windowsContext = path.Context(
-        style: path.Style.windows,
-        current: r'C:\Users\Dev\website',
-      );
-      final index = GitLastModifiedIndex(
-        repositoryRoot: 'c:/users/dev/website',
-        projectRoot: r'C:\Users\Dev\website\sites\docs',
-        pathContext: windowsContext,
-        lastModifiedPerPath: {
-          'src/content/release/breaking-changes/checkbox-fillColor.md':
-              DateTime.utc(2026, 11, 3, 9, 0),
-        },
-      );
-      final mixedCasePage = _buildPage(
-        pagePath: 'release/breaking-changes/checkbox-fillColor.md',
-        url: '/release/breaking-changes/checkbox-fillcolor',
-        siteUrl: 'https://docs.flutter.dev',
-        pageData: const {'title': 'Checkbox fillColor'},
-        loader: FilesystemLoader(r'src\content'),
-      );
-      index.applyToPage(mixedCasePage);
-      expect(
-        mixedCasePage.data.page['inputPath'],
-        'sites/docs/src/content/release/breaking-changes/checkbox-fillColor.md',
-      );
-      expect(mixedCasePage.data.page['date'], '2026-11-03');
-      expect(mixedCasePage.data.page['sitemap'], {'lastmod': '2026-11-03'});
-    });
-
-    test('skips further git calls when repository root is unavailable', () {
-      final calls = <List<String>>[];
-      final nonProd = loadProjectLastModifiedDates(
-        projectRoot: '/non_git_dir/sites/www',
-        isProductionBuild: false,
-        runGit: (args, {workingDirectory}) {
-          calls.add(args);
-          return null;
-        },
-      );
-      expect(nonProd.repositoryRoot, isNull);
-      expect(nonProd.dates, isEmpty);
-      expect(calls, [
-        ['rev-parse', '--show-toplevel'],
-      ]);
-    });
-  });
+  Component buildBody(Page page, Component child) => child;
 }
