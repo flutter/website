@@ -1178,7 +1178,6 @@ const MaterialApp(
 [flutter_localizations README]: {{site.repo.flutter}}/blob/main/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
-<a id="alternative-internationalization-workflows"></a>
 ## Alternative internationalization workflows
 
 This section describes different approaches to internationalize

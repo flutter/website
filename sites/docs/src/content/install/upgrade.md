@@ -26,8 +26,6 @@ and want an even more recent version of the Flutter SDK,
 switch to the **beta** channel using `flutter channel beta`,
 and then run `flutter upgrade`.
 
-<a id="keep-informed" aria-hidden="true"></a>
-
 ### Keep informed
 
 We publish [migration guides][] for known breaking changes.

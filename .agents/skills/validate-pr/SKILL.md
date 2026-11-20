@@ -36,3 +36,15 @@ dart run dash_site check-link-references
 
 If any broken links are found, try to patch them or alert the user.
 
+## Check for duplicate IDs
+
+Run the following command after building the site
+to verify that no element ID is repeated on its rendered page:
+
+```bash
+dart run dash_site check-duplicate-ids
+```
+
+If any duplicate IDs are found,
+try to remove or rename the extra IDs or alert the user.
+

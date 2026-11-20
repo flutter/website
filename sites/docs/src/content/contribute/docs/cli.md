@@ -24,6 +24,11 @@ The site's CLI tool can be accessed by running
 
 ### `check-all`
 
+### `check-duplicate-ids`
+
+After building the site, run this command to find element IDs
+that appear on multiple elements in the same HTML page.
+
 ### `check-link-references`
 
 ### `check-links`
