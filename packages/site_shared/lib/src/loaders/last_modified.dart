@@ -13,12 +13,17 @@ import 'package:path/path.dart' as path;
 import '../../util.dart';
 
 /// Signature for running a `git` command in tests or production.
+///
+/// Implementations run `git` with [args] in [workingDirectory] and
+/// return its standard output, or `null` if the command fails.
 typedef GitRunner = String? Function(
   List<String> args, {
   String? workingDirectory,
 });
 
 /// Whether [value] represents an enabled `noindex` frontmatter flag.
+///
+/// Accepts both the boolean `true` and the string `'true'`.
 bool isNoIndexFlag(Object? value) => value == true || value == 'true';
 
 /// Loads Git commit timestamps for a site directory and populates page
@@ -26,11 +31,18 @@ bool isNoIndexFlag(Object? value) => value == true || value == 'true';
 ///
 /// Also ensures any page marked `noindex` is excluded from `sitemap.xml`.
 final class LastModifiedLoader implements DataLoader {
+  /// Creates a loader that applies modification dates from [index].
+  ///
+  /// If [index] is omitted, immediately builds one for the
+  /// current directory with [GitLastModifiedIndex.forCurrentProject].
   LastModifiedLoader({GitLastModifiedIndex? index})
     : _index = index ?? GitLastModifiedIndex.forCurrentProject();
 
+  /// The index used to look up each page's modification date.
   final GitLastModifiedIndex _index;
 
+  /// Applies Git modification metadata to [page]
+  /// with [GitLastModifiedIndex.applyToPage].
   @override
   Future<void> loadData(Page page) async {
     _index.applyToPage(page);
@@ -39,6 +51,11 @@ final class LastModifiedLoader implements DataLoader {
 
 /// Cached Git modification timestamps for files within a site directory.
 final class GitLastModifiedIndex {
+  /// Creates an index from precomputed modification dates,
+  /// keyed by POSIX-style paths relative to [projectRoot].
+  ///
+  /// Both [repositoryRoot] and [projectRoot] are normalized to
+  /// absolute paths with [pathContext], which defaults to [path.context].
   GitLastModifiedIndex({
     required String? repositoryRoot,
     required String projectRoot,
@@ -54,6 +71,8 @@ final class GitLastModifiedIndex {
        );
 
   /// Builds an index for [projectRoot] (defaulting to [path.current]).
+  ///
+  /// To customize how `git` is invoked, such as in tests, provide [runGit].
   ///
   /// Throws a [StateError] when [isProductionBuild] (or [productionBuild]) is
   /// `true` and full Git history is unavailable (for example, a shallow clone).
@@ -78,12 +97,26 @@ final class GitLastModifiedIndex {
     );
   }
 
+  /// The absolute path to the root of the Git repository
+  /// containing [projectRoot], or `null` if it's unknown.
   final String? repositoryRoot;
+
+  /// The absolute path to the site directory that
+  /// indexed file paths are relative to.
   final String projectRoot;
+
+  /// The latest commit date of each file,
+  /// keyed by its POSIX-style path relative to [projectRoot].
   final Map<String, DateTime> _lastModifiedPerPath;
+
+  /// The path context used to resolve file paths,
+  /// which tests can override to simulate other platforms.
   final path.Context _pathContext;
 
   /// Returns the newest Git modification timestamp across [inputPaths].
+  ///
+  /// Each path should be POSIX-style and relative to [projectRoot].
+  /// Returns `null` if none of the paths have a known timestamp.
   DateTime? latestModifiedDateForPaths(Iterable<String> inputPaths) {
     DateTime? latestDate;
     for (final inputPath in inputPaths) {
@@ -97,6 +130,9 @@ final class GitLastModifiedIndex {
   }
 
   /// Applies `inputPath`, `date`, `dateModified`, and `sitemap` data to [page].
+  ///
+  /// The page's modification date is the latest of its own source file and
+  /// any project-relative paths listed in its `dateModifiedSources` data.
   void applyToPage(Page page) {
     final pageData = page.data.page;
     final excludeFromSitemap = isNoIndexFlag(pageData['noindex']);
@@ -132,6 +168,11 @@ final class GitLastModifiedIndex {
     );
   }
 
+  /// Resolves the POSIX-style path of [page]'s source file
+  /// relative to both [repositoryRoot] and [projectRoot].
+  ///
+  /// Returns `null` for both paths if [repositoryRoot] is unknown or
+  /// [page] wasn't loaded by a [FilesystemLoader].
   ({String? inputPath, String? projectInputPath}) _resolvePagePaths(Page page) {
     final repoRoot = repositoryRoot;
     final pageLoader = page.loader;
@@ -162,8 +203,11 @@ typedef DatesAndRoot = ({String? repositoryRoot, Map<String, DateTime> dates});
 
 /// Loads the latest Git commit date for each file under [projectRoot].
 ///
-/// Throws a [StateError] when [isProductionBuild] is `true` and full Git
-/// history isn't available.
+/// In non-production builds, if `git` fails,
+/// returns empty `dates` rather than throwing.
+///
+/// Throws a [StateError] when [isProductionBuild] is `true` and
+/// full Git history isn't available.
 @visibleForTesting
 DatesAndRoot loadProjectLastModifiedDates({
   required String projectRoot,
@@ -212,9 +256,12 @@ DatesAndRoot loadProjectLastModifiedDates({
   );
 }
 
+/// Returns [targetPath] as a normalized, absolute path in [pathContext].
 String _normalizeAbsolute(path.Context pathContext, String targetPath) =>
     pathContext.normalize(pathContext.absolute(targetPath));
 
+/// Throws a [StateError] explaining that
+/// production builds need the full, unshallowed Git history.
 Never _throwMissingFullHistory() {
   throw StateError(
     'Production builds need the full git history to determine '
@@ -222,6 +269,13 @@ Never _throwMissingFullHistory() {
   );
 }
 
+/// Parses `git log --name-only --format=commit-date:%cI` [output] into
+/// the latest commit date of each listed file.
+///
+/// The returned paths are relative to [projectPath],
+/// the project's POSIX-style path from the repository root.
+/// Since `git log` lists commits newest first,
+/// only the first date found for each file is kept.
 Map<String, DateTime> _parseGitLogDates(String output, String projectPath) {
   final fileLastModified = <String, DateTime>{};
   DateTime? currentCommitDate;
@@ -241,6 +295,10 @@ Map<String, DateTime> _parseGitLogDates(String output, String projectPath) {
   return fileLastModified;
 }
 
+/// Synchronously runs `git` with [args] in [workingDirectory].
+///
+/// Returns the command's standard output,
+/// or `null` if `git` couldn't be started or exited with a non-zero code.
 String? _defaultRunGit(List<String> args, {String? workingDirectory}) {
   final ProcessResult result;
   try {
@@ -253,7 +311,9 @@ String? _defaultRunGit(List<String> args, {String? workingDirectory}) {
   return result.exitCode == 0 ? result.stdout as String : null;
 }
 
+/// Formatting helpers for dates included in page metadata.
 extension on DateTime {
+  /// This date converted to UTC and formatted as `YYYY-MM-DD`.
   String get formattedUtcDate {
     final utc = toUtc();
     final year = utc.year.toString().padLeft(4, '0');
