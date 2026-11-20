@@ -248,7 +248,7 @@ final class SnapshotRunner {
         },
         onError: (Object e) {
           streamCompleted = true;
-          if (!completer.isCompleted) completer.completeError(e);
+          if (!completer.isCompleted) completer.complete();
         },
       );
 

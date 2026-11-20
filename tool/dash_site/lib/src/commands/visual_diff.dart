@@ -323,109 +323,69 @@ final class VisualDiffCommand extends Command<int> {
     }
     diffOutputDir.createSync(recursive: true);
 
-    final List<String> currentRoutes;
-
     if (shouldBuild) {
       if (isTargeted) {
         print(
-          '🔨 Building ${site.name} with eager snapshotting...\n'
+          '🔨 Building ${site.name}...\n'
           '   (Tip: Pass --no-build if the site is already built to test '
           'instantly.)',
         );
       } else {
-        print('🔨 Building ${site.name} with eager snapshotting...');
+        print('🔨 Building ${site.name}...');
       }
 
-      final buildProcess = await startSiteBuildProcess(
-        site,
-        productionRelease: false,
-      );
-
-      print('⚡ Starting static server for eager snapshotting...');
-      final server = await SnapshotServer.start(currentBuildDir);
-      try {
-        final routeStream = watchBuildRoutes(
-          currentBuildDir,
-          buildFuture: buildProcess.exitCode,
-          explicitRoutes: explicitRoutes,
-          filter: filterRegex,
-          limit: limit,
-        );
-
-        await runner.captureEagerSnapshots(
-          server: server,
-          routeStream: routeStream,
-          outputDirectory: currentDir,
-          viewports: viewports,
-          buildDirectory: currentBuildDir,
-          baselineDirectory: baselineDir,
-          baselineHashes: baselineHashes,
-          baselineMetadata: baselineMetaMap,
-          onProgress: print,
-        );
-
-        final buildExitCode = await buildProcess.exitCode;
-        if (buildExitCode != 0) {
-          stderr.writeln(
-            'Error: Site build failed with exit code $buildExitCode.',
-          );
-          return buildExitCode;
-        }
-
-        currentRoutes = discoverRoutes(
-          currentBuildDir,
-          explicitRoutes: explicitRoutes,
-          filter: filterRegex,
-          limit: limit,
-        );
-      } finally {
-        await server.close();
-      }
-    } else {
-      currentRoutes = discoverRoutes(
-        currentBuildDir,
-        explicitRoutes: explicitRoutes,
-        filter: filterRegex,
-        limit: limit,
-      );
-
-      if (currentRoutes.isEmpty) {
+      final buildExitCode = await buildSite(site, productionRelease: false);
+      if (buildExitCode != 0) {
         stderr.writeln(
-          'Error: No routes discovered in current build directory: '
-          '${currentBuildDir.path}.\n'
-          'Run "dart run dash_site build" first or omit --no-build.',
+          'Error: Site build failed with exit code $buildExitCode.',
         );
-        return 1;
+        return buildExitCode;
       }
+    }
 
-      if (isTargeted) {
-        print('🎯 Targeted run for ${currentRoutes.length} route(s):');
-        for (final r in currentRoutes.take(5)) {
-          print('   • $r');
-        }
-        if (currentRoutes.length > 5) {
-          print('   • ... and ${currentRoutes.length - 5} more');
-        }
-        print('');
-      }
+    final currentRoutes = discoverRoutes(
+      currentBuildDir,
+      explicitRoutes: explicitRoutes,
+      filter: filterRegex,
+      limit: limit,
+    );
 
-      print('⚡ Starting static server for current snapshotting...');
-      final server = await SnapshotServer.start(currentBuildDir);
-      try {
-        await runner.captureSnapshots(
-          server: server,
-          routes: currentRoutes,
-          outputDirectory: currentDir,
-          viewports: viewports,
-          buildDirectory: currentBuildDir,
-          baselineDirectory: baselineDir,
-          baselineHashes: baselineHashes,
-          baselineMetadata: baselineMetaMap,
-          onProgress: print,
-        );
-      } finally {
-        await server.close();
+    if (currentRoutes.isEmpty) {
+      stderr.writeln(
+        'Error: No routes discovered in current build directory: '
+        '${currentBuildDir.path}.\n'
+        'Run "dart run dash_site build" first or omit --no-build.',
+      );
+      return 1;
+    }
+
+    if (isTargeted) {
+      print('🎯 Targeted run for ${currentRoutes.length} route(s):');
+      for (final r in currentRoutes.take(5)) {
+        print('   • $r');
       }
+      if (currentRoutes.length > 5) {
+        print('   • ... and ${currentRoutes.length - 5} more');
+      }
+      print('');
+    }
+
+    print('⚡ Starting static server for current snapshotting...');
+    final server = await SnapshotServer.start(currentBuildDir);
+    try {
+      await runner.captureSnapshots(
+        server: server,
+        routes: currentRoutes,
+        outputDirectory: currentDir,
+        viewports: viewports,
+        buildDirectory: currentBuildDir,
+        baselineDirectory: baselineDir,
+        baselineHashes: baselineHashes,
+        baselineMetadata: baselineMetaMap,
+        onProgress: print,
+      );
+    } finally {
+      await server.close();
     }
 
     print('✅ Current snapshots saved to ${currentDir.path}\n');

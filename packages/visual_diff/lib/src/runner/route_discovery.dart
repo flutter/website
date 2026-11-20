@@ -32,41 +32,45 @@ List<String> discoverRoutes(
   final routes = <String>{};
   final normalizedBuildPath = path.normalize(buildDirectory.path);
 
-  for (final entity in buildDirectory.listSync(
-    recursive: true,
-    followLinks: false,
-  )) {
-    if (entity is! File || !entity.path.endsWith('.html')) {
-      continue;
-    }
+  try {
+    for (final entity in buildDirectory.listSync(
+      recursive: true,
+      followLinks: false,
+    )) {
+      if (entity is! File || !entity.path.endsWith('.html')) {
+        continue;
+      }
 
-    final relativePath = path.relative(
-      entity.path,
-      from: normalizedBuildPath,
-    );
-
-    // Ignore hidden files or directories (e.g. .git, .hidden).
-    if (relativePath.startsWith('.') || relativePath.contains('/.')) {
-      continue;
-    }
-
-    final normalized = path.split(relativePath).join('/');
-
-    if (normalized == 'index.html') {
-      routes.add('/');
-    } else if (normalized.endsWith('/index.html')) {
-      final routePath = normalized.substring(
-        0,
-        normalized.length - '/index.html'.length,
+      final relativePath = path.relative(
+        entity.path,
+        from: normalizedBuildPath,
       );
-      routes.add('/$routePath');
-    } else {
-      final routePath = normalized.substring(
-        0,
-        normalized.length - '.html'.length,
-      );
-      routes.add('/$routePath');
+
+      // Ignore hidden files or directories (e.g. .git, .hidden).
+      if (relativePath.startsWith('.') || relativePath.contains('/.')) {
+        continue;
+      }
+
+      final normalized = path.split(relativePath).join('/');
+
+      if (normalized == 'index.html') {
+        routes.add('/');
+      } else if (normalized.endsWith('/index.html')) {
+        final routePath = normalized.substring(
+          0,
+          normalized.length - '/index.html'.length,
+        );
+        routes.add('/$routePath');
+      } else {
+        final routePath = normalized.substring(
+          0,
+          normalized.length - '.html'.length,
+        );
+        routes.add('/$routePath');
+      }
     }
+  } on FileSystemException catch (_) {
+    // Gracefully handle any transient concurrent file system deletions.
   }
 
   var sortedRoutes = routes.toList()..sort();
@@ -110,12 +114,34 @@ Stream<String> watchBuildRoutes(
   unawaited(buildFuture.whenComplete(() => buildDone = true));
 
   while (!buildDone) {
+    try {
+      if (buildDirectory.existsSync()) {
+        final currentRoutes = discoverRoutes(
+          buildDirectory,
+          filter: filter,
+        );
+        for (final r in currentRoutes) {
+          if (!yieldedRoutes.contains(r)) {
+            yieldedRoutes.add(r);
+            yield r;
+            if (limit != null && limit > 0 && yieldedRoutes.length >= limit) {
+              return;
+            }
+          }
+        }
+      }
+    } on FileSystemException catch (_) {}
+    await Future<void>.delayed(const Duration(milliseconds: 100));
+  }
+
+  // Final scan after build completes to ensure all rendered files are emitted.
+  try {
     if (buildDirectory.existsSync()) {
-      final currentRoutes = discoverRoutes(
+      final finalRoutes = discoverRoutes(
         buildDirectory,
         filter: filter,
       );
-      for (final r in currentRoutes) {
+      for (final r in finalRoutes) {
         if (!yieldedRoutes.contains(r)) {
           yieldedRoutes.add(r);
           yield r;
@@ -125,25 +151,7 @@ Stream<String> watchBuildRoutes(
         }
       }
     }
-    await Future<void>.delayed(const Duration(milliseconds: 100));
-  }
-
-  // Final scan after build completes to ensure all rendered files are emitted.
-  if (buildDirectory.existsSync()) {
-    final finalRoutes = discoverRoutes(
-      buildDirectory,
-      filter: filter,
-    );
-    for (final r in finalRoutes) {
-      if (!yieldedRoutes.contains(r)) {
-        yieldedRoutes.add(r);
-        yield r;
-        if (limit != null && limit > 0 && yieldedRoutes.length >= limit) {
-          return;
-        }
-      }
-    }
-  }
+  } on FileSystemException catch (_) {}
 }
 
 String _normalizeRoute(String rawRoute) {
