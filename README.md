@@ -239,7 +239,7 @@ build the site locally and run the following commands.
     dart run dash_site check-links
     ```
 
-If either command reports any errors or warnings,
+If a check reports any errors or warnings,
 address them, rebuild the site, and rerun the command.
 
 [firebase-install]: https://firebase.google.com/docs/cli#setup_update_cli

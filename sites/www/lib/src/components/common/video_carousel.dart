@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../../models/video.dart';
 import 'carousel.dart';
@@ -15,9 +14,9 @@ class VideoCarousel extends StatelessComponent {
   final List<Video> videos;
 
   @override
-  Component build(BuildContext context) => Carousel(
-    ref(.fragment([for (final video in videos) _VideoCard(video)])),
-  );
+  Component build(BuildContext context) => Carousel([
+    for (final video in videos) _VideoCard(video),
+  ]);
 }
 
 class _VideoCard extends StatelessComponent {

@@ -158,7 +158,8 @@ the rare case where it doesn't, care can be taken to quantize opacity to [0,
 255] using `.alpha` and `.withAlpha()` to match the behavior before Flutter
 3.27.
 
-<a id="opacity-migration" aria-hidden="true"></a>
+<FragmentTarget id="opacity-migration" />
+
 #### Migrate `opacity`
 
 ```dart
@@ -169,7 +170,8 @@ final x = color.opacity;
 final x = color.a;
 ```
 
-<a id="withopacity-migration" aria-hidden="true"></a>
+<FragmentTarget id="withopacity-migration" />
+
 #### Migrate `withOpacity`
 
 ```dart

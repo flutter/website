@@ -10,7 +10,8 @@ with the host operating system or run code from an existing native library.
 To solve this, Flutter provides several interop tools ranging from
 code generators to direct FFI bindings.
 
-<a id="choose-your-interop-solution" aria-hidden="true"></a>
+<FragmentTarget id="choose-your-interop-solution" />
+
 ## Overview of interop tools
 
 Flutter's interop tools take one of two architectural approaches

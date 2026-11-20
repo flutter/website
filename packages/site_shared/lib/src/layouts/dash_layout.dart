@@ -96,11 +96,18 @@ abstract class DashLayout implements PageLayout {
         ? '$pageTitle | $titleBase'
         : pageTitle;
 
+    final noIndex =
+        pageData['noindex'] == true || pageData['noindex'] == 'true';
+    final pageUrl = _absoluteUrl(siteBaseUrl, page.url);
     final canonicalUrl = switch (pageData['canonical']) {
-      final String url when url.trim().isNotEmpty => url.trim(),
-      _ => siteBaseUrl.resolve(page.url).toString(),
+      false || 'false' => null,
+      final String url when url.trim().isNotEmpty => _absoluteUrl(
+        siteBaseUrl,
+        url.trim(),
+      ),
+      _ => noIndex ? null : pageUrl,
     };
-    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
+    final socialPageUrl = canonicalUrl ?? pageUrl;
     final socialImageUrl = _absoluteUrl(
       siteBaseUrl,
       pageImage ?? twitterDefaultImageUrl,
@@ -112,10 +119,8 @@ abstract class DashLayout implements PageLayout {
         meta(name: 'description', content: desc),
 
       // Set indexing and canonical URL configuration.
-      if (pageData['noindex'] case final noIndex?
-          when noIndex == true || noIndex == 'true')
-        const meta(name: 'robots', content: 'noindex'),
-      link(rel: 'canonical', href: canonicalUrl),
+      if (noIndex) const meta(name: 'robots', content: 'noindex'),
+      if (canonicalUrl != null) link(rel: 'canonical', href: canonicalUrl),
       if (pageData['redirectTo'] case final String redirectTo
           when redirectTo.isNotEmpty)
         RawText('<script>window.location.replace("$redirectTo");</script>'),

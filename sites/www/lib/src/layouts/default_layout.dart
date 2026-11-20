@@ -71,11 +71,18 @@ class DefaultLayout extends PageLayout {
         (pageData['titleBase'] ?? siteData['titleBase']) as String?;
     final documentTitle = titleBase == null ? title : '$title | $titleBase';
 
-    final canonicalUrl = switch (page.data.page['canonical']) {
-      final String url when url.trim().isNotEmpty => url.trim(),
-      _ => siteBaseUrl.resolve(page.url).toString(),
+    final noIndex =
+        pageData['noindex'] == true || pageData['noindex'] == 'true';
+    final pageUrl = _absoluteUrl(siteBaseUrl, page.url);
+    final canonicalUrl = switch (pageData['canonical']) {
+      false || 'false' => null,
+      final String url when url.trim().isNotEmpty => _absoluteUrl(
+        siteBaseUrl,
+        url.trim(),
+      ),
+      _ => noIndex ? null : pageUrl,
     };
-    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
+    final socialPageUrl = canonicalUrl ?? pageUrl;
 
     return AsyncBuilder(
       builder: (context) async {
@@ -98,7 +105,9 @@ class DefaultLayout extends PageLayout {
             ),
 
             meta(name: 'description', content: description),
-            link(rel: 'canonical', href: canonicalUrl),
+            if (noIndex) const meta(name: 'robots', content: 'noindex'),
+            if (canonicalUrl != null)
+              link(rel: 'canonical', href: canonicalUrl),
             meta(
               name: 'twitter:card',
               content: socialImage != null ? 'summary_large_image' : 'summary',

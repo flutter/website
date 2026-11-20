@@ -96,7 +96,7 @@ to learn how to structure hero animation code,
 and [behind the scenes](#behind-the-scenes) to understand
 how Flutter performs a hero animation.
 
-<a id="basic-structure"></a>
+<FragmentTarget id="basic-structure" />
 
 ## Basic structure of a hero animation
 
@@ -249,7 +249,7 @@ implement hero animations:
   image in a layout widget. These examples use `Container`.
 :::
 
-<a id="standard-hero-animation-code"></a>
+<FragmentTarget id="standard-hero-animation-code" />
 
 ### What's going on?
 
@@ -427,7 +427,7 @@ position in the destination route. For visual examples
 of this transition, consult [Radial transformation][]
 in the Material motion spec.
 
-<a id="radial-hero-animation-code"></a>
+<FragmentTarget id="radial-hero-animation-code" />
 
 :::tip Pro tip
 The radial hero animation involves intersecting a round shape with

@@ -98,7 +98,7 @@ $transition-normal: 0.2s ease;
       padding-block-start: $spacing-sm;
     }
 
-    &.collapsed {
+    &:not(.expanded) {
       .card-content {
         display: none;
       }
