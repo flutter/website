@@ -61,5 +61,59 @@ void main() {
       expect(desktopSnapshot.lengthSync(), greaterThan(100));
       expect(mobileSnapshot.lengthSync(), greaterThan(100));
     });
+
+    test(
+      'skips unchanged routes when HTML and global assets match baseline',
+      () async {
+        final runner = SnapshotRunner(concurrency: 1);
+
+        // 1. Capture baseline with buildDirectory
+        final baselineDir = Directory.systemTemp.createTempSync(
+          'snapshot-runner-baseline-',
+        );
+        try {
+          await runner.captureSnapshots(
+            server: server,
+            routes: ['/'],
+            outputDirectory: baselineDir,
+            viewports: SnapshotViewport.all,
+            buildDirectory: buildDir,
+          );
+
+          final baselineHashes = File(
+            path.join(baselineDir.path, 'content_hashes.json'),
+          );
+          expect(baselineHashes.existsSync(), isTrue);
+
+          // 2. Capture current with baseline provided: should reuse baseline
+          var loggedReused = false;
+          final currentCount = await runner.captureSnapshots(
+            server: server,
+            routes: ['/'],
+            outputDirectory: outputDir,
+            viewports: SnapshotViewport.all,
+            buildDirectory: buildDir,
+            baselineDirectory: baselineDir,
+            onProgress: (msg) {
+              if (msg.contains('Reused baseline')) {
+                loggedReused = true;
+              }
+            },
+          );
+
+          expect(currentCount, equals(2));
+          expect(loggedReused, isTrue);
+
+          final desktopSnapshot = File(
+            path.join(outputDir.path, '__root__@desktop.png'),
+          );
+          expect(desktopSnapshot.existsSync(), isTrue);
+        } finally {
+          if (baselineDir.existsSync()) {
+            baselineDir.deleteSync(recursive: true);
+          }
+        }
+      },
+    );
   });
 }

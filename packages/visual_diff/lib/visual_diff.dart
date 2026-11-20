@@ -12,6 +12,7 @@ export 'src/models/diff_manifest.dart';
 export 'src/models/diff_route.dart';
 export 'src/models/header_metadata.dart';
 export 'src/models/route_tree_node.dart';
+export 'src/runner/content_hasher.dart';
 export 'src/runner/git_worktree.dart';
 export 'src/runner/header_extractor.dart';
 export 'src/runner/route_discovery.dart';

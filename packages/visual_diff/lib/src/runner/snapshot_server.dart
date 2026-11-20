@@ -40,7 +40,18 @@ final class SnapshotServer {
         if (file != null && file.existsSync()) {
           final mimeType = _resolveContentType(file.path);
           request.response.headers.contentType = mimeType;
-          request.response.headers.add('Cache-Control', 'no-cache');
+          final isHtml =
+              file.path.endsWith('.html') || file.path.endsWith('.htm');
+          if (isHtml) {
+            request.response.headers.set('Cache-Control', 'no-cache');
+          } else {
+            // Speed optimization: Allow browser to cache CSS, JS, fonts,
+            // and images in memory instead of refetching on every route.
+            request.response.headers.set(
+              'Cache-Control',
+              'public, max-age=3600, immutable',
+            );
+          }
           request.response.headers.add('Access-Control-Allow-Origin', '*');
           await file.openRead().pipe(request.response);
           return;

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
@@ -261,6 +262,26 @@ final class VisualDiffCommand extends Command<int> {
 
     print('⚡ Using existing baseline ($baselineSnapshotCount snapshots).\n');
 
+    // Load persisted baseline metadata and content hashes if present.
+    final baselineMetaMap = <String, HeaderMetadata>{};
+    final baselineMetaFile = File(path.join(baselineDir.path, 'metadata.json'));
+    if (baselineMetaFile.existsSync()) {
+      try {
+        final json = jsonDecode(
+          baselineMetaFile.readAsStringSync(),
+        ) as Map<String, dynamic>;
+        for (final entry in json.entries) {
+          baselineMetaMap[entry.key] = HeaderMetadata.fromJson(
+            entry.value as Map<String, dynamic>,
+          );
+        }
+      } catch (_) {}
+    }
+
+    final baselineHashes = SiteContentHashes.loadFromFile(
+      File(path.join(baselineDir.path, 'content_hashes.json')),
+    );
+
     // Build current working copy and capture snapshots eagerly if requested.
     final currentBuildDir = Directory(
       path.join(repositoryRoot, site.buildOutputDirectory),
@@ -314,6 +335,10 @@ final class VisualDiffCommand extends Command<int> {
           routeStream: routeStream,
           outputDirectory: currentDir,
           viewports: viewports,
+          buildDirectory: currentBuildDir,
+          baselineDirectory: baselineDir,
+          baselineHashes: baselineHashes,
+          baselineMetadata: baselineMetaMap,
           onProgress: print,
         );
 
@@ -370,6 +395,10 @@ final class VisualDiffCommand extends Command<int> {
           routes: currentRoutes,
           outputDirectory: currentDir,
           viewports: viewports,
+          buildDirectory: currentBuildDir,
+          baselineDirectory: baselineDir,
+          baselineHashes: baselineHashes,
+          baselineMetadata: baselineMetaMap,
           onProgress: print,
         );
       } finally {
@@ -551,6 +580,7 @@ final class VisualDiffCommand extends Command<int> {
           routes: baselineRoutes,
           outputDirectory: baselineDir,
           viewports: viewports,
+          buildDirectory: baselineBuildDir,
           onProgress: print,
         );
       } finally {
@@ -630,6 +660,7 @@ final class VisualDiffCommand extends Command<int> {
         routes: baselineRoutes,
         outputDirectory: baselineDir,
         viewports: viewports,
+        buildDirectory: currentBuildDir,
         onProgress: print,
       );
     } finally {
@@ -692,6 +723,14 @@ final class VisualDiffCommand extends Command<int> {
       final currentMeta = File(path.join(currentDir.path, 'metadata.json'));
       if (currentMeta.existsSync()) {
         currentMeta.copySync(path.join(baselineDir.path, 'metadata.json'));
+      }
+      final currentHashes = File(
+        path.join(currentDir.path, 'content_hashes.json'),
+      );
+      if (currentHashes.existsSync()) {
+        currentHashes.copySync(
+          path.join(baselineDir.path, 'content_hashes.json'),
+        );
       }
       if (diffOutputDir.existsSync()) {
         for (final entity in diffOutputDir.listSync()) {

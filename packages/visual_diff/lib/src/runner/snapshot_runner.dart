@@ -11,6 +11,7 @@ import 'package:path/path.dart' as path;
 import 'package:puppeteer/puppeteer.dart';
 
 import '../models/header_metadata.dart';
+import 'content_hasher.dart';
 import 'header_extractor.dart';
 import 'route_discovery.dart';
 import 'snapshot_server.dart';
@@ -35,6 +36,10 @@ final class SnapshotRunner {
     required List<String> routes,
     required Directory outputDirectory,
     List<SnapshotViewport> viewports = SnapshotViewport.all,
+    Directory? buildDirectory,
+    Directory? baselineDirectory,
+    SiteContentHashes? baselineHashes,
+    Map<String, HeaderMetadata>? baselineMetadata,
     void Function(String message)? onProgress,
     void Function(String filename)? onSnapshotSaved,
   }) async {
@@ -44,6 +49,10 @@ final class SnapshotRunner {
       expectedTotalRoutes: routes.length,
       outputDirectory: outputDirectory,
       viewports: viewports,
+      buildDirectory: buildDirectory,
+      baselineDirectory: baselineDirectory,
+      baselineHashes: baselineHashes,
+      baselineMetadata: baselineMetadata,
       onProgress: onProgress,
       onSnapshotSaved: onSnapshotSaved,
     );
@@ -59,6 +68,10 @@ final class SnapshotRunner {
     int? expectedTotalRoutes,
     required Directory outputDirectory,
     List<SnapshotViewport> viewports = SnapshotViewport.all,
+    Directory? buildDirectory,
+    Directory? baselineDirectory,
+    SiteContentHashes? baselineHashes,
+    Map<String, HeaderMetadata>? baselineMetadata,
     void Function(String message)? onProgress,
     void Function(String filename)? onSnapshotSaved,
   }) async {
@@ -75,15 +88,36 @@ final class SnapshotRunner {
       log('🌐 Auto-resolving / downloading Chromium for Puppeteer...');
     }
 
-    final browser = await puppeteer.launch(
-      executablePath: chromePath,
-      headless: true,
-      args: const [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu',
-      ],
+    final workerCount = concurrency.clamp(1, 16);
+    // Launch a pool of Chromium instances (e.g. 1 to 4) so rasterization
+    // and libpng compression execute across multiple independent compositor
+    // threads instead of bottlenecking on a single process.
+    final browserPoolSize = (workerCount / 2).clamp(1, 4).toInt();
+
+    final browsers = await Future.wait(
+      List.generate(
+        browserPoolSize,
+        (_) => puppeteer.launch(
+          executablePath: chromePath,
+          headless: true,
+          args: const [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+            '--disable-extensions',
+            '--disable-background-timer-throttling',
+            '--disable-backgrounding-occluded-windows',
+            '--disable-renderer-backgrounding',
+            '--disable-ipc-flooding-protection',
+            '--hide-scrollbars',
+            '--mute-audio',
+            '--no-first-run',
+            '--no-default-browser-check',
+            '--disable-features=Translate,BackForwardCache,MediaRouter',
+          ],
+        ),
+      ),
     );
 
     var capturedCount = 0;
@@ -93,22 +127,111 @@ final class SnapshotRunner {
 
     final capturedMetadata = <String, HeaderMetadata>{};
 
+    final effectiveBaselineHashes =
+        baselineHashes ??
+        (baselineDirectory != null
+            ? SiteContentHashes.loadFromFile(
+                File(path.join(baselineDirectory.path, 'content_hashes.json')),
+              )
+            : null);
+
+    final currentGlobalAssetsHash = buildDirectory != null
+        ? SiteContentHashes.computeGlobalAssetsHash(buildDirectory)
+        : '';
+
+    final canSkipUnchanged =
+        effectiveBaselineHashes != null &&
+        effectiveBaselineHashes.globalAssetsHash == currentGlobalAssetsHash &&
+        baselineDirectory != null &&
+        baselineDirectory.existsSync();
+
+    if (effectiveBaselineHashes != null &&
+        effectiveBaselineHashes.globalAssetsHash != currentGlobalAssetsHash) {
+      log(
+        '  🎨 Global styles or scripts changed. Full re-snapshotting required.',
+      );
+    } else if (canSkipUnchanged) {
+      log(
+        '  ⚡ Global styles and scripts unchanged. Reusing baseline for '
+        'unchanged HTML routes...',
+      );
+    }
+
+    final currentRouteHashes = <String, String>{};
+
     // Shared work queue containing tasks for each (route, viewport) pair.
     final taskQueue = Queue<({String route, SnapshotViewport viewport})>();
     var streamCompleted = false;
     final completer = Completer<void>();
 
     try {
-      // Allocate dedicated worker tabs. Distribute workers across viewports.
-      final workerCount = concurrency.clamp(1, 16);
       final workers = <Future<void>>[];
 
       // Listen to incoming routes from the stream and enqueue viewport tasks.
       late final StreamSubscription<String> streamSub;
       streamSub = routeStream.listen(
         (route) {
-          for (final vp in viewports) {
-            taskQueue.add((route: route, viewport: vp));
+          var routeSkipped = false;
+          if (canSkipUnchanged && buildDirectory != null) {
+            final htmlFile = SiteContentHashes.resolveRouteHtmlFile(
+              buildDirectory,
+              route,
+            );
+            if (htmlFile != null && htmlFile.existsSync()) {
+              final hash = SiteContentHashes.computeFileHash(htmlFile);
+              currentRouteHashes[route] = hash;
+
+              if (effectiveBaselineHashes.routeHashes[route] == hash) {
+                var allBaselineSnapshotsExist = true;
+                for (final vp in viewports) {
+                  final filename = snapshotFileName(route, vp.name);
+                  final src = File(path.join(baselineDirectory.path, filename));
+                  if (!src.existsSync()) {
+                    allBaselineSnapshotsExist = false;
+                    break;
+                  }
+                }
+
+                if (allBaselineSnapshotsExist) {
+                  for (final vp in viewports) {
+                    final filename = snapshotFileName(route, vp.name);
+                    final src = File(
+                      path.join(baselineDirectory.path, filename),
+                    );
+                    final dest = File(
+                      path.join(outputDirectory.path, filename),
+                    );
+                    src.copySync(dest.path);
+                    capturedCount++;
+                    onSnapshotSaved?.call(filename);
+                  }
+                  if (baselineMetadata?[route] case final meta?) {
+                    capturedMetadata[route] = meta;
+                  }
+                  routeSkipped = true;
+                  final progressStr = totalExpectedSnapshots != null
+                      ? '$capturedCount/$totalExpectedSnapshots'
+                      : '$capturedCount';
+                  log('  ⚡ [$progressStr] Reused baseline: $route');
+                }
+              }
+            }
+          } else if (buildDirectory != null) {
+            final htmlFile = SiteContentHashes.resolveRouteHtmlFile(
+              buildDirectory,
+              route,
+            );
+            if (htmlFile != null && htmlFile.existsSync()) {
+              currentRouteHashes[route] = SiteContentHashes.computeFileHash(
+                htmlFile,
+              );
+            }
+          }
+
+          if (!routeSkipped) {
+            for (final vp in viewports) {
+              taskQueue.add((route: route, viewport: vp));
+            }
           }
         },
         onDone: () {
@@ -124,6 +247,7 @@ final class SnapshotRunner {
       );
 
       for (var workerIndex = 0; workerIndex < workerCount; workerIndex++) {
+        final browser = browsers[workerIndex % browsers.length];
         workers.add(() async {
           final page = await browser.newPage();
           try {
@@ -142,32 +266,37 @@ final class SnapshotRunner {
               }
             });
 
-            // Speed optimization 2: Inject cookie-hiding CSS on document
-            // creation once.
-            if (hideCookieBanner) {
-              await page.evaluateOnNewDocument(r'''() => {
-                const style = document.createElement('style');
-                style.id = '__visual_diff_hide_cookie__';
-                style.textContent = `
-                  .glue-cookie-notification-bar,
-                  [class*="glue-cookie-notification-bar"],
-                  #glue-cookie-notification-bar-1 {
-                    display: none !important;
-                    visibility: hidden !important;
-                    opacity: 0 !important;
-                    pointer-events: none !important;
-                  }
-                `;
-                (document.head || document.documentElement).appendChild(style);
-              }''');
-            }
+            // Speed optimization 2: Inject cookie-hiding CSS and disable
+            // transitions/animations so rendering is immediate and stable.
+            await page.evaluateOnNewDocument(r'''() => {
+              const style = document.createElement('style');
+              style.id = '__visual_diff_injected__';
+              style.textContent = `
+                .glue-cookie-notification-bar,
+                [class*="glue-cookie-notification-bar"],
+                #glue-cookie-notification-bar-1 {
+                  display: none !important;
+                  visibility: hidden !important;
+                  opacity: 0 !important;
+                  pointer-events: none !important;
+                }
+                *, *::before, *::after {
+                  transition-duration: 0s !important;
+                  animation-duration: 0s !important;
+                  transition-delay: 0s !important;
+                  animation-delay: 0s !important;
+                }
+              `;
+              (document.head || document.documentElement).appendChild(style);
+            }''');
 
             SnapshotViewport? currentViewport;
 
             while (!streamCompleted || taskQueue.isNotEmpty) {
               if (taskQueue.isEmpty) {
+                if (streamCompleted) break;
                 // Wait briefly for more routes to arrive from stream.
-                await Future<void>.delayed(const Duration(milliseconds: 50));
+                await Future<void>.delayed(const Duration(milliseconds: 25));
                 continue;
               }
 
@@ -260,7 +389,20 @@ final class SnapshotRunner {
       await Future.wait(workers);
       await streamSub.cancel();
     } finally {
-      await browser.close();
+      await Future.wait(browsers.map((b) => b.close()));
+    }
+
+    // Persist content hashes to output directory to allow skipping next time.
+    if (buildDirectory != null && currentRouteHashes.isNotEmpty) {
+      try {
+        final siteHashes = SiteContentHashes(
+          globalAssetsHash: currentGlobalAssetsHash,
+          routeHashes: currentRouteHashes,
+        );
+        siteHashes.saveToFile(
+          File(path.join(outputDirectory.path, 'content_hashes.json')),
+        );
+      } catch (_) {}
     }
 
     // Persist all captured header metadata to metadata.json in output dir.
