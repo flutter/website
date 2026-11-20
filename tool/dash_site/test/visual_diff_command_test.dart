@@ -23,11 +23,10 @@ void main() {
 
     test('defines required flags and options', () {
       final parser = command.argParser;
-      expect(parser.options.containsKey('base'), isTrue);
-      expect(parser.options.containsKey('current'), isTrue);
-      expect(parser.options.containsKey('full'), isTrue);
-      expect(parser.options.containsKey('save-baseline'), isTrue);
+      expect(parser.options.containsKey('update-baseline'), isTrue);
       expect(parser.options.containsKey('update'), isTrue);
+      expect(parser.options.containsKey('from'), isTrue);
+      expect(parser.options.containsKey('current'), isTrue);
       expect(parser.options.containsKey('build'), isTrue);
       expect(parser.options.containsKey('open'), isTrue);
       expect(parser.options.containsKey('serve'), isTrue);
@@ -38,7 +37,12 @@ void main() {
       expect(parser.options.containsKey('concurrency'), isTrue);
       expect(parser.options.containsKey('chrome-path'), isTrue);
       expect(parser.options.containsKey('output-dir'), isTrue);
-      expect(parser.options.containsKey('hide-cookie-banner'), isTrue);
+
+      // Verify removed / deprecated flags
+      expect(parser.options.containsKey('base'), isFalse);
+      expect(parser.options.containsKey('full'), isFalse);
+      expect(parser.options.containsKey('save-baseline'), isFalse);
+      expect(parser.options.containsKey('hide-cookie-banner'), isFalse);
     });
   });
 }

@@ -292,5 +292,65 @@ void main() {
         );
       },
     );
+
+    test(
+      'tracks and diffs header metadata between baseline and current',
+      () async {
+        final tempDir = Directory.systemTemp.createTempSync('batch_meta_test_');
+        addTearDown(() => tempDir.deleteSync(recursive: true));
+
+        final baselineDir = Directory('${tempDir.path}/baseline')..createSync();
+        final currentDir = Directory('${tempDir.path}/current')..createSync();
+        final diffDir = Directory('${tempDir.path}/diff');
+        final manifestFile = File('${tempDir.path}/manifest.json');
+
+        final redImg = img.Image(width: 10, height: 10);
+        img.fill(redImg, color: img.ColorRgba8(255, 0, 0, 255));
+
+        File('${baselineDir.path}/ui__widgets@desktop.png')
+            .writeAsBytesSync(img.encodePng(redImg));
+        File('${currentDir.path}/ui__widgets@desktop.png')
+            .writeAsBytesSync(img.encodePng(redImg));
+
+        const batch = BatchDiffer();
+        final manifest = await batch.run(
+          baselineDir: baselineDir,
+          currentDir: currentDir,
+          diffOutputDir: diffDir,
+          manifestFile: manifestFile,
+          site: 'docs',
+          baseRef: 'main',
+          baselineMetadata: {
+            '/ui/widgets': const HeaderMetadata(
+              title: 'Old Title',
+              meta: {'description': 'Old Description'},
+            ),
+          },
+          currentMetadata: {
+            '/ui/widgets': const HeaderMetadata(
+              title: 'New Title',
+              meta: {'description': 'New Description'},
+            ),
+          },
+          onProgress: (_) {},
+        );
+
+        // Screenshot is identical, but metadata changed!
+        expect(manifest.changedCount, equals(0));
+        expect(manifest.unchangedCount, equals(1));
+        expect(manifest.metadataChangedCount, equals(1));
+        expect(manifest.hasDiff, isTrue);
+
+        final entry = manifest.entries.first;
+        expect(entry.hasHeaderDiff, isTrue);
+        expect(entry.headerDiff?.titleChanged, isTrue);
+        expect(entry.headerDiff?.baselineTitle, equals('Old Title'));
+        expect(entry.headerDiff?.currentTitle, equals('New Title'));
+        expect(
+          entry.headerDiff?.metaChanges['description']?.type,
+          equals(HeaderPropertyChangeType.modified),
+        );
+      },
+    );
   });
 }

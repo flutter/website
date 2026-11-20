@@ -14,11 +14,10 @@ import 'build.dart';
 
 /// Command to run local visual regression diffing against a baseline branch.
 final class VisualDiffCommand extends Command<int> {
-  static const String _baseOption = 'base';
-  static const String _currentFlag = 'current';
-  static const String _fullFlag = 'full';
-  static const String _saveBaselineFlag = 'save-baseline';
+  static const String _updateBaselineFlag = 'update-baseline';
   static const String _updateFlag = 'update';
+  static const String _fromOption = 'from';
+  static const String _currentFlag = 'current';
   static const String _buildFlag = 'build';
   static const String _openFlag = 'open';
   static const String _serveFlag = 'serve';
@@ -29,41 +28,36 @@ final class VisualDiffCommand extends Command<int> {
   static const String _concurrencyOption = 'concurrency';
   static const String _chromePathOption = 'chrome-path';
   static const String _outputDirOption = 'output-dir';
-  static const String _hideCookieBannerFlag = 'hide-cookie-banner';
 
   VisualDiffCommand() {
+    argParser.addFlag(
+      _updateBaselineFlag,
+      defaultsTo: false,
+      negatable: false,
+      help:
+          'Update baseline snapshots. When used with --from or --current, '
+          'creates a clean baseline. When used alone, updates the baseline '
+          'from current diff snapshots.',
+    );
+    argParser.addFlag(
+      _updateFlag,
+      defaultsTo: false,
+      negatable: false,
+      help: 'Alias for --update-baseline.',
+    );
     argParser.addOption(
-      _baseOption,
-      defaultsTo: 'main',
-      help: 'The git branch or ref to use as baseline.',
+      _fromOption,
+      help:
+          'Git branch or ref to generate baseline snapshots from '
+          '(e.g. --from=main).',
     );
     argParser.addFlag(
       _currentFlag,
       defaultsTo: false,
       negatable: false,
       help:
-          'Create the baseline from the current branch or working copy '
-          'instead of checking out a git branch.',
-    );
-    argParser.addFlag(
-      _fullFlag,
-      defaultsTo: false,
-      negatable: false,
-      help: 'Rebuild baseline snapshots from the base branch even if cached.',
-    );
-    argParser.addFlag(
-      _saveBaselineFlag,
-      defaultsTo: false,
-      negatable: false,
-      help:
-          'Rebuild and save baseline snapshots from the base branch, '
-          'then exit.',
-    );
-    argParser.addFlag(
-      _updateFlag,
-      defaultsTo: false,
-      negatable: false,
-      help: 'Update baseline images from current snapshots.',
+          'Generate baseline snapshots from the current branch or '
+          'working copy.',
     );
     argParser.addFlag(
       _buildFlag,
@@ -115,16 +109,11 @@ final class VisualDiffCommand extends Command<int> {
       _outputDirOption,
       help: 'Custom directory for visual diff artifacts.',
     );
-    argParser.addFlag(
-      _hideCookieBannerFlag,
-      defaultsTo: true,
-      help: 'Hide the cookie notification banner in snapshots.',
-    );
   }
 
   @override
   String get description =>
-      'Run visual regression diffing against a baseline branch.';
+      'Run visual regression diffing against baseline snapshots.';
 
   @override
   String get name => 'visual-diff';
@@ -134,12 +123,19 @@ final class VisualDiffCommand extends Command<int> {
     final site = selectedSite;
     final results = argResults;
 
-    final baseBranch = results?.option(_baseOption) ?? 'main';
-    final useCurrentForBaseline =
-        results.get<bool>(_currentFlag, false) || baseBranch == 'current';
-    final fullRun = results.get<bool>(_fullFlag, false);
-    final saveBaselineOnly = results.get<bool>(_saveBaselineFlag, false);
-    final updateBaseline = results.get<bool>(_updateFlag, false);
+    final updateBaselineRequested =
+        results.get<bool>(_updateBaselineFlag, false) ||
+        results.get<bool>(_updateFlag, false);
+    final fromBranch = results?.option(_fromOption);
+    final useCurrentForBaseline = results.get<bool>(_currentFlag, false);
+
+    if (fromBranch != null && useCurrentForBaseline) {
+      usageException('Cannot combine --$_fromOption and --$_currentFlag.');
+    }
+
+    final isBaselineOperation =
+        updateBaselineRequested || fromBranch != null || useCurrentForBaseline;
+
     final shouldBuild = results.get<bool>(_buildFlag, true);
     final shouldOpen = results.get<bool>(_openFlag, true);
     final serveOnly = results.get<bool>(_serveFlag, false);
@@ -151,7 +147,6 @@ final class VisualDiffCommand extends Command<int> {
     final concurrency =
         int.tryParse(results?.option(_concurrencyOption) ?? '4') ?? 4;
     final chromePath = results?.option(_chromePathOption);
-    final hideCookieBanner = results.get<bool>(_hideCookieBannerFlag, true);
 
     final RegExp? filterRegex;
     if (filterPattern != null && filterPattern.isNotEmpty) {
@@ -201,180 +196,72 @@ final class VisualDiffCommand extends Command<int> {
       );
     }
 
-    final baselineSnapshotCount = _countPngSnapshots(baselineDir);
-    final needsBaseline =
-        saveBaselineOnly || fullRun || baselineSnapshotCount == 0;
-
     final runner = SnapshotRunner(
       customChromePath: chromePath,
       concurrency: concurrency,
-      hideCookieBanner: hideCookieBanner,
+      hideCookieBanner: true,
     );
 
-    // 1. Build and capture baseline if required.
-    if (needsBaseline) {
-      if (!isTargeted && baselineDir.existsSync()) {
-        baselineDir.deleteSync(recursive: true);
-      }
-      baselineDir.createSync(recursive: true);
-
-      if (useCurrentForBaseline) {
-        print('ℹ️  Creating baseline snapshots from current branch...');
-
-        if (shouldBuild) {
-          print('🔨 Building current working copy for ${site.name}...');
-          final buildExitCode = await buildSite(site, productionRelease: false);
-          if (buildExitCode != 0) {
-            stderr.writeln(
-              'Error: Site build failed with exit code $buildExitCode.',
-            );
-            return buildExitCode;
-          }
-        }
-
-        final currentBuildDir = Directory(
-          path.join(repositoryRoot, site.buildOutputDirectory),
-        );
-        if (!currentBuildDir.existsSync()) {
-          stderr.writeln(
-            'Error: Build directory not found at: ${currentBuildDir.path}.\n'
-            'Run "dart run dash_site build" first or omit --no-build.',
-          );
-          return 1;
-        }
-
-        final baselineRoutes = discoverRoutes(
-          currentBuildDir,
+    // Baseline management operations: always separate from diffing.
+    if (isBaselineOperation) {
+      if (fromBranch != null) {
+        return await _createBaselineFromBranch(
+          site: site,
+          fromBranch: fromBranch,
+          baselineDir: baselineDir,
+          isTargeted: isTargeted,
           explicitRoutes: explicitRoutes,
-          filter: filterRegex,
+          filterRegex: filterRegex,
           limit: limit,
+          viewports: viewports,
+          runner: runner,
+          shouldBuild: shouldBuild,
         );
-
-        if (baselineRoutes.isEmpty) {
-          stderr.writeln(
-            'Error: No routes discovered in build directory: '
-            '${currentBuildDir.path}',
-          );
-          return 1;
-        }
-
-        print('⚡ Starting static server for baseline snapshotting...');
-        final server = await SnapshotServer.start(currentBuildDir);
-        try {
-          await runner.captureSnapshots(
-            server: server,
-            routes: baselineRoutes,
-            outputDirectory: baselineDir,
-            viewports: viewports,
-          );
-        } finally {
-          await server.close();
-        }
+      } else if (useCurrentForBaseline) {
+        return await _createBaselineFromCurrent(
+          site: site,
+          baselineDir: baselineDir,
+          isTargeted: isTargeted,
+          explicitRoutes: explicitRoutes,
+          filterRegex: filterRegex,
+          limit: limit,
+          viewports: viewports,
+          runner: runner,
+          shouldBuild: shouldBuild,
+        );
       } else {
-        if (baselineSnapshotCount == 0) {
-          print(
-            'ℹ️  No baseline snapshots found. '
-            'Creating baseline from "$baseBranch"...',
-          );
-        } else {
-          print(
-            '🔄 Rebuilding baseline snapshots from "$baseBranch" (--full)...',
-          );
-        }
-
-        final worktree = await GitWorktree.create(
-          repositoryRoot: repositoryRoot,
-          baseRef: baseBranch,
+        return await _updateBaselineFromExistingSnapshots(
+          site: site,
+          baselineDir: baselineDir,
+          currentDir: currentDir,
+          diffOutputDir: diffOutputDir,
+          visualDiffDir: visualDiffDir,
+          isTargeted: isTargeted,
+          explicitRoutes: explicitRoutes,
+          viewports: viewports,
         );
-
-        try {
-          if (shouldBuild) {
-            print('📦 Installing dependencies in baseline worktree...');
-            final pubGetResult = await Process.run('dart', [
-              'pub',
-              'get',
-            ], workingDirectory: worktree.directory.path);
-            if (pubGetResult.exitCode != 0) {
-              stderr.writeln(
-                'Error: Failed to get dependencies in baseline worktree: '
-                '${pubGetResult.stderr}',
-              );
-              return pubGetResult.exitCode;
-            }
-
-            print('🔨 Building baseline site in worktree...');
-            final buildResult = await Process.run('dart', [
-              'run',
-              'dash_site',
-              '--site=${site.name}',
-              'build',
-              '--no-production',
-            ], workingDirectory: worktree.directory.path);
-            if (buildResult.exitCode != 0) {
-              stderr.writeln(
-                'Error: Failed to build baseline site in worktree: '
-                '${buildResult.stderr}',
-              );
-              return buildResult.exitCode;
-            }
-          }
-
-          final baselineBuildDir = Directory(
-            path.join(worktree.directory.path, site.buildOutputDirectory),
-          );
-          if (!baselineBuildDir.existsSync()) {
-            stderr.writeln(
-              'Error: Baseline build output directory not found at: '
-              '${baselineBuildDir.path}',
-            );
-            return 1;
-          }
-
-          final baselineRoutes = discoverRoutes(
-            baselineBuildDir,
-            explicitRoutes: explicitRoutes,
-            filter: filterRegex,
-            limit: limit,
-          );
-
-          if (baselineRoutes.isEmpty) {
-            stderr.writeln(
-              'Error: No routes discovered in baseline build directory: '
-              '${baselineBuildDir.path}',
-            );
-            return 1;
-          }
-
-          print('⚡ Starting static server for baseline snapshotting...');
-          final server = await SnapshotServer.start(baselineBuildDir);
-          try {
-            await runner.captureSnapshots(
-              server: server,
-              routes: baselineRoutes,
-              outputDirectory: baselineDir,
-              viewports: viewports,
-            );
-          } finally {
-            await server.close();
-          }
-        } finally {
-          await worktree.cleanup(repositoryRoot: repositoryRoot);
-        }
       }
-
-      print('✅ Baseline snapshots saved to ${baselineDir.path}\n');
-
-      if (saveBaselineOnly) {
-        return 0;
-      }
-    } else {
-      print(
-        '⚡ Using cached baseline ($baselineSnapshotCount snapshots). '
-        'Skipping "$baseBranch" rebuild.\n',
-      );
     }
 
-    // 2. Build current working copy and capture snapshots eagerly if requested.
+    // Normal diff run: ALWAYS assume a baseline exists.
+    final baselineSnapshotCount = _countPngSnapshots(baselineDir);
+    if (baselineSnapshotCount == 0) {
+      stderr.writeln(
+        'Error: No baseline snapshots found for site "${site.name}".\n\n'
+        'Before running visual-diff, create a baseline first:\n'
+        '  • From a git branch (e.g. main):\n'
+        '    dart run dash_site --site=${site.name} visual-diff '
+        '--update-baseline --from=main\n'
+        '  • From the current working copy:\n'
+        '    dart run dash_site --site=${site.name} visual-diff '
+        '--update-baseline --current\n',
+      );
+      return 1;
+    }
+
+    print('⚡ Using existing baseline ($baselineSnapshotCount snapshots).\n');
+
+    // Build current working copy and capture snapshots eagerly if requested.
     final currentBuildDir = Directory(
       path.join(repositoryRoot, site.buildOutputDirectory),
     );
@@ -492,38 +379,7 @@ final class VisualDiffCommand extends Command<int> {
 
     print('✅ Current snapshots saved to ${currentDir.path}\n');
 
-    // 4. Update baseline if requested.
-    if (updateBaseline) {
-      if (isTargeted) {
-        print('🔄 Updating baseline snapshots for targeted route(s)...');
-        for (final route in currentRoutes) {
-          for (final vp in viewports) {
-            final filename = snapshotFileName(route, vp.name);
-            final currentFile = File(path.join(currentDir.path, filename));
-            if (currentFile.existsSync()) {
-              currentFile.copySync(path.join(baselineDir.path, filename));
-            }
-          }
-        }
-        print('✅ Baseline updated for targeted route(s).\n');
-      } else {
-        print('🔄 Updating baseline snapshots from current snapshots...');
-        for (final entity in currentDir.listSync()) {
-          if (entity is File && entity.path.endsWith('.png')) {
-            entity.copySync(
-              path.join(baselineDir.path, path.basename(entity.path)),
-            );
-          }
-        }
-        final currentMeta = File(path.join(currentDir.path, 'metadata.json'));
-        if (currentMeta.existsSync()) {
-          currentMeta.copySync(path.join(baselineDir.path, 'metadata.json'));
-        }
-        print('✅ Baseline updated.\n');
-      }
-    }
-
-    // 5. Run pure Dart pixel diffing across all snapshots.
+    // Run pure Dart pixel diffing across all snapshots.
     final manifestFile = File(
       path.join(visualDiffDir.path, 'diff_manifest.json'),
     );
@@ -534,7 +390,7 @@ final class VisualDiffCommand extends Command<int> {
       diffOutputDir: diffOutputDir,
       manifestFile: manifestFile,
       site: site.name,
-      baseRef: baseBranch,
+      baseRef: 'baseline',
       targetRoutes: isTargeted ? currentRoutes.toSet() : null,
       targetViewports: viewports.length < SnapshotViewport.all.length
           ? viewports.map((v) => v.name).toSet()
@@ -600,6 +456,266 @@ final class VisualDiffCommand extends Command<int> {
       await Future.any([sigint.first, if (sigterm != null) sigterm.first]);
       await reviewServer.close();
       print('\nReview server stopped.');
+    }
+
+    return 0;
+  }
+
+  Future<int> _createBaselineFromBranch({
+    required Site site,
+    required String fromBranch,
+    required Directory baselineDir,
+    required bool isTargeted,
+    required List<String>? explicitRoutes,
+    required RegExp? filterRegex,
+    required int? limit,
+    required List<SnapshotViewport> viewports,
+    required SnapshotRunner runner,
+    required bool shouldBuild,
+  }) async {
+    print('ℹ️  Generating baseline snapshots from branch "$fromBranch"...');
+
+    final worktree = await GitWorktree.create(
+      repositoryRoot: repositoryRoot,
+      baseRef: fromBranch,
+    );
+
+    try {
+      if (shouldBuild) {
+        print('📦 Installing dependencies in baseline worktree...');
+        final pubGetResult = await Process.run('dart', [
+          'pub',
+          'get',
+        ], workingDirectory: worktree.directory.path);
+        if (pubGetResult.exitCode != 0) {
+          stderr.writeln(
+            'Error: Failed to get dependencies in baseline worktree: '
+            '${pubGetResult.stderr}',
+          );
+          return pubGetResult.exitCode;
+        }
+
+        print('🔨 Building baseline site in worktree...');
+        final buildResult = await Process.run('dart', [
+          'run',
+          'dash_site',
+          '--site=${site.name}',
+          'build',
+          '--no-production',
+        ], workingDirectory: worktree.directory.path);
+        if (buildResult.exitCode != 0) {
+          stderr.writeln(
+            'Error: Failed to build baseline site in worktree: '
+            '${buildResult.stderr}',
+          );
+          return buildResult.exitCode;
+        }
+      }
+
+      final baselineBuildDir = Directory(
+        path.join(worktree.directory.path, site.buildOutputDirectory),
+      );
+      if (!baselineBuildDir.existsSync()) {
+        stderr.writeln(
+          'Error: Baseline build output directory not found at: '
+          '${baselineBuildDir.path}',
+        );
+        return 1;
+      }
+
+      final baselineRoutes = discoverRoutes(
+        baselineBuildDir,
+        explicitRoutes: explicitRoutes,
+        filter: filterRegex,
+        limit: limit,
+      );
+
+      if (baselineRoutes.isEmpty) {
+        stderr.writeln(
+          'Error: No routes discovered in baseline build directory: '
+          '${baselineBuildDir.path}',
+        );
+        return 1;
+      }
+
+      if (!isTargeted && baselineDir.existsSync()) {
+        baselineDir.deleteSync(recursive: true);
+      }
+      baselineDir.createSync(recursive: true);
+
+      print('⚡ Starting static server for baseline snapshotting...');
+      final server = await SnapshotServer.start(baselineBuildDir);
+      try {
+        await runner.captureSnapshots(
+          server: server,
+          routes: baselineRoutes,
+          outputDirectory: baselineDir,
+          viewports: viewports,
+          onProgress: print,
+        );
+      } finally {
+        await server.close();
+      }
+
+      print(
+        '✅ Baseline snapshots from "$fromBranch" saved to '
+        '${baselineDir.path}\n',
+      );
+      return 0;
+    } finally {
+      await worktree.cleanup(repositoryRoot: repositoryRoot);
+    }
+  }
+
+  Future<int> _createBaselineFromCurrent({
+    required Site site,
+    required Directory baselineDir,
+    required bool isTargeted,
+    required List<String>? explicitRoutes,
+    required RegExp? filterRegex,
+    required int? limit,
+    required List<SnapshotViewport> viewports,
+    required SnapshotRunner runner,
+    required bool shouldBuild,
+  }) async {
+    print('ℹ️  Generating baseline snapshots from current working copy...');
+
+    if (shouldBuild) {
+      print('🔨 Building current working copy for ${site.name}...');
+      final buildExitCode = await buildSite(site, productionRelease: false);
+      if (buildExitCode != 0) {
+        stderr.writeln(
+          'Error: Site build failed with exit code $buildExitCode.',
+        );
+        return buildExitCode;
+      }
+    }
+
+    final currentBuildDir = Directory(
+      path.join(repositoryRoot, site.buildOutputDirectory),
+    );
+    if (!currentBuildDir.existsSync()) {
+      stderr.writeln(
+        'Error: Build directory not found at: ${currentBuildDir.path}.\n'
+        'Run "dart run dash_site build" first or omit --no-build.',
+      );
+      return 1;
+    }
+
+    final baselineRoutes = discoverRoutes(
+      currentBuildDir,
+      explicitRoutes: explicitRoutes,
+      filter: filterRegex,
+      limit: limit,
+    );
+
+    if (baselineRoutes.isEmpty) {
+      stderr.writeln(
+        'Error: No routes discovered in build directory: '
+        '${currentBuildDir.path}',
+      );
+      return 1;
+    }
+
+    if (!isTargeted && baselineDir.existsSync()) {
+      baselineDir.deleteSync(recursive: true);
+    }
+    baselineDir.createSync(recursive: true);
+
+    print('⚡ Starting static server for baseline snapshotting...');
+    final server = await SnapshotServer.start(currentBuildDir);
+    try {
+      await runner.captureSnapshots(
+        server: server,
+        routes: baselineRoutes,
+        outputDirectory: baselineDir,
+        viewports: viewports,
+        onProgress: print,
+      );
+    } finally {
+      await server.close();
+    }
+
+    print('✅ Baseline snapshots saved to ${baselineDir.path}\n');
+    return 0;
+  }
+
+  Future<int> _updateBaselineFromExistingSnapshots({
+    required Site site,
+    required Directory baselineDir,
+    required Directory currentDir,
+    required Directory diffOutputDir,
+    required Directory visualDiffDir,
+    required bool isTargeted,
+    required List<String>? explicitRoutes,
+    required List<SnapshotViewport> viewports,
+  }) async {
+    final currentSnapshotCount = _countPngSnapshots(currentDir);
+    if (currentSnapshotCount == 0) {
+      stderr.writeln(
+        'Error: No current snapshots found in ${currentDir.path}.\n'
+        'Run visual-diff first to generate current snapshots, or specify '
+        '--from=<branch> or --current to create a baseline from scratch.',
+      );
+      return 1;
+    }
+
+    if (!baselineDir.existsSync()) {
+      baselineDir.createSync(recursive: true);
+    }
+
+    if (isTargeted && explicitRoutes != null && explicitRoutes.isNotEmpty) {
+      print('🔄 Updating baseline snapshots for targeted route(s)...');
+      for (final route in explicitRoutes) {
+        for (final vp in viewports) {
+          final filename = snapshotFileName(route, vp.name);
+          final currentFile = File(path.join(currentDir.path, filename));
+          if (currentFile.existsSync()) {
+            currentFile.copySync(path.join(baselineDir.path, filename));
+          }
+          final diffFile = File(path.join(diffOutputDir.path, filename));
+          if (diffFile.existsSync()) {
+            diffFile.deleteSync();
+          }
+        }
+      }
+      print('✅ Baseline updated for targeted route(s).\n');
+    } else {
+      print('🔄 Updating baseline snapshots from all current snapshots...');
+      for (final entity in currentDir.listSync()) {
+        if (entity is File && entity.path.endsWith('.png')) {
+          entity.copySync(
+            path.join(baselineDir.path, path.basename(entity.path)),
+          );
+        }
+      }
+      final currentMeta = File(path.join(currentDir.path, 'metadata.json'));
+      if (currentMeta.existsSync()) {
+        currentMeta.copySync(path.join(baselineDir.path, 'metadata.json'));
+      }
+      if (diffOutputDir.existsSync()) {
+        for (final entity in diffOutputDir.listSync()) {
+          if (entity is File && entity.path.endsWith('.png')) {
+            entity.deleteSync();
+          }
+        }
+      }
+      print('✅ Baseline updated from all current snapshots.\n');
+    }
+
+    final manifestFile = File(
+      path.join(visualDiffDir.path, 'diff_manifest.json'),
+    );
+    if (manifestFile.existsSync()) {
+      const differ = BatchDiffer();
+      await differ.run(
+        baselineDir: baselineDir,
+        currentDir: currentDir,
+        diffOutputDir: diffOutputDir,
+        manifestFile: manifestFile,
+        site: site.name,
+        baseRef: 'baseline',
+      );
     }
 
     return 0;
