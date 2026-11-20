@@ -8,6 +8,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
 import 'package:site_shared/components/common/card.dart';
+import 'package:site_shared/components/common/fragment_target.dart';
 import 'package:site_shared/components/common/ide_explorer/markdown_component.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/common/tabs.dart';
@@ -115,6 +116,7 @@ List<CustomComponent> get _embeddableComponents => [
   const ArchitectureRecommendations(),
   const PlatformsGrid(),
   const PlatformCard(),
+  const FragmentTargetMarkdownComponent(),
   defineComponentWithAttrs('Icon', MaterialIcon.fromAttributes),
   defineComponent('OSSelector', const OsSelector()),
   defineComponentWithChild('Card', Card.fromAttributes),

@@ -59,7 +59,7 @@ If you prefer, you can use the `edge` device type on Windows,
 or use `web-server` to
 navigate to a local URL in the browser of your choice.
 
-<a id="hot-reload-web" aria-hidden="true" ></a>
+<FragmentTarget id="hot-reload-web" />
 
 :::note Hot reload on the web
 As of the Flutter 3.35 release,

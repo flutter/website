@@ -223,7 +223,7 @@ The manifest omits dotfiles, `flutter_service_worker.js`, source maps
 When you build with `--no-web-resources-cdn`, the manifest includes
 `canvaskit/**` files with `"urlHashed": false`; otherwise, it omits them.
 
-<a id="opting-in-to-webassembly" aria-hidden="true"></a>
+<FragmentTarget id="opting-in-to-webassembly" />
 
 ## Deploy WebAssembly in production {:#deploy-webassembly-in-production}
 
@@ -337,7 +337,7 @@ To get started, [install or update][install-firebase-cli] the Firebase CLI:
 npm install -g firebase-tools
 ```
 
-<a id="initialize-firebase" aria-hidden="true"></a>
+<FragmentTarget id="initialize-firebase" />
 
 ### Initialize and deploy
 
