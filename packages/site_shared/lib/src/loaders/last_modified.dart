@@ -78,12 +78,6 @@ final class GitLastModifiedIndex {
     );
   }
 
-  static GitLastModifiedIndex? _defaultInstance;
-
-  /// Shared lazily initialized index for the active process working directory.
-  static GitLastModifiedIndex get defaultInstance =>
-      _defaultInstance ??= GitLastModifiedIndex.forCurrentProject();
-
   final String? repositoryRoot;
   final String projectRoot;
   final Map<String, DateTime> _lastModifiedPerPath;
