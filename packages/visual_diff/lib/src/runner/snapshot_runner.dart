@@ -13,6 +13,7 @@ import 'package:puppeteer/puppeteer.dart';
 
 import '../models/header_metadata.dart';
 import 'content_hasher.dart';
+import 'font_cache.dart';
 import 'header_extractor.dart';
 import 'route_discovery.dart';
 import 'snapshot_server.dart';
@@ -25,6 +26,7 @@ final class SnapshotRunner {
   final bool hideCookieBanner;
   final int maxHeight;
   final bool disableJavaScript;
+  final FontCache fontCache;
 
   SnapshotRunner({
     this.customChromePath,
@@ -32,7 +34,14 @@ final class SnapshotRunner {
     this.hideCookieBanner = true,
     this.maxHeight = 4500,
     this.disableJavaScript = true,
-  });
+    FontCache? fontCache,
+    Directory? fontCacheDirectory,
+  }) : fontCache =
+           fontCache ??
+           FontCache(
+             cacheDirectory:
+                 fontCacheDirectory ?? FontCache.defaultCacheDirectory(),
+           );
 
   /// Captures snapshots of [routes] from [server] and saves them
   /// to [outputDirectory].
@@ -99,7 +108,9 @@ final class SnapshotRunner {
     // threads instead of bottlenecking on a single process.
     final browserPoolSize = (workerCount / 2).clamp(1, 4).toInt();
 
-    final browsers = await Future.wait(
+    // Pre-warm font cache concurrently while Chromium instances launch.
+    final prewarmFuture = fontCache.prewarm();
+    final browsersFuture = Future.wait(
       List.generate(
         browserPoolSize,
         (_) => puppeteer.launch(
@@ -125,6 +136,9 @@ final class SnapshotRunner {
         ),
       ),
     );
+
+    final browsers = await browsersFuture;
+    await prewarmFuture;
 
     var capturedCount = 0;
     final totalExpectedSnapshots = expectedTotalRoutes != null
@@ -262,24 +276,42 @@ final class SnapshotRunner {
             }
 
             // Speed optimization 1: Abort all external third-party requests
-            // (e.g. analytics, tracking, ads) while allowing fonts and
-            // icon glyphs (Google Fonts, Material Symbols) to load.
+            // (e.g. analytics, tracking, ads). Fonts are intercepted and
+            // served locally from the FontCache in 0ms without network calls.
             var inFlightRequests = 0;
             await page.setRequestInterception(true);
             page.onRequest.listen((request) async {
               final uri = Uri.tryParse(request.url);
               final host = uri?.host.toLowerCase() ?? '';
-              final isAllowed =
-                  host == 'localhost' ||
-                  host == '127.0.0.1' ||
-                  host == 'fonts.googleapis.com' ||
-                  host == 'fonts.gstatic.com' ||
-                  host.endsWith('.gstatic.com') ||
-                  host.endsWith('.googleapis.com') ||
-                  uri?.scheme == 'data';
-              if (isAllowed) {
-                inFlightRequests++;
+              if (uri != null &&
+                  (host == 'localhost' ||
+                      host == '127.0.0.1' ||
+                      uri.scheme == 'data')) {
                 await request.continueRequest();
+              } else if (FontCache.isFontUrl(request.url)) {
+                inFlightRequests++;
+                try {
+                  final cached = await fontCache.getOrFetch(
+                    request.url,
+                    requestHeaders: request.headers,
+                  );
+                  if (cached != null) {
+                    await request.respond(
+                      status: cached.status,
+                      contentType: cached.contentType,
+                      headers: cached.headers,
+                      body: cached.bodyBytes,
+                    );
+                  } else {
+                    await request.continueRequest();
+                  }
+                } catch (_) {
+                  try {
+                    await request.abort();
+                  } catch (_) {}
+                } finally {
+                  if (inFlightRequests > 0) inFlightRequests--;
+                }
               } else {
                 await request.abort();
               }
@@ -362,13 +394,18 @@ final class SnapshotRunner {
                   );
                 } catch (_) {}
 
-                // Wait for any in-flight font or asset requests to finish.
-                final fontDeadline = DateTime.now().add(
-                  const Duration(milliseconds: 1000),
-                );
-                while (inFlightRequests > 0 &&
-                    DateTime.now().isBefore(fontDeadline)) {
-                  await Future<void>.delayed(const Duration(milliseconds: 20));
+                // If an unexpected font URL was missed during prewarming,
+                // wait briefly for its in-flight fetch to complete.
+                if (inFlightRequests > 0) {
+                  final fontDeadline = DateTime.now().add(
+                    const Duration(milliseconds: 500),
+                  );
+                  while (inFlightRequests > 0 &&
+                      DateTime.now().isBefore(fontDeadline)) {
+                    await Future<void>.delayed(
+                      const Duration(milliseconds: 10),
+                    );
+                  }
                 }
 
                 // Ensure local and icon fonts are rendered.
@@ -378,11 +415,6 @@ final class SnapshotRunner {
                       '() => document.fonts ? document.fonts.ready : null',
                     );
                   } catch (_) {}
-                } else {
-                  // Settle delay for Chromium to decode and rasterize fonts.
-                  await Future<void>.delayed(
-                    const Duration(milliseconds: 80),
-                  );
                 }
 
                 // Extract live HTML header metadata (title, canonical, meta).
@@ -465,6 +497,7 @@ final class SnapshotRunner {
       await streamSub.cancel();
     } finally {
       await Future.wait(browsers.map((b) => b.close()));
+      fontCache.close();
     }
 
     // Persist content hashes to output directory to allow skipping next time.

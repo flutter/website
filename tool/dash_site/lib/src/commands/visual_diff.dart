@@ -233,6 +233,9 @@ final class VisualDiffCommand extends Command<int> {
       hideCookieBanner: true,
       maxHeight: maxHeight,
       disableJavaScript: !enableJavaScript,
+      fontCacheDirectory: Directory(
+        path.join(repositoryRoot, '.visual-diff', '.font-cache'),
+      ),
     );
 
     // Baseline management operations: always separate from diffing.
