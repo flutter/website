@@ -42,7 +42,7 @@ void main() {
       }
     });
 
-    test('computes deterministic global assets hash from CSS and JS', () {
+    test('computes deterministic global assets hash from CSS stylesheets', () {
       final hash1 = SiteContentHashes.computeGlobalAssetsHash(buildDir);
       final hash2 = SiteContentHashes.computeGlobalAssetsHash(buildDir);
       expect(hash1, isNotEmpty);

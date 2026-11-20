@@ -29,6 +29,8 @@ final class VisualDiffCommand extends Command<int> {
   static const String _concurrencyOption = 'concurrency';
   static const String _chromePathOption = 'chrome-path';
   static const String _outputDirOption = 'output-dir';
+  static const String _maxHeightOption = 'max-height';
+  static const String _javascriptFlag = 'javascript';
 
   VisualDiffCommand() {
     argParser.addFlag(
@@ -110,6 +112,21 @@ final class VisualDiffCommand extends Command<int> {
       _outputDirOption,
       help: 'Custom directory for visual diff artifacts.',
     );
+    argParser.addOption(
+      _maxHeightOption,
+      defaultsTo: '4500',
+      help:
+          'Maximum page snapshot height in pixels (0 for unconstrained full '
+          'page).',
+    );
+    argParser.addFlag(
+      _javascriptFlag,
+      defaultsTo: false,
+      negatable: true,
+      help:
+          'Enable JavaScript execution during snapshotting. Defaults to false '
+          'for faster initial load snapshots.',
+    );
   }
 
   @override
@@ -148,6 +165,9 @@ final class VisualDiffCommand extends Command<int> {
     final concurrency =
         int.tryParse(results?.option(_concurrencyOption) ?? '4') ?? 4;
     final chromePath = results?.option(_chromePathOption);
+    final maxHeight =
+        int.tryParse(results?.option(_maxHeightOption) ?? '4500') ?? 4500;
+    final enableJavaScript = results.get<bool>(_javascriptFlag, false);
 
     final RegExp? filterRegex;
     if (filterPattern != null && filterPattern.isNotEmpty) {
@@ -201,6 +221,8 @@ final class VisualDiffCommand extends Command<int> {
       customChromePath: chromePath,
       concurrency: concurrency,
       hideCookieBanner: true,
+      maxHeight: maxHeight,
+      disableJavaScript: !enableJavaScript,
     );
 
     // Baseline management operations: always separate from diffing.

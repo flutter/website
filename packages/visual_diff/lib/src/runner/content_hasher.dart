@@ -78,8 +78,13 @@ final class SiteContentHashes {
     );
   }
 
-  /// Finds all `.css` and `.js` files in [buildDir] and computes an aggregate
+  /// Finds all `.css` stylesheet files in [buildDir] and computes an aggregate
   /// MD5 hash based on their paths and contents.
+  ///
+  /// We purposefully restrict global asset hashing to CSS files. JavaScript
+  /// bundle compilation (e.g. Dart2JS deferred parts) embeds compilation
+  /// timestamps and symbol hashes that change on every build even when no
+  /// visual or code changes occurred.
   static String computeGlobalAssetsHash(Directory buildDir) {
     if (!buildDir.existsSync()) return '';
 
@@ -87,7 +92,7 @@ final class SiteContentHashes {
     for (final entity in buildDir.listSync(recursive: true)) {
       if (entity is File) {
         final ext = path.extension(entity.path).toLowerCase();
-        if (ext == '.css' || ext == '.js') {
+        if (ext == '.css') {
           final relPath = path.relative(entity.path, from: buildDir.path);
           assetFiles[relPath] = entity;
         }

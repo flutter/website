@@ -44,6 +44,32 @@ final class SnapshotServer {
               file.path.endsWith('.html') || file.path.endsWith('.htm');
           if (isHtml) {
             request.response.headers.set('Cache-Control', 'no-cache');
+            request.response.headers.add('Access-Control-Allow-Origin', '*');
+            final content = file.readAsStringSync();
+            const injectedStyle =
+                '<style id="__visual_diff_injected__">'
+                '.glue-cookie-notification-bar,'
+                '[class*="glue-cookie-notification-bar"],'
+                '#glue-cookie-notification-bar-1{'
+                'display:none!important;'
+                'visibility:hidden!important;'
+                'opacity:0!important;'
+                'pointer-events:none!important'
+                '}'
+                '*,*::before,*::after{'
+                'transition-duration:0s!important;'
+                'animation-duration:0s!important;'
+                'transition-delay:0s!important;'
+                'animation-delay:0s!important'
+                '}'
+                '</style>';
+
+            final modified = content.contains('</head>')
+                ? content.replaceFirst('</head>', '$injectedStyle</head>')
+                : '$content$injectedStyle';
+            request.response.write(modified);
+            await request.response.close();
+            return;
           } else {
             // Speed optimization: Allow browser to cache CSS, JS, fonts,
             // and images in memory instead of refetching on every route.
@@ -51,10 +77,10 @@ final class SnapshotServer {
               'Cache-Control',
               'public, max-age=3600, immutable',
             );
+            request.response.headers.add('Access-Control-Allow-Origin', '*');
+            await file.openRead().pipe(request.response);
+            return;
           }
-          request.response.headers.add('Access-Control-Allow-Origin', '*');
-          await file.openRead().pipe(request.response);
-          return;
         }
 
         // Check for 404.html fallback.

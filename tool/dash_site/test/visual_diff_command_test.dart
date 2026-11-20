@@ -37,6 +37,8 @@ void main() {
       expect(parser.options.containsKey('concurrency'), isTrue);
       expect(parser.options.containsKey('chrome-path'), isTrue);
       expect(parser.options.containsKey('output-dir'), isTrue);
+      expect(parser.options.containsKey('max-height'), isTrue);
+      expect(parser.options.containsKey('javascript'), isTrue);
 
       // Verify removed / deprecated flags
       expect(parser.options.containsKey('base'), isFalse);

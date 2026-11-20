@@ -6,6 +6,7 @@ import 'dart:async';
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
 
 import 'package:path/path.dart' as path;
 import 'package:puppeteer/puppeteer.dart';
@@ -22,11 +23,15 @@ final class SnapshotRunner {
   final String? customChromePath;
   final int concurrency;
   final bool hideCookieBanner;
+  final int maxHeight;
+  final bool disableJavaScript;
 
   SnapshotRunner({
     this.customChromePath,
     this.concurrency = 6,
     this.hideCookieBanner = true,
+    this.maxHeight = 4500,
+    this.disableJavaScript = true,
   });
 
   /// Captures snapshots of [routes] from [server] and saves them
@@ -100,7 +105,7 @@ final class SnapshotRunner {
         (_) => puppeteer.launch(
           executablePath: chromePath,
           headless: true,
-          args: const [
+          args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
             '--disable-dev-shm-usage',
@@ -115,6 +120,7 @@ final class SnapshotRunner {
             '--no-first-run',
             '--no-default-browser-check',
             '--disable-features=Translate,BackForwardCache,MediaRouter',
+            if (disableJavaScript) '--disable-javascript',
           ],
         ),
       ),
@@ -251,6 +257,10 @@ final class SnapshotRunner {
         workers.add(() async {
           final page = await browser.newPage();
           try {
+            if (disableJavaScript) {
+              await page.setJavaScriptEnabled(false);
+            }
+
             // Speed optimization 1: Abort all external third-party requests
             // (e.g. analytics, CDNs, fonts) to prevent network stalls.
             await page.setRequestInterception(true);
@@ -268,27 +278,29 @@ final class SnapshotRunner {
 
             // Speed optimization 2: Inject cookie-hiding CSS and disable
             // transitions/animations so rendering is immediate and stable.
-            await page.evaluateOnNewDocument(r'''() => {
-              const style = document.createElement('style');
-              style.id = '__visual_diff_injected__';
-              style.textContent = `
-                .glue-cookie-notification-bar,
-                [class*="glue-cookie-notification-bar"],
-                #glue-cookie-notification-bar-1 {
-                  display: none !important;
-                  visibility: hidden !important;
-                  opacity: 0 !important;
-                  pointer-events: none !important;
-                }
-                *, *::before, *::after {
-                  transition-duration: 0s !important;
-                  animation-duration: 0s !important;
-                  transition-delay: 0s !important;
-                  animation-delay: 0s !important;
-                }
-              `;
-              (document.head || document.documentElement).appendChild(style);
-            }''');
+            if (!disableJavaScript) {
+              await page.evaluateOnNewDocument(r'''() => {
+                const style = document.createElement('style');
+                style.id = '__visual_diff_injected__';
+                style.textContent = `
+                  .glue-cookie-notification-bar,
+                  [class*="glue-cookie-notification-bar"],
+                  #glue-cookie-notification-bar-1 {
+                    display: none !important;
+                    visibility: hidden !important;
+                    opacity: 0 !important;
+                    pointer-events: none !important;
+                  }
+                  *, *::before, *::after {
+                    transition-duration: 0s !important;
+                    animation-duration: 0s !important;
+                    transition-delay: 0s !important;
+                    animation-delay: 0s !important;
+                  }
+                `;
+                (document.head || document.documentElement).appendChild(style);
+              }''');
+            }
 
             SnapshotViewport? currentViewport;
 
@@ -333,37 +345,69 @@ final class SnapshotRunner {
                   );
                 } catch (_) {}
 
-                // Ensure local fonts are rendered.
-                try {
-                  await page.evaluate<Object?>(
-                    '() => document.fonts ? document.fonts.ready : null',
-                  );
-                } catch (_) {}
-
-                // Extract live HTML header metadata (title, canonical, meta).
-                if (!capturedMetadata.containsKey(route)) {
+                // Ensure local fonts are rendered when JS is enabled.
+                if (!disableJavaScript) {
                   try {
-                    final rawMeta = await page.evaluate<Map<String, dynamic>?>(
-                      puppeteerHeaderExtractionScript,
+                    await page.evaluate<Object?>(
+                      '() => document.fonts ? document.fonts.ready : null',
                     );
-                    if (rawMeta != null) {
-                      capturedMetadata[route] = HeaderMetadata.fromJson(
-                        rawMeta,
-                      );
-                    }
                   } catch (_) {}
                 }
 
-                // Render next animation frame for visual stability.
-                try {
-                  await page.evaluate<void>(
-                    '() => new Promise(requestAnimationFrame)',
-                  );
-                } catch (_) {}
+                // Extract live HTML header metadata (title, canonical, meta).
+                if (!capturedMetadata.containsKey(route)) {
+                  if (buildDirectory != null) {
+                    final htmlFile = SiteContentHashes.resolveRouteHtmlFile(
+                      buildDirectory,
+                      route,
+                    );
+                    if (htmlFile != null && htmlFile.existsSync()) {
+                      try {
+                        capturedMetadata[route] =
+                            await extractHeaderMetadataFromFile(htmlFile);
+                      } catch (_) {}
+                    }
+                  }
+                  if (!capturedMetadata.containsKey(route) &&
+                      !disableJavaScript) {
+                    try {
+                      final rawMeta = await page
+                          .evaluate<Map<String, dynamic>?>(
+                            puppeteerHeaderExtractionScript,
+                          );
+                      if (rawMeta != null) {
+                        capturedMetadata[route] = HeaderMetadata.fromJson(
+                          rawMeta,
+                        );
+                      }
+                    } catch (_) {}
+                  }
+                }
+
+                // Render next animation frame when JS is enabled.
+                if (!disableJavaScript) {
+                  try {
+                    await page.evaluate<void>(
+                      '() => new Promise(requestAnimationFrame)',
+                    );
+                  } catch (_) {}
+                }
+
+                final int captureHeight;
+                if (maxHeight > 0) {
+                  final metrics = await page.devTools.page.getLayoutMetrics();
+                  final scrollHeight = metrics.cssContentSize.height.round();
+                  captureHeight = min(scrollHeight, maxHeight);
+                } else {
+                  captureHeight = 0;
+                }
 
                 final bytes = await page.screenshot(
                   format: ScreenshotFormat.png,
-                  fullPage: true,
+                  fullPage: captureHeight <= 0,
+                  clip: captureHeight > 0
+                      ? Rectangle(0, 0, viewport.width, captureHeight)
+                      : null,
                 );
                 await File(outputPath).writeAsBytes(bytes);
                 capturedCount++;
