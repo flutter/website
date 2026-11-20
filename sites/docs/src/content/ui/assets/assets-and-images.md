@@ -514,7 +514,7 @@ For more details, see
 
 [add-to-app]: /add-to-app/ios
 [Adding a splash screen to your Android app]: /platform-integration/android/splash-screen
-[Adding a splash screen to your iOS app]: /platform-integration/ios/splash-screen
+[Adding a splash screen to your iOS app]: /platform-integration/ios/launch-screen
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`AssetImage`]: {{site.api}}/flutter/painting/AssetImage-class.html
 [`DefaultAssetBundle`]: {{site.api}}/flutter/widgets/DefaultAssetBundle-class.html

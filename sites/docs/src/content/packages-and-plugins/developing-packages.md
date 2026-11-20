@@ -1101,8 +1101,8 @@ file, like any other Dart package.
 [Flutter Favorites program]: /packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
 [helper isolate]: {{site.dart-site}}/guides/language/concurrency#background-workers
-[How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
-[How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin
+[How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2
 [issue #33302]: {{site.repo.flutter}}/issues/33302
 [multiple Flutter engines]: /add-to-app/multiple-flutters
 [`LICENSE`]: #adding-licenses-to-the-license-file
@@ -1134,4 +1134,4 @@ automatically discover your instructions. To learn more about authoring
 guidelines and best practices, check out
 [Ship skills with packages](https://dart.dev/tools/pub/package-skills).
 
-[Writing a good plugin]: {{site.flutter-blog}}/writing-a-good-flutter-plugin-1a561b986c9c
+[Writing a good plugin]: {{site.flutter-blog}}/writing-a-good-flutter-plugin
