@@ -7,36 +7,12 @@ import 'dart:convert';
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/developer_profiles.dart';
-import 'package:site_shared/util.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
+import '../../utils/gdp_signin.dart';
+import '../common/gdp_signin_elements.dart';
 import '../common/icon.dart';
-
-/// The OAuth 2.0 client ID used to request
-/// Google Developer Profiles API access tokens.
-///
-/// Provide or override it at build time with
-/// `--dart-define=GDP_OAUTH_CLIENT_ID=<client-id>`.
-///
-/// Production builds default to [_prodOauthClientId]. Non-production builds,
-/// including local development and PR previews, have no default, so they must
-/// provide a client ID explicitly.
-const String _oauthClientId = String.fromEnvironment(
-  'GDP_OAUTH_CLIENT_ID',
-  defaultValue: productionBuild ? _prodOauthClientId : '',
-);
-
-/// The OAuth 2.0 client for `flutter.dev` in production.
-///
-/// OAuth client IDs for browser apps are public by design. Which sites can use
-/// this one is restricted by the authorized JavaScript origins configured on
-/// the client (`https://flutter.dev`).
-const String _prodOauthClientId =
-    '689428580108-90tt42dajs2fkt6rgjp69bq8itila8st.apps.googleusercontent.com';
-
-const String _gisScriptUrl = 'https://accounts.google.com/gsi/client';
 
 /// A sign-up form that uses Google Sign-In to
 /// create or update the user's Google Developer profile,
@@ -181,12 +157,7 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
         });
       });
     }
-    // Load Google Identity Services up front, so that clicking the button
-    // can open the sign-in popup synchronously, within the user gesture.
-    // Otherwise, browsers might block the popup.
-    if (kIsWeb && _oauthClientId.isNotEmpty) {
-      unawaited(_loadGoogleIdentityServices().catchError((Object _) {}));
-    }
+    preloadGoogleIdentityServices();
   }
 
   @override
@@ -202,49 +173,17 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
     });
 
     try {
-      final accessToken = await _requestAccessToken();
-      final client = DeveloperProfilesClient(
-        accessToken: accessToken,
-        environment: productionBuild ? .production : .staging,
-      );
+      final profile = await signInAndEnrollFlutterGdp();
 
-      try {
-        final originUri = web.window.location.href;
-        final profile = await client.ensureProfile(
-          eventEmail: .enabled,
-          originUri: originUri,
-        );
-        await client.addInterests(profile.name, const [
-          flutterInterestNodeId,
-          dartInterestNodeId,
-        ]);
-        await client.joinProgramGroup(
-          profile.name,
-          flutterProgramGroupId,
-          emailPreferences: const {
-            flutterDevUpdatesEmailPreferenceId: .enabled,
-          },
-          originUri: originUri,
-        );
-
-        // Persist the sign-up and notify every form on the page,
-        // including this one.
-        _recordSignup(created: profile.created);
-      } finally {
-        client.close();
-      }
+      // Persist the sign-up and notify every form on the page,
+      // including this one.
+      _recordSignup(created: profile.created);
     } on Object catch (e) {
       web.console.error('Flutter Create sign-in failed: $e'.toJS);
       if (!mounted) return;
       setState(() {
         _status = .error;
-        _errorMessage = switch (e) {
-          _SignInError(:final message) => message,
-          DeveloperProfilesException(:final statusCode, :final message)
-              when !productionBuild =>
-            'Developer Profiles API error ($statusCode): $message',
-          _ => 'Something went wrong. Please try again later.',
-        };
+        _errorMessage = formatGdpSignInError(e);
       });
     }
   }
@@ -266,7 +205,7 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
             ),
           ]),
           ..._buildErrors(),
-          const _FinePrint(),
+          const GdpSignInDisclosure(classes: 'fc-fine-print'),
         ]),
         const div(classes: 'fc-swap-done', [
           div(classes: 'fc-hero-signup-done', [
@@ -290,7 +229,7 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
         ]),
         _buildSignInButton(hero: false),
         ..._buildErrors(),
-        const _FinePrint(),
+        const GdpSignInDisclosure(classes: 'fc-fine-print'),
       ]),
       div(classes: 'fc-swap-done fc-signup-success', [
         const span(classes: 'fc-success-icon', [Icon(symbol: 'celebration')]),
@@ -312,6 +251,7 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
             classes: 'btn fc-btn-outline-dark',
             href: 'https://developers.google.com/profile/u/me',
             target: Target.blank,
+            attributes: {'rel': 'noopener'},
             [.text('View your profile')],
           ),
           _SwitchAccountButton(),
@@ -323,10 +263,11 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
   Component _buildSignInButton({required bool hero}) {
     return button(
       classes: hero ? 'fc-google-btn fc-google-btn-hero' : 'fc-google-btn',
-      disabled: _status == .working || _oauthClientId.isEmpty,
+      type: ButtonType.button,
+      disabled: _status == .working || gdpOauthClientId.isEmpty,
       onClick: () => unawaited(_onSignIn()),
       [
-        const _GoogleLogo(),
+        const GoogleLogo(classes: 'fc-google-logo'),
         span([
           .text(
             _status == .working ? 'Signing you in…' : 'Sign in with Google',
@@ -337,7 +278,7 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
   }
 
   List<Component> _buildErrors() => [
-    if (_oauthClientId.isEmpty)
+    if (gdpOauthClientId.isEmpty)
       const p(classes: 'fc-signup-error', [
         .text('Sign-in is not configured for this build.'),
       ]),
@@ -360,195 +301,4 @@ class _SwitchAccountButton extends StatelessComponent {
       [.text('Use a different account')],
     );
   }
-}
-
-/// The disclosure shown next to each sign-in button.
-class _FinePrint extends StatelessComponent {
-  const _FinePrint();
-
-  @override
-  Component build(BuildContext context) {
-    return const p(classes: 'fc-fine-print', [
-      .text(
-        'Signing up creates or updates your Google Developer Program '
-        'profile, joins the Flutter Developer Community, adds Flutter '
-        'and Dart to your interests, and opts you in to emails. ',
-      ),
-      a(
-        href: 'https://developers.google.com/profile/terms',
-        target: Target.blank,
-        [.text('Program terms')],
-      ),
-      .text(' · '),
-      a(
-        href: 'https://policies.google.com/privacy',
-        target: Target.blank,
-        [.text('Privacy policy')],
-      ),
-    ]);
-  }
-}
-
-/// The multicolor Google "G" logo.
-class _GoogleLogo extends StatelessComponent {
-  const _GoogleLogo();
-
-  @override
-  Component build(BuildContext context) {
-    return const RawText(
-      '<svg class="fc-google-logo" viewBox="0 0 48 48" aria-hidden="true">'
-      '<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85'
-      'C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19'
-      'C12.43 13.72 17.74 9.5 24 9.5z"/>'
-      '<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02'
-      'h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 '
-      '7.09-17.65z"/>'
-      '<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59'
-      's.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 '
-      '2.56 10.78l7.97-6.19z"/>'
-      '<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6'
-      'c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19'
-      'C6.51 42.62 14.62 48 24 48z"/>'
-      '</svg>',
-    );
-  }
-}
-
-/// Thrown when Google Sign-In doesn't return an access token.
-final class _SignInError implements Exception {
-  const _SignInError(this.message, {this.code});
-
-  /// Creates an error for the specified Google Identity Services error [code].
-  factory _SignInError.fromCode(String code, {String? description}) {
-    final message = switch (code) {
-      'popup_closed' ||
-      'access_denied' => 'Sign-in was cancelled. Please try again.',
-      'popup_failed_to_open' =>
-        'Your browser blocked the sign-in popup. '
-            'Allow popups for this site and try again.',
-      _ when productionBuild =>
-        "Google couldn't sign you in. Please try again later.",
-      _ =>
-        "Google couldn't sign you in ($code)"
-            '${description != null ? ': $description' : ''}.',
-    };
-    return _SignInError(message, code: code);
-  }
-
-  /// A user-facing description of the error.
-  final String message;
-
-  /// The Google Identity Services error code, if any.
-  final String? code;
-
-  @override
-  String toString() => '_SignInError(${code ?? 'unknown'}): $message';
-}
-
-/// Prompts the user to sign in with Google and
-/// returns an access token for the Developer Profiles API.
-Future<String> _requestAccessToken() async {
-  // Only wait if the library isn't loaded yet, since awaiting can cause
-  // the browser to treat the popup as not initiated by the user.
-  if (!_gisLoaded) await _loadGoogleIdentityServices();
-
-  final completer = Completer<String>();
-  final tokenClient = _initTokenClient(
-    _TokenClientConfig(
-      client_id: _oauthClientId,
-      scope: developerProfilesScope,
-      callback: (_TokenResponse response) {
-        if (completer.isCompleted) return;
-        if (response.access_token case final token? when token.isNotEmpty) {
-          completer.complete(token);
-        } else {
-          completer.completeError(
-            _SignInError.fromCode(
-              response.error ?? 'unknown',
-              description: response.error_description,
-            ),
-          );
-        }
-      }.toJS,
-      error_callback: (_TokenClientError error) {
-        if (completer.isCompleted) return;
-        completer.completeError(
-          _SignInError.fromCode(
-            error.type ?? 'unknown',
-            description: error.message,
-          ),
-        );
-      }.toJS,
-    ),
-  );
-  tokenClient.requestAccessToken();
-
-  return await completer.future;
-}
-
-/// Whether the Google Identity Services library has finished loading.
-bool _gisLoaded = false;
-
-Future<void>? _gisLoading;
-
-/// Loads the Google Identity Services client library, at most once.
-Future<void> _loadGoogleIdentityServices() {
-  return _gisLoading ??= () {
-    final completer = Completer<void>();
-    final script = web.HTMLScriptElement()
-      ..src = _gisScriptUrl
-      ..async = true
-      ..defer = true;
-    script
-      ..addEventListener(
-        'load',
-        (web.Event _) {
-          _gisLoaded = true;
-          completer.complete();
-        }.toJS,
-      )
-      ..addEventListener(
-        'error',
-        (web.Event _) {
-          _gisLoading = null;
-          completer.completeError(
-            StateError('Failed to load Google Identity Services.'),
-          );
-        }.toJS,
-      );
-    web.document.head!.append(script);
-    return completer.future;
-  }();
-}
-
-@JS('google.accounts.oauth2.initTokenClient')
-external _TokenClient _initTokenClient(_TokenClientConfig config);
-
-extension type _TokenClient(JSObject _) implements JSObject {
-  external void requestAccessToken();
-}
-
-// The property names must match the snake_case names
-// expected by Google Identity Services.
-// ignore_for_file: non_constant_identifier_names
-
-@anonymous
-extension type _TokenClientConfig._(JSObject _) implements JSObject {
-  external factory _TokenClientConfig({
-    required String client_id,
-    required String scope,
-    required JSFunction callback,
-    JSFunction? error_callback,
-  });
-}
-
-extension type _TokenResponse(JSObject _) implements JSObject {
-  external String? get access_token;
-  external String? get error;
-  external String? get error_description;
-}
-
-extension type _TokenClientError(JSObject _) implements JSObject {
-  external String? get type;
-  external String? get message;
 }
