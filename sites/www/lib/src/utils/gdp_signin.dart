@@ -82,6 +82,9 @@ String formatGdpSignInError(Object error) {
 /// gesture.
 void preloadGoogleIdentityServices() {
   if (kIsWeb && gdpOauthClientId.isNotEmpty) {
+    // Preload the script in the background so clicking sign-in can open the
+    // popup synchronously within the user gesture; load errors are retried on
+    // demand in `_requestAccessToken`.
     unawaited(_loadGoogleIdentityServices().catchError((Object _) {}));
   }
 }

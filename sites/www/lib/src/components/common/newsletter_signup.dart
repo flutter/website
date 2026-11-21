@@ -151,6 +151,8 @@ class _NewsletterSignupState extends State<NewsletterSignup> {
 
   @override
   void dispose() {
+    // `dispose` is synchronous, so the broadcast subscription cancel future
+    // cannot be awaited.
     unawaited(_signupSubscription?.cancel());
     super.dispose();
   }
@@ -194,6 +196,8 @@ class _NewsletterSignupState extends State<NewsletterSignup> {
           classes: 'gdp-google-btn',
           type: ButtonType.button,
           disabled: _status == .working || gdpOauthClientId.isEmpty,
+          // Jaspr's `onClick` callback is synchronous; `_onSignIn` manages its
+          // own loading and error state.
           onClick: () => unawaited(_onSignIn()),
           [
             const GoogleLogo(classes: 'gdp-google-logo'),

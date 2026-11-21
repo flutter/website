@@ -162,6 +162,8 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
 
   @override
   void dispose() {
+    // `dispose` is synchronous, so the broadcast subscription cancel future
+    // cannot be awaited.
     unawaited(_signupSubscription?.cancel());
     super.dispose();
   }
@@ -265,6 +267,8 @@ class _FlutterCreateSignupState extends State<FlutterCreateSignup> {
       classes: hero ? 'fc-google-btn fc-google-btn-hero' : 'fc-google-btn',
       type: ButtonType.button,
       disabled: _status == .working || gdpOauthClientId.isEmpty,
+      // Jaspr's `onClick` callback is synchronous; `_onSignIn` manages its own
+      // loading and error state.
       onClick: () => unawaited(_onSignIn()),
       [
         const GoogleLogo(classes: 'fc-google-logo'),
