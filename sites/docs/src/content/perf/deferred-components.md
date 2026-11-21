@@ -41,21 +41,29 @@ Android app for deferred loading.
 
 ### Step 1: Dependencies and initial project setup
 
+**Flutter SDK compatibility:** Play Feature Delivery 2.1.0 must be compatible
+with the Play APIs used by the Flutter Android embedding. Flutter SDK releases
+whose embedding was built against Play Core 1.x are incompatible and can fail
+with a `NoSuchMethodError` at runtime. Update to a Flutter release that
+includes the corresponding embedding migration before applying these
+instructions. Track the migration in [Flutter issue #195160][].
+
 <ol>
 <li>
 
-Add Play Core to the Android app's
-build.gradle dependencies.
-In `android/app/build.gradle` add the following:
+Add Play Feature Delivery 2.1.0 to the Android app's
+dependencies. Play Core 1.x is rejected for apps targeting
+Android 14 (API 34) or later. In the app-level
+`build.gradle` or `build.gradle.kts` file, add the following:
 
-<Tabs key="android-play-core">
+<Tabs key="android-feature-delivery">
 <Tab name="Kotlin">
 
 ```kotlin title="android/app/build.gradle.kts"
 ...
 dependencies {
   ...
-  implementation("com.google.android.play:core:1.8.0")
+  implementation("com.google.android.play:feature-delivery:2.1.0")
   ...
 }
 ```
@@ -67,7 +75,7 @@ dependencies {
 ...
 dependencies {
   ...
-  implementation "com.google.android.play:core:1.8.0"
+  implementation "com.google.android.play:feature-delivery:2.1.0"
   ...
 }
 ```
@@ -96,7 +104,7 @@ the `android:name` property on the application in
 </manifest>
 ```
 
-`io.flutter.app.FlutterPlayStoreSplitApplication` handles
+`io.flutter.embedding.android.FlutterPlayStoreSplitApplication` handles
 both of these tasks for you. If you use
 `FlutterPlayStoreSplitApplication`,
 you can skip to step 1.3.
@@ -104,7 +112,7 @@ you can skip to step 1.3.
 If your Android application
 is large or complex, you might want to separately support
 `SplitCompat` and provide the
-`PlayStoreDynamicFeatureManager` manually.
+`PlayStoreDeferredComponentManager` manually.
 
 To support `SplitCompat`, there are three methods
 (as detailed in the [Android docs][]), any of which are valid:
@@ -162,7 +170,7 @@ the Flutter embedder by adding the following code
 to your app initialization:
 
 ```java
-import io.flutter.embedding.engine.dynamicfeatures.PlayStoreDeferredComponentManager;
+import io.flutter.embedding.engine.deferredcomponents.PlayStoreDeferredComponentManager;
 import io.flutter.FlutterInjector;
 ...
 PlayStoreDeferredComponentManager deferredComponentManager = new
@@ -419,7 +427,7 @@ to the name of a deferred component to install. For example:
 ...
 <application
     android:label="MyApp"
-    android:name="io.flutter.app.FlutterPlayStoreSplitApplication"
+    android:name="io.flutter.embedding.android.FlutterPlayStoreSplitApplication"
     android:icon="@mipmap/ic_launcher">
     ...
     <meta-data android:name="io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager.loadingUnitMapping" android:value="2:boxComponent"/>
@@ -681,6 +689,7 @@ Play store's delivery feature.
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
 [Flutter Gallery's `lib/deferred_widget.dart`]: {{site.repo.gallery-archive}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
+[Flutter issue #195160]: https://github.com/flutter/flutter/issues/195160
 [github.com/google/bundletool/releases]: https://github.com/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 [release or profile mode]: /testing/build-modes
