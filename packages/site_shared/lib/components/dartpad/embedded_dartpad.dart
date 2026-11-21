@@ -40,7 +40,7 @@ final class EmbeddedDartPad extends StatefulComponent {
   /// It must be unique within the document and a valid HTML element ID.
   ///
   /// The [scheme] and [host] are used to construct the DartPad iframe URL.
-  /// [scheme] defaults to 'https' and [host] defaults to 'dartpad.dev'.
+  /// [scheme] defaults to 'https' and [host] defaults to 'preview.dartpad.dev'.
   ///
   /// To control the appearance of the embedded DartPad,
   /// you can switch to the [embedLayout] and choose a specific [theme].
@@ -58,7 +58,7 @@ final class EmbeddedDartPad extends StatefulComponent {
   }) {
     final dartPadUrl = Uri(
       scheme: scheme ?? 'https',
-      host: host ?? 'dartpad.dev',
+      host: host ?? 'preview.dartpad.dev',
       queryParameters: <String, String>{
         if (embedLayout ?? true) 'embed': '$embedLayout',
         if (theme != DartPadTheme.auto) 'theme': '$theme',
