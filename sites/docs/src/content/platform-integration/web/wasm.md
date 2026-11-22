@@ -4,7 +4,7 @@ description: >-
   Learn how to build, run, and interoperate with JavaScript and browser APIs in
   Flutter WebAssembly (Wasm) apps.
 shortTitle: Wasm
-last-update: Nov 9, 2026
+last-update: Nov 22, 2026
 ---
 
 Flutter and Dart support
@@ -138,18 +138,48 @@ unless the server is configured to send specific HTTP headers.
 
 | Name | Value |
 | :--- | :--- |
-| `Cross-Origin-Embedder-Policy` | `credentialless` or `require-corp` |
+| `Cross-Origin-Embedder-Policy` | `credentialless` (Chromium and Firefox) or `require-corp` (all browsers, including Safari) |
 | `Cross-Origin-Opener-Policy` | `same-origin` |
 
 {:.table .table-striped}
+
+Safari (WebKit) doesn't support `Cross-Origin-Embedder-Policy: credentialless`.
+To enable `window.crossOriginIsolated` and `SharedArrayBuffer` on Safari,
+return `Cross-Origin-Embedder-Policy: require-corp` and ensure cross-origin
+subresources include `Cross-Origin-Resource-Policy` or CORS headers.
 
 To learn more about these headers, check out
 [Load cross-origin resources without CORP headers using COEP: credentialless][coep].
 For production MIME types, pre-compression, cold-start optimization, and CDN
 serving, refer to [Deploy WebAssembly in production][deploy-wasm].
 
+#### Use multi-threaded mode with GPU workloads {:#multithreaded-rendering}
+
+When `window.crossOriginIsolated` is `true`, Flutter runs its 2D WebAssembly
+rasterizer on a dedicated Web Worker with an `OffscreenCanvas` object.
+This offloads display-list rasterization from the browser main thread,
+while your Dart UI code continues to run on the main isolate.
+
+Keep the following behavior in mind for custom WebGL2 or 3D workloads:
+
+- **Custom GPU contexts stay on their host thread**:
+  WebGL2 or WebGPU work that your app runs on its own `<canvas>` element or
+  `OffscreenCanvas` object executes on the thread where you create that context.
+  That context still shares the browser's
+  underlying GPU command queue with Flutter.
+- **Per-frame `ImageBitmap` imports cross worker boundaries**:
+  In multi-threaded mode, importing a new `ImageBitmap` object every frame with
+  `ui_web.createImageFromImageBitmap` or `ui_web.createImageFromTextureSource`
+  transfers handles across Web Worker `postMessage` boundaries.
+  For full-viewport 3D scenes, composite a DOM `<canvas>` element with an
+  `HtmlElementView` widget to avoid per-frame texture copies.
+  Alternatively, force single-threaded WebAssembly rendering by setting the
+  `forceSingleThreadedSkwasm` option to `true` in
+  [Flutter web app initialization][force-st-wasm].
+
 [coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
 [deploy-wasm]: /deployment/web#deploy-webassembly-in-production
+[force-st-wasm]: /platform-integration/web/initialization#forcesinglethreadedskwasm
 
 ## Learn more about browser compatibility
 
