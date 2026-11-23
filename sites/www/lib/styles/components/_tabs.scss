@@ -59,7 +59,7 @@
   .tab-content {
     display: none;
     grid-template-columns: 1fr;
-    transform: translate3d(0, var(--anim-offset), 0);
+    transform: translateY(var(--anim-offset));
     opacity: 0;
     position: relative;
 
