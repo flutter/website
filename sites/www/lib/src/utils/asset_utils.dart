@@ -48,7 +48,7 @@ class ResizingAssetTransformer implements AssetTransformer {
       return asset;
     }
 
-    final headerDecoder = _createDecoder(asset.path);
+    final headerDecoder = img.findDecoderForNamedImage(asset.path);
     if (headerDecoder == null) {
       return asset;
     }
@@ -93,14 +93,6 @@ class ResizingAssetTransformer implements AssetTransformer {
   }
 }
 
-img.Decoder? _createDecoder(String assetPath) {
-  final decoder = img.findDecoderForNamedImage(assetPath);
-  if (decoder is img.WebPDecoder) {
-    decoder.maxPixels = 0;
-  }
-  return decoder;
-}
-
 ({img.Image image, bool losslessWebP})? _decodeSourceForResize(
   String assetPath,
   img.Decoder headerDecoder,
@@ -112,18 +104,17 @@ img.Decoder? _createDecoder(String assetPath) {
     return null;
   }
 
-  // Decode with a fresh decoder instance because stateful decoders such as
-  // PngDecoder append to internal chunk/frame lists on each startDecode call.
-  final decoder = _createDecoder(assetPath);
-  var image = decoder?.decode(sourceBytes);
-  if (image == null || image.width <= targetWidth) {
+  // Keep animated WebPs as is, since decoding and
+  // re-encoding every frame is slow and memory intensive.
+  if (info is img.WebPInfo && info.hasAnimation) {
     return null;
   }
 
-  // Extract the final composited poster frame when downsizing animated WebP
-  // thumbnails so multi-megabyte animations become compact static WebPs.
-  if (decoder is img.WebPDecoder && image.hasAnimation) {
-    image = image.frames.last;
+  // Decode with a fresh decoder instance because stateful decoders such as
+  // PngDecoder append to internal chunk/frame lists on each startDecode call.
+  var image = img.decodeNamedImage(assetPath, sourceBytes);
+  if (image == null || image.width <= targetWidth) {
+    return null;
   }
 
   if (image.hasPalette) {

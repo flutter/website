@@ -56,39 +56,15 @@ void main() {
     });
 
     test(
-      'extracts and resizes the final composited poster frame on animated WebP',
+      'keeps the original animated WebP when a smaller width is requested',
       () {
-        final firstFrame = img.Image(width: 400, height: 200, frameDuration: 40)
-          ..clear(img.ColorRgba8(10, 20, 30, 255));
-        final finalFrame = _createGradientImage(width: 400, height: 200)
-          ..frameDuration = 40;
-        firstFrame.addFrame(finalFrame);
+        final animation = img.Image(width: 400, height: 200, frameDuration: 40)
+          ..addFrame(_createGradientImage(width: 400, height: 200));
+        final bytes = img.encodeWebP(animation, lossless: false, quality: 85);
+        expect(img.WebPDecoder().startDecode(bytes)!.numFrames, 2);
+        final asset = Asset.fromBytes('news/release.webp', bytes);
 
-        final animatedBytes = img.encodeWebP(
-          firstFrame,
-          lossless: false,
-          quality: 85,
-        );
-        final asset = Asset.fromBytes('news/release.webp', animatedBytes);
-
-        final result = transformer.transform(asset, 200);
-
-        expect(result.path, 'news/release.w200.webp');
-        final resizedBytes = result.readAsBytes();
-        expect(
-          resizedBytes.lengthInBytes,
-          lessThan(animatedBytes.lengthInBytes),
-        );
-
-        final decoded = img.decodeWebP(resizedBytes);
-        expect(decoded, isNotNull);
-        expect(decoded!.numFrames, 1);
-        expect(decoded.width, 200);
-        expect(decoded.height, 100);
-        // Verify the poster comes from the final frame rather than the dark
-        // initial frame.
-        final centerPixel = decoded.getPixel(100, 50);
-        expect(centerPixel.r, greaterThan(40));
+        expect(transformer.transform(asset, 200), same(asset));
       },
     );
 
