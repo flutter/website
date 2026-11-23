@@ -8,8 +8,8 @@ import 'package:jaspr/client.dart';
 
 import 'package:flutter_website/src/components/common/carousel.dart'
     deferred as _carousel;
-import 'package:flutter_website/src/components/common/newsletter_form.dart'
-    deferred as _newsletter_form;
+import 'package:flutter_website/src/components/common/newsletter_signup.dart'
+    deferred as _newsletter_signup;
 import 'package:flutter_website/src/components/common/tabs.dart'
     deferred as _tabs;
 import 'package:flutter_website/src/components/layout/header.dart'
@@ -85,9 +85,9 @@ ClientOptions get defaultClientOptions => ClientOptions(
       ),
       loader: _carousel.loadLibrary,
     ),
-    'newsletter_form': ClientLoader(
-      (p) => _newsletter_form.NewsletterForm(),
-      loader: _newsletter_form.loadLibrary,
+    'newsletter_signup': ClientLoader(
+      (p) => _newsletter_signup.NewsletterSignup(),
+      loader: _newsletter_signup.loadLibrary,
     ),
     'tabs': ClientLoader(
       (p) => _tabs.Tabs(
