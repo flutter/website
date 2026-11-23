@@ -11,8 +11,33 @@
     "rewrites": [],
     "redirects": [
       {
+        "source": "/robots.txt",
+        "destination": "https://flutter.dev/robots.txt",
+        "type": 301
+      },
+      {
+        "source": "/all",
+        "destination": "https://flutter.dev/blog",
+        "type": 301
+      },
+      {
+        "source": "/tagged/:tag*",
+        "destination": "https://flutter.dev/blog",
+        "type": 301
+      },
+      {
+        "source": "/announcing-the-flutter-create-winner-ecfb70f1d32a",
+        "destination": "https://flutter.dev/blog/the-flutter-create-winners-are",
+        "type": 301
+      },
+      {
         "source": "/flutter-2025-roadmap-f127882b117f",
         "destination": "https://flutter.dev/blog/flutter-2025-roadmap-update",
+        "type": 301
+      },
+      {
+        "source": "/flutter-3-22-0-and-dart-3-4-0-updates-for-developers-705f01ef6e87",
+        "destination": "https://flutter.dev/blog/whats-new-in-flutter-3-22",
         "type": 301
       },
       {
@@ -38,6 +63,16 @@
       {
         "source": "/flutter-release-preview-1-943a9b6ee65a",
         "destination": "https://flutter.dev/blog/announcing-flutter-release-preview-1",
+        "type": 301
+      },
+      {
+        "source": "/flutter-update-on-ios-14-and-xcode-12-907e2d904a06",
+        "destination": "https://flutter.dev/blog/supporting-ios-14-and-xcode-12-with-flutter",
+        "type": 301
+      },
+      {
+        "source": "/how-its-made-holobooth-with-flutter-and-firebase-a9436b8e0d08",
+        "destination": "https://flutter.dev/blog/how-its-made-holobooth",
         "type": 301
       },
       {
@@ -71,7 +106,17 @@
         "type": 301
       },
       {
-        "regex": "\/(.*)-([0-9a-f]{10,12})\/?",
+        "regex": "^/(.*)-([0-9a-f]{10,12})/media/.*",
+        "destination": "https://flutter.dev/blog/:1",
+        "type": 301
+      },
+      {
+        "source": "/media/:rest*",
+        "destination": "https://flutter.dev/blog",
+        "type": 301
+      },
+      {
+        "regex": "/(.*)-([0-9a-f]{10,12})/?",
         "destination": "https://flutter.dev/blog/:1",
         "type": 301
       },
@@ -81,7 +126,7 @@
         "type": 301
       },
       {
-        "regex": "\/(.+)",
+        "regex": "/(.+)",
         "destination": "https://flutter.dev/blog/:1",
         "type": 301
       }
