@@ -63,8 +63,9 @@ add the Cloud Firestore plugin.
 $ flutter pub add cloud_firestore
 ```
 
-Then follow the [Cloud Firestore quickstart][firestore-quickstart]
-to set up your database.
+Then follow the [Persist data with Cloud Firestore][firestore-recipe]
+recipe to add, read, update, and delete documents, or start from the
+[Cloud Firestore quickstart][firestore-quickstart].
 
 :::note
 Cloud Firestore is Firebase's recommended NoSQL database for new apps
@@ -170,6 +171,7 @@ To start building with a cloud database, check out the following resources:
 
 * [Add Firebase to your Flutter app][firebase-setup]
 * [Firebase for Flutter][firebase-page]
+* [Persist data with Cloud Firestore][firestore-recipe]
 * [Get started with Cloud Firestore][firestore-quickstart]
 * [Firebase SQL Connect for Flutter][sql-connect-flutter]
 
@@ -189,6 +191,7 @@ To start building with a cloud database, check out the following resources:
 [firebase-storage]: {{site.firebase}}/docs/storage/flutter/start
 [`firebase_storage`]: {{site.pub-pkg}}/firebase_storage
 [firestore-quickstart]: {{site.firebase}}/docs/firestore/quickstart
+[firestore-recipe]: /cookbook/persistence/firestore
 [firestore-rules]: {{site.firebase}}/docs/firestore/security/get-started
 [`flutter_secure_storage`]: {{site.pub-pkg}}/flutter_secure_storage
 [key-value-architecture]: /app-architecture/design-patterns/key-value-data

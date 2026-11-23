@@ -73,6 +73,7 @@ workspace:
   - cookbook/networking/send_data
   - cookbook/networking/update_data
   - cookbook/networking/web_sockets
+  - cookbook/persistence/firestore
   - cookbook/persistence/key_value
   - cookbook/persistence/reading_writing_files
   - cookbook/persistence/sqlite
