@@ -160,12 +160,12 @@ on the `Flexible` widget.
 The resources linked below provide further information about this error.
 
 * [Flexible (Flutter Widget of the Week)][flexible-video]
-* [How to debug layout issues with the Flutter Inspector][medium-article]
+* [Debug an overflow error with the Flutter Inspector][inspector-overflow]
 * [Understanding constraints][]
 
 [its source code]: {{site.repo.flutter}}/blob/c8e42b47f5ea8b5ff7bf2f2b0a2a8e765f1aa51d/packages/flutter/lib/src/widgets/basic.dart#L5166-L5174
 [flexible-video]: {{site.yt.watch}}?v=CI7x0mAZiY0
-[medium-article]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector#layout-problem-2-unbounded-height-error
+[inspector-overflow]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector#layout-problem-1-overflow-error
 [Understanding constraints]: /ui/layout/constraints
 
 ## 'RenderBox was not laid out'
@@ -284,8 +284,10 @@ Widget build(BuildContext context) {
 The resources linked below provide
 further information about this error.
 
-* [How to debug layout issues with the Flutter Inspector][medium-article]
+* [Debug an unbounded height error with the Flutter Inspector][inspector-height]
 * [Understanding constraints][]
+
+[inspector-height]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector#layout-problem-2-unbounded-height-error
 
 ## 'An InputDecorator...cannot have an unbounded width'
 
@@ -510,8 +512,9 @@ To learn more about how to debug errors,
 especially layout errors in Flutter,
 check out the following resources:
 
-* [How to debug layout issues with the Flutter Inspector][medium-article]
+* [How to debug layout issues with the Flutter Inspector][]
 * [Understanding constraints][]
 * [Flutter architectural overview][]
 
+[How to debug layout issues with the Flutter Inspector]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector
 [Flutter architectural overview]: /resources/architectural-overview#layout-and-rendering

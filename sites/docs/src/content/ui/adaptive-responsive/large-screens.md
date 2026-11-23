@@ -250,4 +250,4 @@ check out [Problem: Navigation rail][], a section in the
 [article]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens
 [`BottomNavigationBar`]: {{site.material_ui}}/BottomNavigationBar-class.html
 [`NavigationRail`]: {{site.material_ui}}/NavigationRail-class.html
-[Problem: Navigation rail]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens#:~:text=Problem%3A%20Navigation%20rail1
+[Problem: Navigation rail]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens#problem-navigation-rail
