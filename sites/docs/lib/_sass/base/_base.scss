@@ -1,13 +1,12 @@
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: var(--site-body-fontFamily);
-  overflow-x: hidden;
-  line-height: 1.5;
-  background-color: var(--site-base-bgColor);
-  color: var(--site-base-fgColor);
+@use 'package:site_shared/_sass/base/mixins';
 
-  // The top TOC is not shown on narrow screens.
+:root {
+  // Keep fragment targets below the fixed header and subheader.
+  scroll-padding-top: calc(
+    var(--site-header-height) + var(--site-subheader-height) + 1.25rem
+  );
+
+  // The top TOC is not shown on wide screens unless marked show-always.
   &:not(:has(#site-subheader.show-always)) {
     @media (min-width: 1200px) {
       --site-subheader-height: 0rem;
@@ -16,10 +15,19 @@ body {
 
   // If the TOC is disabled, reduce the subheader height to
   // ensure offset calculations are still correct.
-  &[data-toc="false"],
-  &.no-toc {
+  &:has(> body[data-toc="false"]) {
     --site-subheader-height: 0rem;
   }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--site-body-fontFamily);
+  overflow-x: hidden;
+  line-height: 1.5;
+  background-color: var(--site-base-bgColor);
+  color: var(--site-base-fgColor);
 }
 
 *:focus-visible {
@@ -71,27 +79,13 @@ picture {
 }
 
 .material-symbols {
-  font-family: var(--site-icon-fontFamily);
+  @include mixins.material-symbol;
   font-variation-settings:
     'FILL' 0,
     'wght' 400,
     'GRAD' 0,
     'opsz' 24;
-
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
   vertical-align: middle;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  font-feature-settings: 'liga';
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
   user-select: none;
 
   &.ms-filled {
@@ -434,12 +428,4 @@ p+dl {
 
 lite-youtube:not(.full-width) {
   max-width: 560px;
-}
-
-.footnote-ref a {
-  scroll-margin-top: 6rem;
-}
-
-.footnote-item {
-  scroll-margin-top: 5rem;
 }

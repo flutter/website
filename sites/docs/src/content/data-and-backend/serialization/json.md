@@ -107,7 +107,8 @@ based on code generation instead. This
 approach is covered in more detail in the
 [code generation libraries][] section.
 
-<a id="manual-encoding"></a>
+<FragmentTarget id="manual-encoding" />
+
 ## Serializing JSON manually using dart:convert
 
 Basic JSON serialization in Flutter is very simple. Flutter has a built-in
@@ -226,7 +227,8 @@ class.
 It would be nice if there were something that handled the JSON encoding
 and decoding for you.  Luckily, there is!
 
-<a id="code-generation"></a>
+<FragmentTarget id="code-generation" />
+
 ## Serializing JSON using code generation libraries
 
 Although there are other libraries available, this guide uses

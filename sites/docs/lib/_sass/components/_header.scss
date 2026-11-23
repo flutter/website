@@ -1,3 +1,5 @@
+@use 'package:site_shared/_sass/base/mixins';
+
 #site-header {
   background-color: var(--site-header-bgColor);
   font-family: var(--site-ui-fontFamily);
@@ -85,9 +87,9 @@
     }
 
     &::before {
+      @include mixins.material-symbol(28px);
       content: 'search';
       color: var(--site-base-fgColor-alt);
-      font: 28px/1 var(--site-icon-fontFamily);
       pointer-events: none;
       position: absolute;
       left: 1rem;

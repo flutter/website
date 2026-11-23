@@ -6,7 +6,6 @@ import 'package:intl/intl.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/icon.dart';
@@ -59,20 +58,16 @@ class ShowcasePage extends StatelessComponent {
           const div(classes: 'stacked-header container', [
             h2([.text('Flutter at Google')]),
           ]),
-          Carousel(
-            ref(
-              .fragment([
-                for (final app in googleApps) _buildStoryItem(context, app),
-              ]),
-            ),
-          ),
+          Carousel([
+            for (final app in googleApps) _buildStoryItem(context, app),
+          ]),
         ]),
         section(id: 'stories', classes: 'module', [
           ShowcaseGrid(
             data: _extractFilterData(stories),
             items: [
               for (final page in stories)
-                ref(_buildUserStoryGridItem(context, page)),
+                _buildUserStoryGridItem(context, page),
             ],
           ),
           const div(classes: 'container see-more', [
@@ -102,13 +97,9 @@ class ShowcasePage extends StatelessComponent {
           const div(classes: 'container stacked-header', [
             h2(classes: 'push-left', [.text('Demos')]),
           ]),
-          Carousel(
-            ref(
-              .fragment([
-                for (final demo in demos) _buildDemoItem(context, demo),
-              ]),
-            ),
-          ),
+          Carousel([
+            for (final demo in demos) _buildDemoItem(context, demo),
+          ]),
         ]),
         section(id: 'companies', classes: 'module', [
           div(classes: 'container', [

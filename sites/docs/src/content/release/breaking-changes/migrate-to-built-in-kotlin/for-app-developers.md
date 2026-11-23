@@ -36,7 +36,7 @@ follow the [migration guide for plugin authors][].
 [AGP block]: {{site.android-dev}}/build/releases/gradle-plugin
 [migration guide for plugin authors]: /release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors
 
-<a id="verify-flags-in-properties-file" aria-hidden="true"></a>
+<FragmentTarget id="verify-flags-in-properties-file" />
 
 ## Verify flags in the Gradle properties file
 

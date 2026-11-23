@@ -65,7 +65,7 @@ calls `AppDelegate` methods related to UI state.
 [migration guide for add-to-app]: #migrate-an-add-to-app-integration
 [migration guide for Flutter plugins]: #migrate-a-flutter-plugin
 
-<a id="migration-guide-for-flutter-apps" aria-hidden="true"></a>
+<FragmentTarget id="migration-guide-for-flutter-apps" />
 
 ## Migrate a Flutter app
 
@@ -372,7 +372,7 @@ you can create one by subclassing `FlutterSceneDelegate`:
     </Tab>
     </Tabs>
 
-<a id="migration-guide-for-adding-flutter-to-existing-app-add-to-app" aria-hidden="true"></a>
+<FragmentTarget id="migration-guide-for-adding-flutter-to-existing-app-add-to-app" />
 
 ## Migrate an add-to-app integration
 
@@ -384,7 +384,7 @@ such as [`openURL`][], to plugins such as [`local_auth`][].
 [`openURL`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623112-application
 [`local_auth`]: {{site.pub}}/packages/local_auth
 
-<a id="createupdate-a-scenedelegate" aria-hidden="true"></a>
+<FragmentTarget id="createupdate-a-scenedelegate" />
 
 ### Create or update a SceneDelegate
 
@@ -454,7 +454,7 @@ make the following changes:
 [flutter-app-delegate]: /add-to-app/ios/add-flutter-screen#using-the-flutterappdelegate
 [If your app supports multiple scenes]: #if-your-app-supports-multiple-scenes
 
-<a id="if-you-cant-directly-make-flutterscenedelegate-a-subclass" aria-hidden="true"></a>
+<FragmentTarget id="if-you-cant-directly-make-flutterscenedelegate-a-subclass" />
 
 ### If you can't subclass FlutterSceneDelegate
 
@@ -609,7 +609,7 @@ forward scene lifecycle events to Flutter.
 Flutter doesn't fully support multiple scenes yet,
 but support is in progress.
 
-<a id="migration-guide-for-flutter-plugins" aria-hidden="true"></a>
+<FragmentTarget id="migration-guide-for-flutter-plugins" />
 
 ## Migrate a Flutter plugin
 
