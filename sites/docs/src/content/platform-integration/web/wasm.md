@@ -144,7 +144,7 @@ unless the server is configured to send specific HTTP headers.
 {:.table .table-striped}
 
 Safari (WebKit) doesn't support `Cross-Origin-Embedder-Policy: credentialless`.
-To enable `window.crossOriginIsolated` and `SharedArrayBuffer` on Safari,
+To enable `window.crossOriginIsolated` and `SharedArrayBuffer` in Safari,
 return `Cross-Origin-Embedder-Policy: require-corp` and ensure cross-origin
 subresources include `Cross-Origin-Resource-Policy` or CORS headers.
 
