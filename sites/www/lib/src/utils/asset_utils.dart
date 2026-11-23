@@ -3,6 +3,7 @@
 // can be found in the LICENSE file.
 
 import 'dart:io';
+import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:image/image.dart' as img;
@@ -110,7 +111,14 @@ class ResizingAssetTransformer implements AssetTransformer {
   int targetWidth,
 ) {
   final info = headerDecoder.startDecode(sourceBytes);
-  if (info != null && info.width <= targetWidth) {
+  // A JPEG header reports the stored width,
+  // which its EXIF orientation can swap with the height when decoded,
+  // so compare the larger of the two.
+  final headerWidth = switch (info) {
+    img.JpegInfo(:final width, :final height) => math.max(width, height),
+    _ => info?.width,
+  };
+  if (headerWidth != null && headerWidth <= targetWidth) {
     return null;
   }
 

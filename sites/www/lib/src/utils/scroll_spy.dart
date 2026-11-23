@@ -68,15 +68,21 @@ class ScrollNotifier extends ChangeNotifier {
   /// Evaluates [thresholds] against [scrollY] and notifies listeners at most
   /// once when the active scroll state changes.
   ///
-  /// Each threshold's ID is active while [scrollY] is past its `offsetTop`.
-  /// Thresholds without an ID are ignored.
+  /// An ID is active while [scrollY] is past the `offsetTop` of
+  /// any of its thresholds. Thresholds without an ID are ignored.
   void applyThresholds(
     double scrollY,
     Iterable<(int offsetTop, ScrollId? id)> thresholds,
   ) {
+    final ids = {for (final (_, id) in thresholds) ?id};
+    final passedIds = {
+      for (final (offsetTop, id) in thresholds)
+        if (id != null && scrollY > offsetTop) id,
+    };
+
     var changed = false;
-    for (final (offsetTop, id) in thresholds) {
-      if (id != null && updateActiveId(id, isActive: scrollY > offsetTop)) {
+    for (final id in ids) {
+      if (updateActiveId(id, isActive: passedIds.contains(id))) {
         changed = true;
       }
     }
@@ -142,23 +148,25 @@ typedef _ScrollTarget = (int offsetTop, web.Element node, ScrollId? id);
 /// plus the offset from its attribute.
 List<_ScrollTarget> _collectScrollTargets() {
   final nodes = web.document.querySelectorAll('[data-scroll-spy]');
-  final targets = <_ScrollTarget>[];
+  return [
+    for (var i = 0; i < nodes.length; i++)
+      _scrollTargetFor(nodes.item(i) as web.HTMLElement),
+  ];
+}
 
-  for (var i = 0; i < nodes.length; i++) {
-    final node = nodes.item(i) as web.HTMLElement;
-    final data = jsonDecode(
-      node.getAttribute('data-scroll-spy') ?? '[]',
-    ) as List<Object?>;
+/// Returns the scroll target for [node] based on
+/// its `data-scroll-spy` attribute.
+_ScrollTarget _scrollTargetFor(web.HTMLElement node) {
+  final data = jsonDecode(
+    node.getAttribute('data-scroll-spy') ?? '[]',
+  ) as List<Object?>;
 
-    final offset = data.firstOrNull as int? ?? 0;
-    final id = data.skip(1).firstOrNull as String?;
+  final offset = data.firstOrNull as int? ?? 0;
+  final id = data.skip(1).firstOrNull as String?;
 
-    targets.add((
-      node.offsetTop + offset,
-      node,
-      id != null ? ScrollId.values.byName(id) : null,
-    ));
-  }
-
-  return targets;
+  return (
+    node.offsetTop + offset,
+    node,
+    id != null ? ScrollId.values.byName(id) : null,
+  );
 }

@@ -77,7 +77,7 @@ void main() {
         (300, ScrollId.inContent),
       ];
 
-      // Below all thresholds: zero state changes, zero notifications.
+      // Scrolling above every threshold changes nothing and doesn't notify.
       notifier.applyThresholds(50, thresholds);
       expect(notifier.activeIds, isEmpty);
       expect(notifications, 0);
@@ -97,6 +97,28 @@ void main() {
       // Scrolling back above the second threshold notifies once.
       notifier.applyThresholds(200, thresholds);
       expect(notifier.activeIds, unorderedEquals([ScrollId.inHero]));
+      expect(notifications, 2);
+    });
+
+    test('keeps an ID active while past any of its thresholds', () {
+      final notifier = ScrollNotifier();
+      var notifications = 0;
+      notifier.addListener(() => notifications += 1);
+
+      final thresholds = <(int, ScrollId?)>[
+        (100, ScrollId.inContent),
+        (2000, ScrollId.inContent),
+      ];
+
+      // Between the two thresholds, the ID stays active without flapping.
+      notifier.applyThresholds(500, thresholds);
+      notifier.applyThresholds(600, thresholds);
+      expect(notifier.activeIds, unorderedEquals([ScrollId.inContent]));
+      expect(notifications, 1);
+
+      // Scrolling above both thresholds deactivates it.
+      notifier.applyThresholds(50, thresholds);
+      expect(notifier.activeIds, isEmpty);
       expect(notifications, 2);
     });
   });

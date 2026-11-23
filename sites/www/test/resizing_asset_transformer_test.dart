@@ -106,6 +106,22 @@ void main() {
       expect(decoded!.width, 200);
       expect(decoded.height, 100);
     });
+
+    test('resizes a JPEG whose EXIF orientation makes it wider', () {
+      // Stored 100 pixels wide, but displayed 200 pixels wide.
+      final sourceImage = _createGradientImage(width: 100, height: 200)
+        ..exif.imageIfd.orientation = 6;
+      final sourceBytes = img.encodeJpg(sourceImage);
+      final asset = Asset.fromBytes('images/photo.jpg', sourceBytes);
+
+      final result = transformer.transform(asset, 150);
+
+      expect(result.path, 'images/photo.w150.jpg');
+      final decoded = img.decodeJpg(result.readAsBytes());
+      expect(decoded, isNotNull);
+      expect(decoded!.width, 150);
+      expect(decoded.height, 75);
+    });
   });
 }
 
