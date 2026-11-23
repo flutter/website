@@ -79,6 +79,15 @@ void main() {
       expect((await processDartPad('title="Example"')).height, 400);
     });
 
+    for (final metadata in ['height', 'height=']) {
+      test('rejects a DartPad fence with `$metadata`', () async {
+        await expectLater(
+          processDartPad(metadata),
+          throwsA(isA<ArgumentError>().having((e) => e.name, 'name', 'height')),
+        );
+      });
+    }
+
     test(
       'parses positive whole pixel integers and optional px suffix',
       () async {
