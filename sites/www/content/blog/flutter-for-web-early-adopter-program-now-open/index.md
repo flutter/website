@@ -25,4 +25,4 @@ Accepted participants will receive priority support and an opportunity to highli
 
 [Apply for consideration by completing the form](https://forms.gle/32JCpbYefLaZE3xp8). We’ll be accepting qualified applications from now through the end of August.
 
-More information on Flutter’s support for the web can be found at [flutter.dev/web](https://flutter.dev/web). We’re looking forward to hear from you!
+More information on Flutter’s support for the web can be found at [flutter.dev/web](/development/web). We’re looking forward to hear from you!

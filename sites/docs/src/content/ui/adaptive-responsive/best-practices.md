@@ -233,5 +233,5 @@ in [Developing Flutter apps for Large screens][article],
 a post on the Flutter blog.
 
 [app state]: {{site.android-dev}}/jetpack/compose/state#store-state
-[article]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
-[state-loss]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Folding/Unfolding%20causes%20state%2Dloss
+[article]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens
+[state-loss]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens#:~:text=Problem%3A%20Folding/Unfolding%20causes%20state%2Dloss
