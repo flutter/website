@@ -31,7 +31,10 @@ class AiPage extends StatelessComponent {
             'reach users on any platform with '
             'Flutter and Google\'s AI capabilities.',
         media: img(
-          src: context.asset('images/build-with-ai/build-with-ai-hero.png'),
+          src: context.asset(
+            'images/build-with-ai/build-with-ai-hero.png',
+            width: 1200,
+          ),
           alt: 'Build with AI',
         ),
       ),
@@ -98,7 +101,10 @@ class AiPage extends StatelessComponent {
             div(classes: 'alternating-item', [
               div(classes: 'media', [
                 img(
-                  src: context.asset('images/build-with-ai/vertex-tab.png'),
+                  src: context.asset(
+                    'images/build-with-ai/vertex-tab.png',
+                    width: 1200,
+                  ),
                   alt: 'Firebase AI Logic Logo',
                 ),
               ]),
@@ -229,7 +235,11 @@ class AiPage extends StatelessComponent {
       a(href: item.href, target: Target.blank, [
         div([
           div(classes: 'image-container', [
-            img(alt: item.title, src: context.asset(item.image)),
+            img(
+              alt: item.title,
+              src: context.asset(item.image, width: 635),
+              loading: MediaLoading.lazy,
+            ),
           ]),
           div(classes: 'text', [
             h3([.text(item.title)]),

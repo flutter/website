@@ -51,27 +51,30 @@ class IosPage extends StatelessComponent {
           div(id: 'header-img-container', classes: 'media img-container', [
             img(
               classes: 'background',
-              src: context.asset('images/header-image-background.png'),
+              src: context.asset(
+                'images/header-image-background.png',
+                width: 1200,
+              ),
               alt: 'Header image background',
             ),
             img(
               classes: 'item',
-              src: context.asset('images/header-image-1.png'),
+              src: context.asset('images/header-image-1.png', width: 1200),
               alt: 'Header image 1',
             ),
             img(
               classes: 'item',
-              src: context.asset('images/header-image-2.png'),
+              src: context.asset('images/header-image-2.png', width: 1200),
               alt: 'Header image 2',
             ),
             img(
               classes: 'item',
-              src: context.asset('images/header-image-3.png'),
+              src: context.asset('images/header-image-3.png', width: 1200),
               alt: 'Header image 3',
             ),
             img(
               classes: 'item',
-              src: context.asset('images/header-image-4.png'),
+              src: context.asset('images/header-image-4.png', width: 1200),
               alt: 'Header image 4',
             ),
           ]),
@@ -265,6 +268,7 @@ class IosPage extends StatelessComponent {
         src: context.asset('/showcase/${app.image}', width: 635),
         width: 480,
         height: 480,
+        loading: MediaLoading.lazy,
       ),
       div(classes: 'text', [
         h3([.text(app.title)]),
@@ -316,7 +320,7 @@ class IosPage extends StatelessComponent {
           div(classes: 'media', [
             img(
               alt: 'Rich Ecosystem Image',
-              src: context.asset('images/rich-ecosystem-1.png'),
+              src: context.asset('images/rich-ecosystem-1.png', width: 1200),
             ),
           ]),
         ]),
@@ -331,7 +335,7 @@ class IosPage extends StatelessComponent {
           div(classes: 'media', [
             img(
               alt: 'Rich Ecosystem Image',
-              src: context.asset('images/rich-ecosystem-2.png'),
+              src: context.asset('images/rich-ecosystem-2.png', width: 1200),
             ),
           ]),
         ]),
@@ -390,8 +394,8 @@ class IosPage extends StatelessComponent {
           ),
         ]),
         img(
-          attributes: const {'alt': 'Productive Team Image'},
-          src: context.asset('images/productive-team.png'),
+          alt: 'Productive Team Image',
+          src: context.asset('images/productive-team.png', width: 1200),
         ),
       ]),
     ]);
@@ -452,7 +456,10 @@ class IosPage extends StatelessComponent {
         ]),
         div(classes: 'media', [
           img(
-            src: context.asset('/images/common/try-flutter-background.png'),
+            src: context.asset(
+              '/images/common/try-flutter-background.png',
+              width: 1200,
+            ),
             alt: 'Flutter next steps',
           ),
         ]),

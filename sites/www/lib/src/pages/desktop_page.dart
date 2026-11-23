@@ -23,7 +23,7 @@ class DesktopPage extends StatelessComponent {
         title: 'Flutter on Desktop',
         text: 'Build high-quality desktop apps without compromising compatibility or performance.',
         media: img(
-          src: context.asset('images/flutter-on-desktop.png'),
+          src: context.asset('images/flutter-on-desktop.png', width: 1200),
           alt: 'Flutter on Desktop',
         ),
       ),
@@ -69,7 +69,10 @@ class DesktopPage extends StatelessComponent {
               ]),
               div(classes: 'media', [
                 img(
-                  src: context.asset('images/scale-desktop-support.png'),
+                  src: context.asset(
+                    'images/scale-desktop-support.png',
+                    width: 1200,
+                  ),
                   alt: 'Scale desktop support',
                 ),
               ]),
