@@ -7,8 +7,8 @@
 import 'package:jaspr/server.dart';
 import 'package:flutter_website/src/components/common/carousel.dart'
     as _carousel;
-import 'package:flutter_website/src/components/common/newsletter_form.dart'
-    as _newsletter_form;
+import 'package:flutter_website/src/components/common/newsletter_signup.dart'
+    as _newsletter_signup;
 import 'package:flutter_website/src/components/common/tabs.dart' as _tabs;
 import 'package:flutter_website/src/components/layout/header.dart' as _header;
 import 'package:flutter_website/src/components/pages/consultants_cookie_snack.dart'
@@ -72,8 +72,8 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'carousel',
       params: __carouselCarousel,
     ),
-    _newsletter_form.NewsletterForm:
-        ClientTarget<_newsletter_form.NewsletterForm>('newsletter_form'),
+    _newsletter_signup.NewsletterSignup:
+        ClientTarget<_newsletter_signup.NewsletterSignup>('newsletter_signup'),
     _tabs.Tabs: ClientTarget<_tabs.Tabs>('tabs', params: __tabsTabs),
     _header.Header: ClientTarget<_header.Header>(
       'header',

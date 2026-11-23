@@ -8,7 +8,6 @@ library;
 import 'dart:convert';
 
 import 'package:flutter_website/main.server.options.dart';
-import 'package:flutter_website/src/components/sections/newsletter_section.dart';
 import 'package:flutter_website/src/utils/scroll_spy.dart';
 import 'package:jaspr/server.dart';
 import 'package:site_shared/components/common/wrapped_code_block.dart';
@@ -63,19 +62,6 @@ void main() {
           inspected.copiedText,
           'flutter pub get\n\nvoid main() {\n  print("hi");\n}\n',
         );
-      },
-    );
-  });
-
-  group('NewsletterSection lazy reCAPTCHA loading', () {
-    test(
-      'omits synchronous recaptcha/api.js script from initial HTML',
-      () async {
-        final rendered = await renderComponent(const NewsletterSection());
-        final renderedHtml = utf8.decode(rendered.body);
-
-        expect(renderedHtml, contains('id="newsletter"'));
-        expect(renderedHtml, isNot(contains('recaptcha/api.js')));
       },
     );
   });

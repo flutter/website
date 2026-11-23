@@ -26,20 +26,8 @@ final class CheckLinkReferencesCommand extends Command<int> {
 int _checkLinkReferences(Site site) {
   print('Checking for broken Markdown link references...');
 
-  final generatedSiteDirectory = path.join(
-    repositoryRoot,
-    site.buildOutputDirectory,
-  );
-
-  final directory = Directory(generatedSiteDirectory);
-
-  if (!directory.existsSync()) {
-    stderr.writeln(
-      'Error: Generated site not found at $generatedSiteDirectory. '
-      'Make sure the site is generated first!',
-    );
-    return 1;
-  }
+  final directory = findBuildOutputDirectory(site);
+  if (directory == null) return 1;
 
   final filesToInvalidReferences = _findInvalidLinkReferences(directory);
 
@@ -66,15 +54,10 @@ int _checkLinkReferences(Site site) {
 Map<String, List<String>> _findInvalidLinkReferences(Directory directory) {
   final invalidReferences = <String, List<String>>{};
 
-  for (final filePath
-      in directory
-          .listSync(recursive: true)
-          .map((f) => f.path)
-          .where((p) => path.extension(p) == '.html')) {
-    final content = File(filePath).readAsStringSync();
-    final results = _findInContent(content);
+  for (final file in listHtmlFiles(directory)) {
+    final results = _findInContent(file.readAsStringSync());
     if (results.isNotEmpty) {
-      invalidReferences[path.relative(filePath, from: directory.path)] =
+      invalidReferences[path.relative(file.path, from: directory.path)] =
           results;
     }
   }

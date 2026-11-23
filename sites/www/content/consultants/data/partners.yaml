@@ -1324,3 +1324,14 @@
   options_customer_size:
     - "Small-to-medium Business"
   options_GCP_partner: false
+- title: "moblers"
+  summary: "Is a software development and engineering company that designs, builds, and tests Flutter apps for iOS, Android and web from a single Dart codebase. Since 2007 they have built solutions for companies in Israel and USA, including Fortune 500 companies."
+  card: "images/third_party/partners/moblers_logo.png"
+  external_url: "https://moblers.com/services/flutter-app-development/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false

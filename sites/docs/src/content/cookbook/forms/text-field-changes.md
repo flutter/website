@@ -238,7 +238,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-[`addListener()`]: {{site.api}}/flutter/foundation/ChangeNotifier/addListener.html
+[`addListener()`]: {{site.api}}/flutter/package-listen_listen/ChangeNotifier/addListener.html
 [`controller`]: {{site.material_ui}}/TextField/controller.html
 [`onChanged()`]: {{site.material_ui}}/TextField/onChanged.html
 [`TextField`]: {{site.material_ui}}/TextField-class.html

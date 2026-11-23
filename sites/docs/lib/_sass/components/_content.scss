@@ -56,7 +56,6 @@ main {
     position: relative;
     font-family: var(--site-ui-fontFamily);
     margin-block-end: 1.5rem;
-    scroll-margin-top: calc(var(--site-header-height) + var(--site-subheader-height) + 1.25rem);
 
     &.wrap {
       display: flex;
@@ -120,14 +119,9 @@ main {
   h5,
   h6 {
     text-wrap: balance;
-    scroll-margin-top: 7rem;
     line-height: 1.2;
     font-family: var(--site-ui-fontFamily);
     font-weight: 400;
-
-    @media (min-width: 1200px) {
-      scroll-margin-top: 5rem;
-    }
   }
 
   h1 {

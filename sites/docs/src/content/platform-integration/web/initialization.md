@@ -50,7 +50,7 @@ For production optimization guidance, refer to
 
 [cold-start]: /deployment/web#reduce-cold-start-latency
 
-<a id="customizing-initialization" aria-hidden="true"></a>
+<FragmentTarget id="customizing-initialization" />
 
 ## Customize initialization
 
@@ -84,7 +84,7 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 
 {:.table .table-striped}
 
-<a id="write-a-custom-flutter_bootstrap-js" aria-hidden="true"></a>
+<FragmentTarget id="write-a-custom-flutter_bootstrap-js" />
 
 ## Write a custom bootstrap script {:#custom-bootstrap-js}
 
@@ -154,7 +154,7 @@ The `config` argument is an object that accepts the following optional fields:
 
 {:.table .table-striped}
 
-<a id="forcesinglethreadedskwasm" aria-hidden="true"></a>
+<FragmentTarget id="forcesinglethreadedskwasm" />
 
 ### WebAssembly and build selection
 

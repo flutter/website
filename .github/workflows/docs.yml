@@ -87,6 +87,8 @@ jobs:
         run: dart run dash_site --site=docs build
       - name: Check for broken Markdown link references
         run: dart run dash_site --site=docs check-link-references
+      - name: Check for duplicate element IDs
+        run: dart run dash_site --site=docs check-duplicate-ids
       - name: Check for broken internal links
         run: dart run dash_site --site=docs check-links
 

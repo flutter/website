@@ -5,19 +5,25 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../common/newsletter_form.dart';
+import '../common/newsletter_signup.dart';
 
+/// A page section inviting visitors to sign in with Google to join the
+/// Flutter Developer Community and receive Flutter updates.
 class NewsletterSection extends StatelessComponent {
-  const NewsletterSection();
+  /// Creates a newsletter sign-up section.
+  const NewsletterSection({super.key});
 
   @override
   Component build(BuildContext context) {
     return const section(id: 'newsletter', [
+      // Runs before the sign-up UI is painted to avoid
+      // briefly showing sign-in to visitors who already signed up.
+      script(content: newsletterSignupStateScript),
       div(classes: 'newsletter container', [
         div(classes: 'text', [
           h2([.text('Join our '), br(), .text('newsletter')]),
         ]),
-        div(classes: 'form', [NewsletterForm()]),
+        div(classes: 'form', [NewsletterSignup()]),
       ]),
     ]);
   }

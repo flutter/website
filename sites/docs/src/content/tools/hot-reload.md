@@ -37,7 +37,7 @@ To hot reload a Flutter app manually:
     select **Save All** (`cmd-s`/`ctrl-s`),
     or click the hot reload button on the toolbar.
 
-    <a id="hot-reload-on-save" aria-hidden="true"></a>
+    <FragmentTarget id="hot-reload-on-save" />
 
     :::tip To enable hot reload on save
     From your preferred IDE,
@@ -80,7 +80,7 @@ Your app continues to execute from where it was prior
 to run the hot reload command.
 The code updates and execution continues.
 
-<a id="hot-restart" aria-hidden="true"></a>
+<FragmentTarget id="hot-restart" />
 
 :::secondary
 **What is the difference between hot reload, hot restart,
