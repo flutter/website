@@ -46,8 +46,6 @@ import 'package:site_shared/components/common/client/back_to_top_button.dart'
     as _back_to_top_button;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     as _collapse_button;
-import 'package:site_shared/components/common/client/copy_button.dart'
-    as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     as _dartpad_injector;
 import 'package:site_shared/components/layout/theme_switcher.dart'
@@ -161,10 +159,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:collapse_button',
           params: __collapse_buttonCollapseButton,
         ),
-    _copy_button.CopyButton: ClientTarget<_copy_button.CopyButton>(
-      'site_shared:copy_button',
-      params: __copy_buttonCopyButton,
-    ),
     _dartpad_injector.DartPadInjector:
         ClientTarget<_dartpad_injector.DartPadInjector>(
           'site_shared:dartpad_injector',
@@ -241,12 +235,6 @@ Map<String, Object?> __share_buttonShareButton(_share_button.ShareButton c) => {
 Map<String, Object?> __collapse_buttonCollapseButton(
   _collapse_button.CollapseButton c,
 ) => {'classes': c.classes, 'title': c.title};
-Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
-  'buttonText': c.buttonText,
-  'toCopy': c.toCopy,
-  'classes': c.classes,
-  'title': c.title,
-};
 Map<String, Object?> __dartpad_injectorDartPadInjector(
   _dartpad_injector.DartPadInjector c,
 ) => {
