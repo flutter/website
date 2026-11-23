@@ -43,7 +43,7 @@ class ResizingAssetTransformer implements AssetTransformer {
 
     final inputExt = p.extension(asset.path).toLowerCase();
 
-    // AVIF is not supported by the image package.
+    // AVIF isn't supported by the image package.
     if (inputExt == '.avif') {
       return asset;
     }
@@ -93,6 +93,16 @@ class ResizingAssetTransformer implements AssetTransformer {
   }
 }
 
+/// Decodes [sourceBytes] for resizing to [targetWidth] pixels wide,
+/// or returns `null` if the image is already that narrow,
+/// is an animated WebP, or can't be decoded.
+///
+/// To skip a full decode when possible,
+/// [headerDecoder] first reads only the image header.
+///
+/// The returned image has any palette expanded to RGBA,
+/// and `losslessWebP` indicates whether the source is a lossless WebP,
+/// so the resized image can be encoded the same way.
 ({img.Image image, bool losslessWebP})? _decodeSourceForResize(
   String assetPath,
   img.Decoder headerDecoder,
@@ -127,6 +137,11 @@ class ResizingAssetTransformer implements AssetTransformer {
   return (image: image, losslessWebP: losslessWebP);
 }
 
+/// Returns the encoder and output file extension for
+/// a resized image whose source has the [inputExt] extension.
+///
+/// WebP images are encoded losslessly if [losslessWebP] is `true`.
+/// Formats without a matching encoder are converted to PNG.
 (img.Encoder, String) _encoderForExtension(
   String inputExt, {
   required bool losslessWebP,

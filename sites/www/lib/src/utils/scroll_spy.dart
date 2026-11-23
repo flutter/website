@@ -8,21 +8,51 @@ import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
+/// The shared [ScrollNotifier] for the page's scroll spy targets.
 final scroll = ScrollNotifier();
 
-enum ScrollId { inContent, inHero }
+/// Identifies a page region that components react to scrolling into.
+enum ScrollId {
+  /// The page is scrolled into its main content.
+  inContent,
 
+  /// The page is scrolled into the home page hero.
+  inHero,
+}
+
+/// Tracks which [ScrollId] regions the page is scrolled into and
+/// notifies listeners when that changes.
+///
+/// Elements opt in with the attributes from [spy] or [spyContent],
+/// which [init] collects on the client.
 class ScrollNotifier extends ChangeNotifier {
+  /// The regions the page is currently scrolled into.
   Set<ScrollId> activeIds = {};
 
+  /// The [spy] offset that activates a target once it
+  /// scrolls under the site header,
+  /// whose height is `--ui-header-navigation-height`.
   int get headerOffset => -86;
+
+  /// Returns the attributes that make an element a scroll spy target.
+  ///
+  /// The target is active while the window's scroll position is
+  /// past the element's top offset plus [offset].
+  /// While active, the element has the `active` class and,
+  /// if specified, [id] is in [activeIds].
   Map<String, String> spy(int offset, [ScrollId? id]) {
     return {'data-scroll-spy': '[$offset${id != null ? ',"${id.name}"' : ''}]'};
   }
 
+  /// The [spy] attributes for a page's main content, which
+  /// activate [ScrollId.inContent] once it scrolls under the header.
   Map<String, String> get spyContent => spy(headerOffset, .inContent);
 
   /// Updates [activeIds] for [id] and returns whether the active state changed.
+  ///
+  /// Doesn't notify listeners, so callers can batch multiple updates.
+  /// On the web, a change to [ScrollId.inContent] also
+  /// toggles the `in-content` class on the document body.
   bool updateActiveId(ScrollId id, {required bool isActive}) {
     final changed = isActive ? activeIds.add(id) : activeIds.remove(id);
     if (!changed) {
@@ -37,6 +67,9 @@ class ScrollNotifier extends ChangeNotifier {
 
   /// Evaluates [thresholds] against [scrollY] and notifies listeners at most
   /// once when the active scroll state changes.
+  ///
+  /// Each threshold's ID is active while [scrollY] is past its `offsetTop`.
+  /// Thresholds without an ID are ignored.
   void applyThresholds(
     double scrollY,
     Iterable<(int offsetTop, ScrollId? id)> thresholds,
@@ -52,6 +85,8 @@ class ScrollNotifier extends ChangeNotifier {
     }
   }
 
+  /// Gives each of [targets] the `active` class only while
+  /// [offsetY] is past it, then updates [activeIds] to match.
   void _syncTargets(List<_ScrollTarget> targets, double offsetY) {
     for (final (offsetTop, node, _) in targets) {
       final isActive = offsetY > offsetTop;
@@ -66,6 +101,11 @@ class ScrollNotifier extends ChangeNotifier {
     );
   }
 
+  /// Starts updating the page's scroll spy targets as the window scrolls,
+  /// at most once per animation frame.
+  ///
+  /// Target positions are measured only once,
+  /// so call this once on the client after the page is rendered.
   static void init() {
     final targets = _collectScrollTargets();
     if (targets.isEmpty) {
@@ -90,8 +130,16 @@ class ScrollNotifier extends ChangeNotifier {
   }
 }
 
+/// An element tracked by the scroll spy,
+/// with the scroll position past which it's active and
+/// the [ScrollId] it controls, if any.
 typedef _ScrollTarget = (int offsetTop, web.Element node, ScrollId? id);
 
+/// Returns a scroll target for each element with
+/// a `data-scroll-spy` attribute, as added by [ScrollNotifier.spy].
+///
+/// Each target's `offsetTop` is the element's current offset on the page
+/// plus the offset from its attribute.
 List<_ScrollTarget> _collectScrollTargets() {
   final nodes = web.document.querySelectorAll('[data-scroll-spy]');
   final targets = <_ScrollTarget>[];
