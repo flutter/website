@@ -519,6 +519,17 @@
     label: Flutter docs
     url: /cookbook/networking/background-parsing
 
+- name: Persist data with Cloud Firestore
+  description: Store, query, and sync cloud documents with the cloud_firestore package.
+  tags:
+    - data
+    - persistence
+    - firebase
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/persistence/firestore
+
 - name: Persist data with SQLite
   description: Use the sqflite package.
   tags:

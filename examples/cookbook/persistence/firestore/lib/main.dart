@@ -18,7 +18,8 @@ void main() async {
 // #docregion collection
 // A reference to the `dogs` collection.
 // Firestore creates the collection the first time you write to it.
-final CollectionReference<Map<String, dynamic>> dogs = FirebaseFirestore
+// Access this after `Firebase.initializeApp()` completes.
+final CollectionReference<Map<String, dynamic>> dogsRef = FirebaseFirestore
     .instance
     .collection('dogs');
 // #enddocregion collection
@@ -26,14 +27,14 @@ final CollectionReference<Map<String, dynamic>> dogs = FirebaseFirestore
 // #docregion addDog
 // Add a new dog. Firestore generates a unique document ID.
 Future<void> addDog(String name, int age) async {
-  await dogs.add({'name': name, 'age': age});
+  await dogsRef.add({'name': name, 'age': age});
 }
 // #enddocregion addDog
 
 // #docregion getDogs
 // Read the dogs collection once.
 Future<List<Dog>> getDogs() async {
-  final snapshot = await dogs.get();
+  final snapshot = await dogsRef.get();
   return [for (final doc in snapshot.docs) Dog.fromFirestore(doc)];
 }
 // #enddocregion getDogs
@@ -42,7 +43,7 @@ Future<List<Dog>> getDogs() async {
 // Listen to the dogs collection.
 // The stream emits a new list whenever any dog changes.
 Stream<List<Dog>> watchDogs() {
-  return dogs
+  return dogsRef
       .orderBy('name')
       .snapshots()
       .map(
@@ -54,14 +55,14 @@ Stream<List<Dog>> watchDogs() {
 // #docregion updateDog
 // Update the fields of an existing dog.
 Future<void> updateDog(Dog dog) async {
-  await dogs.doc(dog.id).update(dog.toFirestore());
+  await dogsRef.doc(dog.id).update(dog.toFirestore());
 }
 // #enddocregion updateDog
 
 // #docregion deleteDog
 // Delete a dog by its document ID.
 Future<void> deleteDog(String id) async {
-  await dogs.doc(id).delete();
+  await dogsRef.doc(id).delete();
 }
 // #enddocregion deleteDog
 
@@ -77,11 +78,14 @@ class Dog {
   // Create a Dog from a Firestore document.
   // The document ID becomes the dog's id.
   factory Dog.fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) {
-    final data = doc.data()!;
+    final data = doc.data();
+    if (data == null) {
+      throw StateError('Document ${doc.id} has no data.');
+    }
     return Dog(
       id: doc.id,
       name: data['name'] as String,
-      age: data['age'] as int,
+      age: (data['age'] as num).toInt(),
     );
   }
 

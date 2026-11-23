@@ -9,7 +9,8 @@ description: >-
 
 :::note
 This guide uses the [`cloud_firestore`][] plugin,
-which supports Android, iOS, web, macOS, and (in beta) Windows.
+which supports Android, iOS, and web, with beta support for
+macOS and Windows (local development only).
 For the latest platform support, check out the
 [Firebase plugin table][].
 :::
@@ -50,6 +51,8 @@ This recipe uses the following steps:
   7. Update a `Dog` in the collection.
   8. Delete a `Dog` from the collection.
 
+{% render "docs/cookbook/material-ui-dependency.md", site: site %}
+
 ## 1. Add the dependencies
 
 To work with Cloud Firestore, add the `firebase_core` and
@@ -79,18 +82,26 @@ import 'firebase_options.dart';
 ## 2. Connect your app to Firebase
 
 Unlike a local database, Cloud Firestore needs a Firebase project
-to store your data. If you haven't already connected your app to
-Firebase, install the [Firebase CLI][] and the FlutterFire CLI,
-then run `flutterfire configure` from the root of your project:
+with a Firestore database to store your data.
+If you haven't already set up Firebase for your app:
 
-```console
-$ dart pub global activate flutterfire_cli
-$ flutterfire configure
-```
+1. Create a Cloud Firestore database for your project in the
+   [Firebase console][]. Choose **test mode** while prototyping,
+   then restrict access before shipping.
+2. Install the [Firebase CLI][] and sign in, install the
+   FlutterFire CLI, and run `flutterfire configure` from the
+   root of your project:
 
-This registers your app with a Firebase project and generates
+   ```console
+   $ firebase login
+   $ dart pub global activate flutterfire_cli
+   $ flutterfire configure
+   ```
+
+This registers your app with your Firebase project and generates
 `lib/firebase_options.dart`, which the import in the previous step
-refers to. Then initialize Firebase before calling `runApp()`:
+refers to. Next, mark `main()` as `async` and initialize Firebase
+before calling `runApp()`:
 
 <?code-excerpt "lib/main.dart (initializeApp)"?>
 ```dart
@@ -98,11 +109,11 @@ WidgetsFlutterBinding.ensureInitialized();
 await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 ```
 
-For a full walkthrough of the setup, including creating a Firebase
-project and enabling Cloud Firestore in the Firebase console, refer to
+For a full walkthrough of Firebase and Firestore setup, refer to
 [Connect a Flutter app to Firebase][] and the
 [Cloud Firestore quickstart][].
 
+[Firebase console]: https://console.firebase.google.com/
 [Firebase CLI]: {{site.firebase}}/docs/cli
 [Connect a Flutter app to Firebase]: /data-and-backend/firebase#connect-a-flutter-app-to-firebase
 [Cloud Firestore quickstart]: {{site.firebase}}/docs/firestore/quickstart
@@ -136,11 +147,14 @@ class Dog {
   // Create a Dog from a Firestore document.
   // The document ID becomes the dog's id.
   factory Dog.fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) {
-    final data = doc.data()!;
+    final data = doc.data();
+    if (data == null) {
+      throw StateError('Document ${doc.id} has no data.');
+    }
     return Dog(
       id: doc.id,
       name: data['name'] as String,
-      age: data['age'] as int,
+      age: (data['age'] as num).toInt(),
     );
   }
 
@@ -160,10 +174,11 @@ class Dog {
 :::tip
 For larger models, `cloud_firestore` can convert documents to and
 from your classes automatically with `withConverter()`.
-To learn more, check out [Typing CollectionReference and DocumentReference][].
+To learn more, check out [Custom objects][] in the
+Cloud Firestore documentation.
 :::
 
-[Typing CollectionReference and DocumentReference]: {{site.firebase}}/docs/firestore/query-data/get-data#custom_objects
+[Custom objects]: {{site.firebase}}/docs/firestore/query-data/get-data#custom_objects
 
 ## 4. Add a Dog to the collection
 
@@ -175,7 +190,8 @@ Cloud Firestore creates it the first time you write a document to it.
 ```dart
 // A reference to the `dogs` collection.
 // Firestore creates the collection the first time you write to it.
-final CollectionReference<Map<String, dynamic>> dogs = FirebaseFirestore
+// Access this after `Firebase.initializeApp()` completes.
+final CollectionReference<Map<String, dynamic>> dogsRef = FirebaseFirestore
     .instance
     .collection('dogs');
 ```
@@ -187,11 +203,11 @@ to store. Cloud Firestore generates a unique document ID for you.
 ```dart
 // Add a new dog. Firestore generates a unique document ID.
 Future<void> addDog(String name, int age) async {
-  await dogs.add({'name': name, 'age': age});
+  await dogsRef.add({'name': name, 'age': age});
 }
 ```
 
-If you need to choose the ID yourself, call `dogs.doc(id).set(...)`
+If you need to choose the ID yourself, call `dogsRef.doc(id).set(...)`
 instead.
 
 [`add()`]: {{site.pub-api}}/cloud_firestore/latest/cloud_firestore/CollectionReference/add.html
@@ -206,7 +222,7 @@ each dog, which you can convert into `Dog` objects.
 ```dart
 // Read the dogs collection once.
 Future<List<Dog>> getDogs() async {
-  final snapshot = await dogs.get();
+  final snapshot = await dogsRef.get();
   return [for (final doc in snapshot.docs) Dog.fromFirestore(doc)];
 }
 ```
@@ -231,7 +247,7 @@ such as `orderBy()` and `where()` before listening.
 // Listen to the dogs collection.
 // The stream emits a new list whenever any dog changes.
 Stream<List<Dog>> watchDogs() {
-  return dogs
+  return dogsRef
       .orderBy('name')
       .snapshots()
       .map(
@@ -307,12 +323,13 @@ class _DogListScreenState extends State<DogListScreen> {
 To change an existing dog, get a reference to its document with
 `doc()` and call [`update()`][] with the fields to change.
 Fields you don't include are left as they are.
+Unlike `set()`, `update()` fails if the document doesn't exist.
 
 <?code-excerpt "lib/main.dart (updateDog)"?>
 ```dart
 // Update the fields of an existing dog.
 Future<void> updateDog(Dog dog) async {
-  await dogs.doc(dog.id).update(dog.toFirestore());
+  await dogsRef.doc(dog.id).update(dog.toFirestore());
 }
 ```
 
@@ -327,7 +344,7 @@ To remove a dog, get a reference to its document and call
 ```dart
 // Delete a dog by its document ID.
 Future<void> deleteDog(String id) async {
-  await dogs.doc(id).delete();
+  await dogsRef.doc(id).delete();
 }
 ```
 
@@ -337,12 +354,16 @@ Future<void> deleteDog(String id) async {
 
 On Android and Apple platforms, Cloud Firestore caches the documents
 your app reads and queues any writes you make while offline.
-The code in this recipe works without a network connection:
-`snapshots()` keeps emitting from the local cache, and
-`add()`, `update()`, and `delete()` sync to the server when
-connectivity returns. Offline persistence is off by default on the web
-and can be enabled with a setting. To learn more, check out
-[Access data offline][].
+`snapshots()` reflects local writes immediately from the cache,
+and `add()`, `update()`, and `delete()` sync to the server when
+connectivity returns. Because the `Future` returned by a write only
+completes once the server confirms it, avoid blocking your UI on
+`await`ing writes when you expect users to be offline.
+
+Offline persistence is off by default on the web. To enable it,
+configure `Settings(persistenceEnabled: true)` on
+`FirebaseFirestore.instance.settings` before reading or writing data.
+To learn more, check out [Access data offline][].
 
 [Access data offline]: {{site.firebase}}/docs/firestore/manage-data/enable-offline
 
@@ -381,25 +402,26 @@ void main() async {
 
 // A reference to the `dogs` collection.
 // Firestore creates the collection the first time you write to it.
-final CollectionReference<Map<String, dynamic>> dogs = FirebaseFirestore
+// Access this after `Firebase.initializeApp()` completes.
+final CollectionReference<Map<String, dynamic>> dogsRef = FirebaseFirestore
     .instance
     .collection('dogs');
 
 // Add a new dog. Firestore generates a unique document ID.
 Future<void> addDog(String name, int age) async {
-  await dogs.add({'name': name, 'age': age});
+  await dogsRef.add({'name': name, 'age': age});
 }
 
 // Read the dogs collection once.
 Future<List<Dog>> getDogs() async {
-  final snapshot = await dogs.get();
+  final snapshot = await dogsRef.get();
   return [for (final doc in snapshot.docs) Dog.fromFirestore(doc)];
 }
 
 // Listen to the dogs collection.
 // The stream emits a new list whenever any dog changes.
 Stream<List<Dog>> watchDogs() {
-  return dogs
+  return dogsRef
       .orderBy('name')
       .snapshots()
       .map(
@@ -409,12 +431,12 @@ Stream<List<Dog>> watchDogs() {
 
 // Update the fields of an existing dog.
 Future<void> updateDog(Dog dog) async {
-  await dogs.doc(dog.id).update(dog.toFirestore());
+  await dogsRef.doc(dog.id).update(dog.toFirestore());
 }
 
 // Delete a dog by its document ID.
 Future<void> deleteDog(String id) async {
-  await dogs.doc(id).delete();
+  await dogsRef.doc(id).delete();
 }
 
 class Dog {
@@ -428,11 +450,14 @@ class Dog {
   // Create a Dog from a Firestore document.
   // The document ID becomes the dog's id.
   factory Dog.fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) {
-    final data = doc.data()!;
+    final data = doc.data();
+    if (data == null) {
+      throw StateError('Document ${doc.id} has no data.');
+    }
     return Dog(
       id: doc.id,
       name: data['name'] as String,
-      age: data['age'] as int,
+      age: (data['age'] as num).toInt(),
     );
   }
 
