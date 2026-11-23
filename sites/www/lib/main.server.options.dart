@@ -78,7 +78,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
     ),
     _image_zoombox.ImageZoombox: ClientTarget<_image_zoombox.ImageZoombox>(
       'image_zoombox',
-      params: __image_zoomboxImageZoombox,
     ),
     _newsletter_signup.NewsletterSignup:
         ClientTarget<_newsletter_signup.NewsletterSignup>('newsletter_signup'),
@@ -183,9 +182,6 @@ Map<String, Object?> __carouselCarousel(_carousel.Carousel c) => {
   'prevBtn': c.prevBtn,
   'nextBtn': c.nextBtn,
 };
-Map<String, Object?> __image_zoomboxImageZoombox(
-  _image_zoombox.ImageZoombox c,
-) => {'containerSelector': c.containerSelector};
 Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
   'title': c.title,
   'header': c.header,

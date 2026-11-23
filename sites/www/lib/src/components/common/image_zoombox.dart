@@ -80,46 +80,39 @@ final class _ZoomboxImage {
   final List<String> extraClasses;
 }
 
-/// A modal zoombox that expands images inside [containerSelector] to full size
+/// A modal zoombox that expands blog post images to full size
 /// when clicked or activated via keyboard.
 ///
 /// Renders a native `<dialog>` element and progressively enhances eligible
-/// `<img>` descendants on the client, excluding images inside links, buttons,
-/// author metadata, or related-post cards.
+/// `<img>` descendants of `.post-content` on the client, excluding images
+/// inside links, buttons, author metadata, or related-post cards.
 @client
 final class ImageZoombox extends StatelessComponent {
-  /// Creates an image zoombox scoped to [containerSelector].
-  const ImageZoombox({
-    this.containerSelector = '.post-content',
-    super.key,
-  });
-
-  /// CSS selector for the container whose content images can be expanded.
-  final String containerSelector;
+  /// Creates an image zoombox for blog post content.
+  const ImageZoombox({super.key});
 
   @override
-  Component build(BuildContext _) => Component.element(
+  Component build(BuildContext _) => const Component.element(
     // Keep `<dialog>` outside the stateful child so Jaspr attribute diffing
     // doesn't strip the native `open` attribute managed by `showModal()`.
     tag: 'dialog',
     classes: 'image-zoombox',
-    attributes: const {'aria-label': 'Expanded image'},
+    attributes: {'aria-label': 'Expanded image'},
     children: [
-      _ImageZoomboxBody(containerSelector: containerSelector),
+      _ImageZoomboxBody(),
     ],
   );
 }
 
 final class _ImageZoomboxBody extends StatefulComponent {
-  const _ImageZoomboxBody({required this.containerSelector});
-
-  final String containerSelector;
+  const _ImageZoomboxBody();
 
   @override
   State<_ImageZoomboxBody> createState() => _ImageZoomboxBodyState();
 }
 
 final class _ImageZoomboxBodyState extends State<_ImageZoomboxBody> {
+  static const String _containerSelector = '.post-content';
   static const String _triggerAttribute = 'data-zoombox-trigger';
   static const String _excludedAncestorsSelector =
       '.post-info, .blog-next-posts, .blog-card, '
@@ -189,7 +182,7 @@ final class _ImageZoomboxBodyState extends State<_ImageZoomboxBody> {
           .listen(_onDialogClose);
     }
 
-    final container = web.document.querySelector(component.containerSelector);
+    final container = web.document.querySelector(_containerSelector);
     if (container == null) return;
 
     final images = container.querySelectorAll('img');

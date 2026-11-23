@@ -88,9 +88,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
       loader: _carousel.loadLibrary,
     ),
     'image_zoombox': ClientLoader(
-      (p) => _image_zoombox.ImageZoombox(
-        containerSelector: p['containerSelector'] as String,
-      ),
+      (p) => _image_zoombox.ImageZoombox(),
       loader: _image_zoombox.loadLibrary,
     ),
     'newsletter_signup': ClientLoader(
