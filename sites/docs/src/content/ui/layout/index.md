@@ -150,9 +150,9 @@ A Flutter app is itself a widget, and most widgets have a [`build()`][]
 method. Instantiating and returning a widget in the app's `build()` method
 displays the widget.
 
-<a id="non-material-apps" aria-hidden="true"></a>
-<a id="material-apps" aria-hidden="true"></a>
-<a id="cupertino-apps" aria-hidden="true"></a>
+<FragmentTarget id="non-material-apps" />
+<FragmentTarget id="material-apps" />
+<FragmentTarget id="cupertino-apps" />
 
 <Tabs key="app-type-tabs" wrapped="true">
 
@@ -767,8 +767,8 @@ from the [widgets library][], and specialized widgets from the
 [Material library][]. Any app can use the widgets library but
 only Material apps can use the Material Components library.
 
-<a id="standard-widgets" aria-hidden="true"></a>
-<a id="materials-widgets" aria-hidden="true"></a>
+<FragmentTarget id="standard-widgets" />
+<FragmentTarget id="materials-widgets" />
 
 <Tabs key="widget-types-tabs" wrapped="true">
 

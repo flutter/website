@@ -119,7 +119,7 @@ or you've launched the [iOS simulator][]
 [Android emulator][] (part of the Android Studio
 install), you are good to go!
 
-<a id="step-1"></a>
+<FragmentTarget id="step-1" />
 
 ### Step 1: Decide which object manages the widget's state
 
@@ -133,7 +133,7 @@ the UI, so the widget can handle its state internally.
 Learn more about the separation of widget and state,
 and how state might be managed, in [Managing state][].
 
-<a id="step-2"></a>
+<FragmentTarget id="step-2" />
 
 ### Step 2: Subclass StatefulWidget
 
@@ -164,7 +164,7 @@ see [Libraries and imports][], a section in the
 [Dart language documentation][].
 :::
 
-<a id="step-3"></a>
+<FragmentTarget id="step-3" />
 
 ### Step 3: Subclass State
 
@@ -252,7 +252,7 @@ void _toggleFavorite() {
 }
 ```
 
-<a id="step-4"></a>
+<FragmentTarget id="step-4" />
 
 ### Step 4: Plug the stateful widget into the widget tree
 
@@ -353,7 +353,7 @@ color: green for active or grey for inactive.
 These examples use [`GestureDetector`][] to capture activity
 on the `Container`.
 
-<a id="self-managed" aria-hidden="true"></a>
+<FragmentTarget id="self-managed" />
 
 ### The widget manages its own state
 
@@ -441,7 +441,7 @@ class MyApp extends StatelessWidget {
 
 <hr>
 
-<a id="parent-managed"></a>
+<FragmentTarget id="parent-managed" />
 
 ### The parent widget manages the widget's state
 
@@ -538,7 +538,7 @@ class TapboxB extends StatelessWidget {
 
 <hr>
 
-<a id="mix-and-match"></a>
+<FragmentTarget id="mix-and-match" />
 
 ### A mix-and-match approach
 
