@@ -3,7 +3,6 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 
-import 'package:collection/collection.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
@@ -12,29 +11,6 @@ import '../../blog.dart';
 import '../common/material_icon.dart';
 import 'blog_card.dart';
 import 'client/blog_categories.dart';
-
-extension PostIndex on BuildContext {
-  List<({String url, Post post})> get blogPosts {
-    final categories = page.blogCategories;
-    final posts = <({String url, Post post})>[
-      for (final page in pages)
-        if (page.url.startsWith('/blog/'))
-          (
-            url: page.url,
-            post: Post.parse(
-              page.data.page,
-              categories: categories,
-              source: page.url,
-            ),
-          ),
-    ];
-
-    return posts
-        .sortedBy((entry) => entry.post.dateObject)
-        .reversed
-        .toList(growable: false);
-  }
-}
 
 class BlogIndex extends StatelessComponent {
   const BlogIndex({super.key});

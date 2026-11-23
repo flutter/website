@@ -3,7 +3,6 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 
-import 'package:collection/collection.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
@@ -19,16 +18,13 @@ import '../components/common/content_image.dart';
 import '../utils/scroll_spy.dart';
 import 'default_layout.dart';
 
-/// The Jaspr Content layout to use for blog pages,
-/// adding elements such as breadcrumbs.
-class BlogLayout extends DefaultLayout {
-  BlogLayout();
+/// The blog's name, as shown in each post's page title and breadcrumbs.
+const String _blogTitle = 'The Flutter Blog';
 
+/// Shared styling and theme settings for the blog index and posts.
+abstract class _BlogLayout extends DefaultLayout {
   @override
-  String get name => 'blog';
-
-  @override
-  List<String> get defaultBodyTags => ['interior', 'blog'];
+  List<String> get defaultBodyTags => const ['interior', 'blog'];
 
   @override
   bool get supportsDarkMode => true;
@@ -43,76 +39,78 @@ class BlogLayout extends DefaultLayout {
         'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0'
         '&display=block',
   ];
+}
+
+/// The layout for the blog's list of posts.
+class BlogIndexLayout extends _BlogLayout {
+  @override
+  String get name => 'blog-index';
 
   @override
   Component buildLayout(Page page, Component child) {
-    final pageData = page.data.page;
-    final pageTitle = pageData['title'] as String? ?? 'Untitled';
+    return super.buildLayout(
+      page,
+      main_([
+        article(classes: 'content', [
+          div(classes: 'content', attributes: scroll.spyContent, [
+            const _BlogHeading(),
+            child,
+          ]),
+        ]),
+      ]),
+    );
+  }
+}
 
-    final isPost = page.url.startsWith('/blog/');
-    if (isPost && page.data.page['titleBase'] == null) {
-      page.apply(
-        data: {
-          'page': {'titleBase': 'The Flutter Blog'},
-        },
-      );
-    }
+/// The layout for an individual blog post.
+class BlogPostLayout extends _BlogLayout {
+  // Anchored because layout names match as prefixes,
+  // so a plain 'blog' would also claim the 'blog-index' layout.
+  static final RegExp _name = .new(r'blog$');
 
+  @override
+  Pattern get name => _name;
+
+  @override
+  String get titleBase => _blogTitle;
+
+  @override
+  Component buildLayout(Page page, Component child) {
     final categories = page.blogCategories;
-    final post = isPost
-        ? Post.parse(pageData, categories: categories, source: page.url)
-        : null;
-    final pageCategory = post == null
-        ? null
-        : categories.firstWhereOrNull(
-            (category) => category.slug == post.category,
-          );
+    final post = Post.parse(
+      page.data.page,
+      categories: categories,
+      source: page.url,
+    );
+    final pageCategory = categories.firstWhere(
+      (category) => category.slug == post.category,
+    );
 
     return super.buildLayout(
       page,
       main_([
         article(classes: 'content', [
           div(
-            classes: ['content', if (isPost) 'post-content'].toClasses,
+            classes: 'content post-content',
             attributes: scroll.spyContent,
             [
-              div(id: 'site-content-title', [
-                if (isPost)
-                  PageBreadcrumbs(
-                    crumbs: [
-                      const BreadcrumbItem(
-                        title: 'The Flutter Blog',
-                        url: '/blog',
-                      ),
-                      if (pageCategory != null) ...[
-                        BreadcrumbItem(
-                          title: pageCategory.label,
-                          url: '/blog?category=${pageCategory.slug}',
-                        ),
-                      ],
-                      BreadcrumbItem(
-                        title: pageTitle.split(':').first,
-                        url: page.url,
-                      ),
-                    ],
-                  ),
-                h1(
-                  id: 'document-title',
-                  attributes: const {'tabindex': '-1'},
-                  [
-                    if (pageData['underscore_breaker_titles'] == true)
-                      ...splitByUnderscore(pageTitle)
-                    else
-                      .text(pageTitle),
+              _BlogHeading(
+                breadcrumbs: PageBreadcrumbs(
+                  crumbs: [
+                    const BreadcrumbItem(title: _blogTitle, url: '/blog'),
+                    BreadcrumbItem(
+                      title: pageCategory.label,
+                      url: '/blog?category=${pageCategory.slug}',
+                    ),
+                    BreadcrumbItem(
+                      title: post.title.split(':').first,
+                      url: page.url,
+                    ),
                   ],
                 ),
-                if (pageData['description'] != null)
-                  p(classes: 'blog-subtitle', [
-                    .text(pageData['description'] as String),
-                  ]),
-              ]),
-              if (post != null) PostInfo(post: post, url: page.url),
-              if (post?.coverImage case final coverImage?
+              ),
+              PostInfo(post: post, url: page.url),
+              if (post.coverImage case final coverImage?
                   when coverImage.showInPost)
                 ContentImage(
                   src: coverImage.url,
@@ -122,15 +120,43 @@ class BlogLayout extends DefaultLayout {
                   figureClass: 'blog-cover-image',
                   isHighPriority: true,
                 ),
-              if (isPost) const BlogTableOfContents(),
+              const BlogTableOfContents(),
               child,
-              if (isPost)
-                BlogNextPosts(currentPage: page, category: pageCategory),
+              BlogNextPosts(currentPage: page, category: pageCategory),
             ],
           ),
         ]),
-        if (isPost) const BackToTopButton(),
+        const BackToTopButton(),
       ]),
     );
+  }
+}
+
+/// The title block shared by the blog index and individual posts.
+class _BlogHeading extends StatelessComponent {
+  const _BlogHeading({this.breadcrumbs});
+
+  /// The breadcrumb trail for a post, or `null` for the blog index.
+  final PageBreadcrumbs? breadcrumbs;
+
+  @override
+  Component build(BuildContext context) {
+    final pageData = context.page.data.page;
+    final title = pageData['title'] as String;
+    return div(id: 'site-content-title', [
+      ?breadcrumbs,
+      h1(
+        id: 'document-title',
+        attributes: const {'tabindex': '-1'},
+        [
+          if (pageData['underscore_breaker_titles'] == true)
+            ...splitByUnderscore(title)
+          else
+            .text(title),
+        ],
+      ),
+      if (pageData['description'] case final String description)
+        p(classes: 'blog-subtitle', [.text(description)]),
+    ]);
   }
 }

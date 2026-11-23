@@ -116,14 +116,22 @@ final class GitLastModifiedIndex {
   /// Returns the newest Git modification timestamp across [inputPaths].
   ///
   /// Each path should be POSIX-style and relative to [projectRoot].
+  /// A path ending in `/` covers every file within that directory,
+  /// including files that were since removed.
   /// Returns `null` if none of the paths have a known timestamp.
   DateTime? latestModifiedDateForPaths(Iterable<String> inputPaths) {
     DateTime? latestDate;
     for (final inputPath in inputPaths) {
-      final modifiedDate = _lastModifiedPerPath[inputPath];
-      if (modifiedDate != null &&
-          (latestDate == null || modifiedDate.isAfter(latestDate))) {
-        latestDate = modifiedDate;
+      final modifiedDates = inputPath.endsWith('/')
+          ? [
+              for (final MapEntry(:key, :value) in _lastModifiedPerPath.entries)
+                if (key.startsWith(inputPath)) value,
+            ]
+          : [?_lastModifiedPerPath[inputPath]];
+      for (final modifiedDate in modifiedDates) {
+        if (latestDate == null || modifiedDate.isAfter(latestDate)) {
+          latestDate = modifiedDate;
+        }
       }
     }
     return latestDate;
@@ -132,7 +140,8 @@ final class GitLastModifiedIndex {
   /// Applies `inputPath`, `date`, `dateModified`, and `sitemap` data to [page].
   ///
   /// The page's modification date is the latest of its own source file and
-  /// any project-relative paths listed in its `dateModifiedSources` data.
+  /// any project-relative paths listed in its `dateModifiedSources` data,
+  /// where a path ending in `/` covers every file within that directory.
   void applyToPage(Page page) {
     final pageData = page.data.page;
     final excludeFromSitemap = isNoIndexFlag(pageData['noindex']);
