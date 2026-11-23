@@ -299,7 +299,7 @@ check out the [IntelliJ for Flutter reference][ij-more].
 [ij-more]: /tools/android-studio
 [ij-run]: /tools/android-studio#running-and-debugging
 
-<a id="project-idx" aria-hidden="true"></a>
+<FragmentTarget id="project-idx" />
 
 ## Antigravity
 

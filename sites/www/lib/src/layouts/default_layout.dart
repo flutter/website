@@ -27,6 +27,9 @@ class DefaultLayout extends PageLayout {
   /// before the page paints and the site header includes a theme switcher.
   bool get supportsDarkMode => false;
 
+  /// Additional font stylesheet URLs required by this layout.
+  List<String> get additionalFontUrls => const [];
+
   @override
   Component buildLayout(Page page, Component child) {
     final pageData = page.data.page;
@@ -68,11 +71,18 @@ class DefaultLayout extends PageLayout {
         (pageData['titleBase'] ?? siteData['titleBase']) as String?;
     final documentTitle = titleBase == null ? title : '$title | $titleBase';
 
-    final canonicalUrl = switch (page.data.page['canonical']) {
-      final String url when url.trim().isNotEmpty => url.trim(),
-      _ => siteBaseUrl.resolve(page.url).toString(),
+    final noIndex =
+        pageData['noindex'] == true || pageData['noindex'] == 'true';
+    final pageUrl = _absoluteUrl(siteBaseUrl, page.url);
+    final canonicalUrl = switch (pageData['canonical']) {
+      false || 'false' => null,
+      final String url when url.trim().isNotEmpty => _absoluteUrl(
+        siteBaseUrl,
+        url.trim(),
+      ),
+      _ => noIndex ? null : pageUrl,
     };
-    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
+    final socialPageUrl = canonicalUrl ?? pageUrl;
 
     return AsyncBuilder(
       builder: (context) async {
@@ -95,7 +105,9 @@ class DefaultLayout extends PageLayout {
             ),
 
             meta(name: 'description', content: description),
-            link(rel: 'canonical', href: canonicalUrl),
+            if (noIndex) const meta(name: 'robots', content: 'noindex'),
+            if (canonicalUrl != null)
+              link(rel: 'canonical', href: canonicalUrl),
             meta(
               name: 'twitter:card',
               content: socialImage != null ? 'summary_large_image' : 'summary',
@@ -140,6 +152,7 @@ class DefaultLayout extends PageLayout {
               href: 'https://fonts.gstatic.com',
               attributes: {'crossorigin': ''},
             ),
+            const link(rel: 'preconnect', href: 'https://www.gstatic.com'),
 
             // Set up site fonts and icons.
             const link(
@@ -147,25 +160,15 @@ class DefaultLayout extends PageLayout {
               rel: 'stylesheet',
             ),
             const link(
-              rel: 'stylesheet',
               href:
                   'https://fonts.googleapis.com/css2?'
-                  'family=Roboto+Serif:ital,opsz,wght@'
-                  '0,8..72,400..700;1,8..72,400..700'
-                  '&display=swap',
-            ),
-            const link(
-              href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block',
+                  'family=Material+Symbols+Rounded:'
+                  'opsz,wght,FILL,GRAD@20..48,400,0..1,0'
+                  '&display=block',
               rel: 'stylesheet',
             ),
-
-            const link(
-              rel: 'stylesheet',
-              href:
-                  'https://fonts.googleapis.com/css2?'
-                  'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
-                  '24,400,0..1,0&display=block',
-            ),
+            for (final font in additionalFontUrls)
+              link(rel: 'stylesheet', href: font),
 
             const script(
               src: 'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.8.2/lite-youtube.js',

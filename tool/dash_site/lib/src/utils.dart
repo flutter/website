@@ -8,6 +8,8 @@ import 'dart:isolate';
 import 'package:args/args.dart';
 import 'package:path/path.dart' as path;
 
+import 'sites.dart';
+
 /// The root path of the website repository.
 final String repositoryRoot = () {
   final packageConfigPath = path.fromUri(Isolate.packageConfigSync);
@@ -84,6 +86,32 @@ int runPubGetIfNecessary(String directory) {
 
   return 0;
 }
+
+/// Returns the existing build output directory of [site],
+/// for commands that check a previously built site.
+///
+/// If the site hasn't been built yet, writes an error to stderr
+/// that explains how to build it, and returns `null`.
+Directory? findBuildOutputDirectory(Site site) {
+  final directory = Directory(
+    path.join(repositoryRoot, site.buildOutputDirectory),
+  );
+  if (directory.existsSync()) return directory;
+
+  stderr.writeln(
+    'Error: Build output not found at ${site.buildOutputDirectory}. '
+    'Run `dart run dash_site --site=${site.name} build` first.',
+  );
+  return null;
+}
+
+/// Lists the generated HTML files in [buildOutputDirectory],
+/// including those in nested directories.
+List<File> listHtmlFiles(Directory buildOutputDirectory) => buildOutputDirectory
+    .listSync(recursive: true)
+    .whereType<File>()
+    .where((file) => path.extension(file.path) == '.html')
+    .toList(growable: false);
 
 /// Returns [value] if it is non-null and non-empty, otherwise `null`.
 String? nonEmpty(String? value) {

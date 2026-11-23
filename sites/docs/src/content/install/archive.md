@@ -65,7 +65,7 @@ By explicitly calling out branch cutoff dates and release targets,
 we enable everyone to align their development cycles and
 coordinate feature landing effectively.
 
-<a id="what-is-a-branch-cutoff-date" aria-hidden="true"></a>
+<FragmentTarget id="what-is-a-branch-cutoff-date" />
 
 ### What is a branch cutoff date? {:#branch-cutoff}
 
@@ -76,7 +76,7 @@ guarantee inclusion in the next stable release.
 * **Before cutoff:** Your PR will ship in the next stable version.
 * **After cutoff:** Your PR will wait for the following cycle.
 
-<a id="2026-schedule" aria-hidden="true"></a>
+<FragmentTarget id="2026-schedule" />
 
 ### 2027 release schedule {:#release-schedule}
 
@@ -134,7 +134,7 @@ To see what's changed in a beta release, compare the version tags on GitHub.
 For example: [`flutter/flutter@3.38.0-0.1.pre...3.38.0-0.2.pre`](https://github.com/flutter/flutter/compare/3.38.0-0.1.pre...3.38.0-0.2.pre)
 :::
 
-<a id="master-channel" aria-hidden="true"></a>
+<FragmentTarget id="master-channel" />
 
 ## Main channel
 
@@ -149,7 +149,7 @@ $ git clone -b main https://github.com/flutter/flutter.git
 $ ./flutter/bin/flutter --version
 ```
 
-<a id="install-from-an-archive" aria-hidden="true"></a>
+<FragmentTarget id="install-from-an-archive" />
 
 ## More information
 

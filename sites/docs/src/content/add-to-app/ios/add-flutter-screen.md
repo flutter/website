@@ -364,8 +364,6 @@ func showFlutter() {
 See [Loading sequence and performance][]
 for more explorations on latency and memory usage.
 
-<a id="using-the-flutterappdelegate" aria-hidden="true"></a>
-
 ## Using FlutterAppDelegate and FlutterSceneDelegate
 
 As of Flutter 3.41, `UIScene` support is the default for iOS apps,

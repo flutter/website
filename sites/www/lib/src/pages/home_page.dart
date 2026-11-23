@@ -646,10 +646,9 @@ class HomePage extends StatelessComponent {
             loading: MediaLoading.lazy,
           ),
           h4([.text(item.title)]),
-          a(
-            href: item.url,
-            attributes: const {'target': '_blank'},
-            const [
+          const span(
+            classes: 'read-more',
+            [
               .text('Read more'),
               RawText('&nbsp;'),
               Icon.linkArrow(),
