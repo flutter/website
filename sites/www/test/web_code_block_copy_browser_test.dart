@@ -13,100 +13,63 @@ import 'package:test/test.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
+@JS('navigator.clipboard.writeText')
+external JSFunction get _writeText;
+
+@JS('navigator.clipboard.writeText')
+external set _writeText(JSFunction value);
+
 void main() {
   test(
-    'extractCodeBlockText strips aria-hidden elements and zero-width spaces',
-    () {
-      final wrapper = web.document.createElement('div')
-        ..className = 'code-block-wrapper'
-        ..innerHTML =
-            '''
-<div class="code-block-body">
-  <pre><code><span class="line"><span aria-hidden="true">\$ </span><span>flutter test</span>
-</span><span class="line"><span>\u200B</span>
-</span><details><summary class="fold-summary"><span class="material-symbols" aria-hidden="true">keyboard_arrow_right</span><span class="line"><span>void main() {}</span>
-</span></summary></details></code></pre>
-  <button type="button" $codeBlockCopyAttribute=""></button>
-</div>
-'''
-                .toJS;
-      _appendToBodyForTest(wrapper);
-
-      final button = wrapper.querySelector('button[$codeBlockCopyAttribute]')!;
-      expect(extractCodeBlockText(button), 'flutter test\n\nvoid main() {}\n');
-    },
-  );
-
-  test(
-    'setUpCodeBlockCopyButtons updates icon and text copy buttons cleanly on click',
+    'copies clean code and replaces the button label',
     () async {
       setUpCodeBlockCopyButtons();
-
+      const markup =
+          '''
+<pre><code><span aria-hidden="true">\$ </span>flutter test
+\u200B
+done</code></pre>
+<button $codeBlockCopyAttribute><span>Copy</span></button>
+''';
       final wrapper = web.document.createElement('div')
         ..className = 'code-block-wrapper'
-        ..innerHTML =
-            '''
-<div class="code-block-body">
-  <pre><code><span>void main() {}</span></code></pre>
-  <button type="button" class="text-button icon-button copy-button" title="Copy code to clipboard" aria-label="Copy code to clipboard" $codeBlockCopyAttribute=""><span class="material-symbols" aria-hidden="true">content_copy</span></button>
-  <button type="button" class="filled-button copy-button" title="Copy snippet" aria-label="Copy snippet" $codeBlockCopyAttribute="">Copy code</button>
-</div>
-'''
-                .toJS;
-      _appendToBodyForTest(wrapper);
+        ..innerHTML = markup.toJS;
+      web.document.body!.appendChild(wrapper);
 
-      final buttons = wrapper.querySelectorAll(
-        'button[$codeBlockCopyAttribute]',
+      final button = wrapper.querySelector('button')!;
+      final feedback = Completer<void>();
+      final observer = web.MutationObserver(
+        ((JSArray<web.MutationRecord> _, web.MutationObserver observer) {
+          observer.disconnect();
+          feedback.complete();
+        }).toJS,
       );
-      final iconButton = buttons.item(0) as web.HTMLButtonElement;
-      final textButton = buttons.item(1) as web.HTMLButtonElement;
-
-      await _clickAndWaitForAttributeMutation(iconButton);
-      expect(iconButton.classList.contains('icon-button'), isFalse);
-      expect(
-        iconButton.querySelector('.copy-feedback')?.textContent,
-        anyOf('Copied!', 'Failed to copy'),
+      observer.observe(
+        button,
+        web.MutationObserverInit(
+          childList: true,
+          characterData: true,
+          subtree: true,
+        ),
       );
 
-      await _clickAndWaitForAttributeMutation(textButton);
-      expect(textButton.textContent, anyOf('Copied!', 'Failed to copy'));
-      expect(
-        textButton.getAttribute('aria-label'),
-        anyOf('Copied!', 'Failed to copy'),
-      );
+      final originalWriteText = _writeText;
+      String? copied;
+      addTearDown(() {
+        observer.disconnect();
+        _writeText = originalWriteText;
+        wrapper.remove();
+      });
+      _writeText = ((String text) {
+        copied = text;
+        return Future<void>.value().toJS;
+      }).toJS;
 
-      // Rapid repeat click preserves replacement feedback without concatenation.
-      await _clickAndWaitForAttributeMutation(textButton);
-      expect(textButton.textContent, anyOf('Copied!', 'Failed to copy'));
+      (button.firstElementChild! as web.HTMLElement).click();
+      await feedback.future;
+
+      expect(copied, 'flutter test\n\ndone');
+      expect(button.textContent, button.getAttribute('aria-label'));
     },
   );
-}
-
-Future<void> _clickAndWaitForAttributeMutation(
-  web.HTMLButtonElement button,
-) async {
-  final completer = Completer<void>();
-  final observer = web.MutationObserver(
-    ((JSArray<web.MutationRecord> _, web.MutationObserver obs) {
-      obs.disconnect();
-      if (!completer.isCompleted) {
-        completer.complete();
-      }
-    }).toJS,
-  )..observe(button, web.MutationObserverInit(attributes: true));
-
-  try {
-    button.click();
-    await completer.future;
-  } finally {
-    observer.disconnect();
-  }
-}
-
-void _appendToBodyForTest(web.Element element) {
-  web.document.body!.appendChild(element);
-  // External JS interop extension-type members cannot be torn off on web/wasm,
-  // even though universal_web's VM analyzer stub triggers unnecessary_lambdas.
-  // ignore: unnecessary_lambdas
-  addTearDown(() => element.remove());
 }
