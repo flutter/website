@@ -26,8 +26,6 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
 import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     as _collapse_button;
-import 'package:site_shared/components/common/client/copy_button.dart'
-    as _copy_button;
 import 'package:site_shared/components/common/client/download_button.dart'
     as _download_button;
 import 'package:site_shared/components/common/client/expandable.dart'
@@ -112,10 +110,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:collapse_button',
           params: __collapse_buttonCollapseButton,
         ),
-    _copy_button.CopyButton: ClientTarget<_copy_button.CopyButton>(
-      'site_shared:copy_button',
-      params: __copy_buttonCopyButton,
-    ),
     _download_button.DownloadButton:
         ClientTarget<_download_button.DownloadButton>(
           'site_shared:download_button',
@@ -192,12 +186,6 @@ Map<String, Object?> __archive_tableArchiveTable(
 Map<String, Object?> __collapse_buttonCollapseButton(
   _collapse_button.CollapseButton c,
 ) => {'classes': c.classes, 'title': c.title};
-Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
-  'buttonText': c.buttonText,
-  'toCopy': c.toCopy,
-  'classes': c.classes,
-  'title': c.title,
-};
 Map<String, Object?> __download_buttonDownloadButton(
   _download_button.DownloadButton c,
 ) => {'name': c.name};
