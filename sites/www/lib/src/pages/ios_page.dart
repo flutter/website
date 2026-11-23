@@ -55,6 +55,8 @@ class IosPage extends StatelessComponent {
                 'images/header-image-background.png',
                 width: 1200,
               ),
+              width: 1200,
+              height: 1154,
               alt: 'Header image background',
             ),
             img(
@@ -321,6 +323,8 @@ class IosPage extends StatelessComponent {
             img(
               alt: 'Rich Ecosystem Image',
               src: context.asset('images/rich-ecosystem-1.png', width: 1200),
+              width: 790,
+              height: 718,
             ),
           ]),
         ]),
@@ -336,6 +340,8 @@ class IosPage extends StatelessComponent {
             img(
               alt: 'Rich Ecosystem Image',
               src: context.asset('images/rich-ecosystem-2.png', width: 1200),
+              width: 686,
+              height: 888,
             ),
           ]),
         ]),
@@ -396,6 +402,8 @@ class IosPage extends StatelessComponent {
         img(
           alt: 'Productive Team Image',
           src: context.asset('images/productive-team.png', width: 1200),
+          width: 963,
+          height: 542,
         ),
       ]),
     ]);

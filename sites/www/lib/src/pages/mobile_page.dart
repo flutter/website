@@ -38,6 +38,8 @@ class MobilePage extends StatelessComponent {
       text: 'Bring your app idea to more users from day one by building with Flutter on iOS and Android simultaneously, without sacrificing features, quality, or performance.',
       media: img(
         src: context.asset('images/flutter-on-mobile.png', width: 1200),
+        width: 1316,
+        height: 1072,
         alt: 'Flutter on Mobile',
       ),
     );
@@ -90,6 +92,8 @@ class MobilePage extends StatelessComponent {
                 'images/build-for-all-as-one-team.png',
                 width: 1200,
               ),
+              width: 1088,
+              height: 1292,
               alt: 'Build for all as one team',
             ),
           ]),
