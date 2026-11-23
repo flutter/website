@@ -1438,7 +1438,7 @@ in the Flutter ecosystem, see [publishing packages][].
 [`MethodChannel` for Flutter]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannel` for Android]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
 [`FlutterMethodChannel` for iOS]: {{site.api}}/ios-embedder/interface_flutter_method_channel.html
-[Platform adaptations]: /platform-integration/platform-adaptations
+[Platform adaptations]: /ui/adaptive-responsive/platform-adaptations
 [publishing packages]: /packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions
 [section on threading]: #channels-and-platform-threading

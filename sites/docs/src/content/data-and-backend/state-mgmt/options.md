@@ -80,7 +80,7 @@ Other useful docs include:
 
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: https://medium.com/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
-[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-blog}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
+[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-blog}}/managing-flutter-application-state-with-inheritedwidgets
 [Widget - State - Context - InheritedWidget]: https://flutteris.com/blog/en/widget-state-context-inheritedwidget
 
 ## Community-provided packages

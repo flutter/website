@@ -2103,7 +2103,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Material Components]: {{site.material}}/develop/flutter/
 [Material Design guidelines]: {{site.material}}/styles/
 [optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
-[Platform adaptations]: /platform-integration/platform-adaptations
+[Platform adaptations]: /ui/adaptive-responsive/platform-adaptations
 [platform channel]: /platform-integration/platform-channels
 [pub.dev]: {{site.pub}}/flutter/packages
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
