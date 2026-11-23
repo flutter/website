@@ -7,6 +7,8 @@
 import 'package:jaspr/server.dart';
 import 'package:flutter_website/src/components/common/carousel.dart'
     as _carousel;
+import 'package:flutter_website/src/components/common/image_zoombox.dart'
+    as _image_zoombox;
 import 'package:flutter_website/src/components/common/newsletter_signup.dart'
     as _newsletter_signup;
 import 'package:flutter_website/src/components/common/tabs.dart' as _tabs;
@@ -71,6 +73,9 @@ ServerOptions get defaultServerOptions => ServerOptions(
     _carousel.Carousel: ClientTarget<_carousel.Carousel>(
       'carousel',
       params: __carouselCarousel,
+    ),
+    _image_zoombox.ImageZoombox: ClientTarget<_image_zoombox.ImageZoombox>(
+      'image_zoombox',
     ),
     _newsletter_signup.NewsletterSignup:
         ClientTarget<_newsletter_signup.NewsletterSignup>('newsletter_signup'),

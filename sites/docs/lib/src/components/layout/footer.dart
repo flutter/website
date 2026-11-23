@@ -25,6 +25,7 @@ final class DashFooter extends StatelessComponent {
                 src: '/assets/images/branding/flutter/logo+text/horizontal/white.svg',
                 alt: 'Flutter logo',
                 width: 164,
+                height: 46,
               ),
             ],
           ),

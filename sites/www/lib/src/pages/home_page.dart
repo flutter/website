@@ -642,6 +642,7 @@ class HomePage extends StatelessComponent {
             src: context.asset(item.image, width: 635),
             width: 635,
             height: 357,
+            loading: MediaLoading.lazy,
           ),
           h4([.text(item.title)]),
           const span(
