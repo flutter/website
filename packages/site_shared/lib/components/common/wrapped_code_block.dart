@@ -7,7 +7,7 @@ import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
 import 'client/collapse_button.dart';
-import 'client/copy_button.dart';
+import 'code_block_copy_button.dart';
 import 'material_icon.dart';
 
 /// A rendered code block with support for syntax highlighting,
@@ -50,61 +50,69 @@ final class WrappedCodeBlock extends StatelessComponent {
   final bool collapsed;
   final List<Component> actions;
 
-  @override
-  Component build(BuildContext context) {
+  Map<int, Component> _buildCodeLineChildren() {
     final children = <int, Component>{
       for (var lineIndex = 0; lineIndex < content.length; lineIndex += 1)
-        lineIndex: span(
-          classes: [
-            'line',
-            if (highlightLines.contains(lineIndex + 1)) 'highlighted-line',
-            if (removedLines.contains(lineIndex + 1)) 'removed-line',
-            if (addedLines.contains(lineIndex + 1)) 'added-line',
-          ].toClasses,
-          attributes: {
-            if (showLineNumbers)
-              'data-line': '${initialLineNumber + lineIndex}',
-          },
-          [
-            switch (content[lineIndex]) {
-              // Add a zero-width space when empty
-              // so that the line isn't collapsed to 0 height.
-              final line when line.isEmpty => const span(
-                styles: Styles(
-                  userSelect: UserSelect.none,
-                ),
-                [.text('\u200b')],
-              ),
-              final lineSpans => span(lineSpans),
-            },
-            const .text('\n'),
-          ],
-        ),
+        lineIndex: _buildCodeLine(lineIndex),
     };
 
-    if (foldingRanges.isNotEmpty) {
-      for (final (:start, :end, :level, :open) in foldingRanges) {
-        final foldingSummary = children.remove(start - 1);
-        final foldedChildren = [
-          for (var i = start + 1; i <= end; i += 1) ?children.remove(i - 1),
-        ];
+    for (final (:start, :end, :level, :open) in foldingRanges) {
+      final foldingSummary = children.remove(start - 1);
+      final foldedChildren = [
+        for (var i = start + 1; i <= end; i += 1) ?children.remove(i - 1),
+      ];
 
-        children[start - 1] = details(
-          open: open,
-          styles: Styles(raw: {'--level': '$level'}),
-          [
-            summary(
-              classes: 'fold-summary',
-              [
-                const MaterialIcon('keyboard_arrow_right'),
-                foldingSummary ?? const .text('...'),
-              ],
-            ),
-            ...foldedChildren,
-          ],
-        );
-      }
+      children[start - 1] = details(
+        open: open,
+        styles: Styles(raw: {'--level': '$level'}),
+        [
+          summary(
+            classes: 'fold-summary',
+            [
+              const MaterialIcon('keyboard_arrow_right'),
+              foldingSummary ?? const .text('...'),
+            ],
+          ),
+          ...foldedChildren,
+        ],
+      );
     }
+
+    return children;
+  }
+
+  Component _buildCodeLine(int lineIndex) {
+    final lineNumber = lineIndex + 1;
+    final lineSpans = content[lineIndex];
+
+    return span(
+      classes: [
+        'line',
+        if (highlightLines.contains(lineNumber)) 'highlighted-line',
+        if (removedLines.contains(lineNumber)) 'removed-line',
+        if (addedLines.contains(lineNumber)) 'added-line',
+      ].toClasses,
+      attributes: {
+        if (showLineNumbers) 'data-line': '${initialLineNumber + lineIndex}',
+      },
+      [
+        if (lineSpans.isEmpty)
+          // Add a zero-width space when empty
+          // so that the line isn't collapsed to 0 height.
+          const span(
+            styles: Styles(userSelect: UserSelect.none),
+            [.text('\u200b')],
+          )
+        else
+          span(lineSpans),
+        const .text('\n'),
+      ],
+    );
+  }
+
+  @override
+  Component build(BuildContext context) {
+    final children = _buildCodeLineChildren();
 
     return div(
       classes: [
@@ -150,10 +158,7 @@ final class WrappedCodeBlock extends StatelessComponent {
                 ]),
               ],
             ),
-            if (showCopyButton)
-              const CopyButton(
-                title: 'Copy code to clipboard',
-              ),
+            if (showCopyButton) const CodeBlockCopyButton(),
           ],
         ),
       ],

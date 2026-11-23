@@ -7,8 +7,8 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
 
 import '../../src/extensions/code_block_processor.dart';
-import '../common/client/copy_button.dart';
 import '../common/client/download_button.dart';
+import '../common/code_block_copy_button.dart';
 import '../common/wrapped_code_block.dart';
 
 class DownloadableSnippet extends CustomComponentBase {
@@ -67,7 +67,7 @@ class DownloadableSnippet extends CustomComponentBase {
             DownloadButton(
               name: name,
             ),
-            const CopyButton(
+            const CodeBlockCopyButton(
               title: 'Copy to clipboard',
             ),
           ],

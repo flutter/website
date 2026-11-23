@@ -12,6 +12,7 @@ import 'package:universal_web/web.dart' as web;
 /// These are temporary until they can be integrated with their
 /// relevant Jaspr components.
 void setUpSite() {
+  setUpCodeBlockCopyButtons();
   _setUpSearchKeybindings();
   _setUpPlatformKeys();
   _setUpToc();
