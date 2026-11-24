@@ -20,19 +20,19 @@ Generative user interfaces (GenUI) put native controls
 like date pickers, sliders, and confirmation cards
 right inside the conversation.
 
-[A2UI](https://a2ui.org) (Agent-to-User Interface) is Google's open protocol
+[A2UI](https://g.dev/flutter/blog-genkit-a2ui-a2ui-site) (Agent-to-User Interface) is Google's open protocol
 for agent-driven interfaces.
 Instead of returning raw text,
 an agent streams structured UI surfaces,
 and the client renders them with native widgets
 and sends user interactions back as events.
 
-With [Genkit Dart](https://genkit.dev/docs/dart/get-started/) and A2UI,
+With [Genkit Dart](https://g.dev/flutter/blog-genkit-a2ui-genkit-get-started) and A2UI,
 you can build full-stack apps with agentic UI
-in [Dart](https://dart.dev) and [Flutter](/),
+in [Dart](https://g.dev/flutter/blog-genkit-a2ui-dart) and [Flutter](https://g.dev/flutter/blog-genkit-a2ui-flutter),
 from backend tools to interactive screens.
 This walkthrough builds an end-to-end dining concierge for Cymbal Bistro
-(refer to the [complete sample on GitHub](https://github.com/genkit-ai/samples/tree/main/a2ui-reservations_dart)).
+(refer to the [complete sample on GitHub](https://g.dev/flutter/blog-genkit-a2ui-sample-repo)).
 
 <video
   src="images/a2ui-demo.webm"
@@ -49,7 +49,7 @@ checks availability and confirms a booking._
 
 ## Why build agentic UI with Genkit Dart
 
-[Genkit](https://genkit.dev/docs/dart/get-started/) is Google's open-source
+[Genkit](https://g.dev/flutter/blog-genkit-a2ui-genkit-get-started) is Google's open-source
 framework for building AI workflows and stateful agents in Dart.
 When you pair it with A2UI, you get:
 
@@ -79,8 +79,8 @@ between your server and Flutter app around three ideas:
     your Flutter app stays in control of styling and security
     while API keys and backend mutations remain on the server.
 1.  **Built-in A2UI 1.0 enhancements:** The A2UI middleware uses the
-    enhancements from [A2UI 1.0](/blog/a2ui-launch),
-    including [A2UI Express](https://a2ui.org/specification/proposals/express/a2ui_express/)
+    enhancements from [A2UI 1.0](https://g.dev/flutter/blog-genkit-a2ui-a2ui-launch),
+    including [A2UI Express](https://g.dev/flutter/blog-genkit-a2ui-a2ui-express)
     by default, which cuts generated UI output roughly in half
     compared to raw JSON.
     Because the middleware compiles each block into standard A2UI JSON
@@ -98,7 +98,7 @@ between your server and Flutter app around three ideas:
 ## Set up the full-stack project
 
 To follow along, install Flutter (with Dart 3.12 or later)
-and the [Genkit CLI](https://genkit.dev/docs/devtools/),
+and the [Genkit CLI](https://g.dev/flutter/blog-genkit-a2ui-genkit-cli),
 and set a `GEMINI_API_KEY` environment variable.
 Calling Gemini models might incur usage charges beyond the free tier.
 
@@ -230,7 +230,7 @@ Here, `bistroCatalogId` points to the custom catalog defined in
 [Extend the component catalog](#extend-the-component-catalog).
 If you only need the 18 built-in components, omit the `catalog` argument.
 For Google Cloud deployments, swap `googleAI` for the
-[Vertex AI plugin](https://pub.dev/packages/genkit_vertexai)
+[Vertex AI plugin](https://g.dev/flutter/blog-genkit-a2ui-pub-genkit-vertexai)
 and call `vertexAI.gemini('gemini-4-hydrogen')`.
 
 ## Serve the agent over HTTP
@@ -275,7 +275,7 @@ while `MessageProcessor` turns incoming A2UI payloads
 into live `A2uiSurface` widgets.
 The two wire helpers (`a2uiMessagesFrom` and `a2uiActionToMessage`) live in
 `client/lib/a2ui_helpers.dart` in the
-[sample repository](https://github.com/genkit-ai/samples/tree/main/a2ui-reservations_dart):
+[sample repository](https://g.dev/flutter/blog-genkit-a2ui-sample-repo):
 
 ```dart
 // client/lib/main.dart
@@ -440,12 +440,12 @@ Future<void> registerCatalogs() =>
 On the Flutter client, register a matching Flutter widget
 for `ConfirmationPass` alongside `BasicComponents.all`
 under the same `bistroCatalogId` (refer to `client/lib/catalog.dart` in the
-[sample repository](https://github.com/genkit-ai/samples/tree/main/a2ui-reservations_dart)):
+[sample repository](https://g.dev/flutter/blog-genkit-a2ui-sample-repo)):
 
 <DashImage figure src="images/bistro-catalog-mapping.webp" alt="Mapping the 18-component Basic Catalog and custom ConfirmationPass schema to native Flutter widgets with CatalogImplementation" caption="Combining the 18 built-in Basic Catalog widgets with a custom ConfirmationPass component under bistroCatalogId." />
 
 You can also drop in existing domain catalogs from the A2UI ecosystem,
-such as the [Google Maps Platform Agentic UI toolkit](https://developers.google.com/maps/ai/agentic-ui-toolkit).
+such as the [Google Maps Platform Agentic UI toolkit](https://g.dev/flutter/blog-genkit-a2ui-maps-toolkit).
 
 ## Inspect and debug A2UI workflows in the Developer UI
 
@@ -479,15 +479,15 @@ from a single Dart codebase.
 To explore further:
 
 - **Sample repository:** Check out the
-  [complete Cymbal Bistro sample on GitHub](https://github.com/genkit-ai/samples/tree/main/a2ui-reservations_dart).
+  [complete Cymbal Bistro sample on GitHub](https://g.dev/flutter/blog-genkit-a2ui-sample-repo).
 - **Genkit Dart documentation:** Read the
-  [Genkit Dart A2UI guide](https://genkit.dev/docs/dart/agents/a2ui/) and the
-  [Genkit Dart 1.0 announcement](/blog/announcing-genkit-dart-1-0).
+  [Genkit Dart A2UI guide](https://g.dev/flutter/blog-genkit-a2ui-a2ui-guide) and the
+  [Genkit Dart 1.0 announcement](https://g.dev/flutter/blog-genkit-a2ui-genkit-launch).
 - **A2UI documentation:** Explore
-  [Announcing A2UI 1.0 and `a2ui_flutter`](/blog/a2ui-launch),
-  the [A2UI 1.0 announcement](https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/),
-  and the [A2UI protocol specification](https://a2ui.org/specification/v1.0-a2ui/).
-- **Pub packages:** Browse [`genkit`](https://pub.dev/packages/genkit),
-  [`genkit_a2ui`](https://pub.dev/packages/genkit_a2ui),
-  [`a2ui_flutter`](https://pub.dev/packages/a2ui_flutter), and
-  [`a2ui_core`](https://pub.dev/packages/a2ui_core) on pub.dev.
+  [Announcing A2UI 1.0 and `a2ui_flutter`](https://g.dev/flutter/blog-genkit-a2ui-a2ui-launch),
+  the [A2UI 1.0 announcement](https://g.dev/flutter/blog-genkit-a2ui-devblog-a2ui),
+  and the [A2UI protocol specification](https://g.dev/flutter/blog-genkit-a2ui-a2ui-spec).
+- **Pub packages:** Browse [`genkit`](https://g.dev/flutter/blog-genkit-a2ui-pub-genkit),
+  [`genkit_a2ui`](https://g.dev/flutter/blog-genkit-a2ui-pub-genkit-a2ui),
+  [`a2ui_flutter`](https://g.dev/flutter/blog-genkit-a2ui-pub-a2ui-flutter), and
+  [`a2ui_core`](https://g.dev/flutter/blog-genkit-a2ui-pub-a2ui-core) on pub.dev.
