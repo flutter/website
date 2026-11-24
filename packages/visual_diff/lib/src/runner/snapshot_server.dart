@@ -46,6 +46,17 @@ final class SnapshotServer {
             request.response.headers.set('Cache-Control', 'no-cache');
             request.response.headers.add('Access-Control-Allow-Origin', '*');
             final content = file.readAsStringSync();
+            // Strip tracking/noscript iframes (e.g. Google Tag Manager ns.html)
+            // that cause headless Chrome to hang on frame lifecycle events when
+            // JavaScript is disabled.
+            final sanitized = content.replaceAll(
+              RegExp(
+                r'<noscript[^>]*>[\s\S]*?<iframe[\s\S]*?</iframe>[\s\S]*?</noscript>',
+                caseSensitive: false,
+              ),
+              '',
+            );
+
             const injectedStyle =
                 '<style id="__visual_diff_injected__">'
                 '.glue-cookie-notification-bar,'
@@ -64,9 +75,9 @@ final class SnapshotServer {
                 '}'
                 '</style>';
 
-            final modified = content.contains('</head>')
-                ? content.replaceFirst('</head>', '$injectedStyle</head>')
-                : '$content$injectedStyle';
+            final modified = sanitized.contains('</head>')
+                ? sanitized.replaceFirst('</head>', '$injectedStyle</head>')
+                : '$sanitized$injectedStyle';
             request.response.write(modified);
             await request.response.close();
             return;

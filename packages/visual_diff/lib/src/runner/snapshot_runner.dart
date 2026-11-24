@@ -334,6 +334,16 @@ final class SnapshotRunner {
                   } finally {
                     if (inFlightRequests > 0) inFlightRequests--;
                   }
+                } else if (request.frame != null &&
+                    request.frame != page.mainFrame) {
+                  // For subframes/iframes, respond with empty HTML rather than
+                  // aborting so Chrome's frame lifecycle watcher does not hang
+                  // waiting for an aborted frame's load event.
+                  await request.respond(
+                    status: HttpStatus.ok,
+                    contentType: 'text/html',
+                    body: '<!DOCTYPE html><html><body></body></html>',
+                  );
                 } else {
                   await request.abort();
                 }
