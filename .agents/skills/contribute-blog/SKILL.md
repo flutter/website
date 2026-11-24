@@ -15,8 +15,9 @@ First person, contractions, anecdotes, humor, enthusiasm,
 and future-facing announcements can all be appropriate.
 Don't rewrite them merely to match documentation conventions.
 
-Apply `write-technical-docs` and `format-markdown` selectively for clarity,
-accuracy, accessibility, links, code formatting, and sound structure.
+Apply `site-skills-write-technical-docs` and `site-skills-format-markdown`
+selectively for clarity, accuracy, accessibility, links, code formatting,
+and sound structure.
 Their documentation-specific preferences aren't blanket blog requirements:
 semantic line breaks and an 80-character limit aren't required,
 especially when importing or lightly editing an existing post.
@@ -44,7 +45,7 @@ or implementation source when a convention is unclear.
 ## Code and quality checks
 
 - If changing or writing Dart or Flutter samples,
-  apply `write-dart` and `write-flutter` as relevant.
+  apply `site-skills-write-dart` and `site-skills-write-flutter` as relevant.
   Validate complete examples when practical and
   label intentional omissions or pseudocode clearly.
 - Before calling a post ready,

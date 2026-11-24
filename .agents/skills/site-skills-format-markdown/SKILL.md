@@ -1,16 +1,16 @@
 ---
-name: format-markdown
+name: site-skills-format-markdown
 description: >-
   Write or edit well-structured Markdown and MDX.
   Use for front matter, headings, lists, code fences, links, tables,
   other Markdown mechanics, and site-specific extensions.
-  Pair with the write-technical-docs skill when changing prose.
+  Pair with the site-skills-write-technical-docs skill when changing prose.
 ---
 
 # Format Markdown
 
 Use this skill for markup mechanics and document structure.
-Use the `write-technical-docs` skill alongside it for
+Use the `site-skills-write-technical-docs` skill alongside it for
 prose, terminology, heading wording, link text, and alt text.
 
 ## Core conventions
@@ -54,24 +54,28 @@ Apply these conventions unless the target project specifies otherwise.
   `## Section`, not `##Section`.
 - Don't use closing hashes such as `## Section ##`.
 - For heading wording and capitalization,
-  follow the `write-technical-docs` rules:
+  follow the `site-skills-write-technical-docs` rules:
   use sentence case and descriptive wording with no trailing period.
 
 ### Fragment targets
 
 - When rewording a heading, preserve links to its original ID.
-  On `docs.flutter.dev`, append `{: #old-id }` to the revised heading.
-  On `flutter.dev`, if the generated ID changes,
-  place `<FragmentTarget id="old-id" />` before the revised heading.
+  The syntax depends on the site:
+  - On `docs.flutter.dev` and `dart.dev`,
+    append `{: #old-id }` to the revised heading.
+  - On `flutter.dev`, if the generated ID changes,
+    place `<FragmentTarget id="old-id" />` before the revised heading.
 - For a mid-section target on an element without an `id`,
   set the ID directly on the HTML element, such as `<li id="old-id">`.
   On `docs.flutter.dev`, you can also apply `{: #old-id }`
   to a Markdown block.
-- On either site, use `<FragmentTarget id="old-id" />` on its own line
+- On `docs.flutter.dev` and `flutter.dev`,
+  use `<FragmentTarget id="old-id" />` on its own line
   for an additional ID before a heading or mid-section.
   Stack one `<FragmentTarget>` tag per ID when multiple aliases are needed,
   and separate the tag or group from following Markdown blocks
   with a blank line.
+  Markdown files on `dart.dev` don't support the `<FragmentTarget>` tag.
 - Don't use empty `<a id="..."></a>` elements or `aria-hidden="true"`
   on fragment targets.
 
@@ -98,7 +102,7 @@ Apply these conventions unless the target project specifies otherwise.
   so wrapped lines and sublists render correctly.
 - For term-and-description pairs, use a definition list.
 - Keep a blank line between a list and surrounding paragraphs.
-  For list _types_ and parallelism, follow `write-technical-docs`.
+  For list _types_ and parallelism, follow `site-skills-write-technical-docs`.
 
 ### Definition lists
 
@@ -131,7 +135,8 @@ you can't publish updates to the existing app.
 
 - Add an optional, sentence-case title after the type.
   Otherwise, the type supplies a default title except for `secondary`.
-- For information, use `note`, `flutter-note`, or `version-note`.
+- For information, use `note` or `version-note`.
+  For information that only applies to Flutter, use `flutter-note`.
 - For advice, use `tip` or `recommend`.
 - For essential information, use `important`.
 - For experimental behavior, use `experimental`.
@@ -151,13 +156,14 @@ you can't publish updates to the existing app.
 - Keep the language tag and indentation consistent.
   Keep fences flush with the surrounding text's indentation level
   or correctly nested inside a list item.
-- For _what_ to put in code font versus bold, follow `write-technical-docs`.
+- For _what_ to put in code font versus bold,
+  follow `site-skills-write-technical-docs`.
 
 ### Links and images
 
 - Use **descriptive link text** that names the destination.
   Never link bare "here", "click here", "this", or a raw URL.
-  See `write-technical-docs` for the full rule.
+  See `site-skills-write-technical-docs` for the full rule.
 - Follow the target project's convention for internal links.
   On documentation sites that support root-relative routes,
   use an explicit root-relative path such as `/path/to/page`
@@ -176,8 +182,9 @@ you can't publish updates to the existing app.
   place its definition at the **end of the document** instead.
 - When you must show a raw URL,
   use an angle-bracket autolink, such as `<https://example.com>`.
-- Use `![alt text](path)` syntax for images.
-  For link text and alt text _content_, follow `write-technical-docs`.
+- Use `![alt text](https://example.com/image.png)` syntax for images.
+  For link text and alt text _content_,
+  follow `site-skills-write-technical-docs`.
 
 ### Tables
 

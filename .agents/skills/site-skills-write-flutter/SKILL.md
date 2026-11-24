@@ -1,10 +1,10 @@
 ---
-name: write-flutter
+name: site-skills-write-flutter
 description: >-
   Write, review, or refactor idiomatic Flutter code.
   Use for widgets, state and architecture, lifecycle, layout, theming,
   accessibility, performance, and tests.
-  Apply alongside the write-dart skill for Dart guidance.
+  Apply alongside the site-skills-write-dart skill for Dart guidance.
 ---
 
 # Write Flutter
@@ -12,7 +12,7 @@ description: >-
 Produce Flutter code that is composable,
 correct across rebuilds, efficient, and accessible.
 
-This skill builds on the `write-dart` skill:
+This skill builds on the `site-skills-write-dart` skill:
 apply that skill's Dart guidance,
 then add the Flutter-specific guidance here.
 In the references, **DO** and **DON'T** are near-absolute,
@@ -36,7 +36,7 @@ and **CONSIDER** requires judgment.
 
 ## Core defaults
 
-Apply these high-frequency Flutter rules alongside `write-dart`.
+Apply these high-frequency Flutter rules alongside `site-skills-write-dart`.
 
 ### Composition
 
@@ -114,7 +114,7 @@ Apply these high-frequency Flutter rules alongside `write-dart`.
 
 ## Validate
 
-Extend the `write-dart` validation loop with Flutter tools.
+Extend the `site-skills-write-dart` validation loop with Flutter tools.
 When the environment allows it,
 run the app and exercise the changed UI.
 Check the console for overflow errors, exceptions,

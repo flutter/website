@@ -1,5 +1,5 @@
 ---
-name: write-technical-docs
+name: site-skills-write-technical-docs
 description: >-
   Write or review clear, consistent, and accessible prose
   for Dart and Flutter developer documentation.
@@ -10,8 +10,10 @@ description: >-
 # Write technical documentation
 
 Write clear, consistent developer-facing prose.
-Use the `format-markdown` skill for markup mechanics
-and the `write-dart` and `write-flutter` skills for code examples.
+Use the `site-skills-format-markdown` skill for markup mechanics
+and the `site-skills-write-dart` skill for code examples.
+If the `site-skills-write-flutter` skill is available,
+also use it for Flutter code examples.
 
 This style is based on the [Google developer documentation style guide][].
 The guide is licensed under CC BY 4.0
@@ -58,6 +60,10 @@ Apply these rules to most developer-facing prose.
   in order to, note that_.
 - Prefer short, direct sentences.
   Lead each paragraph with its main point.
+- Use **American spelling**,
+  and don't use Latin abbreviations:
+  write _for example_ instead of _e.g._ and _that is_ instead of _i.e._,
+  and replace _etc._ by naming the items or rewriting the sentence.
 
 ### Formatting
 
@@ -104,7 +110,7 @@ Apply these rules to most developer-facing prose.
 - Use a **term-and-description list** for pairs of related data,
   such as fields and their meanings.
   For Markdown syntax,
-  follow the `format-markdown` guidance for the target platform.
+  follow the `site-skills-format-markdown` guidance for the target platform.
 - Keep list items **parallel** in grammar and roughly parallel in length.
   For example, start all items with a verb
   or write all items as noun phrases.

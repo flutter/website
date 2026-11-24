@@ -100,6 +100,23 @@ Avoid using "see", "see the", or "for more information, see" to introduce
 links or references. Prefer action-oriented or descriptive phrasings such as
 "refer to", "consult", or "visit" (for example, "To learn about X, visit Y").
 
+## Agent skills
+
+The skills in `.agents/skills/` whose names begin with `site-skills-`
+are installed copies of the shared skills in `packages/site_skills/skills/`.
+The `dart-lang/site-www` repository also uses these shared skills.
+
+To change one of these skills,
+edit the source in `packages/site_skills/skills/`,
+then update the installed copies:
+
+```bash
+dart run skills@ get --package site_skills --all
+```
+
+Don't edit the installed copies directly.
+To learn more, refer to `packages/site_skills/README.md`.
+
 ## Coding guidelines
 
 All Dart code should follow [Effective Dart](https://dart.dev/effective-dart),

@@ -1,0 +1,12 @@
+name: site_skills
+description: >-
+  Agent skills for writing and reviewing content on
+  the Dart and Flutter websites.
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.14.0-0
+
+# NOTE: Code isn't allowed in this package.
+# It only distributes the agent skills in the `skills/` directory.

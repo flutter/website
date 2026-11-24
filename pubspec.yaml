@@ -10,7 +10,12 @@ workspace:
   - packages/dash_media_convert
   - packages/excerpter
   - packages/site_shared
+  - packages/site_skills
   - sites/docs
   - sites/www
   - tool/dash_site
 
+dev_dependencies:
+  # Provides the shared agent skills installed to `.agents/skills/`.
+  site_skills:
+    path: packages/site_skills

@@ -136,7 +136,7 @@ and preserve exact API identifiers such as `onTap`.
 
 - Follow the target language's best practices for documentation comments.
   For example, for Dart doc comments, reference our guidelines at
-  [Dart doc comments](../../write-dart/references/documentation.md).
+  [Dart doc comments](../../site-skills-write-dart/references/documentation.md).
 - Describe parameters, return values, exceptions, errors,
   fields, and constants precisely.
   Include meaning, constraints, units, and defaults that aren't clear

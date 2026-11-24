@@ -75,7 +75,9 @@ Otherwise, testing prices or business rules requires pumping a widget tree.
   and an exhaustive `switch`
   prevents the impossible combinations that nullable flags allow.
   For additional guidance,
-  see [Modern Dart idioms](../../write-dart/references/modern-dart.md).
+  see [Modern Dart idioms][].
+
+[Modern Dart idioms]: ../../site-skills-write-dart/references/modern-dart.md
 
 ## Dependency injection
 

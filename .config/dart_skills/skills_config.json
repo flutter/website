@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "installations": {
+    "generic": {
+      "package:site_skills": {
+        "skills": [
+          {
+            "name": "site-skills-write-dart",
+            "installedAt": "2026-11-24T19:27:44.505061Z",
+            "contentHash": "JAANeGy57I4zflbjQdif8w==",
+            "path": "skills/site-skills-write-dart"
+          },
+          {
+            "name": "site-skills-format-markdown",
+            "installedAt": "2026-11-24T19:27:44.508815Z",
+            "contentHash": "JdjH0bKC3XkagFl6ZI516w==",
+            "path": "skills/site-skills-format-markdown"
+          },
+          {
+            "name": "site-skills-write-technical-docs",
+            "installedAt": "2026-11-24T19:27:44.515778Z",
+            "contentHash": "+ZH8wM7FXdLcLBfnEGVlCw==",
+            "path": "skills/site-skills-write-technical-docs"
+          },
+          {
+            "name": "site-skills-write-flutter",
+            "installedAt": "2026-11-24T19:27:44.522645Z",
+            "contentHash": "d9xZeoRkwdSpc56QwBbi0Q==",
+            "path": "skills/site-skills-write-flutter"
+          }
+        ]
+      }
+    }
+  }
+}
