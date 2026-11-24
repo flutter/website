@@ -58,3 +58,19 @@ OperatingSystem? get browserOperatingSystem {
   // Any other, undetermined operating system.
   return null;
 }
+
+/// Updates all `<kbd class="special-key">` elements in the document
+/// to display the appropriate modifier key for the current platform
+/// ("Command" for macOS, "Control" for other operating systems).
+void setUpPlatformKeys() {
+  final os = browserOperatingSystem;
+  final specialKey = switch (os) {
+    .macOS => 'Command',
+    _ => 'Control',
+  };
+  final keys = web.document.querySelectorAll('kbd.special-key');
+  for (var i = 0; i < keys.length; i += 1) {
+    final element = keys.item(i) as web.Element;
+    element.textContent = specialKey;
+  }
+}

@@ -13,63 +13,11 @@ import 'package:universal_web/web.dart' as web;
 /// relevant Jaspr components.
 void setUpSite() {
   setUpCodeBlockCopyButtons();
-  _setUpSearchKeybindings();
-  _setUpPlatformKeys();
+  setUpHeadingLinkCopy();
+  setUpSearchKeybindings();
+  setUpPlatformKeys();
   _setUpToc();
   _setUpIdeExplorers();
-}
-
-void _setUpSearchKeybindings() {
-  web.document.addEventListener('keydown', _handleSearchShortcut.toJS);
-}
-
-void _handleSearchShortcut(web.Event event) {
-  final keyboardEvent = event as web.KeyboardEvent;
-  final activeElement = web.document.activeElement;
-
-  // Don't intercept if typing in an input field or not pressing slash key.
-  if (activeElement.isA<web.HTMLInputElement>() ||
-      activeElement.isA<web.HTMLTextAreaElement>() ||
-      keyboardEvent.code != 'Slash') {
-    return;
-  }
-
-  final web.Element? parentElement;
-  // If the sidebar is open, focus its search field.
-  if (web.document.body!.classList.contains('open_menu')) {
-    parentElement = web.document.getElementById('sidenav');
-  } else {
-    // If the page has a search field in the body, focus that.
-    if (web.document.getElementById('in-content-search')
-        case final bodySearch?) {
-      parentElement = bodySearch;
-    } else {
-      // Otherwise, fallback to the top navbar search field.
-      parentElement = web.document.getElementById('header-search');
-    }
-  }
-
-  // If we found any search field, focus it.
-  if (parentElement?.querySelector('.search-field')
-      case final web.HTMLElement searchField) {
-    searchField.focus();
-    // Prevent the initial slash from showing up in the search field.
-    event.preventDefault();
-  }
-}
-
-void _setUpPlatformKeys() {
-  final os = browserOperatingSystem;
-  // Use Command key for macOS, Control key for other OS.
-  final specialKey = switch (os) {
-    .macOS => 'Command',
-    _ => 'Control',
-  };
-  final keys = web.document.querySelectorAll('kbd.special-key');
-  for (var i = 0; i < keys.length; i += 1) {
-    final element = keys.item(i) as web.Element;
-    element.textContent = specialKey;
-  }
 }
 
 /// Adjusts the behavior of the table of contents (TOC) on the page.
