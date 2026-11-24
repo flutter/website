@@ -278,6 +278,9 @@ final class SnapshotRunner {
         workers.add(() async {
           final page = await browser.newPage();
           try {
+            page.defaultNavigationTimeout = const Duration(seconds: 15);
+            page.defaultTimeout = const Duration(seconds: 15);
+
             if (disableJavaScript) {
               await page.setJavaScriptEnabled(false);
             }
@@ -285,42 +288,59 @@ final class SnapshotRunner {
             // Speed optimization 1: Abort all external third-party requests
             // (e.g. analytics, tracking, ads). Fonts are intercepted and
             // served locally from the FontCache in 0ms without network calls.
+            // Domain redirects to production site URLs are rewritten to local.
             var inFlightRequests = 0;
             await page.setRequestInterception(true);
             page.onRequest.listen((request) async {
-              final uri = Uri.tryParse(request.url);
-              final host = uri?.host.toLowerCase() ?? '';
-              if (uri != null &&
-                  (host == 'localhost' ||
-                      host == '127.0.0.1' ||
-                      uri.scheme == 'data')) {
-                await request.continueRequest();
-              } else if (FontCache.isFontUrl(request.url)) {
-                inFlightRequests++;
-                try {
-                  final cached = await fontCache.getOrFetch(
-                    request.url,
-                    requestHeaders: request.headers,
-                  );
-                  if (cached != null) {
-                    await request.respond(
-                      status: cached.status,
-                      contentType: cached.contentType,
-                      headers: cached.headers,
-                      body: cached.bodyBytes,
-                    );
-                  } else {
-                    await request.continueRequest();
-                  }
-                } catch (_) {
+              try {
+                final uri = Uri.tryParse(request.url);
+                final host = uri?.host.toLowerCase() ?? '';
+                if (uri != null &&
+                    (host == 'localhost' ||
+                        host == '127.0.0.1' ||
+                        uri.scheme == 'data')) {
+                  await request.continueRequest();
+                } else if (host == 'dart.dev' ||
+                    host == 'www.dart.dev' ||
+                    host == 'flutter.dev' ||
+                    host == 'docs.flutter.dev') {
+                  final queryStr = uri != null && uri.hasQuery
+                      ? '?${uri.query}'
+                      : '';
+                  final localUrl =
+                      '${server.baseUrl}${uri?.path ?? ''}$queryStr';
+                  await request.continueRequest(url: localUrl);
+                } else if (FontCache.isFontUrl(request.url)) {
+                  inFlightRequests++;
                   try {
-                    await request.abort();
-                  } catch (_) {}
-                } finally {
-                  if (inFlightRequests > 0) inFlightRequests--;
+                    final cached = await fontCache.getOrFetch(
+                      request.url,
+                      requestHeaders: request.headers,
+                    );
+                    if (cached != null) {
+                      await request.respond(
+                        status: cached.status,
+                        contentType: cached.contentType,
+                        headers: cached.headers,
+                        body: cached.bodyBytes,
+                      );
+                    } else {
+                      await request.continueRequest();
+                    }
+                  } catch (_) {
+                    try {
+                      await request.abort();
+                    } catch (_) {}
+                  } finally {
+                    if (inFlightRequests > 0) inFlightRequests--;
+                  }
+                } else {
+                  await request.abort();
                 }
-              } else {
-                await request.abort();
+              } catch (_) {
+                try {
+                  await request.abort();
+                } catch (_) {}
               }
             });
 
@@ -372,32 +392,32 @@ final class SnapshotRunner {
               final route = task.route;
               final viewport = task.viewport;
 
-              // Only reconfigure viewport if different from previous task.
-              if (currentViewport?.name != viewport.name) {
-                await page.setViewport(
-                  DeviceViewport(
-                    width: viewport.width,
-                    height: viewport.height,
-                    deviceScaleFactor: viewport.deviceScaleFactor,
-                    isMobile: viewport.isMobile,
-                    hasTouch: viewport.hasTouch,
-                  ),
-                );
-                currentViewport = viewport;
-              }
-
-              final filename = snapshotFileName(route, viewport.name);
-              final outputPath = path.join(outputDirectory.path, filename);
-              final url = '${server.baseUrl}$route';
-
               try {
+                // Only reconfigure viewport if different from previous task.
+                if (currentViewport?.name != viewport.name) {
+                  await page.setViewport(
+                    DeviceViewport(
+                      width: viewport.width,
+                      height: viewport.height,
+                      deviceScaleFactor: viewport.deviceScaleFactor,
+                      isMobile: viewport.isMobile,
+                      hasTouch: viewport.hasTouch,
+                    ),
+                  );
+                  currentViewport = viewport;
+                }
+
+                final filename = snapshotFileName(route, viewport.name);
+                final outputPath = path.join(outputDirectory.path, filename);
+                final url = '${server.baseUrl}$route';
+
                 // Speed optimization 3: Use Until.load instead of networkIdle
                 // which avoids unnecessary 500ms idling delay per page.
                 try {
                   await page.goto(
                     url,
                     wait: Until.load,
-                    timeout: const Duration(seconds: 20),
+                    timeout: const Duration(seconds: 15),
                   );
                 } catch (_) {}
 
