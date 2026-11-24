@@ -21,7 +21,7 @@ void setUpHeadingLinkCopy() {
     'click',
     ((web.Event event) {
       final target = event.target;
-      if (!target.isA<web.Element>()) return;
+      if (target == null || !target.isA<web.Element>()) return;
 
       final anchor = (target as web.Element).closest('a.heading-link[href]');
       if (anchor == null || !anchor.isA<web.HTMLAnchorElement>()) return;

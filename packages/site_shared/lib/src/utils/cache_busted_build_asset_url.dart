@@ -28,8 +28,9 @@ String cacheBustedBuildAssetUrl(String assetUrl) {
   }
 
   return _cacheBustedBuildAssetUrls.putIfAbsent(assetUrl, () {
-    final assetUri = Uri.parse(assetUrl);
-    if (assetUri.hasScheme ||
+    final assetUri = Uri.tryParse(assetUrl);
+    if (assetUri == null ||
+        assetUri.hasScheme ||
         assetUri.hasAuthority ||
         assetUri.path.isEmpty ||
         assetUri.path.endsWith('/')) {

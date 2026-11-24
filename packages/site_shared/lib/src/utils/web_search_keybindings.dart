@@ -23,8 +23,9 @@ void _handleSearchShortcut(web.Event event) {
   final activeElement = web.document.activeElement;
 
   // Don't intercept if typing in an input field or not pressing slash key.
-  if (activeElement.isA<web.HTMLInputElement>() ||
-      activeElement.isA<web.HTMLTextAreaElement>() ||
+  if ((activeElement != null &&
+          (activeElement.isA<web.HTMLInputElement>() ||
+              activeElement.isA<web.HTMLTextAreaElement>())) ||
       keyboardEvent.code != 'Slash') {
     return;
   }

@@ -25,6 +25,14 @@ void main() {
         cleanCopiedCodeText(r'C:\Users\dev> dart test'),
         'dart test',
       );
+      expect(
+        cleanCopiedCodeText(r'C:\Users\dev> dart test > output.txt'),
+        'dart test > output.txt',
+      );
+    });
+
+    test('does not strip mid-line variables or symbols', () {
+      expect(cleanCopiedCodeText(r'echo $HOME'), r'echo $HOME');
     });
 
     test('strips prompts on multiline input', () {
