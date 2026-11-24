@@ -36,9 +36,6 @@ abstract class _BlogLayout extends DefaultLayout {
         'family=Roboto+Serif:ital,opsz,wght@'
         '0,8..72,400..700;1,8..72,400..700'
         '&display=swap',
-    'https://fonts.googleapis.com/css2?'
-        'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0'
-        '&display=block',
   ];
 }
 
