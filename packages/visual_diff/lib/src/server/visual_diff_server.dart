@@ -4,6 +4,7 @@
 
 import 'dart:convert';
 import 'dart:io';
+import 'dart:isolate';
 
 import 'package:path/path.dart' as path;
 
@@ -32,6 +33,8 @@ final class VisualDiffServer {
     Directory? webAppDirectory,
     int port = 0,
   }) async {
+    webAppDirectory ??= await defaultWebAppDirectory();
+
     final server = await HttpServer.bind(
       InternetAddress.loopbackIPv4,
       port,
@@ -45,6 +48,23 @@ final class VisualDiffServer {
     );
     diffServer._listen();
     return diffServer;
+  }
+
+  /// Attempts to resolve the default web application directory for visual diff.
+  static Future<Directory?> defaultWebAppDirectory() async {
+    try {
+      final packageUri = await Isolate.resolvePackageUri(
+        Uri.parse('package:visual_diff/visual_diff.dart'),
+      );
+      if (packageUri != null) {
+        final packageDir = path.dirname(path.dirname(packageUri.toFilePath()));
+        final webDir = Directory(path.join(packageDir, 'web'));
+        if (webDir.existsSync()) {
+          return webDir;
+        }
+      }
+    } catch (_) {}
+    return null;
   }
 
   void _listen() {

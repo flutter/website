@@ -1,5 +1,7 @@
 .dart_tool/
 build/
 web/*.js
+!web/main.client.dart.js
 web/*.deps
 web/*.map
+
