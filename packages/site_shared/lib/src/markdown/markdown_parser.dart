@@ -99,9 +99,7 @@ String parseInlineMarkdownToText(String markdownString) {
   return html.parseFragment(rendered).text ?? '';
 }
 
-final RegExp _markdownFilePattern = RegExp(
-  r'(.*\.md$)|(^blog$)|(^blog/index$)',
-);
+final RegExp _markdownFilePattern = RegExp(r'.*\.md$');
 
 class DashMarkdownParser implements PageParser {
   const DashMarkdownParser();
