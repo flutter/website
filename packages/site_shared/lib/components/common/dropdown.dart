@@ -53,7 +53,13 @@ final class DropdownState extends State<Dropdown> {
           'keydown': (e) {
             final keydownEvent = e as web.KeyboardEvent;
             if (_expanded && keydownEvent.key == 'Escape') {
+              keydownEvent.stopPropagation();
               toggle(to: false);
+              final dropdown = keydownEvent.currentTarget as web.Element;
+              final button = dropdown.querySelector(
+                ':scope > .dropdown-button',
+              );
+              (button as web.HTMLElement?)?.focus();
             }
           },
           'focusout': (e) {
