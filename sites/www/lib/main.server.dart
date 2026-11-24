@@ -4,7 +4,7 @@
 
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/components/file_tree.dart';
-import 'package:jaspr_content/jaspr_content.dart' hide BlogLayout;
+import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:site_shared/blog.dart';
@@ -137,12 +137,9 @@ void main() {
           defineComponent('FlutterCreatePage', const FlutterCreatePage()),
           defineComponent('NewsPage', const NewsPage()),
           defineComponent('WhyFlutterPage', const WhyFlutterPage()),
+          defineComponent('BlogIndex', const BlogIndex()),
           defineComponentWithAttrs('Image', Image.fromAttrs),
 
-          CustomComponent(
-            pattern: RegExp('BlogIndex', caseSensitive: false),
-            builder: (_, _, _) => const BlogIndex(),
-          ),
           const DashImage(),
           const YoutubeEmbed(),
           const FileTree(),
@@ -152,7 +149,8 @@ void main() {
           DefaultLayout(),
           ConsultantsTosLayout(),
           ShowcaseStoryLayout(),
-          BlogLayout(),
+          BlogIndexLayout(),
+          BlogPostLayout(),
         ],
         theme: const ContentTheme.none(),
         secondaryOutputs: const [BlogAtomFeedOutput(), RobotsTxtOutput()],
