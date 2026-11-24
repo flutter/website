@@ -441,23 +441,72 @@ final class BatchDiffer {
     final elapsed = (stopwatch.elapsedMilliseconds / 1000).toStringAsFixed(1);
 
     var allEntries = entries;
-    if (normalizedTargets != null &&
-        normalizedTargets.isNotEmpty &&
-        manifestFile.existsSync()) {
-      try {
-        final existingManifest = DiffManifest.loadFromFile(manifestFile);
-        final targetedIds = entries.map((e) => e.id).toSet();
-        final remainingExisting = existingManifest.entries
-            .where(
-              (e) =>
-                  !targetedIds.contains(e.id) &&
-                  !normalizedTargets.contains(e.route),
-            )
-            .toList();
-        allEntries = [...remainingExisting, ...entries];
-      } catch (_) {
-        allEntries = entries;
+    if (normalizedTargets != null && normalizedTargets.isNotEmpty) {
+      final existingEntriesMap = <String, DiffEntry>{};
+      if (manifestFile.existsSync()) {
+        try {
+          final existingManifest = DiffManifest.loadFromFile(manifestFile);
+          for (final e in existingManifest.entries) {
+            existingEntriesMap[e.id] = e;
+          }
+        } catch (_) {}
       }
+
+      // Ensure every non-targeted snapshot known in baseline is preserved in
+      // the manifest so targeted runs never drop routes.
+      for (final filename in allFilenames) {
+        final id = path.basenameWithoutExtension(filename);
+        final parsed = parseSnapshotName(filename);
+        if (normalizedTargets.contains(parsed.route)) continue;
+
+        if (!existingEntriesMap.containsKey(id)) {
+          final bFile = baselineFiles[filename];
+          final cFile = currentFiles[filename];
+          if (bFile != null && cFile != null) {
+            final dims = _readPngDimensions(bFile.readAsBytesSync());
+            existingEntriesMap[id] = DiffEntry(
+              id: id,
+              route: parsed.route,
+              viewport: parsed.viewport,
+              filename: filename,
+              status: DiffStatus.unchanged,
+              diffPercentage: 0.0,
+              diffPixels: 0,
+              totalPixels: dims.width * dims.height,
+              width: dims.width,
+              height: dims.height,
+              baselineRelativePath: path.join('baseline', filename),
+              currentRelativePath: path.join('current', filename),
+            );
+          } else if (bFile != null) {
+            final dims = _readPngDimensions(bFile.readAsBytesSync());
+            existingEntriesMap[id] = DiffEntry(
+              id: id,
+              route: parsed.route,
+              viewport: parsed.viewport,
+              filename: filename,
+              status: DiffStatus.unchanged,
+              diffPercentage: 0.0,
+              diffPixels: 0,
+              totalPixels: dims.width * dims.height,
+              width: dims.width,
+              height: dims.height,
+              baselineRelativePath: path.join('baseline', filename),
+              currentRelativePath: path.join('baseline', filename),
+            );
+          }
+        }
+      }
+
+      final targetedIds = entries.map((e) => e.id).toSet();
+      final remainingExisting = existingEntriesMap.values
+          .where(
+            (e) =>
+                !targetedIds.contains(e.id) &&
+                !normalizedTargets.contains(e.route),
+          )
+          .toList();
+      allEntries = [...remainingExisting, ...entries];
     }
 
     // Sort entries: changed first (highest diff % first),

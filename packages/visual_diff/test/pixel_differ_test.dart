@@ -75,15 +75,15 @@ void main() {
       expect(result.totalPixels, equals(50 * 60)); // 3000
     });
 
-    test('treats differences of fewer than 10 pixels as equal by default', () {
+    test('treats differences of fewer than 50 pixels as equal by default', () {
       final img1 = img.Image(width: 50, height: 50);
       final img2 = img.Image(width: 50, height: 50);
 
       img.fill(img1, color: img.ColorRgba8(255, 255, 255, 255));
       img.fill(img2, color: img.ColorRgba8(255, 255, 255, 255));
 
-      // Draw 5 differing pixels (< 10).
-      for (var x = 0; x < 5; x++) {
+      // Draw 25 differing pixels (< 50).
+      for (var x = 0; x < 25; x++) {
         img2.setPixelRgba(x, 0, 0, 0, 0, 255);
       }
 
@@ -97,15 +97,15 @@ void main() {
       expect(result.boundingBox, isNull);
     });
 
-    test('flags differences of at least 10 pixels as changed by default', () {
+    test('flags differences of at least 50 pixels as changed by default', () {
       final img1 = img.Image(width: 50, height: 50);
       final img2 = img.Image(width: 50, height: 50);
 
       img.fill(img1, color: img.ColorRgba8(255, 255, 255, 255));
       img.fill(img2, color: img.ColorRgba8(255, 255, 255, 255));
 
-      // Draw 10 differing pixels (>= 10).
-      for (var x = 0; x < 10; x++) {
+      // Draw 50 differing pixels (>= 50).
+      for (var x = 0; x < 50; x++) {
         img2.setPixelRgba(x, 0, 0, 0, 0, 255);
       }
 
@@ -113,7 +113,7 @@ void main() {
       final result = differ.compare(img1, img2);
 
       expect(result.hasDiff, isTrue);
-      expect(result.diffPixels, equals(10));
+      expect(result.diffPixels, equals(50));
       expect(result.diffImage, isNotNull);
     });
   });

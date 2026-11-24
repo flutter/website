@@ -61,7 +61,7 @@ final class PixelDiffer {
 
   const PixelDiffer({
     this.threshold = 0.08,
-    this.minDiffPixels = 10,
+    this.minDiffPixels = 50,
     this.highlightR = 255,
     this.highlightG = 0,
     this.highlightB = 122,

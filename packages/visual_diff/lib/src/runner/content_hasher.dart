@@ -68,7 +68,10 @@ final class SiteContentHashes {
     for (final route in routes) {
       final htmlFile = resolveRouteHtmlFile(buildDir, route);
       if (htmlFile != null && htmlFile.existsSync()) {
-        routeMap[route] = computeFileHash(htmlFile);
+        final hash = tryComputeFileHash(htmlFile);
+        if (hash != null) {
+          routeMap[route] = hash;
+        }
       }
     }
 
@@ -89,15 +92,31 @@ final class SiteContentHashes {
     if (!buildDir.existsSync()) return '';
 
     final assetFiles = <String, File>{};
-    for (final entity in buildDir.listSync(recursive: true)) {
-      if (entity is File) {
-        final ext = path.extension(entity.path).toLowerCase();
-        if (ext == '.css') {
-          final relPath = path.relative(entity.path, from: buildDir.path);
-          assetFiles[relPath] = entity;
+    void scanCss(Directory dir) {
+      List<FileSystemEntity> entities;
+      try {
+        if (!dir.existsSync()) return;
+        entities = dir.listSync(followLinks: false);
+      } on FileSystemException catch (_) {
+        return;
+      }
+      for (final entity in entities) {
+        if (entity is File) {
+          final ext = path.extension(entity.path).toLowerCase();
+          if (ext == '.css') {
+            final relPath = path.relative(entity.path, from: buildDir.path);
+            assetFiles[relPath] = entity;
+          }
+        } else if (entity is Directory) {
+          final base = path.basename(entity.path);
+          if (!base.startsWith('.')) {
+            scanCss(entity);
+          }
         }
       }
     }
+
+    scanCss(buildDir);
 
     if (assetFiles.isEmpty) return '';
 
@@ -106,8 +125,10 @@ final class SiteContentHashes {
 
     for (final key in sortedKeys) {
       builder.add(utf8.encode('$key:'));
-      final bytes = assetFiles[key]!.readAsBytesSync();
-      builder.add(bytes);
+      try {
+        final bytes = assetFiles[key]!.readAsBytesSync();
+        builder.add(bytes);
+      } on FileSystemException catch (_) {}
       builder.add(utf8.encode(';'));
     }
 
@@ -146,5 +167,20 @@ final class SiteContentHashes {
   static String computeFileHash(File file) {
     final bytes = file.readAsBytesSync();
     return md5.convert(bytes).toString();
+  }
+
+  /// Safely computes the MD5 hex string of [file]'s contents, retrying on
+  /// transient file lock or concurrent write exceptions.
+  static String? tryComputeFileHash(File file) {
+    for (var attempt = 0; attempt < 3; attempt++) {
+      try {
+        if (!file.existsSync()) return null;
+        final bytes = file.readAsBytesSync();
+        return md5.convert(bytes).toString();
+      } on FileSystemException catch (_) {
+        sleep(const Duration(milliseconds: 15));
+      }
+    }
+    return null;
   }
 }

@@ -32,46 +32,35 @@ List<String> discoverRoutes(
   final routes = <String>{};
   final normalizedBuildPath = path.normalize(buildDirectory.path);
 
-  try {
-    for (final entity in buildDirectory.listSync(
-      recursive: true,
-      followLinks: false,
-    )) {
-      if (entity is! File || !entity.path.endsWith('.html')) {
-        continue;
-      }
+  _safeScanHtmlFiles(buildDirectory, (file) {
+    final relativePath = path.relative(
+      file.path,
+      from: normalizedBuildPath,
+    );
 
-      final relativePath = path.relative(
-        entity.path,
-        from: normalizedBuildPath,
-      );
-
-      // Ignore hidden files or directories (e.g. .git, .hidden).
-      if (relativePath.startsWith('.') || relativePath.contains('/.')) {
-        continue;
-      }
-
-      final normalized = path.split(relativePath).join('/');
-
-      if (normalized == 'index.html') {
-        routes.add('/');
-      } else if (normalized.endsWith('/index.html')) {
-        final routePath = normalized.substring(
-          0,
-          normalized.length - '/index.html'.length,
-        );
-        routes.add('/$routePath');
-      } else {
-        final routePath = normalized.substring(
-          0,
-          normalized.length - '.html'.length,
-        );
-        routes.add('/$routePath');
-      }
+    // Ignore hidden files or directories (e.g. .git, .hidden).
+    if (relativePath.startsWith('.') || relativePath.contains('/.')) {
+      return;
     }
-  } on FileSystemException catch (_) {
-    // Gracefully handle any transient concurrent file system deletions.
-  }
+
+    final normalized = path.split(relativePath).join('/');
+
+    if (normalized == 'index.html') {
+      routes.add('/');
+    } else if (normalized.endsWith('/index.html')) {
+      final routePath = normalized.substring(
+        0,
+        normalized.length - '/index.html'.length,
+      );
+      routes.add('/$routePath');
+    } else {
+      final routePath = normalized.substring(
+        0,
+        normalized.length - '.html'.length,
+      );
+      routes.add('/$routePath');
+    }
+  });
 
   var sortedRoutes = routes.toList()..sort();
 
@@ -86,6 +75,28 @@ List<String> discoverRoutes(
   return sortedRoutes;
 }
 
+void _safeScanHtmlFiles(Directory dir, void Function(File file) onFile) {
+  List<FileSystemEntity> entities;
+  try {
+    if (!dir.existsSync()) return;
+    entities = dir.listSync(followLinks: false);
+  } on FileSystemException catch (_) {
+    return;
+  }
+  for (final entity in entities) {
+    if (entity is File) {
+      if (entity.path.endsWith('.html')) {
+        onFile(entity);
+      }
+    } else if (entity is Directory) {
+      final base = path.basename(entity.path);
+      if (!base.startsWith('.')) {
+        _safeScanHtmlFiles(entity, onFile);
+      }
+    }
+  }
+}
+
 /// Watches [buildDirectory] while [buildFuture] is completing, emitting newly
 /// rendered routes as soon as their HTML files are written.
 Stream<String> watchBuildRoutes(
@@ -95,33 +106,31 @@ Stream<String> watchBuildRoutes(
   RegExp? filter,
   int? limit,
 }) async* {
-  if (explicitRoutes != null && explicitRoutes.isNotEmpty) {
-    var routes = explicitRoutes.map(_normalizeRoute).toSet().toList()..sort();
-    if (filter != null) {
-      routes = routes.where(filter.hasMatch).toList();
-    }
-    if (limit != null && limit > 0 && routes.length > limit) {
-      routes = routes.sublist(0, limit);
-    }
-    for (final r in routes) {
-      yield r;
-    }
-    return;
-  }
-
   final yieldedRoutes = <String>{};
   var buildDone = false;
   unawaited(buildFuture.whenComplete(() => buildDone = true));
 
-  while (!buildDone) {
-    try {
-      if (buildDirectory.existsSync()) {
-        final currentRoutes = discoverRoutes(
-          buildDirectory,
-          filter: filter,
-        );
-        for (final r in currentRoutes) {
-          if (!yieldedRoutes.contains(r)) {
+  // 1. Wait until index.html is built (indicating web assets are compiled
+  // and page generation has begun).
+  final indexFile = File(path.join(buildDirectory.path, 'index.html'));
+  while (!buildDone && !indexFile.existsSync()) {
+    await Future<void>.delayed(const Duration(milliseconds: 100));
+  }
+
+  if (explicitRoutes != null && explicitRoutes.isNotEmpty) {
+    var targets = explicitRoutes.map(_normalizeRoute).toSet().toList()..sort();
+    if (filter != null) {
+      targets = targets.where(filter.hasMatch).toList();
+    }
+
+    while (!buildDone && yieldedRoutes.length < targets.length) {
+      for (final r in targets) {
+        if (!yieldedRoutes.contains(r)) {
+          final rel = r == '/' ? 'index.html' : '${r.substring(1)}/index.html';
+          final alt = r == '/' ? 'index.html' : '${r.substring(1)}.html';
+          final f1 = File(path.join(buildDirectory.path, rel));
+          final f2 = File(path.join(buildDirectory.path, alt));
+          if (f1.existsSync() || f2.existsSync()) {
             yieldedRoutes.add(r);
             yield r;
             if (limit != null && limit > 0 && yieldedRoutes.length >= limit) {
@@ -130,20 +139,32 @@ Stream<String> watchBuildRoutes(
           }
         }
       }
-    } on FileSystemException catch (_) {}
-    await Future<void>.delayed(const Duration(milliseconds: 100));
+      await Future<void>.delayed(const Duration(milliseconds: 100));
+    }
+
+    // Final scan for remaining explicit targets.
+    for (final r in targets) {
+      if (!yieldedRoutes.contains(r)) {
+        yieldedRoutes.add(r);
+        yield r;
+        if (limit != null && limit > 0 && yieldedRoutes.length >= limit) {
+          return;
+        }
+      }
+    }
+    return;
   }
 
-  // Final scan after build completes to ensure all rendered files are emitted.
-  try {
+  // 2. Repeatedly build snapshots for pages that are already built and watch
+  // the build directory for new pages.
+  while (!buildDone) {
     if (buildDirectory.existsSync()) {
-      final finalRoutes = discoverRoutes(
+      final currentRoutes = discoverRoutes(
         buildDirectory,
         filter: filter,
       );
-      for (final r in finalRoutes) {
-        if (!yieldedRoutes.contains(r)) {
-          yieldedRoutes.add(r);
+      for (final r in currentRoutes) {
+        if (yieldedRoutes.add(r)) {
           yield r;
           if (limit != null && limit > 0 && yieldedRoutes.length >= limit) {
             return;
@@ -151,7 +172,25 @@ Stream<String> watchBuildRoutes(
         }
       }
     }
-  } on FileSystemException catch (_) {}
+    await Future<void>.delayed(const Duration(milliseconds: 100));
+  }
+
+  // 3. Once the build process completes, check for final pages and yield all
+  // remaining routes.
+  if (buildDirectory.existsSync()) {
+    final finalRoutes = discoverRoutes(
+      buildDirectory,
+      filter: filter,
+    );
+    for (final r in finalRoutes) {
+      if (yieldedRoutes.add(r)) {
+        yield r;
+        if (limit != null && limit > 0 && yieldedRoutes.length >= limit) {
+          return;
+        }
+      }
+    }
+  }
 }
 
 String _normalizeRoute(String rawRoute) {

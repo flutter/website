@@ -47,5 +47,25 @@ void main() {
       expect(meta.canonical, isNull);
       expect(meta.meta.isEmpty, isTrue);
     });
+
+    test(
+      'correctly parses meta content containing apostrophes and newlines',
+      () {
+        const html = '''
+<head>
+  <meta name="description" content="ReorderableListView's localized strings are moved from material localizations to widgets localizations.
+"/>
+</head>
+''';
+        final meta = extractHeaderMetadataFromHtml(html);
+        expect(
+          meta.meta['description'],
+          equals(
+            "ReorderableListView's localized strings are moved from material "
+            'localizations to widgets localizations.',
+          ),
+        );
+      },
+    );
   });
 }

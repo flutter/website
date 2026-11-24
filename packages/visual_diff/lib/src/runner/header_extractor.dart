@@ -32,14 +32,20 @@ HeaderMetadata extractHeaderMetadataFromHtml(String html) {
 
   // 2. Extract <link rel="canonical" href="...">
   String? canonical;
-  final linkTagRegex = RegExp(r'<link\b([^>]+)>', caseSensitive: false);
-  final relCanonicalRegex = RegExp(
-    r'''\brel=\s*["']canonical["']''',
+  final linkTagRegex = RegExp(
+    r'<link\b([^>]+)>',
     caseSensitive: false,
+    dotAll: true,
+  );
+  final relCanonicalRegex = RegExp(
+    r'''\brel=\s*(?:"canonical"|'canonical')''',
+    caseSensitive: false,
+    dotAll: true,
   );
   final hrefRegex = RegExp(
-    r'''\bhref=\s*["']([^"']+)["']''',
+    r'''\bhref=\s*(?:"([^"]*)"|'([^']*)')''',
     caseSensitive: false,
+    dotAll: true,
   );
 
   for (final match in linkTagRegex.allMatches(html)) {
@@ -47,7 +53,8 @@ HeaderMetadata extractHeaderMetadataFromHtml(String html) {
     if (relCanonicalRegex.hasMatch(attributes)) {
       final hrefMatch = hrefRegex.firstMatch(attributes);
       if (hrefMatch != null) {
-        canonical = hrefMatch.group(1)?.trim();
+        final href = hrefMatch.group(1) ?? hrefMatch.group(2) ?? '';
+        canonical = href.trim();
         break;
       }
     }
@@ -55,14 +62,20 @@ HeaderMetadata extractHeaderMetadataFromHtml(String html) {
 
   // 3. Extract all <meta> tags
   final meta = <String, String>{};
-  final metaTagRegex = RegExp(r'<meta\b([^>]+)>', caseSensitive: false);
-  final nameAttrRegex = RegExp(
-    r'''\b(name|property|http-equiv)=\s*["']([^"']+)["']''',
+  final metaTagRegex = RegExp(
+    r'<meta\b([^>]+)>',
     caseSensitive: false,
+    dotAll: true,
+  );
+  final nameAttrRegex = RegExp(
+    r'''\b(name|property|http-equiv)=\s*(?:"([^"]*)"|'([^']*)')''',
+    caseSensitive: false,
+    dotAll: true,
   );
   final contentAttrRegex = RegExp(
-    r'''\bcontent=\s*["']([^"']*)["']''',
+    r'''\bcontent=\s*(?:"([^"]*)"|'([^']*)')''',
     caseSensitive: false,
+    dotAll: true,
   );
 
   for (final match in metaTagRegex.allMatches(html)) {
@@ -71,8 +84,9 @@ HeaderMetadata extractHeaderMetadataFromHtml(String html) {
     final contentMatch = contentAttrRegex.firstMatch(attributes);
 
     if (nameMatch != null && contentMatch != null) {
-      final name = nameMatch.group(2)!.trim();
-      final content = _unescapeHtml(contentMatch.group(1)!.trim());
+      final name = (nameMatch.group(2) ?? nameMatch.group(3) ?? '').trim();
+      final rawContent = contentMatch.group(1) ?? contentMatch.group(2) ?? '';
+      final content = _unescapeHtml(rawContent.trim());
       meta[name] = content;
     }
   }

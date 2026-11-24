@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -130,7 +131,7 @@ final class VisualDiffCommand extends Command<int> {
     );
     argParser.addOption(
       _minDiffPixelsOption,
-      defaultsTo: '10',
+      defaultsTo: '50',
       help:
           'Minimum number of differing pixels required to flag a snapshot as '
           'changed (diffs with fewer pixels are treated as equal).',
@@ -177,7 +178,7 @@ final class VisualDiffCommand extends Command<int> {
         int.tryParse(results?.option(_maxHeightOption) ?? '4500') ?? 4500;
     final enableJavaScript = results.get<bool>(_javascriptFlag, false);
     final minDiffPixels =
-        int.tryParse(results?.option(_minDiffPixelsOption) ?? '10') ?? 10;
+        int.tryParse(results?.option(_minDiffPixelsOption) ?? '50') ?? 50;
 
     final RegExp? filterRegex;
     if (filterPattern != null && filterPattern.isNotEmpty) {
@@ -237,6 +238,8 @@ final class VisualDiffCommand extends Command<int> {
         path.join(repositoryRoot, '.visual-diff', '.font-cache'),
       ),
     );
+
+    final totalStopwatch = Stopwatch()..start();
 
     // Baseline management operations: always separate from diffing.
     if (isBaselineOperation) {
@@ -337,59 +340,83 @@ final class VisualDiffCommand extends Command<int> {
     }
     diffOutputDir.createSync(recursive: true);
 
+    final indexFile = File(path.join(currentBuildDir.path, 'index.html'));
+    final Future<int> buildFuture;
+    final buildStopwatch = Stopwatch();
+    Duration? indexReadyElapsed;
+    Duration? buildElapsed;
+
     if (shouldBuild) {
       if (isTargeted) {
         print(
-          '🔨 Building ${site.name}...\n'
+          '🔨 Building ${site.name} in background while capturing '
+          'snapshots...\n'
           '   (Tip: Pass --no-build if the site is already built to test '
           'instantly.)',
         );
       } else {
-        print('🔨 Building ${site.name}...');
-      }
-
-      final buildExitCode = await buildSite(site, productionRelease: false);
-      if (buildExitCode != 0) {
-        stderr.writeln(
-          'Error: Site build failed with exit code $buildExitCode.',
+        print(
+          '🔨 Building ${site.name} in background while capturing snapshots...',
         );
-        return buildExitCode;
+      }
+
+      // If rebuilding, delete old index.html to ensure we wait for the fresh
+      // one.
+      if (indexFile.existsSync()) {
+        try {
+          indexFile.deleteSync();
+        } catch (_) {}
+      }
+
+      buildStopwatch.start();
+      buildFuture = buildSite(site, productionRelease: false).then((code) {
+        buildElapsed = buildStopwatch.elapsed;
+        return code;
+      });
+    } else {
+      buildFuture = Future.value(0);
+    }
+
+    var buildDone = false;
+    unawaited(buildFuture.whenComplete(() => buildDone = true));
+
+    // 1. Wait until index.html is built (indicating web assets are compiled
+    // and page rendering has commenced).
+    while (!buildDone && !indexFile.existsSync()) {
+      await Future<void>.delayed(const Duration(milliseconds: 100));
+    }
+    if (shouldBuild) {
+      indexReadyElapsed = buildStopwatch.elapsed;
+    }
+
+    if (buildDone) {
+      final exitCode = await buildFuture;
+      if (exitCode != 0) {
+        stderr.writeln('Error: Site build failed with exit code $exitCode.');
+        return exitCode;
       }
     }
 
-    final currentRoutes = discoverRoutes(
-      currentBuildDir,
-      explicitRoutes: explicitRoutes,
-      filter: filterRegex,
-      limit: limit,
-    );
-
-    if (currentRoutes.isEmpty) {
-      stderr.writeln(
-        'Error: No routes discovered in current build directory: '
-        '${currentBuildDir.path}.\n'
-        'Run "dart run dash_site build" first or omit --no-build.',
-      );
-      return 1;
-    }
-
-    if (isTargeted) {
-      print('🎯 Targeted run for ${currentRoutes.length} route(s):');
-      for (final r in currentRoutes.take(5)) {
-        print('   • $r');
-      }
-      if (currentRoutes.length > 5) {
-        print('   • ... and ${currentRoutes.length - 5} more');
-      }
-      print('');
-    }
-
-    print('⚡ Starting static server for current snapshotting...');
+    print('⚡ Starting static server for progressive snapshotting...');
     final server = await SnapshotServer.start(currentBuildDir);
+    final capturedRoutes = <String>{};
+    final snapshotStopwatch = Stopwatch()..start();
+
     try {
-      await runner.captureSnapshots(
+      final routeStream = watchBuildRoutes(
+        currentBuildDir,
+        buildFuture: buildFuture,
+        explicitRoutes: explicitRoutes,
+        filter: filterRegex,
+        limit: limit,
+      );
+
+      await runner.captureEagerSnapshots(
         server: server,
-        routes: currentRoutes,
+        routeStream: routeStream.map((r) {
+          capturedRoutes.add(r);
+          return r;
+        }),
         outputDirectory: currentDir,
         viewports: viewports,
         buildDirectory: currentBuildDir,
@@ -401,6 +428,33 @@ final class VisualDiffCommand extends Command<int> {
     } finally {
       await server.close();
     }
+    final snapshotElapsed = snapshotStopwatch.elapsed;
+
+    final buildExitCode = await buildFuture;
+    if (buildExitCode != 0) {
+      stderr.writeln('Error: Site build failed with exit code $buildExitCode.');
+      return buildExitCode;
+    }
+
+    if (capturedRoutes.isEmpty) {
+      stderr.writeln(
+        'Error: No routes discovered in current build directory: '
+        '${currentBuildDir.path}.\n'
+        'Run "dart run dash_site build" first or omit --no-build.',
+      );
+      return 1;
+    }
+
+    if (isTargeted) {
+      print('🎯 Targeted run for ${capturedRoutes.length} route(s):');
+      for (final r in capturedRoutes.take(5)) {
+        print('   • $r');
+      }
+      if (capturedRoutes.length > 5) {
+        print('   • ... and ${capturedRoutes.length - 5} more');
+      }
+      print('');
+    }
 
     print('✅ Current snapshots saved to ${currentDir.path}\n');
 
@@ -411,6 +465,7 @@ final class VisualDiffCommand extends Command<int> {
     final differ = BatchDiffer(
       pixelDiffer: PixelDiffer(minDiffPixels: minDiffPixels),
     );
+    final diffStopwatch = Stopwatch()..start();
     final manifest = await differ.run(
       baselineDir: baselineDir,
       currentDir: currentDir,
@@ -418,14 +473,34 @@ final class VisualDiffCommand extends Command<int> {
       manifestFile: manifestFile,
       site: site.name,
       baseRef: 'baseline',
-      targetRoutes: isTargeted ? currentRoutes.toSet() : null,
+      targetRoutes: isTargeted ? capturedRoutes : null,
       targetViewports: viewports.length < SnapshotViewport.all.length
           ? viewports.map((v) => v.name).toSet()
           : null,
       onProgress: print,
     );
+    final diffElapsed = diffStopwatch.elapsed;
+
+    totalStopwatch.stop();
 
     print('\n📊 Visual diff manifest: ${manifestFile.path}');
+    print('\n⏱️  Timing Summary:');
+    print('   • Total time:        ${_formatDuration(totalStopwatch.elapsed)}');
+    final totalBuildElapsed = buildElapsed;
+    if (shouldBuild && totalBuildElapsed != null) {
+      final indexInfo = indexReadyElapsed != null
+          ? ' (index.html ready in ${_formatDuration(indexReadyElapsed)})'
+          : '';
+      print(
+        '   • Site build:        '
+        '${_formatDuration(totalBuildElapsed)}$indexInfo',
+      );
+    }
+    print(
+      '   • Snapshot capture:  ${_formatDuration(snapshotElapsed)}'
+      '${shouldBuild ? ' (overlapped with build)' : ''}',
+    );
+    print('   • Pixel diffing:     ${_formatDuration(diffElapsed)}');
 
     // 6. Open report in review server.
     if (shouldOpen) {
@@ -448,6 +523,7 @@ final class VisualDiffCommand extends Command<int> {
     final clientJs = File(path.join(webDir.path, 'main.client.dart.js'));
     if (_needsClientJsCompilation(clientJs, webDir)) {
       print('⚡ Compiling visual diff review web application...');
+      final compileStopwatch = Stopwatch()..start();
       final res = await Process.run('dart', [
         'compile',
         'js',
@@ -456,11 +532,16 @@ final class VisualDiffCommand extends Command<int> {
         clientJs.path,
         '-O2',
       ]);
+      compileStopwatch.stop();
       if (res.exitCode != 0) {
         stderr.writeln(
           'Warning: Failed to compile visual diff client app: ${res.stderr}',
         );
       } else {
+        print(
+          '⚡ Compiled visual diff client app in '
+          '${_formatDuration(compileStopwatch.elapsed)}',
+        );
         final legacyJs = File(path.join(webDir.path, 'main.dart.js'));
         clientJs.copySync(legacyJs.path);
       }
@@ -500,6 +581,10 @@ final class VisualDiffCommand extends Command<int> {
     required SnapshotRunner runner,
     required bool shouldBuild,
   }) async {
+    final totalStopwatch = Stopwatch()..start();
+    Duration? pubGetElapsed;
+    Duration? buildElapsed;
+
     print('ℹ️  Generating baseline snapshots from branch "$fromBranch"...');
 
     final worktree = await GitWorktree.create(
@@ -510,10 +595,12 @@ final class VisualDiffCommand extends Command<int> {
     try {
       if (shouldBuild) {
         print('📦 Installing dependencies in baseline worktree...');
+        final pubGetStopwatch = Stopwatch()..start();
         final pubGetResult = await Process.run('dart', [
           'pub',
           'get',
         ], workingDirectory: worktree.directory.path);
+        pubGetElapsed = pubGetStopwatch.elapsed;
         if (pubGetResult.exitCode != 0) {
           stderr.writeln(
             'Error: Failed to get dependencies in baseline worktree: '
@@ -523,6 +610,7 @@ final class VisualDiffCommand extends Command<int> {
         }
 
         print('🔨 Building baseline site in worktree...');
+        final buildStopwatch = Stopwatch()..start();
         final buildResult = await Process.run('dart', [
           'run',
           'dash_site',
@@ -530,6 +618,7 @@ final class VisualDiffCommand extends Command<int> {
           'build',
           '--no-production',
         ], workingDirectory: worktree.directory.path);
+        buildElapsed = buildStopwatch.elapsed;
         if (buildResult.exitCode != 0) {
           stderr.writeln(
             'Error: Failed to build baseline site in worktree: '
@@ -572,6 +661,7 @@ final class VisualDiffCommand extends Command<int> {
 
       print('⚡ Starting static server for baseline snapshotting...');
       final server = await SnapshotServer.start(baselineBuildDir);
+      final snapshotStopwatch = Stopwatch()..start();
       try {
         await runner.captureSnapshots(
           server: server,
@@ -584,11 +674,28 @@ final class VisualDiffCommand extends Command<int> {
       } finally {
         await server.close();
       }
+      final snapshotElapsed = snapshotStopwatch.elapsed;
+
+      totalStopwatch.stop();
 
       print(
         '✅ Baseline snapshots from "$fromBranch" saved to '
         '${baselineDir.path}\n',
       );
+      print('⏱️  Baseline Timing Summary:');
+      print(
+        '   • Total time:        ${_formatDuration(totalStopwatch.elapsed)}',
+      );
+      if (shouldBuild) {
+        if (pubGetElapsed != null) {
+          print('   • Pub get:           ${_formatDuration(pubGetElapsed)}');
+        }
+        if (buildElapsed != null) {
+          print('   • Site build:        ${_formatDuration(buildElapsed)}');
+        }
+      }
+      print('   • Snapshot capture:  ${_formatDuration(snapshotElapsed)}');
+      print('');
       return 0;
     } finally {
       await worktree.cleanup(repositoryRoot: repositoryRoot);
@@ -606,43 +713,57 @@ final class VisualDiffCommand extends Command<int> {
     required SnapshotRunner runner,
     required bool shouldBuild,
   }) async {
-    print('ℹ️  Generating baseline snapshots from current working copy...');
+    final totalStopwatch = Stopwatch()..start();
+    final buildStopwatch = Stopwatch();
+    Duration? indexReadyElapsed;
+    Duration? buildElapsed;
 
-    if (shouldBuild) {
-      print('🔨 Building current working copy for ${site.name}...');
-      final buildExitCode = await buildSite(site, productionRelease: false);
-      if (buildExitCode != 0) {
-        stderr.writeln(
-          'Error: Site build failed with exit code $buildExitCode.',
-        );
-        return buildExitCode;
-      }
-    }
+    print('ℹ️  Generating baseline snapshots from current working copy...');
 
     final currentBuildDir = Directory(
       path.join(repositoryRoot, site.buildOutputDirectory),
     );
     if (!currentBuildDir.existsSync()) {
-      stderr.writeln(
-        'Error: Build directory not found at: ${currentBuildDir.path}.\n'
-        'Run "dart run dash_site build" first or omit --no-build.',
-      );
-      return 1;
+      currentBuildDir.createSync(recursive: true);
     }
 
-    final baselineRoutes = discoverRoutes(
-      currentBuildDir,
-      explicitRoutes: explicitRoutes,
-      filter: filterRegex,
-      limit: limit,
-    );
-
-    if (baselineRoutes.isEmpty) {
-      stderr.writeln(
-        'Error: No routes discovered in build directory: '
-        '${currentBuildDir.path}',
+    final indexFile = File(path.join(currentBuildDir.path, 'index.html'));
+    final Future<int> buildFuture;
+    if (shouldBuild) {
+      print(
+        '🔨 Building current working copy for ${site.name} in background...',
       );
-      return 1;
+      if (indexFile.existsSync()) {
+        try {
+          indexFile.deleteSync();
+        } catch (_) {}
+      }
+      buildStopwatch.start();
+      buildFuture = buildSite(site, productionRelease: false).then((code) {
+        buildElapsed = buildStopwatch.elapsed;
+        return code;
+      });
+    } else {
+      buildFuture = Future.value(0);
+    }
+
+    var buildDone = false;
+    unawaited(buildFuture.whenComplete(() => buildDone = true));
+
+    // 1. Wait until index.html is built.
+    while (!buildDone && !indexFile.existsSync()) {
+      await Future<void>.delayed(const Duration(milliseconds: 100));
+    }
+    if (shouldBuild) {
+      indexReadyElapsed = buildStopwatch.elapsed;
+    }
+
+    if (buildDone) {
+      final exitCode = await buildFuture;
+      if (exitCode != 0) {
+        stderr.writeln('Error: Site build failed with exit code $exitCode.');
+        return exitCode;
+      }
     }
 
     if (!isTargeted && baselineDir.existsSync()) {
@@ -652,10 +773,19 @@ final class VisualDiffCommand extends Command<int> {
 
     print('⚡ Starting static server for baseline snapshotting...');
     final server = await SnapshotServer.start(currentBuildDir);
+    final snapshotStopwatch = Stopwatch()..start();
     try {
-      await runner.captureSnapshots(
+      final routeStream = watchBuildRoutes(
+        currentBuildDir,
+        buildFuture: buildFuture,
+        explicitRoutes: explicitRoutes,
+        filter: filterRegex,
+        limit: limit,
+      );
+
+      await runner.captureEagerSnapshots(
         server: server,
-        routes: baselineRoutes,
+        routeStream: routeStream,
         outputDirectory: baselineDir,
         viewports: viewports,
         buildDirectory: currentBuildDir,
@@ -664,8 +794,33 @@ final class VisualDiffCommand extends Command<int> {
     } finally {
       await server.close();
     }
+    final snapshotElapsed = snapshotStopwatch.elapsed;
 
+    final buildExitCode = await buildFuture;
+    if (buildExitCode != 0) {
+      stderr.writeln('Error: Site build failed with exit code $buildExitCode.');
+      return buildExitCode;
+    }
+
+    totalStopwatch.stop();
     print('✅ Baseline snapshots saved to ${baselineDir.path}\n');
+    print('⏱️  Baseline Timing Summary:');
+    print('   • Total time:        ${_formatDuration(totalStopwatch.elapsed)}');
+    final totalBuildElapsed = buildElapsed;
+    if (shouldBuild && totalBuildElapsed != null) {
+      final indexInfo = indexReadyElapsed != null
+          ? ' (index.html ready in ${_formatDuration(indexReadyElapsed)})'
+          : '';
+      print(
+        '   • Site build:        '
+        '${_formatDuration(totalBuildElapsed)}$indexInfo',
+      );
+    }
+    print(
+      '   • Snapshot capture:  ${_formatDuration(snapshotElapsed)}'
+      '${shouldBuild ? ' (overlapped with build)' : ''}',
+    );
+    print('');
     return 0;
   }
 
@@ -678,7 +833,7 @@ final class VisualDiffCommand extends Command<int> {
     required bool isTargeted,
     required List<String>? explicitRoutes,
     required List<SnapshotViewport> viewports,
-    int minDiffPixels = 10,
+    int minDiffPixels = 50,
   }) async {
     final currentSnapshotCount = _countPngSnapshots(currentDir);
     if (currentSnapshotCount == 0) {
@@ -755,6 +910,7 @@ final class VisualDiffCommand extends Command<int> {
         manifestFile: manifestFile,
         site: site.name,
         baseRef: 'baseline',
+        targetRoutes: isTargeted ? explicitRoutes?.toSet() : null,
       );
     }
 
@@ -789,5 +945,13 @@ final class VisualDiffCommand extends Command<int> {
       }
     }
     return count;
+  }
+
+  static String _formatDuration(Duration d) {
+    if (d.inMinutes >= 1) {
+      final secs = (d.inMilliseconds % 60000) / 1000;
+      return '${d.inMinutes}m ${secs.toStringAsFixed(1)}s';
+    }
+    return '${(d.inMilliseconds / 1000).toStringAsFixed(1)}s';
   }
 }

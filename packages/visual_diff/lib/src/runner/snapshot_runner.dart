@@ -130,6 +130,8 @@ final class SnapshotRunner {
             '--mute-audio',
             '--no-first-run',
             '--no-default-browser-check',
+            '--force-color-profile=srgb',
+            '--font-render-hinting=none',
             '--disable-features=Translate,BackForwardCache,MediaRouter',
             if (disableJavaScript) '--disable-javascript',
           ],
@@ -198,41 +200,45 @@ final class SnapshotRunner {
               route,
             );
             if (htmlFile != null && htmlFile.existsSync()) {
-              final hash = SiteContentHashes.computeFileHash(htmlFile);
-              currentRouteHashes[route] = hash;
+              final hash = SiteContentHashes.tryComputeFileHash(htmlFile);
+              if (hash != null) {
+                currentRouteHashes[route] = hash;
 
-              if (effectiveBaselineHashes.routeHashes[route] == hash) {
-                var allBaselineSnapshotsExist = true;
-                for (final vp in viewports) {
-                  final filename = snapshotFileName(route, vp.name);
-                  final src = File(path.join(baselineDirectory.path, filename));
-                  if (!src.existsSync()) {
-                    allBaselineSnapshotsExist = false;
-                    break;
-                  }
-                }
-
-                if (allBaselineSnapshotsExist) {
+                if (effectiveBaselineHashes.routeHashes[route] == hash) {
+                  var allBaselineSnapshotsExist = true;
                   for (final vp in viewports) {
                     final filename = snapshotFileName(route, vp.name);
                     final src = File(
                       path.join(baselineDirectory.path, filename),
                     );
-                    final dest = File(
-                      path.join(outputDirectory.path, filename),
-                    );
-                    src.copySync(dest.path);
-                    capturedCount++;
-                    onSnapshotSaved?.call(filename);
+                    if (!src.existsSync()) {
+                      allBaselineSnapshotsExist = false;
+                      break;
+                    }
                   }
-                  if (baselineMetadata?[route] case final meta?) {
-                    capturedMetadata[route] = meta;
+
+                  if (allBaselineSnapshotsExist) {
+                    for (final vp in viewports) {
+                      final filename = snapshotFileName(route, vp.name);
+                      final src = File(
+                        path.join(baselineDirectory.path, filename),
+                      );
+                      final dest = File(
+                        path.join(outputDirectory.path, filename),
+                      );
+                      src.copySync(dest.path);
+                      capturedCount++;
+                      onSnapshotSaved?.call(filename);
+                    }
+                    if (baselineMetadata?[route] case final meta?) {
+                      capturedMetadata[route] = meta;
+                    }
+                    routeSkipped = true;
+                    final progressStr = totalExpectedSnapshots != null
+                        ? '$capturedCount/$totalExpectedSnapshots'
+                        : '$capturedCount';
+                    log('  ⚡ [$progressStr] Reused baseline: $route');
                   }
-                  routeSkipped = true;
-                  final progressStr = totalExpectedSnapshots != null
-                      ? '$capturedCount/$totalExpectedSnapshots'
-                      : '$capturedCount';
-                  log('  ⚡ [$progressStr] Reused baseline: $route');
                 }
               }
             }
@@ -242,9 +248,10 @@ final class SnapshotRunner {
               route,
             );
             if (htmlFile != null && htmlFile.existsSync()) {
-              currentRouteHashes[route] = SiteContentHashes.computeFileHash(
-                htmlFile,
-              );
+              final hash = SiteContentHashes.tryComputeFileHash(htmlFile);
+              if (hash != null) {
+                currentRouteHashes[route] = hash;
+              }
             }
           }
 
@@ -503,13 +510,19 @@ final class SnapshotRunner {
     // Persist content hashes to output directory to allow skipping next time.
     if (buildDirectory != null && currentRouteHashes.isNotEmpty) {
       try {
+        final hashesFile = File(
+          path.join(outputDirectory.path, 'content_hashes.json'),
+        );
+        final existing = SiteContentHashes.loadFromFile(hashesFile);
+        final mergedRouteHashes = <String, String>{
+          if (existing != null) ...existing.routeHashes,
+          ...currentRouteHashes,
+        };
         final siteHashes = SiteContentHashes(
           globalAssetsHash: currentGlobalAssetsHash,
-          routeHashes: currentRouteHashes,
+          routeHashes: mergedRouteHashes,
         );
-        siteHashes.saveToFile(
-          File(path.join(outputDirectory.path, 'content_hashes.json')),
-        );
+        siteHashes.saveToFile(hashesFile);
       } catch (_) {}
     }
 
@@ -517,9 +530,20 @@ final class SnapshotRunner {
     if (capturedMetadata.isNotEmpty) {
       try {
         final metaFile = File(path.join(outputDirectory.path, 'metadata.json'));
+        final mergedMeta = <String, dynamic>{};
+        if (metaFile.existsSync()) {
+          try {
+            final existingJson = jsonDecode(
+              metaFile.readAsStringSync(),
+            ) as Map<String, dynamic>;
+            mergedMeta.addAll(existingJson);
+          } catch (_) {}
+        }
+        for (final entry in capturedMetadata.entries) {
+          mergedMeta[entry.key] = entry.value.toJson();
+        }
         const encoder = JsonEncoder.withIndent('  ');
-        final json = capturedMetadata.map((k, v) => MapEntry(k, v.toJson()));
-        metaFile.writeAsStringSync(encoder.convert(json));
+        metaFile.writeAsStringSync(encoder.convert(mergedMeta));
       } catch (_) {}
     }
 

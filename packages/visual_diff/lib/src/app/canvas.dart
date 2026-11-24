@@ -23,7 +23,6 @@ class CanvasComponent extends StatelessComponent {
   final String activeViewport;
   final ValueChanged<String> onViewportChanged;
   final ReviewMode mode;
-  final ValueChanged<DiffRoute>? onUpdateRouteBaseline;
 
   const CanvasComponent({
     required this.route,
@@ -31,7 +30,6 @@ class CanvasComponent extends StatelessComponent {
     required this.activeViewport,
     required this.onViewportChanged,
     required this.mode,
-    this.onUpdateRouteBaseline,
     super.key,
   });
 
@@ -168,21 +166,6 @@ class CanvasComponent extends StatelessComponent {
               [.text('No visual differences detected in this viewport')],
             ),
           ],
-          if (activeRoute.hasDiff)
-            button(
-              classes: 'vd-btn-accept',
-              attributes: const {
-                'title':
-                    'Accept current snapshots as new baseline for this route',
-              },
-              events: onUpdateRouteBaseline != null
-                  ? {'click': (_) => onUpdateRouteBaseline!(activeRoute)}
-                  : null,
-              const [
-                span([.text('✓')]),
-                span([.text('Accept Route')]),
-              ],
-            ),
         ]),
       ]),
 

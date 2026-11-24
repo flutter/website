@@ -178,22 +178,6 @@ class _VisualDiffAppState extends State<VisualDiffApp> {
     }
   }
 
-  Future<void> _updateRouteBaseline(DiffRoute route) async {
-    if (!kIsWeb) return;
-    try {
-      final res = await web.window
-          .fetch(
-            '/api/update-baseline?route=${Uri.encodeComponent(route.route)}'
-                .toJS,
-            web.RequestInit(method: 'POST'),
-          )
-          .toDart;
-      if (res.ok) {
-        await _loadManifestFromNetwork();
-      }
-    } catch (_) {}
-  }
-
   void _selectInitialRoute() {
     final routes = filteredRoutes;
     if (routes.isNotEmpty) {
@@ -331,7 +315,6 @@ class _VisualDiffAppState extends State<VisualDiffApp> {
             activeViewport: activeViewport,
             onViewportChanged: (vp) => setState(() => activeViewport = vp),
             mode: currentMode,
-            onUpdateRouteBaseline: _updateRouteBaseline,
           ),
         ]),
 
