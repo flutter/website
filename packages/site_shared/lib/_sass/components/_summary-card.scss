@@ -22,6 +22,8 @@
     }
 
     .summary-card-completed {
+      display: flex;
+      align-items: center;
       color: var(--site-alert-tip-color);
     }
   }
@@ -35,6 +37,9 @@
     padding: 0.8rem 1.2rem;
 
     >:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 0.875rem;
       background-color: var(--site-primary-color-highlight);
       color: var(--site-primary-color);
