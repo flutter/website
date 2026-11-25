@@ -224,6 +224,37 @@ To resolve this issue:
    $ flutter doctor
    ```
 
+### Android Studio not detected on Linux
+
+__What does this issue look like?__
+
+On Linux, running `flutter doctor` reports that Android Studio
+can't be found or can't identify its version, even though
+Android Studio is already installed.
+
+__Explanation and suggestions__
+
+When searching automatically on Linux, `flutter doctor` checks
+`/opt/android-studio`, `$HOME/android-studio`, and cache metadata written
+under `$HOME/.cache/Google/` after Android Studio has been opened.
+If you extracted Android Studio to a custom location or a nested
+subdirectory (such as `/opt/android-studio/2025.1.1`) without launching
+it first, `flutter doctor` won't find the installation automatically.
+
+To resolve this issue, do one of the following:
+
+* Launch Android Studio once so it writes its installation metadata,
+  then run `flutter doctor` again.
+* Configure the installation path explicitly with the `flutter config`
+  command:
+
+  ```console
+  $ flutter config --android-studio-dir='<path-to-android-studio>'
+  ```
+
+  To clear a previously configured path and return to automatic
+  detection, run `flutter config --android-studio-dir` with no path.
+
 ## macOS setup
 
 ### SocketException: Send failed, OS Error: No route to host, errno = 65
