@@ -82,11 +82,18 @@ what data needs to be passed into the widget to render the widget.
 In this case, the constructor accepts two parameters:
 
 - A `String` representing the guessed letter of the tile.
-- A `HitType` [enum value][] represent the guess result and
-  used to determine the color of the tile.
+- A `HitType` [enum value][] that represents the guess result and
+  is used to determine the color of the tile.
   For example, `HitType.hit` results in a green tile.
 
 Passing data into widget constructors is at the core of making widgets reusable.
+
+:::note Why widget constructors use `const`
+Marking widget constructors and widget instances as `const` allows Dart
+and Flutter to instantiate compile-time constant widgets once and reuse
+them across UI rebuilds instead of creating new widget instances on
+every rebuild, which improves performance.
+:::
 
 [constructor]: {{site.dart-site}}/language/constructors
 [enum value]: {{site.dart-site}}/language/enums
@@ -307,7 +314,7 @@ class Tile extends StatelessWidget {
 Hot reload, and a single green tile containing the letter **A**
 appears in the center of your app.
 To test different colors,
-try replacing the Tile widget in MainApp
+try replacing the `Tile` widget in `MainApp`
 with one of the following examples, then hot reload:
 
 <?code-excerpt "fwe/birdle/lib/step2_main.dart (TileUsage)"?>
@@ -352,7 +359,7 @@ items:
     details: >-
       You used `Container` to set the widget's size and
       `BoxDecoration` to add borders and background colors.
-      Then to conditional style the tile's color,
+      Then to conditionally style the tile's color,
       you used a switch expression on the `hitType` value.
 </SummaryCard>
 
