@@ -1,7 +1,7 @@
 ---
 title: Add multiplayer support using Firestore
 description: >
-  How to use use Firebase Cloud Firestore to implement multiplayer
+  How to use Firebase Cloud Firestore to implement multiplayer
   in your game.
 ---
 
