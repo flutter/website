@@ -9,7 +9,7 @@ coverImage:
   alt: >-
     Dash stands beside a stack of blocks bearing the
     Dart and Genkit logos and the version number 1.0.
-  url: images/banner.png
+  url: images/banner.webp
 category: news
 layout: blog
 ---
@@ -162,7 +162,7 @@ Dart process using the Genkit CLI:
 genkit start -- dart run bin/server.dart
 ```
 
-<DashImage figure src="images/devui-trace.png" alt="Inspecting an agent's model and tool calls in the Genkit Developer UI" caption="Inspecting an agent's model and tool calls in the Genkit Developer UI" />
+<DashImage figure src="images/devui-trace.webp" alt="Inspecting an agent's model and tool calls in the Genkit Developer UI" caption="Inspecting an agent's model and tool calls in the Genkit Developer UI" />
 
 ## Built for agentic workflows
 

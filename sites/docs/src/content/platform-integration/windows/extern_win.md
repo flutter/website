@@ -42,5 +42,5 @@ The exact file and class name depend on your app's implementation.
   }
 ```
 
-[documentation of this breaking change.]: /release/breaking-changes/win_lifecycle_process_function
+[documentation of this breaking change.]: /release/breaking-changes/win-lifecycle-process-function
 [WidgetsBindingObserver.didChangeAppLifecycle]: {{site.api}}/flutter/widgets/WidgetsBindingObserver/didChangeAppLifecycleState.html

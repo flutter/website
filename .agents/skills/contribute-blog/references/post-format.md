@@ -67,7 +67,9 @@ layout: blog
 `coverImage` (optional)
 : Post-relative hero/cover image that supplies the `/blog` card thumbnail,
   social preview, and optional in-body rendering before the first paragraph.
-  Contains `url` (path to image), `alt` (alternative text; empty string `""`
+  The `url` must point to an animated or static image.
+  Video files cause a validation error.
+  Other fields include `alt` (alternative text; empty string `""`
   for decorative images; required when `showInPost` is `true`),
   optional `caption`, and optional `showInPost` (boolean; defaults to `true`).
   Set `showInPost: false` if you want the card thumbnail and social preview

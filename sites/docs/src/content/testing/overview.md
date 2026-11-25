@@ -141,5 +141,5 @@ integration services, see the following:
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/en/getting-started/quick-start-guides/getting-started-with-flutter-apps
 [Test Flutter apps on Appcircle]: https://blog.appcircle.io/article/flutter-ci-cd-github-ios-android-web#
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
-[Test Flutter apps on Travis]: {{site.flutter-blog}}/test-flutter-apps-on-travis-3fd5142ecd8c
+[Test Flutter apps on Travis]: {{site.flutter-blog}}/test-flutter-apps-on-travis
 [integration testing page]: /cookbook/testing/integration/introduction

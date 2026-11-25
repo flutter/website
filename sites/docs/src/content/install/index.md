@@ -6,7 +6,7 @@ description: >-
   platforms, or update and troubleshoot an existing Flutter installation.
 ---
 
-<a id="get-started" aria-hidden="true"></a>
+<FragmentTarget id="get-started" />
 
 ## Choose an installation method {: #install}
 
@@ -46,7 +46,7 @@ choose how you'd like to install the Flutter SDK:
   </div>
 </div>
 
-<a id="editor" aria-hidden="true"></a>
+<FragmentTarget id="editor" />
 
 ## Set up target platforms and editors {: #target-platform}
 
@@ -68,11 +68,10 @@ set up the tools for your target platforms and configure your preferred editor:
 [VS Code]: /tools/vs-code#setup
 [Android Studio and IntelliJ]: /tools/android-studio#setup
 
-<a id="try" aria-hidden="true"></a>
-<a id="update" aria-hidden="true"></a>
-<a id="previous-releases" aria-hidden="true"></a>
-
-<a id="uninstall" aria-hidden="true"></a>
+<FragmentTarget id="try" />
+<FragmentTarget id="update" />
+<FragmentTarget id="previous-releases" />
+<FragmentTarget id="uninstall" />
 
 ## Manage or troubleshoot your installation {: #manage}
 
@@ -99,7 +98,7 @@ troubleshoot, or remove your installation:
   </Card>
 </div>
 
-<a id="next-steps" aria-hidden="true"></a>
+<FragmentTarget id="next-steps" />
 
 :::tip Ready to start building?
 Once your environment is set up,

@@ -238,7 +238,7 @@ environment:
 # ...
 ```
 
-<a id="update-the-plugins-changelog-md" aria-hidden="true"></a>
+<FragmentTarget id="update-the-plugins-changelog-md" />
 
 ## Update the plugin's changelog
 

@@ -263,7 +263,7 @@ following official and community resources.
 * [Using Firestore as a backend to your Flutter app][video]
 * [Live Coding Firebase Authentication with Flutter][video2]
 
-[article]: {{site.flutter-blog}}/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
+[article]: {{site.flutter-blog}}/must-try-use-firebase-to-host-your-flutter-app-on-the-web
 [auth-codelab]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [choose-db]: /data-and-backend/persistence/choose-a-database
 [Cloud Firestore]: {{site.firebase}}/docs/firestore

@@ -7,6 +7,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/button.dart';
 import 'package:site_shared/components/common/card.dart';
+import 'package:site_shared/components/common/client/trigger.dart';
 import 'package:site_shared/markdown.dart';
 import 'package:site_shared/util.dart';
 
@@ -226,16 +227,17 @@ final class GlossaryCard extends StatelessComponent {
               'aria-label': 'Link to ${entry.term} card',
             },
           ),
-          Button(
-            icon: 'keyboard_arrow_up',
-            style: ButtonStyle.text,
-            classes: const ['expand-button'],
-            title: 'Expand or collapse card',
-            attributes: {
-              'aria-expanded': 'false',
-              'aria-controls': contentId,
-              'aria-label': 'Expand or collapse ${entry.term} card',
-            },
+          Trigger(
+            child: Button(
+              icon: 'keyboard_arrow_up',
+              style: ButtonStyle.text,
+              classes: const ['expand-button'],
+              title: 'Expand or collapse card',
+              attributes: {
+                'aria-controls': contentId,
+                'aria-label': 'Expand or collapse ${entry.term} card',
+              },
+            ),
           ),
         ]),
       ],

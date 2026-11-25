@@ -2,9 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:collection/collection.dart';
 import 'package:intl/intl.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:mime/mime.dart';
 
 import '../../components/blog/client/blog_categories.dart';
 
@@ -22,7 +24,9 @@ extension type Post(Map<String, Object?> data) {
       );
     }
 
-    final supportedCategories = categories.map((category) => category.slug);
+    final supportedCategories = categories
+        .map((category) => category.slug)
+        .toSet();
     if (!supportedCategories.contains(post.category)) {
       throw ArgumentError(
         'Unsupported blog post category "${post.category}"'
@@ -31,14 +35,29 @@ extension type Post(Map<String, Object?> data) {
       );
     }
 
-    switch (data['coverImage']) {
+    validateCoverImage(data['coverImage'], source: source);
+    return post;
+  }
+
+  /// Validates the cover image metadata, throwing if invalid.
+  static void validateCoverImage(Object? coverImage, {String? source}) {
+    final sourceDescription = source == null ? '' : ' at "$source"';
+    switch (coverImage) {
       // Treat an empty map as absent.
       // The asset data loader adds an empty `coverImage` map to
       // pages without one when resolving the `page.coverImage.url` property.
       case null || Map(isEmpty: true):
         break;
-      case final Map<String, Object?> coverData &&
-          {'url': String(isNotEmpty: true)}:
+      case final Map<String, Object?> coverData && {'url': final String url}
+          when url.trim().isNotEmpty:
+        final path = Uri.tryParse(url.trim())?.path ?? '';
+        if (lookupMimeType(path)?.startsWith('video/') ?? false) {
+          throw ArgumentError(
+            'Invalid "coverImage" metadata$sourceDescription. '
+            '"$url" is a video. Use an animated or static image instead.',
+          );
+        }
+
         final showInPost = switch (coverData['showInPost']) {
           null => true,
           final bool showInPost => showInPost,
@@ -77,8 +96,6 @@ extension type Post(Map<String, Object?> data) {
           'Must include a non-empty "url" string.',
         );
     }
-
-    return post;
   }
 
   static Post? tryParse(Map<String, Object?> data) {
@@ -215,6 +232,34 @@ extension BlogData on Page {
   List<Author> authorsByIds(List<String> ids) => [
     for (final id in ids) authorById(id),
   ];
+}
+
+extension PostIndex on BuildContext {
+  /// The blog's posts in publication order, newest first.
+  List<({String url, Post post})> get blogPosts {
+    final categories = page.blogCategories;
+    final posts = <({String url, Post post})>[
+      for (final page in pages)
+        if (page.url.startsWith('/blog/'))
+          (
+            url: page.url,
+            post: Post.parse(
+              page.data.page,
+              categories: categories,
+              source: page.url,
+            ),
+          ),
+    ];
+
+    // ISO 8601 dates sort chronologically as strings,
+    // which avoids parsing each date on every comparison.
+    // Pages load in no fixed order, so the URL breaks ties
+    // to keep same-day posts in a stable order across builds.
+    return posts.sorted((a, b) {
+      final byPublishDate = b.post.publishDate.compareTo(a.post.publishDate);
+      return byPublishDate != 0 ? byPublishDate : a.url.compareTo(b.url);
+    });
+  }
 }
 
 /// Whether [author] is a valid author configuration:

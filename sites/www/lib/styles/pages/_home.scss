@@ -51,7 +51,7 @@ body.home {
     h1 {
       color: white;
       position: relative;
-      top: 110px;
+      transform: translateY(110px);
       opacity: 0;
       margin-bottom: 80px;
       animation: marketing-slide-up var(--anim-dur) var(--ui-anim-func)
@@ -95,16 +95,6 @@ body.home {
         margin-bottom: 80px;
       }
 
-      @keyframes slideup-outer {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-          top: var(--card-vert-offset);
-        }
-      }
-
       .inner-fixed {
         display: grid;
         grid-template-columns: 1fr var(--center-width) 1fr;
@@ -123,11 +113,12 @@ body.home {
       .col-outer {
         animation-duration: var(--anim-dur);
         animation-delay: var(--anim-delay-1);
-        animation-name: slideup-outer;
+        animation-name: marketing-slide-up;
         animation-iteration-count: 1;
         animation-timing-function: var(--ui-anim-func);
         animation-fill-mode: forwards;
-        top: var(--anim-offset);
+        top: var(--card-vert-offset);
+        transform: translateY(calc(var(--anim-offset) - var(--card-vert-offset)));
       }
 
       .col-center {
@@ -139,7 +130,7 @@ body.home {
         animation-fill-mode: forwards;
         display: flex;
         justify-content: center;
-        top: var(--anim-offset);
+        transform: translateY(var(--anim-offset));
         padding: 0 var(--center-pad);
 
         .card-a {

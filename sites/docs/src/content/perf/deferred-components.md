@@ -338,7 +338,7 @@ entry in `pubspec.yaml`.
 :::
 
 <ol>
-<li><a id="step-3.1"></a>
+<li id="step-3.1">
 
 The `flutter build appbundle` command
 runs the validator and attempts to build the app with
@@ -451,7 +451,7 @@ changes to your `android/` directory automatically.
 
 </li>
 
-<li><a id="step-3.3"></a>
+<li id="step-3.3">
 
 Once the available
 loading units are generated and logged in

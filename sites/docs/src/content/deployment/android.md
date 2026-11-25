@@ -121,7 +121,8 @@ dependencies {
 [Getting Started guide for Android]: {{site.material}}/develop/android/mdc-android
 [maven-material]: https://maven.google.com/web/index.html#com.google.android.material:material
 
-<a id="signing-the-app"></a>
+<FragmentTarget id="signing-the-app" />
+
 ## Sign the app
 
 To publish on the Play Store, you must
@@ -787,7 +788,7 @@ continue to be included in all Flutter apps.
 Additionally, this won't work for all libraries written
 in Flutter that are imported into Android apps as AAR dependencies.
 
-[Flutter 3.22]: {{site.flutter-blog}}/whats-new-in-flutter-3-22-fbde6c164fe3
+[Flutter 3.22]: {{site.flutter-blog}}/whats-new-in-flutter-3-22
 
 #### Non-technical evaluation
 
