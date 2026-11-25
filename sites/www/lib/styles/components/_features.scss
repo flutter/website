@@ -66,7 +66,7 @@
   .stacked-feature {
     .feature {
       display: grid;
-      top: 0;
+      transform: none;
       opacity: 1;
 
       &.full {
@@ -137,7 +137,7 @@
     display: none;
     grid-template-columns: 1fr;
     padding: var(--gutter) 0;
-    top: var(--anim-offset);
+    transform: translateY(var(--anim-offset));
     opacity: 0;
     position: relative;
 
@@ -147,7 +147,7 @@
 
     &.nospy {
       display: grid;
-      top: 0;
+      transform: none;
       opacity: 1;
     }
 

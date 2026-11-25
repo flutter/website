@@ -26,10 +26,10 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
 import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     as _collapse_button;
-import 'package:site_shared/components/common/client/copy_button.dart'
-    as _copy_button;
 import 'package:site_shared/components/common/client/download_button.dart'
     as _download_button;
+import 'package:site_shared/components/common/client/expandable.dart'
+    as _expandable;
 import 'package:site_shared/components/common/client/feedback.dart'
     as _feedback;
 import 'package:site_shared/components/common/client/on_this_page_button.dart'
@@ -38,6 +38,8 @@ import 'package:site_shared/components/common/client/page_header_options.dart'
     as _page_header_options;
 import 'package:site_shared/components/common/client/simple_tooltip.dart'
     as _simple_tooltip;
+import 'package:site_shared/components/common/client/tabs.dart' as _tabs;
+import 'package:site_shared/components/common/client/trigger.dart' as _trigger;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     as _dartpad_injector;
 import 'package:site_shared/components/layout/menu_toggle.dart' as _menu_toggle;
@@ -46,6 +48,8 @@ import 'package:site_shared/components/layout/site_switcher.dart'
 import 'package:site_shared/components/layout/theme_switcher.dart'
     as _theme_switcher;
 import 'package:site_shared/components/tutorial/client/quiz.dart' as _quiz;
+import 'package:site_shared/components/tutorial/client/stepper.dart'
+    as _stepper;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -106,15 +110,15 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:collapse_button',
           params: __collapse_buttonCollapseButton,
         ),
-    _copy_button.CopyButton: ClientTarget<_copy_button.CopyButton>(
-      'site_shared:copy_button',
-      params: __copy_buttonCopyButton,
-    ),
     _download_button.DownloadButton:
         ClientTarget<_download_button.DownloadButton>(
           'site_shared:download_button',
           params: __download_buttonDownloadButton,
         ),
+    _expandable.Expandable: ClientTarget<_expandable.Expandable>(
+      'site_shared:expandable',
+      params: __expandableExpandable,
+    ),
     _feedback.FeedbackComponent: ClientTarget<_feedback.FeedbackComponent>(
       'site_shared:feedback',
       params: __feedbackFeedbackComponent,
@@ -131,6 +135,14 @@ ServerOptions get defaultServerOptions => ServerOptions(
     _simple_tooltip.SimpleTooltip: ClientTarget<_simple_tooltip.SimpleTooltip>(
       'site_shared:simple_tooltip',
       params: __simple_tooltipSimpleTooltip,
+    ),
+    _tabs.InteractiveDashTabs: ClientTarget<_tabs.InteractiveDashTabs>(
+      'site_shared:tabs',
+      params: __tabsInteractiveDashTabs,
+    ),
+    _trigger.Trigger: ClientTarget<_trigger.Trigger>(
+      'site_shared:trigger',
+      params: __triggerTrigger,
     ),
     _dartpad_injector.DartPadInjector:
         ClientTarget<_dartpad_injector.DartPadInjector>(
@@ -151,6 +163,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'site_shared:quiz',
       params: __quizInteractiveQuiz,
     ),
+    _stepper.InteractiveStepper: ClientTarget<_stepper.InteractiveStepper>(
+      'site_shared:stepper',
+      params: __stepperInteractiveStepper,
+    ),
   },
   styles: () => [..._file_tree.FileTree.styles],
 );
@@ -162,7 +178,7 @@ Map<String, Object?> __pagenavPageNav(_pagenav.PageNav c) => {
   'breadcrumbs': c.breadcrumbs,
   'pageNumber': c.pageNumber,
   'initialHeading': c.initialHeading,
-  'content': c.content.toId(),
+  'content': c.content,
 };
 Map<String, Object?> __archive_tableArchiveTable(
   _archive_table.ArchiveTable c,
@@ -170,15 +186,14 @@ Map<String, Object?> __archive_tableArchiveTable(
 Map<String, Object?> __collapse_buttonCollapseButton(
   _collapse_button.CollapseButton c,
 ) => {'classes': c.classes, 'title': c.title};
-Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
-  'buttonText': c.buttonText,
-  'toCopy': c.toCopy,
-  'classes': c.classes,
-  'title': c.title,
-};
 Map<String, Object?> __download_buttonDownloadButton(
   _download_button.DownloadButton c,
 ) => {'name': c.name};
+Map<String, Object?> __expandableExpandable(_expandable.Expandable c) => {
+  'id': c.id,
+  'initiallyExpanded': c.initiallyExpanded,
+  'child': c.child,
+};
 Map<String, Object?> __feedbackFeedbackComponent(
   _feedback.FeedbackComponent c,
 ) => {'issueUrl': c.issueUrl};
@@ -192,7 +207,14 @@ Map<String, Object?> __page_header_optionsPageHeaderOptions(
 };
 Map<String, Object?> __simple_tooltipSimpleTooltip(
   _simple_tooltip.SimpleTooltip c,
-) => {'target': c.target.toId(), 'content': c.content.toId()};
+) => {'target': c.target, 'content': c.content};
+Map<String, Object?> __tabsInteractiveDashTabs(_tabs.InteractiveDashTabs c) => {
+  'id': c.id,
+  'tabs': c.tabs.map((i) => i.encode()).toList(),
+  'saveKey': c.saveKey,
+  'wrapped': c.wrapped,
+};
+Map<String, Object?> __triggerTrigger(_trigger.Trigger c) => {'child': c.child};
 Map<String, Object?> __dartpad_injectorDartPadInjector(
   _dartpad_injector.DartPadInjector c,
 ) => {
@@ -207,4 +229,12 @@ Map<String, Object?> __site_switcherSiteSwitcher(
 Map<String, Object?> __quizInteractiveQuiz(_quiz.InteractiveQuiz c) => {
   'title': c.title,
   'questions': c.questions.map((i) => i.toJson()).toList(),
+};
+Map<String, Object?> __stepperInteractiveStepper(
+  _stepper.InteractiveStepper c,
+) => {
+  'steps': c.steps.map((i) => i.encode()).toList(),
+  'collapsible': c.collapsible,
+  'showActions': c.showActions,
+  'showFinish': c.showFinish,
 };

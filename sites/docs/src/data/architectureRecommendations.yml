@@ -26,7 +26,7 @@
       confidence: conditional
       confidence-description: |
         There are many options to handle state-management, and ultimately the decision comes down to personal preference.
-        Read about [our ChangeNotifier recommendation](/get-started/fwe/state-management) or [other popular options](https://docs.flutter.dev/data-and-backend/state-mgmt/options).
+        Read about [our ChangeNotifier recommendation](/learn/pathway) or [other popular options](https://docs.flutter.dev/data-and-backend/state-mgmt/options).
 
     - recommendation: Do not put logic in widgets.
       description: |

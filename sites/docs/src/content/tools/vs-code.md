@@ -13,7 +13,7 @@ description: How to develop Flutter apps in Visual Studio Code.
   </li>
 </ul>
 
-<a id="installation-and-setup" aria-hidden="true"></a>
+<FragmentTarget id="installation-and-setup" />
 
 ## Installation and setup {: #setup}
 
@@ -462,7 +462,7 @@ When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [DevTools]: /tools/devtools
-[flutter doctor]: /resources/bug-reports/#provide-some-flutter-diagnostics
+[flutter doctor]: /resources/bug-reports#provide-some-flutter-diagnostics
 [Flutter inspector]: /tools/devtools/inspector
 [Flutter's build modes]: /testing/build-modes
 [Hot reload]: /tools/hot-reload

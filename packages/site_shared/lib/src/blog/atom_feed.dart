@@ -43,6 +43,7 @@ final class BlogAtomFeedOutput implements SecondaryOutput {
         'Content-Type',
         '$blogAtomMimeType; charset=utf-8',
       );
+      context.setHeader('jaspr-sitemap-data', 'false');
       context.setStatusCode(
         200,
         responseBody: renderAtomFeed(page, context.pages),

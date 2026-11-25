@@ -287,7 +287,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 
 **App source:** [animate2][]
 
-<a id="monitoring"></a>
+<FragmentTarget id="monitoring" />
 
 ## Monitoring the progress of the animation
 

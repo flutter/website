@@ -2077,7 +2077,7 @@ but not bigger than the screen.
 [`build`]: {{site.api}}/flutter/widgets/State/build.html
 [`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
 
-<a id="unbounded"></a>
+<FragmentTarget id="unbounded" />
 
 ## Unbounded constraints
 

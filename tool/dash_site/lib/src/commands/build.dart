@@ -53,8 +53,8 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
       '-O4',
       '--extra-js-compiler-option=--no-source-maps',
       '--sitemap-domain=${site.baseUrl}',
-      // Exclude secondary Markdown output files from sitemap.
-      r'--sitemap-exclude=\.md$',
+      // Exclude secondary Markdown, plain-text, XML, and JSON outputs.
+      r'--sitemap-exclude=\.(md|txt|xml|json)$',
       '--dart-define=PRODUCTION=$productionRelease',
       if (!productionRelease) ...nonProductionDartDefines(),
     ],

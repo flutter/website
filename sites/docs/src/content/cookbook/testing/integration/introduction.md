@@ -61,10 +61,10 @@ To use `patrol`, follow the [Patrol setup guide][].
 The other guides in this section explain how to use integration tests to validate
 [functionality][] and [performance][].
 
-[functionality]: /testing/integration-tests/
+[functionality]: /testing/integration-tests
 [integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
 [Migrating from flutter_driver]: /release/breaking-changes/flutter-driver-migration
 [patrol]: {{site.pub-pkg}}/patrol
 [Patrol setup guide]: https://patrol.leancode.co/getting-started
-[performance]: /cookbook/testing/integration/profiling/
+[performance]: /cookbook/testing/integration/profiling
 [widget tests]: /testing/overview#widget-tests

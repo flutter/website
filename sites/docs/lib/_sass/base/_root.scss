@@ -3,6 +3,12 @@
 $base_primary_color: #0468D7;
 
 // Root variables shared by both light and dark mode.
+:root {
+  // Site layout sizes.
+  --site-header-height: 4rem;
+  --site-subheader-height: 2.5rem;
+}
+
 body {
   // Site typography.
   --site-ui-fontFamily: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
@@ -10,10 +16,6 @@ body {
   --site-code-fontFamily: 'Google Sans Code', 'Roboto Mono', ui-monospace, monospace;
   --site-icon-fontFamily: 'Material Symbols Outlined', 'Material Symbols', 'Material Icons';
   font-optical-sizing: auto;
-
-  // Site layout sizes.
-  --site-header-height: 4rem;
-  --site-subheader-height: 2.5rem;
 
   // Site visual hierarchy levels.
   --site-z-base: 1;

@@ -109,17 +109,58 @@ To enable automatic content-based cache busting across deployments, pass
 flutter build web --wasm --web-content-hash
 ```
 
-When `--web-content-hash` is enabled, Flutter embeds an 8-character truncated
-SHA-256 content hash into compiled entrypoints and all files under
-`build/web/assets/**`, and records the hashed paths in `flutter_bootstrap.js`
-(`_flutter.buildConfig`):
+When you pass `--web-content-hash`, Flutter inserts an eight-character
+truncated SHA-256 content hash (`HASH`) before the file extension of compiled
+entrypoints and every file under `build/web/assets/**`.
+For example, `main.dart.js` becomes `main.dart.HASH.js`, `logo.png` becomes
+`logo.HASH.png`, and the extensionless `NOTICES` file becomes `NOTICES.HASH`.
+The flag works with release, profile, and debug builds,
+and with both JavaScript-only and `--wasm` builds.
+
+Flutter records the hashed entrypoint and asset manifest filenames in the
+`_flutter.buildConfig` object.
+Flutter writes this object to `flutter_bootstrap.js`, and also to `index.html`
+when `index.html` inlines
+`{% raw %}{{flutter_bootstrap_js}}{% endraw %}` or
+`{% raw %}{{flutter_build_config}}{% endraw %}`.
+The hashed asset manifests then map each asset key to its hashed filename,
+so `rootBundle`, `Image.asset`, and fonts resolve hashed assets automatically.
 
 | Artifact group | Files in `build/web` | Recommended `Cache-Control` |
 | :--- | :--- | :--- |
-| **Hashed immutable files** | `main.dart.<hash>.js`, `main.dart.<hash>.wasm`, `main.dart.<hash>.mjs` (plus `.js.map` and `.mjs.map`), and all files under `assets/**` (`AssetManifest.<hash>.bin`, `FontManifest.<hash>.json`, `NOTICES.<hash>`, fonts, images, and `shaders/**`) | `public, max-age=31536000, immutable` |
-| **Unhashed bootstrap and root files** | `index.html`, `flutter_bootstrap.js`, `flutter.js`, `manifest.json`, `version.json`, `404.html`, `icons/**`, bundled `canvaskit/**` (with `--no-web-resources-cdn`), and `main.dart.wasm.map` (with `--source-maps`) | `no-cache` (or `max-age=0, must-revalidate`) |
+| **Hashed immutable files** | `main.dart.HASH.js`, `main.dart.HASH.wasm`, `main.dart.HASH.mjs`, their `.js.map` and `.mjs.map` source maps (if you host them), and all files under `assets/**` (including `AssetManifest.HASH.bin`, `AssetManifest.bin.HASH.json`, `FontManifest.HASH.json`, `NOTICES.HASH`, fonts, images, `shaders/**`, and `packages/**`) | `public, max-age=31536000, immutable` |
+| **Unhashed bootstrap and root files** | `index.html`, `flutter_bootstrap.js`, `flutter.js`, `flutter.js.map`, `manifest.json`, `version.json`, `favicon.png`, `icons/**`, other files copied from `web/` (such as `404.html`), `flutter_service_worker.js`, `precache_manifest.json`, `canvaskit/**`, and `main.dart.wasm.map` (with `--source-maps`) | `no-cache` (or `max-age=0, must-revalidate`) |
 
 {:.table .table-striped}
+
+By default, the app loads CanvasKit and Skwasm (`canvaskit.wasm`, `skwasm.wasm`,
+and related files) from the `www.gstatic.com` CDN under a URL that is versioned
+by the Flutter engine revision.
+Flutter still copies an unhashed `canvaskit/` directory into `build/web`,
+which the app uses only when you build with `--no-web-resources-cdn`.
+Because those files keep the same names across Flutter upgrades,
+don't serve your own copy of `canvaskit/**` with `immutable` caching.
+
+:::important
+When you build with `--web-content-hash`, Flutter renames files under
+`build/web/assets/` on disk.
+Code that references them by a fixed URL, such as `assets/...` paths in
+`index.html`, CSS, or a JavaScript `fetch()` call, receives a `404 Not Found`
+status code.
+Load assets through `rootBundle` or the asset APIs instead.
+:::
+
+Running `flutter build web --web-content-hash` fails with an error in any of
+the following cases:
+
+* The `web/index.html` file or a custom `web/flutter_bootstrap.js` file
+  references `main.dart.js` or calls the deprecated `loadEntrypoint()` method.
+* The `web/index.html` file neither loads nor inlines `flutter_bootstrap.js`.
+* A custom `web/flutter_bootstrap.js` file omits the
+  `{% raw %}{{flutter_build_config}}{% endraw %}` token.
+
+To migrate an older project, run `flutter create . --platforms web`
+or follow [Flutter web app initialization][web-init-bootstrapping].
 
 For a complete `firebase.json` example, refer to the [Web FAQ][web-faq-caching].
 
@@ -175,7 +216,14 @@ Custom PWA service workers or [Workbox][] pipelines can consume
 `precache_manifest.json` directly (passing `revision: entry.urlHashed ? null : entry.hash`
 so URL-hashed files aren't double-cached with query parameters).
 
-<a id="opting-in-to-webassembly" aria-hidden="true"></a>
+Each `url` value is a path relative to `build/web`, without a leading `/` or
+`--base-href` prefix, and the manifest sorts entries by `url`.
+The manifest omits dotfiles, `flutter_service_worker.js`, source maps
+(`*.map`), `*.symbols` files, and `*.info.json` files.
+When you build with `--no-web-resources-cdn`, the manifest includes
+`canvaskit/**` files with `"urlHashed": false`; otherwise, it omits them.
+
+<FragmentTarget id="opting-in-to-webassembly" />
 
 ## Deploy WebAssembly in production {:#deploy-webassembly-in-production}
 
@@ -279,8 +327,7 @@ many others:
 
 ## Deploy to Firebase Hosting {:#deploying-to-firebase-hosting}
 
-You can use the Firebase CLI to build and release your Flutter app with Firebase
-Hosting.
+You can use the Firebase CLI to deploy your Flutter web app to Firebase Hosting.
 
 ### Before you begin
 
@@ -290,43 +337,50 @@ To get started, [install or update][install-firebase-cli] the Firebase CLI:
 npm install -g firebase-tools
 ```
 
-### Initialize Firebase
+<FragmentTarget id="initialize-firebase" />
 
-1. Enable the web frameworks preview to the [Firebase framework-aware CLI][]:
+### Initialize and deploy
 
-    ```console
-    firebase experiments:enable webframeworks
-    ```
-
-2. In an empty directory or an existing Flutter project, run the initialization
-command:
+1.  In the root directory of your Flutter project,
+    run the initialization command:
 
     ```console
     firebase init hosting
     ```
 
-3. Answer `yes` when asked if you want to use a web framework.
+1.  Follow the CLI prompts:
 
-4. If you're in an empty directory,
-    you'll be asked to choose your web framework. Choose `Flutter Web`.
+    * Select an existing Firebase project or create a new project.
+    * When asked `What do you want to use as your public directory?`,
+      enter `build/web`.
+    * Choose whether to configure the site as a single-page application
+      (rewriting all URLs to `/index.html`).
+    * Choose whether to set up automatic builds and deploys with GitHub.
+    * If `build/web/index.html` already exists,
+      answer `no` when asked whether to overwrite it.
 
-5. Choose your hosting source directory; this could be an existing flutter app.
+1.  Build your web app for release:
 
-6. Select a region to host your files.
+    ```console
+    flutter build web
+    ```
 
-7. Choose whether to set up automatic builds and deploys with GitHub.
+    :::tip
+    To run `flutter build web` automatically whenever you deploy,
+    add `"predeploy": ["flutter build web"]` to the `"hosting"` section
+    of your `firebase.json` file.
+    For recommended `Cache-Control` headers and
+    single-page application rewrite rules in `firebase.json`,
+    check out the [Web FAQ][web-faq-caching].
+    :::
 
-8. Deploy the app to Firebase Hosting:
+1.  Deploy the release bundle to Firebase Hosting:
 
     ```console
     firebase deploy
     ```
 
-    Running this command automatically runs `flutter build web --release`,
-    so you don't have to build your app in a separate step.
-
-To learn more, visit the official [Firebase Hosting][] documentation for
-Flutter on the web.
+To learn more, visit the official [Firebase Hosting][] documentation.
 
 ## Handle images on the web {:#handling-images-on-the-web}
 
@@ -399,8 +453,7 @@ refer to [Add Flutter to any web application][Embedding Flutter web].
 [dart-wasm-serving]: {{site.dart-site}}/web/deployment#serving-wasm-in-production
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /platform-integration/web/web-images
-[Firebase Hosting]: {{site.firebase}}/docs/hosting/frameworks/flutter
-[Firebase framework-aware CLI]: {{site.firebase}}/docs/hosting/frameworks/frameworks-overview
+[Firebase Hosting]: {{site.firebase}}/docs/hosting
 [install-firebase-cli]: {{site.firebase}}/docs/cli#install_the_firebase_cli
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
