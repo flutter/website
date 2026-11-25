@@ -15,31 +15,49 @@ import 'package:universal_web/web.dart' as web;
 external set _writeText(JSFunction value);
 
 void main() {
-  test('copies clean code and replaces the button label', () async {
-    String? copied;
-    _writeText = ((String text) {
-      copied = text;
-      return Future<void>.value().toJS;
-    }).toJS;
-    setUpCodeBlockCopyButtons();
+  const dartSource = r'''final message = """
+  $name
+  C:\\src> dart test
+""";''';
+  for (final (language, markup, expected) in [
+    (
+      'console',
+      '''<span aria-hidden="true">\$ </span>flutter test
+\u200B
+\$ echo \$HOME
+\$HOME/.pub-cache/bin''',
+      r'''flutter test
 
-    const markup =
-        '''
-<pre><code><span aria-hidden="true">\$ </span>flutter test
-​
-done</code></pre>
+echo $HOME
+$HOME/.pub-cache/bin''',
+    ),
+    ('dart', dartSource, dartSource),
+  ]) {
+    test('copies $language code and replaces the button label', () async {
+      String? copied;
+      _writeText = ((String text) {
+        copied = text;
+        return Future<void>.value().toJS;
+      }).toJS;
+      setUpCodeBlockCopyButtons();
+
+      final block =
+          '''
+<pre><code>$markup</code></pre>
 <button $codeBlockCopyAttribute><span>Copy</span></button>
 ''';
-    final wrapper = web.document.createElement('div')
-      ..className = 'code-block-wrapper'
-      ..innerHTML = markup.toJS;
-    web.document.body!.appendChild(wrapper);
+      final wrapper = web.document.createElement('div')
+        ..className = 'code-block-wrapper language-$language'
+        ..innerHTML = block.toJS;
+      web.document.body!.appendChild(wrapper);
+      addTearDown(() => web.document.body!.removeChild(wrapper));
 
-    final button = wrapper.querySelector('button')!;
-    (button.firstElementChild! as web.HTMLElement).click();
-    await pumpEventQueue();
+      final button = wrapper.querySelector('button')!;
+      (button.firstElementChild! as web.HTMLElement).click();
+      await pumpEventQueue();
 
-    expect(copied, 'flutter test\n\ndone');
-    expect(button.textContent, button.getAttribute('aria-label'));
-  });
+      expect(copied, expected);
+      expect(button.textContent, button.getAttribute('aria-label'));
+    });
+  }
 }

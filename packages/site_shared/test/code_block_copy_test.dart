@@ -12,36 +12,51 @@ void main() {
     });
 
     test('strips bash prompt prefix', () {
-      expect(cleanCopiedCodeText(r'$ dart pub get'), 'dart pub get');
-      expect(cleanCopiedCodeText(r'  $ flutter run'), 'flutter run');
+      expect(
+        cleanCopiedCodeText(r'$ dart pub get', isShell: true),
+        'dart pub get',
+      );
+      expect(
+        cleanCopiedCodeText('  \$\tflutter run', isShell: true),
+        'flutter run',
+      );
     });
 
     test('strips Windows PowerShell prompt prefix', () {
       expect(
-        cleanCopiedCodeText(r'PS C:\Users\dev> dart test'),
+        cleanCopiedCodeText(r'PS C:\Users\dev> dart test', isShell: true),
         'dart test',
       );
       expect(
-        cleanCopiedCodeText(r'C:\Users\dev> dart test'),
+        cleanCopiedCodeText(r'C:\Users\dev> dart test', isShell: true),
         'dart test',
       );
       expect(
-        cleanCopiedCodeText(r'C:\Users\dev> dart test > output.txt'),
+        cleanCopiedCodeText(
+          r'C:\Users\dev> dart test > output.txt',
+          isShell: true,
+        ),
         'dart test > output.txt',
       );
     });
 
-    test('does not strip mid-line variables or symbols', () {
-      expect(cleanCopiedCodeText(r'echo $HOME'), r'echo $HOME');
+    test('preserves shell variables at the start and middle of a line', () {
+      const source =
+          r'$HOME/.pub-cache/bin'
+          '\n'
+          r'echo $HOME';
+      expect(cleanCopiedCodeText(source, isShell: true), source);
     });
 
     test('strips prompts on multiline input', () {
       final input = '''
 \$ dart pub get
+
 \$ dart test
 ''';
-      expect(cleanCopiedCodeText(input), '''
+      expect(cleanCopiedCodeText(input, isShell: true), '''
 dart pub get
+
 dart test
 ''');
     });

@@ -16,10 +16,9 @@ final _pendingResets = <web.Element, _PendingCopyReset>{};
 /// [button], stripping `[aria-hidden="true"]` prompt/fold elements and
 /// zero-width spaces.
 String? extractCodeBlockText(web.Element button) {
-  final codeElement = button
-      .closest('.code-block-wrapper')
-      ?.querySelector('pre code');
-  if (codeElement == null) {
+  final wrapper = button.closest('.code-block-wrapper');
+  final codeElement = wrapper?.querySelector('pre code');
+  if (wrapper == null || codeElement == null) {
     return null;
   }
 
@@ -30,7 +29,14 @@ String? extractCodeBlockText(web.Element button) {
   }
 
   final text = clone.textContent;
-  return text == null ? null : cleanCopiedCodeText(text);
+  if (text == null) return null;
+  return cleanCopiedCodeText(
+    text,
+    isShell: wrapper.matches(
+      '.language-console, .language-bash, .language-sh, .language-shell, '
+      '.language-ps, .language-powershell, .language-bat',
+    ),
+  );
 }
 
 /// Registers a single delegated document click listener for all buttons marked

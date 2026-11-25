@@ -10,14 +10,17 @@ import 'button.dart';
 const String codeBlockCopyAttribute = 'data-code-copy-button';
 
 final RegExp _terminalReplacementPattern = RegExp(
-  r'^\s*(?:\$|(?:PS\s+)?C:\\[^>]*>)\s*',
+  r'^[ \t]*(?:\$[ \t]+|(?:PS[ \t]+)?C:\\[^>\r\n]*>[ \t]*)',
   multiLine: true,
 );
 
-/// Strips formatting placeholders and shell prompts from copied code.
-String cleanCopiedCodeText(String rawText) => rawText
-    .replaceAll(_terminalReplacementPattern, '')
-    .replaceAll('\u200B', '');
+/// Removes formatting placeholders and, for shell blocks, command prompts.
+String cleanCopiedCodeText(String rawText, {bool isShell = false}) {
+  final text = isShell
+      ? rawText.replaceAll(_terminalReplacementPattern, '')
+      : rawText;
+  return text.replaceAll('\u200B', '');
+}
 
 /// A server-rendered button that copies the contents of its enclosing
 /// `.code-block-wrapper` to the user's clipboard.
