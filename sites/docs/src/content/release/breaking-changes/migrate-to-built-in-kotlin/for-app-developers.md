@@ -48,17 +48,17 @@ and `android.newDsl=false` to your `gradle.properties` file.
 If these flags are missing from your `gradle.properties` file,
 the Flutter tool automatically adds them when you
 next build or run your app using `flutter run` or `flutter build apk`.
-
-Alternatively, building the project using Android Studio tooling also
-adds these flags automatically.
-Once the process completes, verify that the flags have been added.
+This includes running the Flutter project from an IDE with the Flutter
+plugin, which calls `flutter run`.
+Building with Gradle directly, such as running `./gradlew` or opening the
+`android/` directory as an Android Studio project, doesn't add the flags.
+After the build completes, verify that the flags have been added.
 For more details, see Flutter [issue #183910][issue-183910].
 
-All add-to-app projects must manually add
-`android.builtInKotlin=false` and `android.newDsl=false` to
-the Android host app's `gradle.properties` file.
-The Flutter migrator tool can't run during add-to-app Android host app builds
-because the host app is a pure native Android project.
+The Flutter tool can't add the flags to an add-to-app Android host app,
+because the host app builds with Gradle directly.
+If the host app or any Flutter plugin applies KGP,
+add both flags to the host app's `gradle.properties` file manually.
 
 ```properties diff title="<host-app-project>/gradle.properties"
 # ...
