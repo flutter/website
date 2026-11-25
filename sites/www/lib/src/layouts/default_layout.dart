@@ -30,6 +30,12 @@ class DefaultLayout extends PageLayout {
   /// Additional font stylesheet URLs required by this layout.
   List<String> get additionalFontUrls => const [];
 
+  /// The suffix for the document title of pages using this layout,
+  /// unless a page sets its own `titleBase`.
+  ///
+  /// If `null`, falls back to the site's `titleBase`, if any.
+  String? get titleBase => null;
+
   @override
   Component buildLayout(Page page, Component child) {
     final pageData = page.data.page;
@@ -68,7 +74,8 @@ class DefaultLayout extends PageLayout {
       _ => null,
     };
     final titleBase =
-        (pageData['titleBase'] ?? siteData['titleBase']) as String?;
+        (pageData['titleBase'] ?? this.titleBase ?? siteData['titleBase'])
+            as String?;
     final documentTitle = titleBase == null ? title : '$title | $titleBase';
 
     final noIndex =

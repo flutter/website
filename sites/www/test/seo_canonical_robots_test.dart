@@ -148,6 +148,29 @@ void main() {
       expect(data['sitemap'], {'lastmod': '2026-10-20'});
     });
 
+    test('applies the latest commit within a directory source', () {
+      final index = GitLastModifiedIndex(
+        repositoryRoot: repoRoot,
+        projectRoot: siteRoot,
+        lastModifiedPerPath: {
+          'content/blog/index.md': DateTime.utc(2026, 1, 5),
+          'content/blog/new-post/index.md': DateTime.utc(2026, 11, 18),
+          'content/blog.md': DateTime.utc(2026, 12, 1),
+        },
+      );
+      final page = _page(
+        pagePath: 'blog/index.md',
+        url: '/blog',
+        metadata: const {
+          'dateModifiedSources': ['content/blog/'],
+        },
+        loader: FilesystemLoader(path.join(siteRoot, 'content')),
+      );
+      index.applyToPage(page);
+
+      expect(page.data.page['sitemap'], {'lastmod': '2026-11-18'});
+    });
+
     test('excludes noindex pages from the sitemap', () {
       final page = _page(
         metadata: const {
