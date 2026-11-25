@@ -188,10 +188,6 @@
     padding-bottom: 60px;
     position: relative;
 
-    >a {
-      display: block;
-    }
-
     &:last-child {
       margin-right: var(--gutter);
     }
@@ -213,6 +209,7 @@
 
     h4,
     a,
+    .read-more,
     img,
     .placeholder {
       z-index: 2;
@@ -227,10 +224,23 @@
       margin-bottom: var(--gutter-sm);
     }
 
-    a {
+    a,
+    .read-more {
       color: black;
       font-weight: var(--font-weight-bold);
       display: inline-block;
+    }
+
+    >a {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      height: 100%;
+    }
+
+    .read-more {
+      margin-top: auto;
     }
 
     .carousel-card-bg {
@@ -260,7 +270,8 @@
         transition: color 400ms var(--ui-anim-func) var(--delay);
       }
 
-      a {
+      a,
+      .read-more {
         color: white;
         transition: color 300ms var(--ui-anim-func) var(--delay);
 

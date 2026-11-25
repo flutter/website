@@ -1,0 +1,187 @@
+@keyframes image-zoombox-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+img[data-zoombox-trigger] {
+  cursor: zoom-in;
+  transition: outline-color 0.15s ease;
+
+  &:hover {
+    outline: 2px solid var(--site-outline);
+    outline-offset: 2px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--site-link-fgColor);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+body:has(dialog.image-zoombox[open]) {
+  overflow: hidden;
+}
+
+dialog.image-zoombox {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  overflow: hidden;
+  overscroll-behavior: contain;
+
+  &[open] {
+    display: block;
+    animation: image-zoombox-fade-in 0.15s ease-out;
+
+    &::backdrop {
+      animation: image-zoombox-fade-in 0.15s ease-out;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+
+      &::backdrop {
+        animation: none;
+      }
+    }
+  }
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+  }
+
+  .image-zoombox-body {
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-zoombox-toolbar {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .image-zoombox-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(18, 19, 23, 0.78);
+    color: #ffffff;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease;
+
+    &:hover {
+      background: rgba(18, 19, 23, 0.94);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+
+    .material-symbols {
+      font-size: 1.5rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  .image-zoombox-stage {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+
+  .image-zoombox-figure {
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      padding: 1.5rem;
+    }
+  }
+
+  .image-zoombox-img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    border-radius: var(--site-radius);
+    background-color: var(--site-base-bgColor);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    cursor: zoom-out;
+    user-select: none;
+
+    &.diagram-wrap,
+    &.small-diagram-wrap {
+      background-color: var(--site-diagram-wrap-bgColor);
+    }
+
+    &.diagram-wrap {
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+
+    &.small-diagram-wrap {
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .image-zoombox-caption {
+    margin-top: 0.75rem;
+    max-width: min(70ch, calc(100vw - 3rem));
+    font-family: var(--site-ui-fontFamily);
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.92);
+    text-align: center;
+  }
+
+  .image-zoombox-body.dragging {
+    .image-zoombox-stage,
+    .image-zoombox-figure .image-zoombox-img {
+      cursor: grabbing;
+    }
+  }
+}

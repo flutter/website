@@ -383,7 +383,7 @@ The quantities plotted on the y-axis are as follows:
 [frog]: https://dartfrog.vgv.dev/
 [heroku]: {{site.yt.watch}}?v=nkTUMVNelXA
 
-<a id="profile-tab" aria-hidden="true"></a>
+<FragmentTarget id="profile-tab" />
 
 ### Profile Memory tab
 
@@ -412,7 +412,7 @@ to narrow the data:
 For a deeper analysis in Google Sheets
 or other tools, download the data in CSV format.
 
-<a id="trace-tab" aria-hidden="true"></a>
+<FragmentTarget id="trace-tab" />
 
 ### Trace Instances tab
 

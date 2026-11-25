@@ -901,7 +901,7 @@
       permalink: /release/compatibility-policy
     - divider
     - title: Flutter blog
-      permalink: https://blog.flutter.dev
+      permalink: https://flutter.dev/blog
     - title: What's new in the docs
       permalink: /release/whats-new
 

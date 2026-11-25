@@ -19,7 +19,7 @@ And to be clear, when I say "we," I mean the Flutter community as a whole. The F
 
 ## Regressions
 
-In this release, we fixed one regression ([37955](https://github.com/flutter/flutter/pull/37955) Update shader warm-up for recent Skia changes) and caused another ([38167]({{site.repo.dart-sdk}}/issues/38167) Incremental compiler re-issuing of errors from constant evaluator). The new regression is fixed after the 1.9.1 stable release ([00d14e7]({{site.repo.dart-sdk}}/commit/00d14e7) [CFE] Always start constant evaluation error where we are asked to evaluate), so if you're seeing it, you can choose a more recent build to bring it into your Flutter apps.
+In this release, we fixed one regression ([37955](https://github.com/flutter/flutter/pull/37955) Update shader warm-up for recent Skia changes) and caused another ([38167](https://github.com/dart-lang/sdk/issues/38167) Incremental compiler re-issuing of errors from constant evaluator). The new regression is fixed after the 1.9.1 stable release ([00d14e7](https://github.com/dart-lang/sdk/commit/00d14e7) [CFE] Always start constant evaluation error where we are asked to evaluate), so if you're seeing it, you can choose a more recent build to bring it into your Flutter apps.
 
 
 ## Breaking API Changes
@@ -113,7 +113,7 @@ With the release of macOS Catalina just around the corner, we've made sure that 
 
 [38325](https://github.com/flutter/flutter/pull/38325) refactor flutter upgrade to be 2 part, with the second part re-entrant
 
-[cd70b]({{site.repo.dart-sdk}}/commit/ec2d06d4b9f4f0accad2b4aa841499e8e93cd70b) Use MAP_JIT when doing an mmap for executable pages (needed for macOS Catalina).
+[cd70b](https://github.com/dart-lang/sdk/commit/ec2d06d4b9f4f0accad2b4aa841499e8e93cd70b) Use MAP_JIT when doing an mmap for executable pages (needed for macOS Catalina).
 
 [38662](https://github.com/flutter/flutter/pull/38662) Change from using defaults to plutil for Plist parsing
 
@@ -1023,7 +1023,7 @@ As always, the end-to-end experience for Flutter relies heavily on its tools. Wi
 *   [DevTools 0.1.4 Release Notes](https://groups.google.com/forum/#!searchin/flutter-announce/release$20notes|sort:date/flutter-announce/ZUcqjzEDTKc/ABZtXXOpCgAJ) - Jul 19, 2019
 *   [VSCode Plugin v3.2](https://dartcode.org/releases/v3-2/) - Jun 28, 2019
 
-In addition, this release also has a lot going on under the hood to provide you with better, more actionable error messages. You can read about those details in [this blog post](https://blog.flutter.dev/improving-flutters-error-messages-e098513cecf9) from the Flutter User Experience team.
+In addition, this release also has a lot going on under the hood to provide you with better, more actionable error messages. You can read about those details in [this blog post](https://flutter.dev/blog/improving-flutters-error-messages) from the Flutter User Experience team.
 
 [32511](https://github.com/flutter/flutter/pull/32511) Rendering errors with root causes in the widget layer should have a reference to the widget
 

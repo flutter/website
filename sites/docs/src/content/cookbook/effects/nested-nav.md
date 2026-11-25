@@ -378,7 +378,7 @@ Run the app:
   first screen.
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter nested navigation hands-on example in DartPad" run="true" height="640px"
+```dartpad title="Flutter nested navigation hands-on example in DartPad" run="true" height="640"
 // DartPad doesn't support `material_ui` yet,
 // so this example imports Material from the Flutter SDK.
 // To run locally, depend on `material_ui` and use this import instead:

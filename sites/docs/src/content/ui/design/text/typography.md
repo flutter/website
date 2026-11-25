@@ -157,4 +157,4 @@ check out [Playful typography with Flutter][article],
 a post on the Flutter blog. The associated example also
 uses a custom shader.
 
-[article]: {{site.flutter-blog}}/playful-typography-with-flutter-f030385058b4
+[article]: {{site.flutter-blog}}/playful-typography-with-flutter

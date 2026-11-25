@@ -33,7 +33,6 @@ final class ServeSiteCommand extends Command<int> {
 
     final release = argResults!.flag('release');
     final selectedSite = this.selectedSite;
-    final jasprPorts = selectedSite.jasprPorts;
 
     final process = await Process.start(
       Platform.resolvedExecutable,
@@ -43,9 +42,7 @@ final class ServeSiteCommand extends Command<int> {
         'run',
         'jaspr_cli:jaspr',
         'serve',
-        '--port=${jasprPorts.serve}',
-        '--web-port=${jasprPorts.webDev}',
-        '--proxy-port=${jasprPorts.proxy}',
+        '--port=${selectedSite.jasprPort}',
         '--dart-define=PRODUCTION=false',
         ...nonProductionDartDefines(),
         if (release) '--release',

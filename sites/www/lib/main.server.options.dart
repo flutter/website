@@ -7,8 +7,10 @@
 import 'package:jaspr/server.dart';
 import 'package:flutter_website/src/components/common/carousel.dart'
     as _carousel;
-import 'package:flutter_website/src/components/common/newsletter_form.dart'
-    as _newsletter_form;
+import 'package:flutter_website/src/components/common/image_zoombox.dart'
+    as _image_zoombox;
+import 'package:flutter_website/src/components/common/newsletter_signup.dart'
+    as _newsletter_signup;
 import 'package:flutter_website/src/components/common/tabs.dart' as _tabs;
 import 'package:flutter_website/src/components/layout/header.dart' as _header;
 import 'package:flutter_website/src/components/pages/consultants_cookie_snack.dart'
@@ -44,8 +46,6 @@ import 'package:site_shared/components/common/client/back_to_top_button.dart'
     as _back_to_top_button;
 import 'package:site_shared/components/common/client/collapse_button.dart'
     as _collapse_button;
-import 'package:site_shared/components/common/client/copy_button.dart'
-    as _copy_button;
 import 'package:site_shared/components/dartpad/dartpad_injector.dart'
     as _dartpad_injector;
 import 'package:site_shared/components/layout/theme_switcher.dart'
@@ -74,8 +74,11 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'carousel',
       params: __carouselCarousel,
     ),
-    _newsletter_form.NewsletterForm:
-        ClientTarget<_newsletter_form.NewsletterForm>('newsletter_form'),
+    _image_zoombox.ImageZoombox: ClientTarget<_image_zoombox.ImageZoombox>(
+      'image_zoombox',
+    ),
+    _newsletter_signup.NewsletterSignup:
+        ClientTarget<_newsletter_signup.NewsletterSignup>('newsletter_signup'),
     _tabs.Tabs: ClientTarget<_tabs.Tabs>('tabs', params: __tabsTabs),
     _header.Header: ClientTarget<_header.Header>(
       'header',
@@ -156,10 +159,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:collapse_button',
           params: __collapse_buttonCollapseButton,
         ),
-    _copy_button.CopyButton: ClientTarget<_copy_button.CopyButton>(
-      'site_shared:copy_button',
-      params: __copy_buttonCopyButton,
-    ),
     _dartpad_injector.DartPadInjector:
         ClientTarget<_dartpad_injector.DartPadInjector>(
           'site_shared:dartpad_injector',
@@ -173,14 +172,14 @@ ServerOptions get defaultServerOptions => ServerOptions(
 );
 
 Map<String, Object?> __carouselCarousel(_carousel.Carousel c) => {
-  'items': c.items.toId(),
-  'prevBtn': c.prevBtn?.toId(),
-  'nextBtn': c.nextBtn?.toId(),
+  'items': c.items,
+  'prevBtn': c.prevBtn,
+  'nextBtn': c.nextBtn,
 };
 Map<String, Object?> __tabsTabs(_tabs.Tabs c) => {
-  'title': c.title?.toId(),
-  'header': c.header?.toId(),
-  'tabs': c.tabs.map((i) => i.toMap()).toList(),
+  'title': c.title,
+  'header': c.header,
+  'tabs': c.tabs.map((i) => i.encode()).toList(),
   'noSpy': c.noSpy,
 };
 Map<String, Object?> __headerHeader(_header.Header c) => {
@@ -193,10 +192,10 @@ Map<String, Object?> __headerHeader(_header.Header c) => {
 };
 Map<String, Object?> __consultants_gridConsultantsGrid(
   _consultants_grid.ConsultantsGrid c,
-) => {'data': c.data, 'items': c.items.map((i) => i.toId()).toList()};
+) => {'data': c.data, 'items': c.items};
 Map<String, Object?> __events_gridEventsGrid(_events_grid.EventsGrid c) => {
   'data': c.data,
-  'items': c.items.map((i) => i.toId()).toList(),
+  'items': c.items,
   'past': c.past,
 };
 Map<String, Object?> __flutter_create_signupFlutterCreateSignup(
@@ -207,7 +206,7 @@ Map<String, Object?> __games_adaptive_mediaGamesAdaptiveMedia(
 ) => {'mobileAssets': c.mobileAssets, 'desktopAssets': c.desktopAssets};
 Map<String, Object?> __showcase_gridShowcaseGrid(
   _showcase_grid.ShowcaseGrid c,
-) => {'data': c.data, 'items': c.items.map((i) => i.toId()).toList()};
+) => {'data': c.data, 'items': c.items};
 Map<String, Object?> __why_flutter_ai_era_sectionWhyFlutterAiEraSection(
   _why_flutter_ai_era_section.WhyFlutterAiEraSection c,
 ) => {'geminiSprite': c.geminiSprite};
@@ -236,12 +235,6 @@ Map<String, Object?> __share_buttonShareButton(_share_button.ShareButton c) => {
 Map<String, Object?> __collapse_buttonCollapseButton(
   _collapse_button.CollapseButton c,
 ) => {'classes': c.classes, 'title': c.title};
-Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
-  'buttonText': c.buttonText,
-  'toCopy': c.toCopy,
-  'classes': c.classes,
-  'title': c.title,
-};
 Map<String, Object?> __dartpad_injectorDartPadInjector(
   _dartpad_injector.DartPadInjector c,
 ) => {

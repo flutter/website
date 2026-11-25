@@ -1070,7 +1070,7 @@ To review a complete walkthrough, check out the [video_player example][].
 [Flutter concurrency for Swift developers]: /flutter-for/dart-swift-concurrency
 [Navigation and routing]: /ui/navigation
 [Material]: {{site.material}}/develop/flutter/
-[Platform adaptations]: /platform-integration/platform-adaptations
+[Platform adaptations]: /ui/adaptive-responsive/platform-adaptations
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 [widget catalog]: /ui/widgets/layout
 [Understanding constraints]: /ui/layout/constraints

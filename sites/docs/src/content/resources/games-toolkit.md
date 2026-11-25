@@ -374,12 +374,12 @@ investigate other resources that our community recommended.
 [shared_preferences]: {{site.pub-pkg}}/shared_preferences
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
-[read how the game was created in 6 weeks]: {{site.flutter-blog}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
+[read how the game was created in 6 weeks]: https://verygood.ventures/blog/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks/
 [view the open source code repo]: https://github.com/flutter/super_dash
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
 [flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
-[Best practices for optimizing Flutter web loading speed]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[Best practices for optimizing Flutter web loading speed]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed
 
 ## Other resources
 

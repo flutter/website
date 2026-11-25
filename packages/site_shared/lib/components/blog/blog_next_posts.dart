@@ -9,7 +9,6 @@ import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../blog.dart';
 import 'blog_card.dart';
-import 'blog_index.dart';
 
 class BlogNextPosts extends StatelessComponent {
   const BlogNextPosts({
@@ -19,7 +18,7 @@ class BlogNextPosts extends StatelessComponent {
   });
 
   final Page currentPage;
-  final BlogCategory? category;
+  final BlogCategory category;
 
   @override
   Component build(BuildContext context) {
@@ -27,10 +26,10 @@ class BlogNextPosts extends StatelessComponent {
         .where(
           (page) =>
               page.url != currentPage.url &&
-              page.post.category == category?.slug,
+              page.post.category == category.slug,
         )
         .take(2)
-        .toList();
+        .toList(growable: false);
 
     if (nextPosts.isEmpty) return const .fragment([]);
 

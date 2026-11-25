@@ -253,7 +253,7 @@ For cases where you need a platform-native component
 Flutter supports embedding [platform views][] directly into the widget tree.
 
 [catalog of Flutter's widgets]: /ui/widgets
-[platform views]: /platform-integration/platform-views
+[platform views]: /platform-integration/android/platform-views
 
 ### What happens when my mobile OS updates and introduces new widgets?
 
@@ -651,7 +651,7 @@ applying each where it is most effective:
 [`GlobalKey<T>`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
 [`IconTheme`]: {{site.api}}/flutter/widgets/IconTheme-class.html
 [`InkWell`]: {{site.material_ui}}/InkWell-class.html
-[`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
+[`Listenable`]: {{site.api}}/flutter/package-listen_listen/Listenable-class.html
 [`Material`]: {{site.material_ui}}/Material-class.html
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
 [`Rect`]: {{site.api}}/flutter/dart-ui/Rect-class.html

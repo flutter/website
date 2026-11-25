@@ -7,7 +7,7 @@
 # - link: Required, absolute https URL that the whole banner links to.
 
 text: >-
-  Flutter 3.50 is live! Read the blog post
+  Help us improve Flutter! Take the Flutter Q4 Developer survey.
 mobileText: >-
-  Flutter 3.50 is live! Read the blog post
-link: https://flutter.dev/blog/whats-new-in-flutter-3-50
+  Please take the Flutter Q4 Developer survey.
+link: https://g.dev/flutter/survey-q4-55a
