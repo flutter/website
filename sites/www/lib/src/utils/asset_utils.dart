@@ -3,6 +3,8 @@
 // can be found in the LICENSE file.
 
 import 'dart:io';
+import 'dart:math' as math;
+import 'dart:typed_data';
 
 import 'package:image/image.dart' as img;
 import 'package:jaspr/server.dart';
@@ -42,56 +44,46 @@ class ResizingAssetTransformer implements AssetTransformer {
 
     final inputExt = p.extension(asset.path).toLowerCase();
 
-    // WebP and AVIF are not supported by the image package.
-    if (inputExt case '.webp' || '.avif') {
+    // AVIF isn't supported by the image package.
+    if (inputExt == '.avif') {
       return asset;
     }
 
-    final decoder = img.findDecoderForNamedImage(asset.path);
-    if (decoder == null) {
+    final headerDecoder = img.findDecoderForNamedImage(asset.path);
+    if (headerDecoder == null) {
       return asset;
     }
 
     try {
-      var image = decoder.decode(asset.readAsBytes());
-      if (image == null) {
+      final sourceBytes = asset.readAsBytes();
+      final decodedSource = _decodeSourceForResize(
+        asset.path,
+        headerDecoder,
+        sourceBytes,
+        width,
+      );
+      if (decodedSource == null) {
         return asset;
       }
 
-      if (image.hasPalette) {
-        // Expand indexed-color images before resizing and re-encoding.
-        image = image.convert(format: img.Format.uint8, numChannels: 4);
-      }
+      final resized = img.resize(
+        decodedSource.image,
+        width: width,
+        maintainAspect: true,
+        interpolation: img.Interpolation.average,
+      );
 
-      if (image.width <= width) {
+      final (encoder, outputExt) = _encoderForExtension(
+        inputExt,
+        losslessWebP: decodedSource.losslessWebP,
+      );
+      final bytes = encoder.encode(resized);
+      if (bytes.lengthInBytes >= sourceBytes.lengthInBytes) {
         return asset;
-      } else {
-        final resized = img.resize(
-          image,
-          width: width,
-          maintainAspect: true,
-          interpolation: img.Interpolation.average,
-        );
-
-        final (encoder, outputExt) = switch (inputExt) {
-          '.png' => (img.PngEncoder(level: 6), inputExt),
-          '.jpg' || '.jpeg' => (img.JpegEncoder(quality: 100), inputExt),
-          '.gif' => (img.GifEncoder(samplingFactor: 30), inputExt),
-          _ => (img.PngEncoder(level: 6), '.png'),
-        };
-
-        final bytes = encoder.encode(resized);
-        final originalSize = asset.readAsBytes().lengthInBytes;
-        final newSize = bytes.lengthInBytes;
-
-        // Prevent increasing the file size.
-        if (newSize >= originalSize) {
-          return asset;
-        }
-
-        final outPath = p.setExtension(asset.path, '.w$width$outputExt');
-        return Asset.fromBytes(outPath, bytes);
       }
+
+      final outPath = p.setExtension(asset.path, '.w$width$outputExt');
+      return Asset.fromBytes(outPath, bytes);
     } catch (e, st) {
       print('[ERROR] Failed to process image: ${asset.path}');
       print(e);
@@ -101,3 +93,73 @@ class ResizingAssetTransformer implements AssetTransformer {
     }
   }
 }
+
+/// Decodes [sourceBytes] for resizing to [targetWidth] pixels wide,
+/// or returns `null` if the image is already that narrow,
+/// is an animated WebP, or can't be decoded.
+///
+/// To skip a full decode when possible,
+/// [headerDecoder] first reads only the image header.
+///
+/// The returned image has any palette expanded to RGBA,
+/// and `losslessWebP` indicates whether the source is a lossless WebP,
+/// so the resized image can be encoded the same way.
+({img.Image image, bool losslessWebP})? _decodeSourceForResize(
+  String assetPath,
+  img.Decoder headerDecoder,
+  Uint8List sourceBytes,
+  int targetWidth,
+) {
+  final info = headerDecoder.startDecode(sourceBytes);
+  // A JPEG header reports the stored width,
+  // which its EXIF orientation can swap with the height when decoded,
+  // so compare the larger of the two.
+  final headerWidth = switch (info) {
+    img.JpegInfo(:final width, :final height) => math.max(width, height),
+    _ => info?.width,
+  };
+  if (headerWidth != null && headerWidth <= targetWidth) {
+    return null;
+  }
+
+  // Keep animated WebPs as is, since decoding and
+  // re-encoding every frame is slow and memory intensive.
+  if (info is img.WebPInfo && info.hasAnimation) {
+    return null;
+  }
+
+  // Decode with a fresh decoder instance because stateful decoders such as
+  // PngDecoder append to internal chunk/frame lists on each startDecode call.
+  var image = img.decodeNamedImage(assetPath, sourceBytes);
+  if (image == null || image.width <= targetWidth) {
+    return null;
+  }
+
+  if (image.hasPalette) {
+    // Expand indexed-color images before resizing and re-encoding.
+    image = image.convert(format: img.Format.uint8, numChannels: 4);
+  }
+
+  final losslessWebP =
+      info is img.WebPInfo && info.format == img.WebPFormat.lossless;
+  return (image: image, losslessWebP: losslessWebP);
+}
+
+/// Returns the encoder and output file extension for
+/// a resized image whose source has the [inputExt] extension.
+///
+/// WebP images are encoded losslessly if [losslessWebP] is `true`.
+/// Formats without a matching encoder are converted to PNG.
+(img.Encoder, String) _encoderForExtension(
+  String inputExt, {
+  required bool losslessWebP,
+}) => switch (inputExt) {
+  '.png' => (img.PngEncoder(level: 6), inputExt),
+  '.jpg' || '.jpeg' => (img.JpegEncoder(quality: 100), inputExt),
+  '.gif' => (img.GifEncoder(samplingFactor: 30), inputExt),
+  '.webp' => (
+    img.WebPEncoder(lossless: losslessWebP, quality: 85, method: 4),
+    inputExt,
+  ),
+  _ => (img.PngEncoder(level: 6), '.png'),
+};

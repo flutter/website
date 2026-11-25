@@ -14,6 +14,7 @@ dependencies:
     path: ../../packages/excerpter
   github: ^9.26.0
   glob: ^2.2.0
+  html: ^0.15.7
   io: ^1.1.0
   linkcheck: ^3.1.0
   path: ^1.9.1
@@ -21,3 +22,4 @@ dependencies:
 dev_dependencies:
   analysis_defaults:
     path: ../../packages/analysis_defaults
+  test: ^1.31.1

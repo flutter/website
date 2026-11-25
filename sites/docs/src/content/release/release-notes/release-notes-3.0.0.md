@@ -88,7 +88,7 @@ If the error messages do not point to one of your dependencies,
 and `dart fix --apply` doesn't fix the issue,
 or if the warnings are fatal
 (for example, your application refuses to run), please
-[file a bug]({{site.repo.flutter}}/issues/new/choose).
+[file a bug](https://github.com/flutter/flutter/issues/new/choose).
 
 ## What's Changed
 

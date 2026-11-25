@@ -83,6 +83,28 @@ If `dart fix` doesn't automatically add the new packages to your
 Run `dart fix` once more to ensure all other automated migrations are applied,
 and lint warnings addressed, such as import sorting.
 
+#### Resolve ambiguous imports
+
+`dart fix` adds the standalone package imports,
+but it doesn't remove existing imports of
+`package:flutter_localizations/flutter_localizations.dart`.
+Because `flutter_localizations` still exports its own deprecated
+`GlobalMaterialLocalizations` and `GlobalCupertinoLocalizations` classes,
+importing it alongside `material_ui` or `cupertino_ui` causes an
+`ambiguous_import` error wherever you reference them.
+
+To fix the error, remove the `flutter_localizations` import from
+files that no longer need it.
+If a file still uses `GlobalWidgetsLocalizations`
+(which only `flutter_localizations` exports),
+restrict the import with `show`:
+
+```dart
+import 'package:flutter_localizations/flutter_localizations.dart'
+    show GlobalWidgetsLocalizations;
+import 'package:material_ui/material_ui.dart';
+```
+
 ### Manual migration
 
 To migrate manually, follow these steps:
@@ -141,6 +163,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       builder: (BuildContext context, Widget? child) {
+        // ignore: deprecated_member_use
         return MaterialUiCompatibilityBridge(child: child!);
       },
       home: const HomeScreen(),
@@ -148,6 +171,15 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+:::note
+`MaterialUiCompatibilityBridge` and `CupertinoUiCompatibilityBridge`
+are temporary migration tools, so they're deprecated by design and
+trigger `deprecated_member_use` warnings.
+Ignore the warning with `// ignore: deprecated_member_use` while you
+need the bridge, then remove it once your dependencies migrate to the
+standalone packages.
+:::
 
 #### Bridge capabilities and limitations
 
@@ -209,6 +241,82 @@ Setting `localizationsDelegates` to `GlobalMaterialLocalizations.delegates`
 automatically includes the Cupertino and Widgets delegates as well,
 simplifying localization setup.
 
+#### Localizations for CupertinoApp
+
+If your app is built on `CupertinoApp` and only uses Cupertino widgets,
+use `GlobalCupertinoLocalizations.delegates` from `package:cupertino_ui`,
+which includes the Cupertino and Widgets delegates.
+
+If your `CupertinoApp` also uses Material widgets from
+`package:material_ui`, use `GlobalMaterialLocalizations.delegates` instead.
+`GlobalCupertinoLocalizations.delegates` doesn't include a
+`MaterialLocalizations` delegate, and unlike `MaterialApp`,
+`CupertinoApp` doesn't add a default one.
+Without it, Material widgets fail with a
+"No MaterialLocalizations found" error.
+
+```dart
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:material_ui/material_ui.dart';
+
+// ...
+CupertinoApp(
+  localizationsDelegates: GlobalMaterialLocalizations.delegates,
+  // ...
+);
+```
+
+#### Apps that use gen-l10n
+
+In Flutter 3.50, `flutter gen-l10n` still imports
+`package:flutter_localizations/flutter_localizations.dart` in
+`app_localizations.dart` and builds
+`AppLocalizations.localizationsDelegates` with the deprecated delegates.
+
+In apps using `material_ui` or `cupertino_ui`, this causes two issues:
+
+* `flutter analyze` reports `deprecated_member_use` warnings on the
+  generated file.
+* The deprecated delegates don't provide `material_ui`'s
+  `MaterialLocalizations` or `cupertino_ui`'s `CupertinoLocalizations`.
+  English still works because `MaterialApp` and `CupertinoApp` fall back
+  to English-only default delegates, but non-English locales fail at
+  runtime if you use `AppLocalizations.localizationsDelegates`.
+
+Until [Issue 191072][] ([PR 194500][]) lands in a stable release,
+you can work around both issues:
+
+1.  Instead of `AppLocalizations.localizationsDelegates`,
+    build the delegate list from `AppLocalizations.delegate` and
+    `GlobalMaterialLocalizations.delegates` (or
+    `GlobalCupertinoLocalizations.delegates` for a Cupertino-only app):
+
+    ```dart
+    import 'package:material_ui/material_ui.dart';
+
+    import 'l10n/app_localizations.dart';
+
+    // ...
+    MaterialApp(
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        ...GlobalMaterialLocalizations.delegates,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
+      // ...
+    );
+    ```
+
+1.  Add a `header` to `l10n.yaml` and re-run `flutter gen-l10n` to
+    ignore the deprecation warnings in the generated files:
+
+    ```yaml title="l10n.yaml"
+    header: '// ignore_for_file: deprecated_member_use'
+    ```
+
+    Remove this header once you upgrade to a Flutter release
+    that includes the `gen-l10n` fix.
+
 ### Guidance for package authors
 
 If you maintain an open source package or plugin in the Flutter ecosystem,
@@ -233,10 +341,12 @@ Package documentation:
 Relevant issues:
 
 * [Issue 191448][]
+* [Issue 191072][]
 
 Relevant PRs:
 
 * [PR 192957][]
+* [PR 194500][]
 
 Relevant blog posts and announcements:
 
@@ -250,7 +360,9 @@ Related changes in `package:material_ui`:
 [Added enabled to DropdownButtonFormField and made onChanged optional]: /release/breaking-changes/dropdownbuttonformfield-enabled-parameter
 [`flutter/packages`]: {{site.repo.packages}}
 [Issue 191448]: {{site.repo.flutter}}/issues/191448
+[Issue 191072]: {{site.repo.flutter}}/issues/191072
 [PR 192957]: {{site.repo.flutter}}/pull/192957
+[PR 194500]: {{site.repo.flutter}}/pull/194500
 [`package:cupertino_ui`]: {{site.pub-pkg}}/cupertino_ui
 [`package:material_ui`]: {{site.pub-pkg}}/material_ui
 [Flutter's Material and Cupertino code freeze]: {{site.main-url}}/blog/flutters-material-and-cupertino-code-freeze

@@ -100,7 +100,7 @@ Considering your app's widget tree gets more important as your app grows.
 At this point, there's a "branch" in the widget tree for the first time,
 and it now looks like the following figure:
 
-<img src='/assets/images/docs/tutorial/widget_tree_with_app_bar.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
+<img src='/assets/images/docs/tutorial/widget_tree_with_app_bar.png' width="320px" alt="A widget tree diagram: MainApp → MaterialApp → Scaffold, branching to AppBar → Align → Text and Center → Tile.">
 
 
 ### Create a widget for the game page layout

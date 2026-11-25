@@ -26,12 +26,20 @@ body.blog {
       }
 
       &.diagram-wrap {
-        padding: 1rem;
+        $diagram-wrap-padding: 1rem;
+
+        box-sizing: content-box;
+        max-width: calc(100% - #{2 * $diagram-wrap-padding});
+        padding: $diagram-wrap-padding;
         border-radius: 1rem;
       }
 
       &.small-diagram-wrap {
-        padding: 0.5rem;
+        $small-diagram-wrap-padding: 0.5rem;
+
+        box-sizing: content-box;
+        max-width: calc(100% - #{2 * $small-diagram-wrap-padding});
+        padding: $small-diagram-wrap-padding;
         border-radius: 0.5rem;
       }
     }

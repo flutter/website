@@ -104,6 +104,7 @@ final class _ResourceCard extends StatelessComponent {
     'Dart GitHub' || 'Dart docs' => const img(
       src: '/assets/images/branding/dart/logo.svg',
       width: 24,
+      height: 24,
       alt: 'Dart logo',
     ),
     'Google Codelab' => svg(width: 24.px, height: 24.px, const [
@@ -130,6 +131,7 @@ final class _ResourceCard extends StatelessComponent {
       src: '/assets/images/branding/flutter/icon/1080.png',
       alt: 'Flutter logo',
       width: 24,
+      height: 24,
     ),
   };
 }
