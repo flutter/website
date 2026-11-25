@@ -10,7 +10,7 @@ import 'button.dart';
 const String codeBlockCopyAttribute = 'data-code-copy-button';
 
 final RegExp _terminalReplacementPattern = RegExp(
-  r'^[ \t]*(?:\$[ \t]+|(?:PS[ \t]+)?C:\\[^>\r\n]*>[ \t]*)',
+  r'^[ \t]*(?:\$[ \t]+|(?:PS[ \t]+)?[A-Za-z]:\\(?:[^>\r\n]*[^>\s])?>[ \t]*)',
   multiLine: true,
 );
 

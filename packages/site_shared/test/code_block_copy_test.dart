@@ -38,6 +38,16 @@ void main() {
         ),
         'dart test > output.txt',
       );
+      expect(
+        cleanCopiedCodeText(r'PS D:\work> flutter run', isShell: true),
+        'flutter run',
+      );
+      expect(cleanCopiedCodeText(r'C:\> dir', isShell: true), 'dir');
+    });
+
+    test('preserves Windows path commands with output redirection', () {
+      const command = r'C:\src\flutter\bin\flutter doctor -v > doctor.txt';
+      expect(cleanCopiedCodeText(command, isShell: true), command);
     });
 
     test('preserves shell variables at the start and middle of a line', () {

@@ -22,11 +22,15 @@ void _handleSearchShortcut(web.Event event) {
   final keyboardEvent = event as web.KeyboardEvent;
   final activeElement = web.document.activeElement;
 
-  // Don't intercept if typing in an input field or not pressing slash key.
+  // Don't intercept if typing in an input field, holding a modifier key,
+  // or not typing a slash.
   if ((activeElement != null &&
           (activeElement.isA<web.HTMLInputElement>() ||
               activeElement.isA<web.HTMLTextAreaElement>())) ||
-      keyboardEvent.code != 'Slash') {
+      keyboardEvent.ctrlKey ||
+      keyboardEvent.metaKey ||
+      keyboardEvent.altKey ||
+      keyboardEvent.key != '/') {
     return;
   }
 
