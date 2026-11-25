@@ -4,7 +4,6 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/feature_grid.dart';
@@ -32,7 +31,12 @@ class AiPage extends StatelessComponent {
             'reach users on any platform with '
             'Flutter and Google\'s AI capabilities.',
         media: img(
-          src: context.asset('images/build-with-ai/build-with-ai-hero.png'),
+          src: context.asset(
+            'images/build-with-ai/build-with-ai-hero.png',
+            width: 1200,
+          ),
+          width: 1200,
+          height: 980,
           alt: 'Build with AI',
         ),
       ),
@@ -94,12 +98,17 @@ class AiPage extends StatelessComponent {
         section(id: 'tabs', classes: 'module', attributes: scroll.spy(-300), [
           //TODO: Add a section for GenUI here
           div(classes: 'build-features container', [
-            ref(const h2([.text('Start building AI-driven features now.')])),
+            const h2([.text('Start building AI-driven features now.')]),
             // Firebase Section
             div(classes: 'alternating-item', [
               div(classes: 'media', [
                 img(
-                  src: context.asset('images/build-with-ai/vertex-tab.png'),
+                  src: context.asset(
+                    'images/build-with-ai/vertex-tab.png',
+                    width: 1200,
+                  ),
+                  width: 1200,
+                  height: 800,
                   alt: 'Firebase AI Logic Logo',
                 ),
               ]),
@@ -215,13 +224,9 @@ class AiPage extends StatelessComponent {
               h4(classes: 'eyebrow', [.text('Find inspiration')]),
               h2([.text('Explore Flutter + AI samples')]),
             ]),
-            Carousel(
-              ref(
-                .fragment([
-                  for (final item in samples) _buildSampleItem(context, item),
-                ]),
-              ),
-            ),
+            Carousel([
+              for (final item in samples) _buildSampleItem(context, item),
+            ]),
           ],
         ),
         const CTASection(),
@@ -234,7 +239,11 @@ class AiPage extends StatelessComponent {
       a(href: item.href, target: Target.blank, [
         div([
           div(classes: 'image-container', [
-            img(alt: item.title, src: context.asset(item.image)),
+            img(
+              alt: item.title,
+              src: context.asset(item.image, width: 635),
+              loading: MediaLoading.lazy,
+            ),
           ]),
           div(classes: 'text', [
             h3([.text(item.title)]),

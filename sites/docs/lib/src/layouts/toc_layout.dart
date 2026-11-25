@@ -6,6 +6,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/card.dart';
+import 'package:site_shared/seo.dart';
 
 import 'doc_layout.dart';
 
@@ -23,10 +24,11 @@ class TocLayout extends DocLayout {
         builder: (context) {
           final normalizedCurrentUrl = _normalizeUrl(page.url);
 
-          // Find all direct child pages of the current page.
+          // Find all indexable direct child pages of the current page.
           final childPages = [
             for (final pageToCheck in context.pages)
-              if (_isDirectChild(normalizedCurrentUrl, pageToCheck.url))
+              if (_isDirectChild(normalizedCurrentUrl, pageToCheck.url) &&
+                  !isNoIndexFlag(pageToCheck.data.page['noindex']))
                 pageToCheck,
           ];
 

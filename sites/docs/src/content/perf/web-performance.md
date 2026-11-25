@@ -15,7 +15,7 @@ To learn more about optimizing initial load times,
 read the Flutter blog post
 [Best practices for optimizing Flutter web loading speed][article].
 
-[article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed
 :::
 
 To emit custom timeline events from Dart code, use the `dart:developer`

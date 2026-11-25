@@ -121,6 +121,7 @@ class _SiteWordMarkListEntry extends StatelessComponent {
                 src: '/assets/images/branding/flutter/logo/default.svg',
                 alt: 'Flutter logo',
                 width: 28,
+                height: 35,
               ),
             span(
               classes: 'name',

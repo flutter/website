@@ -4,7 +4,6 @@
 
 import 'package:jaspr/jaspr.dart';
 
-import '../../utils/component_ref.dart';
 import '../tooltip.dart';
 
 @client
@@ -15,8 +14,8 @@ class SimpleTooltip extends StatelessComponent {
     super.key,
   });
 
-  final ComponentRef target;
-  final ComponentRef content;
+  final Component target;
+  final Component content;
 
   @override
   Component build(BuildContext context) {

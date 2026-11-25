@@ -50,7 +50,7 @@ For production optimization guidance, refer to
 
 [cold-start]: /deployment/web#reduce-cold-start-latency
 
-<a id="customizing-initialization" aria-hidden="true"></a>
+<FragmentTarget id="customizing-initialization" />
 
 ## Customize initialization
 
@@ -84,7 +84,7 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 
 {:.table .table-striped}
 
-<a id="write-a-custom-flutter_bootstrap-js" aria-hidden="true"></a>
+<FragmentTarget id="write-a-custom-flutter_bootstrap-js" />
 
 ## Write a custom bootstrap script {:#custom-bootstrap-js}
 
@@ -112,11 +112,16 @@ When you build with [`flutter build web --web-content-hash`][web-content-hashing
 Flutter injects the content-hashed entrypoint filenames (`mainJsPath`,
 `mainWasmPath`, `jsSupportRuntimePath`) and hashed asset manifest mappings
 (`assetManifest`, `fontManifest`, `extraAssets`) into
-`{% raw %}{{flutter_build_config}}{% endraw %}`. Custom `web/index.html` or
-`web/flutter_bootstrap.js` files must include
-`{% raw %}{{flutter_build_config}}{% endraw %}` and call `_flutter.loader.load()`
-rather than hardcoding `"main.dart.js"` or calling the deprecated
-`FlutterLoader.loadEntrypoint()` API.
+`{% raw %}{{flutter_build_config}}{% endraw %}`.
+If a custom `web/index.html` or `web/flutter_bootstrap.js` file hardcodes
+`main.dart.js` or calls the deprecated `FlutterLoader.loadEntrypoint()` method,
+the build fails.
+A custom `web/index.html` file must load `flutter_bootstrap.js`, or inline
+`{% raw %}{{flutter_bootstrap_js}}{% endraw %}` or
+`{% raw %}{{flutter_build_config}}{% endraw %}`.
+A custom `web/flutter_bootstrap.js` file must include
+`{% raw %}{{flutter_build_config}}{% endraw %}` and call
+`_flutter.loader.load()`.
 :::
 
 [web-content-hashing]: /deployment/web#web-content-hashing
@@ -149,7 +154,7 @@ The `config` argument is an object that accepts the following optional fields:
 
 {:.table .table-striped}
 
-<a id="forcesinglethreadedskwasm" aria-hidden="true"></a>
+<FragmentTarget id="forcesinglethreadedskwasm" />
 
 ### WebAssembly and build selection
 

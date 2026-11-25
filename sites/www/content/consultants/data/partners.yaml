@@ -637,7 +637,7 @@
     - "Enterprise"
   options_GCP_partner: false
 - title: "OakTree Apps"
-  summary: "OakTree Apps is a fully remote company that works with small and medium enterprises on greenfield projects using Flutter for mobile apps. We are a team of 23, 18 of them being engineers (11 for Flutter/mobile and 7 for backend technologies)."
+  summary: "OakTree Apps is a full service agency specializing in healthcare applications and medical grade software. They build HIPAA and CCPA compliant platforms navigating FDA pathways and clinical validations."
   card: "images/third_party/partners/Pratik_Khivesara.png"
   external_url: "https://oaktreeapps.com/services/flutter-app-development"
   options_location:
@@ -1323,4 +1323,15 @@
     - "Europe"
   options_customer_size:
     - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "moblers"
+  summary: "Is a software development and engineering company that designs, builds, and tests Flutter apps for iOS, Android and web from a single Dart codebase. Since 2007 they have built solutions for companies in Israel and USA, including Fortune 500 companies."
+  card: "images/third_party/partners/moblers_logo.png"
+  external_url: "https://moblers.com/services/flutter-app-development/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
   options_GCP_partner: false

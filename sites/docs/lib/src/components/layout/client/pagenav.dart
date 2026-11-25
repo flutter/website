@@ -6,12 +6,9 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/common/dropdown.dart';
 import 'package:site_shared/components/common/material_icon.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 import 'package:site_shared/util.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
-
-import '../../../client/global_scripts.dart';
 
 @client
 class PageNav extends StatefulComponent {
@@ -26,7 +23,7 @@ class PageNav extends StatefulComponent {
   final List<String> breadcrumbs;
   final int? pageNumber;
   final String initialHeading;
-  final ComponentRef content;
+  final Component content;
 
   @override
   State<PageNav> createState() => _PageNavState();
