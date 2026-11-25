@@ -276,7 +276,7 @@ Use `flutter config --help` for a description of each flag.
 Flags are only read from the current _application_ package, and have no effect
 in the context of a package or dependency.
 
-<a id="disable-swift-package-manager-field" aria-hidden="true"></a>
+<FragmentTarget id="disable-swift-package-manager-field" />
 
 #### enable-swift-package-manager field {: #enable-swift-package-manager }
 
@@ -493,7 +493,7 @@ flutter:
 
 To learn more, visit [Internationalizing Flutter apps][].
 
-[Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
+[Internationalizing Flutter apps]: /ui/internationalization
 
 ### licenses field {: #licenses }
 

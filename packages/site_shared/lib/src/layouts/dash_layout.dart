@@ -48,7 +48,9 @@ abstract class DashLayout implements PageLayout {
   /// Override this to add, remove, or replace site-level font resources.
   List<String> get fontUrls => const [
     'https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..72,400..700&family=Google+Sans+Code:ital,wght@0,400..700;1,400..700&display=swap',
-    'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0',
+    'https://fonts.googleapis.com/css2?'
+        'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0'
+        '&display=block',
   ];
 
   /// The stylesheet URL for the site's built styles.
@@ -74,11 +76,18 @@ abstract class DashLayout implements PageLayout {
         ? '$pageTitle | $titleBase'
         : pageTitle;
 
+    final noIndex =
+        pageData['noindex'] == true || pageData['noindex'] == 'true';
+    final pageUrl = _absoluteUrl(siteBaseUrl, page.url);
     final canonicalUrl = switch (pageData['canonical']) {
-      final String url when url.trim().isNotEmpty => url.trim(),
-      _ => siteBaseUrl.resolve(page.url).toString(),
+      false || 'false' => null,
+      final String url when url.trim().isNotEmpty => _absoluteUrl(
+        siteBaseUrl,
+        url.trim(),
+      ),
+      _ => noIndex ? null : pageUrl,
     };
-    final socialPageUrl = _absoluteUrl(siteBaseUrl, canonicalUrl);
+    final socialPageUrl = canonicalUrl ?? pageUrl;
     final socialImageUrl = _absoluteUrl(
       siteBaseUrl,
       pageImage ?? twitterDefaultImageUrl,
@@ -90,10 +99,8 @@ abstract class DashLayout implements PageLayout {
         meta(name: 'description', content: desc),
 
       // Set indexing and canonical URL configuration.
-      if (pageData['noindex'] case final noIndex?
-          when noIndex == true || noIndex == 'true')
-        const meta(name: 'robots', content: 'noindex'),
-      link(rel: 'canonical', href: canonicalUrl),
+      if (noIndex) const meta(name: 'robots', content: 'noindex'),
+      if (canonicalUrl != null) link(rel: 'canonical', href: canonicalUrl),
       if (pageData['redirectTo'] case final String redirectTo
           when redirectTo.isNotEmpty)
         RawText('<script>window.location.replace("$redirectTo");</script>'),
@@ -144,6 +151,7 @@ abstract class DashLayout implements PageLayout {
         href: 'https://fonts.gstatic.com',
         attributes: {'crossorigin': ''},
       ),
+      const link(rel: 'preconnect', href: 'https://www.gstatic.com'),
       for (final font in fontUrls) link(rel: 'stylesheet', href: font),
 
       // Load the managed cookie banner styles before our theme overrides.

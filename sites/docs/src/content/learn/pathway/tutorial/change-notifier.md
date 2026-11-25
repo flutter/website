@@ -35,7 +35,7 @@ To use [`ChangeNotifier`][], extend it in your state management class to
 gain access to the `notifyListeners()` method,
 which triggers UI rebuilds when called.
 
-[`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
+[`ChangeNotifier`]: {{site.api}}/flutter/package-listen_listen/ChangeNotifier-class.html
 
 ### Create the basic view model structure
 
