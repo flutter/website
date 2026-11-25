@@ -17,7 +17,8 @@ final Map<String, String> _cacheBustedBuildAssetUrls = {};
 /// starts the static site renderer.
 /// This function reads the built asset and appends a
 /// truncated SHA-256 hash as a query parameter.
-/// Outside static generation, it returns [assetUrl] unchanged.
+/// Outside static generation and for invalid or external URLs,
+/// it returns [assetUrl] unchanged.
 ///
 /// If the built asset doesn't exist, throws a [FileSystemException].
 /// If the built asset is empty, throws a [StateError].
@@ -27,7 +28,15 @@ String cacheBustedBuildAssetUrl(String assetUrl) {
   }
 
   return _cacheBustedBuildAssetUrls.putIfAbsent(assetUrl, () {
-    final assetUri = Uri.parse(assetUrl);
+    final assetUri = Uri.tryParse(assetUrl);
+    if (assetUri == null ||
+        assetUri.hasScheme ||
+        assetUri.hasAuthority ||
+        assetUri.path.isEmpty ||
+        assetUri.path.endsWith('/')) {
+      return assetUrl;
+    }
+
     final assetPath = path.joinAll([
       'build',
       'jaspr',

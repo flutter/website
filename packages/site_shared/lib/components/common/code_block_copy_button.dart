@@ -9,8 +9,18 @@ import 'button.dart';
 /// HTML data attribute marking server-rendered code-block copy buttons.
 const String codeBlockCopyAttribute = 'data-code-copy-button';
 
-/// Strips formatting placeholders such as zero-width spaces from copied code.
-String cleanCopiedCodeText(String rawText) => rawText.replaceAll('\u200B', '');
+final RegExp _terminalReplacementPattern = RegExp(
+  r'^[ \t]*(?:\$[ \t]+|(?:PS[ \t]+)?[A-Za-z]:\\(?:[^>\r\n]*[^>\s])?>[ \t]*)',
+  multiLine: true,
+);
+
+/// Removes formatting placeholders and, for shell blocks, command prompts.
+String cleanCopiedCodeText(String rawText, {bool isShell = false}) {
+  final text = isShell
+      ? rawText.replaceAll(_terminalReplacementPattern, '')
+      : rawText;
+  return text.replaceAll('\u200B', '');
+}
 
 /// A server-rendered button that copies the contents of its enclosing
 /// `.code-block-wrapper` to the user's clipboard.

@@ -97,7 +97,11 @@ class _InteractiveStepperState extends State<InteractiveStepper> {
     // Scroll the next step into view, accounting for the fixed header and toc.
     final headerOffset =
         web.document.getElementById('site-header')?.clientHeight ?? 0;
-    final tocOffset = web.document.getElementById('pagenav')?.clientHeight ?? 0;
+    final tocOffset =
+        (web.document.getElementById('toc-top') ??
+                web.document.getElementById('pagenav'))
+            ?.clientHeight ??
+        0;
     final elementPosition = element.getBoundingClientRect().top;
     const padding = 20;
     final offsetPosition =

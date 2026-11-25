@@ -4,6 +4,7 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../utils/global_event_listener.dart';
@@ -53,7 +54,17 @@ final class DropdownState extends State<Dropdown> {
           'keydown': (e) {
             final keydownEvent = e as web.KeyboardEvent;
             if (_expanded && keydownEvent.key == 'Escape') {
+              keydownEvent.stopPropagation();
               toggle(to: false);
+              final dropdown = keydownEvent.currentTarget;
+              if (dropdown != null && dropdown.isA<web.Element>()) {
+                final button = (dropdown as web.Element).querySelector(
+                  ':scope > .dropdown-button',
+                );
+                if (button != null && button.isA<web.HTMLElement>()) {
+                  (button as web.HTMLElement).focus();
+                }
+              }
             }
           },
           'focusout': (e) {
