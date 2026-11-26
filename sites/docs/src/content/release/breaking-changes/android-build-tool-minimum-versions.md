@@ -289,8 +289,16 @@ For add-to-app, set the same properties in
 
 Use the following guides when you're ready to adopt the AGP 9 defaults:
 
-- To migrate to built-in Kotlin (`android.builtInKotlin=true`), follow
-  [Migrating Flutter Android projects to built-in Kotlin][built-in Kotlin].
+- To prepare for `android.builtInKotlin=true`, migrate to built-in Kotlin by
+  following
+  [Migrating Flutter Android projects to built-in Kotlin][built-in Kotlin],
+  which contains the migration guides
+  [for app developers][built-in Kotlin guide for app developers] and
+  [for plugin authors][built-in Kotlin guide for plugin authors].
+  That migration applies only to apps and plugins that apply KGP
+  (`kotlin-android` or `org.jetbrains.kotlin.android`) in
+  `build.gradle` or `build.gradle.kts`.
+  If your project doesn't apply KGP, don't migrate to built-in Kotlin.
 - To prepare custom build scripts for `android.newDsl=true`, consult
   [Extend the Android Gradle Plugin][Variant API].
   Flutter 3.50 defaults to `android.newDsl=false`, keeping legacy AGP
