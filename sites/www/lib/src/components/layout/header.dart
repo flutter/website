@@ -167,7 +167,12 @@ class _HeaderState extends State<Header> {
           div([
             div(classes: 'logo logo-contrast', [
               a(href: '/', [
-                img(src: component.contrastLogoSrc, alt: 'Flutter'),
+                img(
+                  src: component.contrastLogoSrc,
+                  width: 154,
+                  height: 44,
+                  alt: 'Flutter',
+                ),
               ]),
             ]),
             div(classes: 'logo logo-default', [
@@ -175,6 +180,8 @@ class _HeaderState extends State<Header> {
                 img(
                   classes: 'light-mode-visible',
                   src: component.defaultLogoSrc,
+                  width: 156,
+                  height: 44,
                   alt: 'Flutter',
                 ),
                 // Don't load the dark logo on pages without dark mode, and
@@ -183,6 +190,8 @@ class _HeaderState extends State<Header> {
                   img(
                     classes: 'dark-mode-visible',
                     src: component.darkLogoSrc,
+                    width: 156,
+                    height: 44,
                     alt: 'Flutter',
                     loading: MediaLoading.lazy,
                   ),

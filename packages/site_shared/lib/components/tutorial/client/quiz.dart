@@ -48,6 +48,14 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
     return question.options[selectedOptionIndices[currentQuestionIndex]];
   }
 
+  @override
+  void initState() {
+    super.initState();
+    for (final question in component.questions) {
+      question.options.shuffle();
+    }
+  }
+
   void toggleOption(int index, [bool fromKeyboard = false]) {
     if (selectedOption != null) {
       return;
@@ -158,6 +166,9 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
                 currentQuestionIndex = 0;
                 selectedOptionIndices = [];
               });
+              for (final question in component.questions) {
+                question.options.shuffle();
+              }
               return;
             }
             if (selectedOption == null) return;

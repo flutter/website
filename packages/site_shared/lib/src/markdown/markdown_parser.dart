@@ -192,7 +192,9 @@ class DashMarkdownParser implements PageParser {
               'id': ?node.generatedId,
               ...node.attributes,
             },
-            nodeChildren != null ? buildNodes(nodeChildren) : null,
+            nodeChildren != null
+                ? buildNodes(nodeChildren)
+                : [if (node.textContent.isNotEmpty) TextNode(node.textContent)],
           ),
         );
       }

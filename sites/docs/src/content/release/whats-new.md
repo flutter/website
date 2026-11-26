@@ -25,7 +25,8 @@ and review the [Dart changelog][].
 ## 11 November 2026: Release 3.50
 
 Flutter 3.50 is live! For details,
-check out the [Flutter 3.50 blog post][3.50-blog-post].
+check out the [Flutter 3.50 blog post][3.50-blog-post]
+and watch [What's new in Flutter 3.50 and Dart 3.14][3.50-video].
 
 **Docs updated or added since the 3.47 release**
 
@@ -91,6 +92,7 @@ which includes links to migration guides and other vital information.
 [ai-tools]: /ai/tools
 [bind-native-code]: /interop/bind-native-code
 [3.50-blog-post]: {{site.main-url}}/blog/whats-new-in-flutter-3-50
+[3.50-video]: {{site.yt.watch}}?v=K5Kk-C3IL94
 [c-interop]: /interop/ffigen
 [choose-database]: /data-and-backend/persistence/choose-a-database
 [design-pkg-migration]: /release/breaking-changes/material-ui-and-cupertino-ui
@@ -101,7 +103,7 @@ which includes links to migration guides and other vital information.
 [ios-setup]: /platform-integration/ios/setup
 [java-interop]: /interop/jnigen
 [native-interop]: /interop
-[package-skills]: /ai/package-skills
+[package-skills]: https://dart.dev/ai/package-skills
 [pigeon]: /interop/pigeon
 [poyito777]: https://github.com/poyito777
 [rfc-process]: /release/compatibility-policy
@@ -155,10 +157,10 @@ check out the [Flutter 3.47 blog post][3.47-blog-post].
 As always, check out the [breaking changes][bc-3-47] page for this release,
 which includes links to migration guides and other vital information.
 
-[3.47-blog-post]: /blog/whats-new-in-flutter-3-47
+[3.47-blog-post]: {{site.flutter-blog}}/whats-new-in-flutter-3-47
 [widget-previewer]: /tools/widget-previewer
-[antigravity-cli]: /ai/antigravity-cli
-[ai-evals]: /ai/evals
+[antigravity-cli]: /ai/get-started
+[ai-evals]: /ai/tools
 [dependency-mgmt]: /packages-and-plugins/dependency-management
 [swiftpm]: /packages-and-plugins/swift-package-manager
 [add-to-app]: /add-to-app
@@ -180,7 +182,7 @@ and [watch the video][3.44-whats-new]:
 <YouTubeEmbed id="I1uIbGh1dGE" title="What's New in Dart and Flutter 3.44" fullWidth></YouTubeEmbed>
 </div>
 
-[3.44-blog-post]: {{site.flutter-blog}}/whats-new-in-flutter-3-44-b0cc1ad3c527
+[3.44-blog-post]: {{site.flutter-blog}}/whats-new-in-flutter-3-44
 [3.44-whats-new]: https://www.youtube.com/watch?v=I1uIbGh1dGE&t=451s
 
 More on the site updates to come.
@@ -190,7 +192,7 @@ More on the site updates to come.
 Flutter 3.41 is live! For details,
 check out the [Flutter 3.41 blog post][3.41-blog-post].
 
-[3.41-blog-post]: {{site.flutter-blog}}/whats-new-in-flutter-3-41-302ec140e632
+[3.41-blog-post]: {{site.flutter-blog}}/whats-new-in-flutter-3-41
 
 
 **Docs updated or added since the 3.38 release**
@@ -218,7 +220,7 @@ significant changes:
 [bc-3-41]: /release/breaking-changes#released-in-flutter-3-41
 [docs.flutter.dev]: /
 [Flutter API docs]: {{site.api}}
-[few]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
+[few]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience
 [learning pathway]: /learn
 [navaronbracke]: https://github.com/navaronbracke
 [official glossary]: /resources/glossary

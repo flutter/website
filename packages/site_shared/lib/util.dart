@@ -9,6 +9,9 @@ export 'src/utils/slugify.dart';
 /// Whether this build of the site will be deployed to production.
 const bool productionBuild = .fromEnvironment('PRODUCTION');
 
+final ValueNotifier<bool> showPageTitle = ValueNotifier<bool>(true);
+final ValueNotifier<String?> currentPageHeading = ValueNotifier<String?>(null);
+
 /// Split the specific [sourceString] into a list of Jaspr [Component]
 /// by adding a `<wbr>`  element after each underscore.
 ///
@@ -52,7 +55,7 @@ Map<String, String> parseAttributes(String attributeString) {
   final remaining = attributeString.replaceAll(_attributePattern, '').trim();
 
   // Split remaining content by whitespace to find IDs and classes.
-  final parts = remaining.split(_whitespacePattern);
+  final parts = remaining.split(whitespacePattern);
 
   for (final part in parts) {
     if (part.isEmpty) continue;
@@ -72,7 +75,10 @@ Map<String, String> parseAttributes(String attributeString) {
 }
 
 final RegExp _attributePattern = RegExp(r'(\w+)="([^"]*)"');
-final RegExp _whitespacePattern = RegExp(r'\s+');
+
+/// Matches one or more consecutive whitespace characters.
+final RegExp whitespacePattern = RegExp(r'\s+');
+
 final RegExp _wordPattern = RegExp(r'\S+(?:\s*|$)');
 final RegExp _trailingMarkdownLinkPattern = RegExp(r'(\[.+\]:\s*\S+\s*)+$');
 
@@ -87,7 +93,7 @@ String truncateWords(String text, int maxWords) {
     return '';
   }
 
-  final words = text.trim().split(_whitespacePattern);
+  final words = text.trim().split(whitespacePattern);
   if (words.length <= maxWords) {
     return text;
   }

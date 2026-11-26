@@ -332,7 +332,7 @@ struct ContentView: View {
 [Loading sequence and performance]: /add-to-app/performance
 [google_sign_in]: {{site.pub}}/packages/google_sign_in
 [`openURLs`]: {{site.apple-dev}}/documentation/appkit/nsapplicationdelegate/application(_:open:)
-[Start a FlutterEngine and FlutterViewController section]:/add-to-app/macos/add-flutter-screen/#start-a-flutterengine-and-flutterviewcontroller
+[Start a FlutterEngine and FlutterViewController section]:/add-to-app/macos/add-flutter-screen#start-a-flutterengine-and-flutterviewcontroller
 [`Observable`]: {{site.apple-dev}}/documentation/observation/observable
 [`NavigationLink`]: {{site.apple-dev}}/documentation/swiftui/navigationlink
 [`Observable()`]: {{site.apple-dev}}/documentation/observation/observable()

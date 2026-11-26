@@ -96,7 +96,7 @@
           }
 
           p.correct {
-            color: green;
+            color: var(--site-alert-tip-color, green);
 
             &::before {
               content: "✓";
@@ -104,7 +104,7 @@
           }
 
           p.incorrect {
-            color: red;
+            color: var(--site-alert-error-color, red);
 
             &::before {
               content: "✗";
@@ -130,6 +130,8 @@
 
   .quiz-actions {
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     justify-content: space-between;
     margin-top: 1rem;
 

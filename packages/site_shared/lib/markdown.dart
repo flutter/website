@@ -2,5 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+export 'src/markdown/alert_syntax.dart';
+export 'src/markdown/attribute_syntax.dart';
+export 'src/markdown/fenced_code_block_syntax.dart';
+export 'src/markdown/header_syntax.dart';
 export 'src/markdown/markdown_parser.dart';
 export 'src/markdown/mermaid_syntax.dart';

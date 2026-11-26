@@ -3,7 +3,7 @@ aside.alert {
   margin-block-start: 1rem;
   margin-block-end: 1rem;
   border-left: solid 0.25rem var(--site-inset-borderColor);
-  background-color: var(--site-inset-bgColor);
+  background-color: var(--site-inset-bgColor-translucent, var(--site-inset-bgColor));
   color: var(--site-inset-fgColor);
   --alert-title-color: var(--site-base-fgColor);
 
@@ -26,6 +26,10 @@ aside.alert {
 
   .alert-content {
     color: var(--site-base-fgColor);
+
+    > :first-child {
+      margin-top: 0;
+    }
 
     > :last-child {
       margin-bottom: 0;

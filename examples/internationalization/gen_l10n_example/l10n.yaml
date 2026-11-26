@@ -4,5 +4,8 @@ template-arb-file: app_en.arb
 output-localization-file: app_localizations.dart
 #enddocregion config
 
-# Remove this header once gen-l10n stops emitting the deprecated delegates.
+# Remove this header once gen-l10n stops emitting the deprecated delegates
+# from flutter_localizations: https://github.com/flutter/flutter/issues/191072
+#docregion header
 header: '// ignore_for_file: deprecated_member_use'
+#enddocregion header
