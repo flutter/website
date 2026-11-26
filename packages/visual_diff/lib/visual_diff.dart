@@ -16,6 +16,7 @@ export 'src/runner/content_hasher.dart';
 export 'src/runner/font_cache.dart';
 export 'src/runner/git_worktree.dart';
 export 'src/runner/header_extractor.dart';
+export 'src/runner/obscura_daemon.dart';
 export 'src/runner/route_discovery.dart';
 export 'src/runner/snapshot_backend.dart';
 export 'src/runner/snapshot_runner.dart';

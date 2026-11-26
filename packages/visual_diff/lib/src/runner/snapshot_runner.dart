@@ -15,6 +15,7 @@ import '../models/header_metadata.dart';
 import 'content_hasher.dart';
 import 'font_cache.dart';
 import 'header_extractor.dart';
+import 'obscura_daemon.dart';
 import 'route_discovery.dart';
 import 'snapshot_backend.dart';
 import 'snapshot_server.dart';
@@ -587,19 +588,15 @@ final class SnapshotRunner {
     final log = onProgress ?? print;
     final obscuraBin = customObscuraPath ?? 'obscura';
 
+    final ObscuraDaemon daemon;
     try {
-      final check = await Process.run(obscuraBin, ['--version']);
-      if (check.exitCode != 0) {
-        throw ProcessException(
-          obscuraBin,
-          ['--version'],
-          'Exit code ${check.exitCode}',
-        );
-      }
-      log('🌐 Using Obscura engine: ${check.stdout.toString().trim()}');
+      daemon = await ObscuraDaemon.start(obscuraBin: obscuraBin);
+      log(
+        '🌐 Connected to persistent Obscura CDP daemon on port ${daemon.port}',
+      );
     } catch (e) {
       stderr.writeln(
-        'Error: Could not execute Obscura ($obscuraBin).\n'
+        'Error: Could not start Obscura daemon ($obscuraBin).\n'
         'Install it via "brew install obscura" or pass '
         '--renderer-path=<path>.\n'
         'Details: $e',
@@ -736,6 +733,10 @@ final class SnapshotRunner {
 
       for (var workerIndex = 0; workerIndex < workerCount; workerIndex++) {
         workers.add(() async {
+          final sessionId = await daemon.createSession(
+            disableJavaScript: disableJavaScript,
+          );
+
           while (!streamCompleted || taskQueue.isNotEmpty) {
             if (taskQueue.isEmpty) {
               if (streamCompleted) break;
@@ -752,32 +753,13 @@ final class SnapshotRunner {
               final outputPath = path.join(outputDirectory.path, filename);
               final url = '${server.baseUrl}$route';
 
-              final env = {
-                'OBSCURA_ALLOW_PRIVATE_NETWORK': '1',
-                'OBSCURA_SHOT_W': '${viewport.width}',
-                'OBSCURA_SHOT_H': '$maxHeight',
-              };
-
-              final proc = await Process.run(
-                obscuraBin,
-                [
-                  '--allow-private-network',
-                  'fetch',
-                  url,
-                  '--wait-until=domcontentloaded',
-                  '--wait=0',
-                  '--screenshot=$outputPath',
-                ],
-                environment: env,
+              final pngBytes = await daemon.captureSnapshot(
+                sessionId: sessionId,
+                url: url,
+                viewport: viewport,
+                maxHeight: maxHeight,
               );
-
-              if (proc.exitCode != 0) {
-                throw ProcessException(
-                  obscuraBin,
-                  [],
-                  proc.stderr.toString(),
-                );
-              }
+              await File(outputPath).writeAsBytes(pngBytes);
 
               if (!capturedMetadata.containsKey(route) &&
                   buildDirectory != null) {
@@ -812,7 +794,7 @@ final class SnapshotRunner {
       await Future.wait(workers);
       await streamSub.cancel();
     } finally {
-      // Obscura worker cleanup
+      await daemon.close();
     }
 
     _persistHashesAndMetadata(
