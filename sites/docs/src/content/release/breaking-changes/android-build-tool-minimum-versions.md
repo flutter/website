@@ -264,19 +264,28 @@ defaults with two Gradle properties in `android/gradle.properties`:
 
 - `flutter create` writes `android.builtInKotlin=false` and
   `android.newDsl=false` to new projects.
-- When either property is missing, `flutter run` or `flutter build` appends it
-  with a marker comment.
-  Builds started directly from Gradle or Android Studio (including add-to-app
-  host builds) don't run that migrator.
+- If either property is missing, the Flutter tool adds it the next time you
+  run `flutter run` or `flutter build`.
+  This includes running the Flutter project from an IDE such as
+  Android Studio or VS Code with the Flutter plugin, which calls
+  `flutter run`.
+- Building with Gradle directly doesn't add the properties.
+  This includes `./gradlew`, opening the `android/` directory as an Android
+  Studio project, `flutter build aar`, and add-to-app host app builds.
 
-If you build directly from Gradle or Android Studio, confirm that your
-project's `gradle.properties` file sets both properties:
+If you are building with Gradle directly, confirm that
+`<flutter-project>/android/gradle.properties` sets both properties:
 
 ```properties title="<flutter-project>/android/gradle.properties"
 # Keep legacy KGP and DSL compatibility until your app and plugins migrate.
 android.builtInKotlin=false
 android.newDsl=false
 ```
+
+:::note
+For add-to-app, set the same properties in
+`<host-app-project>/gradle.properties`.
+:::
 
 Use the following guides when you're ready to adopt the AGP 9 defaults:
 
