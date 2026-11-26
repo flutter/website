@@ -14,9 +14,8 @@ import 'snapshot_viewport.dart';
 /// [ObscuraDaemon] process.
 final class ObscuraSession {
   final WebSocket _ws;
-  String _sessionId = '';
-  final StreamController<Map<String, dynamic>> _messages =
-      StreamController.broadcast();
+  String? _sessionId;
+  final Map<int, Completer<Map<String, dynamic>>> _pending = {};
   int _nextId = 1;
 
   ObscuraSession._(this._ws) {
@@ -24,36 +23,58 @@ final class ObscuraSession {
       (data) {
         try {
           final json = jsonDecode(data as String) as Map<String, dynamic>;
-          _messages.add(json);
+          final id = json['id'] as int?;
+          final completer = id != null ? _pending.remove(id) : null;
+          completer?.complete(json);
         } catch (_) {}
       },
-      onDone: _messages.close,
+      onDone: () {
+        for (final completer in _pending.values) {
+          if (!completer.isCompleted) {
+            completer.completeError(
+              StateError('WebSocket connection closed unexpectedly.'),
+            );
+          }
+        }
+        _pending.clear();
+      },
+      onError: (Object error) {
+        for (final completer in _pending.values) {
+          if (!completer.isCompleted) {
+            completer.completeError(error);
+          }
+        }
+        _pending.clear();
+      },
     );
   }
 
-  /// The CDP session identifier for this attached page target.
-  String get sessionId => _sessionId;
+  /// The CDP session ID associated with this target page.
+  String? get sessionId => _sessionId;
 
-  /// Creates and attaches a new target page on [ws], returning the initialized
-  /// [ObscuraSession].
+  /// Creates and initializes a new page target session on [ws].
   static Future<ObscuraSession> connect(
     WebSocket ws, {
     bool disableJavaScript = true,
   }) async {
     final session = ObscuraSession._(ws);
+    await session._initTarget(disableJavaScript: disableJavaScript);
+    return session;
+  }
 
-    final targetRes = await session.send(
+  Future<void> _initTarget({required bool disableJavaScript}) async {
+    final createRes = await send(
       'Target.createTarget',
       {'url': 'about:blank'},
       false,
     );
-    final targetResult = targetRes['result'] as Map<String, dynamic>?;
-    final targetId = targetResult?['targetId'] as String?;
+    final createResult = createRes['result'] as Map<String, dynamic>?;
+    final targetId = createResult?['targetId'] as String?;
     if (targetId == null) {
-      throw StateError('Failed to create target page: $targetRes');
+      throw StateError('Failed to create target page: $createRes');
     }
 
-    final attachRes = await session.send(
+    final attachRes = await send(
       'Target.attachToTarget',
       {'targetId': targetId, 'flatten': true},
       false,
@@ -63,16 +84,14 @@ final class ObscuraSession {
     if (sid == null) {
       throw StateError('Failed to attach to target $targetId: $attachRes');
     }
-    session._sessionId = sid;
+    _sessionId = sid;
 
     if (disableJavaScript) {
-      await session.send(
+      await send(
         'Emulation.setScriptExecutionDisabled',
         {'value': true},
       );
     }
-
-    return session;
   }
 
   /// Sends a CDP command on this session and awaits its response.
@@ -80,32 +99,38 @@ final class ObscuraSession {
     String method, [
     Map<String, dynamic>? params,
     bool attachSession = true,
+    Duration timeout = const Duration(seconds: 30),
   ]) {
     final id = _nextId++;
     final completer = Completer<Map<String, dynamic>>();
-
-    late final StreamSubscription<Map<String, dynamic>> sub;
-    sub = _messages.stream.listen((msg) {
-      if (msg['id'] == id) {
-        unawaited(sub.cancel());
-        completer.complete(msg);
-      }
-    });
+    _pending[id] = completer;
 
     final payload = jsonEncode({
       'id': id,
       'method': method,
       'params': ?params,
-      if (attachSession && _sessionId.isNotEmpty) 'sessionId': _sessionId,
+      if (attachSession && _sessionId != null) 'sessionId': _sessionId,
     });
     _ws.add(payload);
 
-    return completer.future;
+    return completer.future.timeout(
+      timeout,
+      onTimeout: () {
+        _pending.remove(id);
+        throw TimeoutException(
+          'Timed out after ${timeout.inSeconds}s waiting for CDP "$method".',
+          timeout,
+        );
+      },
+    );
   }
 
   /// Navigates this page session to [url].
-  Future<void> navigate(String url) async {
-    await send('Page.navigate', {'url': url});
+  Future<void> navigate(
+    String url, {
+    Duration timeout = const Duration(seconds: 30),
+  }) async {
+    await send('Page.navigate', {'url': url}, true, timeout);
   }
 
   /// Captures a screenshot for [viewport], properly capping its height to
@@ -113,18 +138,29 @@ final class ObscuraSession {
   Future<Uint8List> captureViewportSnapshot({
     required SnapshotViewport viewport,
     int maxHeight = 4500,
+    Duration timeout = const Duration(seconds: 30),
   }) async {
-    await send('Emulation.setDeviceMetricsOverride', {
-      'width': viewport.width,
-      'height': viewport.height,
-      'deviceScaleFactor': viewport.deviceScaleFactor,
-      'mobile': viewport.isMobile,
-    });
+    await send(
+      'Emulation.setDeviceMetricsOverride',
+      {
+        'width': viewport.width,
+        'height': viewport.height,
+        'deviceScaleFactor': viewport.deviceScaleFactor,
+        'mobile': viewport.isMobile,
+      },
+      true,
+      timeout,
+    );
 
     var captureHeight = viewport.height;
     if (maxHeight > 0) {
       try {
-        final metricsRes = await send('Page.getLayoutMetrics');
+        final metricsRes = await send(
+          'Page.getLayoutMetrics',
+          null,
+          true,
+          timeout,
+        );
         final result = metricsRes['result'] as Map<String, dynamic>?;
         final cssContentSize =
             result?['cssContentSize'] as Map<String, dynamic>?;
@@ -135,18 +171,23 @@ final class ObscuraSession {
       } catch (_) {}
     }
 
-    final shotRes = await send('Page.captureScreenshot', {
-      'format': 'png',
-      if (maxHeight > 0 && captureHeight > 0)
-        'clip': {
-          'x': 0,
-          'y': 0,
-          'width': viewport.width,
-          'height': captureHeight,
-          'scale': 1,
-        },
-      'captureBeyondViewport': true,
-    });
+    final shotRes = await send(
+      'Page.captureScreenshot',
+      {
+        'format': 'png',
+        if (maxHeight > 0 && captureHeight > 0)
+          'clip': {
+            'x': 0,
+            'y': 0,
+            'width': viewport.width,
+            'height': captureHeight,
+            'scale': 1,
+          },
+        'captureBeyondViewport': true,
+      },
+      true,
+      timeout,
+    );
 
     final shotResult = shotRes['result'] as Map<String, dynamic>?;
     final base64Data = shotResult?['data'] as String?;
@@ -162,9 +203,6 @@ final class ObscuraSession {
     try {
       await _ws.close();
     } catch (_) {}
-    try {
-      await _messages.close();
-    } catch (_) {}
   }
 }
 
@@ -174,8 +212,7 @@ final class ObscuraDaemon {
   final Process _process;
   final int port;
   final WebSocket _ws;
-  final StreamController<Map<String, dynamic>> _messages =
-      StreamController.broadcast();
+  final Map<int, Completer<Map<String, dynamic>>> _pending = {};
   int _nextId = 1;
 
   ObscuraDaemon._(this._process, this.port, this._ws) {
@@ -183,10 +220,29 @@ final class ObscuraDaemon {
       (data) {
         try {
           final json = jsonDecode(data as String) as Map<String, dynamic>;
-          _messages.add(json);
+          final id = json['id'] as int?;
+          final completer = id != null ? _pending.remove(id) : null;
+          completer?.complete(json);
         } catch (_) {}
       },
-      onDone: _messages.close,
+      onDone: () {
+        for (final completer in _pending.values) {
+          if (!completer.isCompleted) {
+            completer.completeError(
+              StateError('WebSocket connection closed unexpectedly.'),
+            );
+          }
+        }
+        _pending.clear();
+      },
+      onError: (Object error) {
+        for (final completer in _pending.values) {
+          if (!completer.isCompleted) {
+            completer.completeError(error);
+          }
+        }
+        _pending.clear();
+      },
     );
   }
 
@@ -221,6 +277,7 @@ final class ObscuraDaemon {
         '$port',
         if (workers > 1) ...['--workers', '$workers'],
         '--allow-private-network',
+        '--quiet',
         if (fontDirectory != null && fontDirectory.existsSync()) ...[
           '--font-dir',
           fontDirectory.path,
@@ -230,6 +287,11 @@ final class ObscuraDaemon {
         'OBSCURA_ALLOW_PRIVATE_NETWORK': '1',
       },
     );
+
+    // Actively drain stdout and stderr so OS pipe buffers (typically 64KB on
+    // macOS/Linux) never fill up and cause the child process to block on write.
+    process.stdout.listen((_) {});
+    process.stderr.listen((_) {});
 
     // Wait until the CDP server is listening.
     final client = HttpClient();
@@ -281,17 +343,11 @@ final class ObscuraDaemon {
     String method, [
     Map<String, dynamic>? params,
     String? sessionId,
+    Duration timeout = const Duration(seconds: 30),
   ]) {
     final id = _nextId++;
     final completer = Completer<Map<String, dynamic>>();
-
-    late final StreamSubscription<Map<String, dynamic>> sub;
-    sub = _messages.stream.listen((msg) {
-      if (msg['id'] == id) {
-        unawaited(sub.cancel());
-        completer.complete(msg);
-      }
-    });
+    _pending[id] = completer;
 
     final payload = jsonEncode({
       'id': id,
@@ -301,7 +357,16 @@ final class ObscuraDaemon {
     });
     _ws.add(payload);
 
-    return completer.future;
+    return completer.future.timeout(
+      timeout,
+      onTimeout: () {
+        _pending.remove(id);
+        throw TimeoutException(
+          'Timed out after ${timeout.inSeconds}s waiting for CDP "$method".',
+          timeout,
+        );
+      },
+    );
   }
 
   /// Creates a new target page and attaches to it, returning its `sessionId`.
@@ -339,20 +404,31 @@ final class ObscuraDaemon {
     required String url,
     required SnapshotViewport viewport,
     int maxHeight = 4500,
+    Duration timeout = const Duration(seconds: 30),
   }) async {
-    await send('Emulation.setDeviceMetricsOverride', {
-      'width': viewport.width,
-      'height': viewport.height,
-      'deviceScaleFactor': viewport.deviceScaleFactor,
-      'mobile': viewport.isMobile,
-    }, sessionId);
+    await send(
+      'Emulation.setDeviceMetricsOverride',
+      {
+        'width': viewport.width,
+        'height': viewport.height,
+        'deviceScaleFactor': viewport.deviceScaleFactor,
+        'mobile': viewport.isMobile,
+      },
+      sessionId,
+      timeout,
+    );
 
-    await send('Page.navigate', {'url': url}, sessionId);
+    await send('Page.navigate', {'url': url}, sessionId, timeout);
 
     var captureHeight = viewport.height;
     if (maxHeight > 0) {
       try {
-        final metricsRes = await send('Page.getLayoutMetrics', null, sessionId);
+        final metricsRes = await send(
+          'Page.getLayoutMetrics',
+          null,
+          sessionId,
+          timeout,
+        );
         final result = metricsRes['result'] as Map<String, dynamic>?;
         final cssContentSize =
             result?['cssContentSize'] as Map<String, dynamic>?;
@@ -363,18 +439,23 @@ final class ObscuraDaemon {
       } catch (_) {}
     }
 
-    final shotRes = await send('Page.captureScreenshot', {
-      'format': 'png',
-      if (maxHeight > 0 && captureHeight > 0)
-        'clip': {
-          'x': 0,
-          'y': 0,
-          'width': viewport.width,
-          'height': captureHeight,
-          'scale': 1,
-        },
-      'captureBeyondViewport': true,
-    }, sessionId);
+    final shotRes = await send(
+      'Page.captureScreenshot',
+      {
+        'format': 'png',
+        if (maxHeight > 0 && captureHeight > 0)
+          'clip': {
+            'x': 0,
+            'y': 0,
+            'width': viewport.width,
+            'height': captureHeight,
+            'scale': 1,
+          },
+        'captureBeyondViewport': true,
+      },
+      sessionId,
+      timeout,
+    );
 
     final shotResult = shotRes['result'] as Map<String, dynamic>?;
     final base64Data = shotResult?['data'] as String?;
@@ -389,9 +470,6 @@ final class ObscuraDaemon {
   Future<void> close() async {
     try {
       await _ws.close();
-    } catch (_) {}
-    try {
-      await _messages.close();
     } catch (_) {}
     _process.kill();
   }

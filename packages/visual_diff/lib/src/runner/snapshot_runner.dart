@@ -742,7 +742,7 @@ final class SnapshotRunner {
 
       for (var workerIndex = 0; workerIndex < workerCount; workerIndex++) {
         workers.add(() async {
-          final session = await daemon.createWorkerSession(
+          var session = await daemon.createWorkerSession(
             disableJavaScript: disableJavaScript,
           );
 
@@ -796,6 +796,14 @@ final class SnapshotRunner {
                 }
               } catch (error) {
                 stderr.writeln('  ✗ Failed to snapshot $route: $error');
+                try {
+                  await session.close();
+                } catch (_) {}
+                try {
+                  session = await daemon.createWorkerSession(
+                    disableJavaScript: disableJavaScript,
+                  );
+                } catch (_) {}
               }
             }
           } finally {
