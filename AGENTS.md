@@ -88,24 +88,12 @@ dart run dash_site --help
 
 ### Visual regression testing
 
-To compare your working changes against `main`:
-
-```bash
-dart run dash_site --site=docs visual-diff
-dart run dash_site --site=www visual-diff
-```
-
-By default, this uses Chrome.
-To use the lightweight [Obscura](https://obscura.sh) renderer,
-install it (`brew install obscura` on macOS or from
-[GitHub releases](https://github.com/h4ckf0r0day/obscura/releases) on Linux)
-and pass `--renderer=obscura`.
-
-Common flags:
-- `--current`: Use the current working tree as baseline instead of `main`.
-- `--update-baseline`: Update baseline images from current snapshots.
-- `--route=<path>`: Snapshot a specific route (e.g. `--route=/get-started`).
-- `--all-routes`: Snapshot all routes, bypassing `visual_diff.yaml` limits.
+To run visual regression testing, use `dart run dash_site visual-diff`.
+By default, this captures full-page snapshots using Chrome and opens an
+interactive review UI.
+To learn about alternative renderers (such as Obscura), route pruning,
+and CLI options, consult the
+[`visual_diff` package README](packages/visual_diff/README.md).
 
 ## Content guidelines
 
