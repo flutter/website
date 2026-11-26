@@ -6,11 +6,11 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
-import 'package:github/github.dart' as github;
 import 'package:path/path.dart' as path;
 
 import '../firebase.dart';
 import '../preview_changes.dart';
+import '../preview_comments.dart';
 import '../sites.dart';
 import '../utils.dart';
 import 'build.dart';
@@ -164,13 +164,50 @@ final class StagePreviewCommand extends Command<int> {
       return 0;
     }
 
+    if (prContext != null) {
+      try {
+        await updatePreviewCommentOnGitHub(
+          site: selectedSite,
+          status: PreviewStatus.pending,
+          prNumber: prContext.prNumber,
+          repoFullName: prContext.repoFullName,
+          commitSha: prContext.commitSha,
+          githubToken: prContext.githubToken,
+        );
+      } on Exception catch (error) {
+        stderr.writeln(
+          'Warning: Failed to post pending status on pull request: $error',
+        );
+      }
+    }
+
     final firebaseToolsVersion = await validateFirebaseCli();
     if (firebaseToolsVersion == null) {
+      if (prContext != null) {
+        await updatePreviewCommentOnGitHub(
+          site: selectedSite,
+          status: PreviewStatus.failed,
+          prNumber: prContext.prNumber,
+          repoFullName: prContext.repoFullName,
+          commitSha: prContext.commitSha,
+          githubToken: prContext.githubToken,
+        );
+      }
       return 1;
     }
 
     if (await buildSite(selectedSite, productionRelease: false)
         case final buildResult when buildResult != 0) {
+      if (prContext != null) {
+        await updatePreviewCommentOnGitHub(
+          site: selectedSite,
+          status: PreviewStatus.failed,
+          prNumber: prContext.prNumber,
+          repoFullName: prContext.repoFullName,
+          commitSha: prContext.commitSha,
+          githubToken: prContext.githubToken,
+        );
+      }
       return buildResult;
     }
 
@@ -189,6 +226,16 @@ final class StagePreviewCommand extends Command<int> {
       expires: expires,
     );
     if (stagingUrl == null) {
+      if (prContext != null) {
+        await updatePreviewCommentOnGitHub(
+          site: selectedSite,
+          status: PreviewStatus.failed,
+          prNumber: prContext.prNumber,
+          repoFullName: prContext.repoFullName,
+          commitSha: prContext.commitSha,
+          githubToken: prContext.githubToken,
+        );
+      }
       return 1;
     }
 
@@ -198,10 +245,14 @@ final class StagePreviewCommand extends Command<int> {
       return 0;
     }
 
-    return await _commentStagingUrlOnGitHub(
+    return await updatePreviewCommentOnGitHub(
       site: selectedSite,
+      status: PreviewStatus.ready,
       stagingUrl: stagingUrl,
-      context: prContext,
+      prNumber: prContext.prNumber,
+      repoFullName: prContext.repoFullName,
+      commitSha: prContext.commitSha,
+      githubToken: prContext.githubToken,
     );
   }
 }
@@ -265,81 +316,6 @@ String? _extractDeployedUrl(String firebaseJsonOutput) {
       if (entry case <String, Object?>{'url': final String url}) {
         return url;
       }
-    }
-  }
-  return null;
-}
-
-/// Posts a new preview comment on the pull request,
-/// or updates the existing one identified by an HTML marker that
-/// includes the [site]'s name.
-///
-/// Returns `0` on success or `1` if the GitHub API call fails.
-Future<int> _commentStagingUrlOnGitHub({
-  required Site site,
-  required String stagingUrl,
-  required _PullRequestContext context,
-}) async {
-  final commentMarker = '<!-- flutter-preview-${site.name} -->';
-  final commentBody =
-      '''
-$commentMarker
-Staged preview of the updated ${site.host} site (updated for commit ${context.commitSha}):
-
-$stagingUrl''';
-
-  print('Commenting ${site.host} staging URL on the PR...');
-  final gitHub = github.GitHub(
-    auth: github.Authentication.withToken(context.githubToken),
-  );
-  try {
-    final repository = github.RepositorySlug.full(context.repoFullName);
-    final existingCommentId = await _findExistingPreviewCommentId(
-      gitHub: gitHub,
-      repository: repository,
-      issueNumber: context.prNumber,
-      commentMarker: commentMarker,
-    );
-
-    if (existingCommentId == null) {
-      await gitHub.issues.createComment(
-        repository,
-        context.prNumber,
-        commentBody,
-      );
-    } else {
-      await gitHub.issues.updateComment(
-        repository,
-        existingCommentId,
-        commentBody,
-      );
-    }
-  } on github.GitHubError catch (error) {
-    stderr.writeln('Error: Failed to comment on the pull request: $error');
-    return 1;
-  } finally {
-    gitHub.dispose();
-  }
-
-  return 0;
-}
-
-/// Returns the id of the first comment on the issue whose body
-/// contains the specified [commentMarker].
-///
-/// Returns `null` if no matching comment exists.
-Future<int?> _findExistingPreviewCommentId({
-  required github.GitHub gitHub,
-  required github.RepositorySlug repository,
-  required int issueNumber,
-  required String commentMarker,
-}) async {
-  await for (final comment in gitHub.issues.listCommentsByIssue(
-    repository,
-    issueNumber,
-  )) {
-    if (comment.body?.contains(commentMarker) ?? false) {
-      return comment.id;
     }
   }
   return null;
