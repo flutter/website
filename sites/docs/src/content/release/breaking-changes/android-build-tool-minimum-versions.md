@@ -225,15 +225,19 @@ To migrate off KGP instead of updating its version, follow the
 
 Flutter plugins compile with the AGP, Gradle, and KGP versions configured by
 the consuming app.
-Verify your plugin's `example/` app against both supported configurations:
+Test your plugin's `example/` app with AGP `9.3.1` and Gradle `9.5.0`,
+the Flutter 3.50 template defaults.
+If your example app can't use those versions, test with at least
+AGP `9.1.1` and Gradle `9.3.1`, the Flutter 3.50 minimums.
 
-- Minimum supported toolchain: AGP `9.1.1` with Gradle `9.3.1`.
-- Template default toolchain: AGP `9.3.1` with Gradle `9.5.0`.
+Then test both values of `android.builtInKotlin` in
+`example/android/gradle.properties`:
 
-Test each configuration with `android.builtInKotlin=false` and
-`android.builtInKotlin=true` in `example/android/gradle.properties`.
-For plugin migration steps, consult the
-[built-in Kotlin guide for plugin authors][].
+- `android.builtInKotlin=false` confirms that the example app builds as-is.
+- `android.builtInKotlin=true` confirms that the plugin is ready for
+  built-in Kotlin.
+  If the build fails, migrate your plugin by following the
+  [built-in Kotlin guide for plugin authors][].
 
 ### Bypass the version check
 
