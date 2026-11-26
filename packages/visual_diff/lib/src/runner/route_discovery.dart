@@ -7,12 +7,19 @@ import 'dart:io';
 
 import 'package:path/path.dart' as path;
 
+import 'content_hasher.dart';
+import 'visual_diff_config.dart';
+
 /// Discovers candidate routes from a site's build directory.
 List<String> discoverRoutes(
   Directory buildDirectory, {
   List<String>? explicitRoutes,
   RegExp? filter,
   int? limit,
+  VisualDiffConfig? config,
+  Set<String> changedHtmlRoutes = const {},
+  SiteContentHashes? baselineHashes,
+  bool disableLimits = false,
 }) {
   if (explicitRoutes != null && explicitRoutes.isNotEmpty) {
     var routes = explicitRoutes.map(_normalizeRoute).toSet().toList()..sort();
@@ -68,6 +75,22 @@ List<String> discoverRoutes(
     sortedRoutes = sortedRoutes.where(filter.hasMatch).toList();
   }
 
+  if (config != null) {
+    final effectiveChanged = <String>{
+      ...changedHtmlRoutes,
+      if (baselineHashes != null)
+        ...baselineHashes.findChangedRoutes(
+          buildDir: buildDirectory,
+          routes: sortedRoutes,
+        ),
+    };
+    sortedRoutes = config.filterRoutes(
+      allRoutes: sortedRoutes,
+      changedHtmlRoutes: effectiveChanged,
+      disableLimits: disableLimits,
+    );
+  }
+
   if (limit != null && limit > 0 && sortedRoutes.length > limit) {
     sortedRoutes = sortedRoutes.sublist(0, limit);
   }
@@ -105,6 +128,10 @@ Stream<String> watchBuildRoutes(
   List<String>? explicitRoutes,
   RegExp? filter,
   int? limit,
+  VisualDiffConfig? config,
+  Set<String> changedHtmlRoutes = const {},
+  SiteContentHashes? baselineHashes,
+  bool disableLimits = false,
 }) async* {
   final yieldedRoutes = <String>{};
   var buildDone = false;
@@ -162,6 +189,10 @@ Stream<String> watchBuildRoutes(
       final currentRoutes = discoverRoutes(
         buildDirectory,
         filter: filter,
+        config: config,
+        changedHtmlRoutes: changedHtmlRoutes,
+        baselineHashes: baselineHashes,
+        disableLimits: disableLimits,
       );
       for (final r in currentRoutes) {
         if (yieldedRoutes.add(r)) {
@@ -181,6 +212,10 @@ Stream<String> watchBuildRoutes(
     final finalRoutes = discoverRoutes(
       buildDirectory,
       filter: filter,
+      config: config,
+      changedHtmlRoutes: changedHtmlRoutes,
+      baselineHashes: baselineHashes,
+      disableLimits: disableLimits,
     );
     for (final r in finalRoutes) {
       if (yieldedRoutes.add(r)) {

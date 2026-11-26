@@ -1,0 +1,16 @@
+# Configuration for visual regression diffing.
+# Controls route sampling and exclusions to improve test performance.
+
+routes:
+  # Sample representative pages from large documentation sections.
+  - pattern: "/cookbook/**"
+    limit: 10
+    sort: asc
+
+  - pattern: "/release/breaking-changes/**"
+    limit: 5
+    sort: desc
+
+  - pattern: "/reference/**"
+    limit: 10
+    sort: asc

@@ -33,6 +33,11 @@ final class VisualDiffCommand extends Command<int> {
   static const String _maxHeightOption = 'max-height';
   static const String _javascriptFlag = 'javascript';
   static const String _minDiffPixelsOption = 'min-diff-pixels';
+  static const String _rendererOption = 'renderer';
+  static const String _rendererPathOption = 'renderer-path';
+  static const String _obscuraPathOption = 'obscura-path';
+  static const String _configOption = 'config';
+  static const String _allRoutesFlag = 'all-routes';
 
   VisualDiffCommand() {
     argParser.addFlag(
@@ -136,6 +141,30 @@ final class VisualDiffCommand extends Command<int> {
           'Minimum number of differing pixels required to flag a snapshot as '
           'changed (diffs with fewer pixels are treated as equal).',
     );
+    argParser.addOption(
+      _rendererOption,
+      defaultsTo: 'chrome',
+      allowed: ['chrome', 'obscura'],
+      help: 'Snapshot rendering engine backend.',
+    );
+    argParser.addOption(
+      _rendererPathOption,
+      help: 'Path to custom Chrome or Obscura executable.',
+    );
+    argParser.addOption(
+      _obscuraPathOption,
+      help: 'Path to custom Obscura executable.',
+    );
+    argParser.addOption(
+      _configOption,
+      help: 'Path to custom visual_diff.yaml configuration file.',
+    );
+    argParser.addFlag(
+      _allRoutesFlag,
+      defaultsTo: false,
+      negatable: false,
+      help: 'Snapshot all routes, bypassing visual_diff.yaml limits.',
+    );
   }
 
   @override
@@ -173,12 +202,34 @@ final class VisualDiffCommand extends Command<int> {
     final viewportChoice = results?.option(_viewportOption) ?? 'all';
     final concurrency =
         int.tryParse(results?.option(_concurrencyOption) ?? '4') ?? 4;
-    final chromePath = results?.option(_chromePathOption);
+    final rendererName = results?.option(_rendererOption) ?? 'chrome';
+    final backend = rendererName == 'obscura'
+        ? SnapshotBackend.obscura
+        : SnapshotBackend.chrome;
+    final customRendererPath = results?.option(_rendererPathOption);
+    final obscuraPath =
+        results?.option(_obscuraPathOption) ?? customRendererPath;
+    final chromePath =
+        results?.option(_chromePathOption) ??
+        (backend == SnapshotBackend.chrome ? customRendererPath : null);
+    final configPath = results?.option(_configOption);
+    final allRoutes = results.get<bool>(_allRoutesFlag, false);
     final maxHeight =
         int.tryParse(results?.option(_maxHeightOption) ?? '4500') ?? 4500;
     final enableJavaScript = results.get<bool>(_javascriptFlag, false);
     final minDiffPixels =
         int.tryParse(results?.option(_minDiffPixelsOption) ?? '50') ?? 50;
+
+    final VisualDiffConfig? config;
+    if (configPath != null) {
+      final configFile = File(configPath);
+      if (!configFile.existsSync()) {
+        usageException('Specified config file not found: $configPath');
+      }
+      config = VisualDiffConfig.loadFromFile(configFile);
+    } else {
+      config = VisualDiffConfig.findConfig(Directory(repositoryRoot));
+    }
 
     final RegExp? filterRegex;
     if (filterPattern != null && filterPattern.isNotEmpty) {
@@ -229,7 +280,9 @@ final class VisualDiffCommand extends Command<int> {
     }
 
     final runner = SnapshotRunner(
+      backend: backend,
       customChromePath: chromePath,
+      customObscuraPath: obscuraPath,
       concurrency: concurrency,
       hideCookieBanner: true,
       maxHeight: maxHeight,
@@ -252,6 +305,8 @@ final class VisualDiffCommand extends Command<int> {
           explicitRoutes: explicitRoutes,
           filterRegex: filterRegex,
           limit: limit,
+          config: config,
+          disableLimits: allRoutes,
           viewports: viewports,
           runner: runner,
           shouldBuild: shouldBuild,
@@ -264,6 +319,8 @@ final class VisualDiffCommand extends Command<int> {
           explicitRoutes: explicitRoutes,
           filterRegex: filterRegex,
           limit: limit,
+          config: config,
+          disableLimits: allRoutes,
           viewports: viewports,
           runner: runner,
           shouldBuild: shouldBuild,
@@ -409,6 +466,9 @@ final class VisualDiffCommand extends Command<int> {
         explicitRoutes: explicitRoutes,
         filter: filterRegex,
         limit: limit,
+        config: config,
+        baselineHashes: baselineHashes,
+        disableLimits: allRoutes,
       );
 
       await runner.captureEagerSnapshots(
@@ -577,6 +637,8 @@ final class VisualDiffCommand extends Command<int> {
     required List<String>? explicitRoutes,
     required RegExp? filterRegex,
     required int? limit,
+    VisualDiffConfig? config,
+    bool disableLimits = false,
     required List<SnapshotViewport> viewports,
     required SnapshotRunner runner,
     required bool shouldBuild,
@@ -644,6 +706,8 @@ final class VisualDiffCommand extends Command<int> {
         explicitRoutes: explicitRoutes,
         filter: filterRegex,
         limit: limit,
+        config: config,
+        disableLimits: disableLimits,
       );
 
       if (baselineRoutes.isEmpty) {
@@ -709,6 +773,8 @@ final class VisualDiffCommand extends Command<int> {
     required List<String>? explicitRoutes,
     required RegExp? filterRegex,
     required int? limit,
+    VisualDiffConfig? config,
+    bool disableLimits = false,
     required List<SnapshotViewport> viewports,
     required SnapshotRunner runner,
     required bool shouldBuild,
@@ -781,6 +847,8 @@ final class VisualDiffCommand extends Command<int> {
         explicitRoutes: explicitRoutes,
         filter: filterRegex,
         limit: limit,
+        config: config,
+        disableLimits: disableLimits,
       );
 
       await runner.captureEagerSnapshots(

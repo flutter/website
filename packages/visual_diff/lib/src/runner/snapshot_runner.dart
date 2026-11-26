@@ -16,12 +16,15 @@ import 'content_hasher.dart';
 import 'font_cache.dart';
 import 'header_extractor.dart';
 import 'route_discovery.dart';
+import 'snapshot_backend.dart';
 import 'snapshot_server.dart';
 import 'snapshot_viewport.dart';
 
-/// Captures screenshots of site routes using headless Chromium.
+/// Captures screenshots of site routes using headless Chromium or Obscura.
 final class SnapshotRunner {
+  final SnapshotBackend backend;
   final String? customChromePath;
+  final String? customObscuraPath;
   final int concurrency;
   final bool hideCookieBanner;
   final int maxHeight;
@@ -29,7 +32,9 @@ final class SnapshotRunner {
   final FontCache fontCache;
 
   SnapshotRunner({
+    this.backend = SnapshotBackend.chrome,
     this.customChromePath,
+    this.customObscuraPath,
     this.concurrency = 6,
     this.hideCookieBanner = true,
     this.maxHeight = 4500,
@@ -93,6 +98,22 @@ final class SnapshotRunner {
 
     if (!outputDirectory.existsSync()) {
       outputDirectory.createSync(recursive: true);
+    }
+
+    if (backend == SnapshotBackend.obscura) {
+      return await _captureEagerSnapshotsWithObscura(
+        server: server,
+        routeStream: routeStream,
+        expectedTotalRoutes: expectedTotalRoutes,
+        outputDirectory: outputDirectory,
+        viewports: viewports,
+        buildDirectory: buildDirectory,
+        baselineDirectory: baselineDirectory,
+        baselineHashes: baselineHashes,
+        baselineMetadata: baselineMetadata,
+        onProgress: onProgress,
+        onSnapshotSaved: onSnapshotSaved,
+      );
     }
 
     final chromePath = _findChromeExecutable(customChromePath);
@@ -537,6 +558,281 @@ final class SnapshotRunner {
       fontCache.close();
     }
 
+    _persistHashesAndMetadata(
+      outputDirectory: outputDirectory,
+      buildDirectory: buildDirectory,
+      currentRouteHashes: currentRouteHashes,
+      currentGlobalAssetsHash: currentGlobalAssetsHash,
+      capturedMetadata: capturedMetadata,
+    );
+
+    return (capturedCount: capturedCount, metadata: capturedMetadata);
+  }
+
+  /// Concurrently captures snapshots using the lightweight Obscura engine.
+  Future<({int capturedCount, Map<String, HeaderMetadata> metadata})>
+  _captureEagerSnapshotsWithObscura({
+    required SnapshotServer server,
+    required Stream<String> routeStream,
+    int? expectedTotalRoutes,
+    required Directory outputDirectory,
+    List<SnapshotViewport> viewports = SnapshotViewport.all,
+    Directory? buildDirectory,
+    Directory? baselineDirectory,
+    SiteContentHashes? baselineHashes,
+    Map<String, HeaderMetadata>? baselineMetadata,
+    void Function(String message)? onProgress,
+    void Function(String filename)? onSnapshotSaved,
+  }) async {
+    final log = onProgress ?? print;
+    final obscuraBin = customObscuraPath ?? 'obscura';
+
+    try {
+      final check = await Process.run(obscuraBin, ['--version']);
+      if (check.exitCode != 0) {
+        throw ProcessException(
+          obscuraBin,
+          ['--version'],
+          'Exit code ${check.exitCode}',
+        );
+      }
+      log('🌐 Using Obscura engine: ${check.stdout.toString().trim()}');
+    } catch (e) {
+      stderr.writeln(
+        'Error: Could not execute Obscura ($obscuraBin).\n'
+        'Install it via "brew install obscura" or pass '
+        '--renderer-path=<path>.\n'
+        'Details: $e',
+      );
+      return (capturedCount: 0, metadata: <String, HeaderMetadata>{});
+    }
+
+    var capturedCount = 0;
+    final totalExpectedSnapshots = expectedTotalRoutes != null
+        ? expectedTotalRoutes * viewports.length
+        : null;
+
+    final capturedMetadata = <String, HeaderMetadata>{};
+
+    final effectiveBaselineHashes =
+        baselineHashes ??
+        (baselineDirectory != null
+            ? SiteContentHashes.loadFromFile(
+                File(path.join(baselineDirectory.path, 'content_hashes.json')),
+              )
+            : null);
+
+    final currentGlobalAssetsHash = buildDirectory != null
+        ? SiteContentHashes.computeGlobalAssetsHash(buildDirectory)
+        : '';
+
+    final canSkipUnchanged =
+        effectiveBaselineHashes != null &&
+        effectiveBaselineHashes.globalAssetsHash == currentGlobalAssetsHash &&
+        baselineDirectory != null &&
+        baselineDirectory.existsSync();
+
+    if (effectiveBaselineHashes != null &&
+        effectiveBaselineHashes.globalAssetsHash != currentGlobalAssetsHash) {
+      log(
+        '  🎨 Global styles or scripts changed. Full re-snapshotting required.',
+      );
+    } else if (canSkipUnchanged) {
+      log(
+        '  ⚡ Global styles and scripts unchanged. Reusing baseline for '
+        'unchanged HTML routes...',
+      );
+    }
+
+    final currentRouteHashes = <String, String>{};
+    final taskQueue = Queue<({String route, SnapshotViewport viewport})>();
+    var streamCompleted = false;
+    final completer = Completer<void>();
+
+    try {
+      final workerCount = concurrency.clamp(1, 16);
+      final workers = <Future<void>>[];
+
+      late final StreamSubscription<String> streamSub;
+      streamSub = routeStream.listen(
+        (route) {
+          var routeSkipped = false;
+          if (canSkipUnchanged && buildDirectory != null) {
+            final htmlFile = SiteContentHashes.resolveRouteHtmlFile(
+              buildDirectory,
+              route,
+            );
+            if (htmlFile != null && htmlFile.existsSync()) {
+              final hash = SiteContentHashes.tryComputeFileHash(htmlFile);
+              if (hash != null) {
+                currentRouteHashes[route] = hash;
+
+                if (effectiveBaselineHashes.routeHashes[route] == hash) {
+                  var allBaselineSnapshotsExist = true;
+                  for (final vp in viewports) {
+                    final filename = snapshotFileName(route, vp.name);
+                    final src = File(
+                      path.join(baselineDirectory.path, filename),
+                    );
+                    if (!src.existsSync()) {
+                      allBaselineSnapshotsExist = false;
+                      break;
+                    }
+                  }
+
+                  if (allBaselineSnapshotsExist) {
+                    for (final vp in viewports) {
+                      final filename = snapshotFileName(route, vp.name);
+                      final src = File(
+                        path.join(baselineDirectory.path, filename),
+                      );
+                      final dest = File(
+                        path.join(outputDirectory.path, filename),
+                      );
+                      src.copySync(dest.path);
+                      capturedCount++;
+                      onSnapshotSaved?.call(filename);
+                    }
+                    if (baselineMetadata?[route] case final meta?) {
+                      capturedMetadata[route] = meta;
+                    }
+                    routeSkipped = true;
+                    final progressStr = totalExpectedSnapshots != null
+                        ? '$capturedCount/$totalExpectedSnapshots'
+                        : '$capturedCount';
+                    log('  ⚡ [$progressStr] Reused baseline: $route');
+                  }
+                }
+              }
+            }
+          } else if (buildDirectory != null) {
+            final htmlFile = SiteContentHashes.resolveRouteHtmlFile(
+              buildDirectory,
+              route,
+            );
+            if (htmlFile != null && htmlFile.existsSync()) {
+              final hash = SiteContentHashes.tryComputeFileHash(htmlFile);
+              if (hash != null) {
+                currentRouteHashes[route] = hash;
+              }
+            }
+          }
+
+          if (!routeSkipped) {
+            for (final vp in viewports) {
+              taskQueue.add((route: route, viewport: vp));
+            }
+          }
+        },
+        onDone: () {
+          streamCompleted = true;
+          if (taskQueue.isEmpty && !completer.isCompleted) completer.complete();
+        },
+        onError: (Object e) {
+          streamCompleted = true;
+          if (!completer.isCompleted) completer.complete();
+        },
+      );
+
+      for (var workerIndex = 0; workerIndex < workerCount; workerIndex++) {
+        workers.add(() async {
+          while (!streamCompleted || taskQueue.isNotEmpty) {
+            if (taskQueue.isEmpty) {
+              if (streamCompleted) break;
+              await Future<void>.delayed(const Duration(milliseconds: 25));
+              continue;
+            }
+
+            final task = taskQueue.removeFirst();
+            final route = task.route;
+            final viewport = task.viewport;
+
+            try {
+              final filename = snapshotFileName(route, viewport.name);
+              final outputPath = path.join(outputDirectory.path, filename);
+              final url = '${server.baseUrl}$route';
+
+              final env = {
+                'OBSCURA_ALLOW_PRIVATE_NETWORK': '1',
+                'OBSCURA_SHOT_W': '${viewport.width}',
+                'OBSCURA_SHOT_H': '$maxHeight',
+              };
+
+              final proc = await Process.run(
+                obscuraBin,
+                [
+                  '--allow-private-network',
+                  'fetch',
+                  url,
+                  '--wait-until=domcontentloaded',
+                  '--wait=0',
+                  '--screenshot=$outputPath',
+                ],
+                environment: env,
+              );
+
+              if (proc.exitCode != 0) {
+                throw ProcessException(
+                  obscuraBin,
+                  [],
+                  proc.stderr.toString(),
+                );
+              }
+
+              if (!capturedMetadata.containsKey(route) &&
+                  buildDirectory != null) {
+                final htmlFile = SiteContentHashes.resolveRouteHtmlFile(
+                  buildDirectory,
+                  route,
+                );
+                if (htmlFile != null && htmlFile.existsSync()) {
+                  try {
+                    capturedMetadata[route] =
+                        await extractHeaderMetadataFromFile(htmlFile);
+                  } catch (_) {}
+                }
+              }
+
+              capturedCount++;
+              onSnapshotSaved?.call(filename);
+
+              final progressStr = totalExpectedSnapshots != null
+                  ? '$capturedCount/$totalExpectedSnapshots'
+                  : '$capturedCount';
+              log('  ✓ [$progressStr] Captured: $filename');
+            } catch (error) {
+              stderr.writeln(
+                '  ✗ Failed to snapshot $route (${viewport.name}): $error',
+              );
+            }
+          }
+        }());
+      }
+
+      await Future.wait(workers);
+      await streamSub.cancel();
+    } finally {
+      // Obscura worker cleanup
+    }
+
+    _persistHashesAndMetadata(
+      outputDirectory: outputDirectory,
+      buildDirectory: buildDirectory,
+      currentRouteHashes: currentRouteHashes,
+      currentGlobalAssetsHash: currentGlobalAssetsHash,
+      capturedMetadata: capturedMetadata,
+    );
+
+    return (capturedCount: capturedCount, metadata: capturedMetadata);
+  }
+
+  static void _persistHashesAndMetadata({
+    required Directory outputDirectory,
+    required Directory? buildDirectory,
+    required Map<String, String> currentRouteHashes,
+    required String currentGlobalAssetsHash,
+    required Map<String, HeaderMetadata> capturedMetadata,
+  }) {
     // Persist content hashes to output directory to allow skipping next time.
     if (buildDirectory != null && currentRouteHashes.isNotEmpty) {
       try {
@@ -576,8 +872,6 @@ final class SnapshotRunner {
         metaFile.writeAsStringSync(encoder.convert(mergedMeta));
       } catch (_) {}
     }
-
-    return (capturedCount: capturedCount, metadata: capturedMetadata);
   }
 
   /// Finds a usable Chrome or Chromium executable on the current platform.

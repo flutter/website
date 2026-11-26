@@ -57,6 +57,29 @@ final class SiteContentHashes {
     file.writeAsStringSync(encoder.convert(toJson()));
   }
 
+  /// Compares [routes] in [buildDir] against this baseline instance and returns
+  /// all route paths whose HTML file hash differs from the baseline, or which
+  /// are newly added routes.
+  Set<String> findChangedRoutes({
+    required Directory buildDir,
+    required Iterable<String> routes,
+  }) {
+    final changed = <String>{};
+    for (final route in routes) {
+      final htmlFile = resolveRouteHtmlFile(buildDir, route);
+      if (htmlFile != null && htmlFile.existsSync()) {
+        final currentHash = tryComputeFileHash(htmlFile);
+        final baselineHash = routeHashes[route];
+        if (currentHash != null && currentHash != baselineHash) {
+          changed.add(route);
+        }
+      } else if (routeHashes.containsKey(route)) {
+        changed.add(route);
+      }
+    }
+    return changed;
+  }
+
   /// Computes content hashes for [routes] built into [buildDir].
   static SiteContentHashes compute({
     required Directory buildDir,
