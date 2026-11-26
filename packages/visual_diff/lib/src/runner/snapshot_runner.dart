@@ -588,11 +588,21 @@ final class SnapshotRunner {
     final log = onProgress ?? print;
     final obscuraBin = customObscuraPath ?? 'obscura';
 
+    Directory? fontDir;
+    try {
+      fontDir = await fontCache.ensureTtfFonts();
+    } catch (_) {}
+
     final ObscuraDaemon daemon;
     try {
-      daemon = await ObscuraDaemon.start(obscuraBin: obscuraBin);
+      daemon = await ObscuraDaemon.start(
+        obscuraBin: obscuraBin,
+        fontDirectory: fontDir,
+      );
+      final fontInfo = fontDir != null ? ' (fonts: ${fontDir.path})' : '';
       log(
-        '🌐 Connected to persistent Obscura CDP daemon on port ${daemon.port}',
+        '🌐 Connected to persistent Obscura CDP daemon on port '
+        '${daemon.port}$fontInfo',
       );
     } catch (e) {
       stderr.writeln(

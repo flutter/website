@@ -256,4 +256,57 @@ final class FontCache {
   void close() {
     _client.close();
   }
+
+  /// Ensures local TrueType font files for icon fonts (such as Material Symbols
+  /// Outlined and Rounded) are cached in `cacheDirectory/ttf` so that software
+  /// rasterizers like Obscura can load them via `--font-dir`.
+  Future<Directory?> ensureTtfFonts() async {
+    final baseDir = cacheDirectory ?? defaultCacheDirectory();
+    final ttfDir = Directory(path.join(baseDir.path, 'ttf'));
+    if (!ttfDir.existsSync()) {
+      try {
+        ttfDir.createSync(recursive: true);
+      } catch (_) {}
+    }
+
+    final ttfSources = <String, String>{
+      'MaterialSymbolsOutlined.ttf':
+          'https://raw.githubusercontent.com/google/material-design-icons/'
+          'master/variablefont/'
+          'MaterialSymbolsOutlined%5BFILL%2CGRAD%2Copsz%2Cwght%5D.ttf',
+      'MaterialSymbolsRounded.ttf':
+          'https://raw.githubusercontent.com/google/material-design-icons/'
+          'master/variablefont/'
+          'MaterialSymbolsRounded%5BFILL%2CGRAD%2Copsz%2Cwght%5D.ttf',
+    };
+
+    final futures = <Future<void>>[];
+    for (final entry in ttfSources.entries) {
+      final file = File(path.join(ttfDir.path, entry.key));
+      if (!file.existsSync() || file.lengthSync() < 1000) {
+        futures.add(() async {
+          try {
+            final uri = Uri.parse(entry.value);
+            final request = await _client.getUrl(uri);
+            final response = await request.close();
+            if (response.statusCode == 200) {
+              final bytes = await response.fold<List<int>>(
+                <int>[],
+                (prev, elem) => prev..addAll(elem),
+              );
+              if (bytes.length > 1000) {
+                await file.writeAsBytes(bytes);
+              }
+            }
+          } catch (_) {}
+        }());
+      }
+    }
+
+    if (futures.isNotEmpty) {
+      await Future.wait(futures);
+    }
+
+    return ttfDir.existsSync() ? ttfDir : null;
+  }
 }

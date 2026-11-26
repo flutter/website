@@ -40,6 +40,7 @@ final class ObscuraDaemon {
   static Future<ObscuraDaemon> start({
     String obscuraBin = 'obscura',
     int? customPort,
+    Directory? fontDirectory,
   }) async {
     final int port;
     if (customPort != null) {
@@ -60,6 +61,10 @@ final class ObscuraDaemon {
         '--port',
         '$port',
         '--allow-private-network',
+        if (fontDirectory != null && fontDirectory.existsSync()) ...[
+          '--font-dir',
+          fontDirectory.path,
+        ],
       ],
       environment: {
         'OBSCURA_ALLOW_PRIVATE_NETWORK': '1',
