@@ -593,11 +593,13 @@ final class SnapshotRunner {
       fontDir = await fontCache.ensureTtfFonts();
     } catch (_) {}
 
+    final workerCount = concurrency.clamp(1, 16);
     final ObscuraDaemon daemon;
     try {
       daemon = await ObscuraDaemon.start(
         obscuraBin: obscuraBin,
         fontDirectory: fontDir,
+        workers: workerCount,
       );
       final fontInfo = fontDir != null ? ' (fonts: ${fontDir.path})' : '';
       log(
@@ -652,12 +654,11 @@ final class SnapshotRunner {
     }
 
     final currentRouteHashes = <String, String>{};
-    final taskQueue = Queue<({String route, SnapshotViewport viewport})>();
+    final taskQueue = Queue<String>();
     var streamCompleted = false;
     final completer = Completer<void>();
 
     try {
-      final workerCount = concurrency.clamp(1, 16);
       final workers = <Future<void>>[];
 
       late final StreamSubscription<String> streamSub;
@@ -726,9 +727,7 @@ final class SnapshotRunner {
           }
 
           if (!routeSkipped) {
-            for (final vp in viewports) {
-              taskQueue.add((route: route, viewport: vp));
-            }
+            taskQueue.add(route);
           }
         },
         onDone: () {
@@ -743,60 +742,64 @@ final class SnapshotRunner {
 
       for (var workerIndex = 0; workerIndex < workerCount; workerIndex++) {
         workers.add(() async {
-          final sessionId = await daemon.createSession(
+          final session = await daemon.createWorkerSession(
             disableJavaScript: disableJavaScript,
           );
 
-          while (!streamCompleted || taskQueue.isNotEmpty) {
-            if (taskQueue.isEmpty) {
-              if (streamCompleted) break;
-              await Future<void>.delayed(const Duration(milliseconds: 25));
-              continue;
-            }
-
-            final task = taskQueue.removeFirst();
-            final route = task.route;
-            final viewport = task.viewport;
-
-            try {
-              final filename = snapshotFileName(route, viewport.name);
-              final outputPath = path.join(outputDirectory.path, filename);
-              final url = '${server.baseUrl}$route';
-
-              final pngBytes = await daemon.captureSnapshot(
-                sessionId: sessionId,
-                url: url,
-                viewport: viewport,
-                maxHeight: maxHeight,
-              );
-              await File(outputPath).writeAsBytes(pngBytes);
-
-              if (!capturedMetadata.containsKey(route) &&
-                  buildDirectory != null) {
-                final htmlFile = SiteContentHashes.resolveRouteHtmlFile(
-                  buildDirectory,
-                  route,
-                );
-                if (htmlFile != null && htmlFile.existsSync()) {
-                  try {
-                    capturedMetadata[route] =
-                        await extractHeaderMetadataFromFile(htmlFile);
-                  } catch (_) {}
-                }
+          try {
+            while (!streamCompleted || taskQueue.isNotEmpty) {
+              if (taskQueue.isEmpty) {
+                if (streamCompleted) break;
+                await Future<void>.delayed(const Duration(milliseconds: 25));
+                continue;
               }
 
-              capturedCount++;
-              onSnapshotSaved?.call(filename);
+              final route = taskQueue.removeFirst();
+              final url = '${server.baseUrl}$route';
 
-              final progressStr = totalExpectedSnapshots != null
-                  ? '$capturedCount/$totalExpectedSnapshots'
-                  : '$capturedCount';
-              log('  ✓ [$progressStr] Captured: $filename');
-            } catch (error) {
-              stderr.writeln(
-                '  ✗ Failed to snapshot $route (${viewport.name}): $error',
-              );
+              try {
+                // Navigate once per route.
+                await session.navigate(url);
+
+                // Capture each viewport on the loaded page.
+                for (final viewport in viewports) {
+                  final filename = snapshotFileName(route, viewport.name);
+                  final outputPath = path.join(outputDirectory.path, filename);
+
+                  final pngBytes = await session.captureViewportSnapshot(
+                    viewport: viewport,
+                    maxHeight: maxHeight,
+                  );
+                  await File(outputPath).writeAsBytes(pngBytes);
+
+                  capturedCount++;
+                  onSnapshotSaved?.call(filename);
+
+                  final progressStr = totalExpectedSnapshots != null
+                      ? '$capturedCount/$totalExpectedSnapshots'
+                      : '$capturedCount';
+                  log('  ✓ [$progressStr] Captured: $filename');
+                }
+
+                if (!capturedMetadata.containsKey(route) &&
+                    buildDirectory != null) {
+                  final htmlFile = SiteContentHashes.resolveRouteHtmlFile(
+                    buildDirectory,
+                    route,
+                  );
+                  if (htmlFile != null && htmlFile.existsSync()) {
+                    try {
+                      capturedMetadata[route] =
+                          await extractHeaderMetadataFromFile(htmlFile);
+                    } catch (_) {}
+                  }
+                }
+              } catch (error) {
+                stderr.writeln('  ✗ Failed to snapshot $route: $error');
+              }
             }
+          } finally {
+            await session.close();
           }
         }());
       }
