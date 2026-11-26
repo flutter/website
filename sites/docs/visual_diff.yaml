@@ -1,4 +1,4 @@
-# Configuration for visual regression diffing.
+# Configuration for visual regression diffing on docs.flutter.dev.
 # Controls route sampling and exclusions to improve test performance.
 
 routes:

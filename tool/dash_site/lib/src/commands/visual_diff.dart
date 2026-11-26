@@ -228,7 +228,14 @@ final class VisualDiffCommand extends Command<int> {
       }
       config = VisualDiffConfig.loadFromFile(configFile);
     } else {
-      config = VisualDiffConfig.findConfig(Directory(repositoryRoot));
+      final siteConfigFile = File(
+        path.join(repositoryRoot, site.directory, 'visual_diff.yaml'),
+      );
+      if (siteConfigFile.existsSync()) {
+        config = VisualDiffConfig.loadFromFile(siteConfigFile);
+      } else {
+        config = VisualDiffConfig.findConfig(Directory(repositoryRoot));
+      }
     }
 
     final RegExp? filterRegex;
