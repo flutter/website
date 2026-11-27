@@ -45,18 +45,23 @@ final class PreviewEntry {
 
   static PreviewEntry? fromJson(Object? json) {
     if (json
-        case {
-          'status': final String statusName,
-          'commitSha': final String commitSha,
-        }
+        case final Map<String, Object?> map &&
+            {
+              'status': final String statusName,
+              'commitSha': final String commitSha,
+            }
         when commitSha.isNotEmpty) {
       final status =
           PreviewStatus.values.asNameMap()[statusName] ?? PreviewStatus.ready;
-      final url = json['url'] as String?;
+      final url = map['url'] as String?;
       return PreviewEntry(status: status, url: url, commitSha: commitSha);
     }
 
-    if (json case {'url': final String url, 'commitSha': final String commitSha}
+    if (json
+        case <String, Object?>{
+          'url': final String url,
+          'commitSha': final String commitSha,
+        }
         when url.isNotEmpty && commitSha.isNotEmpty) {
       return PreviewEntry(
         status: PreviewStatus.ready,
@@ -169,8 +174,8 @@ String buildPreviewCommentBody(
   return buffer.toString().trimRight();
 }
 
-/// Finds the ID of an existing preview comment on [issueNumber], if present.
-Future<int?> findExistingPreviewCommentId({
+/// Finds an existing preview comment on [issueNumber], if present.
+Future<github.IssueComment?> findExistingPreviewComment({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
   required int issueNumber,
@@ -181,10 +186,24 @@ Future<int?> findExistingPreviewCommentId({
   )) {
     final body = comment.body;
     if (body != null && body.contains(previewCommentMarker)) {
-      return comment.id;
+      return comment;
     }
   }
   return null;
+}
+
+/// Finds the ID of an existing preview comment on [issueNumber], if present.
+Future<int?> findExistingPreviewCommentId({
+  required github.GitHub gitHub,
+  required github.RepositorySlug repository,
+  required int issueNumber,
+}) async {
+  final comment = await findExistingPreviewComment(
+    gitHub: gitHub,
+    repository: repository,
+    issueNumber: issueNumber,
+  );
+  return comment?.id;
 }
 
 /// Updates or creates the staged preview comment on the pull request.
@@ -208,17 +227,11 @@ Future<int> updatePreviewCommentOnGitHub({
   try {
     final repository = github.RepositorySlug.full(repoFullName);
 
-    github.IssueComment? existingComment;
-    await for (final comment in gitHub.issues.listCommentsByIssue(
-      repository,
-      prNumber,
-    )) {
-      final body = comment.body;
-      if (body != null && body.contains(previewCommentMarker)) {
-        existingComment = comment;
-        break;
-      }
-    }
+    final existingComment = await findExistingPreviewComment(
+      gitHub: gitHub,
+      repository: repository,
+      issueNumber: prNumber,
+    );
 
     final previews = <Site, PreviewEntry>{};
     if (existingComment?.body case final body?) {
@@ -241,7 +254,7 @@ Future<int> updatePreviewCommentOnGitHub({
     } else {
       await gitHub.issues.createComment(repository, prNumber, commentBody);
     }
-  } on github.GitHubError catch (error) {
+  } on Exception catch (error) {
     stderr.writeln('Error: Failed to comment on the pull request: $error');
     return 1;
   } finally {

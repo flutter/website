@@ -165,20 +165,14 @@ final class StagePreviewCommand extends Command<int> {
     }
 
     if (prContext != null) {
-      try {
-        await updatePreviewCommentOnGitHub(
-          site: selectedSite,
-          status: PreviewStatus.pending,
-          prNumber: prContext.prNumber,
-          repoFullName: prContext.repoFullName,
-          commitSha: prContext.commitSha,
-          githubToken: prContext.githubToken,
-        );
-      } on Exception catch (error) {
-        stderr.writeln(
-          'Warning: Failed to post pending status on pull request: $error',
-        );
-      }
+      await updatePreviewCommentOnGitHub(
+        site: selectedSite,
+        status: PreviewStatus.pending,
+        prNumber: prContext.prNumber,
+        repoFullName: prContext.repoFullName,
+        commitSha: prContext.commitSha,
+        githubToken: prContext.githubToken,
+      );
     }
 
     final firebaseToolsVersion = await validateFirebaseCli();
