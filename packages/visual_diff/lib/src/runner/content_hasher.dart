@@ -128,7 +128,8 @@ final class SiteContentHashes {
           final ext = path.extension(entity.path).toLowerCase();
           if (ext == '.css') {
             final relPath = path.relative(entity.path, from: buildDir.path);
-            assetFiles[relPath] = entity;
+            final normalizedPath = path.split(relPath).join('/');
+            assetFiles[normalizedPath] = entity;
           }
         } else if (entity is Directory) {
           final base = path.basename(entity.path);

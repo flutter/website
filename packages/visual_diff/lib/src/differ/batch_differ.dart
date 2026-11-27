@@ -7,6 +7,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:image/image.dart' as img;
+import 'package:meta/meta.dart';
 import 'package:path/path.dart' as path;
 
 import '../models/diff_entry.dart';
@@ -59,6 +60,12 @@ String _normalizeTargetRoute(String raw) {
 bool _bytesEqual(Uint8List a, Uint8List b) {
   if (identical(a, b)) return true;
   if (a.lengthInBytes != b.lengthInBytes) return false;
+  if (a.offsetInBytes % 8 != 0 || b.offsetInBytes % 8 != 0) {
+    for (var i = 0; i < a.lengthInBytes; i++) {
+      if (a[i] != b[i]) return false;
+    }
+    return true;
+  }
   final wordsA = a.buffer.asUint64List(a.offsetInBytes, a.lengthInBytes ~/ 8);
   final wordsB = b.buffer.asUint64List(b.offsetInBytes, b.lengthInBytes ~/ 8);
   for (var i = 0; i < wordsA.length; i++) {
@@ -70,6 +77,9 @@ bool _bytesEqual(Uint8List a, Uint8List b) {
   }
   return true;
 }
+
+@visibleForTesting
+bool bytesEqualForTesting(Uint8List a, Uint8List b) => _bytesEqual(a, b);
 
 /// Reads width and height directly from PNG IHDR chunk (bytes 16-23)
 /// without decompressing image pixel data.

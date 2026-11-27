@@ -44,13 +44,12 @@ List<String> discoverRoutes(
       file.path,
       from: normalizedBuildPath,
     );
+    final normalized = path.split(relativePath).join('/');
 
     // Ignore hidden files or directories (e.g. .git, .hidden).
-    if (relativePath.startsWith('.') || relativePath.contains('/.')) {
+    if (normalized.startsWith('.') || normalized.contains('/.')) {
       return;
     }
-
-    final normalized = path.split(relativePath).join('/');
 
     if (normalized == 'index.html') {
       routes.add('/');

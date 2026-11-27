@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:image/image.dart' as img;
 import 'package:test/test.dart';
@@ -394,5 +395,33 @@ void main() {
         );
       },
     );
+
+    test('bytesEqualForTesting handles aligned and unaligned offsets', () {
+      final baseA = Uint8List.fromList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+      final baseB = Uint8List.fromList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+      expect(bytesEqualForTesting(baseA, baseB), isTrue);
+
+      // Different length
+      expect(
+        bytesEqualForTesting(
+          baseA,
+          Uint8List.fromList([1, 2, 3, 4]),
+        ),
+        isFalse,
+      );
+
+      // Unaligned views (offset % 8 != 0)
+      final raw = Uint8List(32);
+      for (var i = 0; i < 32; i++) {
+        raw[i] = i * 3;
+      }
+      final unalignedA = Uint8List.sublistView(raw, 3, 19);
+      final unalignedB = Uint8List.sublistView(raw, 3, 19);
+      expect(bytesEqualForTesting(unalignedA, unalignedB), isTrue);
+
+      final diffCopy = Uint8List.fromList(unalignedA);
+      diffCopy[5] = 99;
+      expect(bytesEqualForTesting(unalignedA, diffCopy), isFalse);
+    });
   });
 }
