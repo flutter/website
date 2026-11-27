@@ -1,0 +1,17 @@
+name: firestore
+description: Example of using the cloud_firestore plugin to persist data.
+
+resolution: workspace
+environment:
+  sdk: ^3.14.0-0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  material_ui: ^1.11.0
+
+  cloud_firestore: ^7.1.0
+  firebase_core: ^5.1.0
+
+flutter:
+  uses-material-design: true

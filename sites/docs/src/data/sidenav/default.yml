@@ -322,6 +322,8 @@
           permalink: /cookbook/persistence/reading-writing-files
         - title: Persist data with SQLite
           permalink: /cookbook/persistence/sqlite
+        - title: Persist data with Cloud Firestore
+          permalink: /cookbook/persistence/firestore
     - title: Firebase
       permalink: /data-and-backend/firebase
       children:

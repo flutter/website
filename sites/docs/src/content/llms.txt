@@ -72,6 +72,7 @@ This index provides a curated list of official documentation and resources cover
 - [Networking with Flutter](https://docs.flutter.dev/data-and-backend/networking.md): Make HTTP requests and configure network permissions on Android and macOS.
 - [Firebase for Flutter](https://docs.flutter.dev/data-and-backend/firebase.md): Connect your Flutter app to Firebase with `flutterfire configure`, authenticate users with `firebase_auth`, sync NoSQL data with `cloud_firestore`, query PostgreSQL with `firebase_data_connect`, and share Dart code with the experimental `firebase_functions` SDK.
 - [Persist data with SQLite](https://docs.flutter.dev/cookbook/persistence/sqlite.md): Learn the basics of local database storage.
+- [Persist data with Cloud Firestore](https://docs.flutter.dev/cookbook/persistence/firestore.md): Add, read, update, and delete documents in Cloud Firestore with `cloud_firestore`, and display a list that updates in realtime with `snapshots()` and `StreamBuilder`.
 - [Store key-value data on disk](https://docs.flutter.dev/cookbook/persistence/key-value.md): For simple data storage using `shared_preferences`.
 
 ## Building AI-powered apps

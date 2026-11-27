@@ -202,8 +202,10 @@ class _TaskListState extends State<TaskList> {
 Offline persistence is enabled by default on Android and Apple
 platforms (and can be enabled on the web), so your app can read and
 write cached documents without a network connection and automatically
-sync changes when connectivity returns. To get started, follow the
-[Cloud Firestore quickstart][firestore-quickstart].
+sync changes when connectivity returns. For a step-by-step walkthrough
+of adding, reading, updating, and deleting documents, follow the
+[Persist data with Cloud Firestore][firestore-recipe] recipe, or
+start from the [Cloud Firestore quickstart][firestore-quickstart].
 
 ## Query relational SQL data with Firebase SQL Connect
 
@@ -287,6 +289,7 @@ following official and community resources.
 [firebase-storage]: {{site.firebase}}/docs/storage/flutter/start
 [`firebase_storage`]: {{site.pub-pkg}}/firebase_storage
 [firestore-quickstart]: {{site.firebase}}/docs/firestore/quickstart
+[firestore-recipe]: /cookbook/persistence/firestore
 [sql-connect-flutter]: {{site.firebase}}/docs/sql-connect/flutter-sdk
 [started]: {{site.firebase}}/docs/flutter/setup
 [video]: {{site.yt.watch}}/DqJ_KjFzL9I&t#38s
