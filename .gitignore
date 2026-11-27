@@ -14,6 +14,9 @@ node_modules
 .pnpm-store/
 ./flutter/
 
+# Visual diff artifacts
+.visual-diff/
+
 # Dart and Flutter, build related
 .dart_tool
 .flutter-plugins

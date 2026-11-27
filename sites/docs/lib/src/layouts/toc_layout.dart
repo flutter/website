@@ -24,13 +24,14 @@ class TocLayout extends DocLayout {
         builder: (context) {
           final normalizedCurrentUrl = _normalizeUrl(page.url);
 
-          // Find all indexable direct child pages of the current page.
+          // Find all direct child pages of the current page and sort them
+          // deterministically: first by frontmatter 'order', then by path.
           final childPages = [
             for (final pageToCheck in context.pages)
               if (_isDirectChild(normalizedCurrentUrl, pageToCheck.url) &&
                   !isNoIndexFlag(pageToCheck.data.page['noindex']))
                 pageToCheck,
-          ];
+          ]..sort(_compareChildPages);
 
           return .fragment([
             if (childPages.isNotEmpty)
@@ -56,6 +57,21 @@ class TocLayout extends DocLayout {
         },
       ),
     );
+  }
+
+  static int _compareChildPages(Page pageA, Page pageB) {
+    final aOrder = (pageA.data.page['order'] as num?)?.toInt();
+    final bOrder = (pageB.data.page['order'] as num?)?.toInt();
+
+    if (aOrder != null && bOrder != null && aOrder != bOrder) {
+      return aOrder.compareTo(bOrder);
+    } else if (aOrder != null && bOrder == null) {
+      return -1;
+    } else if (aOrder == null && bOrder != null) {
+      return 1;
+    }
+
+    return pageA.path.compareTo(pageB.path);
   }
 
   static String _normalizeUrl(String url) {

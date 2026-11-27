@@ -18,6 +18,9 @@ dependencies:
   io: ^1.1.0
   linkcheck: ^3.1.0
   path: ^1.9.1
+  puppeteer: ^3.28.0
+  visual_diff:
+    path: ../../packages/visual_diff
 
 dev_dependencies:
   analysis_defaults:

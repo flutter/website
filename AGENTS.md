@@ -78,9 +78,22 @@ dart run dash_site --site=docs refresh-excerpts
 # This doesn't update references to them, so do that afterward:
 dart run dash_site optimize-images <image paths...>
 
+# Run local visual regression diffing against main (or another base branch):
+dart run dash_site --site=docs visual-diff
+dart run dash_site --site=www visual-diff
+
 # Learn what other commands are available:
 dart run dash_site --help
 ```
+
+### Visual regression testing
+
+To run visual regression testing, use `dart run dash_site visual-diff`.
+By default, this captures full-page snapshots using Chrome and opens an
+interactive review UI.
+To learn about alternative renderers (such as Obscura), route pruning,
+and CLI options, consult the
+[`visual_diff` package README](packages/visual_diff/README.md).
 
 ## Content guidelines
 

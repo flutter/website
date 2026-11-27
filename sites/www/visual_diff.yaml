@@ -1,0 +1,13 @@
+# Configuration for visual regression diffing on flutter.dev.
+# Controls route sampling and exclusions to improve test performance.
+
+routes:
+  # Sample the latest 10 blog posts.
+  - pattern: "/blog/**"
+    limit: 10
+    sort: desc
+
+  # Sample the top 10 showcase entries.
+  - pattern: "/showcase/**"
+    limit: 10
+    sort: asc

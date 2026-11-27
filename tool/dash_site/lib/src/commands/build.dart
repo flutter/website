@@ -36,13 +36,26 @@ final class BuildSiteCommand extends Command<int> {
   );
 }
 
-Future<int> buildSite(Site site, {required bool productionRelease}) async {
+/// Starts the Jaspr site build process.
+Future<Process> startSiteBuildProcess(
+  Site site, {
+  required bool productionRelease,
+  String? rootDirectory,
+}) async {
   if (installJasprCliIfNecessary() case final jasprInstallResult
       when jasprInstallResult != 0) {
-    return jasprInstallResult;
+    throw ProcessException(
+      'jaspr',
+      [],
+      'Failed to install Jaspr CLI',
+      jasprInstallResult,
+    );
   }
 
-  final process = await Process.start(
+  final baseDirectory = rootDirectory ?? repositoryRoot;
+  final siteDirectory = path.join(baseDirectory, site.directory);
+
+  return await Process.start(
     Platform.resolvedExecutable,
     [
       'pub',
@@ -58,9 +71,28 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
       '--dart-define=PRODUCTION=$productionRelease',
       if (!productionRelease) ...nonProductionDartDefines(),
     ],
-    workingDirectory: site.directory,
+    workingDirectory: siteDirectory,
     mode: ProcessStartMode.inheritStdio,
   );
+}
+
+Future<int> buildSite(
+  Site site, {
+  required bool productionRelease,
+  String? rootDirectory,
+}) async {
+  final Process process;
+  try {
+    process = await startSiteBuildProcess(
+      site,
+      productionRelease: productionRelease,
+      rootDirectory: rootDirectory,
+    );
+  } on ProcessException catch (e) {
+    return e.errorCode;
+  }
+
+  final baseDirectory = rootDirectory ?? repositoryRoot;
 
   if (await process.exitCode case final processExitCode
       when processExitCode != 0) {
@@ -68,7 +100,7 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
   }
 
   final buildOutputDirectoryPath = path.join(
-    repositoryRoot,
+    baseDirectory,
     site.buildOutputDirectory,
   );
   if (!Directory(buildOutputDirectoryPath).existsSync()) {
