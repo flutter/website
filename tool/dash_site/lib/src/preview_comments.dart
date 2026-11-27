@@ -15,6 +15,7 @@ const previewCommentMarker = '<!-- flutter-preview -->';
 /// The deployment and build status of a preview.
 enum PreviewStatus {
   pending('⏳ Building'),
+  rebuilding('⏳ Rebuilding'),
   ready('✅ Ready'),
   failed('❌ Failed');
 
@@ -158,9 +159,8 @@ String buildPreviewCommentBody(
         : '`$shortSha`';
 
     final previewLink = switch (entry.status) {
-      PreviewStatus.ready when entry.url != null =>
-        '[Visit Preview ↗](${entry.url})',
-      PreviewStatus.pending => '_Deploying..._',
+      _ when entry.url != null => '[Visit Preview ↗](${entry.url})',
+      PreviewStatus.pending || PreviewStatus.rebuilding => '_Deploying..._',
       PreviewStatus.failed => '_Failed_',
       _ => '—',
     };
@@ -238,9 +238,16 @@ Future<int> updatePreviewCommentOnGitHub({
       previews.addAll(parsePreviewCommentEntries(body));
     }
 
+    final existingEntry = previews[site];
+    final resolvedStatus =
+        status == PreviewStatus.pending && existingEntry?.url != null
+        ? PreviewStatus.rebuilding
+        : status;
+    final resolvedUrl = stagingUrl ?? existingEntry?.url;
+
     previews[site] = PreviewEntry(
-      status: status,
-      url: stagingUrl,
+      status: resolvedStatus,
+      url: resolvedUrl,
       commitSha: commitSha,
     );
 

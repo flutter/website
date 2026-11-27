@@ -30,6 +30,17 @@ void main() {
       expect(PreviewEntry.fromJson(json), equals(entry));
     });
 
+    test('serializes and deserializes rebuilding status with url', () {
+      const entry = PreviewEntry(
+        status: PreviewStatus.rebuilding,
+        url: 'https://flutter-docs-prod--pr100.web.app',
+        commitSha: '4977bb96d8ac0d94e8954c0682c80adce95b810e',
+      );
+
+      final json = entry.toJson();
+      expect(PreviewEntry.fromJson(json), equals(entry));
+    });
+
     test('serializes and deserializes failed status', () {
       const entry = PreviewEntry(
         status: PreviewStatus.failed,
@@ -95,6 +106,26 @@ void main() {
         contains('[Visit Preview ↗](https://flutter-docs-prod--pr100.web.app)'),
       );
       expect(body, contains('`4977bb9`'));
+    });
+
+    test('formats a rebuilding site table retaining the preview link', () {
+      final previews = {
+        Site.docs: const PreviewEntry(
+          status: PreviewStatus.rebuilding,
+          url: 'https://flutter-docs-prod--pr100.web.app',
+          commitSha: 'aabbcc112233',
+        ),
+      };
+
+      final body = buildPreviewCommentBody(previews);
+
+      expect(body, contains('**docs.flutter.dev**'));
+      expect(body, contains('⏳ Rebuilding'));
+      expect(
+        body,
+        contains('[Visit Preview ↗](https://flutter-docs-prod--pr100.web.app)'),
+      );
+      expect(body, contains('`aabbcc1`'));
     });
 
     test('formats a failed site table cleanly', () {
