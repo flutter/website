@@ -10,6 +10,7 @@ on:
       - '**/pubspec.lock'
       - '**/analysis_options.yaml'
       - 'examples/**'
+      - '.agents/skills/**'
       - 'packages/**'
       - 'tool/dash_site/**'
       - '.github/workflows/dart.yml'
@@ -22,6 +23,7 @@ on:
       - '**/pubspec.lock'
       - '**/analysis_options.yaml'
       - 'examples/**'
+      - '.agents/skills/**'
       - 'packages/**'
       - 'tool/dash_site/**'
       - '.github/workflows/dart.yml'
@@ -67,6 +69,12 @@ jobs:
 #      - name: Check Dart code formatting
 #        run: dart run dash_site format-dart --check
 #        continue-on-error: ${{ matrix.experimental }}
+      - name: Check installed agent skills
+        run: |
+          dart run skills@ get --package site_skills --all --agent generic
+          git add --intent-to-add .agents/skills
+          git diff --exit-code -- .agents/skills
+        continue-on-error: ${{ matrix.experimental }}
       - name: Analyze Dart code
         run: dart run dash_site analyze-dart
         continue-on-error: ${{ matrix.experimental }}

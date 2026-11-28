@@ -35,7 +35,7 @@ Use these rules to structure and format documentation.
 - Use a **bulleted list** for unordered items.
 - Use a **term-and-description list** for term-and-description pairs.
   If you use Markdown,
-  follow the `format-markdown` guidance for compatible syntax.
+  follow the `site-skills-format-markdown` guidance for compatible syntax.
 - Usually introduce a list with a complete sentence.
   Use a colon when the sentence immediately precedes the list
   and a period when other material intervenes.

@@ -1,16 +1,17 @@
 ---
-name: write-dart
+name: site-skills-write-dart
 description: >-
   Write, review, or refactor correct, idiomatic Dart code.
   Use for Dart source, packages, snippets, tests, public APIs,
   documentation examples, and modern language features.
-  Pair with the write-flutter skill for Flutter-specific concerns.
+  For Flutter-specific concerns,
+  pair with the site-skills-write-flutter skill if it's available.
 ---
 
 # Write Dart
 
 Produce clear, correct, idiomatic Dart.
-Reference the  `write-technical-docs` skill when authoring
+Reference the  `site-skills-write-technical-docs` skill when authoring
 explanatory prose and documentation comments.
 Two principles guide the code rules:
 
