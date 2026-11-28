@@ -129,7 +129,7 @@ Another way to approach these situations is to
 use the `maxWidth` property of `BoxConstraints`.
 This involves the following:
 
-* Wrap the `GridView`in a `ConstrainedBox` and give
+* Wrap the `GridView` in a `ConstrainedBox` and give
   it a `BoxConstraints` with a maximum width set.
 * Use a `Container` instead of a `ConstrainedBox`
   if you want other functionality like setting the

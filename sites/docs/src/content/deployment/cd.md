@@ -308,7 +308,6 @@ information.
 [Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Apple Developer Account console]: {{site.apple-dev}}/account/ios/certificate/
 [Bitrise]: https://devcenter.bitrise.io/en/getting-started/quick-start-guides/getting-started-with-flutter-apps
-[CI Options and Examples]: #reference-and-examples
 [Cirrus]: https://cirrus-ci.org
 [Codemagic]: https://blog.codemagic.io/getting-started-with-codemagic/
 [fastlane]: https://docs.fastlane.tools

@@ -116,7 +116,7 @@ You have seen some of these widgets in previous lessons:
 `Row` and `Padding`. New, though, is the [`Expanded`][] widget.
 When a child of a `Row` (or `Column`) is wrapped in `Expanded`,
 it tells that child to fill all the available space along the main axis
-(horizontal for`Row`, vertical for `Column`) that
+(horizontal for `Row`, vertical for `Column`) that
 hasn't been taken by other children.
 This makes the `TextField` stretch to take up all the space *except*
 what's taken by other widgets in the row.
