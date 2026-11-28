@@ -252,9 +252,11 @@ compression settings:
 
 * **Cross-origin isolation for multi-threaded rendering**:
   Return `Cross-Origin-Opener-Policy: same-origin` and
-  `Cross-Origin-Embedder-Policy: credentialless` (or `require-corp`) on the
-  document response to enable `SharedArrayBuffer` and multi-threaded
-  WebAssembly rendering (refer to the [COOP and COEP guide on web.dev][coep]).
+  `Cross-Origin-Embedder-Policy: credentialless` (Chromium and Firefox) or
+  `require-corp` (all browsers, including Safari) on the document response to
+  enable `SharedArrayBuffer` and multi-threaded WebAssembly rendering.
+  Safari doesn't support `credentialless`, so use `require-corp` there
+  (refer to the [COOP and COEP guide on web.dev][coep]).
 * **Wasm MIME type and static pre-compression**:
   Serve all `.wasm` files (both `main.dart.wasm` and self-hosted engine
   binaries) with `Content-Type: application/wasm`, and pre-compress `.wasm`,
